@@ -1,0 +1,30 @@
+//layout styles
+#three-col {
+  .section-nav{
+    @extend .col-sm-12;
+    @extend .col-md-3;
+    @extend .col-md-pull-9;
+  }
+}
+#two-col-nav {
+  .section-nav{
+    @extend .col-sm-12;
+    @extend .col-md-3;
+    @extend .col-md-pull-9;
+  }
+}
+
+//other styles
+#three-col, #two-col-nav{
+
+}
+
+
+
+
+// responsive styles
+@media only screen and (max-width : 992px) {
+  .section-nav{
+    padding-top: 0.8em;
+  }
+}

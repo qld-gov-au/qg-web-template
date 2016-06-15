@@ -1,0 +1,27 @@
+
+html,body {
+  font-family: Verdana,Helvetica,Arial,sans-serif;
+  font-size: $baseSize;
+  line-height: $baseLineHeight;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Trebuchet MS",Helvetica,Arial,sans-serif;
+  font-weight: bold;
+}
+h1{
+  @include fontSize(25px);
+  font-weight: bold;
+}
+h2{
+  @include fontSize(19px);
+  font-weight: bold;
+}
+h3{
+  @include fontSize(16px);
+  font-weight: bold;
+}
+a {
+  @include fontSize(12px);
+}
+
+//responsive typography

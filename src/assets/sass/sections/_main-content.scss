@@ -1,0 +1,60 @@
+//layout styles
+#three-col{
+  .primary-content{
+    @extend .col-sm-12;
+    @extend .col-md-6;
+    @extend .col-md-push-3;
+  }
+}
+#two-col-aside{
+  .primary-content{
+    @extend .col-sm-12;
+    @extend .col-md-9;
+  }
+}
+#two-col-nav{
+  .primary-content{
+    @extend .col-sm-12;
+    @extend .col-md-9;
+    @extend .col-md-push-3;
+  }
+}
+#full-width{
+  .primary-content{
+    @extend .col-sm-12;
+  }
+}
+
+//other styles
+#three-col, #two-col-aside, #two-col-nav{
+  ul {
+    a {
+      text-decoration: underline;
+    }
+  }
+  .content-footer{
+    dt {
+      float: left;
+      margin-right: 0.5em;
+      font-weight: normal;
+    }
+    .dropup{
+      & > ul{
+        & > li:first-child a{
+          margin-left: -1.3em;
+        }
+      }
+    }
+  }
+}
+
+// responsive styles
+@media only screen and (max-width : 768px) {
+  .primary-content {
+    .dropup {
+      & > ul {
+        margin: 0;
+      }
+    }
+  }
+}

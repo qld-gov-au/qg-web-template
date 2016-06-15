@@ -1,0 +1,25 @@
+@import "../helpers/mixins";
+
+//font family
+$font-main : Verdana,Helvetica,Arial,sans-serif;
+
+// base font size
+$baseSize : 14px;
+$baseLineHeight : 1.5;
+
+// colours
+$lightgrey : #eef1f5;
+$green : #78BA00;
+$grey : rgb(246, 246, 246);
+$linkcolour : #005375;
+$sweblue : #007EB1;
+
+//Setting 16 column grid
+//$new-columns:16;
+//$grid-columns:$new-columns;
+
+//$new-columns :                  12;
+//$new-gutter-width :             40px;
+//
+//$grid-columns :                 $new-columns;
+//$grid-gutter-width :            $new-gutter-width;

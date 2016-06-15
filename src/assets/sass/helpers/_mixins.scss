@@ -1,0 +1,12 @@
+@function em($target, $context: $base-font-size) {
+  @if $target == 0 { @return 0 }
+  @return $target / $context + 0em;
+}
+@function calculateRem($size) {
+  $remSize: $size / $baseSize;
+  @return #{$remSize}rem;
+}
+@mixin fontSize($size) {
+  font-size: $size; //Fallback in px
+  font-size: calculateRem($size);
+}

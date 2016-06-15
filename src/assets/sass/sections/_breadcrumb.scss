@@ -1,0 +1,40 @@
+.bc-container{
+  #breadcrumb{
+    @extend .col-sm-12;
+    .inner{
+      padding: 0.5em 1em 0.5em 1em;
+      background: $sweblue;
+    }
+    ol{
+      margin-left: 0;
+      margin-bottom: 0;
+      > li {
+        line-height: 2em;
+        &, > a {
+          color: #fff;
+          @include fontSize(16px);
+        }
+        + li:before {
+          color: #CCCCCC;
+          content: "> ";
+          //padding: 0 0.3em;
+        }
+        &:last-child{
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .bc-container{
+    background: $sweblue;
+    #breadcrumb{
+      border-top: 0.3em solid $sweblue;
+      .inner{
+        display: none;
+      }
+    }
+  }
+}

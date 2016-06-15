@@ -1,0 +1,27 @@
+
+footer{
+  .feedback{
+    background: $sweblue;
+    section{
+      @extend .col-sm-12;
+    }
+  }
+  .more-info{
+    background: $lightgrey;
+    border-bottom: 1px solid #c4d2e1;
+    margin: 1em 0;
+    .inner>section{
+      @extend .col-sm-3;
+    }
+    ul{
+      list-style: none;
+      padding-left: 0;
+    }
+  }
+  .legal{
+    text-align: center;
+    p {
+      @include fontSize(12px);
+    }
+  }
+}

@@ -1,0 +1,27 @@
+//layout styles
+#three-col{
+  .secondary-content{
+    @extend .col-sm-12;
+    @extend .col-md-3;
+    @extend .col-md-push-3;
+  }
+}
+#two-col-aside{
+  .secondary-content{
+    @extend .col-sm-12;
+    @extend .col-md-3;
+  }
+}
+
+//other styles
+#three-col, #two-col-aside{
+
+}
+
+
+// responsive styles
+@media only screen and (max-width : 992px) {
+  .secondary-content{
+    padding-top: 0.8em;
+  }
+}
