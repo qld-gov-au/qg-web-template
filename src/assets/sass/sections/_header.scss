@@ -1,6 +1,5 @@
 header {
   margin-bottom: 1em;
-  margin-top: 1em;
   .branding{
     @extend .col-sm-4;
     @extend .col-xs-4;
@@ -55,7 +54,7 @@ header {
   }
   #site-nav{
     @extend .col-sm-12;
-    margin: 2em 0 1em 0;
+    //margin: 2em 0 1em 0;
     ul {
       margin: 0;
       > li {
