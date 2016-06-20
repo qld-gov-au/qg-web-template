@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <title>SWE template</title>
-  <link href="assets/css/main.css" rel="stylesheet" type="text/css" media="all">
+  <link href="assets/sass/main.css" rel="stylesheet" type="text/css" media="all">
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -15,7 +15,7 @@
   <![endif]-->
 </head>
 
-<body>
+<body class="qg-glue-forms">
 <!--For dev only - bootstrap breakpoint tester-->
 <div class="device-xs visible-xs" style="background: yellow;">extra small (XS) bootstrap breakpoint</div>
 <div class="device-sm visible-sm" style="background: yellow;">small (SM) bootstrap breakpoint</div>
@@ -91,7 +91,7 @@
       </div>
     </nav>
     <div id="three-col" class="clearfix">
-      <main class="primary-content" role="main">
+      <main id="primary-content" role="main">
         <div class="inner">
           <article>
             <h1>SWE template</h1>
@@ -195,7 +195,7 @@
   </div>
 </div>
 
-<footer>
+<footer id="site-footer">
    <div class="more-info">
       <div class="container-fluid site-width">
         <div class="row">
@@ -282,6 +282,8 @@
     $('.someClass').css('property', 'value');
   }
 </script>
+<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
+        ':35729/livereload.js?snipver=2"></' + 'script>')</script>
 <!--For dev only - bootstrap breakpoint tester-->
 </body>
 </html>

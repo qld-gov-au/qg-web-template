@@ -1,26 +1,26 @@
 //layout styles
 #three-col{
-  .primary-content{
+  #primary-content{
     @extend .col-sm-12;
     @extend .col-md-6;
     @extend .col-md-push-3;
   }
 }
 #two-col-aside{
-  .primary-content{
+  #primary-content{
     @extend .col-sm-12;
     @extend .col-md-9;
   }
 }
 #two-col-nav{
-  .primary-content{
+  #primary-content{
     @extend .col-sm-12;
     @extend .col-md-9;
     @extend .col-md-push-3;
   }
 }
 #full-width{
-  .primary-content{
+  #primary-content{
     @extend .col-sm-12;
   }
 }
@@ -50,7 +50,7 @@
 
 // responsive styles
 @media only screen and (max-width : 768px) {
-  .primary-content {
+  #primary-content {
     .dropup {
       & > ul {
         margin: 0;
