@@ -1,15 +1,9 @@
 
 footer{
-  .feedback{
-    background: $sweblue;
-    section{
-      @extend .col-sm-12;
-    }
-  }
   .more-info{
     background: #ececec;
     border-bottom: 1px solid #c4d2e1;
-    margin: 1em 0;
+    margin: 0 0 1em 0;
     .inner>section{
       @extend .col-sm-3;
     }
