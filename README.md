@@ -3,6 +3,7 @@
 _This project is currently in progress._
 
 **Basic commands :**<br />
+    - Make sure node and npm are installed. Check using **node -v** and **npm -v** commands. If not already installed then please install from this website  [node website](https://nodejs.org/en/) <br />
     - **npm install** to install all the node packages.<br />
     - **gulp build** command to create a build folder from the src folder files<br />
     - **gulp clean:build** command to remove the build folder before creating the new build folder<br />
