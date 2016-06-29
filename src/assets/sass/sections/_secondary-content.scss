@@ -24,7 +24,7 @@
 
 
 // responsive styles
-@media only screen and (max-width : 992px) {
+@include breakpoint($bs-md){
   .secondary-content{
     padding-top: 0.8em;
   }

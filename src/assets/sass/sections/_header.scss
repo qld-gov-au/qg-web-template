@@ -1,5 +1,5 @@
 header {
-  margin-bottom: 1em;
+   margin-bottom: 1em;
   .branding{
     @extend .col-sm-4;
     @extend .col-xs-4;
@@ -21,7 +21,7 @@ header {
         }
         button {
           background: $green;
-          padding: 0.5em;
+          padding: 0.8em;
         }
       }
       &:last-child{
@@ -55,6 +55,9 @@ header {
   #site-nav{
     @extend .col-sm-12;
     //margin: 2em 0 1em 0;
+    .inner {
+      padding-bottom: 0;
+    }
     ul {
       margin: 0;
       > li {
@@ -75,29 +78,31 @@ header {
 }
 
 // responsive styles
-@media (max-width: 992px) {
-  header{
-    .content-divider{
-      display: block;
-      border-top: 4px solid $sweblue;
-    }
-    .tools{
-      display: none;
-    }
-    .utilities {
-      display: block;
-    }
-    #site-nav{
-      display: none;
-      margin: 0;
-      ul {
-        margin-top:1em;
-        > li {
-          border-right : none;
-          display: block;
-          padding: 0.7em 0 0.7em 0;
+@include breakpoint($bs-md){
+    header{
+      .content-divider{
+        display: block;
+        border-top: 4px solid $sweblue;
+      }
+      .tools{
+        display: none;
+      }
+      .utilities {
+        display: block;
+      }
+      #site-nav{
+        display: none;
+        margin: 0;
+        ul {
+          //margin-top:1em;
+          > li {
+            border-right : none;
+            display: block;
+            padding: 0.7em 0 0.7em 0;
+          }
         }
       }
     }
   }
-}
+
+

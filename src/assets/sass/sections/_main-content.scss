@@ -49,7 +49,7 @@
 }
 
 // responsive styles
-@media only screen and (max-width : 768px) {
+@include breakpoint($bs-sm){
   #primary-content {
     .dropup {
       & > ul {
@@ -58,3 +58,4 @@
     }
   }
 }
+

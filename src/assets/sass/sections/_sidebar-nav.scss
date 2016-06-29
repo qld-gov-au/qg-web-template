@@ -24,10 +24,8 @@
 }
 
 
-
-
 // responsive styles
-@media only screen and (max-width : 992px) {
+@include breakpoint($bs-md){
   .section-nav{
     padding-top: 0.8em;
   }
