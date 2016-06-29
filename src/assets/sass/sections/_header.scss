@@ -78,7 +78,7 @@ header {
 }
 
 // responsive styles
-@include breakpoint($bs-md){
+@include breakpoint($bs-md) {
     header{
       .content-divider{
         display: block;
