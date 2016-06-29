@@ -14,7 +14,7 @@ var config = {
         static: 'release/static.qgov.net.au/',
         test : 'test/'
     },
-    franchise : ['www.qld.gov.au' , 'tmr.com.au'],
+    franchise : ['www.qld.gov.au' , 'tmr.com.au' , 'test.com'],
     src : {
         assets : function () {
             return config.basepath.src+'assets/';
