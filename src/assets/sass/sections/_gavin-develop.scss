@@ -9,16 +9,39 @@ background-position: center top;
 
 
 .qg-section-nav {
-background-color: #f2F7F9;      
+//background-color: #f2F7F9;      
+padding-top: 0;
 
 .qg-inner {
 background-color: #E1ECF1 !important;      
+padding: 0px; 
+
+h2 {
+
+margin: 0;
+padding: 0;
+}
+
 
 ul {
-background-color: #f2F7F9;      
+background-color: #f2F7F9; 
+margin: 0;
+padding: 0;
 
 li {
-background-color: #EEF4F6 !important;
+background-color: #3ebee8 !important;
+margin: 0;
+padding: 0;
+list-style-type: none;
+
+a {
+background-color: aqua;  
+display: inline-block;
+width: 100%;
+margin: 0;
+padding: .3em 1em;  
+}
+
 }    
 
 }
