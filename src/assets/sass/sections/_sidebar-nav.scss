@@ -1,13 +1,13 @@
 //layout styles
-#three-col {
-  .section-nav{
+#qg-three-col {
+  .qg-section-nav{
     @extend .col-sm-12;
     @extend .col-md-3;
     @extend .col-md-pull-9;
   }
 }
-#two-col-nav {
-  .section-nav{
+#qg-two-col-nav {
+  .qg-section-nav{
     @extend .col-sm-12;
     @extend .col-md-3;
     @extend .col-md-pull-9;
@@ -15,9 +15,9 @@
 }
 
 //other styles
-#three-col, #two-col-nav{
-  .section-nav{
-    .inner {
+#qg-three-col, #qg-two-col-nav{
+  .qg-section-nav{
+    .qg-inner {
       background: #ececec;
     }
   }
@@ -26,7 +26,7 @@
 
 // responsive styles
 @include breakpoint($bs-md){
-  .section-nav{
+  .qg-section-nav{
     padding-top: 0.8em;
   }
 }

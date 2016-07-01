@@ -1,13 +1,17 @@
 header {
    margin-bottom: 1em;
-  .branding{
+  .qg-branding{
     @extend .col-sm-4;
     @extend .col-xs-4;
+    img {
+      width: 81%;
+      height: auto;
+    }
   }
-  .content-divider{
+  .qg-content-divider{
     display: none;
   }
-  .tools{
+  .qg-tools{
     @extend .col-sm-8;
     text-align: right;
     margin-top: 1.4em;
@@ -32,12 +36,12 @@ header {
       }
     }
   }
-  .utilities {
+  .qg-utilities {
     @extend .col-sm-8;
     display: none;
     text-align: right;
     margin-top: 1em;
-    .navbar-header{
+    .qg-navbar-header{
       padding: 0;
     }
     button {
@@ -52,10 +56,10 @@ header {
       }
     }
   }
-  #site-nav{
+  #qg-site-nav{
     @extend .col-sm-12;
     //margin: 2em 0 1em 0;
-    .inner {
+    .qg-inner {
       padding-bottom: 0;
     }
     ul {
@@ -80,17 +84,17 @@ header {
 // responsive styles
 @include breakpoint($bs-md) {
     header{
-      .content-divider{
+      .qg-content-divider{
         display: block;
         border-top: 4px solid $sweblue;
       }
-      .tools{
+      .qg-tools{
         display: none;
       }
-      .utilities {
+      .qg-utilities {
         display: block;
       }
-      #site-nav{
+      #qg-site-nav{
         display: none;
         margin: 0;
         ul {

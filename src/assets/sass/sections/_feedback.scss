@@ -1,9 +1,9 @@
-#feedback{
+#qg-feedback{
   background: $sweblue;
-  .inner {
+  .qg-inner {
     padding: 2em 1em 2em 1em;
   }
-  .cta{
+  .qg-cta{
     @extend .col-sm-6;
     @extend .col-xs-12;
     .qg-glue-btn{
@@ -20,7 +20,7 @@
       }
     }
   }
-  .share{
+  .qg-share{
     @extend .col-sm-6;
     @extend .col-xs-12;
     ul {
@@ -44,11 +44,11 @@
 
 // responsive styles
 @media (max-width: 768px) {
-  #feedback{
-    .cta{
+  #qg-feedback{
+    .qg-cta{
       text-align: center;
     }
-    .share{
+    .qg-share{
       background: $swedarkblue;
       padding: 1em 0 1em 0;
       margin-top: 2em;

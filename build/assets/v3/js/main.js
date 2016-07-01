@@ -1,17 +1,17 @@
 (function($) {
     "use strict";
     qg.glue.loader.init(function () {
-        $("#glue-show-menu").on("click" , function () {
-            $("#breadcrumb>.inner , #site-nav").slideToggle("fast");
+        $("#qg-show-menu").on("click" , function () {
+            $("#qg-breadcrumb>.qg-inner , #qg-site-nav").slideToggle("fast");
         });
-        $("#glue-show-search").on("click" , function () {
-            $(".tools").slideToggle("fast");
+        $("#qg-show-search").on("click" , function () {
+            $(".qg-tools").slideToggle("fast");
         });
 
         $(window).resize(function () {
-            var $sitenav = $("#site-nav");
-            var $br = $("#breadcrumb>.inner");
-            var $tools = $(".tools");
+            var $sitenav = $("#qg-site-nav");
+            var $br = $("#qg-breadcrumb>.qg-inner");
+            var $tools = $(".qg-tools");
             if ($(window).width() < 768) {}
             else if ($(window).width() >= 768 &&  $(window).width() <= 992) {
                 if($tools.is(":visible")){

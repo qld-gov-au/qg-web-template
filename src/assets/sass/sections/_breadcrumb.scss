@@ -1,7 +1,7 @@
-#breadcrumb{
+#qg-breadcrumb{
   @extend .col-sm-12;
-  .inner{
-    padding: 0.5em 1em 0.5em 1em;
+  .qg-inner{
+    padding: 1.3em 1em 1.3em 1em;
     background: $sweblue;
   }
   ol{
@@ -15,7 +15,8 @@
       }
       + li:before {
         color: #CCCCCC;
-        content: "> ";
+        font-family: FontAwesome;
+        content: "\f054";
         //padding: 0 0.3em;
       }
       &:last-child{
@@ -25,11 +26,11 @@
   }
 }
 @include breakpoint($bs-md){
-  #breadcrumb{
+  #qg-breadcrumb{
     border-top: 0.3em solid $sweblue;
     padding-right: 0;
     padding-left: 0;
-    .inner{
+    .qg-inner{
       display: none;
     }
     ol {

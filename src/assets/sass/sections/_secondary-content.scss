@@ -1,22 +1,22 @@
 //layout styles
-#three-col{
-  .secondary-content{
+#qg-three-col{
+  .qg-secondary-content{
     @extend .col-sm-12;
     @extend .col-md-3;
     @extend .col-md-push-3;
   }
 }
-#two-col-aside{
-  .secondary-content{
+#qg-two-col-aside{
+  .qg-secondary-content{
     @extend .col-sm-12;
     @extend .col-md-3;
   }
 }
 
 //other styles
-#three-col, #two-col-aside{
-  .secondary-content{
-    .inner {
+#qg-three-col, #qg-two-col-aside{
+  .qg-secondary-content{
+    .qg-inner {
       background: #ececec;
     }
   }
@@ -25,7 +25,7 @@
 
 // responsive styles
 @include breakpoint($bs-md){
-  .secondary-content{
+  .qg-secondary-content{
     padding-top: 0.8em;
   }
 }

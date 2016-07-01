@@ -1,8 +1,8 @@
-.inner {
+.qg-inner {
   padding: 1em;
 }
 
-.visually-hidden {
+.qg-visually-hidden {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -13,15 +13,15 @@
   width: 1px;
 }
 
-.hidden-sm-xs {
+.qg-hidden-sm-xs {
   @extend .hidden-sm;
   @extend .hidden-xs;
 }
-.sm-img {
+.qg-sm-img {
   @extend .hidden-md;
   @extend .hidden-lg;
 }
-.hidden-md-lg{
+.qg-hidden-md-lg{
   @extend .hidden-md;
   @extend .hidden-lg;
 }

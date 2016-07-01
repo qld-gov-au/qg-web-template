@@ -1,10 +1,10 @@
 
 footer{
-  .more-info{
+  .qg-more-info{
     background: #ececec;
     border-bottom: 1px solid #c4d2e1;
     margin: 0 0 1em 0;
-    .inner>section{
+    .qg-inner>section{
       @extend .col-sm-3;
     }
     ul{
@@ -12,7 +12,7 @@ footer{
       padding-left: 0;
     }
   }
-  .legal{
+  .qg-legal{
     text-align: center;
     p {
       @include fontSize(12px);
