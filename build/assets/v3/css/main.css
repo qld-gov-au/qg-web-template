@@ -1535,13 +1535,13 @@ pre {
   .row:after {
     clear: both; }
 
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, footer .more-info .inner > section, .col-md-3, #three-col .section-nav, #two-col-nav .section-nav, #three-col .secondary-content, #two-col-aside .secondary-content, .col-lg-3, .col-xs-4, header .branding, .col-sm-4, header .branding, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, #three-col #primary-content, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, header .tools, header .utilities, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, #two-col-aside #primary-content, #two-col-nav #primary-content, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, header #site-nav, #breadcrumb, #three-col #primary-content, #two-col-aside #primary-content, #two-col-nav #primary-content, #full-width #primary-content, #three-col .section-nav, #two-col-nav .section-nav, #three-col .secondary-content, #two-col-aside .secondary-content, .col-md-12, .col-lg-12 {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, footer .more-info .inner > section, .col-md-3, #three-col .section-nav, #two-col-nav .section-nav, #three-col .secondary-content, #two-col-aside .secondary-content, .col-lg-3, .col-xs-4, header .branding, .col-sm-4, header .branding, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, #feedback .cta, #feedback .share, .col-md-6, #three-col #primary-content, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, header .tools, header .utilities, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, #two-col-aside #primary-content, #two-col-nav #primary-content, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, #feedback .cta, #feedback .share, .col-sm-12, header #site-nav, #breadcrumb, #three-col #primary-content, #two-col-aside #primary-content, #two-col-nav #primary-content, #full-width #primary-content, #three-col .section-nav, #two-col-nav .section-nav, #three-col .secondary-content, #two-col-aside .secondary-content, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px; }
 
-.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, header .branding, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
+.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, header .branding, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12, #feedback .cta, #feedback .share {
   float: left; }
 
 .col-xs-1 {
@@ -1577,7 +1577,7 @@ pre {
 .col-xs-11 {
   width: 91.66667%; }
 
-.col-xs-12 {
+.col-xs-12, #feedback .cta, #feedback .share {
   width: 100%; }
 
 .col-xs-pull-0 {
@@ -1698,7 +1698,7 @@ pre {
   margin-left: 100%; }
 
 @media (min-width: 768px) {
-  .col-sm-1, .col-sm-2, .col-sm-3, footer .more-info .inner > section, .col-sm-4, header .branding, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, header .tools, header .utilities, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, header #site-nav, #breadcrumb, #three-col #primary-content, #two-col-aside #primary-content, #two-col-nav #primary-content, #full-width #primary-content, #three-col .section-nav, #two-col-nav .section-nav, #three-col .secondary-content, #two-col-aside .secondary-content {
+  .col-sm-1, .col-sm-2, .col-sm-3, footer .more-info .inner > section, .col-sm-4, header .branding, .col-sm-5, .col-sm-6, #feedback .cta, #feedback .share, .col-sm-7, .col-sm-8, header .tools, header .utilities, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, header #site-nav, #breadcrumb, #three-col #primary-content, #two-col-aside #primary-content, #two-col-nav #primary-content, #full-width #primary-content, #three-col .section-nav, #two-col-nav .section-nav, #three-col .secondary-content, #two-col-aside .secondary-content {
     float: left; }
   .col-sm-1 {
     width: 8.33333%; }
@@ -1710,7 +1710,7 @@ pre {
     width: 33.33333%; }
   .col-sm-5 {
     width: 41.66667%; }
-  .col-sm-6 {
+  .col-sm-6, #feedback .cta, #feedback .share {
     width: 50%; }
   .col-sm-7 {
     width: 58.33333%; }
@@ -7012,6 +7012,43 @@ http://stackoverflow.com/questions/11459051/firefox-moz-placeholder-not-working 
   text-indent: -999px; }
 
 /*# sourceMappingURL=qg-forms.css.map */
+#feedback {
+  background: #007EB1; }
+  #feedback .inner {
+    padding: 2em 1em 2em 1em; }
+  #feedback .cta .qg-glue-btn {
+    padding: .6em 6em;
+    text-align: center;
+    border-radius: 1.5em;
+    border: none;
+    background: #005375;
+    color: #fff;
+    transition: all ease .3s;
+    -webkit-transition: all ease .3s; }
+    #feedback .cta .qg-glue-btn:hover {
+      background: #0b2e4c; }
+  #feedback .share ul {
+    margin-bottom: 0;
+    text-align: right; }
+    #feedback .share ul li {
+      color: #ffffff; }
+      #feedback .share ul li h2 {
+        margin-top: 0;
+        margin-bottom: 0; }
+      #feedback .share ul li i {
+        width: 70%;
+        height: auto; }
+
+@media (max-width: 768px) {
+  #feedback .cta {
+    text-align: center; }
+  #feedback .share {
+    background: #005375;
+    padding: 1em 0 1em 0;
+    margin-top: 2em; }
+    #feedback .share ul {
+      text-align: center; } }
+
 #three-col .section-nav .inner, #two-col-nav .section-nav .inner {
   background: #ececec; }
 
