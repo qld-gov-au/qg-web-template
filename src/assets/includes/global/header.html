@@ -24,28 +24,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<header>
 		<div class="container-fluid qg-site-width">
 			<div class="row">
-				<div class="qg-branding">
-					<div class="qg-inner">
+				<div class="qg-inner clearfix">
+					<div class="qg-branding">
 						<img src="https://static.qgov.net.au/assets/v2/images/skin/qg-coa.svg" alt="Queensland Government" class="qg-hidden-sm-xs">
 						<img src="https://static.qgov.net.au/assets/v2/images/skin/qg-coa-stacked.svg" alt="Queensland Government home" class="qg-sm-img">
 					</div>
+					<ul class="qg-utilities list-inline">
+						<!--<li><button><i class="fa fa-shopping-basket fa-2x" aria-hidden="true"></i></button></li>-->
+						<!--<li><button><i class="fa fa-question fa-2x" aria-hidden="true"></i></button></li>-->
+						<li><button><i class="fa fa-phone fa-2x" aria-hidden="true"></i></button></li>
+						<li><button id="qg-show-search"><i class="fa fa-search fa-2x" aria-hidden="true"></i></button></li>
+						<li><button id="qg-show-menu"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></button></li>
+					</ul>
+					<ul class="qg-tools list-inline">
+						<li class="qg-hidden-sm-xs"><a href="http://www.qld.gov.au/contact/">Contact us</a></li>
+						<li>
+							<form action="http://pan.search.qld.gov.au/search/search.cgi" id="qg-search-form" role="search">
+								<label for="qg-search-query" class="qg-visually-hidden">Search Queensland Government</label>
+								<input type="text" name="query" id="qg-search-query" size="27" value=""><button><i class="fa fa-search" aria-hidden="true"></i></button>
+							</form>
+						</li>
+					</ul>
+
 				</div>
-				<ul class="qg-utilities list-inline">
-					<!--<li><button><i class="fa fa-shopping-basket fa-2x" aria-hidden="true"></i></button></li>-->
-					<!--<li><button><i class="fa fa-question fa-2x" aria-hidden="true"></i></button></li>-->
-					<li><button><i class="fa fa-phone fa-2x" aria-hidden="true"></i></button></li>
-					<li><button id="qg-show-search"><i class="fa fa-search fa-2x" aria-hidden="true"></i></button></li>
-					<li><button id="qg-show-menu"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></button></li>
-				</ul>
-				<ul class="qg-tools list-inline">
-					<li class="qg-hidden-sm-xs"><a href="http://www.qld.gov.au/contact/">Contact us</a></li>
-					<li>
-						<form action="http://pan.search.qld.gov.au/search/search.cgi" id="qg-search-form" role="search">
-							<label for="qg-search-query" class="qg-visually-hidden">Search Queensland Government</label>
-							<input type="text" name="query" id="qg-search-query" size="27" value=""><button><i class="fa fa-search" aria-hidden="true"></i></button>
-						</form>
-					</li>
-				</ul>
 			</div>
 			<div class="row">
 				<nav id="qg-site-nav" role="navigation" aria-label="Main navigation">

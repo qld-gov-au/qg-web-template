@@ -9,6 +9,7 @@
     margin-bottom: 0;
     > li {
       line-height: 2em;
+      padding-left: 0;
       &, > a {
         color: #fff;
         @include fontSize(16px);

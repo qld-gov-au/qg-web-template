@@ -4,7 +4,7 @@ header {
     @extend .col-sm-4;
     @extend .col-xs-4;
     img {
-      width: 81%;
+      width: 21em;
       height: auto;
     }
   }
@@ -14,7 +14,7 @@ header {
   .qg-tools{
     @extend .col-sm-8;
     text-align: right;
-    margin-top: 1.4em;
+    margin-top: 0.6em;
     margin-bottom: 0;
     li{
       form {
@@ -88,8 +88,18 @@ header {
         display: block;
         border-top: 4px solid $sweblue;
       }
+      .qg-branding{
+        img {
+          width: 12em;
+          height: auto;
+        }
+      }
       .qg-tools{
         display: none;
+        li {
+          padding-left: 0;
+          padding-right: 0;
+        }
       }
       .qg-utilities {
         display: block;
@@ -108,5 +118,18 @@ header {
       }
     }
   }
+
+@include breakpoint($bs-xs){
+  header {
+    .qg-branding{
+      img {
+        width: 9em;
+        height: auto;
+        margin-top: 0.4em;
+      }
+    }
+  }
+
+}
 
 
