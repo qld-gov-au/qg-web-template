@@ -1,14 +1,27 @@
+/* Work in progress stylesheet
+- these style will be incorporated into the appropriate SASS files
+- some of these styles will use existing mixins
+
+*/
+
+/* ! breadcrumbs */
+#qg-breadcrumb span.fa {
+font-size: 1.2em;   
+margin-right: .3em; 
+}
+
+/* ! section (side) navigation */
 .qg-section-nav {
-//background-color: #f2F7F9;      
 padding-top: 0;
 
 .qg-inner {
-background-color: #E1ECF1 !important;      
+background-color: #f2F7F9 !important;      
 padding: 0px; 
 
 h2 {
-margin: 0;
-padding: 0;
+padding-top:2em;
+margin:  0 0 .7em .7em;
+color: #13578b;
 }
 
 ul {
@@ -17,10 +30,11 @@ margin: 0;
 padding: 0;
 
 li {
-background-color: #3ebee8 !important;
 margin: 0;
-padding: 0;
+padding: .3em 0;
 list-style-type: none;
+font-size: 110%;
+font-weight: 700;
 
 a {
 display: inline-block;
@@ -29,27 +43,49 @@ margin: 0;
 padding: .3em 1em;  
 }
 
-}    
-
-}
-
-}
-
-}
-
-
-
-
 a.active {
-font-size: 200%;
-color: red;   
+color: #FFF;
+background-color: #007EB1; 
+}
+
+}
+
+li li a {
+width: 95%;  
+margin-left: 5%;
+}
+
+a:before {
+font-family: FontAwesome;
+font-size: .9em;
+display: inline-block !important;
+content: "\f054";
+margin: 0 0.3em 0 0;
+color: #13578b;
+text-decoration: none;
+}  
+
+
+a.active:before {
+font-family: FontAwesome;
+font-size: .9em;
+display: inline-block !important;
+content: "\f054";
+margin: 0 0.3em 0 0;
+color: #FFF;
+text-decoration: none;
+}  
+
+}
+
+}
+
 }
 
 
+/* ! alert style */
 .alert-danger {
 position: relative;   
-
-
 
 .fa-exclamation-triangle {
 position: absolute;
@@ -58,7 +94,8 @@ left: 10px;
 font-size: 3em;  
 }  
 
-h2 {    margin: 0; 
+h2 {
+margin: 0; 
 padding: 0 0 0.3em 0; }
 
 h2 a {
@@ -75,6 +112,7 @@ margin-left: 85px;
 
 }
 
+/* ! asides */
 .qg-secondary-content .qg-inner {
 margin: 0;
 padding: 0;  
@@ -172,6 +210,9 @@ color: #78BA00;
 }
 
 
+
+/* ! content section links for index pages - grid block */
+
 #qg-index-links {
 position: relative;
 margin-bottom: 2em;
@@ -180,15 +221,21 @@ div {
 position: relative;
 
 h2 {
- background-color: aqua;      
+color: #13578b;
+
+a {
+color: #13578b;
+
+}
+
 } 
 
 img {   
- float: left;  
+float: left;  
 }
 
 p, ol, ul {
- margin-left: 95px;     
+margin-left: 95px;     
 }
 
 } 

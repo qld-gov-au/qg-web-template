@@ -5909,9 +5909,11 @@ header {
       font-size: 16px;
       font-size: 1.14286rem; }
     #qg-breadcrumb ol > li + li:before {
-      color: #CCCCCC;
+      color: #FFF;
       font-family: FontAwesome;
-      content: "\f054"; }
+      font-size: .9em;
+      content: "\f054";
+      margin: 0 0.3em 0 0; }
     #qg-breadcrumb ol > li:last-child {
       font-weight: bold; }
 
@@ -7094,33 +7096,65 @@ footer .qg-legal {
     font-size: 12px;
     font-size: 0.85714rem; }
 
+/* Work in progress stylesheet
+- these style will be incorporated into the appropriate SASS files
+- some of these styles will use existing mixins
+
+*/
+/* ! breadcrumbs */
+#qg-breadcrumb span.fa {
+  font-size: 1.2em;
+  margin-right: .3em; }
+
+/* ! section (side) navigation */
 .qg-section-nav {
   padding-top: 0; }
   .qg-section-nav .qg-inner {
-    background-color: #E1ECF1 !important;
+    background-color: #f2F7F9 !important;
     padding: 0px; }
     .qg-section-nav .qg-inner h2 {
-      margin: 0;
-      padding: 0; }
+      padding-top: 2em;
+      margin: 0 0 .7em .7em;
+      color: #13578b; }
     .qg-section-nav .qg-inner ul {
       background-color: #f2F7F9;
       margin: 0;
       padding: 0; }
       .qg-section-nav .qg-inner ul li {
-        background-color: #3ebee8 !important;
         margin: 0;
-        padding: 0;
-        list-style-type: none; }
+        padding: .3em 0;
+        list-style-type: none;
+        font-size: 110%;
+        font-weight: 700; }
         .qg-section-nav .qg-inner ul li a {
           display: inline-block;
           width: 100%;
           margin: 0;
           padding: .3em 1em; }
+        .qg-section-nav .qg-inner ul li a.active {
+          color: #FFF;
+          background-color: #007EB1; }
+      .qg-section-nav .qg-inner ul li li a {
+        width: 95%;
+        margin-left: 5%; }
+      .qg-section-nav .qg-inner ul a:before {
+        font-family: FontAwesome;
+        font-size: .9em;
+        display: inline-block !important;
+        content: "\f054";
+        margin: 0 0.3em 0 0;
+        color: #13578b;
+        text-decoration: none; }
+      .qg-section-nav .qg-inner ul a.active:before {
+        font-family: FontAwesome;
+        font-size: .9em;
+        display: inline-block !important;
+        content: "\f054";
+        margin: 0 0.3em 0 0;
+        color: #FFF;
+        text-decoration: none; }
 
-a.active {
-  font-size: 200%;
-  color: red; }
-
+/* ! alert style */
 .alert-danger {
   position: relative; }
   .alert-danger .fa-exclamation-triangle {
@@ -7138,6 +7172,7 @@ a.active {
   .alert-danger h2, .alert-danger p, .alert-danger ol, .alert-danger ul {
     margin-left: 85px; }
 
+/* ! asides */
 .qg-secondary-content .qg-inner {
   margin: 0;
   padding: 0; }
@@ -7175,13 +7210,16 @@ a.active {
   .qg-secondary-content .qg-inner .qg-aside h2 span:before {
     color: #78BA00; }
 
+/* ! content section links for index pages - grid block */
 #qg-index-links {
   position: relative;
   margin-bottom: 2em; }
   #qg-index-links div {
     position: relative; }
     #qg-index-links div h2 {
-      background-color: aqua; }
+      color: #13578b; }
+      #qg-index-links div h2 a {
+        color: #13578b; }
     #qg-index-links div img {
       float: left; }
     #qg-index-links div p, #qg-index-links div ol, #qg-index-links div ul {
