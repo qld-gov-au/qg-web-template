@@ -7112,7 +7112,6 @@ footer .qg-legal {
         padding: 0;
         list-style-type: none; }
         .qg-section-nav .qg-inner ul li a {
-          background-color: aqua;
           display: inline-block;
           width: 100%;
           margin: 0;
@@ -7176,18 +7175,16 @@ a.active {
   .qg-secondary-content .qg-inner .qg-aside h2 span:before {
     color: #78BA00; }
 
-.grid-links {
+#qg-index-links {
   position: relative;
   margin-bottom: 2em; }
-  .grid-links div {
-    position: relative;
-    min-height: 200px;
-    padding-left: 85px; }
-    .grid-links div img {
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      margin: 0;
-      padding: 0; }
+  #qg-index-links div {
+    position: relative; }
+    #qg-index-links div h2 {
+      background-color: aqua; }
+    #qg-index-links div img {
+      float: left; }
+    #qg-index-links div p, #qg-index-links div ol, #qg-index-links div ul {
+      margin-left: 95px; }
 
 /*# sourceMappingURL=main.css.map */

@@ -172,21 +172,23 @@ color: #78BA00;
 }
 
 
-.grid-links {
+#qg-index-links {
 position: relative;
 margin-bottom: 2em;
 
 div {
 position: relative;
-min-height: 200px; 
-padding-left: 85px;
+
+h2 {
+ background-color: aqua;      
+} 
 
 img {   
-position: absolute;  
-top: 0px;
-left: 0px; 
-margin: 0; 
-padding: 0;    
+ float: left;  
+}
+
+p, ol, ul {
+ margin-left: 95px;     
 }
 
 } 
