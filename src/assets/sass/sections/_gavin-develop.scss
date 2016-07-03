@@ -4,6 +4,15 @@
 
 */
 
+
+header {
+background-color: #F6F6F6 !important; 
+ 
+.qg-utilities button {
+background-color: transparent !important;      
+}
+}
+
 /* ! breadcrumbs */
 #qg-breadcrumb span.fa {
 font-size: 1.2em;   
@@ -15,23 +24,24 @@ margin-right: .3em;
 padding-top: 0;
 
 .qg-inner {
-background-color: #f2F7F9 !important;      
+background-color: #F6F6F6 !important;
 padding: 0px; 
 
 h2 {
-padding-top:2em;
+font-size: 1.5em;
+padding-top: 2em;
 margin:  0 0 .7em .7em;
 color: #13578b;
 }
 
 ul {
-background-color: #f2F7F9; 
+background-color: #F6F6F6; 
 margin: 0;
 padding: 0;
 
 li {
 margin: 0;
-padding: .3em 0;
+padding: 0;
 list-style-type: none;
 font-size: 110%;
 font-weight: 700;
@@ -40,7 +50,7 @@ a {
 display: inline-block;
 width: 100%;
 margin: 0;
-padding: .3em 1em;  
+padding: .5em 1em;  
 }
 
 a.active {

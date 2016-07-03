@@ -7101,6 +7101,11 @@ footer .qg-legal {
 - some of these styles will use existing mixins
 
 */
+header {
+  background-color: #F6F6F6 !important; }
+  header .qg-utilities button {
+    background-color: transparent !important; }
+
 /* ! breadcrumbs */
 #qg-breadcrumb span.fa {
   font-size: 1.2em;
@@ -7110,19 +7115,20 @@ footer .qg-legal {
 .qg-section-nav {
   padding-top: 0; }
   .qg-section-nav .qg-inner {
-    background-color: #f2F7F9 !important;
+    background-color: #F6F6F6 !important;
     padding: 0px; }
     .qg-section-nav .qg-inner h2 {
+      font-size: 1.5em;
       padding-top: 2em;
       margin: 0 0 .7em .7em;
       color: #13578b; }
     .qg-section-nav .qg-inner ul {
-      background-color: #f2F7F9;
+      background-color: #F6F6F6;
       margin: 0;
       padding: 0; }
       .qg-section-nav .qg-inner ul li {
         margin: 0;
-        padding: .3em 0;
+        padding: 0;
         list-style-type: none;
         font-size: 110%;
         font-weight: 700; }
@@ -7130,7 +7136,7 @@ footer .qg-legal {
           display: inline-block;
           width: 100%;
           margin: 0;
-          padding: .3em 1em; }
+          padding: .5em 1em; }
         .qg-section-nav .qg-inner ul li a.active {
           color: #FFF;
           background-color: #007EB1; }
