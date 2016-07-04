@@ -7221,7 +7221,8 @@ header {
   position: relative;
   margin-bottom: 2em; }
   #qg-index-links div {
-    position: relative; }
+    position: relative;
+    min-height: 175px; }
     #qg-index-links div h2 {
       color: #13578b; }
       #qg-index-links div h2 a {
