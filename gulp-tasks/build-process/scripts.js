@@ -1,17 +1,23 @@
 module.exports = function (gulp, plugins, config) {
     return function () {
-        gulp.src(config.src.js()+'**/*')
-            .pipe(plugins.sourcemaps.init())
-            .pipe(plugins.plumber())
-            .pipe(plugins.debug({
-                title: 'js'
-            }))
-            .pipe(plugins.concat('main.js',{
-                newLine: ''
-            }))
-            .pipe(plugins.sourcemaps.write('.', {
-                sourceRoot: config.src.js()
-            }))
-            .pipe(gulp.dest(config.build.js()))
+        gulp.src(config.src.js()+'/main.js').pipe(plugins.webpack({
+            output: {
+                filename: 'main.js'
+            },
+            devtool: 'source-map',
+            module: {
+                loaders: [
+                    {
+                        test: /\.js$/,
+                        exclude: /(node_modules)/,
+                        loader: 'babel',
+                        query: {
+                            presets: ['es2015']
+                        }
+                    }
+                ]
+            }
+        }))
+            .pipe(gulp.dest(config.build.js()));
     };
 };
