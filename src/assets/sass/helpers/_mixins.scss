@@ -6,12 +6,10 @@
   $remSize: $size / $baseSize;
   @return #{$remSize}rem;
 }
-
 @mixin fontSize($size) {
   font-size: $size; //Fallback in px
   font-size: calculateRem($size);
 }
-
 @mixin indent($num){
   @for $i from 1 through $num {
     &:nth-child(#{$i+1}){

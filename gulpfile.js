@@ -93,17 +93,14 @@ var config = {
  JS TASKS
  ======================================================================*/
 gulp.task('js', require('./gulp-tasks/build-process/scripts')(gulp, plugins, config));
-
 /*=====================================================================
  CSS TASKS
  ======================================================================*/
 gulp.task('sass', require('./gulp-tasks/build-process/scss')(gulp, plugins, config));
-
 /*=====================================================================
  MOVE FOLDERS
  ======================================================================*/
 gulp.task('content', require('./gulp-tasks/build-process/content')(gulp, plugins, config));
-
 gulp.task('other:assets', require('./gulp-tasks/build-process/otherAssets')(gulp, plugins, config));
 /*=====================================================================
  CLEAN TASKS
@@ -114,14 +111,22 @@ gulp.task('clean:build', function(cb){
 gulp.task('clean:release', function(cb){
     del([config.basepath.release], cb);
 });
-
+/*=====================================================================
+ WATCH TASKS
+ ======================================================================*/
+gulp.task('watch', function() {
+    gulp.watch(config.src.js()+'/**/*.js', ['js']);
+    gulp.watch(config.src.sass()+'/**/*.scss', ['sass']);
+    gulp.watch([config.basepath.src+'**/*',
+        '!'+config.basepath.src+'{assets,assets/**}'
+    ], ['content']);
+    gulp.watch([config.src.images()+'*',config.src.includes()+'*'+'*',config.src.lib()+'*'+'*'], ['other:assets']);
+});
 /*=====================================================================
  RELEASE TASKS
  ======================================================================*/
 gulp.task('release:assets', require('./gulp-tasks/release-process/assets')(gulp, plugins, config));
-
 gulp.task('release:content', require('./gulp-tasks/release-process/content')(gulp, plugins, config));
-
 /*=====================================================================
  TASK RUNNERS
  ======================================================================*/
