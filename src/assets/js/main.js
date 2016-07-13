@@ -6,7 +6,7 @@ var activeSideNav = require("./sections/nav/current-secondary-nav.js");
     "use strict";
 
     mobileNav();
-    activeSideNav();
+    activeSideNav.init();
     
     // getting specific lib using the loader module
     qg.glue.loader.init(function () {
