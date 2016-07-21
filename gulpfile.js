@@ -10,55 +10,58 @@ var config = {
     basepath : {
         src: 'src/',
         build: 'build/',
+        buildswe: 'build/swe/',
         release: 'release/',
         static: 'release/static.qgov.net.au/',
-        test : 'test/'
+        test : 'test/',
+        swe : 'swe/'
     },
-    franchise : ['www.qld.gov.au' , 'tmr.com.au' , 'test.com'],
+    projects : ['swe' , 'cue'],
+    franchise : ['www.qld.gov.au' , 'tmr.com.au' , 'test.com', 'papa' , 'mama' , 'cacha'],
     src : {
         assets : function () {
-            return config.basepath.src+'assets/';
+            return config.basepath.src+'swe/assets/';
         },
         examples : function () {
-            return config.basepath.src+'examples/';
+            return config.basepath.src+'swe/examples/';
         },
         images : function () {
-            return config.basepath.src+'assets/images/';
+            return config.basepath.src;
         },
         lib : function () {
-            return config.basepath.src+'assets/lib/';
+            return config.basepath.src;
         },
         includes : function () {
-            return config.basepath.src+'assets/includes/';
+            return config.basepath.src;
         },
         js : function () {
-            return config.basepath.src+'assets/js/';
+            return config.basepath.src;
         },
         sass : function () {
-            return config.basepath.src+'assets/sass/'
+            return config.basepath.src;
         }
     },
     build : {
         assets : function () {
-            return config.basepath.build+'assets/';
+            return config.basepath.build;
         },
         images : function () {
-            return config.basepath.build+'assets/'+config.version+'/images/';
+            return config.basepath.build;
         },
         lib : function () {
-            return config.basepath.build+'assets/'+config.version+'/lib/';
+            return config.basepath.build;
         },
         examples : function () {
-            return config.basepath.build+'examples/';
+            return config.basepath.build+'swe/examples/';
         },
         includes : function () {
-            return config.basepath.build+'assets/includes/';
+            return config.basepath.build;
         },
         js : function () {
-            return config.basepath.build+'assets/'+config.version+'/js/';
+            return config.basepath.build;
         },
         css : function () {
-            return config.basepath.build+'assets/'+config.version+'/css/';
+            return config.basepath.build;
         }
     },
     release : {
