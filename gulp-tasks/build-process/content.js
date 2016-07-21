@@ -1,12 +1,3 @@
-// module.exports = function (gulp, plugins, config) {
-//     return function () {
-//         gulp.src([config.basepath.src+'swe/**/*',
-//             '!'+config.basepath.src+'{swe/assets,swe/assets/**}'
-//         ], { dot: true })
-//             .pipe(gulp.dest(config.basepath.build +'/swe/' ));
-//     };
-// };
-
 module.exports = function (gulp, plugins, config) {
     return function () {
         var tasks = config.projects.map(function (element, index, array) {
