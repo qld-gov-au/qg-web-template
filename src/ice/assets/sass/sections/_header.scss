@@ -1,0 +1,151 @@
+header {
+  .qg-bg-pattern{
+    background-color: lightgrey; // for testing
+  }
+  .qg-branding{
+    @extend .col-sm-4;
+    @extend .col-xs-4;
+    img {
+      width: 21em;
+      height: auto;
+      //background: lightgreen;
+      color: #fff;
+    }
+  }
+  //.qg-content-divider{
+  //  display: none;
+  //}
+  .qg-tools{
+    @extend .col-md-8;
+    @extend .col-sm-12;
+    @extend .col-xs-12;
+    text-align: right;
+    margin-top: 0.6em;
+    margin-bottom: 0;
+    li{
+      form {
+        input {
+          border: 1px solid #78BA00;
+          color: #444444;
+          padding: .5em .7em;
+        }
+        button {
+          background: $green;
+          padding: 0.8em;
+          line-height: 0;
+        }
+      }
+      &:last-child{
+        border-right: none;
+      }
+      a {
+        @include fontSize(16px);
+      }
+    }
+  }
+  .qg-utilities {
+    @extend .col-sm-8;
+    display: none;
+    text-align: right;
+    margin-top: 1em;
+    li {
+      padding-right: 0;
+      padding-left: 0;
+      margin-right: 1em;
+      &:last-child{
+        margin-right: 0;
+      }
+      button {
+        padding: 0;
+        border: none;
+        i{
+          color: $sweblue;
+        }
+      }
+    }
+  }
+  #qg-site-name{
+    .qg-inner {
+      padding-top:0;
+      padding-bottom: 0;
+    }
+    h2 {
+      @extend .col-sm-12;
+    }
+  }
+  #qg-site-nav{
+    @extend .col-sm-12;
+    .qg-inner {
+      background: rgba(35, 35, 35, 0.78);
+    }
+    ul {
+      margin: 0;
+      > li {
+        padding: 0 0.8em 0 0.8em;
+        border-right : 1px solid #000;
+        &:first-child{
+          padding-left: 0;
+        }
+        &:last-child{
+          border-right: none;
+        }
+        a {
+          color: #fff;
+          @include fontSize(16px);
+        }
+      }
+    }
+  }
+}
+
+// responsive styles
+@include breakpoint($bs-md) {
+    header{
+      .qg-content-divider{
+        display: block;
+        border-top: 4px solid $sweblue;
+      }
+      .qg-branding{
+        img {
+          width: 12em;
+          height: auto;
+        }
+      }
+      .qg-tools{
+        display: none;
+        li {
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+      .qg-utilities {
+        display: block;
+      }
+      #qg-site-nav{
+        display: none;
+        margin: 0;
+        ul {
+          > li {
+            border-right : none;
+            display: block;
+            padding: 0.7em 0 0.7em 0;
+          }
+        }
+      }
+    }
+  }
+
+@include breakpoint($bs-xs){
+  header {
+    .qg-branding{
+      img {
+        width: 9em;
+        height: auto;
+        margin-top: 0.4em;
+      }
+    }
+  }
+
+}
+
+

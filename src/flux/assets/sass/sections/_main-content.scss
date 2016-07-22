@@ -1,0 +1,61 @@
+//layout styles
+#qg-three-col{
+  #qg-primary-content{
+    @extend .col-sm-12;
+    @extend .col-md-6;
+    @extend .col-md-push-3;
+  }
+}
+#qg-two-col-aside{
+  #qg-primary-content{
+    @extend .col-sm-12;
+    @extend .col-md-9;
+  }
+}
+#qg-two-col-nav{
+  #qg-primary-content{
+    @extend .col-sm-12;
+    @extend .col-md-9;
+    @extend .col-md-push-3;
+  }
+}
+#qg-full-width{
+  #qg-primary-content{
+    @extend .col-sm-12;
+  }
+}
+
+//other styles
+#qg-three-col, #qg-two-col-aside, #qg-two-col-nav{
+  ul {
+    a {
+      text-decoration: underline;
+    }
+  }
+  .content-footer{
+    dt {
+      float: left;
+      margin-right: 0.5em;
+      font-weight: normal;
+    }
+    .dropup{
+      & > ul{
+        & > li:first-child a{
+          margin-left: -1.3em;
+        }
+      }
+    }
+  }
+}
+
+// responsive styles
+@include breakpoint($bs-sm){
+  #qg-primary-content {
+    .dropup {
+      & > ul {
+        margin: 0;
+      }
+    }
+  }
+}
+

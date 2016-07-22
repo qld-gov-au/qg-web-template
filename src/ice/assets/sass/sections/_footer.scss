@@ -1,0 +1,21 @@
+
+footer{
+  .qg-more-info{
+    background: #ececec;
+    border-bottom: 1px solid #c4d2e1;
+    margin: 0 0 1em 0;
+    .qg-inner>section{
+      @extend .col-sm-3;
+    }
+    ul{
+      list-style: none;
+      padding-left: 0;
+    }
+  }
+  .qg-legal{
+    text-align: center;
+    p {
+      @include fontSize(12px);
+    }
+  }
+}

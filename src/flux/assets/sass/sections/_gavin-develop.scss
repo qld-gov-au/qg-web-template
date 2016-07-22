@@ -1,0 +1,257 @@
+/* Work in progress stylesheet
+- these style will be incorporated into the appropriate SASS files
+- some of these styles will use existing mixins
+
+*/
+
+
+header {
+background-color: #F6F6F6 !important; 
+ 
+.qg-utilities button {
+background-color: transparent !important;      
+}
+}
+
+/* ! breadcrumbs */
+#qg-breadcrumb span.fa {
+font-size: 1.2em;   
+margin-right: .3em; 
+}
+
+/* ! section (side) navigation */
+.qg-section-nav {
+padding-top: 0;
+
+.qg-inner {
+background-color: #F6F6F6 !important;
+padding: 0px; 
+
+h2 {
+font-size: 1.5em;
+padding-top: 2em;
+margin:  0 0 .7em .7em;
+color: #13578b;
+}
+
+ul {
+background-color: #F6F6F6; 
+margin: 0;
+padding: 0;
+
+li {
+margin: 0;
+padding: 0;
+list-style-type: none;
+font-size: 110%;
+font-weight: 700;
+
+a {
+display: inline-block;
+width: 100%;
+margin: 0;
+padding: .5em 1em;  
+}
+
+a.active {
+color: #FFF;
+background-color: #007EB1; 
+}
+
+}
+
+li li a {
+width: 95%;  
+margin-left: 5%;
+}
+
+a:before {
+font-family: FontAwesome;
+font-size: .9em;
+display: inline-block !important;
+content: "\f054";
+margin: 0 0.3em 0 0;
+color: #13578b;
+text-decoration: none;
+}  
+
+
+a.active:before {
+font-family: FontAwesome;
+font-size: .9em;
+display: inline-block !important;
+content: "\f054";
+margin: 0 0.3em 0 0;
+color: #FFF;
+text-decoration: none;
+}  
+
+}
+
+}
+
+}
+
+
+/* ! alert style */
+.alert-danger {
+position: relative;   
+
+.fa-exclamation-triangle {
+position: absolute;
+top: 10px;
+left: 10px;   
+font-size: 3em;  
+}  
+
+h2 {
+margin: 0; 
+padding: 0 0 0.3em 0; }
+
+h2 a {
+margin: 0; 
+padding: 0;  
+font-size: 1.2em;  
+}
+
+h2, p, ol, ul {
+margin-left: 85px;   
+
+}  
+
+
+}
+
+/* ! asides */
+.qg-secondary-content .qg-inner {
+margin: 0;
+padding: 0;  
+
+h2 {
+margin: 0;
+padding: 0;     
+}
+
+.qg-aside {
+background-color: #f2F7F9;      
+padding: 1em;
+
+.fa {
+// color: #78BA00;
+font-size: 120%;
+margin: 0 0.3em 0 0;
+}
+
+h2 {
+font-weight: 700;
+margin: 0 0 1em 0; 
+}
+
+
+figure {   
+margin: 0;
+padding: 0; 
+position:relative; 
+
+
+img {
+margin: 0;
+padding: 0; 
+width: 100%;
+height: auto;   
+
+}
+
+
+figcaption {
+margin: 0;
+padding: .5em; 
+font-size: 90%;
+font-style: italic;
+text-align: center;       
+}
+
+}
+
+} 
+
+// possible background colors for asides:
+// background-color: #F2F7F9;
+// background-color: #F7FBFF;
+// background-color: #EEF4F6;
+// background-color: #F2F7F9;
+// background-color: #E7F5FE;
+// background-color: #E1ECF1;
+
+
+
+.qg-aside:nth-child(2n) {
+background-color: #E7F5FE;
+}
+
+.qg-aside:nth-child(3n) {
+background-color: #E1ECF1;
+}
+
+.qg-aside h2 span:before {
+color: #78BA00;
+}
+
+.qg-search {}
+
+.qg-subscribe {}
+
+.qg-contact {}
+
+.qg-disaster {}
+
+.qg-contact {}
+
+.qg-emergency-contact {}
+
+.qg-your-say {}
+
+.qg-tip {}
+
+.qg-story {}
+
+.qg-feedback {}
+
+}
+
+
+
+/* ! content section links for index pages - grid block */
+
+#qg-index-links {
+position: relative;
+margin-bottom: 2em;
+
+div {
+position: relative;
+min-height: 175px;
+
+h2 {
+color: #13578b;
+
+a {
+color: #13578b;
+
+}
+
+} 
+
+img {   
+float: left;  
+}
+
+p, ol, ul {
+margin-left: 95px;     
+}
+
+} 
+
+}
+
+
+
