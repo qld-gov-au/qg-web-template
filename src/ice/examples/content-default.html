@@ -29,14 +29,6 @@
 </head>
 <body class="qg-glue-forms">
 
-<!--For dev only - bootstrap breakpoint tester-->
-<div class="device-xs visible-xs" style="background: yellow;">extra small (XS) bootstrap breakpoint</div>
-<div class="device-sm visible-sm" style="background: yellow;">small (SM) bootstrap breakpoint</div>
-<div class="device-md visible-md" style="background: yellow;">medium (MD) bootstrap breakpoint</div>
-<div class="device-lg visible-lg" style="background: yellow;">large (LG) bootstrap breakpoint</div>
-
-
-<!--For dev only - bootstrap breakpoint tester-->
 <!--#include virtual="/assets/includes/global/header.html"-->
 <div class="container-fluid qg-site-width">
 	<div class="row">
@@ -135,13 +127,5 @@
 </div>
 		<!--#include virtual="/assets/includes/global/page-options-post.html"-->
 		<!--#include virtual="/assets/includes/global/footer.html"-->
-<script>
-	function isBreakpoint( alias ) {
-		return $('.device-' + alias).is(':visible');
-	}
-	if( isBreakpoint('xs') ) {
-		$('.someClass').css('property', 'value');
-	}
-</script>
 </body>
 </html>
