@@ -2,7 +2,7 @@ module.exports = function (gulp, plugins, config) {
     return function () {
         var filenames = ['main.scss' , 'ie.scss'];
         var steps = function (element, index, array) {
-            gulp.src(config.basepath.src+element+'/assets/sass/'+filenames[i])
+            gulp.src(config.basepath.src+'/assets/sass/'+filenames[i])
                 .pipe(plugins.sourcemaps.init())
                 .pipe(plugins.plumber())
                 .pipe(plugins.concat(filenames[i]))
