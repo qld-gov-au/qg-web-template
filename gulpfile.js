@@ -1,10 +1,11 @@
 'use strict';
+
 var gulp = require('gulp'),
     plugins = require('gulp-load-plugins')(),
     del = require('del'),
     supportedBrowser = ['last 2 versions','ie 7', 'ie 8', 'ie 9','ie 10', 'ie 11', 'android 2.3', 'android 4', 'opera 12'];
 
-// TODO - config from a seprate file
+// TODO - config from a separate file
 var config = {
     version : 'v3',
     basepath : {
@@ -16,52 +17,22 @@ var config = {
         test : 'test/',
         swe : 'swe/'
     },
-    projects : ['swe' , 'cue'],
-    franchise : ['www.qld.gov.au' , 'tmr.com.au' , 'test.com', 'papa' , 'mama' , 'cacha'],
+    projects : ['swe' , 'cue' , 'ice' , 'flux'],
+    franchise : ['www.qld.gov.au' , 'tmr.com.au' , 'test.com'],
     src : {
         assets : function () {
             return config.basepath.src+'swe/assets/';
         },
         examples : function () {
             return config.basepath.src+'swe/examples/';
-        },
-        images : function () {
-            return config.basepath.src;
-        },
-        lib : function () {
-            return config.basepath.src;
-        },
-        includes : function () {
-            return config.basepath.src;
-        },
-        js : function () {
-            return config.basepath.src;
-        },
-        sass : function () {
-            return config.basepath.src;
         }
     },
     build : {
         assets : function () {
             return config.basepath.build;
         },
-        images : function () {
-            return config.basepath.build;
-        },
-        lib : function () {
-            return config.basepath.build;
-        },
         examples : function () {
             return config.basepath.build+'swe/examples/';
-        },
-        includes : function () {
-            return config.basepath.build;
-        },
-        js : function () {
-            return config.basepath.build;
-        },
-        css : function () {
-            return config.basepath.build;
         }
     },
     release : {
@@ -118,12 +89,12 @@ gulp.task('clean:release', function(cb){
  WATCH TASKS
  ======================================================================*/
 gulp.task('watch', function() {
-    gulp.watch(config.src.js()+'/**/*.js', ['js']);
-    gulp.watch(config.src.sass()+'/**/*.scss', ['sass']);
+    gulp.watch(config.basepath.src+'/**/*.js', ['js']);
+    gulp.watch(config.basepath.src+'/**/*.scss', ['sass']);
     gulp.watch([config.basepath.src+'**/*',
         '!'+config.basepath.src+'{assets,assets/**}'
     ], ['content']);
-    gulp.watch([config.src.images()+'*',config.src.includes()+'*'+'*',config.src.lib()+'*'+'*'], ['other:assets']);
+    gulp.watch([config.basepath.src+'*',config.basepath.src+'*'+'*',config.basepath.src+'*'+'*'], ['other:assets']);
 });
 /*=====================================================================
  RELEASE TASKS

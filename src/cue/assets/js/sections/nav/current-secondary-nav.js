@@ -31,7 +31,6 @@ var activeSideNav = {
 
 module.exports = activeSideNav;
 
-
 // Highlight current area in TOC
 // if (document.getElementById('toc') !== null) {
 //     // mark current page in guide

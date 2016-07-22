@@ -23,6 +23,9 @@ header {
     margin-top: 0.6em;
     margin-bottom: 0;
     li{
+      &:last-child{
+        border-right: none;
+      }
       form {
         input {
           border: 1px solid #78BA00;
@@ -34,9 +37,6 @@ header {
           padding: 0.8em;
           line-height: 0;
         }
-      }
-      &:last-child{
-        border-right: none;
       }
       a {
         @include fontSize(16px);
