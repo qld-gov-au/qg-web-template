@@ -32,6 +32,8 @@
 @include breakpoint($bs-md){
   #qg-breadcrumb{
     border-top: 0.3em solid $sweblue;
+    padding-right: 0;
+    padding-left: 0;
     .qg-inner{
       display: none;
     }
