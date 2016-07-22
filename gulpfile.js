@@ -1,64 +1,38 @@
 'use strict';
+
 var gulp = require('gulp'),
     plugins = require('gulp-load-plugins')(),
     del = require('del'),
     supportedBrowser = ['last 2 versions','ie 7', 'ie 8', 'ie 9','ie 10', 'ie 11', 'android 2.3', 'android 4', 'opera 12'];
 
-// TODO - config from a seprate file
+// TODO - config from a separate file
 var config = {
     version : 'v3',
     basepath : {
         src: 'src/',
         build: 'build/',
+        buildswe: 'build/swe/',
         release: 'release/',
         static: 'release/static.qgov.net.au/',
-        test : 'test/'
+        test : 'test/',
+        swe : 'swe/'
     },
+    projects : ['swe' , 'cue' , 'ice' , 'flux'],
     franchise : ['www.qld.gov.au' , 'tmr.com.au' , 'test.com'],
     src : {
         assets : function () {
-            return config.basepath.src+'assets/';
+            return config.basepath.src+'swe/assets/';
         },
         examples : function () {
-            return config.basepath.src+'examples/';
-        },
-        images : function () {
-            return config.basepath.src+'assets/images/';
-        },
-        lib : function () {
-            return config.basepath.src+'assets/lib/';
-        },
-        includes : function () {
-            return config.basepath.src+'assets/includes/';
-        },
-        js : function () {
-            return config.basepath.src+'assets/js/';
-        },
-        sass : function () {
-            return config.basepath.src+'assets/sass/'
+            return config.basepath.src+'swe/examples/';
         }
     },
     build : {
         assets : function () {
-            return config.basepath.build+'assets/';
-        },
-        images : function () {
-            return config.basepath.build+'assets/'+config.version+'/images/';
-        },
-        lib : function () {
-            return config.basepath.build+'assets/'+config.version+'/lib/';
+            return config.basepath.build;
         },
         examples : function () {
-            return config.basepath.build+'examples/';
-        },
-        includes : function () {
-            return config.basepath.build+'assets/includes/';
-        },
-        js : function () {
-            return config.basepath.build+'assets/'+config.version+'/js/';
-        },
-        css : function () {
-            return config.basepath.build+'assets/'+config.version+'/css/';
+            return config.basepath.build+'swe/examples/';
         }
     },
     release : {
@@ -115,12 +89,12 @@ gulp.task('clean:release', function(cb){
  WATCH TASKS
  ======================================================================*/
 gulp.task('watch', function() {
-    gulp.watch(config.src.js()+'/**/*.js', ['js']);
-    gulp.watch(config.src.sass()+'/**/*.scss', ['sass']);
+    gulp.watch(config.basepath.src+'/**/*.js', ['js']);
+    gulp.watch(config.basepath.src+'/**/*.scss', ['sass']);
     gulp.watch([config.basepath.src+'**/*',
         '!'+config.basepath.src+'{assets,assets/**}'
     ], ['content']);
-    gulp.watch([config.src.images()+'*',config.src.includes()+'*'+'*',config.src.lib()+'*'+'*'], ['other:assets']);
+    gulp.watch([config.basepath.src+'*',config.basepath.src+'*'+'*',config.basepath.src+'*'+'*'], ['other:assets']);
 });
 /*=====================================================================
  RELEASE TASKS

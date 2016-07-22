@@ -1,0 +1,18 @@
+header {
+  .qg-bg-pattern {
+    background-image: url("../images/header-bg.jpg");
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: cover;
+  }
+  #qg-site-name {
+    color: #fff;
+  }
+  .qg-tools{
+    li{
+      a {
+        color: #fff;
+      }
+    }
+  }
+}
