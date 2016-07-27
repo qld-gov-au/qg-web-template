@@ -1,7 +1,6 @@
 #qg-feedback{
-  background: $sweblue;
-  .qg-inner {
-    padding: 2em 1em 2em 1em;
+  .qg-bg-swe {
+    background: $sweblue;
   }
   .qg-cta{
     @extend .col-sm-6;
@@ -41,10 +40,9 @@
   }
 }
 
-
-// responsive styles
-@media (max-width: 768px) {
+@include breakpoint($bs-sm){
   #qg-feedback{
+    background: $sweblue;
     .qg-cta{
       text-align: center;
     }
@@ -58,3 +56,4 @@
     }
   }
 }
+// responsive styles
