@@ -33,7 +33,7 @@ padding: 0px;
 h2 {
 @include fontSize(19px);
 padding-top: 2em;
-margin:  0 0 .7em .7em;
+margin:  0 0 .7em 20px;
 color: #13578b;
 } 
 
@@ -44,14 +44,14 @@ padding: 0;
 }
 
 li {
-padding: .5em 0 0.3em 0;
+padding: .5em 0 0.3em 20px;
 list-style-type: none;
 @include fontSize(16px);
 font-weight: 400;
 transition: all 0.2s;
 
 a, a:link, a:visited {
-margin:  0 0 .7em .7em;
+margin:  0 0 .7em 0;
 text-decoration: none;
 }
     
@@ -69,7 +69,8 @@ font-family: FontAwesome;
 font-size: .9em;
 display: inline-block !important;
 content: "\f054";
-margin: 0 0 0 0.5em;
+margin: 0;
+padding: 0 0.5em 0 0;
 color: #13578b;
 text-decoration: none;
 opacity: .5;
@@ -83,7 +84,7 @@ ul {
 background-color: transparent;   
 
 li {
-margin-left: .5em; 
+margin-left: 0; 
 }   
 
 //li:hover { 
@@ -101,7 +102,7 @@ font-family: FontAwesome;
 font-size: .9em;
 display: inline-block !important;
 content: "\f054";
-margin: 0 0 0 0.5em;
+margin: 0;
 color: #FFF;
 text-decoration: none;
 opacity: .5;
@@ -355,29 +356,26 @@ letter-spacing: .05em;
 a {
 color: #13578b;
 transition: all 0.2s;
-    padding-bottom: .1em;
+padding-bottom: .1em;
 }
     
  a:hover {
 text-decoration: none;
 border-bottom: 1px solid #1f76b9;    
-
 }   
     
     
-a:after {
-font-family: FontAwesome;
-font-weight: normal;
-display: inline-block !important;
-content: "\f0a9";
-color: #1f76b9;      
-margin: 0 0 0 0.5em;
-text-decoration: none;
-}   
+//a:after {
+//font-family: FontAwesome;
+//font-weight: normal;
+//display: inline-block !important;
+//content: "\f0a9";
+//color: #1f76b9;      
+//margin: 0 0 0 0.5em;
+//text-decoration: none;
+//}   
 
 } 
-    
-  
     
     
 
