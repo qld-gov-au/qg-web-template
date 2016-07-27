@@ -32,8 +32,8 @@ padding: 0px;
         
 h2 {
 @include fontSize(19px);
-padding-top: 2em;
-margin:  0 0 .7em 20px;
+padding: 2em 0 0 20px;
+margin:  0;
 color: #13578b;
 } 
 
@@ -44,69 +44,95 @@ padding: 0;
 }
 
 li {
-padding: .5em 0 0.3em 20px;
+padding:0;
 list-style-type: none;
 @include fontSize(16px);
 font-weight: 400;
 transition: all 0.2s;
 
 a, a:link, a:visited {
-margin:  0 0 .7em 0;
+margin: 0;
+padding: .5em 0 .3em 0;
 text-decoration: none;
+display: block;
+}
+
+a:hover {
+//text-decoration: underline;
+text-decoration:none;
+background-color: #d1d1d1;
+} 
+    
+a.active {
+color: #FFF;
+background-color: #007EB1;     
+}
+
+a:before {
+font-family: FontAwesome;
+font-size: .9em;
+display: inline-block !important;
+content: "\f054";
+margin: 0;
+padding: 0 0.3em 0 20px;
+color: #13578b;
+text-decoration: none;
+opacity: .5;
 }
     
-a:hover {
-text-decoration: underline;
-}    
+li a:before  {
+padding-left: 40px;  
+}
+        
 }
     
 //li:hover { 
 //background-color: #eaeaea; 
 //}
 
-li:before {
-font-family: FontAwesome;
-font-size: .9em;
-display: inline-block !important;
-content: "\f054";
-margin: 0;
-padding: 0 0.5em 0 0;
-color: #13578b;
-text-decoration: none;
-opacity: .5;
-} 
+//li:before {
+//font-family: FontAwesome;
+//font-size: .9em;
+//display: inline-block !important;
+//content: "\f054";
+//margin: 0;
+//padding: 0 0.5em 0 0;
+//color: #13578b;
+//text-decoration: none;
+//opacity: .5;
+//} 
 
-li.active {
-color: #FFF;
-background-color: #007EB1; 
-
-ul {
-background-color: transparent;   
-
-li {
-margin-left: 0; 
-}   
-
-//li:hover { 
-//background-color: transparent; 
+//li.active {
+//color: #FFF;
+//background-color: #007EB1; 
+//
+//ul {
+//background-color: transparent;   
+//
+//li {
+//margin-left: 0; 
+//}   
+//
+////li:hover { 
+////background-color: transparent; 
+////}
 //}
-}
-
-a {
-color: #FFF;
-} 
-} 
+//
+//a {
+//color: #FFF;
+//} 
+//} 
     
-li.active:before, li.active li:before {
-font-family: FontAwesome;
-font-size: .9em;
-display: inline-block !important;
-content: "\f054";
-margin: 0;
-color: #FFF;
-text-decoration: none;
-opacity: .5;
-}    
+//li.active:before, li.active li:before {
+//font-family: FontAwesome;
+//font-size: .9em;
+//display: inline-block !important;
+//content: "\f054";
+//margin: 0;
+//color: #FFF;
+//text-decoration: none;
+//opacity: .5;
+//}    
     
 }      
 }
@@ -356,7 +382,6 @@ letter-spacing: .05em;
 a {
 color: #13578b;
 transition: all 0.2s;
-padding-bottom: .1em;
 }
     
  a:hover {
@@ -396,7 +421,7 @@ margin-left: 95px;
 li { 
 list-style-type: none; 
 padding: 0;
-margin: 0;
+margin: 0 0 0.5em 0;
 
 a {
 text-decoration: none;  
