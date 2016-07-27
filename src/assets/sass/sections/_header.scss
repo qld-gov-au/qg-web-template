@@ -1,6 +1,6 @@
 header {
   .qg-bg-pattern{
-    background-color: lightgrey; // for testing
+    background-color: #f6f6f6;
   }
   .qg-branding{
     @extend .col-sm-4;
@@ -76,7 +76,7 @@ header {
   #qg-site-nav{
     @extend .col-sm-12;
     .qg-inner {
-      background: #494949;
+      background: #444;
     }
     ul {
       margin: 0;
@@ -101,7 +101,7 @@ header {
 // responsive styles
 @include breakpoint($bs-md) {
   header{
-      background-color: lightgrey;
+      background-color: #f6f6f6;
       .qg-content-divider{
         display: block;
         border-top: 4px solid $sweblue;
