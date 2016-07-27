@@ -39,10 +39,14 @@
     }
   }
 }
+@include breakpoint($bs-md) {
+  #qg-feedback {
+    background: $sweblue;
+  }
+}
 
 @include breakpoint($bs-sm){
   #qg-feedback{
-    background: $sweblue;
     .qg-cta{
       text-align: center;
     }

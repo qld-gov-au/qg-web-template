@@ -22,7 +22,7 @@ footer{
   }
 }
 
-@include breakpoint($bs-sm){
+@include breakpoint($bs-md){
   footer {
     background: #ececec;
   }

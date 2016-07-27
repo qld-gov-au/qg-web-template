@@ -76,7 +76,7 @@ header {
   #qg-site-nav{
     @extend .col-sm-12;
     .qg-inner {
-      background: #000;
+      background: #494949;
     }
     ul {
       margin: 0;
@@ -100,7 +100,8 @@ header {
 
 // responsive styles
 @include breakpoint($bs-md) {
-    header{
+  header{
+      background-color: lightgrey;
       .qg-content-divider{
         display: block;
         border-top: 4px solid $sweblue;
@@ -122,6 +123,7 @@ header {
         display: block;
       }
       #qg-site-nav{
+        background: #494949;
         display: none;
         margin: 0;
         ul {
@@ -134,15 +136,6 @@ header {
       }
     }
   }
-
-@include breakpoint($bs-sm){
-  header {
-    background-color: lightgrey;
-  }
-  #qg-site-nav{
-    background: #000;
-  }
-}
 
 @include breakpoint($bs-xs){
   header {
