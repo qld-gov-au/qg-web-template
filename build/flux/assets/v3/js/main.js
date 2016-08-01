@@ -46,14 +46,21 @@
 
 	"use strict";
 	
-	var mobileNav = __webpack_require__(1);
-	var activeSideNav = __webpack_require__(2);
+	var _mobileNav = __webpack_require__(1);
+	
+	var _mobileNav2 = _interopRequireDefault(_mobileNav);
+	
+	var _currentSecondaryNav = __webpack_require__(2);
+	
+	var _currentSecondaryNav2 = _interopRequireDefault(_currentSecondaryNav);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	(function ($) {
 	    "use strict";
 	
-	    mobileNav();
-	    activeSideNav.init();
+	    _mobileNav2.default.interactions();
+	    _currentSecondaryNav2.default.highlightNavItem();
 	
 	    // getting specific lib using the loader module
 	    qg.glue.loader.init(function () {
@@ -67,35 +74,40 @@
 
 	"use strict";
 	
-	var nav = function nav() {
-	    $("#qg-show-menu").on("click", function () {
-	        $("#qg-breadcrumb>.qg-inner , #qg-site-nav").slideToggle("fast");
-	    });
-	    $("#qg-show-search").on("click", function () {
-	        $(".qg-tools").slideToggle("fast");
-	    });
+	var mobileNav = function () {
+	    var $sitenav = $("#qg-site-nav");
+	    var $br = $("#qg-breadcrumb>.qg-inner");
+	    var $tools = $(".qg-tools");
 	
-	    $(window).resize(function () {
-	        var $sitenav = $("#qg-site-nav");
-	        var $br = $("#qg-breadcrumb>.qg-inner");
-	        var $tools = $(".qg-tools");
-	        if ($(window).width() < 768) {} else if ($(window).width() >= 768 && $(window).width() <= 992) {
-	            if ($tools.is(":visible")) {
-	                $tools.hide("fast");
+	    function interactions() {
+	        $("#qg-show-menu").on("click", function () {
+	            $("#qg-breadcrumb>.qg-inner , #qg-site-nav").slideToggle("fast");
+	        });
+	        $("#qg-show-search").on("click", function () {
+	            $(".qg-tools").slideToggle("fast");
+	        });
+	        $(window).resize(function () {
+	            if ($(window).width() < 768) {} else if ($(window).width() >= 768 && $(window).width() <= 992) {
+	                if ($tools.is(":visible")) {
+	                    $tools.hide("fast");
+	                }
+	            } else {
+	                if ($sitenav.is(":hidden")) {
+	                    $sitenav.slideToggle("fast");
+	                    $br.slideToggle("fast");
+	                }
+	                if ($tools.is(":hidden")) {
+	                    $tools.slideToggle("fast");
+	                }
 	            }
-	        } else {
-	            if ($sitenav.is(":hidden")) {
-	                $sitenav.slideToggle("fast");
-	                $br.slideToggle("fast");
-	            }
-	            if ($tools.is(":hidden")) {
-	                $tools.slideToggle("fast");
-	            }
-	        }
-	    });
-	};
+	        });
+	    }
+	    return {
+	        interactions: interactions
+	    };
+	}();
 	
-	module.exports = nav;
+	module.exports = mobileNav;
 
 /***/ },
 /* 2 */
@@ -103,53 +115,42 @@
 
 	"use strict";
 	
-	var activeSideNav = {
-	    init: function init() {
-	        var currentFilename = window.location.pathname.substr(window.location.pathname.lastIndexOf('/') + 1);
-	        this.highlightNavItem();
-	    },
-	    getCurrentTitle: function getCurrentTitle() {
+	var activeSideNav = function () {
+	    var currentFilename = window.location.pathname.substr(window.location.pathname.lastIndexOf('/') + 1);
+	
+	    function refineText(text) {
+	        return text.toLowerCase().replace(/ /g, '');
+	    }
+	
+	    function getCurrentTitle() {
 	        var currentPageTitle = '';
 	        if ($('#guide-title').length > 0) {
 	            currentPageTitle = $('#guide-title').text();
-	        } else if ($('meta[name="DCTERMS.alternative"]').length > 0 && $('meta[name="DCTERMS.alternative"]').eq(0).attr('content') !== '') {
+	        } else if ($('meta[name="DCTERMS.alternative"]').length > 0 && refineText($('meta[name="DCTERMS.alternative"]').eq(0).attr('content')) !== '') {
 	            currentPageTitle = $('meta[name="DCTERMS.alternative"]').eq(0).attr('content');
 	        } else {
 	            var titleClone = $('h1', '#qg-primary-content').eq(0).clone();
 	            titleClone.find('.page-number').remove();
 	            currentPageTitle = titleClone.text();
 	        }
-	        return currentPageTitle;
-	    },
-	    highlightNavItem: function highlightNavItem() {
-	        var currentPageTitle = this.getCurrentTitle();
+	        return refineText(currentPageTitle);
+	    }
+	
+	    function highlightNavItem() {
+	        var currentPageTitle = getCurrentTitle();
 	        $(".qg-section-nav ul>li").each(function (index) {
-	            if ($.trim($(this).text()) === $.trim(currentPageTitle)) {
+	            if (refineText($(this).text()) === $.trim(currentPageTitle)) {
 	                $(this).find("a").addClass("active");
 	            }
 	        });
 	    }
-	};
+	
+	    return {
+	        highlightNavItem: highlightNavItem
+	    };
+	}();
 	
 	module.exports = activeSideNav;
-	
-	// Highlight current area in TOC
-	// if (document.getElementById('toc') !== null) {
-	//     // mark current page in guide
-	//     $('a[href="' + currentFilename + '"]', '#toc').parent().addClass('current');
-	//     $('.link-text', '#toc').filter(function () {
-	//         return $.trim($(this).text()) === $('h2', '#content').eq(0).text();
-	//     }).closest('li').addClass('current');
-	//
-	//     // Embed progress menu for pages that contain it (don't do this for the business franchise)
-	//     $('.current-page', '#nav-section')
-	//         .addClass('has-submenu')
-	//         .append($('#toc ol').clone());
-	// }
-	// // Highlight current area in progress bar
-	// if ($('#guide-progress').length > 0) {
-	//     $('a[href="' + currentFilename + '"]', '#guide-progress').parent().addClass('current');
-	// }
 
 /***/ }
 /******/ ]);
