@@ -1,15 +1,23 @@
 var nav = function () {
+    
+    $(".alert").hide();
+     $("#cart").on("click" , function () {
+        $(".alert").slideToggle("fast");
+    });
+    
+    
+    
     $("#qg-show-menu").on("click" , function () {
-        $("#qg-breadcrumb>.qg-inner , #qg-site-nav").slideToggle("fast");
+        $("#qg-breadcrumb, #qg-site-nav").slideToggle("fast");
     });
     $("#qg-show-search").on("click" , function () {
-        $(".qg-tools").slideToggle("fast");
+        $("#qg-search-form").slideToggle("fast");
     });
 
     $(window).resize(function () {
         var $sitenav = $("#qg-site-nav");
-        var $br = $("#qg-breadcrumb>.qg-inner");
-        var $tools = $(".qg-tools");
+        var $br = $("#qg-breadcrumb");
+        var $tools = $("#qg-search-form");
         if ($(window).width() < 768) {}
         else if ($(window).width() >= 768 &&  $(window).width() <= 992) {
             if($tools.is(":visible")){

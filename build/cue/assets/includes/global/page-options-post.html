@@ -1,104 +1,95 @@
-<!-- noindex -->
-<section id="qg-feedback">
-	<div class="container-fluid qg-site-width">
-		<div class="row">
-			<div class="qg-inner clearfix">
-				<div class="qg-cta">
-					<a href="#qg-page-feedback" class="qg-glue-btn" id="page-feedback-useful">Feedback</a>
-				</div>
-				<div class="qg-share">
-					<ul class="list-inline">
-						<li><h2>Share :</h2></li>
-						<li><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></li>
-						<li><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></li>
-						<li><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i></li>
-						<li><i class="fa fa-share-alt fa-2x" aria-hidden="true"></i></li>
+<div id="qg-feedback" class="container-fluid qg-site-width">
+    
+<div class="row">
+       
+<div class="qg-share">   
+<h2>Share:</h2>
+<ul>   
+<li><span class="fa fa-facebook fa-2x" aria-hidden="true"></span></li>
+<li><span class="fa fa-twitter fa-2x" aria-hidden="true"></span></li>
+<li><span class="fa fa-linkedin fa-2x" aria-hidden="true"></span></li>
+<li><span class="fa fa-share-alt fa-2x" aria-hidden="true"></span></li>
+</ul>
+</div>
+       
+<div class="qg-cta">
+<!--<a href="#qg-page-feedback" class="qg-glue-btn" id="page-feedback-useful">Feedback</a>-->
+<!--<a class="btn btn-default qg-glue-btn" href="#" role="button">Feedback</a>       -->
+<ul class="list-inline">       
+<li><span class="fa fa-comments fa-2x" aria-hidden="true"></span> Feedback</li>    
+<li><span class="fa fa-question fa-2x" aria-hidden="true"></span> Help</li>
+<li><span class="fa fa-phone fa-2x" aria-hidden="true"></span> Contact</li>   
+</ul>       
+</div>
+
+</div>
+</div>
+
+<!--
+
+
+<div id="page-feedback">
+	<form method="post" action="https://www.smartservice.qld.gov.au/services/submissions/email/feedback/feedback" class="form">
+
+		<h2>Page feedback</h2>
+
+		<ol class="questions">
+			<li>
+				<fieldset>
+					<legend>
+						<span class="label">How satisfied are you with your experience today?</span>
+						<abbr title="(required)" class="required">*</abbr>
+					</legend>
+					<ul class="choices vert-label">
+						<li>
+							<label for="fs-very-dissatisfied">Very <br /> dissatisfied<br /> (1)</label>
+							<input type="radio" name="feedback-satisfaction" value="Very dissatisfied" required="" id="fs-very-dissatisfied" />
+						</li>
+						<li>
+							<label for="fs-dissatisfied"> Dissatisfied <br /> (2)</label>
+							<input type="radio" name="feedback-satisfaction" value="Dissatisfied" required="" id="fs-dissatisfied" />
+						</li>
+						<li>
+							<label for="fs-neither-satisfied-or-dissatisfied">Neither<br />satisfied or <br /> dissatisfied <br /> (3)</label>
+							<input type="radio" name="feedback-satisfaction" value="Neither satisfied or dissatisfied" required="" id="fs-neither-satisfied-or-dissatisfied" />
+						</li>
+						<li>
+							<label for="fs-satisfied">Satisfied<br /> (4)</label>
+							<input type="radio" name="feedback-satisfaction" value="Satisfied" required="" id="fs-satisfied" />
+						</li>
+						<li>
+							<label for="fs-very-satisfied">Very <br /> satisfied <br /> (5)</label>
+							<input type="radio" name="feedback-satisfaction" value="Very satisfied" required="" id="fs-very-satisfied" />
+						</li>
 					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<!-- endnoindex -->
+				</fieldset>
+			</li>
+			<li>
+				<label for="comments2">
+					<span class="label">Comments</span>
+					<abbr title="(required)" class="required">*</abbr>
+				</label>
+				<textarea name="comments" id="comments" rows="10" cols="40" required="required"></textarea>
+			</li>
 
-<!--&lt;!&ndash; noindex &ndash;&gt;-->
-<!--<div id="post-page-options" class="page-options">-->
-	<!--<ul>-->
-		<!--<li class="share">-->
-			<!--<h2>Share:</h2>-->
-			<!--<a class="facebook" href="/share/?via=facebook&amp;title=&lt;!&ndash;#echo encoding="url" var="title" &ndash;&gt;" title="Share using Facebook"><span>Facebook</span></a>-->
-			<!--<a class="twitter" href="/share/?via=twitter&amp;title=&lt;!&ndash;#echo encoding="url" var="title" &ndash;&gt;" title="Share using Twitter"><span>Twitter</span></a>-->
-			<!--<a class="linkedin" href="/share/?via=linkedin&amp;title=&lt;!&ndash;#echo encoding="url" var="title" &ndash;&gt;" title="Share using LinkedIn"><span>LinkedIn</span></a>-->
-			<!--<a class="share" href="/share/?title=&lt;!&ndash;#echo encoding="url" var="title" &ndash;&gt;" title="Share using another service…"><span>More</span></a>-->
-		<!--</li>-->
-	<!--</ul>-->
-<!--</div>-->
+			<li id="feedback-captcha-container">
+				<label for="feedback-captcha">Please leave this blank (this helps us identify automatic spam)</label>
+				<input type="text" name="captcha" id="feedback-captcha" value="" />
+			</li>
 
-<!--<div id="page-feedback">-->
-	<!--<form method="post" action="https://www.smartservice.qld.gov.au/services/submissions/email/feedback/feedback" class="form">-->
+			<li class="footer">
+				<input type="hidden" name="franchise" id="franchise" value="&lt;!&ndash;#echo encoding="entity" var="franchise" &ndash;&gt;" />
+				<input type="hidden" name="page-title" id="page-title" value="&lt;!&ndash;#echo encoding="entity" var="title" &ndash;&gt;" />
+				<input type="hidden" name="page-url" value="&lt;!&ndash;#echo encoding="entity" var="SERVER_NAME" &ndash;&gt;&lt;!&ndash;#echo encoding="entity" var="REQUEST_URI" &ndash;&gt;" />
+				<input type="hidden" name="page-referer" value="&lt;!&ndash;#echo encoding="entity" var="HTTP_REFERER" &ndash;&gt;" />
+				<input type="hidden" name="rspUsrAgent" value="&lt;!&ndash;#echo encoding="entity" var="HTTP_USER_AGENT" &ndash;&gt;" />
+				<ul class="actions">
+					<li><strong><input type="submit" value="Submit feedback" /></strong></li>
+					<li><a href="http://www.getinvolved.qld.gov.au/gi/consultation/2811/view.html" class="button">Take part in a survey</a></li>
+				</ul>
+			</li>
+		</ol>
+	</form>
+</div>
+-->
 
-		<!--<h2>Page feedback</h2>-->
-
-		<!--<ol class="questions">-->
-			<!--<li>-->
-				<!--<fieldset>-->
-					<!--<legend>-->
-						<!--<span class="label">How satisfied are you with your experience today?</span>-->
-						<!--<abbr title="(required)" class="required">*</abbr>-->
-					<!--</legend>-->
-					<!--<ul class="choices vert-label">-->
-						<!--<li>-->
-							<!--<label for="fs-very-dissatisfied">Very <br /> dissatisfied<br /> (1)</label>-->
-							<!--<input type="radio" name="feedback-satisfaction" value="Very dissatisfied" required="" id="fs-very-dissatisfied" />-->
-						<!--</li>-->
-						<!--<li>-->
-							<!--<label for="fs-dissatisfied"> Dissatisfied <br /> (2)</label>-->
-							<!--<input type="radio" name="feedback-satisfaction" value="Dissatisfied" required="" id="fs-dissatisfied" />-->
-						<!--</li>-->
-						<!--<li>-->
-							<!--<label for="fs-neither-satisfied-or-dissatisfied">Neither<br />satisfied or <br /> dissatisfied <br /> (3)</label>-->
-							<!--<input type="radio" name="feedback-satisfaction" value="Neither satisfied or dissatisfied" required="" id="fs-neither-satisfied-or-dissatisfied" />-->
-						<!--</li>-->
-						<!--<li>-->
-							<!--<label for="fs-satisfied">Satisfied<br /> (4)</label>-->
-							<!--<input type="radio" name="feedback-satisfaction" value="Satisfied" required="" id="fs-satisfied" />-->
-						<!--</li>-->
-						<!--<li>-->
-							<!--<label for="fs-very-satisfied">Very <br /> satisfied <br /> (5)</label>-->
-							<!--<input type="radio" name="feedback-satisfaction" value="Very satisfied" required="" id="fs-very-satisfied" />-->
-						<!--</li>-->
-					<!--</ul>-->
-				<!--</fieldset>-->
-			<!--</li>-->
-			<!--<li>-->
-				<!--<label for="comments2">-->
-					<!--<span class="label">Comments</span>-->
-					<!--<abbr title="(required)" class="required">*</abbr>-->
-				<!--</label>-->
-				<!--<textarea name="comments" id="comments" rows="10" cols="40" required="required"></textarea>-->
-			<!--</li>-->
-
-			<!--<li id="feedback-captcha-container">-->
-				<!--<label for="feedback-captcha">Please leave this blank (this helps us identify automatic spam)</label>-->
-				<!--<input type="text" name="captcha" id="feedback-captcha" value="" />-->
-			<!--</li>-->
-
-			<!--<li class="footer">-->
-				<!--<input type="hidden" name="franchise" id="franchise" value="&lt;!&ndash;#echo encoding="entity" var="franchise" &ndash;&gt;" />-->
-				<!--<input type="hidden" name="page-title" id="page-title" value="&lt;!&ndash;#echo encoding="entity" var="title" &ndash;&gt;" />-->
-				<!--<input type="hidden" name="page-url" value="&lt;!&ndash;#echo encoding="entity" var="SERVER_NAME" &ndash;&gt;&lt;!&ndash;#echo encoding="entity" var="REQUEST_URI" &ndash;&gt;" />-->
-				<!--<input type="hidden" name="page-referer" value="&lt;!&ndash;#echo encoding="entity" var="HTTP_REFERER" &ndash;&gt;" />-->
-				<!--<input type="hidden" name="rspUsrAgent" value="&lt;!&ndash;#echo encoding="entity" var="HTTP_USER_AGENT" &ndash;&gt;" />-->
-				<!--<ul class="actions">-->
-					<!--<li><strong><input type="submit" value="Submit feedback" /></strong></li>-->
-					<!--<li><a href="http://www.getinvolved.qld.gov.au/gi/consultation/2811/view.html" class="button">Take part in a survey</a></li>-->
-				<!--</ul>-->
-			<!--</li>-->
-		<!--</ol>-->
-	<!--</form>-->
-
-
-
-
-<!--</div>-->
-<!--&lt;!&ndash; endnoindex &ndash;&gt;-->

@@ -17,6 +17,5 @@
 @import "sections/footer";
 
 // develop only:
-@import "sections/gavin-develop";
-
-
+@import "sections/_gavin-develop.scss";
+@import "helpers/_equal-height-columns.scss";

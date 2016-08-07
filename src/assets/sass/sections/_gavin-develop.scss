@@ -5,20 +5,12 @@
 */
 
 
-header {
-
-.qg-utilities button {
-background-color: transparent !important;      
-}
-}
-
-/* ! breadcrumbs */
-#qg-breadcrumb span.fa {
-font-size: 1.2em;   
-margin-right: .3em; 
-}
-
-
+//header {
+//
+//.qg-utilities button {
+//background-color: transparent !important;      
+//}
+//}
 
 
 
@@ -26,9 +18,8 @@ margin-right: .3em;
 
 .qg-section-nav {
     
-div.qg-inner {
 background-color: #F6F6F6 !important;
-padding: 0px;  
+padding: 0 !important;
         
 h2 {
 @include fontSize(19px);
@@ -79,196 +70,88 @@ color: #13578b;
 text-decoration: none;
 opacity: .5;
 }
-    
+        
 li a:before  {
 padding-left: 40px;  
 }
         
 }
-    
-//li:hover { 
-//background-color: #eaeaea; 
-//}
-
-//li:before {
-//font-family: FontAwesome;
-//font-size: .9em;
-//display: inline-block !important;
-//content: "\f054";
-//margin: 0;
-//padding: 0 0.5em 0 0;
-//color: #13578b;
-//text-decoration: none;
-//opacity: .5;
-//} 
-
-//li.active {
-//color: #FFF;
-//background-color: #007EB1; 
-//
-//ul {
-//background-color: transparent;   
-//
-//li {
-//margin-left: 0; 
-//}   
-//
-////li:hover { 
-////background-color: transparent; 
-////}
-//}
-//
-//a {
-//color: #FFF;
-//} 
-//} 
-    
-//li.active:before, li.active li:before {
-//font-family: FontAwesome;
-//font-size: .9em;
-//display: inline-block !important;
-//content: "\f054";
-//margin: 0;
-//color: #FFF;
-//text-decoration: none;
-//opacity: .5;
-//}    
-    
-}      
+   
 }
 
-
-
-/* ! section (side) navigation */
-//.qg-section-nav {
-//padding-top: 0;
-//
-//.qg-inner {
-//background-color: #F6F6F6 !important;
-//padding: 0px; 
-//
-//h2 {
-//font-size: 1.5em;
-//padding-top: 2em;
-//margin:  0 0 .7em .7em;
-//color: #13578b;
-//}
-//
-//ul {
-//background-color: #F6F6F6; 
-//margin: 0;
-//padding: 0;
-//
-//li {
-//margin: 0;
-//padding: 0;
-//list-style-type: none;
-//font-size: 110%;
-//font-weight: 700;
-//    
-//
-//a {
-//display: inline-block;
-//width: 100%;
-//margin: 0;
-//padding: .5em 1em;  
-//}
-//
-//a.active {
-//color: #FFF;
-//background-color: #007EB1; 
-//}
-//
-//}
-//    
-//    
-//li:before {
-//font-family: FontAwesome;
-//font-size: .9em;
-//display: inline-block !important;
-//content: "\f054";
-//margin: 0 0.3em 0 0;
-//color: #13578b;
-//text-decoration: none;
-//}    
-//    
-//    
-//    
-//
-//li li a {
-//width: 95%;  
-//margin-left: 5%;
-//}
-//
-//a:before {
-//font-family: FontAwesome;
-//font-size: .9em;
-//display: inline-block !important;
-//content: "\f054";
-//margin: 0 0.3em 0 0;
-//color: #13578b;
-//text-decoration: none;
-//}  
-//
-//
-//a.active:before {
-//font-family: FontAwesome;
-//font-size: .9em;
-//display: inline-block !important;
-//content: "\f054";
-//margin: 0 0.3em 0 0;
-//color: #FFF;
-//text-decoration: none;
-//}  
-//
-//}
-//
-//}
-//
-//}
 
 
 /* ! alert style */
 
-.alert {
-  border-radius: 0;  
+header .alert {
+margin-top: 0;    
+margin-bottom: 0;
+border: none;
+    
+    
+    time {
+        display: inline-block;
+        margin-left: 1em; 
+       font-size: .8em; 
+        
+    }    
     
 }
 
 
 
+.alert {
+border-radius: 0;  
+ //  display: none;
+}
+
 .alert-danger {
-position: relative;   
+position: relative; 
+//background-color: #bf2a2a;    
+    
+background: #bf2a2a;
+background: -moz-linear-gradient(top,  #bf2a2a 70%, #992323 100%);
+background: -webkit-linear-gradient(top,  #bf2a2a 70%,#992323 100%);
+background: linear-gradient(to bottom,  #bf2a2a 70%,#992323 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bf2a2a', endColorstr='#992323',GradientType=0 );
+    
+
+a, a:link {
+color: #FFF;  
+}   
+
 
 .fa-exclamation-triangle {
 position: absolute;
 top: 10px;
 left: 10px;   
-font-size: 3em;  
+font-size: 3em;
+color:#FFF;
 }  
 
 h2 {
+color: #FFF;
 margin: 0; 
-padding: 0 0 0.3em 0; }
-
-h2 a {
-margin: 0; 
-padding: 0;  
-font-size: 1.2em;  
+padding: 0 0 0.3em 0; 
+font-size: 1.2em; 
 }
 
 h2, p, ol, ul {
+color: #FFF;
 margin-left: 85px;   
-
 }  
-
 
 }
 
+
+
+
+
+
 /* ! asides */
-.qg-secondary-content .qg-inner {
-margin: 0 0 2em 0;
-padding: 0;  
+.qg-secondary-content {
+margin: 0;
+padding: 0 !important;  
 
 h2 {
 margin: 0;
