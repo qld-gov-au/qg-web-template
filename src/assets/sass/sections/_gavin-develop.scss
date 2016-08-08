@@ -102,7 +102,7 @@ border: none;
 
 .alert {
 border-radius: 0;  
- //  display: none;
+//display: none;
 }
 
 .alert-danger {
@@ -115,11 +115,9 @@ background: -webkit-linear-gradient(top,  #bf2a2a 70%,#992323 100%);
 background: linear-gradient(to bottom,  #bf2a2a 70%,#992323 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bf2a2a', endColorstr='#992323',GradientType=0 );
     
-
 a, a:link {
 color: #FFF;  
 }   
-
 
 .fa-exclamation-triangle {
 position: absolute;

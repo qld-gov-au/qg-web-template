@@ -69,11 +69,6 @@
 	
 	var nav = function nav() {
 	
-	    $(".alert").hide();
-	    $("#cart").on("click", function () {
-	        $(".alert").slideToggle("fast");
-	    });
-	
 	    $("#qg-show-menu").on("click", function () {
 	        $("#qg-breadcrumb, #qg-site-nav").slideToggle("fast");
 	    });
