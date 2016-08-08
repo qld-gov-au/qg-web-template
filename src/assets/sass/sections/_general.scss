@@ -27,6 +27,9 @@
   @extend .hidden-lg;
 }
 
+.qg-visually-hidden{
+  @include qg-visually-hidden;
+}
 @include breakpoint($bs-md) {
   .qg-visually-hidden-md {
     @include qg-visually-hidden;
