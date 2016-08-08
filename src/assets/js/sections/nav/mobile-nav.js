@@ -4,12 +4,12 @@ import helpers from "../helpers.js";
 
 var mobileNav = (function () {
     var $sitenav = $("#qg-site-nav");
-    var $br = $("#qg-breadcrumb>.qg-inner");
+    var $br = $("#qg-breadcrumb");
     var $tools = $(".qg-tools");
 
     function interactions() {
         $("#qg-show-menu").on("click" , function () {
-            $("#qg-breadcrumb>.qg-inner , #qg-site-nav").slideToggle(200);
+            $br.add($sitenav).slideToggle(200);
         });
         $("#qg-show-search").on("click" , function () {
             $("#qg-search-form").toggleClass("qg-visually-hidden-md", 1500);
