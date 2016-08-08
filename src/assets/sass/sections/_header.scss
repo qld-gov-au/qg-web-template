@@ -1,53 +1,39 @@
-header {
-  .qg-bg-pattern{
+#qg-site-header {
+    
     background-color: #f6f6f6;
-  }
-  .qg-branding{
-    @extend .col-sm-4;
-    @extend .col-xs-4;
+    margin-top: 32px;
+    padding-top: 1em;
+    padding-bottom: 0;
+    
+    
+// ##############################################################      
+
+  .qg-coat-of-arms {
+    @extend .col-xs-6; 
+    @extend .col-sm-6;  
+    @extend .col-md-4;
+    @extend .col-lg-4;
+    padding-bottom: .8em;
+    overflow: hidden; 
     img {
-      width: 21em;
-      height: auto;
-      //background: lightgreen;
-      color: #fff;
+      width: 287px;
+      height: 50px;
+        margin-top: 1px;
+    margin-left: 35px;
     }
   }
-  //.qg-content-divider{
-  //  display: none;
-  //}
-  .qg-tools{
-    @extend .col-md-8;
-    @extend .col-sm-12;
-    @extend .col-xs-12;
-    text-align: right;
-    margin-top: 0.6em;
-    margin-bottom: 0;
-    li{
-      &:last-child{
-        border-right: none;
-      }
-      form {
-        input {
-          border: 1px solid #78BA00;
-          color: #444444;
-          padding: .5em .7em;
-        }
-        button {
-          background: $green;
-          padding: 0.8em;
-          line-height: 0;
-        }
-      }
-      a {
-        @include fontSize(16px);
-      }
-    }
+    
   }
+    
+// ##############################################################      
+  
   .qg-utilities {
-    @extend .col-sm-8;
-    display: none;
+    @extend .col-xs-6; 
+    @extend .col-sm-6;  
+    @extend .col-md-5;
+    @extend .col-lg-5;
+      
     text-align: right;
-    margin-top: 1em;
     li {
       padding-right: 0;
       padding-left: 0;
@@ -56,62 +42,99 @@ header {
         margin-right: 0;
       }
       button {
+          background-color: transparent;
         padding: 0;
         border: none;
-        i{
-          color: $sweblue;
-        }
       }
     }
   }
-  #qg-site-name{
-    .qg-inner {
-      padding-top:0;
-      padding-bottom: 0;
-    }
-    h2 {
-      @extend .col-sm-12;
-    }
-  }
-  #qg-site-nav{
-    @extend .col-sm-12;
-    .qg-inner {
-      background: #444;
-    }
-    ul {
-      margin: 0;
-      > li {
-        padding: 0 0.8em 0 0.8em;
-        border-right : 1px solid #000;
-        &:first-child{
-          padding-left: 0;
+    
+// ##############################################################      
+    
+    #qg-search-form {
+    @extend .col-xs-12;      
+    @extend .col-sm-12;  
+    @extend .col-md-3;
+    @extend .col-lg-3;
+        
+        input {
+        border-radius: 0;    
         }
-        &:last-child{
-          border-right: none;
-        }
-        a {
-          color: #fff;
-          @include fontSize(16px);
-        }
-      }
+        
+        button.btn-default {
+        background: $green;    
+        border-radius: 0; 
+        }     
+   
     }
-  }
+      
+// ##############################################################    
+    
+#qg-site-name {  
+background-color: transparent; 
+
+h2 {
+@extend .col-sm-12;
 }
+}
+        
+// ##############################################################    
+// Site navigation      
+#qg-site-nav{
+background-color: #444;
+padding-top: .7em;  
+padding-bottom: .7em; 
+@extend .col-sm-12;
+       
+a {
+color: #fff;
+@include fontSize(16px);
+}   
+    
+ul {
+margin: 0;
+color: #FFF;    
+@include fontSize(16px);     
+    
+li {
+padding: 0 1em 0 1em;
+border-right : 2px solid #999;
+
+&:first-child{
+padding-left: 0;
+}
+    
+&:last-child{
+border-right: none;
+}
+}
+    
+}
+}
+
+// ##############################################################    
+
 
 // responsive styles
 @include breakpoint($bs-md) {
-  header{
+ 
+    
+    header{
       background-color: #f6f6f6;
       .qg-content-divider{
         display: block;
         border-top: 4px solid $sweblue;
       }
+      
+      
       .qg-branding{
         img {
           width: 12em;
           height: auto;
         }
       }
+      
+      
       .qg-tools{
         display: none;
         li {
@@ -119,34 +142,80 @@ header {
           padding-right: 0;
         }
       }
+      
+      
       .qg-utilities {
         display: block;
       }
+      
+      
       #qg-site-nav{
         background: #494949;
         display: none;
-        margin: 0;
+          margin: 0;
+            padding: 0;
+          
+          
+          
         ul {
+            
+           margin: 0;
+            padding: 0;
+            
+            
           > li {
+              text-align: center;
             border-right : none;
             display: block;
             padding: 0.7em 0 0.7em 0;
+              
+          //    border-bottom: 1px solid #CCC;
+              
+                   &:last-child{
+          border-bottom: none
+        } 
+              
+              
+         &:nth-child(2n) {
+background-color: #505050;
+} 
+      
+              
+              
+              
+              
           }
+            
+            
+     
+            
+            
         }
       }
+      
+      
     }
   }
 
-@include breakpoint($bs-xs){
-  header {
-    .qg-branding{
-      img {
-        width: 9em;
-        height: auto;
-        margin-top: 0.4em;
-      }
-    }
-  }
-}
+
+
+//@include breakpoint($bs-xs){
+//  header {
+//    .qg-coat-of-arms {
+//      img {
+//        width: 9em;
+//        height: auto;
+//        margin-top: 0.4em;
+//      }
+//    }
+//    
+//    .fa:before {
+//     background-color: red;
+//        
+//    }  
+//    
+//    
+//}
+//}
 
 

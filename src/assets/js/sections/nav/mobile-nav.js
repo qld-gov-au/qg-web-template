@@ -1,40 +1,32 @@
-"use strict";
+var nav = function () {
+    
+    $("#qg-show-menu").on("click" , function () {
+        $("#qg-breadcrumb, #qg-site-nav").slideToggle("fast");
+    });
+    $("#qg-show-search").on("click" , function () {
+        $("#qg-search-form").slideToggle("fast");
+    });
 
-import helpers from "../helpers.js";
-
-var mobileNav = (function () {
-    var $sitenav = $("#qg-site-nav");
-    var $br = $("#qg-breadcrumb>.qg-inner");
-    var $tools = $(".qg-tools");
-
-    function interactions() {
-        $("#qg-show-menu").on("click" , function () {
-            $("#qg-breadcrumb>.qg-inner , #qg-site-nav").slideToggle(200);
-        });
-        $("#qg-show-search").on("click" , function () {
-            $(".qg-tools").slideToggle(200);
-        });
-        $(window).resize(function () {
-            if ($(window).width() < helpers.breakpoints.bsSm) {}
-            else if ($(window).width() >= helpers.breakpoints.bsSm &&  $(window).width() <= helpers.breakpoints.bsMd) {
-                if($tools.is(":visible")){
-                    $tools.hide(1);
-                }
+    $(window).resize(function () {
+        var $sitenav = $("#qg-site-nav");
+        var $br = $("#qg-breadcrumb");
+        var $tools = $("#qg-search-form");
+        if ($(window).width() < 768) {}
+        else if ($(window).width() >= 768 &&  $(window).width() <= 992) {
+            if($tools.is(":visible")){
+                $tools.hide("fast");
             }
-            else  {
-                if($sitenav.is(":hidden")){
-                    $sitenav.slideToggle(1);
-                    $br.slideToggle(1);
-                }
-                if($tools.is(":hidden")){
-                    $tools.slideToggle(1);
-                }
+        }
+        else  {
+            if($sitenav.is(":hidden")){
+                $sitenav.slideToggle("fast");
+                $br.slideToggle("fast");
             }
-        });
-    }
-    return {
-        interactions : interactions
-    }
-})();
+            if($tools.is(":hidden")){
+                $tools.slideToggle("fast");
+            }
+        }
+    });
+};
 
-module.exports = mobileNav;
+module.exports = nav;

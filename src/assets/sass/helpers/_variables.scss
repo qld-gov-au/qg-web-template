@@ -1,19 +1,22 @@
 @import "mixins";
 
 //font family
-$font-main : Verdana,Helvetica,Arial,sans-serif;
+$font-main: Lato, Arial, sans-serif;
 
 // base font size
-$baseSize : 14px;
-$baseLineHeight : 1.5;
+$baseSize: 16px;
+$baseLineHeight: 1.4;
+
+//base-padding
+$base-padding: 1em;
 
 // colours
-$lightgrey : rgba(238, 241, 245, 0.17);
-$green : #78BA00;
-$grey : rgb(246, 246, 246);
-$linkcolour : #005375;
-$sweblue : #007EB1;
-$swedarkblue : #005375;
+$lightgrey: rgba(238, 241, 245, 0.17);
+$green: #78BA00;
+$grey: #f6f6f6;
+$linkcolour: #005375;
+$sweblue: #007EB1;
+$swedarkblue: #005375;
 
 // responsive (Bootstrap default)
 $bs-xs: max-width 480px;

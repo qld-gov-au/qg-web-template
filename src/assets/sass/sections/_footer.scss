@@ -1,29 +1,61 @@
 
-footer{
-  .qg-more-info{
-    background: #ececec;
-    border-bottom: 1px solid #c4d2e1;
+#qg-site-footer{
+   background-color:#0B2E4C;
+    
+// #################################################
+    
+  .qg-more-info {
+    color: #FFF;
+    background: transparent;
     //padding: 1em;
 
     //margin: 0 0 1em 0;
-    section{
+      
+      a, a:link {
+          color: #FFF;  
+          text-decoration: none;
+      } 
+      
+         a:hover {
+          color: #FFF;  
+          text-decoration: underline;
+      } 
+       
+    div {
+      @extend .col-md-4;
       @extend .col-sm-3;
+&:nth-child(2n) {
+background-color: #0b3253;
+} 
+   
     }
-    ul{
+      
+    ul {
       list-style: none;
       padding-left: 0;
     }
   }
+    
+// #################################################
+    
   .qg-legal{
     text-align: center;
+      
+      .row {
+       background-color: #FFF;     
+      }  
+      
     p {
       @include fontSize(12px);
     }
   }
 }
 
+// #################################################
+// #################################################
+
 @include breakpoint($bs-md){
-  footer {
-    background: #ececec;
+  #qg-site-footer {
+    background: #0B2E4C;
   }
 }
