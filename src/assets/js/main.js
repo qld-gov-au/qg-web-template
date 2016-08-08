@@ -8,8 +8,8 @@ import activeSideNav from './sections/nav/current-secondary-nav';
     activeSideNav.highlightNavItem();
 
     // getting specific lib using the loader module
-    qg.glue.loader.init(function () {
-        // code to execute after libs are loaded
-    });
+    // qg.glue.loader.init(function () {
+    //     // code to execute after libs are loaded
+    // });
 
 }(jQuery));
