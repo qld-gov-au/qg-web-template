@@ -46,57 +46,74 @@
 
 	"use strict";
 	
-	var mobileNav = __webpack_require__(1);
-	var activeSideNav = __webpack_require__(2);
+	var _mobileNav = __webpack_require__(1);
+	
+	var _mobileNav2 = _interopRequireDefault(_mobileNav);
+	
+	var _currentSecondaryNav = __webpack_require__(3);
+	
+	var _currentSecondaryNav2 = _interopRequireDefault(_currentSecondaryNav);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	(function ($) {
 	    "use strict";
 	
-	    mobileNav();
-	    activeSideNav.init();
+	    _mobileNav2.default.interactions();
+	    _currentSecondaryNav2.default.highlightNavItem();
 	
 	    // getting specific lib using the loader module
-	    qg.glue.loader.init(function () {
-	        // code to execute after libs are loaded
-	    });
+	    // qg.glue.loader.init(function () {
+	    //     // code to execute after libs are loaded
+	    // });
 	})(jQuery);
 
 /***/ },
 /* 1 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	
-	var nav = function nav() {
+	var _helpers = __webpack_require__(2);
 	
-	    $("#qg-show-menu").on("click", function () {
-	        $("#qg-breadcrumb, #qg-site-nav").slideToggle("fast");
-	    });
-	    $("#qg-show-search").on("click", function () {
-	        $("#qg-search-form").slideToggle("fast");
-	    });
+	var _helpers2 = _interopRequireDefault(_helpers);
 	
-	    $(window).resize(function () {
-	        var $sitenav = $("#qg-site-nav");
-	        var $br = $("#qg-breadcrumb");
-	        var $tools = $("#qg-search-form");
-	        if ($(window).width() < 768) {} else if ($(window).width() >= 768 && $(window).width() <= 992) {
-	            if ($tools.is(":visible")) {
-	                $tools.hide("fast");
-	            }
-	        } else {
-	            if ($sitenav.is(":hidden")) {
-	                $sitenav.slideToggle("fast");
-	                $br.slideToggle("fast");
-	            }
-	            if ($tools.is(":hidden")) {
-	                $tools.slideToggle("fast");
-	            }
-	        }
-	    });
-	};
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	module.exports = nav;
+	var mobileNav = function () {
+	    var $sitenav = $("#qg-site-nav");
+	    var $br = $("#qg-breadcrumb");
+	    var $tools = $(".qg-tools");
+	
+	    function interactions() {
+	        $("#qg-show-menu").on("click", function () {
+	            $br.add($sitenav).slideToggle(200);
+	        });
+	        $("#qg-show-search").on("click", function () {
+	            $("#qg-search-form").toggleClass("qg-visually-hidden-md", 1500);
+	        });
+	        $(window).resize(function () {
+	            if ($(window).width() < _helpers2.default.breakpoints.bsSm) {} else if ($(window).width() >= _helpers2.default.breakpoints.bsSm && $(window).width() <= _helpers2.default.breakpoints.bsMd) {
+	                if ($tools.is(":visible")) {
+	                    $tools.hide(1);
+	                }
+	            } else {
+	                if ($sitenav.is(":hidden")) {
+	                    $sitenav.slideToggle(1);
+	                    $br.slideToggle(1);
+	                }
+	                if ($tools.is(":hidden")) {
+	                    $tools.slideToggle(1);
+	                }
+	            }
+	        });
+	    }
+	    return {
+	        interactions: interactions
+	    };
+	}();
+	
+	module.exports = mobileNav;
 
 /***/ },
 /* 2 */
@@ -104,53 +121,65 @@
 
 	"use strict";
 	
-	var activeSideNav = {
-	    init: function init() {
-	        var currentFilename = window.location.pathname.substr(window.location.pathname.lastIndexOf('/') + 1);
-	        this.highlightNavItem();
-	    },
-	    getCurrentTitle: function getCurrentTitle() {
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	var helpers = function () {
+	    var breakpoints = {
+	        bsXs: 480,
+	        bsSm: 768,
+	        bsMd: 992,
+	        bsLg: 1200
+	    };
+	    return {
+	        breakpoints: breakpoints
+	    };
+	}();
+	
+	exports.default = helpers;
+
+/***/ },
+/* 3 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	var activeSideNav = function () {
+	    var currentFilename = window.location.pathname.substr(window.location.pathname.lastIndexOf('/') + 1);
+	
+	    function refineText(text) {
+	        return text.toLowerCase().replace(/ /g, '');
+	    }
+	
+	    function getCurrentTitle() {
 	        var currentPageTitle = '';
 	        if ($('#guide-title').length > 0) {
 	            currentPageTitle = $('#guide-title').text();
-	        } else if ($('meta[name="DCTERMS.alternative"]').length > 0 && $('meta[name="DCTERMS.alternative"]').eq(0).attr('content') !== '') {
+	        } else if ($('meta[name="DCTERMS.alternative"]').length > 0 && refineText($('meta[name="DCTERMS.alternative"]').eq(0).attr('content')) !== '') {
 	            currentPageTitle = $('meta[name="DCTERMS.alternative"]').eq(0).attr('content');
 	        } else {
 	            var titleClone = $('h1', '#qg-primary-content').eq(0).clone();
 	            titleClone.find('.page-number').remove();
 	            currentPageTitle = titleClone.text();
 	        }
-	        return currentPageTitle;
-	    },
-	    highlightNavItem: function highlightNavItem() {
-	        var currentPageTitle = this.getCurrentTitle();
+	        return refineText(currentPageTitle);
+	    }
+	
+	    function highlightNavItem() {
+	        var currentPageTitle = getCurrentTitle();
 	        $(".qg-section-nav ul>li").each(function (index) {
-	            if ($.trim($(this).text()) === $.trim(currentPageTitle)) {
+	            if (refineText($(this).text()) === $.trim(currentPageTitle)) {
 	                $(this).find("a").addClass("active");
 	            }
 	        });
 	    }
-	};
+	
+	    return {
+	        highlightNavItem: highlightNavItem
+	    };
+	}();
 	
 	module.exports = activeSideNav;
-	
-	// Highlight current area in TOC
-	// if (document.getElementById('toc') !== null) {
-	//     // mark current page in guide
-	//     $('a[href="' + currentFilename + '"]', '#toc').parent().addClass('current');
-	//     $('.link-text', '#toc').filter(function () {
-	//         return $.trim($(this).text()) === $('h2', '#content').eq(0).text();
-	//     }).closest('li').addClass('current');
-	//
-	//     // Embed progress menu for pages that contain it (don't do this for the business franchise)
-	//     $('.current-page', '#nav-section')
-	//         .addClass('has-submenu')
-	//         .append($('#toc ol').clone());
-	// }
-	// // Highlight current area in progress bar
-	// if ($('#guide-progress').length > 0) {
-	//     $('a[href="' + currentFilename + '"]', '#guide-progress').parent().addClass('current');
-	// }
 
 /***/ }
 /******/ ]);

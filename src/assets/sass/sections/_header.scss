@@ -8,17 +8,16 @@
   // ##############################################################
 
   .qg-coat-of-arms {
-    @extend .col-xs-6;
+    @extend .col-xs-12;
     @extend .col-sm-6;
     @extend .col-md-4;
     @extend .col-lg-4;
     padding-bottom: .8em;
     overflow: hidden;
     img {
-      width: 287px;
+  //    width: 287px;
       height: 50px;
-      margin-top: 1px;
-      margin-left: 35px;
+
     }
   }
 
@@ -27,7 +26,7 @@
 // ##############################################################      
 
 .qg-utilities {
-  @extend .col-xs-6;
+  @extend .col-xs-12;
   @extend .col-sm-6;
   @extend .col-md-5;
   @extend .col-lg-5;
@@ -44,6 +43,10 @@
       background-color: transparent;
       padding: 0;
       border: none;
+        
+      display: inline-block;
+        .fa {display: block;}
+        
     }
   }
 }
@@ -54,7 +57,7 @@
   @extend .col-xs-12;
   @extend .col-sm-12;
   @extend .col-md-3;
-  @extend .col-lg-3;
+  @extend .col-lg-3; 
 
   input {
     border-radius: 0;
@@ -123,13 +126,6 @@
       border-top: 4px solid $sweblue;
     }
 
-    .qg-branding {
-      img {
-        width: 12em;
-        height: auto;
-      }
-    }
-
     .qg-utilities {
       display: block;
     }
@@ -143,43 +139,74 @@
         margin: 0;
         padding: 0;
         > li {
-          text-align: center;
+          text-align: left;
           border-right: none;
           display: block;
-          padding: 0.7em 0 0.7em 0;
+          padding: 0.7em;
 
-          //    border-bottom: 1px solid #CCC;
+            &:first-child {
+            padding: 0.7em;
+            } 
 
-          &:last-child {
+            &:last-child {
             border-bottom: none
-          }
+            }
 
-          &:nth-child(2n) {
+            &:nth-child(2n) {
             background-color: #505050;
-          }
+            }
         }
       }
     }
   }
 }
 
-//@include breakpoint($bs-xs){
-//  header {
-//    .qg-coat-of-arms {
-//      img {
-//        width: 9em;
-//        height: auto;
-//        margin-top: 0.4em;
-//      }
-//    }
-//    
-//    .fa:before {
-//     background-color: red;
-//        
-//    }  
-//    
-//    
-//}
-//}
+@include breakpoint($bs-xs){
+
+    header {
+    background-color: #f6f6f6;
+    .qg-content-divider {
+      display: block;
+      border-top: 4px solid $sweblue;
+    }
+
+    .qg-utilities {
+      display: block;
+       text-align: center;
+        .fa { 
+           font-size: 1.3em; 
+        }
+    }
+    #qg-site-nav {
+      background: #494949;
+      display: none;
+      margin: 0;
+      padding: 0;
+
+      ul {
+        margin: 0;
+        padding: 0;
+        > li {
+          text-align: left;
+          border-right: none;
+          display: block;
+          padding: 0.7em;
+
+            &:first-child {
+            padding: 0.7em;
+            } 
+
+            &:last-child {
+            border-bottom: none
+            }
+
+            &:nth-child(2n) {
+            background-color: #505050;
+            }
+        }
+      }
+    }
+  }
+}
 
 
