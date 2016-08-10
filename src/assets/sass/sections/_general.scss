@@ -2,18 +2,6 @@
  background-color: red;
     border: solid 2px #F00;
 }
-
-.qg-visually-hidden {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-
 .qg-hidden-sm-xs {
   @extend .hidden-sm;
   @extend .hidden-xs;
@@ -25,4 +13,13 @@
 .qg-hidden-md-lg{
   @extend .hidden-md;
   @extend .hidden-lg;
+}
+
+.qg-visually-hidden{
+  @include qg-visually-hidden;
+}
+@include breakpoint($bs-md) {
+  .qg-visually-hidden-md {
+    @include qg-visually-hidden;
+  }
 }

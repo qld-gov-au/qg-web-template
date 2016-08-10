@@ -1,16 +1,15 @@
-var mobileNav = require("./sections/nav/mobile-nav.js");
-var activeSideNav = require("./sections/nav/current-secondary-nav.js");
+import mobileNav from "./sections/nav/mobile-nav.js";
+import activeSideNav from './sections/nav/current-secondary-nav';
 
 
 (function($) {
     "use strict";
+    mobileNav.interactions();
+    activeSideNav.highlightNavItem();
 
-    mobileNav();
-    activeSideNav.init();
-    
     // getting specific lib using the loader module
-    qg.glue.loader.init(function () {
-        // code to execute after libs are loaded
-    });
-    
+    // qg.glue.loader.init(function () {
+    //     // code to execute after libs are loaded
+    // });
+
 }(jQuery));
