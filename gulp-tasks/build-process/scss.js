@@ -18,11 +18,10 @@ module.exports = function (gulp, plugins, config) {
                 }))
                 .pipe(gulp.dest(config.basepath.build+element+'/assets/'+config.version+'/css/'));
         };
-        var tasks = config.projects.map(function (element, index, array) {
+        config.projects.map(function (element, index, array) {
             for(i=0; i<filenames.length; i++){
                 steps(element, index, array);
             }
         });
-        return tasks;
     };
 };
