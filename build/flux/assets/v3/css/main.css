@@ -1534,7 +1534,7 @@ pre {
   .row:after {
     clear: both; }
 
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, #qg-site-footer .qg-more-info div, .col-md-3, #qg-search-form, #qg-three-col .qg-section-nav, #qg-two-col-nav .qg-section-nav, #qg-three-col .qg-secondary-content, #qg-two-col-aside .qg-secondary-content, .col-lg-3, #qg-search-form, .col-xs-4, .col-sm-4, .col-md-4, #qg-site-header .qg-coat-of-arms, #qg-site-footer .qg-more-info div, .col-lg-4, #qg-site-header .qg-coat-of-arms, .col-xs-5, .col-sm-5, .col-md-5, .qg-utilities, .col-lg-5, .qg-utilities, .col-xs-6, .col-sm-6, #qg-site-header .qg-coat-of-arms, .qg-utilities, #qg-feedback .qg-cta, #qg-feedback .qg-share, #qg-index-links.qg-2col div, .col-md-6, #qg-three-col #qg-primary-content, #qg-index-links.qg-2col div, .col-lg-6, #qg-index-links.qg-2col div, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, #qg-two-col-aside #qg-primary-content, #qg-two-col-nav #qg-primary-content, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, #qg-site-header .qg-coat-of-arms, .qg-utilities, #qg-search-form, #qg-feedback .qg-cta, #qg-feedback .qg-share, .col-sm-12, #qg-search-form, #qg-site-name h2, #qg-site-nav, #qg-breadcrumb, #qg-three-col #qg-primary-content, #qg-two-col-aside #qg-primary-content, #qg-two-col-nav #qg-primary-content, #qg-full-width #qg-primary-content, #qg-three-col .qg-section-nav, #qg-two-col-nav .qg-section-nav, #qg-three-col .qg-secondary-content, #qg-two-col-aside .qg-secondary-content, .col-md-12, .col-lg-12 {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, #qg-site-footer .qg-more-info div, .col-md-3, #qg-search-form, #qg-three-col .qg-section-nav, #qg-two-col-nav .qg-section-nav, #qg-three-col .qg-secondary-content, #qg-two-col-aside .qg-secondary-content, .col-lg-3, #qg-search-form, .col-xs-4, .col-sm-4, .col-md-4, #qg-site-header .qg-coat-of-arms, #qg-site-footer .qg-more-info div, .col-lg-4, #qg-site-header .qg-coat-of-arms, .col-xs-5, .col-sm-5, .col-md-5, .qg-utilities, #qg-page-feedback form ol li, #qg-page-feedback form ol.questions li, #qg-page-feedback form ul li, #qg-page-feedback form ul.questions li, .col-lg-5, .qg-utilities, .col-xs-6, .col-sm-6, #qg-site-header .qg-coat-of-arms, .qg-utilities, #qg-feedback .qg-cta, #qg-feedback .qg-share, #qg-index-links.qg-2col div, .col-md-6, #qg-three-col #qg-primary-content, #qg-index-links.qg-2col div, .col-lg-6, #qg-index-links.qg-2col div, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, #qg-two-col-aside #qg-primary-content, #qg-two-col-nav #qg-primary-content, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, #qg-site-header .qg-coat-of-arms, .qg-utilities, #qg-search-form, #qg-feedback .qg-cta, #qg-feedback .qg-share, .col-sm-12, #qg-search-form, #qg-site-name h2, #qg-site-nav, #qg-breadcrumb, #qg-three-col #qg-primary-content, #qg-two-col-aside #qg-primary-content, #qg-two-col-nav #qg-primary-content, #qg-full-width #qg-primary-content, #qg-three-col .qg-section-nav, #qg-two-col-nav .qg-section-nav, #qg-three-col .qg-secondary-content, #qg-two-col-aside .qg-secondary-content, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -1803,7 +1803,7 @@ pre {
     margin-left: 100%; } }
 
 @media (min-width: 992px) {
-  .col-md-1, .col-md-2, .col-md-3, #qg-search-form, #qg-three-col .qg-section-nav, #qg-two-col-nav .qg-section-nav, #qg-three-col .qg-secondary-content, #qg-two-col-aside .qg-secondary-content, .col-md-4, #qg-site-header .qg-coat-of-arms, #qg-site-footer .qg-more-info div, .col-md-5, .qg-utilities, .col-md-6, #qg-three-col #qg-primary-content, #qg-index-links.qg-2col div, .col-md-7, .col-md-8, .col-md-9, #qg-two-col-aside #qg-primary-content, #qg-two-col-nav #qg-primary-content, .col-md-10, .col-md-11, .col-md-12 {
+  .col-md-1, .col-md-2, .col-md-3, #qg-search-form, #qg-three-col .qg-section-nav, #qg-two-col-nav .qg-section-nav, #qg-three-col .qg-secondary-content, #qg-two-col-aside .qg-secondary-content, .col-md-4, #qg-site-header .qg-coat-of-arms, #qg-site-footer .qg-more-info div, .col-md-5, .qg-utilities, #qg-page-feedback form ol li, #qg-page-feedback form ol.questions li, #qg-page-feedback form ul li, #qg-page-feedback form ul.questions li, .col-md-6, #qg-three-col #qg-primary-content, #qg-index-links.qg-2col div, .col-md-7, .col-md-8, .col-md-9, #qg-two-col-aside #qg-primary-content, #qg-two-col-nav #qg-primary-content, .col-md-10, .col-md-11, .col-md-12 {
     float: left; }
   .col-md-1 {
     width: 8.33333%; }
@@ -1813,7 +1813,7 @@ pre {
     width: 25%; }
   .col-md-4, #qg-site-header .qg-coat-of-arms, #qg-site-footer .qg-more-info div {
     width: 33.33333%; }
-  .col-md-5, .qg-utilities {
+  .col-md-5, .qg-utilities, #qg-page-feedback form ol li, #qg-page-feedback form ol.questions li, #qg-page-feedback form ul li, #qg-page-feedback form ul.questions li {
     width: 41.66667%; }
   .col-md-6, #qg-three-col #qg-primary-content, #qg-index-links.qg-2col div {
     width: 50%; }
@@ -7125,7 +7125,10 @@ http://stackoverflow.com/questions/11459051/firefox-moz-placeholder-not-working 
     padding: 0; }
     #qg-page-feedback form ol li, #qg-page-feedback form ol.questions li, #qg-page-feedback form ul li, #qg-page-feedback form ul.questions li {
       margin: 0;
-      padding: 0; }
+      padding: 0;
+      clear: none; }
+    #qg-page-feedback form ol ol > li, #qg-page-feedback form ol.questions ol > li, #qg-page-feedback form ul ol > li, #qg-page-feedback form ul.questions ol > li {
+      float: none; }
   #qg-page-feedback form .label {
     color: #000 !important;
     display: inline;

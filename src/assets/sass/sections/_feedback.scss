@@ -84,10 +84,16 @@ padding:0;
 
 li {
 margin: 0;
-padding:0;
-
+padding:0;  
+clear: none;
+@extend .col-md-5;
+       
 }
-
+    
+    
+    ol > li {
+     float: none;   
+    }    
 
 }  
     
@@ -105,8 +111,8 @@ padding:0;
     
 
 fieldset {
-  color: #000 !important;  
-    margin: 0;
+color: #000 !important;  
+margin: 0;
 padding:0;
 
 legend {
@@ -134,17 +140,11 @@ width:auto;
 max-width: auto;
 margin: 0;
 padding:0;   
-
-
 }
 
 }   
 
-
 }
-
-
-
 
 
 
