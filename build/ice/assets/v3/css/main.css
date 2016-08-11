@@ -7092,14 +7092,8 @@ http://stackoverflow.com/questions/11459051/firefox-moz-placeholder-not-working 
   padding-top: 1em;
   padding-bottom: 1em;
   font-size: 1.2em; }
-  #qg-feedback .qg-cta .qg-glue-btn {
-    color: #FFF;
-    background: #005375;
-    border: none;
-    -webkit-transition: all ease .2s;
-    transition: all ease .2s; }
-    #qg-feedback .qg-cta .qg-glue-btn:hover {
-      background: #0b2e4c; }
+  #qg-feedback .fa {
+    font-size: 1.2em; }
   #qg-feedback .qg-cta ul {
     margin: 0;
     padding: 0;
@@ -7120,6 +7114,52 @@ http://stackoverflow.com/questions/11459051/firefox-moz-placeholder-not-working 
       #qg-feedback .qg-share ul li {
         display: inline-block;
         margin: 0 .5em; }
+
+#qg-page-feedback {
+  background-color: #F6F6F6;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  color: #000; }
+  #qg-page-feedback form ol, #qg-page-feedback form ol.questions, #qg-page-feedback form ul, #qg-page-feedback form ul.questions {
+    margin: 0;
+    padding: 0; }
+    #qg-page-feedback form ol li, #qg-page-feedback form ol.questions li, #qg-page-feedback form ul li, #qg-page-feedback form ul.questions li {
+      margin: 0;
+      padding: 0; }
+  #qg-page-feedback form .label {
+    color: #000 !important;
+    display: inline;
+    background-color: aqua;
+    position: static;
+    width: auto;
+    max-width: auto;
+    margin: 0;
+    padding: 0; }
+  #qg-page-feedback form fieldset {
+    color: #000 !important;
+    margin: 0;
+    padding: 0; }
+    #qg-page-feedback form fieldset legend {
+      color: #000 !important;
+      margin: 0;
+      padding: 0; }
+  #qg-page-feedback form label {
+    color: #000 !important;
+    display: inline;
+    background-color: aqua;
+    position: static;
+    width: auto;
+    max-width: auto;
+    margin: 0;
+    padding: 0; }
+  #qg-page-feedback form input {
+    display: inline;
+    background-color: aquamarine;
+    position: static;
+    width: auto;
+    max-width: auto;
+    margin: 0;
+    padding: 0; }
 
 #qg-three-col .qg-section-nav, #qg-two-col-nav .qg-section-nav {
   background: #ececec; }

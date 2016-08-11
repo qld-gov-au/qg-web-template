@@ -46,10 +46,12 @@ font-weight: bold;
 
 @include breakpoint($bs-md){
   #qg-breadcrumb{
-    background: $sweblue;
-    
-      display: none;
-  
+  background: $sweblue;
+
+     display: none;
+//  @include qg-visually-hidden;
+      
+      
     ol {
 text-align: center;
       margin-left: 0;
@@ -87,7 +89,12 @@ margin: 0;
 
 @include breakpoint($bs-sm){
   #qg-breadcrumb {
-      display: none;
+
+  display: none;
+      
+  //   @include qg-visually-hidden;   
+      
+      
     padding-right: 0;
     padding-left: 0;
   }

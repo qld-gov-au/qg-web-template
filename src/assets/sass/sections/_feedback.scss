@@ -3,27 +3,27 @@ background-color:#007EB1;
 padding-top: 1em;
 padding-bottom: 1em;
 font-size: 1.2em;    
-    
-    
-    
+
+.fa {   
+font-size: 1.2em;       
+}   
+
 .qg-cta {
 @extend .col-md-pull-6;
 @extend .col-sm-6;
 @extend .col-xs-12;
-//padding: 0;
-//margin: 0;
-//background-color: aqua;
 
-.qg-glue-btn {
-color: #FFF;
-background: $swedarkblue; 
-border: none; 
-transition: all ease .2s;
-&:hover{
-background: #0b2e4c;
-}      
-}
-    
+
+//.qg-glue-btn {
+//color: #FFF;
+//background: $swedarkblue; 
+//border: none; 
+//transition: all ease .2s;
+//&:hover{
+//background: #0b2e4c;
+//}      
+//}
+
 ul {
 margin: 0;
 padding:0;
@@ -35,20 +35,19 @@ display: inline;
 }   
 
 }   
-    
+
 
 }
-    
+
 // #################################################
-    
+
 .qg-share {
 color: #FFF;
 @extend .col-md-push-6;
 @extend .col-sm-6;
 @extend .col-xs-12;
-//background-color: aquamarine;
 text-align: right;
-    
+
 h2 {
 display: inline-block;
 }  
@@ -60,14 +59,94 @@ display: inline-block;
 
 li {
 display: inline-block; 
-    margin: 0 .5em;
+margin: 0 .5em;
 }   
 
 }
 }
-    
-    
+
+
 }
+
+// #################################################
+
+
+#qg-page-feedback {
+background-color: #F6F6F6;
+padding-top: 1em;
+padding-bottom: 1em;  
+    color: #000;
+    
+form {
+ol, ol.questions, ul, ul.questions {
+margin: 0;
+padding:0;
+
+li {
+margin: 0;
+padding:0;
+
+}
+
+
+}  
+    
+    
+.label {
+color: #000 !important;
+display: inline;
+background-color: aqua;
+position: static; 
+width:auto;
+max-width: auto;
+margin: 0;
+padding:0; 
+}    
+    
+
+fieldset {
+  color: #000 !important;  
+    margin: 0;
+padding:0;
+
+legend {
+color: #000 !important;
+margin: 0;
+padding:0;}   
+}  
+
+label {
+color: #000 !important;
+display: inline;
+background-color: aqua;
+position: static; 
+width:auto;
+max-width: auto;
+margin: 0;
+padding:0; 
+} 
+
+input {
+display: inline;
+background-color: aquamarine;
+position: static; 
+width:auto;
+max-width: auto;
+margin: 0;
+padding:0;   
+
+
+}
+
+}   
+
+
+}
+
+
+
+
+
 
 // #################################################
 // #################################################
