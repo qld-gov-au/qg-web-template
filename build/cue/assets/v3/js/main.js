@@ -63,9 +63,9 @@
 	    _currentSecondaryNav2.default.highlightNavItem();
 	
 	    // getting specific lib using the loader module
-	    // qg.glue.loader.init(function () {
-	    //     // code to execute after libs are loaded
-	    // });
+	    qg.glue.loader.init(function () {
+	        // code to execute after libs are loaded
+	    });
 	})(jQuery);
 
 /***/ },
