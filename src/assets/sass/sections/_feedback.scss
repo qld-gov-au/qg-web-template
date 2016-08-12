@@ -2,25 +2,44 @@
 background-color:#007EB1;
 padding-top: 1em;
 padding-bottom: 1em;
-font-size: 1.2em;    
+font-size: 1.2em; 
+
+a, a:link {
+color: #FFF;  
+} 
+
+a:hover {
+color: #FFF;  
+text-decoration: underline; 
+} 
+
+#page-feedback-useful {
+
+background-color: #005375;
+color: #FFF;
+border: #0B2E4C;
+transition: all .2s;
+    
+&:hover {
+background-color: #0B2E4C;
+}
+    
+}   
 
 h2 {
 display: inline;
-    margin: 0;
-    padding: 0;
-    color: #FFF;
+margin: 0;
+padding: 0;
+color: #FFF;
 }  
-
 
 .fa {   
 font-size: 1.2em;       
 }   
 
 .qg-cta, .qg-share {
+@extend .col-md-4;
 @extend .col-sm-6;
-@extend .col-xs-12;
-
-
 
 ul {
 margin: 0;
@@ -28,37 +47,26 @@ padding:0;
 display: inline-block;
 text-align: right;
 color: #FFF;
+    
 li {
-display: inline;   
+display: inline; 
+margin-left: .5em;  
 }   
 
 }   
-
 
 }
 
 .qg-cta {
-@extend .col-md-pull-6;
-
-//.qg-glue-btn {
-//color: #FFF;
-//background: $swedarkblue; 
-//border: none; 
-//transition: all ease .2s;
-//&:hover{
-//background: #0b2e4c;
-//}      
-//}   
-
-
+@extend .col-md-pull-4;
+@extend .col-sm-pull-6;    
 }
 
 .qg-share {
-@extend .col-md-push-6;    
+@extend .col-md-push-4; 
+@extend .col-sm-push-6;     
 text-align: right;   
-
 }
-
 
 
 // #################################################
@@ -100,6 +108,13 @@ padding-bottom: 1em;
 color: #000;
 @include fontSize(16px); 
 
+
+#feedback-captcha-container {
+display:none; 
+
+}
+
+
 .warn {    
 border: 2px solid red; 
 padding: 1em;
@@ -115,10 +130,11 @@ color: #c90000;
 label {
 color: #c90000;    
 }
-    
+
 input {
 border: 2px solid red; 
 }
+textarea {border: 2px solid red; }
 
 } 
 
@@ -132,28 +148,17 @@ color: #c90000;
 @include fontSize(16px); 
 } 
 
-form {
+form.form {
 ol, ol.questions, ul, ul.questions {
 margin: 0;
-padding:0;
+padding: 1em 0;
+list-style-type: none;
 
-> li {
-display: block;
-margin: 5px 0;
-padding:0;  
-clear: none;
+} 
 
-ul.choices li {
-//  display: inline-block;   
-margin: .3em .25em;  
-
-input {
-margin: .3em auto;
-}
-}
-
-}
-
+ul.actions li {
+display: inline-block;
+margin-right: 1em;
 }  
 
 .label {
@@ -180,7 +185,7 @@ margin: 0;
 padding:0;
 border-bottom: none;   
 }  
-    
+
 }  
 
 label {
@@ -205,7 +210,7 @@ padding:0;
 }
 
 input[type="radio"] {
-  
+
 }
 
 #comments {
@@ -220,17 +225,22 @@ display: block;
 // #################################################
 // #################################################
 
-//@include breakpoint($bs-md) {
-//#qg-feedback {
-//background: $sweblue;
-//}
-//}
-//
-//@include breakpoint($bs-sm){
-//#qg-feedback{
-//.qg-cta{
-//text-align: center;
-//}
+@include breakpoint($bs-md) {
+
+}
+
+
+
+@include breakpoint($bs-sm){
+#qg-feedback{
+.qg-cta, .qg-share  {
+text-align: center;
+}
+
+}
+}
+
+
 //.qg-share{
 ////background: $swedarkblue;
 ////padding: 1em 0 1em 0;
