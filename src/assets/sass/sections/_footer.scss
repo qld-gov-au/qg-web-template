@@ -21,9 +21,9 @@
           text-decoration: underline;
       } 
        
-    div {
-      @extend .col-md-4;
-      @extend .col-sm-3;
+div {
+@extend .col-md-4;
+@extend .col-sm-3;
 &:nth-child(2n) {
 background-color: #0b3253;
 } 
@@ -35,6 +35,65 @@ background-color: #0b3253;
       padding-left: 0;
     }
   }
+    
+   
+// #################################################
+    
+  .qg-legal{
+    text-align: center;
+      
+      .row {
+       background-color: #FFF;     
+      }  
+      
+    p {
+      @include fontSize(12px);
+    }
+  }
+}
+
+// #################################################
+// #################################################
+
+
+#qg-site-footer-cue {
+   background-color:#fcfcfc;
+    
+// #################################################
+    
+  .qg-more-info {
+    color: #404040;
+    background: transparent;
+    //padding: 1em;
+
+    //margin: 0 0 1em 0;
+      
+      a, a:link {
+          color: #555555;  
+          text-decoration: none;
+      } 
+      
+         a:hover {
+          color: #2e2e2e;  
+          text-decoration: underline;
+      } 
+       
+div {
+@extend .col-md-5;
+@extend .col-sm-3;
+&:nth-child(2n) {
+background-color: #f5f5f5;
+} 
+   
+    }
+      
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+  }
+    
+   
     
 // #################################################
     
@@ -50,6 +109,12 @@ background-color: #0b3253;
     }
   }
 }
+
+
+
+
+
+
 
 // #################################################
 // #################################################
