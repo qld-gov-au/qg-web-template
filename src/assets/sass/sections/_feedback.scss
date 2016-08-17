@@ -38,7 +38,7 @@ font-size: 1.2em;
 }   
 
 .qg-cta, .qg-share {
-@extend .col-md-4;
+@extend .col-md-6;
 @extend .col-sm-6;
 
 ul {
@@ -58,12 +58,12 @@ margin-left: .5em;
 }
 
 .qg-cta {
-@extend .col-md-pull-4;
+@extend .col-md-pull-6;
 @extend .col-sm-pull-6;    
 }
 
 .qg-share {
-@extend .col-md-push-4; 
+@extend .col-md-push-6; 
 @extend .col-sm-push-6;     
 text-align: right;   
 }
