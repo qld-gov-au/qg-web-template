@@ -15,7 +15,7 @@
 <style>
 
 #qg-site-header {
-background-image: url("../assets/v3/images/demo-bg.png");
+background-image: url("../cue-assets/demo-bg.png");
 }
 
 #qg-site-name {
@@ -28,7 +28,7 @@ color: #FFF !important;
 }
 
 #qg-search-form div {
-border: 10px solid #de8787;
+border: 7px solid #de8787;
 }
 
 #qg-search-form div button {
@@ -40,8 +40,10 @@ background-color: #dea3a3 !important;
 background-color:#56B7C5;   
 }
 
-.qg-section-nav {
-background-color: #FFF !important;    
+#qg-three-col .qg-section-nav {
+background-color: #FFF !important; 
+padding-left: 15px !important;  
+padding-right: 15px !important;  
 }
       
 .qg-section-nav a:before {
@@ -65,7 +67,12 @@ color: #000 !important;
 background-color: #FFF !important;    
 }
 
-.qg-secondary-content {
+#qg-three-col #qg-secondary-content { 
+padding-left: 15px;  
+padding-right: 15px; 
+}
+    
+#qg-secondary-content {
 background-color: #FFF !important;     
 }
 
@@ -230,7 +237,7 @@ border-width: 1px 1px 1px 10px;
 
             </div>
 
-            <aside class="qg-secondary-content">
+            <aside id="qg-secondary-content">
                 <!--#include virtual="/assets/includes/asides/aside-global.html"-->
                 <!--#include virtual="/assets/includes/asides/aside-disaster-alert.html" -->
                 <!--#include virtual="/assets/includes/asides/aside-contact-qgov.html" -->
@@ -248,17 +255,14 @@ border-width: 1px 1px 1px 10px;
         </div>
 
     </div>
-    <!--#include virtual="/assets/includes/global/post-page-cue.html"-->
-
+    <!--#include virtual="/cue-assets/includes/post-page-cue.html"-->
 
     <footer id="qg-site-footer-cue" class="container-fluid qg-site-width">
-        <!--#include virtual="/assets/includes/site-footer/footer-cue-site-map.html"-->
+        <!--#include virtual="/cue-assets/includes/footer-cue-site-map.html"-->
         <!--#include virtual="/assets/includes/site-footer/footer-legals.html"-->
     </footer>
 
-
     <!--#include virtual="/assets/includes/site-footer/footer-scripts.html"-->
-
 
 </body>
 

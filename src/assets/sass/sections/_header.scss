@@ -1,14 +1,9 @@
 #qg-site-header {
-
   background-color: #f6f6f6;
   margin-top: 32px;
   padding-top: 1em;
   padding-bottom: 0;
     
- //background-image: url('../images/header-bg.jpg');
-    
-    
-
   // ##############################################################
 
   .qg-coat-of-arms {
@@ -47,10 +42,10 @@
       background-color: transparent;
       padding: 0;
       border: none;
-        
       display: inline-block;
-        .fa {display: block;}
-        
+        .fa {
+            display: block;
+            }
     }
   }
 }
@@ -100,35 +95,7 @@
     .qg-utilities {
       display: block;
     }
-//    #qg-site-nav {
-//      background: #494949;
-//      display: none;
-//      margin: 0;
-//      padding: 0;
-//
-//      ul {
-//        margin: 0;
-//        padding: 0;
-//        > li {
-//          text-align: left;
-//          border-right: none;
-//          display: block;
-//          padding: 0.7em;
-//
-//            &:first-child {
-//            padding: 0.7em;
-//            } 
-//
-//            &:last-child {
-//            border-bottom: none
-//            }
-//
-//            &:nth-child(2n) {
-//            background-color: #505050;
-//            }
-//        }
-//      }
-//    }
+
   }
 }
 
@@ -148,35 +115,7 @@
            font-size: 1.3em; 
         }
     }
-//    #qg-site-nav {
-//      background: #494949;
-//      display: none;
-//      margin: 0;
-//      padding: 0;
-//
-//      ul {
-//        margin: 0;
-//        padding: 0;
-//        > li {
-//          text-align: left;
-//          border-right: none;
-//          display: block;
-//          padding: 0.7em;
-//
-//            &:first-child {
-//            padding: 0.7em;
-//            } 
-//
-//            &:last-child {
-//            border-bottom: none
-//            }
-//
-//            &:nth-child(2n) {
-//            background-color: #505050;
-//            }
-//        }
-//      }
-//    }
+
   }
 }
 

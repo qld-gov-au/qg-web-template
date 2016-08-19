@@ -6,6 +6,7 @@
     @extend .col-md-pull-9;
   }
 }
+
 #qg-two-col-nav {
   .qg-section-nav{
     @extend .col-sm-12;
@@ -20,7 +21,6 @@
        background: #ececec;
   }
 }
-
 
 // responsive styles
 @include breakpoint($bs-md){
