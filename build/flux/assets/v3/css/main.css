@@ -1534,7 +1534,7 @@ pre {
   .row:after {
     clear: both; }
 
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, #qg-site-footer .qg-more-info div, #qg-site-footer-cue .qg-more-info div, .col-md-3, #qg-search-form, #qg-three-col .qg-section-nav, #qg-two-col-nav .qg-section-nav, #qg-three-col #qg-secondary-content, #qg-two-col-aside #qg-secondary-content, .col-lg-3, #qg-search-form, .col-xs-4, .col-sm-4, .col-md-4, #qg-site-header .qg-coat-of-arms, #qg-site-footer .qg-more-info div, .col-lg-4, #qg-site-header .qg-coat-of-arms, .col-xs-5, .col-sm-5, .col-md-5, .qg-utilities, #qg-site-footer-cue .qg-more-info div, .col-lg-5, .qg-utilities, .col-xs-6, .col-sm-6, #qg-site-header .qg-coat-of-arms, .qg-utilities, #qg-feedback .qg-cta, #qg-feedback .qg-share, #qg-index-links.qg-2col div, .col-md-6, #qg-three-col #qg-primary-content, #qg-feedback .qg-cta, #qg-feedback .qg-share, #qg-index-links.qg-2col div, .col-lg-6, #qg-index-links.qg-2col div, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, #qg-two-col-aside #qg-primary-content, #qg-two-col-nav #qg-primary-content, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, #qg-site-header .qg-coat-of-arms, .qg-utilities, #qg-search-form, .col-sm-12, #qg-search-form, #qg-site-name h2, #qg-site-nav ul, #qg-breadcrumb, #qg-three-col #qg-primary-content, #qg-two-col-aside #qg-primary-content, #qg-two-col-nav #qg-primary-content, #qg-full-width #qg-primary-content, #qg-three-col .qg-section-nav, #qg-two-col-nav .qg-section-nav, #qg-three-col #qg-secondary-content, #qg-two-col-aside #qg-secondary-content, .col-md-12, .col-lg-12 {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, #qg-site-footer .qg-more-info div, #qg-site-footer-cue .qg-more-info div, .col-md-3, #qg-search-form, #qg-three-col .qg-section-nav, #qg-two-col-nav .qg-section-nav, #qg-three-col #qg-secondary-content, #qg-two-col-aside #qg-secondary-content, .col-lg-3, #qg-search-form, .col-xs-4, .col-sm-4, #qg-index-links.qg-3col div, .col-md-4, #qg-site-header .qg-coat-of-arms, #qg-site-footer .qg-more-info div, #qg-index-links.qg-3col div, .index-page-grid div, .index-page-grid-1 div, .col-lg-4, #qg-site-header .qg-coat-of-arms, #qg-index-links.qg-3col div, .index-page-grid div, .index-page-grid-1 div, .col-xs-5, .col-sm-5, .col-md-5, .qg-utilities, #qg-site-footer-cue .qg-more-info div, .col-lg-5, .qg-utilities, .col-xs-6, .col-sm-6, #qg-site-header .qg-coat-of-arms, .qg-utilities, #qg-feedback .qg-cta, #qg-feedback .qg-share, #qg-index-links.qg-2col div, .index-page-grid div, .index-page-grid-1 div, .col-md-6, #qg-three-col #qg-primary-content, #qg-feedback .qg-cta, #qg-feedback .qg-share, #qg-index-links.qg-2col div, #qg-search-form-content, .col-lg-6, #qg-index-links.qg-2col div, #qg-search-form-content, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, #qg-two-col-aside #qg-primary-content, #qg-two-col-nav #qg-primary-content, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, #qg-site-header .qg-coat-of-arms, .qg-utilities, #qg-search-form, .col-sm-12, #qg-search-form, #qg-site-name h2, #qg-site-nav ul, #qg-breadcrumb, #qg-three-col #qg-primary-content, #qg-two-col-aside #qg-primary-content, #qg-two-col-nav #qg-primary-content, #qg-full-width #qg-primary-content, #qg-three-col .qg-section-nav, #qg-two-col-nav .qg-section-nav, #qg-three-col #qg-secondary-content, #qg-two-col-aside #qg-secondary-content, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -1697,7 +1697,7 @@ pre {
   margin-left: 100%; }
 
 @media (min-width: 768px) {
-  .col-sm-1, .col-sm-2, .col-sm-3, #qg-site-footer .qg-more-info div, #qg-site-footer-cue .qg-more-info div, .col-sm-4, .col-sm-5, .col-sm-6, #qg-site-header .qg-coat-of-arms, .qg-utilities, #qg-feedback .qg-cta, #qg-feedback .qg-share, #qg-index-links.qg-2col div, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, #qg-search-form, #qg-site-name h2, #qg-site-nav ul, #qg-breadcrumb, #qg-three-col #qg-primary-content, #qg-two-col-aside #qg-primary-content, #qg-two-col-nav #qg-primary-content, #qg-full-width #qg-primary-content, #qg-three-col .qg-section-nav, #qg-two-col-nav .qg-section-nav, #qg-three-col #qg-secondary-content, #qg-two-col-aside #qg-secondary-content {
+  .col-sm-1, .col-sm-2, .col-sm-3, #qg-site-footer .qg-more-info div, #qg-site-footer-cue .qg-more-info div, .col-sm-4, #qg-index-links.qg-3col div, .col-sm-5, .col-sm-6, #qg-site-header .qg-coat-of-arms, .qg-utilities, #qg-feedback .qg-cta, #qg-feedback .qg-share, #qg-index-links.qg-2col div, .index-page-grid div, .index-page-grid-1 div, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, #qg-search-form, #qg-site-name h2, #qg-site-nav ul, #qg-breadcrumb, #qg-three-col #qg-primary-content, #qg-two-col-aside #qg-primary-content, #qg-two-col-nav #qg-primary-content, #qg-full-width #qg-primary-content, #qg-three-col .qg-section-nav, #qg-two-col-nav .qg-section-nav, #qg-three-col #qg-secondary-content, #qg-two-col-aside #qg-secondary-content {
     float: left; }
   .col-sm-1 {
     width: 8.33333%; }
@@ -1705,11 +1705,11 @@ pre {
     width: 16.66667%; }
   .col-sm-3, #qg-site-footer .qg-more-info div, #qg-site-footer-cue .qg-more-info div {
     width: 25%; }
-  .col-sm-4 {
+  .col-sm-4, #qg-index-links.qg-3col div {
     width: 33.33333%; }
   .col-sm-5 {
     width: 41.66667%; }
-  .col-sm-6, #qg-site-header .qg-coat-of-arms, .qg-utilities, #qg-feedback .qg-cta, #qg-feedback .qg-share, #qg-index-links.qg-2col div {
+  .col-sm-6, #qg-site-header .qg-coat-of-arms, .qg-utilities, #qg-feedback .qg-cta, #qg-feedback .qg-share, #qg-index-links.qg-2col div, .index-page-grid div, .index-page-grid-1 div {
     width: 50%; }
   .col-sm-7 {
     width: 58.33333%; }
@@ -1803,7 +1803,7 @@ pre {
     margin-left: 100%; } }
 
 @media (min-width: 992px) {
-  .col-md-1, .col-md-2, .col-md-3, #qg-search-form, #qg-three-col .qg-section-nav, #qg-two-col-nav .qg-section-nav, #qg-three-col #qg-secondary-content, #qg-two-col-aside #qg-secondary-content, .col-md-4, #qg-site-header .qg-coat-of-arms, #qg-site-footer .qg-more-info div, .col-md-5, .qg-utilities, #qg-site-footer-cue .qg-more-info div, .col-md-6, #qg-three-col #qg-primary-content, #qg-feedback .qg-cta, #qg-feedback .qg-share, #qg-index-links.qg-2col div, .col-md-7, .col-md-8, .col-md-9, #qg-two-col-aside #qg-primary-content, #qg-two-col-nav #qg-primary-content, .col-md-10, .col-md-11, .col-md-12 {
+  .col-md-1, .col-md-2, .col-md-3, #qg-search-form, #qg-three-col .qg-section-nav, #qg-two-col-nav .qg-section-nav, #qg-three-col #qg-secondary-content, #qg-two-col-aside #qg-secondary-content, .col-md-4, #qg-site-header .qg-coat-of-arms, #qg-site-footer .qg-more-info div, #qg-index-links.qg-3col div, .index-page-grid div, .index-page-grid-1 div, .col-md-5, .qg-utilities, #qg-site-footer-cue .qg-more-info div, .col-md-6, #qg-three-col #qg-primary-content, #qg-feedback .qg-cta, #qg-feedback .qg-share, #qg-index-links.qg-2col div, #qg-search-form-content, .col-md-7, .col-md-8, .col-md-9, #qg-two-col-aside #qg-primary-content, #qg-two-col-nav #qg-primary-content, .col-md-10, .col-md-11, .col-md-12 {
     float: left; }
   .col-md-1 {
     width: 8.33333%; }
@@ -1811,11 +1811,11 @@ pre {
     width: 16.66667%; }
   .col-md-3, #qg-search-form, #qg-three-col .qg-section-nav, #qg-two-col-nav .qg-section-nav, #qg-three-col #qg-secondary-content, #qg-two-col-aside #qg-secondary-content {
     width: 25%; }
-  .col-md-4, #qg-site-header .qg-coat-of-arms, #qg-site-footer .qg-more-info div {
+  .col-md-4, #qg-site-header .qg-coat-of-arms, #qg-site-footer .qg-more-info div, #qg-index-links.qg-3col div, .index-page-grid div, .index-page-grid-1 div {
     width: 33.33333%; }
   .col-md-5, .qg-utilities, #qg-site-footer-cue .qg-more-info div {
     width: 41.66667%; }
-  .col-md-6, #qg-three-col #qg-primary-content, #qg-feedback .qg-cta, #qg-feedback .qg-share, #qg-index-links.qg-2col div {
+  .col-md-6, #qg-three-col #qg-primary-content, #qg-feedback .qg-cta, #qg-feedback .qg-share, #qg-index-links.qg-2col div, #qg-search-form-content {
     width: 50%; }
   .col-md-7 {
     width: 58.33333%; }
@@ -1909,7 +1909,7 @@ pre {
     margin-left: 100%; } }
 
 @media (min-width: 1200px) {
-  .col-lg-1, .col-lg-2, .col-lg-3, #qg-search-form, .col-lg-4, #qg-site-header .qg-coat-of-arms, .col-lg-5, .qg-utilities, .col-lg-6, #qg-index-links.qg-2col div, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
+  .col-lg-1, .col-lg-2, .col-lg-3, #qg-search-form, .col-lg-4, #qg-site-header .qg-coat-of-arms, #qg-index-links.qg-3col div, .index-page-grid div, .index-page-grid-1 div, .col-lg-5, .qg-utilities, .col-lg-6, #qg-index-links.qg-2col div, #qg-search-form-content, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
     float: left; }
   .col-lg-1 {
     width: 8.33333%; }
@@ -1917,11 +1917,11 @@ pre {
     width: 16.66667%; }
   .col-lg-3, #qg-search-form {
     width: 25%; }
-  .col-lg-4, #qg-site-header .qg-coat-of-arms {
+  .col-lg-4, #qg-site-header .qg-coat-of-arms, #qg-index-links.qg-3col div, .index-page-grid div, .index-page-grid-1 div {
     width: 33.33333%; }
   .col-lg-5, .qg-utilities {
     width: 41.66667%; }
-  .col-lg-6, #qg-index-links.qg-2col div {
+  .col-lg-6, #qg-index-links.qg-2col div, #qg-search-form-content {
     width: 50%; }
   .col-lg-7 {
     width: 58.33333%; }
@@ -5554,11 +5554,11 @@ button.close {
   .carousel-indicators {
     bottom: 20px; } }
 
-.clearfix:before, #qg-index-links:before, .clearfix:after, #qg-index-links:after {
+.clearfix:before, #qg-index-links:before, .index-page-grid:before, .index-page-grid-1:before, .clearfix:after, #qg-index-links:after, .index-page-grid:after, .index-page-grid-1:after {
   content: " ";
   display: table; }
 
-.clearfix:after, #qg-index-links:after {
+.clearfix:after, #qg-index-links:after, .index-page-grid:after, .index-page-grid-1:after {
   clear: both; }
 
 .center-block {
@@ -6349,6 +6349,72 @@ header .alert {
 /* ! content section links for index pages - 2 column */
 #qg-index-links.qg-2col div {
   position: relative; }
+
+/* ! content section links for index pages - 3 column */
+#qg-index-links.qg-3col div {
+  position: relative; }
+
+/* ! end content section links for index pages */
+#qg-search-form-content-container {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 50px; }
+
+#qg-search-form-content {
+  float: none;
+  margin: 0 auto; }
+  #qg-search-form-content input {
+    border-radius: 0; }
+  #qg-search-form-content button.btn-default {
+    background: #78BA00;
+    border-radius: 0; }
+
+/* ! BIP content section links for index pages */
+.index-page-grid, .index-page-grid-1 {
+  position: relative;
+  margin-bottom: 2em;
+  position: relative;
+  padding: 15px 0;
+  margin: 15px; }
+  .index-page-grid div, .index-page-grid-1 div {
+    position: relative; }
+  .index-page-grid div.style-1, .index-page-grid-1 div.style-1 {
+    margin: 0 15px;
+    background-color: #FFF; }
+    .index-page-grid div.style-1 figure, .index-page-grid-1 div.style-1 figure {
+      width: 100%;
+      margin-top: 15px; }
+      .index-page-grid div.style-1 figure img, .index-page-grid-1 div.style-1 figure img {
+        width: 100%;
+        height: auto;
+        padding: 0;
+        margin: 0; }
+    .index-page-grid div.style-1 h2, .index-page-grid-1 div.style-1 h2 {
+      color: #13578b;
+      font-size: 19px;
+      font-size: 1.1875rem;
+      letter-spacing: .05em; }
+      .index-page-grid div.style-1 h2 a, .index-page-grid-1 div.style-1 h2 a {
+        color: #13578b;
+        -webkit-transition: all 0.2s;
+        transition: all 0.2s; }
+      .index-page-grid div.style-1 h2 a:hover, .index-page-grid-1 div.style-1 h2 a:hover {
+        text-decoration: none;
+        border-bottom: 1px solid #1f76b9; }
+  .index-page-grid div.style-3, .index-page-grid-1 div.style-3 {
+    margin: 0 15px;
+    border: 1px solid #FFEA8A;
+    background-color: #FFF;
+    border-width: 1px 1px 1px 10px; }
+  .index-page-grid div.style-3:nth-child(2n), .index-page-grid-1 div.style-3:nth-child(2n) {
+    border: 1px solid #56B7C5;
+    border-width: 1px 1px 1px 10px; }
+  .index-page-grid div.style-3:nth-child(3n), .index-page-grid-1 div.style-3:nth-child(3n) {
+    border: 1px solid #de8787;
+    border-width: 1px 1px 1px 10px; }
+
+.index-page-grid-1 {
+  background-color: aliceblue; }
 
 /* ! end content section links for index pages */
 .qg-content-footer dl dt {
