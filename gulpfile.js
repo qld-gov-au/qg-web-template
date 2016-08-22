@@ -15,7 +15,8 @@ var config = {
         release: 'release/',
         static: 'release/static.qgov.net.au/',
         test : 'test/',
-        swe : 'swe/'
+        swe : 'swe/',
+        node_modules: 'node_modules/'
     },
     projects : ['swe' , 'cue' , 'ice' , 'flux'],
     franchise : ['www.qld.gov.au' , 'tmr.com.au' , 'test.com'],
