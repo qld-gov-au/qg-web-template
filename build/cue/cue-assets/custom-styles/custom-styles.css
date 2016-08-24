@@ -1,6 +1,6 @@
 
 #qg-site-header {
-background-image: url("/cue-assets/demo-bg.png");
+background-image: url("/cue-assets/images/demo-bg.png");
 }
 
 #qg-site-name {
@@ -89,87 +89,5 @@ border-width: 1px 1px 1px 10px;
 
 
 
-
-/* ! BIP content section links for index pages */
-
-.index-page-grid {
-position: relative;
-margin-bottom: 2em;
-position: relative;         
-@extend .clearfix;
-padding: 15px 0;
- margin: 15px;
-    
-div {
-position: relative;   
-@extend .col-sm-6;
-@extend .col-md-4;
-@extend .col-lg-4;
-} 
-
-div.style-1 {
-margin: 0 15px;  
-background-color: #FFF;
- 
-figure {
-width: 100%;
-margin-top: 15px;
-   
-img {
-width: 100%;
-height: auto;
-padding: 0;
-margin: 0;
-}    
-
-}  
-
-
-h2 {
-color: #13578b;      
-@include fontSize(19px);
-letter-spacing: .05em;
-
-a {
-color: #13578b;
-transition: all 0.2s;
-}
-
-a:hover {
-text-decoration: none;
-border-bottom: 1px solid #1f76b9;    
-}   
-
-} 
-
-} 
-
-div.style-3 {   
-margin: 0 15px;  
-border: 1px solid #FFEA8A; 
-background-color: #FFF;
-border-width: 1px 1px 1px 10px;  
-}
-
-div.style-3:nth-child(2n) {
-border: 1px solid #56B7C5; 
-border-width: 1px 1px 1px 10px;  
-}
-
-div.style-3:nth-child(3n) {
-border: 1px solid #de8787;  
-border-width: 1px 1px 1px 10px;    
-} 
-
-}
-
-
-.index-page-grid-1 {
-@extend .index-page-grid;
-background-color: aliceblue;
-    
-}
-
-/* ! end content section links for index pages */
 
 
