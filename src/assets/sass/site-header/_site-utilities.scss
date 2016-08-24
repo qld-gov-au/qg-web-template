@@ -3,8 +3,8 @@
   @extend .col-sm-6;
   @extend .col-md-5;
   @extend .col-lg-5;
-
   text-align: right;
+    
   li {
     padding-right: 0;
     padding-left: 0;
@@ -22,19 +22,14 @@
             }
     }
   }
-    
-    
-    
+     
  @include breakpoint($bs-xs){
 .qg-utilities {
 display: block;
 text-align: center;
 .fa { font-size: 1.3em; }
 }
-}   
-    
-    
-    
+}  
     
 }
 
@@ -54,10 +49,3 @@ text-align: center;
   }
 
 }
-
-
-
-
-
-
-
