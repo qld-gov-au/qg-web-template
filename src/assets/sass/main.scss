@@ -5,25 +5,39 @@
 @import "../../../node_modules/breakpoint-sass/stylesheets/_breakpoint.scss";
 
 @import "base/_typography.scss";
-@import "sections/_general.scss";
-@import "sections/_grid.scss";
-@import "sections/_header.scss";
+@import "_general.scss";
+//@import "sections/_grid.scss";
 
-@import "sections/_site-navigation.scss";
-@import "sections/_section-navigation.scss";
-@import "sections/_breadcrumb.scss";
-@import "sections/_alerts.scss";
-@import "sections/_main-content.scss";
+
+@import "_layout.scss";
+
+
+// ################################
+// site-header
+
+@import "_header.scss";
+
+@import "site-header/_coat-of-arms.scss";
+@import "site-header/_site-utilities.scss";
+@import "site-header/_site-name.scss";
+@import "site-header/_site-navigation.scss";
+@import "site-header/_alerts.scss";
+
+// ################################
+
+@import "_section-navigation.scss";
+@import "_breadcrumb.scss";
+//@import "sections/_main-content.scss";
 
 
 //@import "sections/_forms.scss";
 
-@import "sections/_feedback.scss";
-@import "sections/_sidebar-nav.scss";
-@import "sections/_secondary-content.scss";
-@import "sections/_asides.scss";
-@import "sections/_footer.scss";
+@import "_feedback.scss";
+//@import "sections/_sidebar-nav.scss";
+//@import "sections/_secondary-content.scss";
+@import "_asides.scss";
+@import "_footer.scss";
 
 // develop only:
-@import "sections/_gavin-develop.scss";
+@import "_gavin-develop.scss";
 @import "helpers/_equal-height-columns.scss";

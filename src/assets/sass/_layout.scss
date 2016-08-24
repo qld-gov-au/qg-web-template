@@ -1,0 +1,145 @@
+.container-fluid {
+&.qg-site-width{
+// max-width: 95em;   
+max-width: 1327px; 
+}
+}
+
+#qg-primary-content {   
+padding-top: 1em;      
+}
+
+// ############################################
+// Three column layout (navigation, content, aside)
+
+#qg-three-col {
+    
+#qg-primary-content{
+@extend .col-sm-12;
+@extend .col-md-6;
+@extend .col-md-push-3;
+}
+  
+#qg-secondary-content{
+@extend .col-sm-12;
+@extend .col-md-3;
+@extend .col-md-push-3;
+}
+   
+.qg-section-nav{
+@extend .col-sm-12;
+@extend .col-md-3;
+@extend .col-md-pull-9;
+}
+    
+}
+
+// ############################################
+// Two column layout aside (content, aside)
+
+#qg-two-col-aside {
+    
+#qg-primary-content {
+@extend .col-sm-12;
+@extend .col-md-9;
+}
+
+#qg-secondary-content {
+@extend .col-sm-12;
+@extend .col-md-3;
+}
+    
+}
+
+// ############################################
+// Two column layout navigation (navigation, content)
+
+#qg-two-col-nav {
+    
+#qg-primary-content {
+@extend .col-sm-12;
+@extend .col-md-9;
+@extend .col-md-push-3;
+}
+
+.qg-section-nav {
+@extend .col-sm-12;
+@extend .col-md-3;
+@extend .col-md-pull-9;
+}
+    
+}    
+    
+// ############################################
+// One column layout (full width content)
+
+#qg-full-width{
+#qg-primary-content{
+@extend .col-sm-12;
+}
+}
+
+
+
+////other styles
+//#qg-three-col, #qg-two-col-aside{
+//#qg-secondary-content{
+//background: #ececec;
+//}
+//}
+//
+////other styles
+//#qg-three-col, #qg-two-col-nav{
+//.qg-section-nav{
+//background: #ececec;
+//}
+//}
+
+
+////other styles
+//#qg-three-col, #qg-two-col-aside, #qg-two-col-nav{
+//ul {
+//a {
+////text-decoration: underline;
+//}
+//}
+//.content-footer{
+//dt {
+//float: left;
+//margin-right: 0.5em;
+//font-weight: normal;
+//}
+//.dropup{
+//& > ul{
+//& > li:first-child a{
+//margin-left: -1.3em;
+//}
+//}
+//}
+//}
+//}
+
+
+// responsive styles
+@include breakpoint($bs-md){
+.qg-section-nav{
+padding-top: 0.8em;
+}
+    
+#qg-secondary-content{
+padding-top: 0.8em;
+}    
+      
+}
+
+// responsive styles
+@include breakpoint($bs-sm){
+#qg-primary-content {
+.dropup {
+& > ul {
+margin: 0;
+}
+}
+}
+}
+
