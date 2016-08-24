@@ -1,0 +1,93 @@
+
+#qg-site-header {
+background-image: url("/cue-assets/images/demo-bg.png");
+}
+
+#qg-site-name {
+color: #FFF !important;  
+background-color: transparent !important;
+}   
+
+.qg-utilities {
+color: #FFF !important;   
+}
+           
+.qg-utilities li  {
+line-height: 4em;
+ vertical-align: middle;
+}   
+
+#qg-search-form div {
+border: 7px solid #de8787;
+}
+
+#qg-search-form div button, #qg-search-form-content div button{
+color: #FFF !important;
+background-color: #dea3a3 !important;
+}  
+  
+#qg-feedback {
+background-color:#56B7C5;   
+}
+           
+#qg-three-col .qg-section-nav {
+background-color: #FFF !important; 
+padding-left: 15px !important;  
+padding-right: 15px !important;  
+}
+      
+.qg-section-nav a:before {
+content: "" !important; 
+}
+
+.qg-section-nav h2 {
+margin-top: 1em;
+padding: .5em;
+color: #FFF;
+background-color:#56B7C5 !important;     
+}
+
+.qg-section-nav ul {
+color: #000 !important;
+background-color: #FFF !important;    
+}
+
+.qg-section-nav .active {
+color: #000 !important;
+background-color: #FFF !important;    
+}
+
+#qg-three-col #qg-secondary-content { 
+padding-left: 15px;  
+padding-right: 15px; 
+}
+    
+#qg-secondary-content {
+background-color: #FFF !important;     
+}
+
+.qg-aside {
+margin-top: 1em;
+margin-bottom: 1em;
+background-color: #FFF !important;
+border: 1px solid #FFEA8A;
+border-width: 1px 1px 1px 10px;
+}   
+
+.qg-aside:nth-child(2n) {
+background-color: #FFF !important;
+border: 1px solid #56B7C5;
+border-width: 1px 1px 1px 10px;
+}
+
+.qg-aside:nth-child(3n) {
+background-color: #FFF !important;
+border: 1px solid #de8787;
+border-width: 1px 1px 1px 10px;
+}
+
+
+
+
+
+
