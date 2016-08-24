@@ -1,9 +1,8 @@
 #qg-site-name {
- @extend .col-lg-12;
  background-color:rgba(234, 234, 234, 0.49);
 
   h2 {
       margin: .3em 0;
-    @extend .col-sm-12;
+      @extend .col-sm-12;
   }
 }
