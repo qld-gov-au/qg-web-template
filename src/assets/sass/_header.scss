@@ -10,41 +10,6 @@ padding-bottom: 0;
 @include breakpoint($bs-sm) {
 margin-top: 0;  
 }  
-    
-    
-    
-}
-
-
-//#qg-site-header {
-// background-color: #f6f6f6;
-// // margin-top: 32px;
-// // padding-top: 1em;
-//  padding-bottom: 0;
-//    
-//}
-//
-// 
-//// responsive styles
-
-
-@include breakpoint($bs-xs){
-
-    header {
-    background-color: #f6f6f6;
-    .qg-content-divider {
-      display: block;
-      border-top: 4px solid $sweblue;
-    }
-
-    .qg-utilities {
-      display: block;
-       text-align: center;
-        .fa { 
-           font-size: 1.3em; 
-        }
-    }
-
-  }
+       
 }
 
