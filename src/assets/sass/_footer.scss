@@ -2,7 +2,7 @@
 .qg-more-info {
 color: #FFF;
 background-color:#0B2E4C;
-
+padding-bottom: 1.5em;
 a, a:link {
 color: #FFF;  
 text-decoration: none;
@@ -14,20 +14,43 @@ text-decoration: underline;
 } 
 
 div {
+@extend .col-lg-4;    
 @extend .col-md-4;
-@extend .col-sm-3;
+@extend .col-sm-12;
+@extend .col-xs-12;    
 &:nth-child(2n) {
 background-color: #0b3253;
 } 
-}
+
+h3 {
+@include fontSize(19px);
+border-bottom: 1px solid #FFF; 
+padding-top: 1em;
+padding-bottom: .5em; 
+}  
 
 ul {
 list-style: none;
 padding-left: 0;
-}
+} 
+    
+ul.col-2 {
+list-style: none;
+padding-left: 0;
+column-count: 2;
+}  
+    
+li {
+@include fontSize(14px);
+    padding: 0 .3em;
 }
 
 
+}
+
+}
+
+// ###########################################
 
 .qg-legal{
 text-align: center;
@@ -41,10 +64,8 @@ p {
 }
 }
 
-
-
 @include breakpoint($bs-md){
-  #qg-site-footer {
-    background: #0B2E4C;
-  }
+#qg-site-footer {
+background: #0B2E4C;
+}
 }

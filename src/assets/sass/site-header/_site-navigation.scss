@@ -2,11 +2,11 @@
 // Site navigation      
 #qg-site-nav {   
 @extend .col-lg-12;    
-background-color: #444;
+background-color: #F6F6F6;
 padding: 0;
 
 ul {
-color: #FFF;
+color: #005375;
 @extend .col-sm-12;
 @include fontSize(16px);
 margin-bottom: 0px;
@@ -20,17 +20,17 @@ a {
 display: block;
 padding: .3em .5em .7em .5em;
 margin: 0;
-color: #fff;
+color: #005375;
 @include fontSize(16px);
 &:hover {
-background-color: #555;
+background-color: #e0e0e0;
 text-decoration: none;
 }
 }    
 }
 
 li + li {
-border-left: 1px solid #666;
+//border-left: 1px solid #666;
 }
 
 }
