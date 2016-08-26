@@ -1,0 +1,22 @@
+  .qg-coat-of-arms {
+    @extend .col-xs-12;
+    @extend .col-sm-6;
+    @extend .col-md-4;
+    @extend .col-lg-4;
+    padding-bottom: .8em; 
+    overflow: hidden;
+    img {
+  //    width: 287px;
+      height: 50px;
+
+    }
+      
+    // Responsive styles  
+    @include breakpoint($bs-md) {
+
+}  
+      
+      
+  }
+
+
