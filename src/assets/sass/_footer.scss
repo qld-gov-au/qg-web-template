@@ -16,8 +16,7 @@ text-decoration: underline;
 div {
 @extend .col-lg-4;    
 @extend .col-md-4;
-@extend .col-sm-12;
-@extend .col-xs-12;    
+  
 &:nth-child(2n) {
 background-color: #0b3253;
 } 
@@ -42,9 +41,8 @@ column-count: 2;
     
 li {
 @include fontSize(14px);
-    padding: 0 .3em;
+padding: .5em .3em;
 }
-
 
 }
 
@@ -64,8 +62,21 @@ p {
 }
 }
 
+
+
 @include breakpoint($bs-md){
+ul.col-2 {
+list-style: none;
+padding-left: 0;
+column-count: 1 !important;
+}   
+    
+    
+/*
+
 #qg-site-footer {
 background: #0B2E4C;
 }
+*/
+
 }

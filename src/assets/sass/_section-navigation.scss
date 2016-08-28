@@ -5,7 +5,7 @@ padding: 0 !important;
         
 h2 {
 @include fontSize(19px);
-padding: 2em 0 0 20px;
+padding: 2em 0 1.2em 50px;
 margin:  0;
 color: #13578b;
 } 
@@ -46,7 +46,7 @@ font-size: .9em;
 display: inline-block !important;
 content: "\f054";
 margin: 0;
-padding: 0 0.3em 0 20px;
+padding: 0 0.3em 0 50px;
 color: #13578b;
 text-decoration: none;
 opacity: .5;
