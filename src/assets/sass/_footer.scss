@@ -52,16 +52,30 @@ padding: .5em .3em;
 
 .qg-legal{
 text-align: center;
+@include fontSize(14px);
 
 .row {
 background-color: #FFF;     
 }  
 
-p {
-@include fontSize(12px);
-}
+ul {
+margin-top: 1em;  
+
+
+li {
+ padding: .3em .5em;
+ margin: 0;      
 }
 
+li + li {
+border-left: 1px solid #999; 
+}   
+}
+
+p {
+//@include fontSize(12px);
+}
+}
 
 
 @include breakpoint($bs-md){

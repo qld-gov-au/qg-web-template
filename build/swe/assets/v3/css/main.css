@@ -6175,42 +6175,43 @@ header .alert {
     text-align: center; } }
 
 /* ! asides */
-#qg-three-col #qg-secondary-content {
+#qg-content #qg-secondary-content {
   margin: 0;
   padding: 0; }
-  #qg-three-col #qg-secondary-content h2 {
+  #qg-content #qg-secondary-content h2 {
     margin: 0;
     padding: 0; }
-  #qg-three-col #qg-secondary-content .qg-aside {
+  #qg-content #qg-secondary-content .qg-aside {
     background-color: #f2F7F9;
-    padding: 1.5em 1em; }
-    #qg-three-col #qg-secondary-content .qg-aside .fa {
+    padding: 1.5em 1em;
+    margin: 0; }
+    #qg-content #qg-secondary-content .qg-aside .fa {
       font-size: 120%;
       margin: 0 0.3em 0 0; }
-    #qg-three-col #qg-secondary-content .qg-aside h2 {
+    #qg-content #qg-secondary-content .qg-aside h2 {
       font-weight: 700;
       margin: 0 0 1em 0; }
-    #qg-three-col #qg-secondary-content .qg-aside figure {
+    #qg-content #qg-secondary-content .qg-aside figure {
       margin: 0;
       padding: 0;
       position: relative;
       text-align: center; }
-      #qg-three-col #qg-secondary-content .qg-aside figure img {
+      #qg-content #qg-secondary-content .qg-aside figure img {
         margin: 0;
         padding: 0;
         max-width: 100%;
         height: auto; }
-      #qg-three-col #qg-secondary-content .qg-aside figure figcaption {
+      #qg-content #qg-secondary-content .qg-aside figure figcaption {
         margin: 0;
         padding: .5em;
         font-size: 90%;
         font-style: italic;
         text-align: center; }
-  #qg-three-col #qg-secondary-content .qg-aside:nth-child(2n) {
+  #qg-content #qg-secondary-content .qg-aside:nth-child(2n) {
     background-color: #E7F5FE; }
-  #qg-three-col #qg-secondary-content .qg-aside:nth-child(3n) {
+  #qg-content #qg-secondary-content .qg-aside:nth-child(3n) {
     background-color: #E1ECF1; }
-  #qg-three-col #qg-secondary-content .qg-aside h2 span:before {
+  #qg-content #qg-secondary-content .qg-aside h2 span:before {
     color: #78BA00; }
 
 .qg-more-info {
@@ -6246,12 +6247,18 @@ header .alert {
     padding: .5em .3em; }
 
 .qg-legal {
-  text-align: center; }
+  text-align: center;
+  font-size: 14px;
+  font-size: 0.875rem; }
   .qg-legal .row, .qg-legal #qg-site-header {
     background-color: #FFF; }
-  .qg-legal p {
-    font-size: 12px;
-    font-size: 0.75rem; }
+  .qg-legal ul {
+    margin-top: 1em; }
+    .qg-legal ul li {
+      padding: .3em .5em;
+      margin: 0; }
+    .qg-legal ul li + li {
+      border-left: 1px solid #999; }
 
 @media (max-width: 992px) {
   ul.col-2 {
