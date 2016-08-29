@@ -1,4 +1,4 @@
-# glue-swe-templates
+# glue-template
 
 _This project is currently in progress._
 
