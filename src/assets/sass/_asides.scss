@@ -1,8 +1,9 @@
 
 /* ! asides */
-#qg-three-col #qg-secondary-content {
+#qg-content #qg-secondary-content {
 margin: 0;
 padding: 0;  
+
    
     h2 {
     margin: 0;
@@ -12,6 +13,7 @@ padding: 0;
         .qg-aside {
         background-color: #f2F7F9;      
         padding: 1.5em 1em;
+        margin: 0;
 
             .fa {
             // color: #78BA00;

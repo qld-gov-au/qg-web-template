@@ -3,6 +3,7 @@
 var gulp = require('gulp'),
     plugins = require('gulp-load-plugins')(),
     del = require('del'),
+    argv = require('yargs').argv,
     supportedBrowser = ['last 2 versions','ie 7', 'ie 8', 'ie 9','ie 10', 'ie 11', 'android 2.3', 'android 4', 'opera 12'];
 
 // TODO - config from a separate file
@@ -101,6 +102,7 @@ gulp.task('watch', function() {
  ======================================================================*/
 gulp.task('release:assets', require('./gulp-tasks/release-process/assets')(gulp, plugins, config));
 gulp.task('release:content', require('./gulp-tasks/release-process/content')(gulp, plugins, config));
+gulp.task('publish:swe', require('./gulp-tasks/release-process/publish')(gulp, plugins, config, argv));
 /*=====================================================================
  TASK RUNNERS
  ======================================================================*/

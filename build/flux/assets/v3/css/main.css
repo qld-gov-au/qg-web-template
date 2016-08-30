@@ -1534,13 +1534,13 @@ pre {
   .row:after, #qg-site-header:after {
     clear: both; }
 
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, #qg-site-footer-cue div, .col-md-3, #qg-three-col #qg-secondary-content, #qg-three-col .qg-section-nav, #qg-two-col-aside #qg-secondary-content, #qg-two-col-nav .qg-section-nav, #qg-search-form, .col-lg-3, #qg-search-form, .col-xs-4, .col-sm-4, #qg-index-links.qg-3col div, .col-md-4, .qg-coat-of-arms, .qg-more-info div, #qg-index-links.qg-3col div, .index-page-grid div, .index-page-grid-1 div, .col-lg-4, .qg-coat-of-arms, .qg-more-info div, #qg-index-links.qg-3col div, .index-page-grid div, .index-page-grid-1 div, .col-xs-5, .col-sm-5, .col-md-5, .qg-utilities, #qg-site-footer-cue div, .col-lg-5, .qg-utilities, .col-xs-6, .col-sm-6, .qg-coat-of-arms, .qg-utilities, #qg-feedback .qg-cta, #qg-feedback .qg-share, #qg-index-links.qg-2col div, .index-page-grid div, .index-page-grid-1 div, .col-md-6, #qg-three-col #qg-primary-content, #qg-feedback .qg-cta, #qg-feedback .qg-share, #qg-index-links.qg-2col div, #qg-search-form-content, .col-lg-6, #qg-index-links.qg-2col div, #qg-search-form-content, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, #qg-two-col-aside #qg-primary-content, #qg-two-col-nav #qg-primary-content, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .qg-coat-of-arms, .qg-utilities, #qg-search-form, #qg-site-name, .qg-more-info div, .col-sm-12, #qg-three-col #qg-primary-content, #qg-three-col #qg-secondary-content, #qg-three-col .qg-section-nav, #qg-two-col-aside #qg-primary-content, #qg-two-col-aside #qg-secondary-content, #qg-two-col-nav #qg-primary-content, #qg-two-col-nav .qg-section-nav, #qg-full-width #qg-primary-content, #qg-search-form, #qg-site-name, #qg-site-nav ul, #qg-breadcrumb, .qg-more-info div, .col-md-12, #qg-site-name, .col-lg-12, #qg-site-name, #qg-site-nav, header .alert {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, #qg-site-footer-cue div, .col-md-3, #qg-three-col #qg-secondary-content, #qg-three-col .qg-section-nav, #qg-two-col-aside #qg-secondary-content, #qg-two-col-nav .qg-section-nav, #qg-search-form, .col-lg-3, #qg-search-form, .col-xs-4, .col-sm-4, #qg-index-links.qg-3col div, .col-md-4, .qg-coat-of-arms, .qg-more-info div, #qg-index-links.qg-3col div, .index-page-grid div, .index-page-grid-1 div, .col-lg-4, .qg-coat-of-arms, .qg-more-info div, #qg-index-links.qg-3col div, .index-page-grid div, .index-page-grid-1 div, .col-xs-5, .col-sm-5, .col-md-5, .qg-utilities, #qg-site-footer-cue div, .col-lg-5, .qg-utilities, .col-xs-6, .col-sm-6, .qg-coat-of-arms, .qg-utilities, #qg-feedback .qg-cta, #qg-feedback .qg-share, #qg-index-links.qg-2col div, .index-page-grid div, .index-page-grid-1 div, .col-md-6, #qg-three-col #qg-primary-content, #qg-feedback .qg-cta, #qg-feedback .qg-share, #qg-index-links.qg-2col div, #qg-search-form-content, .col-lg-6, #qg-index-links.qg-2col div, #qg-search-form-content, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, #qg-two-col-aside #qg-primary-content, #qg-two-col-nav #qg-primary-content, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .qg-coat-of-arms, .qg-utilities, #qg-search-form, #qg-site-name, .col-sm-12, #qg-three-col #qg-primary-content, #qg-three-col #qg-secondary-content, #qg-three-col .qg-section-nav, #qg-two-col-aside #qg-primary-content, #qg-two-col-aside #qg-secondary-content, #qg-two-col-nav #qg-primary-content, #qg-two-col-nav .qg-section-nav, #qg-full-width #qg-primary-content, #qg-search-form, #qg-site-name, #qg-site-nav ul, #qg-breadcrumb, .col-md-12, #qg-site-name, .col-lg-12, #qg-site-name, #qg-site-nav, header .alert {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px; }
 
-.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12, .qg-coat-of-arms, .qg-utilities, #qg-search-form, #qg-site-name, .qg-more-info div {
+.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12, .qg-coat-of-arms, .qg-utilities, #qg-search-form, #qg-site-name {
   float: left; }
 
 .col-xs-1 {
@@ -1576,7 +1576,7 @@ pre {
 .col-xs-11 {
   width: 91.66667%; }
 
-.col-xs-12, .qg-coat-of-arms, .qg-utilities, #qg-search-form, #qg-site-name, .qg-more-info div {
+.col-xs-12, .qg-coat-of-arms, .qg-utilities, #qg-search-form, #qg-site-name {
   width: 100%; }
 
 .col-xs-pull-0 {
@@ -1697,7 +1697,7 @@ pre {
   margin-left: 100%; }
 
 @media (min-width: 768px) {
-  .col-sm-1, .col-sm-2, .col-sm-3, #qg-site-footer-cue div, .col-sm-4, #qg-index-links.qg-3col div, .col-sm-5, .col-sm-6, .qg-coat-of-arms, .qg-utilities, #qg-feedback .qg-cta, #qg-feedback .qg-share, #qg-index-links.qg-2col div, .index-page-grid div, .index-page-grid-1 div, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, #qg-three-col #qg-primary-content, #qg-three-col #qg-secondary-content, #qg-three-col .qg-section-nav, #qg-two-col-aside #qg-primary-content, #qg-two-col-aside #qg-secondary-content, #qg-two-col-nav #qg-primary-content, #qg-two-col-nav .qg-section-nav, #qg-full-width #qg-primary-content, #qg-search-form, #qg-site-name, #qg-site-nav ul, #qg-breadcrumb, .qg-more-info div {
+  .col-sm-1, .col-sm-2, .col-sm-3, #qg-site-footer-cue div, .col-sm-4, #qg-index-links.qg-3col div, .col-sm-5, .col-sm-6, .qg-coat-of-arms, .qg-utilities, #qg-feedback .qg-cta, #qg-feedback .qg-share, #qg-index-links.qg-2col div, .index-page-grid div, .index-page-grid-1 div, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, #qg-three-col #qg-primary-content, #qg-three-col #qg-secondary-content, #qg-three-col .qg-section-nav, #qg-two-col-aside #qg-primary-content, #qg-two-col-aside #qg-secondary-content, #qg-two-col-nav #qg-primary-content, #qg-two-col-nav .qg-section-nav, #qg-full-width #qg-primary-content, #qg-search-form, #qg-site-name, #qg-site-nav ul, #qg-breadcrumb {
     float: left; }
   .col-sm-1 {
     width: 8.33333%; }
@@ -1721,7 +1721,7 @@ pre {
     width: 83.33333%; }
   .col-sm-11 {
     width: 91.66667%; }
-  .col-sm-12, #qg-three-col #qg-primary-content, #qg-three-col #qg-secondary-content, #qg-three-col .qg-section-nav, #qg-two-col-aside #qg-primary-content, #qg-two-col-aside #qg-secondary-content, #qg-two-col-nav #qg-primary-content, #qg-two-col-nav .qg-section-nav, #qg-full-width #qg-primary-content, #qg-search-form, #qg-site-name, #qg-site-nav ul, #qg-breadcrumb, .qg-more-info div {
+  .col-sm-12, #qg-three-col #qg-primary-content, #qg-three-col #qg-secondary-content, #qg-three-col .qg-section-nav, #qg-two-col-aside #qg-primary-content, #qg-two-col-aside #qg-secondary-content, #qg-two-col-nav #qg-primary-content, #qg-two-col-nav .qg-section-nav, #qg-full-width #qg-primary-content, #qg-search-form, #qg-site-name, #qg-site-nav ul, #qg-breadcrumb {
     width: 100%; }
   .col-sm-pull-0 {
     right: auto; }
@@ -5962,7 +5962,7 @@ header .alert {
   .qg-section-nav h2 {
     font-size: 19px;
     font-size: 1.1875rem;
-    padding: 2em 0 0 20px;
+    padding: 2em 0 1.2em 50px;
     margin: 0;
     color: #13578b; }
   .qg-section-nav ul {
@@ -5994,7 +5994,7 @@ header .alert {
       display: inline-block !important;
       content: "\f054";
       margin: 0;
-      padding: 0 0.3em 0 20px;
+      padding: 0 0.3em 0 50px;
       color: #13578b;
       text-decoration: none;
       opacity: .5; }
@@ -6175,42 +6175,43 @@ header .alert {
     text-align: center; } }
 
 /* ! asides */
-#qg-three-col #qg-secondary-content {
+#qg-content #qg-secondary-content {
   margin: 0;
   padding: 0; }
-  #qg-three-col #qg-secondary-content h2 {
+  #qg-content #qg-secondary-content h2 {
     margin: 0;
     padding: 0; }
-  #qg-three-col #qg-secondary-content .qg-aside {
+  #qg-content #qg-secondary-content .qg-aside {
     background-color: #f2F7F9;
-    padding: 1.5em 1em; }
-    #qg-three-col #qg-secondary-content .qg-aside .fa {
+    padding: 1.5em 1em;
+    margin: 0; }
+    #qg-content #qg-secondary-content .qg-aside .fa {
       font-size: 120%;
       margin: 0 0.3em 0 0; }
-    #qg-three-col #qg-secondary-content .qg-aside h2 {
+    #qg-content #qg-secondary-content .qg-aside h2 {
       font-weight: 700;
       margin: 0 0 1em 0; }
-    #qg-three-col #qg-secondary-content .qg-aside figure {
+    #qg-content #qg-secondary-content .qg-aside figure {
       margin: 0;
       padding: 0;
       position: relative;
       text-align: center; }
-      #qg-three-col #qg-secondary-content .qg-aside figure img {
+      #qg-content #qg-secondary-content .qg-aside figure img {
         margin: 0;
         padding: 0;
         max-width: 100%;
         height: auto; }
-      #qg-three-col #qg-secondary-content .qg-aside figure figcaption {
+      #qg-content #qg-secondary-content .qg-aside figure figcaption {
         margin: 0;
         padding: .5em;
         font-size: 90%;
         font-style: italic;
         text-align: center; }
-  #qg-three-col #qg-secondary-content .qg-aside:nth-child(2n) {
+  #qg-content #qg-secondary-content .qg-aside:nth-child(2n) {
     background-color: #E7F5FE; }
-  #qg-three-col #qg-secondary-content .qg-aside:nth-child(3n) {
+  #qg-content #qg-secondary-content .qg-aside:nth-child(3n) {
     background-color: #E1ECF1; }
-  #qg-three-col #qg-secondary-content .qg-aside h2 span:before {
+  #qg-content #qg-secondary-content .qg-aside h2 span:before {
     color: #78BA00; }
 
 .qg-more-info {
@@ -6243,19 +6244,35 @@ header .alert {
   .qg-more-info div li {
     font-size: 14px;
     font-size: 0.875rem;
-    padding: 0 .3em; }
+    padding: .5em .3em; }
 
 .qg-legal {
-  text-align: center; }
+  text-align: center;
+  font-size: 14px;
+  font-size: 0.875rem; }
   .qg-legal .row, .qg-legal #qg-site-header {
     background-color: #FFF; }
-  .qg-legal p {
-    font-size: 12px;
-    font-size: 0.75rem; }
+  .qg-legal ul {
+    margin-top: 1em; }
+    .qg-legal ul li {
+      padding: .3em .5em;
+      margin: 0; }
+    .qg-legal ul li + li {
+      border-left: 1px solid #999; }
 
 @media (max-width: 992px) {
-  #qg-site-footer {
-    background: #0B2E4C; } }
+  ul.col-2 {
+    list-style: none;
+    padding-left: 0;
+    -webkit-column-count: 1 !important;
+    -moz-column-count: 1 !important;
+    column-count: 1 !important; }
+  /*
+
+#qg-site-footer {
+background: #0B2E4C;
+}
+*/ }
 
 /* Work in progress stylesheet
 - these style will be incorporated into the appropriate SASS files

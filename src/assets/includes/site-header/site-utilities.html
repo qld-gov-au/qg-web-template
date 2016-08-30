@@ -18,16 +18,20 @@
     <li class="hidden-md hidden-lg">
         <button id="qg-show-menu"><span class="fa fa-bars fa-2x" aria-hidden="true"></span>menu</button>
     </li>
-
 </ul>
 
-<form action="http://pan.search.qld.gov.au/search/search.cgi" id="qg-search-form" role="search" class="qg-visually-hidden-md">
+<form action="http://pan.search.qld.gov.au/s/search.html" id="qg-search-form" role="search" class="qg-visually-hidden-md">
     <div>
         <label for="qg-search-query" class="qg-visually-hidden">Search Queensland Government</label>
         <div class="input-group">
-            <input type="text" id="qg-search-query" class="form-control" placeholder="Search for...">
+            <input type="text" name="query" id="qg-search-query" class="form-control" placeholder="Search website e.g. holidays">
             <span class="input-group-btn">
-<button class="btn btn-default" type="button"><span class="fa fa-search" aria-hidden="true"></span></button>
+                <button id="feature-search-submit" class="btn btn-default"><span class="fa fa-search" aria-hidden="true"></span></button>
+                <!--parameters to display results on search page-->
+                <input type="hidden" name="num_ranks" value="10">
+                <input type="hidden" name="tiers" value="off">
+                <input type="hidden" name="collection" value="qld-gov">
+                <input type="hidden" name="profile" value="qld">
             </span>
         </div>
     </div>
