@@ -32,29 +32,29 @@ background-color: #dea3a3 !important;
 background-color:#56B7C5;   
 }
            
-#qg-three-col .qg-section-nav {
+#qg-three-col #qg-section-nav {
 background-color: #FFF !important; 
 padding-left: 15px !important;  
 padding-right: 15px !important;  
 }
       
-.qg-section-nav a:before {
+#qg-section-nav a:before {
 content: "" !important; 
 }
 
-.qg-section-nav h2 {
+#qg-section-nav h2 {
 margin-top: 1em;
 padding: .5em;
 color: #FFF;
 background-color:#56B7C5 !important;     
 }
 
-.qg-section-nav ul {
+#qg-section-nav ul {
 color: #000 !important;
 background-color: #FFF !important;    
 }
 
-.qg-section-nav .active {
+#qg-section-nav .active {
 color: #000 !important;
 background-color: #FFF !important;    
 }
