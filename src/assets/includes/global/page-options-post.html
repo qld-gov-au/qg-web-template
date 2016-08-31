@@ -3,6 +3,7 @@
     <div class="qg-share">
         <h2>Share:</h2>
         <ul>
+
             <li><a href=""><span class="fa fa-facebook fa-2x" aria-hidden="true"></span></a></li>
             <li><a href=""><span class="fa fa-twitter fa-2x" aria-hidden="true"></span></a></li>
             <li><a href=""><span class="fa fa-linkedin fa-2x" aria-hidden="true"></span></a></li>
@@ -14,13 +15,13 @@
         <!--<a href="#qg-page-feedback" class="qg-glue-btn" id="page-feedback-useful">Feedback</a>-->
         <!--<a class="btn btn-default qg-glue-btn" href="#" role="button">Feedback</a>       -->
         <ul>
-            <li><a href="" class="btn btn-default" id="page-feedback-useful">Feedback</a></li>
+            <li><a href="#" class="btn btn-default qg-toggle-btn" id="page-feedback-useful">Feedback</a></li>
         </ul>
     </div>
 
 </div>
 
-<div id="qg-page-feedback" class="row">
+<div id="qg-page-feedback" class="qg-visually-hidden qg-toggle-content row">
 
     <form id="qg-page-feedback-form" method="post" action="https://www.smartservice.qld.gov.au/services/submissions/email/feedback/feedback" class="form">
 
@@ -66,9 +67,7 @@
                         </li>
 
                     </ul>
-
                 </fieldset>
-
             </li>
 
             <li class="col-md-6">
@@ -77,6 +76,12 @@
                     <abbr title="(required)" class="required">*</abbr>
                 </label>
                 <textarea name="comments" id="comments" rows="10" cols="40" required="required"></textarea>
+            </li>
+
+
+            <li id="feedback-captcha-container" class="col-md-12">
+                <label for="feedback-captcha">Please leave this blank (this helps us identify automatic spam)</label>
+                <input type="text" name="captcha" id="feedback-captcha" value="" />
             </li>
 
             <li id="feedback-captcha-container" class="col-md-6">
