@@ -24,7 +24,7 @@ var activeSideNav = (function () {
 
     function highlightNavItem() {
         var currentPageTitle = getCurrentTitle();
-        $(".qg-section-nav ul>li").each(function (index) {
+        $("#qg-section-nav ul>li").each(function (index) {
             if(refineText($(this).text()) === $.trim(currentPageTitle)){
                 $(this).find("a").addClass("active");
             }
