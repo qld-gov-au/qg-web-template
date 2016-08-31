@@ -51,7 +51,12 @@ color: #13578b;
 text-decoration: none;
 opacity: .5;
 }
-        
+    
+a.active:before {
+color: #FFF;  
+ opacity: 1;   
+}    
+           
 li a:before  {
 padding-left: 30px;  
 }
