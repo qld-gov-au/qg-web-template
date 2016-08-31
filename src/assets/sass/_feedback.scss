@@ -120,6 +120,14 @@ color: #000;
 // ################################################# 
 // #################################################  
     
+    
+    
+    #qg-page-feedback-form {
+        
+             @extend .col-md-12;
+ 
+    }
+    
         form.form {
             
             ol, ol.questions, ul, ul.questions {

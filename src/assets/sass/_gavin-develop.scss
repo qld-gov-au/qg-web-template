@@ -104,7 +104,6 @@ position: relative;
 @extend .col-lg-6;   
 }
 
-
 /* ! content section links for index pages - 3 column */
 
 #qg-index-links.qg-3col div {
@@ -113,12 +112,6 @@ position: relative;
 @extend .col-md-4;
 @extend .col-lg-4;   
 }
-
-
-
-
-
-
 
 #qg-search-form-content-container {
 text-align: center; 
@@ -179,9 +172,6 @@ float: left;
 text-align: right;
 }
 
-
-
-
 #qg-site-footer-cue {
 color: #404040;
 background-color:#fcfcfc;
@@ -223,11 +213,6 @@ p {
 @include fontSize(12px);
 }
 }
-
-
-
-
-
 
 /* ! BIP content section links for index pages */
 
