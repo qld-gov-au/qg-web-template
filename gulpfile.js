@@ -3,6 +3,7 @@
 var gulp = require('gulp'),
     plugins = require('gulp-load-plugins')(),
     del = require('del'),
+    bowerConfig = require('./bower.json'),
     argv = require('yargs').argv,
     supportedBrowser = ['last 2 versions','ie 7', 'ie 8', 'ie 9','ie 10', 'ie 11', 'android 2.3', 'android 4', 'opera 12'];
 
@@ -17,6 +18,7 @@ var config = {
         static: 'release/static.qgov.net.au/',
         test : 'test/',
         swe : 'swe/',
+        bowerVersion : bowerConfig.version,
         node_modules: 'node_modules/'
     },
     projects : ['swe' , 'cue' , 'ice' , 'flux'],

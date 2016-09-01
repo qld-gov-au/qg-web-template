@@ -1,0 +1,13 @@
+{
+  "name": "glue-swe-template",
+  "version": "1.0.5",
+  "description": "glue-swe-template",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

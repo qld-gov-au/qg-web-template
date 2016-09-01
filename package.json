@@ -30,6 +30,7 @@
     "gulp-inject": "^3.0.0",
     "gulp-load-plugins": "^1.2.0",
     "gulp-plumber": "^1.0.1",
+    "gulp-prompt": "^0.2.0",
     "gulp-sass": "^2.1.1",
     "gulp-shell": "^0.5.2",
     "gulp-sourcemaps": "^1.6.0",
