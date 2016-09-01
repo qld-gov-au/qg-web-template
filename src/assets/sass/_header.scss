@@ -6,24 +6,7 @@
   padding-top: 1em;
   padding-bottom: 0;
 
-  .listbox{
-    list-style: none;
-    position: absolute;
-    top: 2em;
-    z-index: 999999;
-    width: 100%;
-    padding: 0;
-    li {
-      background: #E7F5FE;
-      width: 100%;
-      padding-left: 0.8em;
-      a {
-        mark {
-         font-weight: bold;
-        }
-      }
-    }
-  }
+
   // Responsive styles
     @include breakpoint($bs-sm) {
       margin-top: 0;

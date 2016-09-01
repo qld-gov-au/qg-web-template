@@ -1,23 +1,26 @@
 // ############################################
 // Site navigation      
-#qg-site-nav {   
+#qg-site-nav {  
+@extend .col-xs-12;
+@extend .col-sm-12;
+@extend .col-md-12;
 @extend .col-lg-12;    
 background-color: #F6F6F6;
 padding: 0;
 
 ul {
 color: #005375;
-@extend .col-sm-12;
 @include fontSize(16px);
-margin-bottom: 0px;
+bottom: 0px;
 
 li {
 display: block;
 float: left;
 padding: 0;
 
+    
 a {
-display: block;
+display: inline-block;
 padding: .3em .5em .7em .5em;
 margin: 0;
 color: #005375;
@@ -41,9 +44,9 @@ li + li {
 @include breakpoint($bs-md) {
 
 #qg-site-nav {
-//  background: #494949;
-display: none;
-
+background: #494949;
+display: none; 
+           
 ul {
 margin: 0;
 padding: 0;
@@ -60,6 +63,13 @@ border-bottom: none
 &:nth-child(2n) {
 background-color: #505050;
 }
+    
+    
+     a, a:link, a:visited {
+        color: #FFF;
+    }   
+    
+    
 }
 
 li + li {
@@ -67,10 +77,22 @@ border: none;
 }
 }
 }
+    
+  
+    
+    
 }
+
+
+
+@include breakpoint($bs-sm) {
+}
+
+
+
+
 
 // ############################################
 // responsive styles
 @include breakpoint($bs-xs){
-
 }

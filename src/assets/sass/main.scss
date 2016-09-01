@@ -14,21 +14,29 @@
 
 
 // ################################
-// site-header
+// site header (qg-site-header)
 
 @import "_header.scss";
 
 @import "site-header/_coat-of-arms.scss";
 @import "site-header/_site-utilities.scss";
+@import "site-header/_site-search.scss";
 @import "site-header/_site-name.scss";
 @import "site-header/_site-navigation.scss";
 @import "site-header/_alerts.scss";
 
 // ################################
-
+// site content (qg-content)
 @import "_section-navigation.scss";
 @import "_breadcrumb.scss";
 //@import "sections/_main-content.scss";
+
+// ################################
+// site page content (qg-primary-content)
+
+@import "_index-page-grid.scss";
+
+@import "_page-content-footer.scss";
 
 
 //@import "sections/_forms.scss";

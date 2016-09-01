@@ -4,8 +4,8 @@
 @extend .col-md-5;
 @extend .col-lg-5;
 text-align: right;
-margin: 0;
-padding: 0;
+//margin: 0;
+//padding: 0;
 
   li {
     padding-right: 0;
@@ -37,21 +37,4 @@ text-align: center;
 }
 }  
     
-}
-
-#qg-search-form {
-  @extend .col-xs-12;
-  @extend .col-sm-12;
-  @extend .col-md-3;
-  @extend .col-lg-3; 
-
-  input {
-    border-radius: 0;
-  }
-
-  button.btn-default {
-    background: $green;
-    border-radius: 0;
-  }
-
 }
