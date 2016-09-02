@@ -5,15 +5,17 @@
     @extend .col-lg-4;
     padding-bottom: .8em; 
     overflow: hidden;
+      
     img {
-  //    width: 287px;
+  //    width: 287px; //current width of logo
       height: 50px;
-
     }
       
     // Responsive styles  
-    @include breakpoint($bs-md) {
-
+    @include breakpoint($bs-xs) {
+    img {
+      height: 40px;
+    }
 }  
       
       

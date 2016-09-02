@@ -5,13 +5,13 @@
 @import "../lib/font-awesome/css/font-awesome.min.css";
 @import "../../../node_modules/breakpoint-sass/stylesheets/_breakpoint.scss";
 
-@import "base/_typography.scss";
-@import "_general.scss";
+
 //@import "sections/_grid.scss";
 
 
 @import "_layout.scss";
-
+@import "base/_typography.scss";
+@import "_general.scss";
 
 // ################################
 // site header (qg-site-header)

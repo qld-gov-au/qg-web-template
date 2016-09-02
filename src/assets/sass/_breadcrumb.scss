@@ -9,7 +9,12 @@ padding-bottom: 1.5em;
 
     a {
     color: #FFF;
-    }   
+    text-decoration: none;
+    }
+    
+    a:hover {
+    text-decoration: underline;
+    }
 
     span.fa {
     font-size: 1.2em;   
