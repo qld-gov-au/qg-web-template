@@ -1,15 +1,15 @@
-import "./components/autocomplete.js";
-import "./components/forms.js";
-import mobileNav from "./sections/nav/mobile-nav.js";
+import './components/autocomplete.js';
+import './components/forms.js';
+import mobileNav from './sections/nav/mobile-nav.js';
 import activeSideNav from './sections/nav/current-secondary-nav';
-import utils from "./components/utils.js";
+import utils from './components/utils.js';
 
 
-(function($) {
-    "use strict";
+(function () {
+    'use strict';
     mobileNav.interactions();
     activeSideNav.highlightNavItem();
     utils.showHide();
-}(jQuery));
+}());
 
 

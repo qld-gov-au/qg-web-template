@@ -1,37 +1,34 @@
 /*! Form validation - v1.1.1 - 2014-04-09
  * https://github.com/bboyle/form-validation
  * Copyright (c) 2014 Ben Boyle; Licensed MIT */
-(function( $ ) {
+(function ($) {
     'use strict';
 
 
-    var SUBMIT_TOLERANCE = 10000, // milliseconds
-
+    var SUBMIT_TOLERANCE = 10000,
         DEFAULT_STATUS_HTML = '<div class="status warn"><div class="inner"><h2>Please check your answers</h2><ol></ol></div></div>',
-
         // fields that validate
         candidateForValidation = 'input, select, textarea',
 
 
         // invalidFilter
-        invalidFilter = function() {
-            return ! ( this.disabled || this.validity.valid );
+        invalidFilter = function () {
+            return !(this.disabled || this.validity.valid);
         },
 
 
         // follow plugin conventions for storing plugin data
         // http://docs.jquery.com/Plugins/Authoring#Data
         pluginDataKey = 'formValidation',
-        pluginData = function( key, value ) {
-            var dataHash = this.data( pluginDataKey ) || this.data( pluginDataKey, {}).data( pluginDataKey );
+        pluginData = function (key, value) {
+            var dataHash = this.data(pluginDataKey) || this.data(pluginDataKey, {}).data(pluginDataKey);
 
-            if ( typeof key !== 'undefined' ) {
-                if ( typeof value !== 'undefined' ) {
-                    dataHash[ key ] = value;
+            if (typeof key !== 'undefined') {
+                if (typeof value !== 'undefined') {
+                    dataHash[key] = value;
                     return value;
-
-                } else if ( typeof dataHash[ key ] !== 'undefined' ) {
-                    return dataHash[ key ];
+                } else if (typeof dataHash[key] !== 'undefined') {
+                    return dataHash[key];
                 }
                 return null;
             }
@@ -41,55 +38,47 @@
 
 
         // helper for .label, .hint and .alert
-        getLabelComponent = function( component, options ) {
-            return this.map(function( index, domElement ) {
-
-                var $element = $( domElement ),
+        getLabelComponent = function (component, options) {
+            return this.map(function (index, domElement) {
+                var $element = $(domElement),
                     labelElement = null,
                     foundElement = null;
 
-                if ( typeof options === 'object' && options.level === 'group' ) {
-                    foundElement = $element.formValidation( 'group' ).find( component )[ 0 ];
-
-                } else if ( $element.is( ':radio, :checkbox' )) {
-                    foundElement = $element.closest( 'fieldset' ).find( component )[ 0 ];
-
-                } else {
-                    labelElement = $element.closest( 'form' ).find( 'label[for="' + domElement.id + '"]' );
-                    foundElement = labelElement.children( component )[ 0 ];
-                    if ( ! foundElement ) {
-                        if ( component === '.hint' ) {
-                            labelElement.append( '<small class="hint"></small>' );
-                            foundElement = labelElement.children( component )[ 0 ];
+                if (typeof options === 'object' && options.level === 'group') {
+                    foundElement = $element.formValidation('group').find(component)[0];
+                    } else if ($element.is(':radio, :checkbox')) {
+                    foundElement = $element.closest('fieldset').find(component)[0];
+                    } else {
+                    labelElement = $element.closest('form').find('label[for="' + domElement.id + '"]');
+                    foundElement = labelElement.children(component)[0];
+                    if (!foundElement) {
+                        if (component === '.hint') {
+                            labelElement.append('<small class="hint"></small>');
+                            foundElement = labelElement.children(component)[0];
                         }
                     }
                 }
-
                 return foundElement;
-
             });
         },
 
 
-        changeValidityCheck = function() {
-
-            var $this = $( this ),
-                alertElement = $this.formValidation( 'alert' ),
+        changeValidityCheck = function () {
+            var $this = $(this),
+                alertElement = $this.formValidation('alert'),
                 alertLevel,
-                invalidContainers
-                ;
+                invalidContainers;
 
             // is this control valid?
-            if ( this.validity.valid ) {
-
+            if (this.validity.valid) {
                 // is it part of a group that contain other invalid controls?
-                if ( $this.formValidation( 'question' ).find( '.alert' ).filter( alertElement ).length > 0 ) {
+                if ($this.formValidation('question').find('.alert').filter(alertElement).length > 0) {
                     alertElement.remove();
                 } else {
                     // update message from first invalid field in group
-                    invalidContainers = $this.formValidation( 'group' ).find( candidateForValidation ).filter( invalidFilter );
-                    if ( invalidContainers.length > 0 ) {
-                        alertElement.text( invalidContainers.formValidation( 'getValidationMessage' ));
+                    invalidContainers = $this.formValidation('group').find(candidateForValidation).filter(invalidFilter);
+                    if (invalidContainers.length > 0) {
+                        alertElement.text(invalidContainers.formValidation('getValidationMessage'));
                     } else {
                         // all fields valid
                         alertElement.remove();
@@ -97,30 +86,28 @@
                 }
 
                 // remove invalid class from ancestors that do not contain invalid fields
-                $this.parentsUntil( 'form', '.invalid' ).filter(function() {
-                    return $( this ).find( candidateForValidation ).filter( invalidFilter ).length === 0;
+                $this.parentsUntil('form', '.invalid').filter(function () {
+                    return $(this).find(candidateForValidation).filter(invalidFilter).length === 0;
                 })
                 // remove .invalid class
-                    .removeClass( 'invalid' )
+                    .removeClass('invalid')
                     // remove old alerts (change handler should have already done this)
-                    .find( '.alert' ).remove()
-                ;
-
-            } else {
-
+                    .find('.alert')
+                    .remove();
+                } else {
                 // does alert exist?
-                if ( alertElement.length === 0 ) {
-                    alertElement = $( '<em class="alert"/>' );
+                if (alertElement.length === 0) {
+                    alertElement = $('<em class="alert"/>');
                 }
-
                 // show message
-                alertElement.text( $this.formValidation( 'getValidationMessage' ));
+                alertElement.text($this.formValidation('getValidationMessage'));
                 // append to form
-                if ( $this.formValidation( 'group' ).hasClass( 'atomic' )) {
-                    alertLevel = { 'level' : 'group' };
+                if ($this.formValidation('group').hasClass('atomic')) {
+                    alertLevel = { 'level': 'group' };
                 }
 
-                $this.formValidation( 'label', alertLevel ).parent().find( '.label, abbr[title="(required)"]' ).eq( -1 ).after( alertElement );
+                $this.formValidation( 'label', alertLevel ).parent().find( '.label, abbr[title="(required)"]' ).eq( -1 )
+                .after(alertElement);
 
                 // NOTE we don't flag the question as .invalid now
                 // .invalid only happens on submit, to soften inline validation errors
@@ -130,66 +117,59 @@
 
         // checks for invalid elements
         // returns number of invalid elements
-        submitValidityCheck = function() {
-
+        submitValidityCheck = function () {
             // form object
-            var form = $( this ).closest( 'form' ),
+            var form = $(this).closest('form'),
 
                 // invalid fields
-                invalid = form.find( candidateForValidation ).filter(function invalidFields() {
-
+                invalid = form.find(candidateForValidation).filter(function invalidFields() {
                     // skip disabled
-                    if ( this.disabled ) {
+                    if (this.disabled) {
                         return false;
                     }
 
                     // only check radio button groups once (skip individual radio button)
-                    if ( this.type === 'radio' ) {
-                        if ( ! invalidFields.cache ) {
+                    if (this.type === 'radio') {
+                        if (!invalidFields.cache) {
                             invalidFields.cache = {};
-
-                        } else if ( invalidFields.cache[ this.name ] === true ) {
+                        } else if (invalidFields.cache[this.name] === true) {
                             return false;
                         }
-                        invalidFields.cache[ this.name ] = true;
+                        invalidFields.cache[this.name] = true;
                     }
 
-                    return this.validity && ! this.validity.valid;
+                    return this.validity && !this.validity.valid;
                 }),
 
                 // alert container
-                alert = pluginData.call( form, 'summaryElement' ) || pluginData.call( form, 'summaryElement', $( DEFAULT_STATUS_HTML )),
+                alert = pluginData.call(form, 'summaryElement') || pluginData.call(form, 'summaryElement', $(DEFAULT_STATUS_HTML)),
 
                 // messages within alert
-                messages = alert.find( 'ol' ),
+                messages = alert.find('ol'),
 
                 // track groups
-                lastGroupSeen = true
-                ;
+                lastGroupSeen = true;
 
-            if ( invalid.length > 0 ) {
-
+            if (invalid.length > 0) {
                 // remove old messages
-                messages.find( 'li' ).remove();
+                messages.find('li').remove();
 
                 // add new messages
-                invalid.each(function() {
-
+                invalid.each(function () {
                     // get field
-                    var $this = $( this ),
+                    var $this = $(this),
                         // get group (if exists)
-                        group = $this.formValidation( 'group' ),
+                        group = $this.formValidation('group'),
                         // get label or group label
-                        label = $this.formValidation( 'label', {
-                            level : group.length > 0 ? 'group' : null
+                        label = $this.formValidation('label', {
+                            level: group.length > 0 ? 'group' : null
                         }),
                         labelId,
-                        item
-                        ;
+                        item;
 
                     // get the label id
-                    if ( label.length > 0 ) {
-                        labelId = label[ 0 ].id || label.generateId( 'label-' + this.id )[ 0 ].id;
+                    if (label.length > 0) {
+                        labelId = label[0].id || label.generateId('label-' + this.id)[0].id;
                     } else {
                         labelId = this.name;
                     }
@@ -197,19 +177,16 @@
                     // get alert item
                     item = pluginData.call( $this, 'summaryElement' ) || pluginData.call( $this, 'summaryElement', $( '<li><a href="#' + labelId + '"></a></li>' ));
 
-                    if ( group.length === 0 || group[ 0 ] !== lastGroupSeen ) {
-
+                    if ( group.length === 0 || group[0] !== lastGroupSeen ) {
                         // update last group seen
                         lastGroupSeen = group[ 0 ];
 
                         // create error message with link to label
                         item
-                            .find( 'a' )
+                            .find('a')
                             .text( label.text().replace( /\?$/, '' ) + ': ' + $this.formValidation( 'getValidationMessage' ))
                             .end()
-                            .appendTo( messages )
-                        ;
-
+                            .appendTo( messages );
                     } else {
                         // remove from DOM
                         item.remove();
@@ -221,7 +198,7 @@
         },
 
 
-        submitValidationHandler = function( event ) {
+        submitValidationHandler = function (event) {
             // validate form
             var count = submitValidityCheck.call( this ),
                 form = $( this );
@@ -233,7 +210,8 @@
             // remove .invalid class
                 .removeClass( 'invalid' )
                 // remove old alerts (change handler should have already done this)
-                .find( '.alert' ).remove()
+                .find( '.alert' )
+                .remove()
             ;
 
 
@@ -297,7 +275,6 @@
                 event.stopImmediatePropagation();
                 event.preventDefault();
                 return false;
-
             } else {
                 // store the timestamp
                 pluginData.call( form, 'lastSubmitTimeStamp', timeStamp );
@@ -307,25 +284,21 @@
 
         // plugin methods
         methods = {
-
             // $( x ).formValidation( 'alert' ) -- get
             // get alert text
-            alert : function() {
+            alert: function() {
                 return this.map(function( index, domElement ) {
-
-                    var $element = $( domElement ),
+                        var $element = $( domElement ),
                         group;
 
                     if ( $element.is( ':radio, :checkbox' ) === true ) {
                         return $element.closest( 'fieldset' ).find( 'legend > .alert' )[ 0 ];
-
-                    } else {
+                        } else {
                         // atomic groups
                         group = $element.formValidation( 'group' ).filter( '.atomic' );
                         if ( group.length > 0 ) {
                             return group.find( 'legend > .alert' )[ 0 ];
-
-                        } else {
+                         } else {
                             return $( 'label[for="' + domElement.id + '"] > .alert' )[ 0 ];
                         }
                     }
@@ -410,19 +383,14 @@
 
                 if ( typeof validityState === 'undefined' || validityState.valid === true ) {
                     return '';
-
                 } else if ( validityState.valueMissing ) {
                     return 'Must be completed';
-
                 } else if ( validityState.customError ) {
                     return this[ 0 ].validationMessage;
-
                 } else if ( validityState.typeMismatch ) {
                     return 'Must be an email address';
-
                 } else if ( validityState.patternMismatch ) {
                     return 'Must use the format shown';
-
                 } else {
                     return 'Must be a valid answer';
                 }
@@ -430,9 +398,7 @@
 
         };
 
-
     $.fn.formValidation = function( method ) {
-
         // Method calling logic
         // http://docs.jquery.com/Plugins/Authoring#Plugin_Methods
         if ( methods[method] ) {
@@ -448,8 +414,6 @@
 
     // legacy API
     $.fn.forcesForms = $.fn.formValidation;
-
-
 }( jQuery ));
 /*! Generate ID - v1.0.3 - 2014-09-18
  * https://github.com/bboyle/Generate-ID
