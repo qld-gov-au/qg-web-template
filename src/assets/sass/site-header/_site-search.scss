@@ -32,5 +32,9 @@
       }
     }
   }  
+        
+@include breakpoint($bs-md){
+margin-bottom: 1em;  
+}
     
 }

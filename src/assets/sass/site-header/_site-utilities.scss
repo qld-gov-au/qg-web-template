@@ -29,7 +29,18 @@ display: block;
 }
     
 }
+       
+@include breakpoint($bs-md){
 
+li {
+
+&:last-child {
+margin-right: 1em;
+}    
+}
+    
+}  
+    
 @include breakpoint($bs-xs){
 display: block;  
 text-align: center;
