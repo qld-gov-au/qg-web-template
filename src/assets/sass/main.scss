@@ -16,7 +16,7 @@
 // ################################
 // site header (qg-site-header)
 
-@import "_header.scss";
+@import "site-header/_header.scss";
 
 @import "site-header/_coat-of-arms.scss";
 @import "site-header/_site-utilities.scss";
@@ -27,25 +27,25 @@
 
 // ################################
 // site content (qg-content)
-@import "_section-navigation.scss";
-@import "_breadcrumb.scss";
+@import "page-content/section-navigation/_section-navigation.scss";
+@import "page-content/breadcrumbs/_breadcrumb.scss";
 //@import "sections/_main-content.scss";
 
 // ################################
 // site page content (qg-primary-content)
 
-@import "_index-page-grid.scss";
+@import "page-content/primary-content/_index-page-grid.scss";
 
-@import "_page-content-footer.scss";
+@import "page-content/_page-content-footer.scss";
 
 
 //@import "sections/_forms.scss";
 
-@import "_feedback.scss";
+@import "page-content/_feedback.scss";
 //@import "sections/_sidebar-nav.scss";
 //@import "sections/_secondary-content.scss";
-@import "_asides.scss";
-@import "_footer.scss";
+@import "page-content/secondary-content/_asides.scss";
+@import "site-footer/_footer.scss";
 
 // develop only:
 @import "_gavin-develop.scss";
