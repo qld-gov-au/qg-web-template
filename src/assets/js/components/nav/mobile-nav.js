@@ -1,7 +1,8 @@
 'use strict';
 
-import helpers from '../global/helpers.js';
+import utils from '../global/utils.js';
 
+// TODO - remove specific show hide function and make it use the general show hide in utils
 var mobileNav = (function () {
     var $sitenav = $('#qg-site-nav'),
         $br = $('#qg-breadcrumb'),
@@ -15,9 +16,9 @@ var mobileNav = (function () {
             $('#qg-search-form').toggleClass('qg-visually-hidden-md', 1500);
         });
         $(window).resize(function () {
-            if ($(window).width() < helpers.breakpoints.bsSm) {
+            if ($(window).width() < utils.breakpoints.bsSm) {
                 // any code
-            } else if ($(window).width() >= helpers.breakpoints.bsSm && $(window).width() <= helpers.breakpoints.bsMd) {
+            } else if ($(window).width() >= utils.breakpoints.bsSm && $(window).width() <= utils.breakpoints.bsMd) {
                 if ($tools.is(':visible')) {
                     $tools.hide(1);
                 }
