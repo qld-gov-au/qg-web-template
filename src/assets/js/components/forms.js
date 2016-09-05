@@ -222,7 +222,7 @@
                 event.preventDefault();
 
                 // show the error summary
-                (function( form ) {
+                (function(form) {
                     var summary = pluginData.call( form, 'summaryElement' );
                     // hide any previous status blocks
                     form.prev( '.status' ).not( summary ).remove();
@@ -511,24 +511,23 @@ if ( jQuery !== 'undefined' ) {
             },
 
 
-            validateField = function( message ) {
-
+            validateField = function(message) {
                 var $this = $( this ),
-                    required = !! $this.attr( 'required' ),
+                    required = !!$this.attr( 'required' ),
                     radio = this.type === 'radio' && getRadioButtonsInGroup( this ),
                     valueMissing,
-                    invalidEmail = this.getAttribute( 'type' ) === 'email' && !! this.value && ! REXP_EMAIL.test( this.value ),
+                    invalidEmail = this.getAttribute( 'type' ) === 'email' && !!this.value && ! REXP_EMAIL.test( this.value ),
                     patternMismatch,
                     pattern,
                     newValidityState
                     ;
 
                 // radio buttons are required if any single radio button is flagged as required
-                if ( radio && ! required ) {
+                if ( radio && !required ) {
                     required = radio.filter( '[required]' ).length > 0;
                 }
                 // if required, check for missing value
-                if ( required ) {
+                if ( required ){
 
                     if ( /^select$/i.test( this.nodeName )) {
                         valueMissing = this.selectedIndex === 0 && this.options[ 0 ].value === '';
@@ -537,10 +536,10 @@ if ( jQuery !== 'undefined' ) {
                         valueMissing = radio.filter( ':checked' ).length === 0;
 
                     } else if ( this.type === 'checkbox' ) {
-                        valueMissing = ! this.checked;
+                        valueMissing = !this.checked;
 
                     } else {
-                        valueMissing = ! this.value;
+                        valueMissing = !this.value;
                     }
 
                 }
@@ -605,10 +604,10 @@ if ( jQuery !== 'undefined' ) {
             },
 
 
-            submitHandler = function( event ) {
+            submitHandler = function( event ){
 
                 var form = $( this ),
-                    novalidate = !! form.attr( 'novalidate' ),
+                    novalidate = !!form.attr( 'novalidate' ),
                     invalid = false
                     ;
 
@@ -617,7 +616,7 @@ if ( jQuery !== 'undefined' ) {
                     // check fields
                     form.find( candidateForValidation ).each(function() {
 
-                        invalid = ! validateField.call( this );
+                        invalid = !validateField.call( this );
 
 
                         // unless @novalidate
@@ -724,7 +723,8 @@ if ( jQuery !== 'undefined' ) {
                 if ( radioButtonBug ) {
                     validateBuggyRadioButtons = function( form ) {
                         var seen = {};
-                        var radio, valueMissing;
+                        var radio,
+                            valueMissing;
 
                         // check every required radio button
                         $( 'input', form ).filter( ':radio' ).filter( '[required],[aria-required="true"]' ).each(function() {
@@ -815,81 +815,82 @@ if ( jQuery !== 'undefined' ) {
 
         var navKeys = [33,34,35,36,37,38,39,40];
 
-        return $(this).each(function(){
+        return $(this).each(function() {
 
-            var countable = $(this);
-            var counter = $(options.counter);
+            var countable = $(this),
+                counter = $(options.counter);
             if (!counter.length) { return false; }
 
-            var countCheck = function(){
+            var countCheck = function() {
 
                 var count;
                 var revCount;
 
-                var reverseCount = function(ct){
-                    return ct - (ct*2) + options.maxCount;
-                }
+                var reverseCount = function(ct) {
+                    return ct - (ct * 2) + options.maxCount;
+                };
 
-                var countInt = function(){
+                var countInt = function() {
                     return (options.countDirection === 'up') ? revCount : count;
-                }
+                };
 
-                var numberFormat = function(ct){
+                var numberFormat = function(ct) {
                     var prefix = '';
-                    if (options.thousandSeparator){
+                    if (options.thousandSeparator) {
                         ct = ct.toString();
                         // Handle large negative numbers
                         if (ct.match(/^-/)) {
                             ct = ct.substr(1);
                             prefix = '-';
                         }
-                        for (var i = ct.length-3; i > 0; i -= 3){
+                        for (var i = ct.length - 3; i > 0; i -= 3){
                             ct = ct.substr(0,i) + options.thousandSeparator + ct.substr(i);
                         }
                     }
                     return prefix + ct;
-                }
+                };
 
-                var changeCountableValue = function(val){
+                var changeCountableValue = function(val) {
                     countable.val(val).trigger('change');
-                }
+                };
 
                 /* Calculates count for either words or characters */
-                if (options.countType === 'words'){
+                if (options.countType === 'words') {
                     count = options.maxCount - $.trim(countable.val()).split(/\s+/).length;
-                    if (countable.val() === ''){ count += 1; }
-                }
-                else { count = options.maxCount - countable.val().length; }
+                    if (countable.val() === '') { count += 1; }
+                } else {
+                    count = options.maxCount - countable.val().length;
+                    }
                 revCount = reverseCount(count);
 
                 /* If strictMax set restrict further characters */
-                if (options.strictMax && count <= 0){
+                if (options.strictMax && count <= 0) {
                     var content = countable.val();
                     if (count < 0) {
                         options.onMaxCount(countInt(), countable, counter);
                     }
-                    if (options.countType === 'words'){
+                    if (options.countType === 'words') {
                         var allowedText = content.match( new RegExp('\\s?(\\S+\\s+){'+ options.maxCount +'}') );
                         if (allowedText) {
                             changeCountableValue(allowedText[0]);
                         }
-                    }
-                    else { changeCountableValue(content.substring(0, options.maxCount)); }
+                    } else { changeCountableValue(content.substring(0, options.maxCount)); }
                     count = 0, revCount = options.maxCount;
                 }
 
                 counter.text(numberFormat(countInt()));
 
                 /* Set CSS class rules and API callbacks */
-                if (!counter.hasClass(options.safeClass) && !counter.hasClass(options.overClass)){
-                    if (count < 0){ counter.addClass(options.overClass); }
-                    else { counter.addClass(options.safeClass); }
-                }
-                else if (count < 0 && counter.hasClass(options.safeClass)){
+                if (!counter.hasClass(options.safeClass) && !counter.hasClass(options.overClass)) {
+                    if (count < 0) {
+                        counter.addClass(options.overClass);
+                    } else {
+                        counter.addClass(options.safeClass);
+                    }
+                } else if (count < 0 && counter.hasClass(options.safeClass)){
                     counter.removeClass(options.safeClass).addClass(options.overClass);
                     options.onOverCount(countInt(), countable, counter);
-                }
-                else if (count >= 0 && counter.hasClass(options.overClass)){
+                } else if (count >= 0 && counter.hasClass(options.overClass)){
                     counter.removeClass(options.overClass).addClass(options.safeClass);
                     options.onSafeCount(countInt(), countable, counter);
                 }
@@ -899,7 +900,7 @@ if ( jQuery !== 'undefined' ) {
             countCheck();
 
             countable.on('keyup blur paste', function(e) {
-                switch(e.type) {
+                switch (e.type) {
                     case 'keyup':
                         // Skip navigational key presses
                         if ($.inArray(e.which, navKeys) < 0) { countCheck(); }
@@ -937,7 +938,7 @@ if ( jQuery !== 'undefined' ) {
 
             formElementsByName = function( form, name ) {
                 // filter out the @id matching of HTMLFormElement.elements[]
-                return $( form.elements[ name ] ).filter( '[name="' + name +'"]' );
+                return $( form.elements[ name ] ).filter( '[name="' + name + '"]' );
             },
 
             filterRelevant = function() {
@@ -955,7 +956,7 @@ if ( jQuery !== 'undefined' ) {
             valueInArray = function( possibleValues, actualValues ) {
                 var i;
                 if ( typeof possibleValues !== 'object' ) {
-                    possibleValues = [ possibleValues ];
+                    possibleValues = [possibleValues];
                 }
 
                 for ( i = 0; i < actualValues.length; i++ ) {
@@ -981,7 +982,9 @@ if ( jQuery !== 'undefined' ) {
 
             // when an element changes relevance, check descendent controls that alter relevance in turn…
             recalculateDependents = function( isRelevant ) {
-                var form, dependencyMap, targets;
+                var form,
+                    dependencyMap,
+                    targets;
 
                 // any change to relevant toggles?
                 form = this.closest( 'form' );
@@ -1041,7 +1044,6 @@ if ( jQuery !== 'undefined' ) {
                 // shows the element (does not check if element is already visible)
                 // triggers 'relevant-done' after showing is complete
                 show: function() {
-
                     // enable elements before they are shown
                     this.add( this.find( elementsToDisable ))
                     // but not any controls that will remain irrelevant
@@ -1060,7 +1062,6 @@ if ( jQuery !== 'undefined' ) {
                 // $( x ).relevance( 'hide' )
                 // hides the element (does not check if element is already hidden)
                 hide: function() {
-
                     this.attr({
                         hidden: 'hidden',
                         'aria-hidden': 'true'
@@ -1089,9 +1090,12 @@ if ( jQuery !== 'undefined' ) {
                 // example: $( '#red' ).relevance( 'relevantWhen', { id: 'rgb-red', value: 'red' })
                 // #red will be shown/hidden when '@name=rgb' value changes.
                 relevantWhen: function( config ) {
-                    var form, data, name, values;
+                    var form,
+                        data,
+                        name,
+                        values;
 
-                    values = config.values || [ config.value ];
+                    values = config.values || [config.value];
 
                     if ( config.name ) {
                         name = config.name;
@@ -1151,10 +1155,11 @@ if ( jQuery !== 'undefined' ) {
                             value = $this.text(),
                             question = $this.closest( options.questionSelector ),
                             toggle = question.prevAll( options.questionSelector ),
-                            i, answers, nestedToggles,
+                            i,
+                            answers,
+                            nestedToggles,
                             match = false,
-                            negate = false
-                            ;
+                            negate = false;
 
                         // pattern: (If different to <PREVIOUS QUESTION>)
                         if ( /If different to/.test( value )) {
@@ -1190,13 +1195,9 @@ if ( jQuery !== 'undefined' ) {
                             question.relevance( 'relevantWhen', { name: toggle.attr( 'name' ), value: value, negate: negate });
                         }
                     });
-
                     return this;
                 }
-
             };
-
-
         // fallback (default) event handling
         $( document ).bind( 'relevant irrelevant', function( event ) {
             var target = $( event.target );
@@ -1207,23 +1208,18 @@ if ( jQuery !== 'undefined' ) {
             }
         });
 
-
         $.fn.relevance = function( method ) {
-
             // Method calling logic
             // http://docs.jquery.com/Plugins/Authoring#Plugin_Methods
             if ( methods[method] ) {
-                return methods[ method ].apply( this, Array.prototype.slice.call( arguments, 1 ));
-            } else if ( typeof method === 'object' || ! method ) {
+                return methods[ method ].apply( this, Array.prototype.slice.call(arguments, 1 ));
+            } else if ( typeof method === 'object' || !method ) {
                 // return methods.init.apply( this, arguments );
                 return this;
             } else {
                 $.error( 'Method ' +  method + ' does not exist on jQuery.relevance' );
             }
-
         };
-
-
     }( jQuery ));
 }
 (function( $ ) {
@@ -1238,7 +1234,8 @@ if ( jQuery !== 'undefined' ) {
     if ( typeof $( '<input type="file">' )[ 0 ].files !== 'object' ) {
         // duplicate fsize instruction before submit button
         $( '.max-fsize' ).each(function() {
-            var fsize = $( this ), form;
+            var fsize = $( this ),
+                form;
             form = fsize.closest( '.preamble' ).nextAll( 'form' ).eq( 0 );
             form.find( '.actions' ).before( '<p>' + fsize.parent().html() + '</p>' );
         });
@@ -1263,11 +1260,10 @@ if ( jQuery !== 'undefined' ) {
 
 
     // forms with max file size
-    $( '.max-fsize' ).each(function() {
+    $('.max-fsize').each(function() {
         var fsize = $( this ),
             form,
-            maxFileSize
-            ;
+            maxFileSize;
 
         // read fsize, assume MB
         maxFileSize = parseInt( fsize.text().replace( /\D+/g, '' ), 10 ) * 1024 * 1024;
@@ -1282,7 +1278,8 @@ if ( jQuery !== 'undefined' ) {
             displayFileSize( input );
 
             // recalculate file sizes
-            var total = 0, valid;
+            var total = 0,
+                valid;
             $( ':file', this.form ).each(function( index, element ) {
                 var size = element.files.length ? element.files[ 0 ].size : 0;
                 total += size; // total = total + size;
@@ -1296,7 +1293,7 @@ if ( jQuery !== 'undefined' ) {
             $( ':file', this.form )
             // update validity for :file inputs with values
                 .filter(function() {
-                    return !! this.value;
+                    return !!this.value;
                 })
                 .each(function( index, element ) {
                     element.setCustomValidity( valid ? '' : 'Attachments are too large' );
@@ -1355,50 +1352,37 @@ if ( jQuery !== 'undefined' ) {
     // plugin
     $.fn.initXorConstraint = function( validationMessage ) {
         // custom validation for XOR options
-        this.closest( 'form' ).on( 'submit', [ this, validationMessage ], xorConstraintSubmitHandler );
-        this.on( 'change', [ this, validationMessage ], xorConstraintChangeHandler );
+        this.closest( 'form' ).on( 'submit', [this, validationMessage], xorConstraintSubmitHandler );
+        this.on( 'change', [this, validationMessage], xorConstraintChangeHandler );
     };
-
-
-}( jQuery ));
+}(jQuery));
 /**
  * This file initialises forms
  */
 (function( $ ) { /* start closure */
     'use strict';
-
-
     var initValidation = function() {
         window.initConstraintValidationAPI();
         $( 'form' ).formValidation( 'validate' );
     };
-
-
     // now: hookup form validation
     initValidation();
-
     // document ready: hookup form validation
     $( initValidation );
-
-
     // instruction based relevance
     if ( $( '.relevance', 'form' ).length > 0 ) {
         $( 'form', '#content' ).relevance( 'instructions' );
     }
-
-
-}( jQuery )); /* end closure */
-(function( $ ){
+}(jQuery)); /* end closure */
+(function($) {
     'use strict';
 
 
     // extend jquery to 'toggle required'
     $.fn.toggleRequired = function( required ) {
         return this.each(function() {
-
             var controls = $( this.form.elements[ this.name ] ),
-                question = $( this ).closest( '.questions > li' )
-                ;
+                question = $( this ).closest( '.questions > li' );
 
             if ( required ) {
                 if ( question.find( 'abbr[title="(required)"]' ).length === 0 ) {
@@ -1417,12 +1401,10 @@ if ( jQuery !== 'undefined' ) {
             }
         });
     };
-
-
-}( jQuery ));
+}(jQuery));
 /*globals qg*/
 // globals
-var qg = { oldIE: false }
+var qg = { oldIE: false };
 qg.date = (function() {
     'use strict';
 
@@ -1565,14 +1547,11 @@ qg.date = (function() {
         // TODO
         // return undefined, it is not known if the date is a public holiday (beyond 2 years in the future?)
 
-        return !! qldHolidays[ dateString ];
+        return !!qldHolidays[ dateString ];
     };
-
-
     return datePackage;
-
 }());
-(function( $ ){
+(function($) {
     'use strict';
 
 
@@ -1583,8 +1562,7 @@ qg.date = (function() {
         var hint = $( this ),
             max = parseInt( hint.text().replace( /Maximum:\s+(\d+)\s+words/, '$1' ), 10 ),
             textField = hint.closest( 'label' ).nextAll( 'textarea' ),
-            counter
-            ;
+            counter;
 
         // add counter
         counter = $( '<span/>' ).generateId( 'word-count' );
@@ -1604,8 +1582,6 @@ qg.date = (function() {
             }
         });
     });
-
-
 }( jQuery ));
 
 //# sourceMappingURL=qg-forms.js.map

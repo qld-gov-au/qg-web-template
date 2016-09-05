@@ -99,6 +99,7 @@ gulp.task('watch', function() {
         '!'+config.basepath.src+'{assets,assets/**}'
     ], ['content']);
     gulp.watch([config.basepath.src+'*',config.basepath.src+'*'+'*',config.basepath.src+'*'+'*'], ['other:assets']);
+    gulp.watch('build/**/*', ['drop']);
 });
 /*=====================================================================
  RELEASE TASKS
@@ -112,3 +113,8 @@ gulp.task('publish:swe', require('./gulp-tasks/release-process/publish')(gulp, p
 gulp.task('default',['content','js','sass', 'other:assets']);
 gulp.task('build',['default']);
 gulp.task('release',['release:assets', 'release:content']);
+
+//sample task
+gulp.task('drop', function() {
+    gulp.src('build/swe/**/*').pipe(gulp.dest('../'));
+});

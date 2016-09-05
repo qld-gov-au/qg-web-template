@@ -1,11 +1,11 @@
 'use strict';
 
-import helpers from '../helpers.js';
+import helpers from '../global/helpers.js';
 
 var mobileNav = (function () {
-    var $sitenav = $('#qg-site-nav');
-    var $br = $('#qg-breadcrumb');
-    var $tools = $('.qg-tools');
+    var $sitenav = $('#qg-site-nav'),
+        $br = $('#qg-breadcrumb'),
+        $tools = $('.qg-tools');
 
     function interactions() {
         $('#qg-show-menu').on('click', function () {
@@ -16,7 +16,7 @@ var mobileNav = (function () {
         });
         $(window).resize(function () {
             if ($(window).width() < helpers.breakpoints.bsSm) {
-                // esd
+                // any code
             } else if ($(window).width() >= helpers.breakpoints.bsSm && $(window).width() <= helpers.breakpoints.bsMd) {
                 if ($tools.is(':visible')) {
                     $tools.hide(1);

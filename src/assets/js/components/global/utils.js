@@ -22,7 +22,7 @@ var utils = (function () {
 
     return {
         showHide : showHide
-    }
+    };
 })();
 
 export default utils;

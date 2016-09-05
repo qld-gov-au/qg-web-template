@@ -1,4 +1,4 @@
-module.exports = function (gulp, plugins, config, argv) {
+module.exports = function (gulp, plugins, config) {
     return function () {
         gulp.src(config.basepath.build + config.basepath.bo)
             .pipe(plugins.prompt.prompt([{
@@ -12,7 +12,7 @@ module.exports = function (gulp, plugins, config, argv) {
                         message: 'Please type yes to confirm this bower package update?'
                     }],
                 function (res) {
-                    if ((res.first == 'yes') && (res.second == 'yes')) {
+                    if ((res.first === 'yes') && (res.second === 'yes')) {
                         plugins.shell.task([
                             process.chdir(config.basepath.build+config.basepath.swe),
                             'git init',
@@ -23,10 +23,9 @@ module.exports = function (gulp, plugins, config, argv) {
                             'git tag -a '+config.basepath.bowerVersion+' -m "'+config.basepath.bowerVersion+'"',
                             'git push --tags',
                             'git push -f origin master:swe-master'
-                        ])()
-                    }
-                    else {
-                        console.log("Please correct the errors");
+                        ])();
+                    } else {
+                        console.log('Please correct the errors');
                     }
                 }));
     };
