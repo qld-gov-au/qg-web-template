@@ -44,7 +44,7 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 	
 	__webpack_require__(1);
 	
@@ -58,19 +58,19 @@
 	
 	var _currentSecondaryNav2 = _interopRequireDefault(_currentSecondaryNav);
 	
-	var _utils = __webpack_require__(7);
+	var _utils = __webpack_require__(5);
 	
 	var _utils2 = _interopRequireDefault(_utils);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	(function ($) {
-	    "use strict";
+	(function () {
+	    'use strict';
 	
 	    _mobileNav2.default.interactions();
 	    _currentSecondaryNav2.default.highlightNavItem();
 	    _utils2.default.showHide();
-	})(jQuery);
+	})();
 
 /***/ },
 /* 1 */
@@ -99,7 +99,7 @@
 	    $('form').filter('[action*="//pan.search.qld.gov.au/"]').each(function () {
 	        var form = this;
 	        var searchField = $(form.elements.query).filter('[name="query"]');
-	        var lastSearch = searchField.val();
+	        // var lastSearch = searchField.val();
 	        var userTyped = '';
 	
 	        // ARIA
@@ -155,7 +155,7 @@
 	        var KEYS = {
 	            alt: 18,
 	            backspace: 8,
-	            'delete': 46,
+	            delete: 46,
 	            down: 40,
 	            enter: 13,
 	            escape: 27,
@@ -244,7 +244,7 @@
 	                // 	// set the value to the best answer and select the untyped portion of the text
 	                // 	prefillInput( data[0] );
 	                // }
-	                lastSearch = searchField.val();
+	                searchField.val();
 	            });
 	
 	            // show suggestions box
@@ -278,10 +278,7 @@
 	    'use strict';
 	
 	    var SUBMIT_TOLERANCE = 10000,
-	        // milliseconds
-	
-	    DEFAULT_STATUS_HTML = '<div class="status warn"><div class="inner"><h2>Please check your answers</h2><ol></ol></div></div>',
-	
+	        DEFAULT_STATUS_HTML = '<div class="status warn"><div class="inner"><h2>Please check your answers</h2><ol></ol></div></div>',
 	
 	    // fields that validate
 	    candidateForValidation = 'input, select, textarea',
@@ -316,7 +313,6 @@
 	    // helper for .label, .hint and .alert
 	    getLabelComponent = function getLabelComponent(component, options) {
 	        return this.map(function (index, domElement) {
-	
 	            var $element = $(domElement),
 	                labelElement = null,
 	                foundElement = null;
@@ -335,12 +331,10 @@
 	                    }
 	                }
 	            }
-	
 	            return foundElement;
 	        });
 	    },
 	        changeValidityCheck = function changeValidityCheck() {
-	
 	        var $this = $(this),
 	            alertElement = $this.formValidation('alert'),
 	            alertLevel,
@@ -348,7 +342,6 @@
 	
 	        // is this control valid?
 	        if (this.validity.valid) {
-	
 	            // is it part of a group that contain other invalid controls?
 	            if ($this.formValidation('question').find('.alert').filter(alertElement).length > 0) {
 	                alertElement.remove();
@@ -372,12 +365,10 @@
 	            // remove old alerts (change handler should have already done this)
 	            .find('.alert').remove();
 	        } else {
-	
 	            // does alert exist?
 	            if (alertElement.length === 0) {
 	                alertElement = $('<em class="alert"/>');
 	            }
-	
 	            // show message
 	            alertElement.text($this.formValidation('getValidationMessage'));
 	            // append to form
@@ -396,14 +387,12 @@
 	    // checks for invalid elements
 	    // returns number of invalid elements
 	    submitValidityCheck = function submitValidityCheck() {
-	
 	        // form object
 	        var form = $(this).closest('form'),
 	
 	
 	        // invalid fields
 	        invalid = form.find(candidateForValidation).filter(function invalidFields() {
-	
 	            // skip disabled
 	            if (this.disabled) {
 	                return false;
@@ -435,13 +424,11 @@
 	        lastGroupSeen = true;
 	
 	        if (invalid.length > 0) {
-	
 	            // remove old messages
 	            messages.find('li').remove();
 	
 	            // add new messages
 	            invalid.each(function () {
-	
 	                // get field
 	                var $this = $(this),
 	
@@ -466,7 +453,6 @@
 	                item = pluginData.call($this, 'summaryElement') || pluginData.call($this, 'summaryElement', $('<li><a href="#' + labelId + '"></a></li>'));
 	
 	                if (group.length === 0 || group[0] !== lastGroupSeen) {
-	
 	                    // update last group seen
 	                    lastGroupSeen = group[0];
 	
@@ -561,12 +547,10 @@
 	
 	    // plugin methods
 	    methods = {
-	
 	        // $( x ).formValidation( 'alert' ) -- get
 	        // get alert text
 	        alert: function alert() {
 	            return this.map(function (index, domElement) {
-	
 	                var $element = $(domElement),
 	                    group;
 	
@@ -668,7 +652,6 @@
 	    };
 	
 	    $.fn.formValidation = function (method) {
-	
 	        // Method calling logic
 	        // http://docs.jquery.com/Plugins/Authoring#Plugin_Methods
 	        if (methods[method]) {
@@ -781,7 +764,6 @@
 	            };
 	        },
 	            validateField = function validateField(message) {
-	
 	            var $this = $(this),
 	                required = !!$this.attr('required'),
 	                radio = this.type === 'radio' && getRadioButtonsInGroup(this),
@@ -1054,8 +1036,8 @@
 	
 	        return $(this).each(function () {
 	
-	            var countable = $(this);
-	            var counter = $(options.counter);
+	            var countable = $(this),
+	                counter = $(options.counter);
 	            if (!counter.length) {
 	                return false;
 	            }
@@ -1276,7 +1258,6 @@
 	            // shows the element (does not check if element is already visible)
 	            // triggers 'relevant-done' after showing is complete
 	            show: function show() {
-	
 	                // enable elements before they are shown
 	                this.add(this.find(elementsToDisable))
 	                // but not any controls that will remain irrelevant
@@ -1294,7 +1275,6 @@
 	            // $( x ).relevance( 'hide' )
 	            // hides the element (does not check if element is already hidden)
 	            hide: function hide() {
-	
 	                this.attr({
 	                    hidden: 'hidden',
 	                    'aria-hidden': 'true'
@@ -1419,12 +1399,9 @@
 	                        question.relevance('relevantWhen', { name: toggle.attr('name'), value: value, negate: negate });
 	                    }
 	                });
-	
 	                return this;
 	            }
-	
 	        };
-	
 	        // fallback (default) event handling
 	        $(document).bind('relevant irrelevant', function (event) {
 	            var target = $(event.target);
@@ -1436,7 +1413,6 @@
 	        });
 	
 	        $.fn.relevance = function (method) {
-	
 	            // Method calling logic
 	            // http://docs.jquery.com/Plugins/Authoring#Plugin_Methods
 	            if (methods[method]) {
@@ -1581,13 +1557,10 @@
 	        window.initConstraintValidationAPI();
 	        $('form').formValidation('validate');
 	    };
-	
 	    // now: hookup form validation
 	    initValidation();
-	
 	    // document ready: hookup form validation
 	    $(initValidation);
-	
 	    // instruction based relevance
 	    if ($('.relevance', 'form').length > 0) {
 	        $('form', '#content').relevance('instructions');
@@ -1600,7 +1573,6 @@
 	
 	    $.fn.toggleRequired = function (required) {
 	        return this.each(function () {
-	
 	            var controls = $(this.form.elements[this.name]),
 	                question = $(this).closest('.questions > li');
 	
@@ -1762,7 +1734,6 @@
 	
 	        return !!qldHolidays[dateString];
 	    };
-	
 	    return datePackage;
 	}();
 	(function ($) {
@@ -1805,45 +1776,48 @@
 /* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 	
-	var _helpers = __webpack_require__(5);
+	var _utils = __webpack_require__(5);
 	
-	var _helpers2 = _interopRequireDefault(_helpers);
+	var _utils2 = _interopRequireDefault(_utils);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	// TODO - remove specific show hide function and make it use the general show hide in utils
 	var mobileNav = function () {
-	    var $sitenav = $("#qg-site-nav");
-	    var $br = $("#qg-breadcrumb");
-	    var $tools = $(".qg-tools");
+	  var siteNav = '#qg-site-nav',
+	      br = '#qg-breadcrumb',
+	      tools = '.qg-tools';
 	
-	    function interactions() {
-	        $("#qg-show-menu").on("click", function () {
-	            $br.add($sitenav).slideToggle(200);
-	        });
-	        $("#qg-show-search").on("click", function () {
-	            $("#qg-search-form").toggleClass("qg-visually-hidden-md", 1500);
-	        });
-	        $(window).resize(function () {
-	            if ($(window).width() < _helpers2.default.breakpoints.bsSm) {} else if ($(window).width() >= _helpers2.default.breakpoints.bsSm && $(window).width() <= _helpers2.default.breakpoints.bsMd) {
-	                if ($tools.is(":visible")) {
-	                    $tools.hide(1);
-	                }
-	            } else {
-	                if ($sitenav.is(":hidden")) {
-	                    $sitenav.slideToggle(1);
-	                    $br.slideToggle(1);
-	                }
-	                if ($tools.is(":hidden")) {
-	                    $tools.slideToggle(1);
-	                }
-	            }
-	        });
-	    }
-	    return {
-	        interactions: interactions
-	    };
+	  function interactions() {
+	    $(document).on('click', '#qg-show-menu', function () {
+	      $(br).add($(siteNav)).slideToggle(200);
+	    });
+	    $(document).on('click', '#qg-show-search', function () {
+	      $('#qg-search-form').toggleClass('qg-visually-hidden-md', 1500);
+	    });
+	    $(window).resize(function () {
+	      if ($(window).width() < _utils2.default.breakpoints.bsSm) {
+	        // any code
+	      } else if ($(window).width() >= _utils2.default.breakpoints.bsSm && $(window).width() <= _utils2.default.breakpoints.bsMd) {
+	        if ($(tools).is(':visible')) {
+	          $(tools).hide(1);
+	        }
+	      } else {
+	        if ($(siteNav).is(':hidden')) {
+	          $(siteNav).slideToggle(1);
+	          $(br).slideToggle(1);
+	        }
+	        if ($(tools).is(':hidden')) {
+	          $(tools).slideToggle(1);
+	        }
+	      }
+	    });
+	  }
+	  return {
+	    interactions: interactions
+	  };
 	}();
 	
 	module.exports = mobileNav;
@@ -1852,33 +1826,55 @@
 /* 5 */
 /***/ function(module, exports) {
 
-	"use strict";
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	var helpers = function () {
+	var utils = function () {
 	    var breakpoints = {
 	        bsXs: 480,
 	        bsSm: 768,
 	        bsMd: 992,
 	        bsLg: 1200
 	    };
+	    var showHide = function showHide() {
+	        var $button = $('.qg-toggle-btn');
+	        var $content = $('.qg-toggle-content');
+	
+	        $button.each(function () {
+	            $(this).click(function (e) {
+	                e.preventDefault();
+	                var $findContent = $(this).parents('.row').last().next($content);
+	                if ($findContent.hasClass('qg-visually-hidden')) {
+	                    $findContent.slideUp(0, function () {
+	                        $findContent.removeClass('qg-visually-hidden').slideDown('fast');
+	                    });
+	                } else {
+	                    $findContent.slideUp('fast', function () {
+	                        $findContent.addClass('qg-visually-hidden').slideDown(0);
+	                    });
+	                }
+	            });
+	        });
+	    };
+	
 	    return {
+	        showHide: showHide,
 	        breakpoints: breakpoints
 	    };
 	}();
 	
-	exports.default = helpers;
+	exports.default = utils;
 
 /***/ },
 /* 6 */
 /***/ function(module, exports) {
 
-	"use strict";
+	'use strict';
 	
 	var activeSideNav = function () {
-	    var currentFilename = window.location.pathname.substr(window.location.pathname.lastIndexOf('/') + 1);
+	    // const currentFilename = window.location.pathname.substr(window.location.pathname.lastIndexOf('/') + 1);
 	
 	    function refineText(text) {
 	        return text.toLowerCase().replace(/ /g, '');
@@ -1900,9 +1896,9 @@
 	
 	    function highlightNavItem() {
 	        var currentPageTitle = getCurrentTitle();
-	        $("#qg-section-nav ul>li").each(function (index) {
+	        $('#qg-section-nav ul>li').each(function () {
 	            if (refineText($(this).text()) === $.trim(currentPageTitle)) {
-	                $(this).find("a").addClass("active");
+	                $(this).find('a').addClass('active');
 	            }
 	        });
 	    }
@@ -1913,44 +1909,6 @@
 	}();
 	
 	module.exports = activeSideNav;
-
-/***/ },
-/* 7 */
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	var utils = function () {
-	    function showHide() {
-	        var $button = $('.qg-toggle-btn');
-	        var $content = $('.qg-toggle-content');
-	
-	        $button.each(function () {
-	            $(this).click(function (e) {
-	                e.preventDefault();
-	                var $content = $(this).parents('.row').last().next($content);
-	                if ($content.hasClass("qg-visually-hidden")) {
-	                    $content.slideUp(0, function () {
-	                        $content.removeClass('qg-visually-hidden').slideDown('fast');
-	                    });
-	                } else {
-	                    $content.slideUp('fast', function () {
-	                        $content.addClass('qg-visually-hidden').slideDown(0);
-	                    });
-	                }
-	            });
-	        });
-	    }
-	
-	    return {
-	        showHide: showHide
-	    };
-	}();
-	
-	exports.default = utils;
 
 /***/ }
 /******/ ]);
