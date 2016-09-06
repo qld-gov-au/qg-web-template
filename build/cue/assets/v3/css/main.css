@@ -5955,6 +5955,9 @@ a {
           background-color: #505050; }
         #qg-site-nav ul li a, #qg-site-nav ul li a:link, #qg-site-nav ul li a:visited {
           color: #FFF; }
+          #qg-site-nav ul li a:hover, #qg-site-nav ul li a:link:hover, #qg-site-nav ul li a:visited:hover {
+            background-color: transparent;
+            text-decoration: underline; }
       #qg-site-nav ul li + li {
         border: none; } }
 
@@ -6250,7 +6253,8 @@ header .alert {
     list-style-type: none; }
   #qg-page-feedback form.form ul.actions li {
     display: inline-block;
-    margin-right: 1em; }
+    margin-right: 1em;
+    text-align: center; }
   #qg-page-feedback form.form .label {
     color: #000 !important;
     font-weight: normal;
