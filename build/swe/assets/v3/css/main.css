@@ -6247,6 +6247,12 @@ header .alert {
     color: #c90000;
     font-size: 16px;
     font-size: 1rem; }
+  @media (max-width: 768px) {
+    #qg-page-feedback #qg-page-feedback-form {
+      margin: 0;
+      padding: 0; }
+      #qg-page-feedback #qg-page-feedback-form h2 {
+        margin: 1em 35px; } }
   #qg-page-feedback form.form ol, #qg-page-feedback form.form ol.questions, #qg-page-feedback form.form ul, #qg-page-feedback form.form ul.questions {
     margin: 0;
     padding: 1em 0;
@@ -6296,8 +6302,11 @@ header .alert {
     display: block; }
 
 @media (max-width: 768px) {
-  #qg-feedback .qg-cta, #qg-feedback .qg-share {
-    text-align: center; } }
+  #qg-feedback .qg-share {
+    text-align: center; }
+  #qg-feedback .qg-cta {
+    text-align: center;
+    margin-top: 1em; } }
 
 /* ! asides */
 #qg-content #qg-secondary-content {

@@ -123,9 +123,22 @@ color: #000;
     
     
     #qg-page-feedback-form {
+    @extend .col-md-12;    
         
-             @extend .col-md-12;
- 
+     @include breakpoint($bs-sm){ 
+        margin:0;
+         padding: 0;
+         
+           h2 {
+            margin: 1em 35px;
+        }
+         
+         
+        }
+        
+        
+      
+         
     }
     
         form.form {
@@ -206,9 +219,16 @@ color: #000;
 
 @include breakpoint($bs-sm){
 #qg-feedback{
-.qg-cta, .qg-share  {
+.qg-share  {
 text-align: center;
 }
 
+.qg-cta  {
+text-align: center;
+margin-top: 1em;
+}    
+
 }
+ 
+
 }
