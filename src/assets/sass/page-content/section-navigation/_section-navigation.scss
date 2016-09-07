@@ -25,7 +25,7 @@ transition: all 0.2s;
 
 a, a:link, a:visited {
 margin: 0;
-padding: .5em 0 .3em 0;
+padding: .5em .5em .3em 30px;
 text-decoration: none;
 display: block;
 }
@@ -33,8 +33,8 @@ display: block;
 a:hover {
 text-decoration:none;
 background-color: #d1d1d1;
-} 
-    
+}
+
 a.active {
 color: #FFF;
 background-color: #007EB1;     
@@ -46,7 +46,7 @@ font-size: .9em;
 display: inline-block !important;
 content: "\f054";
 margin: 0;
-padding: 0 0.3em 0 30px;
+padding: 0 0.3em 0 0;
 color: #13578b;
 text-decoration: none;
 opacity: .5;

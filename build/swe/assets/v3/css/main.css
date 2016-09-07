@@ -5882,7 +5882,8 @@ a {
   @media (max-width: 480px) {
     #qg-site-header .qg-utilities {
       display: block;
-      text-align: center; }
+      text-align: center;
+      padding-top: 1em; }
       #qg-site-header .qg-utilities .fa {
         font-size: 1.3em; } }
 
@@ -6033,7 +6034,7 @@ header .alert {
     transition: all 0.2s; }
     #qg-content #qg-section-nav li a, #qg-content #qg-section-nav li a:link, #qg-content #qg-section-nav li a:visited {
       margin: 0;
-      padding: .5em 0 .3em 0;
+      padding: .5em .5em .3em 30px;
       text-decoration: none;
       display: block; }
     #qg-content #qg-section-nav li a:hover {
@@ -6048,7 +6049,7 @@ header .alert {
       display: inline-block !important;
       content: "\f054";
       margin: 0;
-      padding: 0 0.3em 0 30px;
+      padding: 0 0.3em 0 0;
       color: #13578b;
       text-decoration: none;
       opacity: .5; }
@@ -6107,6 +6108,7 @@ header .alert {
           color: #CCC;
           font-family: FontAwesome;
           font-size: .9em;
+          text-align: center;
           content: "\f078";
           font-weight: normal;
           margin: 0; }
@@ -6244,7 +6246,7 @@ header .alert {
     #qg-page-feedback #qg-page-feedback-form {
       margin: 0;
       padding: 0; }
-      #qg-page-feedback #qg-page-feedback-form h2 {
+      #qg-page-feedback #qg-page-feedback-form h2, #qg-page-feedback #qg-page-feedback-form p {
         margin: 1em 35px; }
       #qg-page-feedback #qg-page-feedback-form textarea {
         width: 100%; } }
@@ -6301,7 +6303,9 @@ header .alert {
     text-align: center; }
   #qg-feedback .qg-cta {
     text-align: center;
-    margin-top: 1em; } }
+    margin-top: 1em; }
+  #qg-page-feedback .info {
+    padding: 1em 0 !important; } }
 
 #qg-feedback {
   background-color: #007EB1;
@@ -6375,7 +6379,7 @@ header .alert {
     #qg-page-feedback #qg-page-feedback-form {
       margin: 0;
       padding: 0; }
-      #qg-page-feedback #qg-page-feedback-form h2 {
+      #qg-page-feedback #qg-page-feedback-form h2, #qg-page-feedback #qg-page-feedback-form p {
         margin: 1em 35px; }
       #qg-page-feedback #qg-page-feedback-form textarea {
         width: 100%; } }
@@ -6432,7 +6436,9 @@ header .alert {
     text-align: center; }
   #qg-feedback .qg-cta {
     text-align: center;
-    margin-top: 1em; } }
+    margin-top: 1em; }
+  #qg-page-feedback .info {
+    padding: 1em 0 !important; } }
 
 /* ! asides */
 #qg-content #qg-secondary-content {

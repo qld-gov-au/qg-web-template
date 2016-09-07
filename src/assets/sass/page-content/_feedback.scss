@@ -123,11 +123,8 @@ color: #c90000;
 @include fontSize(16px); 
 } 
 
-
 // ################################################# 
 // #################################################  
-
-
 
 #qg-page-feedback-form {
 @extend .col-md-12;    
@@ -136,19 +133,15 @@ color: #c90000;
 margin:0;
 padding: 0;
 
-h2 {
+h2, p {
 margin: 1em 35px;
 }
-
+    
 textarea {
 width: 100%;   
 }
 
-
 }
-
-
-
 
 }
 
@@ -229,17 +222,26 @@ display: block;
 @include breakpoint($bs-md) {}
 
 @include breakpoint($bs-sm){
-#qg-feedback{
-.qg-share  {
-text-align: center;
+    
+#qg-feedback {
+
+    .qg-share  {
+    text-align: center;
+    }
+
+    .qg-cta  {
+    text-align: center;
+    margin-top: 1em;
+    }  
+
 }
-
-.qg-cta  {
-text-align: center;
-margin-top: 1em;
-}    
-
+    
+#qg-page-feedback {
+    
+    .info {
+    padding: 1em 0 !important;
+    }
+    
 }
-
 
 }
