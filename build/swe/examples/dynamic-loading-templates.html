@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <title>Example of swe componenets being loaded dynamically using mustache.js</title>
+
+    <!--#set var="franchise" value=""-->
+    <!--#set var="title" value="Example page"-->
+    <!--#set var="licence" value="http://creativecommons.org/licenses/by/3.0/au/"-->
+
+
+    <!--pasted from head-assets.html-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="/assets/v3/css/main.css" rel="stylesheet" type="text/css" media="all">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- end head-assets.html-->
+
+    <meta name="description" content="DESCRIPTION">
+    <meta name="keywords" content="KEYWORDS">
+    <link rel="schema.DCTERMS" href="http://purl.org/dc/terms/">
+    <link rel="schema.AGLSTERMS" href="http://www.agls.gov.au/agls/terms/">
+    <meta name="DCTERMS.creator" scheme="AGLSTERMS.GOLD" content="c=AU; o=The State of Queensland; ou=DEPARTMENT NAME; ou=UNIT NAME">
+    <meta name="DCTERMS.publisher" scheme="AGLSTERMS.AglsAgent" content="corporateName=The State of Queensland; jurisdiction=Queensland">
+    <meta name="DCTERMS.created" content="2010-11-04">
+    <meta name="DCTERMS.modified" content="2011-03-05">
+    <meta name="DCTERMS.title" content="Who is a carer?">
+    <meta name="DCTERMS.alternative" content="Who is a carer?">
+    <meta name="DCTERMS.description" content="DESCRIPTION">
+    <meta name="DCTERMS.subject" scheme="AGLSTERMS.APAIS" content="SUBJECT">
+    <meta name="AGLSTERMS.function" scheme="AGLSTERMS.AGIFT" content="FUNCTION">
+    <meta name="DCTERMS.type" scheme="DCTERMS.DCMIType" content="Text">
+    <meta name="AGLSTERMS.documentType" scheme="AGLSTERMS.agls-document" content="guidelines">
+    <meta name="DCTERMS.audience" scheme="AGLSTERMS.agls-audience" content="">
+    <meta name="DCTERMS.jurisdiction" scheme="AGLSTERMS.AglsJuri" content="Queensland">
+    <meta name="DCTERMS.license" scheme="DCTERMS.URI" content="http://creativecommons.org/licenses/by/3.0/au/">
+
+    <!-- pasted from footer-scripts.html -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!--demo loader - in production version scripts will be loades from CDN-->
+    <script type="text/javascript" src="https://rawgit.com/qld-gov-au/glue-module-loader/master/htdocs/assets/js/loader.js"></script>
+    <!-- end footer-scripts.html -->
+
+    <script src="/assets/v3/js/main.js"></script>
+    <script>
+      function loadFragmentDynamically(id, url){
+          $.get(url, function(template){
+            //simulate a slower connection so that templates really load after JS
+            setTimeout(function(){
+              document.getElementById(id).innerHTML = template;
+            }, 500);
+          });
+      }
+    </script>
+
+</head>
+
+<body>
+    <div class="container-fluid qg-site-width">
+
+        <header id="qg-site-header">
+
+          <div id="coat-of-arms"></div>
+          <script>loadFragmentDynamically('coat-of-arms','../assets/includes/site-header/coat-of-arms.html');</script>
+
+            <div id="site-utilities"></div>
+            <script>loadFragmentDynamically('site-utilities','../assets/includes/site-header/site-utilities.html');</script>
+
+            <div id="site-search"></div>
+            <script>loadFragmentDynamically('site-search','../assets/includes/site-header/site-search.html');</script>
+
+            <div id="global-alert"></div>
+            <script>loadFragmentDynamically('global-alert','../assets/includes/site-header/global-alert.html');</script>
+
+            <div id="site-navigation"></div>
+            <script>loadFragmentDynamically('site-navigation','../assets/includes/site-header/site-navigation.html');</script>
+
+        </header>
+
+        <div id="qg-content">
+            <div id="qg-three-col" class="clearfix row">
+              <div id="breadcrumb-demo"></div>
+              <script>loadFragmentDynamically('breadcrumb-demo','../assets/includes/breadcrumbs/breadcrumb-demo.html');</script>
+
+                <div id="qg-primary-content" role="main">
+
+                    <!--#include virtual="/assets/includes/global/alert.html"-->
+                    <div id="alert"></div>
+                    <script>loadFragmentDynamically('alert','../assets/includes/global/alert.html');</script>
+
+                    <h1>Who is a carer?</h1>
+
+                    <p>Carers play a crucial role in our community&mdash;often without realising. For many people, looking after a loved one is 'just what you do<span style="color: #008000;">'.</span>&nbsp;They are mums and dads, sons and daughters, brothers, sisters, grandparents, spouses, friends and neighbours.</p>
+
+                    <p>The <em><a href="https://www.legislation.qld.gov.au/LEGISLTN/ACTS/2008/08AC070.pdf">Carers (Recognition) Act 2008</a></em> defines a carer as:</p>
+
+                    <p>"An individual who provides, in a non-contractual and unpaid capacity, ongoing care or assistance to another person who, because of disability, frailty, chronic illness or pain, requires assistance with everyday tasks."</p>
+
+                    <p>In Queensland,&nbsp;according to the <a href="http://www.abs.gov.au/AUSSTATS/abs@.nsf/DetailsPage/4430.02012">Australian Bureau of Statistics</a>, about 484,400 people&mdash;or 10.5% of the state's population,&nbsp;were 'carers' in 2012.</p>
+
+                    <h2>Help for&nbsp;carers</h2>
+
+                    <p>Whether you are a carer for a few hours a week or all day every day, caring for a relative, friend or neighbour can take its toll.&nbsp;&nbsp;</p>
+
+                    <p>Ask yourself the following questions. If you answer &lsquo;yes' to any of these questions, <a href="/community/support-for-carers/">find out what support is available to you</a>.</p>
+
+                    <ul>
+                        <li>Is your situation out of control?</li>
+
+                        <li>Are you feeling overwhelmed, confused or shocked by your situation?</li>
+
+                        <li>Do you find it difficult to say 'no'?</li>
+
+                        <li>Would you like a break from caring?</li>
+
+                        <li>Do you no longer see your friends?</li>
+
+                        <li>Are you feeling isolated and don't know how to connect to others?</li>
+
+                        <li>Do you feel that nobody understands what you are going through?</li>
+
+                        <li>Would you like to learn some coping or stress management skills?</li>
+
+                        <li>Are you dealing with sadness, grief or loss (this could include loss of the life you used to know or loss of opportunities for the person you care for)?</li>
+
+                        <li>Are you going through a transition i.e. giving up your job to look after somebody?</li>
+
+                        <li>Would you like some practical problem-solving techniques?</li>
+
+                        <li>Do you need help to focus on your own health and wellbeing?</li>
+
+                        <li>Would you like to just talk to someone about your situation?</li>
+
+                        <li>Are you feeling guilty, frustrated or angry about the situation?</li>
+
+                        <li>Are you afraid about what will happen when you can no longer perform your caring role?</li>
+                    </ul>
+
+                    <div class="qg-content-footer">
+
+                        <dl>
+                            <dt>Last reviewed:</dt>
+                            <dd>1 July 2016</dd>
+                            <dt>Last updated:</dt>
+                            <dd>1 July 2016</dd>
+                        </dl>
+
+                        <p id="document-licence">
+                            <a title="Text available under Creative Commons Attribution 3.0 Australia (CC BY 3.0) licence" href="http://creativecommons.org/licenses/by/3.0/au/" rel="license">
+                                <img alt="Creative Commons Attribution 3.0 Australia (CC BY 3.0)" src="https://static.qgov.net.au/assets/v2/images/licences/by-80x15.png"></a>
+                        </p>
+
+                    </div>
+                </div>
+
+                <aside id="qg-secondary-content">
+
+                    <div id="aside-global"></div>
+                    <script>loadFragmentDynamically('aside-global','../assets/includes/asides/aside-global.html');</script>
+                    <div id="aside-disaster-alert"></div>
+                    <script>loadFragmentDynamically('aside-disaster-alert','../assets/includes/asides/aside-disaster-alert.html');</script>
+                    <div id="aside-contact-qgov"></div>
+                    <script>loadFragmentDynamically('aside-contact-qgov','../assets/includes/asides/aside-contact-qgov.html');</script>
+                    <div id="aside-story-qgov"></div>
+                    <script>loadFragmentDynamically('aside-story-qgov','../assets/includes/asides/aside-story-qgov.html');</script>
+                    <div id="aside-your-say-qgov"></div>
+                    <script>loadFragmentDynamically('aside-your-say-qgov','../assets/includes/asides/aside-your-say-qgov.html');</script>
+                    <div id="aside-tip-qgov"></div>
+                    <script>loadFragmentDynamically('aside-tip-qgov','../assets/includes/asides/aside-tip-qgov.html');</script>
+                    <div id="aside-search-qgov"></div>
+                    <script>loadFragmentDynamically('aside-search-qgov','../assets/includes/asides/aside-search-qgov.html');</script>
+                    <div id="aside-subscribe-qgov"></div>
+                    <script>loadFragmentDynamically('aside-subscribe-qgov','../assets/includes/asides/aside-subscribe-qgov.html');</script>
+                    <div id="aside-download-qgov"></div>
+                    <script>loadFragmentDynamically('aside-download-qgov','../assets/includes/asides/aside-download-qgov.html');</script>
+                    <div id="aside-feedback-qgov"></div>
+                    <script>loadFragmentDynamically('aside-feedback-qgov','../assets/includes/asides/aside-feedback-qgov.html');</script>
+
+                    <div class="qg-aside" role="wairole:complementary">
+                        <h2>Self-help groups</h2>
+
+                        <p>Finding out you are not alone in your situation can do wonders for your wellbeing.</p>
+
+                        <p>One way of connecting with others is to join a self-help group, where people come together to support each other and share information.</p>
+
+                        <p><a href="http://www.selfhelpqld.org.au">Self Help Queensland</a> can help you find a group in your area. Phone (07) 3344 6919 or email <a href="mailto:selfhelp@gil.com.au">selfhelp@gil.com.au</a>.</p>
+                    </div>
+
+                    <div class="qg-aside" role="wairole:complementary">
+                        <h2>Carer Business Discount Card</h2>
+
+                        <p>If you receive a Centrelink carer payment or carers allowance and live in Queensland, you are eligible for a <a href="/community/support-for-carers/carer-card/">Carer Business Discount Card</a>,which recognises the contribution carers make to the community and provides discounts on products and services.</p>
+                    </div>
+                </aside>
+
+                <div id="sample"></div>
+                <script>
+                    loadFragmentDynamically('sample','../assets/includes/section-navigation/sample.html');
+                </script>
+
+            </div>
+            <div id="page-options-post"></div>
+            <script>
+                loadFragmentDynamically('page-options-post','../assets/includes/global/page-options-post.html');
+            </script>
+
+        </div>
+        <footer>
+            <div id="footer-site-map"></div>
+            <script>
+                loadFragmentDynamically('footer-site-map','../assets/includes/site-footer/footer-site-map.html');
+            </script>
+            <div id="footer-legals"></div>
+            <script>
+                loadFragmentDynamically('footer-legals','../assets/includes/site-footer/footer-legals.html');
+            </script>
+        </footer>
+    </div>
+</body>
+
+</html>
