@@ -52,11 +52,12 @@
 
     <script src="/assets/v3/js/main.js"></script>
     <script>
+      /** A simple delayed loading function that simulates how a single page app would load the html includes. **/
       function loadFragmentDynamically(id, url){
-          $.get(url, function(template){
+          $.get(url, function(fragment){
             //simulate a slower connection so that templates really load after JS
             setTimeout(function(){
-              document.getElementById(id).innerHTML = template;
+              document.getElementById(id).innerHTML = fragment;
             }, 500);
           });
       }
@@ -93,7 +94,6 @@
 
                 <div id="qg-primary-content" role="main">
 
-                    <!--#include virtual="/assets/includes/global/alert.html"-->
                     <div id="alert"></div>
                     <script>loadFragmentDynamically('alert','../assets/includes/global/alert.html');</script>
 
