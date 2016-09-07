@@ -6,29 +6,44 @@
 
   input {
     border-radius: 0;
+    border-color: $green; 
   }
 
   button.btn-default {
     background: $green;
     border-radius: 0;
+      z-index: 99;
   }
     
     .listbox {
+        
     list-style: none;
     position: absolute;
-    top: 2em;
-    z-index: 999999;
+    top: 100%;
+    top: calc(100% - 1px);
+    z-index: 98;
     width: 100%;
     padding: 0;
+    border: 1px solid $green;
+    border-top: 0px;
+    background: #FFF;
         
-    li {
-      background: #E7F5FE;
+        li {
+      
       width: 100%;
       padding-left: 0.8em;
+            &:last-of-type {
+              margin-bottom: .3em;  
+            }
+       
       a {
-        mark {
-         font-weight: bold;
-        }
+         color: #000;
+         text-decoration: none;
+             mark {
+             font-weight: bold;
+             background-color: transparent;
+                 padding:inherit;
+            }
       }
     }
   }  
