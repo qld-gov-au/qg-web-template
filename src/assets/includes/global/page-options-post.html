@@ -12,11 +12,7 @@
     </div>
 
     <div class="qg-cta">
-        <!--<a href="#qg-page-feedback" class="qg-glue-btn" id="page-feedback-useful">Feedback</a>-->
-        <!--<a class="btn btn-default qg-glue-btn" href="#" role="button">Feedback</a>       -->
-        <ul>
-            <li><a href="#" class="btn btn-default qg-toggle-btn" id="page-feedback-useful">Feedback</a></li>
-        </ul>
+        <a href="#" class="btn btn-default qg-toggle-btn" id="page-feedback-useful">Feedback</a>
     </div>
 
 </div>
@@ -24,6 +20,29 @@
 <div id="qg-page-feedback" class="qg-visually-hidden qg-toggle-content row">
 
     <form id="qg-page-feedback-form" method="post" action="https://www.smartservice.qld.gov.au/services/submissions/email/feedback/feedback" class="form">
+
+        <ol class="questions">
+            <li class="col-lg-12">
+                <fieldset id="page-feedback-about">
+                    <legend><span class="label">Is your feedback about:</span></legend>
+                    <ul class="choices">
+                        <li>
+                            <input name="page-feedback-about" id="page-feedback-about-this-website" type="radio" value="this website">
+                            <label for="page-feedback-about-this-website">this website</label>
+                        </li>
+                        <li>
+                            <input name="page-feedback-about" id="page-feedback-about-a-government-service" type="radio" value="a government service">
+                            <label for="page-feedback-about-a-government-service">a government service, department or staff member?</label>
+                        </li>
+                    </ul>
+                </fieldset>
+            </li>
+        </ol>
+
+        <div class="status info col-lg-12">
+            <h2>Feedback on government services, departments and staff</h2>
+            <p>Please use our <a href="https://www.qld.gov.au/contact-us/complaints/">complaints and compliments form</a>.</p>
+        </div>
 
         <h2>Page feedback</h2>
 
@@ -90,13 +109,13 @@
             </li>
 
             <li class="footer col-md-12">
-                
-                <input type="hidden" name="franchise" id="franchise" value="<!--#echo encoding="entity" var="franchise" -->" />
-				<input type="hidden" name="page-title" id="page-title" value="<!--#echo encoding="entity" var="title" -->" />
-				<input type="hidden" name="page-url" value="<!--#echo encoding="entity" var="SERVER_NAME" --><!--#echo encoding="entity" var="REQUEST_URI" -->" />
-				<input type="hidden" name="page-referer" value="<!--#echo encoding="entity" var="HTTP_REFERER" -->" />
-				<input type="hidden" name="rspUsrAgent" value="<!--#echo encoding="entity" var="HTTP_USER_AGENT" -->" />
-                
+
+                <input type="hidden" name="franchise" id="franchise" value="<!--#echo encoding=" entity " var="franchise " -->" />
+                <input type="hidden" name="page-title" id="page-title" value="<!--#echo encoding=" entity " var="title " -->" />
+                <input type="hidden" name="page-url" value="<!--#echo encoding=" entity " var="SERVER_NAME " --><!--#echo encoding="entity " var="REQUEST_URI " -->" />
+                <input type="hidden" name="page-referer" value="<!--#echo encoding=" entity " var="HTTP_REFERER " -->" />
+                <input type="hidden" name="rspUsrAgent" value="<!--#echo encoding=" entity " var="HTTP_USER_AGENT " -->" />
+
                 <ul class="actions">
 
                     <li>
