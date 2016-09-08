@@ -30,3 +30,10 @@ node_modules
 .node_repl_history
 
 .idea/
+
+### macOS ###
+*.DS_Store
+.AppleDouble
+.LSOverride
+etc/
+

@@ -1,0 +1,35 @@
+.qg-content-footer{
+margin-top: 2em;   
+margin-bottom: 2em;    
+
+dl {    
+@extend .col-md-6;
+@extend .col-lg-6; 
+    
+@include fontSize(14px);    
+margin: 0;
+padding: 0;
+
+dt {
+margin: 0;
+padding: 0;
+float: left;
+clear: left;
+text-align: left;
+margin-right: 1em;
+font-weight: normal;
+} 
+
+dd {
+margin: 0;
+padding: 0;
+float: left;
+}
+}
+
+#document-licence { 
+@extend .col-md-6;
+@extend .col-lg-6; 
+text-align: right;
+}
+}

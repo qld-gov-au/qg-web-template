@@ -1,6 +1,6 @@
 //layout styles
 #qg-three-col {
-  .qg-section-nav{
+  #qg-section-nav{
     @extend .col-sm-12;
     @extend .col-md-3;
     @extend .col-md-pull-9;
@@ -8,7 +8,7 @@
 }
 
 #qg-two-col-nav {
-  .qg-section-nav{
+  #qg-section-nav{
     @extend .col-sm-12;
     @extend .col-md-3;
     @extend .col-md-pull-9;
@@ -17,14 +17,14 @@
 
 //other styles
 #qg-three-col, #qg-two-col-nav{
-  .qg-section-nav{
+  #qg-section-nav{
        background: #ececec;
   }
 }
 
 // responsive styles
 @include breakpoint($bs-md){
-  .qg-section-nav{
+  #qg-section-nav{
     padding-top: 0.8em;
   }
 }

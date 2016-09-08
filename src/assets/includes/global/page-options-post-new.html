@@ -1,0 +1,66 @@
+<div id="qg-feedback" class="row">
+
+<div class="qg-share">
+<h2>Share:</h2>
+<ul>
+<li><a href="http://www.qld.gov.au/share/?via=facebook&amp;title="><span class="fa fa-facebook fa-2x" aria-hidden="true"></span></a></li>
+<li><a href="http://www.qld.gov.au/share/?via=twitter&amp;title="><span class="fa fa-twitter fa-2x" aria-hidden="true"></span></a></li>
+<li><a href="http://www.qld.gov.au/share/?via=linkedin&amp;title="><span class="fa fa-linkedin fa-2x" aria-hidden="true"></span></a></li>
+<li><a href="http://www.qld.gov.au/share/?title="><span class="fa fa-share-alt fa-2x" aria-hidden="true"></span></a></li>
+</ul>
+</div>
+
+<div class="qg-cta">
+<a href="#" class="btn btn-default qg-toggle-btn" id="page-feedback-useful">Feedback</a>
+</div>
+
+</div>
+
+<div id="qg-page-feedback" class="qg-visually-hidden qg-toggle-content row">
+
+<form id="qg-page-feedback-form" method="post" action="https://www.smartservice.qld.gov.au/services/submissions/email/feedback/feedback" class="form">
+
+<h2>Page feedback</h2>
+
+<fieldset>
+
+<legend>
+<span class="label">How satisfied are you with your experience today?</span>
+<abbr title="(required)" class="required">*</abbr>
+</legend>
+
+<input type="radio" name="feedback-satisfaction" value="Very dissatisfied" required="" id="fs-very-dissatisfied" />
+<label for="fs-very-dissatisfied">Very dissatisfied (1)</label>
+
+<input type="radio" name="feedback-satisfaction" value="Dissatisfied" required="" id="fs-dissatisfied" />
+<label for="fs-dissatisfied">Dissatisfied (2)</label>
+
+<input type="radio" name="feedback-satisfaction" value="Neither satisfied or dissatisfied" required="" id="fs-neither-satisfied-or-dissatisfied" />
+<label for="fs-neither-satisfied-or-dissatisfied">Neither satisfied or dissatisfied (3)</label>
+
+<input type="radio" name="feedback-satisfaction" value="Satisfied" required="" id="fs-satisfied" />
+<label for="fs-satisfied">Satisfied (4)</label>
+
+<input type="radio" name="feedback-satisfaction" value="Very satisfied" required="" id="fs-very-satisfied" />
+<label for="fs-very-satisfied">Very satisfied (5)</label>
+
+</fieldset>
+
+<label for="comments">
+<span class="label">Comments</span>
+<abbr title="(required)" class="required">*</abbr>
+</label>
+    
+<textarea name="comments" id="comments" rows="10" cols="40" required="required"></textarea>
+
+<input type="hidden" name="franchise" id="franchise" value="<!--#echo encoding="entity" var="franchise" -->" />
+<input type="hidden" name="page-title" id="page-title" value="<!--#echo encoding="entity" var="title" -->" />
+<input type="hidden" name="page-url" value="<!--#echo encoding="entity" var="SERVER_NAME" --><!--#echo encoding="entity" var="REQUEST_URI" -->" />
+<input type="hidden" name="page-referer" value="<!--#echo encoding="entity" var="HTTP_REFERER" -->" />
+<input type="hidden" name="rspUsrAgent" value="<!--#echo encoding="entity" var="HTTP_USER_AGENT" -->" />
+
+<button type="submit" value="Submit feedback" class="btn btn-success">Submit feedback</button>
+
+</form>
+
+</div>
