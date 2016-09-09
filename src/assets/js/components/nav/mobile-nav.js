@@ -1,8 +1,10 @@
+/*
 'use strict';
 
 import utils from '../global/utils.js';
 
 // TODO - remove specific show hide function and make it use the general show hide in utils
+
 var mobileNav = (function () {
   var siteNav = '#qg-site-nav',
     br = '#qg-breadcrumb',
@@ -39,3 +41,4 @@ var mobileNav = (function () {
 })();
 
 module.exports = mobileNav;
+*/
