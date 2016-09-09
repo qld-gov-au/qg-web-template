@@ -6652,5 +6652,36 @@ background: #0B2E4C;
  * Callout styles copied from Bootstrap's main docs.
  */
 /* Common styles for all types */
+/*
+
+SCSS files for showhide module
+
+Dependancies
+============
+- Bootstrap (not imported)
+
+*/
+.qg-aria-hidden {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important; }
+
+@media screen and (max-width: 480px) {
+  .qg-aria-hidden-show-sm {
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important; } }
+
+@media screen and (max-width: 768px) {
+  .qg-aria-hidden-show-md {
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important; } }
+
+@media screen and (max-width: 992px) {
+  .qg-aria-hidden-show-lg {
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important; } }
 
 /*# sourceMappingURL=main.css.map */
