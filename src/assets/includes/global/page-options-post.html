@@ -12,12 +12,15 @@
     </div>
 
     <div class="qg-cta">
-        <a href="#" class="btn btn-default qg-toggle-btn" id="page-feedback-useful">Feedback</a>
+        <button class="btn btn-default qg-toggle-btn" id="page-feedback-useful"
+            data-qg-showhide-target="#qg-page-feedback"
+            data-qg-aria-safe="true"
+            data-qg-default="hide">Feedback</button>
     </div>
 
 </div>
 
-<div id="qg-page-feedback" class="qg-visually-hidden qg-toggle-content row">
+<div id="qg-page-feedback" class="qg-toggle-content row">
 
     <form id="qg-page-feedback-form" method="post" action="https://www.smartservice.qld.gov.au/services/submissions/email/feedback/feedback" class="form">
 
@@ -27,11 +30,19 @@
                     <legend><span class="label">Is your feedback about:</span></legend>
                     <ul class="choices">
                         <li>
-                            <input name="page-feedback-about" id="page-feedback-about-this-website" type="radio" value="this website">
+                            <input name="page-feedback-about" id="page-feedback-about-this-website" type="radio" value="this website"
+                                data-qg-showhide-target="#feedback-page-h, #feedback-page"
+                                data-qg-parent="#qg-page-feedback-form"
+                                data-qg-aria-safe="false"
+                                data-qg-default="hide">
                             <label for="page-feedback-about-this-website">this website</label>
                         </li>
                         <li>
-                            <input name="page-feedback-about" id="page-feedback-about-a-government-service" type="radio" value="a government service">
+                            <input name="page-feedback-about" id="page-feedback-about-a-government-service" type="radio" value="a government service"
+                                data-qg-showhide-target="#feedback-serv-dep-staff"
+                                data-qg-parent="#qg-page-feedback-form"
+                                data-qg-aria-safe="false"
+                                data-qg-default="hide">
                             <label for="page-feedback-about-a-government-service">a government service, department or staff member?</label>
                         </li>
                     </ul>
@@ -39,14 +50,14 @@
             </li>
         </ol>
 
-        <div class="status info col-lg-12">
+        <div id="feedback-serv-dep-staff" class="status info col-lg-12">
             <h2>Feedback on government services, departments and staff</h2>
             <p>Please use our <a href="https://www.qld.gov.au/contact-us/complaints/">complaints and compliments form</a>.</p>
         </div>
 
-        <h2>Page feedback</h2>
+        <h2 id="feedback-page-h">Page feedback</h2>
 
-        <ol class="questions">
+        <ol id="feedback-page" class="questions">
 
             <li class="col-md-6 col-sm-12">
 
