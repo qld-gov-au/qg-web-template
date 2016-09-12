@@ -1,3 +1,20 @@
+(function($) {
+  "use strict";
+
+    // this[this.$element.hasClass('in') ? 'hide' : 'show']()
+    var collToggle = $.fn.collapse.Constructor.prototype.toggle;
+    $.fn.collapse.Constructor.prototype.toggle = function(){
+        if( this.$trigger.is("input[type=radio]") ) {
+            if( this.$trigger.prop("checked", true) && ! this.$element.attr('aria-expanded') != true ) {
+                this.show();
+            }
+        } else {
+            collToggle.call(this); // Default behaviour
+        }
+    }
+})(jQuery);
+
+
 const utils = (function () {
     // BREAKPOINTS //
     var breakpoints = {
@@ -18,6 +35,7 @@ const utils = (function () {
     - data-qg-aria-safe : Set true/false depending on if you want ARIA to be able to read the element when hidden (default: true)
     - data-qg-default   : Set to 'show' or 'hide' to set the default behaviour of the target element (default: hide)
     */
+    /*
     var attrTarget      = 'data-qg-showhide-target',
         attrParent      = 'data-qg-parent',
         attrShow        = 'data-qg-show',
@@ -117,7 +135,6 @@ const utils = (function () {
             showHideAction( this, hide, 0 );
 
             if( $(this).is("input[type=radio]") ) {
-                console.log( 'attach to', $(this) );
                 $(this).on('change', function(){
                     if( $(this).prop("checked", true) ){
                         showHideAction( this, 'show' );
@@ -130,47 +147,12 @@ const utils = (function () {
             }
         });
     };
+    */
 
     return {
-        showHide : showHide,
+        // showHide : showHide,
         breakpoints: breakpoints
     };
 })();
 
-
-/*
-const utils = (function () {
-    var breakpoints = {
-        bsXs: 480,
-        bsSm: 768,
-        bsMd: 992,
-        bsLg: 1200
-    };
-    var showHide = function () {
-        var $button = $('.qg-toggle-btn');
-        var $content = $('.qg-toggle-content');
-
-        $button.each(function() {
-            $(this).click(function (e) {
-                e.preventDefault();
-                var $findContent = $(this).parents('.row').last().next($content);
-                if ($findContent.hasClass('qg-visually-hidden')) {
-                    $findContent.slideUp(0, function() {
-                        $findContent.removeClass('qg-visually-hidden').slideDown('fast');
-                    });
-                } else {
-                    $findContent.slideUp('fast', function() {
-                        $findContent.addClass('qg-visually-hidden').slideDown(0);
-                    });
-                }
-            });
-        });
-    };
-
-    return {
-        showHide : showHide,
-        breakpoints: breakpoints
-    };
-})();
-*/
 export default utils;

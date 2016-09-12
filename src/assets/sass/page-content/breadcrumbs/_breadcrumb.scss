@@ -1,11 +1,93 @@
 
 // ##############################################################    
-// Breadcrumb   
+// Breadcrumb (Small)
+
 #qg-breadcrumb {
-background-color: #007EB1;    
-padding-top: 1.5em;
-padding-bottom: 1.5em;
-@extend .col-sm-12;
+    @extend .col-sm-12;
+    background: $sweblue;
+
+    a {
+        color: #FFF;
+        text-decoration: none;
+
+        &:hover { text-decoration: underline; }
+    }
+
+    span.fa {
+        font-size: 1.2em;
+        margin-right: .3em;
+    }
+
+    ol {
+        margin: 0;
+        padding-top: 1.5em;
+        padding-bottom: 1.5em;
+        color: #FFF;
+        text-align: center;
+        @include fontSize(16px);
+
+        > li {
+            display: block;
+            margin: 0;
+
+            + li:before {
+                content: "\f078";    
+                display: block;
+
+                margin: 0;
+
+                color: #CCC;       
+                font-family: FontAwesome;
+                font-size: .9em;
+                font-weight: normal;
+            }  
+
+            &:last-child {
+                font-size: 150%;
+                font-weight: bold;
+            } 
+        }
+    }
+}
+@include breakpoint($bs-sm){
+    #qg-breadcrumb{
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+@include breakpoint($bs-min-lg){
+    #qg-breadcrumb.collapse{ // Over-rides SWE default behaviour for accessibility
+       display: block;
+       height: auto !important;
+    }
+    #qg-breadcrumb ol {
+        text-align: left;
+
+        > li{
+            display: inline-block;
+            margin: auto;
+
+            + li:before {
+                content: "\f054";
+                display: inline-block;
+                margin: 0 0.3em 0 0;
+                color: #FFF;
+            }
+
+            &:last-child{
+                font-size: 100%;
+            }
+        }
+    }
+}
+
+/*
+
+#qg-breadcrumb {
+    @extend .col-sm-12;
+    background-color: #007EB1;    
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
 
     a {
     color: #FFF;
@@ -28,15 +110,15 @@ padding-bottom: 1.5em;
 
         li + li {
             &:before {
-            color: #FFF;
-            font-family: FontAwesome;
-            font-size: .9em;
-            content: "\f054";
-            margin: 0 0.3em 0 0;
+                color: #FFF;
+                font-family: FontAwesome;
+                font-size: .9em;
+                content: "\f054";
+                margin: 0 0.3em 0 0;
             }
 
             &:last-child{
-            font-weight: bold;
+                font-weight: bold;
             }
         }
 
@@ -47,44 +129,47 @@ padding-bottom: 1.5em;
 
 @include breakpoint($bs-md){
     #qg-breadcrumb{
-    background: $sweblue;
-    display: none;
+        background: $sweblue;
 
         ol {
-        text-align: center;
-        margin-left: 0;
-        margin-bottom: 0;
+            text-align: center;
+            margin-left: 0;
+            margin-bottom: 0;
+
             > li {
-            display: block;
-            @include indent(4)
+                display: block;
+                @include indent(4)
 
                 + li:before {
-                //display: inline-block;        
-                display: block;
-                color: #CCC;          
-                font-family: FontAwesome;
-                font-size: .9em;
-                    text-align: center;
-                content: "\f078";
-                //content: "\f149"; 
-                //margin-right: .5em;
-                font-weight: normal;
-                margin: 0;
+                    //display: inline-block;        
+                    display: block;
+                    color: #CCC;          
+                    font-family: FontAwesome;
+                    font-size: .9em;
+                        text-align: center;
+                    content: "\f078";
+                    //content: "\f149"; 
+                    //margin-right: .5em;
+                    font-weight: normal;
+                    margin: 0;
                 }  
 
-            &:last-child {
-            font-size: 150%;
-            }  
-
+                &:last-child {
+                    font-size: 150%;
+                } 
             }
         }
     }
 }
 
 @include breakpoint($bs-sm){
-    #qg-breadcrumb {
-    display: none;
-    padding-right: 0;
     padding-left: 0;
-    }
+    padding-right: 0;
 }
+
+#qg-breadcrumb.collapse{
+   display: block;
+   height: auto !important;
+}
+
+*/

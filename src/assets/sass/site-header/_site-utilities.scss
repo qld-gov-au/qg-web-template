@@ -1,51 +1,56 @@
 #qg-site-header .qg-utilities {
-@extend .col-xs-12;
-@extend .col-sm-6;
-@extend .col-md-5;
-@extend .col-lg-5;
-text-align: right;
-padding: 0;    
+    @extend .col-xs-12;
+    @extend .col-sm-6;
+    @extend .col-md-5;
+    @extend .col-lg-5;
 
+    text-align: right;
+    padding: 0;
 
-li {
-padding-right: 0;
-padding-left: 0;
-margin-right: 1em;
-line-height: 1.75em;
+    li {
+        padding-right: 0;
+        padding-left: 0;
+        margin-right: 1em;
+        line-height: 1.75em;
 
-&:last-child {
-margin-right: 0;
-}
-       
-button {
-background-color: transparent;
-padding: 0;
-border: none;
-vertical-align: middle;
-display: inline-block;
-.fa {
-display: block;
-}
-}
+        &:last-child {
+            margin-right: 0;
+        }
+
+        a, button {
+            display: inline-block;
+
+            padding: 0;
+            border: none;
+            background-color: transparent;
+
+            vertical-align: middle;
+            text-align: center;
+            text-decoration: none;
+
+            .fa {
+                display: block;
+            }
+        }
+
+    }
     
-}
-       
-@include breakpoint($bs-md){
+    @include breakpoint($bs-md){
 
-li {
+        li {
 
-&:last-child {
-margin-right: 1em;
-}    
-}
+            &:last-child {
+                margin-right: 1em;
+            }    
+        }
+
+    }  
     
-}  
-    
-@include breakpoint($bs-xs){
-display: block;  
-text-align: center;
-padding-top: 1em;
-.fa { font-size: 1.3em; }
-}  
+    @include breakpoint($bs-xs){
+        display: block;  
+        text-align: center;
+        padding-top: 1em;
+        .fa { font-size: 1.3em; }
+    }  
 
 }
