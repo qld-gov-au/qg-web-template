@@ -85,9 +85,9 @@ color: #3384c1;
 
 #qg-two-col-aside #qg-index-links div {
 position: relative;   
-@extend .col-sm-4;
-@extend .col-md-4;
-@extend .col-lg-4;   
+@extend .col-sm-6;
+@extend .col-md-6;
+@extend .col-lg-6;   
 }
 
 
@@ -96,12 +96,12 @@ position: relative;
 #qg-three-col #qg-index-links div {
 position: relative;   
 @extend .col-sm-6;
-@extend .col-md-6;
-@extend .col-lg-6;
-//    
-//    img {
-//    float:none;
-//    max-width: 100%; 
-//    }  
+@extend .col-md-12;
+@extend .col-lg-12;
+    
+    img {
+    float:none;
+    max-width: 100%; 
+    }  
     
 }
