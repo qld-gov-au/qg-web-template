@@ -28,6 +28,8 @@
     "gulp-autoprefixer": "^3.1.0",
     "gulp-cache": "^0.4.2",
     "gulp-concat": "^2.6.0",
+    "gulp-connect": "^5.0.0",
+    "gulp-connect-ssi": "^0.3.2",
     "gulp-debug": "^2.1.2",
     "gulp-foreach": "^0.1.0",
     "gulp-inject": "^3.0.0",
