@@ -1,12 +1,11 @@
 {
-  "name": "charts",
-  "version": "1.0.0",
-  "version-name": "modular-benefit",
-  "description": "Queensland Government ",
+  "name": "GLUE-Templates",
+  "version": "2.0.0",
+  "description": "GLUE-Templates",
   "main": "gulpfile.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/qld-gov-au/module-basic.git"
+    "url": "https://github.com/qld-gov-au/glue-template.git"
   },
   "authors": "Queensland Government",
   "licence": "all rights reserved",
@@ -28,6 +27,8 @@
     "gulp-autoprefixer": "^3.1.0",
     "gulp-cache": "^0.4.2",
     "gulp-concat": "^2.6.0",
+    "gulp-connect": "^5.0.0",
+    "gulp-connect-ssi": "^0.3.2",
     "gulp-debug": "^2.1.2",
     "gulp-foreach": "^0.1.0",
     "gulp-inject": "^3.0.0",
