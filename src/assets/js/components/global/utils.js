@@ -27,6 +27,7 @@ const utils = (function () {
     };
 
     // SHOW / HIDE TOGGLE DISPLAY //
+    // THIS IS ONLY KEPT HERE FOR HISTORICAL REASONS, YOU MAY DELETE
     // This function interacts with CSS to define 'hidden'
     /*
     To initialise this on a page, add the attribute 'data-qg-showhide-target' to your trigger element (usually a button).
@@ -124,7 +125,7 @@ const utils = (function () {
                 $target.slideUp(duration);
             }
         } else {
-            console.error('An impossible error occured in utils.js');
+            // console.error('An impossible error occured in utils.js');
         }
     }
     var showHide = function () {

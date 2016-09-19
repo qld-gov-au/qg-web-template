@@ -5,6 +5,9 @@ var gulp = require('gulp'),
     del = require('del'),
     bowerConfig = require('./bower.json'),
     argv = require('yargs').argv,
+    gulpConnect = require('gulp-connect'),
+    runSequence = require('run-sequence'),
+    gulpConnectSsi = require('gulp-connect-ssi'),
     supportedBrowser = ['last 2 versions','ie 7', 'ie 8', 'ie 9','ie 10', 'ie 11', 'android 2.3', 'android 4', 'opera 12'];
 
 // TODO - config from a separate file
@@ -80,6 +83,7 @@ gulp.task('sass', require('./gulp-tasks/build-process/scss')(gulp, plugins, conf
  ======================================================================*/
 gulp.task('content', require('./gulp-tasks/build-process/content')(gulp, plugins, config));
 gulp.task('other:assets', require('./gulp-tasks/build-process/otherAssets')(gulp, plugins, config));
+
 /*=====================================================================
  CLEAN TASKS
  ======================================================================*/
@@ -99,14 +103,13 @@ gulp.task('watch', function() {
         '!'+config.basepath.src+'{assets,assets/**}'
     ], ['content']);
     gulp.watch([config.basepath.src+'*',config.basepath.src+'*'+'*',config.basepath.src+'*'+'*'], ['other:assets']);
-    gulp.watch('build/**/*', ['drop']);
 });
 /*=====================================================================
  RELEASE TASKS
  ======================================================================*/
 gulp.task('release:assets', require('./gulp-tasks/release-process/assets')(gulp, plugins, config));
 gulp.task('release:content', require('./gulp-tasks/release-process/content')(gulp, plugins, config));
-gulp.task('publish:swe', require('./gulp-tasks/release-process/publish')(gulp, plugins, config, argv));
+gulp.task('publish:swe', require('./gulp-tasks/release-process/publish')(gulp, plugins, config));
 /*=====================================================================
  TASK RUNNERS
  ======================================================================*/
@@ -114,7 +117,46 @@ gulp.task('default',['content','js','sass', 'other:assets']);
 gulp.task('build',['default']);
 gulp.task('release',['release:assets', 'release:content']);
 
-//sample task
-gulp.task('drop', function() {
-    gulp.src('build/swe/**/*').pipe(gulp.dest('../'));
+/*====================================================================
+ SSI
+ =====================================================================*/
+// Open using local server
+gulp.task('generate', require('./gulp-tasks/build-process/server.js')(gulp, plugins, config, gulpConnect, gulpConnectSsi, argv));
+
+// Convert to Jinja tasks
+gulp.task('delay',function(cb) {
+    setTimeout(cb, 5000);
+});
+gulp.task('ssi-to-jinja',function(cb) {
+    var spawn = require('child_process').spawn;
+    var child = spawn("python", ["ssi_to_jinja2.py","./build/swe"], {cwd: process.cwd()});
+    var stdout = '';
+    var stderr = '';
+
+    var shell = require('gulp-shell');
+    var gutil = require('gulp-util');
+
+    child.stdout.setEncoding('utf8');
+
+    child.stdout.on('data', function (data) {
+        stdout += data;
+        gutil.log(data);
+    });
+
+    child.stderr.setEncoding('utf8');
+    child.stderr.on('data', function (data) {
+        stderr += data;
+        gutil.log(gutil.colors.red(data));
+        gutil.beep();
+    });
+
+    child.on('close', function(code) {
+        gutil.log("Done with exit code", code);
+        //gutil.log(stdout); // stdout
+        //gutil.log(stderr); // stderr
+    });
+    cb();
+});
+gulp.task('build-jinja', function(cb) {
+    runSequence('default','delay','ssi-to-jinja',cb);
 });
