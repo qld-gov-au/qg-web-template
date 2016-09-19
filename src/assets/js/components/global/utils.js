@@ -104,7 +104,7 @@ const utils = (function () {
                 $target.slideUp(duration);
             }
         } else {
-            console.error('An impossible error occured in utils.js');
+            // console.error('An impossible error occured in utils.js');
         }
     }
     var showHide = function () {
@@ -117,7 +117,7 @@ const utils = (function () {
             showHideAction( this, hide, 0 );
 
             if( $(this).is("input[type=radio]") ) {
-                console.log( 'attach to', $(this) );
+                // console.log( 'attach to', $(this) );
                 $(this).on('change', function(){
                     if( $(this).prop("checked", true) ){
                         showHideAction( this, 'show' );
