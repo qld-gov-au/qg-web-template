@@ -47,3 +47,76 @@ import '../../../../../node_modules/bootstrap-accessibility-plugin/plugins/js/bo
   })
 
 })(jQuery);
+
+// Carousel Extension
+// ===============================
+
+var carouselKeydown = $.fn.carousel.Constructor.prototype.keydown;
+$.fn.carousel.Constructor.prototype.keydown = function (e) {
+  carouselKeydown.call(this); // Default behaviour
+
+  if (k == 37 || k == 38) {                           //  Up
+    $parent.carousel('prev')
+    index--
+    if(index < 0) {
+      index = $items.length -1
+      console.log('prevent previous');
+    } else {
+      $this.prev().focus()
+    }
+
+  }
+  if (k == 39 || k == 40) {                          // Down
+    $parent.carousel('next')
+    index++
+    if(index == $items.length) {
+      index = 0
+      console.log('prevent next');
+    } else  {
+      $this.one($.support.transition.end, function () {
+        $this.next().focus()
+      })
+    }
+
+  }
+
+}
+/*
+(function($) {
+  "use strict";
+
+    // this[this.$element.hasClass('in') ? 'hide' : 'show']()
+    var carouselToggle = $.fn.collapse.Constructor.prototype.toggle;
+    $.fn.collapse.Constructor.prototype.toggle = function(){
+        if( this.$trigger.is("input[type=radio]") ) {
+            if( this.$trigger.prop("checked", true) && ! this.$element.attr('aria-expanded') != true ) {
+                this.show();
+            }
+        } else {
+            collToggle.call(this); // Default behaviour
+        }
+    }
+})(jQuery);
+*/
+
+/*
+var carouselToggle = $.fn.carousel.Constructor.prototype.slide;
+$.fn.carousel.Constructor.prototype.slide = function (type, next) {
+
+  slideCarousel.call(this)
+
+  var $active = this.$element.find('.item.active')
+  , $next = next || $active[type]()
+
+  slideCarousel.apply(this, arguments)
+
+  $active
+  .one($.support.transition.end, function () {
+    $active.attr({'aria-selected':false, 'tabIndex': '-1'})
+    $next.attr({'aria-selected':true, 'tabIndex': '0'})
+  })
+
+}
+$(document).on('keydown.carousel.data-api', 'div[role=option]', $.fn.carousel.Constructor.prototype.keydown)
+
+*/
