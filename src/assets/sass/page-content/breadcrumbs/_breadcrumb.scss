@@ -1,6 +1,7 @@
+/*
 
 // ##############################################################    
-// Breadcrumb (Small)
+// Breadcrumb (Mobile First)
 
 #qg-breadcrumb {
     @extend .col-sm-12;
@@ -81,32 +82,35 @@
     }
 }
 
-/*
+*/
+
+// ##############################################################    
+// Breadcrumb (Desktop first)
 
 #qg-breadcrumb {
     @extend .col-sm-12;
-    background-color: #007EB1;    
     padding-top: 1.5em;
     padding-bottom: 1.5em;
+    background: $sweblue;
 
     a {
-    color: #FFF;
-    text-decoration: none;
+        color: #FFF;
+        text-decoration: none;
     }
     
     a:hover {
-    text-decoration: underline;
+        text-decoration: underline;
     }
 
     span.fa {
-    font-size: 1.2em;   
-    margin-right: .3em; 
+        font-size: 1.2em;   
+        margin-right: .3em; 
     }    
 
     ol {
-    margin: 0;
-    color: #FFF;    
-    @include fontSize(16px); 
+        margin: 0;
+        color: #FFF;    
+        @include fontSize(16px); 
 
         li + li {
             &:before {
@@ -129,8 +133,6 @@
 
 @include breakpoint($bs-md){
     #qg-breadcrumb{
-        background: $sweblue;
-
         ol {
             text-align: center;
             margin-left: 0;
@@ -138,7 +140,7 @@
 
             > li {
                 display: block;
-                @include indent(4)
+                // @include indent(4)
 
                 + li:before {
                     //display: inline-block;        
@@ -167,9 +169,10 @@
     padding-right: 0;
 }
 
-#qg-breadcrumb.collapse{
-   display: block;
-   height: auto !important;
+@include breakpoint($bs-min-lg){
+    #qg-breadcrumb.collapse{
+       display: block;
+       height: auto !important;
+    }
 }
 
-*/

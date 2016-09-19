@@ -1,5 +1,5 @@
 import '../../../node_modules/bootstrap/dist/js/bootstrap.js';
-// import '../../../node_modules/bootstrap-accessibility-plugin/plugins/js/bootstrap-accessibility.js';
+import './components/global/bootstrap-accessibility.js';
 
 import './components/autocomplete.js';
 import './components/forms.js';
@@ -14,5 +14,4 @@ import utils from './components/global/utils.js';
     activeSideNav.highlightNavItem();
     // utils.showHide();
 }());
-
 

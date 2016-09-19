@@ -1,3 +1,5 @@
+// Bootstrap / Jquery extension for collapse
+
 (function($) {
   "use strict";
 
