@@ -12,7 +12,8 @@ import feedbackForm from './components/feedback-form';
   'use strict';
   // mobileNav.interactions()
   activeSideNav.highlightNavItem();
-  feedbackForm.init(window.qg && window.qg.franchiseName);
+  var franchiseTitle = qg && qg.swe && qg.swe.franchiseTitle;
+  feedbackForm.init(franchiseTitle);
 
 // utils.showHide()
 }());

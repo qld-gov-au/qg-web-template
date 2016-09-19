@@ -8,8 +8,8 @@ function addHiddenInput (key, val) {
   newHiddenInput.attr('value', val);
   $('#feedback-hidden-inputs').append(newHiddenInput);
 }
-function init (franchiseName) {
-  addHiddenInput('franchise', franchiseName);
+function init (franchiseTitle) {
+  addHiddenInput('franchise', franchiseTitle);
   addHiddenInput('page-title', $(document).find('title').text());
   addHiddenInput('page-url', window.location.href);
   addHiddenInput('page-referer', encodeURIComponent(document.referrer));
