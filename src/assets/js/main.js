@@ -1,3 +1,6 @@
+import '../../../node_modules/bootstrap/dist/js/bootstrap.js';
+import './components/global/bootstrap-accessibility.js';
+
 import './components/autocomplete.js';
 import './components/forms.js';
 //import mobileNav from './components/nav/mobile-nav.js';
@@ -7,9 +10,8 @@ import utils from './components/global/utils.js';
 
 (function () {
     'use strict';
-    //mobileNav.interactions();
+    // mobileNav.interactions();
     activeSideNav.highlightNavItem();
-    utils.showHide();
+    // utils.showHide();
 }());
-
 
