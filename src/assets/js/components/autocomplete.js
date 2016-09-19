@@ -33,8 +33,6 @@ $(function () {
 
         // create the suggestion box
         var suggestions = $('<ul role="listbox" class="listbox"/>').generateId('suggestbox');
-        searchField.after(suggestions);
-        searchField.attr('aria-owns', suggestions.attr('id'));
 
         function closeSuggestions() {
             suggestions.empty();
@@ -123,6 +121,10 @@ $(function () {
         });
 
         searchField.on('input', function () {
+
+            searchField.after(suggestions);
+            searchField.attr('aria-owns', suggestions.attr('id'));
+
             userTyped = this.value;
             if (userTyped.length < 3) {
                 closeSuggestions();
