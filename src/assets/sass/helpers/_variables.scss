@@ -22,6 +22,10 @@ $bs-sm: max-width 768px;
 $bs-md: max-width 992px;
 $bs-lg: max-width 1200px;
 
+$bs-min-sm: min-width 480px;
+$bs-min-md: min-width 768px;
+$bs-min-lg: min-width 992px;
+
 // Set the gutter width
 $grid-gutter-width: 40px;
 
