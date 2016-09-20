@@ -1,11 +1,10 @@
 .qg-content-footer{
 margin-top: 2em;   
-margin-bottom: 2em;    
+margin-bottom: 2em;   
 
 dl {    
 @extend .col-md-6;
-@extend .col-lg-6; 
-    
+@extend .col-lg-6;    
 @include fontSize(14px);    
 margin: 0;
 padding: 0;

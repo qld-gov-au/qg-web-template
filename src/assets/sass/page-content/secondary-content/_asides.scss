@@ -3,7 +3,6 @@
 #qg-content #qg-secondary-content {
 margin: 0;
 padding: 0;  
-
    
     h2 {
     margin: 0;
@@ -91,5 +90,10 @@ padding: 0;
     .qg-story {}
 
     .qg-feedback {}
+    
+   
+@include breakpoint($bs-xs){
+}
+    
 
 }
