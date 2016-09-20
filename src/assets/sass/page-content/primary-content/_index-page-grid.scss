@@ -1,11 +1,13 @@
-#qg-index-links {
+#qg-primary-content #qg-index-links {
 position: relative;
 margin-bottom: 2em;
-@extend .clearfix;    
+@extend .clearfix; 
+@extend .row; 
 
 div {
-position: relative;   
-
+position: relative;
+padding-bottom: 1em;
+    
 h2 {
 color: #13578b;      
 @include fontSize(19px);
@@ -34,7 +36,9 @@ border-bottom: 1px solid #1f76b9;
 } 
 
 img {   
-float: left;  
+float: left; 
+max-width: 100%;
+height: auto;
 }
 
 p, ol, ul {
@@ -74,26 +78,30 @@ color: #3384c1;
 
 }
 
-div:nth-child(odd){
-clear: left;
-}  
-
+  
 }
 
 /* ! content section links for index pages - 2 column */
 
-#qg-index-links.qg-2col div {
+#qg-two-col-aside #qg-index-links div {
 position: relative;   
 @extend .col-sm-6;
 @extend .col-md-6;
 @extend .col-lg-6;   
 }
 
+
 /* ! content section links for index pages - 3 column */
 
-#qg-index-links.qg-3col div {
+#qg-three-col #qg-index-links div {
 position: relative;   
-@extend .col-sm-4;
-@extend .col-md-4;
-@extend .col-lg-4;   
+@extend .col-sm-6;
+@extend .col-md-12;
+@extend .col-lg-12;
+    
+    img {
+    float:none;
+    max-width: 100%; 
+    }  
+    
 }
