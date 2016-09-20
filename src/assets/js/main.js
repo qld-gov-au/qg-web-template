@@ -7,6 +7,7 @@ import './components/forms.js';
 import activeSideNav from './components/nav/current-secondary-nav';
 import utils from './components/global/utils.js';
 import feedbackForm from './components/feedback-form';
+import shareLinks from './components/share-links';
 
 (function () {
   'use strict';
@@ -14,6 +15,6 @@ import feedbackForm from './components/feedback-form';
   activeSideNav.highlightNavItem();
   var franchiseTitle = qg && qg.swe && qg.swe.franchiseTitle;
   feedbackForm.init(franchiseTitle);
-
+  shareLinks.init();
 // utils.showHide()
 }());
