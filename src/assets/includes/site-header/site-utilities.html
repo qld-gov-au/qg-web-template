@@ -1,38 +1,31 @@
 <ul class="qg-utilities list-inline">
-   <li>
-        <button>Sign up or log in</button>
-    </li>
 
     <li>
-        <button>Help</button>
+        <a href="http://www.qld.gov.au/contact-us/" tabindex="3"><span class="fa fa-phone fa-2x hidden-md hidden-lg" aria-hidden="true"></span>Contact us</a>
     </li>
-
-    <li>
-        <button>Contact us</button>
-    </li>
-
 
     <li class="hidden-md hidden-lg">
-        <button id="qg-show-search"><span class="fa fa-search fa-2x" aria-hidden="true"></span>search</button>
+        <button id="qg-show-search"
+            tabindex="5"
+            data-toggle="collapse"
+            data-target="#qg-search-form"><span class="fa fa-search fa-2x" aria-hidden="true"></span>search</button>
+            <!-- 
+            data-qg-showhide-target="#qg-search-form"
+            data-qg-show="lg"
+            data-qg-aria-safe="true"
+            data-qg-default="hide"
+            -->
     </li>
     <li class="hidden-md hidden-lg">
-        <button id="qg-show-menu"><span class="fa fa-bars fa-2x" aria-hidden="true"></span>menu</button>
+        <button id="qg-show-menu"
+            tabindex="8" 
+        	data-toggle="collapse"
+            data-target="#qg-site-nav, #qg-breadcrumb"><span class="fa fa-bars fa-2x" aria-hidden="true"></span>menu</button>
+            <!--
+            data-qg-showhide-target="#qg-site-nav, #qg-breadcrumb"
+            data-qg-show="lg"
+            data-qg-aria-safe="true"
+            data-qg-default="hide"
+            -->
     </li>
 </ul>
-
-<form action="http://pan.search.qld.gov.au/s/search.html" id="qg-search-form" role="search" class="qg-visually-hidden-md">
-    <div>
-        <label for="qg-search-query" class="qg-visually-hidden">Search Queensland Government</label>
-        <div class="input-group">
-            <input type="text" name="query" id="qg-search-query" class="form-control" placeholder="Search website e.g. holidays">
-            <span class="input-group-btn">
-                <button id="feature-search-submit" class="btn btn-default"><span class="fa fa-search" aria-hidden="true"></span></button>
-                <!--parameters to display results on search page-->
-                <input type="hidden" name="num_ranks" value="10">
-                <input type="hidden" name="tiers" value="off">
-                <input type="hidden" name="collection" value="qld-gov">
-                <input type="hidden" name="profile" value="qld">
-            </span>
-        </div>
-    </div>
-</form>

@@ -1,6 +1,6 @@
 module.exports = function (gulp, plugins, config) {
     return function () {
-        var task = gulp.src(config.basepath.src+'/assets/js/main.js').pipe(plugins.webpack({
+        var task = gulp.src(config.basepath.src + '/assets/js/main.js').pipe(plugins.webpack({
             output: {
                 filename: 'main.js'
             },
@@ -18,8 +18,8 @@ module.exports = function (gulp, plugins, config) {
                 ]
             }
         }));
-        config.projects.map(function (element, index, array) {
-            task.pipe(gulp.dest(config.basepath.build+element+'/assets/'+config.version+'/js/'))
+        config.projects.map(function (element) {
+            task.pipe(gulp.dest(config.basepath.build + element + '/assets/' + config.version + '/js/'));
         });
     };
 };

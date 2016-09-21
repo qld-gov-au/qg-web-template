@@ -1,44 +1,58 @@
-
-@import "helpers/variables";
+@import "helpers/_variables.scss";
+@import "helpers/_mixins.scss";
 
 @import "../../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+// @import "../../../node_modules/bootstrap-accessibility-plugin/plugins/css/bootstrap-accessibility.css";
 @import "../lib/font-awesome/css/font-awesome.min.css";
 @import "../../../node_modules/breakpoint-sass/stylesheets/_breakpoint.scss";
 
-@import "base/_typography.scss";
-@import "_general.scss";
+
 //@import "sections/_grid.scss";
 
 
 @import "_layout.scss";
-
+@import "base/_typography.scss";
+@import "_general.scss";
 
 // ################################
-// site-header
+// site header (qg-site-header)
 
-@import "_header.scss";
+@import "site-header/_header.scss";
 
 @import "site-header/_coat-of-arms.scss";
 @import "site-header/_site-utilities.scss";
+@import "site-header/_site-search.scss";
 @import "site-header/_site-name.scss";
 @import "site-header/_site-navigation.scss";
 @import "site-header/_alerts.scss";
 
 // ################################
-
-@import "_section-navigation.scss";
-@import "_breadcrumb.scss";
+// site content (qg-content)
+@import "page-content/section-navigation/_section-navigation.scss";
+@import "page-content/breadcrumbs/_breadcrumb.scss";
 //@import "sections/_main-content.scss";
 
+// ################################
+// site page content (qg-primary-content)
+
+@import "page-content/primary-content/_index-page-grid.scss";
+@import "page-content/_page-content-footer.scss";
+
+@import "page-content/_feedback.scss";
 
 //@import "sections/_forms.scss";
 
-@import "_feedback.scss";
+@import "page-content/_feedback.scss";
 //@import "sections/_sidebar-nav.scss";
 //@import "sections/_secondary-content.scss";
-@import "_asides.scss";
-@import "_footer.scss";
+@import "page-content/secondary-content/_asides.scss";
+@import "site-footer/_footer.scss";
 
 // develop only:
 @import "_gavin-develop.scss";
 @import "helpers/_equal-height-columns.scss";
+
+// ################################
+// modules & utilities
+
+@import "components/global/_show-hide.scss";

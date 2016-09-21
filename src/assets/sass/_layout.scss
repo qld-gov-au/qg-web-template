@@ -1,13 +1,18 @@
 .container-fluid {
 &.qg-site-width{
 // max-width: 95em;   
-max-width: 1327px; 
+max-width: 1327px; // old SWE width
 }
+    
+@include breakpoint($bs-sm){
+  
+}   
+    
 }
 
 #qg-primary-content {   
 padding-top: 1em;
-padding-bottom: 1em;    
+padding-bottom: 1em;   
 }
 
 // ############################################
@@ -141,6 +146,6 @@ padding-top: 0.8em;
 margin: 0;
 }
 }
-}
+}   
 }
 

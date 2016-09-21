@@ -1,16 +1,19 @@
-import "./components/autocomplete.js";
-import mobileNav from "./sections/nav/mobile-nav.js";
-import activeSideNav from './sections/nav/current-secondary-nav';
+import '../../../node_modules/bootstrap/dist/js/bootstrap.js';
+import './components/global/bootstrap-accessibility.js';
 
-(function($) {
-    "use strict";
-    mobileNav.interactions();
-    activeSideNav.highlightNavItem();
+import './components/autocomplete.js';
+import './components/forms.js';
+// import mobileNav from './components/nav/mobile-nav.js'
+import activeSideNav from './components/nav/current-secondary-nav';
+import utils from './components/global/utils.js';
+import feedbackForm from './components/feedback-form';
 
-    // getting specific lib using the loader module
-    qg.glue.loader.init(function () {
-        // code to execute after libs are loaded
-    });
-}(jQuery));
+(function () {
+  'use strict';
+  // mobileNav.interactions()
+  activeSideNav.highlightNavItem();
+  var franchiseTitle = qg && qg.swe && qg.swe.franchiseTitle;
+  feedbackForm.init(franchiseTitle);
 
-
+// utils.showHide()
+}());

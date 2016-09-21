@@ -7,15 +7,11 @@
 
     <title>Example page | Standard page | Queensland Government</title>
 
-    <!--#set var="franchise" value=""-->
-    <!--#set var="title" value="Example page"-->
-    <!--#set var="licence" value="http://creativecommons.org/licenses/by/3.0/au/"-->
-
     <!--#include virtual="/cue-assets/includes/cue-head-assets.html"-->
 
     <meta name="description" content="DESCRIPTION">
     <meta name="keywords" content="KEYWORDS">
-    
+
     <link rel="schema.DCTERMS" href="http://purl.org/dc/terms/">
     <link rel="schema.AGLSTERMS" href="http://www.agls.gov.au/agls/terms/">
     <meta name="DCTERMS.creator" scheme="AGLSTERMS.GOLD" content="c=AU; o=The State of Queensland; ou=DEPARTMENT NAME; ou=UNIT NAME">
@@ -27,7 +23,7 @@
     <meta name="DCTERMS.description" content="DESCRIPTION">
     <meta name="DCTERMS.subject" scheme="AGLSTERMS.APAIS" content="SUBJECT">
     <meta name="AGLSTERMS.function" scheme="AGLSTERMS.AGIFT" content="FUNCTION">
-    <!--#include virtual="/assets/includes/global/head-meta-identifier.html"-->
+
     <meta name="DCTERMS.type" scheme="DCTERMS.DCMIType" content="Text">
     <meta name="AGLSTERMS.documentType" scheme="AGLSTERMS.agls-document" content="guidelines">
     <meta name="DCTERMS.audience" scheme="AGLSTERMS.agls-audience" content="">
@@ -41,17 +37,12 @@
     <div class="container-fluid qg-site-width">
 
         <header id="qg-site-header">
-            
-            <!--#include virtual="/assets/includes/site-header/coat-of-arms.html"-->
-                       
-            <!--#include virtual="/cue-assets/includes/site-utilities-cue.html"-->
 
-            <!--#include virtual="/assets/includes/site-header/site-name.html"-->
+<!--#include virtual="/assets/includes/site-header/coat-of-arms.html"-->
+<!--#include virtual="/cue-assets/includes/site-utilities-cue.html"-->
+<!--#include virtual="/assets/includes/site-header/site-name.html"-->
+<!--#include virtual="/cue-assets/includes/cue-site-nav.html"-->
 
-            <!--#include virtual="/assets/includes/site-header/alert.html"-->
-
-            <!--#include virtual="/assets/includes/site-header/site-navigation.html"-->
-            
         </header>
 
         <div id="qg-content">
@@ -105,6 +96,12 @@
 
     </div>
 
+    <script>
+      qg = qg || {}
+      qg.swe = qg.swe || {};
+      // Used by the feedback form.
+      qg.swe.franchiseTitle = 'Franchise Title';
+    </script>
     <!--#include virtual="/assets/includes/site-footer/footer-scripts.html"-->
 
 </body>
