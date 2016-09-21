@@ -8,11 +8,12 @@ var gulp = require('gulp'),
     gulpConnect = require('gulp-connect'),
     runSequence = require('run-sequence'),
     gulpConnectSsi = require('gulp-connect-ssi'),
+    eslint = require('gulp-eslint'),
     supportedBrowser = ['last 2 versions','ie 7', 'ie 8', 'ie 9','ie 10', 'ie 11', 'android 2.3', 'android 4', 'opera 12'];
 
 // TODO - config from a separate file
 var config = {
-    version : 'v3',
+    version: 'v3',
     basepath : {
         src: 'src/',
         build: 'build/',
@@ -24,7 +25,7 @@ var config = {
         bowerVersion : bowerConfig.version,
         node_modules: 'node_modules/'
     },
-    projects : ['swe' , 'cue' , 'ice' , 'flux'],
+    projects : ['swe', 'cue', 'ice', 'flux'],
     franchise : ['www.qld.gov.au' , 'tmr.com.au' , 'test.com'],
     src : {
         assets : function () {
@@ -103,6 +104,7 @@ gulp.task('watch', function() {
         '!'+config.basepath.src+'{assets,assets/**}'
     ], ['content']);
     gulp.watch([config.basepath.src+'*',config.basepath.src+'*'+'*',config.basepath.src+'*'+'*'], ['other:assets']);
+    gulp.watch('build/**/*', ['drop']);
 });
 /*=====================================================================
  RELEASE TASKS
@@ -159,4 +161,15 @@ gulp.task('ssi-to-jinja',function(cb) {
 });
 gulp.task('build-jinja', function(cb) {
     runSequence('default','delay','ssi-to-jinja',cb);
+});
+
+gulp.task('drop', function () {
+    gulp.src('build/swe/**/*').pipe(gulp.dest('../'));
+});
+
+gulp.task('lint', function () {
+    return gulp.src(['src/assets/js/**/*.js', '!src/assets/js/**/forms.js', '!src/assets/js/**/autocomplete.js']).pipe(eslint())
+        .pipe(plugins.eslint.format())
+        // Brick on failure to be super strict
+        .pipe(plugins.eslint.failOnError());
 });
