@@ -6,6 +6,7 @@
     // this[this.$element.hasClass('in') ? 'hide' : 'show']()
     var collToggle = $.fn.collapse.Constructor.prototype.toggle;
     $.fn.collapse.Constructor.prototype.toggle = function(){
+
         if( this.$trigger.is("input[type=radio]") ) {
             if( this.$trigger.prop("checked", true) && ! this.$element.attr('aria-expanded') != true ) {
                 this.show();
@@ -14,6 +15,24 @@
             collToggle.call(this); // Default behaviour
         }
     }
+
+    var carouselSlide = $.fn.carousel.Constructor.prototype.slide;
+    $.fn.carousel.Constructor.prototype.slide = function (type, next) {
+
+        carouselSlide.call( type, next );
+
+        console.log('Bye');
+
+        if( $element ) {
+            // disable forward / back action
+            var $active   = this.$element.find('.item.active')
+            if( this.getItemForDirection(type, $active) == $active ){
+                $('.carousel-control .' + type ).css('background','red');
+            }
+        }
+        
+    }
+
 })(jQuery);
 
 
