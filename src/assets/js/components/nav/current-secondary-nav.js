@@ -2,11 +2,11 @@
 var activeSideNav = (function () {
     // const currentFilename = window.location.pathname.substr(window.location.pathname.lastIndexOf('/') + 1);
 
-    function refineText(text) {
+    function refineText (text) {
         return text.toLowerCase().replace(/ /g, '');
     }
 
-    function getCurrentTitle() {
+    function getCurrentTitle () {
         var currentPageTitle = '';
         if ($('#guide-title').length > 0) {
             currentPageTitle = $('#guide-title').text();
@@ -20,7 +20,7 @@ var activeSideNav = (function () {
         return refineText(currentPageTitle);
     }
 
-    function highlightNavItem() {
+    function highlightNavItem () {
         var currentPageTitle = getCurrentTitle();
         $('#qg-section-nav ul>li').each(function () {
             if (refineText($(this).text()) === $.trim(currentPageTitle)) {

@@ -7,7 +7,7 @@ module.exports = function (gulp, plugins, config) {
                 .pipe(plugins.sass({
                     includePaths: [config.basepath.src]
                 }))
-                .on('error',plugins.sass.logError)
+                .on('error', plugins.sass.logError)
                 .pipe(plugins.autoprefixer({
                     browsers: plugins.supportedBrowser,
                     cascade: false
@@ -15,7 +15,7 @@ module.exports = function (gulp, plugins, config) {
                 .pipe(plugins.sourcemaps.write('.', {
                     sourceRoot: config.basepath.src
                 }))
-                .pipe(gulp.dest(config.basepath.build + element + '/assets/' + config.version +'/css/'));
+                .pipe(gulp.dest(config.basepath.build + element + '/assets/' + config.version + '/css/'));
         });
     };
 };

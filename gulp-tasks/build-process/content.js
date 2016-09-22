@@ -4,7 +4,7 @@ module.exports = function (gulp, plugins, config) {
              return gulp.src([config.basepath.src + element + '/**/*',
                 '!' + config.basepath.src + '{' + element + '/assets,' + element + '/assets/**}'
             ], { dot: true })
-                .pipe(gulp.dest(config.basepath.build + '/' + element+ '/'));
+                .pipe(gulp.dest(config.basepath.build + '/' + element + '/'));
         });
     };
 };
