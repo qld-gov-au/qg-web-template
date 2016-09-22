@@ -4,6 +4,17 @@
 @extend .col-md-5;
 @extend .col-lg-5;
 text-align: right;  
+    
+
+    a, a:link {
+    color: #115289;
+        text-decoration: none;
+    } 
+    
+      a:hover {
+    color: #115289;
+        text-decoration: underline
+    } 
 
 
 li {
