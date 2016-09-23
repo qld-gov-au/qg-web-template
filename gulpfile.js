@@ -81,6 +81,14 @@ gulp.task('sass', require('./gulp-tasks/build-process/scss')(gulp, plugins, conf
 gulp.task('content', require('./gulp-tasks/build-process/content')(gulp, plugins, config));
 gulp.task('other:assets', require('./gulp-tasks/build-process/otherAssets')(gulp, plugins, config));
 
+/* TEST TASKS */
+gulp.task('eslint', function () {
+    return gulp.src(['src/assets/js/**/*.js', 'gulp-tasks/**/*.js', '!src/assets/js/**/forms.js', '!src/assets/js/**/autocomplete.js'])
+        .pipe(eslint())
+        .pipe(plugins.eslint.format())
+        .pipe(plugins.eslint.failOnError());
+});
+
 /* CLEAN TASKS */
 gulp.task('clean:build', function (cb) {
     del([config.basepath.build], cb);
@@ -97,7 +105,6 @@ gulp.task('watch', function () {
         '!' + config.basepath.src + '{assets,assets/**}'
     ], ['content']);
     gulp.watch([config.basepath.src + '*', config.basepath.src + '*' + '*', config.basepath.src + '*' + '*'], ['other:assets']);
-    gulp.watch('build/**/*', ['drop']);
 });
 
 /* RELEASE TASKS */
@@ -146,12 +153,3 @@ gulp.task('build-jinja', function (cb) {
     runSequence('default', 'delay', 'ssi-to-jinja', cb);
 });
 
-gulp.task('drop', function () {
-    gulp.src('build/swe/**/*').pipe(gulp.dest('../'));
-});
-
-gulp.task('lint', function () {
-    return gulp.src(['src/assets/js/**/*.js', '!src/assets/js/**/forms.js', '!src/assets/js/**/autocomplete.js']).pipe(eslint())
-        .pipe(plugins.eslint.format())
-        .pipe(plugins.eslint.failOnError());
-});

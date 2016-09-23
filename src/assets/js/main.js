@@ -9,12 +9,12 @@ import activeSideNav from './components/nav/current-secondary-nav';
 import feedbackForm from './components/feedback-form';
 
 (function () {
-  'use strict';
-  // mobileNav.interactions()
-  activeSideNav.highlightNavItem();
-      var qg = qg || {};
-        var franchiseTitle = qg && qg.swe && qg.swe.franchiseTitle;
-  feedbackForm.init(franchiseTitle);
+    'use strict';
+    // mobileNav.interactions()
+    activeSideNav.highlightNavItem();
+    var qg = qg || {};
+    var franchiseTitle = qg && qg.swe && qg.swe.franchiseTitle;
+    feedbackForm.init(franchiseTitle);
 
 // utils.showHide()
 }());
