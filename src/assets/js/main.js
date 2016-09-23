@@ -15,12 +15,14 @@ import activeSideNav from './components/nav/current-secondary-nav';
 import utils from './components/global/utils.js';
 import qgBsExtend from './components/global/bootstrap-extensions.js';
 import feedbackForm from './components/feedback-form';
+import shareLinks from './components/share-links';
 
 (function () {
     'use strict';
-    // mobileNav.interactions()
-    activeSideNav.highlightNavItem();
     var qg = qg || {};
     var franchiseTitle = qg && qg.swe && qg.swe.franchiseTitle;
+
+    activeSideNav.highlightNavItem();
     feedbackForm.init(franchiseTitle);
+    shareLinks.init();
 }());
