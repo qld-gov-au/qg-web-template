@@ -17,9 +17,10 @@ import qgBsExtend from './components/global/bootstrap-extensions.js';
 import feedbackForm from './components/feedback-form';
 
 (function () {
-  'use strict';
-  // mobileNav.interactions()
-  activeSideNav.highlightNavItem();
-  var franchiseTitle = qg && qg.swe && qg.swe.franchiseTitle;
-  feedbackForm.init(franchiseTitle);
+    'use strict';
+    // mobileNav.interactions()
+    activeSideNav.highlightNavItem();
+    var qg = qg || {};
+    var franchiseTitle = qg && qg.swe && qg.swe.franchiseTitle;
+    feedbackForm.init(franchiseTitle);
 }());
