@@ -27,7 +27,7 @@ line-height: 1.75em;
 margin-right: 0;
 }
        
-button {
+button, a {
 background-color: transparent;
 padding: 0;
 border: none;
@@ -36,6 +36,13 @@ display: inline-block;
 .fa {
 display: block;
 }
+    
+    @include breakpoint($bs-md){
+        &:hover {
+            text-decoration: none;
+        }  
+    }  
+    
 }
     
 }
