@@ -14,13 +14,13 @@ module.exports = function (gulp, plugins, config) {
                 function (res) {
                     if ((res.first === 'yes') && (res.second === 'yes')) {
                         plugins.shell.task([
-                            process.chdir(config.basepath.build+config.basepath.swe),
+                            process.chdir(config.basepath.build + config.basepath.swe),
                             'git init',
                             // 'git remote add origin https://github.com/qld-gov-au/glue-swe-template.git',
                             'git fetch --all',
                             'git add --all',
-                            'git commit -m '+config.basepath.bowerVersion+'',
-                            'git tag -a '+config.basepath.bowerVersion+' -m "'+config.basepath.bowerVersion+'"',
+                            'git commit -m ' + config.basepath.bowerVersion + '',
+                            'git tag -a ' + config.basepath.bowerVersion + ' -m "' + config.basepath.bowerVersion + '"',
                             'git push --tags',
                             'git push -f origin master:swe-master'
                         ])();
