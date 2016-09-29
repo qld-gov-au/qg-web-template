@@ -77,8 +77,8 @@
 	padding-top: 1em;
 	padding-bottom: 1em;  
 	color: #000;
-	@include fontSize(16px); 
-
+	@include fontSize(16px);
+	
 	.warn {    
 		border: 2px solid red; 
 		padding: 1em;
@@ -121,14 +121,14 @@
 // #################################################  
 
 
-
 #qg-page-feedback-form { 
 
-	.label {
-		font-weight: normal;
-		white-space: normal;
-		@include fontSize(16px); 
-	}    
+.label {
+font-weight: normal;
+white-space: normal !important;
+@include fontSize(16px); 
+color: red:
+}    
 
 	fieldset {
 		color: #000;  
@@ -177,6 +177,7 @@
 }
 }
 
+
 // #################################################
 // #################################################
 
@@ -197,3 +198,8 @@
 
 
 }
+
+
+
+
+
