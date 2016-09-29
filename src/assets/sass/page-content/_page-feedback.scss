@@ -126,6 +126,7 @@
 
 	.label {
 		font-weight: normal;
+		white-space: normal;
 		@include fontSize(16px); 
 	}    
 
