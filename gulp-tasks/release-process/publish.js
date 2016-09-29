@@ -16,13 +16,13 @@ module.exports = function (gulp, plugins, config) {
                         plugins.shell.task([
                             process.chdir(config.basepath.build + config.basepath.swe),
                             'git init',
-                            // 'git remote add origin https://github.com/qld-gov-au/glue-swe-template.git',
+                            // 'git remote add origin https://github.com/qld-gov-au/glue-template-release.git',
                             'git fetch --all',
                             'git add --all',
                             'git commit -m ' + config.basepath.bowerVersion + '',
                             'git tag -a ' + config.basepath.bowerVersion + ' -m "' + config.basepath.bowerVersion + '"',
                             'git push --tags',
-                            'git push -f origin master:swe-master'
+                            'git push -f origin master:glue-template-release-master'
                         ])();
                     } else {
                         console.log('Please correct the errors');
