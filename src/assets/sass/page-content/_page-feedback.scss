@@ -1,71 +1,71 @@
 #qg-feedback {
-background-color:#007EB1;
-padding-top: 1em;
-padding-bottom: 1em;
-font-size: 1.2em; 
+	background-color:#007EB1;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	font-size: 1.2em; 
 
-a, a:link {
-color: #FFF;  
-} 
+	a, a:link {
+		color: #FFF;  
+	} 
 
-a:hover {
-color: #FFF;  
-text-decoration: underline; 
-} 
+	a:hover {
+		color: #FFF;  
+		text-decoration: underline; 
+	} 
 
-#page-feedback-useful {
-background-color: #005375;
-color: #FFF;
-border: #0B2E4C;
-transition: all .2s;
+	#page-feedback-useful {
+		background-color: #005375;
+		color: #FFF;
+		border: #0B2E4C;
+		transition: all .2s;
 
-&:hover {
-background-color: #0B2E4C;
-}
+		&:hover {
+			background-color: #0B2E4C;
+		}
 
-}   
+	}   
 
-h2 {
-display: inline;
-margin: 0;
-padding: 0;
-color: #FFF;
-}  
+	h2 {
+		display: inline;
+		margin: 0;
+		padding: 0;
+		color: #FFF;
+	}  
 
-.fa {   
-font-size: 1.2em;       
-}   
+	.fa {   
+		font-size: 1.2em;       
+	}   
 
-.qg-cta, .qg-share {
-@extend .col-md-6;
-@extend .col-sm-6;
+	.qg-cta, .qg-share {
+		@extend .col-md-6;
+		@extend .col-sm-6;
 
-ul {
-margin: 0;
-padding:0;
-display: inline-block;
-text-align: right;
-color: #FFF;
+		ul {
+			margin: 0;
+			padding:0;
+			display: inline-block;
+			text-align: right;
+			color: #FFF;
 
-li {
-display: inline; 
-margin-left: .5em;  
-}   
+			li {
+				display: inline; 
+				margin-left: .5em;  
+			}   
 
-}   
+		}   
 
-}
+	}
 
-.qg-cta {
-@extend .col-md-pull-6;
-@extend .col-sm-pull-6;    
-}
+	.qg-cta {
+		@extend .col-md-pull-6;
+		@extend .col-sm-pull-6;    
+	}
 
-.qg-share {
-@extend .col-md-push-6; 
-@extend .col-sm-push-6;     
-text-align: right;   
-}
+	.qg-share {
+		@extend .col-md-push-6; 
+		@extend .col-sm-push-6;     
+		text-align: right;   
+	}
 
 }
 
@@ -73,107 +73,108 @@ text-align: right;
 // Feedback form
 
 #qg-page-feedback { 
-background-color: #f8f8f8;
-padding-top: 1em;
-padding-bottom: 1em;  
-color: #000;
-@include fontSize(16px); 
+	background-color: #f8f8f8;
+	padding-top: 1em;
+	padding-bottom: 1em;  
+	color: #000;
+	@include fontSize(16px);
+	
+	.warn {    
+		border: 2px solid red; 
+		padding: 1em;
+	}
 
-.warn {    
-border: 2px solid red; 
-padding: 1em;
-}
-    
-.status {    
-border: 2px solid blue !important; 
-padding: 1em;
-}      
-       
-.required {
-color: #c90000;    
-}  
+	.status {    
+		border: 2px solid blue !important; 
+		padding: 1em;
+	}      
 
-.invalid {
-color: #c90000;
+	.required {
+		color: #c90000;    
+	}  
 
-label {
-color: #c90000;    
-}
+	.invalid {
+		color: #c90000;
 
-input {
-border: 2px solid red; 
-}
+		label {
+			color: #c90000;    
+		}
 
-textarea {
-border: 2px solid red; 
-}
+		input {
+			border: 2px solid red; 
+		}
 
-} 
+		textarea {
+			border: 2px solid red; 
+		}
 
-.alert {
-display: inline;
-color: #c90000;     
-@include fontSize(16px); 
-} 
+	} 
+
+	.alert {
+		display: inline;
+		color: #c90000;     
+		@include fontSize(16px); 
+	}
 
 
 // ################################################# 
 // #################################################  
 
 
-
 #qg-page-feedback-form { 
-    
+
 .label {
 font-weight: normal;
 @include fontSize(16px); 
 }    
 
-fieldset {
-color: #000;  
-margin: 0;
-padding:0;
+	fieldset {
+		color: #000;  
+		margin: 0;
+		padding:0;
 
-legend {
-color: #000;
-margin: 0;
-padding:0;
-border-bottom: none;   
-}  
+		legend {
+			color: #000;
+			margin: 0;
+			padding:0;
+			border-bottom: none;   
+		}  
 
-}  
+	}  
 
-label {
-font-weight: normal;
-font-size: 1em;
-color: #000;
-} 
+	label {
+		font-weight: normal;
+		font-size: 1em;
+		color: #000;
+	} 
 
-input {
+	input {
+	}
+
+	input[type="radio"] {}
+
+	#comments {
+	}  
+
+	@include breakpoint($bs-sm){ 
+		margin:0;
+		padding: 0;
+
+		h2 {
+			margin: 1em 35px;
+		}
+
+		textarea {
+			width: 100%;   
+		}
+
+	}  
+
+
+
+}
 }
 
-input[type="radio"] {}
-    
-#comments {
-}  
-       
-@include breakpoint($bs-sm){ 
-margin:0;
-padding: 0;
-
-h2 {
-margin: 1em 35px;
-}
-
-textarea {
-width: 100%;   
-}
-
-}  
-    
-    
-    }
-}
 
 // #################################################
 // #################################################
@@ -181,17 +182,22 @@ width: 100%;
 @include breakpoint($bs-md) {}
 
 @include breakpoint($bs-sm){
-#qg-feedback{
-.qg-share  {
-text-align: center;
+	#qg-feedback{
+		.qg-share  {
+			text-align: center;
+		}
+
+		.qg-cta  {
+			text-align: center;
+			margin-top: 1em;
+		}    
+
+	}
+
+
 }
 
-.qg-cta  {
-text-align: center;
-margin-top: 1em;
-}    
-
-}
 
 
-}
+
+
