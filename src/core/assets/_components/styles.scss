@@ -1,55 +1,58 @@
-@import "helpers/_variables.scss";
-@import "helpers/_mixins.scss";
 
-@import "../lib/lato-webfont/lato.min.css";
-@import "../../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
-// @import "../../../node_modules/bootstrap-accessibility-plugin/plugins/css/bootstrap-accessibility.css";
-@import "../lib/font-awesome/css/font-awesome.min.css";
-@import "../../../node_modules/breakpoint-sass/stylesheets/_breakpoint.scss";
+// ################################
+// Variables
+@node-modules: "/node_modules/";
+
+// ################################
+// Dependancies
+
+@import @node-modules "bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import @node-modules "breakpoint-sass/stylesheets/_breakpoint.scss";
+
+// @import "helpers/_variables.scss";
+// @import "helpers/_mixins.scss";
 
 
-//@import "sections/_grid.scss";
-
+// ################################
+// Core glue components
 
 @import "_layout.scss";
-@import "base/_typography.scss";
-@import "_general.scss";
+@import "_typography.scss";
 
 // ################################
 // site header (qg-site-header)
 
-@import "site-header/_header.scss";
-
-@import "site-header/_coat-of-arms.scss";
-@import "site-header/_site-utilities.scss";
-@import "site-header/_site-search.scss";
-@import "site-header/_site-name.scss";
-@import "site-header/_site-navigation.scss";
-@import "site-header/_alerts.scss";
+@import "layout/header/_header.scss";
+@import "layout/header/_coat-of-arms.scss";
+@import "layout/header/_site-utilities.scss";
+@import "layout/header/_site-search.scss";
+@import "layout/header/_site-name.scss";
+@import "layout/header/_site-navigation.scss";
+@import "layout/header/_alerts.scss";
 
 // ################################
 // site content (qg-content)
-@import "page-content/section-navigation/_section-navigation.scss";
-@import "page-content/breadcrumbs/_breadcrumb.scss";
-//@import "sections/_main-content.scss";
+@import "layout/nav-section/_nav-section.scss";
+@import "layout/breadcrumbs/_breadcrumb.scss";
 
 // ################################
 // site page content (qg-primary-content)
 
-@import "page-content/primary-content/_index-page-grid.scss";
-@import "page-content/_page-content-footer.scss";
+// @import "layout/primary-content/_index-page-grid.scss";
+@import "layout/forms/_forms.scss";
 
-//@import "sections/_forms.scss";
 
-@import "page-content/_feedback.scss";
+// ################################
+// footers
+
+@import "layout/footer/_feedback.scss";
 //@import "sections/_sidebar-nav.scss";
 //@import "sections/_secondary-content.scss";
-@import "page-content/secondary-content/_asides.scss";
-@import "site-footer/_footer.scss";
+@import "layout/asides/_asides.scss";
+@import "layout/footer/_footer.scss";
 
 // develop only:
-//@import "_gavin-develop.scss";
-@import "helpers/_equal-height-columns.scss";
+// @import "helpers/_equal-height-columns.scss";
 
 // ################################
 // modules & utilities
