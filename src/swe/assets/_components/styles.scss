@@ -1,0 +1,70 @@
+
+// ################################
+// Variables
+
+@core: "/src/core/assets/_components/";
+@node-modules: "/node_modules/";
+
+// ################################
+// Dependancies
+
+@import @node-modules "bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import @node-modules "breakpoint-sass/stylesheets/_breakpoint.scss";
+
+// @import "helpers/_variables.scss";
+// @import "helpers/_mixins.scss";
+
+
+// ################################
+// Core glue components
+
+@import @core "_layout.scss";
+@import @core "_typography.scss";
+
+// ################################
+// site header (qg-site-header)
+
+@import "layout/header/_header.scss";
+@import "layout/header/_coat-of-arms.scss";
+@import "layout/header/_site-utilities.scss";
+@import "layout/header/_site-search.scss";
+@import "layout/header/_site-name.scss";
+@import "layout/header/_site-navigation.scss";
+@import "layout/header/_alerts.scss";
+
+// ################################
+// site content (qg-content)
+@import "layout/nav-section/_nav-section.scss";
+@import "layout/breadcrumbs/_breadcrumb.scss";
+
+// ################################
+// site page content (qg-primary-content)
+
+// @import "layout/primary-content/_index-page-grid.scss";
+@import "layout/forms/_forms.scss";
+
+
+// ################################
+// footers
+
+@import "layout/footer/_feedback.scss";
+//@import "sections/_sidebar-nav.scss";
+//@import "sections/_secondary-content.scss";
+@import "layout/asides/_asides.scss";
+@import "layout/footer/_footer.scss";
+
+// develop only:
+// @import "helpers/_equal-height-columns.scss";
+
+// ################################
+// modules & utilities
+
+@import "components/global/_show-hide.scss";
+
+// ################################
+
+@import "helpers/_last-chance-override.scss";
+
+
+
+

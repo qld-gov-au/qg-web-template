@@ -1,0 +1,27 @@
+@import "../lib/lato-webfont/lato.min.css";
+@import "../lib/font-awesome/css/font-awesome.min.css";
+
+html,body {
+  font-family: Lato, Arial, Helvetica, sans-serif;
+  font-size: $baseSize;
+  line-height: $baseLineHeight;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: Lato, Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+h1{
+  @include fontSize(25px);
+  font-weight: bold;
+}
+h2{
+  @include fontSize(19px);
+  font-weight: bold;
+}
+h3{
+  @include fontSize(16px);
+  font-weight: bold;
+}
+a {
+    text-decoration: underline;
+}
