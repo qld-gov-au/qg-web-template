@@ -99,7 +99,7 @@ background-color: #FFF !important;
 margin-top: 1em;
 margin-bottom: 1em;
 background-color: #FFF !important;
-border: 1px solid #FFEA8A;
+border: 1px solid $qg-yellow;
 border-width: 1px 1px 1px 10px;
 }   
 

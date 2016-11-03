@@ -5,11 +5,11 @@
     @extend .col-sm-12;
     @extend .col-md-12;
     @extend .col-lg-12;    
-    background-color: #F6F6F6;
+    background-color: $qg-light-gray;
     padding: 0;
 
     ul {
-        color: #005375;
+        color: $qg-blue-green;
         @include fontSize(16px);
         bottom: 0px;
 
@@ -22,11 +22,11 @@
                 display: inline-block;
                 padding: .3em .5em .7em .5em;
                 margin: 0;
-                color: #005375;
+                color: $qg-blue-green;
                 text-decoration: none;    
                 @include fontSize(16px);
                 &:hover {
-                    background-color: #e0e0e0;
+                    background-color: $qg-light-gray6;
                     text-decoration: none;
                 }
             }    

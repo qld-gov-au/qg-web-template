@@ -1,7 +1,7 @@
 
 .qg-more-info {
 color: #FFF;
-background-color:#0B2E4C;
+background-color:$qg-dark-blue;
 padding-bottom: 0;
 a, a:link {
 color: #FFF;  
@@ -18,7 +18,7 @@ div {
 @extend .col-md-4;
   
 &:nth-child(2n) {
-background-color: #0b3253;
+background-color: $qg-blue9;
 } 
 
 h3 {
@@ -89,7 +89,7 @@ column-count: 1 !important;
 /*
 
 #qg-site-footer {
-background: #0B2E4C;
+background: $qg-dark-blue;
 }
 */
 

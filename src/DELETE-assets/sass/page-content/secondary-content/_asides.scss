@@ -5,7 +5,7 @@ margin: 0;
 padding: 0;  
     
     a, a:link {
-    color: #115289;
+    color: $qg-blue5;
     text-decoration: none;
     }  
 
@@ -15,12 +15,12 @@ padding: 0;
     }
 
         .qg-aside {
-        background-color: #f2F7F9;      
+        background-color: $qg-light-blue-gray;      
         padding: 1.5em 1em;
         margin: 0;
 
             .fa {
-            // color: #78BA00;
+            // color: $qg-green;
             font-size: 120%;
             margin: 0 0.3em 0 0;
             }
@@ -57,23 +57,23 @@ padding: 0;
         } 
 
     // possible background colors for asides:
-    // background-color: #F2F7F9;
-    // background-color: #F7FBFF;
-    // background-color: #EEF4F6;
-    // background-color: #F2F7F9;
-    // background-color: #E7F5FE;
-    // background-color: #E1ECF1;
+    // background-color: $qg-light-blue-gray;
+    // background-color: $qg-light-blue-gray1;
+    // background-color: $light-blueberry;
+    // background-color: $qg-light-blue-gray;
+    // background-color: $qg-light-blue-gray4;
+    // background-color: $qg-light-blue-gray5;
 
     .qg-aside:nth-child(2n) {
-    background-color: #E7F5FE;
+    background-color: $qg-light-blue-gray4;
     }
 
     .qg-aside:nth-child(3n) {
-    background-color: #E1ECF1;
+    background-color: $qg-light-blue-gray5;
     }
 
     .qg-aside h2 span:before {
-    color: #78BA00;
+    color: $qg-green;
     }
 
     .qg-search {}

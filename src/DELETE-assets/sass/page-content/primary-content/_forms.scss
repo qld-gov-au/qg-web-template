@@ -281,7 +281,7 @@ ol.xor > li::before {
   font-weight: bold;
   text-transform: capitalize;
   background: transparent;
-  color: #007EB1;
+  color: $qg-blue;
   position: absolute;
   padding: .7em;
   margin-top: -3em;
@@ -596,7 +596,7 @@ button.focus,
 input.focus,
 select.focus,
 textarea.focus {
-  border-color: #007EB1; }
+  border-color: $qg-blue; }
 
 /* form sections */
 form .sections {
@@ -748,7 +748,7 @@ abbr.required, abbr[title*="required"] {
 /* checked radio buttons/checkboxes */
 input:checked + label {
   font-weight: bold;
-  color: #007EB1; }
+  color: $qg-blue; }
 
 .choices label {
   position: relative;
@@ -960,7 +960,7 @@ em .ui-button,
 .ui-widget em .ui-button,
 .actions em .button,
 .actions em input {
-  background-color: #007EB1;
+  background-color: $qg-blue;
   color: #ffffff; }
 
 form em button:hover,
@@ -975,7 +975,7 @@ em .ui-button:focus,
 .actions em input:focus {
   color: #000000;
   background-color: #9ac5df;
-  outline: 1px solid #007EB1;
+  outline: 1px solid $qg-blue;
   outline-offset: -1px; }
 
 form em button:active,
@@ -983,7 +983,7 @@ em .ui-button:active,
 .ui-widget em .ui-button:active,
 .actions em .button:active,
 .actions em input:active {
-  background-color: #007EB1; }
+  background-color: $qg-blue; }
 
 /* disabled buttons */
 .ui-button[disabled],
@@ -1007,7 +1007,7 @@ em .ui-button[disabled],
 .ui-widget em .ui-button[disabled],
 form em button[disabled],
 form em input[type="submit"][disabled] {
-  background: #007EB1;
+  background: $qg-blue;
   color: #ffffff; }
 
 #search-button,

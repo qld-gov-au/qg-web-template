@@ -21,12 +21,12 @@ border-radius: 0;
 
 .alert-danger {
 position: relative; 
-//background-color: #bf2a2a;    
-background: #bf2a2a;
-background: -moz-linear-gradient(top,  #bf2a2a 70%, #b11616 100%);
-background: -webkit-linear-gradient(top,  #bf2a2a 70%,#b11616 100%);
-background: linear-gradient(to bottom,  #bf2a2a 70%,#b11616 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bf2a2a', endColorstr='#992323',GradientType=0 );
+//background-color: $qg-red4;    
+background: $qg-red4;
+background: -moz-linear-gradient(top,  $qg-red4 70%, #b11616 100%);
+background: -webkit-linear-gradient(top,  $qg-red4 70%,#b11616 100%);
+background: linear-gradient(to bottom,  $qg-red4 70%,#b11616 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$qg-red4', endColorstr='#992323',GradientType=0 );
 
 a, a:link {
 color: #FFF;  

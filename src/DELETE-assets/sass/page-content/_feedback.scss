@@ -1,5 +1,5 @@
 #qg-feedback {
-    background-color:#007EB1;
+    background-color:$qg-blue;
     padding-top: 1em;
     padding-bottom: 1em;
     font-size: 1.2em; 
@@ -14,13 +14,13 @@
     } 
 
     #page-feedback-useful {
-        background-color: #005375;
+        background-color: $qg-blue-green;
         color: #FFF;
-        border: #0B2E4C;
+        border: $qg-dark-blue;
         transition: all .2s;
 
         &:hover {
-            background-color: #0B2E4C;
+            background-color: $qg-dark-blue;
         }
 
     }   
@@ -74,7 +74,7 @@
 
 #qg-page-feedback {
     //display: none;   
-    background-color: #f8f8f8;
+    background-color: $qg-light-gray3;
     color: #000;
     @include fontSize(16px);
 
@@ -90,24 +90,24 @@
     .warn {    
         padding: 1em;
         @extend .col-lg-12;
-        background-color: #FFEDDE;  
+        background-color: $qg-light-peach;  
     }
 
     .info {    
         padding: 1em;
         margin-bottom: 1em;
-        background-color: #EEF4F6;   
+        background-color: $light-blueberry;   
     }
 
     .required {
-        color: #c90000;    
+        color: $qg-red3;    
     }  
 
     .invalid {
-        color: #c90000;
+        color: $qg-red3;
 
         label {
-            color: #c90000;    
+            color: $qg-red3;    
         }
 
         input {
@@ -122,7 +122,7 @@
 
     .alert {
         display: inline;
-        color: #c90000;     
+        color: $qg-red3;     
         @include fontSize(16px); 
     } 
 
