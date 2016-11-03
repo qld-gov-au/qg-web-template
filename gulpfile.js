@@ -1,9 +1,11 @@
 'use strict';
 
 var gulp = require('gulp'),
+    requireDir = require('require-dir'),
     plugins = require('gulp-load-plugins')(),
     del = require('del'),
     bowerConfig = require('./bower.json'),
+    config = require('./gulp-config.js'),
     argv = require('yargs').argv,
     gulpConnect = require('gulp-connect'),
     runSequence = require('run-sequence'),
@@ -11,65 +13,7 @@ var gulp = require('gulp'),
     gulpConnectSsi = require('gulp-connect-ssi'),
     eslint = require('gulp-eslint');
 
-// TODO - config from a separate file
-var config = {
-    version: 'v3',
-    basepath: {
-        src: 'src/',
-        build: 'build/',
-        buildswe: 'build/swe/',
-        release: 'release/',
-        static: 'release/static.qgov.net.au/',
-        test: 'test/',
-        swe: 'swe/',
-        bowerVersion: bowerConfig.version,
-        node_modules: 'node_modules/'
-    },
-    projects: ['swe', 'cue', 'ice', 'flux'],
-    franchise: ['www.qld.gov.au', 'tmr.com.au', 'test.com'],
-    src: {
-        assets: function () {
-            return config.basepath.src + 'swe/assets/';
-        },
-        examples: function () {
-            return config.basepath.src + 'swe/examples/';
-        }
-    },
-    build: {
-        assets: function () {
-            return config.basepath.build;
-        },
-        examples: function () {
-            return config.basepath.build + 'swe/examples/';
-        }
-    },
-    release: {
-        assets: function () {
-            return config.basepath.release + 'assets/';
-        },
-        static: function () {
-            return config.basepath.release + 'static.qgov.net.au/assets/';
-        },
-        images: function () {
-            return config.basepath.release + 'assets/' + config.version + '/images/';
-        },
-        lib: function () {
-            return config.basepath.release + 'assets/' + config.version + '/lib/';
-        },
-        examples: function () {
-            return config.basepath.release + 'examples/';
-        },
-        includes: function () {
-            return config.basepath.release + 'assets/includes/';
-        },
-        js: function () {
-            return config.basepath.release + 'assets/' + config.version + '/js/';
-        },
-        css: function () {
-            return config.basepath.release + 'assets/' + config.version + '/css/';
-        }
-    }
-};
+config.basepath.bowerVersion = bowerConfig.version;
 
 /* JS TASKS */
 gulp.task('js', require('./gulp-tasks/build-process/scripts')(gulp, plugins, config));
@@ -80,7 +24,33 @@ gulp.task('sass', require('./gulp-tasks/build-process/scss')(gulp, plugins, conf
 /* MOVE FOLDERS */
 gulp.task('content', require('./gulp-tasks/build-process/content')(gulp, plugins, config));
 gulp.task('other:assets', require('./gulp-tasks/build-process/otherAssets')(gulp, plugins, config));
-gulp.task('includes', require('./gulp-tasks/build-process/includes')(gulp, plugins, config));
+gulp.task('include-partials', ['inherit-partials'], require('./gulp-tasks/build-process/include-partials')(gulp, plugins, config));
+gulp.task('inherit-partials', require('./gulp-tasks/build-process/inherit-partials')(gulp, plugins, config));
+
+    // config.projects.map(function (element) {
+    //     var src = [],
+    //         basepath = [],
+    //         files = config.inherit[element].files;
+    //     if (config.inherit[element].inheritAll === true) {
+    //         basepath = [`${config.basepath.src}core/assets/_components/layout/**/*.html`]
+    //     }
+    //     if (files != null  && files.length > 0) {
+    //         if (!Array.isArray(files)) {
+    //             // Fix errors in configuration
+    //             files = [files];
+    //         }
+    //     } else {
+    //         files = [];
+    //     }
+    //     // for (var i=0, len = files.length; i < len; i++) {
+    //     //     // Isolate files
+    //     //     files[i] = `${config.basepath.src}${element}/${files[i]}`;
+    //     // }
+    //     src = basepath.concat(files);
+
+    //     return gulp.src(src, { dot: true })
+    //         .pipe(gulp.dest(config.basepath.build + element + '/assets/includes/'));
+    // });
 
 /* TEST TASKS */
 gulp.task('eslint', function () {
@@ -114,7 +84,7 @@ gulp.task('release:content', require('./gulp-tasks/release-process/content')(gul
 gulp.task('publish:swe', require('./gulp-tasks/release-process/publish')(gulp, plugins, config));
 
 /* TASK RUNNERS */
-gulp.task('default', ['content', 'js', 'sass', 'other:assets', 'includes']);
+gulp.task('default', ['content', 'js', 'sass', 'other:assets', 'include-partials']);
 gulp.task('build', ['default']);
 gulp.task('release', ['release:assets', 'release:content']);
 
