@@ -1,17 +1,13 @@
-
-// ################################
-// Variables
-@node-modules: "/node_modules/";
-
 // ################################
 // Dependancies
 
-@import @node-modules "bootstrap-sass/assets/stylesheets/_bootstrap.scss";
-@import @node-modules "breakpoint-sass/stylesheets/_breakpoint.scss";
+@import "../../../../bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "../../../../breakpoint-sass/stylesheets/_breakpoint.scss";
 
 // @import "helpers/_variables.scss";
 // @import "helpers/_mixins.scss";
 
+@import "_variables.scss";
 
 // ################################
 // Core glue components

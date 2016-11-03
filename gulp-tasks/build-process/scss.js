@@ -1,7 +1,7 @@
 module.exports = function (gulp, plugins, config) {
     return function () {
         config.projects.map(function (element) {
-            return gulp.src(config.basepath.src + '/assets/sass/*.scss')
+            return gulp.src(config.basepath.src + element + '/assets/_components/*.scss')
                 .pipe(plugins.sourcemaps.init())
                 .pipe(plugins.plumber())
                 .pipe(plugins.sass({

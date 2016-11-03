@@ -80,6 +80,7 @@ gulp.task('sass', require('./gulp-tasks/build-process/scss')(gulp, plugins, conf
 /* MOVE FOLDERS */
 gulp.task('content', require('./gulp-tasks/build-process/content')(gulp, plugins, config));
 gulp.task('other:assets', require('./gulp-tasks/build-process/otherAssets')(gulp, plugins, config));
+gulp.task('includes', require('./gulp-tasks/build-process/includes')(gulp, plugins, config));
 
 /* TEST TASKS */
 gulp.task('eslint', function () {
@@ -113,7 +114,7 @@ gulp.task('release:content', require('./gulp-tasks/release-process/content')(gul
 gulp.task('publish:swe', require('./gulp-tasks/release-process/publish')(gulp, plugins, config));
 
 /* TASK RUNNERS */
-gulp.task('default', ['content', 'js', 'sass', 'other:assets']);
+gulp.task('default', ['content', 'js', 'sass', 'other:assets', 'includes']);
 gulp.task('build', ['default']);
 gulp.task('release', ['release:assets', 'release:content']);
 
@@ -152,4 +153,3 @@ gulp.task('ssi-to-jinja', function (cb) {
 gulp.task('build-jinja', function (cb) {
     runSequence('default', 'delay', 'ssi-to-jinja', cb);
 });
-
