@@ -9,12 +9,12 @@ position: relative;
 padding-bottom: 1em;
     
 h2 {
-color: #13578b;      
+color: $qg-blue4;      
 @include fontSize(19px);
 letter-spacing: .05em;
 
 a {
-color: #13578b;
+color: $qg-blue4;
 transition: all 0.2s;
 }
 
@@ -73,7 +73,7 @@ font-size: .9em;
 display: inline-block !important;
 content: "\f054";
 margin: 0 0.3em 0 0;
-color: #3384c1;
+color: $qg-blue-2;
 }  
 
 }

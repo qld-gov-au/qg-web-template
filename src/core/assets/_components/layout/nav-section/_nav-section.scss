@@ -1,17 +1,17 @@
 /* ! section (side) navigation */
 #qg-content #qg-section-nav {   
-background-color: #F6F6F6 !important;
+background-color: $qg-light-gray !important;
 padding: 0;
         
 h2 {
 @include fontSize(19px);
 padding: 2em 0 1.2em 30px;
 margin:  0;
-color: #13578b;
+color: $qg-blue4;
 } 
 
 ul {
-background-color: #F6F6F6; 
+background-color: $qg-light-gray; 
 margin: 0;
 padding: 0;
 }
@@ -32,12 +32,12 @@ display: block;
 
 a:hover {
 text-decoration:none;
-background-color: #d1d1d1;
+background-color: $qg-light-gray7;
 }
 
 a.active {
 color: #FFF;
-background-color: #007EB1;     
+background-color: $qg-blue;     
 }
 
 a:before {
@@ -47,7 +47,7 @@ display: inline-block !important;
 content: "\f054";
 margin: 0;
 padding: 0 0.3em 0 0;
-color: #13578b;
+color: $qg-blue4;
 text-decoration: none;
 opacity: .5;
 }
