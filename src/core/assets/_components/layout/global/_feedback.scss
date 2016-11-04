@@ -1,5 +1,5 @@
 #qg-feedback {
-    background-color:#007EB1;
+    background-color: $qg-blue;
     padding-top: 1em;
     padding-bottom: 1em;
     font-size: 1.2em; 
@@ -14,13 +14,13 @@
     } 
 
     #page-feedback-useful {
-        background-color: #005375;
+        background-color: $qg-blue-green;
         color: #FFF;
-        border: #0B2E4C;
+        border: $qg-dark-blue;
         transition: all .2s;
 
         &:hover {
-            background-color: #0B2E4C;
+            background-color: $qg-dark-blue;
         }
 
     }   
