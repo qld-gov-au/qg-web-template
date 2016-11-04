@@ -1,3 +1,5 @@
+@import './../../../core/assets/_components/_variables.scss'; // Inherit core variables
+
 //font family
 $font-main: Lato, Arial, sans-serif;
 
@@ -16,45 +18,39 @@ $base-padding: 1em;
 //$sweblue: #007EB1;
 //$swedarkblue: #005375;
 
+
+
+
+
+
 // ###################################
 
 $qg-mid-gray1: #939393;//none
 $qg-mid-gray2: #777777;//none
-$qg-mid-gray:  #666666;//none
+$qg-mid-gray: #666666;//none
 $qg-mid-gray4: #555555;
 $qg-mid-gray5: #505050;
 $qg-mid-gray6: #444444;
 $qg-mid-gray7: #2e2e2e;
-$qg-black:     #000000;
+$qg-black: #000000;
 
 
 $qg-white: #ffffff;
 $qg-light-gray2: #fcfcfc;//none
 $qg-light-gray3: #f8f8f8;//done
-$qg-light-gray:  #f6f6f6;//done
+$qg-light-gray: #f6f6f6;//done
 $qg-light-gray5: #f5f5f5;//done
 $qg-light-gray6: #e0e0e0;//none
 $qg-light-gray7: #d1d1d1;//done
 
 
-//$qg-light-blue-gray1: #F7FBFF;//done
-//$qg-light-blue-gray: #f2F7F9;//done
-//$qg-light-blue-gray3: #EEF4F6;//none
-//$qg-light-blue-gray4: #E7F5FE;//done
-//$qg-light-blue-gray5: #E1ECF1;//none
-//$qg-light-blue-gray6: #7d858a;//none
-//$qg-light-blue-gray7: #585E62;//none
-
-
-$qg-light-blue-gray1: #f4f4f4;//done
-$qg-light-blue-gray:  #ebebeb;//done
-$qg-light-blue-gray3: #dedede;//none
-$qg-light-blue-gray4: #cecece;//done
-$qg-light-blue-gray5: #bababa;//none
-$qg-light-blue-gray6: #a0a0a0;//none
-$qg-light-blue-gray7: #898989;//none
-
-
+$qg-light-blue-gray1: #F7FBFF;//done
+$qg-light-blue-gray: #f2F7F9;//done
+$qg-light-blue-gray3: #EEF4F6;//none
+$qg-light-blue-gray4: #E7F5FE;//done
+$qg-light-blue-gray5: #E1ECF1;//none
+$qg-light-blue-gray6: #7d858a;//none
+$qg-light-blue-gray7: #585E62;//none
 
 
 
@@ -68,16 +64,6 @@ $qg-light-blue-gray7: #898989;//none
 //$qg-dark-blue: #0B2E4C;//done
 //$qg-blue9: #0b3253;//done
 
-
-$qg-blue1:      #f0f0f0;
-$qg-blue2:      #dddddd;
-$qg-blue:       #c4c4c4;
-$qg-blue4:      #adadad;
-$qg-blue5:      #969696;
-$qg-banner-blue:#777777;
-$qg-blue-green: #646464;
-$qg-dark-blue:  #4b4b4b;
-$qg-blue9:      #343434;
 
 
 $qg-yellow: #FFEA8A;//done
@@ -105,6 +91,15 @@ $watermelon: #EA6A7E;//none
 $blueberry: #759BF3;//none
 $light-blueberry: #EEF4F6;//done
 $qg-sky-blue: #009dff;//done
+
+
+
+
+
+
+
+
+
 
 
 
