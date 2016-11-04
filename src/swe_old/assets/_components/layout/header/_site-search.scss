@@ -6,11 +6,11 @@
 
     input {
         border-radius: 0;
-        border-color: $green; 
+        border-color: $qg-green; 
     }
 
     button.btn-default {
-        background: $green;
+        background: $qg-green;
         border-radius: 0;
         z-index: 99;
     }
@@ -24,7 +24,7 @@
         z-index: 98;
         width: 100%;
         padding: 0;
-        border: 1px solid $green;
+        border: 1px solid $qg-green;
         border-top: 1px solid #EEE;
         background: #FFF;
 
