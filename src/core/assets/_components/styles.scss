@@ -11,11 +11,15 @@
 @import "../../../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 @import "../../../../node_modules/breakpoint-sass/stylesheets/_breakpoint.scss";
 
+// @import "helpers/_variables.scss";
+// @import "helpers/_mixins.scss";
+
 // ################################
-// Core glue components
+// Core components
 
 @import "includes/_layout.scss";
 @import "_typography.scss";
+@import "_helpers.scss";
 
 // ################################
 // Bootstrap extensions
@@ -23,8 +27,9 @@
 @import "bootstrap-extensions/_show-hide.scss";
 
 // ################################
-// site header (qg-site-header)
+// Includes (locational styles)
 
+// site header (qg-site-header)
 @import "includes/header/_header.scss";
 @import "includes/header/_coat-of-arms.scss";
 @import "includes/header/_site-utilities.scss";
@@ -33,39 +38,23 @@
 @import "includes/header/_site-navigation.scss";
 @import "includes/header/_alerts.scss";
 
-// ################################
-// site content (qg-content)
-@import "includes/nav-section/_nav-section.scss";
+// Site Navigation
+@import "includes/nav-site/_nav-site.scss";
+
+// breadcrumbs
 @import "includes/breadcrumbs/_breadcrumb.scss";
 
-// ################################
-// site page content (qg-primary-content)
+// section navigation
+@import "includes/nav-section/_nav-section.scss";
 
-// @import "includes/primary-content/_index-page-grid.scss";
-@import "includes/forms/_forms.scss";
-
-
-// ################################
-// footers
-
-@import "includes/footer/_feedback.scss";
-//@import "sections/_sidebar-nav.scss";
-//@import "sections/_secondary-content.scss";
+// asides
 @import "includes/asides/_asides.scss";
+
+// footer
+@import "includes/global/_feedback.scss";
 @import "includes/footer/_footer.scss";
 
-// develop only:
-// @import "helpers/_equal-height-columns.scss";
-
 // ################################
-// modules & utilities
-
-@import "bootstrap-components/_show-hide.scss";
-
-// ################################
-
-@import "helpers/_last-chance-override.scss";
-
-
-
+// Components
+@import "../../../core/assets/_components/forms/_forms.scss";
 
