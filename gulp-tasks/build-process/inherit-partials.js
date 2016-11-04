@@ -5,7 +5,7 @@ module.exports = function (gulp, plugins, config) {
                 basepath = [],
                 files = config.inherit[element].files;
             if (config.inherit[element].inheritAll === true) {
-                basepath = [`${config.basepath.src}core/assets/_components/layout/**/*.html`]
+                basepath = [`${config.basepath.src}core/assets/_components/includes/**/*.html`]
             }
             if (files != null  && files.length > 0) {
                 if (!Array.isArray(files)) {

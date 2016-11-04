@@ -17,38 +17,38 @@
 // ################################
 // Core glue components
 
-@import "../../../core/assets/_components/layout/_layout.scss";
+@import "../../../core/assets/_components/includes/_layout.scss";
 @import "../../../core/assets/_components/_typography.scss";
 @import "../../../core/assets/_components/_helpers.scss";
 
 // ################################
 // site header (qg-site-header)
 
-@import "layout/header/_header.scss";
-@import "layout/header/_coat-of-arms.scss";
-@import "layout/header/_site-utilities.scss";
-@import "layout/header/_site-search.scss";
-@import "layout/header/_site-name.scss";
-@import "layout/header/_site-navigation.scss";
-@import "layout/header/_alerts.scss";
+@import "includes/header/_header.scss";
+@import "includes/header/_coat-of-arms.scss";
+@import "includes/header/_site-utilities.scss";
+@import "includes/header/_site-search.scss";
+@import "includes/header/_site-name.scss";
+@import "includes/header/_site-navigation.scss";
+@import "includes/header/_alerts.scss";
 
 // ################################
 // site content (qg-content)
-@import "layout/nav-section/_nav-section.scss";
-@import "layout/breadcrumbs/_breadcrumb.scss";
+@import "includes/nav-section/_nav-section.scss";
+@import "includes/breadcrumbs/_breadcrumb.scss";
 
 // ################################
 // site page content (qg-primary-content)
 
-// @import "layout/primary-content/_index-page-grid.scss";
+// @import "includes/primary-content/_index-page-grid.scss";
 @import "forms/_forms.scss";
-@import "layout/asides/_asides.scss";
+@import "includes/asides/_asides.scss";
 
 // ################################
 // footers
 
-@import "layout/global/_feedback.scss";
-@import "layout/footer/_footer.scss";
+@import "includes/global/_feedback.scss";
+@import "includes/footer/_footer.scss";
 
 // develop only:
 // @import "helpers/_equal-height-columns.scss";

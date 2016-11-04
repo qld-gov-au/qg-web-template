@@ -17,7 +17,7 @@
 // ################################
 // Core glue components
 
-@import "../../../core/assets/_components/layout/_layout.scss";
+@import "../../../core/assets/_components/includes/_layout.scss";
 @import "../../../core/assets/_components/_typography.scss";
 @import "../../../core/assets/_components/_helpers.scss";
 
@@ -29,31 +29,31 @@
 // ################################
 // site header (qg-site-header)
 
-@import "../../../core/assets/_components/layout/header/_header.scss";
-@import "../../../core/assets/_components/layout/header/_coat-of-arms.scss";
-@import "../../../core/assets/_components/layout/header/_site-utilities.scss";
-@import "../../../core/assets/_components/layout/header/_site-search.scss";
-@import "../../../core/assets/_components/layout/header/_site-name.scss";
-@import "../../../core/assets/_components/layout/header/_site-navigation.scss";
-@import "../../../core/assets/_components/layout/header/_alerts.scss";
+@import "../../../core/assets/_components/includes/header/_header.scss";
+@import "../../../core/assets/_components/includes/header/_coat-of-arms.scss";
+@import "../../../core/assets/_components/includes/header/_site-utilities.scss";
+@import "../../../core/assets/_components/includes/header/_site-search.scss";
+@import "../../../core/assets/_components/includes/header/_site-name.scss";
+@import "../../../core/assets/_components/includes/header/_site-navigation.scss";
+@import "../../../core/assets/_components/includes/header/_alerts.scss";
 
 // ################################
 // site content (qg-content)
-@import "../../../core/assets/_components/layout/nav-section/_nav-section.scss";
-@import "../../../core/assets/_components/layout/breadcrumbs/_breadcrumb.scss";
+@import "../../../core/assets/_components/includes/nav-section/_nav-section.scss";
+@import "../../../core/assets/_components/includes/breadcrumbs/_breadcrumb.scss";
 
 // ################################
 // site page content (qg-primary-content)
 
-// @import "layout/primary-content/_index-page-grid.scss";
+// @import "includes/primary-content/_index-page-grid.scss";
 @import "../../../core/assets/_components/forms/_forms.scss";
-@import "../../../core/assets/_components/layout/asides/_asides.scss";
+@import "../../../core/assets/_components/includes/asides/_asides.scss";
 
 // ################################
 // footers
 
-@import "../../../core/assets/_components/layout/global/_feedback.scss";
-@import "../../../core/assets/_components/layout/footer/_footer.scss";
+@import "../../../core/assets/_components/includes/global/_feedback.scss";
+@import "../../../core/assets/_components/includes/footer/_footer.scss";
 
 // develop only:
 // @import "helpers/_equal-height-columns.scss";
