@@ -6,7 +6,7 @@ import '../../../node_modules/bootstrap/dist/js/bootstrap.js';
 
 // TODO: Find a new bootstrap accessibility plugin, build one, or figure out how to get  this one working properly
 // Disabled because it creates accessibility errors (strangely enough)
-// import './components/global/bootstrap-accessibility.js';
+import './components/global/bootstrap-accessibility.js';
 
 import './components/autocomplete.js';
 import './components/forms.js';
@@ -26,3 +26,6 @@ import shareLinks from './components/share-links';
     feedbackForm.init(franchiseTitle);
     shareLinks.init();
 }());
+
+// temp
+import "../lib/qg-glue/carousel/carousel.js";

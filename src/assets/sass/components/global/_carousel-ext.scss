@@ -1,0 +1,178 @@
+/*
+
+QLD Carousel extension
+--------------------------------------------------
+Extends the standard bootstrap carousel functionality & styling.
+
+Requires:
+- QLD Government GLUE framework
+- Bootstrap JS
+- Bootstrap CSS
+
+Use:
+Add class qg-bs to html element with carousel class to activate QG extensions
+
+*/
+
+// Basic //
+.carousel{
+	margin-top: 1em;
+	margin-bottom: 1em;
+
+	.carousel-caption{
+		margin-bottom: 30px;
+		padding: 1em;
+
+		background: #000; // #E7F5FE;
+		background: rgba(0, 0, 0, 0.7);
+
+		color: #fff;
+		text-shadow: none;
+
+		*:first-child{
+			margin-top: 0;
+		}
+
+		*:last-child{
+			margin-bottom: 0;
+		}
+	}
+
+	.carousel-indicators{
+		bottom: 10px;
+	}
+}
+
+
+// EXTENDED //
+
+@mixin qg-carousel-indicators {
+	// Bootstrap over-rides
+		position: static;
+		bottom: auto;
+		left: auto;
+		width: auto;
+		margin: 0;
+		text-align: left;
+	// END Bootstrap over-rides
+}
+
+// Expose carousel indicators for users
+.carousel-indicators.qg-bs{ @include qg-carousel-indicators(); }
+
+.carousel.qg-bs{
+
+	.carousel-caption{
+		// Bootstrap over-rides
+			// position: static;
+			// bottom: auto;
+			left: auto;
+			right: auto;
+			width: auto;
+			margin: 0;
+			text-align: left;
+		// END Bootstrap over-rides
+		bottom: 0;
+		width: 100%;
+
+		padding: 1em;
+		background: #000; // #E7F5FE;
+		background: rgba(0, 0, 0, 0.7);
+
+		color: #fff;
+		text-shadow: none;
+
+		*{
+			text-shadow: none;
+		}
+	}
+
+	.qg-carousel-controls{
+		position: relative;
+
+		width: 100%;
+		padding: 1em;
+
+		background: #007EB1;
+	}
+
+	.carousel-indicators{
+		@include qg-carousel-indicators();
+	}
+
+	.carousel-control{
+		// Bootstrap over-rides
+			position: static;
+			top: auto;
+			right: auto;
+			bottom: auto;
+			left: auto;
+			width: auto;
+			margin: 0;
+			text-align: left;
+		// END Bootstrap over-rides
+
+		color: white;
+		float: right;
+	}
+}
+
+
+/*
+@mixin qg-carousel-indicators {
+	// Bootstrap over-rides
+		position: static;
+		bottom: auto;
+		left: auto;
+		width: auto;
+		margin: 0;
+		text-align: left;
+	// END Bootstrap over-rides
+
+	width: 100%;
+	padding: 1em;
+
+	background: #007EB1;
+}
+
+// Expose carousel indicators for users
+.carousel-indicators.qg-bs{ @include qg-carousel-indicators(); }
+
+.carousel.qg-bs{
+	margin-top: 1em;
+	margin-bottom: 1em;
+
+	.carousel-caption{
+		// Bootstrap over-rides
+			// position: static;
+			// bottom: auto;
+			left: auto;
+			right: auto;
+			width: auto;
+			margin: 0;
+			text-align: left;
+		// END Bootstrap over-rides
+		bottom: 0;
+		width: 100%;
+
+		padding: 1em;
+		background: #000; // #E7F5FE;
+		background: rgba(0, 0, 0, 0.7);
+
+		color: #fff;
+		text-shadow: none;
+
+		*{
+			text-shadow: none;
+		}
+	}
+
+	.carousel-indicators{
+		@include qg-carousel-indicators();
+	}
+
+	.carousel-control{
+		float: right;
+	}
+}
+*/
