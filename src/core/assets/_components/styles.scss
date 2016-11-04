@@ -1,19 +1,26 @@
+
+// ################################
+// Settings
+
+@import "_variables.scss";
+@import "_mixins.scss";
+
 // ################################
 // Dependancies
 
-@import "../../../../bootstrap-sass/assets/stylesheets/_bootstrap.scss";
-@import "../../../../breakpoint-sass/stylesheets/_breakpoint.scss";
-
-// @import "helpers/_variables.scss";
-// @import "helpers/_mixins.scss";
-
-@import "_variables.scss";
+@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "../../../../node_modules/breakpoint-sass/stylesheets/_breakpoint.scss";
 
 // ################################
 // Core glue components
 
-@import "_layout.scss";
+@import "layout/_layout.scss";
 @import "_typography.scss";
+
+// ################################
+// Bootstrap extensions
+@import "bootstrap-extensions/_carousel.scss";
+@import "bootstrap-extensions/_show-hide.scss";
 
 // ################################
 // site header (qg-site-header)
@@ -53,7 +60,7 @@
 // ################################
 // modules & utilities
 
-@import "components/global/_show-hide.scss";
+@import "bootstrap-components/_show-hide.scss";
 
 // ################################
 
