@@ -10,7 +10,7 @@ Requires:
 - Bootstrap CSS
 
 Use:
-Add class qg-bs to html element with carousel class to activate QG extensions
+Add class qg to html element with carousel class to activate QG extensions
 
 */
 
@@ -46,21 +46,7 @@ Add class qg-bs to html element with carousel class to activate QG extensions
 
 // EXTENDED //
 
-@mixin qg-carousel-indicators {
-	// Bootstrap over-rides
-		position: static;
-		bottom: auto;
-		left: auto;
-		width: auto;
-		margin: 0;
-		text-align: left;
-	// END Bootstrap over-rides
-}
-
-// Expose carousel indicators for users
-.carousel-indicators.qg-bs{ @include qg-carousel-indicators(); }
-
-.carousel.qg-bs{
+.carousel.qg{
 
 	.carousel-caption{
 		// Bootstrap over-rides
@@ -91,88 +77,28 @@ Add class qg-bs to html element with carousel class to activate QG extensions
 		position: relative;
 
 		width: 100%;
-		padding: 1em;
+		padding: 1.2em;
 
 		background: #007EB1;
-	}
 
-	.carousel-indicators{
-		@include qg-carousel-indicators();
-	}
+		.carousel-indicators{
+			// Bootstrap over-rides
+				position: static;
+				bottom: auto;
+				left: auto;
+				width: auto;
+				margin: 0;
+				text-align: center;
+			// END Bootstrap over-rides
+		}
 
-	.carousel-control{
-		// Bootstrap over-rides
-			position: static;
-			top: auto;
-			right: auto;
-			bottom: auto;
-			left: auto;
-			width: auto;
-			margin: 0;
-			text-align: left;
-		// END Bootstrap over-rides
+		.carousel-control{
+			
+			color: white;
 
-		color: white;
-		float: right;
-	}
-}
-
-
-/*
-@mixin qg-carousel-indicators {
-	// Bootstrap over-rides
-		position: static;
-		bottom: auto;
-		left: auto;
-		width: auto;
-		margin: 0;
-		text-align: left;
-	// END Bootstrap over-rides
-
-	width: 100%;
-	padding: 1em;
-
-	background: #007EB1;
-}
-
-// Expose carousel indicators for users
-.carousel-indicators.qg-bs{ @include qg-carousel-indicators(); }
-
-.carousel.qg-bs{
-	margin-top: 1em;
-	margin-bottom: 1em;
-
-	.carousel-caption{
-		// Bootstrap over-rides
-			// position: static;
-			// bottom: auto;
-			left: auto;
-			right: auto;
-			width: auto;
-			margin: 0;
-			text-align: left;
-		// END Bootstrap over-rides
-		bottom: 0;
-		width: 100%;
-
-		padding: 1em;
-		background: #000; // #E7F5FE;
-		background: rgba(0, 0, 0, 0.7);
-
-		color: #fff;
-		text-shadow: none;
-
-		*{
-			text-shadow: none;
+			@include breakpoint($bs-min-md){
+				.glyphicon{ line-height: 0.7em; }
+			}
 		}
 	}
-
-	.carousel-indicators{
-		@include qg-carousel-indicators();
-	}
-
-	.carousel-control{
-		float: right;
-	}
 }
-*/

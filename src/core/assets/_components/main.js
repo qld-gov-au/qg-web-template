@@ -10,8 +10,7 @@ var src = {
 import '../../../../node_modules/bootstrap/dist/js/bootstrap.js';
 
 // TODO: Find a new bootstrap accessibility plugin, build one, or figure out how to get  this one working properly
-// Disabled because it creates accessibility errors (strangely enough)
-// import './components/global/bootstrap-accessibility.js';
+import '../../../../node_modules/bootstrap-accessibility-plugin/plugins/js/bootstrap-accessibility.js';
 
 import './general/autocomplete.js';
 
@@ -19,7 +18,7 @@ import './forms/forms.js';
 // import mobileNav from './components/nav/mobile-nav.js'
 import activeSideNav 	from './includes/nav-section/nav-section.js';
 import breakpoints		from './includes/breakpoints.js';
-import qgBsExtend 		from './bootstrap-extensions/bootstrap-extensions.js';
+// import qgBsExtend 		from './bootstrap-extensions/bootstrap-extensions.js';
 import feedbackForm 	from './general/feedback-form';
 import shareLinks 		from './general/share-links';
 
