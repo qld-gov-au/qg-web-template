@@ -4,7 +4,10 @@ module.exports = function (gulp, plugins, config) {
     return function () {
         config.projects.map( (element) => {
              return gulp.src([
-                    `${config.basepath.src}${element}/**/*.html`
+                    `${config.basepath.src}${element}/**/*.html`,
+                    '!**/_components/',
+                    '!**/_components/*',
+                    '!**/_components/**/*'
                 ], { dot: true })
                 .pipe(include({ hardFail: true }))
                     .on('error', console.log)
