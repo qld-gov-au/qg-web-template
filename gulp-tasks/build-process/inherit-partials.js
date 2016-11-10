@@ -1,6 +1,6 @@
 module.exports = function (gulp, plugins, config) {
-    return function () {
-        config.projects.map(function (element) {
+    return () => {
+        config.projects.map( (element) => {
             var src = [],
                 basepath = [],
                 files = config.inherit[element].files;
@@ -22,7 +22,7 @@ module.exports = function (gulp, plugins, config) {
             src = basepath.concat(files);
             
             return gulp.src(src, { dot: true })
-                .pipe(gulp.dest(config.basepath.build + element + '/assets/includes/'));
+                .pipe(gulp.dest(`${config.basepath.build}${element}/assets/includes/`));
         });
     };
 };

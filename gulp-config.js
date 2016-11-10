@@ -58,7 +58,7 @@ module.exports = {
     inherit: {
         swe: {
             inheritAll: true,
-            files: ['!**/nav-site/nav-site.html']
+            files: null // ['!**/nav-site/nav-site.html']
         },
         cue: {
             inheritAll: true,
