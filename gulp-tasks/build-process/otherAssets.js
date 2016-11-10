@@ -7,6 +7,9 @@ module.exports = function (gulp, plugins, config) {
             gulp.src(config.basepath.node_modules + '/bootstrap-sass/assets/fonts/**').pipe(
                 gulp.dest(config.basepath.build + element + '/assets/v3/fonts')
             );
+            gulp.src(config.basepath.node_modules + '/font-awesome/fonts/**').pipe(
+                gulp.dest(config.basepath.build + element + '/assets/v3/fonts')
+            );
         });
     };
 };

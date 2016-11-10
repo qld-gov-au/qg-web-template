@@ -6,23 +6,16 @@
 @import "_mixins.scss";
 
 // ################################
-// Dependancies
-
-@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
-@import "../../../../node_modules/breakpoint-sass/stylesheets/_breakpoint.scss";
-
-// @import "helpers/_variables.scss";
-// @import "helpers/_mixins.scss";
-
-// ################################
 // Core components
 
-@import "../../../core/assets/_components/includes/_layout.scss";
+@import "../../../core/assets/_components/_dependancies.scss";
 @import "../../../core/assets/_components/_typography.scss";
 @import "../../../core/assets/_components/_helpers.scss";
+@import "../../../core/assets/_components/includes/_layout.scss";
 
 // ################################
 // Bootstrap extensions
+
 @import "../../../core/assets/_components/bootstrap-extensions/_carousel.scss";
 @import "../../../core/assets/_components/bootstrap-extensions/_show-hide.scss";
 
