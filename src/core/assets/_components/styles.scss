@@ -6,16 +6,9 @@
 @import "_mixins.scss";
 
 // ################################
-// Dependancies
-
-@import "_dependancies.scss";
-
-// @import "helpers/_variables.scss";
-// @import "helpers/_mixins.scss";
-
-// ################################
 // Core components
 
+@import "_dependancies.scss";
 @import "includes/_layout.scss";
 @import "_typography.scss";
 @import "_helpers.scss";
