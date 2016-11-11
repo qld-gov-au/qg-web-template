@@ -5,7 +5,8 @@ module.exports = function (gulp, plugins, config) {
                     `${config.basepath.src}${element}/**/*`,
                     '!**/_components/',
                     '!**/_components/*',
-                    '!**/_components/**/*'
+                    '!**/_components/**/*',
+                    '!**/*.html'
                 ], { dot: true })
                 .pipe(gulp.dest(config.basepath.build + '/' + element + '/'));
         });

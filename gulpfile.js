@@ -26,7 +26,7 @@ gulp.task('content', ['include-partials'], require('./gulp-tasks/build-process/c
 gulp.task('inherit-partials', ['include-partials'], require('./gulp-tasks/build-process/inherit-partials')(gulp, plugins, config));
 gulp.task('include-partials', require('./gulp-tasks/build-process/include-partials')(gulp, plugins, config));
 gulp.task('other:assets', require('./gulp-tasks/build-process/otherAssets')(gulp, plugins, config));
-// gulp.task('includes-content', ['content'], require('./gulp-tasks/build-process/includes')(gulp, plugins, config));
+gulp.task('html', require('./gulp-tasks/build-process/html')(gulp, plugins, config));
 
 /* TEST TASKS */
 gulp.task('eslint', function () {
@@ -60,7 +60,7 @@ gulp.task('release:content', require('./gulp-tasks/release-process/content')(gul
 gulp.task('publish:swe', require('./gulp-tasks/release-process/publish')(gulp, plugins, config));
 
 /* TASK RUNNERS */
-gulp.task('default', ['content', 'js', 'sass', 'other:assets']);
+gulp.task('default', ['content', 'html', 'js', 'sass', 'other:assets']);
 gulp.task('build', ['default']);
 gulp.task('release', ['release:assets', 'release:content']);
 
