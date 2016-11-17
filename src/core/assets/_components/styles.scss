@@ -9,14 +9,19 @@
 // Core components
 
 @import "_dependancies.scss";
-@import "includes/_layout.scss";
 @import "_typography.scss";
 @import "_helpers.scss";
+@import "includes/_layout.scss";
 
 // ################################
 // Bootstrap extensions
+
 @import "bootstrap-extensions/_carousel.scss";
 @import "bootstrap-extensions/_show-hide.scss";
+
+// ################################
+// Libraries
+@import "../lib/ext/butterfly/butterfly.css";
 
 // ################################
 // Includes (locational styles)
@@ -29,9 +34,6 @@
 @import "includes/header/_site-name.scss";
 @import "includes/header/_site-navigation.scss";
 @import "includes/header/_alerts.scss";
-
-// Site Navigation
-@import "includes/nav-site/_nav-site.scss";
 
 // breadcrumbs
 @import "includes/breadcrumbs/_breadcrumb.scss";
@@ -48,5 +50,4 @@
 
 // ################################
 // Components
-@import "../../../core/assets/_components/forms/_forms.scss";
-
+@import "forms/_forms.scss";

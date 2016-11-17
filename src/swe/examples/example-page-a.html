@@ -8,8 +8,6 @@
 
     <title>Who is a carer? | Standard page | Queensland Government</title>
 
-    <!--#include virtual="/assets/includes/global/head-assets.html"-->
-
     <meta name="description" content="DESCRIPTION">
     <meta name="keywords" content="KEYWORDS">
     <link rel="schema.DCTERMS" href="http://purl.org/dc/terms/">
@@ -28,6 +26,8 @@
     <meta name="DCTERMS.audience" scheme="AGLSTERMS.agls-audience" content="">
     <meta name="DCTERMS.jurisdiction" scheme="AGLSTERMS.AglsJuri" content="Queensland">
     <meta name="DCTERMS.license" scheme="DCTERMS.URI" content="http://creativecommons.org/licenses/by/3.0/au/">
+
+    <!--#include virtual="/assets/includes/global/head-assets.html"-->
 
 </head>
 
@@ -60,6 +60,10 @@
                     <h1>Who is a carer?</h1>
 
                     <!--=include ../../core/assets/_components/bootstrap-extensions/_carousel-example.html -->
+
+                    <a href="#lightbox" rel="gallery" data-qg-lightbox="true">Linkage</a>
+
+                    <div id="lightbox">test</div>
 
 
                     <p>Carers play a crucial role in our community&mdash;often without realising. For many people, looking after a loved one is 'just what you do<span style="color: #008000;">'.</span>&nbsp;They are mums and dads, sons and daughters, brothers, sisters, grandparents, spouses, friends and neighbours.</p>
@@ -176,8 +180,15 @@
       // Used by the feedback form.
       qg.swe.franchiseTitle = 'Franchise Title';
     </script>
-    <!--#include virtual="/assets/includes/footer/footer-scripts.html"-->
 
+    <!--#include virtual="/assets/includes/footer/footer-scripts.html"-->
+    <script src="/assets/v3/lib/ext/butterfly/jquery.resize-events.js"></script><!-- DEV: Temporary -->
+    <script src="/assets/v3/lib/ext/butterfly/jquery.history.js"></script><!-- DEV: Temporary -->
+    <script src="/assets/v3/lib/ext/butterfly/jquery.butterfly.js"></script><!-- DEV: Temporary -->
+    <script>
+        $('*[data-qg-lightbox=true]').not('[id]').attr('id',Math.random(100000,999999).toString(36).substr(2));
+        $('*[data-qg-lightbox=true]').butterfly();
+    </script>
 </body>
 
 </html>
