@@ -28,7 +28,6 @@ jQuery.qgLightbox = {};
 			outOpts.callbackPreOpen = inOpts.callbackPreOpen;
 		}
 		// Initialise lightbox links for each match
-    	console.log( 'Butterfly?', $.butterfly );
 		return this.each( () => {
 			$(this).butterfly(outOpts);
 		});

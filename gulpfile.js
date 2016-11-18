@@ -12,7 +12,8 @@ var gulp        = require('gulp'),
     gutil       = require('gulp-util'),
     gulpConnectSsi = require('gulp-connect-ssi'),
     eslint      = require('gulp-eslint'),
-    es          = require("event-stream");
+    es          = require('event-stream'),
+    include     = require('gulp-include');
 
 config.basepath.bowerVersion = bowerConfig.version;
 
@@ -26,7 +27,7 @@ gulp.task('sass', require('./gulp-tasks/build-process/scss')(gulp, plugins, conf
 gulp.task('content', ['include-partials'], require('./gulp-tasks/build-process/content')(gulp, plugins, config));
 gulp.task('inherit-partials', require('./gulp-tasks/build-process/inherit-partials')(gulp, plugins, config));
 gulp.task('include-partials', ['inherit-partials'], require('./gulp-tasks/build-process/include-partials')(gulp, plugins, config));
-gulp.task('other:assets', require('./gulp-tasks/build-process/otherAssets')(gulp, plugins, config));
+gulp.task('other:assets', require('./gulp-tasks/build-process/otherAssets')(gulp, plugins, config, es));
 gulp.task('html', require('./gulp-tasks/build-process/html')(gulp, plugins, config));
 
 /* TEST TASKS */

@@ -1,5 +1,3 @@
-var include = require('gulp-include');
-
 module.exports = function (gulp, plugins, config) {
     return function () {
         config.projects.map( (element) => {
@@ -9,7 +7,7 @@ module.exports = function (gulp, plugins, config) {
                     '!**/_components/*',
                     '!**/_components/**/*'
                 ], { dot: true })
-                .pipe(include({ hardFail: true }))
+                .pipe(plugins.include({ hardFail: true }))
                     .on('error', console.log)
                 .pipe(gulp.dest(`${config.basepath.build}${element}/`));
         });

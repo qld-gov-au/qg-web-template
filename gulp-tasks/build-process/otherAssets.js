@@ -1,6 +1,4 @@
-var es = require("event-stream");
-
-module.exports = function (gulp, plugins, config) {
+module.exports = function (gulp, plugins, config, es) {
     return function () {
         config.projects.map(function (element) {
             return es.merge([

@@ -11,7 +11,7 @@ module.exports = {
         bowerVersion: 0,
         node_modules: 'node_modules/'
     },
-    projects: ['swe', 'cue', 'ice', 'flux', 'core'],
+    projects: ['swe', 'cue', 'ice', 'flux'],
     franchise: ['www.qld.gov.au', 'tmr.com.au', 'test.com'],
     src: {
         assets: function () {
