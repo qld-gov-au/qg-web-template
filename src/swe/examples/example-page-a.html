@@ -61,9 +61,12 @@
 
                     <!--=include ../../core/assets/_components/bootstrap-extensions/_carousel-example.html -->
 
-                    <a href="#lightbox" rel="gallery" data-qg-lightbox="true">Linkage</a>
+                    <p><a id="firstlink" href="#lightbox" data-qg-lightbox="true">Linkage</a></p>
+                    <p><a id="anotherlink" href="#lightbox" data-qg-lightbox="true">Another linkage</a></p>
 
-                    <div id="lightbox">test</div>
+                    <div class="wrapper" style="display:none;">
+                        <div id="lightbox">test</div>
+                    </div>
 
 
                     <p>Carers play a crucial role in our community&mdash;often without realising. For many people, looking after a loved one is 'just what you do<span style="color: #008000;">'.</span>&nbsp;They are mums and dads, sons and daughters, brothers, sisters, grandparents, spouses, friends and neighbours.</p>
@@ -182,12 +185,18 @@
     </script>
 
     <!--#include virtual="/assets/includes/footer/footer-scripts.html"-->
-    <script src="/assets/v3/lib/ext/butterfly/jquery.resize-events.js"></script><!-- DEV: Temporary -->
-    <script src="/assets/v3/lib/ext/butterfly/jquery.history.js"></script><!-- DEV: Temporary -->
-    <script src="/assets/v3/lib/ext/butterfly/jquery.butterfly.js"></script><!-- DEV: Temporary -->
+
     <script>
-        $('*[data-qg-lightbox=true]').not('[id]').attr('id',Math.random(100000,999999).toString(36).substr(2));
-        $('*[data-qg-lightbox=true]').butterfly();
+        $('#firstlink').qgLightbox({
+            callbackPreOpen: function() {
+                $('#lightbox').html('Testing Lightbox functionality');
+            }
+        });
+        $('#anotherlink').qgLightbox({
+            callbackPreOpen: function() {
+                $('#lightbox').html('<h1>ANOTHER TEST</h1>');
+            }
+        });
     </script>
 </body>
 

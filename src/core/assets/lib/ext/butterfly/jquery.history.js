@@ -28,10 +28,10 @@
 (function($) {
     var locationWrapper = {
         put: function(hash, win) {
-            console.log('put', hash);
-            console.log('Window', window.location.hash);
+            
+            
             (win || window).location.hash = this.encoder(hash);
-            console.log('Window', window.location.hash);
+            
         },
         get: function(win) {
             var hash = ((win || window).location.hash).replace(/^#/, '');
@@ -98,7 +98,7 @@
         type: undefined,
 
         check: function() {},
-        load:  function(hash) { console.log(0); },
+        load:  function(hash) {  },
         init:  function(callback, options) {
             initObjects(options);
             self.callback = callback;
@@ -126,7 +126,7 @@
             }
         },
         load: function(hash) {
-            console.log(1);
+            
             if(hash != self._appState) {
                 locationWrapper.put(hash);
                 self._appState = hash;
@@ -161,7 +161,7 @@
             }
         },
         load: function(hash) {
-            console.log(2);
+            
             if(hash != self._appState) {
                 locationWrapper.put(hash);
                 iframeWrapper.put(hash);
@@ -180,7 +180,7 @@
             self.callback(locationWrapper.get());
         },
         load: function(hash) {
-            console.log(3);
+            
             locationWrapper.put(hash);
         }
     };

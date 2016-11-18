@@ -163,7 +163,7 @@ jQuery.butterfly.linkCount = 0;
 			.append( '<div id="jb-overlay"></div><div id="jb-window"><div id="jb-window-inner"><div id="jb-window-content" style="width: auto; height: auto;" tabindex="0"></div></div></div>')
 			.bind( 'keydown', lightBoxKeypress )
 		;
-		console.log('append body');
+		
 		$( '#jb-overlay' )
 			.fadeTo( 0, $.butterfly.conf.overlayOpacity, function() {
 				// hide when animation complete
@@ -1032,15 +1032,16 @@ jQuery.butterfly.linkCount = 0;
 		// TODO pop history? ... if this was a gallery, pop the entire gallery?
 		// window.history.back();
 	
-		// TODO
-		// load '' = jump to top of screen
-		// load '!' = no jump, back links do not work
+		// Go back to previous screen, maintain screen pos and re-set focus
 		var screenPos = $(window).scrollTop();
 		$.history.load( '' );
 		$(window).scrollTop( screenPos );
-
-		console.log( 'trigger', originalTriggerEL );
+		$(originalTriggerEL).focus();
 	};
+
+	var progressFromLightbox = function (evt) {
+		// TODO: Add option to progress from this lightbox, leaving it in the history
+	}
 	
 	
 	/**
