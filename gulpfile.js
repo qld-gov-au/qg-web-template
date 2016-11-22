@@ -13,9 +13,26 @@ var gulp        = require('gulp'),
     gulpConnectSsi = require('gulp-connect-ssi'),
     eslint      = require('gulp-eslint'),
     es          = require('event-stream'),
-    include     = require('gulp-include');
+    include     = require('gulp-include'),
+    Server      = require('karma').Server;
 
 config.basepath.bowerVersion = bowerConfig.version;
+
+
+
+gulp.task('test', function (done) {
+    new Server({
+        configFile: __dirname + '/karma.config.js',
+        singleRun: true
+    }, done).start();
+    setTimeout(function () {
+        gulp.src('./src/reporter/reporter.html')
+            .pipe(plugins.open());
+        // gulp.src('./coverage/html/index.html')
+        //     .pipe(plugins.open());
+    }, 1000);
+});
+
 
 /* JS TASKS */
 gulp.task('js', require('./gulp-tasks/build-process/scripts')(gulp, plugins, config));
