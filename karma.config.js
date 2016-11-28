@@ -10,21 +10,19 @@ module.exports = function (config) {
       ],
     },
     files: [
-      'tests/**/*.js'
+      'test/**/*.js'
     ],
     autoWatch: true,
     frameworks: [
       'jasmine',
     ],
     preprocessors: {
-      'tests/**/*.js': ['webpack', 'sourcemap'],
+      'test/**/*.js': ['webpack', 'sourcemap'],
     },
     reporters: ['progress', 'coverage' , 'html'],
     htmlReporter: {
-      outputFile: 'src/reporter/reporter.html',
-
-      // Optional
-      pageTitle: 'Glue Template Unit Tests',
+      outputFile: 'test/unit-test-report/report.html',
+      pageTitle: 'Component Unit Tests',
       groupSuites: true,
       useCompactStyle: true,
       useLegacyStyle: true
@@ -36,7 +34,7 @@ module.exports = function (config) {
         preLoaders: [
           {
             test: /-test\.js$/,
-            include: /tests/,
+            include: /test/,
             exclude: /(bower_components|node_modules)/,
             loader: 'babel',
             query: {
