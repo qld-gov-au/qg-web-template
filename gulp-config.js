@@ -29,6 +29,14 @@ module.exports = {
             return config.basepath.build + 'swe/examples/';
         }
     },
+    test : {
+        reportLoc: function (){
+            return config.basepath.test+'unit-test-report/report.html'
+        },
+        testConfigLoc: function (){
+            return process.cwd() + '/karma.config.js'
+        }
+    },
     release: {
         assets: function () {
             return config.basepath.release + 'assets/';

@@ -1,6 +1,6 @@
 'use strict';
 
-var gulp        = require('gulp'),
+const gulp        = require('gulp'),
     requireDir  = require('require-dir'),
     plugins     = require('gulp-load-plugins')(),
     del         = require('del'),
@@ -13,7 +13,8 @@ var gulp        = require('gulp'),
     gulpConnectSsi = require('gulp-connect-ssi'),
     eslint      = require('gulp-eslint'),
     es          = require('event-stream'),
-    include     = require('gulp-include');
+    include     = require('gulp-include'),
+    Server      = require('karma').Server;
 
 config.basepath.bowerVersion = bowerConfig.version;
 
@@ -31,12 +32,9 @@ gulp.task('other:assets', require('./gulp-tasks/build-process/otherAssets')(gulp
 gulp.task('html', require('./gulp-tasks/build-process/html')(gulp, plugins, config));
 
 /* TEST TASKS */
-gulp.task('eslint', function () {
-    return gulp.src(['src/assets/js/**/*.js', 'gulp-tasks/**/*.js', '!src/assets/js/**/forms.js', '!src/assets/js/**/autocomplete.js'])
-        .pipe(eslint())
-        .pipe(plugins.eslint.format())
-        .pipe(plugins.eslint.failOnError());
-});
+gulp.task('test:unit', require('./gulp-tasks/test-process/unit')(gulp, plugins, config, Server));
+
+gulp.task('test:eslint', require('./gulp-tasks/test-process/lint')(gulp, plugins, config, eslint));
 
 /* CLEAN TASKS */
 gulp.task('clean:build', function (cb) {
@@ -61,9 +59,11 @@ gulp.task('release:assets', require('./gulp-tasks/release-process/assets')(gulp,
 gulp.task('release:content', require('./gulp-tasks/release-process/content')(gulp, plugins, config));
 gulp.task('publish:swe', require('./gulp-tasks/release-process/publish')(gulp, plugins, config));
 
+
 /* TASK RUNNERS */
 gulp.task('default', ['content', 'html', 'js', 'sass', 'other:assets']);
 gulp.task('build', ['default']);
+gulp.task('test', ['test:unit', 'test:eslint']);
 gulp.task('release', ['release:assets', 'release:content']);
 
 /* SSI */
