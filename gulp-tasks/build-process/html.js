@@ -1,7 +1,7 @@
 module.exports = function (gulp, plugins, config) {
     return function () {
         config.projects.map( (element) => {
-             return gulp.src([
+            return gulp.src([
                     `${config.basepath.src}${element}/**/*.html`,
                     '!**/_components/',
                     '!**/_components/*',

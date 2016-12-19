@@ -1,3 +1,5 @@
+// Move all content from element except html and components
+
 module.exports = function (gulp, plugins, config) {
     return function () {
         config.projects.map( (element) => {
@@ -8,7 +10,7 @@ module.exports = function (gulp, plugins, config) {
                     '!**/_components/**/*',
                     '!**/*.html'
                 ], { dot: true })
-                .pipe(gulp.dest(config.basepath.build + '/' + element + '/'));
+                .pipe(gulp.dest(`${config.basepath.build}${element}`));
         });
     };
 };

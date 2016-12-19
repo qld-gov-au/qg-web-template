@@ -1,7 +1,8 @@
-module.exports = function (gulp, plugins, config) {
+module.exports = function (gulp, plugins, config, es) {
     return () => {
         config.projects.map( (element) => {
-            var src = [],
+
+           var src = [],
                 basepath = [],
                 files = [];
 
@@ -19,14 +20,15 @@ module.exports = function (gulp, plugins, config) {
                     files = [];
                 }
             }
-            // for (var i=0, len = files.length; i < len; i++) {
-            //     // Isolate files
-            //     files[i] = `${config.basepath.src}${element}/${files[i]}`;
-            // }
             src = basepath.concat(files);
-            
+
+
             return gulp.src(src, { dot: true })
-                .pipe(gulp.dest(`${config.basepath.build}${element}/assets/includes/`));
+                    .pipe(gulp.dest(`${config.basepath.build}${element}/assets/includes/`))
+                    .on('end', () =>{
+                        gulp.src(`${config.basepath.src}${element}/assets/_components/includes/**/*.html`, { dot: true })
+                        .pipe(gulp.dest(`${config.basepath.build}${element}/assets/includes/`))
+                    });
         });
     };
 };

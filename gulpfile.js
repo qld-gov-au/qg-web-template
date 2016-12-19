@@ -24,11 +24,11 @@ gulp.task('js', require('./gulp-tasks/build-process/scripts')(gulp, plugins, con
 gulp.task('sass', require('./gulp-tasks/build-process/scss')(gulp, plugins, config));
 
 /* MOVE FOLDERS */
-gulp.task('content', ['include-partials'], require('./gulp-tasks/build-process/content')(gulp, plugins, config));
-gulp.task('inherit-partials', require('./gulp-tasks/build-process/inherit-partials')(gulp, plugins, config));
-gulp.task('include-partials', ['inherit-partials'], require('./gulp-tasks/build-process/include-partials')(gulp, plugins, config));
+gulp.task('content', require('./gulp-tasks/build-process/content')(gulp, plugins, config));
+gulp.task('inherit-partials', /*['include-partials'],*/ require('./gulp-tasks/build-process/inherit-partials')(gulp, plugins, config, es));
+// gulp.task('include-partials', /* ['inherit-partials'],*/  require('./gulp-tasks/build-process/include-partials')(gulp, plugins, config, es));
+gulp.task('html', ['inherit-partials'], require('./gulp-tasks/build-process/html')(gulp, plugins, config));
 gulp.task('other:assets', require('./gulp-tasks/build-process/otherAssets')(gulp, plugins, config, es));
-gulp.task('html', require('./gulp-tasks/build-process/html')(gulp, plugins, config));
 
 /* TEST TASKS */
 gulp.task('eslint', function () {
