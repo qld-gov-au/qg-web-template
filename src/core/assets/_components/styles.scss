@@ -9,10 +9,11 @@
 // Core components
 
 @import "_dependancies.scss";
+
 @import "_lato-webfont.scss";
 @import "_typography.scss";
 @import "_helpers.scss";
-@import "includes/_layout.scss";
+@import "_layout.scss";
 
 // ################################
 // Bootstrap extensions
@@ -23,7 +24,6 @@
 // ################################
 // Libraries
 @import "../lib/ext/butterfly/butterfly.css";
-
 
 // ################################
 // Includes (locational styles)

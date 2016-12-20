@@ -19,7 +19,7 @@ import './forms/forms.js';
 
 // import mobileNav from './components/nav/mobile-nav.js'
 import activeSideNav 	from './includes/nav-section/nav-section.js';
-import breakpoints		from './includes/breakpoints.js';
+import breakpoints		from './breakpoints.js';
 // import qgBsExtend 		from './bootstrap-extensions/bootstrap-extensions.js';
 import feedbackForm 	from './general/feedback-form';
 import shareLinks 		from './general/share-links';
