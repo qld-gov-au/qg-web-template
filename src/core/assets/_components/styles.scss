@@ -9,9 +9,10 @@
 // Core components
 
 @import "_dependancies.scss";
-
+// Typography
 @import "_lato-webfont.scss";
 @import "_typography.scss";
+// Other
 @import "_helpers.scss";
 @import "_layout.scss";
 
@@ -47,7 +48,7 @@
 @import "includes/asides/_asides.scss";
 
 // footer
-@import "includes/global/_feedback.scss";
+@import "includes/content/_options.scss";
 @import "includes/footer/_footer.scss";
 
 // ################################
