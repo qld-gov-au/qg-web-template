@@ -22,7 +22,6 @@ module.exports = function (gulp, plugins, config, es) {
             }
             src = basepath.concat(files);
 
-
             return gulp.src(src, { dot: true })
                     .pipe(gulp.dest(`${config.basepath.build}${element}/assets/includes/`))
                     .on('end', () =>{
