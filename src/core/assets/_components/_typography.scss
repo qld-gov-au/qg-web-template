@@ -21,5 +21,46 @@ h3{
   font-weight: bold;
 }
 a {
-    text-decoration: underline;
+  text-decoration: underline;
 }
+/*
+a[target=_blank]:after{
+  content: " \f14c ";
+  display: inline-block;
+  margin-left: 0.1em;
+  padding: 0 0.1em 0 0.1em;
+  
+  background: inherit;
+  opacity: 0.8;
+
+  color: #000;
+  line-height: inherit;
+  font-family: FontAwesome;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+}
+*/
+/*
+a[target=_blank]:hover:after{
+  content: "\f14c";
+  position: absolute;
+  display: inline-block;
+  margin-left: 0.1em;
+  padding: 0 0.2em 0 0.2em;
+  
+  background: #fff;
+  opacity: 0.8;
+
+  color: #000;
+  line-height: inherit;
+  font-family: FontAwesome;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+}
+*/

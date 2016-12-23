@@ -52,6 +52,7 @@ gulp.task('watch', function () {
     gulp.watch([config.basepath.src + '**/*',
         '!' + config.basepath.src + '{assets,assets/**}'
     ], ['content']);
+    gulp.watch([config.basepath.src + '**/*.html'], ['html']);
     gulp.watch([config.basepath.src + '*', config.basepath.src + '*' + '*', config.basepath.src + '*' + '*'], ['other:assets']);
 });
 

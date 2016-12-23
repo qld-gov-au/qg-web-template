@@ -1,0 +1,21 @@
+#qg-access{
+	ul{
+		display: inline-block;
+		list-style: none;
+	}
+	li{
+		display: inline-block;
+		list-style: none;
+	}
+	a,h1{
+		position: absolute;
+		left: -99999px;	
+	}
+	a:focus, h1:focus{
+		position: relative;
+		left: 0;
+	}
+}
+#qg-access:active{
+	background: pink;
+}

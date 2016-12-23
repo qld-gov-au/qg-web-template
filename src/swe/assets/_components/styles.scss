@@ -20,13 +20,14 @@
 
 @import "../../../core/assets/_components/bootstrap-extensions/_carousel.scss";
 @import "../../../core/assets/_components/bootstrap-extensions/_show-hide.scss";
-
+	
 // ################################
 // Libraries
 @import "../lib/ext/butterfly/butterfly.css";
 
 // ################################
 // Includes (locational styles)
+@import "../../../core/assets/_components/includes/_access.scss";
 
 // site header (qg-site-header)
 @import "includes/header/_header.scss";
