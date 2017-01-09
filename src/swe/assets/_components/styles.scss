@@ -9,6 +9,7 @@
 // Core components
 
 @import "../../../core/assets/_components/_dependancies.scss";
+@import "../../../core/assets/_components/_scaffolding.scss";
 
 @import "../../../core/assets/_components/_lato-webfont.scss";
 @import "../../../core/assets/_components/_typography.scss";
@@ -30,21 +31,26 @@
 @import "../../../core/assets/_components/includes/_access.scss";
 
 // site header (qg-site-header)
+@import "../../../core/assets/_components/includes/header/_header.scss";
 @import "includes/header/_header.scss";
 @import "includes/header/_coat-of-arms.scss";
 @import "includes/header/_site-utilities.scss";
 @import "includes/header/_site-search.scss";
 @import "includes/header/_site-name.scss";
-@import "includes/header/_site-navigation.scss";
 @import "includes/header/_alerts.scss";
+
+// site navigation
+@import "../../../core/assets/_components/includes/nav-site/_nav-site.scss";
 
 // breadcrumbs
 @import "includes/breadcrumbs/_breadcrumb.scss";
 
 // section navigation
+@import "../../../core/assets/_components/includes/nav-section/_nav-section.scss";
 @import "includes/nav-section/_nav-section.scss";
 
 // asides
+@import "../../../core/assets/_components/includes/asides/_asides.scss";
 @import "includes/asides/_asides.scss";
 
 // footer
@@ -54,3 +60,4 @@
 // ################################
 // Components
 @import "../../../core/assets/_components/forms/_forms.scss";
+@import "../../../core/assets/_components/general/_lightbox.scss";

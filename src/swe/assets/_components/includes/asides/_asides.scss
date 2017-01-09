@@ -1,60 +1,60 @@
 
 /* ! asides */
 #qg-content #qg-secondary-content {
-margin: 0;
-padding: 0;  
+    margin: 0;
+    padding: 0;  
     
     a, a:link {
-    color: $qg-blue5;
-    text-decoration: none;
+        // color: $qg-blue5;
+        // text-decoration: none;
     }  
 
     h2 {
-    margin: 0;
-    padding: 0;     
+        margin: 0;
+        padding: 0;     
     }
 
-        .qg-aside {
+    .qg-aside {
         background-color: $qg-light-blue-gray;      
         padding: 1.5em 1em;
         margin: 0;
 
-            .fa {
+        .fa {
             // color: $qg-green;
             font-size: 120%;
             margin: 0 0.3em 0 0;
-            }
+        }
 
-            h2 {
+        h2 {
             font-weight: 700;
             margin: 0 0 1em 0; 
-            }
+        }
 
-            figure {   
+        figure {   
             margin: 0;
             padding: 0; 
             position:relative; 
             text-align: center;
 
-                img {
+            img {
                 margin: 0;
                 padding: 0; 
                 //width: 100%;
                 max-width: 100%;
                 height: auto;   
-                }
+            }
 
-                figcaption {
+            figcaption {
                 margin: 0;
                 padding: .5em; 
                 font-size: 90%;
                 font-style: italic;
                 text-align: center;       
-                }
-
             }
 
-        } 
+        }
+
+    } 
 
     // possible background colors for asides:
     // background-color: $qg-light-blue-gray;
@@ -65,15 +65,15 @@ padding: 0;
     // background-color: $qg-light-blue-gray5;
 
     .qg-aside:nth-child(2n) {
-    background-color: $qg-light-blue-gray4;
+        background-color: $qg-light-blue-gray4;
     }
 
     .qg-aside:nth-child(3n) {
-    background-color: $qg-light-blue-gray5;
+        background-color: $qg-light-blue-gray5;
     }
 
     .qg-aside h2 span:before {
-    color: $qg-green;
+        color: $qg-green;
     }
 
     .qg-search {}
@@ -96,9 +96,9 @@ padding: 0;
 
     .qg-feedback {}
     
-   
-@include breakpoint($bs-xs){
-}
+    
+    @include breakpoint($bs-xs){
+    }
     
 
 }
