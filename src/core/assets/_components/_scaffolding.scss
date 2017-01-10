@@ -8,8 +8,11 @@ a{
   &:hover{
     color: #0066CC;
   }
+}
 
-  //// Link icons ////
+//// Link icons ////
+
+body:not([data-qg-accessibility=false]) a{
   // Common CSS
   &[target=_blank]:after,
   &[href^="http://"]:not([href*="qld.gov.au"]):after,

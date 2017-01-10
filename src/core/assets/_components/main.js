@@ -14,15 +14,15 @@ import '../../../../node_modules/bootstrap/dist/js/bootstrap.js';
 
 import './general/autocomplete.js';
 import './general/lightbox.js';
-
 import './forms/forms.js';
 
 // import mobileNav from './components/nav/mobile-nav.js'
-import activeSideNav 	from './includes/nav-section/nav-section.js';
-import breakpoints		from './breakpoints.js';
+import progressiveReveal 	from './general/progressive-reveal.js';
+import activeSideNav 		from './includes/nav-section/nav-section.js';
+import breakpoints			from './breakpoints.js';
 // import qgBsExtend 		from './bootstrap-extensions/bootstrap-extensions.js';
-import feedbackForm 	from './general/feedback-form';
-import shareLinks 		from './general/share-links';
+import feedbackForm 		from './general/feedback-form';
+import shareLinks 			from './general/share-links';
 
 (function () {
     'use strict';
