@@ -30,8 +30,11 @@ gulp.task('html', ['inherit-partials'], require('./gulp-tasks/build-process/html
 gulp.task('other:assets', require('./gulp-tasks/build-process/otherAssets')(gulp, plugins, config, es));
 
 /* TEST TASKS */
+gulp.task('lint', ['eslint']);
 gulp.task('eslint', function () {
-    return gulp.src(['src/assets/js/**/*.js', 'gulp-tasks/**/*.js', '!src/assets/js/**/forms.js', '!src/assets/js/**/autocomplete.js'])
+    // return gulp.src(['src/assets/js/**/*.js', 'gulp-tasks/**/*.js', '!src/assets/js/**/forms.js', '!src/assets/js/**/autocomplete.js'])
+    // return gulp.src(['src/assets/js/**/*.js', 'src/**/*.js', '!**/_local.*', '!**/_local.*/**/*.*'])
+    return gulp.src(['src/core/assets/_components/general/progressive-reveal.js'])
         .pipe(eslint())
         .pipe(plugins.eslint.format())
         .pipe(plugins.eslint.failOnError());

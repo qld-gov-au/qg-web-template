@@ -8,9 +8,7 @@ var src = {
 	};
 
 import '../../../../node_modules/bootstrap/dist/js/bootstrap.js';
-
-// TODO: Find a new bootstrap accessibility plugin, build one, or figure out how to get  this one working properly
-// import '../../../../node_modules/bootstrap-accessibility-plugin/plugins/js/bootstrap-accessibility.js';
+import '../../../../node_modules/bootstrap-accessibility-plugin/plugins/js/bootstrap-accessibility.js';
 
 import './general/autocomplete.js';
 import './general/lightbox.js';
