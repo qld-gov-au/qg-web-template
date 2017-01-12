@@ -7,6 +7,7 @@
  * Developed by: Nimrod Evans for DSITIA > OSSIO
  *
  * A progressive reveal function to show the next form element once a previous element has been selected.
+ * Designed for forms, though technically it will work on any element.
  *
  * Requires:
  * - JQuery
@@ -14,14 +15,12 @@
  * How to use:
  * ===========
  * Attach the following classes / attributes to your objects:
- * data-qg-pr-group - Attach to group of objects to apply progressive reveal to. Note: Direct Children must be the items to reveal
- * data-qg-pr-target - Set on radio buttons within each reveal group with the JQUERY target for the next reveal object (eg. ".option2")
+ * data-qg-pr - Set on the trgr element for revealing the next section to activate progressive reveal
+ * data-target - On the trgr, the target for the reveal action (eg. ".option2")
  *
  * Optional:
- * data-btn-target - Attribute - Set on .pr-group. Determins a target for text changes to the submit button. When present, saves the inital state of the button, which will be revealed when a checkbox in the final element is selected.
- * 		data-btn-text - Attribute - Set on any child of .pr-group. When that child is revealed, the 'btn-target' value will be set to this text.
- * 		NOTE: REQUIRES data-btn-target to be set on group element.
- * data-pr-not - Attribute - Set on ratio buttons within each reveal group to hide elements when selected (over-ridden if items being hidden are 'revealed' inside an element which is being revealed at the same time)
+ * data-parent - On the trgr, sets the group this trgr belongs to for toggling other elements on/off
+ * data-qg-pr-parent - On the parent group object, defines the parent / group element instead of using 'data-parent' on each trgr
  *
  * Version Control:
  * ================
@@ -30,7 +29,7 @@
  * 1.1		- 29/4 - Added 'NOT' functionality, hack fix 'stutter' on init
  * 1.0.1 	- 28/4 - Fixed minor bugs for robustness
  * 1.0		- First full version
- */
+**/
 
 'use strict';
 
@@ -39,75 +38,75 @@ const progressiveReveal = (function () {
 		toggle: 'false',
 		hideOthers: 'true'
 	};
-
-	// const groupAttr = 'data-qg-pr-group'; // Optional
 	const settingsAttr = {
 		toggle: 'data-toggle',
 		hideOthers: 'data-hide-others'
 	};
+	// For parent / group
+	const parentAttr = 'data-qg-pr-parent'; // Optional
+	// For trigger
+	const trgrAttr = 'data-qg-pr';
+	const trgrTargetAttr = 'data-target';
+	const trgrParentAttr = 'data-parent'; // Optional
+	const trgrActiveDataName = 'qgProgressiveRevealActive';
 
-	const triggerAttr = 'data-qg-pr';
-	const triggerTargetAttr = 'data-target';
-	const triggerGroupTargetAttr = 'data-parent'; // Optional
+	function saveAttr (target, $parent, setting) {
+		const aVal = settingsAttr[setting];
 
-	const triggerActiveData = 'qgProgressiveRevealActive';
-
-	// function saveSetting(target, $parent, targetAttr, parentAttr, setting) {
-	function saveSetting (target, $parent, setting) {
-		const settingAttrVal = settingsAttr[setting];
-
-		if (!$(target).attr(settingAttrVal)) {
-			if ($parent.attr(settingAttrVal)) {
-				$(target).attr(settingAttrVal, $parent.attr(settingAttrVal));
+		if (!$(target).attr(aVal)) {
+			if ($parent.attr(aVal)) {
+				$(target).attr(aVal, $parent.attr(aVal));
 			} else {
-				$(target).attr(settingAttrVal, defaultSettings[setting]);
+				$(target).attr(aVal, defaultSettings[setting]);
 			}
 		}
 	}
 
-	function handleNonActiveElements (trigger, $group) {
-		if ($(trigger).attr(settingsAttr.hideOthers) !== 'triggerGroupTargetAttre') {
-			// Do nothing
-		} else {
-			$group.find(`*[${triggerAttr}]`).each(function () {
-				if ($(this).data(triggerActiveData) !== true && $($(this).attr(triggerTargetAttr)).is(':visible')) {
-					$($(this).attr(triggerTargetAttr)).slideUp();
+	function handleNonActiveElements (trgr, $parent) { 
+		if ($(trgr).attr(settingsAttr.hideOthers) !== 'false') {
+			$parent.find(`*[${trgrAttr}]`).each(function () {
+				if ($(this).data(trgrActiveDataName) !== true && $($(this).attr(trgrTargetAttr)).is(':visible')) {
+					$($(this).attr(trgrTargetAttr)).slideUp();
 				}
 			});
 		}
 	}
 
-	// Set up triggers
-	$(`*[${triggerAttr}]`).each(function () {
+	// Set up targets
+	$(`*[${trgrAttr}]`).each(function () {
 		// Find parent
 		let $parent = $('body');
-		if (!$(this).attr(triggerGroupTargetAttr) && $(this).closest(`*[${groupAttr}]`)) {
-			$(this).attr(triggerGroupTargetAttr, `*[${groupAttr}]`);
+		if (!$(this).attr(trgrParentAttr) && $($(this).attr(trgrTargetAttr)).closest(`*[${parentAttr}]`)) {
+			$(this).attr(trgrParentAttr, `*[${parentAttr}]`);
 		}
-		$parent = $(this).closest($(this).attr(triggerGroupTargetAttr));
+		$parent = $(this).closest($(this).attr(trgrParentAttr));
 		// Save settings
-		saveSetting(this, $parent, 'toggle');
-		saveSetting(this, $parent, 'hideOthers');
+		saveAttr(this, $parent, 'toggle');
+		saveAttr(this, $parent, 'hideOthers');
 	});
 
-	// Set trigger action
-	$(`*[${triggerAttr}]`).on('click', function () {
-		$(this).data(triggerActiveData, true);
+	// Trigger action
+	$(`*[${trgrAttr}]`).on('click', function () {
+		// Set target (should reduce file size)
+		const $tgt = $($(this).attr(trgrTargetAttr));
+
+		$(this).data(trgrActiveDataName, true);
+		
 		// Handle other active elements
-		if ($(this).attr(triggerGroupTargetAttr)) {
-			const $group = $(this).closest($(this).attr(triggerGroupTargetAttr));
-			if ($group.length) {
-				handleNonActiveElements(this, $group);
+		if ($(this).attr(trgrParentAttr)) {
+			const $parent = $(this).closest($(this).attr(trgrParentAttr));
+			if ($parent.length) {
+				handleNonActiveElements(this, $parent);
 			}
 		}
 		// Handle this element action
 		if ($(this).attr(settingsAttr.toggle) === 'true') {
-			$($(this).attr(triggerTargetAttr)).slideToggle();
-		} else if (!$($(this).attr(triggerTargetAttr)).is(':visible')) {
-			$($(this).attr(triggerTargetAttr)).slideDown();
+			$tgt.slideToggle();
+		} else if (!$tgt.is(':visible')) {
+			$tgt.slideDown();
 		}
 
-		$(this).removeData(triggerActiveData);
+		$(this).removeData(trgrActiveDataName);
 	});
 }());
 

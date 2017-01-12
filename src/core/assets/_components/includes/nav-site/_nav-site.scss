@@ -24,8 +24,8 @@
 
             a {
                 display: inline-block;
+                margin-left: 20px;
                 padding: .3em .5em .3em .5em;
-                margin: 0;
                 color: $qg-blue-green;
                 text-decoration: none;    
                 @include fontSize(16px);
@@ -36,7 +36,7 @@
             }    
         }
 
-        li + li {
+        li + li a {
             //border-left: 1px solid #666;
         }
     }
@@ -45,7 +45,7 @@
 // ############################################
 // responsive styles
 @include breakpoint($bs-md) {
-
+    
     #qg-site-nav {
         padding: 0;
         background: #494949;
@@ -95,8 +95,13 @@
 }
 
 @include breakpoint($bs-min-lg){
-    #qg-site-nav.collapse{ // Over-rides SWE default behaviour for accessibility
-     display: block;
-     height: auto !important;
- }
+    #qg-site-nav {
+        // Over-rides SWE default behaviour for accessibility
+        display: block;
+        height: auto !important;
+
+        a {
+            margin-left: 0 !important;
+        }
+    }
 }

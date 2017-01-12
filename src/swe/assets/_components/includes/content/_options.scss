@@ -1,8 +1,7 @@
 #qg-feedback {
     background-color: $qg-blue;
     padding-top: 1em;
-    padding-bottom: 1em;
-    font-size: 1.2em; 
+    padding-bottom: 1em; 
 
     a, a:link {
         color: #FFF;  
@@ -64,7 +63,10 @@
     .qg-share {
         @extend .col-md-push-6; 
         @extend .col-sm-push-6;     
-        text-align: right;   
+        padding-top: .25em;
+
+        font-size: 1.2em;
+        text-align: right;
     }
 
 }

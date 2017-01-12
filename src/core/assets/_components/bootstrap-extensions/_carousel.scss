@@ -47,7 +47,9 @@ Add class qg to html element with carousel class to activate QG extensions
 // EXTENDED //
 
 .carousel.qg{
-
+	.carousel-inner img{
+		width: 100%;
+	}
 	.carousel-caption{
 		// Bootstrap over-rides
 			// position: static;
@@ -96,7 +98,6 @@ Add class qg to html element with carousel class to activate QG extensions
 		}
 
 		.carousel-control{
-			
 			color: white;
 
 			@include breakpoint($bs-min-md){

@@ -10,52 +10,98 @@ a{
   }
 }
 
-//// Link icons ////
-
-body:not([data-qg-accessibility=false]) a{
-  // Common CSS
-  &[target=_blank]:after,
-  &[href^="http://"]:not([href*="qld.gov.au"]):after,
-  &[href^="https://"]:not([href*="qld.gov.au"]):after,
-  &[href^="//"]:not([href*="qld.gov.au"]):after{
-      display: inline-block;
-      margin-left: 0.1em;
-      padding: 0 0.1em 0 0.2em;
-
-      background: inherit;
-      opacity: 0.8;
-
-      font-size: 0.7em;
-      line-height: inherit;
-      font-family: FontAwesome;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      font-style: normal;
-      font-weight: normal;
-      text-decoration: none;
-  }
-  // External links
-  &[href^="http://"]:not([href*="qld.gov.au"]):after,
-  &[href^="https://"]:not([href*="qld.gov.au"]):after,
-  &[href^="//"]:not([href*="qld.gov.au"]):after{
-    content: " \f08e ";
-  }
-
-  // New window links
-  &[target=_blank]{
-
-    &:after{
-      content: " \f196 ";
-    }
-
-    // New window external links
+/// Accessibility features / options ////
+body:not([data-qg-accessibility=false]) {
+  //// Link icons ////
+  a{
+    // Common CSS
+    &[target=_blank]:after,
     &[href^="http://"]:not([href*="qld.gov.au"]):after,
     &[href^="https://"]:not([href*="qld.gov.au"]):after,
     &[href^="//"]:not([href*="qld.gov.au"]):after{
-      content: " \f196  \f08e ";
+        display: inline-block;
+        margin-left: 0.1em;
+        padding: 0 0.1em 0 0.2em;
+
+        background: inherit;
+        opacity: 0.8;
+
+        font-size: 0.7em;
+        line-height: inherit;
+        font-family: FontAwesome;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+    }
+
+    // External links
+    &[href^="http://"]:not([href*="qld.gov.au"]):after,
+    &[href^="https://"]:not([href*="qld.gov.au"]):after,
+    &[href^="//"]:not([href*="qld.gov.au"]):after{
+      content: " \f08e ";
+    }
+
+    // New window links
+    &[target=_blank]{
+      &:after{
+        content: " \f196 ";
+      }
+      // New window external links
+      &[href^="http://"]:not([href*="qld.gov.au"]):after,
+      &[href^="https://"]:not([href*="qld.gov.au"]):after,
+      &[href^="//"]:not([href*="qld.gov.au"]):after{
+        content: " \f196  \f08e ";
+      }
     }
   }
   //// END link icons ////
+}
+
+//// Buttons - Bootstrap over-rides ////
+
+.btn{
+  padding: .5em 1em;
+  background: #575d62;
+  border: 0;
+
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background 150ms, color 250ms;
+
+  &:hover, &:focus{
+    outline: 0 !important; // SWE2 forms over-ride
+    background: #92969a; // #43494e;
+    color: #000;
+  }
+  &:focus{
+    border: 1px solid -webkit-focus-ring-color;
+  }
+}
+
+.btn.btn-default{
+  background: #007eb1;
+  &:hover, &:focus{
+    background: #50b2d9;// #006994;
+  }
+}
+
+.btn.btn-primary{
+  background: #78BA00;
+  color: #000;
+  &:hover, &:focus{
+    background: #b1e455;
+  }
+}
+
+.btn-lg{
+  padding: 1em 2em;
+}
+
+.input-group .btn {
+  padding: 6px 12px; // re-set to bootstrap default (TODO: route through bootstrap custom file)
 }
 
 

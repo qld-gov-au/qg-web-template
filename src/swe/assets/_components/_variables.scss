@@ -1,5 +1,3 @@
-@import './../../../core/assets/_components/_variables.scss'; // Inherit core variables
-
 //font family
 $font-main: Lato, Arial, sans-serif;
 
@@ -17,10 +15,6 @@ $grey: #f6f6f6;
 $linkcolour: #005375;
 $sweblue: #007EB1;
 $swedarkblue: #005375;
-
-
-
-
 
 
 // ###################################
@@ -112,10 +106,10 @@ $qg-sky-blue: #009dff;//done
 
 
 // responsive (Bootstrap default)
-$bs-xs: max-width 480px;
-$bs-sm: max-width 768px;
-$bs-md: max-width 992px;
-$bs-lg: max-width 1200px;
+$bs-xs: max-width 480px - 1px;
+$bs-sm: max-width 768px - 1px;
+$bs-md: max-width 992px - 1px;
+$bs-lg: max-width 1200px - 1px;
 
 $bs-min-sm: min-width 480px;
 $bs-min-md: min-width 768px;

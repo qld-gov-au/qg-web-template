@@ -16,7 +16,6 @@
     }
 
     .listbox {
-
         list-style: none;
         position: absolute;
         top: 100%;
@@ -48,12 +47,12 @@
         }
     }  
 
-    @include breakpoint($bs-md){
+    @include breakpoint($bs-md) {
         margin-bottom: 1em;
     }
 }
 
-@include breakpoint($bs-min-lg){
+@include breakpoint($bs-min-lg) {
     #qg-search-form.collapse{ // Over-rides SWE default behaviour for accessibility
        display: block;
        height: auto !important;

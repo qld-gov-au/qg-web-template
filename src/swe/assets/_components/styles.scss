@@ -2,6 +2,7 @@
 // ################################
 // Settings
 
+@import './../../core/assets/_components/_variables.scss'; // Inherit core variables
 @import "_variables.scss";
 @import "_mixins.scss";
 
@@ -11,7 +12,7 @@
 @import "../../../core/assets/_components/_dependancies.scss";
 @import "../../../core/assets/_components/_scaffolding.scss";
 
-@import "../../../core/assets/_components/_lato-webfont.scss";
+// @import "../../../core/assets/_components/_lato-webfont.scss";
 @import "../../../core/assets/_components/_typography.scss";
 @import "../../../core/assets/_components/_helpers.scss";
 @import "../../../core/assets/_components/_layout.scss";
@@ -21,7 +22,7 @@
 
 @import "../../../core/assets/_components/bootstrap-extensions/_carousel.scss";
 @import "../../../core/assets/_components/bootstrap-extensions/_show-hide.scss";
-	
+
 // ################################
 // Libraries
 @import "../lib/ext/butterfly/butterfly.css";
