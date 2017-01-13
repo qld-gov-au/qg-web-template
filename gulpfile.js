@@ -24,6 +24,7 @@ gulp.task('js:minify', require('./gulp-tasks/build-process/scripts-minify')(gulp
 
 /* CSS TASKS */
 gulp.task('sass', require('./gulp-tasks/build-process/scss')(gulp, plugins, config));
+gulp.task('sass:minify', require('./gulp-tasks/build-process/scss-minify')(gulp, plugins, config));
 
 /* MOVE FOLDERS */
 gulp.task('content', require('./gulp-tasks/build-process/content')(gulp, plugins, config));
@@ -68,7 +69,7 @@ gulp.task('publish:swe', require('./gulp-tasks/release-process/publish')(gulp, p
 
 /* TASK RUNNERS */
 gulp.task('default', ['content', 'html', 'js', 'sass', 'other:assets']);
-gulp.task('default:minify', ['content', 'html', 'js:minify', 'sass', 'other:assets']);
+gulp.task('default:minify', ['content', 'html', 'js:minify', 'sass:minify', 'other:assets']);
 gulp.task('build', ['default']);
 gulp.task('build:minify', ['default:minify']);
 gulp.task('release', ['release:assets', 'release:content']);
