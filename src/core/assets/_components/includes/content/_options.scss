@@ -22,7 +22,6 @@
         &:hover {
             background-color: $qg-dark-blue;
         }
-
     }   
 
     h2 {
@@ -73,6 +72,8 @@
 // Feedback form
 
 #qg-page-feedback {
+    @extend .col-xs-12;
+
     //display: none;   
     background-color: #f8f8f8;
     color: #000;

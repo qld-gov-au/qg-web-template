@@ -3,10 +3,10 @@
 // --------------------------------------------------
 
 a{
-  color: #13578b;
+  color: $qg-hyperlink;
 
   &:hover{
-    color: #0066CC;
+    color: $qg-hyperlink-highlight;
   }
 }
 
@@ -60,10 +60,10 @@ body:not([data-qg-accessibility=false]) {
 }
 
 //// Buttons - Bootstrap over-rides ////
-
+// TODO: Link with variables
 .btn{
   padding: .5em 1em;
-  background: #575d62;
+  background: $qg-btn-standard;
   border: 0;
 
   color: #fff;
@@ -73,30 +73,61 @@ body:not([data-qg-accessibility=false]) {
 
   &:hover, &:focus{
     outline: 0 !important; // SWE2 forms over-ride
-    background: #92969a; // #43494e;
+    background: $qg-btn-standard-highlight; // #43494e;
     color: #000;
   }
-  &:focus{
+
+  &:focus {
     border: 1px solid -webkit-focus-ring-color;
   }
-}
+  
+  &.btn-default {
+    background: $qg-btn-default;
+    &:hover, &:focus{
+      background: $qg-btn-default-highlight; // #006994;
+    }
+  }
 
-.btn.btn-default{
-  background: #007eb1;
-  &:hover, &:focus{
-    background: #50b2d9;// #006994;
+  &.btn-primary {
+    background: $qg-btn-primary;
+    color: #000;
+    &:hover, &:focus {
+      background: $qg-btn-primary-highlight;
+    }
+  }
+  &.btn-secondary {
+
+  }
+  &.btn-success {
+    background: $qg-btn-success;
+    &:hover, &:focus {
+      background: $qg-btn-success-highlight;
+    }
+  }
+  &.btn-info {
+    @extend .btn-default;
+    color: #fff;
+  }
+  &.btn-warning {
+    color: #000;
+    background: $qg-btn-warning; // #f0ad4e;
+    &:hover, &:focus {
+      background: $qg-btn-warning-highlight; //#ffe2a5;
+    }
+  }
+  &.btn-danger {
+    background: $qg-btn-danger; // #b11900;
+    &:hover, &:focus {
+      background: $qg-btn-danger-highlight; //#d96250;
+    }
+  }
+  &.btn-link{
+    background: none;
+    color: #007eb1;
   }
 }
 
-.btn.btn-primary{
-  background: #78BA00;
-  color: #000;
-  &:hover, &:focus{
-    background: #b1e455;
-  }
-}
-
-.btn-lg{
+.btn.btn-lg{
   padding: 1em 2em;
 }
 
