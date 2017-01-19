@@ -44,3 +44,7 @@ etc/
 ### Build & Release ###
 /build/**
 /release/**
+
+## Local ##
+_local.*
+/_local.*/**/*.*
