@@ -3,7 +3,10 @@ module.exports = function (gulp, plugins, config, es) {
         config.projects.map(function (element) {
             return es.merge([
                 // Images
-                gulp.src(config.basepath.src + '/assets/images/*').pipe(
+                gulp.src(config.basepath.src  + '/core/assets/images/**/*').pipe(
+                    gulp.dest(config.basepath.build + element + '/assets/' + config.version + '/images/')
+                ),
+                gulp.src(config.basepath.src  + element + '/assets/images/**/*').pipe(
                     gulp.dest(config.basepath.build + element + '/assets/' + config.version + '/images/')
                 ),
                 // Libraries
