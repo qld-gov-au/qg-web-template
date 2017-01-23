@@ -32,38 +32,38 @@
 
 // site header (qg-site-header)
 @import "../../../core/assets/_components/includes/header/_header.scss";
-// @import "includes/header/_header.scss";
+@import "includes/header/_header.scss";
 @import "../../../core/assets/_components/includes/header/_coat-of-arms.scss";
-// @import "includes/header/_coat-of-arms.scss";
+@import "includes/header/_coat-of-arms.scss";
 @import "../../../core/assets/_components/includes/header/_site-utilities.scss";
-// @import "includes/header/_site-utilities.scss";
+@import "includes/header/_site-utilities.scss";
 @import "../../../core/assets/_components/includes/header/_site-search.scss";
-// @import "includes/header/_site-search.scss";
+@import "includes/header/_site-search.scss";
 @import "../../../core/assets/_components/includes/header/_site-name.scss";
-// @import "includes/header/_site-name.scss";
+@import "includes/header/_site-name.scss";
 @import "../../../core/assets/_components/includes/header/_alerts.scss";
-// @import "includes/header/_alerts.scss";
+@import "includes/header/_alerts.scss";
 
 // site navigation
 @import "../../../core/assets/_components/includes/nav-site/_nav-site.scss";
 
 // breadcrumbs
 @import "../../../core/assets/_components/includes/breadcrumbs/_breadcrumb.scss";
-// @import "includes/breadcrumbs/_breadcrumb.scss";
+@import "includes/breadcrumbs/_breadcrumb.scss";
 
 // section navigation
 @import "../../../core/assets/_components/includes/nav-section/_nav-section.scss";
-// @import "includes/nav-section/_nav-section.scss";
+@import "includes/nav-section/_nav-section.scss";
 
 // asides
 @import "../../../core/assets/_components/includes/asides/_asides.scss";
-// @import "includes/asides/_asides.scss";
+@import "includes/asides/_asides.scss";
 
 // footer
 @import "../../../core/assets/_components/includes/content/_options.scss";
-// @import "includes/content/_options.scss";
+@import "includes/content/_options.scss";
 @import "../../../core/assets/_components/includes/footer/_footer.scss";
-// @import "includes/footer/_footer.scss";
+@import "includes/footer/_footer.scss";
 
 // ################################
 // Components
