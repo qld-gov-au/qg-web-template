@@ -4,7 +4,7 @@ function init () {
     var pageTitle = $(document).find('title').text();
     links.each(function (index, link) {
         link.href = link.href.replace('PAGE_TITLE', pageTitle);
-        link.href = link.href.replace('CURR_URL', encodeURIComponent(currUrl));
+        link.href = link.href.replace('PAGE_URL', encodeURIComponent(currUrl));
     });
 }
 module.exports = {
