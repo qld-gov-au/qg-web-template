@@ -1,89 +1,43 @@
 'use strict';
 
-var gulp = require('gulp'),
-    plugins = require('gulp-load-plugins')(),
-    del = require('del'),
+var gulp        = require('gulp'),
+    requireDir  = require('require-dir'),
+    plugins     = require('gulp-load-plugins')(),
+    del         = require('del'),
     bowerConfig = require('./bower.json'),
-    argv = require('yargs').argv,
+    config      = require('./gulp-config.js'),
+    argv        = require('yargs').argv,
     gulpConnect = require('gulp-connect'),
     runSequence = require('run-sequence'),
-    gutil = require('gulp-util'),
+    gutil       = require('gulp-util'),
     gulpConnectSsi = require('gulp-connect-ssi'),
-    eslint = require('gulp-eslint');
+    eslint      = require('gulp-eslint'),
+    es          = require('event-stream'),
+    include     = require('gulp-include'),
+    webpack     = require('webpack');
 
-// TODO - config from a separate file
-var config = {
-    version: 'v3',
-    basepath: {
-        src: 'src/',
-        build: 'build/',
-        buildswe: 'build/swe/',
-        release: 'release/',
-        static: 'release/static.qgov.net.au/',
-        test: 'test/',
-        swe: 'swe/',
-        bowerVersion: bowerConfig.version,
-        node_modules: 'node_modules/'
-    },
-    projects: ['swe', 'cue', 'ice', 'flux'],
-    franchise: ['www.qld.gov.au', 'tmr.com.au', 'test.com'],
-    src: {
-        assets: function () {
-            return config.basepath.src + 'swe/assets/';
-        },
-        examples: function () {
-            return config.basepath.src + 'swe/examples/';
-        }
-    },
-    build: {
-        assets: function () {
-            return config.basepath.build;
-        },
-        examples: function () {
-            return config.basepath.build + 'swe/examples/';
-        }
-    },
-    release: {
-        assets: function () {
-            return config.basepath.release + 'assets/';
-        },
-        static: function () {
-            return config.basepath.release + 'static.qgov.net.au/assets/';
-        },
-        images: function () {
-            return config.basepath.release + 'assets/' + config.version + '/images/';
-        },
-        lib: function () {
-            return config.basepath.release + 'assets/' + config.version + '/lib/';
-        },
-        examples: function () {
-            return config.basepath.release + 'examples/';
-        },
-        includes: function () {
-            return config.basepath.release + 'assets/includes/';
-        },
-        js: function () {
-            return config.basepath.release + 'assets/' + config.version + '/js/';
-        },
-        css: function () {
-            return config.basepath.release + 'assets/' + config.version + '/css/';
-        }
-    }
-};
+config.basepath.bowerVersion = bowerConfig.version;
 
 /* JS TASKS */
 gulp.task('js', require('./gulp-tasks/build-process/scripts')(gulp, plugins, config));
+gulp.task('js:minify', require('./gulp-tasks/build-process/scripts-minify')(gulp, plugins, config, webpack));
 
 /* CSS TASKS */
 gulp.task('sass', require('./gulp-tasks/build-process/scss')(gulp, plugins, config));
+gulp.task('sass:minify', require('./gulp-tasks/build-process/scss-minify')(gulp, plugins, config));
 
 /* MOVE FOLDERS */
 gulp.task('content', require('./gulp-tasks/build-process/content')(gulp, plugins, config));
-gulp.task('other:assets', require('./gulp-tasks/build-process/otherAssets')(gulp, plugins, config));
+gulp.task('inherit-partials', require('./gulp-tasks/build-process/inherit-partials')(gulp, plugins, config, es));
+gulp.task('html', ['inherit-partials'], require('./gulp-tasks/build-process/html')(gulp, plugins, config));
+gulp.task('other:assets', require('./gulp-tasks/build-process/otherAssets')(gulp, plugins, config, es));
 
 /* TEST TASKS */
+gulp.task('lint', ['eslint']);
 gulp.task('eslint', function () {
-    return gulp.src(['src/assets/js/**/*.js', 'gulp-tasks/**/*.js', '!src/assets/js/**/forms.js', '!src/assets/js/**/autocomplete.js'])
+    // return gulp.src(['src/assets/js/**/*.js', 'gulp-tasks/**/*.js', '!src/assets/js/**/forms.js', '!src/assets/js/**/autocomplete.js'])
+    // return gulp.src(['src/assets/js/**/*.js', 'src/**/*.js', '!**/_local.*', '!**/_local.*/**/*.*'])
+    return gulp.src(['src/core/assets/_components/general/progressive-reveal.js'])
         .pipe(eslint())
         .pipe(plugins.eslint.format())
         .pipe(plugins.eslint.failOnError());
@@ -104,6 +58,7 @@ gulp.task('watch', function () {
     gulp.watch([config.basepath.src + '**/*',
         '!' + config.basepath.src + '{assets,assets/**}'
     ], ['content']);
+    gulp.watch([config.basepath.src + '**/*.html'], ['html']);
     gulp.watch([config.basepath.src + '*', config.basepath.src + '*' + '*', config.basepath.src + '*' + '*'], ['other:assets']);
 });
 
@@ -113,8 +68,10 @@ gulp.task('release:content', require('./gulp-tasks/release-process/content')(gul
 gulp.task('publish:swe', require('./gulp-tasks/release-process/publish')(gulp, plugins, config));
 
 /* TASK RUNNERS */
-gulp.task('default', ['content', 'js', 'sass', 'other:assets']);
+gulp.task('default', ['content', 'html', 'js', 'sass', 'other:assets']);
+gulp.task('default:minify', ['content', 'html', 'js:minify', 'sass:minify', 'other:assets']);
 gulp.task('build', ['default']);
+gulp.task('build:minify', ['default:minify']);
 gulp.task('release', ['release:assets', 'release:content']);
 
 /* SSI */
@@ -152,4 +109,3 @@ gulp.task('ssi-to-jinja', function (cb) {
 gulp.task('build-jinja', function (cb) {
     runSequence('default', 'delay', 'ssi-to-jinja', cb);
 });
-

@@ -3,16 +3,17 @@
 <html lang="en">
 
 <head>
+
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
     <title>Who is a carer? | Standard page | Queensland Government</title>
 
-    <!--#include virtual="/assets/includes/global/head-assets.html"-->
-
     <meta name="description" content="DESCRIPTION">
     <meta name="keywords" content="KEYWORDS">
+    
     <link rel="schema.DCTERMS" href="http://purl.org/dc/terms/">
     <link rel="schema.AGLSTERMS" href="http://www.agls.gov.au/agls/terms/">
+
     <meta name="DCTERMS.creator" scheme="AGLSTERMS.GOLD" content="c=AU; o=The State of Queensland; ou=DEPARTMENT NAME; ou=UNIT NAME">
     <meta name="DCTERMS.publisher" scheme="AGLSTERMS.AglsAgent" content="corporateName=The State of Queensland; jurisdiction=Queensland">
     <meta name="DCTERMS.created" content="2010-11-04">
@@ -28,22 +29,27 @@
     <meta name="DCTERMS.jurisdiction" scheme="AGLSTERMS.AglsJuri" content="Queensland">
     <meta name="DCTERMS.license" scheme="DCTERMS.URI" content="http://creativecommons.org/licenses/by/3.0/au/">
 
+    <!--#include virtual="/assets/includes/head-assets.html"-->
+
 </head>
 
-<body>
+<body data-qg-accessibility="true">
+
+    <!--#include virtual="/assets/includes/access.html"-->
+
     <div class="container-fluid qg-site-width">
 
         <header id="qg-site-header">
 
-            <!--#include virtual="/assets/includes/site-header/coat-of-arms.html"-->
+            <!--#include virtual="/assets/includes/header/coat-of-arms.html"-->
 
-            <!--#include virtual="/assets/includes/site-header/site-utilities.html"-->
+            <!--#include virtual="/assets/includes/header/site-utilities.html"-->
 
-            <!--#include virtual="/assets/includes/site-header/site-search.html"-->
+            <!--#include virtual="/assets/includes/header/site-search.html"-->
 
-            <!--#include virtual="/assets/includes/site-header/global-alert.html"-->
+            <!--#include virtual="/assets/includes/header/global-alert.html"-->
 
-            <!--#include virtual="/assets/includes/site-header/site-navigation.html"-->
+            <!--#include virtual="/assets/includes/nav-site/nav-site.html"-->
 
         </header>
 
@@ -54,9 +60,53 @@
 
                 <div id="qg-primary-content" role="main">
 
-                    <!--#include virtual="/assets/includes/global/alert.html"-->
+                    <!--#include virtual="/assets/includes/content/alert.html"-->
 
                     <h1>Who is a carer?</h1>
+
+                    <!--=include ../../core/assets/_components/bootstrap-extensions/_carousel-example.html -->
+
+                    <p><a id="firstlink" href="#lightbox" data-qg-lightbox="true">Lightbox test link</a></p>
+                    <p><a id="anotherlink" href="#lightbox" data-qg-lightbox="true">Lightbox test link 2</a></p>
+                    <p><a href="http://www.something.com/" target="_blank">Extlink</a> Inline hyperlink test.</p>
+                    <p><a href="#" target="_blank">Internal hyperlink in new tab</a> Inline hyperlink test.</p>
+                    <p><a href="http://www.something.com/">External link in same window</a> Inline hyperlink test.</p>
+
+                    <div style="display:none;">
+                        <div id="lightbox">test</div>
+                    </div>
+
+                    <p>
+                        <button class="btn">Standard</button><br />
+                        <button class="btn btn-default">Default</button><br />
+                        <button class="btn btn-primary">Primary</button><br />
+                        <button class="btn btn-secondary">Secondary</button><br />
+                        <button class="btn btn-info">Info</button><br />
+                    </p>
+
+                    <p>
+                        <!-- Standard button -->
+                        <button type="button" class="btn btn-default">Default</button>
+
+                        <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+                        <button type="button" class="btn btn-primary">Primary</button>
+
+                        <!-- Indicates a successful or positive action -->
+                        <button type="button" class="btn btn-success">Success</button>
+
+                        <!-- Contextual button for informational alert messages -->
+                        <button type="button" class="btn btn-info">Info</button>
+
+                        <!-- Indicates caution should be taken with this action -->
+                        <button type="button" class="btn btn-warning">Warning</button>
+
+                        <!-- Indicates a dangerous or potentially negative action -->
+                        <button type="button" class="btn btn-danger">Danger</button>
+
+                        <!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
+                        <button type="button" class="btn btn-link">Link</button>
+                    </p>
+
 
                     <p>Carers play a crucial role in our community&mdash;often without realising. For many people, looking after a loved one is 'just what you do<span style="color: #008000;">'.</span>&nbsp;They are mums and dads, sons and daughters, brothers, sisters, grandparents, spouses, friends and neighbours.</p>
 
@@ -115,7 +165,8 @@
 
                         <p id="document-licence">
                             <a title="Text available under Creative Commons Attribution 3.0 Australia (CC BY 3.0) licence" href="http://creativecommons.org/licenses/by/3.0/au/" rel="license">
-                                <img alt="Creative Commons Attribution 3.0 Australia (CC BY 3.0)" src="/assets/v3/images/licences/by-80x15.png"></a>
+                                <img alt="Creative Commons Attribution 3.0 Australia (CC BY 3.0)" src="/assets/v3/images/licences/by-80x15.png">
+                            </a>
                         </p>
 
                     </div>
@@ -149,19 +200,20 @@
 
                         <p>If you receive a Centrelink carer payment or carers allowance and live in Queensland, you are eligible for a <a href="/community/support-for-carers/carer-card/">Carer Business Discount Card</a>,which recognises the contribution carers make to the community and provides discounts on products and services.</p>
                     </div>
+
                 </aside>
 
-                <!--#include virtual="/assets/includes/section-navigation/sample.html"-->
+                <!--#include virtual="/assets/includes/nav-section/sample.html"-->
 
             </div>
-            <!--#include virtual="/assets/includes/global/page-options-post.html"-->
+            <!--#include virtual="/assets/includes/content/options.html"-->
 
         </div>
 
         <footer>
 
-            <!--#include virtual="/assets/includes/site-footer/footer-site-map.html"-->
-            <!--#include virtual="/assets/includes/site-footer/footer-legals.html"-->
+            <!--#include virtual="/assets/includes/footer/footer-site-map.html"-->
+            <!--#include virtual="/assets/includes/footer/footer-legals.html"-->
 
         </footer>
     </div>
@@ -172,7 +224,21 @@
       // Used by the feedback form.
       qg.swe.franchiseTitle = 'Franchise Title';
     </script>
-    <!--#include virtual="/assets/includes/site-footer/footer-scripts.html"-->
+
+    <!--#include virtual="/assets/includes/footer/footer-scripts.html"-->
+
+    <script>
+        $('#firstlink').qgLightbox({
+            callbackPreOpen: function() {
+                $('#lightbox').html('Testing Lightbox functionality');
+            }
+        });
+        $('#anotherlink').qgLightbox({
+            callbackPreOpen: function() {
+                $('#lightbox').html('<h1>ANOTHER TEST</h1>');
+            }
+        });
+    </script>
 
 </body>
 

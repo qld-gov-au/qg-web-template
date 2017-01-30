@@ -1,12 +1,36 @@
-module.exports = function (gulp, plugins, config) {
+module.exports = function (gulp, plugins, config, es) {
     return function () {
         config.projects.map(function (element) {
-            gulp.src(config.basepath.src + '/assets/images/**/*').pipe(gulp.dest(config.basepath.build + element + '/assets/' + config.version + '/images/'));
-            gulp.src(config.basepath.src + '/assets/lib/**').pipe(gulp.dest(config.basepath.build + element + '/assets/' + config.version + '/lib/'));
-            gulp.src(config.basepath.src + '/assets/includes/**').pipe(gulp.dest(config.basepath.build + element + '/assets/includes/'));
-            gulp.src(config.basepath.node_modules + '/bootstrap-sass/assets/fonts/**').pipe(
-              gulp.dest(config.basepath.build + element + '/assets/v3/fonts')
-            );
+            return es.merge([
+                // Images
+                gulp.src(config.basepath.src  + '/core/assets/images/**/*').pipe(
+                    gulp.dest(config.basepath.build + element + '/assets/' + config.version + '/images/')
+                ),
+                gulp.src(config.basepath.src  + element + '/assets/images/**/*').pipe(
+                    gulp.dest(config.basepath.build + element + '/assets/' + config.version + '/images/')
+                ),
+                // Libraries
+                gulp.src(config.basepath.src +'/core/assets/lib/**').pipe(
+                    gulp.dest(config.basepath.build + element + '/assets/' + config.version + '/lib/')
+                ),
+                gulp.src(config.basepath.src + element + '/assets/lib/**').pipe(
+                    gulp.dest(config.basepath.build + element + '/assets/' + config.version + '/lib/')
+                ),
+                // Includes
+                gulp.src(config.basepath.src + '/assets/includes/**').pipe(
+                    gulp.dest(config.basepath.build + element + '/assets/includes/')
+                ),
+                // Fonts
+                gulp.src(config.basepath.node_modules + '/bootstrap-sass/assets/fonts/**').pipe(
+                    gulp.dest(config.basepath.build + element + '/assets/v3/fonts')
+                ),
+                gulp.src(config.basepath.node_modules + '/font-awesome/fonts/**').pipe(
+                    gulp.dest(config.basepath.build + element + '/assets/v3/fonts')
+                ),
+                gulp.src(config.basepath.node_modules + '/lato-webfont/fonts/**').pipe(
+                    gulp.dest(config.basepath.build + element + '/assets/v3/fonts/lato/')
+                )
+            ]);
         });
     };
 };

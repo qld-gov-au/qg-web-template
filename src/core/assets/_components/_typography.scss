@@ -1,0 +1,22 @@
+
+html,body {
+  font-family: Lato, Arial, Helvetica, sans-serif;
+  font-size: $baseSize;
+  line-height: $baseLineHeight;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: Lato, Arial, Helvetica, sans-serif;
+  font-weight: 900;
+}
+h1{
+  @include fontSize(25px);
+}
+h2{
+  @include fontSize(19px);
+}
+h3{
+  @include fontSize(16px);
+}
+a{
+  text-decoration: underline;
+}

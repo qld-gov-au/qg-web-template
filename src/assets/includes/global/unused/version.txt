@@ -1,7 +1,0 @@
-Version 2.10.2
-
-These includes were generated based on the above tagged version of the template.
-Later incremental versions (i.e. 2.3.x) of the assets will be compatible with these includes.
-Minor version releases (e.g. 2.4.0) are likely to require that the includes be updated.
-
-Please refer to QGO documentation for clarification as to which includes versions are currently supported.
