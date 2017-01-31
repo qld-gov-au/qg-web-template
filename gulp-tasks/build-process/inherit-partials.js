@@ -20,6 +20,7 @@ module.exports = function (gulp, plugins, config, es) {
                     files = [];
                 }
             }
+            files.push('!**/_DELETE.*/*.html', '!**/_DELETE.*/');
             src = basepath.concat(files);
 
             return gulp.src(src, { dot: true })
