@@ -4,6 +4,8 @@ var gulp        = require('gulp'),
     requireDir  = require('require-dir'),
     plugins     = require('gulp-load-plugins')(),
     del         = require('del'),
+    eslintReporter = require('eslint-html-reporter'),
+    fsPath      = require('fs-path'),
     bowerConfig = require('./bower.json'),
     config      = require('./gulp-config.js'),
     argv        = require('yargs').argv,
@@ -14,10 +16,11 @@ var gulp        = require('gulp'),
     eslint      = require('gulp-eslint'),
     es          = require('event-stream'),
     include     = require('gulp-include'),
+    karmaServer      = require('karma').Server,
+    protractor = require('gulp-protractor').protractor,
     webpack     = require('webpack');
 
 config.basepath.bowerVersion = bowerConfig.version;
-
 /* JS TASKS */
 gulp.task('js', require('./gulp-tasks/build-process/scripts')(gulp, plugins, config));
 gulp.task('js:minify', require('./gulp-tasks/build-process/scripts-minify')(gulp, plugins, config, webpack));
@@ -33,15 +36,10 @@ gulp.task('html', ['inherit-partials'], require('./gulp-tasks/build-process/html
 gulp.task('other:assets', require('./gulp-tasks/build-process/otherAssets')(gulp, plugins, config, es));
 
 /* TEST TASKS */
-gulp.task('lint', ['eslint']);
-gulp.task('eslint', function () {
-    // return gulp.src(['src/assets/js/**/*.js', 'gulp-tasks/**/*.js', '!src/assets/js/**/forms.js', '!src/assets/js/**/autocomplete.js'])
-    // return gulp.src(['src/assets/js/**/*.js', 'src/**/*.js', '!**/_local.*', '!**/_local.*/**/*.*'])
-    return gulp.src(['src/core/assets/_components/general/progressive-reveal.js'])
-        .pipe(eslint())
-        .pipe(plugins.eslint.format())
-        .pipe(plugins.eslint.failOnError());
-});
+gulp.task('test:unit', require('./gulp-tasks/test-process/unit')(gulp, plugins, config, karmaServer));
+gulp.task('test:eslint', require('./gulp-tasks/test-process/lint')(gulp, plugins, config, fsPath, eslintReporter));
+gulp.task('test:e2e', require('./gulp-tasks/test-process/e2e')(gulp, plugins, config, protractor));
+gulp.task('test:reports', require('./gulp-tasks/test-process/reports')(gulp, plugins, config));
 
 /* CLEAN TASKS */
 gulp.task('clean:build', function (cb) {
@@ -73,6 +71,7 @@ gulp.task('default:minify', ['content', 'html', 'js:minify', 'sass:minify', 'oth
 gulp.task('build', ['default']);
 gulp.task('build:minify', ['default:minify']);
 gulp.task('release', ['release:assets', 'release:content']);
+gulp.task('test', ['serve', 'test:unit', 'test:eslint', 'test:e2e']);
 
 /* SSI */
 // Open using local server

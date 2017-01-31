@@ -3,14 +3,14 @@ module.exports = function (gulp, plugins, config, es) {
         config.projects.map(function (element) {
             return es.merge([
                 // Images
-                gulp.src(config.basepath.src  + '/core/assets/images/**/*').pipe(
+                gulp.src(config.basepath.src + '/core/assets/images/**/*').pipe(
                     gulp.dest(config.basepath.build + element + '/assets/' + config.version + '/images/')
                 ),
-                gulp.src(config.basepath.src  + element + '/assets/images/**/*').pipe(
+                gulp.src(config.basepath.src + element + '/assets/images/**/*').pipe(
                     gulp.dest(config.basepath.build + element + '/assets/' + config.version + '/images/')
                 ),
                 // Libraries
-                gulp.src(config.basepath.src +'/core/assets/lib/**').pipe(
+                gulp.src(config.basepath.src + '/core/assets/lib/**').pipe(
                     gulp.dest(config.basepath.build + element + '/assets/' + config.version + '/lib/')
                 ),
                 gulp.src(config.basepath.src + element + '/assets/lib/**').pipe(

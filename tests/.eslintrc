@@ -16,11 +16,8 @@
   "extends": ["semistandard"],
   "rules": {
       "indent": 0,
-      "no-tabs": 0,
       "one-var": 0,
       "no-path-concat": 0,
-      "eol-last": 0,
-      "valid-jsdoc": "warn",
-      "spaced-comment": 0,
+      "eol-last": 0
   }
 }
