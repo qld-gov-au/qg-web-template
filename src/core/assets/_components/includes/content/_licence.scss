@@ -6,6 +6,17 @@
 	dl {
 		float: left;
 	}
+	dt {
+		display: inline-block;
+		float: left;
+		clear: left;
+	}
+	dd {
+		display: inline-block;
+		float: left;
+		margin-left: 0.35em;
+	}
+
 	#document-licence {
 		float: right;
 	}
