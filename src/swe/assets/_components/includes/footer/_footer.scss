@@ -1,6 +1,5 @@
 
 .qg-more-info {
-  margin-top: 2em;
   padding-bottom: 0;
   background-color:$qg-dark-blue;
   color: #FFF;
@@ -51,6 +50,7 @@
 // ###########################################
 
 .qg-legal{
+  margin-top: 1em;
   text-align: center;
   @include fontSize(11px);
 
