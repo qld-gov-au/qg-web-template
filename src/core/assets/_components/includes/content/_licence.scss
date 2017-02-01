@@ -1,0 +1,14 @@
+.qg-content-footer {
+	dl {
+		float: left;
+	}
+	#document-licence{
+		float: right;
+	}
+
+	&:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+}
