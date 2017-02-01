@@ -1,9 +1,8 @@
-var SpecReporter = require('./../node_modules/jasmine-spec-reporter/src/jasmine-spec-reporter');
+var SpecReporter = require('jasmine-spec-reporter');
 var Jasmine2HtmlReporter = require('protractor-jasmine2-html-reporter');
 
 exports.config = {
     directConnect: true,
-    seleniumServerJar: "./node_modules/protractor/node_modules/webdriver-manager/selenium/selenium-server-standalone-2.53.1.jar",
     seleniumAddress: 'http://localhost:4444/wd/hub',
     framework: 'jasmine2',
     jasmineNodeOpts: {

@@ -2,25 +2,25 @@ const path = require('path');
 
 module.exports = function (config) {
   config.set({
-    browsers: ['Chrome'],
+    browsers: ['PhantomJS'],
     coverageReporter: {
-      dir : 'tests/reports',
+      dir: 'tests/reports',
       reporters: [
         { type: 'html', subdir: 'coverage' },
-        { type: 'lcovonly', subdir: '.' },
-      ],
+        { type: 'lcovonly', subdir: '.' }
+      ]
     },
     files: [
       'tests/unit/**/*.js'
     ],
     autoWatch: true,
     frameworks: [
-      'jasmine',
+      'jasmine'
     ],
     preprocessors: {
-      'tests/**/*.js': ['webpack', 'sourcemap'],
+      'tests/**/*.js': ['webpack', 'sourcemap']
     },
-    reporters: ['progress', 'coverage' , 'html'],
+    reporters: ['progress', 'coverage', 'html'],
     htmlReporter: {
       outputFile: 'tests/reports/unit-test/report.html',
       pageTitle: 'Component Unit Tests',
@@ -39,8 +39,8 @@ module.exports = function (config) {
             exclude: /(bower_components|node_modules)/,
             loader: 'babel',
             query: {
-              cacheDirectory: true,
-            },
+              cacheDirectory: true
+            }
           },
           {
             test: /\.js?$/,
@@ -48,9 +48,9 @@ module.exports = function (config) {
             exclude: /(node_modules|bower_components)/,
             loader: 'babel-istanbul',
             query: {
-              cacheDirectory: true,
-            },
-          },
+              cacheDirectory: true
+            }
+          }
         ],
         loaders: [
           {
@@ -59,11 +59,11 @@ module.exports = function (config) {
             exclude: /(bower_components|node_modules)/,
             loader: 'babel',
             query: {
-              cacheDirectory: true,
-            },
-          },
-        ],
-      },
-    },
+              cacheDirectory: true
+            }
+          }
+        ]
+      }
+    }
   });
 };

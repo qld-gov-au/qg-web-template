@@ -57,10 +57,11 @@ module.exports = {
     },
     test: {
         e2eTestReport () {
-            return this.test + 'reports/e2e/htmlReport.html';
+            return basepath.test + 'reports/e2e/htmlReport.html';
         },
         unitTestReport () {
-            return this.test + 'reports/unit-test/report.html';
+            console.log(this);
+            return this.basepath.test + './reports/unit-test/report.html';
         },
         lintReport () {
             return this.test + 'reports/eslint/report.html';
