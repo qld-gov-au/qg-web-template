@@ -1,22 +1,17 @@
 module.exports = function (gulp, plugins, config) {
     return function () {
-        gulp.src(config.basepath.build + config.basepath.bo)
+        gulp.src(config.basepath.build)
             .pipe(plugins.prompt.prompt([{
                     type: 'input',
                     name: 'first',
                     message: 'Have you updated bower.json version number? Reply in yes or no'
-                    },
-                    {
-                        type: 'input',
-                        name: 'second',
-                        message: 'Please type yes to confirm this bower package update?'
                     }],
                 function (res) {
-                    if ((res.first === 'yes') && (res.second === 'yes')) {
+                    if ((res.first === 'yes')) {
                         plugins.shell.task([
-                            process.chdir(config.basepath.build + config.basepath.swe),
+                            process.chdir(config.basepath.build),
                             'git init',
-                            // 'git remote add origin https://github.com/qld-gov-au/glue-template-release.git',
+                            //'git remote add origin https://github.com/qld-gov-au/glue-template-release.git',
                             'git fetch --all',
                             'git add --all',
                             'git commit -m ' + config.basepath.bowerVersion + '',

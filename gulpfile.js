@@ -67,7 +67,7 @@ gulp.task('watch', function () {
 /* RELEASE TASKS */
 gulp.task('release:assets', require('./gulp-tasks/release-process/assets')(gulp, plugins, config));
 gulp.task('release:content', require('./gulp-tasks/release-process/content')(gulp, plugins, config));
-gulp.task('publish:swe', require('./gulp-tasks/release-process/publish')(gulp, plugins, config));
+gulp.task('publish:build', require('./gulp-tasks/release-process/publish')(gulp, plugins, config));
 
 /* TASK RUNNERS */
 gulp.task('default', ['content', 'html', 'js', 'sass', 'other:assets']);
