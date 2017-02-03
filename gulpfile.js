@@ -14,7 +14,8 @@ var gulp        = require('gulp'),
     eslint      = require('gulp-eslint'),
     es          = require('event-stream'),
     include     = require('gulp-include'),
-    webpack     = require('webpack');
+    webpack     = require('webpack'),
+    replace     = require('gulp-replace');
 
 config.basepath.bowerVersion = bowerConfig.version;
 
@@ -61,6 +62,7 @@ gulp.task('watch', function () {
     gulp.watch([config.basepath.src + '**/*.html'], ['html']);
     gulp.watch([config.basepath.src + '*', config.basepath.src + '*' + '*', config.basepath.src + '*' + '*'], ['other:assets']);
 });
+
 
 /* RELEASE TASKS */
 gulp.task('release:assets', require('./gulp-tasks/release-process/assets')(gulp, plugins, config));
