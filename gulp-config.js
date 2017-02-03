@@ -1,5 +1,6 @@
 module.exports = {
     version: 'v3',
+    phase: 'Alpha',
     basepath: {
         src: 'src/',
         build: 'build/',
