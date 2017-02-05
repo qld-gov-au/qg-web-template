@@ -71,7 +71,7 @@ gulp.task('default:minify', ['content', 'html', 'js:minify', 'sass:minify', 'oth
 gulp.task('build', ['default']);
 gulp.task('build:minify', ['default:minify']);
 gulp.task('release', ['release:assets', 'release:content']);
-gulp.task('test', ['serve', 'test:unit', 'test:eslint', 'test:e2e']);
+gulp.task('test', ['test:unit', 'test:eslint', 'test:e2e']);
 
 /* SSI */
 // Open using local server
