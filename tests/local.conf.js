@@ -13,12 +13,13 @@ nightwatch_config = {
     default: {
       desiredCapabilities: {
         'build': 'nightwatch-browserstack',
-        'browserstack.user': 'asifamin2',
-        'browserstack.key': 'keyhere',
+        'browserstack.user': process.env.BROWSERSTACK_USERNAME || 'BROWSERSTACK_USERNAME',
+          'browserstack.key': process.env.BROWSERSTACK_ACCESS_KEY || 'BROWSERSTACK_ACCESS_KEY',
         'browserstack.debug': true,
         'browserstack.local': true,
         'browser': 'chrome'
-      }
+      },
+      "proxy":{ "host": "proxyhost", "port": "proxyport", "protocol": "http" }
     }
   }
 };

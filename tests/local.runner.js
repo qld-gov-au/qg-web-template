@@ -10,7 +10,7 @@ try {
   // Code to start browserstack local before start of test
   console.log("Connecting local");
   Nightwatch.bs_local = bs_local = new browserstack.Local();
-  bs_local.start({'key': 'keyhere' }, function(error) {
+  bs_local.start({'key': process.env.BROWSERSTACK_ACCESS_KEY, 'proxyHost': 'proxyhost', 'proxyPort': 'port' }, function(error) {
     if (error) throw error;
 
     console.log('Connected. Now testing...');
