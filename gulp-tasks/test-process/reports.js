@@ -1,7 +1,12 @@
 module.exports = function (gulp, plugins, config) {
     return () => {
-        console.log(config.test.unitTestReport());
+        gulp.src(config.test.e2eTestReport())
+            .pipe(plugins.open());
         gulp.src(config.test.unitTestReport())
+            .pipe(plugins.open());
+        gulp.src(config.test.lintReport())
+            .pipe(plugins.open());
+        gulp.src(config.test.coverageReport())
             .pipe(plugins.open());
     };
 };

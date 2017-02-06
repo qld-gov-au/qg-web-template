@@ -1,4 +1,4 @@
-import Calculator from '../../src/core/assets/_components/general/SampleClass.js';
+import Calculator from '../../src/core/assets/_components/general/testing-example-SampleClass.js';
 
 describe('Calculator', () => {
   it('should add two numbers', () => {

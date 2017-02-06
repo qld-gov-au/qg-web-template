@@ -38,7 +38,7 @@ gulp.task('other:assets', require('./gulp-tasks/build-process/otherAssets')(gulp
 /* TEST TASKS */
 gulp.task('test:unit', require('./gulp-tasks/test-process/unit')(gulp, plugins, config, karmaServer));
 gulp.task('test:eslint', require('./gulp-tasks/test-process/lint')(gulp, plugins, config, fsPath, eslintReporter));
-gulp.task('test:e2e', require('./gulp-tasks/test-process/e2e')(gulp, plugins, config, protractor));
+// gulp.task('test:e2e', require('./gulp-tasks/test-process/e2e')(gulp, plugins, config, protractor));
 gulp.task('test:reports', require('./gulp-tasks/test-process/reports')(gulp, plugins, config));
 
 /* CLEAN TASKS */
@@ -71,7 +71,7 @@ gulp.task('default:minify', ['content', 'html', 'js:minify', 'sass:minify', 'oth
 gulp.task('build', ['default']);
 gulp.task('build:minify', ['default:minify']);
 gulp.task('release', ['release:assets', 'release:content']);
-gulp.task('test', ['test:unit', 'test:eslint', 'test:e2e']);
+gulp.task('test', ['test:unit', 'test:eslint']);
 
 /* SSI */
 // Open using local server

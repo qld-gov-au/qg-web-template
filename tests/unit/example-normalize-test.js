@@ -1,4 +1,4 @@
-import normalizeData from '../../src/core/assets/_components/general/sample-func';
+import normalizeData from '../../src/core/assets/_components/general/testing-example-sample-func';
 
 describe("normalizeData",  () => {
     it("accepts golden path data", () => {

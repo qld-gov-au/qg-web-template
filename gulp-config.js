@@ -1,4 +1,4 @@
-module.exports = {
+const config = {
     version: 'v3',
     basepath: {
         src: 'src/',
@@ -57,17 +57,16 @@ module.exports = {
     },
     test: {
         e2eTestReport () {
-            return basepath.test + 'reports/e2e/htmlReport.html';
+            return config.basepath.test + 'reports/e2e/htmlReport.html';
         },
         unitTestReport () {
-            console.log(this);
-            return this.basepath.test + './reports/unit-test/report.html';
+            return config.basepath.test + 'reports/unit-test/report.html';
         },
         lintReport () {
-            return this.test + 'reports/eslint/report.html';
+            return config.basepath.test + 'reports/eslint/report.html';
         },
         coverageReport () {
-            return this.test + 'reports/coverage/index.html';
+            return config.basepath.test + 'reports/coverage/index.html';
         },
         protractorConfig () {
             return 'tests/protractor.config.js';
@@ -95,4 +94,6 @@ module.exports = {
         }
     }
 };
+
+module.exports = config;
 
