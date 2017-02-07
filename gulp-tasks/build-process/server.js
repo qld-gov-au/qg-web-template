@@ -2,7 +2,7 @@ module.exports = function (gulp, plugins, config, gulpConnect, gulpConnectSsi, a
     return function () {
         gulpConnect.server({
             root: 'build/' + argv.template,
-            port: 8013,
+            port: 5000,
             livereload: true,
             middleware: function () {
                 return [gulpConnectSsi({
