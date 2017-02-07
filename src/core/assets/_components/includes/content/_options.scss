@@ -32,21 +32,25 @@
     }  
 
     .fa {   
-        font-size: 1.2em;       
-    }   
+        font-size: 1.2em;     
+    }
+
+    #shareDropdown + .dropdown-menu{
+        background: #575d62;
+    }
 
     .qg-cta, .qg-share {
         @extend .col-md-6;
         @extend .col-sm-6;
 
-        ul {
+        & > ul {
             margin: 0;
             padding:0;
             display: inline-block;
-            text-align: right;
+            text-align: left;
             color: #FFF;
 
-            li {
+            & > li {
                 display: inline; 
                 margin-left: .5em;  
             }   
@@ -62,8 +66,31 @@
 
     .qg-share {
         @extend .col-md-push-6; 
-        @extend .col-sm-push-6;     
-        text-align: right;   
+        @extend .col-sm-push-6;
+        
+        padding-top: .25em;
+        text-align: right;
+        font-size: 1.2em;
+
+        .qg-share-link{
+            .title{
+                padding-left: .5em;
+            }
+        }
+        button.qg-share-link{
+            background: none;
+            border: 0;
+        }
+        .dropdown-menu{
+            border-radius: 0;
+
+            li a {
+                padding: 1em;
+                &:hover, &:active {
+                    background-color: #0B2E4C;
+                }
+            }
+        }
     }
 
 }
