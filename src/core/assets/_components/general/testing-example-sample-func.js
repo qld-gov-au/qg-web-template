@@ -1,4 +1,4 @@
-import kkk from './sample-comp';
+import './sample-comp';
 
 export default function (jsonIn) {
     var data = JSON.parse(jsonIn);

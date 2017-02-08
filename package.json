@@ -10,9 +10,6 @@
   "authors": "Queensland Government",
   "licence": "all rights reserved",
   "homepage": "http://www.qld.gov.au/",
-  "scripts": {
-    "browserstack-testing": "node tests/e2e/runner.js -c tests/e2e/conf.js"
-  },
   "devDependencies": {
     "babel-core": "^6.10.4",
     "babel-istanbul": "^0.12.1",
@@ -55,6 +52,7 @@
     "gulp-plumber": "^1.0.1",
     "gulp-prompt": "^0.2.0",
     "gulp-protractor": "^3.0.0",
+    "gulp-run": "^1.7.1",
     "gulp-sass": "^2.1.1",
     "gulp-shell": "^0.5.2",
     "gulp-sourcemaps": "^1.6.0",
@@ -75,6 +73,7 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-spec-reporter": "0.0.26",
     "karma-webpack": "^2.0.2",
+    "live-server": "^1.2.0",
     "node-bourbon": "^4.2.8",
     "protractor": "^4.0.13",
     "protractor-jasmine2-html-reporter": "0.0.6",

@@ -10,7 +10,7 @@ describe('Calculator', () => {
   it('should substract two numbers', () => {
     const calculator = new Calculator();
     const sub = calculator.sub(5, 2);
-    expect(sub).toBe(3);
+    expect(sub).toBe(30);
   });
 });
 

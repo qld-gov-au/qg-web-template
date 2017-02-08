@@ -38,7 +38,8 @@ gulp.task('other:assets', require('./gulp-tasks/build-process/otherAssets')(gulp
 /* TEST TASKS */
 gulp.task('test:unit', require('./gulp-tasks/test-process/unit')(gulp, plugins, config, karmaServer));
 gulp.task('test:eslint', require('./gulp-tasks/test-process/lint')(gulp, plugins, config, fsPath, eslintReporter));
-// gulp.task('test:e2e', require('./gulp-tasks/test-process/e2e')(gulp, plugins, config, protractor));
+gulp.task('test:config:e2e', require('./gulp-tasks/test-process/e2e')(gulp, plugins, config));
+gulp.task('test:browserstack', ['local-server', 'test:config:e2e']);
 gulp.task('test:reports', require('./gulp-tasks/test-process/reports')(gulp, plugins, config));
 
 /* CLEAN TASKS */
@@ -75,7 +76,7 @@ gulp.task('test', ['test:unit', 'test:eslint']);
 
 /* SSI */
 // Open using local server
-gulp.task('generate', require('./gulp-tasks/build-process/server.js')(gulp, plugins, config, gulpConnect, gulpConnectSsi, argv));
+gulp.task('local-server', require('./gulp-tasks/build-process/local-server.js')(gulp, plugins, config, gulpConnect, gulpConnectSsi, argv));
 
 // Convert to Jinja tasks
 gulp.task('delay', function (cb) {
