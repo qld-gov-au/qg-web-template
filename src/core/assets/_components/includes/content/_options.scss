@@ -67,16 +67,11 @@
     .qg-share {
         @extend .col-md-push-6; 
         @extend .col-sm-push-6;
-        
+
         padding-top: .25em;
         text-align: right;
         font-size: 1.2em;
 
-        .qg-share-link{
-            .title{
-                padding-left: .5em;
-            }
-        }
         button.qg-share-link{
             background: none;
             border: 0;
@@ -86,8 +81,15 @@
 
             li a {
                 padding: 1em;
-                &:hover, &:active {
+                &:hover, &:active, &:focus {
                     background-color: #0B2E4C;
+                }
+            }
+
+            .qg-share-link{
+                .fa{
+                    width: 1.3em;
+                    margin-right: .4em;
                 }
             }
         }
