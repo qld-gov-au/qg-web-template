@@ -1,4 +1,4 @@
-module.exports = function (gulp, plugins, config,gulpConnect, gulpConnectSsi, argv) {
+module.exports = function (gulp, plugins, config) {
     return () => {
         gulp.src('*.js', {read: false})
             .pipe(plugins.shell([

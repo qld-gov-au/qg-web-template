@@ -11,16 +11,16 @@ const nightwatchConfig = {
       default: {
         desiredCapabilities: {
           'build': 'nightwatch-browserstack',
-          'browserstack.user': process.env.BROWSERSTACK_USERNAME || 'BROWSERSTACK_USERNAME',
-          'browserstack.key': process.env.BROWSERSTACK_ACCESS_KEY || 'BROWSERSTACK_ACCESS_KEY',
+          'browserstack.user': process.env.BROWSERSTACK_USERNAME,
+          'browserstack.key': process.env.BROWSERSTACK_ACCESS_KEY,
           'browserstack.debug': true,
           'browserstack.local': true,
           'browser': 'chrome'
         },
         proxy: {
-            'host': '',
-            'port': '',
-            'protocol': ''
+            'host': process.env.PROXYHOST,
+            'port': process.env.PROXYPORT,
+            'protocol': process.env.PROXYPROTOCOL
         }
       }
   }

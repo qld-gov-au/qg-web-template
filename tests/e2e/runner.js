@@ -6,7 +6,7 @@ try {
   process.mainModule.filename = './node_modules/nightwatch/bin/nightwatch';
   // Code to start browserstack local before start of test
    // Nightwatch.bsLocal = bsLocal = new browserstack.Local();
-    bsLocal.start({ 'key': process.env.BROWSERSTACK_ACCESS_KEY, 'proxyHost': '', 'proxyPort': '' }, function (error) {
+    bsLocal.start({ 'key': process.env.BROWSERSTACK_ACCESS_KEY, 'proxyHost': process.env.PROXYHOST, 'proxyPort': process.env.PROXYPORT }, function (error) {
       if (error) throw error;
       Nightwatch.cli(function (argv) {
         Nightwatch.CliRunner(argv)

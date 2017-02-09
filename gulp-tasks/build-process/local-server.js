@@ -5,7 +5,7 @@ module.exports = function (gulp, plugins, config, gulpConnect, gulpConnectSsi, a
                 root: 'build/' + element,
                 host: 'localhost',
                 name: element.toUpperCase(),
-                port: 2000 + index,
+                port: 5000 + index,
                 livereload: true,
                 middleware: function () {
                     return [gulpConnectSsi({
