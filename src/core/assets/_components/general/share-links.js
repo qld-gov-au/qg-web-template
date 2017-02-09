@@ -1,17 +1,21 @@
 /**
 * Function for rendering social media links on CUE compliant sites
+*
+* Requires:
+* - JQuery
 **/
 
 /**
 * #####################################
 * Model
 **/
+
 function returnSocialLinks () {
   return {
     primary: [
       {title: 'Facebook',   showTitle: false, icon: renderIcon('fa', 'facebook')},
       {title: 'Twitter',    showTitle: false, icon: renderIcon('fa', 'twitter')},
-      {title: 'LinkedIn',   showTitle: false, icon: renderIcon('fa', 'linkedin')}
+      {title: 'LinkedIn',   showTitle: false, icon: renderIcon('fa', 'linkedin')},
     ],
     secondary: [
       {title: 'Delicious',    showTitle: true, icon: renderIcon('fa', 'delicious')},
@@ -20,7 +24,7 @@ function returnSocialLinks () {
       {title: 'Reddit',       showTitle: true, icon: renderIcon('fa', 'reddit')},
       {title: 'StumbleUpon',  showTitle: true, icon: renderIcon('fa', 'stumbleupon')},
       {title: 'Tumblr',       showTitle: true, icon: renderIcon('fa', 'tumblr')},
-      {title: 'Google+',      showTitle: true, icon: renderIcon('fa', 'google-plus')}
+      {title: 'Google+',      showTitle: true, icon: renderIcon('fa', 'google-plus')},
     ]
   };
 }
@@ -63,6 +67,7 @@ function renderIcon (type, name) {
     case 'svg':
       return `<img src="${name}" aria-hidden="true" class="qg-icon" />`; break;
   }
+  // Default, return nothing
   return '';
 }
 
@@ -79,19 +84,15 @@ function renderLink (url, title, icon, hidden = '') {
 function renderShareButtons () {
   return `<h2>Share:</h2>
 <ul class="navbar-right">
-
-    ${getLinks('primary')}
-
-    <li class="dropdown">
-        <button id="shareDropdown" class="qg-share-link" title="share" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="fa fa-share-alt fa-2x" aria-hidden="true"></span><span class="qg-visually-hidden">Share</span>
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="shareDropdown">
-
-          ${getLinks('secondary')}
-
-        </ul>
-    </li>
+  ${getLinks('primary')}
+  <li class="dropdown">
+    <button id="shareDropdown" class="qg-share-link" title="share" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span class="fa fa-share-alt fa-2x" aria-hidden="true"></span><span class="qg-visually-hidden">Share</span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="shareDropdown">
+      ${getLinks('secondary')}
+    </ul>
+  </li>
 </ul>`;
 }
 
@@ -102,16 +103,16 @@ function renderShareButtons () {
 
 function getLinks (type) {
   // Get link list
-  var socialLinks = returnSocialLinks();
+  const socialLinks = returnSocialLinks();
   // Get page data
-  var from = window.location.href;
-  var domain = window.location.hostname;
-  var title = $(document).find('title').text();
-  var description = $('meta[name="DCTERMS.description"]').attr('content');
+  const from = window.location.href;
+  const domain = window.location.hostname;
+  const title = $(document).find('title').text();
+  const description = $('meta[name="DCTERMS.description"]').attr('content');
 
   // Iterate
-  var str = '';
-  for(var prop in socialLinks[type]) {
+  let str = '';
+  for(let prop in socialLinks[type]) {
     let entry = socialLinks[type][prop];
     let url = renderSocialURL(entry.title.toLowerCase(), from, entry.title, domain, description);
     let hidden = '';
@@ -124,7 +125,7 @@ function getLinks (type) {
 }
 
 function init () {
-  var $target = $('#qg-share');
+  const $target = $('#qg-share');
   $target.html(renderShareButtons());
 }
 
