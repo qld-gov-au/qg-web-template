@@ -118,7 +118,7 @@ function getLinks (type) {
     if(entry.showTitle !== true) {
       hidden = renderHidden();
     }
-    str = str + renderLink(from, entry.title, entry.icon, hidden);
+    str = str + renderLink(url, entry.title, entry.icon, hidden);
   }
   return str;
 }
