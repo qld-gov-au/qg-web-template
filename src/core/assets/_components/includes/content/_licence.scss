@@ -1,0 +1,29 @@
+.qg-content-footer {
+	margin-top: 2em;
+
+	font-size: 0.8em;
+
+	dl {
+		float: left;
+	}
+	dt {
+		display: inline-block;
+		float: left;
+		clear: left;
+	}
+	dd {
+		display: inline-block;
+		float: left;
+		margin-left: 0.35em;
+	}
+
+	#document-licence {
+		float: right;
+	}
+
+	&:after {
+		content: " ";
+		display: block;
+		clear: both;
+	}
+}

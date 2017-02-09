@@ -53,6 +53,7 @@
     "gulp-prompt": "^0.2.0",
     "gulp-protractor": "^3.0.0",
     "gulp-run": "^1.7.1",
+	"gulp-replace": "^0.5.4",
     "gulp-sass": "^2.1.1",
     "gulp-shell": "^0.5.2",
     "gulp-sourcemaps": "^1.6.0",

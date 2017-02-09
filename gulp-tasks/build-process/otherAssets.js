@@ -27,9 +27,11 @@ module.exports = function (gulp, plugins, config, es) {
                 gulp.src(config.basepath.node_modules + '/font-awesome/fonts/**').pipe(
                     gulp.dest(config.basepath.build + element + '/assets/v3/fonts')
                 ),
+                /*
                 gulp.src(config.basepath.node_modules + '/lato-webfont/fonts/**').pipe(
                     gulp.dest(config.basepath.build + element + '/assets/v3/fonts/lato/')
                 )
+                */
             ]);
         });
     };

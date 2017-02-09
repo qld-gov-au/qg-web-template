@@ -1,7 +1,12 @@
 module.exports = function (gulp, plugins, config, es) {
     return () => {
+        function fmt(int) {
+            // Format date
+            return ('0' + int).slice(-2);
+        }
         config.projects.map( (element) => {
-
+            var d = new Date();
+            var timestamp = `${d.getFullYear()}-${fmt(d.getMonth())}-${fmt(d.getDay())} ${fmt(d.getHours())}:${fmt(d.getMinutes())}:${fmt(d.getSeconds())}`;
            var src = [],
                 basepath = [],
                 files = [];
@@ -20,9 +25,11 @@ module.exports = function (gulp, plugins, config, es) {
                     files = [];
                 }
             }
+            files.push('!**/_DELETE.*/*.html', '!**/_DELETE.*/');
             src = basepath.concat(files);
 
             return gulp.src(src, { dot: true })
+                    .pipe(plugins.replace(/<!-- GLUE .* Build Date: .* -->/, `<!-- ${config.phase} Build Date: ${timestamp} -->`))
                     .pipe(gulp.dest(`${config.basepath.build}${element}/assets/includes/`))
                     .on('end', () =>{
                         gulp.src(`${config.basepath.src}${element}/assets/_components/includes/**/*.html`, { dot: true })

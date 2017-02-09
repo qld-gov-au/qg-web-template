@@ -62,11 +62,13 @@
 // footer
 @import "../../../core/assets/_components/includes/content/_options.scss";
 @import "includes/content/_options.scss";
+@import "../../../core/assets/_components/includes/content/_licence.scss";
 @import "../../../core/assets/_components/includes/footer/_footer.scss";
 @import "includes/footer/_footer.scss";
 
 // ################################
 // Components
+@import "../../../core/assets/_components/forms/_forms-reset.scss";
 @import "../../../core/assets/_components/forms/_forms.scss";
 @import "../../../core/assets/_components/general/_lightbox.scss";
 

@@ -1,6 +1,8 @@
 # glue-template
 
-_This project is currently in progress._
+**If you are using assets from this Repo, please send an email to oss.products@dsiti.qld.gov.au so we can add you to our change management communications list**
+
+_This project is currently a work in progress._
 
 **Basic commands :**<br />
     - Make sure node and npm are installed. Check using **node -v** and **npm -v** commands. If not already installed then please install from this website  [node website](https://nodejs.org/en/) <br />
