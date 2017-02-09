@@ -1,124 +1,133 @@
-/*
-see: http://stackoverflow.com/questions/12448134/social-share-links-with-custom-icons
-http://www.facebook.com/share.php?u=${from}&title=${title}
-http://twitter.com/home?status=${title}+${from}
-http://www.linkedin.com/shareArticle?mini=true&url=${from}&title=${title}&source=[SOURCE/DOMAIN]
+/**
+* Function for rendering social media links on CUE compliant sites
+**/
 
-        <h2>Share:</h2>
-        <ul>
-            <li>
-                <a class="qg-share-link" href="https://www.qld.gov.au/share/?via=facebook&amp;title=PAGE_TITLE&amp;url=PAGE_URL" title="Facebook"><span class="fa fa-facebook fa-2x" aria-hidden="true"></span><span class="qg-visually-hidden">Facebook</span></a>
-            </li>
-            <li>
-                <a class="qg-share-link" href="https://www.qld.gov.au/share/?via=twitter&amp;title=PAGE_TITLE&amp;url=PAGE_URL" title="Twitter"><span class="fa fa-twitter fa-2x" aria-hidden="true"></span><span class="qg-visually-hidden">Twitter</span></a>
-            </li>
-            <li>
-                <a class="qg-share-link" href="https://www.qld.gov.au/share/?via=linkedin&amp;title=PAGE_TITLE&amp;url=PAGE_URL" title="LinkedIn"><span class="fa fa-linkedin fa-2x" aria-hidden="true"></span><span class="qg-visually-hidden">Linkdin</span></a>
-            </li>
-            <li>
-                <a class="qg-share-link" href="https://www.qld.gov.au/share/?title=PAGE_TITLE&amp;url=PAGE_URL" title="share"><span class="fa fa-share-alt fa-2x" aria-hidden="true"></span><span class="qg-visually-hidden">Share</span></a>
-            </li>
-        </ul>
-*/
-
-
-function getLink (to, args, type, icon = 'default') {
-	var from = args.from;
-	var title = encodeURIComponent(args.title);
-	var domain = args.domain;
-	var description = encodeURIComponent(args.description);
-
-	var url = '';
-	var iconStr = '';
-	var iconSel = '';
-	var hidden = '';
-	var who = to.toLowerCase();
-	switch(who) {
-		case 'facebook':
-			url = `http://www.facebook.com/share.php?u=${from}&title=${title}`; break;
-		case 'twitter':
-			url = `http://twitter.com/home?status=${title}+${from}`; break;
-		case 'linkedin':
-			url = `http://www.linkedin.com/shareArticle?mini=true&url=${from}&title=${title}&source=${domain}`; break;
-		case 'delicious':
-			url = `http://del.icio.us/post?url=${from}&title=${title}]&notes=${description}`; break;
-		case 'digg':
-			url = `http://www.digg.com/submit?phase=2&url=${from}&title=${title}`; break;
-		case 'evernote':
-			url = `http://www.evernote.com/clip.action?url=${from}&title=${title}`; break;
-		case 'reddit':
-			url = `http://www.reddit.com/submit?url=${from}&title=${title}`; break;
-		case 'stumbleupon':
-			url = `http://www.stumbleupon.com/submit?url=${from}&title=${title}`; break;
-		case 'tumblr':
-			// url = `http://www.tumblr.com/share?v=3&posttype=link&content=${from}&title=${title}&caption=${description}`; break;
-			url = `https://www.tumblr.com/widgets/share/tool?posttype=link&content=${from}&title=${title}&caption=${description}`; break;
-		case 'google+':
-			url = `https://plus.google.com/share?url=${from}`; break;
-	}
-	if(type === 'main') {
-		hidden = 'qg-visually-hidden';
-	}
-	if(icon === 'default') {
-		iconSel = who;
-	} else {
-		iconSel = icon;
-	}
-	if(icon !== false) {
-		iconStr = `<span class="fa fa-${iconSel} fa-2x" aria-hidden="true"></span>`;
-	}
-	return `<a class="qg-share-link qg-accessibility-off" href="${url}" title="${to}">${iconStr}<span class="title ${hidden}"">${to}</span></a>`;
+/**
+* #####################################
+* Model
+**/
+function returnSocialLinks () {
+  return {
+    primary: [
+      {title: 'Facebook',   showTitle: false, icon: renderIcon('fa', 'facebook')},
+      {title: 'Twitter',    showTitle: false, icon: renderIcon('fa', 'twitter')},
+      {title: 'LinkedIn',   showTitle: false, icon: renderIcon('fa', 'linkedin')}
+    ],
+    secondary: [
+      {title: 'Delicious',    showTitle: true, icon: renderIcon('fa', 'delicious')},
+      {title: 'Digg',         showTitle: true, icon: renderIcon('fa', 'digg')},
+      {title: 'Evernote',     showTitle: true, icon: renderIcon('svg', '/assets/v3/images/evernote-logo-white.svg')},
+      {title: 'Reddit',       showTitle: true, icon: renderIcon('fa', 'reddit')},
+      {title: 'StumbleUpon',  showTitle: true, icon: renderIcon('fa', 'stumbleupon')},
+      {title: 'Tumblr',       showTitle: true, icon: renderIcon('fa', 'tumblr')},
+      {title: 'Google+',      showTitle: true, icon: renderIcon('fa', 'google-plus')}
+    ]
+  };
 }
 
-function init () {
-	var $target = $('#qg-share');
-	var args = {
-		from: window.location.href,
-		domain: window.location.hostname,
-		title: $(document).find('title').text(),
-		description: $('meta[name="DCTERMS.description"]').attr('content'),
-	};
-	var template = `<h2>Share:</h2>
+/**
+* #####################################
+* Views
+**/
+
+function renderSocialURL (who, from, title, domain, description) {
+  switch(who) {
+    case 'facebook':
+      return `http://www.facebook.com/share.php?u=${from}&title=${title}`; break;
+    case 'twitter':
+      return `http://twitter.com/home?status=${title}+${from}`; break;
+    case 'linkedin':
+      return `http://www.linkedin.com/shareArticle?mini=true&url=${from}&title=${title}&source=${domain}`; break;
+    case 'delicious':
+      return `http://del.icio.us/post?url=${from}&title=${title}]&notes=${description}`; break;
+    case 'digg':
+      return `http://www.digg.com/submit?phase=2&url=${from}&title=${title}`; break;
+    case 'evernote':
+      return `http://www.evernote.com/clip.action?url=${from}&title=${title}`; break;
+    case 'reddit':
+      return `http://www.reddit.com/submit?url=${from}&title=${title}`; break;
+    case 'stumbleupon':
+      return `http://www.stumbleupon.com/submit?url=${from}&title=${title}`; break;
+    case 'tumblr':
+      return `https://www.tumblr.com/widgets/share/tool?posttype=link&content=${from}&title=${title}&caption=${description}`; break;
+    case 'google+':
+      return `https://plus.google.com/share?url=${from}`; break;
+  }
+  return false;
+}
+
+function renderIcon (type, name) {
+  switch(type) {
+    case 'fa':
+      return `<span class="fa fa-${name} fa-2x qg-icon" aria-hidden="true"></span>`; break;
+    case 'svg':
+      return `<img src="${name}" aria-hidden="true" class="qg-icon" />`; break;
+  }
+  return '';
+}
+
+function renderHidden () {
+  return 'qg-visually-hidden';
+}
+
+function renderLink (url, title, icon, hidden = '') {
+  return `<li>
+<a class="qg-share-link qg-accessibility-off" href="${url}" title="${title}">${icon}<span class="title ${hidden}"">${title}</span></a>
+</li>`;
+}
+
+function renderShareButtons () {
+  return `<h2>Share:</h2>
 <ul class="navbar-right">
-    <li>${getLink('Facebook', args, 'main')}</li>
-    <li>${getLink('Twitter', args, 'main')}</li>
-    <li>${getLink('LinkedIn', args, 'main')}</li>
+
+    ${getLinks('primary')}
+
     <li class="dropdown">
         <button id="shareDropdown" class="qg-share-link" title="share" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        	<span class="fa fa-share-alt fa-2x" aria-hidden="true"></span><span class="qg-visually-hidden">Share</span>
+          <span class="fa fa-share-alt fa-2x" aria-hidden="true"></span><span class="qg-visually-hidden">Share</span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="shareDropdown">
-        	<li>${getLink('Delicious',		args, 'sub')}</li>
-        	<li>${getLink('Digg',			args, 'sub')}</li>
-        	<li>${getLink('Evernote',		args, 'sub', false)}</li>
-        	<li>${getLink('Reddit',			args, 'sub')}</li>
-        	<li>${getLink('StumbleUpon', 	args, 'sub')}</li>
-        	<li>${getLink('Tumblr',			args, 'sub')}</li>
-        	<li>${getLink('Google+',		args, 'sub', 'google-plus')}</li>
+
+          ${getLinks('secondary')}
+
         </ul>
     </li>
 </ul>`;
-	$target.html(template);
 }
-module.exports = {
-	init: init
-};
 
+/**
+* #####################################
+* Controller
+**/
 
-/*
- <button class="qg-share-link" href="https://www.qld.gov.au/share/?title=PAGE_TITLE&amp;url=PAGE_URL" title="share"><span class="fa fa-share-alt fa-2x" aria-hidden="true"></span><span class="qg-visually-hidden">Share</span></a>
-    </l
-// old code for reference
+function getLinks (type) {
+  // Get link list
+  var socialLinks = returnSocialLinks();
+  // Get page data
+  var from = window.location.href;
+  var domain = window.location.hostname;
+  var title = $(document).find('title').text();
+  var description = $('meta[name="DCTERMS.description"]').attr('content');
+
+  // Iterate
+  var str = '';
+  for(var prop in socialLinks[type]) {
+    let entry = socialLinks[type][prop];
+    let url = renderSocialURL(entry.title.toLowerCase(), from, entry.title, domain, description);
+    let hidden = '';
+    if(entry.showTitle !== true) {
+      hidden = renderHidden();
+    }
+    str = str + renderLink(from, entry.title, entry.icon, hidden);
+  }
+  return str;
+}
+
 function init () {
-    var pageUrl = window.location.href;
-    var links = $('.qg-share-link');
-    var pageTitle = $(document).find('title').text();
-    links.each(function (index, link) {
-        link.href = link.href.replace('PAGE_TITLE', pageTitle);
-        link.href = link.href.replace('PAGE_URL', encodeURIComponent(pageUrl));
-    });
+  var $target = $('#qg-share');
+  $target.html(renderShareButtons());
 }
+
 module.exports = {
-    init: init
+  init: init
 };
-*/
