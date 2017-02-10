@@ -1,6 +1,6 @@
 # glue-template
 
-**If you are using assets from this Repo, please send an email to [oss.products@dsiti.qld.gov.au](oss.products@dsiti.qld.gov.au) so we can add you to our change management communications list**
+**If you are using assets from this Repo, please send an email to oss.products@dsiti.qld.gov.au so we can add you to our change management communications list**
 
 _This project is currently a work in progress._
 

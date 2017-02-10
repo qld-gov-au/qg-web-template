@@ -1,6 +1,6 @@
 # qld.gov.au website template #
 
-This application is designed, developed and maintained by DSITI OSSSIO products team [oss.products@dsiti.qld.gov.au](oss.products@dsiti.qld.gov.au).
+This application is designed, developed and maintained by DSITI OSSSIO products team oss.products@dsiti.qld.gov.au.
 
 ## Purpose ##
 To provide a template for qld.gov.au websites, and a template for CUE users.
