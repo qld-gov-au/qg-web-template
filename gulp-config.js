@@ -1,4 +1,4 @@
-module.exports = {
+const config = {
     version: 'v3',
     phase: 'Alpha',
     basepath: {
@@ -7,7 +7,7 @@ module.exports = {
         buildswe: 'build/swe/',
         release: 'release/',
         static: 'release/static.qgov.net.au/',
-        test: 'test/',
+        test: 'tests/',
         swe: 'swe/',
         bowerVersion: 0,
         node_modules: 'node_modules/'
@@ -56,6 +56,26 @@ module.exports = {
             return config.basepath.release + 'assets/' + config.version + '/css/';
         }
     },
+    test: {
+        e2eTestReport () {
+            return config.basepath.test + 'reports/e2e/htmlReport.html';
+        },
+        unitTestReport () {
+            return config.basepath.test + 'reports/unit-test/report.html';
+        },
+        lintReport () {
+            return config.basepath.test + 'reports/eslint/report.html';
+        },
+        coverageReport () {
+            return config.basepath.test + 'reports/coverage/index.html';
+        },
+        protractorConfig () {
+            return 'tests/protractor.config.js';
+        },
+        karmaConfig () {
+            return process.cwd() + '/karma.config.js';
+        }
+    },
     inherit: {
         swe: {
             inheritAll: true,
@@ -76,3 +96,4 @@ module.exports = {
     }
 };
 
+module.exports = config;

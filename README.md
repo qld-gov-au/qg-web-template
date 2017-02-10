@@ -13,7 +13,7 @@ _This project is currently a work in progress._
     - **gulp clean:build** command to remove the build folder before creating a new build folder<br />
     - **gulp release** command to create a release folder from the build folder files. Please make sure to run the _gulp build_ command before running the _gulp release_ command<br />
     - **gulp clean:release** command to remove the release folder before creating a new release folder<br />
-    - **gulp generate --template=nameOftheTemplate** where name of the template can be swe/cue/flux/ice. This command will provide a link to view the templates in a browser.
+    - **gulp local-server** This command will run a local server to view the templates in a browser.
     
     
 **Directory structure :**<br />

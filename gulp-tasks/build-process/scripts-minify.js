@@ -1,7 +1,6 @@
 module.exports = function (gulp, plugins, config, webpack) {
     return function () {
         config.projects.map(function (element) {
-
             return gulp.src(config.basepath.src + element + '/assets/_components/main.js').pipe(plugins.webpack({
                     output: {
                         filename: 'main.js'

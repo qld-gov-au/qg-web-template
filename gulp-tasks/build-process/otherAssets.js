@@ -3,14 +3,14 @@ module.exports = function (gulp, plugins, config, es) {
         config.projects.map(function (element) {
             return es.merge([
                 // Images
-                gulp.src(config.basepath.src  + '/core/assets/images/**/*').pipe(
+                gulp.src(config.basepath.src + '/core/assets/images/**/*').pipe(
                     gulp.dest(config.basepath.build + element + '/assets/' + config.version + '/images/')
                 ),
-                gulp.src(config.basepath.src  + element + '/assets/images/**/*').pipe(
+                gulp.src(config.basepath.src + element + '/assets/images/**/*').pipe(
                     gulp.dest(config.basepath.build + element + '/assets/' + config.version + '/images/')
                 ),
                 // Libraries
-                gulp.src(config.basepath.src +'/core/assets/lib/**').pipe(
+                gulp.src(config.basepath.src + '/core/assets/lib/**').pipe(
                     gulp.dest(config.basepath.build + element + '/assets/' + config.version + '/lib/')
                 ),
                 gulp.src(config.basepath.src + element + '/assets/lib/**').pipe(
@@ -26,7 +26,7 @@ module.exports = function (gulp, plugins, config, es) {
                 ),
                 gulp.src(config.basepath.node_modules + '/font-awesome/fonts/**').pipe(
                     gulp.dest(config.basepath.build + element + '/assets/v3/fonts')
-                ),
+                )
                 /*
                 gulp.src(config.basepath.node_modules + '/lato-webfont/fonts/**').pipe(
                     gulp.dest(config.basepath.build + element + '/assets/v3/fonts/lato/')
