@@ -20,7 +20,7 @@ function returnSocialLinks () {
     secondary: [
       {title: 'Delicious',    showTitle: true, icon: renderIcon('fa', 'delicious')},
       {title: 'Digg',         showTitle: true, icon: renderIcon('fa', 'digg')},
-      {title: 'Evernote',     showTitle: true, icon: renderIcon('svg', '/assets/v3/images/evernote-logo-white.svg')},
+      {title: 'Evernote',     showTitle: true, icon: renderIcon('svg', 'evernote', '/assets/v3/images/evernote-logo-white.svg')},
       {title: 'Reddit',       showTitle: true, icon: renderIcon('fa', 'reddit')},
       {title: 'StumbleUpon',  showTitle: true, icon: renderIcon('fa', 'stumbleupon')},
       {title: 'Tumblr',       showTitle: true, icon: renderIcon('fa', 'tumblr')},
@@ -60,12 +60,12 @@ function renderSocialURL (who, from, title, domain, description) {
   return false;
 }
 
-function renderIcon (type, name) {
+function renderIcon (type, name, src = false) {
   switch(type) {
     case 'fa':
       return `<span class="fa fa-${name} fa-2x qg-icon" aria-hidden="true"></span>`; break;
     case 'svg':
-      return `<img src="${name}" aria-hidden="true" class="qg-icon" alt="${name}" />`; break;
+      return `<img src="${src}" aria-hidden="true" class="qg-icon" alt="name" />`; break;
   }
   // Default, return nothing
   return '';
