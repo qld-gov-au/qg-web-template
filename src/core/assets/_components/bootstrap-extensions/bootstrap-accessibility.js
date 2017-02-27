@@ -212,10 +212,12 @@
         element.filter('.tab-pane').attr({ 'aria-hidden' : false,'tabIndex' : '0' })
     }
 
-
     // Collapse Extension
     // ===============================
 
+    /*
+    // Disabled because it was creating accessibility issues
+    
     var $colltabs =  $('[data-toggle="collapse"]')
     $colltabs.attr({ 'role':'tab', 'aria-selected':'false', 'aria-expanded':'false' })
     $colltabs.each(function( index ) {
@@ -307,6 +309,8 @@
     }
 
     $(document).on('keydown.collapse.data-api','[data-toggle="collapse"]' ,  $.fn.collapse.Constructor.prototype.keydown)
+
+    */
 
     // Carousel Extension
     // ===============================
