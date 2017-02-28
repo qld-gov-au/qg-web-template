@@ -3,7 +3,6 @@
     padding-top: 1em;
     padding-bottom: 1em;
 
-
     a, a:link {
         color: #FFF;  
     } 
@@ -32,21 +31,25 @@
     }  
 
     .fa {   
-        font-size: 1.2em;       
-    }   
+        font-size: 1.2em;     
+    }
+
+    #shareDropdown + .dropdown-menu{
+        background: #575d62;
+    }
 
     .qg-cta, .qg-share {
         @extend .col-md-6;
         @extend .col-sm-6;
 
-        ul {
+        & > ul {
             margin: 0;
             padding:0;
             display: inline-block;
-            text-align: right;
+            text-align: left;
             color: #FFF;
 
-            li {
+            & > li {
                 display: inline; 
                 margin-left: .5em;  
             }   
@@ -57,13 +60,7 @@
 
     .qg-cta {
         @extend .col-md-pull-6;
-        @extend .col-sm-pull-6;    
-    }
-
-    .qg-share {
-        @extend .col-md-push-6; 
-        @extend .col-sm-push-6;     
-        text-align: right;   
+        @extend .col-sm-pull-6;
     }
 
 }
@@ -72,9 +69,8 @@
 // Feedback form
 
 #qg-page-feedback {
-    @extend .col-xs-12;
+    // @extend .col-xs-12;
 
-    //display: none;   
     background-color: #f8f8f8;
     color: #000;
     @include fontSize(16px);
@@ -128,7 +124,6 @@
     } 
 
     // ################################################# 
-    // #################################################  
 
     #qg-page-feedback-form {
         @extend .col-md-12;
@@ -224,12 +219,9 @@
         #comments {
             display: block;
         }   
-
     }   
-
 }
 
-// #################################################
 // #################################################
 
 @include breakpoint($bs-md) {}

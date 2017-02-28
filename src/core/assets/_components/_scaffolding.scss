@@ -13,7 +13,7 @@ a{
 /// Accessibility features / options ////
 body:not([data-qg-accessibility=false]) {
   //// Link icons ////
-  a:not(.btn){
+  a:not(.btn):not(.qg-accessibility-off){
     // Common CSS
     &[target=_blank]:after,
     &[href^="http://"]:not([href*="qld.gov.au"]):after,
@@ -123,7 +123,7 @@ body:not([data-qg-accessibility=false]) {
   }
   &.btn-link{
     background: none;
-    color: #007eb1;
+    color: #13578b; // #007eb1;
   }
 }
 

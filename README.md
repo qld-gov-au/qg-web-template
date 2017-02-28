@@ -14,15 +14,10 @@ _This project is currently a work in progress._
     - **gulp release** command to create a release folder from the build folder files. Please make sure to run the _gulp build_ command before running the _gulp release_ command<br />
     - **gulp clean:release** command to remove the release folder before creating a new release folder<br />
     - **gulp generate --template=nameOftheTemplate** where name of the template can be swe/cue/flux/ice. This command will provide a link to view the templates in a browser.
-    
-    
+
+
 **Directory structure :**<br />
     - **src folder** contains all the files of the projects. This is where developers will be making all the changes.<br />
     - **build folder** is where developers will be pushing the changes from the _src folder_ to test the files before they push it to the _release folder_.<br />
     - **release folder** will be created from the _build folder_ files and it will be the final version which will be deployed to the CMS.<br />
-
-
-           
-
-
 
