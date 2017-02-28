@@ -1,60 +1,66 @@
 #qg-search-form {
-    @extend .col-xs-12;
-    @extend .col-sm-12;
-    @extend .col-md-3;
-    @extend .col-lg-3; 
+  @extend .col-xs-12;
+  @extend .col-sm-12;
+  @extend .col-md-3;
+  @extend .col-lg-3; 
 
-    input {
-        border-radius: 0;
-        border-color: $qg-green; 
-    }
-    
+  input {
+    border-radius: 0;
+    border-color: $qg-green; 
+  }
+
     // button.btn-default {
     //     background: $qg-green;
     //     border-radius: 0;
     //     z-index: 99;
     // }
 
-    .listbox {
-        list-style: none;
-        position: absolute;
-        top: 100%;
-        top: calc(100% - 1px);
-        z-index: 98;
-        width: 100%;
-        padding: 0;
-        border: 1px solid $qg-green;
-        border-top: 1px solid #EEE;
-        background: #FFF;
+  .listbox {
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    top: calc(100% - 1px);
+    z-index: 98;
+    width: 100%;
+    padding: 0;
+    border: 1px solid $qg-green;
+    border-top: 1px solid #EEE;
+    background: #FFF;
 
-        li {
-
-            width: 100%;
-            padding-left: 0.8em;
-            &:last-of-type {
-                margin-bottom: .3em;  
-            }
-
-            a {
-                color: #000;
-                text-decoration: none;
-                mark {
-                    font-weight: bold;
-                    background-color: transparent;
-                    padding: 0;
-                }
-            }
-        }
-    }  
-
-    @include breakpoint($bs-md) {
-        margin-bottom: 1em;
+    li {
+      width: 100%;
+      padding-left: 0.8em;
+      &:last-of-type {
+        margin-bottom: .3em;  
+      }
+      &:hover {
+        background: $qg-light-blue-gray3;
+      }
     }
+
+    a {
+      display: block;
+      background: transparent;
+      color: #000;
+      text-decoration: none;
+      white-space: normal;
+    }
+
+    mark {
+      font-weight: bold;
+      background-color: transparent;
+      padding: 0;
+    }
+  }  
+
+  @include breakpoint($bs-md) {
+    margin-bottom: 1em;
+  }
 }
 
 @include breakpoint($bs-min-lg) {
-    #qg-search-form.collapse{ // Over-rides SWE default behaviour for accessibility
-       display: block;
-       height: auto !important;
-    }
+  #qg-search-form.collapse { // Over-rides SWE default behaviour for accessibility
+    display: block;
+    height: auto !important;
+  }
 }

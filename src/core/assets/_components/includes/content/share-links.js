@@ -18,12 +18,12 @@ function returnSocialLinks () {
       {title: 'LinkedIn',   showTitle: false, icon: renderIcon('fa', 'linkedin')},
     ],
     secondary: [
-      {title: 'Delicious',    showTitle: true, icon: renderIcon('fa', 'delicious')},
+      // {title: 'Delicious',    showTitle: true, icon: renderIcon('fa', 'delicious')},
       {title: 'Digg',         showTitle: true, icon: renderIcon('fa', 'digg')},
-      {title: 'Evernote',     showTitle: true, icon: renderIcon('svg', 'evernote', '/assets/v3/images/evernote-logo-white.svg')},
-      {title: 'Reddit',       showTitle: true, icon: renderIcon('fa', 'reddit')},
-      {title: 'StumbleUpon',  showTitle: true, icon: renderIcon('fa', 'stumbleupon')},
-      {title: 'Tumblr',       showTitle: true, icon: renderIcon('fa', 'tumblr')},
+      // {title: 'Evernote',     showTitle: true, icon: renderIcon('svg', 'evernote', '/assets/v3/images/evernote-logo-white.svg')},
+      // {title: 'Reddit',       showTitle: true, icon: renderIcon('fa', 'reddit')},
+      // {title: 'StumbleUpon',  showTitle: true, icon: renderIcon('fa', 'stumbleupon')},
+      // {title: 'Tumblr',       showTitle: true, icon: renderIcon('fa', 'tumblr')},
       {title: 'Google+',      showTitle: true, icon: renderIcon('fa', 'google-plus')},
     ]
   };
