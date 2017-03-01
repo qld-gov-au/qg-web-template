@@ -1,0 +1,112 @@
+
+.container-fluid.qg-site-width{
+  max-width: 1327px; // old SWE width
+}
+
+#qg-primary-content {
+  padding-top: $grid-gutter-width / 2;
+  padding-bottom:  $grid-gutter-width / 2;
+
+  .dropup {
+    & > ul {
+      margin: 0;
+    }
+  }
+  
+  @media (min-width: $screen-md-min) {
+    padding-top: $grid-gutter-width;
+    padding-bottom: $grid-gutter-width;
+  }
+}
+
+// ############################################
+// Adaptable layout
+
+#qg-primary-content {
+  @include make-xs-column(12); // @extend .col-xs-12;
+
+  &.qg-has-aside {
+    @include make-md-column(9);
+  }
+}
+
+#qg-section-nav {
+  @include make-md-column(3);
+
+  @media (min-width: $screen-md-min) {
+    padding-left: 0;
+  }
+
+  & + #qg-primary-content{
+    @include make-md-column(9);
+  }
+
+  & + #qg-primary-content.qg-has-aside {
+    @include make-md-column(6);
+  }
+}
+#qg-primary-content:not(.qg-has-aside) + #qg-secondary-content {
+  display: none;
+}
+
+#qg-primary-content.qg-has-aside + #qg-secondary-content {
+  @include make-xs-column(12); // @extend .col-xs-12;
+  @include make-md-column(3); // @extend .col-md-3;
+
+  @media (min-width: $screen-md-min) {
+    padding-right: 0;
+  }
+}
+
+
+/*
+
+// ############################################
+// Three column layout (navigation, content, aside)
+
+
+// ############################################
+// Two column layout aside (content, aside)
+
+#qg-two-col-aside {
+
+  #qg-primary-content {
+    @extend .col-xs-12;
+    @extend .col-md-9;
+  }
+
+  #qg-secondary-content {
+    @extend .col-xs-12;
+    @extend .col-md-3;
+  }
+
+}
+
+// ############################################
+// Two column layout navigation (navigation, content)
+
+#qg-two-col-nav {
+
+  #qg-primary-content {
+    @extend .col-sm-12;
+    @extend .col-md-9;
+    @extend .col-md-push-3;
+  }
+
+  #qg-section-nav {
+    @extend .col-sm-12;
+    @extend .col-md-3;
+    @extend .col-md-pull-9;
+  }
+
+}    
+
+// ############################################
+// One column layout (full width content)
+
+#qg-full-width{
+  #qg-primary-content{
+    @extend .col-sm-12;
+  }
+}
+*/

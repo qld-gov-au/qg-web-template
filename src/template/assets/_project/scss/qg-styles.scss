@@ -1,0 +1,35 @@
+// Local variables
+@import "qg-variables";
+@import "bootstrap/bs-variables";
+
+// Import bootstrap
+	// @import "bootstrap-loader"; // Local custom loader
+@import "../../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap"; // NPM module
+// Bootstrap mixin over-rides
+@import "bootstrap/mixins/buttons";
+// Bootstrap over-rides
+@import "bootstrap/buttons";
+
+// Add QG Mixins
+@import "mixins/font-size";
+
+// Add QG components
+@import "accessibility";
+
+// Add QG layout components
+@import "layout/layout-structure"; // Primary layout structure
+
+@import "layout/header/alerts";
+@import "layout/header/coat-of-arms";
+@import "layout/header/header-structure";
+@import "layout/header/site-name";
+@import "layout/header/site-search";
+@import "layout/header/site-utilities";
+
+@import "layout/breadcrumbs";
+
+@import "layout/content";
+@import "layout/section-nav";
+@import "layout/asides";
+@import "layout/content-options";
+@import "layout/footer";
