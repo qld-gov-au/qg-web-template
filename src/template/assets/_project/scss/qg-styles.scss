@@ -3,12 +3,8 @@
 @import "bootstrap-variables";
 
 // Import bootstrap
-	// @import "bootstrap-loader"; // Local custom loader
-@import "../../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap"; // NPM module
-// Bootstrap mixin over-rides
-@import "bootstrap/mixins/buttons";
-// Bootstrap over-rides
-@import "bootstrap/buttons";
+@import "bootstrap-loader"; // Local custom loader, pulls resources from NPM module
+	// @import "../../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap"; // NPM module
 
 // Add QG Mixins
 @import "mixins/font-size";

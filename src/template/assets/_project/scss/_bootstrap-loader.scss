@@ -10,7 +10,7 @@
 
 // Core variables and mixins
 @import "../../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
-@import "../../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+@import "bootstrap/mixins"; // Local version
 
 // Reset and dependencies
 @import "../../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/normalize";
@@ -24,7 +24,7 @@
 @import "../../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/grid";
 @import "../../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/tables";
 @import "../../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/forms";
-@import "bootstrap/buttons"; // Replaced with our custom bootstrap button loader (to make rollover white)
+@import "../../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/buttons";
 
 // Components
 @import "../../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/component-animations";
