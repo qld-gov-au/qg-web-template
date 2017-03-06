@@ -21,8 +21,8 @@ var projectName = 'DEFAULT'; // Used for the build process
 
 
 /* BUILD TASKS */
-gulp.task('scss', require('./gulp/build/scss')(gulp, plugins, config));
-gulp.task('html', require('./gulp/build/html')(gulp, plugins, config));
+gulp.task('scss', require('./gulp/build-tasks/scss')(gulp, plugins, config));
+gulp.task('html', require('./gulp/build-tasks/html')(gulp, plugins, config));
 
 gulp.task('default', ['html', 'scss']);
 gulp.task('build', ['default']);
@@ -34,3 +34,7 @@ gulp.task('watch', function () {
     gulp.watch([config.basepath.src + '/**/*.html'], ['html']);
     // gulp.watch([config.basepath.src + '*', config.basepath.src + '*' + '*', config.basepath.src + '*' + '*'], ['other:assets']);
 });
+
+/* RELEASE TASKS */
+gulp.task('scss-src', require('./gulp/release-tasks/scss-src')(gulp, plugins, config));
+gulp.task('release', ['scss-src']);

@@ -154,15 +154,15 @@ $table-border-color:            #ddd !default;
 //
 //## For each of Bootstrap's buttons, define text, background and border color.
 
-$btn-font-weight:                bold !default;
+$btn-font-weight:                bold;
 
-$btn-default-color:              #fff !default;
-$btn-default-bg:                 $qg-dark-grey !default;
-$btn-default-border:             $btn-default-bg !default;
+$btn-default-color:              #fff;
+$btn-default-bg:                 $qg-dark-grey;
+$btn-default-border:             $btn-default-bg;
 
-$btn-primary-color:              #000 !default;
-$btn-primary-bg:                 $qg-green !default;
-$btn-primary-border:             $btn-primary-bg !default;
+$btn-primary-color:              #000;
+$btn-primary-bg:                 $qg-green;
+$btn-primary-border:             $btn-primary-bg;
 
 $btn-success-color:              #fff !default;
 $btn-success-bg:                 $brand-success !default;
