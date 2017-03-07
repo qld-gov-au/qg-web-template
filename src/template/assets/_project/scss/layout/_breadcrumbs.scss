@@ -4,6 +4,109 @@
 	@include make-xs-column(12);
 	background: $qg-blue;
 
+	// padding-left: 0;
+	// padding-right: 0;
+
+	h1, h2 {
+		 color: #FFF;
+	}
+
+	a {
+		color: #FFF;
+		text-decoration: none;
+	}
+	
+	a:hover {
+		text-decoration: underline;
+	}
+
+	span.fa {
+		font-size: 1.2em;   
+		margin-right: .3em; 
+	}
+
+	ol {
+		margin-left: 0;
+		margin-bottom: 0;
+
+		padding-top: 1.5em;
+		padding-bottom: 1.5em;
+
+		color: #FFF;
+		text-align: center;
+		@include fontSize(16px);
+	}
+
+	li {
+		display: block;
+
+		& + li:before {
+			content: "\f078";
+			display: block;
+			margin: 0;
+
+			color: #CCC;          
+			font-family: FontAwesome;
+			font-size: .9em;
+			text-align: center;
+			font-weight: normal;
+		}
+
+		&:last-child{
+			font-size: 150%;
+			font-weight: bold;
+		}
+	}
+} #qg-breadcrumb {
+	// @media (min-width: $screen-sm-min) {
+	// 	padding-left: $grid-gutter-width / 2;
+	// 	padding-right: $grid-gutter-width / 2;
+	// }
+} #qg-breadcrumb {
+	@media (min-width: $screen-md-min) {
+		margin: 0;
+
+		&.collapse {
+			display: block;
+		}
+
+		ol {
+			text-align: left;
+		}
+
+		li:first-child:before {
+			content: "\f19c";
+			margin: 0 0.4em 0 0;
+
+			color: #fff;      
+			font-family: FontAwesome;
+			font-size: 1.1em;
+			text-align: center;
+			font-weight: normal;
+		}
+
+		li {
+			display: inline-block;
+
+			& + li:before {
+				content: "\f054";
+				display: inline;
+				margin: 0 0.3em 0 0;
+				color: #FFF;
+			}
+
+			&:last-child {
+				font-size: 100%;
+			}
+		}
+	}
+}
+
+/*
+#qg-breadcrumb {
+	@include make-xs-column(12);
+	background: $qg-blue;
+
 	h1, h2 {
 		 color: #FFF;
 	}
@@ -50,7 +153,7 @@
 		display: block;
 	}
 }
-
+*/
 
 // ##############################################################    
 /*

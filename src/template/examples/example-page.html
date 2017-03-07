@@ -31,8 +31,6 @@
 
     <!--#include virtual="/assets/includes/head-assets.html"-->
 
-    <link href="/assets/v3/css/qg-styles.css" rel="stylesheet" type="text/css" media="all">
-
 </head>
 
 <body data-qg-accessibility="true">
@@ -54,7 +52,7 @@
         </header>
 
         <div id="qg-content">
-            <div class="row"> <!-- id="qg-three-col" clearfix row -->
+            <div id="qg-three-col" class="row">
 
                 <!--#include virtual="/assets/includes/breadcrumbs/breadcrumb-demo.html"-->
 
@@ -70,114 +68,342 @@
 
                     <!--   =  DON'T include ../../core/assets/_components/bootstrap-extensions/_carousel-example.html -->
 
-<h2>Tables</h2>
-<p>These are the QLD Government implemented tables from Bootstrap. See <a href="http://getbootstrap.com/css/#tables">http://getbootstrap.com/css/#tables</a> for implementation advice.</p>
+                    <p>The Queensland Government Website Template has bootstrap 3.0 baked into it's core. In most instances, you can create content using bootstrap styles, and it will output apropriate Queensland Government Website styling.</p>
 
-<h3>Basic Table</h3>
+                    <h2>Exceptions</h2>
 
-<table class="table">
-    <caption>Optional table caption.</caption>
-    <thead>
-        <tr>
-            <th>#</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Username</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-        </tr>
-    </tbody>
-</table>
+                    <ul>
+                        <li><a href="#forms">Forms</a> - Forms use the SWE V2 form handler, so you are required to use the Queensland Government Form Builder.</li>
+                    </ul>
 
-<h3>Striped rows</h3>
+                    <p>Below is a list of implemented Bootstrap styles. See <a href="http://getbootstrap.com/css/" target="_blank">http://getbootstrap.com/css/</a> for more implementation advice.</p>
 
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>#</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Username</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-        </tr>
-    </tbody>
-</table>
+                    <hr />
 
-<h3>Hover rows</h3>
+<!-- ################################## -->
+    <h2>Typography</h2>
 
-<table class="table table-hover">
-    <thead>
-        <tr>
-            <th>#</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Username</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-        </tr>
-    </tbody>
-</table>
+    <h3>Body copy</h3>
+    <p>
+        Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.
+    </p>
 
-                    <p><a id="firstlink" href="#lightbox" data-qg-lightbox="true">Lightbox test link</a></p>
-                    <p><a id="anotherlink" href="#lightbox" data-qg-lightbox="true">Lightbox test link 2</a></p>
-                    <p><a href="http://www.something.com/" target="_blank">Extlink</a> Inline hyperlink test.</p>
-                    <p><a href="#" target="_blank">Internal hyperlink in new tab</a> Inline hyperlink test.</p>
-                    <p><a href="http://www.something.com/">External link in same window</a> Inline hyperlink test.</p>
+    <h3>Lead body copy</h3>
+    <p class="lead">
+        Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.
+    </p>
+
+    <h3>Transformation classes</h3>
+    <p class="text-lowercase">Lowercased text.</p>
+    <p class="text-uppercase">Uppercased text.</p>
+    <p class="text-capitalize">Capitalized text.</p>
+
+    <h3>Abbreviations</h3>
+    <p>See https://getbootstrap.com/css/#type-abbreviations</p>
+
+    <h4>Basic abbreviation</h4>
+    <abbr title="attribute">attr</abbr>
+
+    <h4>Initialism</h4>
+    <abbr title="HyperText Markup Language" class="initialism">HTML</abbr>
+
+    <h3>Addresses</h3>
+    <address>
+      <strong>Twitter, Inc.</strong><br>
+      1355 Market Street, Suite 900<br>
+      San Francisco, CA 94103<br>
+      <abbr title="Phone">P:</abbr> (123) 456-7890
+    </address>
+
+    <address>
+      <strong>Full Name</strong><br>
+      <a href="mailto:#">first.last@example.com</a>
+    </address>
+
+    <h3>Blockquotes</h3>
+
+    <h4>Default blockquote</h4>
+    <blockquote>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+    </blockquote>
+
+    <h4>Blockquote options</h4>
+    <h5>Naming a source</h5>
+    <blockquote>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+      <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+    </blockquote>
+
+    <h5>Alternate displays</h5>
+    <blockquote class="blockquote-reverse">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+      <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+    </blockquote>
+
+    <h3>Lists</h3>
+    <h4>Unordered</h4>
+    <ul>
+        <li>Lorem ipsum dolor sit amet</li>
+        <li>Consectetur adipiscing elit</li>
+        <li>Integer molestie lorem at massa</li>
+        <li>
+            Nulla volutpat aliquam velit
+            <ul>
+                <li>Phasellus iaculis neque</li>
+                <li>Purus sodales ultricies</li>
+                <li>Vestibulum laoreet porttitor sem</li>
+            </ul>
+        </li>
+        <li>Faucibus porta lacus fringilla vel</li>
+        <li>
+            Item with sub ordered list
+            <ol>
+                <li>Phasellus iaculis neque</li>
+                <li>Purus sodales ultricies</li>
+                <li>Vestibulum laoreet porttitor sem</li>
+            </ol>
+        </li>
+        <li>Aenean sit amet erat nunc</li>
+        <li>Eget porttitor lorem</li>
+    </ul>
+
+    <h4>Ordered</h4>
+    <ol>
+        <li>Lorem ipsum dolor sit amet</li>
+        <li>Consectetur adipiscing elit</li>
+        <li>Integer molestie lorem at massa</li>
+        <li>
+            Item with sub ordered list
+            <ol>
+                <li>Phasellus iaculis neque</li>
+                <li>Purus sodales ultricies</li>
+            </ol>
+        </li>
+        <li>Faucibus porta lacus fringilla vel</li>
+        <li>
+            Item with sub unordered list
+            <ul>
+                <li>Phasellus iaculis neque</li>
+                <li>Purus sodales ultricies</li>
+            </ul>
+        </li>
+        <li>Eget porttitor lorem</li>
+    </ol>
+    
+    <h4>Unstyled</h4>
+    <ul class="list-unstyled">
+        <li>Lorem ipsum dolor sit amet</li>
+        <li>Consectetur adipiscing elit</li>
+        <li>Integer molestie lorem at massa</li>
+        <li>
+            Nulla volutpat aliquam velit
+            <ul>
+                <li>Phasellus iaculis neque</li>
+                <li>Purus sodales ultricies</li>
+                <li>Vestibulum laoreet porttitor sem</li>
+            </ul>
+        </li>
+        <li>Faucibus porta lacus fringilla vel</li>
+        <li>Aenean sit amet erat nunc</li>
+        <li>Eget porttitor lorem</li>
+    </ul>
+
+    <h4>Inline</h4>
+    <ul class="list-inline">
+        <li>Lorem ipsum dolor sit amet</li>
+        <li>Consectetur adipiscing elit</li>
+        <li>Integer molestie lorem at massa</li>
+        <li>Faucibus porta lacus fringilla vel</li>
+        <li>Aenean sit amet erat nunc</li>
+        <li>Eget porttitor lorem</li>
+    </ul>
+
+    <h4>Description</h4>
+    <dl>
+        <dt>Description lists</dt>
+        <dd>A description list is perfect for defining terms.</dd>
+        <dt>Euismod</dt>
+        <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+        <dd>Donec id elit non mi porta gravida at eget metus.</dd>
+        <dt>Malesuada porta</dt>
+        <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+    </dl>
+
+    <h5>Horizontal description</h5>
+    <dl class="dl-horizontal">
+        <dt>Description lists</dt>
+        <dd>A description list is perfect for defining terms.</dd>
+        <dt>Euismod</dt>
+        <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+        <dd>Donec id elit non mi porta gravida at eget metus.</dd>
+        <dt>Malesuada porta</dt>
+        <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+    </dl>
+
+<!-- ################################## -->
+
+    <h2>Code</h2>
+    <p>For information on implementing code, see <a href="https://getbootstrap.com/css/#code">https://getbootstrap.com/css/#code</a>.</p>
+
+<!-- ################################## -->
+
+    <h2>Tables</h2>
+    <p>These are the QLD Government implemented tables from Bootstrap. See <a href="http://getbootstrap.com/css/#tables">http://getbootstrap.com/css/#tables</a> for implementation advice.</p>
+
+    <h3>Basic Table</h3>
+
+    <table class="table">
+        <caption>Optional table caption.</caption>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Username</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Striped rows</h3>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Username</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Hover rows</h3>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Username</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Responsive tables</h3>
+
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Table heading</th>
+                    <th>Table heading</th>
+                    <th>Table heading</th>
+                    <th>Table heading</th>
+                    <th>Table heading</th>
+                    <th>Table heading</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+<!-- ################################## -->
+
+    <h2 id="forms">Forms</h2>
+    <p>Forms are not implemented using the standard bootstrap layout. Instead, forms use the Queensland Government form handler.</p>
+
+
+<!-- ################################## -->
 
                     <h2>Buttons</h2>
                     <p>These are the QLD Government implemented buttons from Bootstrap. See <a href="http://getbootstrap.com/css/#buttons">http://getbootstrap.com/css/#buttons</a> for implementation advice.</p>
@@ -229,6 +455,16 @@
                         <button type="button" class="btn btn-default btn-block">Default</button>
                         <button type="button" class="btn btn-primary btn-block">Primary</button>
                     </p>
+
+<!-- ################################## -->
+
+                    <p><a id="firstlink" href="#lightbox" data-qg-lightbox="true">Lightbox test link</a></p>
+                    <p><a id="anotherlink" href="#lightbox" data-qg-lightbox="true">Lightbox test link 2</a></p>
+                    <p><a href="http://www.something.com/" target="_blank">Extlink</a> Inline hyperlink test.</p>
+                    <p><a href="#" target="_blank">Internal hyperlink in new tab</a> Inline hyperlink test.</p>
+                    <p><a href="http://www.something.com/">External link in same window</a> Inline hyperlink test.</p>
+
+<!-- ################################## -->
 
                     <p>Carers play a crucial role in our community&mdash;often without realising. For many people, looking after a loved one is 'just what you do<span style="color: #008000;">'.</span>&nbsp;They are mums and dads, sons and daughters, brothers, sisters, grandparents, spouses, friends and neighbours.</p>
 
