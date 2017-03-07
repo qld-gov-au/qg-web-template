@@ -18,7 +18,6 @@
 	a {
 		display: block;
 		padding: .4em ($grid-gutter-width / 2)+5px .6em ($grid-gutter-width / 2)+5px;
-		text-decoration: none;
 	}
 
 	a, a:link, a:visited {
@@ -34,6 +33,8 @@
 
 @media (min-width: $screen-md-min) {
 	#qg-site-nav {
+		padding-left: ($grid-gutter-width / 4);
+		padding-right: ($grid-gutter-width / 4);
 		background-color: transparent;
 
 		li {
@@ -42,11 +43,13 @@
 
 		a {
 			display: inline-block;
+			padding-left: ($grid-gutter-width / 4) + 5px;
+			padding-right: ($grid-gutter-width / 4) + 5px;
 			background-color: transparent;
 		}
 
 		a, a:link, a:visited {
-			color: black;
+			color: $link-color;
 		}
 	}
 }
