@@ -24,6 +24,10 @@ var gulpConnect     = require('gulp-connect');
     // include     = require('gulp-include'),
     // replace     = require('gulp-replace');
 
+/* SSI */
+// Open using local server
+gulp.task('local-server', require('./gulp/build-tasks/local-server.js')(gulp, plugins, config, gulpConnect, gulpConnectSsi, argv));
+
 /* BUILD TASKS */
 gulp.task('scss', require('./gulp/build-tasks/scss')(gulp, plugins, config));
 gulp.task('html', require('./gulp/build-tasks/html')(gulp, plugins, config));
@@ -42,10 +46,6 @@ gulp.task('watch', function () {
 /* RELEASE TASKS */
 gulp.task('scss-src', require('./gulp/release-tasks/scss-src')(gulp, plugins, config));
 gulp.task('release', ['scss-src']);
-
-/* SSI */
-// Open using local server
-gulp.task('local-server', require('./gulp/build-tasks/local-server.js')(gulp, plugins, config, gulpConnect, gulpConnectSsi, argv));
 
 /* TEST TASKS */
     gulp.task('test:config:e2e', require('./gulp/test-tasks/e2e')(gulp, plugins, config));

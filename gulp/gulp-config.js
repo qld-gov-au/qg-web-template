@@ -14,12 +14,12 @@ module.exports = {
     projects: ['swe'], // 'cue'
     franchise: ['www.qld.gov.au', 'tmr.com.au', 'test.com'],
     src: {
-        assets: function () {
+        assets () {
             return config.basepath.src + 'template/assets/';
         },
-        examples: function () {
+        examples () {
             return config.basepath.src + 'template/examples/';
-        }
+        },
     },
     build: {
         assets: function () {
