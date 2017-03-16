@@ -1,0 +1,15 @@
+
+#qg-site-header {
+	@extend .row;
+	background-color: $qg-light-gray;
+	margin-top: 32px;
+	padding-top: 1em;
+	padding-bottom: 0;
+
+
+  // Responsive styles
+  @include breakpoint($bs-sm) {
+  	margin-top: 0;
+  }
+}
+

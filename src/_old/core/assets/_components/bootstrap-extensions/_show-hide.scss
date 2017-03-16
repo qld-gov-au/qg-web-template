@@ -1,0 +1,36 @@
+/*
+
+SCSS files for showhide module
+
+Dependancies
+============
+- Bootstrap (not imported)
+- 
+
+*/
+
+@mixin qg-aria-hidden{
+  border: 0;
+  clip: rect(1px 1px 1px 1px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  *{border: 0;}
+}
+
+.qg-aria-hidden {
+    @include qg-aria-hidden;
+}
+
+@media screen AND ( max-width: 480px ) { // show-md
+    .qg-aria-hidden-show-sm { @include qg-aria-hidden; }
+}
+@media screen AND ( max-width: 768px ) { // show-md
+    .qg-aria-hidden-show-md { @include qg-aria-hidden; }
+}
+@media screen AND ( max-width: 992px ) { // Show-lg
+    .qg-aria-hidden-show-lg { @include qg-aria-hidden; }
+}

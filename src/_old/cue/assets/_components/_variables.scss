@@ -1,0 +1,140 @@
+@import './../../../core/assets/_components/_variables.scss'; // Inherit core variables
+
+//font family
+$font-main: Lato, Arial, sans-serif;
+
+// base font size
+$baseSize: 16px;
+$baseLineHeight: 1.4;
+
+//base-padding
+$base-padding: 1em;
+
+// colours
+//$lightgrey: rgba(238, 241, 245, 0.17);
+//$green: #78BA00;
+//$grey: #f6f6f6;
+//$linkcolour: #005375;
+//$sweblue: #007EB1;
+//$swedarkblue: #005375;
+
+
+
+
+
+
+// ###################################
+
+$qg-mid-gray1: #939393;
+$qg-mid-gray2: #777777;
+$qg-mid-gray:  #666666;
+$qg-mid-gray4: #555555;
+$qg-mid-gray5: #505050;
+$qg-mid-gray6: #444444;
+$qg-mid-gray7: #2e2e2e;
+$qg-black:     #000000;
+
+
+$qg-white: #ffffff;
+$qg-light-gray2: #fcfcfc;
+$qg-light-gray3: #f8f8f8;
+$qg-light-gray:  #f6f6f6;
+$qg-light-gray5: #f5f5f5;
+$qg-light-gray6: #e0e0e0;
+$qg-light-gray7: #d1d1d1;
+
+
+$qg-light-blue-gray1: #F7FBFF;
+$qg-light-blue-gray:  #f2F7F9;
+$qg-light-blue-gray3: #EEF4F6;
+$qg-light-blue-gray4: #E7F5FE;
+$qg-light-blue-gray5: #E1ECF1;
+$qg-light-blue-gray6: #7d858a;
+$qg-light-blue-gray7: #585E62;
+
+
+
+//$qg-blue1: #9ac5df;//done
+//$qg-blue2: #3384c1;//done
+//$qg-blue: #007EB1; //done
+//$qg-blue4: #13578b;//done
+//$qg-blue5: #115289;//done
+//$qg-banner-blue: #00335B;
+//$qg-blue-green: #005375;
+//$qg-dark-blue: #0B2E4C;
+//$qg-blue9: #0b3253;
+
+
+
+$qg-yellow: #FFEA8A;
+$qg-light-peach: #FFEDDE;
+$qg-peach: #f8ae70;
+$qg-guava-red: #F85C50;
+$qg-dark-red: #cc0000;
+$qg-red3: #c90000;
+$qg-red4: #bf2a2a;
+$qg-red5: #b11616;
+$qg-red6: #F00;
+
+
+$qg-green1: #b1e455;
+$qg-green: #78BA00;
+$qg-lime: #9CBF6D;
+
+
+
+$qg-light-brown: #AE8446;
+$qg-sand: #F5EBDC;
+$light-lime: #F2F7EA;
+$light-watermelon: #FEECEF;
+$watermelon: #EA6A7E;
+$blueberry: #759BF3;
+$light-blueberry: #EEF4F6;
+$qg-sky-blue: #009dff;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// responsive (Bootstrap default)
+$bs-xs: max-width 480px;
+$bs-sm: max-width 768px;
+$bs-md: max-width 992px;
+$bs-lg: max-width 1200px;
+
+$bs-min-sm: min-width 480px;
+$bs-min-md: min-width 768px;
+$bs-min-lg: min-width 992px;
+
+// Set the gutter width
+$grid-gutter-width: 40px;
+
+// Make buttons square cornered
+//$btn-border-radius-base: 0px;
+//$btn-border-radius-large: 0px;
+//$btn-border-radius-small: 0px;
+
+//Setting 16 column grid
+//$new-columns:16;
+//$grid-columns:$new-columns;
+
+//$new-columns :                  12;
+//$new-gutter-width :             40px;
+//
+//$grid-columns :                 $new-columns;
+//$grid-gutter-width :            $new-gutter-width;
