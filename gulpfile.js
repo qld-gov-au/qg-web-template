@@ -1,17 +1,19 @@
 'use strict';
 
 // Core
-var gulp        = require('gulp');
-var config      = require('./gulp/gulp-config.js');
-var del         = require('del');
-var webpack     = require('webpack');
-var argv        = require('yargs').argv;
-var plugins     = require('gulp-load-plugins')();
+var gulp            = require('gulp');
+var config          = require('./gulp/gulp-config.js');
+var del             = require('del');
+var webpack         = require('webpack');
+var argv            = require('yargs').argv;
+var plugins         = require('gulp-load-plugins')();
 
 // For testing
-var karmaServer = require('karma').Server;
-var fsPath      = require('fs-path');
-var eslintReporter = require('eslint-html-reporter');
+var karmaServer     = require('karma').Server;
+var fsPath          = require('fs-path');
+var eslintReporter  = require('eslint-html-reporter');
+var gulpConnectSsi  = require('gulp-connect-ssi');
+var gulpConnect     = require('gulp-connect');
     // bowerConfig = require('./bower.json'),
     // gulpConnect = require('gulp-connect'),
     // runSequence = require('run-sequence'),
