@@ -1,12 +1,17 @@
 'use strict';
 
-var gulp        = require('gulp'),
-    config      = require('./gulp/gulp-config.js'),
-    del         = require('del'),
-    webpack     = require('webpack'),
-    argv        = require('yargs').argv,
-    plugins     = require('gulp-load-plugins')(),
-    karmaServer = require('karma').Server;
+// Core
+var gulp        = require('gulp');
+var config      = require('./gulp/gulp-config.js');
+var del         = require('del');
+var webpack     = require('webpack');
+var argv        = require('yargs').argv;
+var plugins     = require('gulp-load-plugins')();
+
+// For testing
+var karmaServer = require('karma').Server;
+var fsPath      = require('fs-path');
+var eslintReporter = require('eslint-html-reporter');
     // bowerConfig = require('./bower.json'),
     // gulpConnect = require('gulp-connect'),
     // runSequence = require('run-sequence'),
@@ -36,9 +41,14 @@ gulp.task('watch', function () {
 gulp.task('scss-src', require('./gulp/release-tasks/scss-src')(gulp, plugins, config));
 gulp.task('release', ['scss-src']);
 
+/* SSI */
+// Open using local server
+gulp.task('local-server', require('./gulp/build-tasks/local-server.js')(gulp, plugins, config, gulpConnect, gulpConnectSsi, argv));
+
 /* TEST TASKS */
+    gulp.task('test:config:e2e', require('./gulp/test-tasks/e2e')(gulp, plugins, config));
+gulp.task('test:browserstack', ['local-server', 'test:config:e2e']);
 gulp.task('test:unit', require('./gulp/test-tasks/unit')(gulp, plugins, config, karmaServer));
 gulp.task('test:eslint', require('./gulp/test-tasks/lint')(gulp, plugins, config, fsPath, eslintReporter));
-gulp.task('test:config:e2e', require('./gulp/test-tasks/e2e')(gulp, plugins, config));
-gulp.task('test:browserstack', ['local-server', 'test:config:e2e']);
 gulp.task('test:reports', require('./gulp/test-tasks/reports')(gulp, plugins, config));
+gulp.task('test', ['test:unit', 'test:eslint', 'test:browserstack', 'test:reports']);

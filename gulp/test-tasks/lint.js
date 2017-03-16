@@ -1,6 +1,11 @@
 module.exports = function (gulp, plugins, config, fsPath, eslintReporter) {
     return () => {
-        return gulp.src(['src/**/*.js', 'gulp-tasks/**/*.js', '!src/core/assets/lib/**/*.js', '!src/core/assets/_components/forms/forms.js', '!src/core/assets/_components/general/autocomplete.js'])
+        return gulp.src([
+                    'src/**/*.js', 'gulp/**/*.js',
+                    '!src/core/assets/lib/**/*.js',
+                    '!src/core/assets/_components/forms/forms.js',
+                    '!src/core/assets/_components/general/autocomplete.js'
+                ])
             .pipe(plugins.eslint({
                 configFile: 'tests/.eslintrc'
             }))

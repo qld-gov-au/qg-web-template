@@ -55,23 +55,25 @@ module.exports = {
             return config.basepath.release + 'assets/' + config.version + '/css/';
         }
     },
-    inherit: {
-        swe: {
-            inheritAll: true,
-            files: null // ['!**/nav-site/nav-site.html']
+    test: {
+        e2eTestReport () {
+            return config.basepath.test + 'reports/e2e/htmlReport.html';
         },
-        cue: {
-            inheritAll: true,
-            files: null
+        unitTestReport () {
+            return config.basepath.test + 'reports/unit-test/report.html';
         },
-        flux: {
-            inheritAll: true,
-            files: null
+        lintReport () {
+            return config.basepath.test + 'reports/eslint/report.html';
         },
-        ice: {
-            inheritAll: true,
-            files: null
+        coverageReport () {
+            return config.basepath.test + 'reports/coverage/index.html';
+        },
+        protractorConfig () {
+            return 'tests/protractor.config.js';
+        },
+        karmaConfig () {
+            return process.cwd() + '/karma.config.js';
         }
-    }
+    },
 };
 
