@@ -56,9 +56,20 @@
         <div id="qg-content">
             <div id="qg-three-col" class="row">
 
-                <!--#include virtual="/assets/includes/breadcrumbs/breadcrumb-demo.html"-->
+                <!-- START Breadcrumbs -->
+<nav id="qg-breadcrumb" role="navigation" aria-label="breadcrumb navigation" aria-labelledby="breadcrumb-heading" class="collapse">
 
-                <!--#include virtual="/assets/includes/section-nav/sample.html"-->
+    <h1 id="breadcrumb-heading" class="qg-visually-hidden">You are here:</h2>
+
+    <ol class="list-inline">
+        <li><a href="https://www.qld.gov.au/">Queensland Government home</a></li>
+        <li><a href="index.html">Queensland Government Web Template</a></li>
+    </ol>
+
+</nav>
+                <!-- / END Breadcrumbs -->
+
+                <!--#include virtual="assets/includes/section-nav/qg-web-template.html"-->
 
                 <div id="qg-primary-content" role="main" class="qg-has-aside">
 
@@ -66,7 +77,7 @@
 
                     <h1>Queensland Government Web Template <small>Pattern Library</small></h1>
 
-                    <p class="lead">This is the swiss army knife page, showing most components available for the Queensland Government template. This can be used for testing changes and as guidance on implementation.</p>
+                    <p class="lead">This page contains information on using the Queensland Government Web Template, and checking your output if customising the template.</p>
 
                     <dl class="dl-horizontal">
                         <dt>Developed by</dt>
@@ -75,13 +86,17 @@
                         <dd><a href="mailto:oss.products@dsiti.qld.gov.au">Email OSS Online Products</a></dd>
                     </dl>
 
-                    <p>This page contains information on implementing the SWE and using the Queensland Government Web Template (QGW Template).</p>
+                    <h2>Implementation</h2>
+                    <p>Queensland Government Web Template (QGW Template) is build to comply with the <a href="https://www.qgcio.qld.gov.au/products/qgea-documents/548-information/2446-internet-is26">IS26 Guidelines</a>.</p>
+                    <p>See below for specific patterns:</p>
+                    <ul>
+                        <li><a href="styles.html">Standard styles</a></li>
+                        <li><a href="components.html">Components</a></li>
+                        <li><a href="javascript.html">JavaScript</a></li>
+                    </ul>
 
-                    <h2>Technical</h2>
 
-                    <h3>Bootstrap</h3>
-                    <p>The QGW Template has bootstrap integrated into it. </p>
-
+                    <p>The Queensland Government Website Template has bootstrap 3 baked into it's core. In most instances, you can create content using bootstrap styles, and it will output apropriate Queensland Government Website styling.</p>
 
                     <h2>Exceptions</h2>
 
