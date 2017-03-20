@@ -22,11 +22,13 @@
 // -------------------------
 
 // QG Mixins
+
 @import "mixins/font-size";
 
 // QG components
 @import "components/accessibility";
 @import "components/buttons";
+@import "components/carousel";
 @import "components/utilities";
 @import "components/visually-hidden";
 
@@ -39,7 +41,6 @@
 @import "layout/header/coat-of-arms";
 @import "layout/header/header-structure";
 @import "layout/header/site-name";
-@import "layout/header/site-search";
 @import "layout/header/site-nav";
 // @import "legacy-scratchpad";
 
@@ -65,3 +66,4 @@
 .collapse {
 	display: block !important;
 }
+

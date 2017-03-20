@@ -12,12 +12,12 @@
 	@extend .panel;
 	@extend .panel-default;
 
-	padding: $padding-base-vertical;
+	// padding: $padding-base-vertical;
 
 	&:before {
 		content: "Example";
 		display: block;
-		padding-bottom: $padding-base-vertical;
+		padding: $padding-base-vertical ($padding-base-horizontal / 2);
 		color: $qg-dark-gray-light;
 		font-weight: 800;
 	}
