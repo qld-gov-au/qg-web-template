@@ -347,7 +347,8 @@ textarea {
   border: 1px solid #cccccc;
   padding: .5em .7em;
   max-width: 100%;
-  font-family: "Lato", Helvetica, Arial, sans-serif; }
+  // font-family: "Lato", Helvetica, Arial, sans-serif; // TODO: Update this in SWE2
+}
 
 /* separate the :not() selector or the whole block is ignored in older browsers */
 input:not([type]) {
