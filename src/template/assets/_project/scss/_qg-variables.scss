@@ -1,29 +1,41 @@
 // ###################################
 // Colours
 
-$qg-green: #78ba00; // For primary CTAs for example
-$qg-dark-grey: #585e62; // For buttons for example
-
-// ## QG BLUE ##
-$qg-blue: #007EB1;
-$qg-blue-dark: #13578b;
+// ## Primary blue ##
+$qg-blue: #007EB1; // Primary blue
+$qg-blue-dark: #13578b; // Primary link colour
 $qg-blue-darker: #005375;
+
+$qg-green: #78ba00; // For primary buttons, icons etc.
+
+// ## Dark grey ##
+$qg-dark-gray-lighter: #8a8f91; // Lightest for large text on white
+$qg-dark-gray-light: #717679; // Lightest for small text on white
+$qg-dark-grey: #585e62; // For default buttons 
+
+// ## Light grey ##
+$qg-light-gray: #f6f6f6; // Primary brand light grey
+
+$qg-light-gray-darker: #707070;
+
+
+// ############################
 
 // Light blue colours
 $qg-pale-blue-dark:		#cecece;
 $qg-pale-blue:			#e7f5fe;
 $qg-pale-blue-light:	#f2f7f9;
 
+
+
 // Notes:
 // $brand-danger = $qg-red5
-
-
 
 // #################################################
 // To convert to bootstrap naming convention
 $qg-light-gray2: #fcfcfc;//none
 $qg-light-gray3: #f8f8f8;//done
-$qg-light-gray: #f6f6f6;//done
+// $qg-light-gray: #f6f6f6;//done
 $qg-light-gray5: #f5f5f5;//done
 $qg-light-gray6: #e0e0e0;//none
 $qg-light-gray7: #d1d1d1;//done

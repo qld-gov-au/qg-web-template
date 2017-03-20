@@ -18,14 +18,14 @@
 		content: "Example";
 		display: block;
 		padding-bottom: $padding-base-vertical;
-		color: #CCC;
+		color: $qg-dark-gray-light;
 		font-weight: 800;
 	}
 }
 
 #qg-primary-content {
 	h2.category {
-		padding-top: $padding-base-vertical;
+		padding-top: $padding-large-vertical; // $padding-base-vertical;
 		border-top: 8px solid $qg-blue;
 	}
 }

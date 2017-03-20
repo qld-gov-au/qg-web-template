@@ -21,41 +21,61 @@
   }
 }
 
-#qg-section-nav {
+// ############################################
+// Adaptable layout
+
+// Default layout
+#qg-primary-content {
   @include make-xs-column(12);
-  @include make-md-column(3);
+  @include make-md-column(6);
+  @include make-md-column-push(3);
 }
 #qg-secondary-content {
   @include make-xs-column(12);
   @include make-md-column(3);
+  @include make-md-column-push(3);
 }
-
-// ############################################
-// One column layout (full width content)
-#qg-primary-content {
-  @include make-xs-column(12);
-}
-
-// ############################################
-// Adaptable layout
-
 #qg-section-nav {
+  @include make-xs-column(12);
+  @include make-md-column(3);
+
   & + #qg-primary-content {
+    @include make-md-column(6);
+    @include make-md-column-push(0);
+  }
+
+  & ~ #qg-secondary-content {
+    @include make-md-column-push(0);
+  }
+}
+
+// Wide layout
+#qg-content.qg-wide {
+  #qg-primary-content {
+    @include make-xs-column(12);
+    @include make-md-column-push(0);
+
+    & + #qg-secondary-content {
+      @include make-md-column-push(0);
+    }
+  }
+
+  // With aside
+  #qg-primary-content.qg-has-aside {
     @include make-md-column(9);
   }
 
-  & + #qg-primary-content.qg-has-aside {
-    @include make-md-column(6);
+  // With nav
+  #qg-section-nav {
+    & + #qg-primary-content {
+      @include make-md-column(9);
+    }
+
+    // With nav AND aside
+    & + #qg-primary-content.qg-has-aside {
+      @include make-md-column(6);
+    }
   }
-}
-
-#qg-primary-content:not(.qg-has-aside) + #qg-secondary-content {
-  display: none;
-}
-
-#qg-primary-content.qg-has-aside + #qg-secondary-content {
-  @include make-xs-column(12); // @extend .col-xs-12;
-  @include make-md-column(3); // @extend .col-md-3;
 }
 
 // ############################################
@@ -64,6 +84,7 @@
 // Three column layout (navigation, content, aside)
 #qg-three-col #qg-primary-content {
   @include make-md-column(6);
+  @include make-md-column-push(0);
 
   #qg-secondary-content {
     display: block;
@@ -73,6 +94,7 @@
 // Two column layout aside (content, aside)
 #qg-two-col-aside #qg-primary-content {
   @include make-md-column(9);
+  @include make-md-column-push(0);
 
   #qg-secondary-content {
     display: block;
@@ -82,15 +104,14 @@
 // Two column layout navigation (navigation, content)
 #qg-two-col-nav #qg-primary-content {
   @include make-md-column(9);
+  @include make-md-column-push(0);
 }
 
 // ############################################
 // Ignore gutters
-#qg-two-col-nav, #qg-three-col {
-  #qg-section-nav {
-    @media (min-width: $screen-md-min) {
-      padding-left: 0;
-    }
+#qg-section-nav {
+  @media (min-width: $screen-md-min) {
+    padding-left: 0;
   }
 }
 

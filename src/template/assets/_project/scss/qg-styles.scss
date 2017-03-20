@@ -1,20 +1,35 @@
-// Local variables
+/*!
+ * Queensland Government Web Template (QG Web Template)
+ * -
+ * -
+ */
+
+// Variables
+// -------------------------
+
 @import "qg-variables";
 @import "bootstrap-variables";
+
+// Frameworks
+// -------------------------
 
 // Import bootstrap
 @import "bootstrap-loader"; // Local custom loader, pulls resources from NPM module
 	// @import "../../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap"; // NPM module
 
-// Add QG Mixins
+// Queensland government styles
+// -------------------------
+
+// QG Mixins
 @import "mixins/font-size";
 
-// Add QG components
+// QG components
+@import "components/accessibility";
+@import "components/buttons";
 @import "components/utilities";
 @import "components/visually-hidden";
-@import "components/accessibility";
 
-// Add QG layout components
+// QG layout components
 @import "layout/layout-scaffolding"; // Primary layout structure
 
 @import "layout/access"; 
@@ -37,6 +52,13 @@
 @import "layout/asides";
 @import "layout/content-options";
 @import "layout/footer";
+
+
+// Legacy styles
+// -------------------------
+
+@import "legacy/forms-reset";
+@import "legacy/forms";
 
 // FOR DEVELOPMENT MODE
 .collapse {
