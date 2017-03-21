@@ -52,6 +52,14 @@
 			color: $link-color;
 		}
 	}
+	
+	// Display search form and site nav at full screen
+	#qg-search-form {
+		display: block;
+	}
+	#qg-site-nav{
+		display: block;
+	}
 }
 
 /*
