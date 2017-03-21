@@ -100,7 +100,7 @@ Add class qg to html element with carousel class to activate QG extensions
 		.carousel-control{
 			color: white;
 
-			@include breakpoint($bs-min-md){
+			@media (min-width: $screen-md-min) {
 				.glyphicon{ line-height: 0.7em; }
 			}
 		}

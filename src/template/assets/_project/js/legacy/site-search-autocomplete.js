@@ -3,7 +3,7 @@
  */
 
 
-import './../../../../../node_modules/generate-id/dist/generate-id.min.js';
+import '../../../../../../node_modules/generate-id/dist/generate-id.min.js';
 
 // onready
 $(function () {
