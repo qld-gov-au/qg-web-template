@@ -17,6 +17,7 @@ import breakpoints			from './modules/breakpoints';
 	// import qgBsExtend 		from './legacy/bootstrap-extensions.js';
 import feedbackForm 		from './modules/feedback-form';
 import shareLinks 			from './modules/share-links';
+import accessibility 		from './modules/accessibility';
 
 (function () {
     'use strict';
