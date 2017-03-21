@@ -1,3 +1,6 @@
+// Font size
+// use: @include fontSize(Xpx);
+
 @function calculateRem($size) {
   $remSize: $size / 10px;
   @return #{$remSize}rem;

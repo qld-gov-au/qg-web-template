@@ -63,9 +63,9 @@ function renderSocialURL (who, from, title, domain, description) {
 function renderIcon (type, name, src = false) {
   switch(type) {
     case 'fa':
-      return `<span class="fa fa-${name} fa-2x qg-icon" aria-hidden="true"></span>`; break;
+      return `<span class="fa fa-${name} fa-2x qg-share-icon" aria-hidden="true"></span>`; break;
     case 'svg':
-      return `<img src="${src}" aria-hidden="true" class="qg-icon" alt="name" />`; break;
+      return `<img src="${src}" aria-hidden="true" class="qg-share-icon" alt="name" />`; break;
   }
   // Default, return nothing
   return '';
@@ -83,7 +83,7 @@ function renderLink (url, title, icon, hidden = '') {
 
 function renderShareButtons () {
   return `<h2>Share:</h2>
-<ul class="navbar-right">
+<ul class="navbar navbar-right">
   ${getLinks('primary')}
   <li class="dropdown">
     <button id="shareDropdown" class="qg-share-link" title="share" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
