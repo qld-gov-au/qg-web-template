@@ -43,7 +43,7 @@ gulp.task('watch', function () {
     gulp.watch([config.basepath.src + '/**/*.js'], ['js']);
     gulp.watch([config.basepath.src + '/**/*.html'], ['html']);
     gulp.watch([config.basepath.src + '/**/*.scss'], ['scss']);
-    // gulp.watch([config.basepath.src + '*', config.basepath.src + '*' + '*', config.basepath.src + '*' + '*'], ['other:assets']);
+    gulp.watch([config.basepath.src + '*', config.basepath.src + '*' + '*', config.basepath.src + '*' + '*'], ['other-assets']);
 });
 
 /* RELEASE TASKS */
