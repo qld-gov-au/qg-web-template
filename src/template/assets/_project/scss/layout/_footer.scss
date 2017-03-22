@@ -36,7 +36,10 @@
     ul.col-2 {
       list-style: none;
       padding-left: 0;
-      column-count: 2;
+
+      @media (min-width: $screen-sm-min) {
+        column-count: 2;
+      }
     }  
 
     li {
@@ -102,11 +105,15 @@
   ul {
 
     li {
-      padding: .3em 1em;
-      margin: 0;      
+      padding: 0.5em 0;
+      margin: 0;
+      a {
+        padding: 0.2em 1em;
+        display: block;
+      }
     }
 
-    li + li {
+    li + li a {
       border-left: 1px solid #999; 
     }   
   }
@@ -120,14 +127,4 @@
     text-decoration: underline;  
     color: #000; 
   }
-
 }
-/*
-@include breakpoint($bs-md){
-  ul.col-2 {
-    list-style: none;
-    padding-left: 0;
-    column-count: 1 !important;
-  }
-}
-*/
