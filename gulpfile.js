@@ -7,16 +7,9 @@ var del             = require('del');
 var webpack         = require('webpack');
 var argv            = require('yargs').argv;
 var plugins         = require('gulp-load-plugins')();
-
-// For testing
-var karmaServer     = require('karma').Server;
-var fsPath          = require('fs-path');
-var eslintReporter  = require('eslint-html-reporter');
-var gulpConnectSsi  = require('gulp-connect-ssi');
-var gulpConnect     = require('gulp-connect');
 var es              = require('event-stream');
+var runSequence     = require('run-sequence');
     // bowerConfig = require('./bower.json'),
-    // gulpConnect = require('gulp-connect'),
     // runSequence = require('run-sequence'),
     // gutil       = require('gulp-util'),
     // gulpConnectSsi = require('gulp-connect-ssi'),
@@ -25,9 +18,25 @@ var es              = require('event-stream');
     // include     = require('gulp-include'),
     // replace     = require('gulp-replace');
 
+// For testing
+var karmaServer     = require('karma').Server;
+var fsPath          = require('fs-path');
+var eslintReporter  = require('eslint-html-reporter');
+var gulpConnectSsi  = require('gulp-connect-ssi');
+var gulpConnect     = require('gulp-connect');
+
+
 /* SSI */
 // Open using local server
 gulp.task('local-server', require('./gulp/build-tasks/local-server.js')(gulp, plugins, config, gulpConnect, gulpConnectSsi, argv));
+
+/* CLEAN TASKS */
+gulp.task('clean-build', (cb) => {
+    return del([config.basepath.build], cb);
+});
+gulp.task('clean-release', (cb) => {
+    return del([config.basepath.release], cb);
+});
 
 /* BUILD TASKS */
 gulp.task('scss', require('./gulp/build-tasks/scss')(gulp, plugins, config));
@@ -38,6 +47,9 @@ gulp.task('template-assets', require('./gulp/build-tasks/template-assets')(gulp,
 
 gulp.task('default', ['html', 'scss', 'js', 'other-assets', 'template-assets']);
 gulp.task('build', ['default']);
+gulp.task('build:clean', (cb) => {
+        runSequence('clean-build', 'default', cb);
+    });
 
 /* WATCH TASSKS */
 gulp.task('watch', function () {
@@ -50,7 +62,13 @@ gulp.task('watch', function () {
 
 /* RELEASE TASKS */
 gulp.task('scss-src', require('./gulp/release-tasks/scss-src')(gulp, plugins, config));
-gulp.task('release', ['scss-src']);
+gulp.task('core', require('./gulp/release-tasks/core')(gulp, plugins, config, es));
+gulp.task('release', (cb) => {
+        runSequence(['build:clean', 'clean-release'],
+            ['scss-src', 'core'],
+            cb
+        );
+    });
 
 /* TEST TASKS */
     gulp.task('test:config:e2e', require('./gulp/test-tasks/e2e')(gulp, plugins, config));

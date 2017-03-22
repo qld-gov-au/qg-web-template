@@ -3,7 +3,7 @@ module.exports = function (gulp, plugins, config) {
     config.projects.map((element) => {
       
       return gulp.src([
-          `${config.basepath.src}/template/assets/_project/scss/*.scss`, // Template SCSS files
+          `${config.basepath.src}/core/assets/_project/scss/*.scss`, // Template SCSS files
           '!_*.scss',
         ])
         .pipe(plugins.sourcemaps.init())

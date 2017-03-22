@@ -2,7 +2,7 @@ module.exports = function (gulp, plugins, config) {
   return function () {
     config.projects.map((element) => {
       return gulp.src([
-          `${config.basepath.src}template/assets/_project/js/main.js`
+          `${config.basepath.src}core/assets/_project/js/main.js`
         ])
         .pipe(plugins.webpack({
           output: {

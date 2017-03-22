@@ -11,8 +11,11 @@ module.exports = {
         bowerVersion: 0,
         node_modules: 'node_modules/'
     },
-    projects: ['web-template', 'web-template-local'], // 'cue'
-    franchise: ['www.qld.gov.au', 'tmr.com.au', 'test.com'],
+    projects: ['core'], // 'cue'
+    outputs: {
+        build: ['core'],
+        release: ['core', 'template-local', 'template-cdn'],
+    },
     src: {
         assets () {
             return config.basepath.src + 'template/assets/';
