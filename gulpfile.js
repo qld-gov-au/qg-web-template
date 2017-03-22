@@ -34,8 +34,9 @@ gulp.task('scss', require('./gulp/build-tasks/scss')(gulp, plugins, config));
 gulp.task('html', require('./gulp/build-tasks/html')(gulp, plugins, config));
 gulp.task('js', require('./gulp/build-tasks/js')(gulp, plugins, config));
 gulp.task('other-assets', require('./gulp/build-tasks/other-assets')(gulp, plugins, config, es));
+gulp.task('template-assets', require('./gulp/build-tasks/template-assets')(gulp, plugins, config, es));
 
-gulp.task('default', ['html', 'scss', 'js', 'other-assets']);
+gulp.task('default', ['html', 'scss', 'js', 'other-assets', 'template-assets']);
 gulp.task('build', ['default']);
 
 /* WATCH TASSKS */
@@ -43,6 +44,7 @@ gulp.task('watch', function () {
     gulp.watch([config.basepath.src + '/**/*.js'], ['js']);
     gulp.watch([config.basepath.src + '/**/*.html'], ['html']);
     gulp.watch([config.basepath.src + '/**/*.scss'], ['scss']);
+    gulp.watch([config.basepath.src + '/assets/includes/**/*.html'], ['template-assets']);
     gulp.watch([config.basepath.src + '*', config.basepath.src + '*' + '*', config.basepath.src + '*' + '*'], ['other-assets']);
 });
 
