@@ -29,3 +29,12 @@
 		border-top: 8px solid $qg-blue;
 	}
 }
+
+#page-nav {
+	&.affix {
+		top: 0;
+	}
+	&.affix-bottom {
+		position: relative;
+	}
+}

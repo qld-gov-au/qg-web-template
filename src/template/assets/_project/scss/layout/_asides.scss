@@ -1,5 +1,7 @@
 //// asides ////
 #qg-content #qg-secondary-content {
+  position: relative; // For affix and other fixed position child elements
+
   .qg-aside {
     padding: 16px*1.5;
     margin: 0;
