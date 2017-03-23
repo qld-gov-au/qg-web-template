@@ -45,7 +45,10 @@ gulp.task('js', require('./gulp/build-tasks/js')(gulp, plugins, config));
 gulp.task('other-assets', require('./gulp/build-tasks/other-assets')(gulp, plugins, config, es));
 gulp.task('template-assets', require('./gulp/build-tasks/template-assets')(gulp, plugins, config, es));
 
-gulp.task('default', ['html', 'scss', 'js', 'other-assets', 'template-assets']);
+gulp.task('default', ['html', 'scss',
+        'js',
+        // 'other-assets', 'template-assets'
+    ]);
 gulp.task('build', ['default']);
 gulp.task('build:clean', (cb) => {
         runSequence('clean-build', 'default', cb);

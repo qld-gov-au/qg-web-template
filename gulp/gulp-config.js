@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = {
     version: 'v3',
     phase: 'Alpha',
@@ -13,70 +15,117 @@ module.exports = {
     },
     projects: ['core'], // 'cue'
     outputs: {
-        build: ['core'],
+        build: ['build'],
         release: ['core', 'template-local', 'template-cdn'],
     },
     src: {
-        assets () {
-            return config.basepath.src + 'template/assets/';
+        get assets () {
+            return this._parent.basepath.src + 'assets/';
         },
-        examples () {
-            return config.basepath.src + 'template/examples/';
+        /*
+        get templates () {
+            return this._parent.basepath.src + 'templates/';
+        },
+        get documentation () {
+            return this._parent.basepath.src + 'documentation/';
+        },
+        */
+        get html () {
+            return [
+              `${config.basepath.src}**/*.html`,
+              '!**/_project/**/*',
+            ];
+        },
+        get scss () {
+            return [
+                `${this._parent.src.assets}_project/scss/*.scss`,
+                '!** /_*.scss'
+            ];
+            
+        },
+        get excludes () {
+            return [
+                '!**/_DELETE.*/**/*',
+                '!**/_old*/**/*',
+                '!**/_old*',
+            ];
         },
     },
     build: {
-        assets: function () {
-            return config.basepath.build;
+        get assets () {
+            return this._parent.basepath.build;
         },
-        examples: function () {
-            return config.basepath.build;
-        }
+        get coreAssets() {
+            return `${this._parent.basepath.build}assets/${this._parent.version}/`;
+        },
+        get includes () {
+            return `${this._parent.basepath.build}assets/includes/`;
+        },
+        get templates () {
+            return `${this._parent.basepath.build}templates/`;
+        },
+        get documentation () {
+            return `${this._parent.basepath.build}documentation/`;
+        },
     },
     release: {
-        assets: function () {
-            return config.basepath.release + 'assets/';
+        core: {
+            name: 'core',
+            resources: {
+                get coreAssets () { return this._parent.build.coreAssets; },
+                get includes () { return this._parent.build.includes; },
+            },
         },
-        static: function () {
-            return config.basepath.release + 'static.qgov.net.au/assets/';
+        templateLocal: {
+            name: 'template-local',
+            resources: {
+                get coreAssets () { return this._parent.build.coreAssets; },
+                get includes () { return this._parent.build.includes; },
+                get templates () { return this._parent.build.templates; },
+            },
         },
-        images: function () {
-            return config.basepath.release + 'assets/' + config.version + '/images/';
+        templateCDN: {
+            name: 'template-cdn',
+            resources: {
+                get includes () { return this._parent.build.includes; },
+                get templates () { return this._parent.build.templates; },
+            },
         },
-        lib: function () {
-            return config.basepath.release + 'assets/' + config.version + '/lib/';
-        },
-        examples: function () {
-            return config.basepath.release + 'examples/';
-        },
-        includes: function () {
-            return config.basepath.release + 'assets/includes/';
-        },
-        js: function () {
-            return config.basepath.release + 'assets/' + config.version + '/js/';
-        },
-        css: function () {
-            return config.basepath.release + 'assets/' + config.version + '/css/';
+        documentation: {
+            name: 'documentation',
+            resources: {
+                get templates () { return this._parent.build.templates(); },
+            },
         }
     },
     test: {
-        e2eTestReport () {
-            return config.basepath.test + 'reports/e2e/htmlReport.html';
+        get e2eTestReport () {
+            return this._parent.basepath.test + 'reports/e2e/htmlReport.html';
         },
-        unitTestReport () {
-            return config.basepath.test + 'reports/unit-test/report.html';
+        get unitTestReport () {
+            return this._parent.basepath.test + 'reports/unit-test/report.html';
         },
-        lintReport () {
-            return config.basepath.test + 'reports/eslint/report.html';
+        get lintReport () {
+            return this._parent.basepath.test + 'reports/eslint/report.html';
         },
-        coverageReport () {
-            return config.basepath.test + 'reports/coverage/index.html';
+        get coverageReport () {
+            return this._parent.basepath.test + 'reports/coverage/index.html';
         },
-        protractorConfig () {
+        get protractorConfig () {
             return 'tests/protractor.config.js';
         },
-        karmaConfig () {
+        get karmaConfig () {
             return process.cwd() + '/karma.config.js';
         }
     },
-};
+    init () {
+        for (var value in this) {
+            if(typeof this[value] === "object") {
+                this[value]._parent = this;
+            }
+        }
+        delete this.init;
+        return this;
+    }
+}.init();
 

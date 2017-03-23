@@ -1,11 +1,9 @@
 module.exports = function (gulp, plugins, config) {
   return function () {
     config.projects.map((element) => {
-      
-      return gulp.src([
-          `${config.basepath.src}/core/assets/_project/scss/*.scss`, // Template SCSS files
-          '!_*.scss',
-        ])
+      const target = config.src.scss.concat(config.src.excludes);
+
+      return gulp.src(target)
         .pipe(plugins.sourcemaps.init())
         .pipe(plugins.plumber())
         .pipe(plugins.sass({
@@ -19,7 +17,8 @@ module.exports = function (gulp, plugins, config) {
         .pipe(plugins.sourcemaps.write('.', {
           sourceRoot: config.basepath.src
         }))
-        .pipe(gulp.dest(config.basepath.build + element + '/assets/' + config.version + '/css/'));
+        .pipe(gulp.dest(`${config.build.coreAssets}css/`));
+          // config.basepath.build + element + '/assets/' + config.version + '/css/')); 
     });
   };
 };
