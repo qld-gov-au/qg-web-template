@@ -1,9 +1,7 @@
 /*
  # Autocomplete for Funnelback site search
+ # Requires generate-id : node_modules/generate-id/dist/generate-id.min.js';
  */
-
-
-import '../../../../../../node_modules/generate-id/dist/generate-id.min.js';
 
 // onready
 $(function () {

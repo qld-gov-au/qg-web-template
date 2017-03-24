@@ -43,12 +43,12 @@ gulp.task('scss', require('./gulp/build-tasks/scss')(gulp, plugins, config));
 gulp.task('html', require('./gulp/build-tasks/html')(gulp, plugins, config));
 gulp.task('js', require('./gulp/build-tasks/js')(gulp, plugins, config));
 gulp.task('other-assets', require('./gulp/build-tasks/other-assets')(gulp, plugins, config, es));
-gulp.task('template-assets', require('./gulp/build-tasks/template-assets')(gulp, plugins, config, es));
 
-gulp.task('default', ['html', 'scss',
-        'js',
-        // 'other-assets', 'template-assets'
-    ]);
+gulp.task('default', ['html', 
+    'scss',
+    'js',
+    'other-assets'
+]);
 gulp.task('build', ['default']);
 gulp.task('build:clean', (cb) => {
         runSequence('clean-build', 'default', cb);
@@ -65,16 +65,20 @@ gulp.task('watch', function () {
 
 /* RELEASE TASKS */
 gulp.task('scss-src', require('./gulp/release-tasks/scss-src')(gulp, plugins, config));
-gulp.task('core', require('./gulp/release-tasks/core')(gulp, plugins, config, es));
-gulp.task('release', (cb) => {
-        runSequence(['build:clean', 'clean-release'],
-            ['scss-src', 'core'],
-            cb
-        );
-    });
+gulp.task('assets-core', require('./gulp/release-tasks/assets-core')(gulp, plugins, config));
+gulp.task('assets-includes', require('./gulp/release-tasks/assets-includes')(gulp, plugins, config));
+gulp.task('copy-element', require('./gulp/release-tasks/copy-element')(gulp, plugins, config));
+gulp.task('release', (cb) => { 
+    runSequence(
+        'clean-release',
+        ['scss-src', 'assets-core', 'assets-includes'],
+        'copy-element', // Done last in order to over-ride assets-includes
+        cb
+    );
+});
 
 /* TEST TASKS */
-    gulp.task('test:config:e2e', require('./gulp/test-tasks/e2e')(gulp, plugins, config));
+gulp.task('test:config:e2e', require('./gulp/test-tasks/e2e')(gulp, plugins, config));
 gulp.task('test:browserstack', ['local-server', 'test:config:e2e']);
 gulp.task('test:unit', require('./gulp/test-tasks/unit')(gulp, plugins, config, karmaServer));
 gulp.task('test:eslint', require('./gulp/test-tasks/lint')(gulp, plugins, config, fsPath, eslintReporter));

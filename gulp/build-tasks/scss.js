@@ -1,7 +1,10 @@
 module.exports = function (gulp, plugins, config) {
   return function () {
     config.projects.map((element) => {
-      const target = config.src.scss.concat(config.src.excludes);
+      const target = [
+        `${config.basepath.src}/assets/_project/scss/*.scss`,
+        '!** /_*.scss'
+      ].concat(config.build.excludes);
 
       return gulp.src(target)
         .pipe(plugins.sourcemaps.init())
@@ -17,8 +20,8 @@ module.exports = function (gulp, plugins, config) {
         .pipe(plugins.sourcemaps.write('.', {
           sourceRoot: config.basepath.src
         }))
-        .pipe(gulp.dest(`${config.build.coreAssets}css/`));
-          // config.basepath.build + element + '/assets/' + config.version + '/css/')); 
+        .pipe(gulp.dest(`${config.basepath.build}/assets/${config.version}/css/`));
+        // .pipe(gulp.dest(config.basepath.build + element + '/assets/' + config.version + '/css/'));
     });
   };
 };

@@ -2,10 +2,11 @@
 * Imports Javascript components for the GLUE
 */
 
-import '../../../../../node_modules/bootstrap/dist/js/bootstrap.js';
+import '../../../../node_modules/bootstrap/dist/js/bootstrap.js';
 // import '../../../../../node_modules/bootstrap-accessibility-plugin/plugins/js/bootstrap-accessibility.js'; // Removed due to accessibility issues (ironically)
 import './bootstrap-accessibility.js';
 
+import '../../../../node_modules/generate-id/dist/generate-id.min.js'; // For site-search-autocomplete
 import './legacy/site-search-autocomplete.js';
 import './fragments/qg-lightbox.js';
 import './legacy/forms.js';
