@@ -42,11 +42,12 @@ gulp.task('clean-release', (cb) => {
 /* BUILD TASKS */
 gulp.task('scss', require('./gulp/build-tasks/scss')(gulp, plugins, config));
 gulp.task('html', require('./gulp/build-tasks/html')(gulp, plugins, config));
-    gulp.task('includes-cdn', require('./gulp/build-tasks/includes-cdn')(gulp, plugins, config));
+gulp.task('includes', require('./gulp/build-tasks/includes')(gulp, plugins, config));
+gulp.task('includes-cdn', require('./gulp/build-tasks/includes-cdn')(gulp, plugins, config));
 gulp.task('js', require('./gulp/build-tasks/js')(gulp, plugins, config));
 gulp.task('other-assets', require('./gulp/build-tasks/other-assets')(gulp, plugins, config, es));
 
-gulp.task('default', ['html', 'includes-cdn', 'scss', 'js', 'other-assets']);
+gulp.task('default', ['html', 'includes', 'includes-cdn', 'scss', 'js', 'other-assets']);
 gulp.task('build', ['default']);
 gulp.task('build:clean', (cb) => {
         runSequence('clean-build', 'default', cb);
@@ -57,7 +58,7 @@ gulp.task('watch', function () {
     gulp.watch([config.basepath.src + '/**/*.js'], ['js']);
     gulp.watch([config.basepath.src + '/**/*.html'], ['html']);
     gulp.watch([config.basepath.src + '/**/*.scss'], ['scss']);
-    gulp.watch([config.basepath.src + '/assets/includes/**/*.html'], ['template-assets']);
+    gulp.watch([config.basepath.src + '/assets/includes/**/*.html'], ['includes']);
     gulp.watch([config.basepath.src + '*', config.basepath.src + '*' + '*', config.basepath.src + '*' + '*'], ['other-assets']);
 });
 
@@ -69,7 +70,7 @@ gulp.task('assets-includes-cdn', require('./gulp/release-tasks/assets-includes-c
 gulp.task('copy-element', require('./gulp/release-tasks/copy-element')(gulp, plugins, config));
 gulp.task('release', (cb) => { 
     runSequence(
-        'clean-release',
+        'build:clean', 'clean-release', // TOT: Asif, this is the problem here
         ['scss-src', 'assets-core', 'assets-includes', 'assets-includes-cdn'],
         'copy-element', // Done last in order to over-ride assets-includes
         cb

@@ -6,7 +6,7 @@
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-    <title>Accessibility | Web Template | Queensland Government</title>
+    <title>Basics | Web Template | Queensland Government</title>
 
     <meta name="description" content="DESCRIPTION">
     <meta name="keywords" content="KEYWORDS">
@@ -64,7 +64,7 @@
     <ol class="list-inline">
         <li><a href="https://www.qld.gov.au/">Queensland Government home</a></li>
         <li><a href="index.html">Queensland Government Web Template</a></li>
-        <li>Accessibility</li>
+        <li>Layout and utilities</li>
     </ol>
 
 </nav>
@@ -78,20 +78,28 @@
 
                     <h1><small>Queensland Government Web Template</small></h1>
 
-                    <h1>Accessibility</h1>
+                    <h1>Layout and utilities</h1>
 
-                    <p class="lead">Queensland Government Web Template accessibility features.</p>
-
-                    <p>To support our users, we're continuing to implement accessibility features to make our sites easier to use.</p>
-
-                    <h2>Disabling accessibility features</h2>
-
-                    <p class="warn">This is not recommended.</p>
-
-                    <p>For testing purposes, or if these features are causing issues with applications built on the QG Web Template, these features can be turned off by adding <code>data-qg-accessibility="false"</code> to the <code>&lt;body&gt;</code> tag of your page: <code>&lt;body data-qg-accessibility="false"/&gt;</code>.</p>
+                    <p class="lead">Basics</p>
 
 <!-- ################################## -->
-    <h2 id="links-blank" class="category">Link in new window icon</h2>
+
+    <h2 id="layout" class="category">Layout</h2>
+    <p>X</p>
+    <h3>Page content - Three column layout</h3>
+    <p>The main content of Queensland Government web pages are layed out in three columns as you can see on this page. This is made up of the sections <code>#qg-section-nav</code>, <code>#qg-primary-content</code>, and <code>#qg-secondary-content</code>
+    <p>To remove the navigation or secondary content simply delete it, the CSS will adapt to your new layout.</p>
+    <h4>Wide layout and Index pages</h4>
+    <p>For index pages, applications, and other special purposes, it is possible to have the <code>#qg-primary-content</code> element span the whole width of the document. To do this, add the class <code>qg-wide</code> to the <code>#qg-content</code> element: <code>&lt;div id="qg-content" class="qg-wide"&gt;</code>.</p>
+    <p>Once you've done this, you'll notice the secondary content is no longer displayed. To add the secondary content back, add the class <code>qg-has-aside</code> to the <code>#qg-primary-content</code> element: <code>&lt;div id="qg-primary-content" class="qg-has-aside" role="main"&gt;</code>.</p>
+
+
+<!-- ################################## -->
+
+    <h2 id="accessibility" class="category">Accessibility</h2>
+    <p>To support our users, we're continuing to implement accessibility features to make our sites easier to use.</p>
+
+    <h3>Link in new window icon</h3>
     <p>
         Accessibility guidelines recommend not opening windows in links. However, if opening a window in a new link is required, the QG Web Template automatically styles the links displayed in the #qg-content section with a new window icon.
     </p>
@@ -105,7 +113,7 @@
     <p>If there is a user driven reason for it, you can disable this feature by adding the class 'qg-accessibility-off' to the hyperlink you which to disable accessibility on <code>&lt;a href="#" class="qg-accessibility-off"&gt;</code></p>
     <p>If you would like to turn this feature on for any hyperlink outside of the #qg-content element, add the <code>qg-accessibility-off</code> class: <code>&lt;a href="#" class="qg-accessibility-on"&gt;</code></p>
 
-    <h3>Javascript</h3>
+    <h4>Javascript</h4>
 
     <p>There is also a script that runs over each page to add accessibility to links opening in a new window.</p>
 
@@ -116,6 +124,13 @@
     <p>Secondly the script adds a title to your link if one hasn't already been set: <code>&lt;a href="#" title="Opens in new window"&gt;</code></p>
 
     <p>To turn both of these Javascript features off, add the class <code>qg-accessibility-off</code> to the hyperlink element <code>&lt;a href="#" class="qg-accessibility-off"&gt;</code></p>
+
+    <h3 id="disable-accessibilty">Disabling accessibility features</h3>
+
+    <p class="warn">This is not recommended.</p>
+
+    <p>For testing purposes, or if these features are causing issues with applications built on the QG Web Template, these features can be turned off by adding <code>data-qg-accessibility="false"</code> to the <code>&lt;body&gt;</code> tag of your page: <code>&lt;body data-qg-accessibility="false"/&gt;</code>.</p>
+
 <!-- ################################## -->
 
                     <div class="qg-content-footer">
@@ -149,18 +164,10 @@
                         <h2>On this page</h2>
 
                         <ul>
-                            <li><a href="#typography">Typography</a></li>
-                            <li><a href="#tables">Tables</a></li>
-                            <li><a href="#forms">Forms</a></li>
-                            <li><a href="#buttons">Buttons</a></li>
+                            <li><a href="#layout">Layout</a>
+                            <li><a href="#accessibility">Accessibility</a>
                         </ul>
 
-                    </div>
-
-                    <div class="qg-aside" role="complementary">
-                        <h2>Carer Business Discount Card</h2>
-
-                        <p>If you receive a Centrelink carer payment or carers allowance and live in Queensland, you are eligible for a <a href="/community/support-for-carers/carer-card/">Carer Business Discount Card</a>,which recognises the contribution carers make to the community and provides discounts on products and services.</p>
                     </div>
 
                 </aside>
