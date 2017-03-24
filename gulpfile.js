@@ -9,6 +9,7 @@ var argv            = require('yargs').argv;
 var plugins         = require('gulp-load-plugins')();
 var es              = require('event-stream');
 var runSequence     = require('run-sequence');
+var replace         = require('gulp-replace');
     // bowerConfig = require('./bower.json'),
     // runSequence = require('run-sequence'),
     // gutil       = require('gulp-util'),
@@ -16,7 +17,7 @@ var runSequence     = require('run-sequence');
     // eslint      = require('gulp-eslint'),
     // 
     // include     = require('gulp-include'),
-    // replace     = require('gulp-replace');
+    // 
 
 // For testing
 var karmaServer     = require('karma').Server;
@@ -41,14 +42,11 @@ gulp.task('clean-release', (cb) => {
 /* BUILD TASKS */
 gulp.task('scss', require('./gulp/build-tasks/scss')(gulp, plugins, config));
 gulp.task('html', require('./gulp/build-tasks/html')(gulp, plugins, config));
+    gulp.task('includes-cdn', require('./gulp/build-tasks/includes-cdn')(gulp, plugins, config));
 gulp.task('js', require('./gulp/build-tasks/js')(gulp, plugins, config));
 gulp.task('other-assets', require('./gulp/build-tasks/other-assets')(gulp, plugins, config, es));
 
-gulp.task('default', ['html', 
-    'scss',
-    'js',
-    'other-assets'
-]);
+gulp.task('default', ['html', 'includes-cdn', 'scss', 'js', 'other-assets']);
 gulp.task('build', ['default']);
 gulp.task('build:clean', (cb) => {
         runSequence('clean-build', 'default', cb);
@@ -67,11 +65,12 @@ gulp.task('watch', function () {
 gulp.task('scss-src', require('./gulp/release-tasks/scss-src')(gulp, plugins, config));
 gulp.task('assets-core', require('./gulp/release-tasks/assets-core')(gulp, plugins, config));
 gulp.task('assets-includes', require('./gulp/release-tasks/assets-includes')(gulp, plugins, config));
+gulp.task('assets-includes-cdn', require('./gulp/release-tasks/assets-includes-cdn')(gulp, plugins, config));
 gulp.task('copy-element', require('./gulp/release-tasks/copy-element')(gulp, plugins, config));
 gulp.task('release', (cb) => { 
     runSequence(
         'clean-release',
-        ['scss-src', 'assets-core', 'assets-includes'],
+        ['scss-src', 'assets-core', 'assets-includes', 'assets-includes-cdn'],
         'copy-element', // Done last in order to over-ride assets-includes
         cb
     );

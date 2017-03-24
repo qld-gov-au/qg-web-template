@@ -30,32 +30,43 @@ module.exports = {
       '!**/_old*',
       '!**/_local*',
       '!**/_local*/**/*',
+      '!**/*.css.map',
+      '!**/*.js.map',
     ],
   },
-  outputList: ['core', 'template-local', 'template-cdn', 'documentation'],
+  outputList: ['/', 'template-local', 'template-cdn', 'documentation'],
   output: {
-    core: {
-      assetsCore: true,
-      sourceSCSS: true,
-      assetsIncludes: true,
-
+    '/': {
+      assetsCore: true, // Default: false
+      sourceSCSS: true, // Default: false
+      assetsIncludes: true, // Default: false
+      assetsIncludesCdn: true, // Default: false
+      localToCdn: false, // Default: false, note to include the appropriate assetsIncludes directory above
+      copyElement: false, // Default: false, accepts string for source element
     },
     'template-local': {
       assetsCore: true,
       sourceSCSS: false,
       assetsIncludes: true,
-
+      assetsIncludesCdn: false,
+      localToCdn: false,
+      copyElement: 'template',
     },
     'template-cdn': {
       assetsCore: false,
       sourceSCSS: false,
-      assetsIncludes: true,
-
+      assetsIncludes: false,
+      assetsIncludesCdn: true,
+      localToCdn: true,
+      copyElement: 'template',
     },
     documentation: {
       assetsCore: false,
       sourceSCSS: false,
       assetsIncludes: true,
+      assetsIncludesCdn: false, // TODO: change to true
+      localToCdn: false, // TODO: change to true
+      copyElement: true,
     }
   },
 };
