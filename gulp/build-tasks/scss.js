@@ -1,5 +1,5 @@
 module.exports = function (gulp, plugins, config) {
-  return function () {
+  return function (cb) {
     config.projects.map((element) => {
       const target = [
         `${config.basepath.src}/assets/_project/scss/*.scss`,
@@ -20,8 +20,8 @@ module.exports = function (gulp, plugins, config) {
         .pipe(plugins.sourcemaps.write('.', {
           sourceRoot: config.basepath.src
         }))
-        .pipe(gulp.dest(`${config.basepath.build}/assets/${config.versionName}/css/`));
-        // .pipe(gulp.dest(config.basepath.build + element + '/assets/' + config.versionName + '/css/'));
+        .pipe(gulp.dest(`${config.basepath.build}/assets/${config.versionName}/css/`))
+        .on("end", cb);
     });
   };
 };

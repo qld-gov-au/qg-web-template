@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = function (gulp, plugins, config) {
-  return function () {
+  return function (cb) {
     config.projects.map((element) => {
       const target = [
       		`${config.basepath.src}/assets/includes/**/*.html`
@@ -12,7 +12,8 @@ module.exports = function (gulp, plugins, config) {
         .pipe(plugins.include({ hardFail: true }))
         .pipe(plugins.replace(regex, `="//static.qld.net.au/assets/${config.versionName}/`))
         .on('error', console.log)
-        .pipe(gulp.dest(`${config.basepath.build}/assets/includes-cdn/`));
+        .pipe(gulp.dest(`${config.basepath.build}/assets/includes-cdn/`))
+        .on("end", cb);
     });
   };
 };

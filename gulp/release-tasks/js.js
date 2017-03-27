@@ -1,53 +1,19 @@
-'use-strict';
-
-module.exports = function (gulp, plugins, config, mode) {
+module.exports = function (gulp, plugins, config) {
   return function () {
-    config.projects.map((element) => {
-      var buildDest = `${config.basepath.build}/assets/${config.versionName}/js/`;
-      // let releaseDest
+    config.outputList.map(function (element) {
+      const target = [
+        `${config.basepath.build}/assets/${config.versionName}/**/*.js`,
+      ].concat(config.release.excludes);
 
-      return gulp.src(`${config.basepath.src}/assets/_project/js/main.js`)
-        .pipe(plugins.webpack({
-          output: {
-            filename: 'main.js'
-          },
-          devtool: 'source-map',
-          module: {
-            loaders: [{
-              test: /\.js$/,
-              exclude: /(node_modules)/,
-              loader: 'babel',
-              query: {
-                presets: ['es2015']
-              }
-            }]
-          },
-          output: {
-            path: '',
-            filename: '',
-          }
-        },
-        {
-          output: {
-            filename: 'main.js'
-          },
-          devtool: 'source-map',
-          module: {
-            loaders: [{
-              test: /\.js$/,
-              exclude: /(node_modules)/,
-              loader: 'babel',
-              query: {
-                presets: ['es2015']
-              }
-            }]
-          },
-          output: {
-            path: '',
-            filename: '',
-          }
-        }))
-        .pipe(gulp.dest(`${config.basepath.build}/assets/${config.versionName}/js/`));
+      // Test if the element is set to deploy this component
+      if(config.output[element].assetsCore === true ) {
+        return gulp.src(target, { dot: true })
+          .pipe(plugins.uglify())
+          .on('error', console.log)
+          .pipe(gulp.dest(`${config.basepath.release}/${element}/assets/${config.versionName}/`));
+      } else {
+        return true;
+      }
     });
-  };
-};
+  }
+}

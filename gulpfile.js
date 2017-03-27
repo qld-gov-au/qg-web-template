@@ -4,7 +4,7 @@
 const gulp            = require('gulp');
 const config          = require('./gulp/gulp-config.js');
 const del             = require('del');
-const webpack         = require('webpack');
+const webpack         = require('webpack-stream');
 const argv            = require('yargs').argv;
 const plugins         = require('gulp-load-plugins')();
 const es              = require('event-stream');
@@ -15,9 +15,7 @@ const replace         = require('gulp-replace');
     // gutil       = require('gulp-util'),
     // gulpConnectSsi = require('gulp-connect-ssi'),
     // eslint      = require('gulp-eslint'),
-    // 
     // include     = require('gulp-include'),
-    // 
 
 // For testing
 const karmaServer     = require('karma').Server;
@@ -25,8 +23,6 @@ const fsPath          = require('fs-path');
 const eslintReporter  = require('eslint-html-reporter');
 const gulpConnectSsi  = require('gulp-connect-ssi');
 const gulpConnect     = require('gulp-connect');
-
-let jsDest = "";
 
 /* SSI */
 // Open using local server
@@ -45,7 +41,7 @@ gulp.task('scss', require('./gulp/build-tasks/scss')(gulp, plugins, config));
 gulp.task('html', require('./gulp/build-tasks/html')(gulp, plugins, config));
 gulp.task('includes', require('./gulp/build-tasks/includes')(gulp, plugins, config));
 gulp.task('includes-cdn', require('./gulp/build-tasks/includes-cdn')(gulp, plugins, config));
-gulp.task('js', require('./gulp/build-tasks/js')(gulp, plugins, config, 'build'));
+gulp.task('js', require('./gulp/build-tasks/js')(gulp, plugins, config, webpack));
 gulp.task('other-assets', require('./gulp/build-tasks/other-assets')(gulp, plugins, config, es));
 
 gulp.task('default', ['html', 'includes', 'includes-cdn', 'scss', 'js', 'other-assets']);
@@ -69,24 +65,14 @@ gulp.task('assets-core', require('./gulp/release-tasks/assets-core')(gulp, plugi
 gulp.task('assets-includes', require('./gulp/release-tasks/assets-includes')(gulp, plugins, config));
 gulp.task('assets-includes-cdn', require('./gulp/release-tasks/assets-includes-cdn')(gulp, plugins, config));
 gulp.task('release-files', require('./gulp/release-tasks/release-files')(gulp, plugins, config));
-
-// TODO: Asif, this is not a very elegant solution AT ALL, don't like it:
-/*
-jsDest = `${config.basepath.release}/assets/${config.version}/js/`;
-gulp.task('js-assets', require('./gulp/build-tasks/js')(gulp, plugins, config, jsDest));
-jsDest = `${config.basepath.release}/template-local/assets/${config.version}/js/`
-gulp.task('js-template-local', require('./gulp/build-tasks/js')(gulp, plugins, config, jsDest));
-gulp.task('release-js', ['js-assets', 'js-template-local']);
-*/
-gulp.task('release-js', require('./gulp/release-tasks/js')(gulp, plugins, config));
-
-// /END ugly JS release method
-
+gulp.task('release-js', require('./gulp/release-tasks/js')(gulp, plugins, config)); // Uglifies JS
+gulp.task('css', require('./gulp/release-tasks/css')(gulp, plugins, config)); // Minifies CSS
 gulp.task('copy-element', require('./gulp/release-tasks/copy-element')(gulp, plugins, config));
+
 gulp.task('release', (cb) => { 
     runSequence(
-        'build:clean', 'clean-release',
-        ['scss-src', 'assets-core', 'assets-includes', 'assets-includes-cdn', 'release-files'],
+        ['build:clean', 'clean-release'],
+        ['assets-core', 'scss-src', 'release-js', 'css', 'release-files', 'assets-includes', 'assets-includes-cdn'],
         'copy-element', // Done last in order to over-ride assets-includes
         cb
     );

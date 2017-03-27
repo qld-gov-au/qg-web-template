@@ -1,5 +1,5 @@
 module.exports = function (gulp, plugins, config) {
-  return function () {
+  return function (cb) {
     config.projects.map((element) => {
       const target = [
       		`${config.basepath.src}/**/*.html`,
@@ -9,7 +9,8 @@ module.exports = function (gulp, plugins, config) {
       return gulp.src(target, { dot: true })
         .pipe(plugins.include({ hardFail: true }))
         .on('error', console.log)
-        .pipe(gulp.dest(config.basepath.build));
+        .pipe(gulp.dest(config.basepath.build))
+        .on("end", cb);
     });
   };
 };

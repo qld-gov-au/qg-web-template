@@ -1,5 +1,5 @@
 module.exports = function (gulp, plugins, config, es) {
-    return function () {
+    return function (cb) {
         config.projects.map(function (element) {
             return es.merge([
                 // Images
@@ -17,7 +17,8 @@ module.exports = function (gulp, plugins, config, es) {
                 gulp.src(config.basepath.node_modules + '/font-awesome/fonts/**').pipe(
                     gulp.dest(config.basepath.build + '/assets/v3/fonts')
                 ),
-            ]);
+            ])
+            .on("end", cb);
         });
     };
 };
