@@ -4,8 +4,8 @@ module.exports = function (gulp, plugins, config) {
   return function () {
     config.projects.map((element) => {
       const target = [
-      		`${config.basepath.src}/assets/includes/**/*.html`
-      	].concat(config.build.excludes);
+      `${config.basepath.src}/assets/includes/**/*.html`
+      ].concat(config.build.excludes);
 
       return gulp.src(target, { dot: true })
         .pipe(plugins.include({ hardFail: true }))

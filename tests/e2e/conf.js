@@ -1,5 +1,3 @@
-var browserstack = require('browserstack-local');
-
 const nightwatchConfig = {
     src_folders: [ 'tests/e2e/specs' ],
     selenium: {
