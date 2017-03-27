@@ -1,6 +1,11 @@
-module.exports = function (gulp, plugins, config, dest) {
+'use-strict';
+
+module.exports = function (gulp, plugins, config, mode) {
   return function () {
     config.projects.map((element) => {
+      var buildDest = `${config.basepath.build}/assets/${config.version}/js/`;
+      // let releaseDest
+
       return gulp.src(`${config.basepath.src}/assets/_project/js/main.js`)
         .pipe(plugins.webpack({
           output: {
@@ -16,9 +21,13 @@ module.exports = function (gulp, plugins, config, dest) {
                 presets: ['es2015']
               }
             }]
+          },
+          output: {
+            path: '',
+            filename: '',
           }
         }))
-        .pipe(gulp.dest(dest));
+        .pipe(gulp.dest(buildDest));
     });
   };
 };

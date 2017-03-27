@@ -45,15 +45,14 @@ gulp.task('scss', require('./gulp/build-tasks/scss')(gulp, plugins, config));
 gulp.task('html', require('./gulp/build-tasks/html')(gulp, plugins, config));
 gulp.task('includes', require('./gulp/build-tasks/includes')(gulp, plugins, config));
 gulp.task('includes-cdn', require('./gulp/build-tasks/includes-cdn')(gulp, plugins, config));
-    jsDest = `${config.basepath.build}/assets/${config.version}/js/`;
-gulp.task('js', require('./gulp/build-tasks/js')(gulp, plugins, config, jsDest));
+gulp.task('js', require('./gulp/build-tasks/js')(gulp, plugins, config, 'build'));
 gulp.task('other-assets', require('./gulp/build-tasks/other-assets')(gulp, plugins, config, es));
 
 gulp.task('default', ['html', 'includes', 'includes-cdn', 'scss', 'js', 'other-assets']);
 gulp.task('build', ['default']);
 gulp.task('build:clean', (cb) => {
-        runSequence('clean-build', 'default', cb);
-    });
+    runSequence('clean-build', 'default', cb);
+});
 
 /* WATCH TASSKS */
 gulp.task('watch', function () {
@@ -71,18 +70,24 @@ gulp.task('assets-includes', require('./gulp/release-tasks/assets-includes')(gul
 gulp.task('assets-includes-cdn', require('./gulp/release-tasks/assets-includes-cdn')(gulp, plugins, config));
 
 // TODO: Asif, this is not a very elegant solution AT ALL, don't like it:
+
 jsDest = `${config.basepath.release}/assets/${config.version}/js/`;
 gulp.task('js-assets', require('./gulp/build-tasks/js')(gulp, plugins, config, jsDest));
 jsDest = `${config.basepath.release}/template-local/assets/${config.version}/js/`
 gulp.task('js-template-local', require('./gulp/build-tasks/js')(gulp, plugins, config, jsDest));
 gulp.task('release-js', ['js-assets', 'js-template-local']);
+
 // /END ugly JS release method
+gulp.task('delay', function (cb) {
+    setTimeout(cb, 0);
+});
 
 gulp.task('copy-element', require('./gulp/release-tasks/copy-element')(gulp, plugins, config));
 gulp.task('release', (cb) => { 
     runSequence(
         'build:clean', 'clean-release',
-        ['scss-src', 'assets-core', 'assets-includes', 'assets-includes-cdn', 'release-js'],
+        ['scss-src', 'assets-core', 'assets-includes', 'assets-includes-cdn', 'release-js'], // 
+        // 'delay', // To fix webpack bugs
         'copy-element', // Done last in order to over-ride assets-includes
         cb
     );
