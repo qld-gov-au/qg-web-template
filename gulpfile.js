@@ -1,15 +1,15 @@
 'use strict';
 
 // Core
-var gulp            = require('gulp');
-var config          = require('./gulp/gulp-config.js');
-var del             = require('del');
-var webpack         = require('webpack');
-var argv            = require('yargs').argv;
-var plugins         = require('gulp-load-plugins')();
-var es              = require('event-stream');
-var runSequence     = require('run-sequence');
-var replace         = require('gulp-replace');
+let gulp            = require('gulp');
+let config          = require('./gulp/gulp-config.js');
+let del             = require('del');
+let webpack         = require('webpack');
+let argv            = require('yargs').argv;
+let plugins         = require('gulp-load-plugins')();
+let es              = require('event-stream');
+let runSequence     = require('run-sequence');
+let replace         = require('gulp-replace');
     // bowerConfig = require('./bower.json'),
     // runSequence = require('run-sequence'),
     // gutil       = require('gulp-util'),
@@ -20,12 +20,13 @@ var replace         = require('gulp-replace');
     // 
 
 // For testing
-var karmaServer     = require('karma').Server;
-var fsPath          = require('fs-path');
-var eslintReporter  = require('eslint-html-reporter');
-var gulpConnectSsi  = require('gulp-connect-ssi');
-var gulpConnect     = require('gulp-connect');
+let karmaServer     = require('karma').Server;
+let fsPath          = require('fs-path');
+let eslintReporter  = require('eslint-html-reporter');
+let gulpConnectSsi  = require('gulp-connect-ssi');
+let gulpConnect     = require('gulp-connect');
 
+let jsDest = "";
 
 /* SSI */
 // Open using local server
@@ -44,7 +45,8 @@ gulp.task('scss', require('./gulp/build-tasks/scss')(gulp, plugins, config));
 gulp.task('html', require('./gulp/build-tasks/html')(gulp, plugins, config));
 gulp.task('includes', require('./gulp/build-tasks/includes')(gulp, plugins, config));
 gulp.task('includes-cdn', require('./gulp/build-tasks/includes-cdn')(gulp, plugins, config));
-gulp.task('js', require('./gulp/build-tasks/js')(gulp, plugins, config));
+    jsDest = `${config.basepath.build}/assets/${config.version}/js/`;
+gulp.task('js', require('./gulp/build-tasks/js')(gulp, plugins, config, jsDest));
 gulp.task('other-assets', require('./gulp/build-tasks/other-assets')(gulp, plugins, config, es));
 
 gulp.task('default', ['html', 'includes', 'includes-cdn', 'scss', 'js', 'other-assets']);
@@ -67,11 +69,20 @@ gulp.task('scss-src', require('./gulp/release-tasks/scss-src')(gulp, plugins, co
 gulp.task('assets-core', require('./gulp/release-tasks/assets-core')(gulp, plugins, config));
 gulp.task('assets-includes', require('./gulp/release-tasks/assets-includes')(gulp, plugins, config));
 gulp.task('assets-includes-cdn', require('./gulp/release-tasks/assets-includes-cdn')(gulp, plugins, config));
+
+// TODO: Asif, this is not a very elegant solution AT ALL, don't like it:
+jsDest = `${config.basepath.release}/assets/${config.version}/js/`;
+gulp.task('js-assets', require('./gulp/build-tasks/js')(gulp, plugins, config, jsDest));
+jsDest = `${config.basepath.release}/template-local/assets/${config.version}/js/`
+gulp.task('js-template-local', require('./gulp/build-tasks/js')(gulp, plugins, config, jsDest));
+gulp.task('release-js', ['js-assets', 'js-template-local']);
+// /END ugly JS release method
+
 gulp.task('copy-element', require('./gulp/release-tasks/copy-element')(gulp, plugins, config));
 gulp.task('release', (cb) => { 
     runSequence(
-        'build:clean', 'clean-release', // TOT: Asif, this is the problem here
-        ['scss-src', 'assets-core', 'assets-includes', 'assets-includes-cdn'],
+        'build:clean', 'clean-release',
+        ['scss-src', 'assets-core', 'assets-includes', 'assets-includes-cdn', 'release-js'],
         'copy-element', // Done last in order to over-ride assets-includes
         cb
     );

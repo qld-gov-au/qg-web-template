@@ -1,4 +1,4 @@
-module.exports = function (gulp, plugins, config) {
+module.exports = function (gulp, plugins, config, dest) {
   return function () {
     config.projects.map((element) => {
       return gulp.src(`${config.basepath.src}/assets/_project/js/main.js`)
@@ -18,7 +18,7 @@ module.exports = function (gulp, plugins, config) {
             }]
           }
         }))
-        .pipe(gulp.dest(`${config.basepath.build}/assets/${config.version}/js/`));
+        .pipe(gulp.dest(dest));
     });
   };
 };
