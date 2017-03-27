@@ -68,6 +68,7 @@ gulp.task('scss-src', require('./gulp/release-tasks/scss-src')(gulp, plugins, co
 gulp.task('assets-core', require('./gulp/release-tasks/assets-core')(gulp, plugins, config));
 gulp.task('assets-includes', require('./gulp/release-tasks/assets-includes')(gulp, plugins, config));
 gulp.task('assets-includes-cdn', require('./gulp/release-tasks/assets-includes-cdn')(gulp, plugins, config));
+gulp.task('release-files', require('./gulp/release-tasks/release-files')(gulp, plugins, config));
 
 // TODO: Asif, this is not a very elegant solution AT ALL, don't like it:
 /*
@@ -85,7 +86,7 @@ gulp.task('copy-element', require('./gulp/release-tasks/copy-element')(gulp, plu
 gulp.task('release', (cb) => { 
     runSequence(
         'build:clean', 'clean-release',
-        ['scss-src', 'assets-core', 'assets-includes', 'assets-includes-cdn', 'release-js'],
+        ['scss-src', 'assets-core', 'assets-includes', 'assets-includes-cdn', 'release-files'],
         'copy-element', // Done last in order to over-ride assets-includes
         cb
     );

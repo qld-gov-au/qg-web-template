@@ -3,7 +3,7 @@
 module.exports = function (gulp, plugins, config, mode) {
   return function () {
     config.projects.map((element) => {
-      var buildDest = `${config.basepath.build}/assets/${config.version}/js/`;
+      var buildDest = `${config.basepath.build}/assets/${config.versionName}/js/`;
       // let releaseDest
 
       return gulp.src(`${config.basepath.src}/assets/_project/js/main.js`)
@@ -47,7 +47,7 @@ module.exports = function (gulp, plugins, config, mode) {
             filename: '',
           }
         }))
-        .pipe(gulp.dest(`${config.basepath.build}/assets/${config.version}/js/`));
+        .pipe(gulp.dest(`${config.basepath.build}/assets/${config.versionName}/js/`));
     });
   };
 };

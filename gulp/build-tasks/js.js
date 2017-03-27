@@ -24,7 +24,7 @@ module.exports = function (gulp, plugins, config, mode) {
             filename: '',
           }
         }))
-        .pipe(gulp.dest(`${config.basepath.build}/assets/${config.version}/js/`));
+        .pipe(gulp.dest(`${config.basepath.build}/assets/${config.versionName}/js/`));
     });
   };
 };

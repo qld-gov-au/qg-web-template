@@ -1,7 +1,13 @@
 'use strict';
 
 module.exports = {
-  version: 'v3',
+  versionName: 'v3',
+  versionStr: '3.0.9',
+  version: {
+    major: 3,
+    semiMajor: 0,
+    minor: 9,
+  },
   phase: 'Alpha',
   basepath: {
     src: 'src',

@@ -4,11 +4,11 @@ module.exports = function (gulp, plugins, config, es) {
             return es.merge([
                 // Images
                 gulp.src(config.basepath.src  + '/assets/images/**/*').pipe(
-                    gulp.dest(config.basepath.build + '/assets/' + config.version + '/images/')
+                    gulp.dest(config.basepath.build + '/assets/' + config.versionName + '/images/')
                 ),
                 // Libraries
                 gulp.src(config.basepath.src +'/assets/_project/lib/**').pipe(
-                    gulp.dest(config.basepath.build + '/assets/' + config.version + '/lib/')
+                    gulp.dest(config.basepath.build + '/assets/' + config.versionName + '/lib/')
                 ),
                 // Fonts
                 gulp.src(config.basepath.node_modules + '/bootstrap-sass/assets/fonts/**').pipe(
