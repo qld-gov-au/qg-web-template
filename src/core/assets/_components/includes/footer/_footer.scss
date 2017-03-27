@@ -1,8 +1,27 @@
+.qg-toggle-carret {
+  margin-top: -.5em;
+  color: #fff;
+
+  &:focus, &:hover, &:active {
+    text-decoration: none;
+    color: #fff;
+  }
+}
+.qg-toggle-carret:after {
+  // TODO: Move this
+  content: "\f0d8";
+  font-family: FontAwesome;
+  color: #fff;
+}
+.qg-toggle-carret.collapsed:after {
+  
+  content: "\f0d7";
+}
 
 .qg-more-info {
   color: #FFF;
   background-color:$qg-dark-blue;
-  padding-bottom: 0;
+  padding-bottom: 1em;
 
   a, a:link {
     color: #FFF;  
@@ -47,7 +66,25 @@
 
   }
 
+  .qg-toggle-carret {
+    float: right;
+  }
+
 }
+
+@include breakpoint($bs-min-md){
+  .qg-more-info {
+    .qg-toggle-carret {
+      display: none;
+    }
+    ul.collapse {
+      display: block !important;
+    }
+  }
+}
+
+
+
 
 // ###########################################
 

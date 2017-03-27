@@ -1,6 +1,6 @@
 /* ! section (side) navigation */
 #qg-content #qg-section-nav {   
-	background-color: $qg-light-gray !important;
+	background-color: $qg-light-gray;
 	padding: 0 0 2em 0;
 
 	h2 {
@@ -16,6 +16,10 @@
 		padding: 0;
 	}
 
+	ul > li > a:before {
+		font-family: FontAwesome;
+	}
+
 	li {
 		padding: 0;
 		list-style-type: none;
@@ -23,27 +27,27 @@
 		font-weight: 700;
 		transition: all 0.2s;
 
-		a, a:link, a:visited {
+		a {
 			margin: 0;
 			padding: 0.8em .5em .6em 30px;
 			text-decoration: none;
 			display: block;
-		}
 
-		a:hover {
-			text-decoration:none;
-			background-color: $qg-light-gray7;
+			&:hover {
+				text-decoration:none;
+				background-color: $qg-light-gray7;
+			}
 		}
 
 		a.active {
 			color: #FFF;
-			background-color: $qg-blue;     
+			background-color: $qg-blue;
 		}
 
-		a:before {
-			font-family: FontAwesome;
+		a:before, .page-number {
+			// font-family: FontAwesome;
 			font-size: .9em;
-			display: inline-block !important;
+			display: inline-block;
 			content: "\f054";
 			margin: 0;
 			padding: 0 0.3em 0 0;
@@ -55,12 +59,69 @@
 		a.active:before {
 			color: #FFF;  
 			opacity: 1;   
-		}    
-
-		li a:before  {
-			padding-left: 30px;  
 		}
 
+		ul, ol {
+			padding-left: 0;
+
+			a {
+				position: relative;
+				padding-left: 60px;
+
+				&:before, .page-number {
+					position: absolute;
+					margin-top: 0.1em;
+					margin-left: -18px;
+					opacity: 1;
+				}
+			}
+		}
+		
+		ol:not(.qg-manual-numbers) {
+
+			a:before, .page-number {
+				position: absolute;
+				font-family: Lato;
+				content: " ";
+				color: #007EB1;
+				font-weight: 800;
+			}
+			.page-number {
+				display: none;
+			}
+
+			li:nth-child(1) > a:before { content: "1"; }
+			li:nth-child(2) > a:before { content: "2"; }
+			li:nth-child(3) > a:before { content: "3"; }
+			li:nth-child(4) > a:before { content: "4"; }
+			li:nth-child(5) > a:before { content: "5"; }
+			li:nth-child(6) > a:before { content: "6"; }
+			li:nth-child(7) > a:before { content: "7"; }
+			li:nth-child(8) > a:before { content: "8"; }
+			li:nth-child(9) > a:before { content: "9"; }
+			li:nth-child(10) > a:before { content: "10"; }
+			li:nth-child(11) > a:before { content: "11"; }
+			li:nth-child(11) > a:before { content: "12"; }
+			li:nth-child(11) > a:before { content: "13"; }
+			li:nth-child(11) > a:before { content: "14"; }
+			li:nth-child(11) > a:before { content: "15"; }
+			li:nth-child(11) > a:before { content: "16"; }
+			li:nth-child(11) > a:before { content: "17"; }
+			li:nth-child(11) > a:before { content: "18"; }
+			li:nth-child(11) > a:before { content: "19"; }
+			li:nth-child(11) > a:before { content: "20"; }
+		}
+		ol.qg-manual-numbers {
+			a:before {
+				display: none;
+			}
+			.page-number {
+				display: inline;
+			}
+		}
+		ul .page-number {
+			display: none;
+		}
 	}
 
 }
