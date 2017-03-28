@@ -6,15 +6,18 @@ _This project is currently a work in progress._
 
 ## Repo structure
 This repo should contain three main branches. DO NOT WORK DIRECTLY INTO THESE BRANCHES. Instead create your own branch using the below 'creating new branches' instructions, and use a pull request to get that into the working branch.
+
 - working: For integrating features for the next version
 - beta: For testing
 - master: The current live assets
 
 ### Creating new branches
 To keep the repository clean, branches must be prefixed into categories with a forwardslash /. Categories come from JIRA and are (note capitalisation): 
+
 - Bugfix: For bugs and errors for the next release
 - Feature: For new features
 - Hotfix: For critical bugs and errors which will be merged into the current release
+
 Add the JIRA job number after the category type, or the initials of the developer making the change if there is no JIRA job.
 Example: Bugfix/QOL-841-Fix-bugs-for-tmr
 
