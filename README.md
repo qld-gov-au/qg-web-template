@@ -23,7 +23,7 @@ npm install
 
 ### 3. Create a branch
 
-**WARNING: DO NOT WORK DIRECTLY IN working, beta, or master BRANCHES**
+**WARNING: Do not work directly in 'working', 'beta', or 'master' branches**
 
 To keep the repository clean, branches must be prefixed into categories with a forwardslash /. Categories come from JIRA and are (note capitalisation): 
 
@@ -33,6 +33,7 @@ To keep the repository clean, branches must be prefixed into categories with a f
 
 Add the JIRA job number after the category type, or the initials of the developer making the change if there is no JIRA job.
 Example: Bugfix/QOL-100-Fixing-nav-nesting-issue
+It's best to checkout files from working, or beta. *Note: working may not always be stable, so in those instances use beta.*
 
 **If you use git command line, use the following commands to create your branch**
 
@@ -43,7 +44,6 @@ git checkout -b Bugfix/QOL-100-Fixing-nav-nesting-issue
 ```
 
 Replace "Bugfix/QOL-100-Fixing-nav-nesting-issue" with your branch.
-It's best to checkout files from working, or beta. *Note: working may not always be stable, so in those instances use beta.*
 
 ### 4. Usage
 
