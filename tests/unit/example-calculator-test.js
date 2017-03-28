@@ -1,4 +1,4 @@
-import Calculator from '../../src/core/assets/_components/general/testing-example-SampleClass.js';
+import Calculator from '../../src/testing-example-SampleClass.js';
 
 describe('Calculator', () => {
   it('should add two numbers', () => {
@@ -10,7 +10,7 @@ describe('Calculator', () => {
   it('should substract two numbers', () => {
     const calculator = new Calculator();
     const sub = calculator.sub(5, 2);
-    expect(sub).toBe(30);
+    expect(sub).toBe(3);
   });
 });
 
