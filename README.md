@@ -4,20 +4,73 @@
 
 _This project is currently a work in progress._
 
-**Basic commands :**<br />
-    - Make sure node and npm are installed. Check using **node -v** and **npm -v** commands. If not already installed then please install from this website  [node website](https://nodejs.org/en/) <br />
-    - **npm install** to install all the node packages (If behind a corporate web proxy please have a look at this website [How to setup Node.js and Npm behind a corporate web proxy](https://jjasonclark.com/how-to-setup-node-behind-web-proxy))<br />
-    - **gulp build** command to create a build folder from the src folder files<br />
-    - **gulp build-jinja** command performs build as above then replaces ssi directives with JINJA2 <br />
-    - **gulp watch** command to sync changes between the src folder and the build folder on saving the files<br />
-    - **gulp clean:build** command to remove the build folder before creating a new build folder<br />
-    - **gulp release** command to create a release folder from the build folder files. Please make sure to run the _gulp build_ command before running the _gulp release_ command<br />
-    - **gulp clean:release** command to remove the release folder before creating a new release folder<br />
-    - **gulp generate --template=nameOftheTemplate** where name of the template can be swe/cue/flux/ice. This command will provide a link to view the templates in a browser.
+## Download
+```bash
+git clone https://github.com/qld-gov-au/glue-template.git
+```
+
+## 1. Setup
+**Make sure you have Node version >= 6.0 and NPM >= 3**
+
+Install all the node packages (If behind a corporate web proxy please have a look at this website [How to setup Node.js and Npm behind a corporate web proxy](https://jjasonclark.com/how-to-setup-node-behind-web-proxy))
+```bash
+npm install
+```
+## 2. Usage
+**Command to create a build folder from the src folder files**
+```bash
+gulp build
+```
+**Command performs build as above then replaces ssi directives with JINJA2**
+```bash
+gulp build-jinja
+```
+**Watch and run tests**
+```bash
+gulp watch
+```
+**Command to create a release folder from the build folder files. Please make sure to run the gulp build command before running the gulp release command**
+```bash
+gulp release
+```
+**To start a local server**
+```bash
+gulp serve
+```
+**To run Unit tests and Linting tests**
+```bash
+gulp test
+```
+**Watch and run tests**
+```bash
+gulp watch:test
+```
+**To run E2E tests using Browserstack**. 
+
+Please make sure to setup browserstack _config file_ (step 3) and run _gulp serve_ before running browserstack E2E tests
+```bash
+gulp test:browserstack --browsers _browser names_
+```
+_browser name_ can be a browser or multiple browsers,
+for example chrome or ie,chrome,safari
+We can add more browser configurations in conf.js
+
+To view testing reports (coverage, eslint and unit test)
+```bash
+gulp serve --type=reports-server
+```
 
 
-**Directory structure :**<br />
-    - **src folder** contains all the files of the projects. This is where developers will be making all the changes.<br />
-    - **build folder** is where developers will be pushing the changes from the _src folder_ to test the files before they push it to the _release folder_.<br />
-    - **release folder** will be created from the _build folder_ files and it will be the final version which will be deployed to the CMS.<br />
+## 3. Browserstack Setup
+1.) Create a .env file in the root of your project
+
+2.) Place Browserstack configs in this file =
+```bash
+BROWSERSTACK_USERNAME = username
+BROWSERSTACK_ACCESS_KEY = key
+PROXYHOST = proxyhost (leave blank if no proxy)
+PROXYPORT = proxyport (leave blank if no proxy)
+PROXYPROTOCOL = proxyprotocol (leave blank if no proxy)
+```
+
 
