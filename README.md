@@ -86,4 +86,20 @@ PROXYPORT = proxyport (leave blank if no proxy)
 PROXYPROTOCOL = proxyprotocol (leave blank if no proxy)
 ```
 
-## Structure
+## File structure
+
+
+├── src/ - Where the source for the template are kept
+│	├ assets/ 
+│	│	├ _project/ - 	Files in here are compled specially.
+│	│	│				Keep an eye on the build file when changing them.
+│	│	├ images/ -
+│	│	├ includes/ - 	The main includes. These files 
+│
+│
+│
+│
+└
+### src - Source files
+This is where the source for the project is kept.
+### 
