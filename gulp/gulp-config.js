@@ -1,7 +1,13 @@
 'use strict';
 
-const config = {
-  version: 'v3',
+module.exports = {
+  versionName: 'v3',
+  versionStr: '3.0.9',
+  version: {
+    major: 3,
+    semiMajor: 0,
+    minor: 9,
+  },
   phase: 'Alpha',
   basepath: {
     src: 'src',
@@ -15,13 +21,13 @@ const config = {
   },
 
   projects: ['core'], // 'cue'
-
+  
   build: {
     excludes: [
       '!**/_DELETE.*/**/*',
       '!**/_old*/**/*',
-      '!**/_old*'
-    ]
+      '!**/_old*',
+    ],
   },
   release: {
     excludes: [
@@ -31,28 +37,8 @@ const config = {
       '!**/_local*',
       '!**/_local*/**/*',
       '!**/*.css.map',
-      '!**/*.js.map'
-    ]
-  },
-  test: {
-      e2eTestReport () {
-          return config.basepath.test + 'reports/e2e/htmlReport.html';
-      },
-      unitTestReport () {
-          return config.basepath.test + 'reports/unit-test/report.html';
-      },
-      lintReport () {
-          return config.basepath.test + 'reports/eslint/report.html';
-      },
-      coverageReport () {
-          return config.basepath.test + 'reports/coverage/index.html';
-      },
-      protractorConfig () {
-          return 'tests/protractor.config.js';
-      },
-      karmaConfig () {
-          return process.cwd() + '/karma.config.js';
-      }
+      '!**/*.js.map',
+    ],
   },
   outputList: ['/', 'template-local', 'template-cdn', 'documentation'],
   output: {
@@ -62,7 +48,7 @@ const config = {
       assetsIncludes: true, // Default: false
       assetsIncludesCdn: true, // Default: false
       localToCdn: false, // Default: false, note to include the appropriate assetsIncludes directory above
-      copyElement: false // Default: false, accepts string for source element
+      copyElement: false, // Default: false, accepts string for source element
     },
     'template-local': {
       assetsCore: true,
@@ -70,7 +56,7 @@ const config = {
       assetsIncludes: true,
       assetsIncludesCdn: false,
       localToCdn: false,
-      copyElement: 'template'
+      copyElement: 'template',
     },
     'template-cdn': {
       assetsCore: false,
@@ -78,7 +64,7 @@ const config = {
       assetsIncludes: false,
       assetsIncludesCdn: true,
       localToCdn: true,
-      copyElement: 'template'
+      copyElement: 'template',
     },
     documentation: {
       assetsCore: false,
@@ -86,8 +72,7 @@ const config = {
       assetsIncludes: true,
       assetsIncludesCdn: false, // TODO: change to true
       localToCdn: false, // TODO: change to true
-      copyElement: true
+      copyElement: true,
     }
-  }
+  },
 };
-module.exports = config;

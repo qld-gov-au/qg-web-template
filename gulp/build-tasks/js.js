@@ -1,8 +1,10 @@
-module.exports = function (gulp, plugins, config) {
-  return function () {
+'use-strict';
+
+module.exports = function (gulp, plugins, config, webpack) {
+  return function (cb) {
     config.projects.map((element) => {
       return gulp.src(`${config.basepath.src}/assets/_project/js/main.js`)
-        .pipe(plugins.webpack({
+        .pipe(webpack({
           output: {
             filename: 'main.js'
           },
@@ -18,7 +20,8 @@ module.exports = function (gulp, plugins, config) {
             }]
           }
         }))
-        .pipe(gulp.dest(`${config.basepath.build}/assets/${config.version}/js/`));
+        .pipe(gulp.dest(`${config.basepath.build}/assets/${config.versionName}/js/`))
+        .on("end", cb);
     });
   };
 };
