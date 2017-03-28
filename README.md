@@ -90,11 +90,17 @@ PROXYPROTOCOL = proxyprotocol (leave blank if no proxy)
 
 
  ├─ src/ - Where the source for the template are kept
+
  │	├─ assets/ 
+
  │	│	├─ _project/ - 	Files in here are compled specially
+
  │	│	│				Keep an eye on the build file when changing them
+
  │	│	├─ images/ -
- │	│	├─ includes/ - 	The main includes. These files 
+
+ │	│	├─ includes/ - 	The main includes. These files
+ 
  │
  │
  │
