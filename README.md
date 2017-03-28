@@ -89,7 +89,7 @@ PROXYPROTOCOL = proxyprotocol (leave blank if no proxy)
 ## File structure
 
 
- ├─ src/ - Where the source for the template are kept
+ ├─ src/ - Where the source for the template are kept\n
  │	├─ assets/ 
 
  │	│	├─ _project/ - 	Files in here are compled specially
