@@ -4,6 +4,17 @@
 
 _This project is currently a work in progress._
 
+## Repo structure
+This repo should contain three main branches:
+- working: 
+- beta: 
+- master: 
+
+### Creating new branches
+To keep the repository clean, branches should be prefixed into categories with a forwardslash /. Categories come from JIRA and are (note capitalisation): 
+- Bugfix: For bugs and errors for the next release
+- Feature: For new features
+- Hotfix: For critical bugs and errors which will be merged into the current release
 
 ## Getting started
 ### 1. Download
@@ -62,8 +73,7 @@ To view testing reports (coverage, eslint and unit test)
 gulp serve --type=reports-server
 ```
 
-
-### 3. Browserstack Setup
+### 4. Browserstack Setup
 1.) Create a .env file in the root of your project
 
 2.) Place Browserstack configs in this file =
