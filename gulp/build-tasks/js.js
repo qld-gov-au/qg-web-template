@@ -6,7 +6,7 @@ module.exports = function (gulp, plugins, config, webpack) {
       return gulp.src(`${config.basepath.src}/assets/_project/js/main.js`)
         .pipe(webpack({
           output: {
-            filename: 'main.js'
+            filename: 'main.js',
           },
           devtool: 'source-map',
           module: {
@@ -15,13 +15,13 @@ module.exports = function (gulp, plugins, config, webpack) {
               exclude: /(node_modules)/,
               loader: 'babel',
               query: {
-                presets: ['es2015']
-              }
-            }]
-          }
+                presets: ['es2015'],
+              },
+            }],
+          },
         }))
         .pipe(gulp.dest(`${config.basepath.build}/assets/${config.versionName}/js/`))
-        .on("end", cb);
+        .on('end', cb);
     });
   };
 };

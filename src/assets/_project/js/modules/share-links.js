@@ -10,24 +10,22 @@
 * Model
 **/
 
-function returnSocialLinks () {
-  return {
-    primary: [
-      {title: 'Facebook',   showTitle: false, icon: renderIcon('fa', 'facebook')},
-      {title: 'Twitter',    showTitle: false, icon: renderIcon('fa', 'twitter')},
-      {title: 'LinkedIn',   showTitle: false, icon: renderIcon('fa', 'linkedin')},
-    ],
-    secondary: [
-      // {title: 'Delicious',    showTitle: true, icon: renderIcon('fa', 'delicious')},
-      {title: 'Digg',         showTitle: true, icon: renderIcon('fa', 'digg')},
-      // {title: 'Evernote',     showTitle: true, icon: renderIcon('svg', 'evernote', '/assets/v3/images/evernote-logo-white.svg')},
-      // {title: 'Reddit',       showTitle: true, icon: renderIcon('fa', 'reddit')},
-      // {title: 'StumbleUpon',  showTitle: true, icon: renderIcon('fa', 'stumbleupon')},
-      // {title: 'Tumblr',       showTitle: true, icon: renderIcon('fa', 'tumblr')},
-      {title: 'Google+',      showTitle: true, icon: renderIcon('fa', 'google-plus')},
-    ]
-  };
-}
+const socialLinksList = {
+  primary: [
+    { title: 'Facebook', showTitle: false, icon: renderIcon('fa', 'facebook') },
+    { title: 'Twitter',  showTitle: false, icon: renderIcon('fa', 'twitter') },
+    { title: 'LinkedIn', showTitle: false, icon: renderIcon('fa', 'linkedin') },
+  ],
+  secondary: [
+    // {title: 'Delicious',    showTitle: true, icon: renderIcon('fa', 'delicious')},
+    { title: 'Digg',     showTitle: true, icon: renderIcon('fa', 'digg') },
+    // {title: 'Evernote',     showTitle: true, icon: renderIcon('svg', 'evernote', '/assets/v3/images/evernote-logo-white.svg')},
+    // {title: 'Reddit',       showTitle: true, icon: renderIcon('fa', 'reddit')},
+    // {title: 'StumbleUpon',  showTitle: true, icon: renderIcon('fa', 'stumbleupon')},
+    // {title: 'Tumblr',       showTitle: true, icon: renderIcon('fa', 'tumblr')},
+    { title: 'Google+',  showTitle: true, icon: renderIcon('fa', 'google-plus') },
+  ],
+};
 
 /**
 * #####################################
@@ -35,37 +33,41 @@ function returnSocialLinks () {
 **/
 
 function renderSocialURL (who, from, title, domain, description) {
-  switch(who) {
-    case 'facebook':
-      return `http://www.facebook.com/share.php?u=${from}&title=${title}`; break;
-    case 'twitter':
-      return `http://twitter.com/home?status=${title}+${from}`; break;
-    case 'linkedin':
-      return `http://www.linkedin.com/shareArticle?mini=true&url=${from}&title=${title}&source=${domain}`; break;
-    case 'delicious':
-      return `http://del.icio.us/post?url=${from}&title=${title}]&notes=${description}`; break;
-    case 'digg':
-      return `http://www.digg.com/submit?phase=2&url=${from}&title=${title}`; break;
-    case 'evernote':
-      return `http://www.evernote.com/clip.action?url=${from}&title=${title}`; break;
-    case 'reddit':
-      return `http://www.reddit.com/submit?url=${from}&title=${title}`; break;
-    case 'stumbleupon':
-      return `http://www.stumbleupon.com/submit?url=${from}&title=${title}`; break;
-    case 'tumblr':
-      return `https://www.tumblr.com/widgets/share/tool?posttype=link&content=${from}&title=${title}&caption=${description}`; break;
-    case 'google+':
-      return `https://plus.google.com/share?url=${from}`; break;
+  switch (who) {
+
+  case 'facebook':
+    return `http://www.facebook.com/share.php?u=${from}&title=${title}`;
+  case 'twitter':
+    return `http://twitter.com/home?status=${title}+${from}`;
+  case 'linkedin':
+    return `http://www.linkedin.com/shareArticle?mini=true&url=${from}&title=${title}&source=${domain}`;
+  case 'delicious':
+    return `http://del.icio.us/post?url=${from}&title=${title}]&notes=${description}`;
+  case 'digg':
+    return `http://www.digg.com/submit?phase=2&url=${from}&title=${title}`;
+  case 'evernote':
+    return `http://www.evernote.com/clip.action?url=${from}&title=${title}`;
+  case 'reddit':
+    return `http://www.reddit.com/submit?url=${from}&title=${title}`;
+  case 'stumbleupon':
+    return `http://www.stumbleupon.com/submit?url=${from}&title=${title}`;
+  case 'tumblr':
+    return `https://www.tumblr.com/widgets/share/tool?posttype=link&content=${from}&title=${title}&caption=${description}`;
+  case 'google+':
+    return `https://plus.google.com/share?url=${from}`;
+
   }
   return false;
 }
 
 function renderIcon (type, name, src = false) {
-  switch(type) {
-    case 'fa':
-      return `<span class="fa fa-${name} fa-2x qg-share-icon" aria-hidden="true"></span>`; break;
-    case 'svg':
-      return `<img src="${src}" aria-hidden="true" class="qg-share-icon" alt="name" />`; break;
+  switch (type) {
+
+  case 'fa':
+    return `<span class="fa fa-${name} fa-2x qg-share-icon" aria-hidden="true"></span>`;
+  case 'svg':
+    return `<img src="${src}" aria-hidden="true" class="qg-share-icon" alt="name" />`;
+
   }
   // Default, return nothing
   return '';
@@ -103,20 +105,21 @@ function renderShareButtons () {
 
 function getLinks (type) {
   // Get link list
-  const socialLinks = returnSocialLinks();
+  const socialLinks = socialLinksList;
   // Get page data
   const from = window.location.href;
   const domain = window.location.hostname;
-  const title = $(document).find('title').text();
+  // const title = $(document).find('title').text();
   const description = $('meta[name="DCTERMS.description"]').attr('content');
 
   // Iterate
   let str = '';
-  for(let prop in socialLinks[type]) {
+  for (let prop in socialLinks[type]) {
     let entry = socialLinks[type][prop];
-    let url = renderSocialURL(entry.title.toLowerCase(), from, entry.title, domain, description);
+    let titleKey = entry.title.toLowerCase();
+    let url = renderSocialURL(titleKey, from, entry.title, domain, description);
     let hidden = '';
-    if(entry.showTitle !== true) {
+    if (entry.showTitle !== true) {
       hidden = renderHidden();
     }
     str = str + renderLink(url, entry.title, entry.icon, hidden);
@@ -129,6 +132,4 @@ function init () {
   $target.html(renderShareButtons());
 }
 
-module.exports = {
-  init: init
-};
+module.exports = { init: init };

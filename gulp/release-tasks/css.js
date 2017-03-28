@@ -6,7 +6,7 @@ module.exports = function (gulp, plugins, config) {
       ].concat(config.release.excludes);
 
       // Test if the element is set to deploy this component
-      if(config.output[element].assetsCore === true ) {
+      if (config.output[element].assetsCore === true) {
         return gulp.src(target, { dot: true })
           .pipe(plugins.cleanCss())
           .on('error', console.log)
@@ -15,5 +15,5 @@ module.exports = function (gulp, plugins, config) {
         return true;
       }
     });
-  }
-}
+  };
+};

@@ -15,12 +15,22 @@
   },
   "extends": ["semistandard"],
   "rules": {
-      "indent": 0,
-      "no-tabs": 0,
-      "one-var": 0,
-      "no-path-concat": 0,
-      "eol-last": 0,
-      "valid-jsdoc": "warn",
-      "spaced-comment": 0,
+    "indent": [1, 2],
+    "one-var": 1,
+    "no-tabs": 1,
+    "no-path-concat": 0,
+    "valid-jsdoc": "warn",
+    "spaced-comment": 0,
+    "comma-dangle": [1, "always-multiline"],
+    "eol-last": 1,
+    "no-multi-spaces": [
+      2, 
+      "exceptions": {
+        "Property": true,
+        "VariableDeclarator": true,
+        "ImportDeclaration": true,
+        "ObjectExpression": true,
+      },
+    ],
   }
 }

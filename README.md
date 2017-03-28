@@ -4,19 +4,21 @@
 
 _This project is currently a work in progress._
 
-## Download
+
+## Getting started
+### 1. Download
 ```bash
 git clone https://github.com/qld-gov-au/glue-template.git
 ```
 
-## 1. Setup
+### 2. Setup
 **Make sure you have Node version >= 6.0 and NPM >= 3**
 
 Install all the node packages (If behind a corporate web proxy please have a look at this website [How to setup Node.js and Npm behind a corporate web proxy](https://jjasonclark.com/how-to-setup-node-behind-web-proxy))
 ```bash
 npm install
 ```
-## 2. Usage
+### 2. Usage
 **Command to create a build folder from the src folder files**
 ```bash
 gulp build
@@ -61,7 +63,7 @@ gulp serve --type=reports-server
 ```
 
 
-## 3. Browserstack Setup
+### 3. Browserstack Setup
 1.) Create a .env file in the root of your project
 
 2.) Place Browserstack configs in this file =
@@ -73,4 +75,4 @@ PROXYPORT = proxyport (leave blank if no proxy)
 PROXYPROTOCOL = proxyprotocol (leave blank if no proxy)
 ```
 
-
+## Structure

@@ -19,28 +19,23 @@ jQuery.qgLightbox = {};
 
 // Auto load
 (function ($) {
-    'use strict';
+  'use strict';
 
-	$.fn.qgLightbox = function(inOpts ={}) {
-		// Wrapper for whatever technology is used
-		var outOpts = {};
-		if(inOpts.callbackPreOpen !== undefined){
-			outOpts.callbackPreOpen = inOpts.callbackPreOpen;
-		}
-		// Initialise lightbox links for each match
-		return this.each( () => {
-			$(this).butterfly(outOpts);
-		});
-	};
-
-    const init = function initQGLightbox() {
-    	// Default simple operation
-		$('*[data-qg-lightbox=true]').not('[id]').attr('id',Math.random(100000,999999).toString(36).substr(2));
-		$('*[data-qg-lightbox=true]').butterfly();
-	}
-
-	init();
-
+  $.fn.qgLightbox = function (inOpts = {}) {
+    // Wrapper for whatever technology is used
+    var outOpts = {};
+    if (inOpts.callbackPreOpen !== undefined) {
+      outOpts.callbackPreOpen = inOpts.callbackPreOpen;
+    }
+    // Initialise lightbox links for each match
+    return this.each(() => {
+      $(this).butterfly(outOpts);
+    });
+  };
+  const init = function initQGLightbox () {
+    // Default simple operation
+    $('*[data-qg-lightbox=true]').not('[id]').attr('id', Math.random(100000, 999999).toString(36).substr(2));
+    $('*[data-qg-lightbox=true]').butterfly();
+  };
+  init();
 })(jQuery);
-
-// END QG Lightbox

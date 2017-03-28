@@ -17,11 +17,9 @@ module.exports = {
     test: 'test',
     swe: 'swe',
     bowerVersion: 0,
-    node_modules: 'node_modules'
+    node_modules: 'node_modules',
   },
-
   projects: ['core'], // 'cue'
-  
   build: {
     excludes: [
       '!**/_DELETE.*/**/*',
@@ -42,8 +40,8 @@ module.exports = {
   },
   test: {
     karmaConfig () {
-       return process.cwd() + '/karma.config.js';
-    }
+      return process.cwd() + '/karma.config.js';
+    },
   },
   outputList: ['/', 'template-local', 'template-cdn', 'documentation'],
   output: {
@@ -78,6 +76,6 @@ module.exports = {
       assetsIncludesCdn: false, // TODO: change to true
       localToCdn: false, // TODO: change to true
       copyElement: true,
-    }
+    },
   },
 };

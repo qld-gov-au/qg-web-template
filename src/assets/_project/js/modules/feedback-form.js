@@ -29,6 +29,5 @@ function init (franchiseTitle) {
   addHiddenInput('page-referer', encodeURIComponent(document.referrer));
   addHiddenInput('rspUsrAgent', navigator.userAgent);
 }
-module.exports = {
-  init: init
-};
+
+module.exports = { init: init };

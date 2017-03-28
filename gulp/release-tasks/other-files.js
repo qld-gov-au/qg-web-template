@@ -4,5 +4,5 @@ module.exports = function (gulp, plugins, config) {
       .pipe(plugins.include({ hardFail: true }))
       .on('error', console.log)
       .pipe(gulp.dest(`${config.basepath.release}/`));
-  }
+  };
 };

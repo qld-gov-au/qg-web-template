@@ -3,27 +3,27 @@ const nightwatchConfig = {
     selenium: {
         'start_process': false,
         'host': 'hub-cloud.browserstack.com',
-        'port': 80
+        'port': 80,
     },
     test_settings: {
         default: {
             screenshots: {
                 'enabled': false,
                 'path': './tests/e2e/screenshots/',
-                'on_failure': true
+                'on_failure': true,
             },
             desiredCapabilities: {
                 'build': 'nightwatch-browserstack',
                 'browserstack.user': process.env.BROWSERSTACK_USERNAME,
                 'browserstack.key': process.env.BROWSERSTACK_ACCESS_KEY,
                 'browserstack.debug': true,
-                'browserstack.local': true
+                'browserstack.local': true,
             },
             proxy: ((process.env.PROXYHOST).length <= 0) ? false : {
                 'host': process.env.PROXYHOST,
                 'port': process.env.PROXYPORT,
-                'protocol': process.env.PROXYPROTOCOL
-            }
+                'protocol': process.env.PROXYPROTOCOL,
+            },
         },
         'host': process.env.PROXYHOST,
         chrome: {
@@ -31,26 +31,26 @@ const nightwatchConfig = {
                 browser: 'chrome',
                 os: 'Windows',
                 os_version: '7',
-                resolution: '1024x768'
-            }
+                resolution: '1024x768',
+            },
         },
         firefox: {
             desiredCapabilities: {
-                browser: 'firefox'
-            }
+                browser: 'firefox',
+            },
         },
         safari: {
             desiredCapabilities: {
-                browser: 'safari'
-            }
+                browser: 'safari',
+            },
         },
         ie: {
             desiredCapabilities: {
-                browser: 'internet explorer'
-            }
-        }
+                browser: 'internet explorer',
+            },
+        },
 
-    }
+    },
 };
 
 // Code to copy seleniumhost/port into test settings

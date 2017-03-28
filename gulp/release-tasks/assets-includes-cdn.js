@@ -4,7 +4,7 @@ module.exports = function (gulp, plugins, config) {
   return function () {
     config.outputList.map(function (element) {
       let src = [
-        `${config.basepath.build}/assets/includes-cdn/**/*`
+        `${config.basepath.build}/assets/includes-cdn/**/*`,
       ].concat(config.release.excludes);
 
       // Test if the element is set to deploy this component
