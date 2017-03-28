@@ -4,7 +4,7 @@
 
 'use strict';
 
-var accessibility = (function ($) {
+function init () {
   var $target = $('a[target=_blank]');
 
   if ($('body').attr('data-qg-accessibility') !== false) {
@@ -19,6 +19,6 @@ var accessibility = (function ($) {
       }
     }
   }
-})(jQuery);
+}
 
-module.exports = accessibility;
+module.exports = { init: init };

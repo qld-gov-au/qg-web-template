@@ -4,6 +4,8 @@
 * developers to know what to put into it, and what not to.]
 * ======================================================================== */
 
+// FIXME: Reports linting error as it's defined as a module, but never used
+// TODO: Rename to breakpoints, as this isn't utils anymore
 const utils = (function () {
   // BREAKPOINTS //
   var breakpoints = {

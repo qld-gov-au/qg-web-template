@@ -32,5 +32,6 @@
         "ObjectExpression": true,
       },
     ],
+    "no-warning-comments": 1,
   }
 }
