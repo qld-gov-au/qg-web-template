@@ -40,6 +40,11 @@ module.exports = {
       '!**/*.js.map',
     ],
   },
+  test: {
+    karmaConfig () {
+       return process.cwd() + '/karma.config.js';
+    }
+  },
   outputList: ['/', 'template-local', 'template-cdn', 'documentation'],
   output: {
     '/': {

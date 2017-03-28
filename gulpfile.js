@@ -1,15 +1,19 @@
 'use strict';
 
+// init env variables
+require('dotenv').config();
+
 // Core
-const gulp            = require('gulp');
-const config          = require('./gulp/gulp-config.js');
-const del             = require('del');
-const webpack         = require('webpack-stream');
-const argv            = require('yargs').argv;
-const plugins         = require('gulp-load-plugins')();
-const es              = require('event-stream');
-const runSequence     = require('run-sequence');
-const replace         = require('gulp-replace');
+const gulp            = require('gulp'),
+    config          = require('./gulp/gulp-config.js'),
+    del             = require('del'),
+    webpack         = require('webpack-stream'),
+    argv            = require('yargs').argv,
+    plugins         = require('gulp-load-plugins')(),
+    es              = require('event-stream'),
+    runSequence     = require('run-sequence'),
+    replace         = require('gulp-replace'),
+    path            = require('path');
     // bowerConfig = require('./bower.json'),
     // runSequence = require('run-sequence'),
     // gutil       = require('gulp-util'),
@@ -18,15 +22,11 @@ const replace         = require('gulp-replace');
     // include     = require('gulp-include'),
 
 // For testing
-const karmaServer     = require('karma').Server;
-const fsPath          = require('fs-path');
-const eslintReporter  = require('eslint-html-reporter');
-const gulpConnectSsi  = require('gulp-connect-ssi');
-const gulpConnect     = require('gulp-connect');
-
-/* SSI */
-// Open using local server
-gulp.task('local-server', require('./gulp/build-tasks/local-server.js')(gulp, plugins, config, gulpConnect, gulpConnectSsi, argv));
+const karmaServer = require('karma').Server,
+    fsPath = require('fs-path'),
+    eslintReporter = require('eslint-html-reporter'),
+    connectssi = require('gulp-connect-ssi'),
+    connect = require('gulp-connect');
 
 /* CLEAN TASKS */
 gulp.task('clean-build', (cb) => {
@@ -80,9 +80,11 @@ gulp.task('release', (cb) => {
 });
 
 /* TEST TASKS */
-gulp.task('test:config:e2e', require('./gulp/test-tasks/e2e')(gulp, plugins, config));
-gulp.task('test:browserstack', ['local-server', 'test:config:e2e']);
 gulp.task('test:unit', require('./gulp/test-tasks/unit')(gulp, plugins, config, karmaServer));
 gulp.task('test:eslint', require('./gulp/test-tasks/lint')(gulp, plugins, config, fsPath, eslintReporter));
-gulp.task('test:reports', require('./gulp/test-tasks/reports')(gulp, plugins, config));
-gulp.task('test', ['test:unit', 'test:eslint', 'test:browserstack', 'test:reports']);
+gulp.task('test:browserstack', require('./gulp/test-tasks/e2e')(gulp, plugins, argv));
+
+gulp.task('test', ['test:unit', 'test:eslint']);
+
+/* LOCAL SERVER */
+gulp.task('serve', require('./gulp/build-tasks/serve')(gulp, plugins, connect, connectssi, argv, path));
