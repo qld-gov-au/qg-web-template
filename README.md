@@ -92,16 +92,16 @@ PROXYPROTOCOL = proxyprotocol (leave blank if no proxy)
 
 ## File structure
 
-
-> ├─ src/ - Where the source for the template are kept  
-> │	├─ assets/   
-> │	│	├─ _project/ - 	Files in here are compled specially  
-> │	│	│				Keep an eye on the build file when changing them  
-> │	│	├─ images/ -  
-> │	│	├─ includes/ - 	The main includes. These files  
-> │  
-> └  
-
-### src - Source files
-This is where the source for the project is kept.
-### 
+* gulp/ - Gulp functions and settings file
+* product definitions/ - Definitions and requirements for this project
+* src/ - This is where the source files for the template are kept
+	* assets/
+		* _project/ - Files in here are compiled specially by gulp. Keep an eye on the build file when making changes. This directory will be renamed to the version number for the template (V3)
+		* images/ - Images for the template
+		* includes - The main SSI includes. This folder is split into includes/ and includes-cdn/ (which are automatically re-written to point to CDN assets) on release.
+	* documentation/ - The end user documentation on using this template
+	* other-files/ - Special files for build and release
+		* build/ - .htaccess file and other files required to get build to work. These are excluded on release.
+		* release/ - readme.md and other files for the destination release repository. These are not included on build.
+	* template/ - The template files that pull in the includes, css and js. These are automatically adjusted to point to local or CDN files on release.
+* tests/ - All test functions
