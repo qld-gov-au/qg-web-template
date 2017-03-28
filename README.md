@@ -6,6 +6,8 @@ _This project is currently a work in progress._
 
 ## Getting started
 
+A Git client is required to edit this template.
+
 ### 1. Download
 
 ```bash
@@ -47,21 +49,33 @@ Replace "Bugfix/QOL-100-Fixing-nav-nesting-issue" with your branch.
 
 ### 4. Usage
 
-**Command to create a build folder from the src folder files**
+**Compiles and lints the project into the build folder for smoke testing**
 ```bash
 gulp build
+```
+**Run local server, as well as watch and lint js**
+Remember to run 'build' first.
+```bash
+watch:serve
+```
+**Compiles the released assets for deployment. Note: This will also automatically run a clean build**
+```bash
+gulp release
+```
+
+#### Other commands
+
+**Cleans up your build folder before running build, to keep things tidy**
+```bash
+gulp build:clean
 ```
 **Command performs build as above then replaces ssi directives with JINJA2**
 ```bash
 gulp build-jinja
 ```
-**Watch and run tests**
+**Watch and lint js**
 ```bash
 gulp watch
-```
-**Command to create a release folder from the build folder files. Please make sure to run the gulp build command before running the gulp release command**
-```bash
-gulp release
 ```
 **To start a local server**
 ```bash
@@ -71,10 +85,7 @@ gulp serve
 ```bash
 gulp test
 ```
-**Watch and run tests**
-```bash
-gulp watch:test
-```
+
 **To run E2E tests using Browserstack**. 
 
 Please make sure to setup browserstack _config file_ (step 3) and run _gulp serve_ before running browserstack E2E tests

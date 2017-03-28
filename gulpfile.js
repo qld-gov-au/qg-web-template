@@ -57,6 +57,7 @@ gulp.task('watch', function () {
     gulp.watch([config.basepath.src + '/assets/includes/**/*.html'], ['includes']);
     gulp.watch([config.basepath.src + '/**/*.scss'], ['scss']);
     gulp.watch([config.basepath.src + '/**/*.js'], ['js']);
+    gulp.watch([config.basepath.src + '/**/*.js'], ['eslint']);
     gulp.watch([config.basepath.src + '**/*'], ['other-assets']);
 });
 gulp.task('watch:serve', ['watch', 'serve']);
