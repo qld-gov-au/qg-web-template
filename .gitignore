@@ -54,3 +54,4 @@ etc/
 ## Local ##
 _local.*
 /_local.*/**/*.*
+/.env

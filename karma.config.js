@@ -6,8 +6,7 @@ module.exports = function (config) {
         coverageReporter: {
             dir: 'tests/reports',
             reporters: [
-                { type: 'html', subdir: 'coverage' },
-                { type: 'lcovonly', subdir: '.' }
+                { type: 'html', subdir: 'coverage' }
             ]
         },
         files: [
@@ -22,7 +21,7 @@ module.exports = function (config) {
         },
         reporters: ['progress', 'coverage', 'html'],
         htmlReporter: {
-            outputFile: 'tests/reports/unit-test/report.html',
+            outputFile: 'tests/reports/unit-test/index.html',
             pageTitle: 'Component Unit Tests',
             groupSuites: true,
             useCompactStyle: true,
