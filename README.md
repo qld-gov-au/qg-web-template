@@ -23,16 +23,18 @@ npm install
 
 ### 3. Create a branch
 
+**WARNING: DO NOT WORK DIRECTLY IN working, beta, or master BRANCHES**
+
 To keep the repository clean, branches must be prefixed into categories with a forwardslash /. Categories come from JIRA and are (note capitalisation): 
 
-- Bugfix: For bugs and errors for the next release
+- Bugfix: For bugs and errors that will be released on the standard schedule
 - Feature: For new features
 - Hotfix: For critical bugs and errors which will be merged into the current release
 
 Add the JIRA job number after the category type, or the initials of the developer making the change if there is no JIRA job.
 Example: Bugfix/QOL-100-Fixing-nav-nesting-issue
 
-**If you use git command line, use the following command to create a branch**
+**If you use git command line, use the following commands to create your branch**
 
 ```bash
 git fetch origin
