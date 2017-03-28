@@ -4,14 +4,25 @@
 
 _This project is currently a work in progress._
 
-## Repo structure
-This repo should contain three main branches. DO NOT WORK DIRECTLY INTO THESE BRANCHES. Instead create your own branch using the below 'creating new branches' instructions, and use a pull request to get that into the working branch.
+## Getting started
 
-- working: For integrating features for the next version
-- beta: For testing
-- master: The current live assets
+### 1. Download
 
-### Creating new branches
+```bash
+git clone https://github.com/qld-gov-au/glue-template.git
+```
+
+### 2. Setup
+
+**Make sure you have Node version >= 6.0 and NPM >= 3**
+
+Install all the node packages (If behind a corporate web proxy please have a look at this website [How to setup Node.js and Npm behind a corporate web proxy](https://jjasonclark.com/how-to-setup-node-behind-web-proxy))
+```bash
+npm install
+```
+
+### 3. Create a branch
+
 To keep the repository clean, branches must be prefixed into categories with a forwardslash /. Categories come from JIRA and are (note capitalisation): 
 
 - Bugfix: For bugs and errors for the next release
@@ -19,22 +30,21 @@ To keep the repository clean, branches must be prefixed into categories with a f
 - Hotfix: For critical bugs and errors which will be merged into the current release
 
 Add the JIRA job number after the category type, or the initials of the developer making the change if there is no JIRA job.
-Example: Bugfix/QOL-841-Fix-bugs-for-tmr
+Example: Bugfix/QOL-100-Fixing-nav-nesting-issue
 
-## Getting started
-### 1. Download
+**If you use git command line, use the following command to create a branch**
+
 ```bash
-git clone https://github.com/qld-gov-au/glue-template.git
+git fetch origin
+git checkout working
+git checkout -b Bugfix/QOL-100-Fixing-nav-nesting-issue
 ```
 
-### 2. Setup
-**Make sure you have Node version >= 6.0 and NPM >= 3**
+Replace "Bugfix/QOL-100-Fixing-nav-nesting-issue" with your branch.
+It's best to checkout files from working, or beta. *Note: working may not always be stable, so in those instances use beta.*
 
-Install all the node packages (If behind a corporate web proxy please have a look at this website [How to setup Node.js and Npm behind a corporate web proxy](https://jjasonclark.com/how-to-setup-node-behind-web-proxy))
-```bash
-npm install
-```
-### 2. Usage
+### 4. Usage
+
 **Command to create a build folder from the src folder files**
 ```bash
 gulp build
@@ -78,7 +88,7 @@ To view testing reports (coverage, eslint and unit test)
 gulp serve --type=reports-server
 ```
 
-### 4. Browserstack Setup
+### 5. Browserstack Setup
 1.) Create a .env file in the root of your project
 
 2.) Place Browserstack configs in this file =
@@ -89,6 +99,14 @@ PROXYHOST = proxyhost (leave blank if no proxy)
 PROXYPORT = proxyport (leave blank if no proxy)
 PROXYPROTOCOL = proxyprotocol (leave blank if no proxy)
 ```
+
+## Repo structure
+This repo should contain three main branches. DO NOT WORK DIRECTLY INTO THESE BRANCHES. Instead create your own branch using the below 'creating new branches' instructions, and use a pull request to get that into the working branch.
+
+- working: For integrating features for the next version
+- beta: For testing
+- master: The current live assets
+
 
 ## File structure
 
