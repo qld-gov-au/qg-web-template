@@ -89,22 +89,15 @@ PROXYPROTOCOL = proxyprotocol (leave blank if no proxy)
 ## File structure
 
 
- ├─ src/ - Where the source for the template are kept\n
- │	├─ assets/ 
+> ├─ src/ - Where the source for the template are kept\n
+> │	├─ assets/ 
+> │	│	├─ _project/ - 	Files in here are compled specially
+> │	│	│				Keep an eye on the build file when changing them
+> │	│	├─ images/ -
+> │	│	├─ includes/ - 	The main includes. These files
+> │
+> └
 
- │	│	├─ _project/ - 	Files in here are compled specially
-
- │	│	│				Keep an eye on the build file when changing them
-
- │	│	├─ images/ -
-
- │	│	├─ includes/ - 	The main includes. These files
-
- │
- │
- │
- │
- └
 ### src - Source files
 This is where the source for the project is kept.
 ### 
