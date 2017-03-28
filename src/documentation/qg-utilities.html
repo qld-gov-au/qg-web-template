@@ -6,7 +6,7 @@
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-    <title>Documentation | Web Template | Queensland Government</title>
+    <title>Utilities | Web Template | Queensland Government</title>
 
     <meta name="description" content="DESCRIPTION">
     <meta name="keywords" content="KEYWORDS">
@@ -53,7 +53,7 @@
             <!--#include virtual="/assets/includes/header/site-nav.html"-->
         </header>
 
-        <div id="qg-content">
+        <div id="qg-content" class="qg-wide">
             <div class="row">
 
                 <!-- START Breadcrumbs -->
@@ -62,8 +62,8 @@
     <h1 id="breadcrumb-heading" class="qg-visually-hidden">You are here:</h2>
 
     <ol class="list-inline">
-        <li><a href="https://www.qld.gov.au/">Queensland Government home</a></li>
-        <li>Web Template Documentation</li>
+        <!--#include virtual="assets/includes/breadcrumbs/qg-web-template.html"-->
+        <li>Utilities</li>
     </ol>
 
 </nav>
@@ -71,69 +71,54 @@
 
                 <!--#include virtual="assets/includes/section-nav/qg-web-template.html"-->
 
-                <div id="qg-primary-content" role="main">
+                <div id="qg-primary-content" role="main" class="qg-has-aside">
 
                     <!--#include virtual="/assets/includes/content/alert.html"-->
 
-                    <h1>Web Template Documentation</h1>
+                    <h1><small>Queensland Government Web Template</small></h1>
 
-                    <p class="lead">Instructions and information for website developers</p>
+                    <h1>Utilities</h1>
 
-                    <dl class="dl-horizontal">
-                        <dt>Developed by</dt>
-                        <dd>DSITI OSSSIO Online Products</dd>
-                        <dt>Contact</dt>
-                        <dd><a href="mailto:oss.products@dsiti.qld.gov.au">Email OSSSIO Online Products</a></dd>
-                    </dl>
+                    <p class="lead">Queensland Government custom utilities</p>
 
-                    <h2>Getting started</h2>
-                    <p>The prefered method for using this template is to use the Web Project Jumpstarter from Git, which uses Node.js, NPM, and Gulp. This allows you to build both Franchise websites and Agency templates while using our best practice development methods.</p>
-                    <ol>
-                        <li>
-                            Ensure you have a <a href="https://git-scm.com/" target="_blank">Git client</a> and <a href="https://nodejs.org/en/" target="_blank">Node.js</a> installed
-                        </li>
-                        <li>
-                            Fork the Web Project Jumpstart repo:<br />
-                            <div>$ git clone https://github.com/qld-gov-au/jumpstart</div>
-                            For more information see <a href="https://help.github.com/articles/fork-a-repo/" target="_blank">how to fork a github repo</a>
-                        </li>
-                        <li>
-                            Set up your project:
-                            <div>$ npm init</div>
-                        </li>
-                        <li>
-                            Check out the readme that comes with the Web Project Jumpstarter
-                        </li>
-                        <li>
-                            Read the documentation here to understand how the template works
-                        </li>
-                    </ol>
+<!-- ################################## -->
 
-                    <h2>Usage</h2>
+    <h2 id="accessibility" class="category">Accessibility</h2>
+    <p>To support our users, we're continuing to implement accessibility features to make our sites easier to use.</p>
 
-                    <p>There are two main ways to use the Web Template:</p>
-                    <ol>
-                        <li>CDN Template: To build franchise websites</li>
-                        <li>Local Template: To customise a new website (or template), or host a local franchise website - for Agencies, campaign sites etc.</li>
-                    </ol>
+    <h3>Link in new window icon</h3>
+    <p>
+        Accessibility guidelines recommend not opening windows in links. However, if opening a window in a new link is required, the QG Web Template automatically styles the links displayed in the #qg-content section with a new window icon.
+    </p>
 
-                    <h2>Franchise template implementation and pattern library</h2>
-                    <p>See below for specific pattern implementation advice:</p>
-                    <ul>
-                        <li><a href="layout-util.html">Layout and utilities</a></li>
-                        <li><a href="styles.html">Standard styles</a></li>
-                        <li><a href="components.html">Components</a></li>
-                        <li><a href="javascript.html">JavaScript</a></li>
-                        <li><a href="accessibility.html">Accessibility</a></li>
-                    </ul>
+    <div class="qg-tmplt-example">
+        <div class="panel-body">
+            <a href="#" target="_blank">This link opens in a new window</a>.
+        </div>
+    </div>
 
-                    <p>Custom and Agency websites will start with the styling seen above, but customisation may see significamay deviation from these standard styles.</p>
+    <p>If there is a user driven reason for it, you can disable this feature by adding the class 'qg-accessibility-off' to the hyperlink you which to disable accessibility on <code>&lt;a href="#" class="qg-accessibility-off"&gt;</code></p>
+    <p>If you would like to turn this feature on for any hyperlink outside of the #qg-content element, add the <code>qg-accessibility-off</code> class: <code>&lt;a href="#" class="qg-accessibility-on"&gt;</code></p>
 
-                    <h2>Technology</h2>
-                    <p>To help with rapid development, the web template is now tightly integrated with Bootstrap 3. It also includes jQuery and a suite of custom Javascript features.</p>
+    <h4>Javascript</h4>
 
-                    <h2>Compliance</h2>
-                    <p>Queensland Government Web Template (web template) is build to comply with the <a href="https://www.qgcio.qld.gov.au/products/qgea-documents/548-information/2446-internet-is26">IS26 Guidelines</a>.</p>
+    <p>There is also a script that runs over each page to add accessibility to links opening in a new window.</p>
+
+    <p>Firstly, the script adds the following text to the end of the link, displayed to screen readers only:</p>
+    <pre>(Opens in new window)</pre>
+    <p>To prevent this, you can add your own notification to the link: <code>&lt;span class="qg-blank-notice"&gt;(Opens in new window)&lt;/span&gt;</code></p>
+
+    <p>Secondly the script adds a title to your link if one hasn't already been set: <code>&lt;a href="#" title="Opens in new window"&gt;</code></p>
+
+    <p>To turn both of these Javascript features off, add the class <code>qg-accessibility-off</code> to the hyperlink element <code>&lt;a href="#" class="qg-accessibility-off"&gt;</code></p>
+
+    <h3 id="disable-accessibilty">Disabling accessibility features</h3>
+
+    <p class="warn">This is not recommended.</p>
+
+    <p>For testing purposes, or if these features are causing issues with applications built on the QG Web Template, these features can be turned off by adding <code>data-qg-accessibility="false"</code> to the <code>&lt;body&gt;</code> tag of your page: <code>&lt;body data-qg-accessibility="false"/&gt;</code>.</p>
+
+<!-- ################################## -->
 
                     <div class="qg-content-footer">
 
@@ -149,6 +134,29 @@
                     </div>
                 </div>
 
+                <aside id="qg-secondary-content">
+
+                    <!-- include virtual="/assets/includes/asides/aside-global.html"-->
+                    <!-- include virtual="/assets/includes/asides/aside-disaster-alert.html" -->
+                    <!-- include virtual="/assets/includes/asides/aside-contact-qgov.html" -->
+                    <!-- include virtual="/assets/includes/asides/aside-story-qgov.html" -->
+                    <!-- include virtual="/assets/includes/asides/aside-your-say-qgov.html" -->
+                    <!-- include virtual="/assets/includes/asides/aside-tip-qgov.html" -->
+                    <!-- include virtual="/assets/includes/asides/aside-search-qgov.html" -->
+                    <!-- include virtual="/assets/includes/asides/aside-subscribe-qgov.html" -->
+                    <!-- include virtual="/assets/includes/asides/aside-download-qgov.html" -->
+                    <!-- include virtual="/assets/includes/asides/aside-feedback-qgov.html" -->
+
+                    <div class="qg-aside" role="complementary">
+                        <h2>On this page</h2>
+
+                        <ul>
+                            <li><a href="#accessibility">Accessibility</a>
+                        </ul>
+
+                    </div>
+
+                </aside>
             </div>
             <!--#include virtual="/assets/includes/content/options.html"-->
         </div>

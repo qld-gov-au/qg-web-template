@@ -6,7 +6,7 @@
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-    <title>Components | Web Template | Queensland Government</title>
+    <title>Layout | Web Template | Queensland Government</title>
 
     <meta name="description" content="DESCRIPTION">
     <meta name="keywords" content="KEYWORDS">
@@ -18,7 +18,7 @@
     <meta name="DCTERMS.publisher" scheme="AGLSTERMS.AglsAgent" content="corporateName=The State of Queensland; jurisdiction=Queensland">
     <meta name="DCTERMS.created" content="2010-11-04">
     <meta name="DCTERMS.modified" content="2011-03-05">
-    <meta name="DCTERMS.title" content="Components">
+    <meta name="DCTERMS.title" content="Who is a carer?">
     <meta name="DCTERMS.alternative" content="Who is a carer?">
     <meta name="DCTERMS.description" content="DESCRIPTION">
     <meta name="DCTERMS.subject" scheme="AGLSTERMS.APAIS" content="SUBJECT">
@@ -35,8 +35,7 @@
 
 </head>
 
-<body data-qg-accessibility="true"
-    data-spy="scroll" data-target="#page-nav">
+<body data-qg-accessibility="true">
 
     <!--#include virtual="/assets/includes/access.html"-->
 
@@ -64,7 +63,7 @@
 
     <ol class="list-inline">
         <!--#include virtual="assets/includes/breadcrumbs/qg-web-template.html"-->
-        <li>Components</li>
+        <li>Layout</li>
     </ol>
 
 </nav>
@@ -76,69 +75,32 @@
 
                     <!--#include virtual="/assets/includes/content/alert.html"-->
 
-                    <h1><small>Web Template Pattern Library</small></h1>
+                    <h1><small>Queensland Government Web Template</small></h1>
 
-                    <h1>Components</h1>
+                    <h1>Layout</h1>
 
-                    <p class="lead">Reusable components for your Queensland Government websites and web applications</p>
-
-                    <p>Y</p>
+                    <p class="lead">Template layout options</p>
 
 <!-- ################################## -->
-    <h2 id="dropdowns" class="category">Dropdowns</h2>
-    <p>
-        Dropdowns are only to be used for web applications.
-    </p>
-    <p class="warn">
-        Due to the nature of the Forms system being used, dropdowns are not advised for web forms.
-    </p>
-    <p>
-        For more information on implementation, see the <a href="http://getbootstrap.com/components/#dropdowns" target="_blank">bootstrap dropdowns section</a>.
-    </p>
 
-    <div class="qg-tmplt-example">
-        <div class="panel-body">
+    <h2 id="layout" class="category">Page layout</h2>
+    <p>All Franchise websites have a standardised header and footer. IS26 and the Agency guidelines (CUE) allow for modification to this but still include most of the same standard.</p>
 
-<div class="dropdown">
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    Dropdown
-    <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-    <li><a href="#">Action</a></li>
-    <li><a href="#">Another action</a></li>
-    <li class="dropdown-header">Optional dropdown header</li>
-    <li><a href="#">Action after dropdown header</a></li>
-    <li><a href="#">Something else here</a></li>
-    <li role="separator" class="divider"></li>
-    <li><a href="#">Separated link</a></li>
-  </ul>
-</div>
+    <h3>Header</h3>
+    <p>The header at the top of this page shows the standard styling.</p>
 
-        </div>
-    </div>
-    <p>Dropdown menus can be changed to expand upwards (instead of downwards) by adding .dropup to the parent.</p>
+    <h3>Footer</h3>
+    <p>The footer at the bottom of this page shows the standard styling.</p>
 
-    <div class="qg-tmplt-example">
-        <div class="panel-body">
+    <h3>Page content - Three column layout</h3>
+    <p>The main content of Queensland Government web pages are layed out in three columns as you can see on this page. This is made up of the sections <code>#qg-section-nav</code>, <code>#qg-primary-content</code>, and <code>#qg-secondary-content</code>
+    <p>To remove the navigation or secondary content simply delete it, the CSS will adapt to your new layout.</p>
+    <h4>Wide layout and Index pages</h4>
+    <p>For index pages, applications, and other special purposes, it is possible to have the <code>#qg-primary-content</code> element span the whole width of the document. To do this, add the class <code>qg-wide</code> to the <code>#qg-content</code> element: <code>&lt;div id="qg-content" class="qg-wide"&gt;</code>.</p>
+    <p>Once you've done this, you'll notice the secondary content is no longer displayed. To add the secondary content back, add the class <code>qg-has-aside</code> to the <code>#qg-primary-content</code> element: <code>&lt;div id="qg-primary-content" class="qg-has-aside" role="main"&gt;</code>.</p>
 
-<div class="dropup">
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Dropup
-    <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-    <li><a href="#">Action</a></li>
-    <li><a href="#">Another action</a></li>
-    <li><a href="#">Something else here</a></li>
-    <li role="separator" class="divider"></li>
-    <li><a href="#">Separated link</a></li>
-  </ul>
-</div>
-
-        </div>
-    </div>
 <!-- ################################## -->
+
 
                     <div class="qg-content-footer">
 
@@ -156,19 +118,26 @@
 
                 <aside id="qg-secondary-content">
 
-                    <div id="page-nav" class="qg-aside" role="complementary" data-spy="affix" data-offset-top="500" data-offset-bottom="900" data-parent-width="1">
+                    <!-- include virtual="/assets/includes/asides/aside-global.html"-->
+                    <!-- include virtual="/assets/includes/asides/aside-disaster-alert.html" -->
+                    <!-- include virtual="/assets/includes/asides/aside-contact-qgov.html" -->
+                    <!-- include virtual="/assets/includes/asides/aside-story-qgov.html" -->
+                    <!-- include virtual="/assets/includes/asides/aside-your-say-qgov.html" -->
+                    <!-- include virtual="/assets/includes/asides/aside-tip-qgov.html" -->
+                    <!-- include virtual="/assets/includes/asides/aside-search-qgov.html" -->
+                    <!-- include virtual="/assets/includes/asides/aside-subscribe-qgov.html" -->
+                    <!-- include virtual="/assets/includes/asides/aside-download-qgov.html" -->
+                    <!-- include virtual="/assets/includes/asides/aside-feedback-qgov.html" -->
+
+                    <div class="qg-aside" role="complementary">
                         <h2>On this page</h2>
 
                         <ul>
-                            <li><a href="#dropdowns">Dropdowns</a></li>
+                            <li><a href="#layout">Page Layout</a>
+                            <li><a href="#breakpoints">Breakpoints</a>
+                            <li><a href="#grid">Grid System</a>
                         </ul>
 
-                    </div>
-
-                    <div class="qg-aside" role="complementary">
-                        <h2>Carer Business Discount Card</h2>
-
-                        <p>If you receive a Centrelink carer payment or carers allowance and live in Queensland, you are eligible for a <a href="/community/support-for-carers/carer-card/">Carer Business Discount Card</a>,which recognises the contribution carers make to the community and provides discounts on products and services.</p>
                     </div>
 
                 </aside>

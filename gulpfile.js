@@ -43,8 +43,9 @@ gulp.task('includes-cdn', require('./gulp/build-tasks/includes-cdn')(gulp, plugi
 gulp.task('scss', require('./gulp/build-tasks/scss')(gulp, plugins, config));
 gulp.task('js', require('./gulp/build-tasks/js')(gulp, plugins, config, webpack));
 gulp.task('other-assets', require('./gulp/build-tasks/other-assets')(gulp, plugins, config, es));
+gulp.task('build-files', require('./gulp/build-tasks/other-files')(gulp, plugins, config));
 
-gulp.task('default', ['html', 'includes', 'includes-cdn', 'scss', 'js', 'other-assets']);
+gulp.task('default', ['html', 'includes', 'includes-cdn', 'scss', 'js', 'other-assets', 'build-files']);
 gulp.task('build', ['default']);
 gulp.task('build:clean', (cb) => {
     runSequence('clean-build', 'default', cb);
@@ -64,7 +65,7 @@ gulp.task('scss-src', require('./gulp/release-tasks/scss-src')(gulp, plugins, co
 gulp.task('assets-core', require('./gulp/release-tasks/assets-core')(gulp, plugins, config));
 gulp.task('assets-includes', require('./gulp/release-tasks/assets-includes')(gulp, plugins, config));
 gulp.task('assets-includes-cdn', require('./gulp/release-tasks/assets-includes-cdn')(gulp, plugins, config));
-gulp.task('release-files', require('./gulp/release-tasks/release-files')(gulp, plugins, config));
+gulp.task('release-files', require('./gulp/release-tasks/other-files')(gulp, plugins, config));
 gulp.task('release-js', require('./gulp/release-tasks/js')(gulp, plugins, config)); // Uglifies JS
 gulp.task('css', require('./gulp/release-tasks/css')(gulp, plugins, config)); // Minifies CSS
 gulp.task('copy-element', require('./gulp/release-tasks/copy-element')(gulp, plugins, config));
