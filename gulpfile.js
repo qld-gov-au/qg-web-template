@@ -22,11 +22,11 @@ const path            = require('path');
     // include     = require('gulp-include'),
 
 // For testing
-const karmaServer = require('karma').Server;
-const fsPath = require('fs-path');
-const eslintReporter = require('eslint-html-reporter');
-const connectssi = require('gulp-connect-ssi');
-const connect = require('gulp-connect');
+const karmaServer       = require('karma').Server;
+const fsPath            = require('fs-path');
+const eslintReporter    = require('eslint-html-reporter');
+const connectssi        = require('gulp-connect-ssi');
+const connect           = require('gulp-connect');
 
 /* CLEAN TASKS */
 gulp.task('clean-build', (cb) => {
