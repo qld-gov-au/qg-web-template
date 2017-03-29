@@ -4,6 +4,31 @@
 
 _This project is currently a work in progress._
 
+## Making changes - Create a branch
+
+**WARNING: Do not work directly in 'working', 'beta', or 'master' branches**
+
+To keep the repository clean, branches must be prefixed into categories with a forwardslash /. Categories come from JIRA and are (note capitalisation): 
+
+- Bugfix: For bugs and errors that will be released on the standard schedule
+- Feature: For new features
+- Hotfix: For critical bugs and errors which will be merged into the current release
+- Enhancement: For refactoring, or general improvements to existing features that do not add new features
+
+Add the JIRA job number after the category type, or the initials of the developer making the change if there is no JIRA job.
+Example: Bugfix/QOL-100-Fixing-nav-nesting-issue
+It's best to checkout files from working, or beta. *Note: working may not always be stable, in those instances use beta.*
+
+**If you use git command line, use the following commands to create your branch**
+
+```bash
+git fetch origin
+git checkout working
+git checkout -b Bugfix/QOL-100-Fixing-nav-nesting-issue
+```
+
+Replace "Bugfix/QOL-100-Fixing-nav-nesting-issue" with your branch.
+
 **Basic commands :**<br />
     - Make sure node and npm are installed. Check using **node -v** and **npm -v** commands. If not already installed then please install from this website  [node website](https://nodejs.org/en/) <br />
     - **npm install** to install all the node packages (If behind a corporate web proxy please have a look at this website [How to setup Node.js and Npm behind a corporate web proxy](https://jjasonclark.com/how-to-setup-node-behind-web-proxy))<br />
