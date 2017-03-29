@@ -8,12 +8,12 @@ try {
     if (error) throw error;
     Nightwatch.cli(function (argv) {
       Nightwatch.CliRunner(argv)
-                .setup(null, function () {
-                  bsLocal.stop(function () { });
-                })
-                .runTests(function () {
-                  bsLocal.stop(function () { });
-                });
+        .setup(null, function () {
+          bsLocal.stop(function () { });
+        })
+        .runTests(function () {
+          bsLocal.stop(function () { });
+        });
     });
   });
 } catch (ex) {

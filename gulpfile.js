@@ -22,11 +22,11 @@ const path            = require('path');
     // include     = require('gulp-include'),
 
 // For testing
-const karmaServer = require('karma').Server;
-const fsPath = require('fs-path');
-const eslintReporter = require('eslint-html-reporter');
-const connectssi = require('gulp-connect-ssi');
-const connect = require('gulp-connect');
+const karmaServer       = require('karma').Server;
+const fsPath            = require('fs-path');
+const eslintReporter    = require('eslint-html-reporter');
+const connectssi        = require('gulp-connect-ssi');
+const connect           = require('gulp-connect');
 
 /* CLEAN TASKS */
 gulp.task('clean-build', (cb) => {
@@ -63,6 +63,7 @@ gulp.task('watch', function () {
   gulp.watch([config.basepath.src + '/assets/includes/**/*.html'], ['includes']);
   gulp.watch([config.basepath.src + '/**/*.scss'], ['scss']);
   gulp.watch([config.basepath.src + '/**/*.js'], ['js']);
+  gulp.watch([config.basepath.src + '/**/*.js'], ['eslint']);
   gulp.watch([config.basepath.src + '**/*'], ['other-assets']);
 });
 gulp.task('watch:serve', ['watch', 'serve']);
@@ -89,6 +90,7 @@ gulp.task('release', (cb) => {
 /* TEST TASKS */
 gulp.task('test:unit', require('./gulp/test-tasks/unit')(gulp, plugins, config, karmaServer));
 gulp.task('test:eslint', require('./gulp/test-tasks/lint')(gulp, plugins, config, fsPath, eslintReporter));
+gulp.task('lint', ['test:eslint']);
 gulp.task('test:browserstack', require('./gulp/test-tasks/e2e')(gulp, plugins, argv));
 
 gulp.task('test', ['test:unit', 'test:eslint']);
