@@ -104,7 +104,7 @@ gulp serve --type=reports-server
 
 ### 5. Making a commit to git
 
-When making a commit, prefix it with the JIRA task number
+Allways prefix your commit message with the JIRA task number - if you have a JIRA task.
 
 ```bash
 git commit -m "QOL-100 - Your commit message"
