@@ -12,7 +12,7 @@ const argv            = require('yargs').argv;
 const plugins         = require('gulp-load-plugins')();
 const es              = require('event-stream');
 const runSequence     = require('run-sequence');
-const replace         = require('gulp-replace');
+// const replace         = require('gulp-replace');
 const path            = require('path');
     // bowerConfig = require('./bower.json'),
     // runSequence = require('run-sequence'),
@@ -45,16 +45,19 @@ gulp.task('js', require('./gulp/build-tasks/js')(gulp, plugins, config, webpack)
 gulp.task('other-assets', require('./gulp/build-tasks/other-assets')(gulp, plugins, config, es));
 gulp.task('build-files', require('./gulp/build-tasks/other-files')(gulp, plugins, config));
 
-gulp.task('build', (cb) => {
+gulp.task('build', ['test:eslint:soft', 'html', 'includes', 'includes-cdn', 'scss', 'js', 'other-assets', 'build-files']);
+gulp.task('build:hardfail', (cb) => {
+  // Build hardfail supports release process
   runSequence(
-        'test',
-        ['html', 'includes', 'includes-cdn', 'scss', 'js', 'other-assets', 'build-files'],
-        cb
-    );
+    'test',
+    ['html', 'includes', 'includes-cdn', 'scss', 'js', 'other-assets', 'build-files'],
+    cb
+  );
 });
+
 gulp.task('default', ['build']);
 gulp.task('build:clean', (cb) => {
-  runSequence('clean-build', 'default', cb);
+  runSequence('clean-build', 'build:hardfail', cb);
 });
 
 /* WATCH TASSKS */
@@ -80,16 +83,17 @@ gulp.task('copy-element', require('./gulp/release-tasks/copy-element')(gulp, plu
 
 gulp.task('release', (cb) => {
   runSequence(
-        ['build:clean', 'clean-release'],
-        ['assets-core', 'scss-src', 'release-js', 'css', 'release-files', 'assets-includes', 'assets-includes-cdn'],
-        'copy-element', // Done last in order to over-ride assets-includes
-        cb
-    );
+    ['build:clean', 'clean-release'],
+    ['assets-core', 'scss-src', 'release-js', 'css', 'release-files', 'assets-includes', 'assets-includes-cdn'],
+    'copy-element', // Done last in order to over-ride assets-includes
+    cb
+  );
 });
 
 /* TEST TASKS */
 gulp.task('test:unit', require('./gulp/test-tasks/unit')(gulp, plugins, config, karmaServer));
 gulp.task('test:eslint', require('./gulp/test-tasks/lint')(gulp, plugins, config, fsPath, eslintReporter));
+gulp.task('test:eslint:soft', require('./gulp/test-tasks/lint-soft')(gulp, plugins, config, fsPath, eslintReporter));
 gulp.task('lint', ['test:eslint']);
 gulp.task('test:browserstack', require('./gulp/test-tasks/e2e')(gulp, plugins, argv));
 

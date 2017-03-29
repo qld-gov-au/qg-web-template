@@ -42,6 +42,20 @@ module.exports = {
     karmaConfig () {
       return process.cwd() + '/karma.config.js';
     },
+    lint: [
+      'gulpfile.js',
+      'src/**/*.js',
+      'gulp/**/*.js',
+      'tests/**/*.js',
+      '!tests/reports/**/*.js',
+      '!build/**/*',
+      '!release/**/*',
+      '!**/_old/**/*',
+      '!**/_local*/**/*',
+      '!**/_local.*',
+      '!**/legacy/**/*',
+      '!**/lib/ext/**/*',
+    ],
   },
   outputList: ['/', 'template-local', 'template-cdn', 'documentation'],
   output: {
