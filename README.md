@@ -102,7 +102,15 @@ To view testing reports (coverage, eslint and unit test)
 gulp serve --type=reports-server
 ```
 
-### 5. Browserstack Setup
+### 5. Making a commit to git
+
+When making a commit, prefix it with the JIRA task number
+
+```bash
+git commit -m "QOL-100 - Your commit message"
+```
+
+### 6. Browserstack Setup
 1.) Create a .env file in the root of your project
 
 2.) Place Browserstack configs in this file =
