@@ -84,6 +84,7 @@ gulp.task('release', (cb) => {
 /* TEST TASKS */
 gulp.task('test:unit', require('./gulp/test-tasks/unit')(gulp, plugins, config, karmaServer));
 gulp.task('test:eslint', require('./gulp/test-tasks/lint')(gulp, plugins, config, fsPath, eslintReporter));
+gulp.task('lint', ['test:eslint']);
 gulp.task('test:browserstack', require('./gulp/test-tasks/e2e')(gulp, plugins, argv));
 
 gulp.task('test', ['test:unit', 'test:eslint']);

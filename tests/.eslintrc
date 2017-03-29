@@ -16,7 +16,7 @@
   "extends": ["semistandard"],
   "rules": {
     "indent": [1, 2],
-    "one-var": 1,
+    "one-var": 2,
     "no-tabs": 1,
     "no-path-concat": 0,
     "valid-jsdoc": "warn",
@@ -24,12 +24,14 @@
     "comma-dangle": [1, "always-multiline"],
     "eol-last": 1,
     "no-multi-spaces": [
-      2, 
-      "exceptions": {
-        "Property": true,
-        "VariableDeclarator": true,
-        "ImportDeclaration": true,
-        "ObjectExpression": true,
+      2,
+      {
+        "exceptions": {
+          "Property": true,
+          "VariableDeclarator": true,
+          "ImportDeclaration": true,
+          "ObjectExpression": true,
+        },
       },
     ],
     "no-warning-comments": 1,

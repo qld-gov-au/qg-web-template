@@ -129,6 +129,10 @@ This repo should contain three main branches. DO NOT WORK DIRECTLY INTO THESE BR
 * src/ - This is where the source files for the template are kept
 	* assets/
 		* _project/ - SCSS, JS, external libraries, code-snippets, and images vital for the template to operate correctly. Files in here are compiled specially by gulp. Keep an eye on the build file when making changes. This directory will be renamed to the version number for the template (V3).
+			* js/ - 
+				* 
+				* 
+			* scss/ - 
 		* images/ - Images for the template
 		* includes - The main SSI includes. This folder is split into includes/ and includes-cdn/ (which are automatically re-written to point to CDN assets) on release.
 	* documentation/ - The end user documentation on using this template
