@@ -47,7 +47,7 @@ gulp.task('build-files', require('./gulp/build-tasks/other-files')(gulp, plugins
 
 gulp.task('build', ['test:eslint:soft', 'html', 'includes', 'includes-cdn', 'scss', 'js', 'other-assets', 'build-files']);
 gulp.task('build:hardfail', (cb) => {
-  // Build hardfail supports release process
+  // Build hardfail supports release process, and fails if the test doesn't complete successfully
   runSequence(
     'test',
     ['html', 'includes', 'includes-cdn', 'scss', 'js', 'other-assets', 'build-files'],
@@ -92,8 +92,8 @@ gulp.task('release', (cb) => {
 
 /* TEST TASKS */
 gulp.task('test:unit', require('./gulp/test-tasks/unit')(gulp, plugins, config, karmaServer));
-gulp.task('test:eslint', require('./gulp/test-tasks/lint')(gulp, plugins, config, fsPath, eslintReporter));
-gulp.task('test:eslint:soft', require('./gulp/test-tasks/lint-soft')(gulp, plugins, config, fsPath, eslintReporter));
+gulp.task('test:eslint', require('./gulp/test-tasks/lint')(gulp, plugins, config, fsPath, eslintReporter)); // Terminates on error
+gulp.task('test:eslint:soft', require('./gulp/test-tasks/lint-soft')(gulp, plugins, config, fsPath, eslintReporter)); // Doesn't terminate on error
 gulp.task('lint', ['test:eslint']);
 gulp.task('test:browserstack', require('./gulp/test-tasks/e2e')(gulp, plugins, argv));
 

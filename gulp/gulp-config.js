@@ -42,6 +42,7 @@ module.exports = {
     karmaConfig () {
       return process.cwd() + '/karma.config.js';
     },
+    // Linting source and exclusions
     lint: [
       'gulpfile.js',
       'src/**/*.js',
@@ -59,15 +60,24 @@ module.exports = {
   },
   outputList: ['/', 'template-local', 'template-cdn', 'documentation'],
   output: {
+    // Sets the options for output to release for each module
     '/': {
-      assetsCore: true, // Default: false
-      sourceSCSS: true, // Default: false
-      assetsIncludes: true, // Default: false
-      assetsIncludesCdn: true, // Default: false
-      localToCdn: false, // Default: false, note to include the appropriate assetsIncludes directory above
-      copyElement: false, // Default: false, accepts string for source element
+      // Root directory
+      // Copy the core project assets to the target directory, Default: false
+      assetsCore: true,
+      // Copy the SCSS to the target directory, Default: false 
+      sourceSCSS: true,
+      // Copy the local incldues to the target directoy, Default: false
+      assetsIncludes: true, 
+      // Copy the CDN incldues to the target directoy, Default: false
+      assetsIncludesCdn: true, 
+      // Convert html SSI includes to point to CDN assets, must include the appropriate assetsIncludes above, Default: false
+      localToCdn: false, 
+      // Copy the target directory from build to release and set it's name to the name of this element, Default: false
+      copyElement: false,
     },
     'template-local': {
+      // The template using local assets
       assetsCore: true,
       sourceSCSS: false,
       assetsIncludes: true,
@@ -76,6 +86,7 @@ module.exports = {
       copyElement: 'template',
     },
     'template-cdn': {
+      // The template using cdn (static.qld.gov.au) assets
       assetsCore: false,
       sourceSCSS: false,
       assetsIncludes: false,
@@ -84,12 +95,13 @@ module.exports = {
       copyElement: 'template',
     },
     documentation: {
+      // User documentation
       assetsCore: false,
       sourceSCSS: false,
       assetsIncludes: true,
       assetsIncludesCdn: false, // TODO: change to true
       localToCdn: false, // TODO: change to true
-      copyElement: true,
+      copyElement: 'documentation',
     },
   },
 };

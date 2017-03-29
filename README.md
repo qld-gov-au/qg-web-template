@@ -23,7 +23,7 @@ Install all the node packages (If behind a corporate web proxy please have a loo
 npm install
 ```
 
-### 3. Create a branch
+### 3. Making changes - Create a branch
 
 **WARNING: Do not work directly in 'working', 'beta', or 'master' branches**
 

@@ -5,6 +5,7 @@ module.exports = function (gulp, plugins, config) {
     config.outputList.map(function (element) {
       let src = [];
       let dest = `${config.basepath.release}/${element}/`;
+      
       if (typeof config.output[element].copyElement === 'string') {
         let elementSrc = config.output[element].copyElement;
         src = [`${config.basepath.build}/${elementSrc}/**/*`];
@@ -14,7 +15,7 @@ module.exports = function (gulp, plugins, config) {
       src.concat(config.release.excludes);
 
       // Test if the element is set to deploy this component
-      if (config.output[element].copyElement === true || typeof config.output[element].copyElement === 'string') {
+      if (typeof config.output[element].copyElement === 'string') {
         if (config.output[element].localToCdn === true) {
           let regex = new RegExp('<!--#include.*virtual="/assets/includes/', 'g');
           return gulp.src(src, { dot: true })
