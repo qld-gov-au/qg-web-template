@@ -29,6 +29,15 @@ git checkout -b Bugfix/QOL-100-NE-Fixing-nav-nesting-issue
 
 Replace "Bugfix/QOL-100-Fixing-nav-nesting-issue" with your branch.
 
+### Making a commit to git
+
+Allways prefix your commit message with the JIRA task number - if you have a JIRA task.
+
+```bash
+git commit -m "QOL-100 - Your commit message"
+```
+
+
 **Basic commands :**<br />
     - Make sure node and npm are installed. Check using **node -v** and **npm -v** commands. If not already installed then please install from this website  [node website](https://nodejs.org/en/) <br />
     - **npm install** to install all the node packages (If behind a corporate web proxy please have a look at this website [How to setup Node.js and Npm behind a corporate web proxy](https://jjasonclark.com/how-to-setup-node-behind-web-proxy))<br />
