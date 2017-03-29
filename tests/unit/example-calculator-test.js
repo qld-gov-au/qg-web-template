@@ -1,16 +1,11 @@
-import Calculator from '../../src/testing-example-SampleClass.js';
+// import feedbackForm  from '../../src/assets/_project/js/modules/feedback-form.js';
 
-describe('Calculator', () => {
-  it('should add two numbers', () => {
-    const calculator = new Calculator();
-    const sum = calculator.add(5, 2);
-    expect(sum).toBe(7);
-  });
+function helloWorld () {
+  return 'Hello world!';
+}
 
-  it('should substract two numbers', () => {
-    const calculator = new Calculator();
-    const sub = calculator.sub(5, 2);
-    expect(sub).toBe(3);
+describe('Hello world', function () {
+  it('says hello', function () {
+    expect(helloWorld()).toEqual('Hello world!');
   });
 });
-

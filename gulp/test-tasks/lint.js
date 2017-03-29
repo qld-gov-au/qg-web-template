@@ -4,6 +4,7 @@ module.exports = function (gulp, plugins, config, fsPath, eslintReporter) {
       'src/**/*.js',
       'gulp/**/*.js',
       'tests/**/*.js',
+      '!tests/reports/**/*.js',
       '!build/**/*',
       '!release/**/*',
       '!**/_old/**/*',
@@ -16,6 +17,7 @@ module.exports = function (gulp, plugins, config, fsPath, eslintReporter) {
       configFile: 'tests/.eslintrc',
     }))
     .pipe(plugins.eslint.format())
+    .pipe(plugins.eslint.failAfterError())
     .pipe(plugins.eslint.format(eslintReporter, function (results) {
       fsPath.writeFile('tests/reports/eslint/report.html', results);
     }));

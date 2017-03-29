@@ -30,10 +30,10 @@ const connect           = require('gulp-connect');
 
 /* CLEAN TASKS */
 gulp.task('clean-build', (cb) => {
-    return del([config.basepath.build], cb);
+  return del([config.basepath.build], cb);
 });
 gulp.task('clean-release', (cb) => {
-    return del([config.basepath.release], cb);
+  return del([config.basepath.release], cb);
 });
 
 /* BUILD TASKS */
@@ -45,20 +45,26 @@ gulp.task('js', require('./gulp/build-tasks/js')(gulp, plugins, config, webpack)
 gulp.task('other-assets', require('./gulp/build-tasks/other-assets')(gulp, plugins, config, es));
 gulp.task('build-files', require('./gulp/build-tasks/other-files')(gulp, plugins, config));
 
-gulp.task('default', ['test:eslint', 'html', 'includes', 'includes-cdn', 'scss', 'js', 'other-assets', 'build-files']);
-gulp.task('build', ['default']);
+gulp.task('build', (cb) => {
+  runSequence(
+        'test',
+        ['html', 'includes', 'includes-cdn', 'scss', 'js', 'other-assets', 'build-files'],
+        cb
+    );
+});
+gulp.task('default', ['build']);
 gulp.task('build:clean', (cb) => {
-    runSequence('clean-build', 'default', cb);
+  runSequence('clean-build', 'default', cb);
 });
 
 /* WATCH TASSKS */
 gulp.task('watch', function () {
-    gulp.watch([config.basepath.src + '/**/*.html'], ['html']);
-    gulp.watch([config.basepath.src + '/assets/includes/**/*.html'], ['includes']);
-    gulp.watch([config.basepath.src + '/**/*.scss'], ['scss']);
-    gulp.watch([config.basepath.src + '/**/*.js'], ['js']);
-    gulp.watch([config.basepath.src + '/**/*.js'], ['eslint']);
-    gulp.watch([config.basepath.src + '**/*'], ['other-assets']);
+  gulp.watch([config.basepath.src + '/**/*.html'], ['html']);
+  gulp.watch([config.basepath.src + '/assets/includes/**/*.html'], ['includes']);
+  gulp.watch([config.basepath.src + '/**/*.scss'], ['scss']);
+  gulp.watch([config.basepath.src + '/**/*.js'], ['js']);
+  gulp.watch([config.basepath.src + '/**/*.js'], ['eslint']);
+  gulp.watch([config.basepath.src + '**/*'], ['other-assets']);
 });
 gulp.task('watch:serve', ['watch', 'serve']);
 
@@ -72,8 +78,8 @@ gulp.task('release-js', require('./gulp/release-tasks/js')(gulp, plugins, config
 gulp.task('css', require('./gulp/release-tasks/css')(gulp, plugins, config)); // Minifies CSS
 gulp.task('copy-element', require('./gulp/release-tasks/copy-element')(gulp, plugins, config));
 
-gulp.task('release', (cb) => { 
-    runSequence(
+gulp.task('release', (cb) => {
+  runSequence(
         ['build:clean', 'clean-release'],
         ['assets-core', 'scss-src', 'release-js', 'css', 'release-files', 'assets-includes', 'assets-includes-cdn'],
         'copy-element', // Done last in order to over-ride assets-includes
