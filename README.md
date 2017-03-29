@@ -15,8 +15,8 @@ To keep the repository clean, branches must be prefixed into categories with a f
 - Hotfix: For critical bugs and errors which will be merged into the current release
 - Enhancement: For refactoring, or general improvements to existing features that do not add new features
 
-Add the JIRA job number after the category type, or the initials of the developer making the change if there is no JIRA job.
-Example: Bugfix/QOL-100-Fixing-nav-nesting-issue
+Add the JIRA job number after the category type, and your initials so we can track who's responsible for each branch. If there is no JIRA task, just add your initials.
+Example: Bugfix/QOL-100-NE-Fixing-nav-nesting-issue
 It's best to checkout files from working, or beta. *Note: working may not always be stable, in those instances use beta.*
 
 **If you use git command line, use the following commands to create your branch**
@@ -24,7 +24,7 @@ It's best to checkout files from working, or beta. *Note: working may not always
 ```bash
 git fetch origin
 git checkout working
-git checkout -b Bugfix/QOL-100-Fixing-nav-nesting-issue
+git checkout -b Bugfix/QOL-100-NE-Fixing-nav-nesting-issue
 ```
 
 Replace "Bugfix/QOL-100-Fixing-nav-nesting-issue" with your branch.
