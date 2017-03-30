@@ -7,10 +7,11 @@ module.exports = function (gulp, plugins, config) {
         `${config.basepath.src}/assets/includes/**/*.html`,
       ].concat(config.build.excludes);
 
-      let regex = new RegExp('="/assets/' + config.versionName + '/', 'g');
+      let projectAssets = new RegExp('="/assets/_project/', 'g');
       return gulp.src(target, { dot: true })
         .pipe(plugins.include({ hardFail: true }))
-        .pipe(plugins.replace(regex, `="//static.qld.net.au/assets/${config.versionName}/`))
+        // Replace /assets/_project/ with /assets/v3/, and convert to CDN
+        .pipe(plugins.replace(projectAssets, `="//static.qld.net.au/assets/${config.versionName}/`))
         .on('error', console.log)
         .pipe(gulp.dest(`${config.basepath.build}/assets/includes-cdn/`))
         .on('end', cb);

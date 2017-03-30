@@ -11,4 +11,4 @@
 export default function parentWidth () {
   var $target = $('*[data-parent-width=1]');
   $target.outerWidth($target.parent().width());
-};
+}
