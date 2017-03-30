@@ -1,12 +1,12 @@
 // ###################################
-// Colours
+// Colour definitions
 
 // ## Primary blue ##
 $qg-blue: #007EB1; // Primary blue
-$qg-blue-dark: #13578b; // Primary link colour
+$qg-blue-dark: #13578b; // Primary link colour (see bootstrap-variables.scss)
 $qg-blue-darker: #005375;
 
-$qg-green: #78ba00; // For primary buttons, icons etc.
+$qg-green: #78ba00; // For primary buttons, icons etc. (see bootstrap-variables.scss)
 
 // ## Dark grey ##
 $qg-dark-gray-lighter: #8a8f91; // Lightest for large text on white
@@ -14,19 +14,58 @@ $qg-dark-gray-light: #717679; // Lightest for small text on white
 $qg-dark-grey: #585e62; // For default buttons 
 
 // ## Light grey ##
+$qg-light-gray-lighter: #f8f8f8;
 $qg-light-gray: #f6f6f6; // Primary brand light grey
+$qg-light-gray-darker: #d1d1d1;
 
-$qg-light-gray-darker: #707070;
+// $qg-light-gray-darker: #707070; // Dark grey
 
 
+// ## Dark Blue ##
+$qg-dark-blue: #0B2E4C;
 
-// ############################
+
+// ###################################
 
 // Light blue colours
 $qg-pale-blue-dark:		#cecece;
 $qg-pale-blue:			#e7f5fe;
 $qg-pale-blue-light:	#f2f7f9;
 
+
+
+// Semantic colour Variables
+// #################################################
+// Semantic variables for common element colours
+// Note: Use US spelling for colour
+
+// Site header
+$qg-breadcrumb-bg-color: $qg-blue;
+$qg-site-header-bg-color: $qg-light-gray;
+
+// Section Nav
+$qg-section-nav-bg-color: $qg-light-gray;
+$qg-section-nav-link-hover-bg-color: $qg-light-gray-darker;
+
+// Asides
+$qg-aside-bg-color: $qg-pale-blue;
+$qg-aside-bg-color2: $qg-pale-blue-light;
+$qg-aside-bg-color3: $qg-pale-blue-dark;
+
+// Content options
+$qg-content-options-bg-color: $qg-blue;
+$qg-feedback-btn-bg-color: $qg-blue-darker;
+$qg-feedback-bg-color: $qg-light-gray-lighter;
+$qg-content-options-share-icon-color: #fff;
+// FIXME: This might be superseeded by fixing the BS dropdown menu colours
+$qg-content-options-share-dropdown-bg-color: $qg-dark-grey; //#575d62
+$qg-content-options-share-dropdown-hover-bg-color: $qg-light-gray;
+$qg-content-options-share-dropdown-icon-color: inherit;
+$qg-content-options-share-dropdown-icon-hover-color: #000;
+
+// Footer
+$qg-footer-bg-color: $qg-dark-blue;
+$qg-footer-bg-alt-color: $qg-dark-blue;
 
 
 // Notes:
@@ -56,5 +95,5 @@ $qg-blue4: #13578b;//done
 $qg-blue5: #115289;//done
 $qg-banner-blue: #00335B;//none
 $qg-blue-green: #005375;//done
-$qg-dark-blue: #0B2E4C;//done
+
 $qg-blue9: #0b3253;//done

@@ -6,7 +6,7 @@
     padding: 16px*1.5;
     margin: 0;
 
-    background-color: $qg-pale-blue;
+    background-color: $qg-aside-bg-color;
 
     h2 {
       margin-top: 0;
@@ -15,10 +15,10 @@
       margin-bottom: 0;
     }
     &:nth-child(2n) {
-      background-color: $qg-pale-blue-light; // $qg-light-blue-gray4;
+      background-color: $qg-aside-bg-color2;
     }
     &:nth-child(3n) {
-      background-color: $qg-pale-blue-dark; // $qg-light-blue-gray5;
+      background-color: $qg-aside-bg-color3;
     }
   }
 }

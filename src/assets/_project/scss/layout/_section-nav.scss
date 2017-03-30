@@ -3,22 +3,20 @@ $small-margin: $grid-gutter-width / 2;
 $large-margin: $grid-gutter-width;
 
 #qg-content #qg-section-nav {   
-  background-color: $qg-light-gray;
+  background-color: $qg-section-nav-bg-color;
 
   h2 {
     padding: $small-margin 0 ($small-margin / 2) 0;
     margin:  0;
-    background-color: $qg-light-gray;
 
     color: #000;
     @include fontSize(19px);
   }
   a {
-    color: $qg-blue-dark;
+    // color: $qg-blue-dark;
   }
 
   ul {
-    background-color: $qg-light-gray; 
     margin: 0;
     padding: 0 0 ($small-margin * 0.7) 0;
   }
@@ -43,7 +41,7 @@ $large-margin: $grid-gutter-width;
 
     a:hover {
       text-decoration: none;
-      background-color: $qg-light-gray7;
+      background-color: $qg-section-nav-link-hover-bg-color;
     }
 
     a.active {
@@ -73,6 +71,10 @@ $large-margin: $grid-gutter-width;
 
   @media (min-width: $screen-md-min) {
     background-color: transparent;
+
+    h2, ul {
+      background-color: $qg-section-nav-bg-color
+    }
 
     h2 {
       padding: $large-margin $large-margin ($large-margin / 3) $large-margin;

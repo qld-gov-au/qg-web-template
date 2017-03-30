@@ -2,10 +2,7 @@
 
 #qg-breadcrumb {
 	@include make-xs-column(12);
-	background: $qg-blue;
-
-	// padding-left: 0;
-	// padding-right: 0;
+	background: $qg-breadcrumb-bg-color;
 
 	h1, h2 {
 		 color: #FFF;
@@ -99,6 +96,14 @@
 				font-size: 100%;
 			}
 		}
+	}
+}
+
+@media (min-width: $screen-md-min) {
+	// Set to shown to prevent breadcrumbs from being hidden
+	#qg-breadcrumb.collapse{
+	   display: block;
+	   height: auto !important;
 	}
 }
 

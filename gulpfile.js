@@ -1,7 +1,8 @@
 'use strict';
 
 // init env variables
-require('dotenv').config();
+// FIXME: This isn't loading
+// require('dotenv').config();
 
 // Core
 const gulp            = require('gulp');
