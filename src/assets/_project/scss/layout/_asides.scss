@@ -3,7 +3,7 @@
   position: relative; // For affix and other fixed position child elements
 
   .qg-aside {
-    padding: 16px*1.5;
+    padding: $qg-margin; // 16px*1.5;
     margin: 0;
 
     background-color: $qg-aside-bg-color;

@@ -32,7 +32,7 @@ To keep the repository clean, branches must be prefixed into categories with a f
 - Bugfix: For bugs and errors that will be released on the standard schedule
 - Feature: For new features
 - Hotfix: For critical bugs and errors which will be merged into the current release
-- Enhancement: For refactoring, or general improvements to existing features that do not add new features
+- Enhance: For refactoring, or general improvements to existing features that do not add new features
 
 Add the JIRA job number after the category type, and your initials so we can track who's responsible for each branch. If there is no JIRA task, just add your initials.
 Example: Bugfix/QOL-100-NE-Fixing-nav-nesting-issue

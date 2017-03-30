@@ -1,12 +1,10 @@
 /* ! section (side) navigation */
-$small-margin: $grid-gutter-width / 2;
-$large-margin: $grid-gutter-width;
 
 #qg-content #qg-section-nav {   
   background-color: $qg-section-nav-bg-color;
 
   h2 {
-    padding: $small-margin 0 ($small-margin / 2) 0;
+    padding: $qg-margin-small 0 ($qg-margin-small / 2) 0;
     margin:  0;
 
     color: #000;
@@ -18,7 +16,7 @@ $large-margin: $grid-gutter-width;
 
   ul {
     margin: 0;
-    padding: 0 0 ($small-margin * 0.7) 0;
+    padding: 0 0 ($qg-margin-small * 0.7) 0;
   }
 
   li {
@@ -77,17 +75,17 @@ $large-margin: $grid-gutter-width;
     }
 
     h2 {
-      padding: $large-margin $large-margin ($large-margin / 3) $large-margin;
+      padding: $qg-margin $qg-margin ($qg-margin / 3) $qg-margin;
     }
     ul {
-      padding: 0 0 ($large-margin * 0.7) 0;
+      padding: 0 0 ($qg-margin * 0.7) 0;
     }
     li {
       a {
-        padding: .7em ($large-margin/2) .7em ($large-margin + 15px);
+        padding: .7em ($qg-margin/2) .7em ($qg-margin + 15px);
       }
       a:before {
-        left: $large-margin;
+        left: $qg-margin;
       }
     }
   }

@@ -68,6 +68,14 @@ $qg-footer-bg-color: $qg-dark-blue;
 $qg-footer-bg-alt-color: $qg-dark-blue;
 
 
+// ###################################
+// Margins and rulers
+
+$qg-margin: 50px; // Note: Used by BS gutter width
+$qg-margin-large: $qg-margin * 1.5;
+$qg-margin-small: $qg-margin / 2;
+
+
 // Notes:
 // $brand-danger = $qg-red5
 
