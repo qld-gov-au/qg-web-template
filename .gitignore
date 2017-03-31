@@ -38,6 +38,7 @@ node_modules
 # Local and dev
 _local.*
 _local*/**/*
+tests/reports/**/*
 
 ### macOS ###
 *.DS_Store
