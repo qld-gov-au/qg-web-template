@@ -1,0 +1,27 @@
+// Extends bootstrap dropdowns
+
+.dropdown .dropdown-toggle:not(.noicon):after,
+.dropup .dropdown-toggle:not(.noicon):after {
+	padding-left: 0.2em;
+    font-family: FontAwesome;
+    line-height: inherit;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+.dropdown .dropdown-toggle:not(.noicon):after {
+	content: " \f0d7";
+}
+.dropdown.open .dropdown-toggle:not(.noicon):after {
+	content: " \f0d8";
+}
+
+.dropup .dropdown-toggle:not(.noicon):after {
+	content: " \f0d8";
+}
+.dropup.open .dropdown-toggle:not(.noicon):after {
+	content: " \f0d7";
+}

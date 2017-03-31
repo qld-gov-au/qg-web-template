@@ -59,11 +59,8 @@ $qg-content-options-bg-color: $qg-blue;
 $qg-feedback-btn-bg-color: $qg-blue-darker;
 $qg-feedback-bg-color: $qg-light-gray-lighter;
 $qg-content-options-share-icon-color: #fff;
-// FIXME: This might be superseeded by fixing the BS dropdown menu colours
-$qg-content-options-share-dropdown-bg-color: $qg-dark-grey; //#575d62
-$qg-content-options-share-dropdown-hover-bg-color: $qg-light-gray;
-$qg-content-options-share-dropdown-icon-color: inherit;
-$qg-content-options-share-dropdown-icon-hover-color: #000;
+// Note: Share dropdown uses colours from bootstrap
+
 
 // Footer
 $qg-footer-bg-color: $qg-dark-blue;
