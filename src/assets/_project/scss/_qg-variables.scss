@@ -1,5 +1,6 @@
-// ###################################
-// Colour definitions
+// #################################################
+// ## Colour definitions
+// Define colour names, avoid using these in the wider SCSS
 
 // ## Primary blue ##
 $qg-blue: #007EB1; // Primary blue
@@ -34,9 +35,10 @@ $qg-pale-blue-light:	#f2f7f9;
 
 
 
-// Semantic colour Variables
+
 // #################################################
-// Semantic variables for common element colours
+// ## Semantic colour Variables
+// Semantic variables names common element colours. Use these in your SCSS
 // Note: Use US spelling for colour
 
 // Site header
