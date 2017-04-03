@@ -79,36 +79,105 @@
 
                     <h1>Layout</h1>
 
-                    <p class="lead">Template layout options</p>
+                    <p class="lead">Template layout options, fundamental HTML elements, and grid system framework</p>
 
 <!-- ################################## -->
 
     <h2 id="layout" class="category">Page layout</h2>
-    <p>All Franchise websites have a standardised header and footer. IS26 and the Agency guidelines (CUE) allow for modification to this but still include most of the same standard.</p>
+    <p>All Franchise websites have a standardised layout. This includes a header, footer, and flexible three column layout.</p>
 
     <h3>Header</h3>
     <p>The header at the top of this page shows the standard styling.</p>
+    <h4>Site nav</h4>
+    <p>Site navigation is automatically included for you. If you are building an Agency page and need to change this, please make a copy of the default include, make yourchanges, and point to your new copy.</p>
+    <h4>Utilities</h4>
+    <p>The standard header contains the required utilities (site search, contact us), but also contains some elements commented out. To add these optional elements or add your own, create your own custom includes file and un-comment the ones you want.</p>
+
+    <h3>Breadcrumbs</h3>
+    <p>The breadcrumbs at the top of this page shows the standard styling.</p>
+
+    <h3>Page content</h3>
+    <p>The main content of Queensland Government web pages. This is a flexible section which can have one, two or three columns, with a veriety of display options.</p>
+    <p>See the <a href="#flexible-three-col">Flexible three column layout</a> section for more information.</p>
+
+    <h3>Footer</h3>
+    <p>Content coming soon.</p>
+
+<!-- ################################## -->
+
+    <h2 id="flexible-three-col" class="category">Fexlible three column layout</h2>
+    <p>The main content of Queensland Government websites is layed out in three columns as you can see on this page. This is made up of the sections <code>#qg-section-nav</code>, <code>#qg-primary-content</code>, and <code>#qg-secondary-content</code></p>
+    
+    <h3>Wide layout and Index pages</h3>
+    <p>For index pages, applications, and other special purposes, it is possible to have the <code>#qg-primary-content</code> element span the whole width of the document. To do this, add the class <code>qg-wide</code> to the <code>#qg-content</code> element: <code>&lt;div id="qg-content" class="qg-wide"&gt;</code>.</p>
+    <p>Once you've done this, you'll notice the secondary content is no longer displayed. To add the secondary content back, add the class <code>qg-has-aside</code> to the <code>#qg-primary-content</code> element: <code>&lt;div id="qg-primary-content" class="qg-has-aside" role="main"&gt;</code>.</p>
+
+    <h3 id="section-navigation">Section navigation</h3>
+
+    <p>The section navigation is an optional element containing links to other pages in the same information architecture context as the page the user is currently on.</p>
+    <p>The section starts with a nav with a nav element with the id qg-section-nav.</p>
+    <pre>
+<code>
+&lt;nav id="qg-section-nav" aria-label="side navigation" role="navigation"&gt;
+    &lt;h2&gt;
+        &lt;a href="#"&gt;
+            Parent page for section tree
+        &lt;/a&gt;
+    &lt;/h2&gt;
+    &lt;ul aria-label="section navigation"&gt;
+    &lt;li&gt;
+        &lt;a href="#"&gt;
+            At least one sub page
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+</code>
+    </pre>
+
+    <p>All standard content pages should include section navigation, however if your page doesn't require it you can simply delete the entire block. The template will adapt automatically.</p>
+    <p>More information:</p>
+    <ul>
+        <li>
+            <a href="https://www.qld.gov.au/gov/cue-module2-checkpoint16-section-navigation">CUE guideline on section navigation</a>
+        </li>
+    </ul>
+
+    <h3 id="primary-content">Primary content</h3>
+    <p>This is where most of your content should go. See the rest of this documentation for advice on what styles can be applied here.</p>
+
+    <h3 id="asides">Asides (secondary content)</h3>
+    <p>Asides should contain secondary content applicable to the page, but not immediately relevant.</p>
+    <p>To add secondary content, simply add <code>&lt;aside id="qg-secondary-content"&gt;</code> after the <code>#qg-primary-content</code> element, then add one or more asides.</p>
+    <p>Each aside should start with a <code>&lt;h2&gt;</code> element</p>
+
+    <pre>
+<code>
+&lt;aside id="qg-secondary-content"&gt;
+    &lt;div class="qg-aside" role="complementary"&gt;
+        &lt;h2&gt;On this page&lt;/h2&gt;
+        &lt;ul&gt;&lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/aside&gt;
+</code>
+    </pre>
+
+    <p>If multiple pages are to have the same aside, it is advised that you use an SSI (or some other method of dynamically including files) to include the file from /assets/includes/asides/.</p>
 
     <h3>Footer</h3>
     <p>The footer at the bottom of this page shows the standard styling.</p>
 
-    <h3>Page content - Three column layout</h3>
-    <p>The main content of Queensland Government web pages are layed out in three columns as you can see on this page. This is made up of the sections <code>#qg-section-nav</code>, <code>#qg-primary-content</code>, and <code>#qg-secondary-content</code>
-    <p>To remove the navigation or secondary content simply delete it, the CSS will adapt to your new layout.</p>
-    <h4>Wide layout and Index pages</h4>
-    <p>For index pages, applications, and other special purposes, it is possible to have the <code>#qg-primary-content</code> element span the whole width of the document. To do this, add the class <code>qg-wide</code> to the <code>#qg-content</code> element: <code>&lt;div id="qg-content" class="qg-wide"&gt;</code>.</p>
-    <p>Once you've done this, you'll notice the secondary content is no longer displayed. To add the secondary content back, add the class <code>qg-has-aside</code> to the <code>#qg-primary-content</code> element: <code>&lt;div id="qg-primary-content" class="qg-has-aside" role="main"&gt;</code>.</p>
+<!-- ################################## -->
+
+    <h2 id="breakpoints" class="category">Breakpoints</h2>
+    <p>Content coming soon.</p>
 
 <!-- ################################## -->
 
-    <h2 id="navigation" class="category">Navigation</h2>
+    <h2 id="grid-system" class="category">Grid system</h2>
+    <p>Content coming soon.</p>
 
 <!-- ################################## -->
-
-    <h2 id="asides" class="category">Asides (secondary content)</h2>
-
-<!-- ################################## -->
-
 
                     <div class="qg-content-footer">
 
@@ -125,29 +194,24 @@
                 </div>
 
                 <aside id="qg-secondary-content">
-
-                    <!-- include virtual="/assets/includes/asides/aside-global.html"-->
-                    <!-- include virtual="/assets/includes/asides/aside-disaster-alert.html" -->
-                    <!-- include virtual="/assets/includes/asides/aside-contact-qgov.html" -->
-                    <!-- include virtual="/assets/includes/asides/aside-story-qgov.html" -->
-                    <!-- include virtual="/assets/includes/asides/aside-your-say-qgov.html" -->
-                    <!-- include virtual="/assets/includes/asides/aside-tip-qgov.html" -->
-                    <!-- include virtual="/assets/includes/asides/aside-search-qgov.html" -->
-                    <!-- include virtual="/assets/includes/asides/aside-subscribe-qgov.html" -->
-                    <!-- include virtual="/assets/includes/asides/aside-download-qgov.html" -->
-                    <!-- include virtual="/assets/includes/asides/aside-feedback-qgov.html" -->
-
                     <div class="qg-aside" role="complementary">
                         <h2>On this page</h2>
 
                         <ul>
-                            <li><a href="#layout">Page Layout</a>
-                            <li><a href="#breakpoints">Breakpoints</a>
-                            <li><a href="#grid">Grid System</a>
+                            <li><a href="#layout">Page layout</a></li>
+                            <li>
+                                <a href="#flexible-three-col">Flexible three column layout</a>
+                                <ul>
+                                    <li><a href="#section-navigation">Section navigation</a></li>
+                                    <li><a href="#primary-content">Primary content</a></li>
+                                    <li><a href="#asides">Asides</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#breakpoints">Breakpoints</a></li>
+                            <li><a href="#grid">Grid System</a></li>
                         </ul>
 
                     </div>
-
                 </aside>
             </div>
             <!--#include virtual="/assets/includes/content/options.html"-->
