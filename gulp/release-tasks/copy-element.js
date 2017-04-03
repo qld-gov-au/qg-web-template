@@ -5,7 +5,7 @@ module.exports = function (gulp, plugins, config) {
     config.outputList.map(function (element) {
       let src = [];
       let dest = `${config.basepath.release}/${element}/`;
-      
+
       if (typeof config.output[element].copyElement === 'string') {
         let elementSrc = config.output[element].copyElement;
         src = [`${config.basepath.build}/${elementSrc}/**/*`];

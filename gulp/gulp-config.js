@@ -65,14 +65,14 @@ module.exports = {
       // Root directory
       // Copy the core project assets to the target directory, Default: false
       assetsCore: true,
-      // Copy the SCSS to the target directory, Default: false 
+      // Copy the SCSS to the target directory, Default: false
       sourceSCSS: true,
       // Copy the local incldues to the target directoy, Default: false
-      assetsIncludes: true, 
+      assetsIncludes: true,
       // Copy the CDN incldues to the target directoy, Default: false
-      assetsIncludesCdn: true, 
+      assetsIncludesCdn: true,
       // Convert html SSI includes to point to CDN assets, must include the appropriate assetsIncludes above, Default: false
-      localToCdn: false, 
+      localToCdn: false,
       // Copy the target directory from build to release and set it's name to the name of this element, Default: false
       copyElement: false,
     },

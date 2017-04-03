@@ -31,7 +31,7 @@
 
     <!--#include virtual="/assets/includes/head-assets.html"-->
 
-    <link href="/assets/v3/css/qg-documentation.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/assets/_project/css/qg-documentation.css" rel="stylesheet" type="text/css" media="all">
 
 </head>
 
@@ -85,35 +85,38 @@
                     <p>Y</p>
 
 <!-- ################################## -->
-    <h2 id="dropdowns" class="category">Dropdowns</h2>
-    <p>
-        Dropdowns are only to be used for web applications.
-    </p>
-    <p class="warn">
-        Due to the nature of the Forms system being used, dropdowns are not advised for web forms.
-    </p>
-    <p>
-        For more information on implementation, see the <a href="http://getbootstrap.com/components/#dropdowns" target="_blank">bootstrap dropdowns section</a>.
-    </p>
+  <h2 id="dropdowns" class="category">Dropdowns</h2>
+  <p>
+      Dropdowns are only to be used for web applications, not forms.
+  </p>
+  <p class="warn">
+      Due to the nature of the Forms system being used, dropdowns are not advised for web forms.
+  </p>
+  <p class="alert alert-info" role="alert">
+    Unlike Bootstrap, the Web Template automatically provides a caret on dropdowns. See <a href="#dropdowns-custom-icon">custom icon</a> to disable this feature.
+  </p>
+  <p>
+      For more information on implementation, see the <a href="http://getbootstrap.com/components/#dropdowns" target="_blank">bootstrap dropdowns section</a>.
+  </p>
 
-    <div class="qg-tmplt-example">
-        <div class="panel-body">
+  <div class="qg-tmplt-example">
+      <div class="panel-body">
 
-<div class="dropdown">
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    Dropdown
-    <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-    <li><a href="#">Action</a></li>
-    <li><a href="#">Another action</a></li>
-    <li class="dropdown-header">Optional dropdown header</li>
-    <li><a href="#">Action after dropdown header</a></li>
-    <li><a href="#">Something else here</a></li>
-    <li role="separator" class="divider"></li>
-    <li><a href="#">Separated link</a></li>
-  </ul>
-</div>
+  <div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      Dropdown
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+      <li><a href="#">Action</a></li>
+      <li><a href="#">Another action</a></li>
+      <li class="dropdown-header">Optional dropdown header</li>
+      <li><a href="#">Action after dropdown header</a></li>
+      <li class="disabled"><a href="#">Disabled link</a></li>
+      <li><a href="#">Something else here</a></li>
+      <li role="separator" class="divider"></li>
+      <li><a href="#">Separated link</a></li>
+    </ul>
+  </div>
 
         </div>
     </div>
@@ -125,7 +128,6 @@
 <div class="dropup">
   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Dropup
-    <span class="caret"></span>
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
     <li><a href="#">Action</a></li>
@@ -138,6 +140,72 @@
 
         </div>
     </div>
+
+  <h2 id="dropdowns-custom-icon">Custom icon</h2>
+  <p>To remove the caret added by the Web Template, add the class '.noicon' to the button. Make sure to add your own icon, or use the bootstrap default icon.</p>
+
+  <div class="qg-tmplt-example">
+    <div class="panel-body">
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle noicon" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          Dropdown
+          <span class="icon caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu3">
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Another action</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+<!-- ################################## -->
+
+    <h2 class="category">Button Groups</h2>
+    <div class="btn-group" role="group" aria-label="...">
+      <button type="button" class="btn btn-default">Left</button>
+      <button type="button" class="btn btn-default">Middle</button>
+      <button type="button" class="btn btn-default">Right</button>
+    </div>
+
+    <h3 class="category">Button toolbar</h2>
+    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+        <div class="btn-group" role="group" aria-label="First group">
+            <button type="button" class="btn btn-default">1</button>
+            <button type="button" class="btn btn-default">2</button>
+            <button type="button" class="btn btn-default">3</button>
+            <button type="button" class="btn btn-default">4</button>
+        </div>
+        <div class="btn-group" role="group" aria-label="Second group">
+            <button type="button" class="btn btn-default">5</button>
+            <button type="button" class="btn btn-default">6</button>
+            <button type="button" class="btn btn-default">7</button>
+        </div>
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a href="#">Dropdown link</a></li>
+              <li><a href="#">Dropdown link</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <h3 class="category">Justified button group</h2>
+    <div class="btn-group btn-group-justified" role="group" aria-label="...">
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-default">Left</button>
+      </div>
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-default">Middle</button>
+      </div>
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-default">Right</button>
+      </div>
+    </div>
+
 <!-- ################################## -->
 
                     <div class="qg-content-footer">

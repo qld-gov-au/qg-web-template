@@ -67,7 +67,6 @@ function renderIcon (type, name, src = false) {
     return `<span class="fa fa-${name} fa-2x qg-share-icon" aria-hidden="true"></span>`;
   case 'svg':
     return `<img src="${src}" aria-hidden="true" class="qg-share-icon" alt="name" />`;
-
   }
   // Default, return nothing
   return '';
@@ -87,11 +86,11 @@ function renderShareButtons () {
   return `<h2>Share:</h2>
 <ul class="navbar navbar-right">
   ${getLinks('primary')}
-  <li class="dropdown dropdown-menu-right">
-    <button id="shareDropdown" class="qg-share-link" title="share" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <li id="shareDropdown" class="dropdown dropdown-menu-right">
+    <button id="shareDropdownToggle" class="qg-share-link noicon" title="share" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       <span class="fa fa-share-alt fa-2x" aria-hidden="true"></span><span class="qg-visually-hidden">Share</span>
     </button>
-    <ul class="dropdown-menu" aria-labelledby="shareDropdown">
+    <ul class="dropdown-menu" aria-labelledby="shareDropdownToggle">
       ${getLinks('secondary')}
     </ul>
   </li>

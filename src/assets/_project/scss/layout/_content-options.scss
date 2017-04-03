@@ -1,10 +1,12 @@
+// TODO: This needs some serious cleanup
+
 #qg-options {
-  background-color: $qg-blue;
+  background-color: $qg-content-options-bg-color;
   padding-top: $grid-gutter-width / 2;
   padding-bottom: $grid-gutter-width / 2;
 
   .btn-default {
-    @include button-variant(#fff, $qg-blue-darker, transparent);
+    @include button-variant(#fff, $qg-feedback-btn-bg-color, transparent);
   }
 }
 
@@ -15,7 +17,7 @@
 
   padding-bottom: $padding-large-vertical;
 
-  color: #fff;
+  color: $qg-content-options-share-icon-color;
   text-align: center;
   vertical-align: baseline;
 
@@ -42,7 +44,7 @@
   }
   .qg-share-link {
     padding: 0 5px;
-    color: #fff
+    color: inherit;
   }
 
   .dropdown-menu {
@@ -50,12 +52,18 @@
     left: auto;
   }
 
-  #shareDropdown {
+  #shareDropdown.open {
+    #shareDropdownToggle .fa:before {
+      content: "\f00d";
+    }
+  }
+
+  #shareDropdownToggle {
     background: transparent;
     border: none;
 
     &+ .dropdown-menu{
-      background: #575d62;
+      // background: $qg-content-options-share-dropdown-bg-color;
       border: 0;
 
       li {
@@ -64,10 +72,7 @@
       .qg-share-link {
         display: block;
         padding: $padding-base-vertical $padding-base-horizontal;
-
-        &:hover {
-          color: #000;
-        }
+        color: $dropdown-link-color; // From bootstrap
       }
       .qg-share-icon {
         width: 25px;
@@ -115,7 +120,7 @@
 #qg-page-feedback {
   // @extend .col-xs-12;
 
-  background-color: #f8f8f8;
+  background-color: $qg-feedback-bg-color;
   color: #000;
   @include fontSize(16px);
 

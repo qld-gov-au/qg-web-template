@@ -32,7 +32,7 @@ To keep the repository clean, branches must be prefixed into categories with a f
 - Bugfix: For bugs and errors that will be released on the standard schedule
 - Feature: For new features
 - Hotfix: For critical bugs and errors which will be merged into the current release
-- Enhancement: For refactoring, or general improvements to existing features that do not add new features
+- Enhance: For refactoring, or general improvements to existing features that do not add new features
 
 Add the JIRA job number after the category type, and your initials so we can track who's responsible for each branch. If there is no JIRA task, just add your initials.
 Example: Bugfix/QOL-100-NE-Fixing-nav-nesting-issue
@@ -138,8 +138,7 @@ This repo should contain three main branches. DO NOT WORK DIRECTLY INTO THESE BR
 	* assets/
 		* _project/ - SCSS, JS, external libraries, code-snippets, and images vital for the template to operate correctly. Files in here are compiled specially by gulp. Keep an eye on the build file when making changes. This directory will be renamed to the version number for the template (V3).
 			* js/ - 
-				* 
-				* 
+				* legacy/ - Old legacy components that are to be re-built, not linted
 			* scss/ - 
 		* images/ - Images for the template
 		* includes - The main SSI includes. This folder is split into includes/ and includes-cdn/ (which are automatically re-written to point to CDN assets) on release.

@@ -1,7 +1,7 @@
 
 .qg-more-info {
   color: #fff;
-  background-color:$qg-dark-blue;
+  background-color: $qg-footer-bg-color;
   padding-bottom: 0;
 
   a, a:link {
@@ -18,7 +18,7 @@
     @include make-md-column(4);
 
     &:nth-child(2n) {
-      background-color: $qg-dark-blue;
+      background-color: $qg-footer-bg-alt-color;
     } 
 
     h3 {
