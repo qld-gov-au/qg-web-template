@@ -161,7 +161,7 @@
 
 <!-- ################################## -->
 
-    <h2 class="category">Button Groups</h2>
+    <h2 class="category" id="button-groups">Button Groups</h2>
     <div class="btn-group" role="group" aria-label="...">
       <button type="button" class="btn btn-default">Left</button>
       <button type="button" class="btn btn-default">Middle</button>
@@ -199,12 +199,58 @@
         <button type="button" class="btn btn-default">Left</button>
       </div>
       <div class="btn-group" role="group">
-        <button type="button" class="btn btn-default">Middle</button>
+        <button type="button" class="btn btn-primary">Middle</button>
       </div>
       <div class="btn-group" role="group">
         <button type="button" class="btn btn-default">Right</button>
       </div>
     </div>
+
+<!-- ################################## -->
+
+<h2 class="category" id="button-dropdowns">Button Dropdowns</h2>
+
+<p>The <a href="#dropdowns">dropdowns methodology</a> is prefered over this method of creating dropdowns, the one exception being for split buttons.</p>
+
+<h3>Split buttons</h3>
+
+<!-- Split button -->
+<div class="btn-group">
+  <button type="button" class="btn btn-primary">Action</button>
+  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="sr-only">Toggle Dropdown</span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another action</a></li>
+    <li><a href="#">Something else here</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="#">Separated link</a></li>
+  </ul>
+</div>
+
+<h3>Dropup split buttons</h3>
+
+<div class="btn-group dropup">
+  <button type="button" class="btn btn-default">Dropup</button>
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="sr-only">Toggle Dropdown</span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another action</a></li>
+  </ul>
+</div>
+
+<!-- ################################## -->
+
+<h2 class="category" id="input-groups">Input groups</h2>
+
+<p>Don't use this for now.</p>
+
+<!-- ################################## -->
+
+<h2 class="category" id="navs">Navs</h2>
 
 <!-- ################################## -->
 
@@ -229,6 +275,10 @@
 
                         <ul>
                             <li><a href="#dropdowns">Dropdowns</a></li>
+                            <li><a href="#button-groups">Button groups</a></li>
+                            <li><a href="#button-dropdowns">Button dropdowns</a></li>
+                            <li><a href="#input-groups">Input groups</a></li>
+                            <li><a href="#navs">Navs</a></li>
                         </ul>
 
                     </div>
