@@ -116,9 +116,7 @@
 
     <p>The section navigation is an optional element containing links to other pages in the same information architecture context as the page the user is currently on.</p>
     <p>The section starts with a nav with a nav element with the id qg-section-nav.</p>
-    <pre>
-<code>
-&lt;nav id="qg-section-nav" aria-label="side navigation" role="navigation"&gt;
+    <pre><code>&lt;nav id="qg-section-nav" aria-label="side navigation" role="navigation"&gt;
     &lt;h2&gt;
         &lt;a href="#"&gt;
             Parent page for section tree
@@ -131,9 +129,7 @@
         &lt;/a&gt;
     &lt;/li&gt;
     &lt;/ul&gt;
-&lt;/nav&gt;
-</code>
-    </pre>
+&lt;/nav&gt;</code></pre>
 
     <p>All standard content pages should include section navigation, however if your page doesn't require it you can simply delete the entire block. The template will adapt automatically.</p>
     <p>More information:</p>
@@ -151,16 +147,12 @@
     <p>To add secondary content, simply add <code>&lt;aside id="qg-secondary-content"&gt;</code> after the <code>#qg-primary-content</code> element, then add one or more asides.</p>
     <p>Each aside should start with a <code>&lt;h2&gt;</code> element</p>
 
-    <pre>
-<code>
-&lt;aside id="qg-secondary-content"&gt;
+    <pre><code>&lt;aside id="qg-secondary-content"&gt;
     &lt;div class="qg-aside" role="complementary"&gt;
         &lt;h2&gt;On this page&lt;/h2&gt;
         &lt;ul&gt;&lt;/ul&gt;
     &lt;/div&gt;
-&lt;/aside&gt;
-</code>
-    </pre>
+&lt;/aside&gt;</code></pre>
 
     <p>If multiple pages are to have the same aside, it is advised that you use an SSI (or some other method of dynamically including files) to include the file from /assets/includes/asides/.</p>
 
