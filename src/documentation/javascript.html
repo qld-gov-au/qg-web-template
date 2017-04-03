@@ -79,46 +79,71 @@
 
                     <h1>Javascript</h1>
 
-                    <p class="lead">Queensland Government custom utilities</p>
+                    <p class="lead">Bootstraps custom Javascript plugins</p>
 
 <!-- ################################## -->
 
-    <h2 id="accessibility" class="category">Accessibility</h2>
-    <p>To support our users, we're continuing to implement accessibility features to make our sites easier to use.</p>
-
-    <h3>Link in new window icon</h3>
-    <p>
-        Accessibility guidelines recommend not opening windows in links. However, if opening a window in a new link is required, the QG Web Template automatically styles the links displayed in the #qg-content section with a new window icon.
-    </p>
-
-    <div class="qg-tmplt-example">
-        <div class="panel-body">
-            <a href="#" target="_blank">This link opens in a new window</a>.
-        </div>
-    </div>
-
-    <p>If there is a user driven reason for it, you can disable this feature by adding the class 'qg-accessibility-off' to the hyperlink you which to disable accessibility on <code>&lt;a href="#" class="qg-accessibility-off"&gt;</code></p>
-    <p>If you would like to turn this feature on for any hyperlink outside of the #qg-content element, add the <code>qg-accessibility-off</code> class: <code>&lt;a href="#" class="qg-accessibility-on"&gt;</code></p>
-
-    <h4>Javascript</h4>
-
-    <p>There is also a script that runs over each page to add accessibility to links opening in a new window.</p>
-
-    <p>Firstly, the script adds the following text to the end of the link, displayed to screen readers only:</p>
-    <pre>(Opens in new window)</pre>
-    <p>To prevent this, you can add your own notification to the link: <code>&lt;span class="qg-blank-notice"&gt;(Opens in new window)&lt;/span&gt;</code></p>
-
-    <p>Secondly the script adds a title to your link if one hasn't already been set: <code>&lt;a href="#" title="Opens in new window"&gt;</code></p>
-
-    <p>To turn both of these Javascript features off, add the class <code>qg-accessibility-off</code> to the hyperlink element <code>&lt;a href="#" class="qg-accessibility-off"&gt;</code></p>
-
-    <h3 id="disable-accessibilty">Disabling accessibility features</h3>
-
-    <p class="warn">This is not recommended.</p>
-
-    <p>For testing purposes, or if these features are causing issues with applications built on the QG Web Template, these features can be turned off by adding <code>data-qg-accessibility="false"</code> to the <code>&lt;body&gt;</code> tag of your page: <code>&lt;body data-qg-accessibility="false"/&gt;</code>.</p>
+    <h2 id="transitions" class="category">Transitions</h2>
+    <p>Standard implementation. Safe to use with this Web Template.</p>
 
 <!-- ################################## -->
+
+    <h2 id="modals" class="category">Modals</h2>
+    <p class="warn">For accessibility reasons, the QG Web Template uses butterfly instead of bootstrap modals.</p>
+    <p>Implementation advice comming soon...</p>
+
+<!-- ################################## -->
+
+    <h2 id="dropdowns" class="category">Dropdowns</h2>
+    <p>Standard implementation. Safe to use with this Web Template. More implementation advice comming soon...</p>
+
+<!-- ################################## -->
+
+    <h2 id="scrollspy" class="category">ScrollSpy</h2>
+    <p>Standard implementation. Safe to use with this Web Template. More implementation advice comming soon...</p>
+
+<!-- ################################## -->
+
+    <h2 id="toggle-tabs" class="category">Toggle Tabs</h2>
+    <p>Standard implementation. Safe to use with this Web Template. More implementation advice comming soon...</p>
+
+<!-- ################################## -->
+
+    <h2 id="tooltip" class="category">Tooltip</h2>
+    <p>Standard implementation. Safe to use with this Web Template. More implementation advice comming soon...</p>
+
+<!-- ################################## -->
+
+    <h2 id="popovers" class="category">Popovers</h2>
+    <p>Standard implementation. Safe to use with this Web Template. More implementation advice comming soon...</p>
+
+<!-- ################################## -->
+
+    <h2 id="alert-messages" class="category">Alert messages</h2>
+    <p class="warn">WARNING: Not currently supported.</p>
+
+<!-- ################################## -->
+
+    <h2 id="buttons" class="category">Buttons</h2>
+    <p class="warn">WARNING: Not currently supported.</p>
+
+<!-- ################################## -->
+
+    <h2 id="collapse" class="category">Collapse</h2>
+    <p>Standard implementation. Safe to use with this Web Template. More implementation advice comming soon...</p>
+
+<!-- ################################## -->
+
+    <h2 id="carousel" class="category">Carousel</h2>
+    <p class="warn">WARNING: Not currently supported.</p>
+
+<!-- ################################## -->
+
+    <h2 id="affix" class="category">Affix</h2>
+    <p>Standard implementation. Safe to use with this Web Template. More implementation advice comming soon...</p>
+
+<!-- ################################## -->
+
 
                     <div class="qg-content-footer">
 
@@ -136,22 +161,22 @@
 
                 <aside id="qg-secondary-content">
 
-                    <!-- include virtual="/assets/includes/asides/aside-global.html"-->
-                    <!-- include virtual="/assets/includes/asides/aside-disaster-alert.html" -->
-                    <!-- include virtual="/assets/includes/asides/aside-contact-qgov.html" -->
-                    <!-- include virtual="/assets/includes/asides/aside-story-qgov.html" -->
-                    <!-- include virtual="/assets/includes/asides/aside-your-say-qgov.html" -->
-                    <!-- include virtual="/assets/includes/asides/aside-tip-qgov.html" -->
-                    <!-- include virtual="/assets/includes/asides/aside-search-qgov.html" -->
-                    <!-- include virtual="/assets/includes/asides/aside-subscribe-qgov.html" -->
-                    <!-- include virtual="/assets/includes/asides/aside-download-qgov.html" -->
-                    <!-- include virtual="/assets/includes/asides/aside-feedback-qgov.html" -->
-
-                    <div class="qg-aside" role="complementary">
+                    <div id="page-nav" class="qg-aside" role="complementary" data-spy="affix" data-offset-top="500" data-offset-bottom="900" data-parent-width="1">
                         <h2>On this page</h2>
 
                         <ul>
-                            <li><a href="#accessibility">Accessibility</a>
+                            <li><a href="#transitions">Transitions</a>
+                            <li><a href="#Modal">Modal</a>
+                            <li><a href="#dropdown">Dropdown</a>
+                            <li><a href="#scrollspy">Scrollspy</a>
+                            <li><a href="#toggle-tabs">Toggle tabs</a>
+                            <li><a href="#tooltip">Tooltip</a>
+                            <li><a href="#popover">Popover</a>
+                            <li><a href="#alert">Alert</a>
+                            <li><a href="#button">Button</a>
+                            <li><a href="#collapse">Collapse</a>
+                            <li><a href="#carousel">Carousel</a>
+                            <li><a href="#affix">Affix</a>
                         </ul>
 
                     </div>
