@@ -73,8 +73,11 @@ gulp.task('watch', function () {
 gulp.task('watch:serve', ['watch', 'serve']);
 
 /* RELEASE TASKS */
+// Grabs SCSS from SRC and moves to release, does not process
 gulp.task('scss-src', require('./gulp/release-tasks/scss-src')(gulp, plugins, config));
+// Moves project assets (ie)
 gulp.task('assets-core', require('./gulp/release-tasks/assets-core')(gulp, plugins, config));
+// 
 gulp.task('assets-includes', require('./gulp/release-tasks/assets-includes')(gulp, plugins, config));
 gulp.task('assets-includes-cdn', require('./gulp/release-tasks/assets-includes-cdn')(gulp, plugins, config));
 gulp.task('release-files', require('./gulp/release-tasks/other-files')(gulp, plugins, config));
@@ -93,8 +96,10 @@ gulp.task('release', (cb) => {
 
 /* TEST TASKS */
 gulp.task('test:unit', require('./gulp/test-tasks/unit')(gulp, plugins, config, karmaServer));
-gulp.task('test:eslint', require('./gulp/test-tasks/lint')(gulp, plugins, config, fsPath, eslintReporter)); // Terminates on error
-gulp.task('test:eslint:soft', require('./gulp/test-tasks/lint-soft')(gulp, plugins, config, fsPath, eslintReporter)); // Doesn't terminate on error
+// Lints JS, terminates on error - used for release
+gulp.task('test:eslint', require('./gulp/test-tasks/lint')(gulp, plugins, config, fsPath, eslintReporter));
+// Lints JS, doesn't terminate on error - used for build and watch
+gulp.task('test:eslint:soft', require('./gulp/test-tasks/lint-soft')(gulp, plugins, config, fsPath, eslintReporter));
 gulp.task('lint', ['test:eslint']);
 gulp.task('test:browserstack', require('./gulp/test-tasks/e2e')(gulp, plugins, argv));
 
