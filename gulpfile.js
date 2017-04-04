@@ -77,7 +77,7 @@ gulp.task('watch:serve', ['watch', 'serve']);
 gulp.task('scss-src', require('./gulp/release-tasks/scss-src')(gulp, plugins, config));
 // Moves project assets (ie)
 gulp.task('assets-core', require('./gulp/release-tasks/assets-core')(gulp, plugins, config));
-// 
+//
 gulp.task('assets-includes', require('./gulp/release-tasks/assets-includes')(gulp, plugins, config));
 gulp.task('assets-includes-cdn', require('./gulp/release-tasks/assets-includes-cdn')(gulp, plugins, config));
 gulp.task('release-files', require('./gulp/release-tasks/other-files')(gulp, plugins, config));

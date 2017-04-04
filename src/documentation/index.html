@@ -54,7 +54,7 @@
         </header>
 
         <div id="qg-content">
-            <div class="row">
+            <div id="qg-two-col-nav" class="row">
 
                 <!-- START Breadcrumbs -->
 <nav id="qg-breadcrumb" role="navigation" aria-label="breadcrumb navigation" aria-labelledby="breadcrumb-heading" class="collapse">
@@ -68,8 +68,6 @@
 
 </nav>
                 <!-- / END Breadcrumbs -->
-
-                <!--#include virtual="assets/includes/section-nav/qg-web-template.html"-->
 
                 <div id="qg-primary-content" role="main">
 
@@ -147,6 +145,8 @@
                     </div>
                 </div>
 
+                <!--#include virtual="assets/includes/section-nav/qg-web-template.html"-->
+
             </div>
             <!--#include virtual="/assets/includes/content/options.html"-->
         </div>
@@ -165,19 +165,6 @@
     </script>
 
     <!--#include virtual="/assets/includes/footer/footer-scripts.html"-->
-
-    <script>
-        $('#firstlink').qgLightbox({
-            callbackPreOpen: function() {
-                $('#lightbox').html('Testing Lightbox functionality');
-            }
-        });
-        $('#anotherlink').qgLightbox({
-            callbackPreOpen: function() {
-                $('#lightbox').html('<h1>ANOTHER TEST</h1>');
-            }
-        });
-    </script>
 
 </body>
 
