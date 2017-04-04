@@ -79,6 +79,10 @@
     color: #000;
     @include fontSize(16px);
 
+    .questions abbr.required {
+        left: 0;
+    }
+
     #qg-page-feedback-form{
         padding-top: 1em;
         padding-bottom: 1em;
