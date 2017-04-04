@@ -19,7 +19,7 @@
         border: $qg-dark-blue;
         transition: all .2s;
 
-        &:hover {
+        &:hover, &:focus {
             background-color: $qg-dark-blue;
         }
     }   
@@ -57,7 +57,7 @@
 
     .qg-cta {
         @extend .col-md-pull-6;
-        @extend .col-sm-pull-6;    
+        @extend .col-sm-pull-6;
     }
 
     .qg-share {
