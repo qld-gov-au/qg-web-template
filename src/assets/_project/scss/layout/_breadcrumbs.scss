@@ -32,6 +32,10 @@
 		color: #FFF;
 		text-align: center;
 		@include fontSize(16px);
+
+		@media (min-width: $screen-lg-min) {
+	      padding-left: $qg-spacing / 2;
+	    }
 	}
 
 	li {

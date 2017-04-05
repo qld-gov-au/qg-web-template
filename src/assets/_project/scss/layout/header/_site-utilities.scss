@@ -27,17 +27,10 @@
       vertical-align: middle;
       display: inline-block;
       text-align: center;
+      
       .fa {
         display: block;
       }
-      
-      /*
-      @include breakpoint($bs-md){
-        &:hover {
-          text-decoration: none;
-        }  
-      }  
-      */
     }
 
     & + li {
@@ -45,12 +38,4 @@
     }
   }
 
-  /*
-  @include breakpoint($bs-xs){
-    display: block;  
-    text-align: center;
-    padding-top: 1em;
-    .fa { font-size: 1.3em; }
-  }
-  */
 }

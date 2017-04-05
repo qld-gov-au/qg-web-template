@@ -2,7 +2,11 @@
   @extend .col-xs-12;
   @extend .col-sm-12;
   @extend .col-md-3;
-  @extend .col-lg-3; 
+  @extend .col-lg-3;
+
+  @media (min-width: $screen-lg-min) {
+    padding-right: $grid-gutter-width;
+  }
 
   input {
     border-radius: 0;

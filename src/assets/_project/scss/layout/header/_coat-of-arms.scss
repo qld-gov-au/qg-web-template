@@ -13,5 +13,8 @@
     @media (min-width: $screen-sm-min) {
       height: 50px;
     }
+    @media (min-width: $screen-lg-min) {
+      padding-left: $qg-spacing / 2;
+    }
   }
 }

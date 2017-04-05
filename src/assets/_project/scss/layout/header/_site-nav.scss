@@ -13,6 +13,10 @@
 		margin: 0;
 		padding: 0;
 		list-style: none;
+
+		@media (min-width: $screen-lg-min) {
+	      padding-left: $qg-spacing / 2;
+	    }
 	}
 
 	a {
@@ -33,8 +37,10 @@
 
 @media (min-width: $screen-md-min) {
 	#qg-site-nav {
-		padding-left: ($grid-gutter-width / 4);
-		padding-right: ($grid-gutter-width / 4);
+		padding-left: 0;
+		padding-right: 0;
+		// padding-left: ($grid-gutter-width / 4);
+		// padding-right: ($grid-gutter-width / 4);
 		background-color: transparent;
 
 		li {
@@ -60,6 +66,12 @@
 	#qg-site-nav{
 		display: block;
 	}
+}
+
+@media (min-width: $screen-lg-min) {
+	#qg-site-nav {
+  		padding-left: $grid-gutter-width / 4;
+  	}
 }
 
 /*
