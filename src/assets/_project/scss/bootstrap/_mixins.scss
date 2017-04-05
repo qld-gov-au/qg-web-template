@@ -41,5 +41,7 @@
 @import "../../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins/clearfix";
 @import "../../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins/center-block";
 @import "../../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins/nav-vertical-align";
-@import "../../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins/grid-framework";
+// @import "../../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins/grid-framework";
+@import "mixins/grid-framework";
 @import "../../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins/grid";
+@import "mixins/grid";

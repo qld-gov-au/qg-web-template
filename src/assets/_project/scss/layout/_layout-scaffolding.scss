@@ -36,7 +36,7 @@
   @include make-md-column-push(3);
 }
 #qg-section-nav {
-  // @include make-xs-column(12);
+  @include make-xs-column(12);
   @include make-md-column(3);
 
   & + #qg-primary-content {

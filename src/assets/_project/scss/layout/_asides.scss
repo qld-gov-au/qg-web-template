@@ -3,10 +3,18 @@
   position: relative; // For affix and other fixed position child elements
 
   .qg-aside {
-    padding: $qg-margin; // 16px*1.5;
+    // @include qg-responsive-padding($md: $qg-spacing); // 16px*1.5;
+    padding: $qg-spacing-xs ($qg-spacing-xs / 2);
     margin: 0;
 
     background-color: $qg-aside-bg-color;
+
+    @media (min-width: $screen-md-min) {
+      padding: $qg-spacing-xs;
+    }
+    @media (min-width: $screen-lg-min) {
+      padding: $qg-spacing;
+    }
 
     h2 {
       margin-top: 0;

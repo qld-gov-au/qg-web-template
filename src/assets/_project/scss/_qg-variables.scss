@@ -68,11 +68,15 @@ $qg-footer-bg-alt-color: $qg-dark-blue;
 
 
 // ###################################
-// Margins and rulers
+// Rulers & spacing
 
-$qg-margin: 50px; // Note: Used by BS gutter width
-$qg-margin-large: $qg-margin * 1.5;
-$qg-margin-small: $qg-margin / 2;
+$qg-spacing: 50px; // Note: Used by BS gutter width
+$qg-spacing-large: $qg-spacing * 1.5;
+$qg-spacing-small: $qg-spacing / 2;
+
+$qg-spacing-xs: 30px;
+$qg-spacing-xs-large: $qg-spacing-xs * 1.5;
+$qg-spacing-xs-small: $qg-spacing-xs / 2;
 
 
 // Notes:

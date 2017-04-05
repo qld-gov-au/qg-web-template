@@ -38,3 +38,11 @@
 		position: relative;
 	}
 }
+
+@media (max-width: $screen-md-min) {
+	.qg-docs-sidenav.affix {
+	  position: static;
+	  width: auto;
+	  top: 0;
+	}
+}
