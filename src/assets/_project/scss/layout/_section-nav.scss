@@ -1,6 +1,6 @@
 /* ! section (side) navigation */
 
-#qg-content #qg-section-nav {   
+#qg-content #qg-section-nav {
   background-color: $qg-section-nav-bg-color;
 
   h2 {
@@ -81,17 +81,33 @@
     }
 
     h2 {
-      padding: $qg-spacing $qg-spacing $qg-spacing-xs-small $qg-spacing;
+      padding-bottom: $qg-spacing-xs-small;
+      padding-left: ($qg-spacing-xs / 2);
+      padding-right: ($qg-spacing-xs / 2);
     }
     ul {
       padding: 0 0 ($qg-spacing * 0.7) 0;
     }
     li {
       a {
+        // padding: .7em ($qg-spacing/2) .7em ($qg-spacing + 15px);
+        padding-left: ($qg-spacing-xs / 2) + 15px;
+      }
+      a:before {
+        left: ($qg-spacing-xs / 2);
+      }
+    }
+  }
+  @media (min-width: $screen-lg-min) {
+    h2 {
+      padding: $qg-spacing $qg-spacing $qg-spacing-xs-small $qg-spacing;
+    }
+    li {
+      a {
         padding: .7em ($qg-spacing/2) .7em ($qg-spacing + 15px);
       }
       a:before {
-        left: $qg-spacing;
+        left: ($qg-spacing);
       }
     }
   }

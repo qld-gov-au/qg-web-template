@@ -10,6 +10,9 @@
     background-color: $qg-aside-bg-color;
 
     @media (min-width: $screen-md-min) {
+      padding: $qg-spacing-xs;
+    }
+    @media (min-width: $screen-lg-min) {
       padding: $qg-spacing;
     }
 

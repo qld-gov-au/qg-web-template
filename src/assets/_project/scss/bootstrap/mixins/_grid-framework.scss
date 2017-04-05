@@ -17,7 +17,7 @@
     padding-left:  ceil(($qg-grid-gutter-width-small / 2));
     padding-right: floor(($qg-grid-gutter-width-small / 2));
 
-    @media (min-width: $screen-md-min) {
+    @media (min-width: $screen-lg-min) {
       padding-left:  ceil(($grid-gutter-width / 2));
       padding-right: floor(($grid-gutter-width / 2));
     }
