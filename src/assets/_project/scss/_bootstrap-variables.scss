@@ -377,7 +377,8 @@ $screen-md-max:              ($screen-lg-min - 1) !default;
 //** Number of columns in the grid.
 $grid-columns:              12;
 //** Padding between columns. Gets divided in half for the left and right.
-$grid-gutter-width:         $qg-margin; // 30px !default;, SWE = 50px;
+$grid-gutter-width:         $qg-spacing; // 30px !default;, SWE = 50px;
+$qg-grid-gutter-width-small: $qg-spacing-xs; // Custom for responsive gutter widths
 // Navbar collapse
 //** Point at which the navbar becomes uncollapsed.
 $grid-float-breakpoint:     $screen-sm-min !default;
