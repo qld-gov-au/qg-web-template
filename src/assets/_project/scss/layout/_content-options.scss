@@ -2,8 +2,13 @@
 
 #qg-options {
   background-color: $qg-content-options-bg-color;
-  padding-top: $grid-gutter-width / 2;
-  padding-bottom: $grid-gutter-width / 2;
+  padding-top: $qg-spacing / 2;
+  padding-bottom: $qg-spacing / 2;
+  
+  @media (min-width: $screen-lg-min) {
+    padding-left:  ($grid-gutter-width / 2);
+    padding-right: ($grid-gutter-width / 2);
+  }
 
   .btn-default {
     @include button-variant(#fff, $qg-feedback-btn-bg-color, transparent);

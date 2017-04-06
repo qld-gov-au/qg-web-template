@@ -6,22 +6,22 @@
 @mixin container-fixed($gutter: $grid-gutter-width) {
   margin-right: auto;
   margin-left: auto;
-  padding-left:  floor(($qg-grid-gutter-width-small / 2));
-  padding-right: ceil(($qg-grid-gutter-width-small / 2));
+  padding-left:  floor($qg-grid-gutter-width-small / 2);
+  padding-right: ceil($qg-grid-gutter-width-small / 2);
   @media (min-width: $screen-lg-min) {
-    padding-left:  floor(($gutter / 2));
-    padding-right: ceil(($gutter / 2));
+    padding-left:  floor($gutter / 2);
+    padding-right: ceil($gutter / 2);
   }
   @include clearfix;
 }
 
 // Creates a wrapper for a series of columns
 @mixin make-row($gutter: $grid-gutter-width) {
-  margin-left:  ceil(($qg-grid-gutter-width-small / -2));
-  margin-right: floor(($qg-grid-gutter-width-small / -2));
+  margin-left:  ceil($qg-grid-gutter-width-small / -2);
+  margin-right: floor($qg-grid-gutter-width-small / -2);
   @media (min-width: $screen-lg-min) {
-    margin-left:  ceil(($gutter / -2));
-    margin-right: floor(($gutter / -2));
+    margin-left:  ceil($gutter / -2); // $gutter / -2
+    margin-right: floor($gutter / -2);
   }
   @include clearfix;
 }

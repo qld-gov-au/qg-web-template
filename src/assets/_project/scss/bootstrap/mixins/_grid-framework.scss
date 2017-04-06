@@ -14,12 +14,12 @@
     min-height: 1px;
     // Inner gutter via padding
 
-    padding-left:  ceil(($qg-grid-gutter-width-small / 2));
-    padding-right: floor(($qg-grid-gutter-width-small / 2));
+    padding-left:  ceil($qg-grid-gutter-width-small / 2);
+    padding-right: floor($qg-grid-gutter-width-small / 2);
 
     @media (min-width: $screen-lg-min) {
-      padding-left:  ceil(($grid-gutter-width / 2));
-      padding-right: floor(($grid-gutter-width / 2));
+      padding-left:  ceil($grid-gutter-width / 2);
+      padding-right: floor($grid-gutter-width / 2);
     }
   }
 }
