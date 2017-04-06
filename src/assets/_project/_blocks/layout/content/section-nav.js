@@ -1,4 +1,5 @@
 'use strict';
+
 var activeSideNav = (function () {
   // const currentFilename = window.location.pathname.substr(window.location.pathname.lastIndexOf('/') + 1);
 
