@@ -4,7 +4,7 @@ module.exports = function (gulp, plugins, config) {
   return function (cb) {
     config.projects.map((element) => {
       const target = [
-        `${config.basepath.src}/assets/includes/**/*.html`,
+        `${config.basepath.src}/assets/_project/_blocks/layout/**/*.html`,
       ].concat(config.build.excludes);
 
       let projectAssets = new RegExp('="/assets/_project/', 'g');
@@ -14,6 +14,7 @@ module.exports = function (gulp, plugins, config) {
         .pipe(plugins.replace(projectAssets, `="/assets/${config.versionName}/`))
         .on('error', console.log)
         .pipe(gulp.dest(`${config.basepath.build}/assets/includes/`))
+        .pipe(gulp.dest(`${config.basepath.build}/assets/includes-local/`))
         .on('end', cb);
     });
   };

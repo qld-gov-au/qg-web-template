@@ -4,7 +4,7 @@ module.exports = function (gulp, plugins, config) {
   return function (cb) {
     config.projects.map((element) => {
       const target = [
-        `${config.basepath.src}/assets/includes/**/*.html`,
+        `${config.basepath.src}/assets/_project/_blocks/layout/**/*.html`,
       ].concat(config.build.excludes);
 
       let projectAssets = new RegExp('="/assets/_project/', 'g');

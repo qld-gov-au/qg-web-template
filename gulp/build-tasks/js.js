@@ -3,10 +3,10 @@
 module.exports = function (gulp, plugins, config, webpack) {
   return function (cb) {
     config.projects.map((element) => {
-      return gulp.src(`${config.basepath.src}/assets/_project/js/main.js`)
+      return gulp.src(`${config.basepath.src}/assets/_project/_blocks/qg-main.js`)
         .pipe(webpack({
           output: {
-            filename: 'main.js',
+            filename: 'qg-main.js',
           },
           devtool: 'source-map',
           module: {

@@ -39,19 +39,19 @@ gulp.task('clean-release', (cb) => {
 
 /* BUILD TASKS */
 gulp.task('html', require('./gulp/build-tasks/html')(gulp, plugins, config));
-gulp.task('includes', require('./gulp/build-tasks/includes')(gulp, plugins, config));
+gulp.task('includes-local', require('./gulp/build-tasks/includes-local')(gulp, plugins, config));
 gulp.task('includes-cdn', require('./gulp/build-tasks/includes-cdn')(gulp, plugins, config));
 gulp.task('scss', require('./gulp/build-tasks/scss')(gulp, plugins, config));
 gulp.task('js', require('./gulp/build-tasks/js')(gulp, plugins, config, webpack));
 gulp.task('other-assets', require('./gulp/build-tasks/other-assets')(gulp, plugins, config, es));
 gulp.task('build-files', require('./gulp/build-tasks/other-files')(gulp, plugins, config));
 
-gulp.task('build', ['test:eslint:soft', 'html', 'includes', 'includes-cdn', 'scss', 'js', 'other-assets', 'build-files']);
+gulp.task('build', ['test:eslint:soft', 'html', 'includes-local', 'includes-cdn', 'scss', 'js', 'other-assets', 'build-files']);
 gulp.task('build:hardfail', (cb) => {
   // Build hardfail supports release process, and fails if the test doesn't complete successfully
   runSequence(
     'test',
-    ['html', 'includes', 'includes-cdn', 'scss', 'js', 'other-assets', 'build-files'],
+    ['html', 'includes-local', 'includes-cdn', 'scss', 'js', 'other-assets', 'build-files'],
     cb
   );
 });
@@ -64,7 +64,7 @@ gulp.task('build:clean', (cb) => {
 /* WATCH TASSKS */
 gulp.task('watch', function () {
   gulp.watch([config.basepath.src + '/**/*.html'], ['html']);
-  gulp.watch([config.basepath.src + '/assets/includes/**/*.html'], ['includes']);
+  gulp.watch([config.basepath.src + '/assets/includes/**/*.html'], ['includes-local']);
   gulp.watch([config.basepath.src + '/**/*.scss'], ['scss']);
   gulp.watch([config.basepath.src + '/**/*.js'], ['js']);
   gulp.watch([config.basepath.src + '/**/*.js'], ['test:eslint:soft']);
@@ -78,7 +78,7 @@ gulp.task('scss-src', require('./gulp/release-tasks/scss-src')(gulp, plugins, co
 // Moves project assets (ie)
 gulp.task('assets-core', require('./gulp/release-tasks/assets-core')(gulp, plugins, config));
 //
-gulp.task('assets-includes', require('./gulp/release-tasks/assets-includes')(gulp, plugins, config));
+gulp.task('assets-includes-local', require('./gulp/release-tasks/assets-includes-local')(gulp, plugins, config));
 gulp.task('assets-includes-cdn', require('./gulp/release-tasks/assets-includes-cdn')(gulp, plugins, config));
 gulp.task('release-files', require('./gulp/release-tasks/other-files')(gulp, plugins, config));
 gulp.task('release-js', require('./gulp/release-tasks/js')(gulp, plugins, config)); // Uglifies JS
@@ -88,7 +88,7 @@ gulp.task('copy-element', require('./gulp/release-tasks/copy-element')(gulp, plu
 gulp.task('release', (cb) => {
   runSequence(
     ['build:clean', 'clean-release'],
-    ['assets-core', 'scss-src', 'release-js', 'css', 'release-files', 'assets-includes', 'assets-includes-cdn'],
+    ['assets-core', 'scss-src', 'release-js', 'css', 'release-files', 'assets-includes-local', 'assets-includes-cdn'],
     'copy-element', // Done last in order to over-ride assets-includes
     cb
   );
