@@ -45,8 +45,6 @@
 @import "layout/header/header-structure";
 @import "layout/header/site-name";
 @import "layout/header/site-nav";
-// @import "legacy-scratchpad";
-
 @import "layout/header/site-search";
 @import "layout/header/site-utilities";
 
@@ -58,10 +56,8 @@
 @import "layout/content-options";
 @import "layout/footer";
 
-
 // Legacy styles
 // -------------------------
 
 @import "legacy/forms-reset";
 @import "legacy/forms";
-

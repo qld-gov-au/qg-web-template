@@ -12,6 +12,7 @@ import './fragments/qg-lightbox.js';
 import './legacy/forms.js';
 
 import './fragments/progressive-reveal';
+import './fragments/language-scroller';
 
 // import mobileNav from './components/nav/mobile-nav.js'
 import activeSideNav      from './modules/section-nav';
