@@ -14,6 +14,8 @@ import './general/autocomplete.js';
 import './general/lightbox.js';
 import './forms/forms.js';
 
+import './includes/footer/language-scroller.js';
+
 // import mobileNav from './components/nav/mobile-nav.js'
 import progressiveReveal 	from './general/progressive-reveal.js';
 import activeSideNav 		from './includes/nav-section/nav-section.js';
