@@ -2,7 +2,10 @@
 
 .btn-group:not(.dropup), .dropdown, .dropup{
     .dropdown-toggle:not(.noicon):after {
+        display: inline-block;
+        width: 1.2em;
     	padding-left: 0.2em;
+
         font-family: FontAwesome;
         line-height: inherit;
         -webkit-font-smoothing: antialiased;
@@ -16,18 +19,27 @@
 
 .btn-group:not(.dropup), .dropdown {
     .dropdown-toggle:not(.noicon):after {
-	   content: " \f0d7";
+	   content: " \f078"; // Dropdown closed
     }
 }
 .btn-group.open:not(.dropup), .dropdown.open {
     .dropdown-toggle:not(.noicon):after {
-	   content: " \f0d8";
+	   content: " \f00d"; // Dropdown open
     }
 }
 
 .dropup .dropdown-toggle:not(.noicon):after {
-	content: " \f0d8";
+	content: " \f077"; // Dropup closed
 }
 .dropup.open .dropdown-toggle:not(.noicon):after {
-	content: " \f0d7";
+	content: " \f00d"; // Dropup open
+}
+
+.btn-group {
+    .dropdown-toggle:not(.noicon):after {
+        width: 1.4em;
+        
+        padding-left: 0.1em;
+        padding-right: 0.1em;
+    }
 }
