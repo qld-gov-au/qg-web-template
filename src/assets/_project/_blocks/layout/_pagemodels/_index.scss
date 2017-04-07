@@ -19,18 +19,18 @@
 // Legacy stuff
 #qg-one-col, #qg-three-col, #qg-two-col-aside, #qg-two-col-nav {
 	.qg-index-links > div {
-		@include make-xs-column(6);
+		@include make-sm-column(6);
 	}
 }
 
 #qg-one-col.wide {
 	.qg-index-links > div {
-		@include make-xs-column(3);
+		@include make-sm-column(3);
 	}
 }
 
 #qg-two-col-aside.wide, #qg-two-col-nav.wide {
 	.qg-index-links > div {
-		@include make-xs-column(4);
+		@include make-sm-column(4);
 	}
 }

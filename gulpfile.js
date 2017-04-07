@@ -64,7 +64,7 @@ gulp.task('build:clean', (cb) => {
 /* WATCH TASSKS */
 gulp.task('watch', function () {
   gulp.watch([config.basepath.src + '/**/*.html'], ['html']);
-  gulp.watch([config.basepath.src + '/assets/includes/**/*.html'], ['includes-local']);
+  gulp.watch([config.basepath.src + '/assets/_project/_blocks/layout/**/*.html'], ['includes-local']);
   gulp.watch([config.basepath.src + '/**/*.scss'], ['scss']);
   gulp.watch([config.basepath.src + '/**/*.js'], ['js']);
   gulp.watch([config.basepath.src + '/**/*.js'], ['test:eslint:soft']);

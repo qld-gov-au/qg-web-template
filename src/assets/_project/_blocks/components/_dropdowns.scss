@@ -45,21 +45,23 @@
 }
 
 .qg-toggle-icon:after {
-    content: "\f078";
-    display: inline-block;
-    float: right;
-    width: 1.2em;
-    padding-left: 0.2em;
-
-    color: #fff;
-    font-family: FontAwesome;
-    line-height: inherit;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-style: normal;
-    font-weight: normal;
-    text-decoration: none;
-}
-.qg-toggle-icon.collapsed:after {
     content: "\f077";
+    
+    font-family: FontAwesome;
+    color: #fff;
+
+    &:focus, &:active {
+        outline: 0 !important;
+    }
+}
+.qg-toggle-icon-right {
+    @extend .qg-toggle-icon;
+    float: right;
+    padding: $padding-base-vertical;
+    // margin-top: -.5em;
+    margin-top: - $padding-base-vertical;
+    line-height: 1em;
+}
+.qg-toggle-icon-right.collapsed:after, .qg-toggle-icon.collapsed:after {
+    content: "\f078";
 }
