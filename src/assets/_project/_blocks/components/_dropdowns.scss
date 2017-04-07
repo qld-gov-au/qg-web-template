@@ -1,10 +1,9 @@
 // Extends bootstrap dropdowns
-
 .btn-group:not(.dropup), .dropdown, .dropup{
     .dropdown-toggle:not(.noicon):after {
         display: inline-block;
         width: 1.2em;
-    	padding-left: 0.2em;
+        padding-left: 0.2em;
 
         font-family: FontAwesome;
         line-height: inherit;
@@ -14,7 +13,6 @@
         font-weight: normal;
         text-decoration: none;
     }
-
 }
 
 .btn-group:not(.dropup), .dropdown {
@@ -54,6 +52,7 @@
         outline: 0 !important;
     }
 }
+
 .qg-toggle-icon-right {
     @extend .qg-toggle-icon;
     float: right;
@@ -62,6 +61,17 @@
     margin-top: - $padding-base-vertical;
     line-height: 1em;
 }
-.qg-toggle-icon-right.collapsed:after, .qg-toggle-icon.collapsed:after {
-    content: "\f078";
+.qg-toggle-icon-right,
+.qg-toggle-icon {
+    &.collapsed:after {
+        content: "\f078";
+    }
+}
+
+button[data-toggle=collapse],
+a[data-toggle=collapse] {
+    @extend .qg-toggle-icon;
+    &:after {
+        padding-left: .4em;
+    }
 }
