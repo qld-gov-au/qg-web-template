@@ -95,8 +95,8 @@
         </div>
     </div>
 
-    <p>If there is a user driven reason for it, you can disable this feature by adding the class 'qg-accessibility-off' to the hyperlink you which to disable accessibility on <code>&lt;a href="#" class="qg-accessibility-off"&gt;</code></p>
-    <p>If you would like to turn this feature on for any hyperlink outside of the #qg-content element, add the <code>qg-accessibility-off</code> class: <code>&lt;a href="#" class="qg-accessibility-on"&gt;</code></p>
+    <p>If there is a user driven reason for it, you can disable this feature by adding the data attribute <code>data-access-extlink=false</code> to the hyperlink you which to disable accessibility on <code>&lt;a href="#" data-access-extlink="false"&gt;</code></p>
+    <p>If you would like to turn this feature on for any hyperlink outside of the #qg-content element, add the <code>data-access-extlink=false</code> attribute: <code>&lt;a href="#" data-access-extlink="false"&gt;</code></p>
 
     <h4>Javascript</h4>
 
@@ -108,7 +108,7 @@
 
     <p>Secondly the script adds a title to your link if one hasn't already been set: <code>&lt;a href="#" title="Opens in new window"&gt;</code></p>
 
-    <p>To turn both of these Javascript features off, add the class <code>qg-accessibility-off</code> to the hyperlink element <code>&lt;a href="#" class="qg-accessibility-off"&gt;</code></p>
+    <p>To turn both of these Javascript features off, add the class <code>data-access-extlink=false</code> to the hyperlink element <code>&lt;a href="#" data-access-extlink="false"&gt;</code></p>
 
     <h3 id="disable-accessibilty">Disabling accessibility features</h3>
 

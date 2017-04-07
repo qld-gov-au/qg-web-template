@@ -58,7 +58,7 @@ module.exports = {
       '!**/lib/ext/**/*',
     ],
   },
-  outputList: ['/', 'template-local', 'template-cdn', 'documentation'],
+  outputList: ['/', 'template-local', 'template-cdn', 'docs'],
   output: {
     // Sets the options for output to release for each module
     '/': {
