@@ -23,9 +23,6 @@ import breakpoints			from './breakpoints.js';
 // import qgBsExtend 		from './bootstrap-extensions/bootstrap-extensions.js';
 import feedbackForm 		from './general/feedback-form';
 import shareLinks 			from './general/share-links';
-import resizeEvents			from '../lib/ext/butterfly/jquery.resize-events';
-import history 					from '../lib/ext/butterfly/jquery.history';
-import lightbox 				from '../lib/ext/butterfly/jquery.butterfly';
 
 (function () {
     'use strict';
