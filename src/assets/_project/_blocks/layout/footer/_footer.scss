@@ -36,7 +36,13 @@
     ul {
       list-style: none;
       padding-left: 0;
-    } 
+    }
+    @media (min-width: $screen-sm-min) {
+      ul.collapse {
+        display: block !important;
+        height: auto !important;
+      }
+    }
 
     ul.col-2 {
       list-style: none;
@@ -119,7 +125,7 @@
     }
 
     li + li a {
-      border-left: 1px solid #999; 
+      border-left: 1px solid #999;
     }   
   }
 
