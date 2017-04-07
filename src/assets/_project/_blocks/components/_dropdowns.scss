@@ -43,3 +43,23 @@
         padding-right: 0.1em;
     }
 }
+
+.qg-toggle-icon:after {
+    content: "\f078";
+    display: inline-block;
+    float: right;
+    width: 1.2em;
+    padding-left: 0.2em;
+
+    color: #fff;
+    font-family: FontAwesome;
+    line-height: inherit;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+}
+.qg-toggle-icon.collapsed:after {
+    content: "\f077";
+}
