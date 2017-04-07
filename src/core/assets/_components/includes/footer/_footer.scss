@@ -51,6 +51,8 @@
     ul {
       list-style: none;
       padding-left: 0;
+
+
     } 
 
     ul.col-2 {
@@ -82,7 +84,6 @@
     }
   }
 }
-
 
 
 
@@ -158,10 +159,16 @@
     text-decoration: underline;  
     color: #000; 
   }
-
 }
-@include breakpoint($bs-md){
-  ul.col-2 {
+
+@include breakpoint($bs-min-sm) {
+  .qg-more-info ul.collapse {
+    display: block !important;
+    height: auto !important;
+  }
+}
+@include breakpoint($bs-md) {
+  .qg-more-info ul.col-2 {
     list-style: none;
     padding-left: 0;
     column-count: 1 !important;
