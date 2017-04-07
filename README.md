@@ -8,7 +8,7 @@ _This project is currently a work in progress._
 
 **WARNING: Do not work directly in 'working', 'beta', or 'master' branches**
 
-To keep the repository clean, branches must be prefixed into categories with a forwardslash /. Categories come from JIRA and are (note capitalisation): 
+To keep the repository clean, branches must be prefixed into categories with a forwardslash /. Categories come from JIRA and are (note capitalisation):
 
 - Bugfix: For bugs and errors that will be released on the standard schedule
 - Feature: For new features
@@ -48,15 +48,31 @@ git commit -m "QOL-100 - Your commit message"
     - **gulp release** command to create a release folder from the build folder files. Please make sure to run the _gulp build_ command before running the _gulp release_ command<br />
     - **gulp clean:release** command to remove the release folder before creating a new release folder<br />
     - **gulp local-server** This command will run a local server to view the templates in a browser.
-    
-    
+
+
 **Directory structure :**<br />
     - **src folder** contains all the files of the projects. This is where developers will be making all the changes.<br />
     - **build folder** is where developers will be pushing the changes from the _src folder_ to test the files before they push it to the _release folder_.<br />
     - **release folder** will be created from the _build folder_ files and it will be the final version which will be deployed to the CMS.<br />
 
 
-           
+### Testing a local version against your project using `bower link`
 
+First clone glue-swe-templates using the instructions in this file.
 
+```bash
+  #in glue-swe-templates
+  npm install
+  gulp
 
+  # now register a bower link to your local copy of swe's build directory
+  cd build
+  bower link
+```
+
+Then in your client project, use `bower link` to connect to your local copy of swe
+```bash
+  cd ../YOUR_CLIENT_PROJECT
+  #in your client project, link to the local copy of swe's build folder that you registered earlier
+  bower link build glue-template-release
+```
