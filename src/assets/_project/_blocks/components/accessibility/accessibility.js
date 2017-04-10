@@ -7,9 +7,9 @@
 function opensInNewWindow () {
   var $target = $('a[target=_blank]');
 
-  if (!$target.hasClass('qg-accessibility-off')
-    && $target.attr('data-access-extlink') !== false
-    && $target.attr('href') !== undefined) {
+  if (!$target.hasClass('qg-accessibility-off') &&
+    $target.attr('data-access-extlink') !== false &&
+    $target.attr('href') !== undefined) {
     if ($.contains('.qg-blank-notice', $target) === false) {
       $target.append(' <span class="qg-blank-notice sr-only">(Opens in new window)</span> ');
     }

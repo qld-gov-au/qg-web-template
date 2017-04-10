@@ -94,14 +94,14 @@ module.exports = {
       localToCdn: true,
       copyElement: 'template',
     },
-    documentation: {
+    docs: {
       // User documentation
       assetsCore: false,
       sourceSCSS: false,
       assetsIncludes: true,
       assetsIncludesCdn: false, // TODO: change to true
       localToCdn: false, // TODO: change to true
-      copyElement: 'documentation',
+      copyElement: 'docs',
     },
   },
 };
