@@ -74,7 +74,7 @@
 
 }
 
-@include breakpoint($bs-min-md){
+@include breakpoint($bs-min-lg) {
   .qg-more-info {
     .qg-toggle-carret {
       display: none;
@@ -139,29 +139,28 @@
   }   
 
   ul {
-
     li {
       padding: .3em 1em;
-      margin: 0;      
+      margin: 0;   
     }
 
     li + li {
-      border-left: 1px solid #999; 
-    }   
+      border-left: 1px solid #999;
+    }
   }
 
   a {
-    text-decoration: none;  
-    color: #000; 
+    text-decoration: none;
+    color: #000;
   }
 
   a:focus, a:hover {
-    text-decoration: underline;  
-    color: #000; 
+    text-decoration: underline;
+    color: #000;
   }
 }
 
-@include breakpoint($bs-min-sm) {
+@include breakpoint($bs-min-lg) {
   .qg-more-info ul.collapse {
     display: block !important;
     height: auto !important;
