@@ -37,9 +37,9 @@
     @extend .col-lg-4;    
     @extend .col-md-4;
 
-    &:nth-child(2n) {
-      background-color: $qg-dark-blue;
-    } 
+    // &:nth-child(2n) {
+      // background-color: $qg-dark-blue;
+    // } 
 
     h3 {
       @include fontSize(19px);
@@ -51,6 +51,8 @@
     ul {
       list-style: none;
       padding-left: 0;
+
+
     } 
 
     ul.col-2 {
@@ -72,7 +74,7 @@
 
 }
 
-@include breakpoint($bs-min-md){
+@include breakpoint($bs-min-lg) {
   .qg-more-info {
     .qg-toggle-carret {
       display: none;
@@ -82,7 +84,6 @@
     }
   }
 }
-
 
 
 
@@ -138,30 +139,35 @@
   }   
 
   ul {
-
     li {
       padding: .3em 1em;
-      margin: 0;      
+      margin: 0;   
     }
 
     li + li {
-      border-left: 1px solid #999; 
-    }   
+      border-left: 1px solid #999;
+    }
   }
 
   a {
-    text-decoration: none;  
-    color: #000; 
+    text-decoration: none;
+    color: #000;
   }
 
   a:focus, a:hover {
-    text-decoration: underline;  
-    color: #000; 
+    text-decoration: underline;
+    color: #000;
   }
-
 }
-@include breakpoint($bs-md){
-  ul.col-2 {
+
+@include breakpoint($bs-min-lg) {
+  .qg-more-info ul.collapse {
+    display: block !important;
+    height: auto !important;
+  }
+}
+@include breakpoint($bs-md) {
+  .qg-more-info ul.col-2 {
     list-style: none;
     padding-left: 0;
     column-count: 1 !important;
