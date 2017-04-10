@@ -37,9 +37,9 @@
     @extend .col-lg-4;    
     @extend .col-md-4;
 
-    &:nth-child(2n) {
-      background-color: $qg-dark-blue;
-    } 
+    // &:nth-child(2n) {
+      // background-color: $qg-dark-blue;
+    // } 
 
     h3 {
       @include fontSize(19px);
