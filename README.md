@@ -4,8 +4,8 @@
 
 _This project is currently a work in progress._
 
-[Getting started](readme/getting-started.md)
-[Deploying the template](readme/deploy.md)
+- [Getting started](readme/getting-started.md)
+- [Deploying the template](readme/deploy.md)
 
 ## Getting started
 
