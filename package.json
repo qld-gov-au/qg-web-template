@@ -33,6 +33,7 @@
     "font-awesome": "^4.7.0",
     "fs-path": "0.0.23",
     "generate-id": "git+https://github.com/bboyle/Generate-ID.git",
+    "git-hooks": "^1.1.8",
     "gulp": "^3.9.0",
     "gulp-add-src": "^0.2.0",
     "gulp-autoprefixer": "^3.1.0",

@@ -1,0 +1,11 @@
+#!/bin/bash
+# Stops commits to master and working branches.
+
+BRANCH=`git rev-parse --abbrev-ref HEAD`
+
+if [[ "$BRANCH" == "master" || "$BRANCH" == "working" ]]; then
+	echo "You are on branch $BRANCH. Please create a separate branch and then send a pull request to the $BRANCH branch"
+	exit 1
+fi
+
+exit 0
