@@ -6,7 +6,7 @@ module.exports = function (gulp, plugins, config, argv) {
       .pipe(plugins.prompt.prompt([{
           type: 'input',
           name: 'confirmation',
-          message: 'Please confirm that you want to publish this package on npm? (yes or no)',
+          message: 'Please confirm that you want to publish this package on NPM? (yes or no)',
         },{
           type: 'input',
           name: 'logged',
