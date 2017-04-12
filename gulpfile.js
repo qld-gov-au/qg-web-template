@@ -87,12 +87,15 @@ gulp.task('copy-element', require('./gulp/release-tasks/copy-element')(gulp, plu
 
 gulp.task('release', (cb) => {
   runSequence(
-    ['build:clean', 'clean-release'],
+    ['build', 'clean-release'],
     ['assets-core', 'scss-src', 'release-js', 'css', 'release-files', 'assets-includes-local', 'assets-includes-cdn'],
     'copy-element', // Done last in order to over-ride assets-includes
     cb
   );
 });
+
+/* NPM Publish*/
+gulp.task('npm:publish', require('./gulp/publish-tasks/npm.js')(gulp, plugins, config, argv));
 
 /* TEST TASKS */
 gulp.task('test:unit', require('./gulp/test-tasks/unit')(gulp, plugins, config, karmaServer));

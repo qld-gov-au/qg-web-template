@@ -1,4 +1,8 @@
 'use strict';
+// config specific imports
+// TODO remove duplicate path
+const path            = require('path');
+const pjson       = require('../package.json');
 
 module.exports = {
   versionName: 'v3',
@@ -37,6 +41,10 @@ module.exports = {
       '!**/*.css.map',
       '!**/*.js.map',
     ],
+  },
+  publish: {
+    npmDir: path.join('..', 'testnpmsib'),
+    version: pjson.version,
   },
   test: {
     karmaConfig () {
