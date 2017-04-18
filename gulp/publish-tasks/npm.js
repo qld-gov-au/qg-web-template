@@ -4,18 +4,18 @@ module.exports = function (gulp, plugins, config, argv) {
     return gulp.src(`${config.basepath.release}/**/*`, { dot: true })
       .pipe(gulp.dest(`${config.publish.npmDir}`))
       .pipe(plugins.prompt.prompt([{
-          type: 'input',
-          name: 'confirmation',
-          message: 'Please confirm that you want to publish this package on NPM? (yes or no)',
-        },{
-          type: 'input',
-          name: 'logged',
-          message: 'Are you logged into the NPM as the correct user? (yes or no)',
-        }, {
-          type: 'input',
-          name: 'releaseType',
-          message: 'Select a release type? Ex ' + releaseTypes,
-        },],
+        type: 'input',
+        name: 'confirmation',
+        message: 'Please confirm that you want to publish this package on NPM? (yes or no)',
+      }, {
+        type: 'input',
+        name: 'logged',
+        message: 'Are you logged into the NPM as the correct user? (yes or no)',
+      }, {
+        type: 'input',
+        name: 'releaseType',
+        message: 'Select a release type? Ex ' + releaseTypes,
+      }],
         function (res) {
           let checkInput = releaseTypes.filter(e => e.match(new RegExp('\\b' + res.releaseType + '\\b')));
           if ((res.confirmation === 'yes') && (res.logged === 'yes') && checkInput.length > 0) {
@@ -30,7 +30,7 @@ module.exports = function (gulp, plugins, config, argv) {
               'npm version ' + res.releaseType,
               'git pull -X ours',
               'git push origin master --tags',
-              'npm publish'
+              'npm publish',
             ])();
           } else {
             console.log('Please make sure you are logged into the NPM and you have selected a release type');

@@ -12,6 +12,5 @@ npm makes it easy to share and reuse code, and it makes it easy to update the co
 * Run __gulp npm:publish --msg="your commit msg"__ to start the publishing process. 
    * Confirm and enter a release type.
 * Check the published content by going to the npm package home page (Ex for testing https://www.npmjs.com/package/testnpmsib).  
-   
-  
+     
 
