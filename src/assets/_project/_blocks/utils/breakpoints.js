@@ -5,6 +5,7 @@
 * ======================================================================== */
 
 // FIXME: Reports linting error as it's defined as a module, but never used
+//If this is not in use then we can can delete?
 // TODO: Rename to breakpoints, as this isn't utils anymore
 const utils = (function () {
   // BREAKPOINTS //

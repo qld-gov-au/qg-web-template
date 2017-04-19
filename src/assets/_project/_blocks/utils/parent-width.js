@@ -7,6 +7,7 @@
 'use strict';
 
 // FIXME: Reports linting error as it's defined as a module, but never used
+//If this is not in use then we can can delete?
 var parentWidth = (function ($) {
   var $target = $('*[data-parent-width=1]');
   $target.outerWidth($target.parent().width());

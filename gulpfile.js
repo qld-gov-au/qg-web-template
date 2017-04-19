@@ -1,8 +1,7 @@
 'use strict';
 
 // init env variables
-// FIXME: This isn't loading
-// require('dotenv').config();
+require('dotenv').config();
 
 // Core
 const gulp            = require('gulp');
@@ -46,9 +45,7 @@ gulp.task('js', require('./gulp/build-tasks/js')(gulp, plugins, config, webpack)
 gulp.task('other-assets', require('./gulp/build-tasks/other-assets')(gulp, plugins, config, es));
 gulp.task('build-files', require('./gulp/build-tasks/other-files')(gulp, plugins, config));
 
-gulp.task('build', ['test:eslint:soft', 'html', 'includes-local', 'includes-cdn', 'scss', 'js', 'other-assets', 'build-files']);
-gulp.task('build:hardfail', (cb) => {
-  // Build hardfail supports release process, and fails if the test doesn't complete successfully
+gulp.task('build', (cb) => {
   runSequence(
     'test',
     ['html', 'includes-local', 'includes-cdn', 'scss', 'js', 'other-assets', 'build-files'],
@@ -58,16 +55,15 @@ gulp.task('build:hardfail', (cb) => {
 
 gulp.task('default', ['build']);
 gulp.task('build:clean', (cb) => {
-  runSequence('clean-build', 'build:hardfail', cb);
+  runSequence('clean-build', 'build', cb);
 });
 
-/* WATCH TASSKS */
+/* WATCH TASKS */
 gulp.task('watch', function () {
   gulp.watch([config.basepath.src + '/**/*.html'], ['html']);
   gulp.watch([config.basepath.src + '/assets/_project/_blocks/layout/**/*.html'], ['includes-local']);
   gulp.watch([config.basepath.src + '/**/*.scss'], ['scss']);
-  gulp.watch([config.basepath.src + '/**/*.js'], ['js']);
-  gulp.watch([config.basepath.src + '/**/*.js'], ['test:eslint:soft']);
+  gulp.watch([config.basepath.src + '/**/*.js'], ['js', 'test:eslint']);
   gulp.watch([config.basepath.src + '**/*'], ['other-assets']);
 });
 gulp.task('watch:serve', ['watch', 'serve']);
@@ -87,22 +83,20 @@ gulp.task('copy-element', require('./gulp/release-tasks/copy-element')(gulp, plu
 
 gulp.task('release', (cb) => {
   runSequence(
-    ['build:clean', 'clean-release'],
+    ['build', 'clean-release'],
     ['assets-core', 'scss-src', 'release-js', 'css', 'release-files', 'assets-includes-local', 'assets-includes-cdn'],
     'copy-element', // Done last in order to over-ride assets-includes
     cb
   );
 });
 
+/* NPM Publish*/
+gulp.task('npm:publish', require('./gulp/publish-tasks/npm.js')(gulp, plugins, config, argv));
+
 /* TEST TASKS */
 gulp.task('test:unit', require('./gulp/test-tasks/unit')(gulp, plugins, config, karmaServer));
-// Lints JS, terminates on error - used for release
 gulp.task('test:eslint', require('./gulp/test-tasks/lint')(gulp, plugins, config, fsPath, eslintReporter));
-// Lints JS, doesn't terminate on error - used for build and watch
-gulp.task('test:eslint:soft', require('./gulp/test-tasks/lint-soft')(gulp, plugins, config, fsPath, eslintReporter));
-gulp.task('lint', ['test:eslint']);
 gulp.task('test:browserstack', require('./gulp/test-tasks/e2e')(gulp, plugins, argv));
-
 gulp.task('test', ['test:unit', 'test:eslint']);
 
 /* LOCAL SERVER */
