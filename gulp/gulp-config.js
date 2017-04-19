@@ -1,7 +1,6 @@
 'use strict';
 // config specific imports
-// TODO remove duplicate path
-const path            = require('path');
+const path        = require('path');
 const pjson       = require('../package.json');
 
 module.exports = {
