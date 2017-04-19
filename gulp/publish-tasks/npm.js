@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function (gulp, plugins, config, argv) {
   return function () {
     let releaseTypes = ['major', 'minor', 'patch', 'premajor', 'preminor', 'prepatch', 'prerelease'];
