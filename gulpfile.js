@@ -63,7 +63,7 @@ gulp.task('watch', function () {
   gulp.watch([config.basepath.src + '/**/*.html'], ['html']);
   gulp.watch([config.basepath.src + '/assets/_project/_blocks/layout/**/*.html'], ['includes-local']);
   gulp.watch([config.basepath.src + '/**/*.scss'], ['scss']);
-  gulp.watch([config.basepath.src + '/**/*.js'], ['js', 'test:eslint']);
+  gulp.watch([config.basepath.src + '/**/*.js'], ['js', 'test']);
   gulp.watch([config.basepath.src + '**/*'], ['other-assets']);
 });
 gulp.task('watch:serve', ['watch', 'serve']);
@@ -97,7 +97,13 @@ gulp.task('npm:publish', require('./gulp/publish-tasks/npm.js')(gulp, plugins, c
 gulp.task('test:unit', require('./gulp/test-tasks/unit')(gulp, plugins, config, karmaServer));
 gulp.task('test:eslint', require('./gulp/test-tasks/lint')(gulp, plugins, config, fsPath, eslintReporter));
 gulp.task('test:browserstack', require('./gulp/test-tasks/e2e')(gulp, plugins, argv));
-gulp.task('test', ['test:unit', 'test:eslint']);
+gulp.task('test', (cb) => {
+  runSequence(
+    ['test:unit'],
+    ['test:eslint'],
+    cb
+  );
+});
 
 /* LOCAL SERVER */
 gulp.task('serve', require('./gulp/build-tasks/serve')(gulp, plugins, connect, connectssi, argv, path));
