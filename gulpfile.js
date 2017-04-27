@@ -83,7 +83,7 @@ gulp.task('copy-element', require('./gulp/release-tasks/copy-element')(gulp, plu
 
 gulp.task('release', (cb) => {
   runSequence(
-    ['build', 'clean-release'],
+    ['build:clean', 'clean-release'],
     ['assets-core', 'scss-src', 'release-js', 'css', 'release-files', 'assets-includes-local', 'assets-includes-cdn'],
     'copy-element', // Done last in order to over-ride assets-includes
     cb
