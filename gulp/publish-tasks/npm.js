@@ -26,7 +26,7 @@ module.exports = function (gulp, plugins, config, argv) {
               'echo release version "' + config.publish.version + '"',
               process.chdir(config.publish.npmDir),
               'pwd',
-              'git remote set-url origin https://github.com/AsifAmin/testnpmsib.git',
+              'git remote set-url origin https://github.com/qld-gov-au/web-template-release',
               'git add --all',
               'git commit -m "' + argv.msg + '"',
               'npm version ' + res.releaseType,
