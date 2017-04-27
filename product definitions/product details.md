@@ -3,7 +3,7 @@
 This application is designed, developed and maintained by DSITI OSSSIO products team oss.products@dsiti.qld.gov.au.
 
 ## Purpose ##
-To provide a template for qld.gov.au websites, and a template for CUE users.
+To provide a template for qld.gov.au websites, and a framework for CUE users to build templates.
 
 ## Stakeholders ##
 

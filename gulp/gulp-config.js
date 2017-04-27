@@ -90,7 +90,7 @@ module.exports = {
       assetsIncludes: true,
       assetsIncludesCdn: false,
       localToCdn: false,
-      copyElement: 'template',
+      copyElement: 'template-pages',
     },
     'template-cdn': {
       // The template using cdn (static.qld.gov.au) assets
@@ -99,7 +99,7 @@ module.exports = {
       assetsIncludes: false,
       assetsIncludesCdn: true,
       localToCdn: true,
-      copyElement: 'template',
+      copyElement: 'template-pages',
     },
     docs: {
       // User documentation
