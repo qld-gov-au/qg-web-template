@@ -15,9 +15,9 @@ module.exports = function (gulp, plugins, config) {
       // Test if the element is set to deploy this component
       if (config.output[element].assetsIncludes === true) {
         return gulp.src(src, { dot: true })
-          .pipe(plugins.if(config.output[element].assetsRel === true, plugins.replace(relLink.regex, relLink.replacement)))
           .pipe(plugins.include({ hardFail: true }))
           .on('error', console.log)
+          .pipe(plugins.if(config.output[element].assetsRel === true, plugins.replace(relLink.regex, relLink.replacement)))
           .pipe(gulp.dest(`${config.basepath.release}/${element}/assets/includes-local/`));
       } else {
         return true;
