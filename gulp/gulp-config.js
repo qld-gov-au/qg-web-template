@@ -74,14 +74,18 @@ module.exports = {
       assetsCore: true,
       // Copy the SCSS to the target directory, Default: false
       sourceSCSS: true,
-      // Copy the local incldues to the target directoy, Default: false
+      // Copy the local includes to the target directoy, Default: false
       assetsIncludes: true,
       // Copy the CDN incldues to the target directoy, Default: false
       assetsIncludesCdn: true,
       // Convert html SSI includes to point to CDN assets, must include the appropriate assetsIncludes above, Default: false
-      localToCdn: false,
+      includesLocalToCdn: false,
+      // Convert html SSI includes to be root relative
+      includesRel: false,
       // Copy the target directory from build to release and set it's name to the name of this element, Default: false
       copyElement: false,
+      // Transform assets to relative urls TODO: REMOVE THIS! It's just temporary before files are in CDN, Default: false
+      assetsRel: false,
     },
     'template-local': {
       // The template using local assets
@@ -89,8 +93,10 @@ module.exports = {
       sourceSCSS: false,
       assetsIncludes: true,
       assetsIncludesCdn: false,
-      localToCdn: false,
+      includesLocalToCdn: false,
+      includesRel: false,
       copyElement: 'template-pages',
+      assetsRel: false,
     },
     'template-cdn': {
       // The template using cdn (static.qld.gov.au) assets
@@ -98,17 +104,21 @@ module.exports = {
       sourceSCSS: false,
       assetsIncludes: false,
       assetsIncludesCdn: true,
-      localToCdn: true,
+      includesLocalToCdn: true,
+      includesRel: false,
       copyElement: 'template-pages',
+      assetsRel: false,
     },
     docs: {
       // User documentation
-      assetsCore: false,
+      assetsCore: true,
       sourceSCSS: false,
       assetsIncludes: true,
-      assetsIncludesCdn: false, // TODO: change to true
-      localToCdn: false, // TODO: change to true
+      assetsIncludesCdn: false,
+      includesLocalToCdn: false,
+      includesRel: true,
       copyElement: 'docs',
+      assetsRel: true,
     },
   },
 };
