@@ -42,7 +42,7 @@ module.exports = {
     ],
   },
   publish: {
-    npmDir: path.join('..', 'testnpmsib'),
+    npmDir: path.join('..', 'web-template-release'),
     version: pjson.version,
   },
   test: {
