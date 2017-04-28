@@ -93,7 +93,7 @@ gulp.task('release', (cb) => {
     ['build:clean', 'clean-release'],
     ['assets-core', 'scss-src', 'release-js', 'css', 'release-files', 'assets-includes-local', 'assets-includes-cdn'],
     'copy-element', // Done second last in order to over-ride assets-includes
-    'ssi-to-static',
+    'ssi-to-static', // Done last, this is a workaround to get docs flattened
     cb
   );
 });
