@@ -25,23 +25,18 @@ module.exports = function (gulp, plugins, config) {
           regex: new RegExp('<!--#include.*virtual="/assets/includes', 'g'),
           replacement: '<!--#include virtual="assets/includes',
         };
-        /*
-        if (config.output[element].includesLocalToCdn === true) {
 
-        } else if (config.output[element].includesRootRel === true) {
-          //
-        } else {
-          //
-        }
-        */
         return gulp.src(src, { dot: true })
           .pipe(plugins.if(config.output[element].includesLocalToCdn === true, plugins.replace(cdn.regex, cdn.replacement)))
           .pipe(plugins.if(config.output[element].includesRel === true, plugins.replace(relLink.regex, relLink.replacement)))
+          // TODO: Asif, add flatten function below please
+          // .pipe(plugins.if(config.output[element].assetIncludesFlatten === true, -- ADD FLATTEN FUNCTION --))
           .pipe(plugins.include({ hardFail: true }))
           .on('error', console.log)
           .pipe(gulp.dest(dest));
 
         /*
+        // Depricated code
         if (config.output[element].localToCdn === true) {
           let regex = new RegExp('<!--#include.*virtual="/assets/includes/', 'g');
           return gulp.src(src, { dot: true })

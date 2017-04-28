@@ -86,6 +86,8 @@ module.exports = {
       copyElement: false,
       // Transform assets to relative urls TODO: REMOVE THIS! It's just temporary before files are in CDN, Default: false
       assetsRel: false,
+      // Flatten includes into referencing html files, Default: false
+      assetIncludesFlatten: false,
     },
     'template-local': {
       // The template using local assets
@@ -97,6 +99,7 @@ module.exports = {
       includesRel: false,
       copyElement: 'template-pages',
       assetsRel: false,
+      assetIncludesFlatten: false,
     },
     'template-cdn': {
       // The template using cdn (static.qld.gov.au) assets
@@ -108,6 +111,7 @@ module.exports = {
       includesRel: false,
       copyElement: 'template-pages',
       assetsRel: false,
+      assetIncludesFlatten: false,
     },
     docs: {
       // User documentation
@@ -119,6 +123,7 @@ module.exports = {
       includesRel: true,
       copyElement: 'docs',
       assetsRel: true,
+      assetIncludesFlatten: true,
     },
   },
 };
