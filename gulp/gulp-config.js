@@ -131,7 +131,7 @@ module.exports = {
       includesRel: true,
       copyElement: true,
       src: 'docs',
-      dest: 'temp',
+      dest: 'docs',
       assetsRel: true,
       assetIncludesFlatten: true,
     },

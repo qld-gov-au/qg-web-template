@@ -11,7 +11,7 @@ const ssi    = new SSI({
 });
 
 const folder = {
-  src: path.join('release', 'temp'),
+  src: path.join('release', 'docs'),
   exclude: [
     'assets',
   ],

@@ -27,6 +27,7 @@ const fsPath            = require('fs-path');
 const eslintReporter    = require('eslint-html-reporter');
 const connectssi        = require('gulp-connect-ssi');
 const connect           = require('gulp-connect');
+const wait              = require('gulp-wait');
 
 /* CLEAN TASKS */
 gulp.task('clean-build', (cb) => {
@@ -83,29 +84,18 @@ gulp.task('copy-element', require('./gulp/release-tasks/copy-element')(gulp, plu
 
 gulp.task('ssi-to-static', (cb) => {
   return gulp.src('', {read: false})
+    .pipe(wait(1500)) // FIXME: This is a dodgy way to handle the wait to save files
     .pipe(plugins.shell([
       'node gulp/release-tasks/ssi-to-static.js'
     ]));
 });
-gulp.task('handle-docs', (cb) => {
-  return gulp.src(`${config.basepath.release}/${config.output.docs.dest}/assets/${config.versionName}/**`, { dot: true })
-    .on('error', console.log)
-    .pipe(gulp.dest(`${config.basepath.release}/docs/assets/${config.versionName}/`), cb);
-});
 
-gulp.task('temp', (cb) => {
+gulp.task('release', (cb) => {
   return runSequence(
     ['build:clean', 'clean-release'],
     ['assets-core', 'scss-src', 'release-js', 'css', 'release-files', 'assets-includes-local', 'assets-includes-cdn'],
     'copy-element', // Done second last in order to over-ride assets-includes
-    cb
-  );
-});
-
-gulp.task('release', ['temp'], (cb) => {
-  return runSequence(
     'ssi-to-static',
-    'handle-docs', // This is a workaround to get docs flattened
     cb
   );
 });
