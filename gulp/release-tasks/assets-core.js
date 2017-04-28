@@ -1,5 +1,5 @@
 module.exports = function (gulp, plugins, config) {
-  return function () {
+  return function (cb) {
     config.outputList.map(function (element) {
       const target = [
         `${config.basepath.build}/assets/${config.versionName}/**/*`,
@@ -12,9 +12,9 @@ module.exports = function (gulp, plugins, config) {
         return gulp.src(target, { dot: true })
           .pipe(plugins.include({ hardFail: true }))
           .on('error', console.log)
-          .pipe(gulp.dest(`${config.basepath.release}/${element}/assets/${config.versionName}/`));
+          .pipe(gulp.dest(`${config.basepath.release}/${config.output[element].dest}/assets/${config.versionName}/`), cb);
       } else {
-        return true;
+        return cb;
       }
     });
   };

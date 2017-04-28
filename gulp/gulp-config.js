@@ -84,6 +84,8 @@ module.exports = {
       includesRel: false,
       // Copy the target directory from build to release and set it's name to the name of this element, Default: false
       copyElement: false,
+      // Source
+      src: '/',
       // Destination of output
       dest: '/',
       // Transform assets to relative urls TODO: REMOVE THIS! It's just temporary before files are in CDN, Default: false
@@ -99,7 +101,8 @@ module.exports = {
       assetsIncludesCdn: false,
       includesLocalToCdn: false,
       includesRel: false,
-      copyElement: 'template-pages',
+      copyElement: true,
+      src: 'template-pages',
       dest: 'template-local',
       assetsRel: false,
       assetIncludesFlatten: false,
@@ -112,7 +115,8 @@ module.exports = {
       assetsIncludesCdn: true,
       includesLocalToCdn: true,
       includesRel: false,
-      copyElement: 'template-pages',
+      copyElement: true,
+      src: 'template-pages',
       dest: 'template-cdn',
       assetsRel: false,
       assetIncludesFlatten: false,
@@ -125,7 +129,8 @@ module.exports = {
       assetsIncludesCdn: false,
       includesLocalToCdn: false,
       includesRel: true,
-      copyElement: 'docs',
+      copyElement: true,
+      src: 'docs',
       dest: 'temp',
       assetsRel: true,
       assetIncludesFlatten: true,

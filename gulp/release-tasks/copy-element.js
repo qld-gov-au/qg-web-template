@@ -1,21 +1,22 @@
 'use strict';
 
 module.exports = function (gulp, plugins, config) {
-  return function () {
-    config.outputList.map(function (element) {
-      let src = [];
+  return function (cb) {
+    config.outputList.map((element) => {
+      let src = [`${config.basepath.build}/${config.output[element].src}/**`];
       let dest = `${config.basepath.release}/${config.output[element].dest}/`;
 
-      if (typeof config.output[element].copyElement === 'string') {
-        let elementSrc = config.output[element].copyElement;
-        src = [`${config.basepath.build}/${elementSrc}/**/*`];
-      } else {
-        src = [`${config.basepath.build}/${element}/**/*`];
-      }
+      // if (typeof config.output[element].copyElement === 'string') {
+      //   let elementSrc = config.output[element].src;
+      //   src = [`${config.basepath.build}/${elementSrc}/**`];
+      // } else {
+      //   src = [`${config.basepath.build}/${element}/**/*`];
+      // }
+
       src.concat(config.release.excludes);
 
       // Test if the element is set to deploy this component
-      if (typeof config.output[element].copyElement === 'string') {
+      if (config.output[element].copyElement === true) {
         // Define regex
         let cdn = {
           regex: new RegExp('<!--#include.*virtual="/assets/includes/', 'g'),
@@ -32,7 +33,7 @@ module.exports = function (gulp, plugins, config) {
           // .pipe(plugins.if(config.output[element].assetIncludesFlatten === true, -- ADD FLATTEN FUNCTION --))
           .pipe(plugins.include({ hardFail: true }))
           .on('error', console.log)
-          .pipe(gulp.dest(dest));
+          .pipe(gulp.dest(dest), cb);
 
         /*
         // Depricated code
@@ -51,7 +52,7 @@ module.exports = function (gulp, plugins, config) {
         }
         */
       } else {
-        return true;
+        return cb;
       }
     });
   };

@@ -1,7 +1,7 @@
 // SCSS Source
 
 module.exports = function (gulp, plugins, config) {
-  return function () {
+  return function (cb) {
     config.outputList.map(function (element) {
       const target = [
         `${config.basepath.src}/assets/_project/scss/**/*.scss`,
@@ -12,9 +12,9 @@ module.exports = function (gulp, plugins, config) {
         return gulp.src(target, { dot: true })
           .pipe(plugins.include({ hardFail: true }))
           .on('error', console.log)
-          .pipe(gulp.dest(`${config.basepath.release}/${element}/assets/scss/`));
+          .pipe(gulp.dest(`${config.basepath.release}/${config.output[element].dest}/assets/scss/`), cb);
       } else {
-        return true;
+        return cb;
       }
     });
   };

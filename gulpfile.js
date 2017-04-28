@@ -81,19 +81,26 @@ gulp.task('release-js', require('./gulp/release-tasks/js')(gulp, plugins, config
 gulp.task('css', require('./gulp/release-tasks/css')(gulp, plugins, config)); // Minifies CSS
 gulp.task('copy-element', require('./gulp/release-tasks/copy-element')(gulp, plugins, config));
 
-gulp.task('ssi-to-static', () => {
+gulp.task('ssi-to-static', (cb) => {
   return gulp.src('', {read: false})
     .pipe(plugins.shell([
       'node gulp/release-tasks/ssi-to-static.js'
     ]));
 });
+gulp.task('handle-docs', (cb) => {
+  return gulp.src(`${config.basepath.release}/${config.output.docs.dest}/assets/${config.versionName}/**`, { dot: true })
+    .on('error', console.log)
+    .pipe(gulp.dest(`${config.basepath.release}/docs/assets/${config.versionName}/`), cb);
+});
 
 gulp.task('release', (cb) => {
+  console.log('release', cb);
   runSequence(
     ['build:clean', 'clean-release'],
     ['assets-core', 'scss-src', 'release-js', 'css', 'release-files', 'assets-includes-local', 'assets-includes-cdn'],
     'copy-element', // Done second last in order to over-ride assets-includes
-    'ssi-to-static', // Done last, this is a workaround to get docs flattened
+    'ssi-to-static',
+    'handle-docs', // This is a workaround to get docs flattened
     cb
   );
 });

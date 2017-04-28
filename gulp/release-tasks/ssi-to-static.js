@@ -11,9 +11,11 @@ const ssi    = new SSI({
 });
 
 const folder = {
-  src: path.join('/temp', 'docs'),
-  exclude: [''],
-  build: path.join('/release', 'docs'),
+  src: path.join('release', 'temp'),
+  exclude: [
+    'assets',
+  ],
+  build: path.join('release', 'docs'),
 };
 
 function fromDir (startPath) {
@@ -41,9 +43,10 @@ function fromDir (startPath) {
         });
       });
     });
-    fsPath.remove('/temp', (err) => {
-      console.log('ok');
-    });
+    // fsPath.remove(folder.src, (err) => {
+    //   console.log('ok');
+    //   if (err) return;
+    // });
   });
 }
 
