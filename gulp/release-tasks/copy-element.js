@@ -4,7 +4,7 @@ module.exports = function (gulp, plugins, config) {
   return function () {
     config.outputList.map(function (element) {
       let src = [];
-      let dest = `${config.basepath.release}/${element}/`;
+      let dest = `${config.basepath.release}/${config.output[element].dest}/`;
 
       if (typeof config.output[element].copyElement === 'string') {
         let elementSrc = config.output[element].copyElement;
@@ -29,7 +29,6 @@ module.exports = function (gulp, plugins, config) {
         return gulp.src(src, { dot: true })
           .pipe(plugins.if(config.output[element].includesLocalToCdn === true, plugins.replace(cdn.regex, cdn.replacement)))
           .pipe(plugins.if(config.output[element].includesRel === true, plugins.replace(relLink.regex, relLink.replacement)))
-          // TODO: Asif, add flatten function below please
           // .pipe(plugins.if(config.output[element].assetIncludesFlatten === true, -- ADD FLATTEN FUNCTION --))
           .pipe(plugins.include({ hardFail: true }))
           .on('error', console.log)

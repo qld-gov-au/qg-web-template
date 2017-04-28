@@ -1,4 +1,7 @@
 'use strict';
+
+// Todo: Clean this up, it's super messy
+
 const SSI  = require('node-ssi');
 const fsPath = require('fs-path');
 const path = require('path');
@@ -8,9 +11,9 @@ const ssi    = new SSI({
 });
 
 const folder = {
-  src: path.join('build', 'docs'),
+  src: path.join('/temp', 'docs'),
   exclude: [''],
-  build: path.join('release', 'docs'),
+  build: path.join('/release', 'docs'),
 };
 
 function fromDir (startPath) {
@@ -37,6 +40,9 @@ function fromDir (startPath) {
           }
         });
       });
+    });
+    fsPath.remove('/temp', (err) => {
+      console.log('ok');
     });
   });
 }
