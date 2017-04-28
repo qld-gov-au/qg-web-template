@@ -42,6 +42,7 @@ function fromDir (startPath) {
       });
     });
     fsPath.remove('/temp', (err) => {
+      if (err) return;
       console.log('ok');
     });
   });
