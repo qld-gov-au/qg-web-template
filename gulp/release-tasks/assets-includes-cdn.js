@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = function (gulp, plugins, config) {
-  return function (cb) {
+  return function () {
     config.outputList.map(function (element) {
       let src = [
         `${config.basepath.build}/assets/includes-cdn/**/*`,
@@ -12,9 +12,9 @@ module.exports = function (gulp, plugins, config) {
         return gulp.src(src, { dot: true })
           .pipe(plugins.include({ hardFail: true }))
           .on('error', console.log)
-          .pipe(gulp.dest(`${config.basepath.release}/${config.output[element].dest}/assets/includes/`), cb);
+          .pipe(gulp.dest(`${config.basepath.release}/${config.output[element].dest}/assets/includes/`));
       } else {
-        return cb;
+        return true;
       }
     });
   };

@@ -1,5 +1,5 @@
 module.exports = function (gulp, plugins, config) {
-  return function (cb) {
+  return function () {
     config.outputList.map(function (element) {
       const target = [
         `${config.basepath.build}/assets/${config.versionName}/**/*.css`,
@@ -10,9 +10,9 @@ module.exports = function (gulp, plugins, config) {
         return gulp.src(target, { dot: true })
           .pipe(plugins.cleanCss())
           .on('error', console.log)
-          .pipe(gulp.dest(`${config.basepath.release}/${config.output[element].dest}/assets/${config.versionName}/`), cb);
+          .pipe(gulp.dest(`${config.basepath.release}/${config.output[element].dest}/assets/${config.versionName}/`));
       } else {
-        return cb;
+        return true;
       }
     });
   };

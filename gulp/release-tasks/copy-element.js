@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = function (gulp, plugins, config) {
-  return function (cb) {
+  return function () {
     config.outputList.map((element) => {
       let src = [`${config.basepath.build}/${config.output[element].src}/**`];
       let dest = `${config.basepath.release}/${config.output[element].dest}/`;
@@ -33,7 +33,7 @@ module.exports = function (gulp, plugins, config) {
           // .pipe(plugins.if(config.output[element].assetIncludesFlatten === true, -- ADD FLATTEN FUNCTION --))
           .pipe(plugins.include({ hardFail: true }))
           .on('error', console.log)
-          .pipe(gulp.dest(dest), cb);
+          .pipe(gulp.dest(dest));
 
         /*
         // Depricated code
@@ -52,7 +52,7 @@ module.exports = function (gulp, plugins, config) {
         }
         */
       } else {
-        return cb;
+        return true;
       }
     });
   };

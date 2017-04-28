@@ -93,12 +93,17 @@ gulp.task('handle-docs', (cb) => {
     .pipe(gulp.dest(`${config.basepath.release}/docs/assets/${config.versionName}/`), cb);
 });
 
-gulp.task('release', (cb) => {
-  console.log('release', cb);
-  runSequence(
+gulp.task('temp', (cb) => {
+  return runSequence(
     ['build:clean', 'clean-release'],
     ['assets-core', 'scss-src', 'release-js', 'css', 'release-files', 'assets-includes-local', 'assets-includes-cdn'],
     'copy-element', // Done second last in order to over-ride assets-includes
+    cb
+  );
+});
+
+gulp.task('release', ['temp'], (cb) => {
+  return runSequence(
     'ssi-to-static',
     'handle-docs', // This is a workaround to get docs flattened
     cb
