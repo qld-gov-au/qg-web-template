@@ -85,8 +85,8 @@ gulp.task('ssi-to-static', () => {
   return gulp.src('', {read: false})
     .pipe(plugins.shell([
       'node gulp/release-tasks/ssi-to-static.js'
-    ]))
-})
+    ]));
+});
 
 gulp.task('release', (cb) => {
   runSequence(
