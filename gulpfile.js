@@ -81,6 +81,13 @@ gulp.task('release-js', require('./gulp/release-tasks/js')(gulp, plugins, config
 gulp.task('css', require('./gulp/release-tasks/css')(gulp, plugins, config)); // Minifies CSS
 gulp.task('copy-element', require('./gulp/release-tasks/copy-element')(gulp, plugins, config));
 
+gulp.task('ssi-to-static', () => {
+  return gulp.src('', {read: false})
+    .pipe(plugins.shell([
+      'node gulp/release-tasks/ssi-to-static.js'
+    ]))
+})
+
 gulp.task('release', (cb) => {
   runSequence(
     ['build:clean', 'clean-release'],

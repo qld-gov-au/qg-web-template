@@ -4,13 +4,13 @@ const SSI  = require('node-ssi'),
   path = require('path'),
   ssi    = new SSI({
     encoding: 'utf-8',
-    baseDir: path.join('..', '..' , 'build')
+    baseDir: path.join('build')
   });
 
 const folder = {
-  src: path.join('..', '..' , 'build', 'docs'),
+  src: path.join('build', 'docs'),
   exclude:[''],
-  build:path.join('..', '..' , 'release', 'docs')
+  build:path.join('release', 'docs')
 };
 
 function fromDir(startPath){
