@@ -27,6 +27,10 @@
 	a, a:link, a:visited {
 		color: #FFF;
 	}
+
+	@media print {
+		display: none !important;
+	}
 }
 
 @media (max-width: $screen-sm-max) {

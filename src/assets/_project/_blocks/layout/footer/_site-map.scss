@@ -62,4 +62,8 @@
       padding: .5em .3em;
     }
   }
+
+  @media print {
+    display: none;
+  }
 }

@@ -35,7 +35,7 @@
 
     li + li a {
       border-left: 1px solid #999;
-    }   
+    }  
   }
 
   a {
@@ -46,5 +46,19 @@
   a:focus, a:hover {
     text-decoration: underline;  
     color: #000; 
+  }
+
+  @media print {
+    border-top: 1px solid black;
+
+    ul {
+      li {
+        display: block;
+
+        & + li a {
+          border-left: none;
+        }
+      }
+    }
   }
 }
