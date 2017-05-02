@@ -60,6 +60,10 @@
       //
     }
   }
+
+  @media print {
+    display: none;
+  }
 }
 /*
 @include breakpoint($bs-min-lg) {

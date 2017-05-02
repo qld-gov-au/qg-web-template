@@ -8,4 +8,8 @@
   @media (min-width: $screen-sm-min) {
     margin-top: 32px;
   }
+
+  @media print {
+    border-bottom: 1px solid black;
+  }
 }

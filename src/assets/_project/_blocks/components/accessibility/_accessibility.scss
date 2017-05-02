@@ -2,7 +2,7 @@
 // GLUE Accessibility features and options
 // --------------------------------------------------
 
-//// START External link icons ////
+//// START link icons ////
 body:not([data-accessibility=false]):not([data-access-extlink=false]) {
   #qg-content {
     a:not(.btn):not(.qg-accessibility-off), // legacy
