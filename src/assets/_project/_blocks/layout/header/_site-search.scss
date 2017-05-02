@@ -1,0 +1,71 @@
+#qg-search-form {
+  @include make-xs-column(12);
+  @include make-xs-column(3);
+
+  @media (min-width: $screen-lg-min) {
+    padding-right: $grid-gutter-width;
+  }
+
+  input {
+    border-radius: 0;
+    border-color: $qg-green; 
+  }
+
+  .listbox {
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    top: calc(100% - 1px);
+    z-index: 98;
+    width: 100%;
+    padding: 0;
+    border: 1px solid $qg-green;
+    border-top: 1px solid #EEE;
+    background: #FFF;
+
+    li {
+      width: 100%;
+      padding-left: 0.8em;
+      &:last-of-type {
+        margin-bottom: .3em;  
+      }
+      &:hover {
+        background: $qg-pale-blue-light;
+      }
+    }
+
+    a {
+      display: block;
+      background: transparent;
+      color: #000;
+      text-decoration: none;
+      white-space: normal;
+    }
+
+    mark {
+      font-weight: bold;
+      background-color: transparent;
+      padding: 0;
+    }
+  }  
+
+  /*
+  @media (min-width: $screen-sm-min) {
+  @include breakpoint($bs-md) {
+    margin-bottom: 1em;
+  }
+  */
+  .collapse {
+    @media (min-width: $screen-sm-min) {
+      //
+    }
+  }
+}
+/*
+@include breakpoint($bs-min-lg) {
+  #qg-search-form.collapse { // Over-rides SWE default behaviour for accessibility
+    display: block;
+    height: auto !important;
+  }
+}
+*/

@@ -1,0 +1,114 @@
+// #################################################
+// ## Colour definitions
+// Define colour names, avoid using these in the wider SCSS
+
+// ## Primary blue ##
+$qg-blue: #007EB1; // Primary blue
+$qg-blue-dark: #13578b; // Primary link colour (see bootstrap-variables.scss)
+$qg-blue-darker: #005375;
+
+$qg-green: #78ba00; // For primary buttons, icons etc. (see bootstrap-variables.scss)
+
+// ## Dark grey ##
+$qg-dark-gray-lighter: #8a8f91; // Lightest for large text on white
+$qg-dark-gray-light: #717679; // Lightest for small text on white
+$qg-dark-grey: #585e62; // For default buttons 
+
+// ## Light grey ##
+$qg-light-gray-lighter: #f8f8f8;
+$qg-light-gray: #f6f6f6; // Primary brand light grey
+$qg-light-gray-darker: #d1d1d1;
+
+// $qg-light-gray-darker: #707070; // Dark grey
+
+
+// ## Dark Blue ##
+$qg-dark-blue: #0B2E4C;
+
+
+// ###################################
+
+// Light blue colours
+$qg-pale-blue-dark:		#cecece;
+$qg-pale-blue:			#e7f5fe;
+$qg-pale-blue-light:	#f2f7f9;
+
+
+
+
+// #################################################
+// ## Semantic colour Variables
+// Semantic variables names common element colours. Use these in your SCSS
+// Note: Use US spelling for colour
+
+// ## Components
+$qg-icon-color: $qg-green;
+
+// ## Layout
+// Site header
+$qg-breadcrumb-bg-color: $qg-blue;
+$qg-site-header-bg-color: $qg-light-gray;
+
+// Section Nav
+$qg-section-nav-bg-color: $qg-light-gray;
+$qg-section-nav-link-hover-bg-color: $qg-light-gray-darker;
+
+// Asides
+$qg-aside-bg-color: $qg-pale-blue;
+$qg-aside-bg-color2: $qg-pale-blue-light;
+$qg-aside-bg-color3: $qg-pale-blue-dark;
+
+// Content options
+$qg-content-options-bg-color: $qg-blue;
+$qg-feedback-btn-bg-color: $qg-blue-darker;
+$qg-feedback-bg-color: $qg-light-gray-lighter;
+$qg-content-options-share-icon-color: #fff;
+// Note: Share dropdown uses colours from bootstrap
+
+
+// Footer
+$qg-footer-bg-color: $qg-dark-blue;
+$qg-footer-bg-alt-color: $qg-dark-blue;
+
+
+// ###################################
+// Rulers & spacing
+
+$qg-spacing: 50px; // Note: Used by $grid-gutter-width
+$qg-spacing-large: $qg-spacing * 1.5;
+$qg-spacing-small: $qg-spacing / 2;
+
+$qg-spacing-xs: 30px;
+$qg-spacing-xs-large: $qg-spacing-xs * 1.5;
+$qg-spacing-xs-small: $qg-spacing-xs / 2;
+
+
+// Notes:
+// $brand-danger = $qg-red5
+
+// #################################################
+// To convert to bootstrap naming convention
+$qg-light-gray2: #fcfcfc;//none
+$qg-light-gray3: #f8f8f8;//done
+// $qg-light-gray: #f6f6f6;//done
+$qg-light-gray5: #f5f5f5;//done
+$qg-light-gray6: #e0e0e0;//none
+$qg-light-gray7: #d1d1d1;//done
+
+$qg-light-blue-gray1: #F7FBFF;//done
+$qg-light-blue-gray: #f2F7F9;//done
+$qg-light-blue-gray3: #EEF4F6;//none
+$qg-light-blue-gray4: #E7F5FE;//done
+$qg-light-blue-gray5: #E1ECF1;//none
+$qg-light-blue-gray6: #7d858a;//none
+$qg-light-blue-gray7: #585E62;//none
+
+$qg-blue1: #9ac5df;//done
+$qg-blue2: #3384c1;//done
+$qg-blue: #007EB1; //done
+$qg-blue4: #13578b;//done
+$qg-blue5: #115289;//done
+$qg-banner-blue: #00335B;//none
+$qg-blue-green: #005375;//done
+
+$qg-blue9: #0b3253;//done

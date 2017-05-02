@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <title>Components | Web Template | Queensland Government</title>
+
+    <meta name="description" content="DESCRIPTION">
+    <meta name="keywords" content="KEYWORDS">
+    
+    <link rel="schema.DCTERMS" href="http://purl.org/dc/terms/">
+    <link rel="schema.AGLSTERMS" href="http://www.agls.gov.au/agls/terms/">
+
+    <meta name="DCTERMS.creator" scheme="AGLSTERMS.GOLD" content="c=AU; o=The State of Queensland; ou=DEPARTMENT NAME; ou=UNIT NAME">
+    <meta name="DCTERMS.publisher" scheme="AGLSTERMS.AglsAgent" content="corporateName=The State of Queensland; jurisdiction=Queensland">
+    <meta name="DCTERMS.created" content="2010-11-04">
+    <meta name="DCTERMS.modified" content="2011-03-05">
+    <meta name="DCTERMS.title" content="Components">
+    <meta name="DCTERMS.alternative" content="Who is a carer?">
+    <meta name="DCTERMS.description" content="DESCRIPTION">
+    <meta name="DCTERMS.subject" scheme="AGLSTERMS.APAIS" content="SUBJECT">
+    <meta name="AGLSTERMS.function" scheme="AGLSTERMS.AGIFT" content="FUNCTION">
+    <meta name="DCTERMS.type" scheme="DCTERMS.DCMIType" content="Text">
+    <meta name="AGLSTERMS.documentType" scheme="AGLSTERMS.agls-document" content="guidelines">
+    <meta name="DCTERMS.audience" scheme="AGLSTERMS.agls-audience" content="">
+    <meta name="DCTERMS.jurisdiction" scheme="AGLSTERMS.AglsJuri" content="Queensland">
+    <meta name="DCTERMS.license" scheme="DCTERMS.URI" content="http://creativecommons.org/licenses/by/3.0/au/">
+
+    <!--#include virtual="/assets/includes-local/head-assets.html"-->
+
+    <link href="assets/_project/css/qg-documentation.css" rel="stylesheet" type="text/css" media="all">
+
+</head>
+
+<body data-qg-accessibility="true"
+    data-spy="scroll" data-target="#page-nav">
+
+    <!--#include virtual="/assets/includes-local/header/access.html"-->
+
+    <div class="container-fluid qg-site-width">
+
+        <header id="qg-site-header">
+            <!--#include virtual="/assets/includes-local/header/coat-of-arms.html"-->
+
+            <!--#include virtual="/assets/includes-local/header/site-utilities.html"-->
+
+            <!--#include virtual="/assets/includes-local/header/site-search.html"-->
+
+            <!--#include virtual="/assets/includes-local/header/global-alert.html"-->
+
+            <!--#include virtual="/assets/includes-local/header/site-nav.html"-->
+        </header>
+
+        <div id="qg-content">
+            <div id="qg-three-col" class="row">
+
+                <!-- START Breadcrumbs -->
+<nav id="qg-breadcrumb" role="navigation" aria-label="breadcrumb navigation" aria-labelledby="breadcrumb-heading" class="collapse">
+
+    <h1 id="breadcrumb-heading" class="qg-visually-hidden">You are here:</h2>
+
+    <ol class="list-inline">
+        <!--#include virtual="assets/includes-local/breadcrumbs/qg-web-template.html"-->
+        <li>Components</li>
+    </ol>
+
+</nav>
+                <!-- / END Breadcrumbs -->
+
+                <div id="qg-primary-content" role="main">
+
+                    <!--#include virtual="/assets/includes-local/content/alert.html"-->
+
+                    <h1><small>Web Template Pattern Library</small></h1>
+
+                    <h1>Components</h1>
+
+                    <p class="lead">Reusable components for your Queensland Government websites and web applications</p>
+
+                    <p></p>
+
+<!-- ################################## -->
+  <h2 id="dropdowns" class="category">Dropdowns</h2>
+  <p>
+      Dropdowns are only to be used for web applications, not forms.
+  </p>
+  <p class="warn">
+      Due to the nature of the Forms system being used, dropdowns are not advised for web forms.
+  </p>
+  <p class="alert alert-info" role="alert">
+    Unlike Bootstrap, the Web Template automatically provides a chevron on dropdowns. See <a href="#dropdowns-custom-icon">custom icon</a> to disable this feature.
+  </p>
+  <p>
+      For more information on implementation, see the <a href="http://getbootstrap.com/components/#dropdowns" target="_blank">bootstrap dropdowns section</a>.
+  </p>
+
+  <div class="qg-tmplt-example">
+      <div class="panel-body">
+
+  <div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      Dropdown
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+      <li><a href="#">Action</a></li>
+      <li><a href="#">Another action</a></li>
+      <li class="dropdown-header">Optional dropdown header</li>
+      <li><a href="#">Action after dropdown header</a></li>
+      <li class="disabled"><a href="#">Disabled link</a></li>
+      <li><a href="#">Something else here</a></li>
+      <li role="separator" class="divider"></li>
+      <li><a href="#">Separated link</a></li>
+    </ul>
+  </div>
+
+        </div>
+    </div>
+    <p>Dropdown menus can be changed to expand upwards (instead of downwards) by adding .dropup to the parent.</p>
+
+    <div class="qg-tmplt-example">
+        <div class="panel-body">
+
+<div class="dropup">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropup
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another action</a></li>
+    <li><a href="#">Something else here</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="#">Separated link</a></li>
+  </ul>
+</div>
+
+        </div>
+    </div>
+
+  <h2 id="dropdowns-custom-icon">Custom icon</h2>
+  <p>To remove the default dropdown icon added by the Web Template, add the class '.noicon' to the button. Make sure to add your own icon, or use the bootstrap default icon.</p>
+
+  <div class="qg-tmplt-example">
+    <div class="panel-body">
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle noicon" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          Dropdown
+          <span class="icon caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu3">
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Another action</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+<!-- ################################## -->
+
+    <h2 class="category" id="button-groups">Button Groups</h2>
+    <div class="btn-group" role="group" aria-label="...">
+      <button type="button" class="btn btn-default">Left</button>
+      <button type="button" class="btn btn-default">Middle</button>
+      <button type="button" class="btn btn-default">Right</button>
+    </div>
+
+    <h3 class="category">Button toolbar</h2>
+    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+        <div class="btn-group" role="group" aria-label="First group">
+            <button type="button" class="btn btn-default">1</button>
+            <button type="button" class="btn btn-default">2</button>
+            <button type="button" class="btn btn-default">3</button>
+            <button type="button" class="btn btn-default">4</button>
+        </div>
+        <div class="btn-group" role="group" aria-label="Second group">
+            <button type="button" class="btn btn-default">5</button>
+            <button type="button" class="btn btn-default">6</button>
+            <button type="button" class="btn btn-default">7</button>
+        </div>
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown
+            </button>
+            <ul class="dropdown-menu">
+              <li><a href="#">Dropdown link</a></li>
+              <li><a href="#">Dropdown link</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <h3 class="category">Justified button group</h2>
+    <div class="btn-group btn-group-justified" role="group" aria-label="...">
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-default">Left</button>
+      </div>
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-primary">Middle</button>
+      </div>
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-default">Right</button>
+      </div>
+    </div>
+
+<!-- ################################## -->
+
+<h2 class="category" id="button-dropdowns">Button Dropdowns</h2>
+
+<p>The <a href="#dropdowns">dropdowns methodology</a> is prefered over this method of creating dropdowns, the one exception being for split buttons.</p>
+
+<h3>Split buttons</h3>
+
+<!-- Split button -->
+<div class="btn-group">
+  <button type="button" class="btn btn-primary">Action</button>
+  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="sr-only">Toggle Dropdown</span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another action</a></li>
+    <li><a href="#">Something else here</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="#">Separated link</a></li>
+  </ul>
+</div>
+
+<h3>Dropup split buttons</h3>
+
+<div class="btn-group dropup">
+  <button type="button" class="btn btn-default">Dropup</button>
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="sr-only">Toggle Dropdown</span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another action</a></li>
+  </ul>
+</div>
+
+<!-- ################################## -->
+
+<h2 class="category" id="input-groups">Input groups</h2>
+
+<p>Don't use this for now.</p>
+
+<!-- ################################## -->
+
+<h2 class="category" id="navs">Navs</h2>
+
+<!-- See https://www.qld.gov.au/alerts for styling -->
+
+<p>Coming soon.</p>
+
+<!-- ################################## -->
+
+<h2 class="category" id="navbar">Navbar</h2>
+
+<p>Coming soon.</p>
+
+<!-- ################################## -->
+
+<h2 class="category" id="breadcrumbs">Breadcrumbs</h2>
+
+<p>See <a href="http://local.qgwt.build/docs/layout.html#layout">Template page layout</a>.</p>
+
+<!-- ################################## -->
+
+<h2 class="category" id="pagination">Pagination</h2>
+
+<p>Coming soon.</p>
+
+<!-- ################################## -->
+
+<h2 class="category" id="labels">Labels</h2>
+
+<p>Coming soon.</p>
+
+<!-- ################################## -->
+
+<h2 class="category" id="badges">Badges</h2>
+
+<p>Coming soon.</p>
+
+<!-- ################################## -->
+
+<h2 class="category" id="jumbotron">Jumbotron</h2>
+
+<p>Coming soon.</p>
+
+<!-- ################################## -->
+
+                    <div class="qg-content-footer">
+
+                        <dl>
+                            <dt>Last updated:</dt>
+                            <dd>1 July 2016</dd>
+                            <dt>Last reviewed:</dt>
+                            <dd>1 July 2016</dd>
+                        </dl>
+
+                        <!--#include virtual="/assets/includes-local/content/licence-cc.html" -->
+
+                    </div>
+                </div>
+
+                <aside id="qg-secondary-content">
+
+                    <div id="page-nav" class="qg-aside qg-docs-sidenav" role="complementary" data-spy="affix" data-offset-top="500" data-offset-bottom="900" data-parent-width="1">
+                        <h2>On this page</h2>
+
+                        <ul>
+                            <li><a href="#dropdowns">Dropdowns</a></li>
+                            <li><a href="#button-groups">Button groups</a></li>
+                            <li><a href="#button-dropdowns">Button dropdowns</a></li>
+                            <li><a href="#input-groups">Input groups</a></li>
+                            <li><a href="#navs">Navs</a></li>
+                        </ul>
+
+                    </div>
+
+                    <div class="qg-aside" role="complementary">
+                        <h2>Carer Business Discount Card</h2>
+
+                        <p>If you receive a Centrelink carer payment or carers allowance and live in Queensland, you are eligible for a <a href="/community/support-for-carers/carer-card/">Carer Business Discount Card</a>,which recognises the contribution carers make to the community and provides discounts on products and services.</p>
+                    </div>
+
+                </aside>
+
+                <!--#include virtual="assets/includes-local/section-nav/qg-web-template.html"-->
+                
+            </div>
+            <!--#include virtual="/assets/includes-local/content/options.html"-->
+        </div>
+
+        <footer>
+            <!--#include virtual="/assets/includes-local/footer/footer-site-map.html"-->
+            <!--#include virtual="/assets/includes-local/footer/footer-legals.html"-->
+        </footer>
+    </div>
+
+    <script>
+      var qg = qg || {};
+      qg.swe = qg.swe || {};
+      // Used by the feedback form.
+      qg.swe.franchiseTitle = 'Franchise Title';
+    </script>
+
+    <!--#include virtual="/assets/includes-local/footer/footer-scripts.html"-->
+
+</body>
+
+</html>

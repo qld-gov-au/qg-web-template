@@ -1,0 +1,41 @@
+#qg-site-header .qg-utilities {
+  @extend .col-xs-12;
+  @extend .col-sm-6;
+  @extend .col-md-5;
+
+  text-align: right;
+
+  a, a:link {
+    color: $qg-blue5;
+    text-decoration: none;
+  } 
+
+  a:hover {
+    color: $qg-blue5;
+    text-decoration: underline
+  } 
+
+  li {
+    padding-right: 0;
+    padding-left: 0;
+    line-height: 1.75em;
+
+    button, a {
+      background-color: transparent;
+      padding: 0;
+      border: none;
+      vertical-align: middle;
+      display: inline-block;
+      text-align: center;
+      
+      .fa {
+        display: block;
+      }
+    }
+
+    & + li {
+      margin-left: 1em;
+    }
+  }
+
+}

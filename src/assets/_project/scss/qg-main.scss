@@ -1,0 +1,64 @@
+/*!
+ * Queensland Government Web Template (QG Web Template)
+ * -
+ * -
+ */
+
+// Variables
+// -------------------------
+
+@import "qg-variables";
+@import "bootstrap-variables";
+
+// Frameworks
+// -------------------------
+
+// Import bootstrap
+@import "bootstrap-loader"; // Local custom loader, pulls resources from NPM module
+	// @import "../../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap"; // NPM module
+@import "../../../../node_modules/font-awesome/scss/font-awesome.scss";
+
+// Queensland government styles
+// -------------------------
+
+// QG Mixins
+@import "mixins/font-size";
+@import "mixins/spacing";
+
+// QG Utilities
+@import "../_blocks/utils/utilities"; // Utilities loaded first so they can be used in other components
+
+// QG components
+@import "../_blocks/components/accessibility/accessibility";
+@import "../_blocks/components/buttons";
+@import "../_blocks/components/carousel/carousel";
+@import "../_blocks/components/visually-hidden";
+@import "../_blocks/components/dropdowns"; // Extends bootstrap dropdowns
+
+// QG layout components
+@import "../_blocks/layout/layout-scaffolding"; // Primary layout structure
+
+@import "../_blocks/layout/_pagemodels/index"; // Page models
+
+@import "../_blocks/layout/header/access"; 
+@import "../_blocks/layout/header/alerts";
+@import "../_blocks/layout/header/coat-of-arms";
+@import "../_blocks/layout/header/header-structure";
+@import "../_blocks/layout/header/site-name";
+@import "../_blocks/layout/header/site-nav";
+@import "../_blocks/layout/header/site-search";
+@import "../_blocks/layout/header/site-utilities";
+
+@import "../_blocks/layout/breadcrumbs/breadcrumbs";
+@import "../_blocks/layout/content/content";
+@import "../_blocks/layout/content/options";
+@import "../_blocks/layout/section-nav/section-nav";
+@import "../_blocks/layout/asides/asides";
+@import "../_blocks/layout/footer/site-map";
+@import "../_blocks/layout/footer/legals";
+
+// Legacy styles
+// -------------------------
+
+@import "../_blocks/legacy/forms/forms-reset";
+@import "../_blocks/legacy/forms/forms";

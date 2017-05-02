@@ -2,7 +2,7 @@
 logs
 *.log
 npm-debug.log*
-
+.idea/
 # Runtime data
 pids
 *.pid
@@ -36,10 +36,9 @@ node_modules
 .node_repl_history
 
 # Local and dev
-.idea/
-.idea
 _local.*
-_local.*/**/*.*
+_local*/**/*
+tests/reports/**/*
 
 ### macOS ###
 *.DS_Store
@@ -50,9 +49,3 @@ etc/
 ### Build & Release ###
 /build/**
 /release/**
-
-## Local ##
-_local.*
-/_local.*/**/*.*
-
-

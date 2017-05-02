@@ -1,0 +1,115 @@
+/* ! section (side) navigation */
+
+#qg-content #qg-section-nav {
+  background-color: $qg-section-nav-bg-color;
+
+  h2 {
+    // @include qg-responsive-padding-top ($xs: $qg-spacing-small, $md: $qg-spacing);
+    // @include qg-responsive-padding-right ($xs: 0, $md: $qg-spacing);
+    // $xs: $qg-spacing-small / 2;
+    // $md: $qg-spacing / 3;
+    // @include qg-responsive-padding-bottom ($xs: $xs, $md: $md);
+    // @include qg-responsive-padding-left ($xs: 0, $md: $qg-spacing);
+    padding: $qg-spacing-xs 0 $qg-spacing-xs-small 0;
+    margin:  0;
+
+    color: #000;
+    @include fontSize(19px);
+  }
+  a {
+    // color: $qg-blue-dark;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0 0 ($qg-spacing-small * 0.7) 0;
+  }
+
+  li {
+    position: relative;
+    padding: 0;
+    transition: all 0.2s;
+    list-style-type: none;
+
+    @include fontSize(14px);
+    font-weight: 700;
+
+    a {
+      display: block;
+      margin: 0;
+      padding: .7em 0 0.9em 0 + 15px;
+
+      color: $qg-blue-darker;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: none;
+      background-color: $qg-section-nav-link-hover-bg-color;
+    }
+
+    a.active {
+      color: #FFF;
+      background-color: $qg-blue;
+    }
+
+    a:before {
+      position: absolute;
+      top: .95em;
+      left: 0;
+
+      display: inline-block !important;
+      content: "\f054";
+      margin: 0;
+      padding: 0 0.3em 0 0;
+      text-decoration: none;
+      opacity: .5;
+
+      font-family: FontAwesome;
+      font-size: .9em;
+    }
+    a.active:before {
+      opacity: 1;
+    }
+  }
+
+  @media (min-width: $screen-md-min) {
+    background-color: transparent;
+
+    h2, ul {
+      background-color: $qg-section-nav-bg-color
+    }
+
+    h2 {
+      padding-bottom: $qg-spacing-xs-small;
+      padding-left: ($qg-spacing-xs / 2);
+      padding-right: ($qg-spacing-xs / 2);
+    }
+    ul {
+      padding: 0 0 ($qg-spacing * 0.7) 0;
+    }
+    li {
+      a {
+        // padding: .7em ($qg-spacing/2) .7em ($qg-spacing + 15px);
+        padding-left: ($qg-spacing-xs / 2) + 15px;
+      }
+      a:before {
+        left: ($qg-spacing-xs / 2);
+      }
+    }
+  }
+  @media (min-width: $screen-lg-min) {
+    h2 {
+      padding: $qg-spacing $qg-spacing $qg-spacing-xs-small $qg-spacing;
+    }
+    li {
+      a {
+        padding: .7em ($qg-spacing/2) .7em ($qg-spacing + 15px);
+      }
+      a:before {
+        left: ($qg-spacing);
+      }
+    }
+  }
+
+}

@@ -1,0 +1,53 @@
+// Responsive spacing
+// QG addon to allow you to set dynamic padding or margins to elements based on the standard md break.
+// WARNING: This is a legacy module
+
+$default-xs: ($qg-spacing-xs/2);
+$default-md: ($qg-spacing/2);
+
+@mixin qg-responsive-spacing($prop, $xs, $sm, $md, $lg) {
+  #{$prop}: $xs;
+  @media (min-width: $screen-sm-min) {
+    #{$prop}: $sm;
+  }
+  @media (min-width: $screen-md-min) {
+    #{$prop}: $md;
+  }
+  @media (min-width: $screen-lg-min) {
+    #{$prop}: $lg;
+  }
+}
+
+// Padding
+@mixin qg-responsive-padding ($xs: $default-xs, $sm: $xs, $md: $default-md, $lg: $md) {
+  @include qg-responsive-spacing('padding', $xs, $sm, $md, $lg);
+}
+@mixin qg-responsive-padding-top ($xs: $default-xs, $sm: $xs, $md: $default-md, $lg: $md) {
+  @include qg-responsive-spacing('padding-top', $xs, $sm, $md, $lg);
+}
+@mixin qg-responsive-padding-right ($xs: $default-xs, $sm: $xs, $md: $default-md, $lg: $md) {
+  @include qg-responsive-spacing('padding-right', $xs, $sm, $md, $lg);
+}
+@mixin qg-responsive-padding-bottom ($xs: $default-xs, $sm: $xs, $md: $default-md, $lg: $md) {
+  @include qg-responsive-spacing('padding-bottom', $xs, $sm, $md, $lg);
+}
+@mixin qg-responsive-padding-left ($xs: $default-xs, $sm: $xs, $md: $default-md, $lg: $md) {
+  @include qg-responsive-spacing('padding-left', $xs, $sm, $md, $lg);
+}
+
+// Margin
+@mixin qg-responsive-margin ($xs: $default-xs, $sm: $xs, $md: $default-md, $lg: $md) {
+  @include qg-responsive-spacing('margin', $xs, $sm, $md, $lg);
+}
+@mixin qg-responsive-margin-top ($xs: $default-xs, $sm: $xs, $md: $default-md, $lg: $md) {
+  @include qg-responsive-spacing('margin-top', $xs, $sm, $md, $lg);
+}
+@mixin qg-responsive-margin-right ($xs: $default-xs, $sm: $xs, $md: $default-md, $lg: $md) {
+  @include qg-responsive-spacing('margin-right', $xs, $sm, $md, $lg);
+}
+@mixin qg-responsive-margin-bottom ($xs: $default-xs, $sm: $xs, $md: $default-md, $lg: $md) {
+  @include qg-responsive-spacing('margin-bottom', $xs, $sm, $md, $lg);
+}
+@mixin qg-responsive-margin-left ($xs: $default-xs, $sm: $xs, $md: $default-md, $lg: $md) {
+  @include qg-responsive-spacing('margin-left', $xs, $sm, $md, $lg);
+}

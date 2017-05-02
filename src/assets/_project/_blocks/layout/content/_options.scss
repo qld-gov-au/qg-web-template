@@ -1,0 +1,525 @@
+// TODO: This needs some serious cleanup
+
+#qg-options {
+  background-color: $qg-content-options-bg-color;
+  padding-top: $qg-spacing / 2;
+  padding-bottom: $qg-spacing / 2;
+  
+  @media (min-width: $screen-lg-min) {
+    padding-left:  ($grid-gutter-width / 2);
+    padding-right: ($grid-gutter-width / 2);
+  }
+
+  .btn-default {
+    @include button-variant(#fff, $qg-feedback-btn-bg-color, transparent);
+  }
+}
+
+#qg-share {
+  @include make-xs-column(12);
+  @include make-sm-column(6);
+  @include make-sm-column-push(6);
+
+  padding-bottom: $padding-large-vertical;
+
+  color: $qg-content-options-share-icon-color;
+  text-align: center;
+  vertical-align: baseline;
+
+  .navbar {
+    min-height: auto;
+  }
+
+  h2, ul, li {
+    padding: 0;
+    margin: 0;
+
+    vertical-align: middle;
+  }
+
+  h2 {
+    padding-bottom: $padding-base-vertical;
+    @include fontSize(16px);
+  }
+  ul {
+    list-style: none;
+  }
+  li {
+    display: inline-block;
+  }
+  .qg-share-link {
+    padding: 0 5px;
+    color: inherit;
+  }
+
+  .dropdown-menu {
+    right: 0;
+    left: auto;
+  }
+
+  #shareDropdown.open {
+    #shareDropdownToggle .fa:before {
+      content: "\f00d";
+    }
+  }
+
+  #shareDropdownToggle {
+    background: transparent;
+    border: none;
+
+    &+ .dropdown-menu{
+      // background: $qg-content-options-share-dropdown-bg-color;
+      border: 0;
+
+      li {
+        display: block;
+      }
+      .qg-share-link {
+        display: block;
+        padding: $padding-base-vertical $padding-base-horizontal;
+        color: $dropdown-link-color; // From bootstrap
+      }
+      .qg-share-icon {
+        width: 25px;
+        padding-right: 4px;
+        @include fontSize(14px);
+      }
+    }
+  }
+
+  @media (min-width: $screen-sm-min) {
+    text-align: right;
+    padding-top: $padding-base-vertical;
+    padding-bottom: 0;
+
+    @include fontSize(12px);
+
+    h2, .navbar {
+      display: inline-block;
+    }
+
+    h2 {
+      padding: 3px 5px 0 0;
+      vertical-align: middle;
+    }
+    .navbar {
+      vertical-align: middle;
+    }
+  }
+}
+
+#qg-feedback-btn {
+  @include make-xs-column(12);
+  @include make-sm-column(6);
+  @include make-sm-column-pull(6);
+  text-align: center;
+
+  @media (min-width: $screen-sm-min) {
+    text-align: left;
+  }
+}
+
+// #################################################
+// Feedback form
+
+#qg-page-feedback {
+  // @extend .col-xs-12;
+
+  background-color: $qg-feedback-bg-color;
+  color: #000;
+  @include fontSize(16px);
+
+  #qg-page-feedback-form{
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+
+  #feedback-captcha-container {
+    display:none; 
+  }
+
+  .warn {    
+    padding: 1em;
+    @extend .col-lg-12;
+    background-color: #FFEDDE;  
+  }
+
+  .info {    
+    padding: 1em;
+    margin-bottom: 1em;
+    background-color: #EEF4F6;   
+  }
+
+  .required {
+    color: #c90000;    
+  }  
+
+  .invalid {
+    color: #c90000;
+
+    label {
+      color: #c90000;    
+    }
+
+    input {
+      border: 2px solid red; 
+    }
+
+    textarea {
+      border: 2px solid red; 
+    }
+
+  } 
+
+  .alert {
+    display: inline;
+    color: #c90000;     
+    @include fontSize(16px); 
+  } 
+
+  // ################################################# 
+
+  #qg-page-feedback-form {
+    @extend .col-md-12;
+
+    .panel{
+      @extend .panel-unstyled;
+      // Bootstrap over-ride
+      // TODO: Turn this into a global class
+    }
+
+    @media (max-width: $screen-sm-max) { 
+      margin:0;
+      padding: 0;
+
+      h2, p {
+        margin: 1em 35px;
+      }
+
+      textarea {
+        width: 100%;   
+      }
+
+    }
+
+    ol, ol.questions, ul, ul.questions {
+      margin: 0;
+      padding: 1em 0;
+      list-style-type: none;
+    } 
+
+    ul.actions li {
+      display: inline-block;
+      margin-right: 1em;
+      text-align: center;
+    }  
+
+    .label {
+      color: #000 !important;
+      font-weight: normal;
+      @include fontSize(16px); 
+      display: inline;
+      position: static; 
+      width:auto;
+      max-width: auto;
+      margin: 0;
+      padding:0;
+      white-space: normal;
+    }    
+
+    fieldset {
+      color: #000;  
+      margin: 0;
+      padding:0;
+
+      legend {
+        color: #000;
+        margin: 0;
+        padding:0;
+        border-bottom: none;   
+      }  
+
+    }  
+
+    label {
+      font-weight: normal;
+      font-size: 1em;
+      color: #000;
+      display: inline;
+      position: static; 
+      width:auto;
+      max-width: auto;
+      margin: 0;
+      padding:0; 
+    } 
+
+    input {
+      display: inline;
+      position: static; 
+      width:auto;
+      max-width: auto;
+      margin: 0;
+      padding:0;   
+    }
+
+    input[type="radio"] {}
+
+    #comments {
+      display: block;
+    }   
+  }   
+}
+
+
+/*
+#qg-feedback {
+  background-color: $qg-blue;
+  padding-top: $grid-gutter-width / 2;
+  padding-bottom: $grid-gutter-width / 2;
+
+  a, a:link {
+    color: #FFF;  
+  } 
+
+  a:hover {
+    color: #FFF;  
+    text-decoration: underline; 
+  } 
+
+  #page-feedback-useful {
+    background-color: $qg-blue-green;
+    color: #FFF;
+    border: $qg-dark-blue;
+    transition: all .2s;
+
+    &:hover {
+      background-color: $qg-dark-blue;
+    }
+  }   
+
+  h2 {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    color: #FFF;
+  }  
+
+  .fa {   
+    font-size: 1.2em;     
+  }
+
+  #shareDropdown + .dropdown-menu{
+    background: #575d62;
+  }
+
+  .qg-cta, .qg-share {
+    @extend .col-md-6;
+    @extend .col-sm-6;
+
+    & > ul {
+      margin: 0;
+      padding:0;
+      display: inline-block;
+      text-align: left;
+      color: #FFF;
+
+      & > li {
+        display: inline; 
+        margin-left: .5em;  
+      }   
+
+    }   
+
+  }
+
+  .qg-cta {
+    @extend .col-md-pull-6;
+    @extend .col-sm-pull-6;
+  }
+
+}
+
+// #################################################
+// Feedback form
+
+#qg-page-feedback {
+  // @extend .col-xs-12;
+
+  background-color: #f8f8f8;
+  color: #000;
+  @include fontSize(16px);
+
+  #qg-page-feedback-form{
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+
+  #feedback-captcha-container {
+    display:none; 
+  }
+
+  .warn {    
+    padding: 1em;
+    @extend .col-lg-12;
+    background-color: #FFEDDE;  
+  }
+
+  .info {    
+    padding: 1em;
+    margin-bottom: 1em;
+    background-color: #EEF4F6;   
+  }
+
+  .required {
+    color: #c90000;    
+  }  
+
+  .invalid {
+    color: #c90000;
+
+    label {
+      color: #c90000;    
+    }
+
+    input {
+      border: 2px solid red; 
+    }
+
+    textarea {
+      border: 2px solid red; 
+    }
+
+  } 
+
+  .alert {
+    display: inline;
+    color: #c90000;     
+    @include fontSize(16px); 
+  } 
+
+  // ################################################# 
+
+  #qg-page-feedback-form {
+    @extend .col-md-12;
+
+    .panel{
+      // Bootstrap over-ride
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    @media (max-width: $screen-sm-max) { 
+      margin:0;
+      padding: 0;
+
+      h2, p {
+        margin: 1em 35px;
+      }
+
+      textarea {
+        width: 100%;   
+      }
+
+    }
+
+  }
+
+  form.form {
+
+    ol, ol.questions, ul, ul.questions {
+      margin: 0;
+      padding: 1em 0;
+      list-style-type: none;
+    } 
+
+    ul.actions li {
+      display: inline-block;
+      margin-right: 1em;
+      text-align: center;
+    }  
+
+    .label {
+      color: #000 !important;
+      font-weight: normal;
+      @include fontSize(16px); 
+      display: inline;
+      position: static; 
+      width:auto;
+      max-width: auto;
+      margin: 0;
+      padding:0;
+      white-space: normal;
+    }    
+
+    fieldset {
+      color: #000;  
+      margin: 0;
+      padding:0;
+
+      legend {
+        color: #000;
+        margin: 0;
+        padding:0;
+        border-bottom: none;   
+      }  
+
+    }  
+
+    label {
+      font-weight: normal;
+      font-size: 1em;
+      color: #000;
+      display: inline;
+      position: static; 
+      width:auto;
+      max-width: auto;
+      margin: 0;
+      padding:0; 
+    } 
+
+    input {
+      display: inline;
+      position: static; 
+      width:auto;
+      max-width: auto;
+      margin: 0;
+      padding:0;   
+    }
+
+    input[type="radio"] {}
+
+    #comments {
+      display: block;
+    }   
+  }   
+}
+
+// #################################################
+
+@media (max-width: $screen-sm-max) { 
+
+  #qg-feedback {
+
+    .qg-share  {
+      text-align: center;
+    }
+
+    .qg-cta  {
+      text-align: center;
+      margin-top: 1em;
+    }  
+
+  }
+  
+  #qg-page-feedback {
+
+    .info {
+      padding: 1em 0 !important;
+    }
+
+  }
+
+}
+*/

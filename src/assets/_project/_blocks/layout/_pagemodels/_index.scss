@@ -1,0 +1,36 @@
+.qg-index-links {
+	&> div {
+		margin-bottom: $qg-spacing;
+
+		img {
+			width: 75px;
+			float: left;
+		}
+		h2, p, &> div &> span {
+			padding-left: ($qg-spacing / 2) + 75px;
+		}
+		h2 {
+			margin-top: 0;
+			@include fontSize(19px);
+		}
+	}
+}
+
+// Legacy stuff
+#qg-one-col, #qg-three-col, #qg-two-col-aside, #qg-two-col-nav {
+	.qg-index-links > div {
+		@include make-sm-column(6);
+	}
+}
+
+#qg-one-col.wide {
+	.qg-index-links > div {
+		@include make-sm-column(3);
+	}
+}
+
+#qg-two-col-aside.wide, #qg-two-col-nav.wide {
+	.qg-index-links > div {
+		@include make-sm-column(4);
+	}
+}
