@@ -7,14 +7,14 @@
 // Variables
 // -------------------------
 
-@import "qg-variables";
-@import "bootstrap-variables";
+@import "scss-general/qg-variables";
+@import "scss-general/bootstrap-variables";
 
 // Frameworks
 // -------------------------
 
 // Import bootstrap
-@import "bootstrap-loader"; // Local custom loader, pulls resources from NPM module
+@import "scss-general/bootstrap-loader"; // Local custom loader, pulls resources from NPM module
 	// @import "../../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap"; // NPM module
 @import "../../../../node_modules/font-awesome/scss/font-awesome.scss";
 
@@ -22,43 +22,43 @@
 // -------------------------
 
 // QG Mixins
-@import "mixins/font-size";
-@import "mixins/spacing";
+@import "scss-general/mixins/font-size";
+@import "scss-general/mixins/spacing";
 
 // QG Utilities
-@import "../_blocks/utils/utilities"; // Utilities loaded first so they can be used in other components
+@import "utils/utilities"; // Utilities loaded first so they can be used in other components
 
 // QG components
-@import "../_blocks/components/accessibility/accessibility";
-@import "../_blocks/components/buttons";
-@import "../_blocks/components/carousel/carousel";
-@import "../_blocks/components/visually-hidden";
-@import "../_blocks/components/dropdowns"; // Extends bootstrap dropdowns
+@import "components/accessibility/accessibility";
+@import "components/buttons";
+@import "components/carousel/carousel";
+@import "components/visually-hidden";
+@import "components/dropdowns"; // Extends bootstrap dropdowns
 
 // QG layout components
-@import "../_blocks/layout/layout-scaffolding"; // Primary layout structure
+@import "layout/layout-scaffolding"; // Primary layout structure
 
-@import "../_blocks/layout/_pagemodels/index"; // Page models
+@import "layout/_pagemodels/index"; // Page models
 
-@import "../_blocks/layout/header/access"; 
-@import "../_blocks/layout/header/alerts";
-@import "../_blocks/layout/header/coat-of-arms";
-@import "../_blocks/layout/header/header-structure";
-@import "../_blocks/layout/header/site-name";
-@import "../_blocks/layout/header/site-nav";
-@import "../_blocks/layout/header/site-search";
-@import "../_blocks/layout/header/site-utilities";
+@import "layout/header/access"; 
+@import "layout/header/alerts";
+@import "layout/header/coat-of-arms";
+@import "layout/header/header-structure";
+@import "layout/header/site-name";
+@import "layout/header/site-nav";
+@import "layout/header/site-search";
+@import "layout/header/site-utilities";
 
-@import "../_blocks/layout/breadcrumbs/breadcrumbs";
-@import "../_blocks/layout/content/content";
-@import "../_blocks/layout/content/options";
-@import "../_blocks/layout/section-nav/section-nav";
-@import "../_blocks/layout/asides/asides";
-@import "../_blocks/layout/footer/site-map";
-@import "../_blocks/layout/footer/legals";
+@import "layout/breadcrumbs/breadcrumbs";
+@import "layout/content/content";
+@import "layout/content/options";
+@import "layout/section-nav/section-nav";
+@import "layout/asides/asides";
+@import "layout/footer/site-map";
+@import "layout/footer/legals";
 
 // Legacy styles
 // -------------------------
 
-@import "../_blocks/legacy/forms/forms-reset";
-@import "../_blocks/legacy/forms/forms";
+@import "legacy/forms/forms-reset";
+@import "legacy/forms/forms";
