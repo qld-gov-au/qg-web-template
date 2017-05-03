@@ -8,11 +8,11 @@ module.exports = function (gulp, plugins, config, argv) {
       .pipe(plugins.prompt.prompt([{
         type: 'input',
         name: 'confirmation',
-        message: 'Please confirm that you want to publish this package on NPM? (yes or no)',
+        message: 'Please confirm that you want to publish this package on NPM? (y or n)',
       }, {
         type: 'input',
         name: 'logged',
-        message: 'Are you logged into the NPM as the correct user? (yes or no)',
+        message: 'Are you logged into the NPM as the correct user? (y or n)',
       }, {
         type: 'input',
         name: 'releaseType',
@@ -20,10 +20,9 @@ module.exports = function (gulp, plugins, config, argv) {
       }],
         function (res) {
           let checkInput = releaseTypes.filter(e => e.match(new RegExp('\\b' + res.releaseType + '\\b')));
-          if ((res.confirmation === 'yes') && (res.logged === 'yes') && checkInput.length > 0) {
+          if (/^yes|y$/.test(res.confirmation.toLowerCase()) && /^yes|y$/.test(res.logged.toLowerCase()) && checkInput.length > 0) {
             plugins.shell.task([
               'echo release type "' + res.releaseType + '"',
-              'echo release version "' + config.publish.version + '"',
               process.chdir(config.publish.npmDir),
               'pwd',
               'git remote set-url origin https://github.com/qld-gov-au/web-template-release',
