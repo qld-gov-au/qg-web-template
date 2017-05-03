@@ -3,7 +3,7 @@
   @extend .col-sm-6;
   @extend .col-md-5;
 
-  text-align: right;
+  text-align: center;
 
   a, a:link {
     color: $qg-blue5;
@@ -36,6 +36,10 @@
     & + li {
       margin-left: 1em;
     }
+  }
+
+  @media (min-width: $screen-sm-min) {
+    text-align: right;
   }
 
   @media print {
