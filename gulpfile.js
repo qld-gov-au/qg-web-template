@@ -85,9 +85,7 @@ gulp.task('copy-element', require('./gulp/release-tasks/copy-element')(gulp, plu
 gulp.task('ssi-to-static', (cb) => {
   return gulp.src('', {read: false})
     .pipe(wait(1500)) // FIXME: This is a dodgy way to handle the wait to save files
-    .pipe(plugins.shell([
-      'node gulp/release-tasks/ssi-to-static.js'
-    ]));
+    .pipe(plugins.shell(['node gulp/release-tasks/ssi-to-static.js']));
 });
 
 gulp.task('release', (cb) => {

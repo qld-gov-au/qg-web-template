@@ -30,13 +30,13 @@ function fromDir (startPath) {
     list.files.forEach(function (file) {  //iterates through list of filtered files
       ssi.compileFile(file, function (err, content) {
         if (err) {
-          console.log(err);
+          console.error(err);
           return;
         }
         var buildFile = file.replace(folder.src, folder.build);  //builds destination filepath
         fsPath.writeFile(buildFile, content, function (err) {
           if (err) {
-            console.log(err);
+            console.error(err);
           } else {
             console.log(buildFile + ' - Done');
           }
