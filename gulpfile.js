@@ -101,7 +101,7 @@ gulp.task('release', (cb) => {
 });
 
 /* NPM Publish*/
-gulp.task('npm:publish', require('./gulp/publish-tasks/npm.js')(gulp, plugins, config, argv));
+gulp.task('npm:publish', ['release'], require('./gulp/publish-tasks/npm.js')(gulp, plugins, config, argv));
 
 /* TEST TASKS */
 gulp.task('test:unit', require('./gulp/test-tasks/unit')(gulp, plugins, config, karmaServer));
