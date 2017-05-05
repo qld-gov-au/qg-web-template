@@ -1,10 +1,10 @@
 // Local variables
-@import "qg-variables";
-@import "bootstrap-variables";
+@import "scss-general/qg-variables";
+@import "scss-general/bootstrap-variables";
 
 // Core variables and mixins
 @import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
-@import "bootstrap/mixins"; // Local version
+@import "scss-general/bootstrap/mixins"; // Local version
 
 @import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/panels";
 

@@ -31,14 +31,15 @@
 
     <!--#include virtual="/assets/includes-local/head-assets.html"-->
 
-    <link href="assets/_project/css/qg-documentation.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/assets/_project/css/qg-documentation.css" rel="stylesheet" type="text/css" media="all">
 
 </head>
 
 <body data-qg-accessibility="true"
     data-spy="scroll" data-target="#page-nav">
 
-    <!--#include virtual="/assets/includes-local/header/access.html"-->
+ <!--#include virtual="/assets/includes-local/analytics.html"-->
+ <!--#include virtual="/assets/includes-local/header/access.html"-->
 
     <div class="container-fluid qg-site-width">
 
@@ -84,15 +85,24 @@
 
 <!-- ################################## -->
   <h2 id="dropdowns" class="category">Dropdowns</h2>
-  <p>
-      Dropdowns are only to be used for web applications, not forms.
-  </p>
   <p class="warn">
-      Due to the nature of the Forms system being used, dropdowns are not advised for web forms.
+    Due to the nature of the Forms system being used, dropdowns are not advised for web forms.
   </p>
-  <p class="alert alert-info" role="alert">
-    Unlike Bootstrap, the Web Template automatically provides a chevron on dropdowns. See <a href="#dropdowns-custom-icon">custom icon</a> to disable this feature.
+  <p>
+    The Template standard for implementing dropdowns is using the Queensland Government icon. To enable this, add the class <code>qg-icon</code> to your button.
   </p>
+
+  <pre><code>
+&lt;button class="btn btn-default dropdown-toggle qg-icon"
+  type="button"
+  id="dropdownMenu"
+  data-toggle="dropdown"
+  aria-haspopup="true"
+  aria-expanded="true"&gt;
+    Dropdown
+&lt;/button&gt;
+  </code></pre>
+
   <p>
       For more information on implementation, see the <a href="http://getbootstrap.com/components/#dropdowns" target="_blank">bootstrap dropdowns section</a>.
   </p>
@@ -101,7 +111,7 @@
       <div class="panel-body">
 
   <div class="dropdown">
-    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    <button class="btn btn-default dropdown-toggle qg-icon" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
       Dropdown
     </button>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -124,7 +134,7 @@
         <div class="panel-body">
 
 <div class="dropup">
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <button class="btn btn-default dropdown-toggle qg-icon" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Dropup
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
@@ -139,13 +149,14 @@
         </div>
     </div>
 
-  <h2 id="dropdowns-custom-icon">Custom icon</h2>
-  <p>To remove the default dropdown icon added by the Web Template, add the class '.noicon' to the button. Make sure to add your own icon, or use the bootstrap default icon.</p>
+  <h3>Without QG dropdown icon</h3>
+
+  <p>You can also use dropdowns without the standard icon. It is advised that you use another icon to indicate the behaviour of your button.</p>
 
   <div class="qg-tmplt-example">
     <div class="panel-body">
       <div class="dropdown">
-        <button class="btn btn-default dropdown-toggle noicon" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
           Dropdown
           <span class="icon caret"></span>
         </button>
@@ -156,6 +167,8 @@
       </div>
     </div>
   </div>
+
+
 
 <!-- ################################## -->
 
@@ -214,7 +227,7 @@
 <!-- Split button -->
 <div class="btn-group">
   <button type="button" class="btn btn-primary">Action</button>
-  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <button type="button" class="btn btn-primary dropdown-toggle qg-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     <span class="sr-only">Toggle Dropdown</span>
   </button>
   <ul class="dropdown-menu">
@@ -230,7 +243,7 @@
 
 <div class="btn-group dropup">
   <button type="button" class="btn btn-default">Dropup</button>
-  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <button type="button" class="btn btn-default dropdown-toggle qg-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     <span class="sr-only">Toggle Dropdown</span>
   </button>
   <ul class="dropdown-menu">

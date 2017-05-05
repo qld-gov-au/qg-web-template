@@ -2,11 +2,11 @@
 logs
 *.log
 npm-debug.log*
-.idea/
 # Runtime data
 pids
 *.pid
 *.seed
+tests/reports/**/*.*
 
 #env variables
 .env
@@ -39,6 +39,7 @@ node_modules
 _local.*
 _local*/**/*
 tests/reports/**/*
+.idea/
 
 ### macOS ###
 *.DS_Store

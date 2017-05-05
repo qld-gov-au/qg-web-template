@@ -17,4 +17,11 @@
       padding-left: $qg-spacing / 2;
     }
   }
+
+  @media print {
+    // 
+    a:after {
+      content: "";
+    }
+  }
 }

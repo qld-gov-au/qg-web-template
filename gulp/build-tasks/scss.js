@@ -2,7 +2,7 @@ module.exports = function (gulp, plugins, config) {
   return function (cb) {
     config.projects.map((element) => {
       const target = [
-        `${config.basepath.src}/assets/_project/scss/*.scss`,
+        `${config.basepath.src}/assets/_project/_blocks/*.scss`,
         '!** /_*.scss',
       ].concat(config.build.excludes);
 

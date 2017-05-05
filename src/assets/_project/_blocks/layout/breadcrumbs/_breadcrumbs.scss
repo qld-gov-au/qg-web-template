@@ -58,12 +58,7 @@
 			font-weight: bold;
 		}
 	}
-} #qg-breadcrumb {
-	// @media (min-width: $screen-sm-min) {
-	// 	padding-left: $grid-gutter-width / 2;
-	// 	padding-right: $grid-gutter-width / 2;
-	// }
-} #qg-breadcrumb {
+
 	@media (min-width: $screen-md-min) {
 		margin: 0;
 
@@ -99,6 +94,12 @@
 			&:last-child {
 				font-size: 100%;
 			}
+		}
+	}
+
+	@media print {
+		a:after {
+			content: ''; // Over-ride link urls
 		}
 	}
 }
