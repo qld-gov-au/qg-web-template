@@ -1,5 +1,4 @@
 'use strict';
-
 // init env variables
 require('dotenv').config();
 
