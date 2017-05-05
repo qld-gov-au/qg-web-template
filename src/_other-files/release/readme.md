@@ -15,6 +15,6 @@ Project boilerplate is comming soon.
 ### Custom installation
 Install the files via <a href="https://nodejs.org/en/">node package manager (NPM)</a>:
 
-$ npm install qg-web-template-release
+$ npm install web-template-release
 
 Check out the <a href="https://qld-gov-au.github.io/web-template-release/">documentation</a> for implementation advice.
