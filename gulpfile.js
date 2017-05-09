@@ -80,6 +80,7 @@ gulp.task('release-files', require('./gulp/release-tasks/other-files')(gulp, plu
 gulp.task('release-js', require('./gulp/release-tasks/js')(gulp, plugins, config)); // Uglifies JS
 gulp.task('css', require('./gulp/release-tasks/css')(gulp, plugins, config)); // Minifies CSS
 gulp.task('copy-element', require('./gulp/release-tasks/copy-element')(gulp, plugins, config));
+gulp.task('copy-element-html', require('./gulp/release-tasks/copy-element-html')(gulp, plugins, config));
 
 gulp.task('ssi-to-static', (cb) => {
   return gulp.src('', {read: false})
@@ -91,7 +92,7 @@ gulp.task('release', (cb) => {
   return runSequence(
     ['build:clean', 'clean-release'],
     ['assets-core', 'scss-src', 'release-js', 'css', 'release-files', 'assets-includes-local', 'assets-includes-cdn'],
-    'copy-element', // Done second last in order to over-ride assets-includes
+    ['copy-element', 'copy-element-html'], // Done second last in order to over-ride assets-includes
     'ssi-to-static',
     cb
   );
