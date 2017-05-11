@@ -2,9 +2,7 @@
   @include make-xs-column(12);
   @include make-xs-column(3);
 
-  @media (min-width: $screen-lg-min) {
-    padding-right: $grid-gutter-width;
-  }
+  @include qg-responsive-spacing('padding-right', false, default);
 
   input {
     border-radius: 0;
