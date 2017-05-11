@@ -21,20 +21,20 @@
 //     .dropdown-toggle:not(.noicon):after {
 .btn-group:not(.dropup), .dropdown {
     .dropdown-toggle.qg-icon:after {
-	   content: " \f078"; // Dropdown closed
+       content: " \f078"; // Dropdown closed
     }
 }
 
 .btn-group.open:not(.dropup), .dropdown.open {
     .dropdown-toggle.qg-icon:after {
-	   content: " \f00d"; // Dropdown open
+       content: " \f00d"; // Dropdown open
     }
 }
 .dropup .dropdown-toggle.qg-icon:after {
-	content: " \f077"; // Dropup closed
+    content: " \f077"; // Dropup closed
 }
 .dropup.open .dropdown-toggle.qg-icon:after {
-	content: " \f00d"; // Dropup open
+    content: " \f00d"; // Dropup open
 }
 
 .btn-group {
@@ -67,7 +67,7 @@
 }
 .qg-toggle-icon-right,
 .qg-toggle-icon {
-    &.collapsed.qg-icon:after {
+    &.collapsed:after {
         content: "\f078";
     }
 }
