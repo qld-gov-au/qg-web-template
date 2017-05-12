@@ -15,11 +15,12 @@ $qg-dark-gray-light: #717679; // Lightest for small text on white
 $qg-dark-grey: #585e62; // For default buttons 
 
 // ## Light grey ##
-$qg-light-gray-lighter: #f8f8f8;
+$qg-light-gray-lighter: #fafafa;
 $qg-light-gray: #f6f6f6; // Primary brand light grey
 $qg-light-gray-darker: #d1d1d1;
 
 // $qg-light-gray-darker: #707070; // Dark grey
+
 
 
 // ## Dark Blue ##
@@ -65,11 +66,15 @@ $qg-feedback-bg-color: $qg-light-gray-lighter;
 $qg-content-options-share-icon-color: #fff;
 // Note: Share dropdown uses colours from bootstrap
 
-
 // Footer
 $qg-footer-bg-color: $qg-dark-blue;
 $qg-footer-bg-alt-color: $qg-dark-blue;
 
+// ### Components ###
+// Navs
+// Tabs
+$qg-nav-tabs-link-hover-bg: $qg-dark-grey;
+$qg-nav-tabs-link-hover-color: #fff;
 
 // ###################################
 // Rulers & spacing
