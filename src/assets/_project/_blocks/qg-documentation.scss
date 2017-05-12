@@ -9,45 +9,60 @@
 @import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/panels";
 
 .qg-tmplt-example {
-	@extend .panel;
-	@extend .panel-default;
+  @extend .panel;
+  @extend .panel-default;
 
-	// padding: $padding-base-vertical;
+  // padding: $padding-base-vertical;
 
-	&:before {
-		content: "Example";
-		display: block;
-		padding: $padding-base-vertical ($padding-base-horizontal / 2);
-		color: $qg-dark-gray-light;
-		font-weight: 800;
-	}
+  &:before {
+    content: "Example";
+    display: block;
+    padding: $padding-base-vertical ($padding-base-horizontal / 2);
+    color: $qg-dark-gray-light;
+    font-weight: 800;
+  }
 }
 
 #qg-primary-content {
-	h2.category {
-		padding-top: $padding-large-vertical; // $padding-base-vertical;
-		border-top: 8px solid $qg-blue;
+  h2.category {
+    padding-top: $padding-large-vertical; // $padding-base-vertical;
+    border-top: 8px solid $qg-blue;
 
-		@media (min-width: $screen-lg-min) {
-			margin-top: $qg-spacing;
-			padding-top: $qg-spacing;
-		}
-	}
+    @media (min-width: $screen-lg-min) {
+      margin-top: $qg-spacing;
+      padding-top: $qg-spacing;
+    }
+  }
 }
 
 #page-nav {
-	&.affix {
-		top: 0;
-	}
-	&.affix-bottom {
-		position: relative;
-	}
+  font-size: 0.9em;
+
+  &.affix {
+    top: 0;
+  }
+  &.affix-bottom {
+    position: relative;
+  }
+  .nav { 
+    margin-bottom: $qg-spacing-xs / 2;
+
+    a {
+      padding-top: 2px;
+      padding-bottom: 2px;
+
+      &:hover {
+        //  background: $qg-pale-blue-dark;
+        background: $qg-pale-blue-darker;
+      }
+    }
+  }
 }
 
 @media (max-width: $screen-md-min) {
-	.qg-docs-sidenav.affix {
-	  position: static;
-	  width: auto;
-	  top: 0;
-	}
+  .qg-docs-sidenav.affix {
+    position: static;
+    width: auto;
+    top: 0;
+  }
 }
