@@ -6,8 +6,8 @@
 }
 
 #qg-primary-content {
-  @include qg-responsive-margin('top');
-  @include qg-responsive-margin('bottom');
+  @include qg-responsive-spacing(margin-top, full);
+  @include qg-responsive-spacing(margin-bottom, full);
 
   .dropup {
     & > ul {

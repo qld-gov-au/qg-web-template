@@ -61,7 +61,7 @@
                 <!-- START Breadcrumbs -->
 <nav id="qg-breadcrumb" role="navigation" aria-label="breadcrumb navigation" aria-labelledby="breadcrumb-heading" class="collapse">
 
-    <h1 id="breadcrumb-heading" class="qg-visually-hidden">You are here:</h2>
+    <h2 id="breadcrumb-heading" class="qg-visually-hidden">You are here:</h2>
 
     <ol class="list-inline">
         <!--#include virtual="assets/includes-local/breadcrumbs/qg-web-template.html"-->
@@ -84,9 +84,8 @@
 
 <!-- ################################## -->
     <h2 id="grid" class="category">Grid system</h2>
-    <p>
-        <span class="label label-primary" title="Heavily customised bootstrap implementation">Customised</span>
-    </p>
+    <p><span class="label label-primary" title="Heavily customised bootstrap implementation">Customised</span></p>
+    
     <p>The Web Template uses bootstrap's grid system, with a custom responsive gutter system. The sizes for the gutter are as follows:</p>
     <ul>
         <li>At xs, sm, and md screen sizes, the gutter is 30px to conserve screen realestate</li>
@@ -96,7 +95,7 @@
     <h3>Responsive margin and padding mixins</h3>
 
     <p>
-        <span class="label label-success" title="Heavily customised bootstrap implementation">Custom SASS</span>
+        <span class="label label-warning" title="Heavily customised bootstrap implementation">Custom SASS</span>
     </p>
 
     <p>Note: This is only when working with the provided <a href="#using-sass">Web Template SASS files</a>.</p>
@@ -105,37 +104,83 @@
     <p><strong>For responsive margins:</strong></p>
 
 <pre><code>#yourElement {
-    @include qg-responsive-margin();
+    @include qg-responsive-spacing(margin);
+    @include qg-responsive-spacing(margin-top);
+    @include qg-responsive-spacing(margin-right);
 }</code></pre>
 
     <p><strong>For responsive padding:</strong></p>
 
 <pre><code>#yourElement {
-    @include qg-responsive-padding();
+    @include qg-responsive-spacing(padding);
+    @include qg-responsive-spacing(padding-left);
+    @include qg-responsive-spacing(padding-bottom);
 }</code></pre>
 
-    <p>By default this sets top, right, bottom, and left padding to be the same. To only set a certain sub property to auto, pass the property you wish to set:</p>
+    <p>If you wish to use the 'full' gutter size (for top margins for example), you can set this using the 'full' parameter.</p>
 
 <pre><code>#yourElement {
-    @include qg-responsive-margin('top');
-    @include qg-responsive-margin('bottom');
+    @include qg-responsive-margin(top, full);
 }</code></pre>
 
-    <h4>Responsive Spacing</h4>
-    <p>The <code>qg-responsive-margin()</code> and <code>qg-responsive-padding()</code> mixins are wrappers for the more specific <code>qg-responsive-spacing()</code> mixin. if need be, you can use this mixin directly to control your spacing:</p>
+    <h3>qg-responsive-spacing mixin specification</h3>
 
-<pre><code>#yourElement {
-    @include qg-responsive-spacing('padding-left', $small: false, $large: default);
-}</code></pre>
-
-    <p>The qg-responsive-spacing mixin takes up to 3 parameters:
-    <ul>
-        <li>$property : required : Requires full property name, eg. 'margin-left', 'padding-top' or 'padding'</li>
-        <li>$small : optional : false (does not set up a size), default (uses the default), [specific] (sets the this size to your desired size)</li>
-        <li>$large : optional : false (does not set up a size), default (uses the default), [specific] (sets the this size to your desired size)</li>
-    </ul>
-    The specific break points are set by the mixin.
-    </p>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Parameter</th>
+                    <th width="33%">Description</th>
+                    <th>Options</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Property ($prop)</td>
+                    <td>Required - Defines the css property to use.</td>
+                    <td>
+                        <ul>
+                            <li>margin : Sets all four sides</li>
+                            <li>margin-top : The top margin</li>
+                            <li>margin-bottom : The bottom margin</li>
+                            <li>margin-left : The left margin</li>
+                            <li>margin-right : The right margin</li>
+                            <li>padding : Sets all four sides</li>
+                            <li>padding-top : The top padding</li>
+                            <li>padding-bottom : The bottom padding</li>
+                            <li>padding-left : The left padding</li>
+                            <li>padding-right : The right padding</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Small ($small)</td>
+                    <td>Optional - Defines what size to set the small breakpoint to. Can be set directly.<br />
+                    Note: If you ONLY set the small parameter, and do not set it directly with $small, it will automatically set $large to the same value.</td>
+                    <td>
+                        <ul>
+                            <li>false : Do not set this size</li>
+                            <li>default : Set this size to the default value</li>
+                            <li>full : Set this size to the full gutter value</li>
+                            <li>*px / *em / *% : Set this value to a specific px/em/%. Note: This should be avoided.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Large ($large)</td>
+                    <td>Optional - Defines what size to set the large breakpoint to. Can be set directly.</td>
+                    <td>
+                        <ul>
+                            <li>false : Do not set this size</li>
+                            <li>default : Set this size to the default value</li>
+                            <li>full : Set this size to the full gutter value</li>
+                            <li>*px / *em / *% : Set this value to a specific px/em/%. Note: This should be avoided.</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
 <!-- ################################## -->
     <h2 id="typography" class="category">Typography</h2>
@@ -404,7 +449,7 @@
 
 <!-- ################################## -->
 
-    <h2 class="category">Code</h2>
+    <h2 id="#code" class="category">Code</h2>
     <p>
         <span class="label label-default" title="Default bootstrap implementation">Default</span>
     </p>
@@ -586,7 +631,7 @@
 
     <h2 class="category" id="forms">Forms</h2>
     <p>
-        <span class="label label-warning" title="Entirely custom implementation">Custom</span>
+        <span class="label label-danger" title="Entirely custom implementation">Custom</span>
     </p>
     <p>Forms are not implemented using the standard bootstrap layout. Instead, forms use the Queensland Government form handler.</p>
 
