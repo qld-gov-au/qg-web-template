@@ -84,15 +84,64 @@
 
 <!-- ################################## -->
     <h2 id="grid" class="category">Grid system</h2>
+    <p>
+        <span class="label label-primary" title="Heavily customised bootstrap implementation">Customised</span>
+    </p>
     <p>The Web Template uses bootstrap's grid system, with a custom responsive gutter system. The sizes for the gutter are as follows:</p>
     <ul>
         <li>At xs, sm, and md screen sizes, the gutter is 30px to conserve screen realestate</li>
         <li>At lg screen sizes, the gutter is 50px to comply with old SWE design guidelines</li>
     </ul>
-    <p>When adding new elements, be sure to account for these responsive attributes.</p>
+
+    <h3>Responsive margin and padding mixins</h3>
+
+    <p>
+        <span class="label label-success" title="Heavily customised bootstrap implementation">Custom SASS</span>
+    </p>
+
+    <p>Note: This is only when working with the provided <a href="#using-sass">Web Template SASS files</a>.</p>
+    <p>When adding new elements, normally your gutters will automatically be taken care of. However, your top and bottom margins / padding may not be. You can fix this by using our responsive spacing mixin.</p>
+
+    <p><strong>For responsive margins:</strong></p>
+
+<pre><code>#yourElement {
+    @include qg-responsive-margin();
+}</code></pre>
+
+    <p><strong>For responsive padding:</strong></p>
+
+<pre><code>#yourElement {
+    @include qg-responsive-padding();
+}</code></pre>
+
+    <p>By default this sets top, right, bottom, and left padding to be the same. To only set a certain sub property to auto, pass the property you wish to set:</p>
+
+<pre><code>#yourElement {
+    @include qg-responsive-margin('top');
+    @include qg-responsive-margin('bottom');
+}</code></pre>
+
+    <h4>Responsive Spacing</h4>
+    <p>The <code>qg-responsive-margin()</code> and <code>qg-responsive-padding()</code> mixins are wrappers for the more specific <code>qg-responsive-spacing()</code> mixin. if need be, you can use this mixin directly to control your spacing:</p>
+
+<pre><code>#yourElement {
+    @include qg-responsive-spacing('padding-left', $small: false, $large: default);
+}</code></pre>
+
+    <p>The qg-responsive-spacing mixin takes up to 3 parameters:
+    <ul>
+        <li>$property : required : Requires full property name, eg. 'margin-left', 'padding-top' or 'padding'</li>
+        <li>$small : optional : false (does not set up a size), default (uses the default), [specific] (sets the this size to your desired size)</li>
+        <li>$large : optional : false (does not set up a size), default (uses the default), [specific] (sets the this size to your desired size)</li>
+    </ul>
+    The specific break points are set by the mixin.
+    </p>
 
 <!-- ################################## -->
     <h2 id="typography" class="category">Typography</h2>
+    <p>
+        <span class="label label-default" title="Default bootstrap implementation">Default</span>
+    </p>
     <p>
         Queensland Government websites should use the Lato web font. This is included by default in the Queensland Government Web Template. In most instances when using the template, you should not have to worry about custom typography.
     </p>
@@ -356,11 +405,17 @@
 <!-- ################################## -->
 
     <h2 class="category">Code</h2>
+    <p>
+        <span class="label label-default" title="Default bootstrap implementation">Default</span>
+    </p>
     <p>Generally, the code tag should not be needed for most applications of this template. For information on implementing code, see the <a href="https://getbootstrap.com/css/#code">bootstrap section on code</a>.</p>
 
 <!-- ################################## -->
 
     <h2 id="tables" class="category">Tables</h2>
+    <p>
+        <span class="label label-default" title="Default bootstrap implementation">Default</span>
+    </p>
     <p>These are the QLD Government implemented tables from Bootstrap. See the <a href="http://getbootstrap.com/css/#tables">bootstrap section on tables</a> for implementation advice.</p>
 
     <h3>Basic Table</h3>
@@ -530,11 +585,17 @@
 <!-- ################################## -->
 
     <h2 class="category" id="forms">Forms</h2>
+    <p>
+        <span class="label label-warning" title="Entirely custom implementation">Custom</span>
+    </p>
     <p>Forms are not implemented using the standard bootstrap layout. Instead, forms use the Queensland Government form handler.</p>
 
 <!-- ################################## -->
 
     <h2 id="buttons" class="category">Buttons</h2>
+    <p>
+        <span class="label label-default" title="Default bootstrap implementation">Default</span>
+    </p>
     <p>These are the QLD Government implemented buttons from Bootstrap. See the <a href="http://getbootstrap.com/css/#buttons">bootstrap section on buttons</a> for additional implementation advice.</p>
     <p>Note: QLD Government includes a 'Secondary' button type on top of the standard Bootstrap buttons.</p>
 
@@ -603,6 +664,40 @@
 
 <!-- ################################## -->
 
+    <h2 id="images" class="category">Images</h2>
+
+    <p>Comming soon...</p>
+
+<!-- ################################## -->
+
+    <h2 id="helper-classes" class="category">Helper classes</h2>
+
+    <p>Comming soon...</p>
+
+<!-- ################################## -->
+
+    <h2 id="responsive-utilities" class="category">Responsive utilities</h2>
+
+    <p>Comming soon...</p>
+
+<!-- ################################## -->
+
+    <h2 id="using-less" class="category">Using less</h2>
+
+    <p><span class="label label-danger" title="Not supported by this template">Not supported</span></p>
+
+    <p><a href="#using-less">Please use SASS instead</a>.</p>
+
+    <p>The Queensland Government Website Template does not use LESS. Any css written in LESS will have to be compiled out into a seperate stylesheet.</p>
+
+<!-- ################################## -->
+
+    <h2 id="using-less" class="category">Using sass</h2>
+
+    <p>Comming soon...</p>
+
+<!-- ################################## -->
+
                     <div class="qg-content-footer">
 
                         <dl>
@@ -627,8 +722,15 @@
                             <li><a href="#code">Code</a></li>
                             <li><a href="#tables">Tables</a></li>
                             <li><a href="#forms">Forms</a></li>
-                            <li><a href="#buttons">Buttons</a></li>
+                            <li><a href="#images">Images</a></li>
+                            <li><a href="#helper-classes">Helper classes</a></li>
+                            <li><a href="#responsive-utilities">Responsive utilities</a></li>
+                            <li><a href="#using-less">Using less</a></li>
+                            <li><a href="#using-sass">Using sass</a></li>
                         </ul>
+                        <p>
+                            <a href="#top">Back to top</a>
+                        </p>
                     </div>
 
                 </aside>
