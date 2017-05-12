@@ -84,7 +84,17 @@
                     <p></p>
 
 <!-- ################################## -->
+
+  <h2 id="glyphicons" class="category">Glyphicons</h2>
+  <p><span class="label label-default" title="Default bootstrap implementation">Default</span></p>
+
+  <p>See the <a href="https://getbootstrap.com/components/#glyphicons-glyphs">bootstrap glyphicons section</a>.</p>
+
+<!-- ################################## -->
+
   <h2 id="dropdowns" class="category">Dropdowns</h2>
+  <p><span class="label label-primary" title="Heavily customised bootstrap implementation">Customised</span></p>
+
   <p class="warn">
     Due to the nature of the Forms system being used, dropdowns are not advised for web forms.
   </p>
@@ -169,56 +179,58 @@
   </div>
 
 
-
 <!-- ################################## -->
 
-    <h2 class="category" id="button-groups">Button Groups</h2>
-    <div class="btn-group" role="group" aria-label="...">
+  <h2 class="category" id="button-groups">Button Groups</h2>
+  <p><span class="label label-primary" title="Heavily customised bootstrap implementation">Customised</span></p>
+
+  <div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-default">Left</button>
+    <button type="button" class="btn btn-default">Middle</button>
+    <button type="button" class="btn btn-default">Right</button>
+  </div>
+
+  <h3 class="category">Button toolbar</h2>
+  <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+      <div class="btn-group" role="group" aria-label="First group">
+          <button type="button" class="btn btn-default">1</button>
+          <button type="button" class="btn btn-default">2</button>
+          <button type="button" class="btn btn-default">3</button>
+          <button type="button" class="btn btn-default">4</button>
+      </div>
+      <div class="btn-group" role="group" aria-label="Second group">
+          <button type="button" class="btn btn-default">5</button>
+          <button type="button" class="btn btn-default">6</button>
+          <button type="button" class="btn btn-default">7</button>
+      </div>
+      <div class="btn-group" role="group">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="#">Dropdown link</a></li>
+            <li><a href="#">Dropdown link</a></li>
+          </ul>
+      </div>
+  </div>
+
+  <h3 class="category">Justified button group</h2>
+  <div class="btn-group btn-group-justified" role="group" aria-label="...">
+    <div class="btn-group" role="group">
       <button type="button" class="btn btn-default">Left</button>
-      <button type="button" class="btn btn-default">Middle</button>
+    </div>
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-primary">Middle</button>
+    </div>
+    <div class="btn-group" role="group">
       <button type="button" class="btn btn-default">Right</button>
     </div>
-
-    <h3 class="category">Button toolbar</h2>
-    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-        <div class="btn-group" role="group" aria-label="First group">
-            <button type="button" class="btn btn-default">1</button>
-            <button type="button" class="btn btn-default">2</button>
-            <button type="button" class="btn btn-default">3</button>
-            <button type="button" class="btn btn-default">4</button>
-        </div>
-        <div class="btn-group" role="group" aria-label="Second group">
-            <button type="button" class="btn btn-default">5</button>
-            <button type="button" class="btn btn-default">6</button>
-            <button type="button" class="btn btn-default">7</button>
-        </div>
-        <div class="btn-group" role="group">
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dropdown
-            </button>
-            <ul class="dropdown-menu">
-              <li><a href="#">Dropdown link</a></li>
-              <li><a href="#">Dropdown link</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <h3 class="category">Justified button group</h2>
-    <div class="btn-group btn-group-justified" role="group" aria-label="...">
-      <div class="btn-group" role="group">
-        <button type="button" class="btn btn-default">Left</button>
-      </div>
-      <div class="btn-group" role="group">
-        <button type="button" class="btn btn-primary">Middle</button>
-      </div>
-      <div class="btn-group" role="group">
-        <button type="button" class="btn btn-default">Right</button>
-      </div>
-    </div>
+  </div>
 
 <!-- ################################## -->
 
 <h2 class="category" id="button-dropdowns">Button Dropdowns</h2>
+<p><span class="label label-primary" title="Heavily customised bootstrap implementation">Customised</span></p>
 
 <p>The <a href="#dropdowns">dropdowns methodology</a> is prefered over this method of creating dropdowns, the one exception being for split buttons.</p>
 
@@ -255,8 +267,9 @@
 <!-- ################################## -->
 
 <h2 class="category" id="input-groups">Input groups</h2>
+<p><span class="label label-danger" title="Not supported by this template">Not supported</span></p>
 
-<p>Don't use this for now.</p>
+<p>Not currently supported.</p>
 
 <!-- ################################## -->
 
@@ -322,21 +335,22 @@
 
                     <div id="page-nav" class="qg-aside qg-docs-sidenav" role="complementary" data-spy="affix" data-offset-top="500" data-offset-bottom="900" data-parent-width="1">
                         <h2>On this page</h2>
-
-                        <ul>
+                        <ul class="nav" role="tablist">
                             <li><a href="#dropdowns">Dropdowns</a></li>
                             <li><a href="#button-groups">Button groups</a></li>
                             <li><a href="#button-dropdowns">Button dropdowns</a></li>
                             <li><a href="#input-groups">Input groups</a></li>
                             <li><a href="#navs">Navs</a></li>
+                            <li><a href="#navbar">Navbar</a></li>
+                            <li><a href="#breacrumbs">Breadcrumbs</a></li>
+                            <li><a href="#pagination">Pagination</a></li>
+                            <li><a href="#labels">Labels</a></li>
+                            <li><a href="#badges">Badges</a></li>
+                            <li><a href="#jumbotron">Jumbotron</a></li>
                         </ul>
-
-                    </div>
-
-                    <div class="qg-aside" role="complementary">
-                        <h2>Carer Business Discount Card</h2>
-
-                        <p>If you receive a Centrelink carer payment or carers allowance and live in Queensland, you are eligible for a <a href="/community/support-for-carers/carer-card/">Carer Business Discount Card</a>,which recognises the contribution carers make to the community and provides discounts on products and services.</p>
+                        <p>
+                            <a href="#top">Back to top</a>
+                        </p>
                     </div>
 
                 </aside>
