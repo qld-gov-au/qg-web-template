@@ -114,28 +114,71 @@
     @include qg-responsive-padding();
 }</code></pre>
 
-    <p>By default this sets top, right, bottom, and left padding to be the same. To only set a certain sub property to auto, pass the property you wish to set:</p>
+    <p>By default this sets top, right, bottom, and left padding to be the same. If you wish to set only a certain sub property to auto, pass the property you wish to set:</p>
 
 <pre><code>#yourElement {
-    @include qg-responsive-margin('top');
-    @include qg-responsive-margin('bottom');
+    @include qg-responsive-margin(top);
+    @include qg-responsive-margin(bottom);
 }</code></pre>
 
-    <h4>Responsive Spacing</h4>
-    <p>The <code>qg-responsive-margin()</code> and <code>qg-responsive-padding()</code> mixins are wrappers for the more specific <code>qg-responsive-spacing()</code> mixin. if need be, you can use this mixin directly to control your spacing:</p>
+    <p>If you wish to use the 'full' gutter size (for top margins for example), you can set this using the 'full' parameter.</p>
 
 <pre><code>#yourElement {
-    @include qg-responsive-spacing('padding-left', $small: false, $large: default);
+    @include qg-responsive-margin(top, full);
 }</code></pre>
 
-    <p>The qg-responsive-spacing mixin takes up to 3 parameters:
-    <ul>
-        <li>$property : required : Requires full property name, eg. 'margin-left', 'padding-top' or 'padding'</li>
-        <li>$small : optional : false (does not set up a size), default (uses the default), [specific] (sets the this size to your desired size)</li>
-        <li>$large : optional : false (does not set up a size), default (uses the default), [specific] (sets the this size to your desired size)</li>
-    </ul>
-    The specific break points are set by the mixin.
-    </p>
+    <h3>Responsive object spec</h3>
+
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Description</th>
+                    <th>Options</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Extenion ($ext)</td>
+                    <td>Optional - Defines the parameter extension to use.</td>
+                    <td>
+                        <ul>
+                            <li>top : The top padding or margin</li>
+                            <li>bottom : The bottom padding or margin</li>
+                            <li>left : The left padding or margin</li>
+                            <li>right : The right padding or margin</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Small ($small)</td>
+                    <td>Optional - Defines what size to set the small breakpoint to. Can be set directly.<br />
+                    Note: If you ONLY set the small parameter, and do not set it directly with $small, it will automatically set $large to the same value.</td>
+                    <td>
+                        <ul>
+                            <li>false : Do not set this size</li>
+                            <li>default : Set this size to the default value</li>
+                            <li>full : Set this size to the full gutter value</li>
+                            <li>*px / *em / *% : Set this value to a specific px/em/%. Note: This should be avoided.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Large ($large)</td>
+                    <td>Optional - Defines what size to set the large breakpoint to. Can be set directly.</td>
+                    <td>
+                        <ul>
+                            <li>false : Do not set this size</li>
+                            <li>default : Set this size to the default value</li>
+                            <li>full : Set this size to the full gutter value</li>
+                            <li>*px / *em / *% : Set this value to a specific px/em/%. Note: This should be avoided.</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
 <!-- ################################## -->
     <h2 id="typography" class="category">Typography</h2>

@@ -4,13 +4,9 @@
   background-color: $qg-section-nav-bg-color;
 
   h2 {
-    // @include qg-responsive-padding-top ($xs: $qg-spacing-small, $md: $qg-spacing);
-    // @include qg-responsive-padding-right ($xs: 0, $md: $qg-spacing);
-    // $xs: $qg-spacing-small / 2;
-    // $md: $qg-spacing / 3;
-    // @include qg-responsive-padding-bottom ($xs: $xs, $md: $md);
-    // @include qg-responsive-padding-left ($xs: 0, $md: $qg-spacing);
-    padding: $qg-spacing-xs 0 $qg-spacing-xs-small 0;
+    @include qg-responsive-padding();
+    @include qg-responsive-padding('top', full);
+    @include qg-responsive-padding('left', $large: full);
     margin:  0;
 
     color: #000;
@@ -80,11 +76,11 @@
       background-color: $qg-section-nav-bg-color
     }
 
-    h2 {
-      padding-bottom: $qg-spacing-xs-small;
-      padding-left: ($qg-spacing-xs / 2);
-      padding-right: ($qg-spacing-xs / 2);
-    }
+    // h2 {
+    //   padding-bottom: $qg-spacing-xs-small;
+    //   padding-left: ($qg-spacing-xs / 2);
+    //   padding-right: ($qg-spacing-xs / 2);
+    // }
     ul {
       padding: 0 0 ($qg-spacing * 0.7) 0;
     }
@@ -99,9 +95,9 @@
     }
   }
   @media (min-width: $screen-lg-min) {
-    h2 {
-      padding: $qg-spacing $qg-spacing $qg-spacing-xs-small $qg-spacing;
-    }
+    // h2 {
+    //   padding: $qg-spacing $qg-spacing $qg-spacing-xs-small $qg-spacing;
+    // }
     li {
       a {
         padding: .7em ($qg-spacing/2) .7em ($qg-spacing + 15px);
