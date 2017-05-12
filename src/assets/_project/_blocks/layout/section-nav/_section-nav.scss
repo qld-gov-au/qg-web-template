@@ -4,9 +4,10 @@
   background-color: $qg-section-nav-bg-color;
 
   h2 {
-    @include qg-responsive-padding();
-    @include qg-responsive-padding('top', full);
-    @include qg-responsive-padding('left', $large: full);
+    @include qg-responsive-spacing(padding);
+    @include qg-responsive-spacing(padding-top, full);
+    @include qg-responsive-spacing(padding-left, $large: full);
+    
     margin:  0;
 
     color: #000;

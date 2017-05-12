@@ -7,7 +7,7 @@
     // padding: $qg-spacing-xs ($qg-spacing-xs / 2);
     // @include qg-responsive-padding();
     
-    @include qg-responsive-padding();
+    @include qg-responsive-spacing(padding);
 
     margin: 0;
 
@@ -18,7 +18,7 @@
     // }
 
     &:first-child() {
-      @include qg-responsive-padding(top, full);
+      @include qg-responsive-spacing(padding, top, full);
     }
     // @media (min-width: $screen-lg-min) {
     //   &:first-child() {

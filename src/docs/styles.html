@@ -105,20 +105,17 @@
     <p><strong>For responsive margins:</strong></p>
 
 <pre><code>#yourElement {
-    @include qg-responsive-margin();
+    @include qg-responsive-spacing(margin);
+    @include qg-responsive-spacing(margin-top);
+    @include qg-responsive-spacing(margin-right);
 }</code></pre>
 
     <p><strong>For responsive padding:</strong></p>
 
 <pre><code>#yourElement {
-    @include qg-responsive-padding();
-}</code></pre>
-
-    <p>By default this sets top, right, bottom, and left padding to be the same. If you wish to set only a certain sub property to auto, pass the property you wish to set:</p>
-
-<pre><code>#yourElement {
-    @include qg-responsive-margin(top);
-    @include qg-responsive-margin(bottom);
+    @include qg-responsive-spacing(padding);
+    @include qg-responsive-spacing(padding-left);
+    @include qg-responsive-spacing(padding-bottom);
 }</code></pre>
 
     <p>If you wish to use the 'full' gutter size (for top margins for example), you can set this using the 'full' parameter.</p>
@@ -127,27 +124,33 @@
     @include qg-responsive-margin(top, full);
 }</code></pre>
 
-    <h3>Responsive object spec</h3>
+    <h3>qg-responsive-spacing mixin specification</h3>
 
     <div class="table-responsive">
         <table class="table">
             <thead>
                 <tr>
                     <th>Parameter</th>
-                    <th>Description</th>
+                    <th width="33%">Description</th>
                     <th>Options</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Extenion ($ext)</td>
-                    <td>Optional - Defines the parameter extension to use.</td>
+                    <td>Property ($prop)</td>
+                    <td>Required - Defines the css property to use.</td>
                     <td>
                         <ul>
-                            <li>top : The top padding or margin</li>
-                            <li>bottom : The bottom padding or margin</li>
-                            <li>left : The left padding or margin</li>
-                            <li>right : The right padding or margin</li>
+                            <li>margin : Sets all four sides</li>
+                            <li>margin-top : The top margin</li>
+                            <li>margin-bottom : The bottom margin</li>
+                            <li>margin-left : The left margin</li>
+                            <li>margin-right : The right margin</li>
+                            <li>padding : Sets all four sides</li>
+                            <li>padding-top : The top padding</li>
+                            <li>padding-bottom : The bottom padding</li>
+                            <li>padding-left : The left padding</li>
+                            <li>padding-right : The right padding</li>
                         </ul>
                     </td>
                 </tr>

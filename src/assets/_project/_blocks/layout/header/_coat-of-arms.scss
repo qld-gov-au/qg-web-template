@@ -7,7 +7,7 @@
   padding-bottom: 16px*.8; 
   overflow: hidden;
 
-  @include qg-responsive-padding(left, $large: full);
+  @include qg-responsive-spacing(padding-left, $large: full);
 
   img {
     height: 40px;

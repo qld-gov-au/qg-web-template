@@ -1,39 +1,30 @@
 // Responsive spacing
 // QG addon to allow you to set dynamic padding or margins to elements based on the standard md break.
 
-// Helper functions
-// @function str-replace($string, $search, $replace: '') {
-//   $index: str-index($string, $search);
-//   @if $index {
-//     @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
-//   }
-//   @return $string;
-// }
-
-// @function is-string($value) {
-//   @return type-of($value) == 'string';
-// }
-
-// @function replace-keyword($str, $key, $val) {
-//   @if str-index($str, $key) != false {
-//     @return str-replace($str, $key, $val);
-//   }
-//   @return $str;
-// }
-
 // Settings
-$default-small: $qg-spacing-xs / 2;
-$default-large: $qg-spacing / 2;
+@mixin qg-responsive-spacing ($prop, $scale: notset, $large: notset, $small: notset) {
+  $default-small: $qg-spacing-xs / 2;
+  $default-large: $qg-spacing / 2;
 
-// Mixins
-@mixin qg-responsive-spacing($prop, $small: $default-small, $large: $default-large) {
-  // Manipulate small / large variables
+  @if $scale != 'notset' AND $large == 'notset' AND $small == 'notset' {
+    $small: $scale;
+    $large: $scale;
+  } @else if $scale != 'notset' AND $large != 'notset' AND $small == 'notset' {
+    $small: $scale;
+  }
+  @if $small == notset {
+    $small: default;
+  }
+  @if $large == notset {
+    $large: default;
+  }
+
+  // Manipulate default / full variables
   @if $small == default {
     $small: $default-small;
   } @else if $small == full {
     $small: $default-small * 2;
   }
-
   @if $large == default {
     $large: $default-large;
   } @else if $large == full {
@@ -51,32 +42,4 @@ $default-large: $qg-spacing / 2;
       #{$prop}: $large;
     }
   }
-}
-
-@mixin qg-responsive-handle-spacing ($prop, $ext, $scale, $large, $small) {
-  @if $ext != false {
-    $prop: $prop + '-' + $ext;
-  }
-  @if $scale != 'notset' AND $large == 'notset' AND $small == 'notset' {
-    $small: $scale;
-    $large: $scale;
-  } @else if $scale != 'notset' AND $large != 'notset' AND $small == 'notset' {
-    $small: $scale;
-  }
-  @if $small == notset {
-    $small: default;
-  }
-  @if $large == notset {
-    $large: default;
-  }
-  @include qg-responsive-spacing($prop, $small, $large);
-}
-
-// Margin
-@mixin qg-responsive-margin ($ext: false, $scale: notset, $large: notset, $small: noteset) {
-  @include qg-responsive-handle-spacing('margin', $ext, $scale, $large, $small);
-}
-// Padding
-@mixin qg-responsive-padding ($ext: false, $scale: notset, $large: notset, $small: noteset) {
-  @include qg-responsive-handle-spacing('padding', $ext, $scale, $large, $small);
 }
