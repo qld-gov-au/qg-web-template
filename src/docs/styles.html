@@ -92,8 +92,19 @@
         <li>At lg screen sizes, the gutter is 50px to comply with old SWE design guidelines</li>
     </ul>
 
-    <h3>Responsive margin and padding mixins</h3>
+    <h3 id="breakpoints" class="category">Breakpoints</h3>
+    <p><span class="label label-default" title="Default bootstrap implementation">Default</span></p>
 
+    <p>We use standard bootstrap media queries. See <a href="https://getbootstrap.com/css/#grid-media-queries">Bootstrap grid media queries</a></p>
+
+    <ul>
+        <li>Extra Small - Minimum sized devices</li>
+        <li>Small - Devices 768px and above</li>
+        <li>Medium - Devices 992px and above</li>
+        <li>Large - Devices 1200px and above</li>
+    </ul>
+
+    <h3 id="responsive-spacing-mixin">Responsive spacing mixins</h3>
     <p>
         <span class="label label-warning" title="Heavily customised bootstrap implementation">Custom SASS</span>
     </p>
@@ -762,7 +773,12 @@
                     <div id="page-nav" class="qg-aside qg-docs-sidenav" role="complementary" data-spy="affix" data-offset-top="500" data-offset-bottom="900" data-parent-width="1">
                         <h2>On this page</h2>
                         <ul class="nav" role="tablist">
-                            <li><a href="#grid">Grid system</a></li>
+                            <li><a href="#grid">Grid system</a>
+                                <ul>
+                                    <li><a href="#breakpoints">Breakpoints</a></li>
+                                    <li><a href="#responsive-spacing-mixin">Responsive spacing mixins</a></li>
+                                </ul>
+                            </li>
                             <li><a href="#typography">Typography</a></li>
                             <li><a href="#code">Code</a></li>
                             <li><a href="#tables">Tables</a></li>
