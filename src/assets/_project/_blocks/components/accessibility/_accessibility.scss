@@ -3,11 +3,11 @@
 // --------------------------------------------------
 
 //// START link icons ////
-body:not([data-accessibility=false]):not([data-access-extlink=false]) {
+body:not([data-accessibility=false]):not([data-access-new-window=false]) {
   #qg-content {
     a:not(.btn):not(.qg-accessibility-off), // legacy
-    a:not(.btn):not([data-access-extlink=false]),
-    a[data-access-extlinks=true] {
+    a:not(.btn):not([data-access-extlink=false]), a[data-access-extlinks=true], // legacy
+    a:not(.btn):not([data-access-new-window=false]), *[data-access-new-window=true] {
       // Common CSS
       &[target=_blank]:after,
       &[href^="http://"]:not([href*="qld.gov.au"]):after,

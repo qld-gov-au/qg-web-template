@@ -35,7 +35,8 @@
 
 </head>
 
-<body data-qg-accessibility="true">
+<body data-qg-accessibility="true"
+    data-spy="scroll" data-target="#page-nav">
 
  <!--#include virtual="/assets/includes-local/analytics.html"-->
  <!--#include virtual="/assets/includes-local/header/access.html"-->
@@ -94,8 +95,10 @@
         </div>
     </div>
 
-    <p>If there is a user driven reason for it, you can disable this feature by adding the data attribute <code>data-access-extlink=false</code> to the hyperlink you which to disable accessibility on <code>&lt;a href="#" data-access-extlink="false"&gt;</code></p>
-    <p>If you would like to turn this feature on for any hyperlink outside of the #qg-content element, add the <code>data-access-extlink=false</code> attribute: <code>&lt;a href="#" data-access-extlink="false"&gt;</code></p>
+    <h4>Disabling new window icon feature</h4>
+
+    <p>If there is a user driven reason for it, you can disable this feature by adding the data attribute <code>data-access-new-window=false</code> to the hyperlink you which to disable accessibility on <code>&lt;a href="#" data-access-new-window="false"&gt;</code></p>
+    <p>If you would like to turn this feature on for any hyperlink outside of the #qg-content element, add the <code>data-access-new-window=true</code> attribute: <code>&lt;a href="#" data-access-new-window="truee"&gt;</code></p>
 
     <h4>Javascript</h4>
 
@@ -106,8 +109,6 @@
     <p>To prevent this, you can add your own notification to the link: <code>&lt;span class="qg-blank-notice"&gt;(Opens in new window)&lt;/span&gt;</code></p>
 
     <p>Secondly the script adds a title to your link if one hasn't already been set: <code>&lt;a href="#" title="Opens in new window"&gt;</code></p>
-
-    <p>To turn both of these Javascript features off, add the class <code>data-access-extlink=false</code> to the hyperlink element <code>&lt;a href="#" data-access-extlink="false"&gt;</code></p>
 
     <h3 id="disable-accessibilty">Disabling accessibility features</h3>
 
@@ -136,7 +137,7 @@
                     <div id="page-nav" class="qg-aside qg-docs-sidenav" role="complementary" data-spy="affix" data-offset-top="500" data-offset-bottom="900" data-parent-width="1">
                         <h2>On this page</h2>
 
-                        <ul>
+                        <ul class="nav nav-pills nav-stacked" role="tablist">
                             <li><a href="#accessibility">Accessibility</a>
                         </ul>
 
