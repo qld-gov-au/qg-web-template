@@ -1,0 +1,32 @@
+const path = require('path');
+
+module.exports = function (gulp, plugins, config, gulpWebpack, webpack, ExtractTextPlugin) {
+  return function () {
+    gulp.src('src/entry.js')
+      .pipe(gulpWebpack({
+        entry: {
+          autocomplete: path.resolve(__dirname, config.basepath.modules, 'autocomplete'),
+          slider: path.resolve(__dirname, config.basepath.modules, 'slider'),
+        },
+        output: {
+          filename: `[name]/[name].js`,
+          chunkFilename: '[id].js',
+        },
+        module: {
+          loaders: [
+            {
+              test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader',
+            },
+            {
+              test: /\.css$/,
+              loaders: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader' }),
+            },
+          ],
+        },
+        plugins: [
+          new ExtractTextPlugin(`[name]/[name].css`),
+        ],
+      }, webpack))
+      .pipe(gulp.dest(`${config.basepath.build}/assets/${config.versionName}/components/`));
+  };
+};

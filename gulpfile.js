@@ -6,13 +6,14 @@ require('dotenv').config();
 const gulp            = require('gulp');
 const config          = require('./gulp/gulp-config.js');
 const del             = require('del');
-const webpack         = require('webpack-stream');
+const gulpWebpack     = require('webpack-stream');
+const webpack         = require('webpack');
 const argv            = require('yargs').argv;
 const plugins         = require('gulp-load-plugins')();
 const es              = require('event-stream');
 const runSequence     = require('run-sequence');
-// const replace         = require('gulp-replace');
 const path            = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
     // bowerConfig = require('./bower.json'),
     // runSequence = require('run-sequence'),
     // gutil       = require('gulp-util'),
@@ -41,14 +42,15 @@ gulp.task('html', require('./gulp/build-tasks/html')(gulp, plugins, config));
 gulp.task('includes-local', require('./gulp/build-tasks/includes-local')(gulp, plugins, config));
 gulp.task('includes-cdn', require('./gulp/build-tasks/includes-cdn')(gulp, plugins, config));
 gulp.task('scss', require('./gulp/build-tasks/scss')(gulp, plugins, config));
-gulp.task('js', require('./gulp/build-tasks/js')(gulp, plugins, config, webpack));
+gulp.task('js', require('./gulp/build-tasks/js')(gulp, plugins, config, gulpWebpack));
 gulp.task('other-assets', require('./gulp/build-tasks/other-assets')(gulp, plugins, config, es));
 gulp.task('build-files', require('./gulp/build-tasks/other-files')(gulp, plugins, config));
+gulp.task('build-components', require('./gulp/build-tasks/components')(gulp, plugins, config, gulpWebpack, webpack, ExtractTextPlugin));
 
+//TODO - modify and include unit test
 gulp.task('build', (cb) => {
   runSequence(
-    'test',
-    ['html', 'includes-local', 'includes-cdn', 'scss', 'js', 'other-assets', 'build-files'],
+    ['html', 'includes-local', 'includes-cdn', 'scss', 'js', 'other-assets', 'build-files', 'build-modules'],
     cb
   );
 });
