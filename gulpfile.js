@@ -50,7 +50,7 @@ gulp.task('build-components', require('./gulp/build-tasks/components')(gulp, plu
 //TODO - modify and include unit test
 gulp.task('build', (cb) => {
   runSequence(
-    ['html', 'includes-local', 'includes-cdn', 'scss', 'js', 'other-assets', 'build-files', 'build-modules'],
+    ['html', 'includes-local', 'includes-cdn', 'scss', 'js', 'other-assets', 'build-files', 'build-components'],
     cb
   );
 });
