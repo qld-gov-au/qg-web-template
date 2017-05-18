@@ -7,19 +7,17 @@
   padding-bottom: 16px*.8; 
   overflow: hidden;
 
+  @include qg-responsive-spacing(padding-left, $large: full);
+
   img {
     height: 40px;
 
     @media (min-width: $screen-sm-min) {
       height: 50px;
     }
-    @media (min-width: $screen-lg-min) {
-      padding-left: $qg-spacing / 2;
-    }
   }
 
   @media print {
-    // 
     a:after {
       content: "";
     }

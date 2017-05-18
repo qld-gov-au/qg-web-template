@@ -35,7 +35,8 @@
 
 </head>
 
-<body data-qg-accessibility="true">
+<body data-qg-accessibility="true"
+    data-spy="scroll" data-target="#page-nav">
 
  <!--#include virtual="/assets/includes-local/analytics.html"-->
  <!--#include virtual="/assets/includes-local/header/access.html"-->
@@ -60,7 +61,7 @@
                 <!-- START Breadcrumbs -->
 <nav id="qg-breadcrumb" role="navigation" aria-label="breadcrumb navigation" aria-labelledby="breadcrumb-heading" class="collapse">
 
-    <h1 id="breadcrumb-heading" class="qg-visually-hidden">You are here:</h2>
+    <h2 id="breadcrumb-heading" class="qg-visually-hidden">You are here:</h2>
 
     <ol class="list-inline">
         <!--#include virtual="assets/includes-local/breadcrumbs/qg-web-template.html"-->
@@ -73,8 +74,6 @@
                 <div id="qg-primary-content" role="main" class="qg-has-aside">
 
                     <!--#include virtual="/assets/includes-local/content/alert.html"-->
-
-                    <h1><small>Queensland Government Web Template</small></h1>
 
                     <h1>Javascript</h1>
 
@@ -161,9 +160,10 @@
                 <aside id="qg-secondary-content">
 
                     <div id="page-nav" class="qg-aside qg-docs-sidenav" role="complementary" data-spy="affix" data-offset-top="500" data-offset-bottom="900" data-parent-width="1">
-                        <h2>On this page</h2>
 
-                        <ul>
+                        <h2>On this page</h2>
+                        
+                        <ul class="nav nav-pills nav-stacked" role="tablist">
                             <li><a href="#transitions">Transitions</a>
                             <li><a href="#Modal">Modal</a>
                             <li><a href="#dropdown">Dropdown</a>
@@ -177,10 +177,13 @@
                             <li><a href="#carousel">Carousel</a>
                             <li><a href="#affix">Affix</a>
                         </ul>
-
+                        <p>
+                            <a href="#top">Back to top</a>
+                        </p>
                     </div>
 
                 </aside>
+
                 <!--#include virtual="assets/includes-local/section-nav/qg-web-template.html"-->
                 
             </div>
@@ -201,19 +204,6 @@
     </script>
 
     <!--#include virtual="/assets/includes-local/footer/footer-scripts.html"-->
-
-    <script>
-        $('#firstlink').qgLightbox({
-            callbackPreOpen: function() {
-                $('#lightbox').html('Testing Lightbox functionality');
-            }
-        });
-        $('#anotherlink').qgLightbox({
-            callbackPreOpen: function() {
-                $('#lightbox').html('<h1>ANOTHER TEST</h1>');
-            }
-        });
-    </script>
 
 </body>
 
