@@ -5,7 +5,7 @@ module.exports = function (gulp, plugins, connect, connectssi, argv, path) {
       os.platform() === 'darwin' ? 'google chrome' : (
         os.platform() === 'win32' ? 'chrome' : 'firefox'));*/
     if (argv.port === undefined && (argv.type !== 'reports-server')) {
-      argv.port = 7779;
+      argv.port = 7777;
     } else if (argv.type === 'reports-server') {
       argv.port = 9999;
     }

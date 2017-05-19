@@ -1,0 +1,17 @@
+{
+  "name": "slider",
+  "version": "1.0.0",
+  "description": "",
+  "main": "slider.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server ."
+  },
+  "keywords": [],
+  "author": "Asif Amin <asif.amin@dsiti.qld.gov.au> (http://test.com)",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "http-server": "^0.10.0"
+  }
+}
