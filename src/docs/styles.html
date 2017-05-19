@@ -644,7 +644,8 @@
     <p>
         <span class="label label-danger" title="Entirely custom implementation">Custom</span>
     </p>
-    <p>Forms are not implemented using the standard bootstrap layout. Instead, forms use the Queensland Government form handler.</p>
+    <p>Forms are not implemented using the standard bootstrap layout. Instead, forms use the <a href="http://qld-gov-au.github.io/form-builder/form-builder.html">Queensland Government form builder</a>.</p>
+    <p>For the user interface, see the <a href="https://github.com/qld-gov-au/pattern-library/blob/master/source/patterns-for-web-forms.md">SWE 2 pattern library for forms</a>.</p>
 
 <!-- ################################## -->
 
@@ -749,8 +750,30 @@
 <!-- ################################## -->
 
     <h2 id="using-sass" class="category">Using sass</h2>
+    <p><span class="label label-primary" title="Heavily customised bootstrap implementation">Customised</span></p>
 
-    <p>Comming soon...</p>
+    <p>The Queensland Government Web Template is built on SASS.</p>
+
+    <p>The source SCSS files are included in the NPM package (or git repo) under assets/scss/.</p>
+
+    <p>The main SCSS files are:</p>
+
+    <ul>
+        <li>
+            qg-main.scss : The main file which includes all other SCSS fragments. Compiles to qg-main.css in the QGWT
+            <ul>
+                <li>scss-general/_qg-variables.scss : Contains settings specific to Queensland Government</li>
+                <li>scss-general/_bootstrap-variables : Contains the standard set of bootstrap variables</li>
+                <li>
+                    scss-general/_bootstrap-loader.scss : Loader for standard bootstrap files, from node_modules/bootstrap-sass/
+                    <ul>
+                        <li>bootstrap/_mixins.scss : Loader for Bootstrap mixins, from node_modules/bootstrap-sass/mixins/</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>qg-noscript.scss : Styles for browsers not running javascript</li>
+    </ul>
 
 <!-- ################################## -->
 
@@ -770,7 +793,11 @@
 
                 <aside id="qg-secondary-content">
 
-                    <div id="page-nav" class="qg-aside qg-docs-sidenav" role="complementary" data-spy="affix" data-offset-top="500" data-offset-bottom="900" data-parent-width="1">
+                    <div id="page-nav" 
+                            data-parent-width="true"
+                            class="qg-aside qg-docs-sidenav"
+                            role="complementary"
+                            data-spy="affix" data-offset-top="500" data-offset-bottom="900">
                         <h2>On this page</h2>
                         
                         <ul class="nav nav-pills nav-stacked" role="tablist">

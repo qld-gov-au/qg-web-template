@@ -81,6 +81,8 @@
 <!-- ################################## -->
 
     <h2 id="layout" class="category">Page layout</h2>
+    <p><span class="label label-primary" title="Heavily customised bootstrap implementation">Customised</span></p>
+
     <p>All Franchise websites have a standardised layout. This includes a header, footer, and flexible three column layout.</p>
 
     <h3>Header</h3>
@@ -98,11 +100,13 @@
     <p>See the <a href="#flexible-three-col">Flexible three column layout</a> section for more information.</p>
 
     <h3>Footer</h3>
-    <p>Content coming soon.</p>
+    <p>The footer at the bottom of this page shows the standard styling.</p>
 
 <!-- ################################## -->
 
     <h2 id="flexible-three-col" class="category">Fexlible three column layout</h2>
+    <p><span class="label label-primary" title="Heavily customised bootstrap implementation">Customised</span></p>
+
     <p>The main content of Queensland Government websites is layed out in three columns as you can see on this page. This is made up of the sections <code>#qg-section-nav</code>, <code>#qg-primary-content</code>, and <code>#qg-secondary-content</code></p>
     
     <h3>Wide layout and Index pages</h3>
@@ -152,9 +156,10 @@
 &lt;/aside&gt;</code></pre>
 
     <p>If multiple pages are to have the same aside, it is advised that you use an SSI (or some other method of dynamically including files) to include the file from assets/includes-local/asides/.</p>
+<!-- ################################## -->
 
-    <h3>Footer</h3>
-    <p>The footer at the bottom of this page shows the standard styling.</p>
+    <h2 id="flexible-three-col" class="category">Fexlible three column layout</h2>
+    <p><span class="label label-primary" title="Heavily customised bootstrap implementation">Customised</span></p>
 
 <!-- ################################## -->
 
@@ -174,7 +179,11 @@
 
                 <aside id="qg-secondary-content">
 
-                    <div id="page-nav" class="qg-aside qg-docs-sidenav" role="complementary" data-spy="affix" data-offset-top="500" data-offset-bottom="900" data-parent-width="1">
+                    <div id="page-nav" 
+                            data-parent-width="true"
+                            class="qg-aside qg-docs-sidenav"
+                            role="complementary"
+                            data-spy="affix" data-offset-top="500" data-offset-bottom="900">
                     
                         <h2>On this page</h2>
 

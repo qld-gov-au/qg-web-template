@@ -142,6 +142,18 @@
 
 <!-- ################################## -->
 
+    <h2 id="qg-parent-width" class="category">QG Parent width</h2>
+    <p><span class="label label-warning" title="Entirely custom javascript">Custom JS</span></p>
+
+    <p>There may be some instances where you have to set a floated or absolutely positioned element to the same width as it's parent. To do this, add <code>data-parent-width=true</code> to the child element.</p>
+<pre><code>&lt;div id="parent-element"&gt;
+    &lt;div data-parent-width="true"&gt;
+        Your floated div.
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<!-- ################################## -->
+
 
                     <div class="qg-content-footer">
 
@@ -159,7 +171,11 @@
 
                 <aside id="qg-secondary-content">
 
-                    <div id="page-nav" class="qg-aside qg-docs-sidenav" role="complementary" data-spy="affix" data-offset-top="500" data-offset-bottom="900" data-parent-width="1">
+                    <div id="page-nav" 
+                            data-parent-width="true"
+                            class="qg-aside qg-docs-sidenav"
+                            role="complementary"
+                            data-spy="affix" data-offset-top="500" data-offset-bottom="900">
 
                         <h2>On this page</h2>
                         
@@ -176,6 +192,7 @@
                             <li><a href="#collapse">Collapse</a>
                             <li><a href="#carousel">Carousel</a>
                             <li><a href="#affix">Affix</a>
+                            <li><a href="#qg-parent-width">QG Parent width</a>
                         </ul>
                         <p>
                             <a href="#top">Back to top</a>
