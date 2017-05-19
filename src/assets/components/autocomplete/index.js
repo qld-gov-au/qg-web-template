@@ -1,30 +1,23 @@
 //slider custom styling
 import './styles/autocomplete.scss';
 
-/*
- # Autocomplete for Funnelback site search
- # Requires generate-id : node_modules/generate-id/dist/generate-id.min.js';
- */
+// generate id plugin
+import './lib/generate-id';
 
 // onready
 $(function () {
   'use strict';
-
-  // until pan.search supports https, we cannot use suggest feature on https domains
-  if (/^https/.test(window.location.protocol)) {
-    return;
-  }
 
   var MAX_SUGGESTIONS = 7;
 
   // TODO refactor this so functions are not created for every search form found on the page
 
   // setup for each form
-  // TODO hardcoded to pan.search.qld.gov.au
-  $('form').filter('[action*="//pan.search.qld.gov.au/"]').each(function () {
+  // TODO hardcoded to find.search.qld.gov.au
+  $('form').filter('[action*="//find.search.qld.gov.au/"]').each(function () {
     var form = this;
     var searchField = $(form.elements.query).filter('[name="query"]');
-    // var lastSearch = searchField.val();
+    var lastSearch = searchField.val();
     var userTyped = '';
 
     // ARIA
@@ -38,13 +31,15 @@ $(function () {
     // keep it wide while interacting with the search form (box, button, autosuggest list)
 
     // create the suggestion box
-    var suggestions = $('<ul role="listbox" class="listbox"/>').generateId('suggestbox');
+    var suggestions = $('<ul role="listbox" class="listbox" aria-busy="true"/>').generateId('suggestbox');
+    searchField.after(suggestions);
+    searchField.attr('aria-owns', suggestions.attr('id'));
 
-    function closeSuggestions() {
+    function closeSuggestions () {
       suggestions.empty();
     }
 
-    function prefillInput(value) {
+    function prefillInput (value) {
       searchField[0].value = value;
       // console.log( 'prefilling', value, userTyped );
       // http://stackoverflow.com/questions/12047648/setselectionrange-with-on-click-in-chrome-does-not-select-on-second-click
@@ -53,7 +48,7 @@ $(function () {
       }, 0);
     }
 
-    function moveFocus(n) {
+    function moveFocus (n) {
       var a = suggestions.find('a');
       var focus = a.filter('.focus');
       if (focus.length > 0) {
@@ -77,20 +72,18 @@ $(function () {
       closeSuggestions();
     });
 
-
     var KEYS = {
       alt: 18,
       backspace: 8,
-      delete: 46,
+      'delete': 46,
       down: 40,
       enter: 13,
       escape: 27,
       left: 37,
       right: 39,
       tab: 9,
-      up: 38
+      up: 38,
     };
-
 
     // clicking outside the field closes suggestions
     $(document).on('click', function (event) {
@@ -107,19 +100,19 @@ $(function () {
     // <combobox><input><ul></combobox> ??
     searchField.on('keydown', function (event) {
       switch (event.which) {
-        case KEYS.up:
-        case KEYS.down:
-          moveFocus(event.which === KEYS.down ? 1 : -1);
-          break;
-        case KEYS.tab:
-          closeSuggestions();
+      case KEYS.up:
+      case KEYS.down:
+        moveFocus(event.which === KEYS.down ? 1 : -1);
+        break;
+      case KEYS.tab:
+        closeSuggestions();
       }
     });
     searchField.on('keyup', function (event) {
       switch (event.which) {
-        case KEYS.escape:
-        case KEYS.enter:
-          closeSuggestions();
+      case KEYS.escape:
+      case KEYS.enter:
+        closeSuggestions();
       }
 
       // delete
@@ -127,10 +120,6 @@ $(function () {
     });
 
     searchField.on('input', function () {
-
-      searchField.after(suggestions);
-      searchField.attr('aria-owns', suggestions.attr('id'));
-
       userTyped = this.value;
       if (userTyped.length < 3) {
         closeSuggestions();
@@ -143,14 +132,14 @@ $(function () {
         // cache! (the URL will be change with the search text)
         cache: true,
         dataType: 'jsonp',
-        url: 'http://pan.search.qld.gov.au/s/suggest.json?',
+        url: 'https://find.search.qld.gov.au/s/suggest.json?',
         data: {
           // TODO read these from search form
           collection: $(form.elements.collection).filter('[name="collection"]').val() || 'qld-gov',
           profile: $(form.elements.profile).filter('[name="profile"]').val() || 'qld_preview',
           show: MAX_SUGGESTIONS,
-          partial_query: userTyped
-        }
+          partial_query: userTyped,
+        },
       })
         .done(function (data) {
           if (data.length < 1) {
@@ -166,7 +155,7 @@ $(function () {
           suggestions.html($.map(data, function (value) {
             var htmlValue = value.replace(/</g, '&lt;').replace(match, '<mark>' + safeInput + '</mark>');
             // use form.action + default params
-            return '<li><a href="http://pan.search.qld.gov.au/s/search.html?collection=qld-gov&profile=qld&query=' + encodeURIComponent(value) + '">' + htmlValue + '</a></li>';
+            return '<li><a href="https://find.search.qld.gov.au/s/search.html?collection=qld-gov&profile=qld&query=' + encodeURIComponent(value) + '">' + htmlValue + '</a></li>';
           }).join('\n'));
 
           // issue #3: issues with typing over selected suggestion
@@ -176,7 +165,8 @@ $(function () {
           // 	// set the value to the best answer and select the untyped portion of the text
           // 	prefillInput( data[0] );
           // }
-          searchField.val();
+          lastSearch = searchField.val();
+          suggestions.attr('aria-busy', 'false');
         });
 
       // show suggestions box
@@ -185,3 +175,4 @@ $(function () {
     });
   });
 }); // onready
+

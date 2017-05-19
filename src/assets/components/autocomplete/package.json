@@ -10,9 +10,7 @@
   "keywords": [],
   "author": "Asif Amin <asif.amin@dsiti.qld.gov.au> (http://test.com)",
   "license": "ISC",
-  "dependencies": {
-    "slick-carousel": "^1.6.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "http-server": "^0.10.0"
   }

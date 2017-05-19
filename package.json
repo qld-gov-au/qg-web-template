@@ -16,6 +16,7 @@
     "babel-istanbul-loader": "^0.1.0",
     "babel-loader": "^6.2.4",
     "babel-preset-es2015": "^6.9.0",
+    "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.1",
     "del": "^2.2.0",
     "eslint": "^3.4.0",
@@ -76,14 +77,14 @@
     "yargs": "^5.0.0"
   },
   "dependencies": {
-    "node-bourbon": "^4.2.8",
-    "breakpoint-sass": "^2.7.0",
-    "browserstack-local": "^1.3.0",
     "bootstrap": "^3.3.7",
     "bootstrap-accessibility-plugin": "^1.0.2",
     "bootstrap-sass": "^3.3.6",
+    "breakpoint-sass": "^2.7.0",
+    "browserstack-local": "^1.3.0",
     "dotenv": "^4.0.0",
     "lato-webfont": "^2.15.1",
-    "nightwatch": "^0.9.12"
+    "nightwatch": "^0.9.12",
+    "node-bourbon": "^4.2.8"
   }
 }

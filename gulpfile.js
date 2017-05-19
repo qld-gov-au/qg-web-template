@@ -13,13 +13,6 @@ const plugins         = require('gulp-load-plugins')();
 const es              = require('event-stream');
 const runSequence     = require('run-sequence');
 const path            = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-    // bowerConfig = require('./bower.json'),
-    // runSequence = require('run-sequence'),
-    // gutil       = require('gulp-util'),
-    // gulpConnectSsi = require('gulp-connect-ssi'),
-    // eslint      = require('gulp-eslint'),
-    // include     = require('gulp-include'),
 
 // For testing
 const karmaServer       = require('karma').Server;
@@ -45,12 +38,13 @@ gulp.task('scss', require('./gulp/build-tasks/scss')(gulp, plugins, config));
 gulp.task('js', require('./gulp/build-tasks/js')(gulp, plugins, config, gulpWebpack));
 gulp.task('other-assets', require('./gulp/build-tasks/other-assets')(gulp, plugins, config, es));
 gulp.task('build-files', require('./gulp/build-tasks/other-files')(gulp, plugins, config));
-gulp.task('build-components', require('./gulp/build-tasks/components')(gulp, plugins, config, gulpWebpack, webpack, ExtractTextPlugin));
+gulp.task('build-components', require('./gulp/build-tasks/components')(gulp, plugins, config, gulpWebpack, webpack, path));
 
 //TODO - modify and include unit test
 gulp.task('build', (cb) => {
   runSequence(
-    ['html', 'includes-local', 'includes-cdn', 'scss', 'js', 'other-assets', 'build-files', 'build-components'],
+    ['html', 'includes-local', 'includes-cdn', 'scss', 'js', 'other-assets', 'build-files'],
+    //'build-components',
     cb
   );
 });
@@ -67,6 +61,9 @@ gulp.task('watch', function () {
   gulp.watch([config.basepath.src + '/**/*.scss'], ['scss']);
   gulp.watch([config.basepath.src + '/**/*.js'], ['js', 'test']);
   gulp.watch([config.basepath.src + '**/*'], ['other-assets']);
+});
+gulp.task('watch:components', function () {
+  gulp.watch([config.basepath.src + '/assets/components/**/*.*'], ['build-components']);
 });
 gulp.task('watch:serve', ['watch', 'serve']);
 
