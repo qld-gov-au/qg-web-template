@@ -6,4 +6,6 @@ import './lib/unslider/unslider.css';
 import './styles/slider.scss';
 
 // init code
-$(function () { $('.banner').unslider(); });
+$(function () {
+  $('.banner').unslider().show();
+});
