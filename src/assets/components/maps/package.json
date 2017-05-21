@@ -14,12 +14,19 @@
   "dependencies": {},
   "devDependencies": {
     "concurrently": "^3.4.0",
+<<<<<<< be8bc862ce6cbb8a897f7d71de50f3951079f9b0
     "css-loader": "^0.28.1",
     "extract-text-webpack-plugin": "^2.1.0",
     "html-webpack-plugin": "^2.28.0",
     "raw-loader": "^0.5.1",
     "sass-loader": "^6.0.5",
     "style-loader": "^0.17.0",
+=======
+    "extract-text-webpack-plugin": "^2.1.0",
+    "html-webpack-plugin": "^2.28.0",
+    "image-webpack-loader": "^3.3.1",
+    "raw-loader": "^0.5.1",
+>>>>>>> component level build system
     "webpack": "^2.5.1",
     "webpack-dev-server": "^2.4.5"
   }
