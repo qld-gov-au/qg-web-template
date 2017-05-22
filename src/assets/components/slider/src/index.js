@@ -46,4 +46,3 @@ $(function ($, qg) {
     console.log('error in processing your request', reason);
   });
 }(jQuery, qg));
-
