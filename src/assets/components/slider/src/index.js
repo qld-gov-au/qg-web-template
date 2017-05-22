@@ -1,9 +1,12 @@
+<<<<<<< af2639e305ffd76bc9e0134bca266590cec3c81d
 // NOTE - DEV START and DEV END are for importing other modules locally for testing components independently and the code inside these tags is stripped when we run gulp build-components because loader loads scripts dynamically in the build version
 
 /* DEV-START */
 import '../../misc/src/qg-xml-reader.js';
 /* DEV-END */
 
+=======
+>>>>>>> components workflow updated
 //plugin
 import './lib/unslider/unslider-min';
 import './lib/unslider/unslider.css';
@@ -11,6 +14,7 @@ import './lib/unslider/unslider.css';
 //slider custom styling
 import './styles/slider.scss';
 
+<<<<<<< af2639e305ffd76bc9e0134bca266590cec3c81d
 /*globals qg*/
 $(function ($, qg) {
   var prepareUrl = function (loc) {
@@ -47,3 +51,9 @@ $(function ($, qg) {
   });
 }(jQuery, qg));
 
+=======
+// init code
+$(function () {
+  $('.banner').unslider().show();
+});
+>>>>>>> components workflow updated
