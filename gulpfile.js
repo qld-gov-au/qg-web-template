@@ -30,6 +30,11 @@ gulp.task('clean-release', (cb) => {
   return del([config.basepath.release], cb);
 });
 
+/* NEW BUILD */
+gulp.task('template-pages-cdn', require('./gulp/build-tasks/html')(gulp, plugins, config, 'cdn'))
+gulp.task('template-pages-local', require('./gulp/build-tasks/html')(gulp, plugins, config, 'local'))
+gulp.task('new-build', ['template-pages-cdn', 'template-pages-local']);
+
 /* BUILD TASKS */
 gulp.task('html', require('./gulp/build-tasks/html')(gulp, plugins, config));
 gulp.task('includes-local', require('./gulp/build-tasks/includes-local')(gulp, plugins, config));
