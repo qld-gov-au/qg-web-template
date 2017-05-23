@@ -9,7 +9,7 @@
     "dev": "./node_modules/.bin/webpack-dev-server --open"
   },
   "keywords": [],
-  "author": "Asif Amin <asif.amin@dsiti.qld.gov.au> (http://test.com)",
+  "author": "SM OSS Digital Applications [oss.applications@dsiti.qld.gov.au]",
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {

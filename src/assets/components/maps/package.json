@@ -1,8 +1,8 @@
 {
-  "name": "slider",
+  "name": "maps",
   "version": "1.0.0",
   "description": "",
-  "main": "slider.js",
+  "main": "maps.js",
   "scripts": {
     "start": "npm run build && npm run dev ",
     "build": "./node_modules/.bin/webpack",
