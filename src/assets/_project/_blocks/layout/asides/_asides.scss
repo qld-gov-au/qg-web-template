@@ -18,7 +18,7 @@
     // }
 
     &:first-child() {
-      @include qg-responsive-spacing(padding, top, full);
+      @include qg-responsive-spacing(padding-top, full);
     }
     // @media (min-width: $screen-lg-min) {
     //   &:first-child() {
