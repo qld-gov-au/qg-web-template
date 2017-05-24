@@ -1,10 +1,14 @@
-module.exports = function (gulp, plugins, config) {
+module.exports = function (gulp, plugins, config, destFolder = 'assets', type = 'build') {
   return function (cb) {
     config.projects.map((element) => {
       const target = [
         `${config.basepath.src}/assets/_project/_blocks/*.scss`,
         '!** /_*.scss',
       ].concat(config.build.excludes);
+      let dest = `${config.basepath.build}/${destFolder}/${config.versionName}/css/`;
+      if(type === 'release') {
+        dest = `${config.basepath.release}/${destFolder}/${config.versionName}/css/`;
+      }
 
       return gulp.src(target)
         .pipe(plugins.sourcemaps.init())
@@ -20,7 +24,7 @@ module.exports = function (gulp, plugins, config) {
         .pipe(plugins.sourcemaps.write('.', {
           sourceRoot: config.basepath.src,
         }))
-        .pipe(gulp.dest(`${config.basepath.build}/assets/${config.versionName}/css/`))
+        .pipe(gulp.dest(dest))
         .on('end', cb);
     });
   };

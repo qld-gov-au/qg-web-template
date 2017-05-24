@@ -1,26 +1,25 @@
 'use strict';
 
-// Todo: Clean this up, it's super messy
+// Node.js task to convert SSI includes to inline html
+// const path = require('path');
 
-const SSI  = require('node-ssi');
-const fsPath = require('fs-path');
-const path = require('path');
-const ssi    = new SSI({
-  encoding: 'utf-8',
-  baseDir: path.join('build'),
-});
+module.exports = function (includeSrc, src, dest, exclude) {
+  const SSI  = require('node-ssi');
+  const fsPath = require('fs-path');
+  const path = require('path');
+  const ssi    = new SSI({
+    encoding: 'utf-8',
+    baseDir: includeSrc // Source of includes
+  });
 
-const folder = {
-  src: path.join('release', 'docs'),
-  exclude: [
-    'assets',
-  ],
-  build: path.join('release', 'docs'),
-};
+  const folder = {
+    src: src, // Source path, use path.join
+    exclude: exclude,
+    build: dest, // Destination path, use path.join
+  };
 
-function fromDir (startPath) {
-  fsPath.find(startPath, function (filepath, stats, filename) {
-    //filters only html files and excludes folders assigned to folder.exclude
+  fsPath.find(folder.src, function (filepath, stats, filename) {
+    // filters only html files and excludes folders assigned to folder.exclude
     if ((stats === 'file' && /\.html$/.test(filename)) || (stats === 'directory' && folder.exclude.indexOf(filename) < 0)) {
       return true;
     }
@@ -43,11 +42,7 @@ function fromDir (startPath) {
         });
       });
     });
-    // fsPath.remove(folder.src, (err) => {
-    //   console.log('ok');
-    //   if (err) return;
-    // });
   });
 }
 
-fromDir(folder.src);
+// fromDir(folder.src);

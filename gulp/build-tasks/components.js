@@ -9,10 +9,10 @@ module.exports = function (gulp, plugins, config, gulpWebpack, webpack, path) {
 
     // building each component
     components.map(function (element) {
-      return gulp.src(path.resolve(__dirname, config.basepath.modules))
+      return gulp.src(path.join(__dirname, config.basepath.modules))
         .pipe(gulpWebpack({
-          context: path.resolve(__dirname, config.basepath.modules),
-          entry: path.resolve(__dirname, config.basepath.modules, element),
+          context: path.join(__dirname, config.basepath.modules),
+          entry: path.join(__dirname, config.basepath.modules, element),
           output: {
             filename: `${element}/index.js`,
           },
