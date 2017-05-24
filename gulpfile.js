@@ -55,6 +55,7 @@ gulp.task('docs-flatten', (cb) => {
 
 gulp.task('build', (cb) => {
   runSequence(
+    'test:eslint',
     ['template-pages-cdn', 'assets-includes-cdn', 'js', 'scss', 'other-assets', 'build-other-files'],
     ['template-pages-local', 'assets-includes-local'],
     ['template-pages-docs', 'docs-assets-includes'],
