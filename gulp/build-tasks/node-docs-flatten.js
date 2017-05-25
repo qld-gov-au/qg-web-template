@@ -10,5 +10,4 @@ let src = path.join('build', 'docs');
 let dest = path.join('build', 'docs');
 let exclude = [];
 
-
 ssiToStatic(includeSrc, src, dest, exclude);

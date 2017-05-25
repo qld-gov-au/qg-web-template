@@ -6,7 +6,7 @@ module.exports = function (gulp, plugins, config, destFolder = 'assets', type = 
         '!** /_*.scss',
       ].concat(config.build.excludes);
       let dest = `${config.basepath.build}/${destFolder}/${config.versionName}/css/`;
-      if(type === 'release') {
+      if (type === 'release') {
         dest = `${config.basepath.release}/${destFolder}/${config.versionName}/css/`;
       }
 

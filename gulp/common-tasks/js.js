@@ -5,7 +5,7 @@ module.exports = function (gulp, plugins, config, webpack, destFolder, type = 'b
     config.projects.map((element) => {
       let src = `${config.basepath.src}/assets/_project/_blocks/qg-main.js`;
       let dest = `${config.basepath.build}/${destFolder}/${config.versionName}/js/`;
-      if(type === 'release') {
+      if (type === 'release') {
         dest = `${config.basepath.release}/${destFolder}/${config.versionName}/js/`;
       }
 

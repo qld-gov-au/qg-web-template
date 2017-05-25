@@ -1,6 +1,6 @@
-
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = function (gulp, plugins, config, gulpWebpack, webpack, path) {
   return function () {
@@ -9,16 +9,15 @@ module.exports = function (gulp, plugins, config, gulpWebpack, webpack, path) {
 
     // building each component
     components.map(function (element) {
-      return gulp.src(path.join(__dirname, config.basepath.modules))
+      return gulp.src(path.resolve(__dirname, config.basepath.components))
         .pipe(gulpWebpack({
-          context: path.join(__dirname, config.basepath.modules),
-          entry: path.join(__dirname, config.basepath.modules, element),
+          context: path.resolve(__dirname, config.basepath.components),
+          entry: path.resolve(__dirname, config.basepath.components, element, 'src'),
           output: {
-            filename: `${element}/index.js`,
+            filename: `index.js`,
           },
-          // devtool: 'source-map',
+          //devtool: 'source-map',
           module: {
-
             loaders: [
               {
                 test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader',
@@ -35,14 +34,17 @@ module.exports = function (gulp, plugins, config, gulpWebpack, webpack, path) {
             ],
           },
           plugins: [
-            new ExtractTextPlugin(`${element}/[name].css`),
+            new ExtractTextPlugin(`styles/[name].css`),
             new CopyWebpackPlugin([
-              { from: `${element}/examples`, to: `${element}/examples ` },
-              { from: `${element}/images`, to: `${element}/images` },
+              { from: `${element}/src/examples`, to: `examples ` },
+              { from: `${element}/src/images`, to: `images` },
             ]),
+            new HtmlWebpackPlugin({
+              template: `${element}/src/examples/index.html`,
+            }),
           ],
         }, webpack))
-        .pipe(gulp.dest(`${config.basepath.build}/assets/${config.versionName}/components/`));
+        .pipe(gulp.dest(`${config.basepath.build}/assets/${config.versionName}/components/${element}`));
     });
   };
 };

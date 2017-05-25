@@ -53,9 +53,10 @@ gulp.task('docs-flatten', (cb) => {
     .pipe(plugins.shell(['node gulp/build-tasks/node-docs-flatten.js']));
 });
 
+// FIXME: Re-add unit tests
 gulp.task('build', (cb) => {
   runSequence(
-    // 'test', // FIXME: This is failing currently
+    'test:eslint',
     ['template-pages-cdn', 'assets-includes-cdn', 'js', 'scss', 'other-assets', 'build-other-files'],
     ['template-pages-local', 'assets-includes-local'],
     ['template-pages-docs', 'docs-assets-includes'],

@@ -6,10 +6,10 @@
 module.exports = function (includeSrc, src, dest, exclude) {
   const SSI  = require('node-ssi');
   const fsPath = require('fs-path');
-  const path = require('path');
+  // const path = require('path');
   const ssi    = new SSI({
     encoding: 'utf-8',
-    baseDir: includeSrc // Source of includes
+    baseDir: includeSrc, // Source of includes
   });
 
   const folder = {
@@ -43,6 +43,6 @@ module.exports = function (includeSrc, src, dest, exclude) {
       });
     });
   });
-}
+};
 
 // fromDir(folder.src);

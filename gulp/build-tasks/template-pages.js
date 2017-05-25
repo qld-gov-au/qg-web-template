@@ -4,9 +4,9 @@ module.exports = function (gulp, plugins, config, type) {
   return function (cb) {
     let src = 'template-pages';
     let dest = 'template-cdn';
-    if(type === 'local') {
+    if (type === 'local') {
       dest = 'template-local';
-    } else if(type === 'docs') {
+    } else if (type === 'docs') {
       src = 'docs';
       dest = 'docs';
     }
@@ -23,6 +23,6 @@ module.exports = function (gulp, plugins, config, type) {
       .pipe(plugins.replace(projectAssets, `="$1assets/${config.versionName}/`))
       .pipe(plugins.if(type === 'local', plugins.replace(cdnIncludes, `="$1assets/includes-local/`))) // Replace cdn assets with local assets
       .on('error', console.log)
-      .pipe(gulp.dest(`${config.basepath.build}/${dest}/`))
+      .pipe(gulp.dest(`${config.basepath.build}/${dest}/`));
   };
 };
