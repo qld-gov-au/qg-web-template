@@ -4,11 +4,23 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = function (gulp, plugins, config, gulpWebpack, webpack, path) {
   return function () {
-    //add any new components here
     let components = ['slider', 'autocomplete', 'pagination', 'data'];
+    let staticAssets = ['images', 'examples'];
+    let others = ['globals', 'misc'];
+
+    others.forEach(function (el, index) {
+      gulp.src(`${config.basepath.src}/assets/components/${el}/**/*`)
+        .pipe(plugins.concat(`${el}.js`))
+        .pipe(gulp.dest(`${config.basepath.build}/assets/${config.versionName}/components/`));
+    });
+
 
     // building each component
     components.map(function (element) {
+      staticAssets.forEach(function (el, index) {
+        gulp.src(`${config.basepath.src}/assets/components/${element}/src/${el}/**/**`)
+          .pipe(gulp.dest(`${config.basepath.build}/assets/${config.versionName}/components/${element}/${el}`));
+      });
       return gulp.src(path.resolve(__dirname, config.basepath.components))
         .pipe(gulpWebpack({
           context: path.resolve(__dirname, config.basepath.components),
@@ -36,8 +48,8 @@ module.exports = function (gulp, plugins, config, gulpWebpack, webpack, path) {
           plugins: [
             new ExtractTextPlugin(`styles/[name].css`),
             new CopyWebpackPlugin([
-              { from: `${element}/src/examples`, to: `examples ` },
-              { from: `${element}/src/images`, to: `images` },
+              /*{ from: `${element}/src/examples`, to: `examples ` },
+              { from: `${element}/src/images`, to: `images` },*/
             ]),
             new HtmlWebpackPlugin({
               template: `${element}/src/examples/index.html`,
