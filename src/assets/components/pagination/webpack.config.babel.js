@@ -25,11 +25,15 @@ module.exports = {
       },
 
     ],
+    rules: [
+      { enforce: 'pre',test: /\.js$/, exclude: /node_modules/, loader: "eslint-loader" }
+    ]
   },
   plugins: [
     new ExtractTextPlugin(`styles/[name].css`),
     new HtmlWebpackPlugin({
       title: 'build template',
+      inject: false,
       template: './examples/index.html',
     }),
   ],
