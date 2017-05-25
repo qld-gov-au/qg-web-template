@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = function (gulp, plugins, config, gulpWebpack, webpack, path) {
   return function () {
     //add any new components here
-    let components = ['slider', 'autocomplete'];
+    let components = ['slider', 'autocomplete', 'pagination', 'data'];
 
     // building each component
     components.map(function (element) {
