@@ -26,7 +26,7 @@ module.exports = {
 
     ],
     rules: [
-      { enforce: 'pre',test: /\.js$/, exclude: /node_modules/, loader: "eslint-loader" },
+      { enforce: 'pre',test: /\.js$/, exclude: /node_modules/, loader: "eslint-loader" }
     ]
   },
   plugins: [
@@ -34,7 +34,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'build template',
       inject: false,
-      template: './examples/index.html'
+      template: './examples/index.html',
     }),
   ],
 };
