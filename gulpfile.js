@@ -41,11 +41,17 @@ gulp.task('other-assets', require('./gulp/build-tasks/other-assets')(gulp, plugi
 gulp.task('build-other-files', require('./gulp/build-tasks/other-files')(gulp, plugins, config));
 gulp.task('build-components', require('./gulp/build-tasks/components')(gulp, plugins, config, gulpWebpack, webpack, path));
 
-gulp.task('assets-includes-cdn', require('./gulp/build-tasks/assets-includes')(gulp, plugins, config, 'assets/includes-cdn'));
-gulp.task('assets-includes-local', require('./gulp/build-tasks/assets-includes')(gulp, plugins, config, 'assets/includes-local', true));
-gulp.task('docs-assets-includes', require('./gulp/build-tasks/assets-includes')(gulp, plugins, config, 'docs/assets/includes-local', true, true));
+gulp.task('assets-includes-cdn', require('./gulp/build-tasks/assets-includes')(gulp, plugins, config, ['assets/includes-cdn']));
+let dests = [
+   'assets/includes-local',
+   'docs/assets/includes-local',
+   'template-local/assets/includes-local',
+];
+gulp.task('assets-includes-local', require('./gulp/build-tasks/assets-includes')(gulp, plugins, config, dests, true));
+// gulp.task('docs-assets-includes', require('./gulp/build-tasks/assets-includes')(gulp, plugins, config, 'docs/assets/includes-local', true, true));
 
-gulp.task('docs-assets', require('./gulp/build-tasks/docs-assets')(gulp, plugins, config));
+gulp.task('assets-docs', require('./gulp/build-tasks/assets')(gulp, plugins, config, 'docs'));
+gulp.task('assets-local', require('./gulp/build-tasks/assets')(gulp, plugins, config, 'template-local'));
 
 gulp.task('docs-flatten', (cb) => {
   return gulp.src('', {read: false})
@@ -60,8 +66,8 @@ gulp.task('build', (cb) => {
     ['template-pages-cdn', 'assets-includes-cdn', 'js', 'scss', 'other-assets', 'build-other-files'],
     ['template-pages-local', 'assets-includes-local'],
     ['template-pages-docs', 'docs-assets-includes'],
-    ['docs-assets', 'docs-flatten'],
-    'build-components',
+    ['docs-flatten', 'assets-docs'],
+    'assets-local',
     cb
   );
 });
