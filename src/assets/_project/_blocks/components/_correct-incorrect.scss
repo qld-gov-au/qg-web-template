@@ -1,0 +1,100 @@
+
+.qg-correct, .qg-incorrect {
+  position: relative;
+  display: inline-block;
+
+  max-width: 60%;
+  margin: 0.8em 0.8em 0.8em 0;
+  padding: 1.2rem 0.5rem 1.2rem 4rem;
+
+  border-top: 1px solid green;
+  border-right: 1px solid green;
+  border-bottom: 1px solid green;
+  border-left: 7px solid green;
+
+  &:before {
+    position: absolute;
+    top: 0.15rem;
+    left: 0.5rem;
+    font-family: FontAwesome;
+    font-size: 2em;
+    color: #78ba00;
+    aria-hidden: true;
+  }
+}
+
+.qg-correct {
+  border-color: green;
+  &:before {
+    content: "\f00c";
+    color: green;
+  }
+}
+
+.qg-incorrect {
+  border-color: red;
+  &:before {
+    content: "\f00d";
+    color: red;
+  }
+}
+
+/*
+.qg-correct {
+  position: relative;
+  display: inline-block;
+
+  box-shadow: inset 0.5rem 0 0 0 #78ba00;
+  border-top: 0.1rem solid #78ba00;
+  border-right: 0.1rem solid #78ba00;
+  border-bottom: 0.1rem solid #78ba00;
+  max-width: 60%;
+  margin: 0.8em 0.8em 0.8em 0;
+  padding: 1.2rem 0.5rem 1.2rem 3.6rem;
+  border-radius: 0 0.25rem 0.25rem 0;
+
+  &:before {
+    content: "\f00c";
+    font-family: FontAwesome;
+    font-size: 2em;
+    color: #78ba00;
+    position: absolute;
+    left: 0.5em;
+    top: 0.35em;
+    aria-hidden: true;
+  }
+}
+
+
+td.qg-correct {
+  display: table-cell;
+}
+
+.qg-incorrect {
+  position: relative;
+  display: inline-block;
+  box-shadow: inset 0.5rem 0 0 0 #cc352d;
+  border-top: 0.1rem solid #cc352d;
+  border-right: 0.1rem solid #cc352d;
+  border-bottom: 0.1rem solid #cc352d;
+  max-width: 60%;
+  margin: 0.8em 0.8em 0.8em 0;
+  padding: 1.2rem 0.5rem 1.2rem 3.6rem;
+  border-radius: 0 0.25rem 0.25rem 0;
+}
+
+td.qg-incorrect {
+  display: table-cell;
+}
+
+.qg-incorrect:before {
+  content: "\f00d";
+  font-family: FontAwesome;
+  font-size: 2em;
+  color: #cc352d;
+  position: absolute;
+  left: 0.5em;
+  top: 0.35em;
+  aria-hidden: true;
+}
+*/
