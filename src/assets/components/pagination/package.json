@@ -1,12 +1,12 @@
 {
-  "name": "slider",
+  "name": "pagination",
   "version": "1.0.0",
   "description": "",
-  "main": "slider.js",
+  "main": "pagination.js",
   "scripts": {
     "start": "npm run build && npm run dev ",
     "build": "./node_modules/.bin/webpack",
-    "dev": "./node_modules/.bin/webpack-dev-server --open"
+    "dev": "./node_modules/.bin/webpack-dev-server --watch-poll --open"
   },
   "keywords": [],
   "author": "SM OSS Digital Applications [oss.applications@dsiti.qld.gov.au]",
