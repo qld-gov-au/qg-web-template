@@ -31,24 +31,28 @@ gulp.task('clean-release', (cb) => {
 });
 
 /* BUILD */
-let assetDests = ['assets', 'docs/assets', 'template-local/assets'];
-let includesDests = ['assets/includes-local', 'docs/assets/includes-local', 'template-local/assets/includes-local'];
-
-gulp.task('template-pages-cdn', require('./gulp/build-tasks/template-pages')(gulp, plugins, config, 'cdn'));
-gulp.task('template-pages-local', require('./gulp/build-tasks/template-pages')(gulp, plugins, config, 'local'));
+gulp.task('template-pages-cdn', require('./gulp/build-tasks/template-pages')(gulp, plugins, config, 'template-cdn'));
+gulp.task('template-pages-local', require('./gulp/build-tasks/template-pages')(gulp, plugins, config, 'template-local'));
 gulp.task('template-pages-docs', require('./gulp/build-tasks/template-pages')(gulp, plugins, config, 'docs'));
 
+let assetDests = ['assets', 'docs/assets', 'template-local/assets'];
 gulp.task('scss', require('./gulp/common-tasks/scss')(gulp, plugins, config, assetDests));
 gulp.task('js', require('./gulp/common-tasks/js')(gulp, plugins, config, gulpWebpack, assetDests));
-gulp.task('other-assets', require('./gulp/build-tasks/other-assets')(gulp, plugins, config, es));
+
+gulp.task('other-assets', ['other-assets-root', 'other-assets-local', 'other-assets-docs']);
+gulp.task('other-assets-root', require('./gulp/build-tasks/other-assets')(gulp, plugins, config, es, assetDests[0]));
+gulp.task('other-assets-local', require('./gulp/build-tasks/other-assets')(gulp, plugins, config, es, assetDests[1]));
+gulp.task('other-assets-docs', require('./gulp/build-tasks/other-assets')(gulp, plugins, config, es, assetDests[2]));
+
 gulp.task('build-other-files', require('./gulp/build-tasks/other-files')(gulp, plugins, config));
 gulp.task('build-components', require('./gulp/build-tasks/components')(gulp, plugins, config, gulpWebpack, webpack, path));
 
-gulp.task('assets-includes-cdn', require('./gulp/build-tasks/assets-includes')(gulp, plugins, config, ['assets/includes-cdn', 'template-cdn/assets/includes-cdn']));
+let includesDests = ['assets/includes-local', 'docs/assets/includes-local', 'template-local/assets/includes-local'];
 gulp.task('assets-includes-local', require('./gulp/build-tasks/assets-includes')(gulp, plugins, config, includesDests, true));
+gulp.task('assets-includes-cdn', require('./gulp/build-tasks/assets-includes')(gulp, plugins, config, ['assets/includes-cdn', 'template-cdn/assets/includes-cdn']));
 
-gulp.task('assets-docs', require('./gulp/build-tasks/assets')(gulp, plugins, config, 'docs'));
-gulp.task('assets-local', require('./gulp/build-tasks/assets')(gulp, plugins, config, 'template-local'));
+// gulp.task('assets-docs', require('./gulp/build-tasks/assets')(gulp, plugins, config, 'docs'));
+// gulp.task('assets-local', require('./gulp/build-tasks/assets')(gulp, plugins, config, 'template-local'));
 
 gulp.task('docs-flatten', (cb) => {
   return gulp.src('', {read: false})
@@ -63,8 +67,7 @@ gulp.task('build', (cb) => {
     ['template-pages-cdn', 'assets-includes-cdn', 'js', 'scss', 'other-assets', 'build-other-files'],
     ['template-pages-local', 'assets-includes-local'],
     'template-pages-docs',
-    ['docs-flatten', 'assets-docs'],
-    'assets-local',
+    'docs-flatten',
     cb
   );
 });
