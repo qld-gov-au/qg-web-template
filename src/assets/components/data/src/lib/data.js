@@ -16,7 +16,6 @@ possible API ideas:
 */
 
 /*global qg*/
-
 (function (qg) {
 	'use strict';
 
