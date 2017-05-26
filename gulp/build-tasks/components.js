@@ -14,7 +14,7 @@ module.exports = function (gulp, plugins, config, gulpWebpack, webpack, path) {
           context: path.resolve(__dirname, config.basepath.components),
           entry: path.resolve(__dirname, config.basepath.components, element, 'src'),
           output: {
-            filename: `index.js`,
+            filename: `${element}.js`,
           },
           //devtool: 'source-map',
           module: {
@@ -34,13 +34,14 @@ module.exports = function (gulp, plugins, config, gulpWebpack, webpack, path) {
             ],
           },
           plugins: [
-            new ExtractTextPlugin(`styles/[name].css`),
+            new ExtractTextPlugin(`styles/${element}.css`),
             new CopyWebpackPlugin([
-              { from: `${element}/src/examples`, to: `examples ` },
+              // { from: `${element}/src/examples`, to: `examples ` },
               { from: `${element}/src/images`, to: `images` },
             ]),
             new HtmlWebpackPlugin({
               template: `${element}/src/examples/index.html`,
+              inject: false
             }),
           ],
         }, webpack))
