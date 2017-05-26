@@ -41,6 +41,8 @@ module.exports = function (gulp, plugins, config, gulpWebpack, webpack, path) {
             new ExtractTextPlugin(`styles/${element}.css`),
             new CopyWebpackPlugin([
               // { from: `${element}/src/examples`, to: `examples ` },
+              { from: `${element}/src/images`, to: `images` },
+              // { from: `${element}/src/examples`, to: `examples ` },
               /*{ from: `${element}/src/images`, to: `images` },*/
             ]),
             new HtmlWebpackPlugin({
