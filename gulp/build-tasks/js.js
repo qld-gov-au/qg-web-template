@@ -1,6 +1,8 @@
 'use-strict';
 
-module.exports = function (gulp, plugins, config, webpack) {
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
+module.exports = function (gulp, plugins, config, webpack, path) {
   return function (cb) {
     config.projects.map((element) => {
       return gulp.src(`${config.basepath.src}/assets/_project/_blocks/qg-main.js`)
@@ -19,6 +21,11 @@ module.exports = function (gulp, plugins, config, webpack) {
               },
             }],
           },
+          plugins: [
+            new CopyWebpackPlugin([
+              {from: `${config.basepath.src}/assets/_project/_blocks/qg-env.js`},
+            ]),
+          ],
         }))
         .pipe(gulp.dest(`${config.basepath.build}/assets/${config.versionName}/js/`))
         .on('end', cb);

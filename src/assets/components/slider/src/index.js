@@ -6,6 +6,8 @@ import './lib/unslider/unslider.css';
 import './styles/slider.scss';
 
 // init code
-$(function () {
+/*globals qg*/
+$(function ($, qg) {
   $('.banner').unslider().show();
-});
+  qg.comp.processXML('inside slider file');
+}(jQuery, qg));
