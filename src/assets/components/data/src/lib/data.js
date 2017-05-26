@@ -16,9 +16,6 @@ possible API ideas:
 */
 
 /*global qg*/
-if (qg === undefined) {
-	var qg = {};
-}
 (function (qg) {
 	'use strict';
 
