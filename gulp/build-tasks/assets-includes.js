@@ -17,8 +17,6 @@ module.exports = function (gulp, plugins, config, dest, local = false, relpath =
 
     const projectAssets = new RegExp('="(/)?assets/_project/', 'g');
 
-    console.log('destination', dest);
-
     // Test if the element is set to deploy this component
     return gulp.src(src, { dot: true })
       .pipe(plugins.include({ hardFail: true }))

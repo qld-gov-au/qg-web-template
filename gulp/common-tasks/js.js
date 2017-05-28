@@ -1,5 +1,7 @@
 'use-strict';
 
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+
 module.exports = function (gulp, plugins, config, webpack, destFolder, type = 'build') {
   return function (cb) {
     let src = [
@@ -17,23 +19,32 @@ module.exports = function (gulp, plugins, config, webpack, destFolder, type = 'b
       destFolder = [destFolder];
     }
 
+    let webpackSettings = {
+      output: {
+        filename: 'qg-main.js',
+      },
+      module: {
+        loaders: [{
+          test: /\.js$/,
+          exclude: /(node_modules)/,
+          loader: 'babel',
+          query: {
+            presets: ['es2015'],
+          },
+        }],
+      },
+    };
+
+    if (type === 'build') {
+      webpackSettings.devtool = 'source-map';
+    } else if (type === 'release') {
+      webpackSettings.plugins = [
+        new UglifyJSPlugin()
+      ];
+    }
+
     return gulp.src(src)
-      .pipe(webpack({
-        output: {
-          filename: 'qg-main.js',
-        },
-        devtool: 'source-map',
-        module: {
-          loaders: [{
-            test: /\.js$/,
-            exclude: /(node_modules)/,
-            loader: 'babel',
-            query: {
-              presets: ['es2015'],
-            },
-          }],
-        },
-      }))
+      .pipe(webpack(webpackSettings))
       .pipe(plugins.if(typeof destFolder[0] !== 'undefined', gulp.dest(`${dest.base}/${destFolder[0]}/${dest.ext}`)))
       .pipe(plugins.if(typeof destFolder[1] !== 'undefined', gulp.dest(`${dest.base}/${destFolder[1]}/${dest.ext}`)))
       .pipe(plugins.if(typeof destFolder[2] !== 'undefined', gulp.dest(`${dest.base}/${destFolder[2]}/${dest.ext}`)))

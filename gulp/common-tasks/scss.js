@@ -29,9 +29,10 @@ module.exports = function (gulp, plugins, config, destFolder = 'assets', type = 
         browsers: plugins.supportedBrowser,
         cascade: false,
       }))
-      .pipe(plugins.sourcemaps.write('.', {
+      .pipe(plugins.if(type === 'build', plugins.sourcemaps.write('.', {
         sourceRoot: config.basepath.src,
-      }))
+      })))
+      .pipe(plugins.if(type === 'release', plugins.cleanCss()))
       .pipe(plugins.if(typeof destFolder[0] !== 'undefined', gulp.dest(`${dest.base}/${destFolder[0]}/${dest.ext}`)))
       .pipe(plugins.if(typeof destFolder[1] !== 'undefined', gulp.dest(`${dest.base}/${destFolder[1]}/${dest.ext}`)))
       .pipe(plugins.if(typeof destFolder[2] !== 'undefined', gulp.dest(`${dest.base}/${destFolder[2]}/${dest.ext}`)))
