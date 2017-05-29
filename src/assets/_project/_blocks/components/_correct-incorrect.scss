@@ -24,19 +24,24 @@
 }
 
 .qg-correct {
-  border-color: green;
+  border-color: $qg-correct-color;
   &:before {
     content: "\f00c";
-    color: green;
+    color: $qg-correct-color;
   }
 }
 
 .qg-incorrect {
-  border-color: red;
+  border-color: $qg-incorrect-color;
   &:before {
     content: "\f00d";
-    color: red;
+    color: $qg-incorrect-color;
   }
+}
+
+td.qg-correct, td.qg-incorrect {
+  display: table-cell;
+  // border-left-width: 1px;
 }
 
 /*
