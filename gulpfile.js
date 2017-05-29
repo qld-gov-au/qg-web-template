@@ -45,7 +45,7 @@ gulp.task('build', (cb) => {
   runSequence(
     'test:eslint',
     ['html', 'includes-local', 'includes-cdn', 'scss', 'js', 'other-assets', 'build-files'],
-    //'build-components',
+    'build-components',
     cb
   );
 });

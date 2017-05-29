@@ -1,9 +1,9 @@
 var componentsLoader = (function ($) {
   function loadFiles () {
     if (('.qg-slider').length > 0) {
-      console.log('slider content is there in the page');
+      console.log('Found slider content');
       asyncJS('/assets/v3/components/misc/misc.js').done(function (script, textStatus) {
-        console.log(textStatus);
+        console.log(`Loaded misc.js`);
         asyncJS('/assets/v3/components/slider/slider.js').done(function (script, textStatus) {
           console.log(textStatus);
         });

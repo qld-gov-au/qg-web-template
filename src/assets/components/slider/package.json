@@ -6,6 +6,7 @@
   "scripts": {
     "start": "npm run build && npm run dev ",
     "build": "./node_modules/.bin/webpack",
+    "watch": "./node_modules/.bin/webpack --watch",
     "dev": "./node_modules/.bin/webpack-dev-server --watch-poll --open"
   },
   "keywords": [],
