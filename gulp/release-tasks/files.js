@@ -3,8 +3,8 @@ module.exports = function (gulp, plugins, config) {
     const target = [
       `${config.basepath.build}/**/*`,
       `!**/*.htaccess`,
-      `!**/*.js`,
-      `!**/*.css`,
+      `!**/${config.versionName}/js/*.js`, // handled by JS task that minifies
+      `!**/${config.versionName}/css/*.css`, // handled by SCSS -> CSS task that minifies
     ].concat(config.release.excludes);
 
     return gulp.src(target, { dot: true })
