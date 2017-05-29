@@ -5,7 +5,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 module.exports = function (gulp, plugins, config, webpack, destFolder, type = 'build') {
   return function (cb) {
     let src = [
-      `${config.basepath.src}/assets/_project/_blocks/qg-main.js`
+      `${config.basepath.src}/assets/_project/_blocks/qg-main.js`,
     ].concat(config.build.excludes);
     let dest = {
       base: `${config.basepath.build}`,
@@ -39,7 +39,7 @@ module.exports = function (gulp, plugins, config, webpack, destFolder, type = 'b
       webpackSettings.devtool = 'source-map';
     } else if (type === 'release') {
       webpackSettings.plugins = [
-        new UglifyJSPlugin()
+        new UglifyJSPlugin(),
       ];
     }
 

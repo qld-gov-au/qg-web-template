@@ -31,7 +31,7 @@
     '<span lang="tl" xml:lang="tl">Tagalog</span>',
     '<span lang="de" xml:lang="de">Deutsch</span>',
     '<span lang="fa" xml:lang="fa">\u0641\u0627\u0631\u0633\u06CC</span>',
-    '<span lang="vi" xml:lang="vi">Ti\u1EBFng Vi\u1EC7t</span>'
+    '<span lang="vi" xml:lang="vi">Ti\u1EBFng Vi\u1EC7t</span>',
   ];
   // function to cycle through languages in the footer link text
   function updateLanguage () {
