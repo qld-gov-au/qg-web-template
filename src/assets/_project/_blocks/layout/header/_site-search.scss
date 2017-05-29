@@ -1,8 +1,8 @@
 #qg-search-form {
   @include make-xs-column(12);
-  @include make-xs-column(3);
+  @include make-md-column(3);
 
-  @include qg-responsive-spacing('padding-right', false, default);
+  // @include qg-responsive-spacing('padding-right', false, default);
 
   input {
     border-radius: 0;
@@ -47,12 +47,6 @@
     }
   }  
 
-  /*
-  @media (min-width: $screen-sm-min) {
-  @include breakpoint($bs-md) {
-    margin-bottom: 1em;
-  }
-  */
   .collapse {
     @media (min-width: $screen-sm-min) {
       //
@@ -63,11 +57,3 @@
     display: none;
   }
 }
-/*
-@include breakpoint($bs-min-lg) {
-  #qg-search-form.collapse { // Over-rides SWE default behaviour for accessibility
-    display: block;
-    height: auto !important;
-  }
-}
-*/

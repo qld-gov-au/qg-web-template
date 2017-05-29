@@ -14,6 +14,7 @@ module.exports = {
   phase: 'Alpha',
   basepath: {
     src: 'src',
+    components: path.join('..', '..', 'src', 'assets', 'components'),
     build: 'build',
     release: 'release',
     static: 'release/static.qgov.net.au',
@@ -56,6 +57,7 @@ module.exports = {
       'gulp/**/*.js',
       'tests/**/*.js',
       '!tests/reports/**/*.js',
+      '!src/assets/components/**/*.js',
       '!build/**/*',
       '!release/**/*',
       '!**/_old/**/*',

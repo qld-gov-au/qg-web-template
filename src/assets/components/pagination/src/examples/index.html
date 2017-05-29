@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css">
+</head>
+<body>
+<div class="container">
+  <div id="search-results-container">
+    <ol id="search-results">
+      <li>List item 1</li>
+      <li>List item 2</li>
+      <li>List item 3</li>
+      <li>List item 4</li>
+      <li>List item 5</li>
+      <li>List item 6</li>
+      <li>List item 7</li>
+      <li>List item 8</li>
+      <li>List item 9</li>
+      <li>List item 10</li>
+      <li>List item 11</li>
+      <li>List item 12</li>
+      <li>List item 13</li>
+      <li>List item 14</li>
+      <li>List item 15</li>
+      <li>List item 16</li>
+      <li>List item 17</li>
+      <li>List item 18</li>
+      <li>List item 19</li>
+      <li>List item 20</li>
+      <li>List item 21</li>
+      <li>List item 22</li>
+      <li>List item 23</li>
+      <li>List item 24</li>
+      <li>List item 25</li>
+      <li>List item 26</li>
+      <li>List item 27</li>
+      <li>List item 28</li>
+      <li>List item 29</li>
+      <li>List item 30</li>
+      <li>List item 31</li>
+      <li>List item 32</li>
+      <li>List item 33</li>
+      <li>List item 34</li>
+      <li>List item 35</li>
+      <li>List item 36</li>
+      <li>List item 37</li>
+    </ol>
+    <div class="pagination"></div>
+</div>
+</div>
+<script
+  src="https://code.jquery.com/jquery-1.12.4.js"
+  integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+  crossorigin="anonymous"></script>
+
+  <script type="text/javascript" src="pagination.js"></script>
+  <script type="text/javascript">
+      // init code
+      $(function () { 
+         $('#search-results-container').pajinate({
+                  item_container_id: '#search-results',
+                  nav_panel_id: '.pagination',
+                  items_per_page: 10,
+                  num_page_links_to_display: 5,
+                  show_first_last: !1,
+                  slideTransition: !0,
+                  nav_label_prev: 'Previous',
+                  nav_label_next: 'Next'
+              });
+      });
+  </script>
+</body>
+</html>

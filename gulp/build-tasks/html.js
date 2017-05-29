@@ -6,6 +6,7 @@ module.exports = function (gulp, plugins, config) {
       const target = [
         `${config.basepath.src}/**/*.html`,
         '!**/_project/**/*',
+        '!**/components/**/*',
       ].concat(config.build.excludes);
 
       let projectAssets = new RegExp('="(/)?assets/_project/', 'g');
