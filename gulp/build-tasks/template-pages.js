@@ -1,16 +1,7 @@
 'use strict';
 
-module.exports = function (gulp, plugins, config, type) {
+module.exports = function (gulp, plugins, config, src, dest, type = 'cdn') {
   return function (cb) {
-    let src = 'template-pages';
-    let dest = 'template-cdn';
-    if (type === 'local') {
-      dest = 'template-local';
-    } else if (type === 'docs') {
-      src = 'docs';
-      dest = 'docs';
-    }
-
     const target = [
       `${config.basepath.src}/${src}/**/*.html`,
     ].concat(config.build.excludes);

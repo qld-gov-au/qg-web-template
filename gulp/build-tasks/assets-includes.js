@@ -7,8 +7,8 @@ module.exports = function (gulp, plugins, config, dest, local = false, relpath =
     ].concat(config.build.excludes);
 
     let relLink = {
-      regex: new RegExp('/assets/', 'g'),
-      replacement: 'assets/',
+      regex: new RegExp('="/assets/', 'g'),
+      replacement: '="assets/',
     };
 
     if (!Array.isArray(dest)) {
