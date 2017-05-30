@@ -10,8 +10,7 @@
 </head>
 <body>
 <div class="container">
-  
-</div>
+  <h1>Resize your window to see alert</h1>
 </div>
 <script
   src="https://code.jquery.com/jquery-1.12.4.js"
@@ -25,7 +24,9 @@
   <script type="text/javascript" src="jquery.resize-events.js"></script>
   <script type="text/javascript">
       // init code
-      console.log(ResizeEvents); 
+      ResizeEvents.bind (
+          'x-text-resize x-window-resize', function(){alert('Resized');}
+        );
   </script>
 </body>
 </html>
