@@ -27,6 +27,20 @@ module.exports = function (gulp, plugins, config, gulpWebpack, webpack, path) {
                 test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader',
               },
               {
+                test: /\.js$/,
+                enforce: 'pre',
+                exclude: /(node_modules|bower_components|\.spec\.js)/,
+                use: [
+                  {
+                    loader: 'webpack-strip-block',
+                    options: {
+                      start: 'DEV-START',
+                      end: 'DEV-END',
+                    },
+                  },
+                ],
+              },
+              {
                 test: /\.scss$/,
                 loaders: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader!sass-loader' }),
               },
