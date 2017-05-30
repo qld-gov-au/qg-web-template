@@ -283,4 +283,5 @@ var ResizeEvents = {
 		ResizeEvents.throttleStates[id] = true;
 		callback.apply();
 	};
+	window.ResizeEvents = ResizeEvents;
 }(jQuery, qg)); /* end closure */
