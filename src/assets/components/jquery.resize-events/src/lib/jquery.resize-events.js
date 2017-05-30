@@ -283,8 +283,5 @@ var ResizeEvents = {
 		ResizeEvents.throttleStates[id] = true;
 		callback.apply();
 	};
-<<<<<<< 437d05639fd3ba66bb19f1c97ec63122dbb21e3d
 	window.ResizeEvents = ResizeEvents;
-=======
->>>>>>> QOL-1348, QOL-1380. Moving dependencies
 }(jQuery, qg)); /* end closure */
