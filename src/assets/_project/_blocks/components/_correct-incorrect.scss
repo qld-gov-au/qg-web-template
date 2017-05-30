@@ -48,21 +48,19 @@ span.qg-correct, span.qg-incorrect {
   max-width: 48%;
 }
 
-.table > tbody > tr,
-  table {
-  td.qg-correct, td.qg-incorrect {
-    display: table-cell;
-    border-left-width: 3px;
-  }
+.table > tbody > tr, table {
   td.qg-correct {
     @extend .qg-correct;
   }
   td.qg-incorrect {
     @extend .qg-incorrect;
   }
+  td.qg-correct, td.qg-incorrect {
+    border-left-width: 3px;
+  }
 }
 
-table.qg-correct-incorrect {
+.table.qg-correct-incorrect > tbody > tr, table.qg-correct-incorrect {
   td:nth-child(odd) {
     @extend .qg-correct;
     border-left-width: 3px;
