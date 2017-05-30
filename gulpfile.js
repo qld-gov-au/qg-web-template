@@ -59,7 +59,7 @@ gulp.task('watch', function () {
   gulp.watch([config.basepath.src + '/**/*.html'], ['html']);
   gulp.watch([config.basepath.src + '/assets/_project/_blocks/layout/**/*.html'], ['includes-local']);
   gulp.watch([config.basepath.src + '/**/*.scss'], ['scss']);
-  gulp.watch([config.basepath.src + '/**/*.js'], ['js', 'test']);
+  gulp.watch([config.basepath.src + '/**/*.js'], ['js']);
   gulp.watch([config.basepath.src + '**/*'], ['other-assets']);
 });
 gulp.task('watch:components', function () {

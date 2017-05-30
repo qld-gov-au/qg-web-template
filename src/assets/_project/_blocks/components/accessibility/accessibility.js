@@ -40,11 +40,22 @@ function addFileType () {
   });
 }
 
+function addCorrectIncorrect () {
+  let ext = ':not(:has(.qg-blank-notice))';
+  let $correct = $(`.qg-correct${ext}, table.qg-correct-incorrect td:nth-child(odd)${ext}`);
+  let $incorrect = $(`.qg-incorrect${ext}, table.qg-correct-incorrect td:nth-child(even)${ext}`);
+
+  $correct.prepend('<span class="qg-blank-notice sr-only">Correct.</span> ');
+  $incorrect.prepend('<span class="qg-blank-notice sr-only">Incorrect.</span> ');
+}
+
 function init () {
   if ($('body').attr('data-qg-accessibility') !== false) {
     opensInNewWindow();
     addFileType();
+    addCorrectIncorrect();
   }
 }
 
 module.exports = { init: init };
+

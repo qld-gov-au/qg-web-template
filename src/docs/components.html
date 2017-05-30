@@ -381,25 +381,52 @@
 <h2 class="category" id="qg-correct-incorrect">QG Correct / incorrect</h2>
 <p><span class="label label-primary" title="Custom QG styles">Custom</span></p>
 
-<div class="qg-correct">
-  We carry out quality assurance (QA)
+<p>For correct incorrect examples in documentation.</p>
 
+<h3>Short form examples</h3>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+<p>
+  <span class="qg-correct">
+    CDs
+  </span>
+  <span class="qg-incorrect">
+    CD's
+  </span>
+</p>
+<p>
+  <span class="qg-correct">
+    CDs
+  </span>
+  <span class="qg-incorrect">
+    CD's
+  </span>
+</p>
+<p>
+  <span class="qg-correct">
+    Guests at your Brisbane registry wedding can include your family, <strong>that is</strong>, your mother, father, brother, sister, grandmother, <strong>and so on</strong>.
+  </span>
+  <span class="qg-incorrect">
+    Guests at your Brisbane registry wedding can <strong> that is</strong>, your mother, father, brother, <strong>sister, grandmother, and so on</strong>.
+  </span>
+</p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+<h3>Long form examples</h3>
+
+<div class="qg-correct" alt="Correct example">
+  Guests at your Brisbane registry wedding can include your family, <strong>that is</strong>, your mother, father, brother, sister, grandmother, <strong>and so on</strong>.
 </div>
-<div class="qg-correct">
-  We document QA processes in ...
+<div class="qg-incorrect" alt="Incorrect example">
+  Guests at your Brisbane registry wedding can <strong>include your family, that is</strong>, your mother, father, brother, <strong>sister, grandmother, and so on</strong>.
 </div>
 
-<div class="qg-incorrect">
-  We carry out quality assurance (QA)
+<h3>Tables</h3>
 
-</div>
-<div class="qg-incorrect">
-  We document QA processes in ...
-</div>
+<p>You can apply the class <code>qg-correct</code> to table cells.</p>
 
-<h3>Punctuation and capitalisation</h3>
-<p>Most acronyms are upper case and not punctuated.</p>
-<table title="acronym examples">
+<table title="acronym examples" class="table">
   <thead>
     <tr>
       <th>
@@ -427,64 +454,108 @@
         mou
       </td>
     </tr>
-<!-- -->
-    <tr>
-      <td class="qg-correct">
-        ATO
-      </td>
-      <td class="qg-incorrect">
-        A.T.O
-      </td>
-    </tr>
-    <tr>
-      <td class="qg-correct">
-        MOU
-      </td>
-      <td class="qg-incorrect">
-        mou
-      </td>
-    </tr>
-        <tr>
-      <td class="qg-correct">
-        ATO
-      </td>
-      <td class="qg-incorrect">
-        A.T.O
-      </td>
-    </tr>
-    <tr>
-      <td class="qg-correct">
-        MOU
-      </td>
-      <td class="qg-incorrect">
-        mou
-      </td>
-    </tr>
-        <tr>
-      <td class="qg-correct">
-        ATO
-      </td>
-      <td class="qg-incorrect">
-        A.T.O
-      </td>
-    </tr>
-    <tr>
-      <td class="qg-correct">
-        MOU
-      </td>
-      <td class="qg-incorrect">
-        mou
-      </td>
-    </tr>
-<!-- -->
   </tbody>
 </table>
 
-<div class="qg-correct" alt="Correct example">
-  Guests at your Brisbane registry wedding can include your family, <strong>that is</strong>, your mother, father, brother, sister, grandmother, <strong>and so on</strong>.
+<p>Or add <code>qg-correct-incorrect</code> to the table itself <code>&lt;table class="qg-correct-incorrect"&gt;</code>.</p>
+
+<table title="acronym examples" class="table qg-correct-incorrect">
+  <thead>
+    <tr>
+      <th>
+        This
+      </th>
+      <th>
+        Not this
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        Person with disability
+      </td>
+      <td>
+        Cripple, crippled, deformed, disabled person, handicapped, invalid, mentally retarded, retarded, spastic, special, victim
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Hearing-impaired, person is deaf 
+      </td>
+      <td>
+        Deaf
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>You can also add these classes to tables that aren't styled.</p>
+
+<div class="table-responsive">
+  <table title="acronym examples">
+    <thead>
+      <tr>
+        <th>
+          Correct
+        </th>
+        <th>
+          Incorrect
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="qg-correct">
+          ATO
+        </td>
+        <td class="qg-incorrect">
+          A.T.O
+        </td>
+      </tr>
+      <tr>
+        <td class="qg-correct">
+          MOU
+        </td>
+        <td class="qg-incorrect">
+          mou
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
-<div class="qg-incorrect" alt="Incorrect example">
-  Guests at your Brisbane registry wedding can <strong>include your family, that is</strong>, your mother, father, brother, <strong>sister, grandmother, and so on</strong>.
+
+<div class="table-responsive">
+  <table title="acronym examples" class="qg-correct-incorrect">
+    <thead>
+      <tr>
+        <th>
+          Correct
+        </th>
+        <th>
+          Incorrect
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          ATO
+        </td>
+        <td>
+          A.T.O
+        </td>
+      </tr>
+      <tr>
+        <td>
+          MOU
+        </td>
+        <td>
+          mou
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 <!-- ################################## -->
