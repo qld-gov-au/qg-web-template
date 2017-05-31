@@ -1,3 +1,4 @@
-//env variables file
+// All the environment related SWE3 code
+
 window.qg = window.qg || {};
-window.qg.comp = window.qg.comp || {};
+window.qg.components = window.qg.components || {};

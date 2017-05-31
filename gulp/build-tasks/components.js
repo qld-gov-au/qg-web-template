@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = function (gulp, plugins, config, gulpWebpack, webpack, path) {
   return function () {
-    let components = ['slider', 'autocomplete', 'pagination', 'data', 'misc', 'loader'];
+    let components = ['slider', 'autocomplete', 'pagination', 'data', 'misc', 'loader', 'social-feed'];
     let staticAssets = ['images'];
 
     // building each component

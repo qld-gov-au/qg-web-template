@@ -1,7 +1,7 @@
 /*globals qg*/
 (function ($, qg) {
   'use strict';
-  qg.component.processXML = function (url, methodType, callback) {
+  qg.components.processXML = function (url, methodType, callback) {
     return $.ajax({
       url: url,
       method: methodType,

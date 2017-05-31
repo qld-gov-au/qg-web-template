@@ -1,4 +1,4 @@
-// NOTE - DEV START and DEV END are for importing other modules locally and the code inside these tags is stripped when we run gulp build-components because loader loads scripts dynamically in the build version
+// NOTE - DEV START and DEV END are for importing other modules locally for testing components independently and the code inside these tags is stripped when we run gulp build-components because loader loads scripts dynamically in the build version
 
 /* DEV-START */
 import '../../misc/src/qg-xml-reader.js';
@@ -12,7 +12,6 @@ import './lib/unslider/unslider.css';
 import './styles/slider.scss';
 
 /*globals qg*/
-
 $(function ($, qg) {
   var prepareUrl = function (loc) {
     var path = window.location.pathname.replace(/\/$/, '');
@@ -28,7 +27,7 @@ $(function ($, qg) {
     return [ dateObj.getDate(), dateObj.toString().slice(4, 7), dateObj.getFullYear() ].join(' ');
   };
 
-  qg.component.processXML($('[data-role="qg-slider"]').data('options').src, 'GET').then(function (result) {
+  qg.components.processXML($('[data-role="qg-slider"]').data('options').src, 'GET').then(function (result) {
     var container = $('<div class="banner"><ul></ul></div>');
     $(result).find('entry').each(function (index) {
       var $this = $(this);
