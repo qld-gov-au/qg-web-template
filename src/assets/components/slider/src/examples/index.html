@@ -7,63 +7,21 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css">
-  <link rel="stylesheet" href="../main.css">
+  <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
 <div class="container">
-  <div class="banner">
-    <ul>
-      <li>
-        <a href="https://teach.qld.gov.au/" class=""> <img src="http://www.qld.gov.au/education/assets/images/qgov-teachqld.jpg" alt="">
-        </a>
-        <h3>Teach Queensland</h3>
-        <div class="news-content">
-          <dl class="meta">
-            <dt class="date-posted">Posted</dt>
-            <dd class="date-posted">3 Apr 2017</dd> </dl>
-          <p>If you're considering becoming a teacher, or are studying to become a teacher, find out about teacher job vacancies, scholarships and grants, how to apply for jobs and more. </p> <p class="more"> <a href="https://teach.qld.gov.au/" title="Read more about: Teach Queensland">More…</a> </p>
-        </div>
-      </li>
-      <li>
-        <a href="https://teach.qld.gov.au/" class=""> <img src="http://www.qld.gov.au/education/assets/images/improve-skills.jpg" alt="">
-        </a>
-        <h3>Teach Queensland</h3>
-        <div class="news-content">
-          <dl class="meta">
-            <dt class="date-posted">Posted</dt>
-            <dd class="date-posted">3 Apr 2017</dd> </dl>
-          <p>If you're considering becoming a teacher, or are studying to become a teacher, find out about teacher job vacancies, scholarships and grants, how to apply for jobs and more. </p> <p class="more"> <a href="https://teach.qld.gov.au/" title="Read more about: Teach Queensland">More…</a> </p>
-        </div>
-      </li>
-      <li>
-        <a href="https://teach.qld.gov.au/" class=""> <img src="http://www.qld.gov.au/education/assets/images/asides/qschool.jpg" alt="">
-        </a>
-        <h3>Teach Queensland</h3>
-        <div class="news-content">
-          <dl class="meta">
-            <dt class="date-posted">Posted</dt>
-            <dd class="date-posted">3 Apr 2017</dd> </dl>
-          <p>If you're considering becoming a teacher, or are studying to become a teacher, find out about teacher job vacancies, scholarships and grants, how to apply for jobs and more. </p> <p class="more"> <a href="https://teach.qld.gov.au/" title="Read more about: Teach Queensland">More…</a> </p>
-        </div>
-      </li>
-      <li>
-        <a href="https://teach.qld.gov.au/" class=""> <img src="http://www.qld.gov.au/education/assets/images/asides/immunisation.jpg" alt="">
-        </a>
-        <h3>Teach Queensland</h3>
-        <div class="news-content">
-          <dl class="meta">
-            <dt class="date-posted">Posted</dt>
-            <dd class="date-posted">3 Apr 2017</dd> </dl>
-          <p>If you're considering becoming a teacher, or are studying to become a teacher, find out about teacher job vacancies, scholarships and grants, how to apply for jobs and more. </p> <p class="more"> <a href="https://teach.qld.gov.au/" title="Read more about: Teach Queensland">More…</a> </p>
-        </div>
-      </li>
-    </ul>
-
-  </div>
+  <div data-role="qg-slider" data-options='{"src":"assets/data/featured/source.atom"}'></div>
 </div>
 <script
   src="https://code.jquery.com/jquery-1.12.4.js"
   integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
   crossorigin="anonymous"></script>
+<script>
+  //env variables file
+  window.qg = window.qg || {};
+  window.qg.components = window.qg.components || {};
+</script>
+<script src="slider.js"></script>
 </body>
 </html>

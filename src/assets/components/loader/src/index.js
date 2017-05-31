@@ -1,14 +1,27 @@
 var componentsLoader = (function ($) {
   function loadFiles () {
     if (('.qg-slider').length > 0) {
-      asyncCSS(['node_modules/slick-carousel/slick/slick.css'], () => {
+      console.log('Found slider content');
+      asyncJS('/assets/v3/components/misc/misc.js').done(function (script, textStatus) {
+        console.log(`Loaded misc.js`);
+        asyncJS('/assets/v3/components/slider/slider.js').done(function (script, textStatus) {
+          console.log(textStatus);
+        });
+      });
+    }
+  }
+  // load css and then js function
+  /*function loadFiles () {
+    if (('.qg-xml-content').length > 0) {
+      console.log('xml content is there in the page');
+      asyncCSS(['/assets/v3/js/qg-main.js'], () => {
         console.log('all css loaded');
-        asyncJS('src/index.js').done(function (script, textStatus) {
+        asyncJS('/assets/v3/js/qg-main.js').done(function (script, textStatus) {
           console.log(textStatus);
         });
       }, true);
     }
-  }
+  }*/
   function asyncJS (url, options) {
     options = $.extend(options || {}, {
       dataType: 'script',

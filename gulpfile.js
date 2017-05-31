@@ -35,7 +35,7 @@ gulp.task('html', require('./gulp/build-tasks/html')(gulp, plugins, config));
 gulp.task('includes-local', require('./gulp/build-tasks/includes-local')(gulp, plugins, config));
 gulp.task('includes-cdn', require('./gulp/build-tasks/includes-cdn')(gulp, plugins, config));
 gulp.task('scss', require('./gulp/build-tasks/scss')(gulp, plugins, config));
-gulp.task('js', require('./gulp/build-tasks/js')(gulp, plugins, config, gulpWebpack));
+gulp.task('js', require('./gulp/build-tasks/js')(gulp, plugins, config, gulpWebpack, path));
 gulp.task('other-assets', require('./gulp/build-tasks/other-assets')(gulp, plugins, config, es));
 gulp.task('build-files', require('./gulp/build-tasks/other-files')(gulp, plugins, config));
 gulp.task('build-components', require('./gulp/build-tasks/components')(gulp, plugins, config, gulpWebpack, webpack, path));

@@ -75,6 +75,7 @@
     "url-loader": "^0.5.8",
     "webpack": "^2.5.1",
     "webpack-stream": "^3.2.0",
+    "webpack-strip-block": "^0.2.0",
     "yargs": "^5.0.0"
   },
   "dependencies": {

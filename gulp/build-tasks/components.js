@@ -4,11 +4,15 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = function (gulp, plugins, config, gulpWebpack, webpack, path) {
   return function () {
-    //add any new components here
-    let components = ['slider', 'autocomplete', 'pagination', 'data'];
+    let components = ['slider', 'autocomplete', 'pagination', 'data', 'misc', 'loader', 'social-feed'];
+    let staticAssets = ['images'];
 
     // building each component
     components.map(function (element) {
+      staticAssets.forEach(function (el, index) {
+        gulp.src(`${config.basepath.src}/assets/components/${element}/src/${el}/**/**`)
+          .pipe(gulp.dest(`${config.basepath.build}/assets/${config.versionName}/components/${element}/${el}`));
+      });
       return gulp.src(path.resolve(__dirname, config.basepath.components))
         .pipe(gulpWebpack({
           context: path.resolve(__dirname, config.basepath.components),
@@ -21,6 +25,20 @@ module.exports = function (gulp, plugins, config, gulpWebpack, webpack, path) {
             loaders: [
               {
                 test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader',
+              },
+              {
+                test: /\.js$/,
+                enforce: 'pre',
+                exclude: /(node_modules|bower_components|\.spec\.js)/,
+                use: [
+                  {
+                    loader: 'webpack-strip-block',
+                    options: {
+                      start: 'DEV-START',
+                      end: 'DEV-END',
+                    },
+                  },
+                ],
               },
               {
                 test: /\.scss$/,
@@ -37,11 +55,11 @@ module.exports = function (gulp, plugins, config, gulpWebpack, webpack, path) {
             new ExtractTextPlugin(`styles/${element}.css`),
             new CopyWebpackPlugin([
               // { from: `${element}/src/examples`, to: `examples ` },
-              { from: `${element}/src/images`, to: `images` },
+              /*{ from: `${element}/src/images`, to: `images` },*/
             ]),
             new HtmlWebpackPlugin({
               template: `${element}/src/examples/index.html`,
-              inject: false
+              inject: false,
             }),
           ],
         }, webpack))
