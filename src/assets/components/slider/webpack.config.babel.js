@@ -38,7 +38,6 @@ module.exports = {
     }),
     new CopyWebpackPlugin([
       { from: `assets`, to: `assets/` },
-      { from: `/home/aminaz/Desktop/github/glue-orig/glue-template/src/assets/_project/_blocks/qg-env.js`, to: `assets/v3/js/` },
     ]),
   ],
 };
