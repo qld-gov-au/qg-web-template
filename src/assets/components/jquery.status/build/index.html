@@ -1,4 +1,4 @@
-<!doctype html>
+<!doctype html> 
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -19,7 +19,12 @@
   crossorigin="anonymous"></script>
 
   <script type="text/javascript" src="https://rawgit.com/qld-gov-au/glue-template/working/src/assets/components/autocomplete/src/lib/generate-id.js"></script>
-  <script type="text/javascript" src="https://rawgit.com/qld-gov-au/glue-template/working/src/assets/_project/lib/ext/butterfly/jquery.butterfly.js"></script>
+  <!--<script type="text/javascript" src="https://rawgit.com/qld-gov-au/glue-template/working/src/assets/_project/lib/ext/butterfly/jquery.butterfly.js"></script>-->
+  <script>
+    //env variables file
+    window.qg = window.qg || {};
+    window.qg.components = window.qg.components || {};
+  </script>
   <script type="text/javascript" src="jquery.status.js"></script>
   <script type="text/javascript">
       // init code
