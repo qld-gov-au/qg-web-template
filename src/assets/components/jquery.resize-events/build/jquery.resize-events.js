@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "/build/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -357,18 +357,6 @@ var ResizeEvents = {
 	};
 	window.ResizeEvents = ResizeEvents;
 }(jQuery, qg)); /* end closure */
-
-
-/***/ }),
-/* 1 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lib_jquery_resize_events__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lib_jquery_resize_events___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__lib_jquery_resize_events__);
-//plugin
-
 
 
 /***/ })
