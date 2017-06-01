@@ -120,6 +120,8 @@
 			d3 = $.Deferred();
 		if ($.fn.generateId === undefined) {
 			$.getScript('https://rawgit.com/qld-gov-au/glue-template/working/src/assets/components/autocomplete/src/lib/generate-id.js').done(function () { console.log('generate id loaded'); d1.resolve(); });
+		} else {
+			d1.resolve();
 		}
 		if (window.ResizeEvents === undefined || $.butterfly === undefined) {
 			if (window.ResizeEvents === undefined) {
@@ -127,9 +129,15 @@
 			} else {
 				d2.resolve();
 			}
-			$.when(d2).done(function () {
-				$.getScript('https://rawgit.com/qld-gov-au/glue-template/working/src/assets/_project/lib/ext/butterfly/jquery.butterfly.js').done(function () { console.log('butterfly loaded'); d3.resolve(); });
-			});
+			if ($.butterfly === undefined) {
+				$.when(d2).done(function () {
+					$.getScript('https://rawgit.com/qld-gov-au/glue-template/working/src/assets/_project/lib/ext/butterfly/jquery.butterfly.js').done(function () { console.log('butterfly loaded'); d3.resolve(); });
+				});
+			} else {
+				d3.resolve();
+			}
+		} else {
+			d2.resolve(); d3.resolve();
 		}
 		$.when(d1, d2, d3).then(function (v1, v2, v3) {
 		    jqueryStatus();
