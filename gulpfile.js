@@ -78,12 +78,17 @@ gulp.task('build:clean', (cb) => {
 });
 
 /* WATCH TASKS */
+const ignore = `!${config.basepath.src}/assets/components/**/*`;
 gulp.task('watch', function () {
-  gulp.watch([config.basepath.src + '/**/*.html'], ['template-pages-cdn', 'template-pages-local', 'template-pages-docs']);
-  gulp.watch([config.basepath.src + '/assets/_project/_blocks/layout/**/*.html'], ['assets-includes-local']);
-  gulp.watch([config.basepath.src + '/**/*.scss'], ['scss']);
-  gulp.watch([config.basepath.src + '/**/*.js'], ['js', 'test']);
-  gulp.watch([config.basepath.src + '**/*'], ['other-assets']);
+  gulp.watch([`${config.basepath.src}/**/*.html`, ignore], ['template-pages-cdn', 'template-pages-local', 'template-pages-docs']);
+  gulp.watch([`${config.basepath.src}/assets/_project/_blocks/layout/**/*.html`], ['assets-includes-local']);
+  gulp.watch([`${config.basepath.src}/assets/_project/**/*.scss`], ['scss']);
+  gulp.watch(`${config.basepath.src}/assets/_project/_blocks/**/*.js`, { verbose: true }, ['js', 'test']);
+  gulp.watch([
+    `${config.basepath.src}/assets/_project/images/**/*`,
+    `${config.basepath.src}/assets/_project/lib/**/*`,
+    ignore,
+  ], ['other-assets']);
 });
 gulp.task('watch:components', function () {
   gulp.watch([config.basepath.src + '/assets/components/**/*.*'], ['build-components']);
