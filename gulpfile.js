@@ -84,7 +84,7 @@ gulp.task('watch', function () {
   gulp.watch([
       `${config.basepath.src}/**/*.html`,
       ignore,
-      '!${config.basepath.src}/assets/_project/_blocks/**/*'
+      `!${config.basepath.src}/assets/_project/_blocks/**/*`
     ],
     ['template-pages-cdn', 'template-pages-local', 'template-pages-docs']);
   gulp.watch([`${config.basepath.src}/assets/_project/_blocks/layout/**/*.html`], ['assets-includes-local']);
