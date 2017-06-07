@@ -68,6 +68,7 @@ gulp.task('build', (cb) => {
     ['template-pages-cdn', 'assets-includes-cdn', 'js', 'scss', 'other-assets', 'build-other-files'],
     ['template-pages-local', 'assets-includes-local', 'template-pages-docs'],
     'docs-flatten',
+    'build-components',
     cb
   );
 });

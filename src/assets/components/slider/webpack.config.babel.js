@@ -30,7 +30,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new ExtractTextPlugin(`styles/[name].css`),
+    new ExtractTextPlugin(`styles/slider.css`),
     new HtmlWebpackPlugin({
       title: 'build template',
       inject: false,

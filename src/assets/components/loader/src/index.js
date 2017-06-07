@@ -1,52 +1,56 @@
+/* plugins to have a better cross compatible loading script in a more robust way from IE7+ onwards, if the support for IE7 and IE8 is discontinued at some point then promise based custom script can be used with some polyfills to support IE9+.*/
+import loadJS from './lib/script.js';
+import { loadCSS } from './lib/loadCSS.js';
+
+/*TODO Automate loading process*/
+/*TODO files loading inline documentation */
+/*const buildPath = '/assets/v3/components/';
+
+ const mapTo = {
+ slider: {
+ identifier: '.qg-slider',
+ css: [`${buildPath}+slider/styles/slider.css`],
+ js: [`${buildPath}+misc/misc.js`, `${buildPath}+slider/slider.js`],
+ },
+ };
+
+ $.each(mapTo, function (key, value) {
+ console.log(key[value]);
+ });*/
+
 var componentsLoader = (function ($) {
-  function loadFiles () {
-    if (('.qg-slider').length > 0) {
-      console.log('Found slider content');
-      asyncJS('/assets/v3/components/misc/misc.js').done(function (script, textStatus) {
-        console.log(`Loaded misc.js`);
-        asyncJS('/assets/v3/components/slider/slider.js').done(function (script, textStatus) {
-          console.log(textStatus);
+  function check () {
+    if ($('[data-role="qg-slider"]').length > 0) {
+      var stylesheet = loadCSS('/assets/v3/components/slider/styles/slider.css');
+      onloadCSS(stylesheet, function () {
+        loadJS('/assets/v3/components/misc/misc.js', function () {
+          loadJS('/assets/v3/components/slider/slider.js');
         });
       });
     }
   }
-  // load css and then js function
-  /*function loadFiles () {
-    if (('.qg-xml-content').length > 0) {
-      console.log('xml content is there in the page');
-      asyncCSS(['/assets/v3/js/qg-main.js'], () => {
-        console.log('all css loaded');
-        asyncJS('/assets/v3/js/qg-main.js').done(function (script, textStatus) {
-          console.log(textStatus);
-        });
-      }, true);
+  function onloadCSS (ss, callback) {
+    var called;
+    function newcb () {
+      if (!called && callback) {
+        called = true;
+        callback.call(ss);
+      }
     }
-  }*/
-  function asyncJS (url, options) {
-    options = $.extend(options || {}, {
-      dataType: 'script',
-      cache: true,
-      url: url,
-    });
-    return jQuery.ajax(options);
+    if (ss.addEventListener) {
+      ss.addEventListener('load', newcb);
+    }
+    if (ss.attachEvent) {
+      ss.attachEvent('onload', newcb);
+    }
+    if ('isApplicationInstalled' in navigator && 'onloadcssdefined' in ss) {
+      ss.onloadcssdefined(newcb);
+    }
   }
-  function asyncCSS (urls, callback, nocache) {
-    if (typeof nocache === 'undefined') nocache = false;
-    $.when.apply($,
-      $.map(urls, function (url) {
-        if (nocache) url += '?_ts=' + new Date().getTime();
-        return $.get(url, function () {
-          $('<link>', {rel: 'stylesheet', type: 'text/css', 'href': url}).appendTo('head');
-        });
-      })
-    ).then(function () {
-      if (typeof callback === 'function') callback();
-    });
-  }
-
   return {
-    loadFiles: loadFiles,
+    check: check,
   };
 })(jQuery);
 
-componentsLoader.loadFiles();
+componentsLoader.check();
+

@@ -1,5 +1,5 @@
 'use strict';
-
+// TODO handle any types of data inside the template pages folder
 module.exports = function (gulp, plugins, config, src, dest, type = 'cdn') {
   return function (cb) {
     const target = [
@@ -17,6 +17,8 @@ module.exports = function (gulp, plugins, config, src, dest, type = 'cdn') {
       .pipe(plugins.replace(projectAssets, `="$1assets/${config.versionName}/`))
       .pipe(plugins.if(type === 'local', plugins.replace(cdnIncludes, `="$1assets/includes-local/`))) // Replace cdn assets with local assets
       .on('error', console.log)
+      // to add atom file types
+      .pipe(plugins.addSrc(`${config.basepath.src}/${src}/**/*.atom`))
       .pipe(gulp.dest(`${config.basepath.build}/${dest}/`));
   };
 };
