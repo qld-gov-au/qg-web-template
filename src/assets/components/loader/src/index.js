@@ -28,6 +28,9 @@ var componentsLoader = (function ($) {
         });
       });
     }
+    if ($('[data-role="qg-social-feed"]').length > 0) {
+      loadJS('/assets/v3/components/social-feed/social-feed.js');
+    }
   }
   function onloadCSS (ss, callback) {
     var called;
