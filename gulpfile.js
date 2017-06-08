@@ -30,22 +30,44 @@ gulp.task('clean-release', (cb) => {
   return del([config.basepath.release], cb);
 });
 
-/* BUILD TASKS */
-gulp.task('html', require('./gulp/build-tasks/html')(gulp, plugins, config));
-gulp.task('includes-local', require('./gulp/build-tasks/includes-local')(gulp, plugins, config));
-gulp.task('includes-cdn', require('./gulp/build-tasks/includes-cdn')(gulp, plugins, config));
-gulp.task('scss', require('./gulp/build-tasks/scss')(gulp, plugins, config));
-gulp.task('js', require('./gulp/build-tasks/js')(gulp, plugins, config, gulpWebpack));
-gulp.task('other-assets', require('./gulp/build-tasks/other-assets')(gulp, plugins, config, es));
-gulp.task('build-files', require('./gulp/build-tasks/other-files')(gulp, plugins, config));
+/* BUILD */
+gulp.task('template-pages-cdn', require('./gulp/build-tasks/template-pages')(gulp, plugins, config, 'template-pages', 'template-cdn'));
+gulp.task('template-pages-local', require('./gulp/build-tasks/template-pages')(gulp, plugins, config, 'template-pages', 'template-local', 'local'));
+gulp.task('template-pages-docs', require('./gulp/build-tasks/template-pages')(gulp, plugins, config, 'docs', 'docs', 'local'));
+
+let assetDests = ['assets', 'docs/assets', 'template-local/assets'];
+gulp.task('scss', require('./gulp/common-tasks/scss')(gulp, plugins, config, assetDests));
+gulp.task('js', require('./gulp/common-tasks/js')(gulp, plugins, config, gulpWebpack, assetDests));
+
+gulp.task('other-assets', ['other-assets-root', 'other-assets-local', 'other-assets-docs']);
+gulp.task('other-assets-root', require('./gulp/build-tasks/other-assets')(gulp, plugins, config, es, assetDests[0]));
+gulp.task('other-assets-local', require('./gulp/build-tasks/other-assets')(gulp, plugins, config, es, assetDests[1]));
+gulp.task('other-assets-docs', require('./gulp/build-tasks/other-assets')(gulp, plugins, config, es, assetDests[2]));
+
+gulp.task('build-other-files', require('./gulp/build-tasks/other-files')(gulp, plugins, config));
 gulp.task('build-components', require('./gulp/build-tasks/components')(gulp, plugins, config, gulpWebpack, webpack, path));
 
-//TODO - modify and include unit test
+gulp.task('assets-includes-local', require('./gulp/build-tasks/assets-includes')(gulp, plugins, config, ['assets/includes-local', 'template-local/assets/includes-local'], true));
+gulp.task('assets-includes-docs', require('./gulp/build-tasks/assets-includes')(gulp, plugins, config, 'docs/assets/includes-local', true, true));
+gulp.task('assets-includes-cdn', require('./gulp/build-tasks/assets-includes')(gulp, plugins, config, ['assets/includes-cdn', 'template-cdn/assets/includes-cdn']));
+
+// gulp.task('assets-docs', require('./gulp/build-tasks/assets')(gulp, plugins, config, 'docs'));
+// gulp.task('assets-local', require('./gulp/build-tasks/assets')(gulp, plugins, config, 'template-local'));
+
+gulp.task('docs-flatten', (cb) => {
+  return gulp.src('', {read: false})
+    .pipe(wait(1500)) // FIXME: This is a dodgy way to handle the wait to save files
+    .pipe(plugins.shell(['node gulp/build-tasks/node-docs-flatten.js']));
+});
+
+// FIXME: Re-add unit tests
 gulp.task('build', (cb) => {
   runSequence(
     'test:eslint',
-    ['html', 'includes-local', 'includes-cdn', 'scss', 'js', 'other-assets', 'build-files'],
-    //'build-components',
+    'assets-includes-docs',
+    ['template-pages-cdn', 'assets-includes-cdn', 'js', 'scss', 'other-assets', 'build-other-files'],
+    ['template-pages-local', 'assets-includes-local', 'template-pages-docs'],
+    'docs-flatten',
     cb
   );
 });
@@ -56,12 +78,21 @@ gulp.task('build:clean', (cb) => {
 });
 
 /* WATCH TASKS */
+// Note: External libraries and external components are not watched
+const ignore = `!${config.basepath.src}/assets/components/**/*`;
 gulp.task('watch', function () {
-  gulp.watch([config.basepath.src + '/**/*.html'], ['html']);
-  gulp.watch([config.basepath.src + '/assets/_project/_blocks/layout/**/*.html'], ['includes-local']);
-  gulp.watch([config.basepath.src + '/**/*.scss'], ['scss']);
-  gulp.watch([config.basepath.src + '/**/*.js'], ['js', 'test']);
-  gulp.watch([config.basepath.src + '**/*'], ['other-assets']);
+  gulp.watch([
+      `${config.basepath.src}/**/*.html`,
+      ignore,
+      `!${config.basepath.src}/assets/_project/_blocks/**/*`,
+      `!${config.basepath.src}/_other-files/**/*.html`,
+    ],
+    ['template-pages-cdn', 'template-pages-local', 'template-pages-docs']);
+  gulp.watch([`${config.basepath.src}/assets/_project/_blocks/layout/**/*.html`], ['assets-includes-local']);
+  gulp.watch([`${config.basepath.src}/assets/_project/**/*.scss`], ['scss']);
+  gulp.watch(`${config.basepath.src}/assets/_project/_blocks/**/*.js`, { verbose: true }, ['js', 'test']);
+  gulp.watch([`${config.basepath.src}/assets/_project/images/**/*`], ['other-assets']);
+  gulp.watch(`${config.basepath.src}/_other-files/**/*.html`, ['build-other-files']);
 });
 gulp.task('watch:components', function () {
   gulp.watch([config.basepath.src + '/assets/components/**/*.*'], ['build-components']);
@@ -71,29 +102,23 @@ gulp.task('watch:serve', ['watch', 'serve']);
 /* RELEASE TASKS */
 // Grabs SCSS from SRC and moves to release, does not process
 gulp.task('scss-src', require('./gulp/release-tasks/scss-src')(gulp, plugins, config));
-// Moves project assets (ie)
-gulp.task('assets-core', require('./gulp/release-tasks/assets-core')(gulp, plugins, config));
-//
-gulp.task('assets-includes-local', require('./gulp/release-tasks/assets-includes-local')(gulp, plugins, config));
-gulp.task('assets-includes-cdn', require('./gulp/release-tasks/assets-includes-cdn')(gulp, plugins, config));
-gulp.task('release-files', require('./gulp/release-tasks/other-files')(gulp, plugins, config));
-gulp.task('release-js', require('./gulp/release-tasks/js')(gulp, plugins, config)); // Uglifies JS
-gulp.task('css', require('./gulp/release-tasks/css')(gulp, plugins, config)); // Minifies CSS
-gulp.task('copy-element', require('./gulp/release-tasks/copy-element')(gulp, plugins, config));
-gulp.task('copy-element-html', require('./gulp/release-tasks/copy-element-html')(gulp, plugins, config));
+gulp.task('release-other-files', require('./gulp/release-tasks/other-files')(gulp, plugins, config));
+gulp.task('release-files', require('./gulp/release-tasks/files')(gulp, plugins, config));
 
-gulp.task('ssi-to-static', (cb) => {
-  return gulp.src('', {read: false})
-    .pipe(wait(1500)) // FIXME: This is a dodgy way to handle the wait to save files
-    .pipe(plugins.shell(['node gulp/release-tasks/ssi-to-static.js']));
-});
+let dests = ['template-local/assets', 'docs/assets'];
+gulp.task('release-js', require('./gulp/common-tasks/js')(gulp, plugins, config, gulpWebpack, dests, 'release'));
+gulp.task('release-scss', require('./gulp/common-tasks/scss')(gulp, plugins, config, dests, 'release'));
 
 gulp.task('release', (cb) => {
   return runSequence(
     ['build:clean', 'clean-release'],
-    ['assets-core', 'scss-src', 'release-js', 'css', 'release-files', 'assets-includes-local', 'assets-includes-cdn'],
-    ['copy-element', 'copy-element-html'], // Done second last in order to over-ride assets-includes
-    'ssi-to-static',
+    [
+      'release-files',
+      'release-js',
+      'release-scss',
+      'scss-src',
+      'release-other-files',
+    ],
     cb
   );
 });

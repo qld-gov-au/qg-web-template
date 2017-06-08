@@ -12,7 +12,7 @@ import '../../../../node_modules/bootstrap/dist/js/bootstrap.js';
 import './utils/parent-width';
 
 // Components
-
+import './utils/parent-width';
 import './legacy/forms/forms';
 import './legacy/bootstrap-accessibility.js';
 import '../../../../node_modules/generate-id/dist/generate-id.min.js'; // For site-search-autocomplete
