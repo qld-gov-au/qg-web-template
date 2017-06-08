@@ -84,13 +84,15 @@ gulp.task('watch', function () {
   gulp.watch([
       `${config.basepath.src}/**/*.html`,
       ignore,
-      `!${config.basepath.src}/assets/_project/_blocks/**/*`
+      `!${config.basepath.src}/assets/_project/_blocks/**/*`,
+      `!${config.basepath.src}/_other-files/**/*.html`,
     ],
     ['template-pages-cdn', 'template-pages-local', 'template-pages-docs']);
   gulp.watch([`${config.basepath.src}/assets/_project/_blocks/layout/**/*.html`], ['assets-includes-local']);
   gulp.watch([`${config.basepath.src}/assets/_project/**/*.scss`], ['scss']);
   gulp.watch(`${config.basepath.src}/assets/_project/_blocks/**/*.js`, { verbose: true }, ['js', 'test']);
   gulp.watch([`${config.basepath.src}/assets/_project/images/**/*`], ['other-assets']);
+  gulp.watch(`${config.basepath.src}/_other-files/**/*.html`, ['build-other-files']);
 });
 gulp.task('watch:components', function () {
   gulp.watch([config.basepath.src + '/assets/components/**/*.*'], ['build-components']);

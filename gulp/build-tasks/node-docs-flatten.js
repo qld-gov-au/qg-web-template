@@ -4,6 +4,7 @@
 
 const path = require('path');
 const ssiToStatic = require('./ssi-to-static.js');
+// const del = require('del');
 
 let includeSrc = path.join('build', 'docs');
 let src = path.join('build', 'docs');
@@ -11,3 +12,5 @@ let dest = path.join('build', 'docs');
 let exclude = [];
 
 ssiToStatic(includeSrc, src, dest, exclude);
+
+// del('build/docs/includes-local/');
