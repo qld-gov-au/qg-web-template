@@ -86,7 +86,7 @@ gulp.task('watch', function () {
       ignore,
       `!${config.basepath.src}/assets/_project/_blocks/**/*`
     ],
-    ['template-pages-cdn', 'template-pages-local', 'template-pages-docs']);
+    ['template-pages-cdn', 'template-pages-local', 'template-pages-docs', 'build-other-files']);
   gulp.watch([`${config.basepath.src}/assets/_project/_blocks/layout/**/*.html`], ['assets-includes-local']);
   gulp.watch([`${config.basepath.src}/assets/_project/**/*.scss`], ['scss']);
   gulp.watch(`${config.basepath.src}/assets/_project/_blocks/**/*.js`, { verbose: true }, ['js', 'test']);

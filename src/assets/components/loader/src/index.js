@@ -9,6 +9,12 @@ var componentsLoader = (function ($) {
         });
       });
     }
+    if(('.pagination').length > 0) {
+      console.log('Loading pagination.js');
+      asyncJS('/assets/v3/components/pagination/pagination.js').done(function (script, textStatus) {
+        console.log('Loaded pagination.js');
+      });
+    }
   }
   // load css and then js function
   /*function loadFiles () {
