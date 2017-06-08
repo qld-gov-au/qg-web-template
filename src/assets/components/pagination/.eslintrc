@@ -1,0 +1,41 @@
+{
+  "globals": {
+    "jQuery": true,
+    "$": true,
+    "describe": false,
+    "it": false,
+    "expect": false,
+    "$on": false,
+    "beforeEach": false,
+    "qg": true
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "extends": ["semistandard"],
+  "rules": {
+    "indent": [2, "tab"],
+    "no-mixed-spaces-and-tabs": 0,
+    "one-var": 0,
+    "no-path-concat": 0,
+    "valid-jsdoc": "warn",
+    "spaced-comment": 0,
+    "no-tabs": 0,
+    "comma-dangle": [1, "only-multiline"],
+    "eol-last": 1,
+    "no-multi-spaces": [
+      2,
+      {
+        "exceptions": {
+          "Property": true,
+          "VariableDeclarator": true,
+          "ImportDeclaration": true,
+          "ObjectExpression": true,
+        },
+      },
+    ],
+    "no-warning-comments": 1,
+  },
+}

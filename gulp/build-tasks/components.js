@@ -1,27 +1,44 @@
-
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = function (gulp, plugins, config, gulpWebpack, webpack, path) {
   return function () {
-    //add any new components here
-    let components = ['slider', 'autocomplete'];
+    let components = ['slider', 'autocomplete', 'pagination', 'data', 'misc', 'loader', 'social-feed'];
+    let staticAssets = ['images'];
 
     // building each component
     components.map(function (element) {
-      return gulp.src(path.resolve(__dirname, config.basepath.modules))
+      staticAssets.forEach(function (el, index) {
+        gulp.src(`${config.basepath.src}/assets/components/${element}/src/${el}/**/**`)
+          .pipe(gulp.dest(`${config.basepath.build}/assets/${config.versionName}/components/${element}/${el}`));
+      });
+      return gulp.src(path.resolve(__dirname, config.basepath.components))
         .pipe(gulpWebpack({
-          context: path.resolve(__dirname, config.basepath.modules),
-          entry: path.resolve(__dirname, config.basepath.modules, element),
+          context: path.resolve(__dirname, config.basepath.components),
+          entry: path.resolve(__dirname, config.basepath.components, element, 'src'),
           output: {
-            filename: `${element}/index.js`,
+            filename: `${element}.js`,
           },
-          // devtool: 'source-map',
+          //devtool: 'source-map',
           module: {
-
             loaders: [
               {
                 test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader',
+              },
+              {
+                test: /\.js$/,
+                enforce: 'pre',
+                exclude: /(node_modules|bower_components|\.spec\.js)/,
+                use: [
+                  {
+                    loader: 'webpack-strip-block',
+                    options: {
+                      start: 'DEV-START',
+                      end: 'DEV-END',
+                    },
+                  },
+                ],
               },
               {
                 test: /\.scss$/,
@@ -35,14 +52,18 @@ module.exports = function (gulp, plugins, config, gulpWebpack, webpack, path) {
             ],
           },
           plugins: [
-            new ExtractTextPlugin(`${element}/[name].css`),
+            new ExtractTextPlugin(`styles/${element}.css`),
             new CopyWebpackPlugin([
-              { from: `${element}/examples`, to: `${element}/examples ` },
-              { from: `${element}/images`, to: `${element}/images` },
+              // { from: `${element}/src/examples`, to: `examples ` },
+              /*{ from: `${element}/src/images`, to: `images` },*/
             ]),
+            new HtmlWebpackPlugin({
+              template: `${element}/src/examples/index.html`,
+              inject: false,
+            }),
           ],
         }, webpack))
-        .pipe(gulp.dest(`${config.basepath.build}/assets/${config.versionName}/components/`));
+        .pipe(gulp.dest(`${config.basepath.build}/assets/${config.versionName}/components/${element}`));
     });
   };
 };
