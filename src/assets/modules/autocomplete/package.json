@@ -1,20 +1,18 @@
 {
-  "name": "slider",
+  "name": "autocomplete",
   "version": "1.0.0",
   "description": "",
-  "main": "slider.js",
+  "main": "autocomplete.js",
   "scripts": {
     "start": "npm run build && npm run dev ",
     "build": "./node_modules/.bin/webpack",
-    "dev": "./node_modules/.bin/webpack-dev-server --open"
+    "watch": "./node_modules/.bin/webpack --watch",
+    "dev": "./node_modules/.bin/webpack-dev-server --watch-poll --open"
   },
   "keywords": [],
   "author": "SM OSS Digital Applications [oss.applications@dsiti.qld.gov.au]",
   "license": "ISC",
-  "dependencies": {
-    "bootstrap-sass": "^3.3.7",
-    "font-awesome": "^4.7.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "concurrently": "^3.4.0",
     "css-loader": "^0.28.1",

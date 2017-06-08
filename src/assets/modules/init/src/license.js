@@ -5,7 +5,6 @@
  * Supports only Creative Commons Australian licences, versions 2.5 and 3.0
  */
 
-/*globals qg*/
 (function ($, assetPath) {
   'use strict';
   const licenceOptions = {
@@ -128,11 +127,14 @@
       licence = getLicenseVal(url);
       // if we have licence details…
       if (licence) {
-        $('dl', '#document-properties').prepend(
-          '<dt class="visuallyhidden">Licence</dt>\n' +
-          '<dd id="document-licence"><a rel="license" href="' + licence.url + licence.version.urlPath + '" title="Text available under Creative Commons ' + licence.name + ' ' + licence.version.title + ' licence"><img src="' + licence.imgPath + '" alt="Creative Commons ' + licence.name + ' ' + licence.version.title + '" /></a></dd>\n'
+        $('.qg-content-footer').append(
+        '<p id="document-licence">' +
+          '<a rel="license" href="' + licence.url + licence.version.urlPath + '" title="Text available under Creative Commons ' + licence.name + ' ' + licence.version.title + ' licence">' +
+          '<img src="' + licence.imgPath + '" alt="Creative Commons ' + licence.name + ' ' + licence.version.title + '" />' +
+          '</a>' +
+          '</p>'
         );
       }
     });
   }
-}(jQuery, '/assets/v3'));
+}(jQuery, '/assets/v3/'));
