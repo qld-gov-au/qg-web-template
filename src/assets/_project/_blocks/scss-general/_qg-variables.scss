@@ -61,6 +61,16 @@ $state-warning-border:  darken(adjust-hue($state-success-bg, -10), 5%) !default;
 $state-danger-bg:       #B90824;
 $state-danger-border:   darken(adjust-hue($state-success-bg, -10), 5%) !default;
 
+// $qg-warning-color: #cc352d;
+$qg-correct-color: #78ba00;
+$qg-correct-border-color: #92c23a; // #a6c56d;
+$qg-correct-bg-color: #fafff2; // #fafff0; // #f7ffe8;
+
+$qg-incorrect-color: #d22d24; // #cc352d;
+$qg-incorrect-border-color: #d4534c; // #d06060;
+$qg-incorrect-bg-color: #fffafa; // #fff6f5; // #ffe2e0;
+
+
 // ## Layout
 // Site header
 $qg-breadcrumb-bg-color: $qg-blue;
