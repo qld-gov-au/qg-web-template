@@ -1,0 +1,62 @@
+.qg-alert {
+  @extend .alert;
+  position: relative;
+  margin-left: 60px;
+  border: 0;
+
+  color: #000;
+
+  &:before {
+    position: absolute;
+    top: 0;
+    left: -60px;
+    width: 60px;
+
+    padding-top: .2em;
+    padding-bottom: .2em;
+
+    font-size: 2.2em;
+    font-family: fontAwesome;
+    text-align: center;
+  }
+  
+  h2 {
+    margin-top: 5px;
+    font-size: 1.2em;
+  }
+
+  &.alert-success {
+    &:before {
+      content: '\f058';
+      background: $state-success-bg;
+      color: $brand-success;
+    }
+  }
+  &.alert-info {
+    &:before {
+      content: '\f05a';
+      background: $state-info-bg;
+      color: $brand-info;
+    }
+  }
+  &.alert-warning {
+    &:before {
+      content: '\f071';
+      background: $state-warning-bg;
+      color: $brand-warning;
+    }
+  }
+  &.alert-danger {
+    color: #fff;
+
+    a {
+      color: #FF0;
+    }
+
+    &:before {
+      content: '\f071';
+      background: $state-danger-bg;
+      color: $brand-danger;
+    }
+  }
+}

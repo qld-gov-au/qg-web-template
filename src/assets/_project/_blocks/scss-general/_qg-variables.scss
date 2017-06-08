@@ -45,7 +45,21 @@ $qg-pale-blue:			#e7f5fe;
 // Note: Use US spelling for colour
 
 // ## Components
-$qg-icon-color: $qg-green;
+$qg-icon-color: 		$qg-green;
+
+$brand-success:         #9ebf6d; // #5cb85c;
+$brand-info:            #759bf3;
+$brand-warning:         #f9af71;
+$brand-danger:          #fff;
+
+$state-success-bg:      #f2f7ea;
+$state-success-border:  darken(adjust-hue($state-success-bg, -10), 5%) !default;
+$state-info-bg:      	#eff5f6;
+$state-info-border:  	darken(adjust-hue($state-success-bg, -10), 5%) !default;
+$state-warning-bg:      #ffedde;
+$state-warning-border:  darken(adjust-hue($state-success-bg, -10), 5%) !default;
+$state-danger-bg:       #B90824;
+$state-danger-border:   darken(adjust-hue($state-success-bg, -10), 5%) !default;
 
 // ## Layout
 // Site header

@@ -9,7 +9,6 @@ import '../../../../node_modules/bootstrap/dist/js/bootstrap.js';
 
 /*This 2 modules (breakpoints, parentwidth) are to be initialize where we are using these or If we make one common function for small utilities then we can initialize here in the main file.*/
 /*import breakpoints        from './utils/breakpoints'; */
-import './utils/parent-width';
 
 // Components
 import './utils/parent-width';
