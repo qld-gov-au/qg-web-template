@@ -105,7 +105,7 @@ gulp.task('scss-src', require('./gulp/release-tasks/scss-src')(gulp, plugins, co
 gulp.task('release-other-files', require('./gulp/release-tasks/other-files')(gulp, plugins, config));
 gulp.task('release-files', require('./gulp/release-tasks/files')(gulp, plugins, config));
 
-let dests = ['assets', 'template-local/assets', 'docs/assets'];
+let dests = ['template-local/assets', 'docs/assets'];
 gulp.task('release-js', require('./gulp/common-tasks/js')(gulp, plugins, config, gulpWebpack, dests, 'release'));
 gulp.task('release-scss', require('./gulp/common-tasks/scss')(gulp, plugins, config, dests, 'release'));
 

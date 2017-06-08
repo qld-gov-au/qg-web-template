@@ -4,6 +4,7 @@
 
 const path = require('path');
 const ssiToStatic = require('./ssi-to-static.js');
+// TODO: Delete /includes-local/ after flatten process
 // const del = require('del');
 
 let includeSrc = path.join('build', 'docs');
