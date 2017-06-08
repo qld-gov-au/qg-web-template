@@ -14,7 +14,7 @@ import '../../../../node_modules/bootstrap/dist/js/bootstrap.js';
 import './utils/parent-width';
 import './legacy/forms/forms';
 import './legacy/bootstrap-accessibility.js';
-import '../../../../node_modules/generate-id/dist/generate-id.min.js'; // For site-search-autocomplete
+import '../lib/ext/generate-id.js'; // For site-search-autocomplete
 import './legacy/site-search-autocomplete.js';
 
 import './components/lightbox/qg-lightbox.js';
