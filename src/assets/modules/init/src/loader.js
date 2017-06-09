@@ -2,36 +2,55 @@
 import loadJS from './lib/script.js';
 import { loadCSS } from './lib/loadCSS.js';
 
-/*TODO Automate loading process*/
-/*TODO files loading inline documentation */
-/*const buildPath = '/assets/v3/modules/';
+/*modules dynamic loading process v1-
 
- const mapTo = {
- slider: {
- identifier: '.qg-slider',
- css: [`${buildPath}+slider/styles/slider.css`],
- js: [`${buildPath}+misc/misc.js`, `${buildPath}+slider/slider.js`],
- },
- };
+* Create a object with the identifier, js and css(if any) to load files dynamically
+* Currently it supports loading max of 4 js files async in sequence and 1 css file per module
 
- $.each(mapTo, function (key, value) {
- console.log(key[value]);
- });*/
+* */
+
+const buildPath = '/assets/v3/modules/';
+
+const mapTo = {
+  slider: {
+    identifier: 'qg-slider',
+    css: `${buildPath}slider/styles/slider.css`,
+    js: [`${buildPath}misc/misc.js`, `${buildPath}slider/slider.js`],
+  },
+  feeds: {
+    identifier: 'qg-social-feed',
+    js: [`${buildPath}social-feed/social-feed.js`],
+  },
+};
 
 var modulesLoader = (function ($) {
-  function check () {
-    if ($('[data-role="qg-slider"]').length > 0) {
-      var stylesheet = loadCSS('/assets/v3/modules/slider/styles/slider.css');
-      onloadCSS(stylesheet, function () {
-        loadJS('/assets/v3/modules/misc/misc.js', function () {
-          loadJS('/assets/v3/modules/slider/slider.js');
+  function dynamicLoading () {
+    $.each(mapTo, function (key, value) {
+      function handleJs () {
+          //TODO - Any number of files in sequence
+        loadJS(value.js[0], function () {
+          if (value.js[1]) {
+            loadJS(value.js[1], function () {
+              if (value.js[2]) {
+                loadJS(value.js[2], function () {
+                  if (value.js[3]) { loadJS(value.js[3]); }
+                });
+              }
+            });
+          }
         });
-      });
-    }
-    if ($('[data-role="qg-social-feed"]').length > 0) {
-      loadJS('/assets/v3/modules/social-feed/social-feed.js');
-    }
+      }
+      if ($('[data-role=' + value.identifier + ']').length > 0) {
+        if (value.css) {
+          let stylesheet = loadCSS(value.css);
+          onloadCSS(stylesheet, function () { handleJs(); });
+        } else {
+          handleJs();
+        }
+      }
+    });
   }
+
   function onloadCSS (ss, callback) {
     var called;
     function newcb () {
@@ -51,9 +70,9 @@ var modulesLoader = (function ($) {
     }
   }
   return {
-    check: check,
+    dynamicLoading: dynamicLoading,
   };
 })(jQuery);
 
-modulesLoader.check();
+modulesLoader.dynamicLoading();
 

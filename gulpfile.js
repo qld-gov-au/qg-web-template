@@ -94,7 +94,7 @@ gulp.task('watch', function () {
   gulp.watch([`${config.basepath.src}/assets/_project/images/**/*`], ['other-assets']);
 });
 gulp.task('watch:modules', function () {
-  gulp.watch([config.basepath.src + '/assets/modules/**/*.*'], ['build-modules']);
+  gulp.watch([config.basepath.src + '/assets/modules/**/src/*.*'], ['build-modules']);
 });
 gulp.task('watch:serve', ['watch', 'serve']);
 

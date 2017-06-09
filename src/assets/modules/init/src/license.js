@@ -1,15 +1,13 @@
 /**
  * if there is not a #document-licence present
  * this script will add one based on the DCTERMS.license metadata
- *
- * Supports only Creative Commons Australian licences, versions 2.5 and 3.0
  */
-
-(function ($, assetPath) {
+/*globals qg*/
+(function ($, qg) {
   'use strict';
   const licenceOptions = {
     url: '//creativecommons.org/licenses/',
-    imgSrc: assetPath + 'images/licences/',
+    imgSrc: qg.swe.paths.images + '/licences/',
     types: {
       'by': {
         'name': 'Attribution',
@@ -137,4 +135,4 @@
       }
     });
   }
-}(jQuery, '/assets/v3/'));
+}(jQuery, qg));
