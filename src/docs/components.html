@@ -73,7 +73,7 @@
 
                 <div id="qg-primary-content" role="main">
 
-                    <!--#include virtual="/assets/includes-local/content/alert.html"-->
+                    <!-- # include virtual="/assets/includes-local/content/alert.html"-->
 
                     <h1>Components</h1>
 
@@ -273,8 +273,6 @@
 
 <h2 class="category" id="navs">Navs</h2>
 
-<!-- See https://www.qld.gov.au/alerts for styling -->
-
 <p>More details coming soon...</p>
 
 <h3>Tabs</h3>
@@ -416,32 +414,51 @@
 <!-- ################################## -->
 
 <h2 class="category" id="alerts">Alerts</h2>
-<p><span class="label label-danger" title="Not supported by this template">Not supported</span></p>
+  <p><span class="label label-primary" title="Heavily customised bootstrap implementation">Customised</span></p>
+
+  <p>See <a href="https://getbootstrap.com/components/#alerts">Bootstrap alerts documentation</a> for more information.</p>
 
 <div class="qg-tmplt-example panel panel-default">
   <div class="panel-body">
-    <div class="qg-alert alert-success" role="alert">
+    <div class="alert alert-success" role="alert">
       <h2>Congratulations</h2>
       <ol>
         <li><a href="#QName">Name: Must be completed</a></li>
       </ol>
     </div>
-    <div class="qg-alert alert-info" role="alert">
+    <div class="alert alert-info" role="alert">
       <h2>Please check your answers</h2>
       <ol>
         <li><a href="#">Name: Must be completed</a></li>
         <li><a href="#">Email: Must be a valid email address</a></li>
       </ol>
     </div>
-    <div class="qg-alert alert-warning" role="alert">
+    <div class="alert alert-warning" role="alert">
       <h2>Please check your answers</h2>
       <ol>
         <li><a href="#">Name: Must be completed</a></li>
         <li><a href="#">Email: Must be a valid email address</a></li>
       </ol>
     </div>
-    <div class="qg-alert alert-danger" role="alert">
+    <div class="alert alert-danger" role="alert">
       <h2>Please check your answers</h2>
+      <ol>
+        <li><a href="#">Name: Must be completed</a></li>
+        <li><a href="#">Email: Must be a valid email address</a></li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+<p>You can also add <code>class="qg-noicon"</code> to the alert panel to remove the standard icon.</p>
+
+<div class="qg-tmplt-example panel panel-default">
+  <div class="panel-body">
+    <div class="alert alert-warning qg-noicon" role="alert">
+      <header>
+        <h2>Please check your answers</h2>
+      </header>
+
       <ol>
         <li><a href="#">Name: Must be completed</a></li>
         <li><a href="#">Email: Must be a valid email address</a></li>
