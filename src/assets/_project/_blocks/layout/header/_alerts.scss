@@ -1,47 +1,74 @@
 /* ! alert style */
 
-header .alert {
-	@extend .col-lg-12;
+#qg-site-header .alert-danger, .qg-global-alert {
+  @include make-xs-column(12);
+  @include qg-responsive-spacing(padding-left, $large: full);
+  @include qg-responsive-spacing(padding-right, $large: full);
 
-	margin-top: 0; 
-	margin-bottom: 0;
-	border: none;  
+  header {
+    @include make-xs-column(12);
+    @include make-sm-column(4);
+    @include make-lg-column(3);
 
-	time {
-		display: inline-block;
-		margin-left: 16px; 
-		font-size: .8em; 
-	}    
+    position: relative;
+    padding-left: 0 !important;
+
+    border-bottom: 1px solid #fff;
+    border-collapse: collapse;
+
+    h2 {
+      margin-top: 0;
+    }
+    
+    @media (min-width: $screen-sm-min) {
+      border-right: 1px solid #fff;
+      border-bottom: 0;
+    }
+
+    & > * {
+      padding-left: 60px;
+    }
+
+    &:before {
+      content: '\f071';
+      position: absolute;
+      display: inline-block;
+      float: left;
+      top: 0;
+      left: 0;
+
+      padding-bottom: .2em;
+
+      font-size: 2.2em;
+      font-family: fontAwesome;
+      text-align: center;
+    }
+  }
+  section {
+    @include make-xs-column(12)
+    @include make-sm-column(8);
+    @include make-lg-column(9);
+    padding-top: $qg-spacing / 4;
+    padding-right: 0 !important;
+    
+    @media (min-width: $screen-sm-min) {
+      padding-top: 0;
+      padding-left: $qg-spacing / 2;
+    }
+  }
 }
 
-/*
-.alert-danger {
-	position: relative;    
-	background: $brand-danger;
-	background: linear-gradient(to bottom, $brand-danger 70%, #b11616 100%);
-
-	a, a:link {
-		color: #FFF;  
-	}   
-
-	.fa-exclamation-triangle {
-		position: absolute;
-		top: 10px;
-		left: 10px;   
-		font-size: 3em;
-		color: #FFF;
-	}  
-
-	h2 {
-		color: #FFF;
-		margin: 0; 
-		padding: 0 0 0.3em 0; 
-		font-size: 1.2em; 
-	}
-
-	h2, p, ol, ul {
-		color: #FFF;
-		margin-left: 85px;   
-	}  
+#qg-site-header .alert-danger {
+  margin-bottom: 0;
 }
-*/
+
+#qg-primary-content .qg-global-alert {
+  header {
+    @include make-xs-column(12);
+    @include make-sm-column(5);
+  }
+  section {
+    @include make-xs-column(12)
+    @include make-sm-column(7);
+  }
+}
