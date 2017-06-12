@@ -2,7 +2,8 @@ module.exports = function (gulp, plugins, config) {
   return function () {
     const target = [
       `${config.basepath.build}/**/*`,
-      `!**/*.htaccess`,
+      `!${config.basepath.build}/assets/**/*`,
+      `!${config.basepath.build}/*`,
       `!**/${config.versionName}/js/*.js`, // handled by JS task that minifies
       `!**/${config.versionName}/css/*.css`, // handled by SCSS -> CSS task that minifies
     ].concat(config.release.excludes);

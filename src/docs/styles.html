@@ -83,6 +83,7 @@
                     <p>Below is a list of implemented Bootstrap styles. See the <a href="http://getbootstrap.com/css/" target="_blank">bootstrap website on css</a> for further advice.</p>
 
 <!-- ################################## -->
+
     <h2 id="grid" class="category">Grid system</h2>
     <p><span class="label label-primary" title="Heavily customised bootstrap implementation">Customised</span></p>
     
@@ -93,16 +94,18 @@
     </ul>
 
     <h3 id="breakpoints" class="category">Breakpoints</h3>
-    <p><span class="label label-default" title="Default bootstrap implementation">Default</span></p>
+    <p><span class="label label-default" title="Default bootstrap implementation">Default Bootstrap</span></p>
 
     <p>We use standard bootstrap media queries. See <a href="https://getbootstrap.com/css/#grid-media-queries">Bootstrap grid media queries</a></p>
 
     <ul>
-        <li>Extra Small - Minimum sized devices</li>
-        <li>Small - Devices 768px and above</li>
-        <li>Medium - Devices 992px and above</li>
-        <li>Large - Devices 1200px and above</li>
+        <li>Extra Small - Min sized devices, eg. Mobile phones</li>
+        <li>Small - Devices 768px and above, eg. tablets</li>
+        <li>Medium - Devices 992px and above, eg. laptops and large tablets</li>
+        <li>Large - Devices 1200px and above, eg. desktops</li>
     </ul>
+
+    <p>The standard template uses a responsive width that has a custom maximum width of 1327px.</p>
 
     <h3 id="responsive-spacing-mixin">Responsive spacing mixins</h3>
     <p>
@@ -194,10 +197,10 @@
     </div>
 
 <!-- ################################## -->
+
     <h2 id="typography" class="category">Typography</h2>
-    <p>
-        <span class="label label-default" title="Default bootstrap implementation">Default</span>
-    </p>
+    <p><span class="label label-default" title="Default bootstrap implementation">Default Bootstrap</span></p>
+
     <p>
         Queensland Government websites should use the Lato web font. This is included by default in the Queensland Government Web Template. In most instances when using the template, you should not have to worry about custom typography.
     </p>
@@ -461,17 +464,15 @@
 <!-- ################################## -->
 
     <h2 id="code" class="category">Code</h2>
-    <p>
-        <span class="label label-default" title="Default bootstrap implementation">Default</span>
-    </p>
+    <p><span class="label label-default" title="Default bootstrap implementation">Default Bootstrap</span></p>
+
     <p>Generally, the code tag should not be needed for most applications of this template. For information on implementing code, see the <a href="https://getbootstrap.com/css/#code">bootstrap section on code</a>.</p>
 
 <!-- ################################## -->
 
     <h2 id="tables" class="category">Tables</h2>
-    <p>
-        <span class="label label-default" title="Default bootstrap implementation">Default</span>
-    </p>
+    <p><span class="label label-default" title="Default bootstrap implementation">Default Bootstrap</span></p>
+
     <p>These are the QLD Government implemented tables from Bootstrap. See the <a href="http://getbootstrap.com/css/#tables">bootstrap section on tables</a> for implementation advice.</p>
 
     <h3>Basic Table</h3>
@@ -641,17 +642,16 @@
 <!-- ################################## -->
 
     <h2 class="category" id="forms">Forms</h2>
-    <p>
-        <span class="label label-danger" title="Entirely custom implementation">Custom</span>
-    </p>
-    <p>Forms are not implemented using the standard bootstrap layout. Instead, forms use the Queensland Government form handler.</p>
+    <p><span class="label label-danger" title="Entirely custom implementation">Custom</span></p>
+
+    <p>Forms are not implemented using the standard bootstrap layout. Instead, forms use the <a href="http://qld-gov-au.github.io/form-builder/form-builder.html">Queensland Government form builder</a>.</p>
+    <p>For the user interface, see the <a href="https://github.com/qld-gov-au/pattern-library/blob/master/source/patterns-for-web-forms.md">SWE 2 pattern library for forms</a>.</p>
 
 <!-- ################################## -->
 
     <h2 id="buttons" class="category">Buttons</h2>
-    <p>
-        <span class="label label-default" title="Default bootstrap implementation">Default</span>
-    </p>
+    <p><span class="label label-default" title="Default bootstrap implementation">Default Bootstrap</span></p>
+
     <p>These are the QLD Government implemented buttons from Bootstrap. See the <a href="http://getbootstrap.com/css/#buttons">bootstrap section on buttons</a> for additional implementation advice.</p>
     <p>Note: QLD Government includes a 'Secondary' button type on top of the standard Bootstrap buttons.</p>
 
@@ -677,6 +677,9 @@
 
                 <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
                 <button type="button" class="btn btn-primary">Primary</button>
+
+                <!-- Provides context  -->
+                <button type="button" class="btn btn-secondary">Secondary</button>
 
                 <!-- Indicates a successful or positive action -->
                 <button type="button" class="btn btn-success">Success</button>
@@ -721,36 +724,122 @@
 <!-- ################################## -->
 
     <h2 id="images" class="category">Images</h2>
+    <p><span class="label label-primary" title="Heavily customised bootstrap implementation">Customised</span></p>
 
-    <p>Comming soon...</p>
+    <p>You can use standard bootstrap image utilities. See <a href="https://getbootstrap.com/css/#images">Bootstrap documentation on images</a>.</p>
+
+    <p>The Web Template also has some custom images features.</p>
+
+    <h3 id="figures">Figures</h3>
+    <p><span class="label label-default" title="Default HTML5 implementation">Default HTML5</span></p>
+
+    <p>To use figures, just put in standard HTML5 figure code in the <code>&lt;div id="qg-primary-content"&gt;</code> element, or add the class <code>qg-fig</code> to any figure element outside of the qg-primary-content element:</p>
+
+<pre><code>&lt;figure&gt;
+    &lt;img src="/assets/v3/images/placeholder-image.png" alt="" /&gt;
+    &lt;figcaption>
+        Caption text here
+        &lt;div class="figure-credits"&gt;Figure credits here&lt;/div&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
+</code></pre>
+
+    <div class="qg-tmplt-example">
+        <div class="panel-body">
+            <figure>
+                <img src="/assets/v3/images/placeholder-image.png" alt="" />
+                <figcaption>
+                    Caption text here
+                    <div class="figure-credits">Figure credits here</div>
+                </figcaption>
+            </figure>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+    </div>
+
+    <p>You can pull this figure left or right (turning it into a cut-in image) by adding the class <code>pull-right</code> or <code>pull-left</code> to the figure element <code>&lt;figure class="pull-right"&gt;</code>.</p>
+
+    <div class="qg-tmplt-example">
+        <div class="panel-body">
+            <figure class="pull-right">
+                <img src="/assets/v3/images/placeholder-image.png" alt="" />
+                <figcaption>
+                    Caption text here
+                    <div class="figure-credits">Figure credits here</div>
+                </figcaption>
+            </figure>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+    </div>
+
+    <p>You can also unstyled the figure by adding <code>qg-unstyled</code> to the figure <code>&lt;figure class="qg-unstyled"&gt;</code>. Unstyled figures also work with pull-right and pull-left.</p>
+
+    <div class="qg-tmplt-example">
+        <div class="panel-body">
+            <figure class="qg-unstyled">
+                <img src="/assets/v3/images/placeholder-image.png" alt="" />
+                <figcaption>
+                    Caption text here
+                    <div class="figure-credits">Figure credits here</div>
+                </figcaption>
+            </figure>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+    </div>
+
+    <p>If you need to remove the standard styling of a figure element in the qg-primary-content element, add the class <code>qg-nofig</code> to the figure element <code>&lt;figure class="qg-nofig"&gt;</code>.</p>
+
 
 <!-- ################################## -->
 
     <h2 id="helper-classes" class="category">Helper classes</h2>
+    <p><span class="label label-danger" title="Not supported by this template">Not supported</span></p>
 
-    <p>Comming soon...</p>
+    <p>Not currently supported.</p>
 
 <!-- ################################## -->
 
     <h2 id="responsive-utilities" class="category">Responsive utilities</h2>
+    <p><span class="label label-default" title="Default bootstrap implementation">Default Bootstrap</span></p>
 
-    <p>Comming soon...</p>
+    <p>See <a href="https://getbootstrap.com/css/#responsive-utilities">Bootstrap responsive utilities</a>.</p>
 
 <!-- ################################## -->
 
     <h2 id="using-less" class="category">Using less</h2>
-
     <p><span class="label label-danger" title="Not supported by this template">Not supported</span></p>
 
-    <p><a href="#using-less">Please use SASS instead</a>.</p>
-
     <p>The Queensland Government Website Template does not use LESS. Any css written in LESS will have to be compiled out into a seperate stylesheet.</p>
+
+    <p><a href="#using-sass">Please use SASS instead</a>.</p>
 
 <!-- ################################## -->
 
     <h2 id="using-sass" class="category">Using sass</h2>
+    <p><span class="label label-primary" title="Heavily customised bootstrap implementation">Customised</span></p>
 
-    <p>Comming soon...</p>
+    <p>The Queensland Government Web Template is built on SASS.</p>
+
+    <p>The source SCSS files are included in the NPM package (or git repo) under assets/scss/.</p>
+
+    <p>The main SCSS files are:</p>
+
+    <ul>
+        <li>
+            qg-main.scss : The main file which includes all other SCSS fragments. Compiles to qg-main.css in the QGWT
+            <ul>
+                <li>scss-general/_qg-variables.scss : Contains settings specific to Queensland Government</li>
+                <li>scss-general/_bootstrap-variables : Contains the standard set of bootstrap variables</li>
+                <li>
+                    scss-general/_bootstrap-loader.scss : Loader for standard bootstrap files, from node_modules/bootstrap-sass/
+                    <ul>
+                        <li>bootstrap/_mixins.scss : Loader for Bootstrap mixins, from node_modules/bootstrap-sass/mixins/</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>qg-noscript.scss : Styles for browsers not running javascript</li>
+    </ul>
 
 <!-- ################################## -->
 
@@ -770,7 +859,11 @@
 
                 <aside id="qg-secondary-content">
 
-                    <div id="page-nav" class="qg-aside qg-docs-sidenav" role="complementary" data-spy="affix" data-offset-top="500" data-offset-bottom="900" data-parent-width="1">
+                    <div id="page-nav" 
+                            data-parent-width="true"
+                            class="qg-aside qg-docs-sidenav"
+                            role="complementary"
+                            data-spy="affix" data-offset-top="500" data-offset-bottom="900">
                         <h2>On this page</h2>
                         
                         <ul class="nav nav-pills nav-stacked" role="tablist">
@@ -784,6 +877,7 @@
                             <li><a href="#code">Code</a></li>
                             <li><a href="#tables">Tables</a></li>
                             <li><a href="#forms">Forms</a></li>
+                            <li><a href="#buttons">Buttons</a></li>
                             <li><a href="#images">Images</a></li>
                             <li><a href="#helper-classes">Helper classes</a></li>
                             <li><a href="#responsive-utilities">Responsive utilities</a></li>

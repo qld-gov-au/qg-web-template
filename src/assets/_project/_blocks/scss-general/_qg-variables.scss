@@ -45,7 +45,31 @@ $qg-pale-blue:			#e7f5fe;
 // Note: Use US spelling for colour
 
 // ## Components
-$qg-icon-color: $qg-green;
+$qg-icon-color: 		$qg-green;
+
+$brand-success:         #9ebf6d; // #5cb85c;
+$brand-info:            #759bf3;
+$brand-warning:         #f9af71;
+$brand-danger:          #B90824; //#fff;
+
+$state-success-bg:      #f2f7ea;
+$state-success-border:  darken(adjust-hue($state-success-bg, -10), 5%) !default;
+$state-info-bg:      	#eff5f6;
+$state-info-border:  	darken(adjust-hue($state-success-bg, -10), 5%) !default;
+$state-warning-bg:      #ffedde;
+$state-warning-border:  darken(adjust-hue($state-success-bg, -10), 5%) !default;
+$state-danger-bg:       #B90824;
+$state-danger-border:   darken(adjust-hue($state-success-bg, -10), 5%) !default;
+
+// $qg-warning-color: #cc352d;
+$qg-correct-color: #78ba00;
+$qg-correct-border-color: #92c23a; // #a6c56d;
+$qg-correct-bg-color: #fafff2; // #fafff0; // #f7ffe8;
+
+$qg-incorrect-color: #d22d24; // #cc352d;
+$qg-incorrect-border-color: #d4534c; // #d06060;
+$qg-incorrect-bg-color: #fffafa; // #fff6f5; // #ffe2e0;
+
 
 // ## Layout
 // Site header

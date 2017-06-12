@@ -85,13 +85,15 @@ gulp.task('watch', function () {
   gulp.watch([
       `${config.basepath.src}/**/*.html`,
       ignore,
-      `!${config.basepath.src}/assets/_project/_blocks/**/*`
+      `!${config.basepath.src}/assets/_project/_blocks/**/*`,
+      `!${config.basepath.src}/_other-files/**/*.html`,
     ],
     ['template-pages-cdn', 'template-pages-local', 'template-pages-docs']);
   gulp.watch([`${config.basepath.src}/assets/_project/_blocks/layout/**/*.html`], ['assets-includes-local']);
   gulp.watch([`${config.basepath.src}/assets/_project/**/*.scss`], ['scss']);
   gulp.watch(`${config.basepath.src}/assets/_project/_blocks/**/*.js`, { verbose: true }, ['js', 'test']);
   gulp.watch([`${config.basepath.src}/assets/_project/images/**/*`], ['other-assets']);
+  gulp.watch(`${config.basepath.src}/_other-files/**/*.html`, ['build-other-files']);
 });
 gulp.task('watch:modules', function () {
   gulp.watch([config.basepath.src + '/assets/modules/**/src/*.*'], ['build-modules']);
@@ -104,7 +106,7 @@ gulp.task('scss-src', require('./gulp/release-tasks/scss-src')(gulp, plugins, co
 gulp.task('release-other-files', require('./gulp/release-tasks/other-files')(gulp, plugins, config));
 gulp.task('release-files', require('./gulp/release-tasks/files')(gulp, plugins, config));
 
-let dests = ['assets', 'template-local/assets', 'docs/assets'];
+let dests = ['template-local/assets', 'docs/assets'];
 gulp.task('release-js', require('./gulp/common-tasks/js')(gulp, plugins, config, gulpWebpack, dests, 'release'));
 gulp.task('release-scss', require('./gulp/common-tasks/scss')(gulp, plugins, config, dests, 'release'));
 
