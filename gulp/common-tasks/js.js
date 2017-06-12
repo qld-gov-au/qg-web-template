@@ -1,6 +1,7 @@
 'use-strict';
 
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+/*const CopyWebpackPlugin = require('copy-webpack-plugin');*/
 
 module.exports = function (gulp, plugins, config, webpack, destFolder, type = 'build') {
   return function (cb) {
@@ -33,6 +34,11 @@ module.exports = function (gulp, plugins, config, webpack, destFolder, type = 'b
           },
         }],
       },
+      /*plugins: [
+        new CopyWebpackPlugin([
+          {from: `${config.basepath.src}/assets/_project/_blocks/qg-env.js`},
+        ]),
+      ],*/
     };
 
     if (type === 'build') {

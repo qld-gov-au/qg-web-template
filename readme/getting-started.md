@@ -17,6 +17,37 @@ Install all the node packages (If behind a corporate web proxy please have a loo
 npm install
 ```
 
+## 3. Testing Setup
+
+**To start a local server**
+```bash
+gulp serve
+```
+**To run Unit tests and Linting tests**
+```bash
+gulp test
+```
+**Watch and run tests**
+```bash
+gulp watch:test
+```
+
+**To run E2E tests using Browserstack**.
+
+Please make sure to setup browserstack _config file_ (step 3) and run _gulp serve_ before running browserstack E2E tests
+```bash
+gulp test:browserstack --browsers _browser names_
+```
+_browser name_ can be a browser or multiple browsers,
+for example chrome or ie,chrome,safari
+We can add more browser configurations in conf.js
+
+To view testing reports (coverage, eslint and unit test)
+```bash
+gulp serve --type=reports-server
+```
+
+
 ## 3. Browserstack Setup
 1.) Create a .env file in the root of your project
 

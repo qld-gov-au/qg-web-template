@@ -45,7 +45,7 @@ gulp.task('other-assets-local', require('./gulp/build-tasks/other-assets')(gulp,
 gulp.task('other-assets-docs', require('./gulp/build-tasks/other-assets')(gulp, plugins, config, es, assetDests[2]));
 
 gulp.task('build-other-files', require('./gulp/build-tasks/other-files')(gulp, plugins, config));
-gulp.task('build-components', require('./gulp/build-tasks/components')(gulp, plugins, config, gulpWebpack, webpack, path));
+gulp.task('build-modules', require('./gulp/build-tasks/modules')(gulp, plugins, config, gulpWebpack, webpack, path));
 
 gulp.task('assets-includes-local', require('./gulp/build-tasks/assets-includes')(gulp, plugins, config, ['assets/includes-local', 'template-local/assets/includes-local'], true));
 gulp.task('assets-includes-docs', require('./gulp/build-tasks/assets-includes')(gulp, plugins, config, 'docs/assets/includes-local', true, true));
@@ -68,6 +68,7 @@ gulp.task('build', (cb) => {
     ['template-pages-cdn', 'assets-includes-cdn', 'js', 'scss', 'other-assets', 'build-other-files'],
     ['template-pages-local', 'assets-includes-local', 'template-pages-docs'],
     'docs-flatten',
+    'build-modules',
     cb
   );
 });
@@ -78,8 +79,8 @@ gulp.task('build:clean', (cb) => {
 });
 
 /* WATCH TASKS */
-// Note: External libraries and external components are not watched
-const ignore = `!${config.basepath.src}/assets/components/**/*`;
+// Note: External libraries and external modules are not watched
+const ignore = `!${config.basepath.src}/assets/modules/**/*`;
 gulp.task('watch', function () {
   gulp.watch([
       `${config.basepath.src}/**/*.html`,
@@ -94,8 +95,8 @@ gulp.task('watch', function () {
   gulp.watch([`${config.basepath.src}/assets/_project/images/**/*`], ['other-assets']);
   gulp.watch(`${config.basepath.src}/_other-files/**/*.html`, ['build-other-files']);
 });
-gulp.task('watch:components', function () {
-  gulp.watch([config.basepath.src + '/assets/components/**/*.*'], ['build-components']);
+gulp.task('watch:modules', function () {
+  gulp.watch([config.basepath.src + '/assets/modules/**/src/*.*'], ['build-modules']);
 });
 gulp.task('watch:serve', ['watch', 'serve']);
 
