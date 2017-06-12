@@ -1,6 +1,6 @@
 'use-strict';
 
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+/*const UglifyJSPlugin = require('uglifyjs-webpack-plugin');*/
 /*const CopyWebpackPlugin = require('copy-webpack-plugin');*/
 
 module.exports = function (gulp, plugins, config, webpack, destFolder, type = 'build') {
@@ -45,7 +45,7 @@ module.exports = function (gulp, plugins, config, webpack, destFolder, type = 'b
       webpackSettings.devtool = 'source-map';
     } else if (type === 'release') {
       webpackSettings.plugins = [
-        new UglifyJSPlugin(),
+        //new UglifyJSPlugin()
       ];
     }
 
