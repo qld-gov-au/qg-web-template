@@ -5,7 +5,20 @@
     height: auto;
   }
   .unslider-arrow.prev {
-    left: 0;
+    left: 87%;
+  }
+  .unslider-action {
+    left: 93%;
+    position: absolute;
+    &.hide{
+      display: none;
+    }
+    &.show{
+      display: none;
+    }
+  }
+  .unslider-play {
+   display: none;
   }
   .unslider-arrow.next {
     right: 0;
