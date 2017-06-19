@@ -191,19 +191,37 @@
 			d2 = $.Deferred(),
 			d3 = $.Deferred();
 		if ($.fn.generateId === undefined) {
-			$.getScript('https://rawgit.com/qld-gov-au/glue-template/working/src/assets/components/autocomplete/src/lib/generate-id.js').done(function () { console.log('generate id loaded'); d1.resolve(); });
+			$.ajax({
+				url: 'https://rawgit.com/qld-gov-au/glue-template/working/src/assets/components/autocomplete/src/lib/generate-id.js',
+				dataType: 'script'
+			})
+				.done(function () { console.log('generate id loaded'); d1.resolve(); })
+				.fail(function () { console.error('generate id loading failed'); });
+			// $.getScript('https://rawgit.com/qld-gov-au/glue-template/working/src/assets/components/autocomplete/src/lib/generate-id.js').done(function () { console.log('generate id loaded'); d1.resolve(); });
 		} else {
 			d1.resolve();
 		}
 		if (window.ResizeEvents === undefined || $.butterfly === undefined) {
 			if (window.ResizeEvents === undefined) {
-				$.getScript('https://rawgit.com/qld-gov-au/glue-template/Feature/QOL-1101-Maps-JS-Transfer/src/assets/components/jquery.resize-events/build/jquery.resize-events.js').done(function () { console.log('resize loaded'); d2.resolve(); });
+				$.ajax({
+					url: 'https://rawgit.com/qld-gov-au/glue-template/working/src/assets/components/autocomplete/src/lib/generate-id.js',
+					dataType: 'script'
+				})
+					.done(function () { console.log('resize loaded'); d2.resolve(); })
+					.fail(function () { console.log('resize loading failed'); d2.resolve(); });
+				// $.getScript('https://rawgit.com/qld-gov-au/glue-template/Feature/QOL-1101-Maps-JS-Transfer/src/assets/components/jquery.resize-events/build/jquery.resize-events.js').done(function () { console.log('resize loaded'); d2.resolve(); });
 			} else {
 				d2.resolve();
 			}
 			if ($.butterfly === undefined) {
 				$.when(d2).done(function () {
-					$.getScript('https://rawgit.com/qld-gov-au/glue-template/working/src/assets/_project/lib/ext/butterfly/jquery.butterfly.js').done(function () { console.log('butterfly loaded'); d3.resolve(); });
+					$.ajax({
+						url: 'https://rawgit.com/qld-gov-au/glue-template/working/src/assets/_project/lib/ext/butterfly/jquery.butterfly.js',
+						dataType: 'script'
+					})
+						.done(function () { console.log('butterfly loaded'); d3.resolve(); })
+						.fail(function () { console.log('butterfly loading failed'); d3.resolve(); });
+					// $.getScript('https://rawgit.com/qld-gov-au/glue-template/working/src/assets/_project/lib/ext/butterfly/jquery.butterfly.js').done(function () { console.log('butterfly loaded'); d3.resolve(); });
 				});
 			} else {
 				d3.resolve();
