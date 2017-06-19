@@ -192,7 +192,7 @@
 			d3 = $.Deferred();
 		if ($.fn.generateId === undefined) {
 			$.ajax({
-				url: 'https://rawgit.com/qld-gov-au/qg-web-template/working/src/assets/_project/lib/ext/generate-id.js',
+				url: 'https://rawgit.com/qld-gov-au/glue-template/working/src/assets/components/autocomplete/src/lib/generate-id.js',
 				dataType: 'script'
 			})
 				.done(function () { console.log('generate id loaded'); d1.resolve(); })
@@ -204,7 +204,7 @@
 		if (window.ResizeEvents === undefined || $.butterfly === undefined) {
 			if (window.ResizeEvents === undefined) {
 				$.ajax({
-					url: 'https://rawgit.com/qld-gov-au/qg-web-template/Feature/QOL-1101-Maps-JS-Transfer/src/assets/_project/lib/ext/jquery.resize-events.js',
+					url: 'https://rawgit.com/qld-gov-au/glue-template/working/src/assets/components/autocomplete/src/lib/generate-id.js',
 					dataType: 'script'
 				})
 					.done(function () { console.log('resize loaded'); d2.resolve(); })
@@ -216,7 +216,7 @@
 			if ($.butterfly === undefined) {
 				$.when(d2).done(function () {
 					$.ajax({
-						url: 'https://rawgit.com/qld-gov-au/qg-web-template/Feature/QOL-1101-Maps-JS-Transfer/src/assets/_project/lib/ext/butterfly/jquery.butterfly.js',
+						url: 'https://rawgit.com/qld-gov-au/glue-template/working/src/assets/_project/lib/ext/butterfly/jquery.butterfly.js',
 						dataType: 'script'
 					})
 						.done(function () { console.log('butterfly loaded'); d3.resolve(); })
