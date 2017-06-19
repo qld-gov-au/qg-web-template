@@ -144,7 +144,7 @@
 			if ($.butterfly === undefined) {
 				$.when(d2).done(function () {
 					$.ajax({
-						url: '/build/assets/v3/lib/ext/butterfly/jquery.butterfly.js',
+						url: 'https://rawgit.com/qld-gov-au/qg-web-template/Feature/QOL-1101-Maps-JS-Transfer/src/assets/_project/lib/ext/butterfly/jquery.butterfly.js',
 						dataType: 'script'
 					})
 						.done(function () { console.log('butterfly loaded'); d3.resolve(); })
