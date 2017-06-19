@@ -192,5 +192,6 @@
 	}
 
 	$.extend(self, implementations[self.type]);
+
 	$.history = self;
 })(jQuery, qg);
