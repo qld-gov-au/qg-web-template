@@ -23,10 +23,10 @@ const generateSlider = {
       autoplay: true,
       delay: delay,
       arrows: {
-        prev: '<a class="unslider-arrow prev">Previous</a>',
-        next: '<a class="unslider-arrow next">Next</a>',
-        stop: '<a class="unslider-action unslider-pause">Pause</a>',
-        start: '<a class="unslider-action unslider-play">Play</a>',
+        prev: '<a class="unslider-arrow prev"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>',
+        next: '<a class="unslider-arrow next"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>',
+        stop: '<a class="unslider-action unslider-pause"><i class="fa fa-pause" aria-hidden="true"></i></a>',
+        start: '<a class="unslider-action unslider-play"><i class="fa fa-play" aria-hidden="true"></i></a>',
       },
     };
   },
@@ -75,7 +75,7 @@ $(function ($, qg) {
       };
       $(container).find('ul').append('<li> <a href="' + entry.url + '" class=""> <img src="' + entry.imgSrc + '" alt=""> </a> <h3>' + entry.title + '</h3> <div class="news-content"> <dl class="meta"> <dt class="date-posted">Posted</dt> <dd class="date-posted">' + convertDate(entry.posted) + '</dd> </dl> <p>' + entry.desc + '</p> <p class="more"> <a href="' + entry.url + '" title="Read more about: ' + entry.title + '">More…</a> </p> </div> </li>');
     });
-    $('[data-role="qg-slider"]').replaceWith(container);
+    $('[data-role="qg-slider"]').append(container);
     // slider
     generateSlider.init();
   }, function (reason) {

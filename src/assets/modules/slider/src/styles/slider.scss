@@ -4,11 +4,8 @@
     width: 100%;
     height: auto;
   }
-  .unslider-arrow.prev {
-    left: 87%;
-  }
   .unslider-action {
-    left: 93%;
+    left: 87%;
     position: absolute;
     &.hide{
       display: none;
@@ -16,6 +13,9 @@
     &.show{
       display: none;
     }
+  }
+  .unslider-arrow.prev {
+    left: 78%;
   }
   .unslider-play {
    display: none;
@@ -25,7 +25,7 @@
   }
 }
 .unslider-nav ol {
-  text-align: center;
+  text-align: left;
   li{
     display: inline-block;
     float: none;
