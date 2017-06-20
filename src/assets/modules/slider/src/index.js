@@ -11,6 +11,41 @@ import './lib/unslider/unslider.css';
 //slider custom styling
 import './styles/slider.scss';
 
+// slider config function
+const generateSlider = {
+  el: '.banner',
+  init: function (delay = 3000) {
+    $(this.el).unslider(this.options(delay));
+    this.methods.playPause();
+  },
+  options: function (delay) {
+    return {
+      autoplay: true,
+      delay: delay,
+      arrows: {
+        prev: '<a class="unslider-arrow prev">Previous</a>',
+        next: '<a class="unslider-arrow next">Next</a>',
+        stop: '<a class="unslider-action unslider-pause">Pause</a>',
+        start: '<a class="unslider-action unslider-play">Play</a>',
+      },
+    };
+  },
+  methods: {
+    playPause: function () {
+      $(document).on('click', '.unslider-action', function (e) {
+        if ($(e.currentTarget).hasClass('unslider-pause')) {
+          $(this).removeClass('show').addClass('hide');
+          $('.unslider-play').removeClass('hide').addClass('show');
+        } else if ($(e.currentTarget).hasClass('unslider-play')) {
+          $(this).removeClass('show').addClass('hide');
+          $('.unslider-pause').removeClass('hide').addClass('show');
+        }
+      });
+    },
+  },
+};
+
+// reading xml and creating a slider using the xml data
 /*globals qg*/
 $(function ($, qg) {
   var prepareUrl = function (loc) {
@@ -41,7 +76,8 @@ $(function ($, qg) {
       $(container).find('ul').append('<li> <a href="' + entry.url + '" class=""> <img src="' + entry.imgSrc + '" alt=""> </a> <h3>' + entry.title + '</h3> <div class="news-content"> <dl class="meta"> <dt class="date-posted">Posted</dt> <dd class="date-posted">' + convertDate(entry.posted) + '</dd> </dl> <p>' + entry.desc + '</p> <p class="more"> <a href="' + entry.url + '" title="Read more about: ' + entry.title + '">More…</a> </p> </div> </li>');
     });
     $('[data-role="qg-slider"]').replaceWith(container);
-    $('.banner').unslider();
+    // slider
+    generateSlider.init();
   }, function (reason) {
     console.log('error in processing your request', reason);
   });
