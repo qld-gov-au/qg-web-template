@@ -1,6 +1,3 @@
-//slider custom styling
-import './styles/autocomplete.scss';
-
 // generate id plugin
 import './lib/generate-id';
 
