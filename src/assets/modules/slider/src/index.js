@@ -40,7 +40,7 @@ $(function ($, qg) {
       };
       $(container).find('ul').append('<li> <a href="' + entry.url + '" class=""> <img src="' + entry.imgSrc + '" alt=""> </a> <h3>' + entry.title + '</h3> <div class="news-content"> <dl class="meta"> <dt class="date-posted">Posted</dt> <dd class="date-posted">' + convertDate(entry.posted) + '</dd> </dl> <p>' + entry.desc + '</p> <p class="more"> <a href="' + entry.url + '" title="Read more about: ' + entry.title + '">More…</a> </p> </div> </li>');
     });
-    $('[data-role="qg-slider"]').replaceWith(container);
+    $('[data-role="qg-slider"]').append(container);
     $('.banner').unslider();
   }, function (reason) {
     console.log('error in processing your request', reason);

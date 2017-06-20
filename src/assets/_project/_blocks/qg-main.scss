@@ -39,13 +39,13 @@
 @import "components/pagination";
 @import "components/alert";
 @import "components/_correct-incorrect"; // Adds correct / incorrect styling
-
+@import "components/_misc";
 // QG layout components
 @import "layout/layout-scaffolding"; // Primary layout structure
 
 @import "layout/_pagemodels/index"; // Page models
 
-@import "layout/header/access"; 
+@import "layout/header/access";
 @import "layout/header/alerts";
 @import "layout/header/coat-of-arms";
 @import "layout/header/header-structure";

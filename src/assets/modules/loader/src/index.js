@@ -40,7 +40,7 @@ var modulesLoader = (function ($) {
           }
         });
       }
-      if ($('[data-role=' + value.identifier + ']').length > 0) {
+      if ($(value.identifier).length > 0 || $('[data-role=' + value.identifier + ']').length > 0) {
         if (value.css) {
           let stylesheet = loadCSS(value.css);
           onloadCSS(stylesheet, function () { handleJs(); });
