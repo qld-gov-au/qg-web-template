@@ -12,7 +12,9 @@
   "keywords": [],
   "author": "SM OSS Digital Applications [oss.applications@dsiti.qld.gov.au]",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "font-awesome": "^4.7.0"
+  },
   "devDependencies": {
     "concurrently": "^3.4.0",
     "css-loader": "^0.28.1",
