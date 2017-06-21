@@ -12,7 +12,7 @@
 <div class="container">
   
 </div>
-  <a href="#history">click this link to see state saved in history</a>
+  <p id="history">click this link to see state saved in history</a>
 </div>
 <script
   src="https://code.jquery.com/jquery-1.12.4.js"
@@ -26,7 +26,10 @@
   </script>
   <script type="text/javascript" src="jquery.history.js"></script>
   <script type="text/javascript">
-      
+      $('p').on('click',function(e){
+        $.history.load($(this).attr('id'));
+        $(this).append('<strong><br> window.location.hash = '+window.location.hash+'</strong>');
+      })
   </script>
 </body>
 </html>
