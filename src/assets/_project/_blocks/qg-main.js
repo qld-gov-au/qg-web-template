@@ -22,6 +22,7 @@ import './legacy/bootstrap-accessibility.js';
 
 import './components/lightbox/qg-lightbox.js';
 import './components/progressive-reveal';
+import './components/license';
 import accessibility      from './components/accessibility/accessibility';
 
 // Layout
@@ -36,6 +37,5 @@ import feedbackForm       from './layout/footer/feedback-form';
   activeSideNav.highlightNavItem();
   feedbackForm.init(franchiseTitle);
   shareLinks.init();
-
   accessibility.init();
 }());

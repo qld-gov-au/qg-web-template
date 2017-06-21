@@ -1,2 +1,2 @@
-import './qg-xml-reader';
-import './qg-loan-calculator';
+import './includes/qg-xml-reader';
+import './includes/qg-loan-calculator';
