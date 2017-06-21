@@ -3,13 +3,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-
 module.exports = {
   context: resolve('src'),
   entry: './index.js',
   output: {
     path: resolve(__dirname, 'build'),
-    filename: 'slider.js',
+    filename: 'slider.bundle.js',
     publicPath: '/build/',
   },
   devtool: 'source-map',

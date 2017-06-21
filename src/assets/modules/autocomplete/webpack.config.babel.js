@@ -7,7 +7,7 @@ module.exports = {
   entry: './index.js',
   output: {
     path: resolve(__dirname, 'build'),
-    filename: 'autocomplete.js',
+    filename: 'autocomplete.bundle.js',
     publicPath: '/build/',
   },
   devtool: 'source-map',

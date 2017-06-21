@@ -8,7 +8,7 @@ module.exports = {
   entry: './index.js',
   output: {
     path: resolve(__dirname, 'build'),
-    filename: 'social-feed.js',
+    filename: 'social-feed.bundle.js',
     publicPath: '/build/',
   },
   devtool: 'source-map',

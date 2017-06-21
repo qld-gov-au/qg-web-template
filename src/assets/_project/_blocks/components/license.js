@@ -97,13 +97,12 @@
   };
 
   var getLicenseVal = function (url) {
-    var abbreviation, version, urlArr;
-    urlArr = /\/licenses\/([a-zA-Z0-9-/.]+)/g.exec(url)[1].split('/').filter(function (e) {
+    var urlArr = /\/licenses\/([a-zA-Z0-9-/.]+)/g.exec(url)[1].split('/').filter(function (e) {
       return e;
     });
 
-    abbreviation = urlArr[0];
-    version = urlArr[1];
+    var abbreviation = urlArr[0];
+    var version = urlArr[1];
 
     return {
       name: licenceOptions.types[abbreviation].name,
@@ -119,10 +118,8 @@
     $('meta').filter('[name="DCTERMS.license"]').filter(function () {
       return new RegExp('https?://creativecommons.org/licenses/[a-zA-Z0-9\\-\\/\\.]+').test(this.content);
     }).eq(0).each(function () {
-      var url = this.content,
-        licence;
-
-      licence = getLicenseVal(url);
+      var url = this.content;
+      var licence = getLicenseVal(url);
       // if we have licence details…
       if (licence) {
         $('.qg-content-footer').append(
