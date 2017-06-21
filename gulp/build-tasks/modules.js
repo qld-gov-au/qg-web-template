@@ -5,7 +5,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = function (gulp, plugins, config, gulpWebpack, webpack, path) {
   return function () {
     //init is a global component the scripts inside of this are loaded on every page. For example - loader, license
-    let modules = ['init', 'slider', 'pagination', 'data', 'misc', 'social-feed'];
+    let modules = ['loader', 'slider', 'pagination', 'data', 'misc', 'social-feed'];
     let staticAssets = ['images', 'examples', 'includes'];
 
     // building each component
