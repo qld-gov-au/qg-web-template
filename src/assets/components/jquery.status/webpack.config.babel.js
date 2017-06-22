@@ -10,6 +10,7 @@ module.exports = {
     filename: 'jquery.status.js',
     publicPath: '/build/',
   },
+  devtool: 'source-map',
   module: {
     loaders: [
       {
@@ -25,9 +26,9 @@ module.exports = {
       },
 
     ],
-    rules: [
-      { enforce: 'pre',test: /\.js$/, exclude: /node_modules/, loader: "eslint-loader" },
-    ]
+    // rules: [
+    //   { enforce: 'pre',test: /\.js$/, exclude: /node_modules/, loader: "eslint-loader" },
+    // ]
   },
   plugins: [
     new ExtractTextPlugin(`styles/jquery.status.css`),
