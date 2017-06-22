@@ -1,0 +1,14 @@
+//mixin
+@import "../../../../_project/_blocks/scss-general/mixins/_font-size.scss";
+
+
+@mixin status($icon: $fa-var-info-circle, $background-color: $info-background-color, $color: $info-color, $border-color: $info-border-color) {
+	background-color: $background-color;
+	color: $color;
+	@include fonticon($icon, 1, 2.5, 1, #000);
+
+	&:before, &:hover:before {
+		background: $background-color;
+		color: $border-color;
+	}
+}

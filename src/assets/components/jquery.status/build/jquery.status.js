@@ -63,31 +63,41 @@
 /******/ 	__webpack_require__.p = "/build/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
 /***/ (function(module, exports) {
 
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {return typeof obj;} : function (obj) {return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;}; // import './styles/variables.scss';
+// import './styles/mixin.scss';
+__webpack_require__(0);
+
 (function ($) {
 	/*
-		jquery status plugin
+               	jquery status  plugin
+               		displays a "status" box
+               		<div class="status info">
+               		<h2>Title<h2>
+               		body
+               	</div>
+               		requires jquery
+               	requires jquery.butterfly
+               	requires jquery.generateId
+               	*/
 
-		displays a "status" box
 
-		<div class="status info">
-			<h2>Title<h2>
-			body
-		</div>
 
-		requires jquery
-		requires jquery.butterfly
-		requires jquery.generateId
 
-	*/
 	'use strict';
-	console.log('inside status');
 
 	var methods = {
 
@@ -98,40 +108,40 @@
 		// lightbox - true | false - display status box in a lightbox, false displays nothing (TODO)
 		// title - text/html - contents for the <h2>
 		// body - text/html - contents of the lightbox (after the h2)
-		show: function (options) {
+		show: function show(options) {
 			var html,
-				link,
-				callback;
+			link,
+			callback;
 
 			// butterfly options
 			options = $.extend({}, {
 				status: 'info',
 				lightbox: false,
 				title: 'Status message',
-				body: ''
-			}, options);
+				body: '' },
+			options);
 
 			// show status in a lightbox
 			if (options.lightbox === true) {
 				// create dummy status box
 				html = $(
-						'<div class="status ' + options.status + '">' +
-							'<h2>' + options.title + '</h2>' + options.body +
-						'</div>'
-					)
-					// give it an id for lightbox
-					.generateId(options.status)
-				;
+				'<div class="status ' + options.status + '">' +
+				'<h2>' + options.title + '</h2>' + options.body +
+				'</div>'
 
-				link = $('<a>' + options.title + '</a>').attr('href', '#' + html[ 0 ].id);
+				// give it an id for lightbox
+				).generateId(options.status);
+
+
+				link = $('<a>' + options.title + '</a>').attr('href', '#' + html[0].id);
 
 				// add dummy html to page
-				html
-					.wrap('<div style="display: none"/>')
-					.parent()
-						.append(link)
-						.appendTo(document.body)
-				;
+				html.
+				wrap('<div style="display: none"/>').
+				parent().
+				append(link).
+				appendTo(document.body);
+
 
 				// hardcoded butterfly options
 				callback = options.callbackPostOpen;
@@ -140,23 +150,23 @@
 					// prevent status lightbox from going in browser history
 					storeState: false,
 
-					callbackPostOpen: function () {
+					callbackPostOpen: function callbackPostOpen() {
 						// cleanup DOM after lightbox opened
 						html.parent().remove();
 						// support callback
 						if (typeof callback === 'function') {
 							callback.apply(this);
 						}
-					}
-				});
+					} });
+
 
 				// find the status box link
 				link
-					// set us up a lightbox
-					.butterfly(options)
-					// activate it
-					.click()
-				;
+				// set us up a lightbox
+				.butterfly(options
+				// activate it
+				).click();
+
 			}
 
 			// chaining
@@ -164,17 +174,17 @@
 		},
 
 		// init - does nothing
-		init: function () {
+		init: function init() {
 			return this;
-		}
-	};
+		} };
+
 
 	$.fn.status = function (method) {
 		// Method calling logic
 		// http://docs.jquery.com/Plugins/Authoring#Plugin_Methods
 		if (methods[method]) {
-			return methods[ method ].apply(this, Array.prototype.slice.call(arguments, 1));
-		} else if (typeof method === 'object' || !method) {
+			return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
+		} else if ((typeof method === 'undefined' ? 'undefined' : _typeof(method)) === 'object' || !method) {
 			return methods.init.apply(this, arguments);
 		} else {
 			$.error('Method ' + method + ' does not exist on jQuery.status');
@@ -182,6 +192,6 @@
 	};
 })(jQuery);
 
-
 /***/ })
 /******/ ]);
+//# sourceMappingURL=jquery.status.js.map

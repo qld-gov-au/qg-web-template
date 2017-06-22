@@ -1,6 +1,7 @@
 // #################################################
 // ## Colour definitions
 // Define colour names, avoid using these in the wider SCSS
+$black: #000000;
 
 // ## Primary blue ##
 $qg-blue: #007EB1; // Primary blue
@@ -33,11 +34,21 @@ $qg-dark-blue: #0B2E4C;
 $qg-pale-blue-darker:	#cde8ec;
 $qg-pale-blue:			#e7f5fe;
 
-	$qg-pale-blue-dark:		#cecece;
-	$qg-pale-blue-light:	#f2f7f9;
+$qg-pale-blue-dark:		#cecece;
+$qg-pale-blue-light:	#f2f7f9;
+
+$qg-blueberry: #759BF3;
 
 
-
+//Other colours
+$qg-light-lime: #F2F7EA;
+$qg-lime: #9CBF6D;
+$qg-light-peach: #FFEDDE;
+$qg-peach: #f8ae70;
+$qg-light-watermelon: #FEECEF;
+$qg-watermelon: #EA6A7E;
+$qg-beige: #F5EBDC;
+$qg-dark-beige: #AE8446;
 
 // #################################################
 // ## Semantic colour Variables
