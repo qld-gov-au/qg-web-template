@@ -1,0 +1,305 @@
+@charset "UTF-8";
+.status {
+  margin: 0.5em 0 0.5em 4em;
+  padding: 1em 2em;
+  background: #EEF4F6;
+  position: relative;
+  word-wrap: break-word; }
+
+.status:before {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  margin-left: -2.4em;
+  width: 1em;
+  height: 1em;
+  text-align: center;
+  color: #000000;
+  padding: 0.4em; }
+
+/* status in butterfly lightbox */
+#jb-window .status {
+  margin: 0; }
+
+.status h2 {
+  margin-top: 0; }
+
+.info, .status {
+  background-color: #EEF4F6;
+  color: #000000;
+  clear: both; }
+  .info:before, .status:before {
+    display: inline-block;
+    font-family: FontAwesome;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    font-size: 2.5rem;
+    line-height: 1;
+    padding-right: 16px;
+    padding-right: 1rem;
+    content: "\F05A";
+    text-decoration: inherit;
+    background: inherit;
+    color: #000; }
+  .info:hover:before, .status:hover:before {
+    display: inline-block;
+    font-family: FontAwesome;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    font-size: 2.5rem;
+    line-height: 1;
+    padding-right: 16px;
+    padding-right: 1rem;
+    content: "\F05A";
+    text-decoration: none;
+    background: inherit;
+    color: #000; }
+  .info:before, .info:hover:before, .status:before, .status:hover:before {
+    background: #EEF4F6;
+    color: #759BF3; }
+
+.success-step {
+  background-color: #EEF4F6;
+  color: #000000; }
+  .success-step:before {
+    display: inline-block;
+    font-family: FontAwesome;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    font-size: 2.5rem;
+    line-height: 1;
+    padding-right: 16px;
+    padding-right: 1rem;
+    content: "\F00C";
+    text-decoration: inherit;
+    background: inherit;
+    color: #000; }
+  .success-step:hover:before {
+    display: inline-block;
+    font-family: FontAwesome;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    font-size: 2.5rem;
+    line-height: 1;
+    padding-right: 16px;
+    padding-right: 1rem;
+    content: "\F00C";
+    text-decoration: none;
+    background: inherit;
+    color: #000; }
+  .success-step:before, .success-step:hover:before {
+    background: #EEF4F6;
+    color: #759BF3; }
+
+.success {
+  background-color: #F2F7EA;
+  color: #000000; }
+  .success:before {
+    display: inline-block;
+    font-family: FontAwesome;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    font-size: 2.5rem;
+    line-height: 1;
+    padding-right: 16px;
+    padding-right: 1rem;
+    content: "\F058";
+    text-decoration: inherit;
+    background: inherit;
+    color: #000; }
+  .success:hover:before {
+    display: inline-block;
+    font-family: FontAwesome;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    font-size: 2.5rem;
+    line-height: 1;
+    padding-right: 16px;
+    padding-right: 1rem;
+    content: "\F058";
+    text-decoration: none;
+    background: inherit;
+    color: #000; }
+  .success:before, .success:hover:before {
+    background: #F2F7EA;
+    color: #9CBF6D; }
+
+.warn {
+  background-color: #FFEDDE;
+  color: #000000; }
+  .warn:before {
+    display: inline-block;
+    font-family: FontAwesome;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    font-size: 2.5rem;
+    line-height: 1;
+    padding-right: 16px;
+    padding-right: 1rem;
+    content: "\F071";
+    text-decoration: inherit;
+    background: inherit;
+    color: #000; }
+  .warn:hover:before {
+    display: inline-block;
+    font-family: FontAwesome;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    font-size: 2.5rem;
+    line-height: 1;
+    padding-right: 16px;
+    padding-right: 1rem;
+    content: "\F071";
+    text-decoration: none;
+    background: inherit;
+    color: #000; }
+  .warn:before, .warn:hover:before {
+    background: #FFEDDE;
+    color: #f8ae70; }
+
+.fail {
+  background-color: #FEECEF;
+  color: #000000; }
+  .fail:before {
+    display: inline-block;
+    font-family: FontAwesome;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    font-size: 2.5rem;
+    line-height: 1;
+    padding-right: 16px;
+    padding-right: 1rem;
+    content: "\F05E";
+    text-decoration: inherit;
+    background: inherit;
+    color: #000; }
+  .fail:hover:before {
+    display: inline-block;
+    font-family: FontAwesome;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    font-size: 2.5rem;
+    line-height: 1;
+    padding-right: 16px;
+    padding-right: 1rem;
+    content: "\F05E";
+    text-decoration: none;
+    background: inherit;
+    color: #000; }
+  .fail:before, .fail:hover:before {
+    background: #FEECEF;
+    color: #EA6A7E; }
+
+.qg-survey {
+  background-color: #007EB1;
+  color: #FFF; }
+  .qg-survey:before {
+    display: inline-block;
+    font-family: FontAwesome;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    font-size: 2.5rem;
+    line-height: 1;
+    padding-right: 16px;
+    padding-right: 1rem;
+    content: "\F0E6";
+    text-decoration: inherit;
+    background: inherit;
+    color: #000; }
+  .qg-survey:hover:before {
+    display: inline-block;
+    font-family: FontAwesome;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    font-size: 2.5rem;
+    line-height: 1;
+    padding-right: 16px;
+    padding-right: 1rem;
+    content: "\F0E6";
+    text-decoration: none;
+    background: inherit;
+    color: #000; }
+  .qg-survey:before, .qg-survey:hover:before {
+    background: #007EB1;
+    color: #FFF; }
+  .qg-survey p, .qg-survey h2 {
+    color: #FFF;
+    border: none !important; }
+  .qg-survey a:link, .qg-survey a:focus, .qg-survey a:visited, .qg-survey a:hover {
+    color: #FFF; }
+
+div.download {
+  background-color: #F5EBDC;
+  color: #000000; }
+  div.download:before {
+    display: inline-block;
+    font-family: FontAwesome;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    font-size: 2.5rem;
+    line-height: 1;
+    padding-right: 16px;
+    padding-right: 1rem;
+    content: "\F019";
+    text-decoration: inherit;
+    background: inherit;
+    color: #000; }
+  div.download:hover:before {
+    display: inline-block;
+    font-family: FontAwesome;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    font-size: 2.5rem;
+    line-height: 1;
+    padding-right: 16px;
+    padding-right: 1rem;
+    content: "\F019";
+    text-decoration: none;
+    background: inherit;
+    color: #000; }
+  div.download:before, div.download:hover:before {
+    background: #F5EBDC;
+    color: #AE8446; }
