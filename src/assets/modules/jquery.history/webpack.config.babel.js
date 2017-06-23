@@ -7,7 +7,7 @@ module.exports = {
   entry: './index.js',
   output: {
     path: resolve(__dirname, 'build'),
-    filename: 'jquery.history.js',
+    filename: 'jquery.history.bundle.js',
     publicPath: '/build/',
   },
   module: {

@@ -8,7 +8,7 @@ module.exports = {
   entry: './index.js',
   output: {
     path: resolve(__dirname, 'build'),
-    filename: 'jquery.status.js',
+    filename: 'jquery.status.bundle.js',
     publicPath: '/build/',
   },
   module: {
