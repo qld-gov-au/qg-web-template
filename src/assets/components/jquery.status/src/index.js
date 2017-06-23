@@ -1,5 +1,3 @@
-// import './styles/variables.scss';
-// import './styles/mixin.scss';
 import './styles/status.scss';
 
 (function ($) {
