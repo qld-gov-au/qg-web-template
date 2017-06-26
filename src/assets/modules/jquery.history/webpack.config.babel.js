@@ -7,7 +7,7 @@ module.exports = {
   entry: './index.js',
   output: {
     path: resolve(__dirname, 'build'),
-    filename: 'bundle.js',
+    filename: 'jquery.history.bundle.js',
     publicPath: '/build/',
   },
   module: {
@@ -25,12 +25,16 @@ module.exports = {
       },
 
     ],
+    rules: [
+      { enforce: 'pre',test: /\.js$/, exclude: /node_modules/, loader: "eslint-loader" },
+    ]
   },
   plugins: [
-    new ExtractTextPlugin(`styles/[name].css`),
+    new ExtractTextPlugin(`styles/jquery.history.css`),
     new HtmlWebpackPlugin({
       title: 'build template',
-      template: './examples/index.html',
+      inject: false,
+      template: './examples/index.html'
     }),
   ],
 };

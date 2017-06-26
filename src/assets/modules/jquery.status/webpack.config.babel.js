@@ -8,10 +8,9 @@ module.exports = {
   entry: './index.js',
   output: {
     path: resolve(__dirname, 'build'),
-    filename: 'pagination.js',
+    filename: 'jquery.status.bundle.js',
     publicPath: '/build/',
   },
-  devtool: 'source-map',
   module: {
     loaders: [
       {
@@ -32,7 +31,7 @@ module.exports = {
     // ]
   },
   plugins: [
-    new ExtractTextPlugin(`styles/pagination.css`),
+    new ExtractTextPlugin(`styles/jquery.status.css`),
     new HtmlWebpackPlugin({
       title: 'build template',
       inject: false,
