@@ -15,11 +15,16 @@ const mapTo = {
   slider: {
     identifier: 'qg-slider',
     css: `${buildPath}slider/styles/slider.css`,
-    js: [`${buildPath}misc/misc.bundle.js`, `${buildPath}slider/slider.bundle.js`],
+    js: [`${buildPath}misc/includes/xml-reader/xml-reader.js`, `${buildPath}slider/slider.bundle.js`],
   },
   feeds: {
     identifier: 'qg-social-feed',
     js: [`${buildPath}social-feed/social-feed.bundle.js`],
+  },
+  quickExit: {
+    identifier: '#qg-quick-exit',
+    css: `${buildPath}misc/includes/quick-exit/quick-exit.css`,
+    js: [`${buildPath}misc/includes/quick-exit/quick-exit.js`],
   },
 };
 
