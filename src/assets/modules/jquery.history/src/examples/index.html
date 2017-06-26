@@ -10,17 +10,26 @@
 </head>
 <body>
 <div class="container">
-  <a id="data-url" data-url="https://data.qld.gov.au/dataset/q-ride-providers/resource/0647759d-9f68-44f9-bd7e-eb96d37d11e4" style="display:none">View full Data</a>
-  <p class="search-result"></p>
+  
+</div>
+  <p id="history">click this link to see state saved in history</a>
 </div>
 <script
   src="https://code.jquery.com/jquery-1.12.4.js"
   integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
   crossorigin="anonymous"></script>
+
+  <script>
+    //env variables file
+    window.qg = window.qg || {};
+    window.qg.components = window.qg.components || {};
+  </script>
+  <script type="text/javascript" src="jquery.history.bundle.js"></script>
   <script type="text/javascript">
-    if (qg === undefined) {
-      var qg = {};
-    }
+      $('p').on('click',function(e){
+        $.history.load($(this).attr('id'));
+        $(this).append('<strong><br> window.location.hash = '+window.location.hash+'</strong>');
+      })
   </script>
 </body>
 </html>

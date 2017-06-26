@@ -1,0 +1,31 @@
+@import "../../../../_project/_blocks/scss-general/_qg-variables.scss";
+
+$status-background-color: $qg-light-blue-gray3;
+$info-background-color: $qg-light-blue-gray3;
+$info-color: $black;
+$info-border-color: $qg-blueberry;
+$success-step-background-color: $qg-light-blue-gray3;
+$success-step-color: $black;
+$success-step-border-color: $qg-blueberry;
+$success-background-color: $qg-light-lime;
+$success-color: $black;
+$success-border-color: $qg-lime;
+$warn-background-color: $qg-light-peach;
+$warn-color: $black;
+$warn-border-color: $qg-peach;
+$fail-background-color: $qg-light-watermelon;
+$fail-color: $black;
+$fail-border-color: $qg-watermelon;
+$download-background-color: $qg-beige;
+$download-color: $black;
+$download-border-color: $qg-dark-beige;
+
+$font-awesome: FontAwesome;
+$base-font-size: 16;
+$fa-var-info-circle: "\f05a";
+$fa-var-check: "\f00c";
+$fa-var-check-circle: "\f058";
+$fa-var-exclamation-triangle: "\f071";
+$fa-var-ban: "\f05e";
+$fa-var-comments-o: "\f0e6";
+$fa-var-download: "\f019";

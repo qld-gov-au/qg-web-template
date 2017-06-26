@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://rawgit.com/qld-gov-au/qg-web-template/Feature/QOL-1101-Maps-JS-Transfer/src/assets/_project/lib/ext/butterfly/butterfly.css">
+  <link rel="stylesheet" href="styles/jquery.status.css">
+</head>
+<body>
+<div class="container">
+  
+</div>
+</div>
+<script
+  src="https://code.jquery.com/jquery-1.12.4.js"
+  integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+  crossorigin="anonymous"></script>
+
+  <!--<script type="text/javascript" src="https://rawgit.com/qld-gov-au/glue-template/working/src/assets/components/autocomplete/src/lib/generate-id.js"></script>
+  <script type="text/javascript" src="https://rawgit.com/qld-gov-au/glue-template/working/src/assets/_project/lib/ext/butterfly/jquery.butterfly.js"></script>-->
+  <script>
+    //env variables file
+    window.qg = window.qg || {};
+    window.qg.components = window.qg.components || {};
+  </script>
+  <script type="text/javascript" src="https://rawgit.com/qld-gov-au/qg-web-template/working/src/assets/_project/lib/ext/generate-id.js"></script>
+  <script type="text/javascript" src="https://rawgit.com/qld-gov-au/qg-web-template/Feature/QOL-1101-Maps-JS-Transfer/src/assets/_project/lib/ext/jquery.resize-events.js"></script>
+  <script type="text/javascript" src="https://rawgit.com/qld-gov-au/qg-web-template/Feature/QOL-1101-Maps-JS-Transfer/src/assets/modules/jquery.history/build/jquery.history.js"></script>
+  <script type="text/javascript" src="https://rawgit.com/qld-gov-au/qg-web-template/Feature/QOL-1101-Maps-JS-Transfer/src/assets/_project/lib/ext/butterfly/jquery.butterfly.js"></script>
+  <script type="text/javascript" src="jquery.status.bundle.js"></script>
+  <script type="text/javascript">
+      // init code
+      $(document).status('show', {
+        status: 'fail',
+        lightbox: true,
+        title: 'Error loading data',
+        body: '<p>We were unable to retrieve data.</p><p>Please try again later.</p>',
+        closeButtonImage: 'images/close.png'
+      });
+  </script>
+</body>
+</html>

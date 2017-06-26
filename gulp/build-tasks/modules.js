@@ -3,8 +3,7 @@ const sourcemaps = require('gulp-sourcemaps');
 
 module.exports = function (gulp, plugins, config, gulpWebpack, webpack, path) {
   return function () {
-    //init is a global component the scripts inside of this are loaded on every page. For example - loader, license
-    let modules = ['loader', 'slider', 'autocomplete', 'pagination', 'data', 'social-feed', 'misc'];
+    let modules = ['loader', 'slider', 'autocomplete', 'pagination', 'data', 'misc', 'social-feed', 'jquery.status', 'jquery.history'];
     let staticAssets = ['images', 'examples', 'includes'];
 
     // building each component
@@ -26,6 +25,10 @@ module.exports = function (gulp, plugins, config, gulpWebpack, webpack, path) {
             .pipe(gulp.dest(`${config.basepath.build}/assets/${config.versionName}/modules/${element}/includes`));
           gulp.src(`${config.basepath.src}/assets/modules/${element}/src/${el}/**/**/*`)
             .pipe(gulp.dest(`${config.basepath.build}/assets/${config.versionName}/modules/${element}/includes`));
+        }
+        if (el === 'images') {
+          gulp.src(`${config.basepath.src}/assets/modules/${element}/src/${el}/**/**`)
+            .pipe(gulp.dest(`${config.basepath.build}/assets/${config.versionName}/modules/${element}/${el}`));
         }
       });
       return gulp.src(path.resolve(__dirname, config.basepath.modules))
