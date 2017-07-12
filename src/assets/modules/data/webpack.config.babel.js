@@ -7,11 +7,11 @@ module.exports = {
   entry: './index.js',
   output: {
     path: resolve(__dirname, 'build'),
-    filename: 'bundle.js',
+    filename: 'data.bundle.js',
     publicPath: '/build/',
   },
   module: {
-    
+
     loaders: [
       {
         test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader',
