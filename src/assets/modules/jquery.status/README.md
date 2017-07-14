@@ -7,6 +7,7 @@ jquery.status is a module that lets you display error/ information/ warning / su
  - jquery.resize-events.js //TODO: Update with CDN link once hosted
  - jquery.history.js //TODO: Update with CDN link once hosted
  - jquery.butterfly.js //TODO: Update with CDN link once hosted
+ - butterfly.css //TODO: Update with CDN link once hosted
 ## Usage
 Following script would display message in modal box
 ```

@@ -68,7 +68,7 @@ $(document).status('show', {
     body: '< p >We were unable to retrieve data.</ p>< p>Please try again later.</ p>',
     closeButtonImage: 'images/close.png'
 });
-</code> 
+</code>
                     </pre>
                     <h3>Attributes</h3>
                     <dl class="dl-horizontal">
@@ -77,6 +77,49 @@ $(document).status('show', {
                         <dt>body</dt><dd>Message to display</dd>
                         <dt>closeButtonImage</dt><dd>Path to modal box close button</dd>
                     </dl>
+
+
+                  <h2 class="category" id="data">Data </h2>
+                  <p>Data is a module that lets you fetch data from CKAN (data.qld.gov.au) through PostgreSQL queries</p>
+                  <h3>Dependencies</h3>
+                  <dl class="dl-horizontal">
+                    <dt>generate-id.js</dt><dd>//TODO: Update with CDN link once hosted</dd>
+                    <dt>jquery.resize-events.js</dt><dd>//TODO: Update with CDN link once hosted</dd>
+                    <dt>jquery.history.js</dt><dd>//TODO: Update with CDN link once hosted</dd>
+                    <dt>jquery.butterfly.js</dt><dd>//TODO: Update with CDN link once hosted</dd>
+                    <dt>butterfly.css</dt><dd>//TODO: Update with CDN link once hosted</dd>
+                    <dt>jquery.status.bundle.js</dt><dd>//TODO: Update with CDN link once hosted</dd>
+                    <dt>jquery.status.css</dt><dd>//TODO: Update with CDN link once hosted</dd>
+                    <dt>jquery.jsonp.js</dt><dd>//TODO: Update with CDN link once hosted</dd>
+                  </dl>
+                  <h3>Usage</h3>
+                  <pre>
+<code>
+qg.data.get(dataEnvironment, sql, {
+        cache: !0,
+        modalCloseButtonImage: 'images/close.png',
+        successCallback: function (data) {
+            if (data.result.records.length > 0) {
+                $.each(data.result.records, function (k, v) {
+                    $('.search-result').append(v.Title + '<br>');
+                });
+            } else {
+                $('.search-result').html('No records found');
+            }
+        }
+    });
+                  </code>
+                  </pre>
+                  <h3>Attributes</h3>
+                  <dl class="dl-horizontal">
+                    <dt>dataEnvironment</dt><dd>staging.data.qld.gov.au | data.qld.gov.au</dd>
+                    <dt>sql</dt><dd>PostgreSQL query. Example: Select * from {RESOURCE_ID}</dd>
+                    <dt>successCallback</dt><dd>Function to execute after data is fetched</dd>
+                    <dt>modalCloseButtonImage</dt><dd>Path to modal box close button</dd>
+                  </dl>
+
+
+
                     <p class="lead">Bootstraps custom Javascript plugins</p><!-- ################################## -->
                     <h2 class="category" id="transitions">Transitions</h2>
                     <p>Standard implementation. Safe to use with this Web Template.</p><!--=include ../assets/components/slider/src/examples/_example.html -->
@@ -119,6 +162,9 @@ $(document).status('show', {
                         <ul class="nav nav-pills nav-stacked" role="tablist">
                             <li>
                                 <a href="#status">Status</a>
+                            </li>
+                            <li>
+                              <a href="#data">Data</a>
                             </li>
                             <li>
                                 <a href="#transitions">Transitions</a>
