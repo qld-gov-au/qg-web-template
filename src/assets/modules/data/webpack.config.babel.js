@@ -1,6 +1,7 @@
 const {resolve} = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   context: resolve('src'),
@@ -36,5 +37,8 @@ module.exports = {
       title: 'build template',
       template: './examples/index.html',
     }),
+    new CopyWebpackPlugin([
+      { from: `images`, to: `images/` },
+    ]),
   ],
 };
