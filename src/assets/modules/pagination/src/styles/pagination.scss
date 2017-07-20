@@ -1,0 +1,60 @@
+@import "variables";
+@import "../../../../_project/_blocks/scss-general/mixins/_font-size";
+
+/* Guide content (multipage) */
+.pagination {
+  clear: both;
+  overflow: hidden;
+  list-style-type: none;
+  margin: 2em 0 1em;
+  padding: 0;
+  .previous a, .next a {
+    display: block;
+    float: left;
+    text-decoration: none;
+    background: $search-pagination-link-background-color;
+    color: $search-pagination-link-color;
+    padding: .2em 1em .4em;
+    &:hover {
+      background: $search-pagination-link-hover-background-color;
+      color: $search-pagination-link-hover-color;
+    }
+  }
+  .next {
+    float: right;
+    a {
+      @include fonticon-after($fa-var-chevron-right, 1, 0.7, #007EB1);
+    }
+  }
+  .previous {
+    a {
+      @include fonticon($fa-var-chevron-left, 1, 0.7, #007EB1);
+    }
+  }
+  .ellipse {
+    float: left;
+  }
+  .active_page {
+    color: black;
+    text-decoration: none;
+  }
+  .page_link {
+    margin: 0 5px 0 5px;
+    display: block;
+    float: left;
+  }
+  .previous_link {
+    margin: 0 12px 0 0;
+    display: block;
+    float: left;
+  }
+  .previous_link.no_more,
+  .next_link.no_more {
+    text-decoration: none;
+  }
+  .next_link {
+    margin: 0 0 0 12px;
+    display: block;
+    float: left;
+  }
+}

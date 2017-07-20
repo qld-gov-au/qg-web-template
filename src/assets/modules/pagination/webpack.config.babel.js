@@ -37,6 +37,7 @@ module.exports = {
       title: 'build template',
       inject: false,
       template: './examples/index.html'
+
     }),
 
   ],

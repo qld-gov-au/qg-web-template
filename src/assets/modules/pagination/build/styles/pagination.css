@@ -1,0 +1,106 @@
+@charset "UTF-8";
+/* Guide content (multipage) */
+.pagination {
+  clear: both;
+  overflow: hidden;
+  list-style-type: none;
+  margin: 2em 0 1em;
+  padding: 0; }
+  .pagination .previous a, .pagination .next a {
+    display: block;
+    float: left;
+    text-decoration: none;
+    background: #585E62;
+    color: #FFF;
+    padding: .2em 1em .4em; }
+    .pagination .previous a:hover, .pagination .next a:hover {
+      background: #585E62;
+      color: #FFF; }
+  .pagination .next {
+    float: right; }
+    .pagination .next a:after {
+      display: inline-block;
+      font-family: FontAwesome;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 11px;
+      font-size: 0.7rem;
+      line-height: #007EB1;
+      padding-left: 16px;
+      padding-left: 1rem;
+      content: "\F054";
+      text-decoration: inherit;
+      background: inherit;
+      color: inherit; }
+    .pagination .next a:hover:after {
+      display: inline-block;
+      font-family: FontAwesome;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 11px;
+      font-size: 0.7rem;
+      line-height: #007EB1;
+      padding-left: 16px;
+      padding-left: 1rem;
+      content: "\F054";
+      text-decoration: none;
+      background: inherit;
+      color: inherit; }
+  .pagination .previous a:before {
+    display: inline-block;
+    font-family: FontAwesome;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 11px;
+    font-size: 0.7rem;
+    line-height: #007EB1;
+    padding-right: 16px;
+    padding-right: 1rem;
+    content: "\F053";
+    text-decoration: inherit;
+    background: inherit;
+    color: inherit; }
+  .pagination .previous a:hover:before {
+    display: inline-block;
+    font-family: FontAwesome;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 11px;
+    font-size: 0.7rem;
+    line-height: #007EB1;
+    padding-right: 16px;
+    padding-right: 1rem;
+    content: "\F053";
+    text-decoration: none;
+    background: inherit;
+    color: inherit; }
+  .pagination .ellipse {
+    float: left; }
+  .pagination .active_page {
+    color: black;
+    text-decoration: none; }
+  .pagination .page_link {
+    margin: 0 5px 0 5px;
+    display: block;
+    float: left; }
+  .pagination .previous_link {
+    margin: 0 12px 0 0;
+    display: block;
+    float: left; }
+  .pagination .previous_link.no_more,
+  .pagination .next_link.no_more {
+    text-decoration: none; }
+  .pagination .next_link {
+    margin: 0 0 0 12px;
+    display: block;
+    float: left; }
+
+/*# sourceMappingURL=pagination.css.map*/
