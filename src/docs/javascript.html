@@ -22,6 +22,7 @@
     <meta content="Queensland" name="DCTERMS.jurisdiction" scheme="AGLSTERMS.AglsJuri">
     <meta content="http://creativecommons.org/licenses/by/3.0/au/" name="DCTERMS.license" scheme="DCTERMS.URI"><!--#include virtual="/assets/includes-local/head-assets.html"-->
     <link href="assets/_project/css/qg-documentation.css" media="all" rel="stylesheet" type="text/css">
+    <!--<link rel="stylesheet" href="/assets/v3/modules/pagination/styles/pagination.css">-->
 </head>
 <body data-qg-accessibility="true" data-spy="scroll" data-target="#page-nav">
     <!--#include virtual="/assets/includes-local/analytics.html"-->
@@ -95,7 +96,7 @@ $(document).status('show', {
                   </dl>
                   <h3>Usage</h3>
                   <pre>
-<code>                  
+<code>
 qg.data.get(dataEnvironment, sql, {
         cache: !0,
         modalCloseButtonImage: 'images/close.png',
@@ -107,7 +108,7 @@ qg.data.get(dataEnvironment, sql, {
             } else {
                 $('.search-result').html('No records found');
             }
-        } 
+        }
                   </code>
                   </pre>
                   <h3>Attributes</h3>
@@ -141,6 +142,84 @@ $('#search-results-container').pajinate({
     });
                   </code>
                   </pre>
+                  <div class="qg-tmplt-example">
+                    <div class="panel-body" id="paginate-container">
+                      <table class="table">
+                        <caption>Optional table caption.</caption>
+                        <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>First Name</th>
+                          <th>Last Name</th>
+                          <th>Username</th>
+                        </tr>
+                        </thead>
+                        <tbody id="paginate-body">
+                        <tr>
+                          <th scope="row">1</th>
+                          <td>Mark</td>
+                          <td>Otto</td>
+                          <td>@mdo</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">2</th>
+                          <td>Jacob</td>
+                          <td>Thornton</td>
+                          <td>@fat</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">3</th>
+                          <td>Larry</td>
+                          <td>the Bird</td>
+                          <td>@twitter</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">4</th>
+                          <td>Mark</td>
+                          <td>Otto</td>
+                          <td>@mdo</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">5</th>
+                          <td>Jacob</td>
+                          <td>Thornton</td>
+                          <td>@fat</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">6</th>
+                          <td>Larry</td>
+                          <td>the Bird</td>
+                          <td>@twitter</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">7</th>
+                          <td>Mark</td>
+                          <td>Otto</td>
+                          <td>@mdo</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">8</th>
+                          <td>Jacob</td>
+                          <td>Thornton</td>
+                          <td>@fat</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">9</th>
+                          <td>Larry</td>
+                          <td>the Bird</td>
+                          <td>@twitter</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">10</th>
+                          <td>Larry</td>
+                          <td>the Bird</td>
+                          <td>@twitter</td>
+                        </tr>
+                        </tbody>
+                      </table>
+                      <div class="pagination"></div>
+                    </div>
+                  </div>
                   <h3>Attributes</h3>
                   <dl class="dl-horizontal">
 
@@ -199,6 +278,8 @@ $('#search-results-container').pajinate({
                             </li>
                             <li>
                               <a href="#data">Data</a>
+                            </li>
+                            <li>
                               <a href="#pagination">Pagination</a>
                             </li>
                             <li>
@@ -254,5 +335,27 @@ $('#search-results-container').pajinate({
          // Used by the feedback form.
          qg.swe.franchiseTitle = 'Franchise Title';
     </script> <!--#include virtual="/assets/includes-local/footer/footer-scripts.html"-->
+    <!--<script type="text/javascript" src="/assets/v3/modules/pagination/pagination.bundle.js"></script>-->
+    <script type="text/javascript">
+      document.onreadystatechange= function () {
+        if (this.readyState === 'complete') {
+//          $('#paginate-container').pajinate({
+//            item_container_id: '#paginate-body',
+//            nav_panel_id: '.pagination',
+//            items_per_page: 5,
+//            num_page_links_to_display: 5,
+//            show_first_last: false,
+//            slideTransition: true,
+//            nav_label_prev: 'Previous',
+//            nav_label_next: 'Next'
+//
+//          });
+        }
+      }
+      $(window).on('load',function(){
+
+      });
+
+    </script>
 </body>
 </html>

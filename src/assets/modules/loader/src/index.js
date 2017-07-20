@@ -26,6 +26,11 @@ const mapTo = {
     css: `${buildPath}misc/includes/quick-exit/quick-exit.css`,
     js: [`${buildPath}misc/includes/quick-exit/quick-exit.js`],
   },
+  pagination: {
+    identifier: '.pagination',
+    css: `${buildPath}pagination/styles/pagination.css`,
+    js: [`${buildPath}pagination/pagination.bundle.js`],
+  },
 };
 
 var modulesLoader = (function ($) {
