@@ -1,17 +1,18 @@
 const {resolve} = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   context: resolve('src'),
   entry: './index.js',
   output: {
     path: resolve(__dirname, 'build'),
-    filename: 'bundle.js',
+    filename: 'data.bundle.js',
     publicPath: '/build/',
   },
   module: {
-    
+
     loaders: [
       {
         test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader',
@@ -36,5 +37,8 @@ module.exports = {
       title: 'build template',
       template: './examples/index.html',
     }),
+    new CopyWebpackPlugin([
+      { from: `images`, to: `images/` },
+    ]),
   ],
 };
