@@ -61,28 +61,18 @@
 
         <!--#include virtual="/assets/includes-cdn/content/alert.html"-->
 
-        <h1>Queensland Government Web Template HTML Template</h1>
+        <h1>Queensland Government Javascript Components Demo</h1>
 
-        <p class="lead">If your page needs lead text to add emphasis, add it here.</p>
+        <h2>Data from CKAN & Pagination</h2>
+        <div>
+          <a id="data-url" data-url="https://data.qld.gov.au/dataset/q-ride-providers/resource/0647759d-9f68-44f9-bd7e-eb96d37d11e4" style="display:none">View full Data</a>
+          <div class="search-results-container">
+            <ol class="search-results">
 
-        <p>[Put more content here]</p>
-
-        <h2>To use this template</h2>
-
-        <ol>
-          <li>Make a copy of this file, and move it to your site directory</li>
-          <li>Copy the /assets/ directory to your site</li>
-          <li><a href="../pattern-library/">Read through the documentation on using the Queensland Government Web Template</a></li>
-          <li>
-            Create a new section nav file
-            <ol>
-              <li>Find the section nav file at /assets/includes/section-nav/template-nav.html in your site</li>
-              <li>Make a copy of it, and rename it something meaningful for your project</li>
-              <li>Add your content</li>
             </ol>
-          </li>
-          <li>Replace the content on this page with the content for your site. Pay special attention to the meta data as this is important for site search, and google search.</li>
-        </ol>
+            <div class="pagination"></div>
+          </div>
+        </div>
 
         <div class="qg-content-footer">
 
@@ -147,10 +137,40 @@
   qg.swe = qg.swe || {};
   // Used by the feedback form.
   qg.swe.franchiseTitle = 'Franchise Title';
+
+
 </script>
 
 <!--#include virtual="/assets/includes-cdn/footer/footer-scripts.html"-->
+<script type="text/javascript">
+  $(window).on('load', function () {
+    qg.data.get('data.qld.gov.au', 'Select * from "0647759d-9f68-44f9-bd7e-eb96d37d11e4" LIMIT 10', {
+      cache: !0,
+      modalCloseButtonImage: 'assets/images/close.png',
+      successCallback: function (data) {
+        if (data.result.records.length > 0) {
+          $('.search-results').html('');
+          $.each(data.result.records, function (k, v) {
+            $('.search-results').append('<li>'+v.Title + '</li>');
+          });
+          $('.search-results-container').pajinate({
+            item_container_id: '.search-results',
+            nav_panel_id: '.pagination',
+            items_per_page: 5,
+            num_page_links_to_display: 5,
+            show_first_last: false,
+            slideTransition: true,
+            nav_label_prev: 'Previous',
+            nav_label_next: 'Next',
 
+          });
+        } else {
+          $('.search-result').html('No records found');
+        }
+      },
+    });
+  });
+</script>
 </body>
 
 </html>

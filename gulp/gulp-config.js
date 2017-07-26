@@ -42,6 +42,16 @@ module.exports = {
       '!**/*.js.map',
     ],
   },
+  extLib: {
+    js: ['generate-id',
+      'jquery.resize-events',
+      'butterfly/jquery.history',
+      'butterfly/jquery.butterfly',
+    ],
+    css: [
+      'butterfly/butterfly.css'
+    ]
+  },
   publish: {
     npmDir: path.join('..', 'web-template-release'),
     version: pjson.version,

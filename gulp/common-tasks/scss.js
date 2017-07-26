@@ -1,6 +1,7 @@
 'use-strict';
 
-module.exports = function (gulp, plugins, config, destFolder = 'assets', type = 'build') {
+module.exports = function (gulp, plugins, config, destFolder = 'assets', addSrc, type = 'build') {
+  let extLibCssTarget = config.extLib.css.map(function (s) { return `${config.basepath.src}/assets/_project/lib/ext/` + s + '.css'; });
   return function (cb) {
     let src = [
       `${config.basepath.src}/assets/_project/_blocks/*.scss`,
@@ -25,6 +26,7 @@ module.exports = function (gulp, plugins, config, destFolder = 'assets', type = 
         includePaths: [config.basepath.src],
       }))
       .on('error', plugins.sass.logError)
+      .pipe(addSrc.append(extLibCssTarget))
       .pipe(plugins.autoprefixer({
         browsers: plugins.supportedBrowser,
         cascade: false,

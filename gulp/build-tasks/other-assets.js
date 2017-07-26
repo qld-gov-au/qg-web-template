@@ -1,4 +1,5 @@
 module.exports = function (gulp, plugins, config, es, dest) {
+  let extLibJSTarget = config.extLib.js.map(function (s) { return `${config.basepath.src}/assets/_project/lib/ext/` + s + '.js'; });
   return function (cb) {
     return es.merge([
       // Images
@@ -11,7 +12,8 @@ module.exports = function (gulp, plugins, config, es, dest) {
         gulp.dest(`${config.basepath.build}/${dest}/${config.versionName}/lib/`)
       ),
       // concat external js libraries
-      gulp.src(`${config.basepath.src}/assets/_project/lib/**/*.js`)
+      gulp.src(extLibJSTarget)
+          // .pipe(plugins.debug({title: 'External js:'}))
           .pipe(plugins.concat('all-ext-min.js'))
           .pipe(plugins.uglify())
           .pipe(gulp.dest(`${config.basepath.build}/${dest}/${config.versionName}/lib/`)),

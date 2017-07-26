@@ -31,6 +31,8 @@ import activeSideNav      from './layout/section-nav/section-nav';
 import shareLinks         from './layout/content/share-links';
 import feedbackForm       from './layout/footer/feedback-form';
 
+//Modules
+import '../../modules/jquery.status/build/jquery.status.bundle';
 (function () {
   'use strict';
   var franchiseTitle = qg && qg.swe && qg.swe.franchiseTitle;

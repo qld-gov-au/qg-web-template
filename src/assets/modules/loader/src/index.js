@@ -31,6 +31,11 @@ const mapTo = {
     css: `${buildPath}pagination/styles/pagination.css`,
     js: [`${buildPath}pagination/pagination.bundle.js`],
   },
+  data: {
+    identifier: '#data-url',
+    css: '',
+    js: ['/assets/v3/lib/ext/jquery.jsonp.js',`${buildPath}data/data.bundle.js`],
+  },
 };
 
 var modulesLoader = (function ($) {
@@ -50,7 +55,7 @@ var modulesLoader = (function ($) {
           }
         });
       }
-      if ($(value.identifier).length > 0 || $('[data-role=' + value.identifier + ']').length > 0) {
+      if ($(value.identifier).length > 0 || $('[data-role="' + value.identifier + '"]').length > 0) {
         if (value.css) {
           let stylesheet = loadCSS(value.css);
           onloadCSS(stylesheet, function () { handleJs(); });
