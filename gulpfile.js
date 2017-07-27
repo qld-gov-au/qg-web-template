@@ -13,6 +13,7 @@ const plugins         = require('gulp-load-plugins')();
 const es              = require('event-stream');
 const runSequence     = require('run-sequence');
 const path            = require('path');
+const addSrc          = require('gulp-add-src');
 
 // For testing
 const karmaServer       = require('karma').Server;
@@ -36,13 +37,17 @@ gulp.task('template-pages-local', require('./gulp/build-tasks/template-pages')(g
 gulp.task('template-pages-docs', require('./gulp/build-tasks/template-pages')(gulp, plugins, config, 'docs', 'docs', 'local'));
 
 let assetDests = ['assets', 'docs/assets', 'template-local/assets'];
-gulp.task('scss', require('./gulp/common-tasks/scss')(gulp, plugins, config, assetDests));
+gulp.task('scss', require('./gulp/common-tasks/scss')(gulp, plugins, config, assetDests, addSrc));
 gulp.task('js', require('./gulp/common-tasks/js')(gulp, plugins, config, gulpWebpack, assetDests));
 
-gulp.task('other-assets', ['other-assets-root', 'other-assets-local', 'other-assets-docs']);
+gulp.task('other-assets', ['other-assets-root', 'other-assets-local', 'other-assets-docs', 'assets-docs']);
 gulp.task('other-assets-root', require('./gulp/build-tasks/other-assets')(gulp, plugins, config, es, assetDests[0]));
 gulp.task('other-assets-local', require('./gulp/build-tasks/other-assets')(gulp, plugins, config, es, assetDests[1]));
 gulp.task('other-assets-docs', require('./gulp/build-tasks/other-assets')(gulp, plugins, config, es, assetDests[2]));
+gulp.task('assets-docs', (cb) => {
+  gulp.src([`${config.basepath.src}/docs/**/*.js`, `${config.basepath.src}/docs/**/*.png`])
+    .pipe(gulp.dest(`${config.basepath.build}/docs/`));
+});
 
 gulp.task('build-other-files', require('./gulp/build-tasks/other-files')(gulp, plugins, config));
 gulp.task('build-modules', require('./gulp/build-tasks/modules')(gulp, plugins, config, gulpWebpack, webpack, path));

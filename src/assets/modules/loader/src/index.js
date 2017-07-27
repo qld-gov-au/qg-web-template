@@ -26,6 +26,16 @@ const mapTo = {
     css: `${buildPath}misc/includes/quick-exit/quick-exit.css`,
     js: [`${buildPath}misc/includes/quick-exit/quick-exit.js`],
   },
+  pagination: {
+    identifier: '.pagination',
+    css: `${buildPath}pagination/styles/pagination.css`,
+    js: [`${buildPath}pagination/pagination.bundle.js`],
+  },
+  data: {
+    identifier: '#data-url',
+    css: '',
+    js: ['/assets/v3/lib/ext/jquery.jsonp.js',`${buildPath}data/data.bundle.js`],
+  },
 };
 
 var modulesLoader = (function ($) {
@@ -45,7 +55,7 @@ var modulesLoader = (function ($) {
           }
         });
       }
-      if ($(value.identifier).length > 0 || $('[data-role=' + value.identifier + ']').length > 0) {
+      if ($(value.identifier).length > 0 || $('[data-role="' + value.identifier + '"]').length > 0) {
         if (value.css) {
           let stylesheet = loadCSS(value.css);
           onloadCSS(stylesheet, function () { handleJs(); });

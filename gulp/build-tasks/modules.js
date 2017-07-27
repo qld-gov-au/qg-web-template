@@ -72,7 +72,8 @@ module.exports = function (gulp, plugins, config, gulpWebpack, webpack, path) {
             new ExtractTextPlugin(`styles/${element}.css`),
           ],
         }, webpack))
-        .pipe(gulp.dest(`${config.basepath.build}/assets/${config.versionName}/modules/${element}`));
+        .pipe(gulp.dest(`${config.basepath.build}/assets/${config.versionName}/modules/${element}`))
+        .pipe(gulp.dest(`${config.basepath.build}/docs/assets/${config.versionName}/modules/${element}`));
     });
   };
 };
