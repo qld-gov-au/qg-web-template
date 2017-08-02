@@ -7,7 +7,7 @@
 $(function () {
     'use strict';
 
-    // until pan.search supports https, we cannot use suggest feature on https domains
+    // until find.search supports https, we cannot use suggest feature on https domains
     if (/^https/.test(window.location.protocol)) {
         return;
     }
@@ -17,7 +17,7 @@ $(function () {
     // TODO refactor this so functions are not created for every search form found on the page
 
     // setup for each form
-    // TODO hardcoded to pan.search.qld.gov.au
+    // TODO hardcoded to find.search.qld.gov.au
     $('form').filter('[action*="//find.search.qld.gov.au/"]').each(function () {
         var form = this;
         var searchField = $(form.elements.query).filter('[name="query"]');
