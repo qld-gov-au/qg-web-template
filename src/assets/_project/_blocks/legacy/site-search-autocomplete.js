@@ -18,7 +18,7 @@ $(function () {
 
     // setup for each form
     // TODO hardcoded to pan.search.qld.gov.au
-    $('form').filter('[action*="//pan.search.qld.gov.au/"]').each(function () {
+    $('form').filter('[action*="//find.search.qld.gov.au/"]').each(function () {
         var form = this;
         var searchField = $(form.elements.query).filter('[name="query"]');
         // var lastSearch = searchField.val();
@@ -140,7 +140,7 @@ $(function () {
                 // cache! (the URL will be change with the search text)
                 cache: true,
                 dataType: 'jsonp',
-                url: 'http://pan.search.qld.gov.au/s/suggest.json?',
+                url: 'http://find.search.qld.gov.au/s/suggest.json?',
                 data: {
                     // TODO read these from search form
                     collection: $(form.elements.collection).filter('[name="collection"]').val() || 'qld-gov',
@@ -163,7 +163,7 @@ $(function () {
                     suggestions.html($.map(data, function (value) {
                         var htmlValue = value.replace(/</g, '&lt;').replace(match, '<mark>' + safeInput + '</mark>');
                         // use form.action + default params
-                        return '<li><a href="http://pan.search.qld.gov.au/s/search.html?collection=qld-gov&profile=qld&query=' + encodeURIComponent(value) + '">' + htmlValue + '</a></li>';
+                        return '<li><a href="http://find.search.qld.gov.au/s/search.html?collection=qld-gov&profile=qld&query=' + encodeURIComponent(value) + '">' + htmlValue + '</a></li>';
                     }).join('\n'));
 
                     // issue #3: issues with typing over selected suggestion
