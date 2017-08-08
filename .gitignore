@@ -38,7 +38,7 @@ node_modules
 # Local and dev
 _local.*
 _local*/**/*
-__tests__/reports/**/*
+tests/reports/**/*
 .idea/
 
 ### macOS ###
