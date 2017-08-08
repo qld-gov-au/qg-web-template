@@ -7,13 +7,16 @@
     "type": "git",
     "url": "https://github.com/qld-gov-au/glue-template.git"
   },
+  "scripts": {
+    "test:unit": "node_modules/.bin/karma start --single-run --no-auto-watch karma.config.js",
+    "test:unit:watch": "node_modules/.bin/karma start --auto-watch --no-single-run karma.config.js",
+    "test:e2e": "./node_modules/.bin/nightwatch --config __tests__/e2e/config.json"
+  },
   "authors": "Queensland Government",
   "licence": "all rights reserved",
   "homepage": "http://www.qld.gov.au/",
   "devDependencies": {
     "babel-core": "^6.10.4",
-    "babel-istanbul": "^0.12.1",
-    "babel-istanbul-loader": "^0.1.0",
     "babel-loader": "^6.2.4",
     "babel-preset-es2015": "^6.9.0",
     "copy-webpack-plugin": "^4.0.1",
@@ -47,6 +50,7 @@
     "gulp-include": "^2.3.1",
     "gulp-inject": "^3.0.0",
     "gulp-load-plugins": "^1.2.0",
+    "gulp-nightwatch": "^0.3.2",
     "gulp-open": "^2.0.0",
     "gulp-plumber": "^1.0.1",
     "gulp-prompt": "^0.2.0",
@@ -67,7 +71,6 @@
     "karma-coverage": "^1.1.1",
     "karma-htmlfile-reporter": "^0.3.5",
     "karma-jasmine": "^1.1.0",
-    "karma-phantomjs-launcher": "^1.0.2",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-spec-reporter": "0.0.26",
     "karma-webpack": "^2.0.2",

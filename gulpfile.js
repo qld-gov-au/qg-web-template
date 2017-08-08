@@ -69,11 +69,11 @@ gulp.task('docs-flatten', (cb) => {
 gulp.task('build', (cb) => {
   runSequence(
     'test:eslint',
+    'build-modules',
     'assets-includes-docs',
     ['template-pages-cdn', 'assets-includes-cdn', 'js', 'scss', 'other-assets', 'build-other-files'],
     ['template-pages-local', 'assets-includes-local', 'template-pages-docs'],
     'docs-flatten',
-    'build-modules',
     cb
   );
 });
@@ -88,11 +88,11 @@ gulp.task('build:clean', (cb) => {
 const ignore = `!${config.basepath.src}/assets/modules/**/*`;
 gulp.task('watch', function () {
   gulp.watch([
-      `${config.basepath.src}/**/*.html`,
-      ignore,
-      `!${config.basepath.src}/assets/_project/_blocks/**/*`,
-      `!${config.basepath.src}/_other-files/**/*.html`,
-    ],
+    `${config.basepath.src}/**/*.html`,
+    ignore,
+    `!${config.basepath.src}/assets/_project/_blocks/**/*`,
+    `!${config.basepath.src}/_other-files/**/*.html`,
+  ],
     ['template-pages-cdn', 'template-pages-local', 'template-pages-docs', 'build-other-files']);
   gulp.watch([`${config.basepath.src}/assets/_project/_blocks/layout/**/*.html`], ['assets-includes-local']);
   gulp.watch([`${config.basepath.src}/assets/_project/**/*.scss`], ['scss']);
@@ -135,7 +135,24 @@ gulp.task('npm:publish', ['release'], require('./gulp/publish-tasks/npm.js')(gul
 /* TEST TASKS */
 gulp.task('test:unit', require('./gulp/test-tasks/unit')(gulp, plugins, config, karmaServer));
 gulp.task('test:eslint', require('./gulp/test-tasks/lint')(gulp, plugins, config, fsPath, eslintReporter));
-gulp.task('test:browserstack', require('./gulp/test-tasks/e2e')(gulp, plugins, argv));
+gulp.task('test:e2e:local', function () {
+  return gulp.src('')
+    .pipe(plugins.nightwatch({
+      configFile: 'tests/e2e/config.json',
+    }));
+});
+gulp.task('process-exit', function () {
+  process.exit(0);
+});
+gulp.task('test:e2e:browserstack', require('./gulp/test-tasks/e2e')(gulp, plugins, argv));
+gulp.task('test:e2e', (cb) => {
+  runSequence(
+    ['serve'],
+    ['test:e2e:local'],
+    ['process-exit'],
+    cb
+  );
+});
 gulp.task('test', (cb) => {
   runSequence(
     ['test:unit'],
