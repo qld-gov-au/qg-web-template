@@ -38,7 +38,8 @@ node_modules
 # Local and dev
 _local.*
 _local*/**/*
-tests/reports/**/*
+__tests__/reports/**/*
+__tests__/e2e/logs/**/*
 .idea/
 
 ### macOS ###
