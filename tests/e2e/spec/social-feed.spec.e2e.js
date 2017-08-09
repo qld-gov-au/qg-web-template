@@ -6,7 +6,12 @@ module.exports = {
       .assert.elementPresent('.fb-page.fb_iframe_widget')
       .assert.elementPresent('#twitter-widget-0')
       .click('.facebook-updates .more a')
-      .pause(1000)
+      .pause(500)
+      .assert.urlMatch(new RegExp('facebook.com', 'i'))
+      .back()
+      .click('.twitter-updates .more a')
+      .pause(500)
+      .assert.urlMatch(new RegExp('twitter.com', 'i'))
       .end();
   },
 };
