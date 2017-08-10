@@ -4,16 +4,21 @@ module.exports = function (gulp, plugins, config, dest, local = false, relpath =
   return function (cb) {
     let src = [
       `${config.basepath.src}/assets/_project/_blocks/layout/**/*.html`,
-    ].concat(config.build.excludes);
+    ];
+      //.concat(config.build.excludes); //remove concat excludes, remove from gulp-config.json also
 
     let relLink = {
       regex: new RegExp('="/assets/', 'g'),
       replacement: '="assets/',
     };
+    let cdnLink = {
+      regex: new RegExp('="/assets/', 'g'),
+      replacement: '="//beta-static.qld.net.au/assets/',
+    };
 
-    if (!Array.isArray(dest)) {
-      dest = [dest];
-    }
+    // if (!Array.isArray(dest)) {
+    //   dest = [dest];
+    // }
 
     const projectAssets = new RegExp('="(/)?assets/_project/', 'g');
 
@@ -23,11 +28,8 @@ module.exports = function (gulp, plugins, config, dest, local = false, relpath =
       .on('error', console.log)
       .pipe(plugins.replace(projectAssets, `="$1assets/${config.versionName}/`)) // Replace '_project' with 'v3'
       .pipe(plugins.if(local !== true, plugins.replace(projectAssets, `="//static.qld.net.au/assets/${config.versionName}/`)))
+      .pipe(plugins.if(local !== true, plugins.replace(cdnLink.regex, cdnLink.replacement)))
       .pipe(plugins.if(relpath === true, plugins.replace(relLink.regex, relLink.replacement)))
-      .pipe(plugins.if(typeof dest[0] !== 'undefined', gulp.dest(`${config.basepath.build}/${dest[0]}/`)))
-      .pipe(plugins.if(typeof dest[1] !== 'undefined', gulp.dest(`${config.basepath.build}/${dest[1]}/`)))
-      .pipe(plugins.if(typeof dest[2] !== 'undefined', gulp.dest(`${config.basepath.build}/${dest[2]}/`)))
-      .pipe(plugins.if(typeof dest[3] !== 'undefined', gulp.dest(`${config.basepath.build}/${dest[3]}/`)))
-      .pipe(plugins.if(typeof dest[4] !== 'undefined', gulp.dest(`${config.basepath.build}/${dest[4]}/`)));
+      .pipe(gulp.dest(`${config.basepath.build}/${dest}/`));
   };
 };

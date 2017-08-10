@@ -4,7 +4,7 @@ module.exports = function (gulp, plugins, config, src, dest, type = 'cdn') {
   return function (cb) {
     const target = [
       `${config.basepath.src}/${src}/**/*.html`,
-    ].concat(config.build.excludes);
+    ].concat(config.build.excludes); //remove concat excludes, remove from gulp-config.json also
 
     let projectAssets = new RegExp('="(/)?assets/_project/', 'g');
     let cdnIncludes = new RegExp('="(/)?assets/includes-cdn/', 'g');

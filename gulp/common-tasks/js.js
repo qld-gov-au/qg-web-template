@@ -7,14 +7,15 @@ module.exports = function (gulp, plugins, config, webpack, destFolder, type = 'b
   return function (cb) {
     let src = [
       `${config.basepath.src}/assets/_project/_blocks/qg-main.js`,
-    ].concat(config.build.excludes);
+    ];
+    //.concat(config.build.excludes); remove excludes
     let dest = {
       base: `${config.basepath.build}`,
       ext: `${config.versionName}/js`,
     };
-    if (type === 'release') {
-      dest.base = `${config.basepath.release}`; // ${destFolder}/${config.versionName}/js/
-    }
+    // if (type === 'release') {
+    //   dest.base = `${config.basepath.release}`; // ${destFolder}/${config.versionName}/js/
+    // }
 
     if (!Array.isArray(destFolder)) {
       destFolder = [destFolder];
@@ -34,6 +35,7 @@ module.exports = function (gulp, plugins, config, webpack, destFolder, type = 'b
           },
         }],
       },
+      devtool: 'source-map'
       /*plugins: [
         new CopyWebpackPlugin([
           {from: `${config.basepath.src}/assets/_project/_blocks/qg-env.js`},
@@ -41,13 +43,13 @@ module.exports = function (gulp, plugins, config, webpack, destFolder, type = 'b
       ],*/
     };
 
-    if (type === 'build') {
-      webpackSettings.devtool = 'source-map';
-    } else if (type === 'release') {
-      webpackSettings.plugins = [
-        //new UglifyJSPlugin()
-      ];
-    }
+    // if (type === 'build') {
+    //   webpackSettings.devtool = 'source-map';
+    // } else if (type === 'release') {
+    //   webpackSettings.plugins = [
+    //     //new UglifyJSPlugin()
+    //   ];
+    // }
 
     return gulp.src(src)
       .pipe(webpack(webpackSettings))
