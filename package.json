@@ -7,6 +7,10 @@
     "type": "git",
     "url": "https://github.com/qld-gov-au/glue-template.git"
   },
+  "scripts": {
+    "clean": "gulp clean-build",
+    "build": "gulp build && node gulp/build-tasks/node-docs-flatten.js"
+  },
   "authors": "Queensland Government",
   "licence": "all rights reserved",
   "homepage": "http://www.qld.gov.au/",

@@ -25,6 +25,8 @@ module.exports = function (gulp, plugins, config, es, dest) {
       gulp.src(`${config.basepath.node_modules}/font-awesome/fonts/**`).pipe(
         gulp.dest(`${config.basepath.build}/${dest}/v3/fonts`)
       ),
+      gulp.src([`${config.basepath.src}/docs/**/*.js`, `${config.basepath.src}/docs/**/*.png`])
+        .pipe(plugins.if(dest === 'docs/assets', gulp.dest(`${config.basepath.build}/docs/`)))
     ]);
     // config.projects.map(function (element) {
     // });
