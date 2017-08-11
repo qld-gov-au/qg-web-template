@@ -1,15 +1,72 @@
-module.exports = function (gulp, plugins, config) {
+module.exports = function (gulp, plugins, config, es, webpack, path) {
   return function () {
     const target = [
       `${config.basepath.build}/**/*`,
       `!${config.basepath.build}/assets/**/*`,
+      `!${config.basepath.build}/template-pages/**/*`,
       `!${config.basepath.build}/*`,
-      `!**/${config.versionName}/js/*.js`, // handled by JS task that minifies
-      `!**/${config.versionName}/css/*.css`, // handled by SCSS -> CSS task that minifies
+      `!**/${config.versionName}/*.js`, // handled by JS task that minifies
+      `!**/${config.versionName}/*.css`, // handled by SCSS -> CSS task that minifies
     ].concat(config.release.excludes);
+    const versionAssetsTarget = [
+      `${config.basepath.build}/assets/${config.versionName}/**/*`,
+      `!**/${config.versionName}/**/*.js`, // handled by JS task that minifies
+      `!**/${config.versionName}/**/*.css`, // handled by SCSS -> CSS task that minifies
+    ].concat(config.release.excludes);
+    let includesLink = {
+      cdnRegex: new RegExp('="(/)?assets/includes-cdn/', 'g'),
+      localRegex: new RegExp('="(/)?assets/includes-local/', 'g'),
+      cdnReplacement: '="$1assets/includes-cdn/',
+      localReplacement: '="$1assets/includes-local/',
+    };
 
-    return gulp.src(target, { dot: true })
-      .on('error', console.log)
-      .pipe(gulp.dest(`${config.basepath.release}`));
+    return es.merge([
+      gulp.src(target, { dot: true })
+        .on('error', console.log)
+        .pipe(gulp.dest(`${config.basepath.release}`)),
+
+      //template with include-cdn links
+      gulp.src(`${config.basepath.build}/template-pages/**/*`, { dot: true })
+        .on('error', console.log)
+        .pipe(plugins.replace(includesLink.localRegex, includesLink.cdnReplacement)) //checks for local includes and replaces with cdn includes
+        .pipe(gulp.dest(`${config.basepath.release}/template-cdn`)),
+      //template with include-local links
+      gulp.src(`${config.basepath.build}/template-pages/**/*`, { dot: true })
+        .on('error', console.log)
+        .pipe(plugins.replace(includesLink.cdnRegex, includesLink.localReplacement)) //checks for cdn includes and replaces with local includes
+        .pipe(gulp.dest(`${config.basepath.release}/template-local`)),
+
+      //assets with cdn assets links
+      gulp.src(`${config.basepath.build}/assets/includes-cdn/**/*`, { dot: true })
+        .pipe(gulp.dest(`${config.basepath.release}/template-cdn/assets/includes-cdn/`)),
+      //assets with local assets links
+      gulp.src(`${config.basepath.build}/assets/includes-local/**/*`, { dot: true })
+        .pipe(gulp.dest(`${config.basepath.release}/template-local/assets/includes-local/`)),
+
+      //JS task
+      gulp.src(`${config.basepath.build}/assets/${config.versionName}/**/*.js`, { dot: true })
+        .pipe(plugins.foreach(function (stream, file) {
+          let filename = path.basename(file.path);
+          let destPath = file.path.split(file.base)[1].split(filename)[0];
+          return stream
+            .pipe(plugins.webpack({
+                output: {
+                  filename: filename,
+                },
+                plugins: [new webpack.optimize.UglifyJsPlugin()],
+              }, webpack))
+            .pipe(gulp.dest(`${config.basepath.release}/template-local/assets/${config.versionName}/latest/${destPath}`));
+        })),
+
+      //CSS task
+      gulp.src(`${config.basepath.build}/assets/${config.versionName}/**/*.css`, { dot: true })
+        .pipe(plugins.cleanCss())
+        .on('error', console.log)
+        .pipe(gulp.dest(`${config.basepath.release}/template-local/assets/${config.versionName}/latest/`)),
+
+      //other version assets
+      gulp.src(versionAssetsTarget, { dot: true })
+        .pipe(gulp.dest(`${config.basepath.release}/template-local/assets/${config.versionName}/latest/`)),
+    ]);
   };
 };

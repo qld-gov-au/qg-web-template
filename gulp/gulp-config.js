@@ -40,6 +40,7 @@ module.exports = {
       '!**/_local*/**/*',
       '!**/*.css.map',
       '!**/*.js.map',
+      '!**/_other-files/**/*',
     ],
   },
   extLib: {
