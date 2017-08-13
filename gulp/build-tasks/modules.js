@@ -73,6 +73,7 @@ module.exports = function (gulp, plugins, config, gulpWebpack, webpack, path) {
           ],
         }, webpack))
         .pipe(gulp.dest(`${config.basepath.build}/assets/${config.versionName}/modules/${element}`))
+        .pipe(plugins.replace(new RegExp('="/assets/', 'g'), '="assets/'))
         .pipe(gulp.dest(`${config.basepath.build}/docs/assets/${config.versionName}/modules/${element}`));
     });
   };

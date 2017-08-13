@@ -8,8 +8,8 @@ module.exports = {
   versionStr: '3.0.9',
   version: {
     major: 3,
-    semiMajor: 0,
-    minor: 9,
+    minor: 0,
+    patch: 9,
   },
   phase: 'Alpha',
   basepath: {
@@ -25,7 +25,7 @@ module.exports = {
   },
   projects: ['core'], // 'cue'
   build: {
-    excludes: [
+    excludes: [ //remove excludes
       '!**/_DELETE.*/**/*',
       '!**/_old*/**/*',
       '!**/_old*',
