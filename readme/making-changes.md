@@ -42,8 +42,11 @@ gulp serve
 ```bash
 gulp test
 ```
-
-**To run E2E tests using Browserstack**. 
+**To run E2E tests locally**.
+```bash
+gulp test:e2e
+```
+**To run E2E tests using Browserstack**.
 
 Please make sure to setup browserstack _config file_ (step 3) and run _gulp serve_ before running browserstack E2E tests
 ```bash
