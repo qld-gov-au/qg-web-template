@@ -11,7 +11,7 @@ module.exports = function (gulp, plugins, config, destFolder = 'assets', addSrc)
     //.concat(config.build.excludes); remove excludes
     let dest = {
       base: `${config.basepath.build}`,
-      ext: `${config.versionName}/css`,
+      ext: `${config.versionName}/latest/css`,
     };
     // if (type === 'release') {
     //   dest.base = `${config.basepath.release}`; // ${destFolder}/${config.versionName}/js/

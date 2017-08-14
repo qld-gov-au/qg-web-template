@@ -55,18 +55,18 @@ module.exports = function (gulp, plugins, config, es, webpack, path) {
                 },
                 plugins: [new webpack.optimize.UglifyJsPlugin()],
               }, webpack))
-            .pipe(gulp.dest(`${config.basepath.release}/template-local/assets/${config.versionName}/latest/${destPath}`));
+            .pipe(gulp.dest(`${config.basepath.release}/template-local/assets/${config.versionName}/${destPath}`));
         })),
 
       //CSS task
       gulp.src(`${config.basepath.build}/assets/${config.versionName}/**/*.css`, { dot: true })
         .pipe(plugins.cleanCss())
         .on('error', console.log)
-        .pipe(gulp.dest(`${config.basepath.release}/template-local/assets/${config.versionName}/latest/`)),
+        .pipe(gulp.dest(`${config.basepath.release}/template-local/assets/${config.versionName}/`)),
 
       //other version assets
       gulp.src(versionAssetsTarget, { dot: true })
-        .pipe(gulp.dest(`${config.basepath.release}/template-local/assets/${config.versionName}/latest/`)),
+        .pipe(gulp.dest(`${config.basepath.release}/template-local/assets/${config.versionName}/`)),
     ]);
   };
 };

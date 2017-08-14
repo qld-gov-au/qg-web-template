@@ -64,7 +64,7 @@
 @import "layout/footer/legals";
 
 //External Libraries
-@import "../lib/ext/butterfly/butterfly.css";
+@import "https://rawgit.com/qld-gov-au/qg-web-template/master/src/assets/_project/lib/ext/butterfly/butterfly.css";  //TODO: update with CDN url
 
 //Modules
 @import 'https://rawgit.com/qld-gov-au/qg-web-template/working/src/assets/modules/jquery.status/build/styles/jquery.status.css';  //TODO: update with CDN url
