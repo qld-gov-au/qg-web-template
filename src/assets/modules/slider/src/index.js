@@ -1,9 +1,3 @@
-// NOTE - DEV START and DEV END are for importing other modules locally for testing components independently and the code inside these tags is stripped when we run gulp build-components because loader loads scripts dynamically in the build version
-
-/* DEV-START */
-import '../../misc/src/includes/xml-reader/qg-xml-reader.js';
-/* DEV-END */
-
 //plugin
 import './lib/unslider/unslider-min';
 import './lib/unslider/unslider.css';

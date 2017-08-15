@@ -5,7 +5,7 @@
       $(this.el).empty().append(this.template);
       this.methods();
     },
-    template: '<header><strong>Quick exit to</strong></header><ul><li><a target="_top" data-accesskey="Esc" href="http://www.abc.net.au/tv/epg/#/" title="ABC"><img src="/assets/v3/modules/misc/includes/quick-exit/images/abc-bw.png" alt="ABC"></a></li><li><a target="_top" href="https://www.facebook.com/" title="Facebook"><img src="/assets/v3/modules/misc/includes/quick-exit/images/facebook-bw.png" alt="Facebook"></a></li></ul><footer><strong>or press \'Esc\'</strong></footer>',
+    template: '<header><strong>Quick exit to</strong></header><ul><li><a target="_top" data-accesskey="Esc" href="http://www.abc.net.au/tv/epg/#/" title="ABC"><img src="/assets/v3/latest/modules/misc/includes/quick-exit/images/abc-bw.png" alt="ABC"></a></li><li><a target="_top" href="https://www.facebook.com/" title="Facebook"><img src="/assets/v3/latest/modules/misc/includes/quick-exit/images/facebook-bw.png" alt="Facebook"></a></li></ul><footer><strong>or press \'Esc\'</strong></footer>',
     methods: function () {
       let quickExitLinks = $(this.el).find('a');
       let escLink = $(this.el).find('a[data-accesskey="Esc"]').attr('href');
