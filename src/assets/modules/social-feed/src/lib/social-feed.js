@@ -41,7 +41,6 @@ const facebook = {
   ele: $('.facebook-updates'),
   init: function () {
     if (!document.getElementById('facebook-jssdk') && this.ele.length > 0) {
-      console.log('facebook-updates');
       let fbUrl = this.ele.attr('data-href');
       this.ele.append('<div class=\'fb-page\' data-href=' + fbUrl + ' data-tabs=\'timeline\' data-small-header=\'true\' data-width=\'10000\'  data-adapt-container-width=\'true\' data-show-facepile=\'false\'></div>');
       this.facebookSdkScript();
