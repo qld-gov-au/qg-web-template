@@ -14,7 +14,7 @@ module.exports = function (config) {
       './src/assets/_project/_blocks/utils/qg-env.js',
       'tests.webpack.js',
     ],
-    frameworks: ['jasmine-jquery', 'jasmine'],
+    frameworks: ['jasmine-ajax', 'jasmine-jquery', 'jasmine'],
     preprocessors: {
       'tests.webpack.js': ['webpack', 'sourcemap'],
     },
