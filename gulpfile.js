@@ -50,12 +50,6 @@ gulp.task('assets-includes-local', require('./gulp/build-tasks/assets-includes')
 gulp.task('assets-includes-docs', require('./gulp/build-tasks/assets-includes')(gulp, plugins, config, 'docs/assets/includes-local', true, true));
 gulp.task('assets-includes-cdn', require('./gulp/build-tasks/assets-includes')(gulp, plugins, config, 'assets/includes-cdn'));
 
-let includeSrc = path.join('build', 'docs');
-let assetSrc = path.join('build', 'docs');
-let dest = path.join('build', 'docs');
-let exclude = [];
-gulp.task('flatten-docs', require('./gulp/build-tasks/ssi-to-static')(includeSrc, assetSrc, dest, exclude));
-
 // FIXME: Re-add unit tests
 gulp.task('build', (cb) => {
   runSequence(
@@ -70,7 +64,6 @@ gulp.task('build', (cb) => {
     'build-other-files',
     'template-pages-docs',
     'build-modules',
-    // 'flatten-docs',
     cb
   );
 });

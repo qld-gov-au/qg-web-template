@@ -9,7 +9,7 @@ import { loadCSS } from './lib/loadCSS.js';
 
 * */
 
-const buildPath = '/assets/v3/modules/';
+const buildPath = '/assets/v3/latest/modules/';
 
 const mapTo = {
   slider: {
@@ -34,7 +34,7 @@ const mapTo = {
   data: {
     identifier: '#data-url',
     css: '',
-    js: ['/assets/v3/lib/ext/jquery.jsonp.js',`${buildPath}data/data.bundle.js`],
+    js: ['/assets/v3/latest/lib/ext/jquery.jsonp.js',`${buildPath}data/data.bundle.js`],
   },
 };
 
