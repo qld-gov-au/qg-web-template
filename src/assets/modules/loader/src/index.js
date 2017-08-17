@@ -1,92 +1,38 @@
-import loadJS from './lib/script.js';
-import { loadCSS } from './lib/loadCSS.js';
-
+import {modulesLoader} from './lib/mapFiles';
 /*modules dynamic loading process v1-
 
 * Create a object with the identifier, js and css(if any) to load files dynamically
 * Currently it supports loading max of 4 js files async in sequence and 1 css file per module
 
 * */
-
-const buildPath = '/assets/v3/modules/';
-
-const mapTo = {
+const modulesPath = '/assets/v3/modules/';
+const filesMap = {
   slider: {
     identifier: 'qg-slider',
-    css: `${buildPath}slider/styles/slider.css`,
-    js: [`${buildPath}slider/slider.bundle.js`],
+    css: `${modulesPath}slider/styles/slider.css`,
+    js: [`${modulesPath}slider/slider.bundle.js`],
   },
   feeds: {
     identifier: 'qg-social-feed',
-    js: [`${buildPath}social-feed/social-feed.bundle.js`],
+    js: [`${modulesPath}social-feed/social-feed.bundle.js`],
   },
   quickExit: {
     identifier: '#qg-quick-exit',
-    css: `${buildPath}quick-exit/styles/quick-exit.css`,
-    js: [`${buildPath}quick-exit/quick-exit.bundle.js`],
+    css: `${modulesPath}quick-exit/styles/quick-exit.css`,
+    js: [`${modulesPath}quick-exit/quick-exit.bundle.js`],
   },
   pagination: {
     identifier: '.pagination',
-    css: `${buildPath}pagination/styles/pagination.css`,
-    js: [`${buildPath}pagination/pagination.bundle.js`],
+    css: `${modulesPath}pagination/styles/pagination.css`,
+    js: [`${modulesPath}pagination/pagination.bundle.js`],
   },
   data: {
     identifier: '#data-url',
     css: '',
-    js: ['/assets/v3/lib/ext/jquery.jsonp.js', `${buildPath}data/data.bundle.js`],
+    js: ['/assets/v3/lib/ext/jquery.jsonp.js', `${modulesPath}data/data.bundle.js`],
   },
 };
 
-var modulesLoader = (function ($) {
-  function dynamicLoading () {
-    $.each(mapTo, function (key, value) {
-      function handleJs () {
-          //TODO - Any number of files in sequence
-        loadJS(value.js[0], function () {
-          if (value.js[1]) {
-            loadJS(value.js[1], function () {
-              if (value.js[2]) {
-                loadJS(value.js[2], function () {
-                  if (value.js[3]) { loadJS(value.js[3]); }
-                });
-              }
-            });
-          }
-        });
-      }
-      if ($(value.identifier).length > 0 || $("[data-role='" + value.identifier + "']").length > 0) {
-        if (value.css) {
-          let stylesheet = loadCSS(value.css);
-          onloadCSS(stylesheet, function () { handleJs(); });
-        } else {
-          handleJs();
-        }
-      }
-    });
-  }
-
-  function onloadCSS (ss, callback) {
-    var called;
-    function newcb () {
-      if (!called && callback) {
-        called = true;
-        callback.call(ss);
-      }
-    }
-    if (ss.addEventListener) {
-      ss.addEventListener('load', newcb);
-    }
-    if (ss.attachEvent) {
-      ss.attachEvent('onload', newcb);
-    }
-    if ('isApplicationInstalled' in navigator && 'onloadcssdefined' in ss) {
-      ss.onloadcssdefined(newcb);
-    }
-  }
-  return {
-    dynamicLoading: dynamicLoading,
-  };
-})(jQuery);
-
-modulesLoader.dynamicLoading();
+// initializing dynamic loading function
+modulesLoader().dynamicLoading(modulesPath, filesMap);
 
