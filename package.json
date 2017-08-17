@@ -81,7 +81,6 @@
     "karma-webpack": "^2.0.2",
     "nightwatch-custom-commands-assertions": "^1.1.0",
     "node-ssi": "^0.3.2",
-    "raw-loader": "^0.5.1",
     "run-sequence": "^1.1.5",
     "sass-loader": "^6.0.5",
     "style-loader": "^0.17.0",
