@@ -1,4 +1,3 @@
-/* plugins to have a better cross compatible loading script in a more robust way from IE7+ onwards, if the support for IE7 and IE8 is discontinued at some point then promise based custom script can be used with some polyfills to support IE9+.*/
 import loadJS from './lib/script.js';
 import { loadCSS } from './lib/loadCSS.js';
 
@@ -23,8 +22,8 @@ const mapTo = {
   },
   quickExit: {
     identifier: '#qg-quick-exit',
-    css: `${buildPath}misc/includes/quick-exit/quick-exit.css`,
-    js: [`${buildPath}misc/includes/quick-exit/quick-exit.js`],
+    css: `${buildPath}quick-exit/styles/quick-exit.css`,
+    js: [`${buildPath}quick-exit/quick-exit.bundle.js`],
   },
   pagination: {
     identifier: '.pagination',
@@ -34,7 +33,7 @@ const mapTo = {
   data: {
     identifier: '#data-url',
     css: '',
-    js: ['/assets/v3/lib/ext/jquery.jsonp.js',`${buildPath}data/data.bundle.js`],
+    js: ['/assets/v3/lib/ext/jquery.jsonp.js', `${buildPath}data/data.bundle.js`],
   },
 };
 

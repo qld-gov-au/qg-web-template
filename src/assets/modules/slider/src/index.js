@@ -9,11 +9,6 @@ import './styles/slider.scss';
 import {sliderConfig} from './lib/qg-slider-config';
 import {processXML} from './lib/qg-get-xml';
 
-$.ajax({url: 'demo_test.txt',
-  success: function (result) {
-    console.log(result);
-  }});
-
 /*global qg*/
 (function generateSlider (jQuery, qg) {
   if ($('[data-role="qg-slider"]').length) {

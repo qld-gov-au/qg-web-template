@@ -13,6 +13,7 @@ module.exports = function (config) {
       'node_modules/jquery/dist/jquery.min.js',
       './src/assets/_project/_blocks/utils/qg-env.js',
       'tests.webpack.js',
+      {pattern: 'src/assets/modules/**/**/fixtures/*.html', watched: true, served: true, included: false},
     ],
     frameworks: ['jasmine-ajax', 'jasmine-jquery', 'jasmine'],
     preprocessors: {
