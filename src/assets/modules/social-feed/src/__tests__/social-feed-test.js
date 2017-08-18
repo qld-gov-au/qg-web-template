@@ -1,6 +1,13 @@
 import {facebook, twitter} from '../lib/social-feed';
 
 describe('QG Social feed Unit tests :-', function () {
+  beforeEach(function () {
+    jasmine.getFixtures().fixturesPath = 'base/src/assets/modules/social-feed/src/__tests__/fixtures';  // path to your templates
+    jasmine.getFixtures().load('social-fixtures.html');   // load a template
+    //intialize social feed function
+    twitter.init();
+    facebook.init();
+  });
   it('Facebook SDK script should be present on initialization', function () {
     var src = 'http://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.8';
     expect(document.getElementsByTagName('script')[0].src).not.toEqual(src);

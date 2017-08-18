@@ -1,7 +1,6 @@
 //plugin
 import './lib/unslider/unslider-min';
 import './lib/unslider/unslider.css';
-
 //slider custom styling
 import './styles/slider.scss';
 
@@ -12,7 +11,7 @@ import {processXML} from './lib/qg-get-xml';
 /*global qg*/
 (function generateSlider (jQuery, qg) {
   if ($('[data-role="qg-slider"]').length) {
-    processXML($('[data-role="qg-slider"]').data('options').src, 'GET').then(function (result) {
+    processXML($('[data-role="qg-slider"]').data('options').src).then(function (result) {
       let container = $('<div class="banner"><ul></ul></div>');
       $(result).find('entry').each(function (index) {
         let $this = $(this);

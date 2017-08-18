@@ -11,8 +11,7 @@
     "clean": "gulp clean-build",
     "build": "gulp build && node gulp/build-tasks/node-docs-flatten.js",
     "test:unit": "node_modules/.bin/karma start --single-run --no-auto-watch karma.config.js",
-    "test:unit:watch": "node_modules/.bin/karma start --auto-watch --no-single-run karma.config.js",
-    "test:e2e": "./node_modules/.bin/nightwatch --config __tests__/e2e/config.json"
+    "test:unit:watch": "node_modules/.bin/karma start --auto-watch --no-single-run karma.config.js"
   },
   "authors": "Queensland Government",
   "licence": "all rights reserved",

@@ -1,7 +1,7 @@
-const processXML = function (url, methodType, callback) {
+const processXML = function (url, callback) {
   return $.ajax({
     url: url,
-    method: methodType,
+    method: 'GET',
     contentType: 'text/xml',
     dataType: 'text',
   });
