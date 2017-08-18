@@ -6,7 +6,8 @@
 
   input {
     border-radius: 0;
-    border-color: $qg-green; 
+    border-color: $qg-green;
+    height: 42.8px; //inherited from .form-control class
   }
 
   .listbox {
@@ -20,12 +21,15 @@
     border: 1px solid $qg-green;
     border-top: 1px solid #EEE;
     background: #FFF;
+    &[aria-busy="true"] {
+      border-top-style: hidden;
+    }
 
     li {
       width: 100%;
       padding-left: 0.8em;
       &:last-of-type {
-        margin-bottom: .3em;  
+        margin-bottom: .3em;
       }
       &:hover {
         background: $qg-pale-blue-light;
@@ -45,7 +49,7 @@
       background-color: transparent;
       padding: 0;
     }
-  }  
+  }
 
   .collapse {
     @media (min-width: $screen-sm-min) {
