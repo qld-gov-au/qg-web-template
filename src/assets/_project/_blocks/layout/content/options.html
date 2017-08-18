@@ -17,25 +17,29 @@
 
         <ol class="questions">
             <li>
-                <fieldset id="page-feedback-about">
-                    <legend><span class="label">Is your feedback about:</span></legend>
-                    <ul class="choices">
-                        <li>
-                            <input name="page-feedback-about" id="page-feedback-about-this-website" type="radio" value="this website"
-                                data-qg-pr="default"
-                                data-parent="#qg-page-feedback-form"
-                                data-target="#feedback-page">
-                            <label for="page-feedback-about-this-website">this website</label>
-                        </li>
-                        <li>
-                            <input name="page-feedback-about" id="page-feedback-about-a-government-service" type="radio" value="a government service"
-                                data-qg-pr="default"
-                                data-parent="#qg-page-feedback-form"
-                                data-target="#feedback-serv-dep-staff">
-                            <label for="page-feedback-about-a-government-service">a government service, department or staff member?</label>
-                        </li>
-                    </ul>
-                </fieldset>
+                  <fieldset id="page-feedback-about">
+                      <legend><span class="label">Is your feedback about:</span></legend>
+                      <ul class="choices">
+                          <li>
+                            <div class="form-group">
+                                <input class="form-control" name="page-feedback-about" id="page-feedback-about-this-website" type="radio" value="this website"
+                                    data-qg-pr="default"
+                                    data-parent="#qg-page-feedback-form"
+                                    data-target="#feedback-page">
+                                <label for="page-feedback-about-this-website">this website</label>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="form-group">
+                                <input class="form-control" name="page-feedback-about" id="page-feedback-about-a-government-service" type="radio" value="a government service"
+                                    data-qg-pr="default"
+                                    data-parent="#qg-page-feedback-form"
+                                    data-target="#feedback-serv-dep-staff">
+                                <label for="page-feedback-about-a-government-service">a government service, department or staff member?</label>
+                            </div>
+                          </li>
+                      </ul>
+                  </fieldset>
             </li>
         </ol>
 
@@ -64,29 +68,38 @@
                             <ul class="choices">
 
                                 <li>
-                                    <input type="radio" name="feedback-satisfaction" value="Very dissatisfied" required="" id="fs-very-dissatisfied" />
-                                    <label for="fs-very-dissatisfied">Very dissatisfied (1)</label>
+                                  <div class="form-group">
+                                      <input class="form-control" type="radio" name="feedback-satisfaction" value="Very dissatisfied" required="" id="fs-very-dissatisfied" />
+                                      <label for="fs-very-dissatisfied">Very dissatisfied (1)</label>
+                                  </div>
                                 </li>
 
                                 <li>
-                                    <input type="radio" name="feedback-satisfaction" value="Dissatisfied" required="" id="fs-dissatisfied" />
-                                    <label for="fs-dissatisfied">Dissatisfied (2)</label>
+                                  <div class="form-group">
+                                      <input class="form-control" type="radio" name="feedback-satisfaction" value="Dissatisfied" required="" id="fs-dissatisfied" />
+                                      <label for="fs-dissatisfied">Dissatisfied (2)</label>
+                                  </div>
                                 </li>
 
                                 <li>
-                                    <input type="radio" name="feedback-satisfaction" value="Neither satisfied or dissatisfied" required="" id="fs-neither-satisfied-or-dissatisfied" />
-                                    <label for="fs-neither-satisfied-or-dissatisfied">Neither satisfied or dissatisfied (3)</label>
+                                  <div class="form-group">
+                                      <input class="form-control" type="radio" name="feedback-satisfaction" value="Neither satisfied or dissatisfied" required="" id="fs-neither-satisfied-or-dissatisfied" />
+                                      <label for="fs-neither-satisfied-or-dissatisfied">Neither satisfied or dissatisfied (3)</label>
+                                  </div>
                                 </li>
 
                                 <li>
-                                    <input type="radio" name="feedback-satisfaction" value="Satisfied" required="" id="fs-satisfied" />
-                                    <label for="fs-satisfied">Satisfied (4)</label>
+                                  <div class="form-group">
+                                      <input class="form-control" type="radio" name="feedback-satisfaction" value="Satisfied" required="" id="fs-satisfied" />
+                                      <label for="fs-satisfied">Satisfied (4)</label>
+                                  </div>
                                 </li>
 
                                 <li>
-                                    <input type="radio" name="feedback-satisfaction" value="Very satisfied" required="" id="fs-very-satisfied" />
-                                    <label for="fs-very-satisfied">Very satisfied (5)</label>
-
+                                  <div class="form-group">
+                                      <input class="form-control" type="radio" name="feedback-satisfaction" value="Very satisfied" required="" id="fs-very-satisfied" />
+                                      <label for="fs-very-satisfied">Very satisfied (5)</label>
+                                  </div>
                                 </li>
 
                             </ul>
@@ -94,16 +107,20 @@
                     </li>
 
                     <li class="col-md-6 col-sm-12">
-                        <label for="comments">
-                            <span class="label">Comments</span>
-                            <abbr title="(required)" class="required">*</abbr>
-                        </label>
-                        <textarea name="comments" id="comments" rows="10" cols="40" required="required"></textarea>
+                      <div class="form-group">
+                          <label for="comments">
+                              <span class="label">Comments</span>
+                              <abbr title="(required)" class="required">*</abbr>
+                          </label>
+                          <textarea class="form-control" name="comments" id="comments" rows="10" cols="40" required="required"></textarea>
+                      </div>
                     </li>
 
                     <li id="feedback-captcha-container" class="col-md-12">
-                        <label for="feedback-captcha">Please leave this blank (this helps us identify automatic spam)</label>
-                        <input type="text" name="captcha" id="feedback-captcha" value="" />
+                      <div class="form-group">
+                          <label for="feedback-captcha">Please leave this blank (this helps us identify automatic spam)</label>
+                          <input class="form-control" type="text" name="captcha" id="feedback-captcha" value="" />
+                      </div>
                     </li>
 
                     <li class="footer col-md-12">
