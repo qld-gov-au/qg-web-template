@@ -8,7 +8,7 @@
   $(document).ready(function () {
     /**
      * Event listener on header search box to make it accessible
-     * If search box has no value, aria-busy of suggestion list should be true
+     * If search box's suggestion list is empty, aria-busy of suggestion list should be true
      */
     $('#qg-search-query').on('focusout', function () {
       $(this).siblings('#suggestbox').attr('aria-busy', 'true');
