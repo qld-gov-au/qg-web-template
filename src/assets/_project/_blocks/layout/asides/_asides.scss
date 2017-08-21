@@ -1,4 +1,5 @@
 //// asides ////
+@import 'minicart';
 #qg-content #qg-secondary-content {
   position: relative; // For affix and other fixed position child elements
 
@@ -6,13 +7,13 @@
     // @include qg-responsive-padding($md: $qg-spacing); // 16px*1.5;
     // padding: $qg-spacing-xs ($qg-spacing-xs / 2);
     // @include qg-responsive-padding();
-    
+
     @include qg-responsive-spacing(padding);
 
     margin: 0;
 
     background-color: $qg-aside-bg-color;
-    
+
     // @media (min-width: $screen-md-min) {
     //   padding: ($qg-spacing / 2);
     // }
@@ -35,6 +36,7 @@
     h2 {
       margin-top: 0;
       overflow: hidden;
+      color: $qg-aside-h2-color;
       @include fontSize(22px);
       font-weight: bold;
 
@@ -44,6 +46,9 @@
         color: $qg-icon-color;
         font-size: 1.3em;
       }
+    }
+    h3 {
+      color: $qg-dark-blue2;
     }
     p:last-child() {
       margin-bottom: 0;
@@ -55,6 +60,31 @@
       font-weight: 800;
       white-space: nowrap;
     }
+    .qg-contact {
+      ul {
+        li {
+          word-wrap: break-word;
+          .tel {
+            color: $qg-dark-grey;
+            font-size: 1.4rem;
+          }
+        }
+      }
+    }
+    &.login {
+      h2:before {
+        content: $fa-var-sign-in;
+        font-family: FontAwesome;
+        color: $qg-green;
+        font-size: 3.2rem;
+        font-weight: normal;
+        padding-right: 1.2rem;
+      }
+    }
+    .actions {
+      list-style: none;
+      padding: .5rem 0 0;
+    }
   }
 }
 /*
@@ -65,7 +95,7 @@
   a, a:link {
     // color: $qg-blue5;
     // text-decoration: none;
-  }  
+  }
 
   h2 {
     margin: 0;
@@ -73,7 +103,7 @@
   }
 
   .qg-aside {
-    background-color: $qg-pale-blue;      
+    background-color: $qg-pale-blue;
     padding: 1.5em 1em;
     margin: 0;
 
@@ -85,32 +115,32 @@
 
     h2 {
       font-weight: 700;
-      margin: 0 0 1em 0; 
+      margin: 0 0 1em 0;
     }
 
-    figure {   
+    figure {
       margin: 0;
-      padding: 0; 
-      position:relative; 
+      padding: 0;
+      position:relative;
       text-align: center;
 
       img {
         margin: 0;
-        padding: 0; 
+        padding: 0;
         //width: 100%;
         max-width: 100%;
-        height: auto;   
+        height: auto;
       }
 
       figcaption {
         margin: 0;
-        padding: .5em; 
+        padding: .5em;
         font-size: 90%;
         font-style: italic;
-        text-align: center;       
+        text-align: center;
       }
     }
-  } 
+  }
 
   // possible background colors for asides:
   // background-color: $qg-light-blue-gray;

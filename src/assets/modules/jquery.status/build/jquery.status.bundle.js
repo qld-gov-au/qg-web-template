@@ -125,10 +125,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				html = $(
 				'<div class="status ' + options.status + '">' +
 				'<h2>' + options.title + '</h2>' + options.body +
-				'</div>'
+				'</div>')
 
 				// give it an id for lightbox
-				).generateId(options.status);
+				.generateId(options.status);
 
 
 				link = $('<a>' + options.title + '</a>').attr('href', '#' + html[0].id);
@@ -161,9 +161,9 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				// find the status box link
 				link
 				// set us up a lightbox
-				.butterfly(options
+				.butterfly(options)
 				// activate it
-				).click();
+				.click();
 
 			}
 
