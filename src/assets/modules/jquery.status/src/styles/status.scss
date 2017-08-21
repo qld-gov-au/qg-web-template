@@ -14,9 +14,9 @@
   content: "";
   position: absolute;
   top: 0;
-  margin-left: -2.4em;
-  width: 1em;
-  height: 1em;
+  margin-left: -8.2rem;
+  //width: 1em;
+  //height: 1em;
   text-align: center;
   color: $black;
   padding: 0.4em;
@@ -63,8 +63,8 @@
     }
 
     a:link, a:focus, a:visited, a:hover {
-      color: #FFF;  
-    }    
+      color: #FFF;
+    }
 }
 
 div.download {

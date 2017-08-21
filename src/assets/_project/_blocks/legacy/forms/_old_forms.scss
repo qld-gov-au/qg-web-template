@@ -652,9 +652,9 @@ legend .h3 {
 
 /* group labels */
 .group .questions .label,
-.group .questions abbr.required,
-.group .questions abbr[title*="required"] {
-  font-size: 80%; }
+//.group .questions abbr.required,
+//.group .questions abbr[title*="required"] {
+//  font-size: 80%; }
 
 .group .questions abbr[title*="required"] {
   font-size: 100%; }
@@ -702,17 +702,17 @@ legend .hint .help {
   display: inline; }
 
 /* required fields */
-abbr.required, abbr[title*="required"] {
-  color: #F85C50;
-  border-bottom: none;
-  text-decoration: none; }
+//abbr.required, abbr[title*="required"] {
+  //color: #F85C50;
+  //border-bottom: none;
+  //text-decoration: none; }
 
-.questions abbr.required, .questions abbr[title*="required"] {
-  position: absolute;
-  margin-left: -1em;
-  width: 1em;
-  text-align: center;
-  top: .5em; }
+//.questions abbr.required, .questions abbr[title*="required"] {
+//  position: absolute;
+//  margin-left: -1em;
+//  width: 1em;
+//  text-align: center;
+//  top: .5em; }
 
 .questions abbr[title*="required"] {
   position: absolute;

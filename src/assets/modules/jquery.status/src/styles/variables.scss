@@ -1,4 +1,5 @@
 @import "../../../../_project/_blocks/scss-general/_qg-variables.scss";
+@import "../../../../_project/_blocks/scss-general/_qg-font-variables.scss";
 
 $status-background-color: $qg-light-blue-gray3;
 $info-background-color: $qg-light-blue-gray3;
@@ -19,13 +20,3 @@ $fail-border-color: $qg-watermelon;
 $download-background-color: $qg-beige;
 $download-color: $black;
 $download-border-color: $qg-dark-beige;
-
-$font-awesome: FontAwesome;
-$base-font-size: 16;
-$fa-var-info-circle: "\f05a";
-$fa-var-check: "\f00c";
-$fa-var-check-circle: "\f058";
-$fa-var-exclamation-triangle: "\f071";
-$fa-var-ban: "\f05e";
-$fa-var-comments-o: "\f0e6";
-$fa-var-download: "\f019";

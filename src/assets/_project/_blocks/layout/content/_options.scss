@@ -4,7 +4,7 @@
   background-color: $qg-content-options-bg-color;
   padding-top: $qg-spacing / 2;
   padding-bottom: $qg-spacing / 2;
-  
+
   @media (min-width: $screen-lg-min) {
     padding-left:  ($grid-gutter-width / 2);
     padding-right: ($grid-gutter-width / 2);
@@ -132,49 +132,33 @@
   @include fontSize(16px);
 
   #feedback-captcha-container {
-    display:none; 
+    display:none;
   }
-
-  .warn {    
-    padding: 1em;
-    @extend .col-lg-12;
-    background-color: #FFEDDE;  
-  }
-
-  .info {    
-    padding: 1em;
-    margin-bottom: 1em;
-    background-color: #EEF4F6;   
-  }
-
-  .required {
-    color: #c90000;    
-  }  
 
   .invalid {
-    color: #c90000;
+    color: $qg-error-red;
 
     label {
-      color: #c90000;    
+      color: $qg-error-red;
     }
 
     input {
-      border: 2px solid red; 
+      border: 2px solid $qg-error-red;
     }
 
     textarea {
-      border: 2px solid red; 
+      border: 2px solid $qg-error-red;
     }
 
-  } 
+  }
 
   .alert {
     display: inline;
-    color: #c90000;     
-    @include fontSize(16px); 
-  } 
+    color: $qg-error-red;
+    @include fontSize(16px);
+  }
 
-  // ################################################# 
+  // #################################################
 
   #qg-page-feedback-form {
     // @extend .col-xs-12;
@@ -189,14 +173,14 @@
       // TODO: Turn this into a global class
     }
 
-    @media (max-width: $screen-sm-max) { 
+    @media (max-width: $screen-sm-max) {
 
       h2, p {
         margin: 1em 35px;
       }
 
       textarea {
-        width: 100%;   
+        width: 100%;
       }
 
     }
@@ -205,29 +189,29 @@
       margin: 0;
       padding: 1em 0;
       list-style-type: none;
-    } 
+    }
 
     ul.actions li {
       display: inline-block;
       margin-right: 1em;
       text-align: center;
-    }  
+    }
 
     .label {
       color: #000 !important;
       font-weight: normal;
-      @include fontSize(16px); 
+      @include fontSize(16px);
       display: inline;
-      position: static; 
+      position: static;
       width:auto;
       max-width: auto;
       margin: 0;
       padding:0;
       white-space: normal;
-    }    
+    }
 
     fieldset {
-      color: #000;  
+      color: #000;
       margin: 0;
       padding:0;
 
@@ -235,36 +219,36 @@
         color: #000;
         margin: 0;
         padding:0;
-        border-bottom: none;   
-      }  
+        border-bottom: none;
+      }
 
-    }  
+    }
 
     label {
       font-weight: normal;
       font-size: 1em;
       color: #000;
       display: inline;
-      position: static; 
+      position: static;
       width:auto;
       max-width: auto;
       margin: 0;
-      padding:0; 
-    } 
+      padding:0;
+    }
 
     input {
       display: inline;
-      position: static; 
+      position: static;
       width:auto;
       max-width: auto;
       margin: 0;
-      padding:0;   
+      padding:0;
     }
 
-    input[type="radio"] {}
-
-    #comments {
-      display: block;
-    }   
-  }   
+    #feedback-page-list {
+      li {
+        clear: none;
+      }
+    }
+  }
 }

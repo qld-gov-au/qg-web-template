@@ -13,7 +13,7 @@ $qg-green: #78ba00; // For primary buttons, icons etc. (see bootstrap-variables.
 // ## Dark grey ##
 $qg-dark-gray-lighter: #8a8f91; // Lightest for large text on white
 $qg-dark-gray-light: #717679; // Lightest for small text on white
-$qg-dark-grey: #585e62; // For default buttons 
+$qg-dark-grey: #585e62; // For default buttons
 
 // ## Light grey ##
 $qg-light-gray-lighter: #fafafa;
@@ -23,6 +23,9 @@ $qg-light-gray-darker: #d1d1d1;
 // $qg-light-gray-darker: #707070; // Dark grey
 
 
+
+// ## Red ##
+$qg-red: #F85C50;
 
 // ## Dark Blue ##
 $qg-dark-blue: #0B2E4C;
@@ -129,6 +132,7 @@ $qg-spacing-xs-small: $qg-spacing-xs / 2;
 
 // Notes:
 // $brand-danger = $qg-red5
+$qg-error-red: $qg-red;
 
 // #################################################
 // To convert to bootstrap naming convention

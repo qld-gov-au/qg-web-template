@@ -100,3 +100,13 @@
     transition: opacity 0.2s ease,margin 0.2s ease,padding 0.2s ease;
   }
 }
+abbr.required, abbr[title*="required"] {
+  font-size: 2.4rem;
+  color: $qg-error-red;
+  border-bottom: none;
+  text-decoration: none;
+  position: absolute;
+  width: 1rem;
+  text-align: center;
+  left: -1.2rem;
+}
