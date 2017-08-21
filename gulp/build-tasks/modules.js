@@ -3,7 +3,7 @@ const sourcemaps = require('gulp-sourcemaps');
 
 module.exports = function (gulp, plugins, config, gulpWebpack, webpack, path) {
   return function () {
-    let modules = ['loader', 'slider', 'autocomplete', 'pagination', 'data', 'misc', 'social-feed', 'jquery.status', 'jquery.history'];
+    let modules = ['loader', 'slider', 'autocomplete', 'pagination', 'data', 'misc', 'quick-exit', 'social-feed', 'jquery.status', 'jquery.history'];
     let staticAssets = ['images', 'examples', 'includes'];
 
     // building each component
