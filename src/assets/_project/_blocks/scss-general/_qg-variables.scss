@@ -29,6 +29,7 @@ $qg-red: #F85C50;
 
 // ## Dark Blue ##
 $qg-dark-blue: #0B2E4C;
+$qg-dark-blue2: #005474;
 
 
 // ###################################
@@ -76,7 +77,7 @@ $state-danger-bg:       #B90824;
 $state-danger-border:   darken(adjust-hue($state-success-bg, -10), 5%) !default;
 
 // $qg-warning-color: #cc352d;
-$qg-correct-color: #78ba00;
+$qg-correct-color: $qg-green;
 $qg-correct-border-color: #92c23a; // #a6c56d;
 $qg-correct-bg-color: #fafff2; // #fafff0; // #f7ffe8;
 
@@ -98,6 +99,7 @@ $qg-section-nav-link-hover-bg-color: $qg-light-gray-darker;
 $qg-aside-bg-color: $qg-pale-blue;
 $qg-aside-bg-color2: $qg-pale-blue-light;
 $qg-aside-bg-color3: $qg-pale-blue-dark;
+$qg-aside-h2-color: $qg-dark-blue2;
 
 // Content options
 $qg-content-options-bg-color: $qg-blue;
