@@ -15,7 +15,7 @@ const mapTo = {
   slider: {
     identifier: 'qg-slider',
     css: `${buildPath}slider/styles/slider.css`,
-    js: [`${buildPath}misc/includes/xml-reader/xml-reader.js`, `${buildPath}slider/slider.bundle.js`],
+    js: [`${buildPath}slider/slider.bundle.js`],
   },
   feeds: {
     identifier: 'qg-social-feed',
@@ -23,8 +23,8 @@ const mapTo = {
   },
   quickExit: {
     identifier: '#qg-quick-exit',
-    css: `${buildPath}misc/includes/quick-exit/quick-exit.css`,
-    js: [`${buildPath}misc/includes/quick-exit/quick-exit.js`],
+    css: `${buildPath}quick-exit/styles/quick-exit.css`,
+    js: [`${buildPath}quick-exit/quick-exit.bundle.js`],
   },
   pagination: {
     identifier: '.pagination',
@@ -34,7 +34,7 @@ const mapTo = {
   data: {
     identifier: '#data-url',
     css: '',
-    js: ['/assets/v3/lib/ext/jquery.jsonp.js',`${buildPath}data/data.bundle.js`],
+    js: ['/assets/v3/lib/ext/jquery.jsonp.js', `${buildPath}data/data.bundle.js`],
   },
 };
 
