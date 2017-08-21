@@ -108,7 +108,24 @@ gulp.task('npm:publish', ['release'], require('./gulp/publish-tasks/npm.js')(gul
 /* TEST TASKS */
 gulp.task('test:unit', require('./gulp/test-tasks/unit')(gulp, plugins, config, karmaServer));
 gulp.task('test:eslint', require('./gulp/test-tasks/lint')(gulp, plugins, config, fsPath, eslintReporter));
-gulp.task('test:browserstack', require('./gulp/test-tasks/e2e')(gulp, plugins, argv));
+gulp.task('test:e2e:browserstack', require('./gulp/test-tasks/e2e')(gulp, plugins, argv));
+gulp.task('test:e2e:local', function () {
+  return gulp.src('')
+    .pipe(plugins.nightwatch({
+      configFile: 'tests/e2e/config.json',
+    }));
+});
+gulp.task('process-exit', function () {
+  process.exit(0);
+});
+gulp.task('test:e2e', (cb) => {
+  runSequence(
+    ['serve'],
+    ['test:e2e:local'],
+    ['process-exit'],
+    cb
+  );
+});
 gulp.task('test', (cb) => {
   runSequence(
     ['test:unit'],
