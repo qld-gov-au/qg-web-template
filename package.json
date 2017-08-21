@@ -1,15 +1,18 @@
 {
-  "name": "GLUE-Templates",
-  "version": "2.0.0",
-  "description": "GLUE-Templates",
+  "name": "Queensland-Government-Web-Template",
+  "version": "3.0.0",
+  "description": "This template is designed to provide a template for all Franchise websites, and the underpinning technology for new Agency websites.",
   "main": "gulpfile.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/qld-gov-au/glue-template.git"
+    "url": "https://github.com/qld-gov-au/qg-web-template.git"
   },
   "scripts": {
-    "clean": "gulp clean-build",
+    "clean": "gulp clean-build && gulp clean-release",
+    "clean-release": "gulp clean-release",
+    "clean-build": "gulp clean-build",
     "build": "gulp build && node gulp/build-tasks/node-docs-flatten.js",
+    "release": "npm run build && gulp release"
     "test:unit": "node_modules/.bin/karma start --single-run --no-auto-watch karma.config.js",
     "test:unit:watch": "node_modules/.bin/karma start --auto-watch --no-single-run karma.config.js"
   },
@@ -47,6 +50,7 @@
     "gulp-connect-ssi": "^0.3.2",
     "gulp-debug": "^3.1.0",
     "gulp-eslint": "^3.0.1",
+    "gulp-foreach": "^0.1.0",
     "gulp-if": "^2.0.2",
     "gulp-include": "^2.3.1",
     "gulp-inject": "^3.0.0",
@@ -61,6 +65,7 @@
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^2.1.2",
     "gulp-wait": "0.0.2",
+    "gulp-webpack": "^1.5.0",
     "historyjs": "^1.8.0-b2",
     "html-loader": "^0.5.1",
     "html-webpack-plugin": "^2.28.0",

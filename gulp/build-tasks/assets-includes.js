@@ -26,8 +26,8 @@ module.exports = function (gulp, plugins, config, dest, local = false, relpath =
     return gulp.src(src, { dot: true })
       .pipe(plugins.include({ hardFail: true }))
       .on('error', console.log)
-      .pipe(plugins.replace(projectAssets, `="$1assets/${config.versionName}/`)) // Replace '_project' with 'v3'
-      .pipe(plugins.if(local !== true, plugins.replace(projectAssets, `="//static.qld.net.au/assets/${config.versionName}/`)))
+      .pipe(plugins.replace(projectAssets, `="$1assets/${config.versionName}/latest/`)) // Replace '_project' with 'v3'
+      .pipe(plugins.if(local !== true, plugins.replace(projectAssets, `="//static.qld.net.au/assets/${config.versionName}/latest/`)))
       .pipe(plugins.if(local !== true, plugins.replace(cdnLink.regex, cdnLink.replacement)))
       .pipe(plugins.if(relpath === true, plugins.replace(relLink.regex, relLink.replacement)))
       .pipe(gulp.dest(`${config.basepath.build}/${dest}/`));

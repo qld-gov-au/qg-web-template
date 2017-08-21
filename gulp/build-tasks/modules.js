@@ -13,7 +13,7 @@ module.exports = function (gulp, plugins, config, gulpWebpack, webpack, path) {
         /*TODO if examples, then the structure should be consistent across component source, component build source and framework build*/
         if (el === 'examples') {
           gulp.src(`${config.basepath.src}/assets/modules/${element}/src/${el}/**/**`)
-            .pipe(gulp.dest(`${config.basepath.build}/assets/${config.versionName}/modules/${element}/`));
+            .pipe(gulp.dest(`${config.basepath.build}/assets/${config.versionName}/latest/modules/${element}/`));
         }
         if (el === 'includes') {
           gulp.src(`${config.basepath.src}/assets/modules/${element}/src/${el}/**/**/*.js`)
@@ -22,13 +22,13 @@ module.exports = function (gulp, plugins, config, gulpWebpack, webpack, path) {
               presets: ['es2015'],
             }))
             .pipe(sourcemaps.write('.'))
-            .pipe(gulp.dest(`${config.basepath.build}/assets/${config.versionName}/modules/${element}/includes`));
+            .pipe(gulp.dest(`${config.basepath.build}/assets/${config.versionName}/latest/modules/${element}/includes`));
           gulp.src(`${config.basepath.src}/assets/modules/${element}/src/${el}/**/**/*`)
-            .pipe(gulp.dest(`${config.basepath.build}/assets/${config.versionName}/modules/${element}/includes`));
+            .pipe(gulp.dest(`${config.basepath.build}/assets/${config.versionName}/latest/modules/${element}/includes`));
         }
         if (el === 'images') {
           gulp.src(`${config.basepath.src}/assets/modules/${element}/src/${el}/**/**`)
-            .pipe(gulp.dest(`${config.basepath.build}/assets/${config.versionName}/modules/${element}/${el}`));
+            .pipe(gulp.dest(`${config.basepath.build}/assets/${config.versionName}/latest/modules/${element}/${el}`));
         }
       });
       return gulp.src(path.resolve(__dirname, config.basepath.modules))
@@ -72,9 +72,9 @@ module.exports = function (gulp, plugins, config, gulpWebpack, webpack, path) {
             new ExtractTextPlugin(`styles/${element}.css`),
           ],
         }, webpack))
-        .pipe(gulp.dest(`${config.basepath.build}/assets/${config.versionName}/modules/${element}`))
+        .pipe(gulp.dest(`${config.basepath.build}/assets/${config.versionName}/latest/modules/${element}`))
         .pipe(plugins.replace(new RegExp('="/assets/', 'g'), '="assets/'))
-        .pipe(gulp.dest(`${config.basepath.build}/docs/assets/${config.versionName}/modules/${element}`));
+        .pipe(gulp.dest(`${config.basepath.build}/docs/assets/${config.versionName}/latest/modules/${element}`));
     });
   };
 };

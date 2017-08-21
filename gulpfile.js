@@ -69,9 +69,6 @@ gulp.task('build', (cb) => {
 });
 
 gulp.task('default', ['build']);
-gulp.task('build:clean', (cb) => {
-  runSequence('clean-build', 'build', cb);
-});
 
 /* WATCH TASKS */
 // Note: External libraries and external modules are not watched
@@ -92,19 +89,12 @@ gulp.task('watch:serve', ['watch', 'serve']);
 // Grabs SCSS from SRC and moves to release, does not process
 gulp.task('scss-src', require('./gulp/release-tasks/scss-src')(gulp, plugins, config));
 gulp.task('release-other-files', require('./gulp/release-tasks/other-files')(gulp, plugins, config));
-gulp.task('release-files', require('./gulp/release-tasks/files')(gulp, plugins, config));
-
-// let dests = ['template-local/assets', 'docs/assets'];
-// gulp.task('release-js', require('./gulp/common-tasks/js')(gulp, plugins, config, gulpWebpack, dests, 'release'));
-// gulp.task('release-scss', require('./gulp/common-tasks/scss')(gulp, plugins, config, dests, 'release'));
+gulp.task('release-files', require('./gulp/release-tasks/files')(gulp, plugins, config, es, webpack, path));
 
 gulp.task('release', (cb) => {
   return runSequence(
-    ['build:clean', 'clean-release'],
     [
       'release-files',
-      'release-js',
-      'release-scss',
       'scss-src',
       'release-other-files',
     ],

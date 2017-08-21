@@ -3,7 +3,7 @@
 module.exports = function (gulp, plugins, config) {
   return function () {
     const target = [
-      `${config.basepath.build}/assets/_project/_blocks/**/*.scss`,
+      `${config.basepath.src}/assets/_project/_blocks/**/*.scss`,
     ].concat(config.release.excludes);
 
     return gulp.src(target, { dot: true })
