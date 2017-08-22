@@ -55,7 +55,10 @@
                     <p>jquery.status is a module that lets you display error/ information/ warning / success messsage in a modal box</p>
                     <div class="qg-tmplt-example">
                       <div class="panel-body">
-                        <button type="button" class="btn btn-default status-btn">Show status</button>
+                        <button type="button" class="btn btn-default status-btn" data-status="info">Show Info</button>
+                        <button type="button" class="btn btn-default status-btn" data-status="warn">Show Warn</button>
+                        <button type="button" class="btn btn-default status-btn" data-status="fail">Show Fail</button>
+                        <button type="button" class="btn btn-default status-btn" data-status="success">Show Success</button>
                       </div>
                     </div>
                     <h3>Usage</h3>
@@ -100,7 +103,7 @@ $(document).status('show', {
   </code>
 </pre>
                   <p>Javascript</p>
-                  <pre class="line-numbers">
+                  <pre>
 <code class="language-javascript">
 qg.data.get(dataEnvironment, sql, {
         cache: !0,
@@ -205,11 +208,6 @@ qg.data.get(dataEnvironment, sql, {
                     </div>
                   </div>
 
-                  <h3>Dependencies</h3>
-                  <dl class="dl-horizontal">
-                    <dt>jquery</dt><dd></dd>
-
-                  </dl>
                   <h3>Usage</h3>
                   <p>HTML</p>
 <pre>

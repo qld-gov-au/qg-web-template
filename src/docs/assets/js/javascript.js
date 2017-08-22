@@ -40,7 +40,7 @@ $(window).on('load', function () {
   var statusTrigger = function () {
     $('.status-btn').on('click', function () {
       $(document).status('show', {
-        status: 'fail',
+        status: $(this).attr('data-status'),
         lightbox: true,
         title: 'Error loading data',
         body: '<p>We were unable to retrieve data.</p>Please try again later.',
