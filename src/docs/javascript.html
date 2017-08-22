@@ -22,6 +22,7 @@
     <meta content="Queensland" name="DCTERMS.jurisdiction" scheme="AGLSTERMS.AglsJuri">
     <meta content="http://creativecommons.org/licenses/by/3.0/au/" name="DCTERMS.license" scheme="DCTERMS.URI"><!--#include virtual="/assets/includes-local/head-assets.html"-->
     <link href="assets/_project/latest/css/qg-documentation.css" media="all" rel="stylesheet" type="text/css">
+    <link href="./assets/css/prism.css" media="all" rel="stylesheet" type="text/css">
     <!--<link rel="stylesheet" href="/assets/v3/modules/pagination/styles/pagination.css">-->
 </head>
 <body data-qg-accessibility="true" data-spy="scroll" data-target="#page-nav">
@@ -54,12 +55,15 @@
                     <p>jquery.status is a module that lets you display error/ information/ warning / success messsage in a modal box</p>
                     <div class="qg-tmplt-example">
                       <div class="panel-body">
-                        <button type="button" class="btn btn-default status-btn">Show status</button>
+                        <button type="button" class="btn btn-default status-btn" data-status="info">Show Info</button>
+                        <button type="button" class="btn btn-default status-btn" data-status="warn">Show Warn</button>
+                        <button type="button" class="btn btn-default status-btn" data-status="fail">Show Fail</button>
+                        <button type="button" class="btn btn-default status-btn" data-status="success">Show Success</button>
                       </div>
                     </div>
                     <h3>Usage</h3>
                     <pre>
-<code>
+<code class="language-javascript">
 $(document).status('show', {
     status: 'fail',
     lightbox: true,
@@ -92,15 +96,15 @@ $(document).status('show', {
 
                   <h3>Usage</h3>
                   <p>HTML</p>
-<code>
-  <pre>
+<pre>
+  <code class="language-markup">
     &lt;a id="data-url" data-url="https://data.qld.gov.au/dataset/{PATH-TO-DATA-RESOURCE}"&gt;View full Data&lt;/a&gt;
     &lt;p class="search-result"&gt;&lt;/p&gt;
-  </pre>
-</code>
+  </code>
+</pre>
                   <p>Javascript</p>
                   <pre>
-<code>
+<code class="language-javascript">
 qg.data.get(dataEnvironment, sql, {
         cache: !0,
         modalCloseButtonImage: 'images/close.png',
@@ -204,15 +208,10 @@ qg.data.get(dataEnvironment, sql, {
                     </div>
                   </div>
 
-                  <h3>Dependencies</h3>
-                  <dl class="dl-horizontal">
-                    <dt>jquery</dt><dd></dd>
-
-                  </dl>
                   <h3>Usage</h3>
                   <p>HTML</p>
-<code>
-  <pre>
+<pre>
+  <code class="language-markup">
       &lt;div class="panel-body" id="paginate-container"&gt;
         &lt;table class="table"&gt;
            &lt;thead&gt;
@@ -226,11 +225,11 @@ qg.data.get(dataEnvironment, sql, {
         &lt;/table&gt;
         &lt;div class="pagination"&gt;&lt;/div&gt;
       &lt;/div&gt;
-  </pre>
-</code>
+  </code>
+</pre>
                   <p>Javascript</p>
                   <pre>
-<code>
+<code class="language-javascript">
 
       $('#paginate-container').pajinate({
           item_container_id: '#paginate-body',
@@ -361,6 +360,7 @@ qg.data.get(dataEnvironment, sql, {
          qg.swe.franchiseTitle = 'Franchise Title';
     </script> <!--#include virtual="/assets/includes-local/footer/footer-scripts.html"-->
     <script type="text/javascript" src="./assets/js/javascript.js"></script>
+    <script type="text/javascript" src="./assets/js/prism.js"></script>
     <!--<script type="text/javascript" src="/assets/v3/modules/pagination/pagination.bundle.js"></script>-->
 
 </body>

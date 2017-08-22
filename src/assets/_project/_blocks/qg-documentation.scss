@@ -44,7 +44,7 @@
   &.affix-bottom {
     position: relative;
   }
-  .nav { 
+  .nav {
     margin-bottom: $qg-spacing-xs / 2;
 
     a {
@@ -65,4 +65,7 @@
     width: auto;
     top: 0;
   }
+}
+pre {
+  display: flex;
 }

@@ -61,11 +61,11 @@ span.qg-correct, span.qg-incorrect {
 }
 
 .table.qg-correct-incorrect > tbody > tr, table.qg-correct-incorrect {
-  td:nth-child(odd) {
+  td:nth-child(even) {
     @extend .qg-correct;
     border-left-width: 3px;
   }
-  td:nth-child(even) {
+  td:nth-child(odd) {
     @extend .qg-incorrect;
     border-left-width: 3px;
   }
