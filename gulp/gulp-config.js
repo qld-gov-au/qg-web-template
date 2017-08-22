@@ -69,6 +69,7 @@ module.exports = {
       'tests/**/*.js',
       '!tests/reports/**/*.js',
       '!src/assets/modules/**/*.js',
+      '!src/docs/assets/js/prism.js',
       '!build/**/*',
       '!release/**/*',
       '!**/_old/**/*',

@@ -12,7 +12,7 @@
     "clean-release": "gulp clean-release",
     "clean-build": "gulp clean-build",
     "build": "gulp build && node gulp/build-tasks/node-docs-flatten.js",
-    "release": "npm run build && gulp release"
+    "release": "npm run build && gulp release",
     "test:unit": "node_modules/.bin/karma start --single-run --no-auto-watch karma.config.js",
     "test:unit:watch": "node_modules/.bin/karma start --auto-watch --no-single-run karma.config.js"
   },
