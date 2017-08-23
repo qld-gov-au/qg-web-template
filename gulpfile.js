@@ -30,6 +30,12 @@ gulp.task('clean-build', (cb) => {
 gulp.task('clean-release', (cb) => {
   return del([config.basepath.release], cb);
 });
+gulp.task('clean-redundant-build', (cb) => {
+  return del([`${config.basepath.build}/docs/assets/includes-local`], cb);
+});
+gulp.task('clean-redundant-release', (cb) => {
+  return del([`${config.basepath.release}/template-cdn-static/assets`, `${config.basepath.release}/template-local-static/assets/includes-local`], cb);
+});
 
 /* BUILD */
 gulp.task('template-pages', require('./gulp/build-tasks/template-pages')(gulp, plugins, config, 'template-pages', 'template-pages', 'local'));

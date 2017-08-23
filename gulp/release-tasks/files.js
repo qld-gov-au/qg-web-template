@@ -55,18 +55,21 @@ module.exports = function (gulp, plugins, config, es, webpack, path) {
                 },
                 plugins: [new webpack.optimize.UglifyJsPlugin()],
               }, webpack))
-            .pipe(gulp.dest(`${config.basepath.release}/template-local/assets/${config.versionName}/${destPath}`));
+            .pipe(gulp.dest(`${config.basepath.release}/template-local/assets/${config.versionName}/${destPath}`))
+            .pipe(gulp.dest(`${config.basepath.release}/template-local-static/assets/${config.versionName}/${destPath}`));
         })),
 
       //CSS task
       gulp.src(`${config.basepath.build}/assets/${config.versionName}/**/*.css`, { dot: true })
         .pipe(plugins.cleanCss())
         .on('error', console.log)
-        .pipe(gulp.dest(`${config.basepath.release}/template-local/assets/${config.versionName}/`)),
+        .pipe(gulp.dest(`${config.basepath.release}/template-local/assets/${config.versionName}/`))
+        .pipe(gulp.dest(`${config.basepath.release}/template-local-static/assets/${config.versionName}/`)),
 
       //other version assets
       gulp.src(versionAssetsTarget, { dot: true })
-        .pipe(gulp.dest(`${config.basepath.release}/template-local/assets/${config.versionName}/`)),
+        .pipe(gulp.dest(`${config.basepath.release}/template-local/assets/${config.versionName}/`))
+        .pipe(gulp.dest(`${config.basepath.release}/template-local-static/assets/${config.versionName}/`)),
     ]);
   };
 };
