@@ -7,7 +7,7 @@
     @include qg-responsive-spacing(padding);
     @include qg-responsive-spacing(padding-top, full);
     @include qg-responsive-spacing(padding-left, $large: full);
-    
+
     margin:  0;
 
     color: #000;
@@ -67,6 +67,17 @@
     }
     a.active:before {
       opacity: 1;
+    }
+    ul {  //nested nav styles
+      padding: 0;
+      li {
+        margin-left: 3rem;
+        a {
+          &:before {
+            content: "";
+          }
+        }
+      }
     }
   }
 
