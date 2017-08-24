@@ -13,7 +13,7 @@ module.exports = function (gulp, plugins, config, dest, local = false, relpath =
     };
     let cdnLink = {
       regex: new RegExp('="/assets/', 'g'),
-      replacement: '="//beta-static.qld.net.au/assets/',
+      replacement: '="https://static.qgov.net.au/assets/',
     };
 
     // if (!Array.isArray(dest)) {
@@ -27,7 +27,7 @@ module.exports = function (gulp, plugins, config, dest, local = false, relpath =
       .pipe(plugins.include({ hardFail: true }))
       .on('error', console.log)
       .pipe(plugins.replace(projectAssets, `="$1assets/${config.versionName}/latest/`)) // Replace '_project' with 'v3'
-      .pipe(plugins.if(local !== true, plugins.replace(projectAssets, `="//static.qld.net.au/assets/${config.versionName}/latest/`)))
+      .pipe(plugins.if(local !== true, plugins.replace(projectAssets, `="https://static.qgov.net.au/assets/${config.versionName}/latest/`)))
       .pipe(plugins.if(local !== true, plugins.replace(cdnLink.regex, cdnLink.replacement)))
       .pipe(plugins.if(relpath === true, plugins.replace(relLink.regex, relLink.replacement)))
       .pipe(gulp.dest(`${config.basepath.build}/${dest}/`));
