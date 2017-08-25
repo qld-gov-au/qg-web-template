@@ -5,7 +5,7 @@ module.exports = function (gulp, plugins, config, gulpWebpack, webpack, path) {
   return function () {
     let staticAssets = ['images', 'examples'];
 
-    fs.readdir(path.resolve(__dirname, config.basepath.modules), function (err, folders) {
+    fs.readdir(path.resolve(config.basepath.modules), function (err, folders) {
       if (err) console.log(err);
       folders.map(function (element) {
         staticAssets.forEach(function (el, index) {
@@ -18,9 +18,9 @@ module.exports = function (gulp, plugins, config, gulpWebpack, webpack, path) {
               .pipe(gulp.dest(`${config.basepath.build}/assets/${config.versionName}/latest/modules/${element}/${el}`));
           }
         });
-        return gulp.src(path.resolve(__dirname, config.basepath.modules))
+        return gulp.src(path.resolve(config.basepath.modules))
           .pipe(gulpWebpack({
-            context: path.resolve(__dirname, config.basepath.modules),
+            context: path.resolve(config.basepath.modules),
             entry: path.resolve(__dirname, config.basepath.modules, element, 'src'),
             output: {
               filename: `${element}.bundle.js`,

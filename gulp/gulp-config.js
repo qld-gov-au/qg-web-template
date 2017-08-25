@@ -14,7 +14,7 @@ module.exports = {
   phase: 'Alpha',
   basepath: {
     src: 'src',
-    modules: path.join('..', '..', 'src', 'assets', 'modules'),
+    modules: path.resolve('src', 'assets', 'modules'),
     build: 'build',
     release: 'release',
     static: 'release/static.qgov.net.au',
