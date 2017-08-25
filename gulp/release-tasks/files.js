@@ -1,5 +1,6 @@
 module.exports = function (gulp, plugins, config, es, webpack, path) {
   return function () {
+    const lazypipe = require('lazypipe');
     const target = [
       `${config.basepath.build}/**/*`,
       `!${config.basepath.build}/assets/**/*`,
@@ -19,6 +20,26 @@ module.exports = function (gulp, plugins, config, es, webpack, path) {
       cdnReplacement: '="$1assets/includes-cdn/',
       localReplacement: '="$1assets/includes-local/',
     };
+    let envFolders = config.release.staticEnv.env;
+
+    //create environment specific files
+    let envStream = lazypipe()
+      .pipe(function () {
+        return plugins.replace(new RegExp('"/assets', 'g'), `"https://${envFolders.prod}/assets`);
+        })
+      .pipe(gulp.dest, `${config.basepath.static}${config.release.staticEnv.envPath}/${envFolders.prod}/assets/${config.versionName}/latest`)
+      .pipe(function () {
+        return plugins.replace(new RegExp(`${envFolders.prod}`, 'g'), `${envFolders.beta}`);
+      })
+      .pipe(gulp.dest, `${config.basepath.static}${config.release.staticEnv.envPath}/${envFolders.beta}/assets/${config.versionName}/latest`)
+      .pipe(function () {
+        return plugins.replace(new RegExp(`${envFolders.beta}`, 'g'), `${envFolders.test}`);
+      })
+      .pipe(gulp.dest, `${config.basepath.static}${config.release.staticEnv.envPath}/${envFolders.test}/assets/${config.versionName}/latest`)
+      .pipe(function () {
+        return plugins.replace(new RegExp(`${envFolders.test}`, 'g'), `${envFolders.dev}`);
+      })
+      .pipe(gulp.dest, `${config.basepath.static}${config.release.staticEnv.envPath}/${envFolders.dev}/assets/${config.versionName}/latest`);
 
     return es.merge([
       gulp.src(target, { dot: true })
@@ -56,7 +77,9 @@ module.exports = function (gulp, plugins, config, es, webpack, path) {
                 plugins: [new webpack.optimize.UglifyJsPlugin()],
               }, webpack))
             .pipe(gulp.dest(`${config.basepath.release}/template-local/assets/${config.versionName}/${destPath}`))
-            .pipe(gulp.dest(`${config.basepath.release}/template-local-static/assets/${config.versionName}/${destPath}`));
+            .pipe(gulp.dest(`${config.basepath.release}/template-local-static/assets/${config.versionName}/${destPath}`))
+            .pipe(plugins.if(config.release.staticEnv.envFiles.indexOf(filename) >= 0, envStream())) //environment specific files
+            .pipe(gulp.dest(`${config.basepath.static}/assets/${config.versionName}/${destPath}`));
         })),
 
       //CSS task
@@ -64,12 +87,14 @@ module.exports = function (gulp, plugins, config, es, webpack, path) {
         .pipe(plugins.cleanCss())
         .on('error', console.log)
         .pipe(gulp.dest(`${config.basepath.release}/template-local/assets/${config.versionName}/`))
-        .pipe(gulp.dest(`${config.basepath.release}/template-local-static/assets/${config.versionName}/`)),
+        .pipe(gulp.dest(`${config.basepath.release}/template-local-static/assets/${config.versionName}/`))
+        .pipe(gulp.dest(`${config.basepath.static}/assets/${config.versionName}/`)),
 
       //other version assets
       gulp.src(versionAssetsTarget, { dot: true })
         .pipe(gulp.dest(`${config.basepath.release}/template-local/assets/${config.versionName}/`))
-        .pipe(gulp.dest(`${config.basepath.release}/template-local-static/assets/${config.versionName}/`)),
+        .pipe(gulp.dest(`${config.basepath.release}/template-local-static/assets/${config.versionName}/`))
+        .pipe(gulp.dest(`${config.basepath.static}/assets/${config.versionName}/`)),
     ]);
   };
 };

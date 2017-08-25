@@ -83,6 +83,7 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-spec-reporter": "0.0.26",
     "karma-webpack": "^2.0.2",
+    "lazypipe": "^1.0.1",
     "nightwatch-custom-commands-assertions": "^1.1.0",
     "node-ssi": "^0.3.2",
     "run-sequence": "^1.1.5",

@@ -42,6 +42,11 @@ module.exports = {
       '!**/*.js.map',
       '!**/_other-files/**/*',
     ],
+    staticEnv: {
+      envFiles: ['loader.bundle.js'],
+      envPath: '/_env',
+      env: {prod: 'static.qgov.net.au', beta: 'beta-static.qgov.net.au', test: 'test-static.qgov.net.au', dev: 'dev-static.qgov.net.au'},
+    }
   },
   extLib: {
     js: ['generate-id',
