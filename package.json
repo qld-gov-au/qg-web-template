@@ -12,9 +12,7 @@
     "clean-release": "gulp clean-release",
     "clean-build": "gulp clean-build",
     "build": "gulp build && node gulp/build-tasks/node-docs-flatten.js && gulp clean-redundant-build",
-    "release": "npm run build && gulp release && node gulp/release-tasks/node-template-flatten.js && gulp clean-redundant-release",
-    "test:unit": "node_modules/.bin/karma start --single-run --no-auto-watch karma.config.js",
-    "test:unit:watch": "node_modules/.bin/karma start --auto-watch --no-single-run karma.config.js"
+    "release": "npm run build && gulp release && node gulp/release-tasks/node-template-flatten.js && gulp clean-redundant-release"
   },
   "authors": "Queensland Government",
   "licence": "all rights reserved",
@@ -92,7 +90,6 @@
     "url-loader": "^0.5.8",
     "webpack": "^2.5.1",
     "webpack-stream": "^3.2.0",
-    "webpack-strip-block": "^0.2.0",
     "yargs": "^5.0.0"
   },
   "dependencies": {
