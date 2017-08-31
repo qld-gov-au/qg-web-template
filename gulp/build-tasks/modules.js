@@ -44,11 +44,10 @@ module.exports = function (gulp, plugins, config, gulpWebpack, webpack, path) {
             plugins: [
               new ExtractTextPlugin(`styles/${element}.css`),
             ],
-          }, webpack))
-          .pipe(gulp.dest(`${config.basepath.build}/assets/${config.versionName}/latest/modules/${element}`))
-          .pipe(plugins.replace(new RegExp('="/assets/', 'g'), '="assets/'))
-          .pipe(gulp.dest(`${config.basepath.build}/docs/assets/${config.versionName}/latest/modules/${element}`));
+        }, webpack))
+        .pipe(gulp.dest(`${config.basepath.build}/assets/${config.versionName}/latest/modules/${element}`))
+        .pipe(plugins.replace(new RegExp('\'/assets/', 'g'), '\'assets/'))
+        .pipe(gulp.dest(`${config.basepath.build}/docs/assets/${config.versionName}/latest/modules/${element}`));
       });
-    });
   };
 };
