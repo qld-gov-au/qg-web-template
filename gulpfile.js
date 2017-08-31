@@ -78,7 +78,7 @@ gulp.task('default', ['build']);
 
 /* WATCH TASKS */
 // Note: External libraries and external modules are not watched
-gulp.task('watch', function () {
+gulp.task('watch:project', function () {
   gulp.watch([`${config.basepath.src}/assets/_project/_blocks/layout/**/*.html`], ['assets-includes-local', 'assets-includes-docs']);
   gulp.watch([`${config.basepath.src}/assets/_project/**/*.scss`], ['scss']);
   gulp.watch(`${config.basepath.src}/assets/_project/_blocks/**/*.js`, { verbose: true }, ['js', 'test']);
@@ -89,7 +89,14 @@ gulp.task('watch', function () {
 gulp.task('watch:modules', function () {
   gulp.watch([config.basepath.src + '/assets/modules/**/src/*.*'], ['build-modules']);
 });
+gulp.task('watch:docs', function () {
+  gulp.watch([config.basepath.src + '/docs/**/*.html'], ['template-pages-docs', 'assets-includes-docs']);
+    gulp.on('stop', () => {
+      return plugins.shell(['node gulp/build-tasks/node-docs-flatten.js && gulp clean-redundant-build']);
+    });
+});
 gulp.task('watch:serve', ['watch', 'serve']);
+gulp.task('watch', ['watch:project', 'watch:modules', 'watch:docs', 'serve']);
 
 /* RELEASE TASKS */
 // Grabs SCSS from SRC and moves to release, does not process
