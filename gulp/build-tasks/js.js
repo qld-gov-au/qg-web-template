@@ -20,7 +20,7 @@ module.exports = function (gulp, plugins, config, webpack) {
             }],
           },
         }))
-        .pipe(gulp.dest(`${config.basepath.build}/assets/${config.versionName}/js/`))
+        .pipe(gulp.dest(`${config.basepath.build}/assets/${config.versionName}/latest/js/`))
         .on('end', cb);
     });
   };

@@ -20,7 +20,7 @@ module.exports = function (gulp, plugins, config) {
         .pipe(plugins.sourcemaps.write('.', {
           sourceRoot: config.basepath.src,
         }))
-        .pipe(gulp.dest(`${config.basepath.build}/assets/${config.versionName}/css/`))
+        .pipe(gulp.dest(`${config.basepath.build}/assets/${config.versionName}/latest/css/`))
         .on('end', cb);
     });
   };

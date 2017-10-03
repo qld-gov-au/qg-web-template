@@ -35,13 +35,14 @@
 @import "components/visually-hidden";
 @import "components/dropdowns"; // Extends bootstrap dropdowns
 @import "components/navs"; // Extends bootstrap navs
+@import "components/correct-incorrect";
 
 // QG layout components
 @import "layout/layout-scaffolding"; // Primary layout structure
 
 @import "layout/_pagemodels/index"; // Page models
 
-@import "layout/header/access"; 
+@import "layout/header/access";
 @import "layout/header/alerts";
 @import "layout/header/coat-of-arms";
 @import "layout/header/header-structure";

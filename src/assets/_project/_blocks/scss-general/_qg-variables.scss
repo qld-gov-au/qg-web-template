@@ -12,7 +12,7 @@ $qg-green: #78ba00; // For primary buttons, icons etc. (see bootstrap-variables.
 // ## Dark grey ##
 $qg-dark-gray-lighter: #8a8f91; // Lightest for large text on white
 $qg-dark-gray-light: #717679; // Lightest for small text on white
-$qg-dark-grey: #585e62; // For default buttons 
+$qg-dark-grey: #585e62; // For default buttons
 
 // ## Light grey ##
 $qg-light-gray-lighter: #fafafa;
@@ -46,6 +46,15 @@ $qg-pale-blue:			#e7f5fe;
 
 // ## Components
 $qg-icon-color: $qg-green;
+
+// $qg-warning-color: #cc352d;
+$qg-correct-color: $qg-green;
+$qg-correct-border-color: #92c23a; // #a6c56d;
+$qg-correct-bg-color: #fafff2; // #fafff0; // #f7ffe8;
+
+$qg-incorrect-color: #d22d24; // #cc352d;
+$qg-incorrect-border-color: #d4534c; // #d06060;
+$qg-incorrect-bg-color: #fffafa; // #fff6f5; // #ffe2e0;
 
 // ## Layout
 // Site header

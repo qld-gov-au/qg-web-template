@@ -16,6 +16,10 @@ module.exports = function (gulp, plugins, config) {
           regex: new RegExp('<!--#include.*virtual="/assets/includes/', 'g'),
           replacement: '<!--#include virtual="/assets/includes-cdn/',
         };
+        let local = {
+          regex: new RegExp('<!--#include.*virtual="/assets/includes/', 'g'),
+          replacement: '<!--#include virtual="/assets/includes-local/',
+        };
         let relSSI = {
           regex: new RegExp('<!--#include.*virtual="/assets/includes', 'g'),
           replacement: '<!--#include virtual="assets/includes',
@@ -29,6 +33,7 @@ module.exports = function (gulp, plugins, config) {
           .pipe(plugins.if(config.output[element].includesLocalToCdn === true, plugins.replace(cdn.regex, cdn.replacement)))
           .pipe(plugins.if(config.output[element].includesRel === true, plugins.replace(relSSI.regex, relSSI.replacement)))
           .pipe(plugins.if(config.output[element].includesRel === true, plugins.replace(relLink.regex, relLink.replacement)))
+          .pipe(plugins.if(element === 'template-local', plugins.replace(local.regex, local.replacement)))
           .pipe(plugins.include({ hardFail: true }))
           .on('error', console.log)
           .pipe(gulp.dest(dest));
