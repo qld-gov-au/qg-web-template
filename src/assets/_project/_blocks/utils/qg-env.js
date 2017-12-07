@@ -2,7 +2,6 @@
 
 window.qg = window.qg || {};
 window.qg.swe = window.qg.swe || {};
-window.qg.modules = window.qg.modules || {};
 
 window.qg.swe.paths = {
   images: '/assets/v3/latest/images',

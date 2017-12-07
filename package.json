@@ -9,10 +9,12 @@
   },
   "scripts": {
     "clean": "gulp clean-build && gulp clean-release",
-    "clean-release": "gulp clean-release",
-    "clean-build": "gulp clean-build",
-    "build": "gulp build && node gulp/build-tasks/node-docs-flatten.js && gulp clean-redundant-build",
-    "release": "npm run build && gulp release && node gulp/release-tasks/node-template-flatten.js && gulp clean-redundant-release",
+    "prebuild": "gulp clean-build",
+    "build": "gulp build && node gulp/build-tasks/node-docs-flatten.js",
+    "postbuild": "gulp clean-redundant-build",
+    "prerelease": "gulp clean-release",
+    "release": "npm run build && gulp release && node gulp/release-tasks/node-template-flatten.js",
+    "postrelease": "gulp clean-redundant-release",
     "watch": "gulp watch"
   },
   "authors": "Queensland Government",

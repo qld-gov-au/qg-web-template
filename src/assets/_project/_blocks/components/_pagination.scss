@@ -11,37 +11,3 @@
     padding-left: .3em;
   }
 }
-
-//styles specific to pagination module
-.pagination {
-  .page_link {
-    margin:0 !important;
-  }
-  .previous_link:before, .next_link:after {
-    font-family: FontAwesome;
-  }
-  .previous_link {
-    margin: 0 !important;
-    &:before {
-      content: '\f137';
-      padding-right: .3em;
-    }
-  }
-  .next_link {
-    margin: 0 !important;
-    &:after {
-      content: '\f138';
-      padding-left: .3em;
-    }
-  }
-  > a,
-  > span {
-    padding: $padding-base-vertical $padding-base-horizontal;
-    border: 1px solid $pagination-border;
-    &:hover,
-    &:focus {
-      z-index: 2;
-      background-color: $pagination-hover-bg;
-    }
-  }
-}

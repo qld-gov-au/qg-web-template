@@ -50,7 +50,6 @@ gulp.task('other-assets-root', require('./gulp/build-tasks/other-assets')(gulp, 
 gulp.task('other-assets-docs', require('./gulp/build-tasks/other-assets')(gulp, plugins, config, es, assetDests[1]));
 
 gulp.task('build-other-files', require('./gulp/build-tasks/other-files')(gulp, plugins, config));
-gulp.task('build-modules', require('./gulp/build-tasks/modules')(gulp, plugins, config, gulpWebpack, webpack, path));
 
 gulp.task('assets-includes-local', require('./gulp/build-tasks/assets-includes')(gulp, plugins, config, 'assets/includes-local', true));
 gulp.task('assets-includes-docs', require('./gulp/build-tasks/assets-includes')(gulp, plugins, config, 'docs/assets/includes-local', true, true));
@@ -69,7 +68,6 @@ gulp.task('build', (cb) => {
     'other-assets',
     'build-other-files',
     'template-pages-docs',
-    'build-modules',
     cb
   );
 });
@@ -86,9 +84,7 @@ gulp.task('watch:project', function () {
   gulp.watch([`${config.basepath.src}/assets/_project/images/**/*`], ['other-assets']);
   gulp.watch([`${config.basepath.src}/_other-files/**/*`], ['build-other-files']);
 });
-gulp.task('watch:modules', function () {
-  gulp.watch([config.basepath.src + '/assets/modules/**/src/*.*'], ['build-modules']);
-});
+
 gulp.task('watch:docs', function () {
   gulp.watch([config.basepath.src + '/docs/**/*.html'], ['template-pages-docs', 'assets-includes-docs']);
     gulp.on('stop', () => {
@@ -96,7 +92,7 @@ gulp.task('watch:docs', function () {
     });
 });
 gulp.task('watch:serve', ['watch', 'serve']);
-gulp.task('watch', ['watch:project', 'watch:modules', 'watch:docs', 'serve']);
+gulp.task('watch', ['watch:project', 'watch:docs', 'serve']);
 
 /* RELEASE TASKS */
 // Grabs SCSS from SRC and moves to release, does not process
