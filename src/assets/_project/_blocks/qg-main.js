@@ -26,7 +26,6 @@ import './components/license';
 import accessibility      from './components/accessibility/accessibility';
 
 // Layout
-import './layout/footer/language-scroller';
 import activeSideNav      from './layout/section-nav/section-nav';
 import shareLinks         from './layout/content/share-links';
 import feedbackForm       from './layout/footer/feedback-form';
