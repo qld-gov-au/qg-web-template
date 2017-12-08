@@ -29,19 +29,19 @@ module.exports = function (gulp, plugins, config, es, webpack, path) {
       gulp.src(`${config.basepath.build}/template-pages/**/*`, { dot: true })
         .on('error', console.log)
         .pipe(plugins.replace(includesLink.localRegex, includesLink.cdnReplacement)) //checks for local includes and replaces with cdn includes
-        .pipe(gulp.dest(`${config.basepath.release}/template-cdn`)),
+        .pipe(gulp.dest(`${config.basepath.release}/template-cdn-ssi`)),
       //template with include-local links
       gulp.src(`${config.basepath.build}/template-pages/**/*`, { dot: true })
         .on('error', console.log)
         .pipe(plugins.replace(includesLink.cdnRegex, includesLink.localReplacement)) //checks for cdn includes and replaces with local includes
-        .pipe(gulp.dest(`${config.basepath.release}/template-local`)),
+        .pipe(gulp.dest(`${config.basepath.release}/template-local-ssi`)),
 
       //assets with cdn assets links
       gulp.src(`${config.basepath.build}/assets/includes-cdn/**/*`, { dot: true })
-        .pipe(gulp.dest(`${config.basepath.release}/template-cdn/assets/includes-cdn/`)),
+        .pipe(gulp.dest(`${config.basepath.release}/template-cdn-ssi/assets/includes-cdn/`)),
       //assets with local assets links
       gulp.src(`${config.basepath.build}/assets/includes-local/**/*`, { dot: true })
-        .pipe(gulp.dest(`${config.basepath.release}/template-local/assets/includes-local/`)),
+        .pipe(gulp.dest(`${config.basepath.release}/template-local-ssi/assets/includes-local/`)),
 
       //JS task
       gulp.src(`${config.basepath.build}/assets/${config.versionName}/**/*.js`, { dot: true })
@@ -55,21 +55,21 @@ module.exports = function (gulp, plugins, config, es, webpack, path) {
                 },
                 plugins: [new webpack.optimize.UglifyJsPlugin()],
               }, webpack))
-            .pipe(gulp.dest(`${config.basepath.release}/template-local/assets/${config.versionName}/${destPath}`))
-            .pipe(gulp.dest(`${config.basepath.release}/template-local-static/assets/${config.versionName}/${destPath}`));
+            .pipe(gulp.dest(`${config.basepath.release}/template-local-ssi/assets/${config.versionName}/${destPath}`))
+            .pipe(gulp.dest(`${config.basepath.release}/template-local/assets/${config.versionName}/${destPath}`));
         })),
 
       //CSS task
       gulp.src(`${config.basepath.build}/assets/${config.versionName}/**/*.css`, { dot: true })
         .pipe(plugins.cleanCss())
         .on('error', console.log)
-        .pipe(gulp.dest(`${config.basepath.release}/template-local/assets/${config.versionName}/`))
-        .pipe(gulp.dest(`${config.basepath.release}/template-local-static/assets/${config.versionName}/`)),
+        .pipe(gulp.dest(`${config.basepath.release}/template-local-ssi/assets/${config.versionName}/`))
+        .pipe(gulp.dest(`${config.basepath.release}/template-local/assets/${config.versionName}/`)),
 
       //other version assets
       gulp.src(versionAssetsTarget, { dot: true })
-        .pipe(gulp.dest(`${config.basepath.release}/template-local/assets/${config.versionName}/`))
-        .pipe(gulp.dest(`${config.basepath.release}/template-local-static/assets/${config.versionName}/`)),
+        .pipe(gulp.dest(`${config.basepath.release}/template-local-ssi/assets/${config.versionName}/`))
+        .pipe(gulp.dest(`${config.basepath.release}/template-local/assets/${config.versionName}/`)),
     ]);
   };
 };

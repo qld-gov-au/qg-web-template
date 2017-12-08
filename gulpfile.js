@@ -34,7 +34,7 @@ gulp.task('clean-redundant-build', (cb) => {
   return del([`${config.basepath.build}/docs/assets/includes-local`], cb);
 });
 gulp.task('clean-redundant-release', (cb) => {
-  return del([`${config.basepath.release}/template-cdn-static/assets`, `${config.basepath.release}/template-local-static/assets/includes-local`], cb);
+  return del([`${config.basepath.release}/template-cdn/assets`, `${config.basepath.release}/template-local/assets/includes-local`], cb);
 });
 
 /* BUILD */
