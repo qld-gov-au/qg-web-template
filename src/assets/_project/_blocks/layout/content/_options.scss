@@ -135,6 +135,22 @@
     display:none;
   }
 
+  .warn {
+    padding: 1em;
+    @extend .col-lg-12;
+    background-color: $qg-light-peach;
+  }
+
+  .info {
+    padding: 1em;
+    margin-bottom: 1em;
+    background-color: $qg-light-blue-gray3;
+  }
+
+  .required {
+    //color: #c90000;
+  }
+
   .invalid {
     color: $qg-error-red;
 
