@@ -37,7 +37,7 @@ module.exports = function (includeSrc, src, dest, exclude) {
           if (err) {
             console.error(err);
           } else {
-            console.log(buildFile + ' - Done');
+            // console.log(buildFile + ' - Done');
           }
         });
       });
