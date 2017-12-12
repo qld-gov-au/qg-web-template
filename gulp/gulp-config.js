@@ -55,7 +55,6 @@ module.exports = {
     ]
   },
   publish: {
-    npmDir: path.join('..', 'web-template-release'),
     version: pjson.version,
   },
   test: {

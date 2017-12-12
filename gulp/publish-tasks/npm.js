@@ -1,10 +1,10 @@
 'use strict';
+const path        = require('path');
 
 module.exports = function (gulp, plugins, config, argv) {
   return function () {
     let releaseTypes = ['major', 'minor', 'patch', 'premajor', 'preminor', 'prepatch', 'prerelease'];
     return gulp.src(`${config.basepath.release}/**/*`, { dot: true })
-      .pipe(gulp.dest(`${config.publish.npmDir}`))
       .pipe(plugins.prompt.prompt([{
         type: 'input',
         name: 'confirmation',
@@ -23,15 +23,15 @@ module.exports = function (gulp, plugins, config, argv) {
           if (/^yes|y$/.test(res.confirmation.toLowerCase()) && /^yes|y$/.test(res.logged.toLowerCase()) && checkInput.length > 0) {
             plugins.shell.task([
               'echo release type "' + res.releaseType + '"',
-              process.chdir(config.publish.npmDir),
+              process.chdir(path.join('..')),
               'pwd',
-              'git remote set-url origin https://github.com/qld-gov-au/web-template-release',
+              '[ ! -d "web-template-release" ] && git clone https://github.com/qld-gov-au/web-template-release.git',
               'git add --all',
               'git commit -m "' + argv.msg + '"',
               'npm version ' + res.releaseType,
               'git pull -X ours',
               'git push origin master --tags',
-              'npm publish',
+              'npm publish'
             ])();
           } else {
             console.log('Please make sure you are logged into the NPM and you have selected a release type');
