@@ -8,12 +8,13 @@ module.exports = {
   versionStr: '3.0.9',
   version: {
     major: 3,
-    semiMajor: 0,
-    minor: 9,
+    minor: 0,
+    patch: 9,
   },
   phase: 'Alpha',
   basepath: {
     src: 'src',
+    modules: path.resolve('src', 'assets', 'modules'),
     build: 'build',
     release: 'release',
     static: 'release/static.qgov.net.au',
@@ -24,7 +25,7 @@ module.exports = {
   },
   projects: ['core'], // 'cue'
   build: {
-    excludes: [
+    excludes: [ //remove excludes
       '!**/_DELETE.*/**/*',
       '!**/_old*/**/*',
       '!**/_old*',
@@ -39,10 +40,21 @@ module.exports = {
       '!**/_local*/**/*',
       '!**/*.css.map',
       '!**/*.js.map',
+      '!**/_other-files/**/*',
     ],
   },
+  extLib: {
+    js: ['generate-id',
+      'jquery.resize-events',
+      'butterfly/jquery.history',
+      'butterfly/jquery.butterfly',
+      'autocomplete'
+    ],
+    css: [
+      'butterfly/butterfly.css'
+    ]
+  },
   publish: {
-    npmDir: path.join('..', 'web-template-release'),
     version: pjson.version,
   },
   test: {
@@ -56,6 +68,8 @@ module.exports = {
       'gulp/**/*.js',
       'tests/**/*.js',
       '!tests/reports/**/*.js',
+      '!src/assets/modules/**/*.js',
+      '!src/docs/assets/js/prism.js',
       '!build/**/*',
       '!release/**/*',
       '!**/_old/**/*',
@@ -64,76 +78,5 @@ module.exports = {
       '!**/legacy/**/*',
       '!**/lib/ext/**/*',
     ],
-  },
-  outputList: ['/', 'template-local', 'template-cdn', 'docs'],
-  output: {
-    // Sets the options for output to release for each module
-    '/': {
-      // Root directory
-      // Copy the core project assets to the target directory, Default: false
-      assetsCore: true,
-      // Copy the SCSS to the target directory, Default: false
-      sourceSCSS: true,
-      // Copy the local includes to the target directoy, Default: false
-      assetsIncludes: true,
-      // Copy the CDN incldues to the target directoy, Default: false
-      assetsIncludesCdn: true,
-      // Convert html SSI includes to point to CDN assets, must include the appropriate assetsIncludes above, Default: false
-      includesLocalToCdn: false,
-      // Convert html SSI includes to be root relative
-      includesRel: false,
-      // Copy the target directory from build to release and set it's name to the name of this element, Default: false
-      copyElement: false,
-      // Source
-      src: '/',
-      // Destination of output
-      dest: '/',
-      // Transform assets to relative urls TODO: REMOVE THIS! It's just temporary before files are in CDN, Default: false
-      assetsRel: false,
-      // Flatten includes into referencing html files, Default: false
-      assetIncludesFlatten: false,
-    },
-    'template-local': {
-      // The template using local assets
-      assetsCore: true,
-      sourceSCSS: false,
-      assetsIncludes: true,
-      assetsIncludesCdn: false,
-      includesLocalToCdn: false,
-      includesRel: false,
-      copyElement: true,
-      src: 'template-pages',
-      dest: 'template-local',
-      assetsRel: false,
-      assetIncludesFlatten: false,
-    },
-    'template-cdn': {
-      // The template using cdn (static.qld.gov.au) assets
-      assetsCore: false,
-      sourceSCSS: false,
-      assetsIncludes: false,
-      assetsIncludesCdn: true,
-      includesLocalToCdn: true,
-      includesRel: false,
-      copyElement: true,
-      src: 'template-pages',
-      dest: 'template-cdn',
-      assetsRel: false,
-      assetIncludesFlatten: false,
-    },
-    docs: {
-      // User documentation
-      assetsCore: true,
-      sourceSCSS: false,
-      assetsIncludes: true,
-      assetsIncludesCdn: false,
-      includesLocalToCdn: false,
-      includesRel: true,
-      copyElement: true,
-      src: 'docs',
-      dest: 'docs',
-      assetsRel: true,
-      assetIncludesFlatten: true,
-    },
   },
 };

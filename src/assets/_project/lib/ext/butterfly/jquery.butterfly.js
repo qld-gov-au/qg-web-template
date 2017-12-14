@@ -157,6 +157,17 @@ jQuery.butterfly.linkCount = 0;
 				);
 			});
 		}
+
+		/**
+		 * A plugin to centre a visible element on the screen
+		 */
+		$.fn.centre = function () {
+			return this.css({
+				'position': 'fixed',
+				'top': ( $(window).height() - this.outerHeight() ) / 2 + 'px',
+				'left': ( $(window).width() - this.outerWidth() ) / 2 + 'px'
+			});
+		};
 		
 		// Create containers
 		$( document.body )
@@ -1286,16 +1297,7 @@ jQuery.butterfly.linkCount = 0;
 	};
 
 
-	/**
-	 * A plugin to centre a visible element on the screen
-	 */
-	$.fn.centre = function () {
-		return this.css({
-			'position': 'fixed',
-			'top': ( $(window).height() - this.outerHeight() ) / 2 + 'px',
-			'left': ( $(window).width() - this.outerWidth() ) / 2 + 'px'
-		});
-	};
+	
 	
 
 	findOffsetToCentre = function( w, h ) {

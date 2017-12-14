@@ -1,7 +1,7 @@
 #qg-site-header .qg-utilities {
-  @extend .col-xs-12;
-  @extend .col-sm-6;
-  @extend .col-md-5;
+  @include make-xs-column(12);
+  @include make-sm-column(6);
+  @include make-md-column(5);
 
   text-align: center;
 

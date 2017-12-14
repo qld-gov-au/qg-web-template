@@ -8,6 +8,7 @@
 // -------------------------
 
 @import "scss-general/qg-variables";
+@import "scss-general/qg-font-variables";
 @import "scss-general/bootstrap-variables";
 
 // Frameworks
@@ -35,13 +36,17 @@
 @import "components/visually-hidden";
 @import "components/dropdowns"; // Extends bootstrap dropdowns
 @import "components/navs"; // Extends bootstrap navs
-
+@import "components/images";
+@import "components/pagination";
+@import "components/alert";
+@import "components/_correct-incorrect"; // Adds correct / incorrect styling
+@import "components/_misc";
 // QG layout components
 @import "layout/layout-scaffolding"; // Primary layout structure
 
 @import "layout/_pagemodels/index"; // Page models
 
-@import "layout/header/access"; 
+@import "layout/header/access";
 @import "layout/header/alerts";
 @import "layout/header/coat-of-arms";
 @import "layout/header/header-structure";
@@ -57,6 +62,9 @@
 @import "layout/asides/asides";
 @import "layout/footer/site-map";
 @import "layout/footer/legals";
+
+//External Libraries
+@import "https://rawgit.com/qld-gov-au/qg-web-template/master/src/assets/_project/lib/ext/butterfly/butterfly.css";  //TODO: update with CDN url
 
 // Legacy styles
 // -------------------------
