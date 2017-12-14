@@ -40,6 +40,7 @@ gulp.task('clean-redundant-release', (cb) => {
 /* BUILD */
 gulp.task('template-pages', require('./gulp/build-tasks/template-pages')(gulp, plugins, config, 'template-pages', 'template-pages', 'local'));
 gulp.task('template-pages-docs', require('./gulp/build-tasks/template-pages')(gulp, plugins, config, 'docs', 'docs', 'local'));
+gulp.task('template-pages-to-docs', require('./gulp/build-tasks/template-pages')(gulp, plugins, config, 'template-pages', 'docs/pagemodels', 'local'));
 
 let assetDests = ['assets', 'docs/assets'];
 gulp.task('scss', require('./gulp/common-tasks/scss')(gulp, plugins, config, assetDests, addSrc));
@@ -68,6 +69,7 @@ gulp.task('build', (cb) => {
     'other-assets',
     'build-other-files',
     'template-pages-docs',
+    'template-pages-to-docs',
     cb
   );
 });
