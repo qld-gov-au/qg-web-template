@@ -82,6 +82,7 @@ gulp.task('watch:project', function () {
   gulp.watch(`${config.basepath.src}/assets/_project/_blocks/**/*.js`, { verbose: true }, ['js', 'test']);
   gulp.watch(`${config.basepath.src}/assets/_project/lib/**/*.js`, { verbose: true }, ['other-assets']);
   gulp.watch([`${config.basepath.src}/assets/_project/images/**/*`], ['other-assets']);
+  gulp.watch([`${config.basepath.src}/template-pages/**/*`], ['template-pages']);
   gulp.watch([`${config.basepath.src}/_other-files/**/*`], ['build-other-files']);
 });
 
