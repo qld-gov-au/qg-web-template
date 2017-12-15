@@ -14,7 +14,7 @@
     "postbuild": "gulp clean-redundant-build",
     "prerelease": "gulp clean-release",
     "release": "npm run build && gulp release && node gulp/release-tasks/node-template-flatten.js",
-    "postrelease": "gulp clean-redundant-release",
+    "postrelease": "gulp release-docs-relative-assets && gulp clean-redundant-release",
     "watch": "gulp watch",
     "prepublish": "npm run release",
     "publish": "gulp npm:publish"
