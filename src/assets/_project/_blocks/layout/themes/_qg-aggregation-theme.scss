@@ -1,4 +1,6 @@
 .qg-aggre-theme {
+  display: flex;
+  flex-wrap: wrap;
   &.qg-feature, .wrapper {
     width: 90%;
     margin-left: auto;
@@ -7,18 +9,21 @@
 
   &.row [class*="col-"]{
     margin-bottom: 3em;
+    display: flex;
+    flex-direction: column;
   }
   &.qg-feature{
     article {
       color: #fff;
       .content{
+        height: 100%;
         background: #444444;
         .details{
           padding: 1em;
         }
       }
       .btn {
-        background: rgba(0, 126, 177, 0.6);
+        background: #007EB1;
         display: inline-block;
         width: 100%;
         color: #fff;
