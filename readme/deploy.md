@@ -2,7 +2,7 @@
 
 * __npm login__
 * Clone https://github.com/qld-gov-au/web-template-release.git as a __sibling directory__ (next to the qg-web-template dir).
-* __gulp npm:publish --msg="your commit msg"__ to start the publishing process.
+* __npm run publish --msg="your commit msg"__ to start the publishing process.
   * Confirm and enter a release type.
   * Check the published content by going to the npm package home page https://www.npmjs.com/package/web-template-release.
 
