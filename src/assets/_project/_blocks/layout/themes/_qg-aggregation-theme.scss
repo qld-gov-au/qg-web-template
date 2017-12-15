@@ -1,0 +1,40 @@
+.qg-aggre-theme {
+  &.qg-feature, .wrapper {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &.row [class*="col-"]{
+    margin-bottom: 3em;
+  }
+  &.qg-feature{
+    article {
+      color: #fff;
+      .content{
+        background: #444444;
+        .details{
+          padding: 1em;
+        }
+      }
+      .btn {
+        background: rgba(0, 126, 177, 0.6);
+        display: inline-block;
+        width: 100%;
+        color: #fff;
+        border: none;
+      }
+    }
+  }
+  &.qg-media{
+    background: #F6F6F6;
+    .wrapper{
+      padding: 25px;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
