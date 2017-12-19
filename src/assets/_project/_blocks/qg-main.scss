@@ -25,9 +25,11 @@
 // QG Mixins
 @import "scss-general/mixins/font-size";
 @import "scss-general/mixins/qg-responsive-spacing";
+@import "scss-general/mixins/bootstrap-breakpoints";
 
 // QG Utilities
 @import "utils/utilities"; // Utilities loaded first so they can be used in other components
+
 
 // QG components
 @import "components/accessibility/accessibility";
@@ -54,6 +56,7 @@
 @import "layout/header/site-nav";
 @import "layout/header/site-search";
 @import "layout/header/site-utilities";
+@import "layout/banners/qg-banner-blurb";
 
 @import "layout/breadcrumbs/breadcrumbs";
 @import "layout/content/content";
@@ -62,6 +65,9 @@
 @import "layout/asides/asides";
 @import "layout/footer/site-map";
 @import "layout/footer/legals";
+
+//themes
+@import "layout/themes/qg-aggregation-theme";
 
 //External Libraries
 @import "https://rawgit.com/qld-gov-au/qg-web-template/master/src/assets/_project/lib/ext/butterfly/butterfly.css";  //TODO: update with CDN url

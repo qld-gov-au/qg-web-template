@@ -1,0 +1,45 @@
+.qg-aggre-theme {
+  display: flex;
+  flex-wrap: wrap;
+  &.qg-feature, .wrapper {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &.row [class*="col-"]{
+    margin-bottom: 3em;
+    display: flex;
+    flex-direction: column;
+  }
+  &.qg-feature{
+    article {
+      color: #fff;
+      .content{
+        height: 100%;
+        background: #444444;
+        .details{
+          padding: 1em;
+        }
+      }
+      .btn {
+        background: #007EB1;
+        display: inline-block;
+        width: 100%;
+        color: #fff;
+        border: none;
+      }
+    }
+  }
+  &.qg-media{
+    background: #F6F6F6;
+    .wrapper{
+      padding: 25px;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
