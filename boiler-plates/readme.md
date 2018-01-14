@@ -24,7 +24,7 @@ This template is for anyone in Queensland Government developing a Franchise (SWE
       - Server side includes are converted to static html
 
 ### Boilerplate - comming soon
-Project boilerplate is comming soon.
+Project boilerplate is comming soon. Test
 
 ### Custom installation
 Install the files via <a href="https://nodejs.org/en/">node package manager (NPM)</a>:
