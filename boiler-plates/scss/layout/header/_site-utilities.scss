@@ -1,0 +1,48 @@
+#qg-site-header .qg-utilities {
+  @include make-xs-column(12);
+  @include make-sm-column(6);
+  @include make-md-column(5);
+
+  text-align: center;
+
+  a, a:link {
+    color: $qg-blue5;
+    text-decoration: none;
+  } 
+
+  a:hover {
+    color: $qg-blue5;
+    text-decoration: underline
+  } 
+
+  li {
+    padding-right: 0;
+    padding-left: 0;
+    line-height: 1.75em;
+
+    button, a {
+      background-color: transparent;
+      padding: 0;
+      border: none;
+      vertical-align: middle;
+      display: inline-block;
+      text-align: center;
+      
+      .fa {
+        display: block;
+      }
+    }
+
+    & + li {
+      margin-left: 1em;
+    }
+  }
+
+  @media (min-width: $screen-sm-min) {
+    text-align: right;
+  }
+
+  @media print {
+    display: none;
+  }
+}

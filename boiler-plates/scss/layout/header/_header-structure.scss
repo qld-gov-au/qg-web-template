@@ -1,0 +1,15 @@
+#qg-site-header {
+  @extend .row;
+  background-color: $qg-site-header-bg-color;
+  margin-top: 0;
+  padding-top: 16px;
+  padding-bottom: 0;
+  
+  @media (min-width: $screen-sm-min) {
+    margin-top: 32px;
+  }
+
+  @media print {
+    border-bottom: 1px solid black;
+  }
+}

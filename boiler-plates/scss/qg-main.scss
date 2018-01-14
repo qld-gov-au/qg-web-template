@@ -1,0 +1,80 @@
+/*!
+ * Queensland Government Web Template (QG Web Template)
+ * -
+ * -
+ */
+
+// Variables
+// -------------------------
+
+@import "scss-general/qg-variables";
+@import "scss-general/qg-font-variables";
+@import "scss-general/bootstrap-variables";
+
+// Frameworks
+// -------------------------
+
+// Import bootstrap
+@import "scss-general/bootstrap-loader"; // Local custom loader, pulls resources from NPM module
+	// @import "../../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap"; // NPM module
+@import "../../../../node_modules/font-awesome/scss/font-awesome.scss";
+
+// Queensland government styles
+// -------------------------
+
+// QG Mixins
+@import "scss-general/mixins/font-size";
+@import "scss-general/mixins/qg-responsive-spacing";
+@import "scss-general/mixins/bootstrap-breakpoints";
+
+// QG Utilities
+@import "utils/utilities"; // Utilities loaded first so they can be used in other components
+
+
+// QG components
+@import "components/accessibility/accessibility";
+@import "components/buttons";
+@import "components/carousel/carousel";
+@import "components/visually-hidden";
+@import "components/dropdowns"; // Extends bootstrap dropdowns
+@import "components/navs"; // Extends bootstrap navs
+@import "components/images";
+@import "components/pagination";
+@import "components/alert";
+@import "components/_correct-incorrect"; // Adds correct / incorrect styling
+@import "components/_misc";
+// QG layout components
+@import "layout/layout-scaffolding"; // Primary layout structure
+
+@import "layout/_pagemodels/index"; // Page models
+
+@import "layout/header/access";
+@import "layout/header/alerts";
+@import "layout/header/coat-of-arms";
+@import "layout/header/header-structure";
+@import "layout/header/site-name";
+@import "layout/header/site-nav";
+@import "layout/header/site-search";
+@import "layout/header/site-utilities";
+@import "layout/banners/qg-banner-blurb";
+
+@import "layout/breadcrumbs/breadcrumbs";
+@import "layout/content/content";
+@import "layout/content/options";
+@import "layout/content/content-types";
+@import "layout/section-nav/section-nav";
+@import "layout/asides/asides";
+@import "layout/footer/site-map";
+@import "layout/footer/legals";
+
+//themes
+@import "layout/_pagemodels/qg-aggregation-theme";
+
+//External Libraries
+@import "https://rawgit.com/qld-gov-au/qg-web-template/master/src/assets/_project/lib/ext/butterfly/butterfly.css";  //TODO: update with CDN url
+
+// Legacy styles
+// -------------------------
+
+@import "legacy/forms/forms-reset";
+@import "legacy/forms/forms";
