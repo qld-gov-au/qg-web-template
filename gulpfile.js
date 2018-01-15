@@ -48,6 +48,9 @@ gulp.task('clean-redundant-build', (cb) => {
 gulp.task('clean-redundant-release', (cb) => {
   return del([`${config.basepath.release}/template-cdn/assets`, `${config.basepath.release}/template-local/assets/includes-local`], cb);
 });
+gulp.task('clean-publish', (cb) => {
+  return del([`${config.webTemplateRepo.folder}`, `${config.staticCdnRepo.folder}`], cb);
+});
 
 /* BUILD */
 gulp.task('template-pages', require('./gulp/build-tasks/template-pages')(gulp, plugins, config, 'template-pages', 'template-pages', 'local'));
@@ -127,9 +130,6 @@ gulp.task('release', (cb) => {
   );
 });
 
-/* NPM Publish*/
-gulp.task('npm:publish', require('./gulp/publish-tasks/npm.js')(gulp, plugins, config, argv));
-
 /* TEST TASKS */
 gulp.task('test:unit', require('./gulp/test-tasks/unit')(gulp, plugins, config, karmaServer));
 gulp.task('test:eslint', require('./gulp/test-tasks/lint')(gulp, plugins, config, fsPath, eslintReporter));
@@ -163,17 +163,16 @@ gulp.task('test', (cb) => {
 gulp.task('serve', require('./gulp/build-tasks/serve')(gulp, plugins, connect, connectssi, argv, path));
 
 /* PUBLISH TASKS */
-gulp.task('publish', (cb) => {
-  let git = require('./gulp/publish-tasks/git');
-  runSequence(
-    ['git-clone'],
-    ['git-sync'],
-    ['git-commit'],
-    cb
-  );
-});
 
-gulp.task('git-clone', require('./gulp/publish-tasks/git').clone);
-gulp.task('git-sync', require('./gulp/publish-tasks/git').sync);
-gulp.task('git-commit', require('./gulp/publish-tasks/git').commit);
-gulp.task('git-push', require('./gulp/publish-tasks/git').push);
+gulp.task('wt-clean', require('./gulp/publish-tasks/git').clean(config.webTemplateRepo.folder));
+gulp.task('wt-clone', require('./gulp/publish-tasks/git').clone(config.webTemplateRepo.url, config.webTemplateRepo.folder));
+gulp.task('wt-sync', require('./gulp/publish-tasks/git').sync(config.basepath.release, config.webTemplateRepo.folder, ['package.json']));
+gulp.task('wt-commit', require('./gulp/publish-tasks/git').commit(config.webTemplateRepo.folder));
+gulp.task('wt-push', require('./gulp/publish-tasks/git').push(config.webTemplateRepo.folder));
+gulp.task('wt-npm', require('./gulp/publish-tasks/npm'));
+
+gulp.task('cdn-clean', require('./gulp/publish-tasks/git').clean(config.staticCdnRepo.folder));
+gulp.task('cdn-clone', require('./gulp/publish-tasks/git').clone(config.staticCdnRepo.url, config.staticCdnRepo.folder));
+gulp.task('cdn-sync', require('./gulp/publish-tasks/git').sync(config.basepath.static, config.staticCdnRepo.folder, ['_env']));
+gulp.task('cdn-commit', require('./gulp/publish-tasks/git').commit(config.staticCdnRepo.folder));
+gulp.task('cdn-push', require('./gulp/publish-tasks/git').push(config.staticCdnRepo.folder));
