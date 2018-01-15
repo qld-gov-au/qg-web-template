@@ -22,6 +22,18 @@ const eslintReporter    = require('eslint-html-reporter');
 const connectssi        = require('gulp-connect-ssi');
 const connect           = require('gulp-connect');
 // const wait              = require('gulp-wait');
+const pjson = require('./package.json');
+
+//constructs build banner for assets
+const buildDate = new Date();
+const buildMonth = (buildDate.getMonth() + 1) < 10 ? '0' + (buildDate.getMonth() + 1) : buildDate.getMonth();
+const buildDay = buildDate.getDate() < 10 ? '0' + buildDate.getDate() : buildDate.getDay();
+const buildHours = (buildDate.getHours() + 1) < 10 ? '0' + (buildDate.getHours() + 1) : buildDate.getHours();
+const buildMinutes = buildDate.getMinutes() < 10 ? '0' + buildDate.getMinutes() : buildDate.getMinutes();
+const banner = '/*! SWE' +
+  ' ' + pjson.version +
+  ' ' + buildDate.getFullYear() + buildMonth + buildDay + 'T' + buildHours + buildMinutes +	' */' +
+  '\n';
 
 /* CLEAN TASKS */
 gulp.task('clean-build', (cb) => {
@@ -101,7 +113,7 @@ gulp.task('watch', ['watch:project', 'watch:docs', 'serve']);
 // Grabs SCSS from SRC and moves to release, does not process
 gulp.task('scss-src', require('./gulp/release-tasks/scss-src')(gulp, plugins, config));
 gulp.task('release-other-files', require('./gulp/release-tasks/other-files')(gulp, plugins, config));
-gulp.task('release-files', require('./gulp/release-tasks/files')(gulp, plugins, config, es, webpack, path));
+gulp.task('release-files', require('./gulp/release-tasks/files')(gulp, plugins, config, es, webpack, path, banner));
 gulp.task('release-docs-relative-assets', require('./gulp/release-tasks/docs-pages-assets')(gulp, plugins, config, true, true));
 
 gulp.task('release', (cb) => {
@@ -149,3 +161,19 @@ gulp.task('test', (cb) => {
 
 /* LOCAL SERVER */
 gulp.task('serve', require('./gulp/build-tasks/serve')(gulp, plugins, connect, connectssi, argv, path));
+
+/* PUBLISH TASKS */
+gulp.task('publish', (cb) => {
+  let git = require('./gulp/publish-tasks/git');
+  runSequence(
+    ['git-clone'],
+    ['git-sync'],
+    ['git-commit'],
+    cb
+  );
+});
+
+gulp.task('git-clone', require('./gulp/publish-tasks/git').clone);
+gulp.task('git-sync', require('./gulp/publish-tasks/git').sync);
+gulp.task('git-commit', require('./gulp/publish-tasks/git').commit);
+gulp.task('git-push', require('./gulp/publish-tasks/git').push);

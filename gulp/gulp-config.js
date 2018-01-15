@@ -23,6 +23,10 @@ module.exports = {
     bowerVersion: 0,
     node_modules: 'node_modules',
   },
+  releaseRepo: {
+    url: 'https://github.com/gvanimurthy/boiler-plates.git',
+    folder: 'boiler-plates'
+  },
   projects: ['core'], // 'cue'
   build: {
     excludes: [ //remove excludes
