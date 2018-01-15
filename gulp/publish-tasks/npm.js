@@ -12,7 +12,7 @@ module.exports = (cb) => {
 
   const uri = 'http://registry.npmjs.org/';
   const username = 'qld-gov-au-npm';
-  const email = 'gvanimurthy@gmail.com';
+  const email = 'oss.applications@dsiti.qld.gov.au';
   const pkgId = pjson.name + '-' + pjson.version + '.tgz';
 
   let auth;
