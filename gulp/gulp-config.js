@@ -23,6 +23,14 @@ module.exports = {
     bowerVersion: 0,
     node_modules: 'node_modules',
   },
+  webTemplateRepo: {
+    url: 'https://github.com/qld-gov-au/web-template-release.git',
+    folder: 'web-template-release'
+  },
+  staticCdnRepo: {
+    url: 'ssh://git@servicesmadesimpler.govnet.qld.gov.au:7999/cdn/static-qld_swe-v3_assets.git',
+    folder: 'static-qld_swe-v3_assets'
+  },
   projects: ['core'], // 'cue'
   build: {
     excludes: [ //remove excludes
