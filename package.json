@@ -15,6 +15,7 @@
     "prerelease": "gulp clean-release",
     "release": "npm run build && gulp release && node gulp/release-tasks/node-template-flatten.js",
     "postrelease": "gulp release-docs-relative-assets && gulp clean-redundant-release",
+    "start": "npm run build && gulp watch",
     "watch": "gulp watch",
     "publish-wt": "gulp wt-clean && gulp wt-clone && gulp wt-sync && gulp wt-npm && gulp wt-commit && gulp wt-push",
     "publish-cdn": "gulp cdn-clean && gulp cdn-clone && gulp cdn-sync && gulp cdn-commit && gulp cdn-push",
