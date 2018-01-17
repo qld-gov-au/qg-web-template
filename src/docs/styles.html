@@ -29,7 +29,7 @@
     <meta name="DCTERMS.jurisdiction" scheme="AGLSTERMS.AglsJuri" content="Queensland">
     <meta name="DCTERMS.license" scheme="DCTERMS.URI" content="http://creativecommons.org/licenses/by/3.0/au/">
 
-    <!--#include virtual="/assets/includes-local/head-assets.html"-->
+    <!--#include virtual="/assets/includes-cdn/head-assets.html"-->
 
     <link href="assets/_project/latest/css/qg-documentation.css" rel="stylesheet" type="text/css" media="all">
 
@@ -38,21 +38,21 @@
 <body data-qg-accessibility="true"
     data-spy="scroll" data-target="#page-nav">
 
- <!--#include virtual="/assets/includes-local/analytics.html"-->
- <!--#include virtual="/assets/includes-local/header/access.html"-->
+ <!--#include virtual="/assets/includes-cdn/analytics.html"-->
+ <!--#include virtual="/assets/includes-cdn/header/access.html"-->
 
     <div class="container-fluid qg-site-width">
 
         <header id="qg-site-header">
-            <!--#include virtual="/assets/includes-local/header/coat-of-arms.html"-->
+            <!--#include virtual="/assets/includes-cdn/header/coat-of-arms.html"-->
 
-            <!--#include virtual="/assets/includes-local/header/site-utilities.html"-->
+            <!--#include virtual="/assets/includes-cdn/header/site-utilities.html"-->
 
-            <!--#include virtual="/assets/includes-local/header/site-search.html"-->
+            <!--#include virtual="/assets/includes-cdn/header/site-search.html"-->
 
-            <!--#include virtual="/assets/includes-local/header/global-alert.html"-->
+            <!--#include virtual="/assets/includes-cdn/header/global-alert.html"-->
 
-            <!--#include virtual="/assets/includes-local/header/site-nav.html"-->
+            <!--#include virtual="/assets/includes-cdn/header/site-nav.html"-->
         </header>
 
         <div id="qg-content">
@@ -73,7 +73,7 @@
 
                 <div id="qg-primary-content" role="main" class="qg-has-aside">
 
-                    <!--#include virtual="/assets/includes-local/content/alert.html"-->
+                    <!--#include virtual="/assets/includes-cdn/content/alert.html"-->
 
                     <h1>CSS Styles</h1>
 
@@ -659,10 +659,10 @@
     <div class="qg-tmplt-example">
         <div class="panel-body">
             <p>
-                <button type="button" class="btn btn-default">Default</button>
-                <button type="button" class="btn btn-primary">Primary</button>
-                <button type="button" class="btn btn-secondary">Secondary</button>
-                <button type="button" class="btn btn-link">Link</button>
+                <button type="button" class="qg-btn btn-default">Default</button>
+                <button type="button" class="qg-btn btn-primary">Primary</button>
+                <button type="button" class="qg-btn btn-secondary">Secondary</button>
+                <button type="button" class="qg-btn btn-link">Link</button>
             </p>
         </div>
     </div>
@@ -673,28 +673,31 @@
         <div class="panel-body">
             <p>
                 <!-- Standard button -->
-                <button type="button" class="btn btn-default">Default</button>
+                <button type="button" class="qg-btn btn-default">Default</button>
 
                 <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-                <button type="button" class="btn btn-primary">Primary</button>
+                <button type="button" class="qg-btn btn-primary">Primary</button>
+
+                <!-- Provides context  -->
+                <button type="button" class="qg-btn btn-secondary">Secondary</button>
 
                 <!-- Provides context  -->
                 <button type="button" class="btn btn-secondary">Secondary</button>
 
                 <!-- Indicates a successful or positive action -->
-                <button type="button" class="btn btn-success">Success</button>
+                <button type="button" class="qg-btn btn-success">Success</button>
 
                 <!-- Contextual button for informational alert messages -->
-                <button type="button" class="btn btn-info">Info</button>
+                <button type="button" class="qg-btn btn-info">Info</button>
 
                 <!-- Indicates caution should be taken with this action -->
-                <button type="button" class="btn btn-warning">Warning</button>
+                <button type="button" class="qg-btn btn-warning">Warning</button>
 
                 <!-- Indicates a dangerous or potentially negative action -->
-                <button type="button" class="btn btn-danger">Danger</button>
+                <button type="button" class="qg-btn btn-danger">Danger</button>
 
                 <!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
-                <button type="button" class="btn btn-link">Link</button>
+                <button type="button" class="qg-btn btn-link">Link</button>
             </p>
         </div>
     </div>
@@ -703,10 +706,10 @@
     <div class="qg-tmplt-example">
         <div class="panel-body">
             <p>
-                <button class="btn btn-default btn-xs">Extra Small</button>
-                <button class="btn btn-default btn-sm">Small</button>
-                <button class="btn btn-default">Default</button>
-                <button class="btn btn-default btn-lg">Large</button>
+                <button class="qg-btn btn-default btn-xs">Extra Small</button>
+                <button class="qg-btn btn-default btn-sm">Small</button>
+                <button class="qg-btn btn-default">Default</button>
+                <button class="qg-btn btn-default btn-lg">Large</button>
             </p>
         </div>
     </div>
@@ -847,9 +850,9 @@
 
                         <dl>
                             <dt>Last updated:</dt>
-                            <dd>1 July 2016</dd>
+                            <dd>11 January 2018</dd>
                             <dt>Last reviewed:</dt>
-                            <dd>1 July 2016</dd>
+                            <dd>11 January 2018</dd>
                         </dl>
 
 
@@ -893,13 +896,13 @@
                 <!--#include virtual="assets/includes-local/section-nav/qg-web-template.html"-->
 
             </div>
-            <!--#include virtual="/assets/includes-local/content/options.html"-->
+            <!--#include virtual="/assets/includes-cdn/content/options.html"-->
 
         </div>
 
         <footer>
-            <!--#include virtual="/assets/includes-local/footer/footer-site-map.html"-->
-            <!--#include virtual="/assets/includes-local/footer/footer-legals.html"-->
+            <!--#include virtual="/assets/includes-cdn/footer/footer-site-map.html"-->
+            <!--#include virtual="/assets/includes-cdn/footer/footer-legals.html"-->
         </footer>
     </div>
 
@@ -910,7 +913,7 @@
       qg.swe.franchiseTitle = 'Franchise Title';
     </script>
 
-    <!--#include virtual="/assets/includes-local/footer/footer-scripts.html"-->
+    <!--#include virtual="/assets/includes-cdn/footer/footer-scripts.html"-->
 
 </body>
 

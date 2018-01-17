@@ -22,6 +22,18 @@ const eslintReporter    = require('eslint-html-reporter');
 const connectssi        = require('gulp-connect-ssi');
 const connect           = require('gulp-connect');
 // const wait              = require('gulp-wait');
+const pjson = require('./package.json');
+
+//constructs build banner for assets
+const buildDate = new Date();
+const buildMonth = (buildDate.getMonth() + 1) < 10 ? '0' + (buildDate.getMonth() + 1) : buildDate.getMonth();
+const buildDay = buildDate.getDate() < 10 ? '0' + buildDate.getDate() : buildDate.getDay();
+const buildHours = (buildDate.getHours() + 1) < 10 ? '0' + (buildDate.getHours() + 1) : buildDate.getHours();
+const buildMinutes = buildDate.getMinutes() < 10 ? '0' + buildDate.getMinutes() : buildDate.getMinutes();
+const banner = '/*! SWE' +
+  ' ' + pjson.version +
+  ' ' + buildDate.getFullYear() + buildMonth + buildDay + 'T' + buildHours + buildMinutes +	' */' +
+  '\n';
 
 /* CLEAN TASKS */
 gulp.task('clean-build', (cb) => {
@@ -36,11 +48,14 @@ gulp.task('clean-redundant-build', (cb) => {
 gulp.task('clean-redundant-release', (cb) => {
   return del([`${config.basepath.release}/template-cdn/assets`, `${config.basepath.release}/template-local/assets/includes-local`], cb);
 });
+gulp.task('clean-publish', (cb) => {
+  return del([`${config.webTemplateRepo.folder}`, `${config.staticCdnRepo.folder}`], cb);
+});
 
 /* BUILD */
 gulp.task('template-pages', require('./gulp/build-tasks/template-pages')(gulp, plugins, config, 'template-pages', 'template-pages', 'local'));
-gulp.task('template-pages-docs', require('./gulp/build-tasks/template-pages')(gulp, plugins, config, 'docs', 'docs', 'local'));
-gulp.task('template-pages-to-docs', require('./gulp/build-tasks/template-pages')(gulp, plugins, config, 'template-pages', 'docs/pagemodels', 'local'));
+gulp.task('template-pages-docs', require('./gulp/build-tasks/template-pages')(gulp, plugins, config, 'docs', 'docs'));
+gulp.task('template-pages-to-docs', require('./gulp/build-tasks/template-pages')(gulp, plugins, config, 'template-pages', 'docs/pagemodels'));
 
 let assetDests = ['assets', 'docs/assets'];
 gulp.task('scss', require('./gulp/common-tasks/scss')(gulp, plugins, config, assetDests, addSrc));
@@ -84,15 +99,15 @@ gulp.task('watch:project', function () {
   gulp.watch(`${config.basepath.src}/assets/_project/_blocks/**/*.js`, { verbose: true }, ['js', 'test']);
   gulp.watch(`${config.basepath.src}/assets/_project/lib/**/*.js`, { verbose: true }, ['other-assets']);
   gulp.watch([`${config.basepath.src}/assets/_project/images/**/*`], ['other-assets']);
-  gulp.watch([`${config.basepath.src}/template-pages/**/*`], ['template-pages']);
+  gulp.watch([`${config.basepath.src}/template-pages/**/*`], ['template-pages', 'template-pages-to-docs']);
   gulp.watch([`${config.basepath.src}/_other-files/**/*`], ['build-other-files']);
 });
 
 gulp.task('watch:docs', function () {
-  gulp.watch([config.basepath.src + '/docs/**/*.html'], ['template-pages-docs', 'assets-includes-docs']);
-    gulp.on('stop', () => {
-      return plugins.shell(['node gulp/build-tasks/node-docs-flatten.js && gulp clean-redundant-build']);
-    });
+  gulp.watch([config.basepath.src + '/docs/**/*.html'], ['template-pages-docs', 'assets-includes-docs', 'template-pages-to-docs']);
+  gulp.on('stop', () => {
+    return plugins.shell(['node gulp/build-tasks/node-docs-flatten.js && gulp clean-redundant-build']);
+  });
 });
 gulp.task('watch:serve', ['watch', 'serve']);
 gulp.task('watch', ['watch:project', 'watch:docs', 'serve']);
@@ -101,7 +116,8 @@ gulp.task('watch', ['watch:project', 'watch:docs', 'serve']);
 // Grabs SCSS from SRC and moves to release, does not process
 gulp.task('scss-src', require('./gulp/release-tasks/scss-src')(gulp, plugins, config));
 gulp.task('release-other-files', require('./gulp/release-tasks/other-files')(gulp, plugins, config));
-gulp.task('release-files', require('./gulp/release-tasks/files')(gulp, plugins, config, es, webpack, path));
+gulp.task('release-files', require('./gulp/release-tasks/files')(gulp, plugins, config, es, webpack, path, banner));
+gulp.task('release-docs-relative-assets', require('./gulp/release-tasks/docs-pages-assets')(gulp, plugins, config, true, true));
 
 gulp.task('release', (cb) => {
   return runSequence(
@@ -113,9 +129,6 @@ gulp.task('release', (cb) => {
     cb
   );
 });
-
-/* NPM Publish*/
-gulp.task('npm:publish', require('./gulp/publish-tasks/npm.js')(gulp, plugins, config, argv));
 
 /* TEST TASKS */
 gulp.task('test:unit', require('./gulp/test-tasks/unit')(gulp, plugins, config, karmaServer));
@@ -148,3 +161,18 @@ gulp.task('test', (cb) => {
 
 /* LOCAL SERVER */
 gulp.task('serve', require('./gulp/build-tasks/serve')(gulp, plugins, connect, connectssi, argv, path));
+
+/* PUBLISH TASKS */
+
+gulp.task('wt-clean', require('./gulp/publish-tasks/git').clean(config.webTemplateRepo.folder));
+gulp.task('wt-clone', require('./gulp/publish-tasks/git').clone(config.webTemplateRepo.url, config.webTemplateRepo.folder));
+gulp.task('wt-sync', require('./gulp/publish-tasks/git').sync(config.basepath.release, config.webTemplateRepo.folder, ['package.json']));
+gulp.task('wt-commit', require('./gulp/publish-tasks/git').commit(config.webTemplateRepo.folder));
+gulp.task('wt-push', require('./gulp/publish-tasks/git').push(config.webTemplateRepo.folder));
+gulp.task('wt-npm', require('./gulp/publish-tasks/npm'));
+
+gulp.task('cdn-clean', require('./gulp/publish-tasks/git').clean(config.staticCdnRepo.folder));
+gulp.task('cdn-clone', require('./gulp/publish-tasks/git').clone(config.staticCdnRepo.url, config.staticCdnRepo.folder));
+gulp.task('cdn-sync', require('./gulp/publish-tasks/git').sync(config.basepath.static, config.staticCdnRepo.folder, ['_env']));
+gulp.task('cdn-commit', require('./gulp/publish-tasks/git').commit(config.staticCdnRepo.folder));
+gulp.task('cdn-push', require('./gulp/publish-tasks/git').push(config.staticCdnRepo.folder));
