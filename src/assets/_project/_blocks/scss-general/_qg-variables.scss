@@ -49,12 +49,22 @@ $qg-blueberry: #759BF3;
 //Other colours
 $qg-light-lime: #F2F7EA;
 $qg-lime: #9CBF6D;
+
 $qg-light-peach: #FFEDDE;
 $qg-peach: #f8ae70;
+
 $qg-light-watermelon: #FEECEF;
 $qg-watermelon: #EA6A7E;
+
 $qg-beige: #F5EBDC;
 $qg-dark-beige: #AE8446;
+$qg-beige-light: #faebcc;
+$qg-beige-light1: #fcf8e3;
+
+$qg-mustard: #F8D87B;
+$qg-mustard-dark: #f2cb58;
+
+$qg-brown: #8a6d3b;
 
 // #################################################
 // ## Semantic colour Variables
@@ -164,3 +174,6 @@ $qg-banner-blue: #00335B;//none
 $qg-blue-green: #005375;//done
 
 $qg-blue9: #0b3253;//done
+
+//component variables
+$qg-box-background: $qg-light-blue-gray3;

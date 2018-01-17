@@ -1,4 +1,5 @@
-module.exports = function (gulp, plugins, config, es, webpack, path) {
+const cssnano = require('cssnano');
+module.exports = function (gulp, plugins, config, es, webpack, path, banner) {
   return function () {
     const target = [
       `${config.basepath.build}/**/*`,
@@ -55,21 +56,28 @@ module.exports = function (gulp, plugins, config, es, webpack, path) {
                 },
                 plugins: [new webpack.optimize.UglifyJsPlugin()],
               }, webpack))
+            .pipe(plugins.insert.prepend(banner))
             .pipe(gulp.dest(`${config.basepath.release}/template-local-ssi/assets/${config.versionName}/${destPath}`))
-            .pipe(gulp.dest(`${config.basepath.release}/template-local/assets/${config.versionName}/${destPath}`));
+            .pipe(gulp.dest(`${config.basepath.release}/template-local/assets/${config.versionName}/${destPath}`))
+            .pipe(gulp.dest(`${config.basepath.static}/assets/${config.versionName}/${destPath}`));
         })),
 
       //CSS task
       gulp.src(`${config.basepath.build}/assets/${config.versionName}/**/*.css`, { dot: true })
-        .pipe(plugins.cleanCss())
+        .pipe(plugins.postcss([cssnano({
+          discardComments: {removeAll: true}
+        })]))
         .on('error', console.log)
+        .pipe(plugins.insert.prepend(banner))
         .pipe(gulp.dest(`${config.basepath.release}/template-local-ssi/assets/${config.versionName}/`))
-        .pipe(gulp.dest(`${config.basepath.release}/template-local/assets/${config.versionName}/`)),
+        .pipe(gulp.dest(`${config.basepath.release}/template-local/assets/${config.versionName}/`))
+        .pipe(gulp.dest(`${config.basepath.static}/assets/${config.versionName}/`)),
 
       //other version assets
       gulp.src(versionAssetsTarget, { dot: true })
         .pipe(gulp.dest(`${config.basepath.release}/template-local-ssi/assets/${config.versionName}/`))
-        .pipe(gulp.dest(`${config.basepath.release}/template-local/assets/${config.versionName}/`)),
+        .pipe(gulp.dest(`${config.basepath.release}/template-local/assets/${config.versionName}/`))
+        .pipe(gulp.dest(`${config.basepath.static}/assets/${config.versionName}/`)),
     ]);
   };
 };

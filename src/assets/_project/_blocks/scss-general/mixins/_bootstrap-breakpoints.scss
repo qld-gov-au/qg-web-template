@@ -1,3 +1,10 @@
+/*
+Examples:
+@include breakpoint($maxWidth: 700px, $minWidth: 500px, $maxHeight: 1500px, $minHeight: 600px){...}
+@include breakpoint($min: 400px, $max: 500px){...}
+@include breakpoint(md) {...}
+*/
+
 @mixin breakpoint($minWidth: 0, $maxWidth: 0, $minHeight: 0, $maxHeight: 0) {
   $type: type-of($minWidth);
 
