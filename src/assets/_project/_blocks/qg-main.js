@@ -25,6 +25,8 @@ import './components/progressive-reveal';
 import './components/license';
 import accessibility      from './components/accessibility/accessibility';
 
+import './layout/footer/footer-legals';
+
 // Layout
 import activeSideNav      from './layout/section-nav/section-nav';
 import shareLinks         from './layout/content/share-links';
