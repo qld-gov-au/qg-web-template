@@ -1,0 +1,2 @@
+- All environment based configs will be saved in this folder.
+- Will be uploaded to https://servicesmadesimpler.govnet.qld.gov.au/bitbucket/projects/CDN/repos/static-qld_swe-v3_assets/browse/_env

@@ -78,6 +78,10 @@ module.exports = function (gulp, plugins, config, es, webpack, path, banner) {
         .pipe(gulp.dest(`${config.basepath.release}/template-local-ssi/assets/${config.versionName}/`))
         .pipe(gulp.dest(`${config.basepath.release}/template-local/assets/${config.versionName}/`))
         .pipe(gulp.dest(`${config.basepath.static}/assets/${config.versionName}/`)),
+
+      //environment variables
+      gulp.src([`${config.basepath.src}/assets/_env/**/*.json`, `!${config.basepath.src}/assets/_env/local`, `!${config.basepath.src}/assets/_env/local/**`])
+        .pipe(gulp.dest(`${config.basepath.static}/_env`))
     ]);
   };
 };
