@@ -13,14 +13,14 @@
 		color: #FFF;
 		text-decoration: none;
 	}
-	
+
 	a:hover {
 		text-decoration: underline;
 	}
 
 	span.fa {
-		font-size: 1.2em;   
-		margin-right: .3em; 
+		font-size: 1.2em;
+		margin-right: .3em;
 	}
 
 	ol {
@@ -31,8 +31,11 @@
 		padding-bottom: 1.5em;
 
 		color: #FFF;
-		text-align: center;
+		text-align: left;
 		@include fontSize(16px);
+    @media all and (max-width: $screen-md) {
+      @include fontSize(14px);
+    }
 
 		@media (min-width: $screen-lg-min) {
 	      padding-left: $qg-spacing / 2;
@@ -42,22 +45,38 @@
 	li {
 		display: block;
 
-		& + li:before {
-			content: "\f078";
-			display: block;
-			margin: 0;
+    &:first-child:before {
+      content: "\f19c";
+      margin: 0 0.4em 0 0;
 
-			color: #CCC;          
+      color: #fff;
+      font-family: FontAwesome;
+      font-size: 1.1em;
+      text-align: center;
+      font-weight: normal;
+    }
+
+		& + li:before {
+			content: "\f054";
+			display: inline;
+			margin:  0 0.3em 0 0;
+
+			color: #FFF;
 			font-family: FontAwesome;
-			font-size: .9em;
+			font-size: .7em;
 			text-align: center;
 			font-weight: normal;
 		}
 
-		&:last-child{
-			font-size: 150%;
-			font-weight: bold;
-		}
+		& + li {
+      @media all and (max-width: $screen-md){
+        padding-left: 15px;
+        padding-top: 10px;
+        &:before {
+          padding-right: 7px;
+        }
+      }
+    }
 	}
 
 	@media (min-width: $screen-md-min) {
@@ -67,33 +86,34 @@
 			display: block;
 		}
 
-		ol {
-			text-align: left;
-		}
+		//ol {
+		//	text-align: left;
+		//}
 
-		li:first-child:before {
-			content: "\f19c";
-			margin: 0 0.4em 0 0;
-
-			color: #fff;      
-			font-family: FontAwesome;
-			font-size: 1.1em;
-			text-align: center;
-			font-weight: normal;
-		}
+		//li:first-child:before {
+		//	content: "\f19c";
+		//	margin: 0 0.4em 0 0;
+		//
+		//	color: #fff;
+		//	font-family: FontAwesome;
+		//	font-size: 1.1em;
+		//	text-align: center;
+		//	font-weight: normal;
+		//}
 
 		li {
 			display: inline-block;
 
 			& + li:before {
-				content: "\f054";
-				display: inline;
-				margin: 0 0.3em 0 0;
-				color: #FFF;
+				//content: "\f054";
+				//display: inline;
+				//margin: 0 0.3em 0 0;
+				//color: #FFF;
 			}
 
 			&:last-child {
 				font-size: 100%;
+        font-weight: bold;
 			}
 		}
 	}
