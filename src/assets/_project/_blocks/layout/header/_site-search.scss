@@ -1,9 +1,5 @@
 #qg-search-form {
-  @include make-xs-column(12);
-  @include make-md-column(3);
-
-  // @include qg-responsive-spacing('padding-right', false, default);
-
+  padding-bottom: 15px;
   input {
     border-radius: 0;
     border-color: $qg-green;
@@ -60,9 +56,11 @@
     top: 0;
     right: -2px;
   }
-  .collapse {
-    @media (min-width: $screen-sm-min) {
-      //
+
+  .input-group {
+    max-width: calc(100% - 60px);
+    @media all and (max-width: $screen-sm) {
+        width: calc(100% - 60px);
     }
   }
 
