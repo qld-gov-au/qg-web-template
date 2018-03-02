@@ -1,4 +1,4 @@
-/*globals grecaptcha, qg, onloadRecaptcha*/
+/*globals grecaptcha, qg*/
 (function ($, swe) {
   let onloadRecaptcha = () => { // eslint-disable-line
     $('form[data-recaptcha="true"]').find('input[type="submit"], button[type="submit"]').on('click', (e) => {
@@ -6,15 +6,11 @@
       let subBtn = e.target;
       let form = $(subBtn).parents('form');
 
-      let renderRecaptcha = (res) => {
-        grecaptcha.render(subBtn, {
-          'sitekey': res.key,
-          'callback': () => { form.submit(); }
-        });
-        grecaptcha.execute();
-      };
-      //Get recaptcha key
-      swe.ajaxCall(window.qg.cdn + window.qg.swe.assets + 'config/recaptcha.json', 'json', renderRecaptcha, 'Recaptcha config unavailable');
+      grecaptcha.render(subBtn, {
+        'sitekey': 'googleRecaptchaApi', //this value will be replaced by build tool. from gulp-config/
+        'callback': () => { form.submit(); }
+      });
+      grecaptcha.execute();
     });
   };
 

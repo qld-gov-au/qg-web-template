@@ -33,7 +33,17 @@ module.exports = function (gulp, plugins, config, webpack, destFolder, type = 'b
           query: {
             presets: ['es2015'],
           },
-        }],
+        },
+          {
+            test: /\.js$/,
+            exclude: /(node_modules)/,
+            loader: 'webpack-replace',
+            query: {
+              search: 'googleRecaptchaApi',
+              replace: config.apiKeys.googleRecaptchaApi
+            }
+          }
+        ],
       },
       devtool: 'source-map'
       /*plugins: [

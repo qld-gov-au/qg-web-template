@@ -104,6 +104,7 @@
     "uglifyjs-webpack-plugin": "^0.4.3",
     "url-loader": "^0.5.8",
     "webpack": "^2.5.1",
+    "webpack-replace": "^1.0.0",
     "webpack-stream": "^3.2.0",
     "yargs": "^5.0.0"
   },
