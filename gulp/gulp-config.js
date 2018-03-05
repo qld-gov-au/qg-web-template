@@ -33,7 +33,7 @@ module.exports = {
   },
   projects: ['core'], // 'cue'
   apiKeys: {
-    googleRecaptchaApi: '6LeNGSwUAAAAAD6o-P5UTM0FNpKjYB71Kh70F-Ud'
+    googleRecaptchaApiKey: '6LeNGSwUAAAAAD6o-P5UTM0FNpKjYB71Kh70F-Ud'
   },
   build: {
     excludes: [ //remove excludes

@@ -39,8 +39,8 @@ module.exports = function (gulp, plugins, config, webpack, destFolder, type = 'b
             exclude: /(node_modules)/,
             loader: 'webpack-replace',
             query: {
-              search: 'googleRecaptchaApi',
-              replace: config.apiKeys.googleRecaptchaApi
+              search: 'googleRecaptchaApiKey',
+              replace: config.apiKeys.googleRecaptchaApiKey
             }
           }
         ],
