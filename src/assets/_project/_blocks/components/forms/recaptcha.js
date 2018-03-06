@@ -7,8 +7,16 @@
       let form = $(subBtn).parents('form');
 
       grecaptcha.render(subBtn, {
-        'sitekey': 'googleRecaptchaApi', //this value will be replaced by build tool. from gulp-config/
-        'callback': () => { form.submit(); }
+        'sitekey': 'googleRecaptchaApiKey', //this value will be replaced by build tool. from gulp-config/
+        'callback': () => {
+          var response = grecaptcha.getResponse();
+          if (response === '' || response === undefined || response.length === 0) {
+            console.log('Invalid recaptcha');
+            return false;
+          } else {
+            form.submit();
+          }
+        },
       });
       grecaptcha.execute();
     });
