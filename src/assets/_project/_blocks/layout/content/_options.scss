@@ -71,23 +71,24 @@
     background: transparent;
     border: none;
 
-    &+ .dropdown-menu{
-      // background: $qg-content-options-share-dropdown-bg-color;
-      border: 0;
 
-      li {
-        display: block;
-      }
-      .qg-share-link {
-        display: block;
-        padding: $padding-base-vertical $padding-base-horizontal;
-        color: $dropdown-link-color; // From bootstrap
-      }
-      .qg-share-icon {
-        width: 25px;
-        padding-right: 4px;
-        @include fontSize(14px);
-      }
+  }
+  .dropdown-menu[aria-labelledby="shareDropdownToggle"]{
+    // background: $qg-content-options-share-dropdown-bg-color;
+    border: 0;
+
+    li {
+      display: block;
+    }
+    .qg-share-link {
+      display: block;
+      padding: $padding-base-vertical $padding-base-horizontal;
+      color: $dropdown-link-color; // From bootstrap
+    }
+    .qg-share-icon {
+      width: 25px;
+      padding-right: 4px;
+      @include fontSize(14px);
     }
   }
 
