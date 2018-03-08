@@ -57,6 +57,7 @@ module.exports = function (gulp, plugins, config, es, webpack, path, banner) {
                 plugins: [new webpack.optimize.UglifyJsPlugin()],
               }, webpack))
             .pipe(plugins.insert.prepend(banner))
+            .pipe(plugins.replace(config.apiKeys.googleRecaptchaApiKey, 'googleRecaptchaApiKey'))
             .pipe(gulp.dest(`${config.basepath.release}/template-local-ssi/assets/${config.versionName}/${destPath}`))
             .pipe(gulp.dest(`${config.basepath.release}/template-local/assets/${config.versionName}/${destPath}`))
             .pipe(gulp.dest(`${config.basepath.static}/assets/${config.versionName}/${destPath}`));
