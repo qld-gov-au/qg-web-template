@@ -1,6 +1,6 @@
 {
   "name": "Queensland-Government-Web-Template",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "This template is designed to provide a template for all Franchise websites, and the underpinning technology for new Agency websites.",
   "main": "gulpfile.js",
   "repository": {
@@ -84,7 +84,6 @@
     "image-webpack-loader": "^3.3.1",
     "jasmine-core": "^2.5.2",
     "jasmine-spec-reporter": "^2.7.0",
-    "jquery": "^2.2.3",
     "karma": "^1.4.1",
     "karma-chrome-launcher": "^2.0.0",
     "karma-coverage": "^1.1.1",
@@ -104,6 +103,7 @@
     "uglifyjs-webpack-plugin": "^0.4.3",
     "url-loader": "^0.5.8",
     "webpack": "^2.5.1",
+    "webpack-replace": "^1.0.0",
     "webpack-stream": "^3.2.0",
     "yargs": "^5.0.0"
   },
