@@ -78,19 +78,22 @@
 	
 	var _sectionNav = __webpack_require__(13);var _sectionNav2 = _interopRequireDefault(_sectionNav);
 	var _shareLinks = __webpack_require__(14);var _shareLinks2 = _interopRequireDefault(_shareLinks);
-	var _feedbackForm = __webpack_require__(15);var _feedbackForm2 = _interopRequireDefault(_feedbackForm);
+	__webpack_require__(15);
+	var _feedbackForm = __webpack_require__(16);var _feedbackForm2 = _interopRequireDefault(_feedbackForm);
 	
-	__webpack_require__(16);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} // Layout
+	__webpack_require__(17);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} // import '../../../../../node_modules/bootstrap-accessibility-plugin/plugins/js/bootstrap-accessibility.js'; // Removed due to accessibility issues (ironically)
+	// Utils
+	/*This 2 modules (breakpoints, parentwidth) are to be initialize where we are using these or If we make one common function for small utilities then we can initialize here in the main file.*/ /*import breakpoints        from './utils/breakpoints'; */ // Components
+	(function () {'use strict';var franchiseTitle = _qgEnv2.default && _qgEnv2.default.swe && _qgEnv2.default.swe.franchiseTitle;
+	  _sectionNav2.default.highlightNavItem();
+	  _feedbackForm2.default.init(franchiseTitle);
+	  _shareLinks2.default.init();
+	  _accessibility2.default.init();
+	})(); // Layout
 	/*import '../lib/ext/generate-id.js';*/ // For site-search-autocomplete
 	/*import './legacy/site-search-autocomplete.js';*/ /*
 	                                                    * Imports Javascript components for the GLUE
 	                                                    */ // env initialization
-	(function () {'use strict';var franchiseTitle = _qgEnv2.default && _qgEnv2.default.swe && _qgEnv2.default.swe.franchiseTitle;_sectionNav2.default.highlightNavItem();_feedbackForm2.default.init(franchiseTitle);
-	  _shareLinks2.default.init();
-	  _accessibility2.default.init();
-	})(); // import '../../../../../node_modules/bootstrap-accessibility-plugin/plugins/js/bootstrap-accessibility.js'; // Removed due to accessibility issues (ironically)
-	// Utils
-	/*This 2 modules (breakpoints, parentwidth) are to be initialize where we are using these or If we make one common function for small utilities then we can initialize here in the main file.*/ /*import breakpoints        from './utils/breakpoints'; */ // Components
 
 /***/ }),
 /* 1 */
@@ -5157,6 +5160,27 @@
 /***/ (function(module, exports) {
 
 	'use strict'; /**
+	               * Figures
+	               *
+	               * Show/hide credits for figures
+	               *
+	               * @requires jQuery
+	               */
+	
+	$(function () {
+	    'use strict';
+	
+	    var figureElement = '.qg-cut-in, .qg-cut-in-alt';
+	    $('#qg-content .figure-credits-toggle').on('click', function () {
+	        $(this).closest(figureElement).find('.figure-credits').toggle(500).focus().end();
+	    });
+	});
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports) {
+
+	'use strict'; /**
 	              * Adds page and user details to hidden inputs on the feedback form
 	              **/
 	
@@ -5191,7 +5215,7 @@
 	module.exports = { init: init };
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports) {
 
 	'use strict'; /**

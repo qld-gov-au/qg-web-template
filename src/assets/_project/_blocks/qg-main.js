@@ -32,6 +32,7 @@ import './components/forms/recaptcha';
 // Layout
 import activeSideNav      from './layout/section-nav/section-nav';
 import shareLinks         from './layout/content/share-links';
+import './layout/content/content-types/figure-credits-toggle';
 import feedbackForm       from './layout/footer/feedback-form';
 
 import './utils/qg-init';

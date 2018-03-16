@@ -10563,6 +10563,46 @@ span.qg-correct, span.qg-incorrect {
   .qg-call-out-box p {
     margin: 0; }
 
+.qg-cut-in, .qg-cut-in-alt {
+  position: relative;
+  max-width: 37.4rem !important;
+  text-align: center;
+  font-size: 1.4rem;
+  font-style: italic;
+  border: 1px solid #eee;
+  padding: .7rem;
+  margin: 1.7rem 0 1.4rem; }
+  .qg-cut-in img, .qg-cut-in-alt img {
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 0 auto;
+    display: block; }
+  .qg-cut-in .figure-credits, .qg-cut-in-alt .figure-credits {
+    padding: 0 2rem; }
+  .qg-cut-in .caption, .qg-cut-in-alt .caption {
+    margin: .6rem auto;
+    text-align: left;
+    font-size: 1.4rem;
+    font-style: italic;
+    max-width: 28.4rem; }
+  .qg-cut-in .figure-credits-toggle, .qg-cut-in-alt .figure-credits-toggle {
+    display: block;
+    position: absolute;
+    height: 30px;
+    top: 10px !important;
+    right: 10px !important;
+    text-align: right;
+    margin: 0 !important;
+    padding: 0 !important; }
+
+.qg-cut-in {
+  float: right;
+  margin-left: 1.6rem; }
+
+.qg-cut-in-alt {
+  float: left;
+  margin-right: 1.6rem; }
+
 /* ! section (side) navigation */
 #qg-content #qg-section-nav {
   background-color: #f6f6f6; }
