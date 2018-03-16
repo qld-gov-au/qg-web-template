@@ -7,6 +7,7 @@ Files compiled with this repository will be deployed to
  
 ## Steps to deploy
 - Clone [repository](https://github.com/qld-gov-au/qg-web-template)
+- Update version in package.json
 - Run command ```npm run publish```
   - This will ask you for 
     1. npm account password (Will be with OSS Applications Team)
@@ -18,6 +19,8 @@ Files compiled with this repository will be deployed to
   1. Navigate to [Bamboo](https://servicesmadesimpler.govnet.qld.gov.au/bamboo/browse/QSA-SWEV3)
   2. Create release from the latest build (automatic build runs when code is pushed to static cdn repo)
   3. Deploy this release onto Prod|Beta|Test|Dev
+- Create release on Github (Ex: https://github.com/qld-gov-au/web-template-release/releases/tag/v1.0.6)
+- Inform online experience team to send out communications
 
 Useful links
 Semantic versioning explanation:

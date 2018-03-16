@@ -31,9 +31,9 @@ const buildDay = buildDate.getDate() < 10 ? '0' + buildDate.getDate() : buildDat
 const buildHours = (buildDate.getHours() + 1) < 10 ? '0' + (buildDate.getHours() + 1) : buildDate.getHours();
 const buildMinutes = buildDate.getMinutes() < 10 ? '0' + buildDate.getMinutes() : buildDate.getMinutes();
 const banner = '/*! SWE' +
-  ' ' + pjson.version +
-  ' ' + buildDate.getFullYear() + buildMonth + buildDay + 'T' + buildHours + buildMinutes +	' */' +
-  '\n';
+    ' ' + pjson.version +
+    ' ' + buildDate.getFullYear() + buildMonth + buildDay + 'T' + buildHours + buildMinutes +	' */' +
+    '\n';
 
 /* CLEAN TASKS */
 gulp.task('clean-build', (cb) => {
@@ -74,18 +74,18 @@ gulp.task('assets-includes-cdn', require('./gulp/build-tasks/assets-includes')(g
 // FIXME: Re-add unit tests
 gulp.task('build', (cb) => {
   runSequence(
-    'test:eslint',
-    'assets-includes-docs',
-    'assets-includes-cdn',
-    'assets-includes-local',
-    'template-pages',
-    'js',
-    'scss',
-    'other-assets',
-    'build-other-files',
-    'template-pages-docs',
-    'template-pages-to-docs',
-    cb
+      'test:eslint',
+      'assets-includes-docs',
+      'assets-includes-cdn',
+      'assets-includes-local',
+      'template-pages',
+      'js',
+      'scss',
+      'other-assets',
+      'build-other-files',
+      'template-pages-docs',
+      'template-pages-to-docs',
+      cb
   );
 });
 
@@ -121,12 +121,12 @@ gulp.task('release-docs-relative-assets', require('./gulp/release-tasks/docs-pag
 
 gulp.task('release', (cb) => {
   return runSequence(
-    [
-      'release-files',
-      'scss-src',
-      'release-other-files',
-    ],
-    cb
+      [
+        'release-files',
+        'scss-src',
+        'release-other-files',
+      ],
+      cb
   );
 });
 
@@ -136,26 +136,26 @@ gulp.task('test:eslint', require('./gulp/test-tasks/lint')(gulp, plugins, config
 gulp.task('test:e2e:browserstack', require('./gulp/test-tasks/e2e')(gulp, plugins, argv));
 gulp.task('test:e2e:local', function () {
   return gulp.src('')
-    .pipe(plugins.nightwatch({
-      configFile: 'tests/e2e/config.json',
-    }));
+      .pipe(plugins.nightwatch({
+        configFile: 'tests/e2e/config.json',
+      }));
 });
 gulp.task('process-exit', function () {
   process.exit(0);
 });
 gulp.task('test:e2e', (cb) => {
   runSequence(
-    ['serve'],
-    ['test:e2e:local'],
-    ['process-exit'],
-    cb
+      ['serve'],
+      ['test:e2e:local'],
+      ['process-exit'],
+      cb
   );
 });
 gulp.task('test', (cb) => {
   runSequence(
-    // ['test:unit'],
-    ['test:eslint'],
-    cb
+      // ['test:unit'],
+      ['test:eslint'],
+      cb
   );
 });
 

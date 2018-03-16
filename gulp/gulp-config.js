@@ -32,6 +32,9 @@ module.exports = {
     folder: 'static-qld_swe-v3_assets'
   },
   projects: ['core'], // 'cue'
+  apiKeys: {
+    googleRecaptchaApiKey: '6LeNGSwUAAAAAD6o-P5UTM0FNpKjYB71Kh70F-Ud'
+  },
   build: {
     excludes: [ //remove excludes
       '!**/_DELETE.*/**/*',
