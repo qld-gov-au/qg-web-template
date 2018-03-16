@@ -49,4 +49,9 @@ etc/
 
 ### Build & Release ###
 /build/**
+#/release/**
+
+# adds all qg-main
 /release/**
+!/release/**/
+!qg-main.*
