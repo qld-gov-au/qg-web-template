@@ -2630,11 +2630,11 @@
 	            // remove invalid class from ancestors that do not contain invalid fields
 	            $this.parentsUntil('form', '.invalid').filter(function () {
 	                return $(this).find(candidateForValidation).filter(invalidFilter).length === 0;
-	            })
+	            }
 	            // remove .invalid class
-	            .removeClass('invalid')
+	            ).removeClass('invalid'
 	            // remove old alerts (change handler should have already done this)
-	            .find('.alert').
+	            ).find('.alert').
 	            remove();
 	        } else {
 	            // does alert exist?
@@ -2748,11 +2748,11 @@
 	        // remove invalid class from questions that do not contain invalid fields
 	        form.find('.invalid').filter(function () {
 	            return $(this).find(candidateForValidation).filter(invalidFilter).length === 0;
-	        })
+	        }
 	        // remove .invalid class
-	        .removeClass('invalid')
+	        ).removeClass('invalid'
 	        // remove old alerts (change handler should have already done this)
-	        .find('.alert').
+	        ).find('.alert').
 	        remove();
 	
 	
@@ -2778,11 +2778,11 @@
 	            form.find(candidateForValidation).filter(invalidFilter).each(function () {
 	                // update inline alerts
 	                changeValidityCheck.call(this);
-	            })
+	            }
 	            // set .invalid on ancestor LI elements
-	            .parentsUntil('form', '.questions > li')
+	            ).parentsUntil('form', '.questions > li'
 	            // but not sections
-	            .not('.section, .compact').
+	            ).not('.section, .compact').
 	            addClass('invalid');
 	
 	
@@ -2898,18 +2898,18 @@
 	        // TODO allow this to be called multiple times without binding additional handlers!
 	        validate: function validate() {
 	            return this.each(function () {
-	                $(this).closest('form')
+	                $(this).closest('form'
 	                // turn off native validation
-	                .attr('novalidate', true)
+	                ).attr('novalidate', true
 	                // unbind and rebind handlers
-	                .unbind('submit', submitDoneHandler).
-	                unbind('submit', submitValidationHandler)
+	                ).unbind('submit', submitDoneHandler).
+	                unbind('submit', submitValidationHandler
 	                // validate this form
-	                .bind('submit', submitValidationHandler)
+	                ).bind('submit', submitValidationHandler
 	                // if validation did not cancel submit…
-	                .bind('submit', submitDoneHandler)
+	                ).bind('submit', submitDoneHandler
 	                // bind inline validation handlers to form elements
-	                .find(candidateForValidation).
+	                ).find(candidateForValidation).
 	                unbind('change', changeValidityCheck).
 	                bind('change', changeValidityCheck);
 	
@@ -3587,9 +3587,9 @@
 	            // triggers 'relevant-done' after showing is complete
 	            show: function show() {
 	                // enable elements before they are shown
-	                this.add(this.find(elementsToDisable))
+	                this.add(this.find(elementsToDisable)
 	                // but not any controls that will remain irrelevant
-	                .not(this.find('[hidden]').find(elementsToDisable)).
+	                ).not(this.find('[hidden]').find(elementsToDisable)).
 	                each(function () {
 	                    this.removeAttribute('disabled');
 	                });
@@ -3832,16 +3832,16 @@
 	
 	            // window.console.info( 'file size validation:', total, '<', maxFileSize, total < maxFileSize );
 	
-	            $(':file', this.form)
+	            $(':file', this.form
 	            // update validity for :file inputs with values
-	            .filter(function () {
+	            ).filter(function () {
 	                return !!this.value;
 	            }).
 	            each(function (index, element) {
 	                element.setCustomValidity(valid ? '' : 'Attachments are too large');
-	            })
+	            }
 	            // blank :file inputs should not have a custom error
-	            .filter(function () {
+	            ).filter(function () {
 	                return !this.value;
 	            }).
 	            each(function (index, element) {
@@ -4169,11 +4169,11 @@
 	    // ===============================
 	
 	    $('.alert').attr('role', 'alert');
-	    $('.close').removeAttr('aria-hidden').wrapInner('<span aria-hidden="true"></span>').append('<span class="sr-only">Close</span>');
+	    $('.close').removeAttr('aria-hidden').wrapInner('<span aria-hidden="true"></span>').append('<span class="sr-only">Close</span>'
 	
 	    // TOOLTIP Extension
 	    // ===============================
-	
+	    );
 	    var showTooltip = $.fn.tooltip.Constructor.prototype.show,
 	    hideTooltip = $.fn.tooltip.Constructor.prototype.hide;
 	
@@ -4246,10 +4246,10 @@
 	        $par = $(this);
 	        var $toggle = $par.find(toggle);
 	        $toggle.attr('aria-expanded', 'false');
-	    });
+	    }
 	
 	    //Adding Space Key Behaviour, opens on spacebar
-	    $.fn.dropdown.Constructor.prototype.keydown = function (e) {
+	    );$.fn.dropdown.Constructor.prototype.keydown = function (e) {
 	        var $par,
 	        firstItem;
 	        if (!/(32)/.test(e.keyCode)) return;
@@ -4269,12 +4269,12 @@
 	            }
 	        }, 150);
 	    }).
-	    on('keydown.bs.dropdown.data-api', toggle + ', [role=menu]', $.fn.dropdown.Constructor.prototype.keydown);
+	    on('keydown.bs.dropdown.data-api', toggle + ', [role=menu]', $.fn.dropdown.Constructor.prototype.keydown
 	
 	
 	    // Tab Extension
 	    // ===============================
-	
+	    );
 	    var $tablist = $('.nav-tabs'),
 	    $lis = $tablist.children('li'),
 	    $tabs = $tablist.find('[data-toggle="tab"], [data-toggle="pill"]');
@@ -4322,8 +4322,8 @@
 	        var nextTab = $items.eq(index);
 	        if (nextTab.attr('role') === 'tab') {
 	
-	            nextTab.tab('show') //Comment this line for dynamically loaded tabPabels, to save Ajax requests on arrow key navigation
-	            .focus();
+	            nextTab.tab('show' //Comment this line for dynamically loaded tabPabels, to save Ajax requests on arrow key navigation
+	            ).focus();
 	        }
 	        // nextTab.focus()
 	
@@ -4494,9 +4494,9 @@
 	        $active.
 	        one($.support.transition.end, function () {
 	            $active.attr({ 'aria-selected': false, 'tabIndex': '-1' });
-	            $next.attr({ 'aria-selected': true, 'tabIndex': '0' });
+	            $next.attr({ 'aria-selected': true, 'tabIndex': '0' }
 	            //.focus()
-	        });
+	            );});
 	    };
 	
 	    $.fn.carousel.Constructor.prototype.keydown = function (e) {
@@ -4533,11 +4533,11 @@
 	        e.preventDefault();
 	        e.stopPropagation();
 	    };
-	    $(document).on('keydown.carousel.data-api', 'div[role=option]', $.fn.carousel.Constructor.prototype.keydown);
+	    $(document).on('keydown.carousel.data-api', 'div[role=option]', $.fn.carousel.Constructor.prototype.keydown
 	
 	    // GENERAL UTILITY FUNCTIONS
 	    // ===============================
-	
+	    );
 	    var removeMultiValAttributes = function removeMultiValAttributes(el, attr, val) {
 	        var describedby = (el.attr(attr) || "").split(/\s+/),
 	        index = $.inArray(val, describedby);
@@ -5188,14 +5188,14 @@
 	  if (!str) {
 	    return false;
 	  }
-	  return str.replace(/</g, '&lt;') // strip <
-	  .replace(/>/g, '&gt;') // strip >
-	  .replace(/\+/g, '&#43;') // strip +
-	  .replace(/\\/g, '&#92;') // strip \
-	  .replace(/\(/g, '&#40;') // strip (
-	  .replace(/\)/g, '&#41;') // strip )
-	  .replace(/{/g, '&#123;') // strip (
-	  .replace(/}/g, '&#124;'); // strip )
+	  return str.replace(/</g, '&lt;' // strip <
+	  ).replace(/>/g, '&gt;' // strip >
+	  ).replace(/\+/g, '&#43;' // strip +
+	  ).replace(/\\/g, '&#92;' // strip \
+	  ).replace(/\(/g, '&#40;' // strip (
+	  ).replace(/\)/g, '&#41;' // strip )
+	  ).replace(/{/g, '&#123;' // strip (
+	  ).replace(/}/g, '&#124;'); // strip )
 	}
 	
 	function addHiddenInput(key, val) {
