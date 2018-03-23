@@ -10637,7 +10637,7 @@ span.qg-correct, span.qg-incorrect {
     #qg-content #qg-section-nav li a {
       display: block;
       margin: 0;
-      padding: 0.7em 0 0.9em 15px;
+      padding: 0.7em 0 0.9em 25px;
       color: #005375;
       text-decoration: none; }
     #qg-content #qg-section-nav li a:hover {
@@ -10649,7 +10649,7 @@ span.qg-correct, span.qg-incorrect {
     #qg-content #qg-section-nav li a:before {
       position: absolute;
       top: .95em;
-      left: 0;
+      left: 10px;
       display: inline-block !important;
       content: "\f054";
       margin: 0;
