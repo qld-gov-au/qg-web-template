@@ -35,6 +35,8 @@ import shareLinks         from './layout/content/share-links';
 import './layout/content/content-types/figure-credits-toggle';
 import feedbackForm       from './layout/footer/feedback-form';
 
+import './layout/layout';
+
 import './utils/qg-init';
 (function () {
   'use strict';
@@ -44,3 +46,4 @@ import './utils/qg-init';
   shareLinks.init();
   accessibility.init();
 }());
+
