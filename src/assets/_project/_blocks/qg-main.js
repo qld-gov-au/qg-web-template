@@ -31,17 +31,17 @@ import './components/forms/recaptcha';
 
 // Layout
 import activeSideNav      from './layout/section-nav/section-nav';
+import stepNav      from './layout/section-nav/step-nav';
 import shareLinks         from './layout/content/share-links';
 import './layout/content/content-types/figure-credits-toggle';
 import feedbackForm       from './layout/footer/feedback-form';
-
-import './layout/layout';
 
 import './utils/qg-init';
 (function () {
   'use strict';
   var franchiseTitle = qg && qg.swe && qg.swe.franchiseTitle;
   activeSideNav.highlightNavItem();
+  stepNav.init();
   feedbackForm.init(franchiseTitle);
   shareLinks.init();
   accessibility.init();
