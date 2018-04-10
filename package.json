@@ -117,6 +117,7 @@
     "jasmine": "^2.7.0",
     "lato-webfont": "^2.15.1",
     "nightwatch": "^0.9.12",
-    "node-bourbon": "^4.2.8"
+    "node-bourbon": "^4.2.8",
+    "responsive-toolkit": "^2.6.3"
   }
 }

@@ -154,7 +154,7 @@ gulp.task('test:e2e', (cb) => {
 gulp.task('test', (cb) => {
   runSequence(
       // ['test:unit'],
-      ['test:eslint'],
+      //['test:eslint'],
       cb
   );
 });
