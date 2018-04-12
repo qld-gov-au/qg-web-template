@@ -4,7 +4,7 @@
   border: 0;
 
   color: #000;
-  
+
   h2 {
     margin-top: 5px;
     font-size: 1.2em;
@@ -19,7 +19,7 @@
   }
 }
 
-.alert:not(.qg-noicon) {
+/*.alert:not(.qg-noicon) {
   @extend .alert;
 
   margin-left: 60px;
@@ -73,7 +73,7 @@
     }
   }
 
-  /*
+  !*
   position: relative;
   margin-left: 60px;
   border: 0;
@@ -93,7 +93,7 @@
     font-family: fontAwesome;
     text-align: center;
   }
-  
+
   h2 {
     margin-top: 5px;
     font-size: 1.2em;
@@ -133,5 +133,5 @@
       color: $brand-danger;
     }
   }
-  */
-}
+  *!
+}*/
