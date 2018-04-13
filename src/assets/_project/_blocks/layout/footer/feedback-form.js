@@ -26,7 +26,7 @@ function init (franchiseTitle) {
   addHiddenInput('franchise', location.pathname.split('/')[1]);
   addHiddenInput('page-title', $(document).find('title').text());
   addHiddenInput('page-url', window.location.href);
-  addHiddenInput('page-referer', encodeURIComponent(document.referrer));
+  addHiddenInput('page-referer', document.referrer);
   addHiddenInput('rspUsrAgent', navigator.userAgent);
 }
 
