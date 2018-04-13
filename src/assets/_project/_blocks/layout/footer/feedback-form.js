@@ -23,7 +23,7 @@ function addHiddenInput (key, val) {
   $('#feedback-hidden-inputs').append(newHiddenInput);
 }
 function init (franchiseTitle) {
-  addHiddenInput('franchise', window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/')).split('/')[1]);
+  addHiddenInput('franchise', location.pathname.split('/')[1]);
   addHiddenInput('page-title', $(document).find('title').text());
   addHiddenInput('page-url', window.location.href);
   addHiddenInput('page-referer', encodeURIComponent(document.referrer));
