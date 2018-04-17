@@ -32,9 +32,9 @@
 
 		color: #FFF;
 		text-align: left;
-		@include fontSize(16px);
+		@include fontSize(17px);
     @media all and (max-width: $screen-md) {
-      @include fontSize(14px);
+      @include fontSize(15px);
     }
 
 		@media (min-width: $screen-lg-min) {
