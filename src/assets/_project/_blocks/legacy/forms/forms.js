@@ -1371,7 +1371,7 @@ if ( jQuery !== 'undefined' ) {
     $( initValidation );
     // instruction based relevance
     if ( $( '.relevance', 'form' ).length > 0 ) {
-        $( 'form', '#content' ).relevance( 'instructions' );
+      $('#qg-primary-content form').relevance( 'instructions' );
     }
 }(jQuery)); /* end closure */
 (function($) {
