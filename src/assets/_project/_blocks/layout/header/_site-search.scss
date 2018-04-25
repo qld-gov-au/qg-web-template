@@ -3,7 +3,6 @@
   input {
     border-radius: 0;
     border-color: $qg-green;
-    height: 42.8px; //inherited from .form-control class
   }
 
   .listbox {
@@ -18,6 +17,7 @@
     border-top: 1px solid #EEE;
     background: $qg-light-gray-lighter1;
     &[aria-busy="true"] {
+      display: none;
       border-top-style: hidden;
     }
 
