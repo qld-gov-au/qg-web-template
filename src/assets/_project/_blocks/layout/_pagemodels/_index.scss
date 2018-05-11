@@ -18,6 +18,40 @@
 			list-style: none;
 		}
 	}
+  @include breakpoint(xs) {
+    margin-right: 0;
+    margin-left: 0;
+    &> .qg-index-item{
+      width: 100%;
+      margin-bottom: 10px;
+      background: $qg-blue-green;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+    h2 {
+      padding: 0 !important;
+      margin-bottom: 0;
+      a {
+        padding: 1em 1.5em 1em 1.5em !important;
+        display: block;
+        color: #ffffff !important;
+      }
+      a:visited, a:active{
+        color: #ffffff !important;
+      }
+      a:hover {
+        background: #007eb1;
+        color: #ffffff !important;
+        text-decoration: none !important;
+      }
+      img {
+        display: none;
+      }
+    }
+    ul{
+      display: none;
+    }
+  }
 }
 
 // Stops problems with bootstrap flowing of elements
