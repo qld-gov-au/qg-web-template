@@ -7,6 +7,20 @@
 			height: 75px;
 			float: left;
 		}
+		a {
+			&:hover {
+				img {
+					border: 1px solid #06c;
+				}
+			}
+			img {
+				position: absolute;
+				left: 25px;
+				background: #f9f9f9;
+				border: 1px solid #fffefc;
+				box-shadow: 0 0 2px 1px rgba(0,0,0,.1);
+			}
+		}
 		h2, p, ul, &> div &> span {
 			padding-left: ($qg-spacing / 2) + 75px;
 		}
