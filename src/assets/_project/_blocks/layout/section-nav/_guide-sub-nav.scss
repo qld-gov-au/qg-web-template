@@ -1,0 +1,23 @@
+#qg-content #qg-section-nav {
+  .guide-sub-nav {
+    a {
+      padding-left: 4rem;
+      &:before {
+        content: "";
+      }
+      .page-number {
+        speak: none;
+        float: left;
+        color: #13578b;
+        min-width: 2rem;
+        text-align: center;
+        margin-left: -3rem;
+        font-weight: 700;
+        background: $qg-grey-light;
+      }
+      @include breakpoint(lg) {
+        padding-left: 6rem;
+      }
+    }
+  }
+}

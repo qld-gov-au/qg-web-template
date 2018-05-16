@@ -2,14 +2,14 @@
   text-align: right;
   margin-top: 0.5rem;
 
-  a, a:link {
+  a, a:link, a:hover, a:focus {
     color: $qg-blue5;
     text-decoration: none;
   }
-
-  a:hover {
-    color: $qg-blue5;
-    text-decoration: underline
+  @include breakpoint(md) {
+    a:hover {
+      text-decoration: underline;
+    }
   }
 
   li {
@@ -28,6 +28,11 @@
       .fa {
         display: block;
       }
+      .fa-phone {
+        &:before {
+          vertical-align: middle;
+        }
+      }
     }
 
     & + li {
@@ -35,7 +40,7 @@
     }
   }
 
-  @media (min-width: $screen-xs-min) {
+  @include breakpoint(sm) {
     text-align: right;
   }
 

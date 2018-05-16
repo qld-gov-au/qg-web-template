@@ -24,6 +24,7 @@ import './legacy/forms/forms';
 import './components/lightbox/qg-lightbox.js';
 import './components/progressive-reveal';
 import './components/license';
+import './components/carousel/carousel';
 import accessibility      from './components/accessibility/accessibility';
 
 import './layout/footer/footer-legals';

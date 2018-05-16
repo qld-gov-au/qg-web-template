@@ -63,12 +63,15 @@
 @import "layout/content/options";
 @import "layout/content/content-types";
 @import "layout/section-nav/section-nav";
+@import "layout/section-nav/guide-sub-nav";
+@import "layout/section-nav/mobile_step_nav";
 @import "layout/asides/asides";
 @import "layout/footer/site-map";
 @import "layout/footer/legals";
 
 //themes
-@import "layout/_pagemodels/qg-aggregation-theme";
+@import "layout/_pagemodels/aggregation";
+@import "layout/_pagemodels/guide";
 
 //External Libraries
 @import "https://rawgit.com/qld-gov-au/qg-web-template/master/src/assets/_project/lib/ext/butterfly/butterfly.css";  //TODO: update with CDN url
