@@ -63,10 +63,11 @@
 	
 	__webpack_require__(4);
 	__webpack_require__(5);
+	
+	
+	
+	
 	__webpack_require__(6);
-	
-	
-	
 	__webpack_require__(7);
 	__webpack_require__(8);
 	__webpack_require__(9);
@@ -77,23 +78,24 @@
 	
 	
 	var _sectionNav = __webpack_require__(13);var _sectionNav2 = _interopRequireDefault(_sectionNav);
-	var _shareLinks = __webpack_require__(14);var _shareLinks2 = _interopRequireDefault(_shareLinks);
-	__webpack_require__(15);
-	var _feedbackForm = __webpack_require__(16);var _feedbackForm2 = _interopRequireDefault(_feedbackForm);
+	var _stepNav = __webpack_require__(14);var _stepNav2 = _interopRequireDefault(_stepNav);
+	var _shareLinks = __webpack_require__(16);var _shareLinks2 = _interopRequireDefault(_shareLinks);
+	__webpack_require__(17);
+	var _feedbackForm = __webpack_require__(18);var _feedbackForm2 = _interopRequireDefault(_feedbackForm);
 	
-	__webpack_require__(17);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} // import '../../../../../node_modules/bootstrap-accessibility-plugin/plugins/js/bootstrap-accessibility.js'; // Removed due to accessibility issues (ironically)
-	// Utils
-	/*This 2 modules (breakpoints, parentwidth) are to be initialize where we are using these or If we make one common function for small utilities then we can initialize here in the main file.*/ /*import breakpoints        from './utils/breakpoints'; */ // Components
-	(function () {'use strict';var franchiseTitle = _qgEnv2.default && _qgEnv2.default.swe && _qgEnv2.default.swe.franchiseTitle;
-	  _sectionNav2.default.highlightNavItem();
+	__webpack_require__(19);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} // Layout
+	/*
+	 * Imports Javascript components for the GLUE
+	 */ // env initialization
+	(function () {'use strict';var franchiseTitle = _qgEnv2.default && _qgEnv2.default.swe && _qgEnv2.default.swe.franchiseTitle;_sectionNav2.default.highlightNavItem();
+	  _stepNav2.default.init();
 	  _feedbackForm2.default.init(franchiseTitle);
 	  _shareLinks2.default.init();
 	  _accessibility2.default.init();
-	})(); // Layout
-	/*import '../lib/ext/generate-id.js';*/ // For site-search-autocomplete
-	/*import './legacy/site-search-autocomplete.js';*/ /*
-	                                                    * Imports Javascript components for the GLUE
-	                                                    */ // env initialization
+	})(); /*import './legacy/bootstrap-accessibility.js';*/ /*import '../lib/ext/generate-id.js';*/ // For site-search-autocomplete
+	/*import './legacy/site-search-autocomplete.js';*/ // import '../../../../../node_modules/bootstrap-accessibility-plugin/plugins/js/bootstrap-accessibility.js'; // Removed due to accessibility issues (ironically)
+	// Utils
+	/*This 2 modules (breakpoints, parentwidth) are to be initialize where we are using these or If we make one common function for small utilities then we can initialize here in the main file.*/ /*import breakpoints        from './utils/breakpoints'; */ // Components
 
 /***/ }),
 /* 1 */
@@ -2630,11 +2632,11 @@
 	            // remove invalid class from ancestors that do not contain invalid fields
 	            $this.parentsUntil('form', '.invalid').filter(function () {
 	                return $(this).find(candidateForValidation).filter(invalidFilter).length === 0;
-	            }
+	            })
 	            // remove .invalid class
-	            ).removeClass('invalid'
+	            .removeClass('invalid')
 	            // remove old alerts (change handler should have already done this)
-	            ).find('.alert').
+	            .find('.alert').
 	            remove();
 	        } else {
 	            // does alert exist?
@@ -2748,11 +2750,11 @@
 	        // remove invalid class from questions that do not contain invalid fields
 	        form.find('.invalid').filter(function () {
 	            return $(this).find(candidateForValidation).filter(invalidFilter).length === 0;
-	        }
+	        })
 	        // remove .invalid class
-	        ).removeClass('invalid'
+	        .removeClass('invalid')
 	        // remove old alerts (change handler should have already done this)
-	        ).find('.alert').
+	        .find('.alert').
 	        remove();
 	
 	
@@ -2778,11 +2780,11 @@
 	            form.find(candidateForValidation).filter(invalidFilter).each(function () {
 	                // update inline alerts
 	                changeValidityCheck.call(this);
-	            }
+	            })
 	            // set .invalid on ancestor LI elements
-	            ).parentsUntil('form', '.questions > li'
+	            .parentsUntil('form', '.questions > li')
 	            // but not sections
-	            ).not('.section, .compact').
+	            .not('.section, .compact').
 	            addClass('invalid');
 	
 	
@@ -2898,18 +2900,18 @@
 	        // TODO allow this to be called multiple times without binding additional handlers!
 	        validate: function validate() {
 	            return this.each(function () {
-	                $(this).closest('form'
+	                $(this).closest('form')
 	                // turn off native validation
-	                ).attr('novalidate', true
+	                .attr('novalidate', true)
 	                // unbind and rebind handlers
-	                ).unbind('submit', submitDoneHandler).
-	                unbind('submit', submitValidationHandler
+	                .unbind('submit', submitDoneHandler).
+	                unbind('submit', submitValidationHandler)
 	                // validate this form
-	                ).bind('submit', submitValidationHandler
+	                .bind('submit', submitValidationHandler)
 	                // if validation did not cancel submit…
-	                ).bind('submit', submitDoneHandler
+	                .bind('submit', submitDoneHandler)
 	                // bind inline validation handlers to form elements
-	                ).find(candidateForValidation).
+	                .find(candidateForValidation).
 	                unbind('change', changeValidityCheck).
 	                bind('change', changeValidityCheck);
 	
@@ -3587,9 +3589,9 @@
 	            // triggers 'relevant-done' after showing is complete
 	            show: function show() {
 	                // enable elements before they are shown
-	                this.add(this.find(elementsToDisable)
+	                this.add(this.find(elementsToDisable))
 	                // but not any controls that will remain irrelevant
-	                ).not(this.find('[hidden]').find(elementsToDisable)).
+	                .not(this.find('[hidden]').find(elementsToDisable)).
 	                each(function () {
 	                    this.removeAttribute('disabled');
 	                });
@@ -3832,16 +3834,16 @@
 	
 	            // window.console.info( 'file size validation:', total, '<', maxFileSize, total < maxFileSize );
 	
-	            $(':file', this.form
+	            $(':file', this.form)
 	            // update validity for :file inputs with values
-	            ).filter(function () {
+	            .filter(function () {
 	                return !!this.value;
 	            }).
 	            each(function (index, element) {
 	                element.setCustomValidity(valid ? '' : 'Attachments are too large');
-	            }
+	            })
 	            // blank :file inputs should not have a custom error
-	            ).filter(function () {
+	            .filter(function () {
 	                return !this.value;
 	            }).
 	            each(function (index, element) {
@@ -3913,7 +3915,7 @@
 	    $(initValidation);
 	    // instruction based relevance
 	    if ($('.relevance', 'form').length > 0) {
-	        $('form', '#content').relevance('instructions');
+	        $('#qg-primary-content form').relevance('instructions');
 	    }
 	})(jQuery); /* end closure */
 	(function ($) {
@@ -4132,433 +4134,6 @@
 /* 6 */
 /***/ (function(module, exports) {
 
-	'use strict'; /*
-	              
-	               * Extended bootstrap-accessibility.js to allow elements without href attribute to accept collapse extension
-	              
-	               * Extended by QLD Gov, DSITI, OSSSIO, Digital Channels
-	              
-	               */
-	
-	/* ========================================================================
-	                   * Extends Bootstrap v3.1.1
-	                  
-	                   * Copyright (c) <2014> eBay Software Foundation
-	                  
-	                   * All rights reserved.
-	                  
-	                   * Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
-	                  
-	                   * Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
-	                  
-	                   * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-	                  
-	                   * Neither the name of eBay or any of its subsidiaries or affiliates nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
-	                  
-	                   * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-	                   * ======================================================================== */
-	
-	(function ($) {
-	    "use strict";
-	
-	    var uniqueId = function uniqueId(prefix) {
-	        return (prefix || 'ui-id') + '-' + Math.floor(Math.random() * 1000 + 1);
-	    };
-	
-	    // Alert Extension
-	    // ===============================
-	
-	    $('.alert').attr('role', 'alert');
-	    $('.close').removeAttr('aria-hidden').wrapInner('<span aria-hidden="true"></span>').append('<span class="sr-only">Close</span>'
-	
-	    // TOOLTIP Extension
-	    // ===============================
-	    );
-	    var showTooltip = $.fn.tooltip.Constructor.prototype.show,
-	    hideTooltip = $.fn.tooltip.Constructor.prototype.hide;
-	
-	    $.fn.tooltip.Constructor.prototype.show = function () {
-	        showTooltip.apply(this, arguments);
-	        var $tip = this.tip(),
-	        tooltipID = $tip.attr('id') || uniqueId('ui-tooltip');
-	        $tip.attr({ 'role': 'tooltip', 'id': tooltipID });
-	        this.$element.attr('aria-describedby', tooltipID);
-	    };
-	
-	    $.fn.tooltip.Constructor.prototype.hide = function () {
-	        hideTooltip.apply(this, arguments);
-	        removeMultiValAttributes(this.$element, 'aria-describedby', this.tip().attr('id'));
-	        return this;
-	    };
-	
-	    // Popover Extension
-	    // ===============================
-	    var showPopover = $.fn.popover.Constructor.prototype.setContent,
-	    hideTPopover = $.fn.popover.Constructor.prototype.hide;
-	
-	    $.fn.popover.Constructor.prototype.setContent = function () {
-	        showPopover.apply(this, arguments);
-	        var $tip = this.tip(),
-	        tooltipID = $tip.attr('id') || uniqueId('ui-tooltip');
-	        $tip.attr({ 'role': 'alert', 'id': tooltipID });
-	        this.$element.attr('aria-describedby', tooltipID);
-	        this.$element.focus();
-	    };
-	    $.fn.popover.Constructor.prototype.hide = function () {
-	        hideTooltip.apply(this, arguments);
-	        removeMultiValAttributes(this.$element, 'aria-describedby', this.tip().attr('id'));
-	    };
-	
-	    //Modal Extension
-	    $('.modal-dialog').attr({ 'role': 'document' });
-	    var modalhide = $.fn.modal.Constructor.prototype.hide;
-	    $.fn.modal.Constructor.prototype.hide = function () {
-	        var modalOpener = this.$element.parent().find('[data-target="#' + this.$element.attr('id') + '"]');
-	        modalhide.apply(this, arguments);
-	        modalOpener.focus();
-	    };
-	
-	    // DROPDOWN Extension
-	    // ===============================
-	
-	    var toggle = '[data-toggle=dropdown]',
-	    $par,
-	    firstItem,
-	    focusDelay = 200,
-	    menus = $(toggle).parent().find('ul').attr('role', 'menu'),
-	    lis = menus.find('li').attr('role', 'presentation');
-	
-	    lis.find('a').attr({ 'role': 'menuitem', 'tabIndex': '-1' });
-	    $(toggle).attr({ 'aria-haspopup': 'true', 'aria-expanded': 'false' });
-	
-	    $(toggle).parent().on('shown.bs.dropdown', function (e) {
-	        $par = $(this);
-	        var $toggle = $par.find(toggle);
-	        $toggle.attr('aria-expanded', 'true');
-	
-	        setTimeout(function () {
-	            firstItem = $('.dropdown-menu [role=menuitem]:visible', $par)[0];
-	            try {firstItem.focus();} catch (ex) {}
-	        }, focusDelay);
-	    });
-	
-	    $(toggle).parent().on('hidden.bs.dropdown', function (e) {
-	        $par = $(this);
-	        var $toggle = $par.find(toggle);
-	        $toggle.attr('aria-expanded', 'false');
-	    }
-	
-	    //Adding Space Key Behaviour, opens on spacebar
-	    );$.fn.dropdown.Constructor.prototype.keydown = function (e) {
-	        var $par,
-	        firstItem;
-	        if (!/(32)/.test(e.keyCode)) return;
-	        $par = $(this).parent();
-	        $(this).trigger("click");
-	        e.preventDefault() && e.stopPropagation();
-	    };
-	
-	    $(document).
-	    on('focusout.dropdown.data-api', '.dropdown-menu', function (e) {
-	        var $this = $(this),
-	        that = this;
-	        setTimeout(function () {
-	            if (!$.contains(that, document.activeElement)) {
-	                $this.parent().removeClass('open');
-	                $this.parent().find('[data-toggle=dropdown]').attr('aria-expanded', 'false');
-	            }
-	        }, 150);
-	    }).
-	    on('keydown.bs.dropdown.data-api', toggle + ', [role=menu]', $.fn.dropdown.Constructor.prototype.keydown
-	
-	
-	    // Tab Extension
-	    // ===============================
-	    );
-	    var $tablist = $('.nav-tabs'),
-	    $lis = $tablist.children('li'),
-	    $tabs = $tablist.find('[data-toggle="tab"], [data-toggle="pill"]');
-	
-	    $tablist.attr('role', 'tablist');
-	    $lis.attr('role', 'presentation');
-	    $tabs.attr('role', 'tab');
-	
-	    $tabs.each(function (index) {
-	        var tabpanel = $($(this).attr('href')),
-	        tab = $(this),
-	        tabid = tab.attr('id') || uniqueId('ui-tab');
-	
-	        tab.attr('id', tabid);
-	
-	        if (tab.parent().hasClass('active')) {
-	            tab.attr({ 'tabIndex': '0', 'aria-expanded': 'true', 'aria-selected': 'true', 'aria-controls': tab.attr('href').substr(1) });
-	            tabpanel.attr({ 'role': 'tabpanel', 'tabIndex': '0', 'aria-hidden': 'false', 'aria-labelledby': tabid });
-	        } else {
-	            tab.attr({ 'tabIndex': '-1', 'aria-expanded': 'false', 'aria-selected': 'false', 'aria-controls': tab.attr('href').substr(1) });
-	            tabpanel.attr({ 'role': 'tabpanel', 'tabIndex': '-1', 'aria-hidden': 'true', 'aria-labelledby': tabid });
-	        }
-	    });
-	
-	    $.fn.tab.Constructor.prototype.keydown = function (e) {
-	        var $this = $(this),
-	        $items,
-	        $ul = $this.closest('ul[role=tablist] '),
-	        index,
-	        k = e.which || e.keyCode;
-	
-	        $this = $(this);
-	        if (!/(37|38|39|40)/.test(k)) return;
-	
-	        $items = $ul.find('[role=tab]:visible');
-	        index = $items.index($items.filter(':focus'));
-	
-	        if (k == 38 || k == 37) index--; // up & left
-	        if (k == 39 || k == 40) index++; // down & right
-	
-	
-	        if (index < 0) index = $items.length - 1;
-	        if (index == $items.length) index = 0;
-	
-	        var nextTab = $items.eq(index);
-	        if (nextTab.attr('role') === 'tab') {
-	
-	            nextTab.tab('show' //Comment this line for dynamically loaded tabPabels, to save Ajax requests on arrow key navigation
-	            ).focus();
-	        }
-	        // nextTab.focus()
-	
-	        e.preventDefault();
-	        e.stopPropagation();
-	    };
-	
-	    $(document).on('keydown.tab.data-api', '[data-toggle="tab"], [data-toggle="pill"]', $.fn.tab.Constructor.prototype.keydown);
-	
-	    var tabactivate = $.fn.tab.Constructor.prototype.activate;
-	    $.fn.tab.Constructor.prototype.activate = function (element, container, callback) {
-	        var $active = container.find('> .active');
-	        $active.find('[data-toggle=tab]').attr({ 'tabIndex': '-1', 'aria-selected': false, 'aria-expanded': false });
-	        $active.filter('.tab-pane').attr({ 'aria-hidden': true, 'tabIndex': '-1' });
-	
-	        tabactivate.apply(this, arguments);
-	
-	        element.addClass('active');
-	        element.find('[data-toggle=tab]').attr({ 'tabIndex': '0', 'aria-selected': true, 'aria-expanded': true });
-	        element.filter('.tab-pane').attr({ 'aria-hidden': false, 'tabIndex': '0' });
-	    };
-	
-	    // Collapse Extension
-	    // ===============================
-	
-	    /*
-	    // Disabled because it was creating accessibility issues
-	    
-	    var $colltabs =  $('[data-toggle="collapse"]')
-	    $colltabs.attr({ 'role':'tab', 'aria-selected':'false', 'aria-expanded':'false' })
-	    $colltabs.each(function( index ) {
-	        var colltab = $(this)
-	            , collpanel = (colltab.attr('data-target')) ? $(colltab.attr('data-target')) : $(colltab.attr('href'))
-	            , parent  = colltab.attr('data-parent')
-	            , collparent = parent && $(parent)
-	            , collid = colltab.attr('id') || uniqueId('ui-collapse')
-	         $(collparent).find('div:not(.collapse,.panel-body), h4').attr('role','presentation')
-	         colltab.attr('id', collid)
-	        if(collparent){
-	            collparent.attr({ 'role' : 'tablist', 'aria-multiselectable' : 'true' })
-	            if(collpanel.hasClass('in')){
-	                if( colltab.attr('href') !== undefined ) { // Added by QLD DSITI OSSSIO
-	                    colltab.attr({ 'aria-controls': colltab.attr('href').substr(1), 'aria-selected':'true', 'aria-expanded':'true', 'tabindex':'0' })
-	                } // Added by QLD DSITI OSSSIO
-	                collpanel.attr({ 'role':'tabpanel', 'tabindex':'0', 'aria-labelledby':collid, 'aria-hidden':'false' })
-	            }else{
-	                if( colltab.attr('href') !== undefined ) { // Added by QLD DSITI OSSSIO
-	                    colltab.attr({'aria-controls' : colltab.attr('href').substr(1), 'tabindex':'-1' })
-	                } // Added by QLD DSITI OSSSIO
-	                collpanel.attr({ 'role':'tabpanel', 'tabindex':'-1', 'aria-labelledby':collid, 'aria-hidden':'true' })
-	            }
-	        }
-	    })
-	     var collToggle = $.fn.collapse.Constructor.prototype.toggle
-	    $.fn.collapse.Constructor.prototype.toggle = function(){
-	        var prevTab = this.$parent && this.$parent.find('[aria-expanded="true"]') , href
-	         if(prevTab){
-	            var prevPanel = prevTab.attr('data-target') || (href = prevTab.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '')
-	                , $prevPanel = $(prevPanel)
-	                , $curPanel = this.$element
-	                , par = this.$parent
-	                , curTab
-	             if (this.$parent) curTab = this.$parent.find('[data-toggle=collapse][href="#' + this.$element.attr('id') + '"]')
-	             collToggle.apply(this, arguments)
-	             if ($.support.transition) {
-	                this.$element.one($.support.transition.end, function(){
-	                     prevTab.attr({ 'aria-selected':'false','aria-expanded':'false', 'tabIndex':'-1' })
-	                    $prevPanel.attr({ 'aria-hidden' : 'true','tabIndex' : '-1'})
-	                     curTab.attr({ 'aria-selected':'true','aria-expanded':'true', 'tabIndex':'0' })
-	                     if($curPanel.hasClass('in')){
-	                        $curPanel.attr({ 'aria-hidden' : 'false','tabIndex' : '0' })
-	                    }else{
-	                        curTab.attr({ 'aria-selected':'false','aria-expanded':'false'})
-	                        $curPanel.attr({ 'aria-hidden' : 'true','tabIndex' : '-1' })
-	                    }
-	                })
-	            }
-	        }else{
-	            collToggle.apply(this, arguments)
-	        }
-	    }
-	     $.fn.collapse.Constructor.prototype.keydown = function (e) {
-	        var $this = $(this)
-	            , $items
-	            , $tablist = $this.closest('div[role=tablist] ')
-	            , index
-	            , k = e.which || e.keyCode
-	         $this = $(this)
-	        if (!/(32|37|38|39|40)/.test(k)) return
-	        if(k==32) $this.click()
-	         $items = $tablist.find('[role=tab]')
-	        index = $items.index($items.filter(':focus'))
-	         if (k == 38 || k == 37) index--                                        // up & left
-	        if (k == 39 || k == 40) index++                        // down & right
-	        if(index < 0) index = $items.length -1
-	        if(index == $items.length) index = 0
-	         $items.eq(index).focus()
-	         e.preventDefault()
-	        e.stopPropagation()
-	     }
-	     $(document).on('keydown.collapse.data-api','[data-toggle="collapse"]' ,  $.fn.collapse.Constructor.prototype.keydown)
-	     */
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	    // Carousel Extension
-	    // ===============================
-	
-	    $('.carousel').each(function (index) {
-	        var $this = $(this),
-	        prev = $this.find('[data-slide="prev"]'),
-	        next = $this.find('[data-slide="next"]'),
-	        $options = $this.find('.item'),
-	        $listbox = $options.parent();
-	
-	        $this.attr({ 'data-interval': 'false', 'data-wrap': 'false' });
-	        $listbox.attr('role', 'listbox');
-	        $options.attr('role', 'option');
-	
-	        var spanPrev = document.createElement('span');
-	        spanPrev.setAttribute('class', 'sr-only');
-	        spanPrev.innerHTML = 'Previous';
-	
-	        var spanNext = document.createElement('span');
-	        spanNext.setAttribute('class', 'sr-only');
-	        spanNext.innerHTML = 'Next';
-	
-	        prev.attr('role', 'button');
-	        next.attr('role', 'button');
-	
-	        prev.append(spanPrev);
-	        next.append(spanNext);
-	
-	        $options.each(function () {
-	            var item = $(this);
-	            if (item.hasClass('active')) {
-	                item.attr({ 'aria-selected': 'true', 'tabindex': '0' });
-	            } else {
-	                item.attr({ 'aria-selected': 'false', 'tabindex': '-1' });
-	            }
-	        });
-	    });
-	
-	    var slideCarousel = $.fn.carousel.Constructor.prototype.slide;
-	    $.fn.carousel.Constructor.prototype.slide = function (type, next) {
-	        var $active = this.$element.find('.item.active'),
-	        $next = next || $active[type]();
-	
-	        slideCarousel.apply(this, arguments);
-	
-	        $active.
-	        one($.support.transition.end, function () {
-	            $active.attr({ 'aria-selected': false, 'tabIndex': '-1' });
-	            $next.attr({ 'aria-selected': true, 'tabIndex': '0' }
-	            //.focus()
-	            );});
-	    };
-	
-	    $.fn.carousel.Constructor.prototype.keydown = function (e) {
-	        var $this = $(this),
-	        $ul = $this.closest('div[role=listbox]'),
-	        $items = $ul.find('[role=option]'),
-	        $parent = $ul.parent(),
-	        k = e.which || e.keyCode,
-	        index,
-	        i;
-	
-	        if (!/(37|38|39|40)/.test(k)) return;
-	
-	        index = $items.index($items.filter('.active'));
-	        if (k == 37 || k == 38) {//  Up
-	            $parent.carousel('prev');
-	            index--;
-	            if (index < 0) index = $items.length - 1;else
-	            $this.prev().focus();
-	
-	        }
-	        if (k == 39 || k == 40) {// Down
-	            $parent.carousel('next');
-	            index++;
-	            if (index == $items.length) index = 0;else
-	            {
-	                $this.one($.support.transition.end, function () {
-	                    $this.next().focus();
-	                });
-	            }
-	
-	        }
-	
-	        e.preventDefault();
-	        e.stopPropagation();
-	    };
-	    $(document).on('keydown.carousel.data-api', 'div[role=option]', $.fn.carousel.Constructor.prototype.keydown
-	
-	    // GENERAL UTILITY FUNCTIONS
-	    // ===============================
-	    );
-	    var removeMultiValAttributes = function removeMultiValAttributes(el, attr, val) {
-	        var describedby = (el.attr(attr) || "").split(/\s+/),
-	        index = $.inArray(val, describedby);
-	        if (index !== -1) {
-	            describedby.splice(index, 1);
-	        }
-	        describedby = $.trim(describedby.join(" "));
-	        if (describedby) {
-	            el.attr(attr, describedby);
-	        } else {
-	            el.removeAttr(attr);
-	        }
-	    };
-	
-	
-	})(jQuery);
-
-/***/ }),
-/* 7 */
-/***/ (function(module, exports) {
-
 	'use strict'; /***********************************
 	              /////////////////
 	              // QG Lightbox //
@@ -4602,7 +4177,7 @@
 	})(jQuery);
 
 /***/ }),
-/* 8 */
+/* 7 */
 /***/ (function(module, exports) {
 
 	/**
@@ -4718,7 +4293,7 @@
 	})();
 
 /***/ }),
-/* 9 */
+/* 8 */
 /***/ (function(module, exports) {
 
 	'use strict'; /**
@@ -4856,6 +4431,55 @@
 	    });
 	  }
 	})(jQuery, qg);
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports) {
+
+	/*aside carousel play and pause feature*/
+	'use strict';
+	
+	(function ($) {
+	  var paused = 0;
+	  $('.toggleCarousel').click(function (e) {
+	    e.preventDefault();
+	    var state = paused ? 'cycle' : 'pause';
+	    paused = paused ? 0 : 1;
+	
+	    $('#aside-carousel').carousel(state);
+	    $(this).
+	    find('i').
+	    toggleClass('fa-sync fa-pause');
+	  });
+	
+	  function carouselNormalization() {
+	    var items = $('#aside-carousel .item');
+	    var heights = [];
+	    var tallest = void 0;
+	    if (items.length) {
+	      var normalizeHeights = function normalizeHeights() {
+	        items.each(function () {
+	          heights.push($(this).height());
+	        });
+	        tallest = Math.max.apply(null, heights);
+	        items.each(function () {
+	          $(this).css('min-height', tallest + 'px');
+	        });
+	      };
+	      normalizeHeights();
+	
+	      $(window).on('resize orientationchange', function () {
+	        tallest = 0;
+	        heights.length = 0;
+	        items.each(function () {
+	          $(this).css('min-height', '0');
+	        });
+	        normalizeHeights();
+	      });
+	    }
+	  }
+	  carouselNormalization();
+	})(jQuery);
 
 /***/ }),
 /* 10 */
@@ -5004,7 +4628,7 @@
 	    var currentPageTitle = getCurrentTitle();
 	    $('#qg-section-nav ul>li').each(function () {
 	      if (refineText($(this).text()) === $.trim(currentPageTitle)) {
-	        $(this).find('a').addClass('active');
+	        /*$(this).find('a').addClass('active');*/
 	      }
 	    });
 	  }
@@ -5018,73 +4642,152 @@
 
 /***/ }),
 /* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';Object.defineProperty(exports, "__esModule", { value: true });var _breakpoints = __webpack_require__(15);var _breakpoints2 = _interopRequireDefault(_breakpoints);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+	var stepNav = {
+	  config: {
+	    $guideSubNav: $('#qg-section-nav .guide-sub-nav'),
+	    $qgSectionNav: $('#qg-section-nav'),
+	    $qgSectionNavListItems: $('#qg-section-nav .guide-sub-nav li'),
+	    $stepNav: $('#step-nav'),
+	    $heading: $('#qg-primary-content h1') },
+	
+	  init: function init() {var _this = this;
+	    if (this.config.$guideSubNav.length > 0) {
+	      this.createStepNav();
+	      $(window).resize(function () {return _this.createStepNav();});
+	    }
+	  },
+	  getActiveNav: function getActiveNav() {
+	    var activeNav = void 0;
+	    this.config.$qgSectionNavListItems.each(function (index) {
+	      if ($(this).find('a').hasClass('active')) {
+	        activeNav = index;
+	      }
+	    });
+	    return activeNav + 1;
+	  },
+	  countListItems: function countListItems() {
+	    return this.config.$qgSectionNavListItems.length;
+	  },
+	  view: function view(getActiveNav, countListItems) {
+	    return '<section id="step-nav">\n               <ul>\n                 <li>\n                    <a class="dropdown">Step ' +
+	
+	
+	    getActiveNav + ' of ' + countListItems + '</a>\n                 </li>\n               </ul>\n            </section>';
+	
+	
+	
+	  },
+	  createStepNav: function createStepNav() {
+	    var block = void 0;
+	    if ($(window).width() < _breakpoints2.default.bsMd) {
+	      if ($('#step-nav .guide-sub-nav').length === 0) {
+	        this.config.$heading.after(this.view(this.getActiveNav(), this.countListItems()));
+	        var $getSubNav = this.config.$guideSubNav.clone();
+	        $('#step-nav li').append($getSubNav);
+	      }
+	      $('#step-nav').hover(function () {
+	        block = setTimeout(function () {
+	          $('#step-nav .guide-sub-nav').stop(true, true).fadeIn({ duration: '100', queue: false }).css('display', 'none').slideDown('fast');
+	        }, 200);
+	      }, function () {
+	        clearTimeout(block);
+	        $('#step-nav .guide-sub-nav').stop(true, true).fadeOut({ duration: '100', queue: false }).slideUp('fast');
+	      });
+	    } else {
+	      $(document).find($('#step-nav')).remove();
+	    }
+	  } };exports.default =
+	
+	
+	stepNav;
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports) {
+
+	"use strict";Object.defineProperty(exports, "__esModule", { value: true });var breakpoints = function () {
+	  return {
+	    bsXs: 480,
+	    bsSm: 768,
+	    bsMd: 992,
+	    bsLg: 1200 };
+	
+	}();exports.default =
+	
+	breakpoints;
+
+/***/ }),
+/* 16 */
 /***/ (function(module, exports) {
 
 	'use strict'; /**
-	              * Function for rendering social media links on CUE compliant sites
-	              *
-	              * Requires:
-	              * - JQuery
-	              **/
+	               * Function for rendering social media links on CUE compliant sites
+	               *
+	               * Requires:
+	               * - JQuery
+	               **/
 	
 	/**
-	                  * #####################################
-	                  * Model
-	                  **/
+	                    * #####################################
+	                    * Model
+	                    **/
 	
 	var socialLinksList = {
 	  primary: [
 	  { title: 'Facebook', showTitle: false, icon: renderIcon('fa', 'facebook') },
 	  { title: 'Twitter', showTitle: false, icon: renderIcon('fa', 'twitter') },
-	  { title: 'LinkedIn', showTitle: false, icon: renderIcon('fa', 'linkedin') }],
+	  { title: 'LinkedIn', showTitle: false, icon: renderIcon('fa', 'linkedin') },
+	  { title: 'Others', showTitle: false, icon: renderIcon('fa', 'share-alt') }]
 	
-	  secondary: [
-	  // {title: 'Delicious',    showTitle: true, icon: renderIcon('fa', 'delicious')},
-	  { title: 'Digg', showTitle: true, icon: renderIcon('fa', 'digg') },
-	  // {title: 'Evernote',     showTitle: true, icon: renderIcon('svg', 'evernote', '/assets/v3/images/evernote-logo-white.svg')},
-	  // {title: 'Reddit',       showTitle: true, icon: renderIcon('fa', 'reddit')},
-	  // {title: 'StumbleUpon',  showTitle: true, icon: renderIcon('fa', 'stumbleupon')},
-	  // {title: 'Tumblr',       showTitle: true, icon: renderIcon('fa', 'tumblr')},
-	  { title: 'Google+', showTitle: true, icon: renderIcon('fa', 'google-plus') }] };
-	
+	  /* secondary: [
+	                                                                                 // {title: 'Delicious',    showTitle: true, icon: renderIcon('fa', 'delicious')},
+	                                                                                 { title: "Digg", showTitle: true, icon: renderIcon("fa", "digg") },
+	                                                                                 // {title: 'Evernote',     showTitle: true, icon: renderIcon('svg', 'evernote', '/assets/v3/images/evernote-logo-white.svg')},
+	                                                                                 // {title: 'Reddit',       showTitle: true, icon: renderIcon('fa', 'reddit')},
+	                                                                                 // {title: 'StumbleUpon',  showTitle: true, icon: renderIcon('fa', 'stumbleupon')},
+	                                                                                 // {title: 'Tumblr',       showTitle: true, icon: renderIcon('fa', 'tumblr')},
+	                                                                                 { title: "Google+", showTitle: true, icon: renderIcon("fa", "google-plus") }
+	                                                                               ]*/ };
 	
 	
 	/**
-	                                                                                   * #####################################
-	                                                                                   * Views
-	                                                                                   **/
+	                                                                                       * #####################################
+	                                                                                       * Views
+	                                                                                       **/
 	
 	function renderSocialURL(who, from, title, domain, description) {
 	  switch (who) {
-	
 	    case 'facebook':
 	      return 'http://www.facebook.com/share.php?u=' + from + '&title=' + title;
 	    case 'twitter':
 	      return 'http://twitter.com/home?status=' + title + '+' + from;
 	    case 'linkedin':
 	      return 'http://www.linkedin.com/shareArticle?mini=true&url=' + from + '&title=' + title + '&source=' + domain;
-	    case 'delicious':
-	      return 'http://del.icio.us/post?url=' + from + '&title=' + title + ']&notes=' + description;
-	    case 'digg':
-	      return 'http://www.digg.com/submit?phase=2&url=' + from + '&title=' + title;
-	    case 'evernote':
-	      return 'http://www.evernote.com/clip.action?url=' + from + '&title=' + title;
-	    case 'reddit':
-	      return 'http://www.reddit.com/submit?url=' + from + '&title=' + title;
-	    case 'stumbleupon':
-	      return 'http://www.stumbleupon.com/submit?url=' + from + '&title=' + title;
-	    case 'tumblr':
-	      return 'https://www.tumblr.com/widgets/share/tool?posttype=link&content=' + from + '&title=' + title + '&caption=' + description;
-	    case 'google+':
-	      return 'https://plus.google.com/share?url=' + from;}
-	
+	    case 'others':
+	      return 'https://www.qld.gov.au/share?&title=' + title + '&url=' + from;
+	    /*  case "delicious":
+	                                                                                  return `http://del.icio.us/post?url=${from}&title=${title}]&notes=${description}`;
+	                                                                                case "digg":
+	                                                                                  return `http://www.digg.com/submit?phase=2&url=${from}&title=${title}`;
+	                                                                                case "evernote":
+	                                                                                  return `http://www.evernote.com/clip.action?url=${from}&title=${title}`;
+	                                                                                case "reddit":
+	                                                                                  return `http://www.reddit.com/submit?url=${from}&title=${title}`;
+	                                                                                case "stumbleupon":
+	                                                                                  return `http://www.stumbleupon.com/submit?url=${from}&title=${title}`;
+	                                                                                case "tumblr":
+	                                                                                  return `https://www.tumblr.com/widgets/share/tool?posttype=link&content=${from}&title=${title}&caption=${description}`;
+	                                                                                case "google+":
+	                                                                                  return `https://plus.google.com/share?url=${from}`;*/}
 	
 	  return false;
 	}
 	
 	function renderIcon(type, name) {var src = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
 	  switch (type) {
-	
 	    case 'fa':
 	      return '<span class="fa fa-' + name + ' fa-2x qg-share-icon" aria-hidden="true"></span>';
 	    case 'svg':
@@ -5099,30 +4802,22 @@
 	}
 	
 	function renderLink(url, title, icon) {var hidden = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
-	  return '<li>\n<a class="qg-share-link qg-accessibility-off" href="' +
-	  url + '" title="' + title + '">' + icon + '<span class="title ' + hidden + '"">' + title + '</span></a>\n</li>';
+	  return '<li>\n            <a class="qg-share-link qg-accessibility-off" href="' +
+	  url + '" title="' + title + '">' + icon + '<span class="title ' + hidden + '"">' + title + '</span></a>\n          </li>';
 	
 	}
 	
 	function renderShareButtons() {
-	  return '<h2>Share:</h2>\n<ul class="navbar navbar-right">\n  ' +
+	  return '<h2>Share:</h2>\n  <ul class="navbar navbar-right">\n    ' +
 	
-	  getLinks('primary') + '\n  <li id="shareDropdown" class="dropdown dropdown-menu-right">\n    <button id="shareDropdownToggle" class="qg-share-link noicon" title="share" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">\n      <span class="fa fa-share-alt fa-2x" aria-hidden="true"></span><span class="qg-visually-hidden">Share</span>\n    </button>\n    <ul class="dropdown-menu" aria-labelledby="shareDropdownToggle">\n      ' +
-	
-	
-	
-	
-	
-	  getLinks('secondary') + '\n    </ul>\n  </li>\n</ul>';
-	
-	
+	  getLinks('primary') + '\n   </ul>';
 	
 	}
 	
 	/**
-	  * #####################################
-	  * Controller
-	  **/
+	   * #####################################
+	   * Controller
+	   **/
 	
 	function getLinks(type) {
 	  // Get link list
@@ -5156,7 +4851,7 @@
 	module.exports = { init: init };
 
 /***/ }),
-/* 15 */
+/* 17 */
 /***/ (function(module, exports) {
 
 	'use strict'; /**
@@ -5177,7 +4872,7 @@
 	});
 
 /***/ }),
-/* 16 */
+/* 18 */
 /***/ (function(module, exports) {
 
 	'use strict'; /**
@@ -5188,14 +4883,14 @@
 	  if (!str) {
 	    return false;
 	  }
-	  return str.replace(/</g, '&lt;' // strip <
-	  ).replace(/>/g, '&gt;' // strip >
-	  ).replace(/\+/g, '&#43;' // strip +
-	  ).replace(/\\/g, '&#92;' // strip \
-	  ).replace(/\(/g, '&#40;' // strip (
-	  ).replace(/\)/g, '&#41;' // strip )
-	  ).replace(/{/g, '&#123;' // strip (
-	  ).replace(/}/g, '&#124;'); // strip )
+	  return str.replace(/</g, '&lt;') // strip <
+	  .replace(/>/g, '&gt;') // strip >
+	  .replace(/\+/g, '&#43;') // strip +
+	  .replace(/\\/g, '&#92;') // strip \
+	  .replace(/\(/g, '&#40;') // strip (
+	  .replace(/\)/g, '&#41;') // strip )
+	  .replace(/{/g, '&#123;') // strip (
+	  .replace(/}/g, '&#124;'); // strip )
 	}
 	
 	function addHiddenInput(key, val) {
@@ -5205,17 +4900,17 @@
 	  $('#feedback-hidden-inputs').append(newHiddenInput);
 	}
 	function init(franchiseTitle) {
-	  addHiddenInput('franchise', franchiseTitle);
+	  addHiddenInput('franchise', location.pathname.split('/')[1]);
 	  addHiddenInput('page-title', $(document).find('title').text());
 	  addHiddenInput('page-url', window.location.href);
-	  addHiddenInput('page-referer', encodeURIComponent(document.referrer));
+	  addHiddenInput('page-referer', document.referrer);
 	  addHiddenInput('rspUsrAgent', navigator.userAgent);
 	}
 	
 	module.exports = { init: init };
 
 /***/ }),
-/* 17 */
+/* 19 */
 /***/ (function(module, exports) {
 
 	'use strict'; /**
