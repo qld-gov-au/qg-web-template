@@ -9,7 +9,7 @@
     &:last-child {
       border-bottom: 1px solid $qg-light-gray;
     }
-    h2 {
+    .acc-heading {
       margin: 0;
       position: relative;
       label {
@@ -61,7 +61,7 @@
       opacity: 1;
       transition: visibility 0s linear 0s, opacity 900ms;
     }
-    &[type=checkbox]:checked + h2 label i {
+    &[type=checkbox]:checked + .acc-heading label i {
       transform: rotate(-135deg);
       -webkit-transform: rotate(-135deg);
     }
