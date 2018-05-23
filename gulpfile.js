@@ -167,12 +167,13 @@ gulp.task('serve', require('./gulp/build-tasks/serve')(gulp, plugins, connect, c
 gulp.task('wt-clean', require('./gulp/publish-tasks/git').clean(config.webTemplateRepo.folder));
 gulp.task('wt-clone', require('./gulp/publish-tasks/git').clone(config.webTemplateRepo.url, config.webTemplateRepo.folder));
 gulp.task('wt-sync', require('./gulp/publish-tasks/git').sync(config.basepath.release, config.webTemplateRepo.folder, ['package.json']));
-gulp.task('wt-commit', require('./gulp/publish-tasks/git').commit(config.webTemplateRepo.folder));
+gulp.task('wt-updateVersion', require('./gulp/publish-tasks/git').updateVersion(config.webTemplateRepo.folder, pjson['wt-version']));
+gulp.task('wt-commit', require('./gulp/publish-tasks/git').commit(config.webTemplateRepo.folder, pjson['wt-version']));
 gulp.task('wt-push', require('./gulp/publish-tasks/git').push(config.webTemplateRepo.folder));
 gulp.task('wt-npm', require('./gulp/publish-tasks/npm'));
 
 gulp.task('cdn-clean', require('./gulp/publish-tasks/git').clean(config.staticCdnRepo.folder));
 gulp.task('cdn-clone', require('./gulp/publish-tasks/git').clone(config.staticCdnRepo.url, config.staticCdnRepo.folder));
 gulp.task('cdn-sync', require('./gulp/publish-tasks/git').sync(config.basepath.static, config.staticCdnRepo.folder, ['_env']));
-gulp.task('cdn-commit', require('./gulp/publish-tasks/git').commit(config.staticCdnRepo.folder));
+gulp.task('cdn-commit', require('./gulp/publish-tasks/git').commit(config.staticCdnRepo.folder, pjson.version));
 gulp.task('cdn-push', require('./gulp/publish-tasks/git').push(config.staticCdnRepo.folder));
