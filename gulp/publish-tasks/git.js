@@ -5,7 +5,7 @@ const git = require('gulp-git');
 const del = require('del');
 const path = require('path');
 const dirSync = require('gulp-directory-sync');
-const pjson = require('../../package.json');
+const replace = require('gulp-replace');
 
 const gitFunctions = {
   clean: (folder) => {
@@ -27,12 +27,19 @@ const gitFunctions = {
         .pipe(dirSync(path.resolve(from), path.resolve(to), { printSummary: true, ignore: ignoreFiles }));
     };
   },
-  commit: (folder) => {
+  updateVersion: (folder, version) => {
+    return (cb) => {
+      return gulp.src(path.resolve(folder, 'package.json'))
+          .pipe(replace(/"version": "\d+.\d+.\d+"/, '"version": "' + version + '"'))
+          .pipe(gulp.dest(path.resolve(folder)));
+    };
+  },
+  commit: (folder, version) => {
     return (cb) => {
       process.chdir(path.resolve(folder));
       return gulp.src('./*')
         .pipe(git.add())
-        .pipe(git.commit(pjson.version));
+        .pipe(git.commit(version));
     };
   },
   push: (folder) => {

@@ -34,7 +34,7 @@
     a {
       display: block;
       margin: 0;
-      padding: .7em 0 0.9em 0 + 15px;
+      padding: .7em 0 0.9em 10 + 15px;
 
       color: $qg-blue-darker;
       text-decoration: none;
@@ -53,7 +53,7 @@
     a:before {
       position: absolute;
       top: .95em;
-      left: 0;
+      left: 10px;
 
       display: inline-block !important;
       content: "\f054";

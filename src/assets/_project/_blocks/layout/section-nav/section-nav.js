@@ -25,7 +25,7 @@ var activeSideNav = (function () {
     var currentPageTitle = getCurrentTitle();
     $('#qg-section-nav ul>li').each(function () {
       if (refineText($(this).text()) === $.trim(currentPageTitle)) {
-        $(this).find('a').addClass('active');
+        /*$(this).find('a').addClass('active');*/
       }
     });
   }

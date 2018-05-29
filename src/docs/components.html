@@ -423,7 +423,7 @@
                 <!-- ################################## -->
                 <h2 id="call-out-box" class="category">Call out box</h2>
                 <p><span class="label label-primary" title="Custom QG styles">Custom</span></p>
-                <p>his component supports having some contextual text to accompany the button.</p>
+                <p>This component supports having some contextual text to accompany the button.</p>
                 <div class="qg-call-out-box">
                     <a class="qg-btn btn-primary" href="">Pay now</a>
                     <p>Some text to provide context around what happens when a user presses this button.</p>
@@ -434,6 +434,45 @@
   &lt;p>Some text to provide context around what happens when a user presses this button.&lt;/p>
 &lt;/div>
 						</code></pre>
+                <!-- ################################## -->
+
+                <!-- ################################## -->
+                <h2 id="cut-in-images" class="category">Cut in images</h2>
+                <p><span class="label label-primary" title="Custom QG styles">Custom</span></p>
+                <p>These images are styles to group image, credit and captions. Classes <code>.qg-cut-in</code> with <code>.qg-cut-in-alt</code> for alternating display.</p>
+                <p><code>.qg-cut-in</code> are floated right and <code>.qg-cut-in-alt</code> are floated left.</p>
+                <div class="section">
+                    <div class="qg-cut-in">
+                        <img src="http://via.placeholder.com/1750x1350" alt="">
+                        <button class="figure-credits-toggle" title="View credits"><img src="https://static.qgov.net.au/assets/v2/images/skin/icon-image-credit.png" alt="view credits"></button><div class="figure-credits" style="display: none;">Figure credits goes here</div>
+                        <div class="caption">Figure caption goes here</div>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam id arcu vel nisi posuere tempus. Praesent quam leo, varius sed augue vitae, imperdiet ultrices erat. Duis et tortor ultricies, accumsan turpis a, ultricies diam</p>
+                    <pre style="clear: both">								<code>
+&lt;div class="qg-cut-in"&gt;
+	&lt;img src="http://via.placeholder.com/1750x1350" alt="" /&gt;
+	&lt;div class="figure-credits"&gt;Figure credits goes here&lt;/div&gt;
+	&lt;div class="caption"&gt;Figure caption goes here&lt;/div&gt;
+&lt;/div&gt;
+								</code>
+							</pre>
+                </div>
+                <div class="section" style="clear: both">
+                    <div class="qg-cut-in-alt">
+                        <img src="http://via.placeholder.com/1750x1350" alt="">
+                        <button class="figure-credits-toggle" title="View credits"><img src="https://static.qgov.net.au/assets/v2/images/skin/icon-image-credit.png" alt"view="" credits"=""></button><div class="figure-credits" style="display: none;">Figure credits goes here</div>
+                        <div class="caption">Figure caption goes here</div>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam id arcu vel nisi posuere tempus. Praesent quam leo, varius sed augue vitae, imperdiet ultrices erat. Duis et tortor ultricies, accumsan turpis a, ultricies diam</p>
+                    <pre style="clear: both">								<code>
+&lt;div class="qg-cut-in-alt"&gt;
+	&lt;img src="http://via.placeholder.com/1750x1350" alt="" /&gt;
+	&lt;div class="figure-credits"&gt;Figure credits goes here&lt;/div&gt;
+	&lt;div class="caption"&gt;Figure caption goes here&lt;/div&gt;
+&lt;/div&gt;
+					</code>
+					</pre>
+                </div>
                 <!-- ################################## -->
 
                 <!-- ################################## -->
@@ -900,6 +939,7 @@
                         <li><a href="#qg-correct-incorrect">QG correct / incorrect</a></li>
                         <li><a href="#qg-survey">Survey</a></li>
                         <li><a href="#call-out-box">Call out box</a></li>
+                        <li><a href="#cut-in-images">Cut it images</a></li>
                         <li><a href="#glyphicons">Glyphicons</a></li>
                         <li><a href="#dropdowns">Dropdowns</a></li>
                         <li><a href="#button-groups">Button groups</a></li>

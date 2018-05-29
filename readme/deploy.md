@@ -8,6 +8,7 @@ Files compiled with this repository will be deployed to
 ## Steps to deploy
 - Clone [repository](https://github.com/qld-gov-au/qg-web-template)
 - Update version in package.json
+- Update wt-version in package.json - this is version of [web-template-release](https://github.com/qld-gov-au/web-template-release)
 - Run command ```npm run publish```
   - This will ask you for 
     1. npm account password (Will be with OSS Applications Team)

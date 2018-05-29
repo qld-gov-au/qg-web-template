@@ -17,13 +17,14 @@ import '../../../../node_modules/bootstrap/dist/js/bootstrap.js';
 // Components
 import './utils/parent-width';
 import './legacy/forms/forms';
-import './legacy/bootstrap-accessibility.js';
+/*import './legacy/bootstrap-accessibility.js';*/
 /*import '../lib/ext/generate-id.js';*/ // For site-search-autocomplete
 /*import './legacy/site-search-autocomplete.js';*/
 
 import './components/lightbox/qg-lightbox.js';
 import './components/progressive-reveal';
 import './components/license';
+import './components/carousel/carousel';
 import accessibility      from './components/accessibility/accessibility';
 
 import './layout/footer/footer-legals';
@@ -31,7 +32,9 @@ import './components/forms/recaptcha';
 
 // Layout
 import activeSideNav      from './layout/section-nav/section-nav';
+import stepNav      from './layout/section-nav/step-nav';
 import shareLinks         from './layout/content/share-links';
+import './layout/content/content-types/figure-credits-toggle';
 import feedbackForm       from './layout/footer/feedback-form';
 
 import './utils/qg-init';
@@ -39,7 +42,9 @@ import './utils/qg-init';
   'use strict';
   var franchiseTitle = qg && qg.swe && qg.swe.franchiseTitle;
   activeSideNav.highlightNavItem();
+  stepNav.init();
   feedbackForm.init(franchiseTitle);
   shareLinks.init();
   accessibility.init();
 }());
+
