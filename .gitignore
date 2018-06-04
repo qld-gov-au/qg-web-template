@@ -49,4 +49,4 @@ etc/
 
 ### Build & Release ###
 /build/**
-#/release/**
+release

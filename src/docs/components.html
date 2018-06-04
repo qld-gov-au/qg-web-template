@@ -412,7 +412,7 @@
                     <p>Is there anything we could improve?</p>
                     <a class="qg-btn" href="">Let us know</a>
                 </div>
-                <pre><code>
+                <pre><code class="language-markup">
 &lt;div class="qg-survey">
 	&lt;h2>Tell us what you think about our website&lt;/h2>
 	&lt;p>Is there anything we could improve?&lt;/p>
@@ -428,7 +428,7 @@
                     <a class="qg-btn btn-primary" href="">Pay now</a>
                     <p>Some text to provide context around what happens when a user presses this button.</p>
                 </div>
-                <pre><code>
+                <pre><code class="language-markup">
 &lt;div class="qg-call-out-box">
   &lt;a class="qg-btn btn-primary" href="">Pay now&lt;/a>
   &lt;p>Some text to provide context around what happens when a user presses this button.&lt;/p>
@@ -437,266 +437,75 @@
                 <!-- ################################## -->
 
                 <!-- ################################## -->
-                <h2 id="cut-in-images" class="category">Cut in images</h2>
-                <p><span class="label label-primary" title="Custom QG styles">Custom</span></p>
-                <p>These images are styles to group image, credit and captions. Classes <code>.qg-cut-in</code> with <code>.qg-cut-in-alt</code> for alternating display.</p>
-                <p><code>.qg-cut-in</code> are floated right and <code>.qg-cut-in-alt</code> are floated left.</p>
-                <div class="section">
-                    <div class="qg-cut-in">
-                        <img src="http://via.placeholder.com/1750x1350" alt="">
-                        <button class="figure-credits-toggle" title="View credits"><img src="https://static.qgov.net.au/assets/v2/images/skin/icon-image-credit.png" alt="view credits"></button><div class="figure-credits" style="display: none;">Figure credits goes here</div>
-                        <div class="caption">Figure caption goes here</div>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam id arcu vel nisi posuere tempus. Praesent quam leo, varius sed augue vitae, imperdiet ultrices erat. Duis et tortor ultricies, accumsan turpis a, ultricies diam</p>
-                    <pre style="clear: both">								<code>
-&lt;div class="qg-cut-in"&gt;
-	&lt;img src="http://via.placeholder.com/1750x1350" alt="" /&gt;
-	&lt;div class="figure-credits"&gt;Figure credits goes here&lt;/div&gt;
-	&lt;div class="caption"&gt;Figure caption goes here&lt;/div&gt;
-&lt;/div&gt;
-								</code>
-							</pre>
-                </div>
-                <div class="section" style="clear: both">
-                    <div class="qg-cut-in-alt">
-                        <img src="http://via.placeholder.com/1750x1350" alt="">
-                        <button class="figure-credits-toggle" title="View credits"><img src="https://static.qgov.net.au/assets/v2/images/skin/icon-image-credit.png" alt"view="" credits"=""></button><div class="figure-credits" style="display: none;">Figure credits goes here</div>
-                        <div class="caption">Figure caption goes here</div>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam id arcu vel nisi posuere tempus. Praesent quam leo, varius sed augue vitae, imperdiet ultrices erat. Duis et tortor ultricies, accumsan turpis a, ultricies diam</p>
-                    <pre style="clear: both">								<code>
-&lt;div class="qg-cut-in-alt"&gt;
-	&lt;img src="http://via.placeholder.com/1750x1350" alt="" /&gt;
-	&lt;div class="figure-credits"&gt;Figure credits goes here&lt;/div&gt;
-	&lt;div class="caption"&gt;Figure caption goes here&lt;/div&gt;
-&lt;/div&gt;
-					</code>
-					</pre>
-                </div>
-                <!-- ################################## -->
 
-                <!-- ################################## -->
-
-                <h2 id="glyphicons" class="category">Glyphicons</h2>
-                <p><span class="label label-default" title="Default bootstrap implementation">Default Bootstrap</span></p>
-
-                <p>See the <a href="https://getbootstrap.com/components/#glyphicons-glyphs">bootstrap glyphicons section</a>.</p>
-
-                <!-- ################################## -->
-
-                <h2 id="dropdowns" class="category">Dropdowns</h2>
+                <h2 id="images" class="category">Images</h2>
                 <p><span class="label label-primary" title="Heavily customised bootstrap implementation">Customised</span></p>
 
-                <p class="warn">
-                    Due to the nature of the Forms system being used, dropdowns are not advised for web forms.
-                </p>
-                <p>
-                    The Template standard for implementing dropdowns is using the Queensland Government icon. To enable this, add the class <code>qg-icon</code> to your button.
-                </p>
+                <p>You can use standard bootstrap image utilities. See <a href="https://getbootstrap.com/css/#images">Bootstrap documentation on images</a>.</p>
 
-                <pre><code class="language-markup">
-&lt;button class="btn btn-default dropdown-toggle qg-icon"
-  type="button"
-  id="dropdownMenu"
-  data-toggle="dropdown"
-  aria-haspopup="true"
-  aria-expanded="true"&gt;
-    Dropdown
-&lt;/button&gt;
-  </code></pre>
+                <p>The Web Template also has some custom images features.</p>
 
-                <p>
-                    For more information on implementation, see the <a href="http://getbootstrap.com/components/#dropdowns" target="_blank">bootstrap dropdowns section</a>.
-                </p>
+                <h3 id="figures">Figures</h3>
+                <p><span class="label label-default" title="Default HTML5 implementation">Default HTML5</span></p>
+
+                <p>To use figures, just put in standard HTML5 figure code in the <code>&lt;div id="qg-primary-content"&gt;</code> element, or add the class <code>qg-fig</code> to any figure element outside of the qg-primary-content element:</p>
+
+                <pre><code class="language-markup">&lt;figure&gt;
+    &lt;img src="/assets/v3/latest/images/placeholder-image.png" alt="" /&gt;
+    &lt;figcaption>
+        Caption text here
+        &lt;div class="figure-credits"&gt;Figure credits here&lt;/div&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
+</code></pre>
 
                 <div class="qg-tmplt-example">
                     <div class="panel-body">
-
-                        <div class="dropdown">
-                            <button class="btn btn-default dropdown-toggle qg-icon" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                Dropdown
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li class="dropdown-header">Optional dropdown header</li>
-                                <li><a href="#">Action after dropdown header</a></li>
-                                <li class="disabled"><a href="#">Disabled link</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
-                            </ul>
-                        </div>
-
+                        <figure>
+                            <img src="/assets/v3/latest/images/placeholder-image.png" alt="" />
+                            <figcaption>
+                                Caption text here
+                                <div class="figure-credits">Figure credits here</div>
+                            </figcaption>
+                        </figure>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     </div>
                 </div>
-                <p>Dropdown menus can be changed to expand upwards (instead of downwards) by adding .dropup to the parent.</p>
+
+                <p>You can pull this figure left or right (turning it into a cut-in image) by adding the class <code>pull-right</code> or <code>pull-left</code> to the figure element <code>&lt;figure class="pull-right"&gt;</code>.</p>
 
                 <div class="qg-tmplt-example">
                     <div class="panel-body">
-
-                        <div class="dropup">
-                            <button class="btn btn-default dropdown-toggle qg-icon" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Dropup
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
-                            </ul>
-                        </div>
-
+                        <figure class="pull-right">
+                            <img src="/assets/v3/latest/images/placeholder-image.png" alt="" />
+                            <figcaption>
+                                Caption text here
+                                <div class="figure-credits">Figure credits here</div>
+                            </figcaption>
+                        </figure>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     </div>
                 </div>
 
-                <h3>Without QG dropdown icon</h3>
-
-                <p>You can also use dropdowns without the standard icon. It is advised that you use another icon to indicate the behaviour of your button.</p>
+                <p>You can also unstyled the figure by adding <code>qg-unstyled</code> to the figure <code>&lt;figure class="qg-unstyled"&gt;</code>. Unstyled figures also work with pull-right and pull-left.</p>
 
                 <div class="qg-tmplt-example">
                     <div class="panel-body">
-                        <div class="dropdown">
-                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                Dropdown
-                                <span class="icon caret"></span>
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu3">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                            </ul>
-                        </div>
+                        <figure class="qg-unstyled">
+                            <img src="/assets/v3/latest/images/placeholder-image.png" alt="" />
+                            <figcaption>
+                                Caption text here
+                                <div class="figure-credits">Figure credits here</div>
+                            </figcaption>
+                        </figure>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     </div>
                 </div>
+
+                <p>If you need to remove the standard styling of a figure element in the qg-primary-content element, add the class <code>qg-nofig</code> to the figure element <code>&lt;figure class="qg-nofig"&gt;</code>.</p>
 
 
                 <!-- ################################## -->
-
-                <h2 class="category" id="button-groups">Button Groups</h2>
-                <p><span class="label label-primary" title="Heavily customised bootstrap implementation">Customised</span></p>
-
-                <div class="btn-group" role="group" aria-label="...">
-                    <button type="button" class="btn btn-default">Left</button>
-                    <button type="button" class="btn btn-default">Middle</button>
-                    <button type="button" class="btn btn-default">Right</button>
-                </div>
-
-                <h3 class="category">Button toolbar</h2>
-                    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                        <div class="btn-group" role="group" aria-label="First group">
-                            <button type="button" class="btn btn-default">1</button>
-                            <button type="button" class="btn btn-default">2</button>
-                            <button type="button" class="btn btn-default">3</button>
-                            <button type="button" class="btn btn-default">4</button>
-                        </div>
-                        <div class="btn-group" role="group" aria-label="Second group">
-                            <button type="button" class="btn btn-default">5</button>
-                            <button type="button" class="btn btn-default">6</button>
-                            <button type="button" class="btn btn-default">7</button>
-                        </div>
-                        <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Dropdown
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Dropdown link</a></li>
-                                <li><a href="#">Dropdown link</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <h3 class="category">Justified button group</h2>
-                        <div class="btn-group btn-group-justified" role="group" aria-label="...">
-                            <div class="btn-group" role="group">
-                                <button type="button" class="btn btn-default">Left</button>
-                            </div>
-                            <div class="btn-group" role="group">
-                                <button type="button" class="btn btn-primary">Middle</button>
-                            </div>
-                            <div class="btn-group" role="group">
-                                <button type="button" class="btn btn-default">Right</button>
-                            </div>
-                        </div>
-
-                        <!-- ################################## -->
-
-                        <h2 class="category" id="button-dropdowns">Button Dropdowns</h2>
-                        <p><span class="label label-primary" title="Heavily customised bootstrap implementation">Customised</span></p>
-
-                        <p>The <a href="#dropdowns">dropdowns methodology</a> is prefered over this method of creating dropdowns, the one exception being for split buttons.</p>
-
-                        <h3>Split buttons</h3>
-
-                        <!-- Split button -->
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-primary">Action</button>
-                            <button type="button" class="btn btn-primary dropdown-toggle qg-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="sr-only">Toggle Dropdown</span>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
-                            </ul>
-                        </div>
-
-                        <h3>Dropup split buttons</h3>
-
-                        <div class="btn-group dropup">
-                            <button type="button" class="btn btn-default">Dropup</button>
-                            <button type="button" class="btn btn-default dropdown-toggle qg-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="sr-only">Toggle Dropdown</span>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                            </ul>
-                        </div>
-
-                        <!-- ################################## -->
-
-                        <h2 class="category" id="input-groups">Input groups</h2>
-                        <p><span class="label label-danger" title="Not supported by this template">Not supported</span></p>
-
-                        <p>Not currently supported.</p>
-
-                        <!-- ################################## -->
-
-                        <h2 class="category" id="navs">Navs</h2>
-
-                        <p>More details coming soon...</p>
-
-                        <h3>Tabs</h3>
-                        <p><span class="label label-default" title="Default bootstrap implementation">Default Bootstrap</span></p>
-
-                        <div class="qg-tmplt-example">
-                            <div class="panel-body">
-                                <ul class="nav nav-tabs">
-                                    <li role="presentation" class="active"><a href="#">Home</a></li>
-                                    <li role="presentation"><a href="#">Profile</a></li>
-                                    <li role="presentation"><a href="#">Messages</a></li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- ################################## -->
-
-                        <h2 class="category" id="navbar">Navbar</h2>
-
-                        <p><span class="label label-danger" title="Not supported by this template">Not supported</span></p>
-
-                        <p>This feature is not supported.</p>
-
-                        <!-- ################################## -->
-
-                        <h2 class="category" id="breadcrumbs">Breadcrumbs</h2>
-
-                        <p><span class="label label-danger" title="Entirely custom implementation">Custom</span></p>
-
-                        <p>See <a href="http://local.qgwt.build/docs/layout.html#layout">Template page layout</a>.</p>
 
                         <!-- ################################## -->
 
@@ -733,77 +542,6 @@
 
                         <!-- ################################## -->
 
-                        <h2 class="category" id="labels">Labels</h2>
-                        <p><span class="label label-default" title="Default bootstrap implementation">Default Bootstrap</span></p>
-
-                        <p>See the <a href="https://getbootstrap.com/components/#labels">bootstrap labels section</a> for more information.</p>
-
-                        <div class="qg-tmplt-example panel panel-default">
-                            <div class="panel-body">
-
-                                <h1>Example heading <span class="label label-default">New</span></h1>
-                                <h2>Example heading <span class="label label-default">New</span></h2>
-                                <h3>Example heading <span class="label label-default">New</span></h3>
-                                <h4>Example heading <span class="label label-default">New</span></h4>
-
-                            </div>
-                        </div>
-
-                        <div class="qg-tmplt-example panel panel-default">
-                            <div class="panel-body">
-
-                                <span class="label label-default">Default</span>
-                                <span class="label label-primary">Primary</span>
-                                <span class="label label-success">Success</span>
-                                <span class="label label-info">Info</span>
-                                <span class="label label-warning">Warning</span>
-                                <span class="label label-danger">Danger</span>
-
-                            </div>
-                        </div>
-
-                        <!-- ################################## -->
-
-                        <h2 class="category" id="badges">Badges</h2>
-                        <p><span class="label label-default" title="Default bootstrap implementation">Default Bootstrap</span></p>
-
-                        <p>See the <a href="https://getbootstrap.com/components/#badges">bootstrap badges section</a> for more information.</p>
-
-                        <div class="qg-tmplt-example panel panel-default">
-                            <div class="panel-body">
-                                <p>
-                                    <a href="#">Inbox <span class="badge">42</span></a>
-                                </p>
-
-                                <p>
-                                    <button class="btn btn-primary" type="button">
-                                        Messages <span class="badge">4</span>
-                                    </button>
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- ################################## -->
-
-                        <h2 class="category" id="jumbotron">Jumbotron</h2>
-
-                        <p><span class="label label-danger" title="Not supported by this template">Not supported</span></p>
-
-                        <p>This feature is not supported.</p>
-
-                        <!-- ################################## -->
-
-                        <h2 class="category" id="page-header">Page header</h2>
-                        <p><span class="label label-danger" title="Not supported by this template">Not supported</span></p>
-
-                        <p>Not currently supported.</p>
-
-                        <!-- ################################## -->
-
-                        <h2 class="category" id="thumbnails">Thumbnails</h2>
-                        <p><span class="label label-danger" title="Not supported by this template">Not supported</span></p>
-
-                        <p>Not currently supported.</p>
 
                         <!-- ################################## -->
 
@@ -843,76 +581,27 @@
                                 </div>
                             </div>
                         </div>
-
-                        <p>You can also add <code>class="qg-noicon"</code> to the alert panel to remove the standard icon.</p>
-
-                        <div class="qg-tmplt-example panel panel-default">
-                            <div class="panel-body">
-                                <div class="alert alert-warning qg-noicon" role="alert">
-                                    <header>
-                                        <h2>Please check your answers</h2>
-                                    </header>
-
-                                    <ol>
-                                        <li><a href="#">Name: Must be completed</a></li>
-                                        <li><a href="#">Email: Must be a valid email address</a></li>
-                                    </ol>
-                                </div>
-                            </div>
-                        </div>
+                <pre><code class="language-markup">
+&lt;div class="alert alert-info" role="alert">
+    &lt;h2>Please check your answers&lt;/h2>
+        &lt;ol>
+        &lt;li>&lt;a href="#">Name: Must be completed&lt;/a>&lt;/li>
+        &lt;li>&lt;a href="#">Email: Must be a valid email address&lt;/a>&lt;/li>
+    &lt;/ol>
+&lt;/div>
+                </code></pre>
 
                         <!-- ################################## -->
+                <!-- ################################## -->
 
-                        <h2 class="category" id="progress-bars">Progress bars</h2>
-                        <p><span class="label label-danger" title="Not supported by this template">Not supported</span></p>
+                <h2 class="category" id="forms">Forms</h2>
+                <p><span class="label label-danger" title="Entirely custom implementation">Custom</span></p>
 
-                        <p>Not currently supported.</p>
+                <p>Forms are not implemented using the standard bootstrap layout. Instead, forms use the <a href="http://qld-gov-au.github.io/form-builder/form-builder.html">Queensland Government form builder</a>.</p>
+                <p>For the user interface, see the <a href="https://github.com/qld-gov-au/pattern-library/blob/master/source/patterns-for-web-forms.md">SWE 2 pattern library for forms</a>.</p>
+                <!-- ################################## -->
 
-                        <!-- ################################## -->
-
-                        <h2 class="category" id="media-object">Media object</h2>
-                        <p><span class="label label-danger" title="Not supported by this template">Not supported</span></p>
-
-                        <p>Not currently supported.</p>
-
-                        <!-- ################################## -->
-
-                        <h2 class="category" id="list-group">List group</h2>
-                        <p><span class="label label-default" title="Default bootstrap implementation">Default Bootstrap</span></p>
-
-                        <p>See the <a href="https://getbootstrap.com/components/#list-group">bootstrap list group section</a>.</p>
-
-                        <div class="qg-tmplt-example">
-                            <ul class="list-group">
-                                <li class="list-group-item">Cras justo odio</li>
-                                <li class="list-group-item">Dapibus ac facilisis in</li>
-                                <li class="list-group-item">Morbi leo risus</li>
-                                <li class="list-group-item">Porta ac consectetur ac</li>
-                                <li class="list-group-item">Vestibulum at eros</li>
-                            </ul>
-                        </div>
-
-                        <!-- ################################## -->
-
-                        <h2 class="category" id="panels">Panels</h2>
-
-                        <p>Coming soon.</p>
-
-                        <!-- ################################## -->
-
-                        <h2 class="category" id="responsive-embed">Responsive embed</h2>
-
-                        <p>Coming soon.</p>
-
-                        <!-- ################################## -->
-
-                        <h2 class="category" id="wells">Wells</h2>
-
-                        <p>Coming soon.</p>
-
-
-
-                        <div class="qg-content-footer">
+                <div class="qg-content-footer">
 
                             <dl>
                                 <dt>Last updated:</dt>
@@ -939,28 +628,10 @@
                         <li><a href="#qg-correct-incorrect">QG correct / incorrect</a></li>
                         <li><a href="#qg-survey">Survey</a></li>
                         <li><a href="#call-out-box">Call out box</a></li>
-                        <li><a href="#cut-in-images">Cut it images</a></li>
-                        <li><a href="#glyphicons">Glyphicons</a></li>
-                        <li><a href="#dropdowns">Dropdowns</a></li>
-                        <li><a href="#button-groups">Button groups</a></li>
-                        <li><a href="#button-dropdowns">Button dropdowns</a></li>
-                        <li><a href="#input-groups">Input groups</a></li>
-                        <li><a href="#navs">Navs</a></li>
-                        <li><a href="#navbar">Navbar</a></li>
-                        <li><a href="#breacrumbs">Breadcrumbs</a></li>
+                        <li><a href="#images">Images</a></li>
                         <li><a href="#pagination">Pagination</a></li>
-                        <li><a href="#labels">Labels</a></li>
-                        <li><a href="#badges">Badges</a></li>
-                        <li><a href="#jumbotron">Jumbotron</a></li>
-                        <li><a href="#page-header">Page header</a></li>
-                        <li><a href="#thumbnails">Thumbnails</a></li>
                         <li><a href="#alerts">Alerts</a></li>
-                        <li><a href="#progress-bars">Progress Bars</a></li>
-                        <li><a href="#media-objects">Media objects</a></li>
-                        <li><a href="#list-group">List group</a></li>
-                        <li><a href="#panels">Panels</a></li>
-                        <li><a href="#responsive-embed">Responsive embed</a></li>
-                        <li><a href="#wells">Wells</a></li>
+                        <li><a href="#forms">Forms</a></li>
                     </ul>
                     <p>
                         <a href="#top">Back to top</a>
