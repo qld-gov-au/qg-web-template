@@ -58,8 +58,7 @@ module.exports = {
     js: ['generate-id',
       'jquery.resize-events',
       'butterfly/jquery.history',
-      'butterfly/jquery.butterfly',
-      'autocomplete'
+      'butterfly/jquery.butterfly'
     ],
     css: [
       'butterfly/butterfly.css'
