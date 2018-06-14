@@ -149,7 +149,7 @@
   }
 
   .required {
-    //color: #c90000;
+    margin-left: 0;
   }
 
   .invalid {
@@ -170,6 +170,7 @@
   }
 
   .alert {
+    padding-left: 1em;
     display: inline;
     color: $qg-error-red;
     @include fontSize(16px);
