@@ -32,7 +32,7 @@
     <!--#include virtual="/assets/includes-cdn/head-assets.html"-->
 
     <link href="assets/_project/latest/css/qg-documentation.css" rel="stylesheet" type="text/css" media="all">
-
+    <link href="./assets/css/prism.css" media="all" rel="stylesheet" type="text/css">
 </head>
 
 <body data-qg-accessibility="true"
@@ -117,7 +117,7 @@
 
                 <p><strong>For responsive margins:</strong></p>
 
-                <pre><code>#yourElement {
+                <pre><code class="language-css">#yourElement {
     @include qg-responsive-spacing(margin);
     @include qg-responsive-spacing(margin-top);
     @include qg-responsive-spacing(margin-right);
@@ -125,7 +125,7 @@
 
                 <p><strong>For responsive padding:</strong></p>
 
-                <pre><code>#yourElement {
+                <pre><code class="language-css">#yourElement {
     @include qg-responsive-spacing(padding);
     @include qg-responsive-spacing(padding-left);
     @include qg-responsive-spacing(padding-bottom);
@@ -133,7 +133,7 @@
 
                 <p>If you wish to use the 'full' gutter size (for top margins for example), you can set this using the 'full' parameter.</p>
 
-                <pre><code>#yourElement {
+                <pre><code class="language-css">#yourElement {
     @include qg-responsive-margin(top, full);
 }</code></pre>
 
@@ -198,454 +198,6 @@
 
                 <!-- ################################## -->
 
-                <h2 id="typography" class="category">Typography</h2>
-                <p><span class="label label-default" title="Default bootstrap implementation">Default Bootstrap</span></p>
-
-                <p>
-                    Queensland Government websites should use the Lato web font. This is included by default in the Queensland Government Web Template. In most instances when using the template, you should not have to worry about custom typography.
-                </p>
-                <p>
-                    For more information on implementation, see the <a href="http://getbootstrap.com/css/#type" target="_blank">bootstrap typography section</a>.
-                </p>
-
-                <h3>Headings</h3>
-                <div class="qg-tmplt-example">
-                    <table class="table">
-                        <tbody>
-                        <tr>
-                            <td><h1>h1. QLD Web Template heading</h1></td>
-                            <td class="type-info">Black (800) 32px</td>
-                        </tr>
-                        <tr>
-                            <td><h2>h2. QLD Web Template heading</h2></td>
-                            <td class="type-info">Black (800) 25px</td>
-                        </tr>
-                        <tr>
-                            <td><h3>h3. QLD Web Template heading</h3></td>
-                            <td class="type-info">Black (800) 22px</td>
-                        </tr>
-                        <tr>
-                            <td><h4>h4. QLD Web Template heading</h4></td>
-                            <td class="type-info">Black (800) 18px</td>
-                        </tr>
-                        <tr>
-                            <td><h5>h5. QLD Web Template heading</h5></td>
-                            <td class="type-info">Black (800) 14px</td>
-                        </tr>
-                        <tr>
-                            <td><h6>h6. QLD Web Template heading</h6></td>
-                            <td class="type-info">Black (800) 12px</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h3>Body copy</h3>
-                <p>For legibility, font size for main body copy has been set to 16px with a line height of 1.5em.</p>
-                <div class="qg-tmplt-example panel panel-default">
-                    <div class="panel-body">
-                        <p>
-                            Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.
-                        </p>
-                    </div>
-                </div>
-
-                <h3>Lead body copy</h3>
-                <p>You should only use lead body copy at the top of a page, directly under the main Heading 1 element. To get an exception, contact <a href="oss.products@dsiti.qld.gov.au">OSS Online Products</a>.</p>
-                <div class="qg-tmplt-example">
-                    <div class="panel-body">
-                        <p class="lead">
-                            Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.
-                        </p>
-                    </div>
-                </div>
-
-                <h3>Transformation classes</h3>
-                <div class="qg-tmplt-example">
-                    <div class="panel-body">
-                        <p class="text-lowercase">Lowercased text.</p>
-                        <p class="text-uppercase">Uppercased text.</p>
-                        <p class="text-capitalize">Capitalized text.</p>
-                    </div>
-                </div>
-
-                <h3>Abbreviations</h3>
-                <p>See <a href="https://getbootstrap.com/css/#type-abbreviations" target="_blank">bootstrap section on abbreviations</a>.</p>
-
-                <h4>Basic abbreviation</h4>
-                <div class="qg-tmplt-example">
-                    <div class="panel-body">
-                        <abbr title="attribute">attr</abbr>
-                    </div>
-                </div>
-
-                <h4>Initialism</h4>
-                <div class="qg-tmplt-example">
-                    <div class="panel-body">
-                        <abbr title="HyperText Markup Language" class="initialism">HTML</abbr>
-                    </div>
-                </div>
-
-                <h3>Addresses</h3>
-                <div class="qg-tmplt-example">
-                    <div class="panel-body">
-                        <address>
-                            <strong>Twitter, Inc.</strong><br>
-                            1355 Market Street, Suite 900<br>
-                            San Francisco, CA 94103<br>
-                            <abbr title="Phone">P:</abbr> (123) 456-7890
-                        </address>
-
-                        <address>
-                            <strong>Full Name</strong><br>
-                            <a href="mailto:#">first.last@example.com</a>
-                        </address>
-                    </div>
-                </div>
-
-                <h3>Blockquotes</h3>
-
-                <h4>Default blockquote</h4>
-                <div class="qg-tmplt-example">
-                    <div class="panel-body">
-                        <blockquote>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                        </blockquote>
-                    </div>
-                </div>
-
-                <h4>Blockquote options</h4>
-                <h5>Naming a source</h5>
-                <div class="qg-tmplt-example">
-                    <div class="panel-body">
-                        <blockquote>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                            <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
-                        </blockquote>
-                    </div>
-                </div>
-
-                <h5>Alternate displays</h5>
-                <div class="qg-tmplt-example">
-                    <div class="panel-body">
-                        <blockquote class="blockquote-reverse">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                            <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
-                        </blockquote>
-                    </div>
-                </div>
-
-                <h3>Lists</h3>
-                <p>Remember that screen readers report the number of elements in a list before paging through each element. This can be useful for accessibility and customer experience, not just from a visual perspective.</p>
-
-                <h4>Unordered</h4>
-                <div class="qg-tmplt-example">
-                    <div class="panel-body">
-                        <ul>
-                            <li>Lorem ipsum dolor sit amet</li>
-                            <li>Consectetur adipiscing elit</li>
-                            <li>Integer molestie lorem at massa</li>
-                            <li>
-                                Nulla volutpat aliquam velit
-                                <ul>
-                                    <li>Phasellus iaculis neque</li>
-                                    <li>Purus sodales ultricies</li>
-                                    <li>Vestibulum laoreet porttitor sem</li>
-                                </ul>
-                            </li>
-                            <li>Faucibus porta lacus fringilla vel</li>
-                            <li>
-                                Item with sub ordered list
-                                <ol>
-                                    <li>Phasellus iaculis neque</li>
-                                    <li>Purus sodales ultricies</li>
-                                    <li>Vestibulum laoreet porttitor sem</li>
-                                </ol>
-                            </li>
-                            <li>Aenean sit amet erat nunc</li>
-                            <li>Eget porttitor lorem</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h4>Ordered</h4>
-                <div class="qg-tmplt-example">
-                    <div class="panel-body">
-                        <ol>
-                            <li>Lorem ipsum dolor sit amet</li>
-                            <li>Consectetur adipiscing elit</li>
-                            <li>Integer molestie lorem at massa</li>
-                            <li>
-                                Item with sub ordered list
-                                <ol>
-                                    <li>Phasellus iaculis neque</li>
-                                    <li>Purus sodales ultricies</li>
-                                </ol>
-                            </li>
-                            <li>Faucibus porta lacus fringilla vel</li>
-                            <li>
-                                Item with sub unordered list
-                                <ul>
-                                    <li>Phasellus iaculis neque</li>
-                                    <li>Purus sodales ultricies</li>
-                                </ul>
-                            </li>
-                            <li>Eget porttitor lorem</li>
-                        </ol>
-                    </div>
-                </div>
-
-                <h4>Unstyled</h4>
-                <div class="qg-tmplt-example">
-                    <div class="panel-body">
-                        <ul class="list-unstyled">
-                            <li>Lorem ipsum dolor sit amet</li>
-                            <li>Consectetur adipiscing elit</li>
-                            <li>Integer molestie lorem at massa</li>
-                            <li>
-                                Nulla volutpat aliquam velit
-                                <ul>
-                                    <li>Phasellus iaculis neque</li>
-                                    <li>Purus sodales ultricies</li>
-                                    <li>Vestibulum laoreet porttitor sem</li>
-                                </ul>
-                            </li>
-                            <li>Faucibus porta lacus fringilla vel</li>
-                            <li>Aenean sit amet erat nunc</li>
-                            <li>Eget porttitor lorem</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h4>Inline</h4>
-                <div class="qg-tmplt-example">
-                    <div class="panel-body">
-                        <ul class="list-inline">
-                            <li>Lorem ipsum dolor sit amet</li>
-                            <li>Consectetur adipiscing elit</li>
-                            <li>Integer molestie lorem at massa</li>
-                            <li>Faucibus porta lacus fringilla vel</li>
-                            <li>Aenean sit amet erat nunc</li>
-                            <li>Eget porttitor lorem</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h4>Description</h4>
-                <div class="qg-tmplt-example">
-                    <div class="panel-body">
-                        <dl>
-                            <dt>Description lists</dt>
-                            <dd>A description list is perfect for defining terms.</dd>
-                            <dt>Euismod</dt>
-                            <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
-                            <dd>Donec id elit non mi porta gravida at eget metus.</dd>
-                            <dt>Malesuada porta</dt>
-                            <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
-                        </dl>
-                    </div>
-                </div>
-
-                <h5>Horizontal description</h5>
-                <div class="qg-tmplt-example">
-                    <div class="panel-body">
-                        <dl class="dl-horizontal">
-                            <dt>Description lists</dt>
-                            <dd>A description list is perfect for defining terms.</dd>
-                            <dt>Euismod</dt>
-                            <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
-                            <dd>Donec id elit non mi porta gravida at eget metus.</dd>
-                            <dt>Malesuada porta</dt>
-                            <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
-                        </dl>
-                    </div>
-                </div>
-
-                <!-- ################################## -->
-
-                <h2 id="code" class="category">Code</h2>
-                <p><span class="label label-default" title="Default bootstrap implementation">Default Bootstrap</span></p>
-
-                <p>Generally, the code tag should not be needed for most applications of this template. For information on implementing code, see the <a href="https://getbootstrap.com/css/#code">bootstrap section on code</a>.</p>
-
-                <!-- ################################## -->
-
-                <h2 id="tables" class="category">Tables</h2>
-                <p><span class="label label-default" title="Default bootstrap implementation">Default Bootstrap</span></p>
-
-                <p>These are the QLD Government implemented tables from Bootstrap. See the <a href="http://getbootstrap.com/css/#tables">bootstrap section on tables</a> for implementation advice.</p>
-
-                <h3>Basic Table</h3>
-
-                <div class="qg-tmplt-example">
-                    <div class="panel-body">
-                        <table class="table">
-                            <caption>Optional table caption.</caption>
-                            <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Username</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <h3>Striped rows</h3>
-
-                <div class="qg-tmplt-example">
-                    <div class="panel-body">
-                        <table class="table table-striped">
-                            <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Username</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <h3>Hover rows</h3>
-
-                <div class="qg-tmplt-example">
-                    <div class="panel-body">
-                        <table class="table table-hover">
-                            <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Username</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <h3>Responsive tables</h3>
-
-
-                <div class="qg-tmplt-example">
-                    <div class="panel-body">
-                        <div class="table-responsive">
-                            <table class="table">
-                                <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Table heading</th>
-                                    <th>Table heading</th>
-                                    <th>Table heading</th>
-                                    <th>Table heading</th>
-                                    <th>Table heading</th>
-                                    <th>Table heading</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ################################## -->
-
-                <h2 class="category" id="forms">Forms</h2>
-                <p><span class="label label-danger" title="Entirely custom implementation">Custom</span></p>
-
-                <p>Forms are not implemented using the standard bootstrap layout. Instead, forms use the <a href="http://qld-gov-au.github.io/form-builder/form-builder.html">Queensland Government form builder</a>.</p>
-                <p>For the user interface, see the <a href="https://github.com/qld-gov-au/pattern-library/blob/master/source/patterns-for-web-forms.md">SWE 2 pattern library for forms</a>.</p>
 
                 <!-- ################################## -->
 
@@ -662,38 +214,6 @@
                             <button type="button" class="qg-btn btn-default">Default</button>
                             <button type="button" class="qg-btn btn-primary">Primary</button>
                             <button type="button" class="qg-btn btn-secondary">Secondary</button>
-                            <button type="button" class="qg-btn btn-link">Link</button>
-                        </p>
-                    </div>
-                </div>
-
-                <p>Default Bootstrap buttons are also available to you:</p>
-
-                <div class="qg-tmplt-example">
-                    <div class="panel-body">
-                        <p>
-                            <!-- Standard button -->
-                            <button type="button" class="qg-btn btn-default">Default</button>
-
-                            <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-                            <button type="button" class="qg-btn btn-primary">Primary</button>
-
-                            <!-- Provides context  -->
-                            <button type="button" class="qg-btn btn-secondary">Secondary</button>
-
-                            <!-- Indicates a successful or positive action -->
-                            <button type="button" class="qg-btn btn-success">Success</button>
-
-                            <!-- Contextual button for informational alert messages -->
-                            <button type="button" class="qg-btn btn-info">Info</button>
-
-                            <!-- Indicates caution should be taken with this action -->
-                            <button type="button" class="qg-btn btn-warning">Warning</button>
-
-                            <!-- Indicates a dangerous or potentially negative action -->
-                            <button type="button" class="qg-btn btn-danger">Danger</button>
-
-                            <!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
                             <button type="button" class="qg-btn btn-link">Link</button>
                         </p>
                     </div>
@@ -720,89 +240,6 @@
                         </p>
                     </div>
                 </div>
-
-                <!-- ################################## -->
-
-                <h2 id="images" class="category">Images</h2>
-                <p><span class="label label-primary" title="Heavily customised bootstrap implementation">Customised</span></p>
-
-                <p>You can use standard bootstrap image utilities. See <a href="https://getbootstrap.com/css/#images">Bootstrap documentation on images</a>.</p>
-
-                <p>The Web Template also has some custom images features.</p>
-
-                <h3 id="figures">Figures</h3>
-                <p><span class="label label-default" title="Default HTML5 implementation">Default HTML5</span></p>
-
-                <p>To use figures, just put in standard HTML5 figure code in the <code>&lt;div id="qg-primary-content"&gt;</code> element, or add the class <code>qg-fig</code> to any figure element outside of the qg-primary-content element:</p>
-
-                <pre><code>&lt;figure&gt;
-    &lt;img src="/assets/v3/latest/images/placeholder-image.png" alt="" /&gt;
-    &lt;figcaption>
-        Caption text here
-        &lt;div class="figure-credits"&gt;Figure credits here&lt;/div&gt;
-    &lt;/figcaption&gt;
-&lt;/figure&gt;
-</code></pre>
-
-                <div class="qg-tmplt-example">
-                    <div class="panel-body">
-                        <figure>
-                            <img src="/assets/v3/latest/images/placeholder-image.png" alt="" />
-                            <figcaption>
-                                Caption text here
-                                <div class="figure-credits">Figure credits here</div>
-                            </figcaption>
-                        </figure>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                </div>
-
-                <p>You can pull this figure left or right (turning it into a cut-in image) by adding the class <code>pull-right</code> or <code>pull-left</code> to the figure element <code>&lt;figure class="pull-right"&gt;</code>.</p>
-
-                <div class="qg-tmplt-example">
-                    <div class="panel-body">
-                        <figure class="pull-right">
-                            <img src="/assets/v3/latest/images/placeholder-image.png" alt="" />
-                            <figcaption>
-                                Caption text here
-                                <div class="figure-credits">Figure credits here</div>
-                            </figcaption>
-                        </figure>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    </div>
-                </div>
-
-                <p>You can also unstyled the figure by adding <code>qg-unstyled</code> to the figure <code>&lt;figure class="qg-unstyled"&gt;</code>. Unstyled figures also work with pull-right and pull-left.</p>
-
-                <div class="qg-tmplt-example">
-                    <div class="panel-body">
-                        <figure class="qg-unstyled">
-                            <img src="/assets/v3/latest/images/placeholder-image.png" alt="" />
-                            <figcaption>
-                                Caption text here
-                                <div class="figure-credits">Figure credits here</div>
-                            </figcaption>
-                        </figure>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                </div>
-
-                <p>If you need to remove the standard styling of a figure element in the qg-primary-content element, add the class <code>qg-nofig</code> to the figure element <code>&lt;figure class="qg-nofig"&gt;</code>.</p>
-
-
-                <!-- ################################## -->
-
-                <h2 id="helper-classes" class="category">Helper classes</h2>
-                <p><span class="label label-danger" title="Not supported by this template">Not supported</span></p>
-
-                <p>Not currently supported.</p>
-
-                <!-- ################################## -->
-
-                <h2 id="responsive-utilities" class="category">Responsive utilities</h2>
-                <p><span class="label label-default" title="Default bootstrap implementation">Default Bootstrap</span></p>
-
-                <p>See <a href="https://getbootstrap.com/css/#responsive-utilities">Bootstrap responsive utilities</a>.</p>
 
                 <!-- ################################## -->
 
@@ -872,14 +309,7 @@
                                 <li><a href="#responsive-spacing-mixin">Responsive spacing mixins</a></li>
                             </ul>
                         </li>
-                        <li><a href="#typography">Typography</a></li>
-                        <li><a href="#code">Code</a></li>
-                        <li><a href="#tables">Tables</a></li>
-                        <li><a href="#forms">Forms</a></li>
                         <li><a href="#buttons">Buttons</a></li>
-                        <li><a href="#images">Images</a></li>
-                        <li><a href="#helper-classes">Helper classes</a></li>
-                        <li><a href="#responsive-utilities">Responsive utilities</a></li>
                         <li><a href="#using-less">Using less</a></li>
                         <li><a href="#using-sass">Using sass</a></li>
                     </ul>
@@ -911,6 +341,7 @@
 </script>
 
 <!--#include virtual="/assets/includes-cdn/footer/footer-scripts.html"-->
+<script type="text/javascript" src="./assets/js/prism.js"></script>
 
 </body>
 

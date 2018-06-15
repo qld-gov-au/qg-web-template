@@ -643,8 +643,10 @@ textarea[readonly] {
 }
 
 /* form footer */
-.questions li.footer {
+form li.footer {
+  list-style: none;
   padding-bottom: .5em;
+  padding-top: 0.8em;
 }
 
 .sections li.footer {
@@ -748,8 +750,13 @@ legend .h3 {
 }
 
 /* instructions */
-.instructions p {
-  margin-top: 0;
+.instructions {
+  p {
+    margin-top: 0;
+  }
+  small, p {
+    font-size: 1.4rem;
+  }
 }
 
 /* group controls */
@@ -770,7 +777,7 @@ legend .h3 {
 }
 
 /* group labels */
-.group .questions .label,
+/*.group .questions .label,
 .group .questions abbr.required,
 .group .questions abbr[title*="required"] {
   font-size: 80%;
@@ -778,7 +785,7 @@ legend .h3 {
 
 .group .questions abbr[title*="required"] {
   font-size: 100%;
-}
+}*/
 
 /* compact question layout */
 .group > fieldset .compact li {
@@ -893,8 +900,8 @@ input:checked + label {
 
 .choices label {
   position: relative;
-  padding-left: 20px;
-  margin-left: -20px;
+  /*padding-left: 20px;
+  margin-left: -20px;*/
 }
 
 /* data display */
@@ -1252,6 +1259,12 @@ form {
     top: 0.1em;
     padding: 0;
     margin: 0;
+    margin-left: -0.5em;
+    border-bottom: none;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: 700;
+
   }
 }
 

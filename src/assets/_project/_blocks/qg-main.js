@@ -19,7 +19,7 @@ import './utils/parent-width';
 import './legacy/forms/forms';
 /*import './legacy/bootstrap-accessibility.js';*/
 /*import '../lib/ext/generate-id.js';*/ // For site-search-autocomplete
-/*import './legacy/site-search-autocomplete.js';*/
+import './legacy/site-search-autocomplete.js';
 
 import './components/lightbox/qg-lightbox.js';
 import './components/progressive-reveal';
