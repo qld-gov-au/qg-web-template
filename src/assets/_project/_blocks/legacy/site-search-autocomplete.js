@@ -35,10 +35,11 @@ $(function () {
         // keep it wide while interacting with the search form (box, button, autosuggest list)
 
         // create the suggestion box
-        var suggestions = $('<ul role="listbox" class="listbox"/>').generateId('suggestbox');
+        var suggestions = $('<ul role="listbox" class="listbox" aria-busy="true"/>').generateId('suggestbox');
 
         function closeSuggestions() {
             suggestions.empty();
+            suggestions.attr('aria-busy','true');
         }
 
         function prefillInput(value) {
@@ -174,6 +175,7 @@ $(function () {
                     // 	prefillInput( data[0] );
                     // }
                     searchField.val();
+                    suggestions.attr('aria-busy','false');
                 });
 
             // show suggestions box

@@ -20,6 +20,33 @@
 				border: 1px solid #fffefc;
 				box-shadow: 0 0 2px 1px rgba(0,0,0,.1);
 			}
+			
+		}
+		ul:not(.qg-unstyled) {
+			li {
+				position: relative;
+				padding-left: 1em;
+				list-style: none;
+				line-height: 2.4rem;
+				a {
+					color: $qg-blue-dark;
+					&:active, &:hover, &:focus {
+						color: $qg-blue-dark;
+					}
+					&:before {
+						position: absolute;
+						left: 0;
+						top: .66rem;
+						font-family: FontAwesome;
+						font-size: 1.1rem;
+						line-height: 1;
+						padding-right: .8rem;
+						content: "\f054";
+					}
+				}
+	
+			}
+	
 		}
 		h2, p, ul, &> div &> span {
 			padding-left: ($qg-spacing / 2) + 75px;
