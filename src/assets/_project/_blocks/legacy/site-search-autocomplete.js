@@ -8,9 +8,9 @@ $(function () {
     'use strict';
 
     // until find.search supports https, we cannot use suggest feature on https domains
-    if (/^https/.test(window.location.protocol)) {
-        return;
-    }
+    // if (/^https/.test(window.location.protocol)) {
+    //     return;
+    // }
 
     var MAX_SUGGESTIONS = 7;
 
@@ -141,7 +141,7 @@ $(function () {
                 // cache! (the URL will be change with the search text)
                 cache: true,
                 dataType: 'jsonp',
-                url: 'http://find.search.qld.gov.au/s/suggest.json?',
+                url: 'https://find.search.qld.gov.au/s/suggest.json?',
                 data: {
                     // TODO read these from search form
                     collection: $(form.elements.collection).filter('[name="collection"]').val() || 'qld-gov',
@@ -164,7 +164,7 @@ $(function () {
                     suggestions.html($.map(data, function (value) {
                         var htmlValue = value.replace(/</g, '&lt;').replace(match, '<mark>' + safeInput + '</mark>');
                         // use form.action + default params
-                        return '<li><a href="http://find.search.qld.gov.au/s/search.html?collection=qld-gov&profile=qld&query=' + encodeURIComponent(value) + '">' + htmlValue + '</a></li>';
+                        return '<li><a href="https://find.search.qld.gov.au/s/search.html?collection=qld-gov&profile=qld&query=' + encodeURIComponent(value) + '">' + htmlValue + '</a></li>';
                     }).join('\n'));
 
                     // issue #3: issues with typing over selected suggestion
