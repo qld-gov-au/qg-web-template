@@ -1,0 +1,49 @@
+{
+    "description": "config for cidm config widget",
+    "cidmLoaderBaseUrl": "https://static.auth.staging-services.qld.gov.au/widget/CIDM/profile/2.2.2",
+    "cssURL": "https://static.auth.staging-services.qld.gov.au/widget/CIDM/profile/2.2.2/css/cidm.css?v=",
+    "config": {
+      "home": "https://www-testharness.auth.services.qld.gov.au",
+      "domain": "app.qld-gov.auth0.com",
+      "auth_domain": "auth.services.qld.gov.au",
+      "attributes_api_url": "https://api-customer-attributes.auth.services.qld.gov.au/v1",
+      "attributes_api_key": "e1woeh2fnd4148CdDTpV23JcaI9RJLC44o8trKDN",
+      "clientID": "wSenI3rdBClasO0JiFUfeOnCFwVULZ9r",
+      "level": "Level_1",
+      "hub": "https://static.auth.services.qld.gov.au/hub/hub.html",
+      "returnTo": "/assets/apps/widget/callback.html",
+      "faq": "https://identity.qld.gov.au/help/faq.html",
+      "about": "https://www.my.qld.gov.au/intro/index.html",
+      "myaccount": "https://www.my.qld.gov.au",
+      "authoritative_attributes": {
+        "SharingPreference": true,
+        "Level": true,
+        "QID": true,
+        "DateOfBirth": true,
+        "Email": true,
+        "UserId": true,
+        "AuthenticationMethod": true,
+        "FirstName": true,
+        "FamilyName": true,
+        "MiddleName": true
+      },
+      "self_asserted_attributes": {
+        "Name": true,
+        "Picture": true,
+        "FirstName": true,
+        "FamilyName": true,
+        "MiddleName": true,
+        "AustralianBusinessNumber": true,
+        "SamlSubjectId": true,
+        "VANguardCredentialType": true,
+        "ABAUserId": true,
+        "ABAUserName": true,
+        "AUSkeyCommonName": true,
+        "AUSkeyEmailAddress": true,
+        "AUSkeyGivenNames": true,
+        "AUSkeySBRPersonId": true,
+        "AUSkeyStaleCRLMinutes": true,
+        "AUSkeySurname": true
+      }
+    }
+  }

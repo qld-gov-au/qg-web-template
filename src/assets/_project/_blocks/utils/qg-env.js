@@ -2,7 +2,7 @@
 
 window.qg = window.qg || {};
 window.qg.swe = window.qg.swe || {};
-window.qg.cdn = window.qg.swe.isProduction === false ? 'https://beta-static.qgov.net.au' : 'https://static.qgov.net.au';
+window.qg.cdn = window.qg.swe.isProduction !== true ? '' : 'https://static.qgov.net.au';
 window.qg.swe.assets = '/assets/v3/latest/';
 
 window.qg.swe.paths = {

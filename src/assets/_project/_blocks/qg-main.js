@@ -29,6 +29,7 @@ import accessibility      from './components/accessibility/accessibility';
 
 import './layout/footer/footer-legals';
 import './components/forms/recaptcha';
+import './components/cidm-login/qg-cidm-login';
 
 // Layout
 import activeSideNav      from './layout/section-nav/section-nav';
