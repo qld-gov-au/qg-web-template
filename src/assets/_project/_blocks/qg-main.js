@@ -5,6 +5,7 @@
 // env initialization
 import qg from './utils/qg-env';
 import './utils/qg-ajax-call';
+import './utils/qg-load-google-api';
 
 import '../../../../node_modules/bootstrap/dist/js/bootstrap.js';
 // import '../../../../../node_modules/bootstrap-accessibility-plugin/plugins/js/bootstrap-accessibility.js'; // Removed due to accessibility issues (ironically)
@@ -29,6 +30,7 @@ import accessibility      from './components/accessibility/accessibility';
 
 import './layout/footer/footer-legals';
 import './components/forms/recaptcha';
+import './components/forms/qg-address-autocomplete';
 
 // Layout
 import activeSideNav      from './layout/section-nav/section-nav';
