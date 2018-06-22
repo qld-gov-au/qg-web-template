@@ -27,6 +27,11 @@ module.exports = function (gulp, plugins, config, es, dest) {
       ),
       gulp.src([`${config.basepath.src}/docs/**/*.js`, `${config.basepath.src}/docs/**/*.png`, `${config.basepath.src}/docs/**/*.css`, `${config.basepath.src}/docs/**/release-notes/**/*`])
         .pipe(plugins.if(dest === 'docs/assets', gulp.dest(`${config.basepath.build}/docs/`))),
+
+      //cidm-config
+      gulp.src(`${config.basepath.src}/assets/_project/_blocks/components/cidm-login/*.json`).pipe(
+        gulp.dest(`${config.basepath.build}/${dest}/apps/cidm/`)
+      ),
     ]);
     // config.projects.map(function (element) {
     // });
