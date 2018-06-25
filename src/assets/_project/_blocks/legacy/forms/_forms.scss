@@ -898,6 +898,13 @@ input:checked + label {
   color: #007EB1;
 }
 
+input[type="checkbox"] {
+  margin-right: 6px;
+  & + label{
+    display: inline;
+  }
+}
+
 .choices label {
   position: relative;
   /*padding-left: 20px;
