@@ -34,15 +34,24 @@ module.exports = function (gulp, plugins, config, webpack, destFolder, type = 'b
             presets: ['es2015'],
           },
         },
-          {
-            test: /\.js$/,
-            exclude: /(node_modules)/,
-            loader: 'webpack-replace',
-            query: {
-              search: 'googleRecaptchaApiKey',
-              replace: config.apiKeys.googleRecaptchaApiKey
-            }
+        {
+          test: /\.js$/,
+          exclude: /(node_modules)/,
+          loader: 'webpack-replace',
+          query: {
+            search: 'googleRecaptchaApiKey',
+            replace: config.apiKeys.googleRecaptchaApiKey
           }
+        },
+        {
+          test: /\.js$/,
+          exclude: /(node_modules)/,
+          loader: 'webpack-replace',
+          query: {
+            search: 'googleMapsApiKey',
+            replace: config.apiKeys.googleMapsApiKey
+          }
+        }
         ],
       },
       devtool: 'source-map'
