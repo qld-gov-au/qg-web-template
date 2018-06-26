@@ -845,18 +845,11 @@ abbr.required, abbr[title*="required"] {
 
 .questions abbr.required, .questions abbr[title*="required"] {
   position: absolute;
-  margin-left: -1em;
   width: 1em;
   text-align: center;
-  top: .5em;
-}
-
-.questions abbr[title*="required"] {
-  position: absolute;
-  margin-left: -1em;
-  width: 1em;
-  text-align: center;
-  top: .5em;
+  margin-left: -0.8em;
+  top: 0;
+  font-size: 1.5em;
 }
 
 /* radio buttons and checkboxes are choices */
@@ -1259,20 +1252,6 @@ form {
     margin-left: -20px;
     padding: 0;
     top: inherit;
-  }
-  .questions abbr[title*="required"] {
-    position: absolute;
-    width: 0;
-    text-align: center;
-    top: 0.1em;
-    padding: 0;
-    margin: 0;
-    margin-left: -0.5em;
-    border-bottom: none;
-    text-decoration: none;
-    font-size: 1.5em;
-    font-weight: 700;
-
   }
 }
 
