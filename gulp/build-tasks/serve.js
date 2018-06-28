@@ -2,7 +2,7 @@ module.exports = function (gulp, plugins, connect, connectssi, argv, path) {
   'use strict';
   return () => {
     let root = argv.root ? path.resolve(argv.root) : path.resolve('build');
-    let port = 7777;
+    let port = 3000;
     connect.server({
       root: root,
       port: port,

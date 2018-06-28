@@ -32,6 +32,9 @@ module.exports = function (gulp, plugins, config, es, dest) {
       gulp.src(`${config.basepath.src}/assets/_project/_blocks/components/cidm-login/*.json`).pipe(
         gulp.dest(`${config.basepath.build}/${dest}/apps/cidm/`)
       ),
+      gulp.src(`${config.basepath.src}/assets/_project/_blocks/components/cidm-login/*.html`).pipe(
+        gulp.dest(`${config.basepath.build}/${dest}/apps/cidm/`)
+      ),
     ]);
     // config.projects.map(function (element) {
     // });

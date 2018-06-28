@@ -1,4 +1,4 @@
-/* globals requirejs, qg */
+/* globals requirejs, qg, $jc */
 'use strict';
 
 (function (swe) {
@@ -12,13 +12,13 @@
       window.cidmLoaderBaseUrl = res.cidmLoaderBaseUrl;
       if (config !== 'undefined' && window.cidmLoaderBaseUrl !== 'undefined') {
         config.returnTo = (config.returnTo !== 'undefined' ? location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + config.returnTo : '/');
-        requirejs([window.cidmLoaderBaseUrl + '/cidm-loader.js'], function () {
+        requirejs([window.cidmLoaderBaseUrl + '/cidm-neo-loader.js?' + Date.now()], function () {
           requirejs(['cidm-neo', 'cidm-utils', 'es6-promise'], function () {
             $('head').append(css);
             $(document).ready(function () {
-              $.qgcidm.initialise(config);
-              $('#qgcidm-avatar').avatar();
-              $.qgcidm.enable();
+              $jc.qgcidm.initialise(config);
+              $jc('#qgcidm-avatar').avatar();
+              $jc.qgcidm.enable();
             });
           });
         });

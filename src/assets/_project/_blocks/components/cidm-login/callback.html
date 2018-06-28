@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CIDM Callback</title>
+</head>
+<body>
+<script type="text/javascript">
+	var hash = window.location.hash;
+	var callbackPath = localStorage ? localStorage.getItem('callback') : '/';
+	window.location.replace(callbackPath + hash);
+</script>
+</body>
+</html>
