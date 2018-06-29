@@ -1,5 +1,5 @@
 /*global jQuery*/
-(function($){
+(function ($) {
   'use strict';
 
   var twitter = {
@@ -35,7 +35,7 @@
           fjs.parentNode.insertBefore(js, fjs);
         }
       }(document, 'script', 'twitter-wjs'));
-    }
+    },
 
   };
   var facebook = {
@@ -43,7 +43,7 @@
     init: function () {
       if (this.ele.length > 0) {
         var fbUrl = this.ele.attr('data-href');
-        var fbhtml = '<div class="fb-page" data-href="'+ fbUrl +'" data-tabs="timeline" data-small-header="true" data-width="10000"  data-adapt-container-width="true" data-show-facepile="false"></div>';
+        var fbhtml = '<div class="fb-page" data-href="' + fbUrl + '" data-tabs="timeline" data-small-header="true" data-width="10000"  data-adapt-container-width="true" data-show-facepile="false"></div>';
         this.ele.append(fbhtml);
         this.facebookSdkScript();
         this.adjustWidth();
@@ -67,7 +67,7 @@
         $('.fb-page').removeClass('fb_iframe_widget fb_iframe_widget_fluid');
         window.FB.XFBML.parse();
       };
-    }
+    },
   };
   var instagram = {
     ele: $('.instagram-updates'),
@@ -77,26 +77,26 @@
         var accountUrl = 'https://www.instagram.com/' + this.ele.attr('data-username');
         var num = this.ele.attr('data-num') || 4;
         $.getJSON('https://query.yahooapis.com/v1/public/yql', {
-          q: 'select * from json where url="'+ accountUrl +'/?__a=1"',
-          format: 'json'
-        }, function(data) {
+          q: 'select * from json where url="' + accountUrl + '/?__a=1"',
+          format: 'json',
+        }, function (data) {
           if (data.query.results) {
             var items = data.query.results.json.user.media.nodes;
             self.ele.append('<ul class="group"></ul>');
             items.slice(0, num).forEach(function (item) {
-              var html = '<li class="instagram-feed"><a class="lightbox" href="'+ item.display_src +'" title="'+ item.caption +'"><img src="'+ item.thumbnail_src +'" alt=""></a></li>';
+              var html = '<li class="instagram-feed"><a class="lightbox" href="' + item.display_src + '" title="' + item.caption + '"><img src="' + item.thumbnail_src + '" alt=""></a></li>';
               self.ele.find('ul').append(html);
             });
             $('a.lightbox').butterfly({
               contentDefaultWidth: '100%',
               contentDefaultHeight: '100%',
               mediaMaxWidth: '100%',
-              mediaMaxHeight: '100%'
+              mediaMaxHeight: '100%',
             });
           }
         });
       }
-    }
+    },
   };
   twitter.init();
   facebook.init();
