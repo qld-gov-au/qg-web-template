@@ -845,11 +845,13 @@ abbr.required, abbr[title*="required"] {
 
 .questions abbr.required, .questions abbr[title*="required"] {
   position: absolute;
-  width: 1em;
-  text-align: center;
-  margin-left: -0.8em;
+  margin-left: -0.5em;
   top: 0;
   font-size: 1.5em;
+}
+
+.questions .h3 ~ abbr.required {
+  top:20px;
 }
 
 /* radio buttons and checkboxes are choices */
