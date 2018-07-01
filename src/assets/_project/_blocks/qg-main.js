@@ -24,7 +24,6 @@ import './legacy/site-search-autocomplete.js';
 import './components/lightbox/qg-lightbox.js';
 import './components/progressive-reveal';
 import './components/license';
-import './components/social-media';
 import './components/carousel/carousel';
 import accessibility      from './components/accessibility/accessibility';
 
