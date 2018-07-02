@@ -2,7 +2,7 @@
   &.content-only{
     .qg-index-item {
       h2, p, ul, &> div &> span {
-        padding-left: 0;
+        padding-left: 10px;
       }
     }
   }
