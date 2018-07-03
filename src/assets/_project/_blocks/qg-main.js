@@ -22,6 +22,7 @@ import './legacy/forms/forms';
 import './legacy/site-search-autocomplete.js';
 
 import './components/lightbox/qg-lightbox.js';
+import './components/qg-social-media';
 import './components/progressive-reveal';
 import './components/license';
 import './components/carousel/carousel';
