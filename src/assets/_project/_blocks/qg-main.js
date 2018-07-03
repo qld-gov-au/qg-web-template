@@ -25,6 +25,7 @@ import './components/lightbox/qg-lightbox.js';
 import './components/progressive-reveal';
 import './components/license';
 import './components/carousel/carousel';
+import './components/quick-exit/quick-exit';
 import accessibility      from './components/accessibility/accessibility';
 
 import './layout/footer/footer-legals';
