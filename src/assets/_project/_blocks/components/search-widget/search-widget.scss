@@ -1,0 +1,34 @@
+.qg-search-widget{
+  background: #f2f7f9;
+  padding: .5em 1em;
+
+  #distance{
+    width: 100%;
+  }
+  .qg-fl{
+    display: flex;
+    #qg-app-geocoding{
+      background: #78ba00;
+    }
+    #qg-location-autocomplete{
+      width: 90%;
+      margin-right: 11px;
+    }
+    #qg-app-geocoding{
+      width: 47px;
+      position: relative;
+      bottom:0 !important;
+      svg{
+        display: block;
+        margin: auto;
+        position: absolute;
+        top: 5px;
+        right: 7px;
+      }
+    }
+  }
+  #search{
+    margin-right: 10px;
+  }
+
+}
