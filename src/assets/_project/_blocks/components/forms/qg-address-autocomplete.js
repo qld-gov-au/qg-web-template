@@ -10,8 +10,8 @@ let qgInitAutocompleteAddress;
     let getLocationEle = $('.qg-app-geocoding');
     qgInitAutocompleteAddress = () => {
       let qldBounds = new google.maps.LatLngBounds(
-          new google.maps.LatLng(-29, 138.0578426),
-          new google.maps.LatLng(-9.9339, 153.63831));
+        new google.maps.LatLng(-29, 138.0578426),
+        new google.maps.LatLng(-9.9339, 153.63831));
       let inputLocationEle = document.getElementsByClassName(inputLocationId);
       let addressFormId = 'qg-address-autocomplete';
 
@@ -56,6 +56,38 @@ let qgInitAutocompleteAddress;
           };
           autocomplete.addListener('place_changed', fillInAddress);
           // $(this).on('change', google.maps.event.trigger(autocomplete, 'place_changed'))
+        } else {
+          let fillInAddress = () => {
+            var place = autocomplete.getPlace();
+            document.getElementById('lat').value = place.geometry.location.lat();
+            document.getElementById('lng').value = place.geometry.location.lng();
+            //clear form
+          };
+          autocomplete.addListener('place_changed', fillInAddress);
+
+          if (localStorage.getItem('distance')) {
+            $('#distance').val(localStorage.getItem('distance'));
+          }
+
+          if (localStorage.getItem('qg-location-autocomplete')) {
+            $('#qg-location-autocomplete').val(localStorage.getItem('qg-location-autocomplete'));
+          }
+
+          $('#search-widget').not('#search').keydown(function (event) {
+            $('#search-widget input[type="text"]').each(function () {
+              var id = $(this).attr('id');
+              var value = $(this).val();
+              localStorage.setItem(id, value);
+            });
+            $('#distance').change(function () {
+              localStorage.setItem('distance', this.value);
+            });
+
+            if (event.keyCode === 13) {
+              event.preventDefault();
+              return false;
+            }
+          });
         }
       });
 
