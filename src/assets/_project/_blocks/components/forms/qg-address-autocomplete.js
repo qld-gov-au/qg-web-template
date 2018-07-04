@@ -68,27 +68,31 @@ let qgInitAutocompleteAddress;
           if (localStorage.getItem('distance')) {
             $('#distance').val(localStorage.getItem('distance'));
           }
-
-          if (localStorage.getItem('qg-location-autocomplete')) {
-            $('#qg-location-autocomplete').val(localStorage.getItem('qg-location-autocomplete'));
-          }
+          $('input[type="text"]').each(function(){
+            var id = $(this).attr('id');
+            var value = localStorage.getItem(id);
+            $(this).val(value);
+          });
 
           $('#search-widget').not('#search').keydown(function (event) {
+            $('#distance').change(function () {
+              localStorage.setItem('distance', this.value);
+            });
+            if (event.keyCode === 13) {
+              event.preventDefault();
+              return false;
+            }
+          });
+
+          $('#search-widget #search').click(function () {
             $('#search-widget input[type="text"]').each(function () {
               var id = $(this).attr('id');
               var value = $(this).val();
               localStorage.setItem(id, value);
             });
-            $('#distance').change(function () {
-              localStorage.setItem('distance', this.value);
-            });
-
-            if (event.keyCode === 13) {
-              event.preventDefault();
-              return false;
-            }
-
+            $('#search-widget').submit();
           });
+
         }
       });
 
