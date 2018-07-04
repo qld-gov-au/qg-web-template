@@ -87,6 +87,7 @@ let qgInitAutocompleteAddress;
               event.preventDefault();
               return false;
             }
+
           });
         }
       });
