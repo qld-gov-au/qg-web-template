@@ -64,10 +64,13 @@ let qgInitAutocompleteAddress;
             //clear form
           };
           autocomplete.addListener('place_changed', fillInAddress);
-
+          $('#distance').change(function () {
+            localStorage.setItem('distance', this.value);
+          });
           if (localStorage.getItem('distance')) {
             $('#distance').val(localStorage.getItem('distance'));
           }
+
           $('input[type="text"]').each(function(){
             var id = $(this).attr('id');
             var value = localStorage.getItem(id);
@@ -75,9 +78,6 @@ let qgInitAutocompleteAddress;
           });
 
           $('#search-widget').not('#search').keydown(function (event) {
-            $('#distance').change(function () {
-              localStorage.setItem('distance', this.value);
-            });
             if (event.keyCode === 13) {
               event.preventDefault();
               return false;
