@@ -32,6 +32,7 @@
 	<!--#include virtual="/assets/includes-cdn/head-assets.html"-->
 
 	<link href="assets/_project/latest/css/qg-documentation.css" rel="stylesheet" type="text/css" media="all">
+    <link href="./assets/css/prism.css" media="all" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -91,6 +92,34 @@
 					<p><a href="https://github.com/qld-gov-au/web-template-release/releases">Release Notes</a> can be read from
 						<a href="https://github.com/qld-gov-au/web-template-release/">Github repository</a></p>
 
+					<h2>Single sign in login widget (CIDM Neo) </h2>
+					<p>This widget is integrated in the header component and enables users to manage their identity.</p>
+					<h3>Configuration</h3>
+					<p>If project is hosted on qld.gov.au, config is taken care.</p>
+					<p>If project is hosted on any other domain, follow the steps below.</p>
+					<ul>
+						<li><a href="mailto:oss.products@dsiti.qld.gov.au">Email OSSSIO Online Products</a> and request to</li>
+						<ul>
+							<li>register your domain on cidm crossdomain hub</li>
+							<li>register your callback.html against client id</li>
+						</ul>
+						<li>Set up a config file in the path <code>/assets/apps/cidm/qg-cidm-config.json</code> <a href="https://github.com/qld-gov-au/qg-web-template/blob/master/src/assets/_project/_blocks/components/cidm-login/qg-cidm-config.json">Template for config file</a></li>
+						<li>Set up a callback.html file on your domain and provide the path in above config file against <code>config.returnTo</code> <a href="https://github.com/qld-gov-au/qg-web-template/blob/master/src/assets/_project/_blocks/components/cidm-login/callback.html">Template for callback.html</a></li>
+					</ul>
+					<h3>Handlers</h3>
+					<p>Widget comes with several handler functions. Browse through <code>$jc.qgcidm</code> variable for the same.</p>
+					<p>To use any of these handlers, assign the same again <code>qg.swe.cidmCallback</code> variable. This will get executed after cidm widget is loaded asynchronously. </p>
+					<div class="qg-tmplt-example">
+						<div class="panel-body">
+							<pre><code class="language-markup">
+window.qg.swe.cidmCallback = function() {
+	$jc.qgcidm._onLogout.add(function () {
+		alert('logging out');
+	});
+}
+							</code></pre>
+						</div>
+					</div>
 					<h2>Technology</h2>
 					<p>To help with rapid development, the web template is now tightly integrated with Bootstrap 3. It also includes jQuery and a suite of custom Javascript features.</p>
 
@@ -159,6 +188,7 @@
 	</script>
 
 	<!--#include virtual="/assets/includes-cdn/footer/footer-scripts.html"-->
+	<script type="text/javascript" src="./assets/js/prism.js"></script>
 
 </body>
 
