@@ -33,6 +33,9 @@
           vertical-align: middle;
         }
       }
+      .qg-sign-in-icon {
+        font-size: 2em !important;
+      }
     }
 
     & + li {
@@ -46,5 +49,31 @@
 
   @media print {
     display: none;
+  }
+
+  @include breakpoint($maxWidth: 768px) {
+    display: flex; 
+    flex-wrap: wrap; 
+    flex-direction: row; 
+    justify-content: space-evenly;
+  }
+  #qgcidm-avatar {
+    #qg-login-menu {
+      .menu-container {
+        button {
+          text-align: left;
+          border-top: 1px solid #5d90c0;
+        }
+      }
+      .footer {
+        .fa {
+          display: inline;
+        }
+      }
+    }
+    @include breakpoint(md) {
+      position: absolute;
+      right: -52%;
+    }
   }
 }

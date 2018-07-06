@@ -58,7 +58,7 @@
   }
 
   .input-group {
-    max-width: calc(100% - 60px);
+    max-width: calc(100% - 15px);
     @media all and (max-width: $screen-sm) {
       width: calc(100% - 60px);
     }
