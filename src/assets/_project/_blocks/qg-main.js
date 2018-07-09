@@ -23,9 +23,11 @@ import './legacy/forms/forms';
 import './legacy/site-search-autocomplete.js';
 
 import './components/lightbox/qg-lightbox.js';
+import './components/qg-social-media';
 import './components/progressive-reveal';
 import './components/license';
 import './components/carousel/carousel';
+import './components/quick-exit/quick-exit';
 import accessibility      from './components/accessibility/accessibility';
 
 import './layout/footer/footer-legals';
@@ -48,5 +50,7 @@ import './utils/qg-init';
   feedbackForm.init(franchiseTitle);
   shareLinks.init();
   accessibility.init();
+
+  $('.qg-index-links .qg-index-item img').length === 0 ? $('.qg-index-links').addClass('content-only') : '';
 }());
 

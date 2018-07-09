@@ -1,5 +1,12 @@
 .qg-index-links {
-	&> .qg-index-item {
+  &.content-only{
+    .qg-index-item {
+      h2, p, ul, &> div &> span {
+        padding-left: 10px;
+      }
+    }
+  }
+  &> .qg-index-item {
 		margin-bottom: $qg-spacing;
 
 		img {

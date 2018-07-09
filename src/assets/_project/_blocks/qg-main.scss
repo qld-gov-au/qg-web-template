@@ -27,6 +27,9 @@
 @import "scss-general/mixins/qg-responsive-spacing";
 @import "scss-general/mixins/bootstrap-breakpoints";
 
+// QG typography
+@import "layout/typography";
+
 // QG Utilities
 @import "utils/utilities"; // Utilities loaded first so they can be used in other components
 
@@ -41,6 +44,7 @@
 @import "components/navs"; // Extends bootstrap navs
 @import "components/images";
 @import "components/pagination";
+@import "components/quick-exit";
 @import "components/alert";
 @import "components/search-widget/search-widget";
 @import "components/_correct-incorrect"; // Adds correct / incorrect styling
@@ -51,6 +55,7 @@
 @import "layout/_pagemodels/index"; // Page models
 
 @import "layout/header/access";
+@import "layout/print";
 @import "layout/header/alerts";
 @import "layout/header/coat-of-arms";
 @import "layout/header/header-structure";
