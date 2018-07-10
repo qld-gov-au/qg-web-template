@@ -1,4 +1,4 @@
-#quick-exit {
+#qg-quick-exit {
   text-align: center;
   position: fixed;
   top: 20%;
@@ -19,14 +19,13 @@
   border-radius: 46% 0 0 46%;
   box-shadow: 0 0 0 .2em #f7d418, 2px 2px 5px .2em rgba(0,0,0,.5);
   text-transform: uppercase;
-
-}
-#quick-exit ul {
-  list-style-type: none;
-  margin: 0.4em 0 0.5em 0;
-  padding: 0;
-  text-align: center;
-}
-#quick-exit:hover {
-  transform: scale(1.2);
+  ul {
+    list-style-type: none;
+    margin: 0.4em 0 0.5em 0;
+    padding: 0;
+    text-align: center;
+  }
+  &:hover {
+    transform: scale(1.2);
+  }
 }
