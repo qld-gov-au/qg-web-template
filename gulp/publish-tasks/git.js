@@ -34,6 +34,22 @@ const gitFunctions = {
           .pipe(gulp.dest(path.resolve(folder)));
     };
   },
+  updateApiKeys: (folder, apiKeys) => {
+    return (cb) => {
+      let maps = {
+        regex: new RegExp('googleMapsApiKey'),
+        replace: "\"+ (window.location.hostname==='www.qld.gov.au'? 'AIzaSyAqkq7IK18bsh-TUMmNR-x9v9PsptT3LMY' : 'AIzaSyCKuaFIFo7YYZXHZ5zaiEZdJx0UBoyfuAE') +\""
+      };
+      let recaptcha = {
+        regex: new RegExp('"googleRecaptchaApiKey"'),
+        replace: "(window.location.hostname==='www.qld.gov.au'? '6LcoIywUAAAAAN-1rq22G-bP3yxl1bBq_5nHJ6s9' : '6LeNGSwUAAAAAD6o-P5UTM0FNpKjYB71Kh70F-Ud')"
+      };
+      return gulp.src(path.resolve(folder, 'static.qgov.net.au/assets/v3/latest/js/', 'qg-main.js'))
+          .pipe(replace(maps.regex, maps.replace))
+          .pipe(replace(recaptcha.regex, recaptcha.replace))
+          .pipe(gulp.dest(path.resolve(folder, 'static.qgov.net.au/assets/v3/latest/js/')));
+    };
+  },
   commit: (folder, version) => {
     return (cb) => {
       process.chdir(path.resolve(folder));
