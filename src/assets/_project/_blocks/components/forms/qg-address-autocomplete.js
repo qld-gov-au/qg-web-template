@@ -53,20 +53,20 @@ function setValue (name, id) {
   el.$searchWidget.find('button[type="reset"]').click(function (evt) {
     evt.preventDefault();
     el.$searchWidget.find($('#distance option:selected')).removeAttr('selected')
-    .end()
-    .find(el.$latitude).val('')
-    .end()
-    .find(el.$longitude).val('')
-    .end()
-    .find('#search-widget-form').get(0).reset();
+      .end()
+      .find(el.$latitude).val('')
+      .end()
+      .find(el.$longitude).val('')
+      .end()
+      .find('#search-widget-form').get(0).reset();
   });
 
   // on autoComplete blur removing hidden fields values
   el.$autoComplete.blur(function () {
     if ($(this).val().length === 0) {
       el.$searchWidget.find(el.$latitude).val('')
-      .end()
-      .find(el.$longitude).val('');
+        .end()
+        .find(el.$longitude).val('');
     }
   });
 
@@ -123,8 +123,9 @@ function setValue (name, id) {
         } else {
           let fillInAddress = () => {
             var place = autocomplete.getPlace();
-            el.$searchWidget.find(el.$latitude).val(place.geometry.location.lat());
-            el.$searchWidget.find(el.$longitude).val(place.geometry.location.lng());
+            el.$searchWidget.find(el.$latitude).val(place.geometry.location.lat())
+              .end()
+              .find(el.$longitude).val(place.geometry.location.lng());
           };
           autocomplete.addListener('place_changed', fillInAddress);
         }
@@ -142,8 +143,9 @@ function setValue (name, id) {
                 let latlng = {lat: parseFloat(latitude), lng: parseFloat(longitude)};
                 let geocoder = new google.maps.Geocoder();
                 let locationInput = $(this).siblings('.' + inputLocationId);
-                el.$searchWidget.find(el.$latitude).val(latitude);
-                el.$searchWidget.find(el.$longitude).val(longitude);
+                el.$searchWidget.find(el.$latitude).val(latitude)
+                  .end()
+                  .find(el.$longitude).val(longitude);
                 if (locationInput.length > 0) {
                   geocoder.geocode({'location': latlng}, (results, status) => {
                     if (status === 'OK') {
