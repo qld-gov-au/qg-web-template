@@ -2,10 +2,34 @@
 
 let qgInitAutocompleteAddress;
 
+function getParameterByName (name, url) {
+  if (!url) url = window.location.href;
+  name = name.replace(/[\[\]]/g, '\\$&');
+  let regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
+  let results = regex.exec(url);
+  if (!results) return null;
+  if (!results[2]) return '';
+  return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+function setValue (name, id) {
+  if (name) {
+    if ($('#' + id + '').is('select')) {
+      $('#' + id + '').add('option[value="' + getParameterByName(name) + '"]').attr('selected', 'selected');
+    } else {
+      $('#' + id + '').val(getParameterByName(name));
+    }
+  }
+}
+
 (function (qg, $) {
   'use strict';
-
   let inputLocationId = 'qg-location-autocomplete';
+  setValue('location', 'qg-location-autocomplete');
+  setValue('latitude', 'lat');
+  setValue('longitude', 'lng');
+  setValue('distance', 'distance');
+
   if ($('.' + inputLocationId).length > 0) {
     let getLocationEle = $('.qg-app-geocoding');
     qgInitAutocompleteAddress = () => {
@@ -61,38 +85,14 @@ let qgInitAutocompleteAddress;
             var place = autocomplete.getPlace();
             document.getElementById('lat').value = place.geometry.location.lat();
             document.getElementById('lng').value = place.geometry.location.lng();
-            //clear form
           };
           autocomplete.addListener('place_changed', fillInAddress);
-          $('#distance').change(function () {
-            localStorage.setItem('distance', this.value);
-          });
-          if (localStorage.getItem('distance')) {
-            $('#distance').val(localStorage.getItem('distance'));
-          }
-
-          $('input[type="text"]').each(function(){
-            var id = $(this).attr('id');
-            var value = localStorage.getItem(id);
-            $(this).val(value);
-          });
-
-          $('#search-widget').not('#search').keydown(function (event) {
+          $('#qg-search-widget').not('#search').keydown(function (event) {
             if (event.keyCode === 13) {
               event.preventDefault();
               return false;
             }
           });
-
-          $('#search-widget #search').click(function () {
-            $('#search-widget input[type="text"]').each(function () {
-              var id = $(this).attr('id');
-              var value = $(this).val();
-              localStorage.setItem(id, value);
-            });
-            $('#search-widget').submit();
-          });
-
         }
       });
 
@@ -108,6 +108,9 @@ let qgInitAutocompleteAddress;
                 let latlng = {lat: parseFloat(latitude), lng: parseFloat(longitude)};
                 let geocoder = new google.maps.Geocoder();
                 let locationInput = $(this).siblings('.' + inputLocationId);
+
+                document.getElementById('lat').value = latitude;
+                document.getElementById('lng').value = longitude;
 
                 if (locationInput.length > 0) {
                   geocoder.geocode({'location': latlng}, (results, status) => {
