@@ -35,6 +35,15 @@
     //   background-color: $qg-aside-bg-color3;
     // }
 
+    .container{
+      width:100%;
+      padding-left: 0;
+      padding-right: 0;
+      iframe {
+        width: 100%;
+      }
+    }
+
     h2 {
       margin-top: 0;
       overflow: hidden;
