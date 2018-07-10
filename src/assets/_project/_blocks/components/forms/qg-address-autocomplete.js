@@ -53,8 +53,8 @@ function setValue (name, id) {
   el.$searchWidget.find('button[type="reset"]').click(function (evt) {
     evt.preventDefault();
     el.$searchWidget.find($('#distance option:selected')).removeAttr('selected');
-    el.$searchWidget.find('#lat').val('');
-    el.$searchWidget.find('#lng').val('');
+    el.$searchWidget.find(el.$latitude).val('');
+    el.$searchWidget.find(el.$longitude).val('');
     el.$searchWidget.find('#search-widget-form').get(0).reset();
   });
 
