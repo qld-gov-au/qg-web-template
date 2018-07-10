@@ -1,7 +1,7 @@
 (function ($) {
   'use strict';
   var quickExit = {
-    el: '#quick-exit',
+    el: '#qg-quick-exit',
     init: function () {
       $(this.el).empty().append(this.template);
       this.methods();

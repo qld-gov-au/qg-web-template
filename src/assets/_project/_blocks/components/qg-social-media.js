@@ -3,7 +3,7 @@
   'use strict';
 
   var twitter = {
-    ele: $('.twitter-updates') || '',
+    ele: $('.qg-twitter-updates') || '',
     init: function () {
       if (twitter.ele.length > 0) {
         var account = twitter.ele.data('account') || '';
