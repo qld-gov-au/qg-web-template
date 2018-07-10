@@ -52,17 +52,21 @@ function setValue (name, id) {
   // removing hidden fields value on reset
   el.$searchWidget.find('button[type="reset"]').click(function (evt) {
     evt.preventDefault();
-    el.$searchWidget.find($('#distance option:selected')).removeAttr('selected');
-    el.$searchWidget.find(el.$latitude).val('');
-    el.$searchWidget.find(el.$longitude).val('');
-    el.$searchWidget.find('#search-widget-form').get(0).reset();
+    el.$searchWidget.find($('#distance option:selected')).removeAttr('selected')
+    .end()
+    .find(el.$latitude).val('')
+    .end()
+    .find(el.$longitude).val('')
+    .end()
+    .find('#search-widget-form').get(0).reset();
   });
 
   // on autoComplete blur removing hidden fields values
   el.$autoComplete.blur(function () {
     if ($(this).val().length === 0) {
-      el.$searchWidget.find(el.$latitude).val('');
-      el.$searchWidget.find(el.$longitude).val('');
+      el.$searchWidget.find(el.$latitude).val('')
+      .end()
+      .find(el.$longitude).val('');
     }
   });
 
