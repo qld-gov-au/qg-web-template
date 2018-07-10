@@ -18,7 +18,6 @@
     "indent": [1, 2],
     "one-var": 2,
     "no-tabs": 1,
-    "no-useless-escape": 0,
     "no-path-concat": 0,
     "valid-jsdoc": "warn",
     "spaced-comment": 0,
