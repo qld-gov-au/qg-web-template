@@ -8,6 +8,9 @@ let qgInitAutocompleteAddress;
  * @param {string} url - url where searching needs to be performed
  * @returns {*} - returns the parameter value
  */
+
+//TODO: since this function can be reused eleswhere, it can sit in the utils with name qg-uri-decode.js. - \src\assets\_project\_blocks\utils
+//And may be returned as an object so that devs can use it for example as qg.swe.uri.getParameterByName() 
 function getParameterByName (name, url) {
   if (!url) url = window.location.href;
   name = name.replace(/[\\[\]]/g, '\\$&');
@@ -23,6 +26,11 @@ function getParameterByName (name, url) {
  * @param {string } name - name of the parameter
  * @param {string} id  - id of the parameter in HTML
  */
+
+ //TODO: this is executing getParameterByName function twice. rather assign to a variable and then use the same
+ //TODO: Please add functionality to fill in all available input fields like radio, checkbox, text areas, selects
+ //TODO: Please use the paramaters in the url to find element with name = parameter. Ex. input[name="parameter"]. 
+ //TODO: Else this is currently similar to hardcoded functionality. You would have to add setValue('parameter', 'id') for every field publisher wants to post
 function setValue (name, id) {
   if (getParameterByName(name)) {
     if ($('#' + id + '').is('select')) {
@@ -38,7 +46,7 @@ function setValue (name, id) {
   let inputLocationId = 'qg-location-autocomplete';
   const el = {
     $searchWidget: $('.qg-search-widget'),
-    $autoComplete: $('#qg-location-autocomplete'),
+    $autoComplete: $('#qg-location-autocomplete'), //TODO: lets not use ids. selectors based on class names gives flexibility to use multiple components on same page
     $latitude: $('#lat'),
     $longitude: $('#lng'),
   };
@@ -50,6 +58,8 @@ function setValue (name, id) {
   setValue('distance', 'distance');
 
   // removing hidden fields value on reset
+  // TODO: This will reset only mentioned input fileds. If publishers are using custom fields like services, types etc they wont get reset.
+  // TODO: Rather iterate through the form to find all input, selects, radios, checkbox etc and reset them all
   el.$searchWidget.find('button[type="reset"]').click(function (evt) {
     evt.preventDefault();
     el.$searchWidget.find($('#distance option:selected')).removeAttr('selected')
