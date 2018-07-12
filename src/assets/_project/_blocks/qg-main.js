@@ -4,6 +4,7 @@
 
 // env initialization
 import qg from './utils/qg-env';
+import './utils/qg-misc';
 import './utils/qg-ajax-call';
 import './utils/qg-load-google-api';
 

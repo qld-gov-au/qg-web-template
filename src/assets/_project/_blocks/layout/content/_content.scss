@@ -11,6 +11,11 @@
     color: $qg-dark-grey;
     font-weight: normal;
   }
+  > blockquote{
+    background: #f9f9f9;
+    padding: 0 1em;
+    border: 1px solid #dcdcdc;
+  }
 }
 
 .qg-content-footer {

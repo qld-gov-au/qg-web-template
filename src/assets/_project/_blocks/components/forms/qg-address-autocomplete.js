@@ -1,42 +1,18 @@
 /*global qg, jQuery, google*/
 
 let qgInitAutocompleteAddress;
-
-/**
- * Gets parameter value
- * @param {string} name - parameter name
- * @param {string} url - url where searching needs to be performed
- * @returns {*} - returns the parameter value
- */
-
-//TODO: since this function can be reused eleswhere, it can sit in the utils with name qg-uri-decode.js. - \src\assets\_project\_blocks\utils
-//And may be returned as an object so that devs can use it for example as qg.swe.uri.getParameterByName() 
-function getParameterByName (name, url) {
-  if (!url) url = window.location.href;
-  name = name.replace(/[\\[\]]/g, '\\$&');
-  let regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
-  let results = regex.exec(url);
-  if (!results) return null;
-  if (!results[2]) return '';
-  return decodeURIComponent(results[2].replace(/\+/g, ' '));
-}
-
 /**
  * Checks value if exist on URL parameter then sets the value
  * @param {string } name - name of the parameter
  * @param {string} id  - id of the parameter in HTML
  */
 
- //TODO: this is executing getParameterByName function twice. rather assign to a variable and then use the same
- //TODO: Please add functionality to fill in all available input fields like radio, checkbox, text areas, selects
- //TODO: Please use the paramaters in the url to find element with name = parameter. Ex. input[name="parameter"]. 
- //TODO: Else this is currently similar to hardcoded functionality. You would have to add setValue('parameter', 'id') for every field publisher wants to post
 function setValue (name, id) {
-  if (getParameterByName(name)) {
+  if (qg.swe.getParameterByName(name)) {
     if ($('#' + id + '').is('select')) {
-      $('#' + id + '').add('option[value="' + getParameterByName(name) + '"]').attr('selected', 'selected');
+      $('#' + id + '').add('option[value="' + qg.swe.getParameterByName(name) + '"]').attr('selected', 'selected');
     } else {
-      $('#' + id + '').val(getParameterByName(name));
+      $('#' + id + '').val(qg.swe.getParameterByName(name));
     }
   }
 }
@@ -46,9 +22,10 @@ function setValue (name, id) {
   let inputLocationId = 'qg-location-autocomplete';
   const el = {
     $searchWidget: $('.qg-search-widget'),
-    $autoComplete: $('#qg-location-autocomplete'), //TODO: lets not use ids. selectors based on class names gives flexibility to use multiple components on same page
+    $autoComplete: $('.qg-location-autocomplete'),
     $latitude: $('#lat'),
     $longitude: $('#lng'),
+    $form: $('#search-widget-form'),
   };
 
   // getting and setting input fields value using query parameter
@@ -58,17 +35,13 @@ function setValue (name, id) {
   setValue('distance', 'distance');
 
   // removing hidden fields value on reset
-  // TODO: This will reset only mentioned input fileds. If publishers are using custom fields like services, types etc they wont get reset.
-  // TODO: Rather iterate through the form to find all input, selects, radios, checkbox etc and reset them all
   el.$searchWidget.find('button[type="reset"]').click(function (evt) {
     evt.preventDefault();
-    el.$searchWidget.find($('#distance option:selected')).removeAttr('selected')
-      .end()
-      .find(el.$latitude).val('')
-      .end()
-      .find(el.$longitude).val('')
-      .end()
-      .find('#search-widget-form').get(0).reset();
+    el.$form.find('input, select, textarea').each(function () {
+      $(this).val('');
+    }).end().find('input[type=checkbox], input[type=radio]').each(function () {
+      $(this).prop('checked', false);
+    });
   });
 
   // on autoComplete blur removing hidden fields values
