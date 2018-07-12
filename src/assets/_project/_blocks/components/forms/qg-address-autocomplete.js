@@ -17,12 +17,13 @@ let qgInitAutocompleteAddress;
   var setsValue = function () {
     el.$form.find(':input:not(:checkbox):not(:radio), select, textarea').each(function () {
       let name = $(this).attr('name');
-      let getParameter = qg.swe.getParameterByName(name);
-      getParameter !== false ? $('[name="' + name + '"]').val(getParameter) : '';
-    });/*.end().find('input[type=checkbox], input[type=radio]').each(function () {
+      let getParameterVal = qg.swe.getParameterByName($(this).attr('name'));
+      getParameterVal !== false ? $('[name="' + name + '"]').val(getParameterVal) : '';
+    }).end().find('input[type=checkbox], input[type=radio]').each(function () {
       let name = $(this).attr('name');
-      qg.swe.getParameterByName(name) !== false ? $(this).prop('checked', true) : '';
-    });*/
+      let getParameterVal = qg.swe.getParameterByName(name);
+      getParameterVal !== false ? $('[value="' + getParameterVal + '"]').prop('checked', true) : '';
+    });
   };
   setsValue();
 
