@@ -1,21 +1,6 @@
 /*global qg, jQuery, google*/
 
 let qgInitAutocompleteAddress;
-/**
- * Checks value if exist on URL parameter then sets the value
- * @param {string } name - name of the parameter
- * @param {string} id  - id of the parameter in HTML
- */
-
-function setValue (name, id) {
-  if (qg.swe.getParameterByName(name)) {
-    if ($('#' + id + '').is('select')) {
-      $('#' + id + '').add('option[value="' + qg.swe.getParameterByName(name) + '"]').attr('selected', 'selected');
-    } else {
-      $('#' + id + '').val(qg.swe.getParameterByName(name));
-    }
-  }
-}
 
 (function (qg, $) {
   'use strict';
@@ -23,21 +8,28 @@ function setValue (name, id) {
   const el = {
     $searchWidget: $('.qg-search-widget'),
     $autoComplete: $('.qg-location-autocomplete'),
-    $latitude: $('#lat'),
-    $longitude: $('#lng'),
+    $latitude: $('#latitude'),
+    $longitude: $('#longitude'),
     $form: $('#search-widget-form'),
   };
 
   // getting and setting input fields value using query parameter
-  setValue('location', 'qg-location-autocomplete');
-  setValue('latitude', 'lat');
-  setValue('longitude', 'lng');
-  setValue('distance', 'distance');
+  var setsValue = function () {
+    el.$form.find(':input:not(:checkbox):not(:radio), select, textarea').each(function () {
+      let name = $(this).attr('name');
+      let getParameter = qg.swe.getParameterByName(name);
+      getParameter !== false ? $('[name="' + name + '"]').val(getParameter) : '';
+    });/*.end().find('input[type=checkbox], input[type=radio]').each(function () {
+      let name = $(this).attr('name');
+      qg.swe.getParameterByName(name) !== false ? $(this).prop('checked', true) : '';
+    });*/
+  };
+  setsValue();
 
   // removing hidden fields value on reset
   el.$searchWidget.find('button[type="reset"]').click(function (evt) {
     evt.preventDefault();
-    el.$form.find('input, select, textarea').each(function () {
+    el.$form.find(':input:not(:checkbox):not(:radio), select, textarea').each(function () {
       $(this).val('');
     }).end().find('input[type=checkbox], input[type=radio]').each(function () {
       $(this).prop('checked', false);
