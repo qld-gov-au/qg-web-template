@@ -33,6 +33,7 @@
 
     <link href="assets/_project/latest/css/qg-documentation.css" rel="stylesheet" type="text/css" media="all">
     <link href="./assets/css/prism.css" media="all" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 
 </head>
 
@@ -652,49 +653,87 @@
 
                         <h2 class="category" id="alerts">Alerts</h2>
                         <p><span class="label label-primary" title="Heavily customised bootstrap implementation">Customised</span></p>
-
+                        <p>Alerts are used to help direct a user's attention to important snippets of information such as an excerpt of text, notification or error message.</p>
+                        <p>The thick lefthand border, typography, colours and padding have been used to achieve greater visual prominence and convey the message type. The use of an icon may increase this prominence and enhance understanding.</p>
+                        <p>Inline icons are optional and to be selected from the <a href="https://fontawesome.com/icons?d=gallery&m=free"target="_blank">Font Awesome</a> icon set.</p>
                         <p>See <a href="https://getbootstrap.com/components/#alerts">Bootstrap alerts documentation</a> for more information.</p>
 
+                        <h4> Success message </h4>
                         <div class="qg-tmplt-example panel panel-default">
                             <div class="panel-body">
-                                <div class="alert alert-success" role="alert">
-                                    <h2>Congratulations</h2>
-                                    <ol>
-                                        <li><a href="#QName">Name: Must be completed</a></li>
-                                    </ol>
-                                </div>
-                                <div class="alert alert-info" role="alert">
-                                    <h2>Please check your answers</h2>
-                                    <ol>
-                                        <li><a href="#">Name: Must be completed</a></li>
-                                        <li><a href="#">Email: Must be a valid email address</a></li>
-                                    </ol>
-                                </div>
-                                <div class="alert alert-warning" role="alert">
-                                    <h2>Please check your answers</h2>
-                                    <ol>
-                                        <li><a href="#">Name: Must be completed</a></li>
-                                        <li><a href="#">Email: Must be a valid email address</a></li>
-                                    </ol>
-                                </div>
-                                <div class="alert alert-danger" role="alert">
-                                    <h2>Please check your answers</h2>
-                                    <ol>
-                                        <li><a href="#">Name: Must be completed</a></li>
-                                        <li><a href="#">Email: Must be a valid email address</a></li>
-                                    </ol>
-                                </div>
+                              <div class="alert alert-success" role="alert">
+                                  <h2><i class="fas fa-check-circle"></i> Alert title</h2>
+                                  <p>Alert content</p>
+                              </div>
                             </div>
                         </div>
-                <pre><code class="language-markup">
+                        <p> HTML </p>
+                        <pre><code class="language-markup">
+&lt;div class="alert alert-success" role="alert">
+  &lt;h2>Alert title&lt;/h2>
+  &lt;p>Alert content&lt;/p>
+&lt;/div>
+                        </code></pre>
+
+                        <h4> Information message </h4>
+                        <div class="qg-tmplt-example panel panel-default">
+                            <div class="panel-body">
+                              <div class="alert alert-info" role="alert">
+                                  <h2>Alert title</h2>
+                                  <p>Alert content</p>
+                              </div>
+                            </div>
+                        </div>
+
+                        <p> HTML </p>
+                        <pre><code class="language-markup">
 &lt;div class="alert alert-info" role="alert">
-    &lt;h2>Please check your answers&lt;/h2>
-        &lt;ol>
-        &lt;li>&lt;a href="#">Name: Must be completed&lt;/a>&lt;/li>
-        &lt;li>&lt;a href="#">Email: Must be a valid email address&lt;/a>&lt;/li>
+  &lt;h2>Alert title&lt;/h2>
+  &lt;p>Alert content&lt;/p>
+&lt;/div>
+                        </code></pre>
+
+                        <h4> Warning message </h4>
+                        <div class="qg-tmplt-example panel panel-default">
+                            <div class="panel-body">
+                              <div class="alert alert-warning" role="alert">
+                                  <h2>Alert title</h2>
+                                  <p>Alert content:</p> <br>
+                                  <ol>
+                                      <li><a href="#">Name: Must be completed</a></li>
+                                      <li><a href="#">Email: Must be a valid email address</a></li>
+                                  </ol>
+                              </div>
+                            </div>
+                        </div>
+                        <p> HTML </p>
+                        <pre><code class="language-markup">
+&lt;div class="alert alert-warning" role="alert">
+  &lt;h2>Alert title&lt;/h2>
+  &lt;p>Alert content:&lt;/p>
+    &lt;ol>
+      &lt;li>&lt;a href="#">Name: Must be completed&lt;/a>&lt;/li>
+      &lt;li>&lt;a href="#">Email: Must be a valid email address&lt;/a>&lt;/li>
     &lt;/ol>
 &lt;/div>
-                </code></pre>
+                        </code></pre>
+
+                        <h4> Danger message </h4>
+                        <div class="qg-tmplt-example panel panel-default">
+                            <div class="panel-body">
+                              <div class="alert alert-danger" role="alert">
+                                  <h2>Alert title</h2>
+                                  <p>Alert content</p>
+                              </div>
+                            </div>
+                        </div>
+
+                        <pre><code class="language-markup">
+&lt;div class="alert alert-danger" role="alert">
+  &lt;h2>Alert title&lt;/h2>
+  &lt;p>Alert content&lt;/p>
+&lt;/div>
+                        </code></pre>
 
                         <!-- ################################## -->
                 <!-- ################################## -->
@@ -715,9 +754,7 @@
                                 <dd>11 January 2018</dd>
                             </dl>
 
-
                         </div>
-
 
               <h2 id="quick-exit-module" class="category">Quick Exit</h2>
               <p>Quick exit from a page. With the help of this function users can exit out of a page immediately without any browser history.</p>
