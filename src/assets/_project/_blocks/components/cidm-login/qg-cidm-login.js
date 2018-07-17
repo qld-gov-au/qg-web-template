@@ -29,8 +29,8 @@
     };
     getConfig = function () {
       // console.log('Loaded require');
-      swe.ajaxCall('/assets/apps/cidm/qg-cidm-config.json', 'json', loadCidm, 'failed to load cidm config. Expecting config file at "/assets/apps/widget/qg-cidm-config.json"');
+      swe.ajaxCall('/assets/apps/cidm/qg-cidm-config.json', 'json', loadCidm, 'failed to load cidm config. Expecting config file at "/assets/apps/cidm/qg-cidm-config.json"');
     };
-    swe.ajaxCall(window.qg.cdn + window.qg.swe.assets + 'lib/ext/require.min.js', 'script', getConfig, 'Require JS unavailable');
+    swe.ajaxCall(window.qg.cdn + window.qg.swe.assets + 'lib/ext/require.min.js', 'script', getConfig, 'Require JS unavailable. Expecting Require JS at ' + window.qg.cdn + window.qg.swe.assets + 'lib/ext/require.min.js');
   }
 }(qg.swe));
