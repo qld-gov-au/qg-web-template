@@ -27,6 +27,12 @@ let qgInitAutocompleteAddress;
   };
   setsValue();
 
+  $('#search-widget-form.qg-location-autocomplete').keydown(function (event) {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+    }
+  });
+
   // removing hidden fields value on reset
   el.$searchWidget.find('button[type="reset"]').click(function (evt) {
     evt.preventDefault();
