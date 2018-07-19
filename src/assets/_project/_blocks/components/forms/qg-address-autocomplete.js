@@ -6,11 +6,11 @@ let qgInitAutocompleteAddress;
   'use strict';
   let inputLocationId = 'qg-location-autocomplete';
   const el = {
-    $searchWidget: $('.qg-search-widget'),
+    $searchWidget: $('#qg-search-widget'),
     $autoComplete: $('.qg-location-autocomplete'),
     $latitude: $('#latitude'),
     $longitude: $('#longitude'),
-    $form: $('#search-widget-form'),
+    $form: $('#qg-search-widget-form'),
   };
 
   // getting and setting input fields value using query parameter
@@ -27,7 +27,7 @@ let qgInitAutocompleteAddress;
   };
   setsValue();
 
-  $('#search-widget-form.qg-location-autocomplete').keydown(function (event) {
+  el.$form.find('.qg-location-autocomplete').keydown(function (event) {
     if (event.keyCode === 13) {
       event.preventDefault();
     }

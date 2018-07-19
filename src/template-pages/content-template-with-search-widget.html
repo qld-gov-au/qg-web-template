@@ -68,40 +68,475 @@
 
         <h2>To use this template</h2>
 
-        <div class="qg-search-widget">
-          <h2>Refine search</h2>
-          <form id="search-widget-form">
-            <label for="location">Suburb or postcode</label>
-            <div class="qg-fl">
-              <input type="text" name="location" id="location" class="qg-location-autocomplete form-control" value="" placeholder="Enter location or postcode" />
-              <a href="#" id="qg-app-geocoding" aria-label="Search by your location" title="Search by your location" class="qg-app-geocoding" style="bottom: 0.7em;"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 480 480" enable-background="new 0 0 480 480"><path d="M240 159.909c-44.235 0-80.091 35.859-80.091 80.091s35.855 80.091 80.091 80.091c44.231 0 80.091-35.859 80.091-80.091s-35.86-80.091-80.091-80.091zm160 66.758h-25.694c-6.267-63.891-57.086-114.701-120.973-120.967v-25.7c0-7.363-5.97-13.333-13.333-13.333s-13.333 5.97-13.333 13.333v25.701c-63.889 6.266-114.705 57.075-120.971 120.966h-25.696c-7.363 0-13.333 5.97-13.333 13.333s5.97 13.333 13.333 13.333h25.696c6.266 63.891 57.082 114.7 120.971 120.966v25.701c0 7.363 5.97 13.333 13.333 13.333s13.333-5.97 13.333-13.333v-25.701c63.888-6.266 114.707-57.075 120.974-120.966h25.693c7.363 0 13.333-5.97 13.333-13.333s-5.97-13.333-13.333-13.333zm-160 121.002c-59.463 0-107.666-48.209-107.666-107.669s48.203-107.669 107.666-107.669c59.466 0 107.669 48.209 107.669 107.669s-48.203 107.669-107.669 107.669z" fill-rule="evenodd" clip-rule="evenodd"></path></svg></a>
-              <input type="hidden" id="latitude" name="latitude" />
-              <input type="hidden" id="longitude" name="longitude" />
-            </div>
-            <div class="form-group">
-              <label for="distance">Radius</label>
-              <select id="distance" name="distance" class="">
-                <option value="">
-                  Any
-                </option>
-                <option value="5">
-                  5km
-                </option>
-                <option value="50">
-                  50km
-                </option>
-              </select>
-            </div>
-            <button type="submit" class="btn btn-primary" id="search">Search</button>
-            <button type="reset" class="btn  btn-secondary">Reset</button>
-          </form>
-
-
-
-
+        <div id="qg-search-widget">
+          <div class="qg-accordion">
+            <article>
+              <input id="with-icon" checked
+                     type="checkbox" name="tabs">
+              <h2 class="acc-heading"><label for="with-icon">Refine search <span class="arrow"> <i></i></span></label></h2>
+              <div class="collapsing-section">
+                <form id="qg-search-widget-form">
+                  <label for="location">Suburb or postcode</label>
+                  <div class="qg-fl">
+                    <input type="text" name="location" id="location" class="qg-location-autocomplete form-control" value="" placeholder="Enter location or postcode" />
+                    <a href="#" id="qg-app-geocoding" aria-label="Search by your location" title="Search by your location" class="qg-app-geocoding" style="bottom: 0.7em;"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 480 480" enable-background="new 0 0 480 480"><path d="M240 159.909c-44.235 0-80.091 35.859-80.091 80.091s35.855 80.091 80.091 80.091c44.231 0 80.091-35.859 80.091-80.091s-35.86-80.091-80.091-80.091zm160 66.758h-25.694c-6.267-63.891-57.086-114.701-120.973-120.967v-25.7c0-7.363-5.97-13.333-13.333-13.333s-13.333 5.97-13.333 13.333v25.701c-63.889 6.266-114.705 57.075-120.971 120.966h-25.696c-7.363 0-13.333 5.97-13.333 13.333s5.97 13.333 13.333 13.333h25.696c6.266 63.891 57.082 114.7 120.971 120.966v25.701c0 7.363 5.97 13.333 13.333 13.333s13.333-5.97 13.333-13.333v-25.701c63.888-6.266 114.707-57.075 120.974-120.966h25.693c7.363 0 13.333-5.97 13.333-13.333s-5.97-13.333-13.333-13.333zm-160 121.002c-59.463 0-107.666-48.209-107.666-107.669s48.203-107.669 107.666-107.669c59.466 0 107.669 48.209 107.669 107.669s-48.203 107.669-107.669 107.669z" fill-rule="evenodd" clip-rule="evenodd"></path></svg></a>
+                    <input type="hidden" id="latitude" name="latitude" />
+                    <input type="hidden" id="longitude" name="longitude" />
+                  </div>
+                  <div class="form-group">
+                    <label for="distance">Radius</label>
+                    <select id="distance" name="distance" class="">
+                      <option value="">
+                        Any
+                      </option>
+                      <option value="5">
+                        5km
+                      </option>
+                      <option value="50">
+                        50km
+                      </option>
+                    </select>
+                  </div>
+                  <button type="submit" class="btn btn-primary" id="search">Search</button>
+                  <button type="reset" class="btn  btn-secondary">Reset</button>
+                </form>
+              </div>
+            </article>
+          </div>
         </div>
 
+        <div class="qg-search-results">
+          <h2 class="resultset-title">Displaying search results <strong>1-10</strong> of <strong>21</strong></h2>
+        </div>
 
+        <div id="qg-search-results" data-resultsPerPage="10">
+          <ol>
+            <li><h3><a
+              href="https://oss-uat.clients.squiz.net/housing/public-community-housing/housing-service-centre/view?id=1&title=Cairns Queensland Government Service Centre">Cairns
+              Queensland Government Service Centre</a></h3>
+              <dl>
+                <dt>Address:</dt>
+                <dd>William McCormack Place <br>Ground Floor 5B Sheridan Street <br>Cairns Qld 4870</dd>
+                <dt>Email:</dt>
+                <dd><a href="mailto:cairnshsc@hpw.qld.gov.au">cairnshsc@hpw.qld.gov.au</a></dd>
+                <dt>Phone:</dt>
+                <dd>
+                  <ul>
+                    <li>07 4036 5460</li>
+                    <li>1800 623 208 (toll free within area)</li>
+                    <li>1300 650 910 (maintenance enquiries)</li>
+                  </ul>
+                </dd>
+                <dt>Fax:</dt>
+                <dd>(07) 4036 5578</dd>
+              </dl>
+            </li>
+            <li><h3><a
+              href="https://oss-uat.clients.squiz.net/housing/public-community-housing/housing-service-centre/view?id=2&title=Maroochydore Queensland Government Service Centre">Maroochydore
+              Queensland Government Service Centre</a></h3>
+              <dl>
+                <dt>Address:</dt>
+                <dd>Mike Ahern Centre <br>Ground floor, 12 First Avenue <br>Maroochydore Qld 4558</dd>
+                <dt>Email:</dt>
+                <dd><a href="mailto:maroochydorehsc@hpw.qld.gov.au">maroochydorehsc@hpw.qld.gov.au</a>
+                </dd>
+                <dt>Phone:</dt>
+                <dd>
+                  <ul>
+                    <li>(07) 5352 7333</li>
+                    <li>1300 650 916 (Coolum Beach and south maintenance enquiries</li>
+                    <li>1300 137 687 (Peregian Beach and north maintenance enquiries)</li>
+                  </ul>
+                </dd>
+                <dt>Fax:</dt>
+                <dd>(07) 5352 7343</dd>
+              </dl>
+            </li>
+            <li><h3><a
+              href="https://oss-uat.clients.squiz.net/housing/public-community-housing/housing-service-centre/view?id=3&title=Thursday Island Housing Service Centre">Thursday
+              Island Housing Service Centre</a></h3>
+              <dl>
+                <dt>Address:</dt>
+                <dd><br>37-45 Douglas Street <br>Thursday Island Qld 4875</dd>
+                <dt>Email:</dt>
+                <dd>
+                  <a href="mailto:thursdayislandhsc@hpw.qld.gov.au">thursdayislandhsc@hpw.qld.gov.au</a>
+                </dd>
+                <dt>Phone:</dt>
+                <dd>
+                  <ul>
+                    <li>(07) 4212 3700</li>
+                    <li>1300 650 910 (maintenance enquiries)</li>
+                  </ul>
+                </dd>
+                <dt>Fax:</dt>
+                <dd>(07) 4090 3782</dd>
+              </dl>
+            </li>
+            <li><h3><a
+              href="https://oss-uat.clients.squiz.net/housing/public-community-housing/housing-service-centre/view?id=4&title=Townsville Housing Service Centre">Townsville
+              Housing Service Centre</a></h3>
+              <dl>
+                <dt>Address:</dt>
+                <dd><br>2/143 Walker Street <br>Townsville Qld 4810</dd>
+                <dt>Email:</dt>
+                <dd><a href="mailto:townsvillehsc@hpw.qld.gov.au">townsvillehsc@hpw.qld.gov.au</a></dd>
+                <dt>Phone:</dt>
+                <dd>
+                  <ul>
+                    <li>(07) 4724 8500</li>
+                    <li>1800 806 197 (toll free within area)</li>
+                    <li>1300 650 913 (maintenance enquiries)</li>
+                  </ul>
+                </dd>
+                <dt>Fax:</dt>
+                <dd>(07) 4760 7376</dd>
+              </dl>
+            </li>
+            <li><h3><a
+              href="https://oss-uat.clients.squiz.net/housing/public-community-housing/housing-service-centre/view?id=5&title=Mount Isa Housing Service Centre">Mount
+              Isa Housing Service Centre</a></h3>
+              <dl>
+                <dt>Address:</dt>
+                <dd><br>19 West Street <br>Mount Isa Qld 4825</dd>
+                <dt>Email:</dt>
+                <dd><a href="mailto:mtisahsc@hpw.qld.gov.au">mtisahsc@hpw.qld.gov.au</a></dd>
+                <dt>Phone:</dt>
+                <dd>
+                  <ul>
+                    <li>(07) 4437 2700</li>
+                    <li>1800 620 466 (toll free within area)</li>
+                    <li>1300 650 912 (maintenance enquiries)</li>
+                  </ul>
+                </dd>
+                <dt>Fax:</dt>
+                <dd>(07) 4747 2138</dd>
+              </dl>
+            </li>
+            <li><h3><a
+              href="https://oss-uat.clients.squiz.net/housing/public-community-housing/housing-service-centre/view?id=6&title=Mackay Housing Service Centre">Mackay
+              Housing Service Centre</a></h3>
+              <dl>
+                <dt>Address:</dt>
+                <dd><br>22-30 Wood Street <br>Mackay Qld 4740</dd>
+                <dt>Email:</dt>
+                <dd><a href="mailto:mackayhsc@hpw.qld.gov.au">mackayhsc@hpw.qld.gov.au</a></dd>
+                <dt>Phone:</dt>
+                <dd>
+                  <ul>
+                    <li>(07) 4862 9500</li>
+                    <li>1800 069 237 (toll free within area)</li>
+                    <li>1300 650 914 (maintenance enquiries)</li>
+                  </ul>
+                </dd>
+                <dt>Fax:</dt>
+                <dd>(07) 4967 0906</dd>
+              </dl>
+            </li>
+            <li><h3><a
+              href="https://oss-uat.clients.squiz.net/housing/public-community-housing/housing-service-centre/view?id=7&title=Rockhampton Housing Service Centre">Rockhampton
+              Housing Service Centre</a></h3>
+              <dl>
+                <dt>Address:</dt>
+                <dd>Level 3, State Government Building <br>209 Bolsover Street <br>Rockhampton Qld 4700
+                </dd>
+                <dt>Email:</dt>
+                <dd><a href="mailto:rockhamptonhsc@hpw.qld.gov.au">rockhamptonhsc@hpw.qld.gov.au</a>
+                </dd>
+                <dt>Phone:</dt>
+                <dd>
+                  <ul>
+                    <li>(07) 4848 7000</li>
+                    <li>1800 801 176 (toll free within area)</li>
+                    <li>1800 817 029 (maintenance enquiries)</li>
+                  </ul>
+                </dd>
+                <dt>Fax:</dt>
+                <dd>(07) 4938 4088</dd>
+              </dl>
+            </li>
+            <li><h3><a
+              href="https://oss-uat.clients.squiz.net/housing/public-community-housing/housing-service-centre/view?id=8&title=Emerald Housing Service Centre">Emerald
+              Housing Service Centre</a></h3>
+              <dl>
+                <dt>Address:</dt>
+                <dd><br>99 Hospital Road <br>Emerald Qld 4720</dd>
+                <dt>Email:</dt>
+                <dd><a href="mailto:emeraldhsc@hpw.qld.gov.au">emeraldhsc@hpw.qld.gov.au</a></dd>
+                <dt>Phone:</dt>
+                <dd>
+                  <ul>
+                    <li>(07) 4988 1600</li>
+                    <li>1800 659 160 (toll fee within area)</li>
+                    <li>1300 650 914 (maintenance enquiries)</li>
+                  </ul>
+                </dd>
+                <dt>Fax:</dt>
+                <dd>(07) 4987 6742</dd>
+              </dl>
+            </li>
+            <li><h3><a
+              href="https://oss-uat.clients.squiz.net/housing/public-community-housing/housing-service-centre/view?id=9&title=Gladstone Housing Service Centre">Gladstone
+              Housing Service Centre</a></h3>
+              <dl>
+                <dt>Address:</dt>
+                <dd><br>Level 2, 20-22 Herbert Street <br>Gladstone Qld 4680</dd>
+                <dt>Email:</dt>
+                <dd><a href="mailto:gladstonehsc@hpw.qld.gov.au">gladstonehsc@hpw.qld.gov.au</a></dd>
+                <dt>Phone:</dt>
+                <dd>
+                  <ul>
+                    <li>(07) 4899 2400</li>
+                    <li>1800 266 807 (toll fee within area)</li>
+                    <li>1800 817 029 (maintenance enquiries)</li>
+                  </ul>
+                </dd>
+                <dt>Fax:</dt>
+                <dd>(07) 4979 6574</dd>
+              </dl>
+            </li>
+            <li><h3><a
+              href="https://oss-uat.clients.squiz.net/housing/public-community-housing/housing-service-centre/view?id=10&title=Bundaberg Housing Service Centre">Bundaberg
+              Housing Service Centre</a></h3>
+              <dl>
+                <dt>Address:</dt>
+                <dd><br>16 Quay Street <br>Bundaberg Qld 4670</dd>
+                <dt>Email:</dt>
+                <dd><a href="mailto:bundaberghsc@hpw.qld.gov.au">bundaberghsc@hpw.qld.gov.au</a></dd>
+                <dt>Phone:</dt>
+                <dd>
+                  <ul>
+                    <li>(07) 4331 7900</li>
+                    <li>1800 809 835 (toll fee within area)</li>
+                    <li>1300 137 687 (maintenance enquiries)</li>
+                  </ul>
+                </dd>
+                <dt>Fax:</dt>
+                <dd>(07) 4131 5989</dd>
+              </dl>
+            </li>
+            <li><h3><a
+              href="https://oss-uat.clients.squiz.net/housing/public-community-housing/housing-service-centre/view?id=11&title=Maryborough Housing Service Centre">Maryborough
+              Housing Service Centre</a></h3>
+              <dl>
+                <dt>Address:</dt>
+                <dd><br>116 Lennox Street <br>Maryborough Qld 4650</dd>
+                <dt>Email:</dt>
+                <dd><a href="mailto:maryboroughhsc@hpw.qld.gov.au">maryboroughhsc@hpw.qld.gov.au</a>
+                </dd>
+                <dt>Phone:</dt>
+                <dd>
+                  <ul>
+                    <li>(07) 4324 8600</li>
+                    <li>1800 623 242 (toll fee within area)</li>
+                    <li>1300 137 687 (maintenance enquiries)</li>
+                  </ul>
+                </dd>
+                <dt>Fax:</dt>
+                <dd>(07) 4121 1775</dd>
+              </dl>
+            </li>
+            <li><h3><a
+              href="https://oss-uat.clients.squiz.net/housing/public-community-housing/housing-service-centre/view?id=12&title=Toowoomba and South West Housing Service Centre">Toowoomba
+              and South West Housing Service Centre</a></h3>
+              <dl>
+                <dt>Address:</dt>
+                <dd>Level 2 Condamine Centre <br>10 Russell Street <br>Toowoomba Qld 4350</dd>
+                <dt>Email:</dt>
+                <dd><a href="mailto:toowoombahsc@hpw.qld.gov.au">toowoombahsc@hpw.qld.gov.au</a></dd>
+                <dt>Phone:</dt>
+                <dd>
+                  <ul>
+                    <li>(07) 4699 4400</li>
+                    <li>1800 623 435 (toll free within area)</li>
+                    <li>1300 650 915 (maintenance enquiries)</li>
+                  </ul>
+                </dd>
+                <dt>Fax:</dt>
+                <dd>(07) 4615 3679</dd>
+              </dl>
+            </li>
+            <li><h3><a
+              href="https://oss-uat.clients.squiz.net/housing/public-community-housing/housing-service-centre/view?id=13&title=Ipswich Housing Service Centre">Ipswich
+              Housing Service Centre</a></h3>
+              <dl>
+                <dt>Address:</dt>
+                <dd>Upper Ground Floor, ICON Tower <br>117 Brisbane Street <br>Ipswich Qld 4305</dd>
+                <dt>Email:</dt>
+                <dd><a href="mailto:ipswichhsc@hpw.qld.gov.au">ipswichhsc@hpw.qld.gov.au</a></dd>
+                <dt>Phone:</dt>
+                <dd>
+                  <ul>
+                    <li>(07) 3437 6000</li>
+                    <li>1800 636 390 (toll free within area)</li>
+                    <li>(07) 3280 1778 (maintenance enquiries)</li>
+                  </ul>
+                </dd>
+                <dt>Fax:</dt>
+                <dd>(07) 3202 4942</dd>
+              </dl>
+            </li>
+            <li><h3><a
+              href="https://oss-uat.clients.squiz.net/housing/public-community-housing/housing-service-centre/view?id=14&title=Fortitude Valley Housing Service Centre">Fortitude
+              Valley Housing Service Centre</a></h3>
+              <dl>
+                <dt>Address:</dt>
+                <dd>Level 7, Green Square North Tower <br>515 St Pauls Terrace <br>Fortitude Valley Qld
+                  4006
+                </dd>
+                <dt>Email:</dt>
+                <dd>
+                  <a href="mailto:fortitudevalleyhsc@hpw.qld.gov.au">fortitudevalleyhsc@hpw.qld.gov.au</a>
+                </dd>
+                <dt>Phone:</dt>
+                <dd>
+                  <ul>
+                    <li>(07) 3034 6500</li>
+                    <li>(07) 3872 0303 (maintenance enquiries)</li>
+                  </ul>
+                </dd>
+                <dt>Fax:</dt>
+                <dd>(07) 3034 6598</dd>
+              </dl>
+            </li>
+            <li><h3><a
+              href="https://oss-uat.clients.squiz.net/housing/public-community-housing/housing-service-centre/view?id=15&title=Chermside Housing Service Centre">Chermside
+              Housing Service Centre</a></h3>
+              <dl>
+                <dt>Address:</dt>
+                <dd><br>Level 3, 18 Banfield Street <br>Chermside Qld 4032</dd>
+                <dt>Email:</dt>
+                <dd><a href="mailto:chermsidehsc@hpw.qld.gov.au">chermsidehsc@hpw.qld.gov.au</a></dd>
+                <dt>Phone:</dt>
+                <dd>
+                  <ul>
+                    <li>(07) 3917 4600</li>
+                    <li>(07) 3896 9973 (maintenance enquiries)</li>
+                  </ul>
+                </dd>
+                <dt>Fax:</dt>
+                <dd>(07) 3896 9904</dd>
+              </dl>
+            </li>
+            <li><h3><a
+              href="https://oss-uat.clients.squiz.net/housing/public-community-housing/housing-service-centre/view?id=16&title=Buranda Housing Service Centre">Buranda
+              Housing Service Centre</a></h3>
+              <dl>
+                <dt>Address:</dt>
+                <dd><br>Level 1, 221 Logan Road <br>Buranda Qld 4102</dd>
+                <dt>Email:</dt>
+                <dd><a href="mailto:burandahsc@hpw.qld.gov.au">burandahsc@hpw.qld.gov.au</a></dd>
+                <dt>Phone:</dt>
+                <dd>
+                  <ul>
+                    <li>(07) 3873 7700</li>
+                    <li>(07) 3873 7700 (maintenance enquiries select option 1)</li>
+                  </ul>
+                </dd>
+                <dt>Fax:</dt>
+                <dd>(07) 3405 5324</dd>
+              </dl>
+            </li>
+            <li><h3><a
+              href="https://oss-uat.clients.squiz.net/housing/public-community-housing/housing-service-centre/view?id=17&title=Inala Housing Service Centre">Inala
+              Housing Service Centre</a></h3>
+              <dl>
+                <dt>Address:</dt>
+                <dd><br>Level 1, 14 Wirraway Parade <br>Inala Qld 4077</dd>
+                <dt>Email:</dt>
+                <dd><a href="mailto:inalahsc@hpw.qld.gov.au">inalahsc@hpw.qld.gov.au</a></dd>
+                <dt>Phone:</dt>
+                <dd>
+                  <ul>
+                    <li>(07) 3723 2000</li>
+                    <li>(07) 3362 9230 (maintenance enquiries)</li>
+                  </ul>
+                </dd>
+                <dt>Fax:</dt>
+                <dd>(07) 3362 9220</dd>
+              </dl>
+            </li>
+            <li><h3><a
+              href="https://oss-uat.clients.squiz.net/housing/public-community-housing/housing-service-centre/view?id=18&title=Bayside Housing Service Centre">Bayside
+              Housing Service Centre</a></h3>
+              <dl>
+                <dt>Address:</dt>
+                <dd><br>Shop 3, 8-12 Dollery Road <br>Capalaba Qld 4157</dd>
+                <dt>Email:</dt>
+                <dd><a href="mailto:baysidehsc@hpw.qld.gov.au">baysidehsc@hpw.qld.gov.au</a></dd>
+                <dt>Phone:</dt>
+                <dd>
+                  <ul>
+                    <li>(07) 3034 9800</li>
+                    <li>(07) 3034 9891 (maintenance enquiries)</li>
+                  </ul>
+                </dd>
+                <dt>Fax:</dt>
+                <dd>(07) 3362 9104</dd>
+              </dl>
+            </li>
+            <li><h3><a
+              href="https://oss-uat.clients.squiz.net/housing/public-community-housing/housing-service-centre/view?id=19&title=Gold Coast Housing Service Centre">Gold
+              Coast Housing Service Centre</a></h3>
+              <dl>
+                <dt>Address:</dt>
+                <dd>Shop 80 Bazaar Street <br>Robina Town Centre <br>Robina Qld 4230</dd>
+                <dt>Email:</dt>
+                <dd><a href="mailto:goldcoasthsc@hpw.qld.gov.au">goldcoasthsc@hpw.qld.gov.au</a></dd>
+                <dt>Phone:</dt>
+                <dd>
+                  <ul>
+                    <li>(07) 5645 8100</li>
+                    <li>1300 650 917 (maintenance enquiries)</li>
+                  </ul>
+                </dd>
+                <dt>Fax:</dt>
+                <dd>(07) 5583 2242</dd>
+              </dl>
+            </li>
+            <li><h3><a
+              href="https://oss-uat.clients.squiz.net/housing/public-community-housing/housing-service-centre/view?id=20&title=Logan Housing Service Centre">Logan
+              Housing Service Centre</a></h3>
+              <dl>
+                <dt>Address:</dt>
+                <dd><br>11-13 Station Road <br>Woodridge Qld 4114</dd>
+                <dt>Email:</dt>
+                <dd><a href="mailto:loganhsc@hpw.qld.gov.au">loganhsc@hpw.qld.gov.au</a></dd>
+                <dt>Phone:</dt>
+                <dd>
+                  <ul>
+                    <li>(07) 3086 3700;</li>
+                    <li>(07) 3086 3740 (maintenance enquiries)</li>
+                  </ul>
+                </dd>
+                <dt>Fax:</dt>
+                <dd>(07) 3884 9830</dd>
+              </dl>
+            </li>
+            <li><h3><a
+              href="https://oss-uat.clients.squiz.net/housing/public-community-housing/housing-service-centre/view?id=21&title=Moreton Bay Housing Service Centre">Moreton
+              Bay Housing Service Centre</a></h3>
+              <dl>
+                <dt>Address:</dt>
+                <dd>Level 5, Caboolture Square Shopping Centre <br>60-78 King Street <br>Caboolture Qld
+                  4510
+                </dd>
+                <dt>Email:</dt>
+                <dd><a href="mailto:moretonbayhsc@hpw.qld.gov.au">moretonbayhsc@hpw.qld.gov.au</a></dd>
+                <dt>Phone:</dt>
+                <dd>
+                  <ul>
+                    <li>(07) 5432 0700</li>
+                    <li>(07) 5432 0700 (maintenance enquiries select option 1)</li>
+                  </ul>
+                </dd>
+                <dt>Fax:</dt>
+                <dd>(07) 5431 2505</dd>
+              </dl>
+            </li>
+          </ol>
+          <div class="pagination-container"></div>
+        </div>
 
         <ol>
           <li>Make a copy of this file, and move it to your site directory</li>
