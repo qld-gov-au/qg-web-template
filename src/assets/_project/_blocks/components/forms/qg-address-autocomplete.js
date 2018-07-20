@@ -105,6 +105,7 @@ let qgInitAutocompleteAddress;
         } else {
           let fillInAddress = () => {
             var place = autocomplete.getPlace();
+            $('.qg-result-title h2').append(`near '<strong><em>${place.formatted_address}'</em></strong>`);
             el.$searchWidget.find(el.$latitude).val(place.geometry.location.lat())
               .end()
               .find(el.$longitude).val(place.geometry.location.lng());
