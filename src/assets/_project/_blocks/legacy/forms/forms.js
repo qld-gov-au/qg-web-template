@@ -6,7 +6,7 @@
 
 
   var SUBMIT_TOLERANCE = 10000,
-    DEFAULT_STATUS_HTML = '<div class="alert alert-warning" role="alert"><div class="inner"><h2>Please check your answers</h2><ol></ol></div></div>',
+    DEFAULT_STATUS_HTML = '<div class="alert alert-warning" role="alert"><div class="inner"><h2><i class="fa fa-exclamation-triangle"></i>Please check your answers</h2><ol></ol></div></div>',
     // fields that validate
     candidateForValidation = 'input, select, textarea',
 
