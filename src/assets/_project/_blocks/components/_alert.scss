@@ -34,7 +34,7 @@
 
 .status{
   margin: 0 0 24px 0 !important;
-  &.success , &.info{
+  &.success , &.info, &.tip{
     position: relative;
     border: 0;
     border-left: 5px solid;
@@ -52,7 +52,7 @@
   &.success {
     border-color: #9ebf6d;
   }
-  &.info {
+  &.info, &.tip{
     border-color: $brand-info;
   }
 }
