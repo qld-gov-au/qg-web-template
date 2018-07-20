@@ -24,29 +24,30 @@
   }
   &.alert-warning {
     border-color: $brand-warning;
+  }
+  &.alert-success, &.alert-info, &.alert-warning{
     h2 {
       i {
         margin-right: 10px;
       }
     }
   }
+
 }
 
 .status{
   margin: 0 0 24px 0 !important;
+  & > *:first-child {
+      margin-left: 30px;
+  }
   &.success , &.info, &.tip{
     position: relative;
     border: 0;
     border-left: 5px solid;
     padding: 1em;
     &:before, &:hover:before {
-      content: "";
-      font-size: 0;
-    }
-    h2 {
-      i {
-        margin-right: 10px;
-      }
+      margin-left: -14px;
+      top: 6px;
     }
   }
   &.success {
