@@ -5,6 +5,8 @@ let qgInitAutocompleteAddress;
 (function (qg, $) {
   'use strict';
   let inputLocationId = 'qg-location-autocomplete';
+  let locationSelectionInProgress = true;
+
   const el = {
     $searchWidget: $('#qg-search-widget'),
     $autoComplete: $('.qg-location-autocomplete'),
@@ -27,9 +29,10 @@ let qgInitAutocompleteAddress;
   };
   setsValue();
 
-  el.$form.find('.qg-location-autocomplete').keydown(function (event) {
-    if (event.keyCode === 13) {
-      event.preventDefault();
+  el.$form.find('.qg-location-autocomplete').keydown(function (e) {
+    if (event.keyCode === 13 && locationSelectionInProgress) {
+      e.preventDefault();
+      e.stopPropagation();
     }
   });
 
@@ -104,6 +107,7 @@ let qgInitAutocompleteAddress;
           // $(this).on('change', google.maps.event.trigger(autocomplete, 'place_changed'))
         } else {
           let fillInAddress = () => {
+            locationSelectionInProgress = false;
             var place = autocomplete.getPlace();
             $('.qg-result-title h2').append(`near '<strong><em>${place.formatted_address}'</em></strong>`);
             el.$searchWidget.find(el.$latitude).val(place.geometry.location.lat())
