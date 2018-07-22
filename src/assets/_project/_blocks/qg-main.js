@@ -51,7 +51,5 @@ import './utils/qg-init';
   feedbackForm.init(franchiseTitle);
   shareLinks.init();
   accessibility.init();
-
-  $('.qg-index-links .qg-index-item img').length === 0 ? $('.qg-index-links').addClass('content-only') : '';
 }());
 
