@@ -51,5 +51,9 @@ import './utils/qg-init';
   feedbackForm.init(franchiseTitle);
   shareLinks.init();
   accessibility.init();
+
+  if ($('.status').length > 0) {
+    $('.status.warn, .status.info, .status.success, .status.tip').wrapInner('<div class="inner"></div>');
+  }
 }());
 
