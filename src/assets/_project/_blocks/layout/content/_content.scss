@@ -20,9 +20,8 @@
 }
 
 .qg-content-footer {
+  margin-top: 4em;
   font-size: 0.8em;
-  padding: 30px;
-  width: 100%;
 
   dl {
     float: left;
@@ -40,18 +39,12 @@
 
   #document-licence {
     float: right;
-    margin: initial;
+    margin-bottom:24px !important;
   }
 
   &:after {
     content: " ";
     display: block;
     clear: both;
-  }
-}
-
-@media screen and (max-width: 640px) {
-  .qg-accordion .acc-heading {
-    font-size: 1em;
   }
 }

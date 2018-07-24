@@ -11,24 +11,27 @@
       var quickExitLinks = $(this.el).find('a');
       var escLink = $(this.el).find('a[data-accesskey="Esc"]').attr('href');
       // action on esc key press
-      $(document).keydown(function (e) {
-        if (e.keyCode === 27) {
+
+      if ($(this.el).length > 0) {
+        $(document).keydown(function (e) {
+          if (e.keyCode === 27) {
+            window.location.replace(escLink);
+            return false;
+          }
+        });
+
+        // clicking on the quick exit block
+        $(document).on('click', this.el, function () {
           window.location.replace(escLink);
-          return false;
-        }
-      });
+        });
 
-      // clicking on the quick exit block
-      $(document).on('click', this.el, function () {
-        window.location.replace(escLink);
-      });
-
-      //clicking on the links inside the quick exit block
-      quickExitLinks.click(function (e) {
-        e.stopPropagation();
-        e.preventDefault();
-        window.location.replace($(this).attr('href'));
-      });
+        //clicking on the links inside the quick exit block
+        quickExitLinks.click(function (e) {
+          e.stopPropagation();
+          e.preventDefault();
+          window.location.replace($(this).attr('href'));
+        });
+      }
     },
   };
   quickExit.init();
