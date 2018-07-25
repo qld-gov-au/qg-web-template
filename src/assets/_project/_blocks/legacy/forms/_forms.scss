@@ -630,6 +630,11 @@ textarea[readonly] {
   padding 0.2s ease;
 }
 
+form li[hidden="hidden"] *{
+  display: none;
+  max-height: 0;
+}
+
 .questions li[hidden] {
   display: block;
   max-height: 0;

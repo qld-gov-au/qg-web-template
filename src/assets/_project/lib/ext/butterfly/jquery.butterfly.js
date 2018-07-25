@@ -48,7 +48,7 @@ jQuery.butterfly.defaultOptions = {
 	collapseHeightWhenPossible: true, // When content is shorter than available height, collapse height of lightbox
 	reuseFragment: false, // When using a fragment from the same page as the link, reuse the same DOM nodes (persisting their state) or clone a new copy?
 	closeButton: true, // Should we have a close button?
-	closeButtonImage: '/assets/v3/lib/ext/butterfly/close.png', // Set to the path of your close button image
+	closeButtonImage: 'https://static.qgov.net.au/assets/v3/latest/lib/ext/butterfly/close.png', // Set to the path of your close button image
 	closeButtonCorner: 'tr', // Top left 'tl' or top right 'tr' or bottom left (bl) or bottom right (br) - top left is the most intuitive option that doesn't overlap scrollabrs
 	clickOverlayCloses: true, // Will clicking the overlay layer (the dark tinted area) close the lightbox?
 	preloadLoadingImage: '', // Specify an image path here and it will be preloaded

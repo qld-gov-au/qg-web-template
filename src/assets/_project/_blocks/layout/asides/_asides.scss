@@ -61,7 +61,7 @@
     h3 {
       color: $qg-dark-blue2;
     }
-    p:last-child() {
+    p:last-child {
       margin-bottom: 0;
     }
     ul {
@@ -83,6 +83,21 @@
         }
       }
     }
+    &.qg-emergency-contact {
+      background: #ffdea6;
+      .fa {
+        float:left;
+        font-size: 1.9em;
+        color: #a60000;
+        margin-right: 0.4em;
+      }
+      p {
+        span a{
+          font-size: 1.5em;
+          margin-left: 10px;
+        }
+      }
+    }
     &.login {
       h2:before {
         content: $fa-var-sign-in;
@@ -97,6 +112,7 @@
       list-style: none;
       padding: .5rem 0 0;
     }
+
   }
 }
 /*
