@@ -16,12 +16,4 @@
     if (!results || !results[2]) return false;
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
   };
-
-  (function () {
-    $('.qg-index-item').each(function () {
-      if ($(this).find('img').length <= 0) {
-        $(this).addClass('content-only');
-      }
-    });
-  })();
 }(jQuery, qg.swe));
