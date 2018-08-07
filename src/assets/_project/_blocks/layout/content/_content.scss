@@ -11,10 +11,16 @@
     color: $qg-dark-grey;
     font-weight: normal;
   }
+  blockquote{
+    background: #f9f9f9;
+    padding: 1em;
+    border: 1px solid #dcdcdc;
+    margin-left: 1em;
+  }
 }
 
 .qg-content-footer {
-  margin-top: 2em;
+  margin-top: 4em;
   font-size: 0.8em;
 
   dl {
@@ -33,6 +39,7 @@
 
   #document-licence {
     float: right;
+    margin-bottom:24px !important;
   }
 
   &:after {

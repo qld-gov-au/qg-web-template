@@ -1,11 +1,10 @@
 .qg-index-links {
-  &.content-only{
-    .qg-index-item {
+  .qg-index-item.content-only{
       h2, p, ul, &> div &> span {
         padding-left: 10px;
       }
     }
-  }
+
   &> .qg-index-item {
 		margin-bottom: $qg-spacing;
 
