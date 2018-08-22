@@ -1,4 +1,9 @@
 .qg-accordion {
+  .controls {
+    float: right;
+    padding: 0 0.5rem;
+    color: $qg-blue-dark;
+  }
   article {
     position: relative;
     margin-bottom: 1px;
@@ -68,6 +73,14 @@
     &[type=checkbox]:checked + .acc-heading label i {
       transform: rotate(-135deg);
       -webkit-transform: rotate(-135deg);
+    }
+    &.expand:checked ~ article {
+      .collapsing-section {
+        max-height: inherit;
+        visibility: visible;
+        opacity: 1;
+        transition: visibility 0s linear 0s, opacity 900ms;
+      }
     }
   }
   .arrow {

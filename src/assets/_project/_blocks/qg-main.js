@@ -29,6 +29,7 @@ import './components/progressive-reveal';
 import './components/license';
 import './components/carousel/carousel';
 import './components/quick-exit/quick-exit';
+import './components/accordion/accordion';
 import accessibility      from './components/accessibility/accessibility';
 
 import './layout/footer/footer-legals';

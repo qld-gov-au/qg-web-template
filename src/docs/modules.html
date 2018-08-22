@@ -86,11 +86,17 @@
                     <p>Displays collapsible content panels for presenting information in a limited amount of space.</p>
                     <p>Click headers to expand/collapse content that is categorised into logical sections.</p>
 
-                    <section class="qg-accordion">
+                    <section class="qg-accordion" aria-label="Accordion Label">
+                        <input type="radio" name="control" id="collapse" class="controls collapse" value="collapse" role="radio">
+                        <label for="collapse" class="controls">Collapse all</label>
+                        <span class="controls">&#124;</span>
+                        <input type="radio" name="control" id="expand" class="controls expand" value="expand" role="radio">
+                        <label for="expand" class="controls">Expand all</label>
+                        
                         <article>
-                            <input id="without-icon" type="checkbox" name="tabs">
+                            <input id="without-icon" type="checkbox" name="tabs" aria-controls="id-panel-content-1" aria-expanded="false" role="checkbox">
                             <h3 class="acc-heading"><label for="without-icon">Without icon <span class="subtitle">Subtitle can go here (optional)</span><span class="arrow"> <i></i></span></label></h3>
-                            <div class="collapsing-section">
+                            <div class="collapsing-section"  aria-hidden="true" id="id-panel-content-1">
                                 <p> Content related to header. </p>
                                 <ul>
                                     <li>If dot points are available</li>
@@ -100,9 +106,9 @@
                             </div>
                         </article>
                         <article>
-                            <input id="with-icon" type="checkbox" name="tabs">
+                            <input id="with-icon" type="checkbox" name="tabs" aria-controls="id-panel-content-2" aria-expanded="false" role="checkbox">
                             <h3 class="acc-heading"><img src="https://placeimg.com/20/20/nature" alt=""><label for="with-icon">With icon <span class="subtitle">Subtitle can go here (optional)</span><span class="arrow"> <i></i></span></label></h3>
-                            <div class="collapsing-section">
+                            <div class="collapsing-section" aria-hidden="true" id="id-panel-content-2">
                                 <p> Content related to header. </p>
                                 <ul>
                                     <li>If dot points are available</li>
@@ -113,11 +119,17 @@
                         </article>
                     </section>
                     <pre><code class="language-markup">
-&lt;section class="qg-accordion">
+&lt;section class="qg-accordion" aria-label="Accordion Label">
+    &lt;input type="radio" name="control" id="collapse" class="controls collapse" value="collapse" role="radio">
+    &lt;label for="collapse" class="controls">Collapse all&lt;/label>
+    &lt;span class="controls">&#124;&lt;/span>
+    &lt;input type="radio" name="control" id="expand" class="controls expand" value="expand" role="radio">
+    &lt;label for="expand" class="controls">Expand all&lt;/label>
+    
     &lt;article>
-        &lt;input id="with-icon" type="checkbox" name="tabs">
-        &lt;h3 class="acc-heading">&lt;img src="https://placeimg.com/20/20/nature" alt="">&lt;label for="with-icon">With icon &lt;span class="subtitle">Subtitle can go here (optional)&lt;/span>&lt;span class="arrow"> &lt;i>&lt;/i>&lt;/span>&lt;/label>&lt;/h3>
-        &lt;div class="collapsing-section">
+        &lt;input id="without-icon" type="checkbox" name="tabs" aria-controls="id-panel-content-1" aria-expanded="false" role="checkbox">
+        &lt;h3 class="acc-heading">&lt;label for="without-icon">Without icon &lt;span class="subtitle">Subtitle can go here (optional)&lt;/span>&lt;span class="arrow"> &lt;i>&lt;/i>&lt;/span>&lt;/label>&lt;/h3>
+        &lt;div class="collapsing-section"  aria-hidden="true" id="id-panel-content-1">
             &lt;p> Content related to header. &lt;/p>
             &lt;ul>
                 &lt;li>If dot points are available&lt;/li>
