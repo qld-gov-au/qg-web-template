@@ -83,9 +83,16 @@
                 <!-- ################################## -->
                 <section id="accordion">
                     <h2>Accordion</h2>
-                    <p>Displays collapsible content panels for presenting information in a limited amount of space.</p>
-                    <p>Click headers to expand/collapse content that is categorised into logical sections.</p>
-
+                    <p> An accordion displays collapsible content panels for presenting information in a limited amount of space. An accordion helps users see only the content they need by expanding and collapsing sections of content. </p>
+                    <p>Considerations have been made to ensure the behaviour of the accordion is predictable for users. For example, a downward facing chevron has been used to indicate the direction of movement when expanding content. Additionally, the user is given full control over what content is visible by allowing the expansion of multiple panels at any time.</p>
+                    <p>Additional features for the accordion include the following options:</p>
+                      <ul>
+                        <li>Addition of an expand all/collapse all feature to an accordion, which is especially useful to the user when there is a large amount of information.</li>
+                        <li>Addition of an image or icon (from the Font Awesome icon set) in line with the heading. This is not advised best practice.</li>
+                        <li>Addition of sub-text beneath the heading. This is not advised best practice. If this is required, it is recommended that this is limited to no more than 2 lines.</li>
+                        <li>Linking directly to an open accordion panel.</li>
+                      </ul>
+                  <div class="qg-tmplt-example">
                     <section class="qg-accordion">
                         <article>
                             <input id="without-icon" type="checkbox" name="tabs">
@@ -112,6 +119,8 @@
                             </div>
                         </article>
                     </section>
+                  </div>
+                  <p>HTML</p>
                     <pre><code class="language-markup">
 &lt;section>
     &lt;article>
@@ -128,14 +137,20 @@
     &lt;/article>
 &lt;/section>
                     </code></pre>
-                    <p>Fontawesome icon can also be used instead of image.</p>
-                    <p class="alert alert-info">Accordion without icons or images is advised best practice. </p>
+                    <p>HTML - Adding an inline icon or image</p>
                     <pre><code class="language-markdown">
 &lt;i class="fa fa-car" aria-hidden="true">&lt;/i>
 or
 &lt;img src="{{path of the image}}" alt="">
                     </code></pre>
                 </section>
+
+              </code></pre>
+              <p>HTML - Linking directly to an open accordion panel</p>
+              <pre><code class="language-markdown">
+https://qld-gov-au.github.io/web-template-release/modules.html#without-icon
+              </code></pre>
+              </section>
 
                 <!-- ################################## -->
 
