@@ -8,7 +8,7 @@
 (function ($) {
   let accordion = '.qg-accordion';
   let accordionControls = 'input[name=control]';
-  let linkedpanel = $('input[aria-controls=' + window.location.hash.substring(1) + ']');
+  let linkedpanel =  window.location.hash && $('input[aria-controls=' + window.location.hash.substring(1) + ']');
 
   //Handle events of accordion inputs
   $(accordion).find('article input').on('change', function () {
