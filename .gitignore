@@ -50,3 +50,4 @@ etc/
 ### Build & Release ###
 /build/**
 release
+package-lock.json
