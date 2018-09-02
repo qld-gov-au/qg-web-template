@@ -8,7 +8,7 @@
 (function ($) {
   let accordion = '.qg-accordion';
   let accordionControls = 'input[name=control]';
-  let linkedpanel = $(window.location.hash);
+  let linkedpanel =  window.location.hash && $('input[aria-controls=' + window.location.hash.substring(1) + ']');
 
   //Handle events of accordion inputs
   $(accordion).find('article input').on('change', function () {
@@ -27,7 +27,7 @@
   });
 
   //Ability to direct link to each section and expand the linked section
-  if (linkedpanel) {
+  if (linkedpanel.length > 0) {
     linkedpanel.prop('checked', true);
   }
 }(jQuery));
