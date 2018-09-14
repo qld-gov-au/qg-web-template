@@ -1,8 +1,5 @@
 .alert {
   position: relative;
-  // margin-left: 60px;
-  border: 0;
-  border-left: 5px solid;
   color: #000;
 
   h2 {
@@ -17,15 +14,19 @@
     }
   }
   &.alert-success {
-    border-color: $brand-success;
+    border-left: 5px solid $brand-success;
   }
   &.alert-info {
-    border-color: $brand-info;
+    border-left: 5px solid $brand-info;
   }
   &.alert-warning {
-    border-color: $brand-warning;
+    border-left: 5px solid $brand-warning;
   }
-  &.alert-success, &.alert-info, &.alert-warning{
+  &.alert-success, &.alert-info, &.alert-warning, &.alert-tip, &.alert-danger{
+    padding: $alert-padding;
+    margin: inherit;
+    font-weight: normal;
+    margin-bottom: $line-height-computed;
     h2{
       i {
         font-size: 2.4rem;
