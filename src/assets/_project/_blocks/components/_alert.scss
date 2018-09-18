@@ -24,7 +24,7 @@
   }
   &.alert-success, &.alert-info, &.alert-warning, &.alert-tip, &.alert-danger{
     padding: $alert-padding;
-    margin: inherit;
+    margin: 0;
     font-weight: normal;
     margin-bottom: $line-height-computed;
     h2{
