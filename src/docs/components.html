@@ -771,20 +771,45 @@
               <p>Add this HTML markup on any template page</p>
               <pre><code class="language-markup">
 
-&lt;div class="qg-aside qg-twitter-updates" data-account="TMFranchise" data-list="transport-and-motoring" data-num="5" data-widgetid="12345678899">
-     &lt;div class="section-header">&lt;h2>Twitter feed&lt;/h2>&lt;/div>
-     &lt;p class="more">&lt;a href="http://twitter.com/TMFranchise/lists/transport-and-motoring" title="More from the Transport and motoring franchise on Twitter">View all&lt;/a>&lt;/p>
-&lt;/div>
+&lt;div class="qg-twitter-updates"&gt;
+  &lt;p class="more text-right"&gt; &lt;a href="https://twitter.com/TMFranchise/lists/transport-and-motoring" title="More from the Transport and motoring franchise on Twitter"&gt;View all&lt;/a&gt; &lt;/p&gt;
+  &lt;a class="twitter-timeline" href="https://twitter.com/TMFranchise/lists/transport-and-motoring" title="More from the Transport and motoring franchise on Twitter" data-tweet-limit="1"&gt;View all&lt;/a&gt;
+&lt;/div&gt;
 
 
 						</code></pre>
+              <h3>Example</h3>
               <p>Configuration options</p>
               <ul>
-                <li>data-account="TMFranchise" - is the Twitter account name</li>
-                <li>data-list="transport-and-motoring" - is the Twitter list name</li>
-                <li>data-num="5" - is count of tweets to display</li>
-                <li>data-widgetid="12345678899" - is the Twitter widget id</li>
+                <li>data-tweet-limit="n" -> attribute to specify a number of Tweets </li>
               </ul>
+
+              <div class="qg-twitter-updates">
+                <p class="more text-right">
+                  <a href="https://twitter.com/TMFranchise/lists/transport-and-motoring" title="More from the Transport and motoring franchise on Twitter">View all</a>
+                </p>
+                <a class="twitter-timeline" href="https://twitter.com/TMFranchise/lists/transport-and-motoring" title="More from the Transport and motoring franchise on Twitter" data-tweet-limit="2">View all</a>
+              </div>
+
+              <h2 id="facebook-feed" class="category">Facebook Feed</h2>
+              <p>Add this HTML markup on any template page</p>
+              <pre><code class="language-markup">
+
+&lt;div class="qg-facebook-updates" data-href="https://www.facebook.com/TMRQld/"&gt;
+  &lt;p class="more text-right"&gt;&lt;a href="https://www.facebook.com/TMRQld/" title="View All"&gt;View all&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+
+						</code></pre>
+              <h3>Example</h3>
+              <p>Configuration options</p>
+              <ul>
+                <li>data-href="n" -> attribute to specify a Facebook account URL </li>
+              </ul>
+              <div class="qg-facebook-updates" data-href="https://www.facebook.com/TMRQld/">
+                <p class="more text-right"><a href="https://www.facebook.com/TMRQld/" title="View All">View all</a></p>
+              </div>
+              <hr />
             </div>
 
             <aside id="qg-secondary-content">
@@ -808,6 +833,7 @@
                         <li><a href="#forms">Forms</a></li>
                         <li><a href="#quick-exit-module">Quick Exit</a></li>
                         <li><a href="#twitter-feed">Twitter Feed</a></li>
+                        <li><a href="#facebook-feed">Facebook Feed</a></li>
                     </ul>
                     <p>
                         <a href="#top">Back to top</a>

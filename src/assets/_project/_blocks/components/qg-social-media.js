@@ -2,41 +2,36 @@
 (function ($) {
   'use strict';
 
-  var twitter = {
-    ele: $('.qg-twitter-updates') || '',
+  var qgSocialMedia = {
+    config: {
+      $twitterEl: $('.qg-twitter-updates'),
+      $facebookEl: $('.qg-facebook-updates'),
+    },
     init: function () {
-      if (twitter.ele.length > 0) {
-        var account = twitter.ele.data('account') || '';
-        var list = twitter.ele.data('list') || '';
-        var widgetid = twitter.ele.data('widgetid') || '';
-        var num = twitter.ele.data('num') || 5;
-
-        if (account.length > 0 && widgetid.length > 0) {
-          twitter.generateIframe(account, list, widgetid, num);
-        } else {
-          console.log('data-account/data-widgetid attribute is empty');
-        }
+      let twitterSdkScript = 'platform.twitter.com/widgets.js';
+      let facebookSdkScript = 'connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.8';
+      if (this.config.$twitterEl.length > 0 && $('script[src*="' + twitterSdkScript + '"]').length <= 0) {
+        this.loadScript('script', 'twitter-wjs', twitterSdkScript);
+      }
+      if (this.config.$facebookEl.length > 0 && $('script[src*="' + facebookSdkScript + '"]').length <= 0) {
+        var fbUrl = this.config.$facebookEl.attr('data-href');
+        var fbhtml = '<div class="fb-page" data-href="' + fbUrl + '" data-tabs="timeline" data-small-header="true" data-width="10000"  data-adapt-container-width="true" data-show-facepile="false"></div>';
+        this.config.$facebookEl.append(fbhtml);
+        this.loadScript('script', 'facebook-wjs', facebookSdkScript);
       }
     },
-    generateIframe: function (account, list, widgetid, num) {
-      var html = '<div><a class="twitter-timeline" href="https://twitter.com/' + account + (list.length > 0 ? '/' + list : '') + '" data-widget-id="' + widgetid + '" data-tweet-limit="' + num + '" data-chrome="transparent noheader noborders nofooter" data-link-color="#546A9A">Tweets from @' + account + (list.length > 0 ? '/' + list : '') + '</a></div>';
-      twitter.ele.append(html);
-      twitter.runScript();
+    loadScript: function (tag, id, sdkUrl) {
+      var createEl;
+      var fjs = document.getElementsByTagName(tag)[0];
+      var p = /^http:/.test(document.location) ? 'http' : 'https';
+      if (!document.getElementById(id)) {
+        createEl = document.createElement(tag);
+        createEl.id = id;
+        createEl.src = `${p}://${sdkUrl}`;
+        fjs.parentNode.insertBefore(createEl, fjs);
+      }
     },
-    runScript: function () {
-      return !(function (d, s, id) {
-        var js;
-        var fjs = d.getElementsByTagName(s)[0];
-        var p = /^http:/.test(d.location) ? 'http' : 'https';
-        if (!d.getElementById(id)) {
-          js = d.createElement(s);
-          js.id = id;
-          js.src = p + '://platform.twitter.com/widgets.js';
-          fjs.parentNode.insertBefore(js, fjs);
-        }
-      }(document, 'script', 'twitter-wjs'));
-    },
-
   };
-  twitter.init();
+  qgSocialMedia.init();
 }(jQuery));
+
