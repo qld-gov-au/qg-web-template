@@ -8,6 +8,8 @@
     // padding: $qg-spacing-xs ($qg-spacing-xs / 2);
     // @include qg-responsive-padding();
     border-bottom: 1px solid #e1ecf1;
+    font-size: .9em;
+    color: #4d4d4d;
     @include qg-responsive-spacing(padding);
 
     margin: 0;
@@ -70,6 +72,13 @@
     .tel {
       font-weight: 800;
       white-space: nowrap;
+    }
+    &.qg-featured {
+      .news-items {
+        h3 {
+          font-size: 1.2em;
+        }
+      }
     }
     &.qg-contact {
       background: #e7f5fe;
