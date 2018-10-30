@@ -8,7 +8,7 @@ import './utils/qg-misc';
 import './utils/qg-ajax-call';
 import './utils/qg-load-google-api';
 
-import '../../../../node_modules/bootstrap/dist/js/bootstrap.js';
+// import '../../../../node_modules/bootstrap/dist/js/bootstrap.js';
 // import '../../../../../node_modules/bootstrap-accessibility-plugin/plugins/js/bootstrap-accessibility.js'; // Removed due to accessibility issues (ironically)
 
 // Utils

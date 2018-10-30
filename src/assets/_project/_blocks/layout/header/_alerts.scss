@@ -1,14 +1,14 @@
 /* ! alert style */
 
 #qg-site-header .alert-danger, .qg-global-alert {
-  @include make-xs-column(12);
+  //@include make-xs-column(12);
   @include qg-responsive-spacing(padding-left, $large: full);
   @include qg-responsive-spacing(padding-right, $large: full);
 
   header {
-    @include make-xs-column(12);
-    @include make-sm-column(4);
-    @include make-lg-column(4);
+    //@include make-xs-column(12);
+    //@include make-sm-column(4);
+    //@include make-lg-column(4);
 
     position: relative;
     padding-left: 0 !important;
@@ -45,9 +45,9 @@
     }
   }
   section {
-    @include make-xs-column(12);
-    @include make-sm-column(8);
-    @include make-lg-column(8);
+    //@include make-xs-column(12);
+    //@include make-sm-column(8);
+    //@include make-lg-column(8);
     padding-top: $qg-spacing / 4;
     padding-right: 0 !important;
 
@@ -64,11 +64,11 @@
 
 #qg-primary-content .qg-global-alert {
   header {
-    @include make-xs-column(12);
-    @include make-sm-column(5);
+    //@include make-xs-column(12);
+    //@include make-sm-column(5);
   }
   section {
-    @include make-xs-column(12);
-    @include make-sm-column(7);
+    //@include make-xs-column(12);
+    //@include make-sm-column(7);
   }
 }

@@ -1,3 +1,4 @@
+//TODO layout columns class names
 .qg-index-links {
   .qg-index-item.content-only{
       h2, p, ul, &> div &> span {
@@ -26,7 +27,7 @@
 				border: 1px solid #fffefc;
 				box-shadow: 0 0 2px 1px rgba(0,0,0,.1);
 			}
-			
+
 		}
 		ul:not(.qg-unstyled) {
 			li {
@@ -50,9 +51,9 @@
 						content: "\f054";
 					}
 				}
-	
+
 			}
-	
+
 		}
 		h2, p, ul, &> div &> span {
 			padding-left: ($qg-spacing / 2) + 75px;
@@ -111,7 +112,7 @@
 // Legacy stuff
 #qg-one-col, #qg-three-col, #qg-two-col-aside:not(.wide), #qg-two-col-nav:not(.wide) {
 	.qg-index-links > .qg-index-item {
-		@include make-sm-column(6);
+		//@include make-sm-column(6);
 		&:nth-child(3) {
 			@include qg-index-item;
 		}
@@ -120,7 +121,7 @@
 
 #qg-one-col.wide {
 	.qg-index-links > .qg-index-item {
-		@include make-sm-column(3);
+		//@include make-sm-column(3);
 		&:nth-child(5) {
 			@include qg-index-item;
 		}
@@ -129,7 +130,7 @@
 
 #qg-two-col-aside.wide, #qg-two-col-nav.wide {
 	.qg-index-links > .qg-index-item {
-		@include make-sm-column(4);
+		//@include make-sm-column(4);
 		&:nth-child(4) {
 			@include qg-index-item;
 		}

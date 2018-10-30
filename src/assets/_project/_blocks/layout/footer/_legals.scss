@@ -4,21 +4,21 @@
   padding-top: 1em;
   padding-bottom: 45px;
 
-  @include fontSize(12px); 
+  @include fontSize(12px);
   font-family: Verdana, Arial, Helvetica, san-serif;
   font-weight: 900;
-  line-height: 7px;  
+  line-height: 7px;
 
   .row {
-    background-color: #FFF;     
-  }  
+    background-color: #FFF;
+  }
 
-  ul, p { 
-    margin-top: 2em; 
-  }   
+  ul, p {
+    margin-top: 2em;
+  }
 
   ul {
-    @include make-xs-column(12);
+    //@include make-xs-column(12);
     @media (min-width: $screen-lg-min) {
       padding-left: ($grid-gutter-width / 2);
       padding-right: ($grid-gutter-width / 2);
@@ -35,17 +35,17 @@
 
     li + li a {
       border-left: 1px solid #999;
-    }  
+    }
   }
 
   a {
-    text-decoration: none;  
-    color: #000; 
+    text-decoration: none;
+    color: #000;
   }
 
   a:focus, a:hover {
-    text-decoration: underline;  
-    color: #000; 
+    text-decoration: underline;
+    color: #000;
   }
 
   @media print {

@@ -13,9 +13,12 @@
 
 // Frameworks
 // -------------------------
+@import "../../../../node_modules/bootstrap/scss/bootstrap.scss";
+
 
 // Import bootstrap
-@import "scss-general/bootstrap-loader"; // Local custom loader, pulls resources from NPM module
+//@import "scss-general/bootstrap-loader"; // Local custom loader, pulls resources from NPM module
+//@import "~bootstrap";
 	// @import "../../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap"; // NPM module
 @import "../../../../node_modules/font-awesome/scss/font-awesome.scss";
 

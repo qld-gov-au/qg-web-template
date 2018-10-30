@@ -13,17 +13,17 @@
   }
 
   a, a:link {
-    color: #FFF;  
+    color: #FFF;
     text-decoration: none;
-  } 
+  }
 
   a:hover {
-    color: #FFF;  
+    color: #FFF;
     text-decoration: underline;
-  } 
+  }
 
   div {
-    @include make-md-column(4);
+    //@include make-md-column(4);
 
     &:nth-child(2n) {
       background-color: $qg-footer-bg-alt-color;

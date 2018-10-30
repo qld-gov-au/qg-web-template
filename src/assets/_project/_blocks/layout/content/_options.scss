@@ -20,9 +20,9 @@
 }
 
 #qg-share {
-  @include make-xs-column(12);
-  @include make-sm-column(6);
-  @include make-sm-column-push(6);
+  //@include make-xs-column(12);
+  //@include make-sm-column(6);
+  //@include make-sm-column-push(6);
 
   padding-bottom: $padding-large-vertical;
 
@@ -114,9 +114,9 @@
 }
 
 #qg-feedback-btn {
-  @include make-xs-column(12);
-  @include make-sm-column(6);
-  @include make-sm-column-pull(6);
+  //@include make-xs-column(12);
+  //@include make-sm-column(6);
+  //@include make-sm-column-pull(6);
   text-align: center;
 
   @media (min-width: $screen-sm-min) {
