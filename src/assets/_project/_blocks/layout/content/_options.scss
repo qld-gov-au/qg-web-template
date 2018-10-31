@@ -20,7 +20,13 @@
 }
 
 #qg-share {
-  //@include make-xs-column(12);
+  @include make-col-ready();
+  @include make-col(12);
+  @include media-breakpoint-up(sm) {
+    @include make-col(6);
+  }
+  @extend .order-sm-2;
+  //@include make-col-offset(6);
   //@include make-sm-column(6);
   //@include make-sm-column-push(6);
 
@@ -114,6 +120,13 @@
 }
 
 #qg-feedback-btn {
+  @include make-col-ready();
+  @include make-col(12);
+  @include media-breakpoint-up(sm) {
+    @include make-col(6);
+  }
+  @extend .order-sm-1;
+
   //@include make-xs-column(12);
   //@include make-sm-column(6);
   //@include make-sm-column-pull(6);
