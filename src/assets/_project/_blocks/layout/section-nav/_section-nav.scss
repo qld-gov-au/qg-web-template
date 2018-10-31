@@ -9,7 +9,7 @@
     padding-bottom: 0.3em;
     color: #000;
     margin: 0;
-    @include fontSize(19px);
+    @include rem(font-size, 19px);
   }
   a {
     // color: $qg-blue-dark;
@@ -25,8 +25,7 @@
     padding: 0;
     transition: all 0.2s;
     list-style-type: none;
-
-    @include fontSize(14px);
+    @include rem(font-size, 14px);
     font-weight: 700;
 
     a {

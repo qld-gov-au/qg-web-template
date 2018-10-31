@@ -6,8 +6,7 @@
 
 	padding: 0;
 	background: #494949;
-
-	@include fontSize(16px);
+  @include rem(font-size, 16px);
 
 	ul {
 		margin: 0;

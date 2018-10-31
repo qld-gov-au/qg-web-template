@@ -30,7 +30,7 @@
     }
 
     h3 {
-      @include fontSize(19px);
+      @include rem(font-size, 19px);
       border-bottom: 1px solid #FFF;
       margin-top: 0;
       padding-top: ($qg-spacing-small / 2);
@@ -58,7 +58,7 @@
     }
 
     li {
-      @include fontSize(14px);
+      @include rem(font-size, 14px);
       padding: .5em .3em;
     }
   }

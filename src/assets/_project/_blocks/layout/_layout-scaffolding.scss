@@ -19,22 +19,25 @@
 
 // Default layout
 #qg-primary-content {
-  outline:10px solid red;
   @include make-col-ready();
-  @include media-breakpoint-up(sm) {
-    @include make-col(12);
+  @include make-col(12);
+  @include media-breakpoint-up(md) {
+    @include make-col(9);
   }
-  @include media-breakpoint-up(lg) {
-    @include make-col(8);
-  }
+  //@include media-breakpoint-up(lg) {
+  //  @include make-col(8);
+  //}
   //@include make-xs-column(12);
   //@include make-md-column(6);
   //@include make-md-column-push(3);
 }
 #qg-secondary-content {
-  outline:1px solid green;
-  //@include make-xs-column(12);
-  //@include make-md-column(3);
+  @include make-col(12);
+  @include media-breakpoint-up(md) {
+    @include make-col(3);
+  }
+  //@include make-col-offset(9)
+
   //@include make-md-column-push(3);
 }
 #qg-section-nav {

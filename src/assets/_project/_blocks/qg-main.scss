@@ -9,12 +9,26 @@
 
 @import "scss-general/qg-variables";
 @import "scss-general/qg-font-variables";
-@import "scss-general/bootstrap-variables";
+//@import "scss-general/bootstrap-variables";
 
 // Frameworks
 // -------------------------
-@import "../../../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "scss-general/bootstrap_v4/rem";
+@import "scss-general/bootstrap_v4/variables";
+$grid-breakpoints: (
+  // Extra small screen / phone
+  xs: 0,
+  // Small screen / phone
+  sm: 768px,
+  // Medium screen / tablet
+  md: 992px,
+  // Large screen / desktop
+  lg: 1200px,
+  // Extra large screen / wide desktop
+);
 
+@import "../../../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "scss-general/bootstrap_v4/bridge";
 
 // Import bootstrap
 //@import "scss-general/bootstrap-loader"; // Local custom loader, pulls resources from NPM module

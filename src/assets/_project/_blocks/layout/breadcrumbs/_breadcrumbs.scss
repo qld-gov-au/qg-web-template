@@ -2,6 +2,7 @@
 // Controls the look and behaviour of the breadcrumbs section
 
 #qg-breadcrumb {
+  @include make-col(12);
 	//@include make-xs-column(12);
 	background: $qg-breadcrumb-bg-color;
 
@@ -32,9 +33,9 @@
 
 		color: #FFF;
 		text-align: left;
-		@include fontSize(17px);
+    @include rem(font-size, 17px);
     @media all and (max-width: $screen-md) {
-      @include fontSize(15px);
+      @include rem(font-size, 15px);
     }
 
 		@media (min-width: $screen-lg-min) {

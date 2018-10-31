@@ -3,8 +3,7 @@
   text-align: center;
   padding-top: 1em;
   padding-bottom: 45px;
-
-  @include fontSize(12px);
+  @include rem(font-size, 12px);
   font-family: Verdana, Arial, Helvetica, san-serif;
   font-weight: 900;
   line-height: 7px;

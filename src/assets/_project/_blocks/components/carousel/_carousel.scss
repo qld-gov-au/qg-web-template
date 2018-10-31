@@ -83,10 +83,10 @@
 
 		.carousel-control{
 			color: white;
-
-			@media (min-width: $screen-md-min) {
-				.glyphicon{ line-height: 0.7em; }
-			}
+      //TODO check icon on md screen carousel
+			//@media (min-width: $screen-md-min) {
+			//	.glyphicon{ line-height: 0.7em; }
+			//}
 		}
 	}
 }

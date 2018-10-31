@@ -60,7 +60,7 @@
 		}
 		h2 {
 			margin-top: 0;
-			@include fontSize(19px);
+      @include rem(font-size, 19px);
 		}
 		& > ul:not(.qg-unstyled) {
 			list-style: none;
