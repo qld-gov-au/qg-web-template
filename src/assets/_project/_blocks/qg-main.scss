@@ -28,6 +28,7 @@ $grid-breakpoints: (
 );
 
 @import "../../../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "scss-general/bootstrap/mixins/buttons";
 @import "scss-general/bootstrap_v4/bridge";
 
 // Import bootstrap

@@ -12,12 +12,19 @@
     background-color: #FFF;
   }
 
-  ul, p {
+  ul{
     margin-top: 2em;
+  }
+  p {
+    @include make-col-ready();
+    @include make-col(12);
   }
 
   ul {
+    //TODO make col boot 4
     //@include make-xs-column(12);
+    @include make-col-ready();
+    @include make-col(12);
     @media (min-width: $screen-lg-min) {
       padding-left: ($grid-gutter-width / 2);
       padding-right: ($grid-gutter-width / 2);

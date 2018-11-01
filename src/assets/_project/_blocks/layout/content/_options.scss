@@ -38,6 +38,7 @@
 
   .navbar {
     min-height: auto;
+    justify-content: center;
   }
 
   h2, ul, li {
@@ -49,7 +50,7 @@
 
   h2 {
     padding-bottom: $padding-base-vertical;
-    @include fontSize(16px);
+    @include rem(font-size, 16px);
   }
   ul {
     list-style: none;
@@ -94,7 +95,7 @@
     .qg-share-icon {
       width: 25px;
       padding-right: 4px;
-      @include fontSize(14px);
+      @include rem(font-size, 14px);
     }
   }
 
@@ -102,9 +103,7 @@
     text-align: right;
     padding-top: $padding-base-vertical;
     padding-bottom: 0;
-
-    @include fontSize(12px);
-
+    @include rem(font-size, 12px);
     h2, .navbar {
       display: inline-block;
     }
@@ -143,7 +142,7 @@
 #qg-page-feedback {
   background-color: $qg-feedback-bg-color;
   color: #000;
-  @include fontSize(16px);
+  @include rem(font-size, 16px);
 
   #feedback-captcha-container {
     display:none;
@@ -231,7 +230,7 @@
     .label {
       color: #000 !important;
       font-weight: normal;
-      @include fontSize(16px);
+      @include rem(font-size, 16px);
       display: inline;
       position: static;
       width:auto;

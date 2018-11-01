@@ -13,11 +13,6 @@
     $('[class^="col-"]').css('outline', '1px solid red');
     // update onload
     $("h2.test-break").text( breakpoint );
-
-    if ( xs == true ) {
-      alert("mobile first");
-    }
-
     // Update on window resize
     $( window ).resize( function(){
       $("h2.test-break").text( breakpoint );
