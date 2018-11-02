@@ -22,7 +22,7 @@
 // Components
 @import "../../../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins/alerts";
 @import "../../../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins/buttons";
-@import "mixins/buttons"; // Replaced with our custom bootstrap button mixin (to make rollover white)
+@import "../bootstrap_v4/buttons"; // Replaced with our custom bootstrap button mixin (to make rollover white)
 @import "../../../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins/panels";
 @import "../../../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins/pagination";
 @import "../../../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins/list-group";

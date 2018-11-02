@@ -262,3 +262,24 @@
     display: none !important;
   }
 }
+
+// feedback form
+#qg-page-feedback-form {
+  width: 100%;
+  #feedback-page-list {
+    @include make-row();
+  }
+}
+
+
+//buttons
+.btn-primary{
+  @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+}
+
+//alerts
+.alert-warning {
+  background-color: #ffedde;
+  border-color: #ebf0d8;
+  color: #8a6d3b;
+}

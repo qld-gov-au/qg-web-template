@@ -28,8 +28,9 @@ $grid-breakpoints: (
 );
 
 @import "../../../../node_modules/bootstrap/scss/bootstrap.scss";
-@import "scss-general/bootstrap/mixins/buttons";
+@import "scss-general/bootstrap_v4/buttons";
 @import "scss-general/bootstrap_v4/bridge";
+
 
 // Import bootstrap
 //@import "scss-general/bootstrap-loader"; // Local custom loader, pulls resources from NPM module

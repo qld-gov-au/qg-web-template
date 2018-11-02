@@ -34,7 +34,7 @@
 				position: relative;
 				padding-left: 1em;
 				list-style: none;
-				line-height: 2.4rem;
+        @include rem(line-height, 24px);
 				a {
 					color: $qg-blue-dark;
 					&:active, &:hover, &:focus {
@@ -43,9 +43,9 @@
 					&:before {
 						position: absolute;
 						left: 0;
-						top: .66rem;
+            top: 0.46rem;
 						font-family: FontAwesome;
-						font-size: 1.1rem;
+            font-size: 0.7rem;
 						line-height: 1;
 						padding-right: .8rem;
 						content: "\f054";

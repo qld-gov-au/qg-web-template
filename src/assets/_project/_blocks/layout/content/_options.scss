@@ -182,10 +182,14 @@
   }
 
   .alert {
+    width: 100%;
     //padding-left: 1em;
     //display: inline;
     //color: $qg-error-red;
     //@include fontSize(16px);
+    .fa {
+      @include rem(font-size, 24px);
+    }
   }
 
   // #################################################

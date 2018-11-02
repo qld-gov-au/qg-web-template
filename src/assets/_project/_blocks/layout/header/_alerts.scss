@@ -1,5 +1,5 @@
 /* ! alert style */
-
+//TODO - priority - look alerts
 #qg-site-header .alert-danger, .qg-global-alert {
   //@include make-xs-column(12);
   @include qg-responsive-spacing(padding-left, $large: full);
