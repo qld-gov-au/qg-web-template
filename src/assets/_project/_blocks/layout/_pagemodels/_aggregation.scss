@@ -1,7 +1,8 @@
 .qg-aggre-theme {
-  display: flex;
-  flex-wrap: wrap;
+  //display: flex;
+  //flex-wrap: wrap;
   &.qg-feature, .wrapper {
+    @include make-row();
     width: 90%;
     margin-left: auto;
     margin-right: auto;
@@ -9,8 +10,8 @@
 
   &.row [class*="col-"]{
     margin-bottom: 3em;
-    display: flex;
-    flex-direction: column;
+    //display: flex;
+    //flex-direction: column;
   }
   &.qg-feature{
     article {

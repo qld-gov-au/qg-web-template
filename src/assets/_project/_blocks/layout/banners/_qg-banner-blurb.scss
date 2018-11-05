@@ -1,4 +1,6 @@
 #qg-banner-blurb{
+  @include make-col-ready();
+  @include make-col(12);
   min-height: 361px;
   height: auto;
   box-sizing: border-box;

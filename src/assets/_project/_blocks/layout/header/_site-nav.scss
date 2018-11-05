@@ -3,7 +3,8 @@
 
 #qg-site-nav {
 	//@include make-xs-column(12);
-
+  @include make-col-ready();
+  @include make-col(12);
 	padding: 0;
 	background: #494949;
   @include rem(font-size, 16px);
