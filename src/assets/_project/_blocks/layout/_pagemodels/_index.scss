@@ -1,5 +1,7 @@
 //TODO layout columns class names
 .qg-index-links {
+  @extend .d-flex;
+  @extend .flex-wrap;
   .qg-index-item.content-only{
       h2, p, ul, &> div &> span {
         padding-left: 10px;
@@ -7,6 +9,7 @@
     }
 
   &> .qg-index-item {
+    @extend .col-4;
 		margin-bottom: $qg-spacing;
 
 		img {

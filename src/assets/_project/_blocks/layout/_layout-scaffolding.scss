@@ -22,8 +22,10 @@
   @include make-col-ready();
   @include make-col(12);
   @include media-breakpoint-up(md) {
-    @include make-col(9);
+    @include make-col(6);
+    @extend .order-md-2;
   }
+
   //@include media-breakpoint-up(lg) {
   //  @include make-col(8);
   //}
@@ -32,20 +34,29 @@
   //@include make-md-column-push(3);
 }
 #qg-secondary-content {
+  @include make-col-ready();
   @include make-col(12);
   @include media-breakpoint-up(md) {
     @include make-col(3);
+    @extend .order-md-3;
   }
   //@include make-col-offset(9)
 
   //@include make-md-column-push(3);
 }
 #qg-section-nav {
-  outline:1px solid blue;
+  outline:1px solid red;
+  @include make-col-ready();
+  @include make-col(12);
+  @include media-breakpoint-up(md) {
+    @include make-col(3);
+    @extend .order-md-1;
+  }
   //@include make-xs-column(12);
   //@include make-md-column(3);
 
   & + #qg-primary-content {
+    outline: 10px solid red;
     //@include make-md-column(6);
     //@include make-md-column-push(0);
   }
@@ -132,6 +143,10 @@
 
 #qg-two-col-aside.wide {
   #qg-primary-content {
+    @include media-breakpoint-up(md) {
+      @include make-col(9);
+      @extend .order-md-1;
+    }
     //@include make-md-column(9);
     //@include make-md-column-push(0);
     @media (min-width: $screen-lg-min) {
@@ -140,6 +155,9 @@
   }
   #qg-secondary-content {
     display: block;
+    @include media-breakpoint-up(md) {
+      @extend .order-md-2;
+    }
     //@include make-md-column-push(0);
   }
 }
