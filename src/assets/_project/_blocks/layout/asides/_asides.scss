@@ -87,7 +87,7 @@
           word-wrap: break-word;
           .tel {
             color: $qg-dark-grey;
-            font-size: 1.4rem;
+            @include rem(font-size, 14px);
           }
         }
       }

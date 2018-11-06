@@ -3,14 +3,14 @@
 @import "scss-general/bootstrap-variables";
 
 // Core variables and mixins
-@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+//@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
 @import "scss-general/bootstrap/mixins"; // Local version
 
-@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/panels";
+//@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/panels";
 
 .qg-tmplt-example {
-  @extend .panel;
-  @extend .panel-default;
+  //@extend .panel;
+  //@extend .panel-default;
 
   // padding: $padding-base-vertical;
 

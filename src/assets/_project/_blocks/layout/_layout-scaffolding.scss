@@ -45,7 +45,6 @@
   //@include make-md-column-push(3);
 }
 #qg-section-nav {
-  outline:1px solid red;
   @include make-col-ready();
   @include make-col(12);
   @include media-breakpoint-up(md) {

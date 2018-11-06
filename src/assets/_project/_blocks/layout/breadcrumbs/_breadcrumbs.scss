@@ -2,6 +2,7 @@
 // Controls the look and behaviour of the breadcrumbs section
 
 #qg-breadcrumb {
+  @include make-col-ready();
   @include make-col(12);
 	//@include make-xs-column(12);
 	background: $qg-breadcrumb-bg-color;

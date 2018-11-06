@@ -27,7 +27,7 @@ $link-hover-color:      darken($link-color, 15%) !default;
 //** Link hover decoration.
 $link-hover-decoration: underline !default;
 
-
+$grid-gutter-width:         $qg-spacing; // 30px !default;, SWE = 50px;
 $spacer: 1rem !default;
 // stylelint-disable value-keyword-case
 $font-family-sans-serif:  'Lato', 'Helvetica', Arial, sans-serif;
