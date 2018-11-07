@@ -68,7 +68,8 @@
     ul {  //nested nav styles
       padding: 0;
       li {
-        margin-left: 3rem;
+        //margin-left: 3rem;
+        @include rem(margin-left, 30px);
         a {
           &:before {
             content: "";

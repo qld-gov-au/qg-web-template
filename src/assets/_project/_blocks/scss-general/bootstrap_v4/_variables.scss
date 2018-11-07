@@ -28,6 +28,9 @@ $link-hover-color:      darken($link-color, 15%) !default;
 $link-hover-decoration: underline !default;
 
 $grid-gutter-width:         $qg-spacing; // 30px !default;, SWE = 50px;
+$qg-grid-gutter-width-small: $qg-spacing-xs; // Custom for responsive gutter widths
+
+
 $spacer: 1rem !default;
 // stylelint-disable value-keyword-case
 $font-family-sans-serif:  'Lato', 'Helvetica', Arial, sans-serif;

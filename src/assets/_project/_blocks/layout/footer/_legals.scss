@@ -30,7 +30,10 @@
       padding-left: ($grid-gutter-width / 2);
       padding-right: ($grid-gutter-width / 2);
     }
-
+    @include media-breakpoint-down(md) {
+      padding-right: $qg-grid-gutter-width-small/2;
+      padding-left: $qg-grid-gutter-width-small/2;
+    }
     li {
       padding: 0.5em 0;
       margin: 0;

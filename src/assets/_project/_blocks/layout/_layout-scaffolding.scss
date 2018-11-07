@@ -25,6 +25,14 @@
     @include make-col(6);
     @extend .order-md-2;
   }
+  @include media-breakpoint-down(md) {
+    padding-right: $qg-grid-gutter-width-small/2;
+    padding-left: $qg-grid-gutter-width-small/2;
+  }
+  //@media (max-width: $screen-lg-min) {
+  //  padding-left:  15px;
+  //  padding-right: 15px;
+  //}
 
   //@include media-breakpoint-up(lg) {
   //  @include make-col(8);
@@ -40,6 +48,10 @@
     @include make-col(3);
     @extend .order-md-3;
   }
+  @include media-breakpoint-down(md) {
+    padding-right: $qg-grid-gutter-width-small/2;
+    padding-left: $qg-grid-gutter-width-small/2;
+  }
   //@include make-col-offset(9)
 
   //@include make-md-column-push(3);
@@ -50,6 +62,10 @@
   @include media-breakpoint-up(md) {
     @include make-col(3);
     @extend .order-md-1;
+  }
+  @include media-breakpoint-down(md) {
+    padding-right: $qg-grid-gutter-width-small/2;
+    padding-left: $qg-grid-gutter-width-small/2;
   }
   //@include make-xs-column(12);
   //@include make-md-column(3);
@@ -189,3 +205,4 @@
     //@include make-md-column-push(0);
   }
 }
+
