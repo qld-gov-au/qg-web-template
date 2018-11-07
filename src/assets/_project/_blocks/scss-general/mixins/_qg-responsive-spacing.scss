@@ -38,7 +38,7 @@
 
   // The 'large' breakpoint is dynamic. In this case, on LG
   @if $large != false {
-    @media (min-width: $screen-lg-min) {
+    @include media-breakpoint-up(lg) {
       #{$prop}: $large;
     }
   }

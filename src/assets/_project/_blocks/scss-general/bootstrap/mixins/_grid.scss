@@ -8,7 +8,7 @@
   margin-left: auto;
   padding-left:  floor($qg-grid-gutter-width-small / 2);
   padding-right: ceil($qg-grid-gutter-width-small / 2);
-  @media (min-width: $screen-lg-min) {
+  @include media-breakpoint-up(lg) {
     padding-left:  floor($gutter / 2);
     padding-right: ceil($gutter / 2);
   }
@@ -19,7 +19,7 @@
 @mixin make-row($gutter: $grid-gutter-width) {
   margin-left:  ceil($qg-grid-gutter-width-small / -2);
   margin-right: floor($qg-grid-gutter-width-small / -2);
-  @media (min-width: $screen-lg-min) {
+  @include media-breakpoint-up(lg) {
     margin-left:  ceil($gutter / -2); // $gutter / -2
     margin-right: floor($gutter / -2);
   }
@@ -34,7 +34,7 @@
   min-height: 1px;
   padding-left:  ($qg-grid-gutter-width-small / 2);
   padding-right: ($qg-grid-gutter-width-small / 2);
-  @media (min-width: $screen-lg-min) {
+  @include media-breakpoint-up(lg) {
     padding-left:  ($gutter / 2);
     padding-right: ($gutter / 2);
   }
@@ -46,7 +46,7 @@
   min-height: 1px;
   padding-left:  ($qg-grid-gutter-width-small / 2);
   padding-right: ($qg-grid-gutter-width-small / 2);
-  @media (min-width: $screen-lg-min) {
+  @include media-breakpoint-up(lg) {
     padding-left:  ($gutter / 2);
     padding-right: ($gutter / 2);
   }
@@ -63,12 +63,12 @@
   min-height: 1px;
   padding-left:  ($qg-grid-gutter-width-small / 2);
   padding-right: ($qg-grid-gutter-width-small / 2);
-  @media (min-width: $screen-lg-min) {
+  @include media-breakpoint-up(lg) {
     padding-left:  ($gutter / 2);
     padding-right: ($gutter / 2);
   }
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     float: left;
     width: percentage(($columns / $grid-columns));
   }
@@ -80,12 +80,12 @@
   min-height: 1px;
   padding-left:  ($qg-grid-gutter-width-small / 2);
   padding-right: ($qg-grid-gutter-width-small / 2);
-  @media (min-width: $screen-lg-min) {
+  @include media-breakpoint-up(lg) {
     padding-left:  ($gutter / 2);
     padding-right: ($gutter / 2);
   }
 
-  @media (min-width: $screen-lg-min) {
+  @include media-breakpoint-up(lg) {
     float: left;
     width: percentage(($columns / $grid-columns));
   }

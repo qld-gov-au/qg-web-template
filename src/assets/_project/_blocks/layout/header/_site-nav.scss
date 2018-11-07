@@ -14,7 +14,7 @@
 		padding: 0;
 		list-style: none;
 
-		@media (min-width: $screen-lg-min) {
+    @include media-breakpoint-up(lg) {
 	      padding-left: $qg-spacing / 2;
 	    }
 	}
@@ -39,7 +39,7 @@
 	}
 }
 
-@media (min-width: $screen-md-min) {
+@include media-breakpoint-up(md) {
 	#qg-site-nav {
 		padding-left: 0;
 		padding-right: 0;
@@ -72,7 +72,7 @@
 	}
 }
 
-@media (min-width: $screen-lg-min) {
+@include media-breakpoint-up(lg) {
 	#qg-site-nav {
     padding-left: $grid-gutter-width / 4;
   	}

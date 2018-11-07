@@ -5,7 +5,7 @@
   padding-top: $qg-spacing / 2;
   padding-bottom: $qg-spacing / 2;
 
-  @media (min-width: $screen-lg-min) {
+  @include media-breakpoint-up(lg) {
     padding-left:  ($grid-gutter-width / 2);
     padding-right: ($grid-gutter-width / 2);
   }

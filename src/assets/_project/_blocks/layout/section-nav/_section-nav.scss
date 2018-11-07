@@ -79,7 +79,7 @@
     }
   }
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     background-color: transparent;
 
     h2, ul {
@@ -104,7 +104,7 @@
       }
     }
   }
-  @media (min-width: $screen-lg-min) {
+  @include media-breakpoint-up(lg) {
     // h2 {
     //   padding: $qg-spacing $qg-spacing $qg-spacing-xs-small $qg-spacing;
     // }

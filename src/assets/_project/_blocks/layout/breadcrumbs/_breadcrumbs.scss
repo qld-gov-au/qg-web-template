@@ -42,7 +42,7 @@
       @include rem(font-size, 15px);
     }
 
-		@media (min-width: $screen-lg-min) {
+    @include media-breakpoint-up(lg) {
 	      padding-left: $qg-spacing / 2;
 	    }
 	}
@@ -84,7 +84,7 @@
     }
 	}
 
-	@media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
 		margin: 0;
 
 		&.collapse {
@@ -108,7 +108,7 @@
 	}
 }
 
-@media (min-width: $screen-md-min) {
+@include media-breakpoint-up(md) {
 	// Set to shown to prevent breadcrumbs from being hidden
 	#qg-breadcrumb.collapse{
 	   display: block;
