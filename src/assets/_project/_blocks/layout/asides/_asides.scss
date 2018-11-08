@@ -112,7 +112,8 @@
         content: $fa-var-sign-in;
         font-family: FontAwesome;
         color: $qg-green;
-        font-size: 3.2rem;
+        //font-size: 3.2rem;
+        @include rem(font-size, 32px);
         font-weight: normal;
         padding-right: 1.2rem;
       }
