@@ -52,15 +52,19 @@
   }
 
   .input-group-btn {
-    position: absolute;
-    top: 0;
-    right: -2px;
+    //position: absolute;
+    //top: 0;
+    //right: -2px;
   }
 
   .input-group {
-    max-width: calc(100% - 60px);
-    @media all and (max-width: $screen-sm) {
-      width: calc(100% - 60px);
+    padding-right: 50px;
+    //max-width: calc(100% - 60px);
+    //@media all and (max-width: $screen-sm) {
+    //  width: calc(100% - 60px);
+    //}
+    @include media-breakpoint-down(md) {
+      padding-right: 0;
     }
   }
 

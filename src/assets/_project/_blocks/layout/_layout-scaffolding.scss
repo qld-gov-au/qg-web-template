@@ -71,7 +71,6 @@
   //@include make-md-column(3);
 
   & + #qg-primary-content {
-    outline: 10px solid red;
     //@include make-md-column(6);
     //@include make-md-column-push(0);
   }
@@ -84,7 +83,6 @@
 // Wide layout
 #qg-content.qg-wide {
   #qg-primary-content {
-    outline: 10px solid silver;
     @include make-col-ready();
     @include make-col(12);
     //@include make-xs-column(12);

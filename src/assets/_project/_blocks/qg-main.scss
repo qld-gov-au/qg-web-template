@@ -6,7 +6,6 @@
 
 // Variables
 // -------------------------
-
 @import "scss-general/qg-variables";
 @import "scss-general/qg-font-variables";
 //@import "scss-general/bootstrap-variables";
@@ -15,27 +14,9 @@
 // -------------------------
 @import "scss-general/bootstrap/rem";
 @import "scss-general/bootstrap/variables";
-$grid-breakpoints: (
-  // Extra small screen / phone
-  xs: 0,
-  // Small screen / phone
-  sm: 768px,
-  // Medium screen / tablet
-  md: 992px,
-  // Large screen / desktop
-  lg: 1200px,
-  // Extra large screen / wide desktop
-);
-
-@import "../../../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../../../../node_modules/bootstrap/scss/bootstrap";
 @import "scss-general/bootstrap/buttons";
 @import "scss-general/bootstrap/bridge_bootstrap3";
-
-
-// Import bootstrap
-//@import "scss-general/bootstrap-loader"; // Local custom loader, pulls resources from NPM module
-//@import "~bootstrap";
-	// @import "../../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap"; // NPM module
 @import "../../../../node_modules/font-awesome/scss/font-awesome.scss";
 
 // Queensland government styles
