@@ -1,9 +1,11 @@
 'use strict';
 
+const config = require('../gulp-config.js');
 const gulp = require('gulp');
 const git = require('gulp-git');
 const del = require('del');
 const path = require('path');
+const fs = require('fs');
 const dirSync = require('gulp-directory-sync');
 const replace = require('gulp-replace');
 
@@ -26,6 +28,19 @@ const gitFunctions = {
       return gulp.src(`${from}/**/*`)
         .pipe(dirSync(path.resolve(from), path.resolve(to), { printSummary: true, ignore: ignoreFiles }));
     };
+  },
+  transfer: () => {
+    if (!fs.existsSync(`${config.staticCdnRepo.folder}/assets/${config.versionName}/${config.subVersion}`)) {
+      return (cb) => {
+        return gulp.src(`${config.basepath.static}/assets/${config.versionName}/latest/**/*`)
+          .pipe(gulp.dest(`${config.staticCdnRepo.folder}/assets/${config.versionName}/latest/`))
+          .pipe(gulp.dest(`${config.staticCdnRepo.folder}/assets/${config.versionName}/${config.subVersion}/`));
+      };
+    } else {
+      return (cb) => {
+        console.log('version directory already exist');
+      };
+    }
   },
   updateVersion: (folder, version) => {
     return (cb) => {

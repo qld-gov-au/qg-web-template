@@ -71,7 +71,6 @@ gulp.task('assets-includes-local', require('./gulp/build-tasks/assets-includes')
 gulp.task('assets-includes-docs', require('./gulp/build-tasks/assets-includes')(gulp, plugins, config, 'docs/assets/includes-local', true, true));
 gulp.task('assets-includes-cdn', require('./gulp/build-tasks/assets-includes')(gulp, plugins, config, 'assets/includes-cdn'));
 
-// FIXME: Re-add unit tests
 gulp.task('build', (cb) => {
   runSequence(
       'test:eslint',
@@ -175,6 +174,7 @@ gulp.task('wt-npm', require('./gulp/publish-tasks/npm'));
 
 gulp.task('cdn-clean', require('./gulp/publish-tasks/git').clean(config.staticCdnRepo.folder));
 gulp.task('cdn-clone', require('./gulp/publish-tasks/git').clone(config.staticCdnRepo.url, config.staticCdnRepo.folder));
-gulp.task('cdn-sync', require('./gulp/publish-tasks/git').sync(config.basepath.static, config.staticCdnRepo.folder, ['_env']));
+gulp.task('cdn-transfer', require('./gulp/publish-tasks/git').transfer());
+// gulp.task('cdn-sync', require('./gulp/publish-tasks/git').sync(config.basepath.static, config.staticCdnRepo.folder, ['_env']));
 gulp.task('cdn-commit', require('./gulp/publish-tasks/git').commit(config.staticCdnRepo.folder, pjson.version));
 gulp.task('cdn-push', require('./gulp/publish-tasks/git').push(config.staticCdnRepo.folder));
