@@ -24,6 +24,9 @@
 
 	.carousel-indicators{
 		bottom: 10px;
+    li {
+      border-radius: 50%;
+    }
 	}
 }
 

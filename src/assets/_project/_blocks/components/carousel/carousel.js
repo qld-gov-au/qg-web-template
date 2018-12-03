@@ -15,7 +15,7 @@
   });
 
   function carouselNormalization () {
-    let items = $('#aside-carousel .item');
+    let items = $('#aside-carousel .carousel-item');
     let heights = [];
     let tallest;
     if (items.length) {
@@ -40,6 +40,8 @@
       });
     }
   }
-  carouselNormalization();
+  window.onload = function () {
+    carouselNormalization();
+  };
 })(jQuery);
 
