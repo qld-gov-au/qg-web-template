@@ -59,10 +59,10 @@ const gitFunctions = {
         regex: new RegExp('"googleRecaptchaApiKey"'),
         replace: "(window.location.hostname==='www.qld.gov.au'? '6LcoIywUAAAAAN-1rq22G-bP3yxl1bBq_5nHJ6s9' : '6LeNGSwUAAAAAD6o-P5UTM0FNpKjYB71Kh70F-Ud')"
       };
-      return gulp.src(path.resolve(folder, 'static.qgov.net.au/assets/v3/latest/js/', 'qg-main.js'))
+      return gulp.src(path.resolve(folder, `static.qgov.net.au/assets/${config.versionName}/latest/js/`, 'qg-main.js'))
           .pipe(replace(maps.regex, maps.replace))
           .pipe(replace(recaptcha.regex, recaptcha.replace))
-          .pipe(gulp.dest(path.resolve(folder, 'static.qgov.net.au/assets/v3/latest/js/')));
+          .pipe(gulp.dest(path.resolve(folder, `static.qgov.net.au/assets/${config.versionName}/latest/js/`)));
     };
   },
   commit: (folder, version) => {
