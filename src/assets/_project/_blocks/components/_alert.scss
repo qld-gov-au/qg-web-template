@@ -15,12 +15,15 @@
   }
   &.alert-success {
     border-left: 5px solid $brand-success;
+    background-color: #f2f7ea;
   }
   &.alert-info {
     border-left: 5px solid $brand-info;
+    background-color: #eff5f6;
   }
   &.alert-warning {
     border-left: 5px solid $brand-warning;
+    background-color: #ffedde;
   }
   &.alert-success, &.alert-info, &.alert-warning, &.alert-tip, &.alert-danger{
     //padding: $alert-padding;

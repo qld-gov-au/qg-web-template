@@ -760,7 +760,7 @@ legend .h3 {
     margin-top: 0;
   }
   small, p {
-    font-size: 1.4rem;
+    @include rem(font-size, 14px);
   }
 }
 
@@ -1258,7 +1258,7 @@ form {
     position: absolute;
     margin-left: -20px;
     padding: 0;
-    top: inherit;
+    //top: inherit;
   }
 }
 
