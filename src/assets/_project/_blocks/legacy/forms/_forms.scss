@@ -880,9 +880,7 @@ abbr.required, abbr[title*="required"] {
   position: absolute;
   margin-left: -20px;
   padding: 0;
-  /* IE8 needs this to remove earlier padding */
-  top: .3em;
-  /* helps Chrome, Firefox and Opera */
+  top: .4em;
 }
 
 /* compact options layout */
