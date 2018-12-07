@@ -8,7 +8,9 @@
   }
 
   &.alert-danger {
-    color: #fff;
+    color: #fff !important;
+    border-left: 5px solid $brand-danger;
+    background-color: #b90824;
     a {
       color: #FF0;
     }
@@ -32,16 +34,16 @@
     //padding: $alert-padding;
     // TODO bootstrap 4 implementation
     font-weight: normal;
+    color: #000;
     margin: 24px 0 24px 0;
     border-radius: 0;
     padding: 0.75rem 1.25rem;
     ul {
       padding-left: 0 !important;
     }
-    // TODO bootstrap 4 implementation
     h2{
       i {
-        font-size: 2.4rem;
+        @include rem(font-size, 24px);
         margin-right: 10px;
       }
     }
@@ -81,4 +83,17 @@
   &.info, &.tip{
     border-color: $brand-info;
   }
+}
+
+// links
+a {
+  color: #13578b;
+  text-decoration: none;
+}
+a:focus, a:hover {
+  color: #0a2d48;
+  text-decoration: underline;
+}
+a:active, a:hover {
+  outline: 0;
 }

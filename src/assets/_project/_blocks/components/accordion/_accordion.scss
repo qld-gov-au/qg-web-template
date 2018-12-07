@@ -3,6 +3,7 @@
     float: right;
     padding: 0 0.5rem;
     color: $qg-blue-dark;
+    font-weight: bold;
   }
   article {
     position: relative;
@@ -40,7 +41,7 @@
       }
       .subtitle {
         color: $qg-dark-grey;
-        font-size: 1.6rem;
+        @include rem(font-size, 16px);
         font-weight: normal;
         display: block;
       }
