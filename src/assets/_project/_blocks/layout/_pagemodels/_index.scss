@@ -1,4 +1,3 @@
-//TODO layout columns class names
 .qg-index-links {
   @extend .d-flex;
   @extend .flex-wrap;
@@ -116,7 +115,6 @@
 // Legacy stuff
 #qg-one-col, #qg-three-col, #qg-two-col-aside:not(.wide), #qg-two-col-nav:not(.wide) {
   .qg-index-links > .qg-index-item {
-    //@include make-sm-column(6);
     @include media-breakpoint-up(sm) {
       @include make-col(6);
     }
@@ -128,7 +126,6 @@
 
 #qg-one-col.wide {
   .qg-index-links > .qg-index-item {
-    //@include make-sm-column(3);
     @include media-breakpoint-up(sm) {
       @include make-col(3);
     }
@@ -140,7 +137,6 @@
 
 #qg-two-col-aside.wide, #qg-two-col-nav.wide {
   .qg-index-links > .qg-index-item {
-    //@include make-sm-column(4);
     @include media-breakpoint-up(sm) {
       @include make-col(4);
     }

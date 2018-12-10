@@ -1,6 +1,6 @@
 // ############################################
 // Primary styles
-//TODO layout columns class names
+
 .container-fluid.qg-site-width{
   max-width: $qg-max-container-width; // old SWE width
 }
@@ -29,17 +29,6 @@
     padding-right: $qg-grid-gutter-width-small/2;
     padding-left: $qg-grid-gutter-width-small/2;
   }
-  //@media (max-width: $screen-lg-min) {
-  //  padding-left:  15px;
-  //  padding-right: 15px;
-  //}
-
-  //@include media-breakpoint-up(lg) {
-  //  @include make-col(8);
-  //}
-  //@include make-xs-column(12);
-  //@include make-md-column(6);
-  //@include make-md-column-push(3);
 }
 #qg-secondary-content {
   @include make-col-ready();
@@ -52,9 +41,6 @@
     padding-right: $qg-grid-gutter-width-small/2;
     padding-left: $qg-grid-gutter-width-small/2;
   }
-  //@include make-col-offset(9)
-
-  //@include make-md-column-push(3);
 }
 #qg-section-nav {
   @include make-col-ready();
@@ -67,16 +53,11 @@
     padding-right: $qg-grid-gutter-width-small/2;
     padding-left: $qg-grid-gutter-width-small/2;
   }
-  //@include make-xs-column(12);
-  //@include make-md-column(3);
-
   & + #qg-primary-content {
-    //@include make-md-column(6);
-    //@include make-md-column-push(0);
-  }
 
+  }
   & ~ #qg-secondary-content {
-    //@include make-md-column-push(0);
+
   }
 }
 
@@ -85,28 +66,25 @@
   #qg-primary-content {
     @include make-col-ready();
     @include make-col(12);
-    //@include make-xs-column(12);
-    //@include make-md-column-push(0);
-
     & + #qg-secondary-content {
-      //@include make-md-column-push(0);
+
     }
   }
 
   // With aside
   #qg-primary-content.qg-has-aside {
-    //@include make-md-column(9);
+
   }
 
   // With nav
   #qg-section-nav {
     & + #qg-primary-content {
-      //@include make-md-column(9);
+
     }
 
     // With nav AND aside
     & + #qg-primary-content.qg-has-aside {
-      //@include make-md-column(6);
+
     }
   }
 }
@@ -137,12 +115,11 @@
 // Three column layout (navigation, content, aside)
 #qg-one-col, #qg-three-col {
   #qg-section-nav {
-    //@include make-md-column-pull(9);
+
   }
 
   #qg-primary-content {
-    //@include make-md-column(6);
-    //@include make-md-column-push(3);
+
   }
 
   #qg-secondary-content {
@@ -163,8 +140,6 @@
       @include make-col(9);
       @extend .order-md-1;
     }
-    //@include make-md-column(9);
-    //@include make-md-column-push(0);
     @include media-breakpoint-up(lg) {
       padding-left: $grid-gutter-width !important;
     }
@@ -174,20 +149,17 @@
     @include media-breakpoint-up(md) {
       @extend .order-md-2;
     }
-    //@include make-md-column-push(0);
   }
 }
 
 // Two column layout navigation (navigation, content)
 #qg-two-col-nav{
   #qg-section-nav {
-    //@include make-md-column-pull(6);
+
   }
 }
 #qg-two-col-nav.wide {
   #qg-primary-content {
-    //@include make-md-column(9);
-    //@include make-md-column-push(3);
     @include media-breakpoint-up(lg) {
       padding-right: $grid-gutter-width !important;
     }
@@ -199,8 +171,6 @@
     @include media-breakpoint-up(md) {
       @include make-col(12);
     }
-    //@include make-md-column(12);
-    //@include make-md-column-push(0);
   }
 }
 
