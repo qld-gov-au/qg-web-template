@@ -15,6 +15,7 @@
     @include rem(margin-top, 24px);
   }
   p {
+    @include rem(font-size, 12px);
     @include make-col-ready();
     @include make-col(12);
     &.qg-copyright {
