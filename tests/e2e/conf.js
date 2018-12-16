@@ -1,3 +1,4 @@
+/*eslint-disable */
 exports.config = {
   onPrepare: function () {
     const protractorImageComparison = require('protractor-image-comparison');
@@ -12,7 +13,7 @@ exports.config = {
     browserName: 'chrome',
 
     chromeOptions: {
-      args: [ '--disable-gpu', '--window-size=1200,1000' ],
+      args: [ '--disable-gpu', '--window-size=2000,1000' ],
     },
   },
   baseUrl: 'http://localhost:7777',
