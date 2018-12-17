@@ -182,6 +182,6 @@ gulp.task('cdn-commit', require('./gulp/publish-tasks/git').commit(config.static
 gulp.task('cdn-push', require('./gulp/publish-tasks/git').push(config.staticCdnRepo.folder));
 
 // SWE release
-gulp.task('wt-commit', require('./gulp/publish-tasks/git').commit('/', pjson['wt-version']));
-gulp.task('wt-push', require('./gulp/publish-tasks/git').push('/'));
+gulp.task('swe-commit', require('./gulp/publish-tasks/git').commit('/', pjson['wt-version']));
+gulp.task('swe-push', require('./gulp/publish-tasks/git').push('/'));
 
