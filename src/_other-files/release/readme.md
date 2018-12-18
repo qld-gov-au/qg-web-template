@@ -23,8 +23,6 @@ This template is for anyone in Queensland Government developing a Franchise (SWE
       - Assets in the template will be requested from local - /assets/v3.1/latest/
       - Server side includes are converted to static html
 
-### Boilerplate - comming soon
-Project boilerplate is comming soon.
 
 ### Custom installation
 Install the files via <a href="https://nodejs.org/en/">node package manager (NPM)</a>:

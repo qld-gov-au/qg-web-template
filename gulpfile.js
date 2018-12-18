@@ -169,7 +169,9 @@ gulp.task('wt-clone', require('./gulp/publish-tasks/git').clone(config.webTempla
 gulp.task('wt-sync', require('./gulp/publish-tasks/git').sync(config.basepath.release, config.webTemplateRepo.folder, ['package.json']));
 gulp.task('wt-updateVersion', require('./gulp/publish-tasks/git').updateVersion(config.webTemplateRepo.folder, pjson['wt-version']));
 gulp.task('wt-updateApiKeys', require('./gulp/publish-tasks/git').updateApiKeys(config.webTemplateRepo.folder, config.apiKeys));
+gulp.task('wt-add', require('./gulp/publish-tasks/git').add(config.webTemplateRepo.folder));
 gulp.task('wt-commit', require('./gulp/publish-tasks/git').commit(config.webTemplateRepo.folder, pjson['wt-version']));
+gulp.task('wt-tag', require('./gulp/publish-tasks/git').tag(config.webTemplateRepo.folder, pjson['wt-version']));
 gulp.task('wt-push', require('./gulp/publish-tasks/git').push(config.webTemplateRepo.folder));
 gulp.task('wt-npm', require('./gulp/publish-tasks/npm'));
 
@@ -182,6 +184,8 @@ gulp.task('cdn-commit', require('./gulp/publish-tasks/git').commit(config.static
 gulp.task('cdn-push', require('./gulp/publish-tasks/git').push(config.staticCdnRepo.folder));
 
 // SWE release
-gulp.task('swe-commit', require('./gulp/publish-tasks/git').commit('/', pjson['wt-version']));
-gulp.task('swe-push', require('./gulp/publish-tasks/git').push('/'));
+gulp.task('swe-add', require('./gulp/publish-tasks/git').add());
+gulp.task('swe-commit', require('./gulp/publish-tasks/git').commit('./', pjson['wt-version']));
+gulp.task('swe-push', require('./gulp/publish-tasks/git').push('./'));
+gulp.task('swe-tag', require('./gulp/publish-tasks/git').tag('./', pjson['wt-version']));
 

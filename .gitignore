@@ -51,3 +51,4 @@ etc/
 /build/**
 release
 package-lock.json
+web-template-release/
