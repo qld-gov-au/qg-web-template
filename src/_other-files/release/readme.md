@@ -1,6 +1,6 @@
 # Queensland Government Web Template
 
-**If you are using assets from this Repo, please send an email to oss.products@dsiti.qld.gov.au so we can add you to our change management communications list**
+**If you are using assets from this Repo, please send an email to qol.development@smartservice.qld.gov.au so we can add you to our change management communications list**
 
 This repo contains the released assets from the Qld Gov Web Template for franchises and agencies to use to build compliant websites.
 
