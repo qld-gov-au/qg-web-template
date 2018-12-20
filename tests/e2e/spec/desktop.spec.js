@@ -1,7 +1,7 @@
 /*eslint-disable */
 const protractorImageComparison = require('protractor-image-comparison');
 
-describe('Example page', function () {
+describe('SWE templates visual regression tests', function () {
   beforeEach(function () {
     browser.protractorImageComparison = new protractorImageComparison({
       baselineFolder: './tests/e2e/screenshots/baseline',

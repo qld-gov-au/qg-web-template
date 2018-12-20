@@ -9,7 +9,6 @@
     "url": "https://github.com/qld-gov-au/qg-web-template.git"
   },
   "scripts": {
-    "test:e2e": "npx protractor tests/e2e/conf.js",
     "clean": "gulp clean-build && gulp clean-release",
     "prebuild": "gulp clean-build",
     "build": "gulp build && node gulp/build-tasks/node-docs-flatten.js && gulp wt-updateVersion",
