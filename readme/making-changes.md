@@ -43,8 +43,9 @@ gulp serve
 gulp test
 ```
 **To run E2E tests locally**.
+webdriver-manager update --gecko false --proxy PROXY(if any)
 ```bash
-gulp test:e2e
+yarn test:e2e
 ```
 **To run E2E tests using Browserstack**.
 
