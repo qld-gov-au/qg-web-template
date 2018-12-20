@@ -1,6 +1,6 @@
 /*eslint-disable */
 
-describe('Service finder', function () {
+describe('SWE templates testing', function () {
   beforeEach(() => {
     browser.waitForAngularEnabled(false);
     browser.get('/template-pages/content-page.html');

@@ -2,7 +2,6 @@
 const protractorImageComparison = require('protractor-image-comparison');
 
 describe('Example page', function () {
-  // Or instantiate `protractor-image-comparison` in a beforeEach or in your protractor conf, see above
   beforeEach(function () {
     browser.protractorImageComparison = new protractorImageComparison({
       baselineFolder: './tests/e2e/screenshots/baseline',
