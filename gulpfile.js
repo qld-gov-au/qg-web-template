@@ -16,7 +16,7 @@ const path            = require('path');
 const addSrc          = require('gulp-add-src');
 
 // For testing
-const karmaServer       = require('karma').Server;
+const protractor        = require("gulp-protractor").protractor;
 const fsPath            = require('fs-path');
 const eslintReporter    = require('eslint-html-reporter');
 const connectssi        = require('gulp-connect-ssi');
@@ -95,7 +95,7 @@ gulp.task('default', ['build']);
 gulp.task('watch:project', function () {
   gulp.watch([`${config.basepath.src}/assets/_project/_blocks/layout/**/*.html`], ['assets-includes-local', 'assets-includes-docs']);
   gulp.watch([`${config.basepath.src}/assets/_project/**/*.scss`], ['scss']);
-  gulp.watch(`${config.basepath.src}/assets/_project/_blocks/**/*.js`, { verbose: true }, ['js', 'test']);
+  gulp.watch(`${config.basepath.src}/assets/_project/_blocks/**/*.js`, { verbose: true }, ['js', 'test:eslint']);
   gulp.watch(`${config.basepath.src}/assets/_project/lib/**/*.js`, { verbose: true }, ['other-assets']);
   gulp.watch([`${config.basepath.src}/assets/_project/images/**/*`], ['other-assets']);
   gulp.watch([`${config.basepath.src}/template-pages/**/*`], ['template-pages', 'template-pages-to-docs']);
@@ -130,32 +130,16 @@ gulp.task('release', (cb) => {
 });
 
 /* TEST TASKS */
-gulp.task('test:unit', require('./gulp/test-tasks/unit')(gulp, plugins, config, karmaServer));
 gulp.task('test:eslint', require('./gulp/test-tasks/lint')(gulp, plugins, config, fsPath, eslintReporter));
-gulp.task('test:e2e:browserstack', require('./gulp/test-tasks/e2e')(gulp, plugins, argv));
-gulp.task('test:e2e:local', function () {
-  return gulp.src('')
-      .pipe(plugins.nightwatch({
-        configFile: 'tests/e2e/config.json',
-      }));
-});
-gulp.task('process-exit', function () {
-  process.exit(0);
-});
-gulp.task('test:e2e', (cb) => {
-  runSequence(
-      ['serve'],
-      ['test:e2e:local'],
-      ['process-exit'],
-      cb
-  );
-});
-gulp.task('test', (cb) => {
-  runSequence(
-      // ['test:unit'],
-      //['test:eslint'],
-      cb
-  );
+gulp.task('test:e2e', function () {
+  gulp.src(["tests/e2e/spec/*.spec.js"])
+    .pipe(protractor({
+      configFile: "./tests/e2e/conf.js",
+      args: [
+        '--baseUrl', 'http://localhost:7777',
+      ]
+    }))
+    .on('error', function(e) { throw e });
 });
 
 /* LOCAL SERVER */
