@@ -16,6 +16,4 @@ exports.config = {
       args: [ '--disable-gpu', '--window-size=2000,1000' ],
     },
   },
-  baseUrl: 'http://localhost:7777',
-  specs: ['spec/*.spec.js'],
 };
