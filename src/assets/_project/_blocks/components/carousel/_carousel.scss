@@ -3,10 +3,30 @@
     margin-bottom: 0;
     margin-top: 2em;
     position: relative;
-    .carousel-item{
-      img {
-        width: 100%;
-        height: auto;
+    .carousel-inner{
+      .carousel-item {
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out;
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+      .active {
+        opacity: 1;
+      }
+      .active.left,
+      .active.right {
+        left: 0;
+        opacity: 0;
+        z-index: 1;
+      }
+      .next.left,
+      .prev.right {
+        opacity: 1;
+      }
+      .carousel-control {
+        z-index: 2;
       }
     }
     .carousel-caption{
@@ -115,27 +135,6 @@
         visibility: hidden;
       }
     }
-  }
-
-  .carousel-fade .carousel-inner .item {
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-  }
-  .carousel-fade .carousel-inner .active {
-    opacity: 1;
-  }
-  .carousel-fade .carousel-inner .active.left,
-  .carousel-fade .carousel-inner .active.right {
-    left: 0;
-    opacity: 0;
-    z-index: 1;
-  }
-  .carousel-fade .carousel-inner .next.left,
-  .carousel-fade .carousel-inner .prev.right {
-    opacity: 1;
-  }
-  .carousel-fade .carousel-control {
-    z-index: 2;
   }
 }
 

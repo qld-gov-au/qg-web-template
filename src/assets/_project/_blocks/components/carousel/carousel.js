@@ -3,19 +3,7 @@
 
 (function ($) {
   let carousels = [];
-  $('.qg-featured .carousel.slide').each(function (i, e) {
-    let carousel = $(e).attr('id');
-    carousels.push(carousel);
-    $(this).attr('data-state', 'cycle').attr('data-interval', '8000');
-    $('#' + carousel + '').find('.toggleCarousel').click(function (e) {
-      e.preventDefault();
-      var $parentCarousel = $(this).parents('div.carousel.slide');
-      $parentCarousel.attr('data-state') === 'cycle' ? $parentCarousel.attr('data-state', 'pause') : $parentCarousel.attr('data-state', 'cycle');
-      $parentCarousel.carousel($parentCarousel.attr('data-state'));
-      $(this).find('i').toggleClass('fa-sync fa-pause');
-    });
-  });
-  function eqHeight (carousels) {
+  let eqHeight = (carousels) => {
     carousels.forEach(function (e) {
       let items = $('#' + e + '').find('.carousel-item');
       let heights = [];
@@ -41,7 +29,19 @@
         });
       }
     });
-  }
+  };
+  $('.qg-featured .carousel.slide').each(function (i, e) {
+    let carousel = $(e).attr('id');
+    carousels.push(carousel);
+    $(this).attr('data-state', 'cycle').attr('data-interval', '8000');
+    $('#' + carousel + '').find('.toggleCarousel').click(function (e) {
+      e.preventDefault();
+      var $parentCarousel = $(this).parents('div.carousel.slide');
+      $parentCarousel.attr('data-state') === 'cycle' ? $parentCarousel.attr('data-state', 'pause') : $parentCarousel.attr('data-state', 'cycle');
+      $parentCarousel.carousel($parentCarousel.attr('data-state'));
+      $(this).find('i').toggleClass('fa-sync fa-pause');
+    });
+  });
   window.onload = function () {
     eqHeight(carousels);
   };
