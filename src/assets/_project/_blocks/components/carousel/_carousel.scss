@@ -1,10 +1,17 @@
 .qg-featured{
   .carousel{
-    margin-bottom: 0;
+    margin-bottom: 2em;
     margin-top: 2em;
     position: relative;
+    &.qg-aside{
+      margin-bottom: 0;
+    }
     .carousel-inner{
       .carousel-item {
+        a {
+          text-decoration: none !important;
+          display: block;
+        }
         opacity: 0;
         transition: opacity 0.2s ease-in-out;
         img {
