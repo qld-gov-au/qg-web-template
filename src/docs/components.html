@@ -65,7 +65,7 @@
                 <h2 id="breadcrumb-heading" class="qg-visually-hidden">You are here:</h2>
 
                 <ol class="list-inline">
-                    <!--#include virtual="assets/includes-cdn/breadcrumbs/qg-web-template.html"-->
+                    <!--#include virtual="assets/includes-local/breadcrumbs/qg-web-template.html"-->
                     <li>Components</li>
                 </ol>
 
@@ -1013,44 +1013,45 @@ or
               <!-- ################################## -->
               <h2 id="carousel" class="category">Carousel</h2>
               <p>A slideshow component for cycling through elements—images or slides of text—like a carousel.</p>
-
+              <p>if a requirement is to have multiple carousels on the same page then please increment 'carousel-n' Id value (ID value at root and controls is to scope carousel in Bootstrap). For more details please refer to the documentation on Bootstrap 4 doc https://getbootstrap.com/docs/4.0/components/carousel/</p>
               <div class="qg-featured">
                 <div id="carousel-1" class="carousel slide" data-ride="carousel">
-                  <!-- Wrapper for slides -->
-                  <div class="carousel-inner" role="listbox">
-                    <div class="carousel-item active">
-                      <a href="https://stoptherise.initiatives.qld.gov.au/" title="External link: https://stoptherise.initiatives.qld.gov.au/">
-                        <img src="https://oss-uat.clients.squiz.net/__data/assets/image/0022/69601/stop-the-rise.jpg" alt="Stop the rise">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active" title="title">
+                      <a href="https://qld.gov.au/">
+                        <img src="https://via.placeholder.com/550/808080/808080" alt="placeholder">
                         <div class="carousel-caption">
-                          <h3>Stop the rise of STIs</h3>
-                          <p>Keep yourself safe, health and sexy with regular testing, protection and sexual health information.</p>
+                          <h3>lorem ipsum </h3>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci atque, ea fuga iste
+                            quia? Accusantium doloribus dolorum, eius in iure, iusto odit officiis praesentium rem,
+                            rerum similique velit voluptatum.</p>
                         </div>
                       </a>
                     </div>
                     <div class="carousel-item">
-                      <a href="https://stoptherise.initiatives.qld.gov.au/" title="External link: https://stoptherise.initiatives.qld.gov.au/">
-                        <img src="https://oss-uat.clients.squiz.net/__data/assets/image/0017/9503/quit-hq.jpg" alt="QuitHQ feature banner">
+                      <a href="https://qld.gov.au/" title="title">
+                        <img src="https://via.placeholder.com/550/000/000" alt="placeholder">
                         <div class="carousel-caption">
-                          <h3>QuitHQ</h3>
-                          <p>Keep yourself safe, health and sexy with regular testing, protection and sexual health information.</p>
+                          <h3>lorem ipsum </h3>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci atque, ea fuga iste
+                            quia? Accusantium doloribus dolorum, eius in iure, iusto odit officiis praesentium rem,
+                            rerum similique velit voluptatum.</p>
                         </div>
                       </a>
 
                     </div>
                     <div class="carousel-item">
-                      <a href="https://oss-uat.clients.squiz.net/health/staying-healthy/feel-good-facts" title="External link: https://stoptherise.initiatives.qld.gov.au/">
-                        <img src="https://oss-uat.clients.squiz.net/__data/assets/image/0021/9516/feel-good-facts-feature.png" alt="Feel good facts feature banner">
+                      <a href="https://qld.gov.au/" title="title">
+                        <img src="https://via.placeholder.com/550/ccc/ccc" alt="placeholder">
                         <div class="carousel-caption">
-                          <h3>Feel good facts</h3>
-                          <p>Read some fun-sized chunks of information giving tips on how to make the Queensland life feel even better.</p>
+                          <h3>lorem ipsum </h3>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci atque, ea fuga iste
+                            quia? Accusantium doloribus dolorum, eius in iure, iusto odit officiis praesentium rem,
+                            rerum similique velit voluptatum.</p>
                         </div>
                       </a>
-
                     </div>
-
                   </div>
-
-
                   <div class="carousel-nav clearfix">
                     <!-- Indicators -->
                     <ol class="carousel-indicators">
@@ -1058,7 +1059,6 @@ or
                       <li data-target="#carousel-1" data-slide-to="1"></li>
                       <li data-target="#carousel-1" data-slide-to="2"></li>
                     </ol>
-
                     <!-- Controls -->
                     <ul class="controls-grp">
                       <li> <a class="left carousel-control" href="#carousel-1" role="button" data-slide="prev">
@@ -1073,78 +1073,74 @@ or
                       </a>
                       </li>
                     </ul>
-
                   </div>
-
-
                 </div>
               </div>
-
               <pre><code class="language-markup">
 
-                &#x3C;div id=&#x22;carousel-1&#x22; class=&#x22;carousel slide&#x22; data-ride=&#x22;carousel&#x22;&#x3E;
 
-                  &#x3C;!-- Wrapper for slides --&#x3E;
-                  &#x3C;div class=&#x22;carousel-inner&#x22; role=&#x22;listbox&#x22;&#x3E;
-                    &#x3C;div class=&#x22;carousel-item active&#x22;&#x3E;
-                      &#x3C;a href=&#x22;https://stoptherise.initiatives.qld.gov.au/&#x22; title=&#x22;External link: https://stoptherise.initiatives.qld.gov.au/&#x22;&#x3E;
-                        &#x3C;img src=&#x22;https://oss-uat.clients.squiz.net/__data/assets/image/0022/69601/stop-the-rise.jpg&#x22; alt=&#x22;Stop the rise&#x22;&#x3E;
-                        &#x3C;div class=&#x22;carousel-caption&#x22;&#x3E;
-                          &#x3C;h3&#x3E;Stop the rise of STIs&#x3C;/h3&#x3E;
-                          &#x3C;p&#x3E;Keep yourself safe, health and sexy with regular testing, protection and sexual health information.&#x3C;/p&#x3E;
-                        &#x3C;/div&#x3E;
-                      &#x3C;/a&#x3E;
-                    &#x3C;/div&#x3E;
-                    &#x3C;div class=&#x22;carousel-item&#x22;&#x3E;
-                      &#x3C;a href=&#x22;https://stoptherise.initiatives.qld.gov.au/&#x22; title=&#x22;External link: https://stoptherise.initiatives.qld.gov.au/&#x22;&#x3E;
-                        &#x3C;img src=&#x22;https://oss-uat.clients.squiz.net/__data/assets/image/0017/9503/quit-hq.jpg&#x22; alt=&#x22;QuitHQ feature banner&#x22;&#x3E;
-                        &#x3C;div class=&#x22;carousel-caption&#x22;&#x3E;
-                          &#x3C;h3&#x3E;QuitHQ&#x3C;/h3&#x3E;
-                          &#x3C;p&#x3E;Keep yourself safe, health and sexy with regular testing, protection and sexual health information.&#x3C;/p&#x3E;
-                        &#x3C;/div&#x3E;
-                      &#x3C;/a&#x3E;
+&lt;div class="qg-featured"&gt;
+  &lt;div id="carousel-1" class="carousel slide" data-ride="carousel"&gt;
+    &lt;div class="carousel-inner"&gt;
+      &lt;div class="carousel-item active" title="title"&gt;
+        &lt;a href="https://qld.gov.au/"&gt;
+          &lt;img src="https://via.placeholder.com/550/808080/808080" alt="placeholder"&gt;
+          &lt;div class="carousel-caption"&gt;
+            &lt;h3&gt;lorem ipsum &lt;/h3&gt;
+            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci atque, ea fuga iste
+              quia? Accusantium doloribus dolorum, eius in iure, iusto odit officiis praesentium rem,
+              rerum similique velit voluptatum.&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div class="carousel-item"&gt;
+        &lt;a href="https://qld.gov.au/" title="title"&gt;
+          &lt;img src="https://via.placeholder.com/550/000/000" alt="placeholder"&gt;
+          &lt;div class="carousel-caption"&gt;
+            &lt;h3&gt;lorem ipsum &lt;/h3&gt;
+            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci atque, ea fuga iste
+              quia? Accusantium doloribus dolorum, eius in iure, iusto odit officiis praesentium rem,
+              rerum similique velit voluptatum.&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/a&gt;
 
-                    &#x3C;/div&#x3E;
-                    &#x3C;div class=&#x22;carousel-item&#x22;&#x3E;
-                      &#x3C;a href=&#x22;https://oss-uat.clients.squiz.net/health/staying-healthy/feel-good-facts&#x22; title=&#x22;External link: https://stoptherise.initiatives.qld.gov.au/&#x22;&#x3E;
-                        &#x3C;img src=&#x22;https://oss-uat.clients.squiz.net/__data/assets/image/0021/9516/feel-good-facts-feature.png&#x22; alt=&#x22;Feel good facts feature banner&#x22;&#x3E;
-                        &#x3C;div class=&#x22;carousel-caption&#x22;&#x3E;
-                          &#x3C;h3&#x3E;Feel good facts&#x3C;/h3&#x3E;
-                          &#x3C;p&#x3E;Read some fun-sized chunks of information giving tips on how to make the Queensland life feel even better.&#x3C;/p&#x3E;
-                        &#x3C;/div&#x3E;
-                      &#x3C;/a&#x3E;
-
-                    &#x3C;/div&#x3E;
-
-                  &#x3C;/div&#x3E;
-                &#x3C;div class=&#x22;carousel-nav clearfix&#x22;&#x3E;
-                    &#x3C;!-- Indicators --&#x3E;
-                    &#x3C;ol class=&#x22;carousel-indicators&#x22;&#x3E;
-                      &#x3C;li data-target=&#x22;#carousel-1&#x22; data-slide-to=&#x22;0&#x22; class=&#x22;active&#x22;&#x3E;&#x3C;/li&#x3E;
-                      &#x3C;li data-target=&#x22;#carousel-1&#x22; data-slide-to=&#x22;1&#x22;&#x3E;&#x3C;/li&#x3E;
-                      &#x3C;li data-target=&#x22;#carousel-1&#x22; data-slide-to=&#x22;2&#x22;&#x3E;&#x3C;/li&#x3E;
-                    &#x3C;/ol&#x3E;
-
-                    &#x3C;!-- Controls --&#x3E;
-                    &#x3C;ul class=&#x22;controls-grp&#x22;&#x3E;
-                      &#x3C;li&#x3E; &#x3C;a class=&#x22;left carousel-control&#x22; href=&#x22;#carousel-1&#x22; role=&#x22;button&#x22; data-slide=&#x22;prev&#x22;&#x3E;
-                        &#x3C;span class=&#x22;icon-prev&#x22; aria-hidden=&#x22;true&#x22;&#x3E;&#x3C;/span&#x3E;
-                        &#x3C;span class=&#x22;sr-only&#x22;&#x3E;Previous&#x3C;/span&#x3E;
-                      &#x3C;/a&#x3E;
-                      &#x3C;/li&#x3E;
-                      &#x3C;li&#x3E;&#x3C;a href=&#x22;#carousel-1&#x22; class=&#x22;toggleCarousel&#x22;&#x3E;&#x3C;i class=&#x22;fa fa-pause&#x22;&#x3E;&#x3C;/i&#x3E;&#x3C;span class=&#x22;button-title&#x22;&#x3E;Pause slideshow&#x3C;/span&#x3E;&#x3C;/a&#x3E;&#x3C;/li&#x3E;
-                      &#x3C;li&#x3E;&#x3C;a class=&#x22;right carousel-control&#x22; href=&#x22;#carousel-1&#x22; role=&#x22;button&#x22; data-slide=&#x22;next&#x22;&#x3E;
-                        &#x3C;span class=&#x22;icon-next&#x22; aria-hidden=&#x22;true&#x22;&#x3E;&#x3C;/span&#x3E;
-                        &#x3C;span class=&#x22;sr-only&#x22;&#x3E;Next&#x3C;/span&#x3E;
-                      &#x3C;/a&#x3E;
-                      &#x3C;/li&#x3E;
-                    &#x3C;/ul&#x3E;
-
-                  &#x3C;/div&#x3E;
-
-
-                &#x3C;/div&#x3E;
-
+      &lt;/div&gt;
+      &lt;div class="carousel-item"&gt;
+        &lt;a href="https://qld.gov.au/" title="title"&gt;
+          &lt;img src="https://via.placeholder.com/550/ccc/ccc" alt="placeholder"&gt;
+          &lt;div class="carousel-caption"&gt;
+            &lt;h3&gt;lorem ipsum &lt;/h3&gt;
+            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci atque, ea fuga iste
+              quia? Accusantium doloribus dolorum, eius in iure, iusto odit officiis praesentium rem,
+              rerum similique velit voluptatum.&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="carousel-nav clearfix"&gt;
+      &lt;!-- Indicators --&gt;
+      &lt;ol class="carousel-indicators"&gt;
+        &lt;li data-target="#carousel-1" data-slide-to="0" class="active"&gt;&lt;/li&gt;
+        &lt;li data-target="#carousel-1" data-slide-to="1"&gt;&lt;/li&gt;
+        &lt;li data-target="#carousel-1" data-slide-to="2"&gt;&lt;/li&gt;
+      &lt;/ol&gt;
+      &lt;!-- Controls --&gt;
+      &lt;ul class="controls-grp"&gt;
+        &lt;li&gt; &lt;a class="left carousel-control" href="#carousel-1" role="button" data-slide="prev"&gt;
+          &lt;span class="icon-prev" aria-hidden="true"&gt;&lt;/span&gt;
+          &lt;span class="sr-only"&gt;Previous&lt;/span&gt;
+        &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;&lt;a href="#carousel-1" class="toggleCarousel"&gt;&lt;i class="fa fa-pause"&gt;&lt;/i&gt;&lt;span class="button-title"&gt;Pause slideshow&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a class="right carousel-control" href="#carousel-1" role="button" data-slide="next"&gt;
+          &lt;span class="icon-next" aria-hidden="true"&gt;&lt;/span&gt;
+          &lt;span class="sr-only"&gt;Next&lt;/span&gt;
+        &lt;/a&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
               </code></pre>
 
               <!-- ################################## -->
@@ -1199,7 +1195,7 @@ or
 
             </aside>
 
-            <!--#include virtual="assets/includes-cdn/section-nav/qg-web-template.html"-->
+            <!--#include virtual="assets/includes-local/section-nav/qg-web-template.html"-->
 
         </div>
         <!--#include virtual="/assets/includes-cdn/content/options.html"-->
