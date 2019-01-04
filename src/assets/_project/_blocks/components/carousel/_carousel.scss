@@ -1,91 +1,152 @@
-// Basic //
-.carousel{
-	margin-top: 1em;
-	margin-bottom: 1em;
-
-	.carousel-caption{
-		margin-bottom: 30px;
-		padding: 1em;
-
-		background: #000; // #E7F5FE;
-		background: rgba(0, 0, 0, 0.7);
-
-		color: #fff;
-		text-shadow: none;
-
-		*:first-child{
-			margin-top: 0;
-		}
-
-		*:last-child{
-			margin-bottom: 0;
-		}
-	}
-
-	.carousel-indicators{
-		bottom: 10px;
-    li {
-      border-radius: 50%;
+.qg-featured{
+  .carousel{
+    margin-bottom: 2em;
+    margin-top: 2em;
+    position: relative;
+    &.qg-aside{
+      margin-bottom: 0;
     }
-	}
+    .carousel-inner{
+      .carousel-item {
+        a {
+          text-decoration: none !important;
+          display: block;
+        }
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out;
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+      .active {
+        opacity: 1;
+      }
+      .active.left,
+      .active.right {
+        left: 0;
+        opacity: 0;
+        z-index: 1;
+      }
+      .next.left,
+      .prev.right {
+        opacity: 1;
+      }
+      .carousel-control {
+        z-index: 2;
+      }
+    }
+    .carousel-caption{
+      position: static;
+      padding-left: 0;
+      padding-right: 0;
+      margin-bottom:0;
+      margin-top: 1em;
+      background: none;
+      h3 {
+        text-align: left;
+        @include rem(font-size, 18px);
+        font-weight: 700;
+        color: #000 !important;
+      }
+      p {
+        text-align: left;
+        color: #000;
+        &.more{
+          text-align: right;
+        }
+      }
+    }
+    .carousel-indicators{
+      position: inherit;
+      margin-left: 0;
+      float: left;
+      text-align: left;
+      margin-bottom: 0;
+      li {
+        border: 1px solid #000;
+        border-radius: 50%;
+        margin-right: 10px;
+        width: 12px;
+        height: 12px;
+        &.active{
+          width: 12px;
+          height: 12px;
+          background-color: #000;
+        }
+      }
+    }
+    .controls-grp {
+      position: relative;
+      margin-bottom: 0;
+      padding-left: 0;
+      float: right;
+      width: 30%;
+      li {
+        display: inline-block;
+        margin-right: 2px;
+        a:active, a:focus {
+          color: #c00;
+          i {
+            color: #c00;
+          }
+        }
+        .fa {
+          color: #000;
+          &.fa-sync {
+            &:before{
+              content: "\f021";
+              font-family: FontAwesome;
+            }
+          }
+        }
+        .toggleCarousel{
+          position: absolute;
+          top: 0;
+          right: 26px;
+        }
+        .carousel-control{
+          position: absolute;
+          left: inherit;
+          top: 0;
+          width: inherit;
+          right: 0;
+          background-image: none;
+          color: #000;
+          text-shadow: none;
+          .icon-prev,.icon-next{
+            position: inherit;
+          }
+          &.right{
+            top: -8px;
+            .icon-next:before{
+              content: "\f0da";
+              position: inherit;
+              font-family: FontAwesome;
+              font-size: 27px;
+            }
+          }
+          &.left{
+            top: -8px;
+            right: 74px;
+            .icon-prev:before{
+              content: "\f0d9";
+              font-family: FontAwesome;
+              position: inherit;
+              font-size: 27px;
+            }
+          }
+        }
+      }
+      .button-title {
+        display: none;
+        visibility: hidden;
+      }
+    }
+  }
 }
 
 
-// EXTENDED //
 
-.carousel.qg{
-	.carousel-inner img{
-		width: 100%;
-	}
-	.carousel-caption{
-		// Bootstrap over-rides
-			// position: static;
-			// bottom: auto;
-			left: auto;
-			right: auto;
-			width: auto;
-			margin: 0;
-			text-align: left;
-		// END Bootstrap over-rides
-		bottom: 0;
-		width: 100%;
 
-		padding: 1em;
-		background: #000; // #E7F5FE;
-		background: rgba(0, 0, 0, 0.7);
 
-		color: #fff;
-		text-shadow: none;
-
-		h2,h3{
-			font-size: 1rem;
-		}
-		*{
-			text-shadow: none;
-		}
-	}
-
-	.qg-carousel-controls{
-		position: relative;
-
-		width: 100%;
-		padding: 1.2em;
-
-		background: #007EB1;
-
-		.carousel-indicators{
-			// Bootstrap over-rides
-				position: static;
-				bottom: auto;
-				left: auto;
-				width: auto;
-				margin: 0;
-				text-align: center;
-			// END Bootstrap over-rides
-		}
-
-		.carousel-control{
-			color: white;
-    }
-	}
-}
