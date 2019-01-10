@@ -128,22 +128,23 @@ gulp.task('release', (cb) => {
   );
 });
 
+/* LOCAL SERVER */
+let randomPort = Math.floor(1000 + Math.random() * 9000);
+gulp.task('serve', require('./gulp/build-tasks/serve')(gulp, plugins, connect, connectssi, argv, path, randomPort));
+
 /* TEST TASKS */
 gulp.task('test:eslint', require('./gulp/test-tasks/lint')(gulp, plugins, config, fsPath, eslintReporter));
-gulp.task('test:e2e', function () {
+gulp.task('e2e', function () {
   gulp.src(['tests/e2e/spec/*.spec.js'])
     .pipe(protractor({
       configFile: './tests/e2e/conf.js',
       args: [
-        '--baseUrl', 'http://localhost:' + port,
+        '--baseUrl', 'http://localhost:' + randomPort,
       ],
     }))
     .on('error', function (e) { throw e; });
 });
-gulp.task('test:e2e:serve', ['serve', 'test:e2e']);
-/* LOCAL SERVER */
-let randomPort = Math.floor(1000 + Math.random() * 9000);
-gulp.task('serve', require('./gulp/build-tasks/serve')(gulp, plugins, connect, connectssi, argv, path, randomPort));
+gulp.task('test:e2e', ['serve', 'e2e']);
 
 /* PUBLISH TASKS */
 
