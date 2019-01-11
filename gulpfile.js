@@ -116,7 +116,6 @@ gulp.task('watch', ['watch:project', 'watch:docs', 'serve']);
 gulp.task('scss-src', require('./gulp/release-tasks/scss-src')(gulp, plugins, config));
 gulp.task('release-other-files', require('./gulp/release-tasks/other-files')(gulp, plugins, config));
 gulp.task('release-files', require('./gulp/release-tasks/files')(gulp, plugins, config, es, webpack, path, banner));
-gulp.task('release-docs-relative-assets', require('./gulp/release-tasks/docs-pages-assets')(gulp, plugins, config, true, true));
 
 gulp.task('release', (cb) => {
   return runSequence(
@@ -129,21 +128,23 @@ gulp.task('release', (cb) => {
   );
 });
 
+/* LOCAL SERVER */
+let randomPort = Math.floor(1000 + Math.random() * 9000);
+gulp.task('serve', require('./gulp/build-tasks/serve')(gulp, plugins, connect, connectssi, argv, path, randomPort));
+
 /* TEST TASKS */
 gulp.task('test:eslint', require('./gulp/test-tasks/lint')(gulp, plugins, config, fsPath, eslintReporter));
-gulp.task('test:e2e', function () {
+gulp.task('e2e', function () {
   gulp.src(['tests/e2e/spec/*.spec.js'])
     .pipe(protractor({
       configFile: './tests/e2e/conf.js',
       args: [
-        '--baseUrl', 'http://localhost:7777',
+        '--baseUrl', 'http://localhost:' + randomPort,
       ],
     }))
     .on('error', function (e) { throw e; });
 });
-
-/* LOCAL SERVER */
-gulp.task('serve', require('./gulp/build-tasks/serve')(gulp, plugins, connect, connectssi, argv, path));
+gulp.task('test:e2e', ['serve', 'e2e']);
 
 /* PUBLISH TASKS */
 

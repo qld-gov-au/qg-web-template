@@ -1,11 +1,13 @@
 .qg-featured{
-  .carousel{
-    margin-bottom: 2em;
-    margin-top: 2em;
-    position: relative;
-    &.qg-aside{
+  &.qg-aside{
+    .carousel {
       margin-bottom: 0;
     }
+  }
+  .carousel{
+    //margin-top: rem();
+    @include rem(margin-top, 16px);
+    position: relative;
     .carousel-inner{
       .carousel-item {
         a {
@@ -38,8 +40,7 @@
     }
     .carousel-caption{
       position: static;
-      padding-left: 0;
-      padding-right: 0;
+      padding: 0;
       margin-bottom:0;
       margin-top: 1em;
       background: none;

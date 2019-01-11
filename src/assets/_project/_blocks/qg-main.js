@@ -52,10 +52,5 @@ import './utils/qg-init';
   feedbackForm.init(franchiseTitle);
   shareLinks.init();
   accessibility.init();
-
-  // TODO - temp solution till we change all the classes to use SWE3/Boostrap
-  if ($('.status').length > 0) {
-    $('.status.warn, .status.info, .status.success, .status.tip').wrapInner('<div class="inner"></div>');
-  }
 }());
 

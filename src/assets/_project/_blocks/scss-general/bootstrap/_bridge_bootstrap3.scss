@@ -298,7 +298,6 @@ h1, .h1, h2, .h2, h3, .h3 {
 }
 
 p {
-  @include rem(font-size, 16px);
   @include rem(margin-bottom, 12px);
 }
 
@@ -440,4 +439,8 @@ blockquote ol:last-child, blockquote p:last-child, blockquote ul:last-child {
   color: #0a2d48;
   background-color: #eeeeee;
   border-color: #ddd;
+}
+
+.hide {
+  display: none!important;
 }
