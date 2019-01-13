@@ -53,12 +53,6 @@
     padding-right: $qg-grid-gutter-width-small/2;
     padding-left: $qg-grid-gutter-width-small/2;
   }
-  & + #qg-primary-content {
-
-  }
-  & ~ #qg-secondary-content {
-
-  }
 }
 
 // Wide layout
@@ -67,23 +61,6 @@
     @include make-col-ready();
     @include make-col(12);
     & + #qg-secondary-content {
-
-    }
-  }
-
-  // With aside
-  #qg-primary-content.qg-has-aside {
-
-  }
-
-  // With nav
-  #qg-section-nav {
-    & + #qg-primary-content {
-
-    }
-
-    // With nav AND aside
-    & + #qg-primary-content.qg-has-aside {
 
     }
   }
@@ -114,14 +91,6 @@
 
 // Three column layout (navigation, content, aside)
 #qg-one-col, #qg-three-col {
-  #qg-section-nav {
-
-  }
-
-  #qg-primary-content {
-
-  }
-
   #qg-secondary-content {
     display: block;
   }
@@ -153,11 +122,6 @@
 }
 
 // Two column layout navigation (navigation, content)
-#qg-two-col-nav{
-  #qg-section-nav {
-
-  }
-}
 #qg-two-col-nav.wide {
   #qg-primary-content {
     @include media-breakpoint-up(lg) {
@@ -174,3 +138,10 @@
   }
 }
 
+// Workaround to push columns - some pages on Matrix have a 3 col layout but there is no third columns
+// example - https://www.qld.gov.au/about/events-awards-honours/awards/reconciliation-awards/2015-award-winners
+#qg-three-col.no-secondary-nav {
+  #qg-primary-content{
+    @extend .offset-md-3;
+  }
+}
