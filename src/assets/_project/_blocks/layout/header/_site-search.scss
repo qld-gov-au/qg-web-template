@@ -1,5 +1,6 @@
 #qg-search-form {
   padding-bottom: 15px;
+  padding-right: 75px;
   input {
     border-radius: 0;
     border-color: $qg-green;
@@ -10,6 +11,7 @@
     position: absolute;
     top: 100%;
     top: calc(100% - 1px);
+    width: calc(100% - 37px);
     z-index: 98;
     //width: 100%;
     padding: 0;
@@ -51,18 +53,7 @@
     }
   }
 
-  .input-group-btn {
-    //position: absolute;
-    //top: 0;
-    //right: -2px;
-  }
-
   .input-group {
-    padding-right: 50px;
-    //max-width: calc(100% - 60px);
-    //@media all and (max-width: $screen-sm) {
-    //  width: calc(100% - 60px);
-    //}
     @include media-breakpoint-down(md) {
       padding-right: 0;
     }
