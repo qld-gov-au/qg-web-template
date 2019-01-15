@@ -25,25 +25,79 @@ let qgInitAutocompleteAddress;
     $state: $('.qg-app-state'),
   };
 
-  //Form fields (on page)
-  let formFields = {
-    street_number: { dataType: 'street', name: 'short_name' },
-    route: { dataType: 'street', name: 'long_name' },
-    locality: { dataType: 'city', name: 'long_name' },
-    administrative_area_level_1: { dataType: 'state', name: 'short_name' },
-    country: { dataType: 'country', name: 'long_name' },
-    postal_code: { dataType: 'zip', name: 'short_name' },
-  };
-
-  //Component form - testing
-  let componentForm = {
-    street_number: 'short_name',
-    route: 'long_name',
-    locality: 'long_name',
-    administrative_area_level_1: 'short_name',
-    administrative_area_level_2: 'short_name',
-    country: 'long_name',
-    postal_code: 'short_name'
+  let formatAddress = function formatAddress (place) {
+    //Format sub premise address
+    let formattedAddressValArray = [];
+    let ADDRESS_SUBPREMISE_REGEX = /^([0-9]+\/)[0-9]+\s.*/;
+    let addressSubpremiseMatch = $('.' + inputLocationId).val().match(ADDRESS_SUBPREMISE_REGEX);
+    let addressSubpremisePart = '';
+    // should get a length of two if matched. The full match, followed by the subpremise prefix
+    if (addressSubpremiseMatch != null && addressSubpremiseMatch.length === 2) {
+      addressSubpremisePart = addressSubpremiseMatch[1];
+    }
+    // Get each component of the address from the place details and fill the corresponding field on the form.
+    for (let i = 0; i < place.length; i++) {
+      let type = place[i].types[0];
+      let componentForm = {
+        street_number: 'short_name',
+        route: 'long_name',
+        locality: 'long_name',
+        administrative_area_level_1: 'short_name',
+        administrative_area_level_2: 'short_name',
+        country: 'long_name',
+        postal_code: 'short_name'
+      };
+      let componentsVal = place[i][componentForm[type]];
+      switch (type) {
+        case 'street_number':
+          if (el.$form.find(el.$streetnumber)) {
+            el.$streetnumber.val(componentsVal);
+          }
+          formattedAddressValArray[i] = addressSubpremisePart + componentsVal;
+          break;
+        case 'route':
+          if (el.$form.find(el.$addressline1)) {
+            el.$addressline1.val(componentsVal);
+          }
+          formattedAddressValArray[i] = componentsVal + ',';
+          break;
+        case 'locality':
+          if (el.$form.find(el.$suburb)) {
+            el.$suburb.val(componentsVal);
+          }
+          formattedAddressValArray[i] = componentsVal;
+          break;
+        case 'administrative_area_level_1':
+          if (el.$form.find(el.$state)) {
+            el.$state.val(componentsVal);
+          }
+          formattedAddressValArray[i] = componentsVal;
+          break;
+        case 'administrative_area_level_2':
+          if (el.$form.find(el.$city)) {
+            el.$city.val(componentsVal);
+          }
+          formattedAddressValArray[i] = componentsVal;
+          break;
+        case 'postal_code':
+          if (el.$form.find(el.$postcode)) {
+            el.$postcode.val(componentsVal);
+          }
+          formattedAddressValArray[i] = componentsVal;
+          break;
+        default:
+          break;
+      }
+    }
+    //Set sub-premise number
+    if (addressSubpremisePart.indexOf('/')) {
+      addressSubpremisePart = addressSubpremisePart.replace('/', '');
+      el.$subpremise.val(addressSubpremisePart);
+    } else {
+      el.$subpremise.val(addressSubpremisePart);
+    }
+    // update selected address to our manipulated address for consistency
+    $(el.$autoComplete).val(formattedAddressValArray.join(' '));
   };
 
   // getting and setting input fields value using query parameter
@@ -82,19 +136,15 @@ let qgInitAutocompleteAddress;
   //Keydown function for first predicted result (tab and enter keys)
   el.$autoComplete.keydown(function (e) {
     if (event.keyCode === 13 || event.keyCode === 9) {
-      if (locationSelectionInProgress) {
+       if (locationSelectionInProgress) {
         e.preventDefault();
         e.stopPropagation();
       } else {
         e.preventDefault();
-        console.log(locationSelectionInProgress);
-        //Testing - using local div elements for prediction
         let itemFull = $('.pac-container .pac-item:first').text();
         let itemQuery = $('.pac-container .pac-item:first .pac-item-query').text();
         let firstResult = itemQuery + ' ' + itemFull.substring(itemQuery.length);
-        if (el.$autoComplete) {
-          el.$autoComplete.val(firstResult);
-        }
+        el.$autoComplete.val(firstResult);
       }
     }
   });
@@ -119,6 +169,16 @@ let qgInitAutocompleteAddress;
         let form = $(this).siblings('.' + addressFormId);
         if (form.length > 0) {
           let fillInAddress = () => {
+            //Form fields (on page)
+            let formFields = {
+              street_number: { dataType: 'street', name: 'short_name' },
+              route: { dataType: 'street', name: 'long_name' },
+              locality: { dataType: 'city', name: 'long_name' },
+              administrative_area_level_1: { dataType: 'state', name: 'short_name' },
+              administrative_area_level_2: { dataType: 'city', name: 'short_name' },
+              country: { dataType: 'country', name: 'long_name' },
+              postal_code: { dataType: 'zip', name: 'short_name' },
+            };
             let loc = autocomplete.getPlace();
             //clear form
             $.each(formFields, (i, v) => {
@@ -203,73 +263,6 @@ let qgInitAutocompleteAddress;
           });
         });
       }
-
-      //Format address using values from getPlaces(), this function also splits subpremise and writes to available form fields
-      let formatAddress = function formatAddress (place) {
-        //Format sub premise address
-        let formattedAddressValArray = [];
-        let ADDRESS_SUBPREMISE_REGEX = /^([0-9]+\/)[0-9]+\s.*/;
-        let addressSubpremiseMatch = $('.' + inputLocationId).val().match(ADDRESS_SUBPREMISE_REGEX);
-        let addressSubpremisePart = '';
-        // should get a length of two if matched. The full match, followed by the subpremise prefix
-        if (addressSubpremiseMatch != null && addressSubpremiseMatch.length === 2) {
-          addressSubpremisePart = addressSubpremiseMatch[1];
-        }
-        // Get each component of the address from the place details and fill the corresponding field on the form.
-        for (let i = 0; i < place.length; i++) {
-          let type = place[i].types[0];
-          let componentsVal = place[i][componentForm[type]];
-          switch (type) {
-            case 'street_number':
-              if (el.$form.find(el.$streetnumber)) {
-                el.$streetnumber.val(componentsVal);
-              }
-              formattedAddressValArray[i] = addressSubpremisePart + componentsVal;
-              break;
-            case 'route':
-              if (el.$form.find(el.$addressline1)) {
-                el.$addressline1.val(componentsVal);
-              }
-              formattedAddressValArray[i] = componentsVal + ',';
-              break;
-            case 'locality':
-              if (el.$form.find(el.$suburb)) {
-                el.$suburb.val(componentsVal);
-              }
-              formattedAddressValArray[i] = componentsVal;
-              break;
-            case 'administrative_area_level_1':
-              if (el.$form.find(el.$state)) {
-                el.$state.val(componentsVal);
-              }
-              formattedAddressValArray[i] = componentsVal;
-              break;
-            case 'administrative_area_level_2':
-              if (el.$form.find(el.$city)) {
-                el.$city.val(componentsVal);
-              }
-              formattedAddressValArray[i] = componentsVal;
-              break;
-            case 'postal_code':
-              if (el.$form.find(el.$postcode)) {
-                el.$postcode.val(componentsVal);
-              }
-              formattedAddressValArray[i] = componentsVal;
-              break;
-            default:
-              break;
-          }
-        }
-        //Set sub-premise number
-        if (addressSubpremisePart.indexOf('/')) {
-          addressSubpremisePart = addressSubpremisePart.replace('/', '');
-          el.$subpremise.val(addressSubpremisePart);
-        } else {
-          el.$subpremise.val(addressSubpremisePart);
-        }
-        // update selected address to our manipulated address for consistency
-        $(el.$autoComplete).val(formattedAddressValArray.join(' '));
-      };
     };
     qg.loadGoogle(qgInitAutocompleteAddress);
   }
