@@ -107,38 +107,37 @@ let qgInitAutocompleteAddress;
           autocomplete.addListener('place_changed', fillInAddress);
         }
         el.$form.find('.qg-location-autocomplete').keydown(function (e) {
-          if ($(this).val().length > 3) {
-            if (event.keyCode === 13 || event.keyCode === 9) {
-              event.preventDefault();
-            }
+          if (event.keyCode === 13 || event.keyCode === 9) {
+            e.preventDefault();
           }
         });
         el.$form.find('.qg-location-autocomplete').keyup(function (e) {
           if ($(this).val().length > 3) {
             if (event.keyCode === 13 || event.keyCode === 9) {
               event.preventDefault();
-              $('.pac-container .pac-item:first').trigger('click');
               let itemFull = $('.pac-container .pac-item:first').text();
               let itemQuery = $('.pac-container .pac-item:first .pac-item-query').text();
               let firstResult = itemQuery + ' ' + itemFull.substring(itemQuery.length);
-              if (firstResult.length > 3) {
+              if (firstResult.length > 1) {
                 let geocoder = new google.maps.Geocoder();
                 geocoder.geocode({ 'address': firstResult }, function (results, status) {
                   if (status === 'OK') {
                     if (results) {
-                      console.log(firstResult);
                       $('.qg-location-autocomplete').val(results[0].formatted_address);
-                      console.log(results);
                       let latitude = results[0].geometry.location.lat();
                       let longitude = results[0].geometry.location.lng();
                       el.$searchWidget.find(el.$latitude).val(latitude)
                         .end()
                         .find(el.$longitude).val(longitude);
                     } else {
-                      window.alert('No results found');
+                      $('.qg-location-autocomplete').attr('placeholder', errorMessage);
                     }
                   } else {
-                    window.alert('Geocoder failed due to: ' + status);
+                    if (status === 'ZERO_RESULTS' || status === undefined) {
+                      $('.qg-location-autocomplete').attr('placeholder', errorMessage);
+                    } else {
+                      $('.qg-location-autocomplete').attr('placeholder', errorMessage);
+                    }
                   }
                 });
               }
