@@ -5,7 +5,6 @@ let qgInitAutocompleteAddress;
 (function (qg, $) {
   'use strict';
   let inputLocationId = 'qg-location-autocomplete';
-  let locationSelectionInProgress = true;
 
   const el = {
     $searchWidget: $('#qg-search-widget'),
@@ -28,13 +27,6 @@ let qgInitAutocompleteAddress;
     });
   };
   setsValue();
-
-  el.$form.find('.qg-location-autocomplete').keydown(function (e) {
-    if (event.keyCode === 13 && locationSelectionInProgress) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
-  });
 
   // removing hidden fields value on reset
   el.$searchWidget.find('button[type="reset"]').click(function (evt) {
@@ -63,7 +55,6 @@ let qgInitAutocompleteAddress;
         new google.maps.LatLng(-9.9339, 153.63831));
       let inputLocationEle = document.getElementsByClassName(inputLocationId);
       let addressFormId = 'qg-address-autocomplete';
-
       $.each(inputLocationEle, function () {
         let dataStrictBounds = $(this).data('strictbounds') || true;
         let options = {
@@ -72,7 +63,6 @@ let qgInitAutocompleteAddress;
           types: ['geocode'],
         };
         let autocomplete = new google.maps.places.Autocomplete(this, options);
-
         //if address form exists fill the selection
         let form = $(this).siblings('.' + addressFormId);
         if (form.length > 0) {
@@ -104,10 +94,8 @@ let qgInitAutocompleteAddress;
             }
           };
           autocomplete.addListener('place_changed', fillInAddress);
-          // $(this).on('change', google.maps.event.trigger(autocomplete, 'place_changed'))
         } else {
-          let fillInAddress = () => {
-            locationSelectionInProgress = false;
+          var fillInAddress = () => {
             var place = autocomplete.getPlace();
             $('.qg-result-title h2').append(`near '<strong><em>${place.formatted_address}'</em></strong>`);
             if (place.geometry) {
@@ -118,6 +106,45 @@ let qgInitAutocompleteAddress;
           };
           autocomplete.addListener('place_changed', fillInAddress);
         }
+        el.$form.find('.qg-location-autocomplete').keydown(function (e) {
+          if ($(this).val().length > 3) {
+            if (event.keyCode === 13 || event.keyCode === 9) {
+              event.preventDefault();
+            }
+          }
+        });
+        el.$form.find('.qg-location-autocomplete').keyup(function (e) {
+          if ($(this).val().length > 3) {
+            if (event.keyCode === 13 || event.keyCode === 9) {
+              event.preventDefault();
+              $('.pac-container .pac-item:first').trigger('click');
+              let itemFull = $('.pac-container .pac-item:first').text();
+              let itemQuery = $('.pac-container .pac-item:first .pac-item-query').text();
+              let firstResult = itemQuery + ' ' + itemFull.substring(itemQuery.length);
+              if (firstResult.length > 3) {
+                let geocoder = new google.maps.Geocoder();
+                geocoder.geocode({ 'address': firstResult }, function (results, status) {
+                  if (status === 'OK') {
+                    if (results) {
+                      console.log(firstResult);
+                      $('.qg-location-autocomplete').val(results[0].formatted_address);
+                      console.log(results);
+                      let latitude = results[0].geometry.location.lat();
+                      let longitude = results[0].geometry.location.lng();
+                      el.$searchWidget.find(el.$latitude).val(latitude)
+                        .end()
+                        .find(el.$longitude).val(longitude);
+                    } else {
+                      window.alert('No results found');
+                    }
+                  } else {
+                    window.alert('Geocoder failed due to: ' + status);
+                  }
+                });
+              }
+            }
+          }
+        });
       });
 
       //Get current location
@@ -158,11 +185,10 @@ let qgInitAutocompleteAddress;
                 }
               };
               let options = {timeout: 60000};
-
               navigator.geolocation.getCurrentPosition(showLocation, errorHandler, options);
             } else {
               // Browser doesn't support Geolocation
-              window.alert('Your browser doesnot support Geolocation');
+              window.alert('Your browser does not support Geolocation');
             }
           });
         });
