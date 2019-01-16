@@ -15,9 +15,6 @@
         font-weight: 700;
         background: $qg-grey-light;
       }
-      @include breakpoint(lg) {
-        padding-left: 6rem;
-      }
     }
   }
 }
