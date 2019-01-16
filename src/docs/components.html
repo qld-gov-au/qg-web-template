@@ -340,12 +340,12 @@
 
                               <h2 id="carousel" class="category">Carousel</h2>
                               <p>A slideshow component for cycling through elements—images or slides of text—like a carousel. The carousel component allows publishers to feature multiple pieces of content in an allocated amount of space.</p>
-                              <p>If there is a requirement to have multiple carousels on the same page, then please increment ID value at root and in controls to scope each carousel. For more details please refer to the Bootstrap documentation.</p>
+                              <p>If there is a requirement to have multiple carousels on the same page, then please increment ID value at root and in controls to scope each carousel. For more details please refer to the Bootstrap 4 documentation.</p>
 
                               <div class="qg-tmplt-example panel panel-default">
                                   <div class="panel-body">
                               <div class="qg-featured">
-                                <div id="carousel-1" class="carousel slide col-10 offset-md-1" data-ride="carousel">
+                                <div id="carousel-1" class="carousel slide col-10 offset-md-1" data-ride="carousel" data-interval="8000">
                                   <div class="carousel-inner">
                                     <div class="carousel-item active" title="title">
                                       <a href="https://qld.gov.au/">
@@ -408,68 +408,68 @@
                               <pre><code class="language-markup">
 
 
-                &lt;div class="qg-featured"&gt;
-                  &lt;div id="carousel-1" class="carousel slide" data-ride="carousel"&gt;
-                    &lt;div class="carousel-inner"&gt;
-                      &lt;div class="carousel-item active" title="title"&gt;
-                        &lt;a href="https://qld.gov.au/"&gt;
-                          &lt;img src="https://via.placeholder.com/550/808080/808080" alt="placeholder"&gt;
-                          &lt;div class="carousel-caption"&gt;
-                            &lt;h3&gt;lorem ipsum &lt;/h3&gt;
-                            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci atque, ea fuga iste
-                              quia? Accusantium doloribus dolorum, eius in iure, iusto odit officiis praesentium rem,
-                              rerum similique velit voluptatum.&lt;/p&gt;
-                          &lt;/div&gt;
-                        &lt;/a&gt;
-                      &lt;/div&gt;
-                      &lt;div class="carousel-item"&gt;
-                        &lt;a href="https://qld.gov.au/" title="title"&gt;
-                          &lt;img src="https://via.placeholder.com/550/000/000" alt="placeholder"&gt;
-                          &lt;div class="carousel-caption"&gt;
-                            &lt;h3&gt;lorem ipsum &lt;/h3&gt;
-                            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci atque, ea fuga iste
-                              quia? Accusantium doloribus dolorum, eius in iure, iusto odit officiis praesentium rem,
-                              rerum similique velit voluptatum.&lt;/p&gt;
-                          &lt;/div&gt;
-                        &lt;/a&gt;
+&lt;div class="qg-featured"&gt;
+  &lt;div id="carousel-1" class="carousel slide" data-ride="carousel" data-interval="8000"&gt;
+    &lt;div class="carousel-inner"&gt;
+      &lt;div class="carousel-item active" title="title"&gt;
+        &lt;a href="https://qld.gov.au/"&gt;
+          &lt;img src="https://via.placeholder.com/550/808080/808080" alt="placeholder"&gt;
+          &lt;div class="carousel-caption"&gt;
+            &lt;h3&gt;lorem ipsum &lt;/h3&gt;
+            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci atque, ea fuga iste
+              quia? Accusantium doloribus dolorum, eius in iure, iusto odit officiis praesentium rem,
+              rerum similique velit voluptatum.&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div class="carousel-item"&gt;
+        &lt;a href="https://qld.gov.au/" title="title"&gt;
+          &lt;img src="https://via.placeholder.com/550/000/000" alt="placeholder"&gt;
+          &lt;div class="carousel-caption"&gt;
+            &lt;h3&gt;lorem ipsum &lt;/h3&gt;
+            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci atque, ea fuga iste
+              quia? Accusantium doloribus dolorum, eius in iure, iusto odit officiis praesentium rem,
+              rerum similique velit voluptatum.&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/a&gt;
 
-                      &lt;/div&gt;
-                      &lt;div class="carousel-item"&gt;
-                        &lt;a href="https://qld.gov.au/" title="title"&gt;
-                          &lt;img src="https://via.placeholder.com/550/ccc/ccc" alt="placeholder"&gt;
-                          &lt;div class="carousel-caption"&gt;
-                            &lt;h3&gt;lorem ipsum &lt;/h3&gt;
-                            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci atque, ea fuga iste
-                              quia? Accusantium doloribus dolorum, eius in iure, iusto odit officiis praesentium rem,
-                              rerum similique velit voluptatum.&lt;/p&gt;
-                          &lt;/div&gt;
-                        &lt;/a&gt;
-                      &lt;/div&gt;
-                    &lt;/div&gt;
-                    &lt;div class="carousel-nav clearfix"&gt;
-                      &lt;!-- Indicators --&gt;
-                      &lt;ol class="carousel-indicators"&gt;
-                        &lt;li data-target="#carousel-1" data-slide-to="0" class="active"&gt;&lt;/li&gt;
-                        &lt;li data-target="#carousel-1" data-slide-to="1"&gt;&lt;/li&gt;
-                        &lt;li data-target="#carousel-1" data-slide-to="2"&gt;&lt;/li&gt;
-                      &lt;/ol&gt;
-                      &lt;!-- Controls --&gt;
-                      &lt;ul class="controls-grp"&gt;
-                        &lt;li&gt; &lt;a class="left carousel-control" href="#carousel-1" role="button" data-slide="prev"&gt;
-                          &lt;span class="icon-prev" aria-hidden="true"&gt;&lt;/span&gt;
-                          &lt;span class="sr-only"&gt;Previous&lt;/span&gt;
-                        &lt;/a&gt;
-                        &lt;/li&gt;
-                        &lt;li&gt;&lt;a href="#carousel-1" class="toggleCarousel"&gt;&lt;i class="fa fa-pause"&gt;&lt;/i&gt;&lt;span class="button-title"&gt;Pause slideshow&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a class="right carousel-control" href="#carousel-1" role="button" data-slide="next"&gt;
-                          &lt;span class="icon-next" aria-hidden="true"&gt;&lt;/span&gt;
-                          &lt;span class="sr-only"&gt;Next&lt;/span&gt;
-                        &lt;/a&gt;
-                        &lt;/li&gt;
-                      &lt;/ul&gt;
-                    &lt;/div&gt;
-                  &lt;/div&gt;
-                &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="carousel-item"&gt;
+        &lt;a href="https://qld.gov.au/" title="title"&gt;
+          &lt;img src="https://via.placeholder.com/550/ccc/ccc" alt="placeholder"&gt;
+          &lt;div class="carousel-caption"&gt;
+            &lt;h3&gt;lorem ipsum &lt;/h3&gt;
+            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci atque, ea fuga iste
+              quia? Accusantium doloribus dolorum, eius in iure, iusto odit officiis praesentium rem,
+              rerum similique velit voluptatum.&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="carousel-nav clearfix"&gt;
+      &lt;!-- Indicators --&gt;
+      &lt;ol class="carousel-indicators"&gt;
+        &lt;li data-target="#carousel-1" data-slide-to="0" class="active"&gt;&lt;/li&gt;
+        &lt;li data-target="#carousel-1" data-slide-to="1"&gt;&lt;/li&gt;
+        &lt;li data-target="#carousel-1" data-slide-to="2"&gt;&lt;/li&gt;
+      &lt;/ol&gt;
+      &lt;!-- Controls --&gt;
+      &lt;ul class="controls-grp"&gt;
+        &lt;li&gt; &lt;a class="left carousel-control" href="#carousel-1" role="button" data-slide="prev"&gt;
+          &lt;span class="icon-prev" aria-hidden="true"&gt;&lt;/span&gt;
+          &lt;span class="sr-only"&gt;Previous&lt;/span&gt;
+        &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;&lt;a href="#carousel-1" class="toggleCarousel"&gt;&lt;i class="fa fa-pause"&gt;&lt;/i&gt;&lt;span class="button-title"&gt;Pause slideshow&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a class="right carousel-control" href="#carousel-1" role="button" data-slide="next"&gt;
+          &lt;span class="icon-next" aria-hidden="true"&gt;&lt;/span&gt;
+          &lt;span class="sr-only"&gt;Next&lt;/span&gt;
+        &lt;/a&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
                               </code></pre>
 
                               <!-- ################################## -->
