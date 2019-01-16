@@ -33,7 +33,7 @@
   $('.qg-featured .carousel.slide').each(function (i, e) {
     let carousel = $(e).attr('id');
     carousels.push(carousel);
-    $(this).attr('data-state', 'cycle').attr('data-interval', '8000');
+    $(this).attr('data-state', 'cycle');
     $('#' + carousel + '').find('.toggleCarousel').click(function (e) {
       e.preventDefault();
       var $parentCarousel = $(this).parents('div.carousel.slide');
