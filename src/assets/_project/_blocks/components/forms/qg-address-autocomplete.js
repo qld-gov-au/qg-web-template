@@ -113,8 +113,7 @@ let qgInitAutocompleteAddress;
         //To do - Clear validation
         el.$form.find('.qg-location-autocomplete').keyup(function (e) {
           if ($(this).val().length > 0) {
-            var reqReady = true;
-            var formContainer = $('.qg-fl');
+            var reqReady = true; var formContainer = $('.qg-fl');
             var errorMessage = $('<p class="text-danger font-italic">No result found</p>');
             var errorHandler = $('<div class="error-handler"></div>');
             if (!$('.error-handler').length > 0) { errorHandler.insertAfter(formContainer); }
