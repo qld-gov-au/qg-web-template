@@ -1,10 +1,10 @@
 /*global qg, jQuery, google*/
-
 let qgInitAutocompleteAddress;
 
 (function (qg, $) {
   'use strict';
   let inputLocationId = 'qg-location-autocomplete';
+  let addressSelection = false;
 
   const el = {
     $searchWidget: $('#qg-search-widget'),
@@ -96,7 +96,7 @@ let qgInitAutocompleteAddress;
         } else {
           var fillInAddress = () => {
             var place = autocomplete.getPlace();
-            if ($('.error-handler').length > 0) { $('.error-handler').html(''); }
+            if ($('.error-handler').length > 0 && $('.error-handler').val()) { $('.error-handler').html(''); }
             $('.qg-result-title h2').append(`near '<strong><em>${place.formatted_address}'</em></strong>`);
             if (place.geometry) {
               el.$searchWidget.find(el.$latitude).val(place.geometry.location.lat())
@@ -107,14 +107,17 @@ let qgInitAutocompleteAddress;
           autocomplete.addListener('place_changed', fillInAddress);
         }
         el.$form.find('.qg-location-autocomplete').keydown(function (e) {
-          if (event.keyCode === 13 || event.keyCode === 9) {
-            e.preventDefault();
+          if (addressSelection === false) {
+            if (event.keyCode === 13 || event.keyCode === 9) {
+              e.preventDefault();
+            }
           }
         });
         el.$form.find('.qg-location-autocomplete').keyup(function (e) {
           if ($(this).val().length > 0) {
-            var reqReady = true; var formContainer = $('.qg-fl');
-            var errorMessage = $('<p class="text-danger font-italic">No result found</p>');
+            var reqReady = true;
+            var formContainer = $('.qg-fl');
+            var errorMessage = $('<p class="text-danger font-italic pt-2 pl-2">No result found</p>');
             var errorHandler = $('<div class="error-handler"></div>');
             if (!$('.error-handler').length > 0) { errorHandler.insertAfter(formContainer); }
             let itemFull = $('.pac-container .pac-item:first').text();
@@ -133,6 +136,7 @@ let qgInitAutocompleteAddress;
                       let latitude = results[0].geometry.location.lat();
                       let longitude = results[0].geometry.location.lng();
                       $('.error-handler').html('');
+                      addressSelection = true;
                       el.$searchWidget.find(el.$latitude).val(latitude)
                         .end()
                         .find(el.$longitude).val(longitude);
@@ -144,15 +148,16 @@ let qgInitAutocompleteAddress;
                       $('.error-handler').html(errorMessage);
                     }
                   } else {
+                    reqReady = true;
                     if (status === 'ZERO_RESULTS' || status === 'OVER_QUERY_LIMIT' || status === undefined) {
                       $('.error-handler').html(errorMessage);
                     }
                   }
                 });
-              } else {
-                $('.error-handler').html(errorMessage);
               }
             }
+          } else {
+            addressSelection = false;
           }
         });
       });
