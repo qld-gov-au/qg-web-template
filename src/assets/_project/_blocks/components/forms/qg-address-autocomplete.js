@@ -46,7 +46,6 @@ let qgInitAutocompleteAddress;
         .find(el.$longitude).val('');
     }
   });
-
   if ($('.' + inputLocationId).length > 0) {
     let getLocationEle = $('.qg-app-geocoding');
     qgInitAutocompleteAddress = () => {
@@ -111,35 +110,48 @@ let qgInitAutocompleteAddress;
             e.preventDefault();
           }
         });
+        //To do - Clear validation
         el.$form.find('.qg-location-autocomplete').keyup(function (e) {
-          if ($(this).val().length > 3) {
+          if ($(this).val().length > 0) {
+            var reqReady = true;
+            var formContainer = $('.qg-fl');
+            var errorMessage = $('<p class="text-danger font-italic">No result found</p>');
+            var errorHandler = $('<div class="error-handler"></div>');
+            if (!$('.error-handler').length > 0) { errorHandler.insertAfter(formContainer); }
+            let itemFull = $('.pac-container .pac-item:first').text();
+            let itemQuery = $('.pac-container .pac-item:first .pac-item-query').text();
+            let firstResult = itemQuery + ' ' + itemFull.substring(itemQuery.length);
             if (event.keyCode === 13 || event.keyCode === 9) {
               event.preventDefault();
-              let itemFull = $('.pac-container .pac-item:first').text();
-              let itemQuery = $('.pac-container .pac-item:first .pac-item-query').text();
-              let firstResult = itemQuery + ' ' + itemFull.substring(itemQuery.length);
-              if (firstResult.length > 1) {
+              if (firstResult.length > 1 && reqReady === true) {
+                $('.qg-location-autocomplete').val(firstResult);
                 let geocoder = new google.maps.Geocoder();
                 geocoder.geocode({ 'address': firstResult }, function (results, status) {
                   if (status === 'OK') {
+                    reqReady = false;
                     if (results) {
                       $('.qg-location-autocomplete').val(results[0].formatted_address);
                       let latitude = results[0].geometry.location.lat();
                       let longitude = results[0].geometry.location.lng();
+                      $('.error-handler').html('');
                       el.$searchWidget.find(el.$latitude).val(latitude)
                         .end()
                         .find(el.$longitude).val(longitude);
+                      setTimeout(function () {
+                        reqReady = true;
+                      }, 1000);
                     } else {
-                      $('.qg-location-autocomplete').attr('placeholder', errorMessage);
+                      reqReady = true;
+                      $('.error-handler').html(errorMessage);
                     }
                   } else {
-                    if (status === 'ZERO_RESULTS' || status === undefined) {
-                      $('.qg-location-autocomplete').attr('placeholder', errorMessage);
-                    } else {
-                      $('.qg-location-autocomplete').attr('placeholder', errorMessage);
+                    if (status === 'ZERO_RESULTS' || status === 'OVER_QUERY_LIMIT' || status === undefined) {
+                      $('.error-handler').html(errorMessage);
                     }
                   }
                 });
+              } else {
+                $('.error-handler').html(errorMessage);
               }
             }
           }
