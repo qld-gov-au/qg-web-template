@@ -75,11 +75,11 @@ let qgInitAutocompleteAddress;
           };
           let fillInAddress = () => {
             let loc = autocomplete.getPlace();
+            if ($('.error-handler').length > 0) { $('.error-handler').html(''); }
             //clear form
             $.each(formFields, (i, v) => {
               form.find('input[data-type="' + v.dataType + '"]').val('');
             });
-
             for (let i = 0; i < loc.address_components.length; i++) {
               let type = loc.address_components[i].types[0];
               if (formFields[type] !== undefined && formFields[type].dataType !== undefined) {
@@ -96,6 +96,7 @@ let qgInitAutocompleteAddress;
         } else {
           var fillInAddress = () => {
             var place = autocomplete.getPlace();
+            if ($('.error-handler').length > 0) { $('.error-handler').html(''); }
             $('.qg-result-title h2').append(`near '<strong><em>${place.formatted_address}'</em></strong>`);
             if (place.geometry) {
               el.$searchWidget.find(el.$latitude).val(place.geometry.location.lat())
@@ -110,7 +111,6 @@ let qgInitAutocompleteAddress;
             e.preventDefault();
           }
         });
-        //To do - Clear validation
         el.$form.find('.qg-location-autocomplete').keyup(function (e) {
           if ($(this).val().length > 0) {
             var reqReady = true; var formContainer = $('.qg-fl');
@@ -175,6 +175,7 @@ let qgInitAutocompleteAddress;
                 if (locationInput.length > 0) {
                   geocoder.geocode({'location': latlng}, (results, status) => {
                     if (status === 'OK') {
+                      if ($('.error-handler').length > 0) { $('.error-handler').html(''); }
                       if (results[1]) {
                         locationInput.val(results[1].formatted_address);
                         locationInput.trigger('place_changed');
