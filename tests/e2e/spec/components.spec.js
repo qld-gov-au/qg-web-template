@@ -10,4 +10,8 @@ describe('SWE components testing', function () {
     expect(myElement.isPresent()).not.toBeFalsy();
     browser.driver.sleep(500);
   });
+  it('Carousel is working as expected', function () {
+    expect(element.all(by.css('.carousel-item')).first().getAttribute('class')).toMatch('carousel-item active');
+    expect(element.all(by.css('.carousel-item')).get(2).getAttribute('class')).toMatch('carousel-item');
+  });
 });
