@@ -107,14 +107,14 @@ let qgInitAutocompleteAddress;
           autocomplete.addListener('place_changed', fillInAddress);
         }
         el.$form.find('.qg-location-autocomplete').keydown(function (e) {
-          if (addressSelection === false) {
+          if (addressSelection === false && $(this).val().length > 1) {
             if (event.keyCode === 13 || event.keyCode === 9) {
               e.preventDefault();
             }
           }
         });
         el.$form.find('.qg-location-autocomplete').keyup(function (e) {
-          if ($(this).val().length > 0) {
+          if ($(this).val().length > 1) {
             var reqReady = true;
             var formContainer = $('.qg-fl');
             var errorMessage = $('<p class="text-danger font-italic pt-2 pl-2">No result found</p>');
