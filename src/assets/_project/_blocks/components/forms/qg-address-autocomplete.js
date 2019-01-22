@@ -7,11 +7,11 @@ let qgInitAutocompleteAddress;
   let addressSelection = false;
 
   const el = {
-    $searchWidget: $('.qg-search-widget'),
+    $searchWidget: $('#qg-search-widget'),
     $autoComplete: $('.qg-location-autocomplete'),
-    $latitude: $('.latitude'),
-    $longitude: $('.longitude'),
-    $form: $('.qg-search-widget-form'),
+    $latitude: $('#latitude'),
+    $longitude: $('#longitude'),
+    $form: $('#qg-search-widget-form'),
   };
 
   // getting and setting input fields value using query parameter
