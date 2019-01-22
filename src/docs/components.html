@@ -1156,6 +1156,97 @@ Please visit the <a href="https://www.qld.gov.au/community/getting-support-healt
 
 
               <!-- ################################## -->
+
+              <h2 id="twitter-feed" class="category">Twitter Feed</h2>
+              <p>Publishers may utilise the Twitter Feed component to dynamically display real time Tweets posted to a relevant Twitter feed. </p>
+
+              <div class="qg-tmplt-example">
+
+                <div class="panel-body">
+                  <div class="qg-twitter-updates">
+                    <p class="more text-right">
+                      <a href="https://twitter.com/TMFranchise/lists/transport-and-motoring" title="More from the Transport and motoring franchise on Twitter">View all</a>
+                    </p>
+                    <a class="twitter-timeline" href="https://twitter.com/TMFranchise/lists/transport-and-motoring" title="More from the Transport and motoring franchise on Twitter" data-tweet-limit="2">View all</a>
+                  </div>
+                </div>
+              </div>
+
+              <p>HTML</p>
+
+              <pre><code class="language-markup">
+
+&lt;div class="qg-twitter-updates"&gt;
+  &lt;p class="more text-right"&gt; &lt;a href="https://twitter.com/TMFranchise/lists/transport-and-motoring" title="More from the Transport and motoring franchise on Twitter"&gt;View all&lt;/a&gt; &lt;/p&gt;
+  &lt;a class="twitter-timeline" href="https://twitter.com/TMFranchise/lists/transport-and-motoring" title="More from the Transport and motoring franchise on Twitter" data-tweet-limit="1"&gt;View all&lt;/a&gt;
+&lt;/div&gt;
+
+
+						</code></pre>
+              <p><i>Configuration options</i></p>
+              <ul>
+                <li>data-tweet-limit="n" -> attribute to specify a number of Tweets </li>
+              </ul>
+
+
+
+              <!-- ################################## -->
+
+              <h2 id="autocomplete-example" class="category">Google Address Autocomplete</h2>
+              <p>You can use the autocomplete widget to provide users an easy method to locate an address.</p>
+
+              <!-- autocomplete -->
+              <div id="qg-search-widget" class="qg-search-widget">
+                <form id="qg-search-widget-form" class="qg-search-widget-form" novalidate="true">
+                  <label for="location">Suburb or postcode</label>
+                  <div class="qg-fl">
+                    <input type="text" name="location" id="location" class="qg-location-autocomplete form-control"
+                                 value="" placeholder="Enter location or postcode" autocomplete="off">
+                    <a href="#" id="qg-app-geocoding" aria-label="Search by your location"
+                             title="Search by your location" class="qg-app-geocoding" style="bottom: 0.7em;"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 480 480"
+                            enable-background="new 0 0 480 480">
+                      <path d="M240 159.909c-44.235 0-80.091 35.859-80.091 80.091s35.855 80.091 80.091 80.091c44.231 0 80.091-35.859 80.091-80.091s-35.86-80.091-80.091-80.091zm160 66.758h-25.694c-6.267-63.891-57.086-114.701-120.973-120.967v-25.7c0-7.363-5.97-13.333-13.333-13.333s-13.333 5.97-13.333 13.333v25.701c-63.889 6.266-114.705 57.075-120.971 120.966h-25.696c-7.363 0-13.333 5.97-13.333 13.333s5.97 13.333 13.333 13.333h25.696c6.266 63.891 57.082 114.7 120.971 120.966v25.701c0 7.363 5.97 13.333 13.333 13.333s13.333-5.97 13.333-13.333v-25.701c63.888-6.266 114.707-57.075 120.974-120.966h25.693c7.363 0 13.333-5.97 13.333-13.333s-5.97-13.333-13.333-13.333zm-160 121.002c-59.463 0-107.666-48.209-107.666-107.669s48.203-107.669 107.666-107.669c59.466 0 107.669 48.209 107.669 107.669s-48.203 107.669-107.669 107.669z"
+                                  fill-rule="evenodd" clip-rule="evenodd"></path>
+                    </svg>
+                    </a>
+                  </div>
+                  <input id="latitude" name="latitude" value="" type="hidden" placeholder="Latitude" class="latitude">
+                  <input id="longitude" name="longitude" value="" type="hidden" placeholder="Longitude" class="longitude">
+                  <br>
+                  <button type="submit" class="btn btn-primary" id="search">Search</button>
+                  <button type="reset" class="btn btn-secondary">Reset</button>
+                </form>
+              </div>
+
+              <p>HTML</p>
+
+              <pre><code class="language-markup">
+              &lt;div id="qg-search-widget" class="qg-search-widget"&gt;
+                &lt;form id="qg-search-widget-form" class="qg-search-widget-form" novalidate="true"&gt;
+                  &lt;label for="location"&gt;Suburb or postcode&lt;/label&gt;
+                  &lt;div class="qg-fl"&gt;
+                    &lt;input type="text" name="location" id="location" class="qg-location-autocomplete form-control"
+                                 value="" placeholder="Enter location or postcode" autocomplete="off"&gt;
+                    &lt;a href="#" id="qg-app-geocoding" aria-label="Search by your location"
+                             title="Search by your location" class="qg-app-geocoding" style="bottom: 0.7em;"&gt;&lt;svg
+                            xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 480 480"
+                            enable-background="new 0 0 480 480"&gt;
+                      &lt;path d="M240 159.909c-44.235 0-80.091 35.859-80.091 80.091s35.855 80.091 80.091 80.091c44.231 0 80.091-35.859 80.091-80.091s-35.86-80.091-80.091-80.091zm160 66.758h-25.694c-6.267-63.891-57.086-114.701-120.973-120.967v-25.7c0-7.363-5.97-13.333-13.333-13.333s-13.333 5.97-13.333 13.333v25.701c-63.889 6.266-114.705 57.075-120.971 120.966h-25.696c-7.363 0-13.333 5.97-13.333 13.333s5.97 13.333 13.333 13.333h25.696c6.266 63.891 57.082 114.7 120.971 120.966v25.701c0 7.363 5.97 13.333 13.333 13.333s13.333-5.97 13.333-13.333v-25.701c63.888-6.266 114.707-57.075 120.974-120.966h25.693c7.363 0 13.333-5.97 13.333-13.333s-5.97-13.333-13.333-13.333zm-160 121.002c-59.463 0-107.666-48.209-107.666-107.669s48.203-107.669 107.666-107.669c59.466 0 107.669 48.209 107.669 107.669s-48.203 107.669-107.669 107.669z"
+                                  fill-rule="evenodd" clip-rule="evenodd"&gt;&lt;/path&gt;
+                    &lt;/svg&gt;
+                    &lt;/a&gt;
+                  &lt;/div&gt;
+                  &lt;input id="latitude" name="latitude" value="" type="hidden" placeholder="Latitude" class="latitude"&gt;
+                  &lt;input id="longitude" name="longitude" value="" type="hidden" placeholder="Longitude" class="longitude"&gt;
+                  &lt;br&gt;
+                  &lt;button type="submit" class="btn btn-primary" id="search"&gt;Search&lt;/button&gt;
+                  &lt;button type="reset" class="btn btn-secondary"&gt;Reset&lt;/button&gt;
+                &lt;/form&gt;
+              &lt;/div&gt;
+						  </code></pre>
+
+              <!-- ################################## -->
               <div class="qg-content-footer">
 
                           <dl>
