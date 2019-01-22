@@ -108,7 +108,7 @@ let qgInitAutocompleteAddress;
         }
         el.$form.find('.qg-location-autocomplete').keydown(function (e) {
           if (addressSelection === false && $(this).val().length > 1) {
-            if (event.keyCode === 13 || event.keyCode === 9) {
+            if (e.keyCode === 13 || e.keyCode === 9) {
               e.preventDefault();
             }
           }
@@ -123,8 +123,8 @@ let qgInitAutocompleteAddress;
             let itemFull = $('.pac-container .pac-item:first').text();
             let itemQuery = $('.pac-container .pac-item:first .pac-item-query').text();
             let firstResult = itemQuery + ' ' + itemFull.substring(itemQuery.length);
-            if (event.keyCode === 13 || event.keyCode === 9) {
-              event.preventDefault();
+            if (e.keyCode === 13 || e.keyCode === 9) {
+              e.preventDefault();
               if (firstResult.length > 1 && reqReady === true) {
                 $('.qg-location-autocomplete').val(firstResult);
                 let geocoder = new google.maps.Geocoder();
