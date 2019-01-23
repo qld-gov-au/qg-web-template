@@ -42,7 +42,7 @@
       background-color: $qg-section-nav-link-hover-bg-color;
     }
 
-    a.active {
+    a.active, a.visited {
       color: #FFF;
       background-color: $qg-blue;
     }
