@@ -21,25 +21,17 @@
 #qg-primary-content {
   @include make-col-ready();
   @include make-col(12);
+  @extend .col-md-push-3;
   @include media-breakpoint-up(md) {
     @include make-col(6);
-    @extend .order-md-2;
-  }
-  @include media-breakpoint-down(md) {
-    padding-right: $qg-grid-gutter-width-small/2;
-    padding-left: $qg-grid-gutter-width-small/2;
   }
 }
 #qg-secondary-content {
   @include make-col-ready();
   @include make-col(12);
+  @extend .col-md-push-3;
   @include media-breakpoint-up(md) {
     @include make-col(3);
-    @extend .order-md-3;
-  }
-  @include media-breakpoint-down(md) {
-    padding-right: $qg-grid-gutter-width-small/2;
-    padding-left: $qg-grid-gutter-width-small/2;
   }
 }
 #qg-section-nav {
@@ -47,11 +39,16 @@
   @include make-col(12);
   @include media-breakpoint-up(md) {
     @include make-col(3);
-    @extend .order-md-1;
   }
-  @include media-breakpoint-down(md) {
-    padding-right: $qg-grid-gutter-width-small/2;
-    padding-left: $qg-grid-gutter-width-small/2;
+  & + #qg-primary-content {
+    @include media-breakpoint-up(md) {
+      @include make-col(6);
+    }
+    @extend .col-md-push-0;
+  }
+
+  & ~ #qg-secondary-content {
+    @extend .col-md-push-0;
   }
 }
 
@@ -60,8 +57,33 @@
   #qg-primary-content {
     @include make-col-ready();
     @include make-col(12);
-    & + #qg-secondary-content {
+    @extend .col-md-push-0;
 
+    & + #qg-secondary-content {
+      @extend .col-md-push-0;
+    }
+  }
+
+  // With aside
+  #qg-primary-content.qg-has-aside {
+    @include media-breakpoint-up(md) {
+      @include make-col(9);
+    }
+  }
+
+  // With nav
+  #qg-section-nav {
+    & + #qg-primary-content {
+      @include media-breakpoint-up(md) {
+        @include make-col(9);
+      }
+    }
+
+    // With nav AND aside
+    & + #qg-primary-content.qg-has-aside {
+      @include media-breakpoint-up(md) {
+        @include make-col(6);
+      }
     }
   }
 }
@@ -91,6 +113,17 @@
 
 // Three column layout (navigation, content, aside)
 #qg-one-col, #qg-three-col {
+  #qg-section-nav {
+    @extend .col-md-pull-9;
+  }
+
+  #qg-primary-content {
+    @extend .col-md-push-3;
+    @include media-breakpoint-up(md) {
+      @include make-col(6);
+    }
+  }
+
   #qg-secondary-content {
     display: block;
   }
@@ -107,24 +140,31 @@
   #qg-primary-content {
     @include media-breakpoint-up(md) {
       @include make-col(9);
-      @extend .order-md-1;
     }
-    @include media-breakpoint-up(lg) {
+    @extend .col-md-push-0;
+    @media (min-width: $screen-lg-min) {
       padding-left: $grid-gutter-width !important;
     }
   }
   #qg-secondary-content {
     display: block;
-    @include media-breakpoint-up(md) {
-      @extend .order-md-2;
-    }
+    @extend .col-md-push-0;
   }
 }
 
 // Two column layout navigation (navigation, content)
+#qg-two-col-nav{
+  #qg-section-nav {
+    @extend .col-md-pull-6;
+  }
+}
 #qg-two-col-nav.wide {
   #qg-primary-content {
-    @include media-breakpoint-up(lg) {
+    @include media-breakpoint-up(md) {
+      @include make-col(9);
+    }
+    @extend .col-md-push-3;
+    @media (min-width: $screen-lg-min) {
       padding-right: $grid-gutter-width !important;
     }
   }
@@ -135,13 +175,6 @@
     @include media-breakpoint-up(md) {
       @include make-col(12);
     }
-  }
-}
-
-// Workaround to push columns - some pages on Matrix have a 3 col layout but there is no third columns
-// example - https://www.qld.gov.au/about/events-awards-honours/awards/reconciliation-awards/2015-award-winners
-#qg-three-col.no-secondary-nav {
-  #qg-primary-content{
-    @extend .offset-md-3;
+    @extend .col-md-push-0;
   }
 }
