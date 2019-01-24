@@ -1,19 +1,8 @@
-let testSites = [
-  'oss-uat.clients.squiz.net',
-  'localhost',
-];
-let createPath = function () {
-  for (let site of testSites) {
-    if (site === location.hostname) {
-      return 'https://dev-static.qgov.net.au';
-    }
-  }
-  return 'https://static.qgov.net.au';
-};
+// All the environment related SWE3 code
 
 window.qg = window.qg || {};
 window.qg.swe = window.qg.swe || {};
-window.qg.cdn = createPath();
+window.qg.cdn = window.qg.swe.isProduction === false ? 'https://beta-static.qgov.net.au' : 'https://static.qgov.net.au';
 window.qg.swe.assets = '/assets/v3.1/latest/';
 
 window.qg.swe.paths = {
