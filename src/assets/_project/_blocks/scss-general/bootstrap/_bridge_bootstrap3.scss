@@ -529,3 +529,9 @@ blockquote ol:last-child, blockquote p:last-child, blockquote ul:last-child {
 .hide {
   display: none!important;
 }
+label {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
