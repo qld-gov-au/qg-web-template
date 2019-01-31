@@ -94,6 +94,7 @@
     "style-loader": "^0.17.0",
     "uglifyjs-webpack-plugin": "^0.4.3",
     "url-loader": "^0.5.8",
+    "vinyl-fs": "^3.0.3",
     "webpack": "^2.5.1",
     "webpack-replace": "^1.0.0",
     "webpack-stream": "^3.2.0",
