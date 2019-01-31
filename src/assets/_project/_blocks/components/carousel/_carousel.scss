@@ -5,7 +5,6 @@
     }
   }
   .carousel{
-    //margin-top: rem();
     @include rem(margin-top, 16px);
     position: relative;
     .carousel-inner{
@@ -46,7 +45,6 @@
       position: static;
       padding: 0;
       margin-bottom:0;
-      //margin-top: 1em;
       background: none;
       h3 {
         text-align: left;
@@ -89,9 +87,17 @@
       float: right;
       width: 30%;
       top: -5px;
+      text-align: right;
       li {
         display: inline-block;
-        margin-right: 2px;
+        margin-right: 18px;
+        line-height: 1;
+        &:last-child{
+          margin-right: 0;
+        }
+        a {
+          text-decoration: none !important;
+        }
         a:active, a:focus {
           color: #c00;
           i {
@@ -108,12 +114,11 @@
           }
         }
         .toggleCarousel{
-          position: absolute;
-          top: 0;
-          right: 26px;
+          position: relative;
+          top: -3px;
         }
         .carousel-control{
-          position: absolute;
+          position: initial;
           left: inherit;
           top: 0;
           width: inherit;
