@@ -1,13 +1,11 @@
+// print button styles
 .print-content-link{
   position: absolute;
   right: 35px;
   z-index:1;
   top: -28px;
 }
-.qg-print-version{
-  display: none;
-}
-
+// print styles
 @media print {
   *,
   *:before,
@@ -256,9 +254,6 @@
 
   .compact .section {
     display: block !important;
-  }
-  .print-content-link {
-    display: none;
   }
   #quick-exit {
     display: none;
