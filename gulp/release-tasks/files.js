@@ -62,9 +62,8 @@ module.exports = function (gulp, plugins, config, es, webpack, path, banner) {
                         .pipe(gulp.dest(`${config.basepath.static}/assets/${config.versionName}/${destPath}`));
                 })),
 
-          gulp.src(`${config.basepath.src}/assets/_project/lib/ext/**/*.js`)
-            .pipe(plugins.concat('all-ext-min.js'))
-            .pipe(plugins.uglify())
+          gulp.src(`${config.basepath.build}/assets/${config.versionName}/latest/lib/all-ext-min.js`)
+            .pipe(plugins.insert.prepend(banner))
             .pipe(gulp.dest(`${config.basepath.release}/template-local-ssi/assets/${config.versionName}/latest/lib/`))
             .pipe(gulp.dest(`${config.basepath.release}/template-local/assets/${config.versionName}/latest/lib/`))
             .pipe(gulp.dest(`${config.basepath.static}/assets/${config.versionName}/latest/lib/`)),
