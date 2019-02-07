@@ -1,12 +1,13 @@
 .qg-cut-in, .qg-cut-in-alt {
   position: relative;
-  max-width: 37.4rem !important;
+  float: right;
+  @include rem(max-width, 374px);
+  @include rem(font-size, 14px);
+  @include rem(padding, 7px);
+  @include rem(margin, 17px 16px 14px 16px);
   text-align: center;
-  font-size: 1.4rem;
   font-style: italic;
   border: 1px solid #eee;
-  padding: .7rem;
-  margin: 1.7rem 0 1.4rem;
   img {
     max-width: 100%!important;
     height: auto!important;
@@ -14,14 +15,13 @@
     display: block;
   }
   .figure-credits {
-    padding: 0 2rem;
+    @include rem(padding, 0 20px);
   }
   .caption {
-    margin: .6rem auto;
+    @include rem(max-width, 284px);
+    @include rem(margin, 6px auto);
     text-align: left;
-    font-size: 1.4rem;
     font-style: italic;
-    max-width: 28.4rem;
   }
   .figure-credits-toggle {
     display: block;
@@ -33,12 +33,4 @@
     margin: 0 !important;
     padding: 0 !important;
   }
-}
-.qg-cut-in {
-  float: right;
-  margin-left: 1.6rem;
-}
-.qg-cut-in-alt {
-  float: left;
-  margin-right: 1.6rem;
 }

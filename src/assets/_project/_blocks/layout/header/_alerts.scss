@@ -1,5 +1,4 @@
 /* ! alert style */
-//TODO - priority - look alerts
 #qg-site-header .alert-danger, .qg-global-alert {
   @include make-row();
   width: 100%;
@@ -44,10 +43,8 @@
       float: left;
       top: 0;
       left: 0;
-
-      padding-bottom: .2em;
-
-      font-size: 2.2em;
+      @include rem(font-size, 7px);
+      @include rem(font-size, 35px);
       font-family: fontAwesome;
       text-align: center;
     }

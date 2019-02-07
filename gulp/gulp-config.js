@@ -56,10 +56,11 @@ module.exports = {
     ],
   },
   extLib: {
-    js: ['generate-id',
-      'jquery.resize-events',
-      'butterfly/jquery.history',
-      'butterfly/jquery.butterfly',
+    js: ['generate-id.js',
+      'jquery.resize-events.js',
+      'butterfly/jquery.history.js',
+      'butterfly/jquery.butterfly.js',
+      'bootstrap.js',
     ],
     css: [
       'butterfly/butterfly.css',

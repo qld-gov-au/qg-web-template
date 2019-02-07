@@ -8,7 +8,6 @@ import './utils/qg-misc';
 import './utils/qg-ajax-call';
 import './utils/qg-load-google-api';
 
-import 'bootstrap/dist/js/bootstrap.bundle.min';
 // import '../../../../../node_modules/bootstrap-accessibility-plugin/plugins/js/bootstrap-accessibility.js'; // Removed due to accessibility issues (ironically)
 
 // Utils
@@ -47,16 +46,11 @@ import feedbackForm       from './layout/footer/feedback-form';
 import './utils/qg-init';
 (function () {
   'use strict';
-  var franchiseTitle = qg && qg.swe && qg.swe.franchiseTitle;
+  let franchiseTitle = qg && qg.swe && qg.swe.franchiseTitle;
   activeSideNav.highlightNavItem();
   stepNav.init();
   feedbackForm.init(franchiseTitle);
   shareLinks.init();
   accessibility.init();
-
-  // TODO - temp solution till we change all the classes to use SWE3/Boostrap
-  if ($('.status').length > 0) {
-    $('.status.warn, .status.info, .status.success, .status.tip').wrapInner('<div class="inner"></div>');
-  }
 }());
 

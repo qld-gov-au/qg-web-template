@@ -45,7 +45,7 @@ module.exports = function (gulp, plugins, config, es, webpack, path, banner) {
                 .pipe(gulp.dest(`${config.basepath.release}/template-local-ssi/assets/includes-local/`)),
 
             //JS task
-            gulp.src(`${config.basepath.build}/assets/${config.versionName}/**/*.js`, { dot: true })
+          gulp.src([`${config.basepath.build}/assets/${config.versionName}/**/*.js`, `!${config.basepath.build}/assets/${config.versionName}/**/lib/*.js`], { dot: true })
                 .pipe(plugins.foreach(function (stream, file) {
                     let filename = path.basename(file.path);
                     let destPath = file.path.split(file.base)[1].split(filename)[0];
@@ -57,12 +57,16 @@ module.exports = function (gulp, plugins, config, es, webpack, path, banner) {
                             plugins: [new webpack.optimize.UglifyJsPlugin()],
                         }, webpack))
                         .pipe(plugins.insert.prepend(banner))
-                        .pipe(plugins.replace(config.apiKeys.googleRecaptchaApiKey, 'googleRecaptchaApiKey'))
-                        .pipe(plugins.replace(config.apiKeys.googleMapsApiKey, 'googleMapsApiKey'))
                         .pipe(gulp.dest(`${config.basepath.release}/template-local-ssi/assets/${config.versionName}/${destPath}`))
                         .pipe(gulp.dest(`${config.basepath.release}/template-local/assets/${config.versionName}/${destPath}`))
                         .pipe(gulp.dest(`${config.basepath.static}/assets/${config.versionName}/${destPath}`));
                 })),
+
+          gulp.src(`${config.basepath.build}/assets/${config.versionName}/latest/lib/all-ext-min.js`)
+            .pipe(plugins.insert.prepend(banner))
+            .pipe(gulp.dest(`${config.basepath.release}/template-local-ssi/assets/${config.versionName}/latest/lib/`))
+            .pipe(gulp.dest(`${config.basepath.release}/template-local/assets/${config.versionName}/latest/lib/`))
+            .pipe(gulp.dest(`${config.basepath.static}/assets/${config.versionName}/latest/lib/`)),
 
             //CSS task
             gulp.src(`${config.basepath.build}/assets/${config.versionName}/**/*.css`, { dot: true })

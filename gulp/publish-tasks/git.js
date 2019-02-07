@@ -8,7 +8,6 @@ const path = require('path');
 const fs = require('fs');
 const dirSync = require('gulp-directory-sync');
 const replace = require('gulp-replace');
-var vfs = require('vinyl-fs');
 const gitFunctions = {
   clean: (folder) => {
     return (cb) => {
@@ -32,9 +31,9 @@ const gitFunctions = {
   transfer: () => {
     if (!fs.existsSync(`${config.staticCdnRepo.folder}/assets/${config.versionName}/${config.subVersion}`)) {
       return (cb) => {
-        return vfs.src(`${config.basepath.static}/assets/${config.versionName}/latest/**/*`)
+        return gulp.src(`${config.basepath.static}/assets/${config.versionName}/latest/**/*`)
           .pipe(gulp.dest(`${config.staticCdnRepo.folder}/assets/${config.versionName}/latest/`, {followSymlinks: false}))
-          .pipe(vfs.symlink(`${config.staticCdnRepo.folder}/assets/${config.versionName}/${config.subVersion}/`));
+          .pipe(gulp.dest(`${config.staticCdnRepo.folder}/assets/${config.versionName}/${config.subVersion}/`));
       };
     } else {
       return (cb) => {

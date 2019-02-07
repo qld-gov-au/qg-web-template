@@ -5,7 +5,7 @@ A Git client and Node.js are required to edit this template.
 ## 1. Download
 
 ```bash
-git clone https://github.com/qld-gov-au/glue-template.git
+git clone https://github.com/qld-gov-au/qg-web-template.git
 ```
 
 ## 2. Setup
@@ -14,22 +14,20 @@ git clone https://github.com/qld-gov-au/glue-template.git
 
 Install all the node packages (If behind a corporate web proxy please have a look at this website [How to setup Node.js and Npm behind a corporate web proxy](https://jjasonclark.com/how-to-setup-node-behind-web-proxy))
 ```bash
-npm install
+npm install or yarn install
 ```
 
 ## 3. Testing Setup
 
 **To start a local server**
 ```bash
-gulp serve
+npm run start or yarn start
 ```
-**To run Unit tests and Linting tests**
+
+**To run E2E tests locally**.
+webdriver-manager update --gecko=false --proxy PROXY(if any)
 ```bash
-gulp test
-```
-**Watch and run tests**
-```bash
-gulp watch:test
+gulp test:e2e
 ```
 
 **To run E2E tests using Browserstack**.

@@ -1,5 +1,5 @@
 module.exports = function (gulp, plugins, config, es, dest) {
-  let extLibJSTarget = config.extLib.js.map(function (s) { return `${config.basepath.src}/assets/_project/lib/ext/` + s + '.js'; });
+  let extLibJSTarget = config.extLib.js.map(function (s) { return `${config.basepath.src}/assets/_project/lib/ext/` + s; });
   return function (cb) {
     return es.merge([
       // Images

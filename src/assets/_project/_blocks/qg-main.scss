@@ -14,10 +14,10 @@
 // -------------------------
 @import "scss-general/bootstrap/rem";
 @import "scss-general/bootstrap/variables";
-@import "../../../../node_modules/bootstrap/scss/bootstrap";
+@import "scss-general/bootstrap/bootstrap-imports";
 @import "scss-general/bootstrap/buttons";
 @import "scss-general/bootstrap/bridge_bootstrap3";
-@import "../../../../node_modules/font-awesome/scss/font-awesome.scss";
+@import "../../../../node_modules/font-awesome/css/font-awesome";
 
 // Queensland government styles
 // -------------------------
@@ -81,7 +81,7 @@
 @import "layout/_pagemodels/guide";
 
 //External Libraries
-@import "https://static.qgov.net.au/assets/v3/latest/lib/ext/butterfly/butterfly.css";
+@import "../lib/ext/butterfly/butterfly.css";
 
 // Legacy styles
 // -------------------------
