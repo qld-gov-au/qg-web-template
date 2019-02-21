@@ -14,7 +14,7 @@
       let form = $(subBtn).parents('form');
 
       grecaptcha.render(subBtn, {
-        'sitekey': 'googleRecaptchaApiKey', //this value will be replaced by build tool. from gulp-config/
+        'sitekey': window.qg.googleRecaptchaApiKey, //this value will be replaced by build tool. from gulp-config/
         'callback': () => {
           var response = grecaptcha.getResponse();
           if (response === '' || response === undefined || response.length === 0) {
