@@ -12,7 +12,7 @@
       window.cidmLoaderBaseUrl = res.cidmLoaderBaseUrl;
       if (config !== 'undefined' && window.cidmLoaderBaseUrl !== 'undefined') {
         config.returnTo = (config.returnTo !== 'undefined' ? location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + config.returnTo : '/');
-        requirejs([window.cidmLoaderBaseUrl + '/cidm-neo-loader.js?' + Date.now()], function () {
+        requirejs([window.cidmLoaderBaseUrl + '/cidm-wrapped-loader.js?' + Date.now()], function () {
           requirejs(['cidm-neo', 'cidm-utils', 'es6-promise'], function () {
             $('head').append(css);
             $(document).ready(function () {
