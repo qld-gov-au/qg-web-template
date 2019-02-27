@@ -119,6 +119,8 @@
               </div>
             </article>
           </section>
+</br><p> HTML </p>
+
           <pre><code class="language-markup">
                 &lt;section class="qg-accordion" aria-label="Accordion Label">
                     &lt;input type="radio" name="control" id="collapse" class="controls collapse" value="collapse" role="radio">
@@ -161,47 +163,48 @@
         <p>Inline icons are optional and to be selected from the <a href="https://fontawesome.com/icons?d=gallery&m=free"target="_blank">Font Awesome</a> icon set.</p>
         <p>See <a href="https://getbootstrap.com/components/#alerts">Bootstrap alerts documentation</a> for more information.</p>
 
-        <h4> Success message </h4>
+        <h3> Success message </h3>
         <div class="qg-tmplt-example panel panel-default">
           <div class="panel-body">
             <div class="alert alert-success" role="alert">
-              <h2><i class="fa fa-check-circle"></i> Alert title</h2>
-              <p>Alert content</p>
+              <h2><i class="fa fa-check-circle"></i> Thank you for your application</h2>
+              <p>You application is being processed and will be completed within the next 10 business days. You will receive an email confirmation when it has been completed.</p>
             </div>
           </div>
         </div>
-        <p> HTML </p>
+      </br><h4> HTML </h4>
         <pre><code class="language-markup">
 &lt;div class="alert alert-success" role="alert">
-  &lt;h2>Alert title&lt;/h2>
-  &lt;p>Alert content&lt;/p>
+  &lt;h2>&lt;i class="fa fa-check-circle">&lt;/i>Thank you for your application&lt;/h2>
+  &lt;p>You application is being processed and will be completed within the next 10 business days. You will receive an email confirmation when it has been completed.&lt;/p>
 &lt;/div>
                                         </code></pre>
 
-        <h4> Information message </h4>
+        <br/><h3> Information message </h3>
         <div class="qg-tmplt-example panel panel-default">
           <div class="panel-body">
             <div class="alert alert-info" role="alert">
-              <h2>Alert title</h2>
-              <p>Alert content</p>
+              <h2><i class="fa fa-comments"></i>Tell us what you think about our website</h2>
+              <p>Is there anything we could improve?</p>
+              <button type="button" class="qg-btn btn-default">Give us your feedback</button>
             </div>
           </div>
         </div>
 
-        <p> HTML </p>
+      <br/><h4> HTML </h4>
         <pre><code class="language-markup">
 &lt;div class="alert alert-info" role="alert">
-  &lt;h2>Alert title&lt;/h2>
-  &lt;p>Alert content&lt;/p>
+  &lt;h2>&lt;i class="fa fa-comments">&lt;/i>Tell us what you think about our website&lt;/h2>
+  &lt;p>Is there anything we could improve?&lt;/p>
+  &lt;button type="button" class="qg-btn btn-default">Give us your feedback&lt;/button>
 &lt;/div>
                                         </code></pre>
 
-        <h4> Warning message </h4>
+        <br/><h3> Warning message </h3>
         <div class="qg-tmplt-example panel panel-default">
           <div class="panel-body">
             <div class="alert alert-warning" role="alert">
-              <h2>Alert title</h2>
-              <p>Alert content:</p> <br>
+              <h2><i class="fa fa-exclamation-triangle"></i>Please check your answers</h2>
               <ol>
                 <li><a href="#">Name: Must be completed</a></li>
                 <li><a href="#">Email: Must be a valid email address</a></li>
@@ -209,11 +212,10 @@
             </div>
           </div>
         </div>
-        <p> HTML </p>
+      </br><h4> HTML </h4>
         <pre><code class="language-markup">
 &lt;div class="alert alert-warning" role="alert">
-  &lt;h2>Alert title&lt;/h2>
-  &lt;p>Alert content:&lt;/p>
+  &lt;h2>&lt;i class="fa fa-exclamation-triangle">&lt;/i>Please check your answers&lt;/h2>
     &lt;ol>
       &lt;li>&lt;a href="#">Name: Must be completed&lt;/a>&lt;/li>
       &lt;li>&lt;a href="#">Email: Must be a valid email address&lt;/a>&lt;/li>
@@ -221,7 +223,7 @@
 &lt;/div>
                                         </code></pre>
 
-        <h4> Danger message </h4>
+        <br/><h3> Danger message </h3>
         <div class="qg-tmplt-example panel panel-default">
           <div class="panel-body">
             <div class="alert alert-danger" role="alert">
@@ -230,7 +232,8 @@
             </div>
           </div>
         </div>
-
+</br>
+<h4> HTML </h4>
         <pre><code class="language-markup">
 &lt;div class="alert alert-danger" role="alert">
   &lt;h2>Alert title&lt;/h2>
@@ -252,7 +255,7 @@
           </div>
         </div>
 
-        <p> HTML </p>
+        <h3> HTML </h3>
 
         Please refer to <a href="https://qld-gov-au.github.io/web-template-release/layout.html#asides">SWE Page Layout - Asides</a> for the aside HTML code snippets.</p>
 
@@ -266,7 +269,28 @@
         <!-- ################################## -->
 
         <h2 id="blockquote" class="category">Blockquote</h2>
-        <blockquote><p>The <em>Disposal of Uncollected Goods Act 1967</em> covers inspection, custody, storage, repair and other treatment of goods. Under this Act, uncollected goods may be sold six months after the date on which they were ready for collection.</p></blockquote>
+
+<p>
+Publishers may use blockquotes to indicate the quotation of a large section of text from another source, which isn’t already mentioned in the article.
+</p>
+
+        <div class="qg-tmplt-example">
+          <div class="panel-body">
+        <blockquote cite="#"><p>The <em>Disposal of Uncollected Goods Act 1967</em> covers inspection, custody, storage, repair and other treatment of goods. Under this Act, uncollected goods may be sold six months after the date on which they were ready for collection.</p></blockquote>
+        </div>
+          </div>
+
+<h3> HTML </h3>
+  <pre><code class="language-markup">
+&lt;blockquote cite="#">
+&lt;p>The &lt;em>Disposal of Uncollected Goods Act 1967&lt;/em> covers inspection, custody, storage, repair and other treatment of goods. Under this Act, uncollected goods may be sold six months after the date on which they were ready for collection.&lt;/p>
+&lt;/blockquote>
+                                  </code></pre>
+
+<br/><p><i>Configuration options</i></p>
+<ul>
+<li>The cite attribute is optional and, although user agents may allow users to follow such citation links, is intended for private use.</li>
+</ul>
 
         <!-- ################################## -->
 
@@ -274,11 +298,9 @@
 
         <h2 id="buttons" class="category">Buttons</h2>
         <p><span class="label label-default" title="Default bootstrap implementation">Default Bootstrap</span></p>
-
-        <p>These are the QLD Government implemented buttons from Bootstrap. See the <a href="http://getbootstrap.com/css/#buttons">bootstrap section on buttons</a> for additional implementation advice.</p>
-        <p>Note: QLD Government includes a 'Secondary' button type on top of the standard Bootstrap buttons.</p>
-
-        <p>We advise you use the following buttons in your applications</p>
+        <p>Publishers can use buttons to express what action will occur when the user clicks it. Buttons are used to initialise an action</p>
+<h3> Standard buttons </h3>
+<p>The SWE leverages the button component from Bootstrap, with the addition of the 'Primary Alt' button.</p>
         <div class="qg-tmplt-example">
           <div class="panel-body">
             <p>
@@ -290,7 +312,8 @@
           </div>
         </div>
 
-        <p>The sizes of the buttons have been adjusted to match the Government style guide. Larger buttons can be created using .btn-lg, and smaller buttons with .btn-sm and .btn-xs.</p>
+        <h3> Sizes </h3>
+<p> Publishers may choose the size of the buttons by using classes <code>.btn-lg</code> for larger buttons and <code>.btn-sm</code> and <code>.btn-xs</code> for smaller buttons. </p>
         <div class="qg-tmplt-example">
           <div class="panel-body">
             <p>
@@ -302,7 +325,8 @@
           </div>
         </div>
 
-        <p>Block level buttons are also available:</p>
+        <h3> Block level buttons </h3>
+<p>Publishers can create block level buttons which span the full width of a parent by adding <code>.btn-block</code>.</p>
         <div class="qg-tmplt-example">
           <div class="panel-body">
             <p>
@@ -311,6 +335,9 @@
             </p>
           </div>
         </div>
+    <h3> HTML </h3>
+      <p>Please refer to <a href="http://getbootstrap.com/css/#buttons">Bootstrap's button component</a> for additional implementation advice.</p>
+
 
         <!-- ################################## -->
 
@@ -318,7 +345,7 @@
 
         <h2 id="call-out-box" class="category">Call out box</h2>
         <p><span class="label label-primary" title="Custom QG styles">Custom</span></p>
-        <p>This component supports having some contextual text to accompany the button.</p>
+        <p>Publishers may use the call out box to help direct a user’s attention to an excerpt of text or call to action.</p>
         <div class="qg-tmplt-example">
           <div class="panel-body">
             <div class="qg-call-out-box">
@@ -327,12 +354,19 @@
             </div>
           </div>
         </div>
+
+        <h3>HTML</h3>
         <pre><code class="language-markup">
-                &lt;div class="qg-call-out-box">
-                  &lt;a class="qg-btn btn-primary" href="">Pay now&lt;/a>
-                  &lt;p>Some text to provide context around what happens when a user presses this button.&lt;/p>
-                &lt;/div>
+&lt;div class="qg-call-out-box">
+  &lt;a class="qg-btn btn-primary" href="">Pay now&lt;/a>
+  &lt;p>Some text to provide context around what happens when a user presses this button.&lt;/p>
+&lt;/div>
                 						</code></pre>
+<br />
+                            <p><i>Configuration options</i></p>
+                            <ul>
+                              <li>This component supports having some contextual text to accompany a button.</li>
+                            </ul>
 
         <!-- ################################## -->
 
@@ -403,7 +437,7 @@
           </div>
         </div>
         <br/>
-        <p>HTML</p>
+        <h3>HTML</h3>
 
         <pre><code class="language-markup">
 
@@ -490,6 +524,7 @@
 
           </div>
         </div>
+        <h3>HTML</h3>
         <pre><code class="language-markup">
 
 &lt;a href="#" class="download">
@@ -515,19 +550,19 @@
           </div>
         </div>
 
-        <p>HTML</p>
+        <br/><h3>HTML</h3>
         <pre><code class="language-markup">
 
-                &lt;div class="qg-facebook-updates" data-href="https://www.facebook.com/TMRQld/"&gt;
-                &lt;p class="more text-right"&gt;&lt;a href="https://www.facebook.com/TMRQld/" title="View All"&gt;View all&lt;/a&gt;&lt;/p&gt;
-                &lt;/div&gt;
+&lt;div class="qg-facebook-updates" data-href="https://www.facebook.com/TMRQld/"&gt;
+  &lt;p class="more text-right"&gt;&lt;a href="https://www.facebook.com/TMRQld/" title="View All"&gt;View all&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
 
                               </code></pre>
         <p><i>Configuration options</i></p>
         <ul>
-          <li>data-href="n" -> attribute to specify a Facebook account URL </li>
+          <li>To specify a Facebook account URL, use the attribute <code>data-href="n"</code></li>
         </ul>
-        <hr />
+
 
         <!-- ################################## -->
 
@@ -545,16 +580,15 @@
 
         <h2 id="images" class="category">Images</h2>
         <p><span class="label label-primary" title="Heavily customised bootstrap implementation">Customised</span></p>
-
-        <p>You can use standard bootstrap image utilities. See <a href="https://getbootstrap.com/css/#images">Bootstrap documentation on images</a>.</p>
-
-        <p>The Web Template also has some custom images features.</p>
+        <p>Publishers can use images to provide a visual representation of context.</p>
+        <p>Publishers can use standard <a href="https://getbootstrap.com/css/#images">Bootstrap image utilities</a> as well as the following custom image features.</p>
 
         <h3 id="figures">Figures</h3>
         <p><span class="label label-default" title="Default HTML5 implementation">Default HTML5</span></p>
+        <p> </p>
+        <p>To use figures, just add the standard HTML5 figure code in the <code>&lt;div id="qg-primary-content"&gt;</code> element, or add the class <code>qg-fig</code> to any figure element outside of the qg-primary-content element:</p>
 
-        <p>To use figures, just put in standard HTML5 figure code in the <code>&lt;div id="qg-primary-content"&gt;</code> element, or add the class <code>qg-fig</code> to any figure element outside of the qg-primary-content element:</p>
-
+<br/><h4>HTML</h4>
         <pre><code class="language-markup">
    &lt;figure&gt;
      &lt;img src="https://via.placeholder.com/300.png/ccc/ccc" alt="" /&gt;
@@ -618,9 +652,7 @@
         <h2 class="category" id="pagination">Pagination</h2>
         <p><span class="label label-primary" title="Customised bootstrap implementation">Customised</span></p>
 
-        <p>See <a href="https://getbootstrap.com/components/#pagination">Bootstrap pagination documentation</a>.</p>
-
-        <p>Add the classes <code>qg-previous</code> and <code>qg-next</code> to the previous and next buttons.</p>
+        <p>Publishers may use pagination to indicate a series of related content exists across multiple pages.</p>
 
         <div class="qg-tmplt-example">
           <div class="panel-body">
@@ -646,12 +678,16 @@
           </div>
         </div>
 
+        <h3>HTML</h3>
+<p>Add the classes <code>qg-previous</code> and <code>qg-next</code> to the previous and next buttons.</p>
+<p>Please refer to <a href="https://getbootstrap.com/docs/4.3/components/pagination/">Bootstrap pagination documentation</a> for furhter implementation information.</p>
+
         <!-- ################################## -->
 
         <!-- ################################## -->
 
         <h2 id="promotions" class="category">Promotions</h2>
-        <p>Component to be used to display promotional items. Preferably shown at the bottom of index pages.</p>
+        <p>Publishers may use the promotions component to display promotional items. Preferably shown at the bottom of index pages.</p>
         <div class="qg-tmplt-example">
           <div class="panel-body">
             <section class="qg-promotional-content">
@@ -699,6 +735,7 @@
             </section>
           </div>
         </div>
+        <h3>HTML</h3>
         <pre><code class="language-markup">
                 &lt;section class="qg-promotional-content">
                     &lt;div class="row">
@@ -752,7 +789,7 @@
         <h2 class="category" id="qg-correct-incorrect">QG Correct / incorrect</h2>
         <p><span class="label label-primary" title="Custom QG styles">Custom</span></p>
 
-        <p>Use the following styles to highlight correct/incorrect examples in web content.</p>
+        <p>Publishers may use the following styles to highlight correct/incorrect examples in web content.</p>
 
         <h3>Short form correct/incorrect examples</h3>
 
@@ -764,16 +801,16 @@
             <span class="qg-incorrect">You cannot use this service to change your business address.</span>
           </div>
         </div>
-        <h4>Usage</h4>
-        <p>HTML</p>
+        <br/><h4>HTML</h4>
         <pre>
 <code class="language-markup">
   &lt;span class="qg-correct"&gt;You can use this service to change your home address.&lt;/span&gt;
   &lt;span class="qg-incorrect"&gt;You cannot use this service to change your business address.&lt;/span&gt;
+
 </code>
 </pre>
 
-
+<br/>
         <h3>Long form correct/incorrect examples</h3>
 
         <p> Use the long form when your correct/incorrect examples express a more complex idea or use a larger amount of content (e.g. multiple sentences). </p>
@@ -799,8 +836,7 @@
             </div>
           </div>
         </div>
-        <h4>Usage</h4>
-        <p>HTML</p>
+        <br/><h4>HTML</h4>
         <pre>
 <code class="language-markup">
 &lt;div class="qg-correct" alt="Correct example"&gt;
@@ -823,7 +859,7 @@
 </code>
 </pre>
 
-        <h3>Tables</h3>
+        <br/><h3>Tables</h3>
 
         <p>You can apply correct/incorrect classes to individual table cells.</p>
         <p>Use this when you want to custom specify correct/incorrect cells </p>
@@ -861,8 +897,7 @@
             </table>
           </div>
         </div>
-        <h4>Usage</h4>
-        <p>HTML</p>
+      <br/>  <h4>HTML</h4>
         <pre>
 <code class="language-markup">
   &lt;table title="acronym examples" class="table"&gt;
@@ -920,8 +955,7 @@
             </table>
           </div>
         </div>
-        <h4>Usage</h4>
-        <p>HTML</p>
+        <br/><h4>HTML</h4>
         <pre>
 <code class="language-markup">
   &lt;table title="acronym examples" class="table qg-correct-incorrect"&gt;
@@ -983,8 +1017,7 @@
             </div>
           </div>
         </div>
-        <h4>Usage</h4>
-        <p>HTML</p>
+        <br/><h4>HTML</h4>
         <pre>
 <code class="language-markup">
   &lt;table title="acronym examples"&gt;
@@ -1043,8 +1076,7 @@
               </table>
             </div>
           </div>
-          <h4>Usage</h4>
-          <p>HTML</p>
+          <br/><h4>HTML</h4>
           <pre>
 <code class="language-markup">
   &lt;table title="acronym examples" class="qg-correct-incorrect"&gt;
@@ -1083,13 +1115,13 @@
 
           </div>
         </div>
-        <p>HTML</p>
+        <h3>HTML</h3>
         <pre><code class="language-markup">
 &lt;div id="qg-quick-exit">
   &lt;header>&lt;strong>Quick exit to&lt;/strong>&lt;/header>
 &lt;/div>
 
-						</code></pre>
+</code></pre>
 
         <!-- ################################## -->
 
@@ -1098,7 +1130,9 @@
 
         <h2 id="qg-survey" class="category">Survey</h2>
         <p><span class="label label-primary" title="Custom QG styles">Custom</span></p>
-        <p>Survey component could be used to display survey link to the users</p>
+        <p>Survey component could be used to display survey link to the users. </p>
+          <p>Note: This survey component will be decommissioned in June 2019. Publishers are asked to use the <a href="https://qld-gov-au.github.io/web-template-release/components.html#alerts">informational alert box component</a> as a replacement for this component.
+          </p>
         <div class="qg-tmplt-example">
           <div class="panel-body">
             <div class="qg-survey">
@@ -1108,6 +1142,7 @@
             </div>
           </div>
         </div>
+<h3>HTML</h3>
         <pre><code class="language-markup">
 &lt;div class="qg-survey">
 	&lt;h2>Tell us what you think about our website&lt;/h2>
@@ -1118,7 +1153,6 @@
 
         <!-- ################################## -->
 
-
         <!-- ################################## -->
 
         <h2 id="twitter-feed" class="category">Twitter Feed</h2>
@@ -1136,7 +1170,7 @@
           </div>
         </div>
 
-        <p>HTML</p>
+        <h3>HTML</h3>
 
         <pre><code class="language-markup">
 
@@ -1147,50 +1181,16 @@
 
 
 						</code></pre>
-        <p><i>Configuration options</i></p>
+        <br/><p><i>Configuration options</i></p>
         <ul>
           <li>data-tweet-limit="n" -> attribute to specify a number of Tweets </li>
         </ul>
 
 
-
-
-        <!-- ################################## -->
-
-        <h2 id="twitter-feed" class="category">Twitter Feed</h2>
-        <p>Publishers may utilise the Twitter Feed component to dynamically display real time Tweets posted to a relevant Twitter feed. </p>
-
-        <div class="qg-tmplt-example">
-
-          <div class="panel-body">
-            <div class="qg-twitter-updates">
-              <p class="more text-right">
-                <a href="https://twitter.com/TMFranchise/lists/transport-and-motoring" title="More from the Transport and motoring franchise on Twitter">View all</a>
-              </p>
-              <a class="twitter-timeline" href="https://twitter.com/TMFranchise/lists/transport-and-motoring" title="More from the Transport and motoring franchise on Twitter" data-tweet-limit="2">View all</a>
-            </div>
-          </div>
-        </div>
-
-        <p>HTML</p>
-
-        <pre><code class="language-markup">
-
-&lt;div class="qg-twitter-updates"&gt;
-  &lt;p class="more text-right"&gt; &lt;a href="https://twitter.com/TMFranchise/lists/transport-and-motoring" title="More from the Transport and motoring franchise on Twitter"&gt;View all&lt;/a&gt; &lt;/p&gt;
-  &lt;a class="twitter-timeline" href="https://twitter.com/TMFranchise/lists/transport-and-motoring" title="More from the Transport and motoring franchise on Twitter" data-tweet-limit="1"&gt;View all&lt;/a&gt;
-&lt;/div&gt;
-
-
-						</code></pre>
-        <p><i>Configuration options</i></p>
-        <ul>
-          <li>data-tweet-limit="n" -> attribute to specify a number of Tweets </li>
-        </ul>
 
         <!-- ################################## -->
         <h2 id="google-autocomplete" class="category">Google Address Autocomplete</h2>
-        <p>You can use the autocomplete widget to provide users an easy method to locate an address.</p>
+        <p>Publishers may use the autocomplete widget to provide users an easy method to locate an address.</p>
 
         <!-- autocomplete -->
         <div id="qg-search-widget">
@@ -1214,7 +1214,7 @@
           </form>
         </div>
         <br>
-        <p>HTML</p>
+        <h3>HTML</h3>
 
         <pre><code class="language-markup">
         &lt;div id="qg-search-widget"&gt;
@@ -1244,9 +1244,9 @@
 
           <dl>
             <dt>Last updated:</dt>
-            <dd>11 January 2018</dd>
+            <dd>27 February 2019</dd>
             <dt>Last reviewed:</dt>
-            <dd>11 January 2018</dd>
+            <dd>27 February 2019</dd>
           </dl>
 
         </div>
