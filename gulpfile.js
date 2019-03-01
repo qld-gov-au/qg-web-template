@@ -153,7 +153,6 @@ gulp.task('wt-clean', require('./gulp/publish-tasks/git').clean(config.webTempla
 gulp.task('wt-clone', require('./gulp/publish-tasks/git').clone(config.webTemplateRepo.url, config.webTemplateRepo.folder));
 gulp.task('wt-sync', require('./gulp/publish-tasks/git').sync(config.basepath.release, config.webTemplateRepo.folder, ['package.json']));
 gulp.task('wt-updateVersion', require('./gulp/publish-tasks/git').updateVersion(config.webTemplateRepo.folder, pjson['wt-version']));
-gulp.task('wt-updateApiKeys', require('./gulp/publish-tasks/git').updateApiKeys(config.webTemplateRepo.folder, config.apiKeys));
 gulp.task('wt-add', require('./gulp/publish-tasks/git').add(config.webTemplateRepo.folder));
 gulp.task('wt-commit', require('./gulp/publish-tasks/git').commit(config.webTemplateRepo.folder, pjson['wt-version']));
 gulp.task('wt-tag', require('./gulp/publish-tasks/git').tag(config.webTemplateRepo.folder, pjson['wt-version']));
