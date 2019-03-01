@@ -153,17 +153,14 @@
 }
 
 // Two column layout navigation (navigation, content)
-#qg-two-col-nav{
+#qg-two-col-nav {
   #qg-section-nav {
-    @extend .col-md-pull-6;
+    @extend .col-md-pull-9;
   }
-}
-#qg-two-col-nav.wide {
   #qg-primary-content {
     @include media-breakpoint-up(md) {
       @include make-col(9);
     }
-    @extend .col-md-push-3;
     @media (min-width: $screen-lg-min) {
       padding-right: $grid-gutter-width !important;
     }
