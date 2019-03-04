@@ -34,6 +34,7 @@ import accessibility      from './components/accessibility/accessibility';
 import './layout/footer/footer-legals';
 import './components/forms/recaptcha';
 import './components/forms/qg-address-autocomplete';
+import './components/qg-document-links';
 
 // Layout
 import activeSideNav      from './layout/section-nav/section-nav';
