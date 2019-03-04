@@ -18,11 +18,10 @@
 
       return false;
     }).each(function () {
-      var $this = $(this),
-        linkText = $this.text(),
-        title,
-        meta
-        ;
+      var $this = $(this);
+      var linkText = $this.text();
+      var title;
+      var meta;
 
       // has metadata without markup?
       if (new RegExp('\\((?:' + documentTypes + '),?\\s+[0-9\\.]+\\s*[KM]B\\)$', 'i').test(linkText)) {

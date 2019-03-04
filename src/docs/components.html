@@ -86,8 +86,7 @@
         <section>
           <p>Displays collapsible content panels for presenting information in a limited amount of space.</p>
           <p>Click headers to expand/collapse content that is categorised into logical sections.</p>
-
-          <section class="qg-accordion" aria-label="Accordion Label">
+          <section class="qg-accordion qg-dark-accordion" aria-label="Accordion Label">
             <input type="radio" name="control" id="collapse" class="controls collapse" value="collapse" role="radio">
             <label for="collapse" class="controls">Collapse all</label>
             <span class="controls">&#124;</span>
@@ -119,8 +118,9 @@
               </div>
             </article>
           </section>
+
           <pre><code class="language-markup">
-                &lt;section class="qg-accordion" aria-label="Accordion Label">
+                &lt;section class="qg-accordion qg-dark-accordion" aria-label="Accordion Label">
                     &lt;input type="radio" name="control" id="collapse" class="controls collapse" value="collapse" role="radio">
                     &lt;label for="collapse" class="controls">Collapse all&lt;/label>
                     &lt;span class="controls">&#124;&lt;/span>
@@ -141,7 +141,7 @@
                     &lt;/article>
                 &lt;/section>
                                     </code></pre>
-          <p>Fontawesome icon can also be used instead of image.</p>
+          <p>Fontawesome icon can also be used instead of image. To use the default theme remove <span class="text-nowrap"><strong>qg-dark-accordion</strong></span> class.</p>
           <p class="alert alert-info">Accordion without icons or images is advised best practice. </p>
           <pre><code class="language-markdown">
                 &lt;i class="fa fa-car" aria-hidden="true">&lt;/i>
