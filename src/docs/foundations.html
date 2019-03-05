@@ -6,7 +6,7 @@
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-    <title>Utilities | Web Template | Queensland Government</title>
+    <title>Foundations | Web Template | Queensland Government</title>
 
     <meta name="description" content="DESCRIPTION">
     <meta name="keywords" content="KEYWORDS">
@@ -35,8 +35,7 @@
 
 </head>
 
-<body data-qg-accessibility="true"
-    data-spy="scroll" data-target="#page-nav">
+<body data-qg-accessibility="true">
 
  <!--#include virtual="/assets/includes-local/analytics.html"-->
  <!--#include virtual="/assets/includes-local/header/access.html"-->
@@ -64,8 +63,8 @@
     <h2 id="breadcrumb-heading" class="qg-visually-hidden">You are here:</h2>
 
     <ol class="list-inline">
-      <!--#include virtual="/assets/includes-local/breadcrumbs/breadcrumb-docs.html"-->
-        <li>Utilities</li>
+        <!--#include virtual="assets/includes-local/breadcrumbs/qg-web-template.html"-->
+        <li>Foundations</li>
     </ol>
 
 </nav>
@@ -75,72 +74,63 @@
 
                     <!--#include virtual="/assets/includes-local/content/alert.html"-->
 
-                    <h1>Utilities</h1>
+                    <h1>Foundations</h1>
 
-                    <p class="lead">Queensland Government custom utilities</p>
-
-<!-- ################################## -->
-
-    <h2 id="accessibility" class="category">Accessibility</h2>
-    <p>To support our users, we're continuing to implement accessibility features to make our sites easier to use.</p>
-
-    <h3>Link in new window icon</h3>
-    <p>
-        Accessibility guidelines recommend not opening windows in links. However, if opening a window in a new link is required, the QG Web Template automatically styles the links displayed in the #qg-content section with a new window icon.
-    </p>
-
-    <div class="qg-tmplt-example">
-        <div class="panel-body">
-            <a href="#" target="_blank">This link opens in a new window</a>.
-        </div>
-    </div>
-
-    <h4>Disabling new window icon feature</h4>
-
-    <p>If there is a user driven reason for it, you can disable this feature by adding the data attribute <code>data-access-new-window=false</code> to the hyperlink you which to disable accessibility on <code>&lt;a href="#" data-access-new-window="false"&gt;</code></p>
-    <p>If you would like to turn this feature on for any hyperlink outside of the #qg-content element, add the <code>data-access-new-window=true</code> attribute: <code>&lt;a href="#" data-access-new-window="truee"&gt;</code></p>
-
-    <h4>Javascript</h4>
-
-    <p>There is also a script that runs over each page to add accessibility to links opening in a new window.</p>
-
-    <p>Firstly, the script adds the following text to the end of the link, displayed to screen readers only:</p>
-    <pre>(Opens in new window)</pre>
-    <p>To prevent this, you can add your own notification to the link: <code>&lt;span class="qg-blank-notice"&gt;(Opens in new window)&lt;/span&gt;</code></p>
-
-    <p>Secondly the script adds a title to your link if one hasn't already been set: <code>&lt;a href="#" title="Opens in new window"&gt;</code></p>
-
-    <h3 id="disable-accessibilty">Disabling accessibility features</h3>
-
-    <p class="alert alert-warning">This is not recommended.</p>
-
-    <p>For testing purposes, or if these features are causing issues with applications built on the QG Web Template, these features can be turned off by adding <code>data-qg-accessibility="false"</code> to the <code>&lt;body&gt;</code> tag of your page: <code>&lt;body data-qg-accessibility="false"/&gt;</code>.</p>
+                    <p class="lead">Explore the foundations that are the core of the all SWE compliant Queensland Government websites and applications.</p>
 
 <!-- ################################## -->
 
 <!-- ################################## -->
 
-<h2 id="FunnelbackIndexing" class="category">Funnelback indexing</h2>
+    <h2 id="FranchiseWebsiteStandard">The Franchise Website Standard</h2>
 
-<p>By default, Funnelback will index all content within a web page. Finer control is provided through several mechanisms to exclude certain content from being indexed. It is recommended that publishers add the Noindex tag to non-content components within the web page, such as navigation (i.e. headers, breadcrumbs, ToC's, side nav, footer). </p>
+    <p> The Franchise Website Standard helps agencies contribute to a franchise model for Queensland Government online service delivery. The objective of the model is to make it easier for customers to interact with the Queensland Government by organising all citizen-facing content in a customer-centric rather than agency-centric way. This means that each franchise delivers online content for a specific topic or audience.</p>
 
-<p>For more implementation guidance on how to add Noindex tags, please refer to the <a href="https://docs.funnelback.com/15.16/develop/key-programs-and-scripts/padre.html#introduction">PaDRE (Parallel Document Retrieval Engine) documentation</a>.
+    <p>All Queensland Government franchise websites need to adhere to a set of guidelines that provide customers with a single website experience (SWE). These guidelines form a template of technical components for use by government departments.</p>
+
+    <p>The <a href="https://github.com/qld-gov-au/swe/blob/master/product-definition.md">SWE Product Definition</a> assist agencies to understand and comply with the Franchise Website Standard.</p>
+
+    <p>The SWE Product Definition:</p>
+      <ul>
+          <li>outlines the requirements for developing website components</li>
+          <li>helps departments customise the components for their specific audience.</li>
+      </ul>
+
+<!-- ################################## -->
+
+<!-- ################################## -->
+
+  <h2 id="Accessibility">Accessibility</h2>
+
+    <p>The Disability Discrimination Act 1992 (Cwlth) states that all Australian websites must comply with the <a href="https://www.w3.org/">W3C Web Content Accessibility Guidelines (WCAG) 2.0</a>. Queensland Government websites and websites established or commissioned by Queensland Government bodies, extranets and internet applications are also specifically mandated in IS26 to achieve conformance Level AA of these guidelines.</p>
+
+    <p>Note: Some agencies may require WCAG AAA Level conformance (e.g. Department of Communities, Child Safety and Disability Services). Refer to your agency’s web policy or procedure for guidelines on your conformance requirements. </p>
+
+    <p>WCAG 2.0 also provides specific requirements for Rich Internet Applications. It allows for a baseline technology to be set by the site creator (e.g. JavaScript) but does not remove the responsibility of meeting success criteria (e.g. the JavaScript must be made accessible).</p>
+
+    <p>Refer to <a href="https://www.w3.org/TR/wai-aria-1.1/">WAI Rich Internet Applications (WAI-ARIA)</a> for more information.</p>
+
+    <p>An <a href="https://github.com/qld-gov-au/swe/blob/master/WCAG-checklist.xlsx?raw=true">Accessibility Checklist</a> has been created to help you self-assess accessibility compliancy against WCAG A and AA level checkpoints.</p>
 
 <!-- ################################## -->
 
 <!-- ################################## -->
 
-<h2 id="hCard" class="category">hCard</h2>
+<h2 id="WritingStyles">Writing Styles</h2>
 
-<p> Whenever publishers need to display contact details, they can choose to use a special set of HTML class attributes known as hCard. A hCard allows programs to export contacts in a standardised format so that they can be imported into other email programs.</p>
-<p> For more information about the hCard, including implementation instructions, please visit the <a href="http://microformats.org/wiki/hcard">Microformats Wiki</a>.</p>
+  <p>The <a href="https://www.forgov.qld.gov.au/web-writing-and-style-guide">Writing Style Guide</a> assists publishers to write clear and consistent web content that meets our customers' needs.</p>
+  <p>The recommendations in this guide comply with:</p>
+    <ul>
+          <li>the Queensland Government's <a href="http://www.qgcio.qld.gov.au/products/qgea-documents/548-information/2446-internet-is26">Information standard 26: Internet</a></li>
+          <li>the <a href="http://www.w3.org/TR/WCAG20/">W3C's Web content accessibility guidelines (WCAG) 2.0</a>.</li>
+</ul>
+<p>The writing and style techniques in this guide apply to all Queensland Government websites, including www.qld.gov.au, corporate (departmental) websites, intranets, and campaign websites.</p>
+
+
 
 <!-- ################################## -->
 
 <!-- ################################## -->
-
-
-
 
                     <div class="qg-content-footer">
 
@@ -155,8 +145,6 @@
                     </div>
                 </div>
 
-
-
                 <aside id="qg-secondary-content">
 
                     <div id="page-nav"
@@ -164,19 +152,19 @@
                             class="qg-aside qg-docs-sidenav"
                             role="complementary"
                             data-spy="affix" data-offset-top="500" data-offset-bottom="900">
+
                         <h2>On this page</h2>
 
                         <ul class="list" role="tablist">
-                            <li><a href="#accessibility">Accessibility</a>
-                              <li><a href="#FunnelbackIndexing">Funnelback Indexing</a>
-                            <li><a href="#hCard">hCard</a>
+                            <li><a href="#FranchiseWebsiteStandard">The Franchise Website Standard</a></li>
+                            <li><a href="#Accessibility">Accessibility</a>
+                              <li><a href="#WritingStyles">Writing Styles</a>
+
                         </ul>
 
                     </div>
-
                 </aside>
-
-              <!--#include virtual="/assets/includes-local/section-nav/docs-nav.html"-->
+                <!--#include virtual="assets/includes-local/section-nav/qg-web-template.html"-->
 
             </div>
             <!--#include virtual="/assets/includes-local/content/options.html"-->
@@ -196,19 +184,6 @@
     </script>
 
     <!--#include virtual="/assets/includes-local/footer/footer-scripts.html"-->
-
-    <script>
-        $('#firstlink').qgLightbox({
-            callbackPreOpen: function() {
-                $('#lightbox').html('Testing Lightbox functionality');
-            }
-        });
-        $('#anotherlink').qgLightbox({
-            callbackPreOpen: function() {
-                $('#lightbox').html('<h1>ANOTHER TEST</h1>');
-            }
-        });
-    </script>
 
 </body>
 
