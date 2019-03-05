@@ -6,6 +6,11 @@
   box-sizing: border-box;
   padding: 1px;
   clear: both;
+  position: relative;
+  .bottom-right {
+    right: 0;
+    bottom: 0;
+  }
   img {
     max-width: 1312px;
     max-height: 361px;
@@ -14,6 +19,7 @@
     }
   }
   .blurb {
+    position: inherit;
     background: rgba(0, 0, 0, 0.5);
     color: #fff;
     padding: 1.2em;
