@@ -74,7 +74,7 @@ const gitFunctions = {
   push: (folder) => {
     return (cb) => {
       process.chdir(path.resolve(folder));
-      git.push('origin', {args: ' --tags'}, function (err) {
+      return git.push('origin', ['master'], {args: ' --tags'}, function (err) {
         if (err) throw err;
       });
     };
