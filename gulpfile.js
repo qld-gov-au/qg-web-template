@@ -140,7 +140,7 @@ gulp.task('e2e', function () {
     .pipe(protractor({
       configFile: './tests/e2e/conf.js',
       args: [
-        '--baseUrl', 'http://localhost:' + randomPort,
+        '--baseUrl', `http://localhost:${argv.port || 8086}`,
       ],
     }))
     .on('error', function (e) { throw e; });

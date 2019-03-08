@@ -5,7 +5,7 @@ module.exports = function (gulp, plugins, connect, connectssi, argv, path, rando
     let connectServer = (root, subpath, port) => {
       connect.server({
         root: subpath ? `${root}/${subpath}` : `${root}`,
-        port: process.env.port || 8086,
+        port: argv.port || 8086,
         livereload: true,
         middleware: function () {
           return [connectssi({
