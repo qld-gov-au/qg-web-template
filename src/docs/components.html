@@ -86,7 +86,8 @@
         <section>
           <p>Displays collapsible content panels for presenting information in a limited amount of space.</p>
           <p>Click headers to expand/collapse content that is categorised into logical sections.</p>
-          <section class="qg-accordion qg-dark-accordion" aria-label="Accordion Label">
+        </br>
+          <section class="qg-accordion" aria-label="Accordion Label">
             <input type="radio" name="control" id="collapse" class="controls collapse" value="collapse" role="radio">
             <label for="collapse" class="controls">Collapse all</label>
             <span class="controls">&#124;</span>
@@ -117,9 +118,10 @@
                 <p>Or provide any semantic html structure</p>
               </div>
             </article>
+
           </section>
 
-</br><p> HTML </p>
+</br><h3> HTML </h3>
 
           <pre><code class="language-markup">
                 &lt;section class="qg-accordion qg-dark-accordion" aria-label="Accordion Label">
@@ -143,7 +145,7 @@
                     &lt;/article>
                 &lt;/section>
                                     </code></pre>
-          <p>Fontawesome icon can also be used instead of image. To use the default theme remove <span class="text-nowrap"><strong>qg-dark-accordion</strong></span> class.</p>
+          <p>Fontawesome icon can also be used instead of image. To use the light theme (example above) remove <span class="text-nowrap"><strong>qg-dark-accordion</strong></span> class from the above code snippet.</p>
           <p class="alert alert-info">Accordion without icons or images is advised best practice. </p>
           <pre><code class="language-markdown">
                 &lt;i class="fa fa-car" aria-hidden="true">&lt;/i>
@@ -382,9 +384,10 @@ Publishers may use blockquotes to indicate the quotation of a large section of t
 
         <!-- ################################## -->
 
-
-        <h2 id="qg-cards" class="category">QG Cards</h2>
+        <h2 id="qg-cards" class="category">Cards</h2>
         <p><span class="label label-primary" title="Custom QG styles">Custom</span></p>
+
+<p>Publishers can use the Cards pattern to display a collection of categories and provide the user with a preview of content they link to.</p>
         <section class="row qg-cards">
           <article class="qg-card col-12 col-sm-6 col-lg-4">
             <div class="content">
@@ -447,6 +450,7 @@ Publishers may use blockquotes to indicate the quotation of a large section of t
             </div>
           </article>
         </section>
+        <h3> HTML </h3>
         <pre>
         <code class="language-markup">
 &#x3C;section class=&#x22;row qg-cards&#x22;&#x3E;
@@ -1421,7 +1425,7 @@ Publishers may use blockquotes to indicate the quotation of a large section of t
             <li><a href="#blockquote">Blockquote</a></li>
             <li><a href="#buttons">Buttons</a></li>
             <li><a href="#call-out-box">Call out box</a></li>
-            <li><a href="#qg-cards">QG Cards</a></li>
+            <li><a href="#qg-cards">Cards</a></li>
             <li><a href="#carousel">Carousel</a></li>
             <li><a href="#downloadable-document-link">Downloadable document link</a></li>
             <li><a href="#facebook-feed">Facebook Feed</a></li>
