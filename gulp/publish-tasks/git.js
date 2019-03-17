@@ -60,7 +60,9 @@ const gitFunctions = {
     return (cb) => {
       process.chdir(path.resolve(folder));
       return gulp.src('./*')
-        .pipe(git.commit(version));
+        .pipe(git.commit(version, {
+          args: '-m  "' + process.env.COMMITMSG + '"',
+        }));
     };
   },
   tag: (folder, version) => {
