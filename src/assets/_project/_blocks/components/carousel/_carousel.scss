@@ -64,18 +64,20 @@
       position: inherit;
       margin-left: 0;
       float: left;
+      justify-content: flex-start;
       text-align: left;
       margin-bottom: 0;
       margin-right: 0;
+      width: 70%;
+      flex-wrap: wrap;
+      height: 38px;
       li {
         border: 1px solid #000;
         border-radius: 50%;
         margin-right: 10px;
-        width: 12px;
-        height: 12px;
+        width: 10px;
+        height: 10px;
         &.active{
-          width: 12px;
-          height: 12px;
           background-color: #000;
         }
       }
@@ -86,7 +88,7 @@
       padding-left: 0;
       float: right;
       width: 30%;
-      top: -5px;
+      top: -7px;
       text-align: right;
       li {
         display: inline-block;
