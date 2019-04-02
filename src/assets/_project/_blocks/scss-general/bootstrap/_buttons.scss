@@ -25,7 +25,7 @@
     &:focus,
     &.focus {
       color: $color;
-      background-color: lighten($background, 17%);
+      background-color: lighten($background, 5%);
           border-color: lighten($border, 25%);
     }
   }
