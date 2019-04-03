@@ -62,16 +62,6 @@ a {
   }
 }
 #qg-primary-content, #qg-secondary-content {
-  .download{
-    text-decoration: none !important;
-    &:hover{
-      text-decoration: none !important;
-    }
-    .title {
-      text-decoration: underline;
-    }
-  }
-
   a:not(.print-content-link) {
     &:focus, &:hover, &:link, &:visited {
       text-decoration: underline;

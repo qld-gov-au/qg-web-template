@@ -7,34 +7,20 @@
   // onready
   $(document).ready(function () {
     // find links in content and asides that are missing metadata markup
-    $('a', '#qg-primary-content, #qg-secondary-content').filter(function () {
-      var documentLink = new RegExp('\\.(' + documentTypes + ')$', 'i').test(this.href);
-
-      if (documentLink) {
-        // add document link class
-        // has meta markup?
-        return $(this).addClass('download').find('.meta').length === 0;
-      }
-
-      return false;
-    }).each(function () {
+    $('a', '#qg-primary-content, #qg-secondary-content').each(function () {
       var $this = $(this);
       var linkText = $this.text();
-      var title;
-      var meta;
-
-      // has metadata without markup?
-      if (new RegExp('\\((?:' + documentTypes + '),?\\s+[0-9\\.]+\\s*[KM]B\\)$', 'i').test(linkText)) {
-        meta = $('<span class="meta">' + linkText.replace(new RegExp('^.*\\((' + documentTypes + '),?\\s+([0-9\\.]+)\\s*([KM]B)\\)$'), '($1, $2$3)') + '</span>');
-        title = $this.contents().eq(-1);
-        title[ 0 ].data = title[ 0 ].data.replace(new RegExp('\\s+\\((?:' + documentTypes + '),?\\s+[0-9\\.]+\\s*[KM]B\\)$'), '');
-        $this.wrapInner('<span class="title"/>');
-        $this.append(' ');
-        $this.append(meta);
+      var dtRegex = new RegExp(documentTypes);
+      if (dtRegex.test(linkText)) {
+        if (/\.\d*?/.test(linkText) && /KB/.test(linkText)) {
+          var extractSize = new RegExp('\\((?:' + documentTypes + '),?\\s+[0-9\\.]+\\s*[KM]B\\)', 'i');
+          $(this).find('.meta').empty().append(linkText.match(extractSize)[0].replace(/(\.\d*)/gi, ''));
+        }
       } else {
-        // get file type from extension
         linkText = $this.attr('href').replace(/^.*\.(.+)$/, '$1').toUpperCase();
-        $this.wrapInner('<span class="title"/>').append(' <span class="meta">(' + linkText + ')</span>');
+        if (dtRegex.test(linkText)) {
+          $this.append(' <span class="meta">(' + linkText + ')</span>');
+        }
       }
     });
   });
