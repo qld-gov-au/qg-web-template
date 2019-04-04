@@ -251,7 +251,6 @@
     float: left;
   }
 
-
   .compact .section {
     display: block !important;
   }
@@ -263,5 +262,15 @@
   }
   .qg-featured.qg-aside .carousel {
     width: 50%;
+  }
+}
+
+/*print styles for forms*/
+@media only print {
+  form abbr[title*=required]:after {
+      content: ''
+  }
+  form .label {
+      border: none;
   }
 }
