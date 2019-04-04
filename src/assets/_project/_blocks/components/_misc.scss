@@ -1,9 +1,14 @@
 .print-link-url{
   display: none;
 }
+/*qg-grab class*/
 .qg-grab {
-  background-color: #eef4f6;
+  background-color: $qg-light-blue-gray3;
   clear: both;
+<<<<<<< HEAD
+  padding: 1.6rem 3.2rem;
+} 
+=======
   padding: 1em 2em;
 }
 
@@ -13,3 +18,4 @@
     text-decoration: none;
   }
 }
+>>>>>>> d40828e8df578cf03a622b2ae70f2666f71df97b
