@@ -7,9 +7,9 @@
   $(document).ready(function () {
     $('a', '#qg-primary-content, #qg-secondary-content').each(function () {
       var $this = $(this);
-      var linkText = $this.text();
       var dtRegex = new RegExp(documentTypes, 'i');
       if (dtRegex.test($this.attr('href'))) {
+        var linkText = $this.text();
         if (dtRegex.test(linkText)) {
           if (/\.\d*?/.test(linkText) && /KB/.test(linkText)) {
             var extractSize = new RegExp('\\((?:' + documentTypes + '),?\\s+[0-9\\.]+\\s*[KM]B\\)', 'i');
