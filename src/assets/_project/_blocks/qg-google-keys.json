@@ -1,4 +1,12 @@
 {
+  "defGoogle" : {
+    "uat" : "AIzaSyCKuaFIFo7YYZXHZ5zaiEZdJx0UBoyfuAE",
+    "prod" : "AIzaSyAqkq7IK18bsh-TUMmNR-x9v9PsptT3LMY"
+  },
+  "defGoogleRecaptcha" : {
+    "uat" : "6LeNGSwUAAAAAD6o-P5UTM0FNpKjYB71Kh70F-Ud",
+    "prod" : "6LcoIywUAAAAAN-1rq22G-bP3yxl1bBq_5nHJ6s9"
+  },
   "franchises": [{
     "name": "about",
     "apiKey": "AIzaSyBi-T3vrvcYwouFPqPI5IgLoQxl2hz6Ogs"

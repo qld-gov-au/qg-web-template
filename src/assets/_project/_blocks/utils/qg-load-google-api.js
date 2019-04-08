@@ -6,6 +6,9 @@ import keys from '../qg-google-keys';
 
 (function (qg, $) {
   'use strict';
+  window.qg.googleKey = window.location.hostname.search(/\bdev\b|\btest\b|\blocalhost\b|\buat\b/) !== -1 ? keys.defGoogle.uat : keys.defGoogle.prod;
+  window.qg.googleRecaptchaApiKey = window.location.hostname.search(/\bdev\b|\btest\b|\blocalhost\b|\buat\b/) !== -1 ? keys.defGoogleRecaptcha.uat : keys.defGoogleRecaptcha.prod;
+
   var findFranchiseName = function () {
     var path = window.location.pathname.replace(/\/$/, '');
     var pathArr = path.split('/').filter(function (e) {
@@ -36,7 +39,8 @@ import keys from '../qg-google-keys';
       }
     };
     if ($('#googleapi').length <= 0) {
-      let googleApiKey = window.qg.franchise.apiKey ? window.qg.franchise.apiKey : window.qg.googleKey;
+      // let googleApiKey = window.qg.franchise.apiKey ? window.qg.franchise.apiKey : window.qg.googleKey;
+      let googleApiKey = window.qg.franchise ? window.qg.franchise.apiKey : window.qg.googleKey;
       let s = document.createElement('script');
       let u = `https://maps.googleapis.com/maps/api/js?key=${googleApiKey}&region=AU&libraries=places`;
       s.type = 'text/javascript';
