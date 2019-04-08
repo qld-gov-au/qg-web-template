@@ -2,9 +2,28 @@
  * When using functionality related to google libraries, this fuction comes handy to check if libraries already exists and then execute custom function
  */
 /* globals qg */
+import keys from '../qg-google-keys';
+
 (function (qg, $) {
   'use strict';
   // lazy load a script
+  var findFranchiseName = function (loc) {
+    var path = window.location.pathname.replace(/\/$/, '');
+    var pathArr = path.split('/').filter(function (e) {
+      return e;
+    });
+    return pathArr[0];
+  };
+
+  keys.franchises.forEach(function (franchise) {
+    if (findFranchiseName() === franchise.name) {
+      window.qg.franchise = {
+        name: franchise.name,
+        apiKey: franchise.apiKey,
+      };
+    }
+  });
+
   function lazyScript (url) {
     $('head').append('<script type="text/javascript" src="' + url + '"></script>');
   }
@@ -18,8 +37,9 @@
       }
     };
     if ($('#googleapi').length <= 0) {
+      let googleApiKey = window.qg.franchise.name ? window.qg.franchise.apiKey : window.qg.googleKey;
       let s = document.createElement('script');
-      let u = `https://maps.googleapis.com/maps/api/js?key=${window.qg.googleKey}&region=AU&libraries=places`;
+      let u = `https://maps.googleapis.com/maps/api/js?key=${googleApiKey}&region=AU&libraries=places`;
       s.type = 'text/javascript';
       s.id = 'googleapi';
       s.src = u;
