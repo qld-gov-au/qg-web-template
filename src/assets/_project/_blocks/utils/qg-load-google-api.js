@@ -6,8 +6,7 @@ import keys from '../qg-google-keys';
 
 (function (qg, $) {
   'use strict';
-  // lazy load a script
-  var findFranchiseName = function (loc) {
+  var findFranchiseName = function () {
     var path = window.location.pathname.replace(/\/$/, '');
     var pathArr = path.split('/').filter(function (e) {
       return e;
