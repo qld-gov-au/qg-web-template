@@ -11,7 +11,7 @@ import keys from '../qg-google-keys';
     var pathArr = path.split('/').filter(function (e) {
       return e;
     });
-    return pathArr[0];
+    return pathArr[0].toLowerCase();
   };
 
   keys.franchises.forEach(function (franchise) {
@@ -36,7 +36,7 @@ import keys from '../qg-google-keys';
       }
     };
     if ($('#googleapi').length <= 0) {
-      let googleApiKey = window.qg.franchise.name ? window.qg.franchise.apiKey : window.qg.googleKey;
+      let googleApiKey = window.qg.franchise.apiKey ? window.qg.franchise.apiKey : window.qg.googleKey;
       let s = document.createElement('script');
       let u = `https://maps.googleapis.com/maps/api/js?key=${googleApiKey}&region=AU&libraries=places`;
       s.type = 'text/javascript';
