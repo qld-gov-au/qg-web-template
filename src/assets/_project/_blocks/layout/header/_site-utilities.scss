@@ -1,6 +1,6 @@
 #qg-site-header .qg-utilities {
   text-align: right;
-  margin-top: 0.5rem;
+  @include rem(margin-top, 5px);
 
   a, a:link, a:hover, a:focus {
     color: $qg-blue5;

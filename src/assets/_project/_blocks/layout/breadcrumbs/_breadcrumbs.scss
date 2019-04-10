@@ -2,7 +2,12 @@
 // Controls the look and behaviour of the breadcrumbs section
 
 #qg-breadcrumb {
-	@include make-xs-column(12);
+  @include make-col-ready();
+  @include make-col(12);
+  @include media-breakpoint-down(md) {
+    padding-right: $qg-grid-gutter-width-small/2;
+    padding-left: $qg-grid-gutter-width-small/2;
+  }
 	background: $qg-breadcrumb-bg-color;
 
 	h1, h2 {
@@ -32,12 +37,12 @@
 
 		color: #FFF;
 		text-align: left;
-		@include fontSize(17px);
+    @include rem(font-size, 17px);
     @media all and (max-width: $screen-md) {
-      @include fontSize(15px);
+      @include rem(font-size, 15px);
     }
 
-		@media (min-width: $screen-lg-min) {
+    @include media-breakpoint-up(lg) {
 	      padding-left: $qg-spacing / 2;
 	    }
 	}
@@ -79,7 +84,7 @@
     }
 	}
 
-	@media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
 		margin: 0;
 
 		&.collapse {
@@ -103,7 +108,7 @@
 	}
 }
 
-@media (min-width: $screen-md-min) {
+@include media-breakpoint-up(md) {
 	// Set to shown to prevent breadcrumbs from being hidden
 	#qg-breadcrumb.collapse{
 	   display: block;

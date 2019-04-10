@@ -5,7 +5,8 @@
   @include fonticon($fa-var-comments-o, 1, 4, 1, #000);
 
   margin: 1rem auto;
-  padding: 1em 2em 1em 5.125em;
+  //padding: 1em 2em 1em 5.125em;
+  @include rem(padding, 16px 32px 16px 82px);
   position: relative;
   overflow: hidden;
   border: 1px solid $qg-beige-light;
@@ -13,8 +14,9 @@
     position: absolute;
     background: transparent;
     color: $qg-brown;
-    left: 2rem;
-    top: 3rem;
+    left: 1.3rem;
+    top: 1.5rem;
+    @include rem(font-size, 40px);
   }
   * {
     color: $qg-brown;

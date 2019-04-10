@@ -16,7 +16,7 @@ const path            = require('path');
 const addSrc          = require('gulp-add-src');
 
 // For testing
-const karmaServer       = require('karma').Server;
+const protractor        = require('gulp-protractor').protractor;
 const fsPath            = require('fs-path');
 const eslintReporter    = require('eslint-html-reporter');
 const connectssi        = require('gulp-connect-ssi');
@@ -71,7 +71,6 @@ gulp.task('assets-includes-local', require('./gulp/build-tasks/assets-includes')
 gulp.task('assets-includes-docs', require('./gulp/build-tasks/assets-includes')(gulp, plugins, config, 'docs/assets/includes-local', true, true));
 gulp.task('assets-includes-cdn', require('./gulp/build-tasks/assets-includes')(gulp, plugins, config, 'assets/includes-cdn'));
 
-// FIXME: Re-add unit tests
 gulp.task('build', (cb) => {
   runSequence(
       'test:eslint',
@@ -96,7 +95,7 @@ gulp.task('default', ['build']);
 gulp.task('watch:project', function () {
   gulp.watch([`${config.basepath.src}/assets/_project/_blocks/layout/**/*.html`], ['assets-includes-local', 'assets-includes-docs']);
   gulp.watch([`${config.basepath.src}/assets/_project/**/*.scss`], ['scss']);
-  gulp.watch(`${config.basepath.src}/assets/_project/_blocks/**/*.js`, { verbose: true }, ['js', 'test']);
+  gulp.watch(`${config.basepath.src}/assets/_project/_blocks/**/*.js`, { verbose: true }, ['js', 'test:eslint']);
   gulp.watch(`${config.basepath.src}/assets/_project/lib/**/*.js`, { verbose: true }, ['other-assets']);
   gulp.watch([`${config.basepath.src}/assets/_project/images/**/*`], ['other-assets']);
   gulp.watch([`${config.basepath.src}/template-pages/**/*`], ['template-pages', 'template-pages-to-docs']);
@@ -116,65 +115,62 @@ gulp.task('watch', ['watch:project', 'watch:docs', 'serve']);
 // Grabs SCSS from SRC and moves to release, does not process
 gulp.task('scss-src', require('./gulp/release-tasks/scss-src')(gulp, plugins, config));
 gulp.task('release-other-files', require('./gulp/release-tasks/other-files')(gulp, plugins, config));
+gulp.task('replace-links', require('./gulp/release-tasks/replace-links')(gulp, plugins, es, config));
 gulp.task('release-files', require('./gulp/release-tasks/files')(gulp, plugins, config, es, webpack, path, banner));
-gulp.task('release-docs-relative-assets', require('./gulp/release-tasks/docs-pages-assets')(gulp, plugins, config, true, true));
 
 gulp.task('release', (cb) => {
   return runSequence(
-      [
-        'release-files',
-        'scss-src',
-        'release-other-files',
-      ],
-      cb
-  );
-});
-
-/* TEST TASKS */
-gulp.task('test:unit', require('./gulp/test-tasks/unit')(gulp, plugins, config, karmaServer));
-gulp.task('test:eslint', require('./gulp/test-tasks/lint')(gulp, plugins, config, fsPath, eslintReporter));
-gulp.task('test:e2e:browserstack', require('./gulp/test-tasks/e2e')(gulp, plugins, argv));
-gulp.task('test:e2e:local', function () {
-  return gulp.src('')
-      .pipe(plugins.nightwatch({
-        configFile: 'tests/e2e/config.json',
-      }));
-});
-gulp.task('process-exit', function () {
-  process.exit(0);
-});
-gulp.task('test:e2e', (cb) => {
-  runSequence(
-      ['serve'],
-      ['test:e2e:local'],
-      ['process-exit'],
-      cb
-  );
-});
-gulp.task('test', (cb) => {
-  runSequence(
-      // ['test:unit'],
-      //['test:eslint'],
+    [
+      'release-files',
+      'scss-src',
+      'release-other-files',
+    ],
       cb
   );
 });
 
 /* LOCAL SERVER */
-gulp.task('serve', require('./gulp/build-tasks/serve')(gulp, plugins, connect, connectssi, argv, path));
+let randomPort = Math.floor(1000 + Math.random() * 9000);
+gulp.task('serve', require('./gulp/build-tasks/serve')(gulp, plugins, connect, connectssi, argv, path, randomPort));
+
+/* TEST TASKS */
+gulp.task('test:eslint', require('./gulp/test-tasks/lint')(gulp, plugins, config, fsPath, eslintReporter));
+gulp.task('e2e', function () {
+  gulp.src(['tests/e2e/spec/*.spec.js'])
+    .pipe(protractor({
+      configFile: './tests/e2e/conf.js',
+      args: [
+        '--baseUrl', `http://localhost:${argv.port || 8086}`,
+      ],
+    }))
+    .on('error', function (e) { throw e; });
+});
+gulp.task('test:e2e', ['serve', 'e2e']);
 
 /* PUBLISH TASKS */
 
+// web template release
 gulp.task('wt-clean', require('./gulp/publish-tasks/git').clean(config.webTemplateRepo.folder));
 gulp.task('wt-clone', require('./gulp/publish-tasks/git').clone(config.webTemplateRepo.url, config.webTemplateRepo.folder));
 gulp.task('wt-sync', require('./gulp/publish-tasks/git').sync(config.basepath.release, config.webTemplateRepo.folder, ['package.json']));
 gulp.task('wt-updateVersion', require('./gulp/publish-tasks/git').updateVersion(config.webTemplateRepo.folder, pjson['wt-version']));
-gulp.task('wt-updateApiKeys', require('./gulp/publish-tasks/git').updateApiKeys(config.webTemplateRepo.folder, config.apiKeys));
+gulp.task('wt-add', require('./gulp/publish-tasks/git').add(config.webTemplateRepo.folder));
 gulp.task('wt-commit', require('./gulp/publish-tasks/git').commit(config.webTemplateRepo.folder, pjson['wt-version']));
+gulp.task('wt-tag', require('./gulp/publish-tasks/git').tag(config.webTemplateRepo.folder, pjson['wt-version']));
 gulp.task('wt-push', require('./gulp/publish-tasks/git').push(config.webTemplateRepo.folder));
 gulp.task('wt-npm', require('./gulp/publish-tasks/npm'));
 
+// CDN release
 gulp.task('cdn-clean', require('./gulp/publish-tasks/git').clean(config.staticCdnRepo.folder));
 gulp.task('cdn-clone', require('./gulp/publish-tasks/git').clone(config.staticCdnRepo.url, config.staticCdnRepo.folder));
-gulp.task('cdn-sync', require('./gulp/publish-tasks/git').sync(config.basepath.static, config.staticCdnRepo.folder, ['_env']));
+gulp.task('cdn-transfer', require('./gulp/publish-tasks/git').transfer());
+gulp.task('cdn-add', require('./gulp/publish-tasks/git').add(config.staticCdnRepo.folder));
 gulp.task('cdn-commit', require('./gulp/publish-tasks/git').commit(config.staticCdnRepo.folder, pjson.version));
 gulp.task('cdn-push', require('./gulp/publish-tasks/git').push(config.staticCdnRepo.folder));
+
+// SWE release
+gulp.task('swe-add', require('./gulp/publish-tasks/git').add());
+gulp.task('swe-commit', require('./gulp/publish-tasks/git').commit('./', pjson['wt-version']));
+gulp.task('swe-push', require('./gulp/publish-tasks/git').push('./'));
+gulp.task('swe-tag', require('./gulp/publish-tasks/git').tag('./', pjson['wt-version']));
+

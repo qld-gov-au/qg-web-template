@@ -19,7 +19,7 @@
     };
     if ($('#googleapi').length <= 0) {
       let s = document.createElement('script');
-      let u = 'https://maps.googleapis.com/maps/api/js?key=googleMapsApiKey&region=AU&libraries=places';
+      let u = `https://maps.googleapis.com/maps/api/js?key=${window.qg.googleKey}&region=AU&libraries=places`;
       s.type = 'text/javascript';
       s.id = 'googleapi';
       s.src = u;

@@ -5,7 +5,7 @@
   padding-top: $qg-spacing / 2;
   padding-bottom: $qg-spacing / 2;
 
-  @media (min-width: $screen-lg-min) {
+  @include media-breakpoint-up(lg) {
     padding-left:  ($grid-gutter-width / 2);
     padding-right: ($grid-gutter-width / 2);
   }
@@ -20,9 +20,15 @@
 }
 
 #qg-share {
-  @include make-xs-column(12);
-  @include make-sm-column(6);
-  @include make-sm-column-push(6);
+  @include make-col-ready();
+  @include make-col(12);
+  @include media-breakpoint-up(sm) {
+    @include make-col(6);
+  }
+  @extend .order-sm-2;
+  //@include make-col-offset(6);
+  //@include make-sm-column(6);
+  //@include make-sm-column-push(6);
 
   padding-bottom: $padding-large-vertical;
 
@@ -32,6 +38,7 @@
 
   .navbar {
     min-height: auto;
+    justify-content: center;
   }
 
   h2, ul, li {
@@ -43,7 +50,7 @@
 
   h2 {
     padding-bottom: $padding-base-vertical;
-    @include fontSize(16px);
+    @include rem(font-size, 16px);
   }
   ul {
     list-style: none;
@@ -88,7 +95,7 @@
     .qg-share-icon {
       width: 25px;
       padding-right: 4px;
-      @include fontSize(14px);
+      @include rem(font-size, 14px);
     }
   }
 
@@ -96,9 +103,7 @@
     text-align: right;
     padding-top: $padding-base-vertical;
     padding-bottom: 0;
-
-    @include fontSize(12px);
-
+    @include rem(font-size, 12px);
     h2, .navbar {
       display: inline-block;
     }
@@ -114,9 +119,16 @@
 }
 
 #qg-feedback-btn {
-  @include make-xs-column(12);
-  @include make-sm-column(6);
-  @include make-sm-column-pull(6);
+  @include make-col-ready();
+  @include make-col(12);
+  @include media-breakpoint-up(sm) {
+    @include make-col(6);
+  }
+  @extend .order-sm-1;
+
+  //@include make-xs-column(12);
+  //@include make-sm-column(6);
+  //@include make-sm-column-pull(6);
   text-align: center;
 
   @media (min-width: $screen-sm-min) {
@@ -130,7 +142,7 @@
 #qg-page-feedback {
   background-color: $qg-feedback-bg-color;
   color: #000;
-  @include fontSize(16px);
+  @include rem(font-size, 16px);
 
   #feedback-captcha-container {
     display:none;
@@ -170,10 +182,14 @@
   }
 
   .alert {
+    width: 100%;
     //padding-left: 1em;
     //display: inline;
     //color: $qg-error-red;
     //@include fontSize(16px);
+    .fa {
+      @include rem(font-size, 24px);
+    }
   }
 
   // #################################################
@@ -218,7 +234,7 @@
     .label {
       color: #000 !important;
       font-weight: normal;
-      @include fontSize(16px);
+      @include rem(font-size, 16px);
       display: inline;
       position: static;
       width:auto;

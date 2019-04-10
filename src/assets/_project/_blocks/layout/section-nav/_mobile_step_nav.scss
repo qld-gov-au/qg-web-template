@@ -6,13 +6,14 @@
     display: block;
     color: #fff;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.7s ease;
     &:after {
       content: " \25bc";
     }
     &:hover{
+      text-decoration: none !important;
+      color: #fff !important;
       background: #53b2d2;
-      text-decoration: none;
     }
   }
   ul {
@@ -37,6 +38,7 @@
         li {
           a {
             display: block;
+            text-decoration: none !important;
             transition: all 0.3s ease;
             padding: 0.6em 1em 0.6em 1em;
             .page-number {
@@ -48,12 +50,13 @@
             &:hover, &.active{
               background: #53b2d2;
               text-decoration: none;
+              color: #fff;
               .page-number {
                 background: #fff;
               }
             }
             &:visited{
-              color: initial !important;
+              color: #fff;
             }
           }
         }

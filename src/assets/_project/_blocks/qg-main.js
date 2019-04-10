@@ -8,7 +8,6 @@ import './utils/qg-misc';
 import './utils/qg-ajax-call';
 import './utils/qg-load-google-api';
 
-import '../../../../node_modules/bootstrap/dist/js/bootstrap.js';
 // import '../../../../../node_modules/bootstrap-accessibility-plugin/plugins/js/bootstrap-accessibility.js'; // Removed due to accessibility issues (ironically)
 
 // Utils
@@ -35,6 +34,7 @@ import accessibility      from './components/accessibility/accessibility';
 import './layout/footer/footer-legals';
 import './components/forms/recaptcha';
 import './components/forms/qg-address-autocomplete';
+import './components/qg-document-links';
 
 // Layout
 import activeSideNav      from './layout/section-nav/section-nav';
@@ -47,16 +47,11 @@ import feedbackForm       from './layout/footer/feedback-form';
 import './utils/qg-init';
 (function () {
   'use strict';
-  var franchiseTitle = qg && qg.swe && qg.swe.franchiseTitle;
+  let franchiseTitle = qg && qg.swe && qg.swe.franchiseTitle;
   activeSideNav.highlightNavItem();
   stepNav.init();
   feedbackForm.init(franchiseTitle);
   shareLinks.init();
   accessibility.init();
-
-  // TODO - temp solution till we change all the classes to use SWE3/Boostrap
-  if ($('.status').length > 0) {
-    $('.status.warn, .status.info, .status.success, .status.tip').wrapInner('<div class="inner"></div>');
-  }
 }());
 

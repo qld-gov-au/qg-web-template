@@ -38,23 +38,15 @@ module.exports = function (gulp, plugins, config, webpack, destFolder, type = 'b
           test: /\.js$/,
           exclude: /(node_modules)/,
           loader: 'webpack-replace',
-          query: {
-            search: 'googleRecaptchaApiKey',
-            replace: config.apiKeys.googleRecaptchaApiKey
-          }
         },
         {
           test: /\.js$/,
           exclude: /(node_modules)/,
           loader: 'webpack-replace',
-          query: {
-            search: 'googleMapsApiKey',
-            replace: config.apiKeys.googleMapsApiKey
-          }
-        }
+        },
         ],
       },
-      devtool: 'source-map'
+      devtool: 'source-map',
       /*plugins: [
        new CopyWebpackPlugin([
        {from: `${config.basepath.src}/assets/_project/_blocks/qg-env.js`},

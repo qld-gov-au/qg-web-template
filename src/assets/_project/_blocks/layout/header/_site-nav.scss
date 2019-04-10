@@ -2,19 +2,19 @@
 // Site navigation
 
 #qg-site-nav {
-	@include make-xs-column(12); 
-
+	//@include make-xs-column(12);
+  @include make-col-ready();
+  @include make-col(12);
 	padding: 0;
 	background: #494949;
-
-	@include fontSize(16px);
+  @include rem(font-size, 16px);
 
 	ul {
 		margin: 0;
 		padding: 0;
 		list-style: none;
 
-		@media (min-width: $screen-lg-min) {
+    @include media-breakpoint-up(lg) {
 	      padding-left: $qg-spacing / 2;
 	    }
 	}
@@ -39,7 +39,7 @@
 	}
 }
 
-@media (min-width: $screen-md-min) {
+@include media-breakpoint-up(md) {
 	#qg-site-nav {
 		padding-left: 0;
 		padding-right: 0;
@@ -62,7 +62,7 @@
 			color: $link-color;
 		}
 	}
-	
+
 	// Display search form and site nav at full screen
 	#qg-search-form {
 		display: block;
@@ -72,17 +72,17 @@
 	}
 }
 
-@media (min-width: $screen-lg-min) {
+@include media-breakpoint-up(lg) {
 	#qg-site-nav {
-  		padding-left: $grid-gutter-width / 4;
+    padding-left: $grid-gutter-width / 4;
   	}
 }
 
 /*
 
 
-#qg-site-nav { 
-	@include make-xs-column(12); 
+#qg-site-nav {
+	@include make-xs-column(12);
 
 	background-color: $qg-light-gray;
 
@@ -105,13 +105,13 @@
 				margin-left: 20px;
 				padding: .3em .5em .3em .5em;
 				color: $qg-blue-green;
-				text-decoration: none;    
+				text-decoration: none;
 				@include fontSize(16px);
 				&:hover {
 					background-color: $qg-light-gray6;
 					text-decoration: none;
 				}
-			}    
+			}
 		}
 	}
 }
@@ -119,7 +119,7 @@
 // ############################################
 // responsive styles
 @media (max-width: $screen-sm-max) {
-	
+
 	#qg-site-nav {
 		padding: 0;
 		background: #494949;
@@ -131,7 +131,7 @@
 			li {
 				float: none;
 
-				&:first-child {} 
+				&:first-child {}
 
 				&:last-child {
 					border-bottom: none
@@ -142,18 +142,18 @@
 				}
 
 				a, a:link, a:visited {
-					color: #FFF;  
+					color: #FFF;
 					&:hover {
 						background-color: transparent;
 						text-decoration: underline;
-					}   
+					}
 
-				}  
+				}
 
 			}
 
 			li + li {
-				border: none;      
+				border: none;
 			}
 		}
 	}

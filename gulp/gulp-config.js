@@ -4,12 +4,12 @@ const path        = require('path');
 const pjson       = require('../package.json');
 
 module.exports = {
-  versionName: 'v3',
-  versionStr: '3.0.9',
+  versionName: 'v3.1',
+  subVersion: '1.0.2',
   version: {
     major: 3,
-    minor: 0,
-    patch: 9,
+    minor: 1,
+    patch: 0,
   },
   phase: 'Alpha',
   basepath: {
@@ -25,17 +25,13 @@ module.exports = {
   },
   webTemplateRepo: {
     url: 'https://github.com/qld-gov-au/web-template-release.git',
-    folder: 'web-template-release'
+    folder: 'web-template-release',
   },
   staticCdnRepo: {
     url: 'ssh://git@servicesmadesimpler.govnet.qld.gov.au:7999/cdn/static-qld_swe-v3_assets.git',
-    folder: 'static-qld_swe-v3_assets'
+    folder: 'static-qld_swe-v3_assets',
   },
   projects: ['core'], // 'cue'
-  apiKeys: {
-    googleRecaptchaApiKey: '6LeNGSwUAAAAAD6o-P5UTM0FNpKjYB71Kh70F-Ud',
-    googleMapsApiKey: 'AIzaSyCKuaFIFo7YYZXHZ5zaiEZdJx0UBoyfuAE'
-  },
   build: {
     excludes: [ //remove excludes
       '!**/_DELETE.*/**/*',
@@ -56,14 +52,15 @@ module.exports = {
     ],
   },
   extLib: {
-    js: ['generate-id',
-      'jquery.resize-events',
-      'butterfly/jquery.history',
-      'butterfly/jquery.butterfly'
+    js: ['generate-id.js',
+      'jquery.resize-events.js',
+      'butterfly/jquery.history.js',
+      'butterfly/jquery.butterfly.js',
+      'bootstrap.js',
     ],
     css: [
-      'butterfly/butterfly.css'
-    ]
+      'butterfly/butterfly.css',
+    ],
   },
   publish: {
     version: pjson.version,

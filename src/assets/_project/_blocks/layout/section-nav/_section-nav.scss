@@ -9,7 +9,7 @@
     padding-bottom: 0.3em;
     color: #000;
     margin: 0;
-    @include fontSize(19px);
+    @include rem(font-size, 19px);
   }
   a {
     // color: $qg-blue-dark;
@@ -25,8 +25,7 @@
     padding: 0;
     transition: all 0.2s;
     list-style-type: none;
-
-    @include fontSize(14px);
+    @include rem(font-size, 14px);
     font-weight: 700;
 
     a {
@@ -43,7 +42,7 @@
       background-color: $qg-section-nav-link-hover-bg-color;
     }
 
-    a.active {
+    a.active, a.visited {
       color: #FFF;
       background-color: $qg-blue;
     }
@@ -69,7 +68,8 @@
     ul {  //nested nav styles
       padding: 0;
       li {
-        margin-left: 3rem;
+        //margin-left: 3rem;
+        @include rem(margin-left, 30px);
         a {
           &:before {
             content: "";
@@ -79,7 +79,7 @@
     }
   }
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     background-color: transparent;
 
     h2, ul {
@@ -104,7 +104,7 @@
       }
     }
   }
-  @media (min-width: $screen-lg-min) {
+  @include media-breakpoint-up(lg) {
     // h2 {
     //   padding: $qg-spacing $qg-spacing $qg-spacing-xs-small $qg-spacing;
     // }

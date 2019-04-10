@@ -8,28 +8,40 @@
   }
 
   &.alert-danger {
-    color: #fff;
+    color: #fff !important;
+    border-left: 5px solid $brand-danger;
+    background-color: #b90824;
     a {
       color: #FF0;
     }
   }
   &.alert-success {
+    border: none;
     border-left: 5px solid $brand-success;
+    background-color: #f2f7ea;
   }
   &.alert-info {
+    border: none;
     border-left: 5px solid $brand-info;
+    background-color: #eff5f6;
   }
   &.alert-warning {
+    border: none;
     border-left: 5px solid $brand-warning;
+    background-color: #ffedde;
   }
   &.alert-success, &.alert-info, &.alert-warning, &.alert-tip, &.alert-danger{
-    padding: $alert-padding;
-    margin: 0;
     font-weight: normal;
-    margin-bottom: $line-height-computed;
+    color: #000;
+    margin: 0;
+    border-radius: 0;
+    padding: 0.75rem 1.25rem;
+    ul {
+      padding-left: 0 !important;
+    }
     h2{
       i {
-        font-size: 2.4rem;
+        @include rem(font-size, 24px);
         margin-right: 10px;
       }
     }
@@ -57,7 +69,7 @@
     border-left: 5px solid;
     padding: 1em;
     &:before, &:hover:before {
-      font-size: 2.4rem;
+      @include rem(font-size, 24px);
       margin-left: -14px;
       top: 6px;
       color: #000;
@@ -69,4 +81,17 @@
   &.info, &.tip{
     border-color: $brand-info;
   }
+}
+
+// links
+a {
+  color: #13578b;
+  text-decoration: none;
+}
+a:focus, a:hover {
+  color: #0a2d48;
+  text-decoration: underline;
+}
+a:active, a:hover {
+  outline: 0;
 }

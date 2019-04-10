@@ -6,18 +6,19 @@
 
 // Variables
 // -------------------------
-
 @import "scss-general/qg-variables";
 @import "scss-general/qg-font-variables";
-@import "scss-general/bootstrap-variables";
+//@import "scss-general/bootstrap-variables";
 
 // Frameworks
 // -------------------------
-
-// Import bootstrap
-@import "scss-general/bootstrap-loader"; // Local custom loader, pulls resources from NPM module
-	// @import "../../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap"; // NPM module
-@import "../../../../node_modules/font-awesome/scss/font-awesome.scss";
+@import "scss-general/bootstrap/rem";
+@import "scss-general/bootstrap/variables";
+@import "scss-general/bootstrap/bootstrap-imports";
+@import "scss-general/bootstrap/buttons";
+// the purpose of bridge_bootstrap3 is to make existing templates running on various apps to work with Bootstrap 4 updates
+@import "scss-general/bootstrap/bridge_bootstrap3";
+@import "../../../../node_modules/font-awesome/css/font-awesome";
 
 // Queensland government styles
 // -------------------------
@@ -43,7 +44,7 @@
 @import "components/dropdowns"; // Extends bootstrap dropdowns
 @import "components/navs"; // Extends bootstrap navs
 @import "components/images";
-@import "components/pagination";
+@import "components/cards";
 @import "components/quick-exit/quick-exit";
 @import "components/alert";
 @import "components/search-widget/search-widget";
@@ -81,7 +82,7 @@
 @import "layout/_pagemodels/guide";
 
 //External Libraries
-@import "https://rawgit.com/qld-gov-au/qg-web-template/master/src/assets/_project/lib/ext/butterfly/butterfly.css";  //TODO: update with CDN url
+@import "../lib/ext/butterfly/butterfly.css";
 
 // Legacy styles
 // -------------------------

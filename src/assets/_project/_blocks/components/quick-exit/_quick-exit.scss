@@ -29,3 +29,9 @@
     transform: scale(1.2);
   }
 }
+
+@media print {
+  #qg-quick-exit{
+    display: none;
+  }
+}

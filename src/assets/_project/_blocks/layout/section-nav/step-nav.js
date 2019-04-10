@@ -14,7 +14,7 @@ let stepNav = {
     }
   },
   getActiveNav () {
-    let activeNav;
+    let activeNav = 0;
     this.config.$qgSectionNavListItems.each(function (index) {
       if ($(this).find('a').hasClass('active')) {
         activeNav = index;
