@@ -8,6 +8,7 @@ const path = require('path');
 const fs = require('fs');
 const dirSync = require('gulp-directory-sync');
 const replace = require('gulp-replace');
+const pjson = require('../../package.json');
 const gitFunctions = {
   clean: (folder) => {
     return (cb) => {
@@ -29,11 +30,11 @@ const gitFunctions = {
     };
   },
   transfer: () => {
-    if (!fs.existsSync(`${config.staticCdnRepo.folder}/assets/${config.versionName}/${config.subVersion}`)) {
+    if (!fs.existsSync(`${config.staticCdnRepo.folder}/assets/${config.versionName}/${pjson.subVersion}`)) {
       return (cb) => {
         return gulp.src(`${config.basepath.static}/assets/${config.versionName}/latest/**/*`)
           .pipe(gulp.dest(`${config.staticCdnRepo.folder}/assets/${config.versionName}/latest/`, {followSymlinks: false}))
-          .pipe(gulp.dest(`${config.staticCdnRepo.folder}/assets/${config.versionName}/${config.subVersion}/`));
+          .pipe(gulp.dest(`${config.staticCdnRepo.folder}/assets/${config.versionName}/${pjson.subVersion}/`));
       };
     } else {
       return (cb) => {

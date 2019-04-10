@@ -5,7 +5,6 @@ const pjson       = require('../package.json');
 
 module.exports = {
   versionName: 'v3.1',
-  subVersion: '1.0.2',
   version: {
     major: 3,
     minor: 1,
