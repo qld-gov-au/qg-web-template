@@ -7,7 +7,7 @@ import keys from '../data/qg-google-keys';
 (function (qg, $) {
   'use strict';
   let googleApiKey;
-  let $mapImg = $('#qg-static-map');
+  let $mapImg = $('.qg-static-map');
   window.qg.googleKey = window.location.hostname.search(/\bdev\b|\btest\b|\blocalhost\b|\buat\b/) !== -1 ? keys.defGoogle.uat : keys.defGoogle.prod;
   window.qg.googleRecaptchaApiKey = window.location.hostname.search(/\bdev\b|\btest\b|\blocalhost\b|\buat\b/) !== -1 ? keys.defGoogleRecaptcha.uat : keys.defGoogleRecaptcha.prod;
 
@@ -40,10 +40,14 @@ import keys from '../data/qg-google-keys';
   }
 
   if ($mapImg.length > 0) {
-    $mapImg.find('img').attr('src', generateStaticMapImg($mapImg.find('img')));
-    let mapClone = $mapImg.clone();
-    $mapImg.remove();
-    $('aside').prepend(mapClone);
+    var htmlInsert = $('<div>');
+    $mapImg.each(function () {
+      let $this = $(this);
+      $this.find('img').attr('src', generateStaticMapImg($this.find('img')));
+      htmlInsert.append($this);
+    });
+    $('aside').prepend(htmlInsert);
+    $('a.qg-static-map').wrap("<div class='qg-aside st-map-static'>");
   }
   function lazyScript (url) {
     $('head').append('<script type="text/javascript" src="' + url + '"></script>');
