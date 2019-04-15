@@ -48,6 +48,7 @@ import keys from '../data/qg-google-keys';
     });
     $('aside').prepend(htmlInsert);
     $('a.qg-static-map').wrap("<div class='qg-aside st-map-static'>");
+    $('.st-map-static').eq(0).prepend("<h2><i class='fa fa-compass' aria-hidden='true'></i>Maps</h2>");
   }
   function lazyScript (url) {
     $('head').append('<script type="text/javascript" src="' + url + '"></script>');
