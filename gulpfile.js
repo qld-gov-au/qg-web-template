@@ -143,7 +143,10 @@ gulp.task('e2e', function () {
         '--baseUrl', `http://localhost:${argv.port || 8086}`,
       ],
     }))
-    .on('error', function (e) { throw e; });
+    .on('error', function (e) { throw e; })
+    .on('end', function () {
+      process.exit();
+    });
 });
 gulp.task('test:e2e', ['serve', 'e2e']);
 

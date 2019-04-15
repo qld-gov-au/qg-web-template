@@ -16,7 +16,9 @@ import keys from '../data/qg-google-keys';
     let pathArr = path.split('/').filter(function (e) {
       return e;
     });
-    return pathArr[0].toLowerCase();
+    if (pathArr[0]) {
+      return pathArr[0].toLowerCase();
+    }
   };
   let franchise = findFranchiseName();
   if (franchise) {
