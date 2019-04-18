@@ -1,19 +1,19 @@
 (function ($) {
   'use strict';
-
-  // Use uppercase here, as not all uses are case sensitive
-  var documentTypes = 'PDF|DOC|DOCX|XLS|XLSX|RTF';
+  let linkType = '.PDF$|.DOC$|.DOCX$|.XLS$|.XLSX$|.RTF$';
+  let contentType = 'PDF|DOC|DOCX|XLS|XLSX|RTF';
   // onready
   $(document).ready(function () {
     $('a', '#qg-primary-content, #qg-secondary-content').each(function () {
-      var $this = $(this);
-      var dtRegex = new RegExp(documentTypes, 'i');
-      if (dtRegex.test($this.attr('href'))) {
-        var linkText = $this.text();
-        if (dtRegex.test(linkText)) {
+      let $this = $(this);
+      let linkRegex = new RegExp(linkType, 'i');
+      let contentRegex = new RegExp(contentType, 'i');
+      if (linkRegex.test($this.attr('href'))) {
+        let linkText = $this.text();
+        if (contentRegex.test(linkText)) {
           if (/\.\d*?/.test(linkText) && /KB/.test(linkText)) {
-            var extractSize = new RegExp('\\((?:' + documentTypes + '),?\\s+[0-9\\.]+\\s*[KM]B\\)', 'i');
-            $(this).find('.meta').empty().append(linkText.match(extractSize)[0].replace(/(\.\d*)/gi, ''));
+            let extractSize = new RegExp('\\((?:' + contentType.toUpperCase() + '),?\\s+[0-9\\.]+\\s*[KM]B\\)', 'i');
+            linkText.match(extractSize) ? $(this).find('.meta').empty().append(linkText.match(extractSize)[0].toUpperCase().replace(/(\.\d*)/gi, '')) : '';
           }
         } else {
           linkText = $this.attr('href').replace(/^.*\.(.+)$/, '$1').toUpperCase();
@@ -23,3 +23,4 @@
     });
   });
 }(jQuery));
+
