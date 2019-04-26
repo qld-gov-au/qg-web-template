@@ -15,7 +15,7 @@
     "build": "gulp build && node gulp/build-tasks/node-docs-flatten.js && gulp wt-updateVersion",
     "postbuild": "gulp clean-redundant-build",
     "prerelease": "gulp clean-release",
-    "release": "npm run build && gulp test:e2e && gulp release && node gulp/release-tasks/node-template-flatten.js && gulp replace-links",
+    "release": "export NODE_ENV=prod && gulp test:e2e && npm run build && gulp release && node gulp/release-tasks/node-template-flatten.js && gulp replace-links",
     "postrelease": "gulp clean-redundant-release",
     "start": "npm run build && gulp watch",
     "watch": "gulp watch",

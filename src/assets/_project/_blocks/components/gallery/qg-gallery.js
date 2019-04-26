@@ -1,7 +1,6 @@
 import load from 'loadjs';
-load('/assets/v3.1/latest/lib/ext/bootstrap.js');
 if ($('.qg-image-gallery')) {
-  load(['STATIC-CDN-LINK/assets/v3.1/latest/lib/ext/fancybox/jquery.fancybox.min.css', 'STATIC-CDN-LINK/assets/v3.1/latest/lib/ext/fancybox/jquery.fancybox.min.js'], function () {
+  load(['{{ON-RELEASE-CDN}}/assets/v3.1/latest/lib/ext/fancybox/jquery.fancybox.min.css', '{{ON-RELEASE-CDN}}/assets/v3.1/latest/lib/ext/fancybox/jquery.fancybox.min.js'], function () {
     $('[data-fancybox^="gallery"]').fancybox({
       buttons: ['thumbs', 'close'],
       baseTpl:
