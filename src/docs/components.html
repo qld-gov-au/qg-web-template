@@ -681,6 +681,90 @@ Publishers may use blockquotes to indicate the quotation of a large section of t
 
         <!-- ################################## -->
 
+        <h2 id="qg-gallery" class="category">Gallery</h2>
+        <p>A slideshow component for cycling through elements—images or slides of text—like a carousel. The carousel component allows publishers to feature multiple pieces of content in an allocated amount of space.</p>
+        <p>If there is a requirement to have multiple carousels on the same page, then please increment ID value at root and in controls to scope each carousel. For more details please refer to the Bootstrap 4 documentation.</p>
+
+        <div class="qg-image-gallery">
+          <ul>
+            <li><a title="eligible-soft-drink-cans.jpg" data-fancybox="gallery-92732" data-caption="Eligible: Soft drink cans - between 150ml and 3L" href="https://www.qld.gov.au/__data/assets/image/0026/68651/eligible-soft-drink-cans.jpg"><img alt="" src="https://www.qld.gov.au/__data/assets/image/0026/68651/eligible-soft-drink-cans.jpg"></a></li><li><a title="eligible-soft-drink-bottles.jpg" data-fancybox="gallery-92732" data-caption="" href="https://www.qld.gov.au/__data/assets/image/0037/68779/eligible-soft-drink-bottles.jpg"><img alt="" src="https://www.qld.gov.au/__data/assets/image/0037/68779/eligible-soft-drink-bottles.jpg"></a></li><li><a title="sports-energy-drinks.jpg" data-fancybox="gallery-92732" data-caption="" href="https://www.qld.gov.au/__data/assets/image/0025/68290/sports-energy-drinks.jpg"><img alt="" src="https://www.qld.gov.au/__data/assets/image/0025/68290/sports-energy-drinks.jpg"></a></li><li><a title="eligible-water-bottles.jpg" data-fancybox="gallery-92732" data-caption="" href="https://www.qld.gov.au/__data/assets/image/0027/68481/eligible-water-bottles.jpg"><img alt="" src="https://www.qld.gov.au/__data/assets/image/0027/68481/eligible-water-bottles.jpg"></a></li><li><a title="eligible-beer-bottles.jpg" data-fancybox="gallery-92732" data-caption="" href="https://www.qld.gov.au/__data/assets/image/0027/68508/eligible-beer-bottles.jpg"><img alt="" src="https://www.qld.gov.au/__data/assets/image/0027/68508/eligible-beer-bottles.jpg"></a></li><li><a title="eligible-fruit-veg-juice-bottles.jpg" data-fancybox="gallery-92732" data-caption="" href="https://www.qld.gov.au/__data/assets/image/0027/68832/eligible-fruit-veg-juice-bottles.jpg"><img alt="" src="https://www.qld.gov.au/__data/assets/image/0027/68832/eligible-fruit-veg-juice-bottles.jpg"></a></li>
+          </ul>
+        </div>
+        <br/>
+        <h3>HTML</h3>
+
+        <pre><code class="language-markup">
+
+
+&lt;div class="qg-featured"&gt;
+  &lt;div id="carousel-1" class="carousel slide" data-ride="carousel" data-interval="8000"&gt;
+    &lt;div class="carousel-inner"&gt;
+      &lt;div class="carousel-item active" title="title"&gt;
+        &lt;a href="https://qld.gov.au/"&gt;
+          &lt;img src="https://via.placeholder.com/550/808080/808080" alt="placeholder"&gt;
+          &lt;div class="carousel-caption"&gt;
+            &lt;h3&gt;lorem ipsum &lt;/h3&gt;
+            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci atque, ea fuga iste
+              quia? Accusantium doloribus dolorum, eius in iure, iusto odit officiis praesentium rem,
+              rerum similique velit voluptatum.&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div class="carousel-item"&gt;
+        &lt;a href="https://qld.gov.au/" title="title"&gt;
+          &lt;img src="https://via.placeholder.com/550/000/000" alt="placeholder"&gt;
+          &lt;div class="carousel-caption"&gt;
+            &lt;h3&gt;lorem ipsum &lt;/h3&gt;
+            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci atque, ea fuga iste
+              quia? Accusantium doloribus dolorum, eius in iure, iusto odit officiis praesentium rem,
+              rerum similique velit voluptatum.&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/a&gt;
+
+      &lt;/div&gt;
+      &lt;div class="carousel-item"&gt;
+        &lt;a href="https://qld.gov.au/" title="title"&gt;
+          &lt;img src="https://via.placeholder.com/550/ccc/ccc" alt="placeholder"&gt;
+          &lt;div class="carousel-caption"&gt;
+            &lt;h3&gt;lorem ipsum &lt;/h3&gt;
+            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci atque, ea fuga iste
+              quia? Accusantium doloribus dolorum, eius in iure, iusto odit officiis praesentium rem,
+              rerum similique velit voluptatum.&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="carousel-nav clearfix"&gt;
+      &lt;!-- Indicators --&gt;
+      &lt;ol class="carousel-indicators"&gt;
+        &lt;li data-target="#carousel-1" data-slide-to="0" class="active"&gt;&lt;/li&gt;
+        &lt;li data-target="#carousel-1" data-slide-to="1"&gt;&lt;/li&gt;
+        &lt;li data-target="#carousel-1" data-slide-to="2"&gt;&lt;/li&gt;
+      &lt;/ol&gt;
+      &lt;!-- Controls --&gt;
+      &lt;ul class="controls-grp"&gt;
+        &lt;li&gt; &lt;a class="left carousel-control" href="#carousel-1" role="button" data-slide="prev"&gt;
+          &lt;span class="icon-prev" aria-hidden="true"&gt;&lt;/span&gt;
+          &lt;span class="sr-only"&gt;Previous&lt;/span&gt;
+        &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;&lt;a href="#carousel-1" class="toggleCarousel"&gt;&lt;i class="fa fa-pause"&gt;&lt;/i&gt;&lt;span class="button-title"&gt;Pause slideshow&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a class="right carousel-control" href="#carousel-1" role="button" data-slide="next"&gt;
+          &lt;span class="icon-next" aria-hidden="true"&gt;&lt;/span&gt;
+          &lt;span class="sr-only"&gt;Next&lt;/span&gt;
+        &lt;/a&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+                              </code></pre>
+
+        <!-- ################################## -->
+
+
+        <!-- ################################## -->
+
         <h2 id="downloadable-document-link" class="category">Downloadable document link</h2>
         <p><span class="label label-primary" title="Custom QG styles">Custom</span></p>
         <p>Including the file type and size to downloadable document links provides users with information about the file before they choose to open or download the file.</p>
@@ -1447,6 +1531,7 @@ Publishers may use blockquotes to indicate the quotation of a large section of t
             <li><a href="#qg-cards">QG Cards</a></li>
             <li><a href="#qg-banner">QG Banner Blurb</a></li>
             <li><a href="#carousel">Carousel</a></li>
+            <li><a href="#qg-gallery">Gallery</a></li>
             <li><a href="#downloadable-document-link">Downloadable document link</a></li>
             <li><a href="#facebook-feed">Facebook Feed</a></li>
             <li><a href="#forms">Forms</a></li>
