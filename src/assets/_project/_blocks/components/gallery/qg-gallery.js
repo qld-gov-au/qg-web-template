@@ -1,5 +1,5 @@
-import load from 'loadjs';
 if ($('.qg-image-gallery')) {
+  var load = require('loadjs');
   load(['{{CDN}}/assets/v3.1/latest/lib/ext/fancybox/jquery.fancybox.min.css', '{{CDN}}/assets/v3.1/latest/lib/ext/fancybox/jquery.fancybox.min.js'], function () {
     $('[data-fancybox^="gallery"]').fancybox({
       buttons: ['thumbs', 'close'],
