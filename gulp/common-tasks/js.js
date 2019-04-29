@@ -39,7 +39,7 @@ module.exports = function (gulp, plugins, config, webpack, destFolder, type = 'b
           exclude: /(node_modules)/,
           loader: 'webpack-replace',
           query: {
-            search: '{{ON-RELEASE-CDN}}',
+            search: '{{CDN}}',
             replace: process.env.NODE_ENV === 'prod' ? `https://static.qgov.net.au` : '',
           },
         },
