@@ -1,41 +1,26 @@
 (function ($) {
   'use strict';
-
-  // Use uppercase here, as not all uses are case sensitive
-  var documentTypes = 'PDF|DOC|DOCX|XLS|XLSX|RTF';
-
+  let linkType = '.PDF$|.DOC$|.DOCX$|.XLS$|.XLSX$|.RTF$';
+  let contentType = 'PDF|DOC|DOCX|XLS|XLSX|RTF';
   // onready
   $(document).ready(function () {
-    // find links in content and asides that are missing metadata markup
-    $('a', '#qg-primary-content, #qg-secondary-content').filter(function () {
-      var documentLink = new RegExp('\\.(' + documentTypes + ')$', 'i').test(this.href);
-
-      if (documentLink) {
-        // add document link class
-        // has meta markup?
-        return $(this).addClass('download').find('.meta').length === 0;
-      }
-
-      return false;
-    }).each(function () {
-      var $this = $(this);
-      var linkText = $this.text();
-      var title;
-      var meta;
-
-      // has metadata without markup?
-      if (new RegExp('\\((?:' + documentTypes + '),?\\s+[0-9\\.]+\\s*[KM]B\\)$', 'i').test(linkText)) {
-        meta = $('<span class="meta">' + linkText.replace(new RegExp('^.*\\((' + documentTypes + '),?\\s+([0-9\\.]+)\\s*([KM]B)\\)$'), '($1, $2$3)') + '</span>');
-        title = $this.contents().eq(-1);
-        title[ 0 ].data = title[ 0 ].data.replace(new RegExp('\\s+\\((?:' + documentTypes + '),?\\s+[0-9\\.]+\\s*[KM]B\\)$'), '');
-        $this.wrapInner('<span class="title"/>');
-        $this.append(' ');
-        $this.append(meta);
-      } else {
-        // get file type from extension
-        linkText = $this.attr('href').replace(/^.*\.(.+)$/, '$1').toUpperCase();
-        $this.wrapInner('<span class="title"/>').append(' <span class="meta">(' + linkText + ')</span>');
+    $('a', '#qg-primary-content, #qg-secondary-content').each(function () {
+      let $this = $(this);
+      let linkRegex = new RegExp(linkType, 'i');
+      let contentRegex = new RegExp(contentType, 'i');
+      if (linkRegex.test($this.attr('href'))) {
+        let linkText = $this.text();
+        if (contentRegex.test(linkText)) {
+          if (/\.\d*?/.test(linkText) && /KB/.test(linkText)) {
+            let extractSize = new RegExp('\\((?:' + contentType.toUpperCase() + '),?\\s+[0-9\\.]+\\s*[KM]B\\)', 'i');
+            linkText.match(extractSize) ? $(this).find('.meta').empty().append(linkText.match(extractSize)[0].toUpperCase().replace(/(\.\d*)/gi, '')) : '';
+          }
+        } else {
+          linkText = $this.attr('href').replace(/^.*\.(.+)$/, '$1').toUpperCase();
+          $this.append(' <span class="meta">(' + linkText + ')</span>');
+        }
       }
     });
   });
 }(jQuery));
+

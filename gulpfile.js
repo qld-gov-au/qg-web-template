@@ -115,6 +115,7 @@ gulp.task('watch', ['watch:project', 'watch:docs', 'serve']);
 // Grabs SCSS from SRC and moves to release, does not process
 gulp.task('scss-src', require('./gulp/release-tasks/scss-src')(gulp, plugins, config));
 gulp.task('release-other-files', require('./gulp/release-tasks/other-files')(gulp, plugins, config));
+gulp.task('replace-links', require('./gulp/release-tasks/replace-links')(gulp, plugins, es, config));
 gulp.task('release-files', require('./gulp/release-tasks/files')(gulp, plugins, config, es, webpack, path, banner));
 
 gulp.task('release', (cb) => {
@@ -139,10 +140,13 @@ gulp.task('e2e', function () {
     .pipe(protractor({
       configFile: './tests/e2e/conf.js',
       args: [
-        '--baseUrl', 'http://localhost:' + randomPort,
+        '--baseUrl', `http://localhost:${argv.port || 8086}`,
       ],
     }))
-    .on('error', function (e) { throw e; });
+    .on('error', function (e) { throw e; })
+    .on('end', function () {
+      process.exit();
+    });
 });
 gulp.task('test:e2e', ['serve', 'e2e']);
 

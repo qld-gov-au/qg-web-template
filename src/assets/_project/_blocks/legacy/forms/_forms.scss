@@ -1264,6 +1264,9 @@ form {
   .status:before {
     margin-left: -0.6em;
   }
+  .questions abbr.required, .questions abbr[title*="required"] {
+    position: inherit;
+  }
   .warn {
     margin: 0;
     background-color: #FFEDDE;

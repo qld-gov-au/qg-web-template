@@ -5,7 +5,7 @@ module.exports = function (gulp, plugins, connect, connectssi, argv, path, rando
     let connectServer = (root, subpath, port) => {
       connect.server({
         root: subpath ? `${root}/${subpath}` : `${root}`,
-        port: process.env.port || 8086,
+        port: port || argv.port || 8086,
         livereload: true,
         middleware: function () {
           return [connectssi({
@@ -18,8 +18,8 @@ module.exports = function (gulp, plugins, connect, connectssi, argv, path, rando
       });
     };
     if (argv.root === 'release') {
-      connectServer(root, 'template-local', randomPort);
-      connectServer(root, 'docs', randomPort + 1);
+      connectServer(root, 'template-local', argv.port);
+      connectServer(root, 'docs', argv.port + 1);
     } else {
       connectServer(root);
     }

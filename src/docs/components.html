@@ -86,8 +86,7 @@
         <section>
           <p>Displays collapsible content panels for presenting information in a limited amount of space.</p>
           <p>Click headers to expand/collapse content that is categorised into logical sections.</p>
-        </br>
-          <section class="qg-accordion" aria-label="Accordion Label">
+          <section class="qg-accordion qg-dark-accordion" aria-label="Accordion Label">
             <input type="radio" name="control" id="collapse" class="controls collapse" value="collapse" role="radio">
             <label for="collapse" class="controls">Collapse all</label>
             <span class="controls">&#124;</span>
@@ -118,10 +117,9 @@
                 <p>Or provide any semantic html structure</p>
               </div>
             </article>
-
           </section>
 
-</br><h3> HTML </h3>
+          </br><p> HTML </p>
 
           <pre><code class="language-markup">
                 &lt;section class="qg-accordion qg-dark-accordion" aria-label="Accordion Label">
@@ -145,7 +143,7 @@
                     &lt;/article>
                 &lt;/section>
                                     </code></pre>
-          <p>Fontawesome icon can also be used instead of image. To use the light theme (example above) remove <span class="text-nowrap"><strong>qg-dark-accordion</strong></span> class from the above code snippet.</p>
+          <p>Fontawesome icon can also be used instead of image. To use the default theme remove <span class="text-nowrap"><strong>qg-dark-accordion</strong></span> class.</p>
           <p class="alert alert-info">Accordion without icons or images is advised best practice. </p>
           <pre><code class="language-markdown">
                 &lt;i class="fa fa-car" aria-hidden="true">&lt;/i>
@@ -170,11 +168,12 @@
           <div class="panel-body">
             <div class="alert alert-success" role="alert">
               <h2><i class="fa fa-check-circle"></i> Thank you for your application</h2>
-              <p>You application is being processed and will be completed within the next 10 business days. You will receive an email confirmation when it has been completed.</p>
+              <p>You application is being processed and will be completed within the next 10 business days. You will
+                receive an email confirmation when it has been completed.</p>
             </div>
           </div>
         </div>
-      </br><h4> HTML </h4>
+        </br><h4> HTML </h4>
         <pre><code class="language-markup">
 &lt;div class="alert alert-success" role="alert">
   &lt;h2>&lt;i class="fa fa-check-circle">&lt;/i>Thank you for your application&lt;/h2>
@@ -193,7 +192,7 @@
           </div>
         </div>
 
-      <br/><h4> HTML </h4>
+        <br/><h4> HTML </h4>
         <pre><code class="language-markup">
 &lt;div class="alert alert-info" role="alert">
   &lt;h2>&lt;i class="fa fa-comments">&lt;/i>Tell us what you think about our website&lt;/h2>
@@ -214,7 +213,7 @@
             </div>
           </div>
         </div>
-      </br><h4> HTML </h4>
+        </br><h4> HTML </h4>
         <pre><code class="language-markup">
 &lt;div class="alert alert-warning" role="alert">
   &lt;h2>&lt;i class="fa fa-exclamation-triangle">&lt;/i>Please check your answers&lt;/h2>
@@ -234,8 +233,8 @@
             </div>
           </div>
         </div>
-</br>
-<h4> HTML </h4>
+        </br>
+        <h4> HTML </h4>
         <pre><code class="language-markup">
 &lt;div class="alert alert-danger" role="alert">
   &lt;h2>Alert title&lt;/h2>
@@ -273,8 +272,10 @@
         <h2 id="qg-grab" class="category">Stand First</h2>
         <p><span class="label label-primary" title="Custom QG styles">Custom</span></p>
         <p>Styles the content to stand out in the page.</p>
-        <p class="qg-grab">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis est labore qui quo soluta voluptas voluptatum. Aperiam expedita, sequi? Deleniti minima mollitia quas tempore. At ea porro soluta tempora ullam.</p>
-<pre><code class="language-markup">&lt;p class="qg-grab">Content goes here.&lt;/p></code></pre>
+        <p class="qg-grab">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis est labore qui quo soluta
+          voluptas voluptatum. Aperiam expedita, sequi? Deleniti minima mollitia quas tempore. At ea porro soluta
+          tempora ullam.</p>
+        <pre><code class="language-markup">&lt;p class="qg-grab">Content goes here.&lt;/p></code></pre>
 
         <!-- ################################## -->
 
@@ -292,8 +293,8 @@ Publishers may use blockquotes to indicate the quotation of a large section of t
         </div>
           </div>
 
-<h3> HTML </h3>
-  <pre><code class="language-markup">
+        <h3> HTML </h3>
+        <pre><code class="language-markup">
 &lt;blockquote cite="#">
 &lt;p>The &lt;em>Disposal of Uncollected Goods Act 1967&lt;/em> covers inspection, custody, storage, repair and other treatment of goods. Under this Act, uncollected goods may be sold six months after the date on which they were ready for collection.&lt;/p>
 &lt;/blockquote>
@@ -384,10 +385,9 @@ Publishers may use blockquotes to indicate the quotation of a large section of t
 
         <!-- ################################## -->
 
-        <h2 id="qg-cards" class="category">Cards</h2>
-        <p><span class="label label-primary" title="Custom QG styles">Custom</span></p>
 
-<p>Publishers can use the Cards pattern to display a collection of categories and provide the user with a preview of content they link to.</p>
+        <h2 id="qg-cards" class="category">QG Cards</h2>
+        <p><span class="label label-primary" title="Custom QG styles">Custom</span></p>
         <section class="row qg-cards">
           <article class="qg-card col-12 col-sm-6 col-lg-4">
             <div class="content">
@@ -450,7 +450,6 @@ Publishers may use blockquotes to indicate the quotation of a large section of t
             </div>
           </article>
         </section>
-        <h3> HTML </h3>
         <pre>
         <code class="language-markup">
 &#x3C;section class=&#x22;row qg-cards&#x22;&#x3E;
@@ -523,6 +522,29 @@ Publishers may use blockquotes to indicate the quotation of a large section of t
 
         <!-- ################################## -->
 
+        <h2 id="qg-banner" class="category">QG Banner Blurb</h2>
+        <p><span class="label label-primary" title="Custom QG styles">Custom</span></p>
+        <div id="qg-banner-blurb" style="background: url('https://via.placeholder.com/1312X361') no-repeat center/cover;">
+          <div class="blurb">
+            <h1>Lorem ipsum dolor sit amet</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, amet, dignissimos exercitationem, facere illo incidunt nisi officiis quisquam sequi tempora temporibus ut veniam voluptatem. Accusamus assumenda laudantium nemo quaerat quod.</p>
+          </div>
+        </div>
+        <pre>
+        <code class="language-markup">
+&#x3C;div id=&#x22;qg-banner-blurb&#x22; style=&#x22;background: url(&#x27;https://via.placeholder.com/1312X361&#x27;) no-repeat center/cover;&#x22;&#x3E;
+   &#x3C;div class=&#x22;blurb&#x22;&#x3E;
+     &#x3C;h1&#x3E;Lorem ipsum dolor sit amet&#x3C;/h1&#x3E;
+     &#x3C;p&#x3E;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, amet, dignissimos exercitationem, facere illo incidunt nisi officiis quisquam sequi tempora temporibus ut veniam voluptatem. Accusamus assumenda laudantium nemo quaerat quod.&#x3C;/p&#x3E;
+   &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+        </code>
+        </pre>
+
+        <!-- ################################## -->
+
+        <!-- ################################## -->
+
         <h2 id="carousel" class="category">Carousel</h2>
         <p>A slideshow component for cycling through elements—images or slides of text—like a carousel. The carousel component allows publishers to feature multiple pieces of content in an allocated amount of space.</p>
         <p>If there is a requirement to have multiple carousels on the same page, then please increment ID value at root and in controls to scope each carousel. For more details please refer to the Bootstrap 4 documentation.</p>
@@ -570,12 +592,13 @@ Publishers may use blockquotes to indicate the quotation of a large section of t
                   </ol>
                   <!-- Controls -->
                   <ul class="controls-grp">
-                    <li> <a class="left carousel-control" href="#carousel-1" role="button" data-slide="prev">
+                    <li><a class="left carousel-control" href="#carousel-1" role="button" data-slide="prev">
                       <span class="icon-prev" aria-hidden="true"></span>
                       <span class="sr-only">Previous</span>
                     </a>
                     </li>
-                    <li><a href="#carousel-1" class="toggleCarousel"><i class="fa fa-pause"></i><span class="button-title">Pause slideshow</span></a></li>
+                    <li><a href="#carousel-1" class="toggleCarousel"><i class="fa fa-pause"></i><span
+                      class="button-title">Pause slideshow</span></a></li>
                     <li><a class="right carousel-control" href="#carousel-1" role="button" data-slide="next">
                       <span class="icon-next" aria-hidden="true"></span>
                       <span class="sr-only">Next</span>
@@ -656,6 +679,63 @@ Publishers may use blockquotes to indicate the quotation of a large section of t
   &lt;/div&gt;
 &lt;/div&gt;
                               </code></pre>
+
+        <!-- ################################## -->
+
+
+        <!-- ################################## -->
+
+        <h2 id="qg-gallery" class="category">Gallery</h2>
+
+        <div class="qg-image-gallery">
+          <ul>
+            <li><a title="eligible-soft-drink-cans.jpg" data-fancybox="gallery-92732"
+                   data-caption="Eligible: Soft drink cans - between 150ml and 3L"
+                   href="https://via.placeholder.com/450"><img alt="" src="https://via.placeholder.com/150"></a>
+            </li>
+            <li><a title="eligible-soft-drink-bottles.jpg" data-fancybox="gallery-92732" data-caption=""
+                   href="https://via.placeholder.com/450"><img
+              alt="" src="https://via.placeholder.com/150"></a>
+            </li>
+            <li><a title="sports-energy-drinks.jpg" data-fancybox="gallery-92732" data-caption=""
+                   href="https://via.placeholder.com/450g"><img alt="" src="https://via.placeholder.com/150"></a>
+            </li>
+            <li><a title="eligible-water-bottles.jpg" data-fancybox="gallery-92732" data-caption=""
+                   href="https://via.placeholder.com/450"><img alt="" src="https://via.placeholder.com/150"></a>
+            </li>
+            <li><a title="eligible-beer-bottles.jpg" data-fancybox="gallery-92732" data-caption=""
+                   href="https://via.placeholder.com/450"><img alt="" src="https://via.placeholder.com/150"></a>
+            </li>
+            <li><a title="eligible-fruit-veg-juice-bottles.jpg" data-fancybox="gallery-92732" data-caption=""
+                   href="https://via.placeholder.com/450"><img alt="" src="https://via.placeholder.com/150"></a></li>
+          </ul>
+        </div>
+        <br/>
+        <h3>HTML</h3>
+
+        <pre><code class="language-markup">
+   &#x3C;div class=&#x22;qg-image-gallery&#x22;&#x3E;
+       &#x3C;ul&#x3E;
+            &#x3C;li&#x3E;&#x3C;a title=&#x22;caption 1&#x22; data-fancybox=&#x22;gallery-92732&#x22; data-caption=&#x22;caption 1&#x22;
+                   href=&#x22;https://via.placeholder.com/450&#x22;&#x3E;&#x3C;img alt=&#x22;&#x22; src=&#x22;https://via.placeholder.com/150&#x22;&#x3E;&#x3C;/a&#x3E;
+            &#x3C;/li&#x3E;
+            &#x3C;li&#x3E;&#x3C;a title=&#x22;caption 2&#x22; data-fancybox=&#x22;gallery-92732&#x22; data-caption=&#x22;caption 2&#x22;
+                   href=&#x22;https://via.placeholder.com/450&#x22;&#x3E;&#x3C;img alt=&#x22;&#x22; src=&#x22;https://via.placeholder.com/150&#x22;&#x3E;&#x3C;/a&#x3E;
+            &#x3C;/li&#x3E;
+            &#x3C;li&#x3E;&#x3C;a title=&#x22;caption 3&#x22; data-fancybox=&#x22;gallery-92732&#x22; data-caption=&#x22;caption 3&#x22;
+                   href=&#x22;https://via.placeholder.com/450g&#x22;&#x3E;&#x3C;img alt=&#x22;&#x22; src=&#x22;https://via.placeholder.com/150&#x22;&#x3E;&#x3C;/a&#x3E;
+            &#x3C;/li&#x3E;
+            &#x3C;li&#x3E;&#x3C;a title=&#x22;caption 4&#x22; data-fancybox=&#x22;gallery-92732&#x22; data-caption=&#x22;caption 4&#x22;
+                   href=&#x22;https://via.placeholder.com/450&#x22;&#x3E;&#x3C;img alt=&#x22;&#x22; src=&#x22;https://via.placeholder.com/150&#x22;&#x3E;&#x3C;/a&#x3E;
+            &#x3C;/li&#x3E;
+            &#x3C;li&#x3E;&#x3C;a title=&#x22;caption 5&#x22; data-fancybox=&#x22;gallery-92732&#x22; data-caption=&#x22;caption 5&#x22;
+                   href=&#x22;https://via.placeholder.com/450&#x22;&#x3E;&#x3C;img alt=&#x22;&#x22; src=&#x22;https://via.placeholder.com/150&#x22;&#x3E;&#x3C;/a&#x3E;
+            &#x3C;/li&#x3E;
+            &#x3C;li&#x3E;&#x3C;a title=&#x22;caption 6&#x22; data-fancybox=&#x22;gallery-92732&#x22; data-caption=&#x22;caption 6&#x22;
+                   href=&#x22;https://via.placeholder.com/450&#x22;&#x3E;&#x3C;img alt=&#x22;&#x22; src=&#x22;https://via.placeholder.com/150&#x22;&#x3E;&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+       &#x3C;/ul&#x3E;
+   &#x3C;/div&#x3E;
+  </code></pre>
 
         <!-- ################################## -->
 
@@ -753,7 +833,7 @@ Publishers may use blockquotes to indicate the quotation of a large section of t
         <div class="qg-tmplt-example">
           <div class="panel-body">
             <figure>
-              <img src="https://via.placeholder.com/300.png/ccc/ccc" alt="" />
+              <img src="https://via.placeholder.com/300.png/ccc/ccc" alt=""/>
               <figcaption>
                 Caption text here
                 <div class="figure-credits">Figure credits here</div>
@@ -768,7 +848,7 @@ Publishers may use blockquotes to indicate the quotation of a large section of t
         <div class="qg-tmplt-example">
           <div class="panel-body">
             <figure class="pull-right">
-              <img src="https://via.placeholder.com/300.png/ccc/ccc" alt="" />
+              <img src="https://via.placeholder.com/300.png/ccc/ccc" alt=""/>
               <figcaption>
                 Caption text here
                 <div class="figure-credits">Figure credits here</div>
@@ -789,11 +869,13 @@ Publishers may use blockquotes to indicate the quotation of a large section of t
                 <div class="figure-credits">Figure credits here</div>
               </figcaption>
             </figure>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.</p>
           </div>
         </div>
 
-        <p>If you need to remove the standard styling of a figure element in the qg-primary-content element, add the class <code>qg-nofig</code> to the figure element <code>&lt;figure class="qg-nofig"&gt;</code>.</p>
+        <p>If you need to remove the standard styling of a figure element in the qg-primary-content element, add the
+          class <code>qg-nofig</code> to the figure element <code>&lt;figure class="qg-nofig"&gt;</code>.</p>
 
 
         <!-- ################################## -->
@@ -1048,7 +1130,7 @@ Publishers may use blockquotes to indicate the quotation of a large section of t
             </table>
           </div>
         </div>
-      <br/>  <h4>HTML</h4>
+        <br/>  <h4>HTML</h4>
         <pre>
 <code class="language-markup">
   &lt;table title="acronym examples" class="table"&gt;
@@ -1338,7 +1420,6 @@ Publishers may use blockquotes to indicate the quotation of a large section of t
         </ul>
 
 
-
         <!-- ################################## -->
         <h2 id="google-autocomplete" class="category">Google Address Autocomplete</h2>
         <p>Publishers may use the autocomplete widget to provide users an easy method to locate an address.</p>
@@ -1425,8 +1506,10 @@ Publishers may use blockquotes to indicate the quotation of a large section of t
             <li><a href="#blockquote">Blockquote</a></li>
             <li><a href="#buttons">Buttons</a></li>
             <li><a href="#call-out-box">Call out box</a></li>
-            <li><a href="#qg-cards">Cards</a></li>
+            <li><a href="#qg-cards">QG Cards</a></li>
+            <li><a href="#qg-banner">QG Banner Blurb</a></li>
             <li><a href="#carousel">Carousel</a></li>
+            <li><a href="#qg-gallery">Gallery</a></li>
             <li><a href="#downloadable-document-link">Downloadable document link</a></li>
             <li><a href="#facebook-feed">Facebook Feed</a></li>
             <li><a href="#forms">Forms</a></li>

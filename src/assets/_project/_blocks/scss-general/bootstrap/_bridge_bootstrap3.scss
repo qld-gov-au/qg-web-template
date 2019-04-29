@@ -508,10 +508,14 @@ blockquote ol:last-child, blockquote p:last-child, blockquote ul:last-child {
 .pagination>li {
   display: inline;
 }
+.qg-print-guide {
+  .pagination>li>a, .pagination>li>span {
+    padding: 8.4px 21.6px
+  }
+}
 .pagination>li>a, .pagination>li>span {
   position: relative;
   float: left;
-  padding: 8.4px 21.6px;
   line-height: 1.5;
   text-decoration: none;
   color: #13578b;

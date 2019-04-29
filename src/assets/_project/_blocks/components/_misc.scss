@@ -1,8 +1,16 @@
 .print-link-url{
   display: none;
 }
+/*qg-grab class*/
 .qg-grab {
-  background-color: #eef4f6;
+  background-color: $qg-light-blue-gray3;
   clear: both;
-  padding: 1em 2em;
+  padding: 1.6rem 3.2rem;
+}
+
+.download{
+  .meta{
+    display: inline-block;
+    text-decoration: none;
+  }
 }
