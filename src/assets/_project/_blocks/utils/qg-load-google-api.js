@@ -33,25 +33,25 @@ import keys from '../data/qg-google-keys';
   }
   googleApiKey = window.qg.franchise && window.qg.franchise.apiKey ? window.qg.franchise.apiKey : window.qg.googleKey;
 
-  // function generateStaticMapImg (ele) {
-  //   let lat = ele.attr('data-lat') || -27.4673;
-  //   let lon = ele.attr('data-long') || 153.0233;
-  //   let zoom = ele.attr('data-zoom') || 17;
-  //   let height = ele.attr('data-height') || 189;
-  //   return 'https://maps.googleapis.com/maps/api/staticmap?size=373x' + height + '&maptype=roadmap&markers=' + lat + '%2C' + lon + '&key=' + googleApiKey + '&sensor=false&zoom=' + zoom;
-  // }
+  function generateStaticMapImg (ele) {
+    let lat = ele.attr('data-lat') || -27.4673;
+    let lon = ele.attr('data-long') || 153.0233;
+    let zoom = ele.attr('data-zoom') || 17;
+    let height = ele.attr('data-height') || 189;
+    return 'https://maps.googleapis.com/maps/api/staticmap?size=373x' + height + '&maptype=roadmap&markers=' + lat + '%2C' + lon + '&key=' + googleApiKey + '&sensor=false&zoom=' + zoom;
+  }
 
-  // if ($mapImg.length > 0) {
-  //   var htmlInsert = $('<div>');
-  //   $mapImg.each(function () {
-  //     let $this = $(this);
-  //     $this.find('img').attr('src', generateStaticMapImg($this.find('img')));
-  //     htmlInsert.append($this);
-  //   });
-  //   $('aside').prepend(htmlInsert);
-  //   $('a.qg-static-map').wrap("<div class='qg-aside st-map-static'>");
-  //   $('.st-map-static').eq(0).prepend("<h2><i class='fa fa-compass' aria-hidden='true'></i>Maps</h2>");
-  // }
+  if ($mapImg.length > 0) {
+    var htmlInsert = $('<div>');
+    $mapImg.each(function () {
+      let $this = $(this);
+      $this.find('img').attr('src', generateStaticMapImg($this.find('img')));
+      htmlInsert.append($this);
+    });
+    $('aside').prepend(htmlInsert);
+    $('a.qg-static-map').wrap("<div class='qg-aside st-map-static'>");
+    $('.st-map-static').eq(0).prepend("<h2><i class='fa fa-compass' aria-hidden='true'></i>Maps</h2>");
+  }
   function lazyScript (url) {
     $('head').append('<script type="text/javascript" src="' + url + '"></script>');
   }

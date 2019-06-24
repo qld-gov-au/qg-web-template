@@ -7,7 +7,6 @@ import './accordion/accordion';
 import './forms/recaptcha';
 import './forms/qg-address-autocomplete';
 import './qg-document-links';
-import './gallery/qg-gallery';
 import accessibility      from './accessibility/accessibility';
 
 accessibility.init();
