@@ -10,9 +10,7 @@
 
   margin-left: auto;
   margin-right: auto;
-
   margin-bottom: 1em;
-
   text-align: center;
 
   &:not(.qg-unstyled) {
@@ -28,12 +26,18 @@
   }
 
   img {
-    max-width: 100% !important;
-    height: auto !important;
+    width: 100%;
+    height: auto;
     margin: 0 auto;
   }
 
   figcaption {
-    @include fontSize(14px);
+    @include rem(font-size, 14px);
+    text-align: left;
+    font-style: italic;
+    .figure-credits {
+      font-style: normal;
+      color: #757575;
+    }
   }
 }
