@@ -255,6 +255,7 @@
 
     // bind this AFTER the validation handler
     // only invoked if validation did not prevent submit
+    // This will softlock submit if form submit passes this function with in SUBMIT_TOLERANCE timerange
     submitDoneHandler = function( event ) {
       // use event.timeStamp when available and $.now() otherwise
       var timeStamp = event.timeStamp || $.now(),
@@ -360,18 +361,25 @@
           // turn off native validation
             .attr( 'novalidate', true )
             // unbind and rebind handlers
-            .unbind( 'submit', submitDoneHandler )
-            .unbind( 'submit', submitValidationHandler )
+            .off( 'submit', submitDoneHandler )
+            .off( 'submit', submitValidationHandler )
             // validate this form
-            .bind( 'submit', submitValidationHandler )
+            .on( 'submit', submitValidationHandler )
             // if validation did not cancel submit…
-            .bind( 'submit', submitDoneHandler )
+            .on( 'submit', submitDoneHandler )
             // bind inline validation handlers to form elements
             .find( candidateForValidation )
-            .unbind( 'change', changeValidityCheck )
-            .bind( 'change', changeValidityCheck )
+            .off( 'change', changeValidityCheck )
+            .on( 'change', changeValidityCheck )
           ;
         });
+      },
+
+      // $( x ).formValidation( 'validate' )
+      // validates the form it is attached too
+      // return false if invalid
+      validateNow : function( ) {
+        return submitValidationHandler( null );
       },
 
 
@@ -668,8 +676,8 @@ if ( jQuery !== 'undefined' ) {
 
           // check validity on change
           candidates
-            .unbind( 'change.constraintValidationAPI' )
-            .bind( 'change.constraintValidationAPI', changeHandler )
+            .off( 'change.constraintValidationAPI' )
+            .on( 'change.constraintValidationAPI', changeHandler )
           ;
         }
 
@@ -752,8 +760,8 @@ if ( jQuery !== 'undefined' ) {
           // watch changes
           if ( ! polyfill ) {
             candidates.filter( ':radio' )
-              .unbind( 'change.constraintValidationAPI' )
-              .bind( 'change.constraintValidationAPI', function() {
+              .off( 'change.constraintValidationAPI' )
+              .on( 'change.constraintValidationAPI', function() {
                 validateBuggyRadioButtons( this.form );
               })
             ;
@@ -764,8 +772,8 @@ if ( jQuery !== 'undefined' ) {
         // this should be bound before all other submit handlers bound to the same form
         // otherwise they will execute before this handler can cancel submit (oninvalid)
         $( 'form' )
-          .unbind( 'submit.constraintValidationAPI' )
-          .bind( 'submit.constraintValidationAPI', submitHandler )
+          .off( 'submit.constraintValidationAPI' )
+          .on( 'submit.constraintValidationAPI', submitHandler )
         ;
       }
     ;
@@ -1122,10 +1130,10 @@ if ( jQuery !== 'undefined' ) {
             // setup event handlers for name
             formElementsByName( form[ 0 ], name )
               .filter( ':radio,:checkbox' )
-              .bind( 'click', recalculateRelevance )
+              .on( 'click', recalculateRelevance )
               .end()
               .filter( 'select' )
-              .bind( 'change', recalculateRelevance )
+              .on( 'change', recalculateRelevance )
             ;
           }
           // add or update relevance rule
@@ -1199,7 +1207,7 @@ if ( jQuery !== 'undefined' ) {
         }
       };
     // fallback (default) event handling
-    $( document ).bind( 'relevant irrelevant', function( event ) {
+    $( document ).on( 'relevant irrelevant', function( event ) {
       var target = $( event.target );
       if ( event.type === 'relevant' ) {
         target.relevance( 'show' );
@@ -1367,11 +1375,11 @@ if ( jQuery !== 'undefined' ) {
 
   // show/hide entire 'question' when fields become irrelevant
   $( '.questions > li' ).not( '.section' )
-    .bind( 'relevant', function( event ) {
+    .on( 'relevant', function( event ) {
       $( this ).relevance( 'show' );
       event.stopImmediatePropagation();
     })
-    .bind( 'irrelevant', function( event ) {
+    .on( 'irrelevant', function( event ) {
       $( this ).relevance( 'hide' );
       event.stopImmediatePropagation();
     })
