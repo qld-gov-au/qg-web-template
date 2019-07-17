@@ -375,13 +375,14 @@
         });
       },
 
+      // jQuery("div.alert.alert-warning").remove(); //as this function only add's to it. submitDoneHandler did the removal on success.
       // $( x ).formValidation( 'validate', event )
       // validates the form it is attached too
       // return false if invalid
       // var fakeEvent = jQuery.Event( "click" );
-      // $("form#myForm").formValidation("validateNow", fakeEvent); 
-      // The fakeEvent captures the .stopImmediatePropagation() .preventDefault() 
-      // and to allow you to check with: 	
+      // $("form#myForm").formValidation("validateNow", fakeEvent);
+      // The fakeEvent captures the .stopImmediatePropagation() .preventDefault()
+      // and to allow you to check with:
       //isDefaultPrevented, isImmediatePropagationStopped
       validateNow : function( event ) {
         return submitValidationHandler.call( this, event );
