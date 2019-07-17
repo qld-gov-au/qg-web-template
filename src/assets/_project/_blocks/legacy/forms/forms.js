@@ -375,11 +375,16 @@
         });
       },
 
-      // $( x ).formValidation( 'validate' )
+      // $( x ).formValidation( 'validate', event )
       // validates the form it is attached too
       // return false if invalid
-      validateNow : function( ) {
-        return submitValidationHandler( null );
+      // var fakeEvent = jQuery.Event( "click" );
+      // $("form#myForm").formValidation("validateNow", fakeEvent); 
+      // The fakeEvent captures the .stopImmediatePropagation() .preventDefault() 
+      // and to allow you to check with: 	
+      //isDefaultPrevented, isImmediatePropagationStopped
+      validateNow : function( event ) {
+        return submitValidationHandler.call( this, event );
       },
 
 
