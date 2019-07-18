@@ -1,8 +1,8 @@
 {
   "name": "Queensland-Government-Web-Template",
-  "version": "3.1.4",
-  "subVersion": "1.0.4",
-  "wt-version": "3.1.4",
+  "version": "3.1.5",
+  "subVersion": "1.0.5",
+  "wt-version": "3.1.5",
   "description": "This template is designed to provide a template for all Franchise websites, and the underpinning technology for new Agency websites.",
   "main": "gulpfile.js",
   "repository": {
@@ -15,7 +15,7 @@
     "build": "gulp build && node gulp/build-tasks/node-docs-flatten.js && gulp wt-updateVersion",
     "postbuild": "gulp clean-redundant-build",
     "prerelease": "gulp clean-release",
-    "release": "npm run build && gulp test:e2e && gulp release && node gulp/release-tasks/node-template-flatten.js && gulp replace-links",
+    "release": "export NODE_ENV=prod && gulp test:e2e && npm run build && gulp release && node gulp/release-tasks/node-template-flatten.js && gulp replace-links",
     "postrelease": "gulp clean-redundant-release",
     "start": "npm run build && gulp watch",
     "watch": "gulp watch",
