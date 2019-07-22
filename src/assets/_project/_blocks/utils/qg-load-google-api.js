@@ -7,32 +7,28 @@ import keys from '../data/qg-google-keys';
 (function (qg, $) {
   'use strict';
   let googleApiKey;
+  let firstFolderPath = location.pathname.split('/')[1];
   let $mapImg = $('.qg-static-map');
-  window.qg.googleKey = window.location.hostname.search(/\bdev\b|\btest\b|\blocalhost\b|\buat\b/) !== -1 ? keys.defGoogle.uat : keys.defGoogle.prod;
-  window.qg.googleRecaptchaApiKey = window.location.hostname.search(/\bdev\b|\btest\b|\blocalhost\b|\buat\b/) !== -1 ? keys.defGoogleRecaptcha.uat : keys.defGoogleRecaptcha.prod;
 
-  let findFranchiseName = function () {
-    let path = window.location.pathname.replace(/\/$/, '');
-    let pathArr = path.split('/').filter(function (e) {
-      return e;
-    });
-    if (pathArr[0]) {
-      return pathArr[0].toLowerCase();
-    }
-  };
-  let franchise = findFranchiseName();
-  if (franchise) {
+  // check if the hostname contains a specific word and assign the key accordingly
+  if (window.location.hostname.search(/\bgithub\b/) !== -1) {
+    console.log('docs key in use');
+    googleApiKey = keys.defGoogle.docs;
+  } else if (window.location.hostname.search(/\bdev\b|\btest\b|\blocalhost\b/) !== -1) {
+    console.log('test key in use');
+    googleApiKey = keys.defGoogle.test;
+  } else {
+    googleApiKey = keys.defGoogle.prod;
+  }
+
+  // check if first folder path exist and match to see if this is a valid franchise name or not
+  if (firstFolderPath) {
     keys.franchises.forEach(function (e) {
-      if (franchise === e.name) {
-        window.qg.franchise = {
-          name: e.name,
-          apiKey: e.apiKey,
-        };
+      if (firstFolderPath === e.name) {
+        googleApiKey = e.apiKey;
       }
     });
   }
-  googleApiKey = window.qg.franchise && window.qg.franchise.apiKey ? window.qg.franchise.apiKey : window.qg.googleKey;
-
   function generateStaticMapImg (ele) {
     let lat = ele.attr('data-lat') || -27.4673;
     let lon = ele.attr('data-long') || 153.0233;
