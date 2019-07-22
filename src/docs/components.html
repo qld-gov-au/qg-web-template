@@ -284,25 +284,34 @@
         <h2 id="blockquote" class="category">Blockquote</h2>
 
 <p>
-Publishers may use blockquotes to indicate the quotation of a large section of text from another source, which isn’t already mentioned in the article.
+Publishers may use blockquotes to indicate the quotation of a section of text from another source, which isn’t already mentioned in the article.
 </p>
 
         <div class="qg-tmplt-example">
           <div class="panel-body">
-        <blockquote cite="#"><p>The <em>Disposal of Uncollected Goods Act 1967</em> covers inspection, custody, storage, repair and other treatment of goods. Under this Act, uncollected goods may be sold six months after the date on which they were ready for collection.</p></blockquote>
+
+            <blockquote cite="#">
+            <p>The terms <em>inspection</em>, <em>custody</em>, <em>storage</em>, <em>repair</em> or <em>other treatment</em> shall include, where applicable, the transport or towing of any goods to the premises used or appropriated by the bailee for acceptance for any such inspection, custody, storage, repair or other treatment as the case may be.</p>
+            <footer>
+            <cite> <a href="#"> Disposal of Uncollected Act 1967 </a> </cite>
+            </footer>
+            </blockquote>
+
         </div>
           </div>
 
         <h3> HTML </h3>
         <pre><code class="language-markup">
 &lt;blockquote cite="#">
-&lt;p>The &lt;em>Disposal of Uncollected Goods Act 1967&lt;/em> covers inspection, custody, storage, repair and other treatment of goods. Under this Act, uncollected goods may be sold six months after the date on which they were ready for collection.&lt;/p>
+    &lt;p>The terms &lt;em>inspection&lt;/em>, &lt;em>custody&lt;/em>, &lt;em>storage&lt;/em>, &lt;em>repair&lt;/em> or &lt;em>other treatment&lt;/em> shall include, where applicable, the transport or towing of any goods to the premises used or appropriated by the bailee for acceptance for any such inspection, custody, storage, repair or other treatment as the case may be.&lt;/p>
+    &lt;footer>&lt;cite> &lt;a href="#"> Disposal of Uncollected Act 1967 &lt;/a> &lt;/cite>&lt;/footer>
 &lt;/blockquote>
                                   </code></pre>
 
 <br/><p><i>Configuration options</i></p>
 <ul>
-<li>The cite attribute is optional and, although user agents may allow users to follow such citation links, is intended for private use.</li>
+<li>It is recommended that, when available, a URL for the source of the quotation is provided using the cite attribute.</li>
+<li>Similarly, a text representation of the source can be presented using the &lt;cite> element. Linking this to the source is optional.</li>
 </ul>
 
         <!-- ################################## -->
