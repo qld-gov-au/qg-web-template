@@ -1,6 +1,10 @@
 // Secondary button appears in QLD blue
+.btn-primary{
+  @include button-variant($qg-green, $qg-green, $qg-green);
+}
+
 .btn-secondary {
-  @include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+  @include button-variant($qg-blue, $qg-blue, $qg-blue);
 }
 
 .qg-btn {

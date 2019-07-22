@@ -1,5 +1,8 @@
 'use-strict';
-// module.exports = function (gulp, plugins, config, destFolder = 'assets', addSrc, type = 'build') {
+var sass = require('gulp-sass');
+var sourcemaps = require('gulp-sourcemaps');
+sass.compiler = require('node-sass');
+
 module.exports = function (gulp, plugins, config, destFolder = 'assets', addSrc) {
   let extLibCssTarget = config.extLib.css.map(function (s) { return `${config.basepath.src}/assets/_project/lib/ext/` + s + '.css'; });
   return function (cb) {
@@ -7,37 +10,31 @@ module.exports = function (gulp, plugins, config, destFolder = 'assets', addSrc)
       `${config.basepath.src}/assets/_project/_blocks/*.scss`,
       '!** /_*.scss',
     ];
-    //.concat(config.build.excludes); remove excludes
     let dest = {
       base: `${config.basepath.build}`,
       ext: `${config.versionName}/latest/css`,
     };
-    // if (type === 'release') {
-    //   dest.base = `${config.basepath.release}`; // ${destFolder}/${config.versionName}/js/
-    // }
-
     if (!Array.isArray(destFolder)) {
       destFolder = [destFolder];
     }
-
     return gulp.src(src)
-      .pipe(plugins.sass({
+      .pipe(sass({
         includePaths: [
           '../../../../node_modules/',
         ],
       }))
-      .pipe(plugins.sourcemaps.init())
+      .pipe(sourcemaps.init())
       .pipe(plugins.plumber())
-      .pipe(plugins.sass({
+      .pipe(sass({
         includePaths: [config.basepath.src],
       }))
-      .on('error', plugins.sass.logError)
+      .on('error', sass.logError)
       .pipe(addSrc.append(extLibCssTarget))
       .pipe(plugins.autoprefixer({
         browsers: plugins.supportedBrowser,
         cascade: false,
       }))
-      .pipe(plugins.sourcemaps.write('.', {
+      .pipe(sourcemaps.write('.', {
         sourceRoot: config.basepath.src,
       }))
       // .pipe(plugins.if(type === 'release', plugins.cleanCss()))

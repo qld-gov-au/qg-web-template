@@ -356,12 +356,6 @@
   }
 }
 
-
-//buttons
-.btn-primary{
-  @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
-}
-
 //alerts
 .alert-warning {
   background-color: #ffedde;
