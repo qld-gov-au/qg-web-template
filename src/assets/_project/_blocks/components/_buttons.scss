@@ -1,5 +1,9 @@
 .btn-primary{
-  @include button-variant($qg-dark-green, $qg-dark-green, darken($qg-green, 15%));
+  @include button-variant($qg-light-green, $qg-light-green, lighten($qg-light-green, 7.5%), $hover-border: $qg-light-green, $active-background:$qg-light-green, $active-border: $qg-light-green);
+  color: #000;
+  &:focus, &:hover, &:link, &:visited, &:active {
+    color: #000;
+  }
 }
 
 .btn-secondary {
