@@ -15,7 +15,7 @@
   }
 
   .btn-default {
-    @include button-variant(#fff, $qg-feedback-btn-bg-color, transparent);
+    @include button-variant($qg-feedback-btn-bg-color, $qg-feedback-btn-bg-color);
   }
 }
 
