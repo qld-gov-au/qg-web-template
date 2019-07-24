@@ -52,3 +52,4 @@ etc/
 release
 package-lock.json
 web-template-release/
+template-pages/sample/*
