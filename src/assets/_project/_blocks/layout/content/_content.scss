@@ -75,17 +75,17 @@ a {
     &:hover {
       color: #06c;
     }
-    &.qg-btn, &.button, &.btn {
-      text-decoration: none;
-      &:focus, &:hover, &:link, &:visited {
-        text-decoration: none;
-        color: #FFF;
-      }
-    }
-    &.btn-primary {
-      &:focus, &:hover, &:link, &:visited {
-        color: #000;
-      }
-    }
+    //&.qg-btn, &.button, &.btn {
+    //  text-decoration: none;
+    //  &:focus, &:hover, &:link, &:visited {
+    //    text-decoration: none;
+    //    color: #FFF;
+    //  }
+    //}
+    //&.btn-primary {
+    //  &:focus, &:hover, &:link, &:visited {
+    //    color: #000;
+    //  }
+    //}
   }
 }

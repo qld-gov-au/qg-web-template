@@ -1,41 +1,23 @@
 //// asides ////
 @import 'minicart';
 #qg-content #qg-secondary-content {
-  position: relative; // For affix and other fixed position child elements
+  position: relative;
 
   .qg-aside {
-    // @include qg-responsive-padding($md: $qg-spacing); // 16px*1.5;
-    // padding: $qg-spacing-xs ($qg-spacing-xs / 2);
-    // @include qg-responsive-padding();
     border-bottom: 1px solid #e1ecf1;
     @include rem(font-size, 14.4px);
     color: #4d4d4d;
     @include qg-responsive-spacing(padding);
 
     margin: 0;
-
     background-color: #f2f7f9;
 
-    // @media (min-width: $screen-md-min) {
-    //   padding: ($qg-spacing / 2);
-    // }
     &:last-child{
       border-bottom: none;
     }
     &:first-child {
       @include qg-responsive-spacing(padding-top, full);
     }
-    // @media (min-width: $screen-lg-min) {
-    //   &:first-child() {
-    //     padding-top: $qg-spacing;
-    //   }
-    // }
-    /*&:nth-child(2n) {
-      background-color: $qg-aside-bg-color2;
-    }*/
-    // &:nth-child(3n) {
-    //   background-color: $qg-aside-bg-color3;
-    // }
 
     .container{
       width:100%;
@@ -59,6 +41,7 @@
         color: $qg-icon-color;
         font-size: 1.3em;
       }
+
     }
     h3 {
       color: $qg-dark-blue2;
@@ -67,8 +50,9 @@
       margin-bottom: 0;
     }
     ul {
-      // padding-left: 1.5em;
+      padding-left: 1.5em;
     }
+
     .tel {
       font-weight: 800;
       white-space: nowrap;
@@ -125,100 +109,4 @@
 
   }
 }
-/*
-#qg-content #qg-secondary-content {
-  margin: 0;
-  padding: 0;
 
-  a, a:link {
-    // color: $qg-blue5;
-    // text-decoration: none;
-  }
-
-  h2 {
-    margin: 0;
-    padding: 0;
-  }
-
-  .qg-aside {
-    background-color: $qg-pale-blue;
-    padding: 1.5em 1em;
-    margin: 0;
-
-    .fa {
-    // color: $qg-green;
-    font-size: 120%;
-    margin: 0 0.3em 0 0;
-    }
-
-    h2 {
-      font-weight: 700;
-      margin: 0 0 1em 0;
-    }
-
-    figure {
-      margin: 0;
-      padding: 0;
-      position:relative;
-      text-align: center;
-
-      img {
-        margin: 0;
-        padding: 0;
-        //width: 100%;
-        max-width: 100%;
-        height: auto;
-      }
-
-      figcaption {
-        margin: 0;
-        padding: .5em;
-        font-size: 90%;
-        font-style: italic;
-        text-align: center;
-      }
-    }
-  }
-
-  // possible background colors for asides:
-  // background-color: $qg-light-blue-gray;
-  // background-color: $qg-light-blue-gray1;
-  // background-color: $light-blueberry;
-  // background-color: $qg-light-blue-gray;
-  // background-color: $qg-light-blue-gray4;
-  // background-color: $qg-light-blue-gray5;
-
-  .qg-aside:nth-child(2n) {
-    background-color: $qg-pale-blue-light; // $qg-light-blue-gray4;
-  }
-
-  .qg-aside:nth-child(3n) {
-    background-color: $qg-pale-blue-lighter; // $qg-light-blue-gray5;
-  }
-
-  .qg-aside h2 span:before {
-    color: $qg-green;
-  }
-
-  .qg-search {}
-
-  .qg-subscribe {}
-
-  .qg-contact {}
-
-  .qg-disaster {}
-
-  .qg-contact {}
-
-  .qg-emergency-contact {}
-
-  .qg-your-say {}
-
-  .qg-tip {}
-
-  .qg-story {}
-
-  .qg-feedback {}
-
-}
-*/

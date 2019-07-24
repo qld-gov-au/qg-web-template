@@ -6,7 +6,10 @@
 * */
 
 /*globals grecaptcha, qg*/
+import keys from '../../data/qg-google-keys';
+
 (function ($, swe) {
+  let googleRecaptchaApiKey = window.location.hostname.search(/\bdev\b|\btest\b|\blocalhost\b/) !== -1 ? keys.defGoogleRecaptcha.uat : keys.defGoogleRecaptcha.prod;
   let onloadRecaptcha = () => { // eslint-disable-line
     $('form[data-recaptcha="true"]').find('input[type="submit"], button[type="submit"]').on('click', (e) => {
       e.preventDefault();
@@ -17,7 +20,7 @@
           grecaptcha.reset();
         } else {
           grecaptcha.render(subBtn, {
-            'sitekey': window.qg.googleRecaptchaApiKey, //this value will be replaced by build tool. from gulp-config/
+            'sitekey': googleRecaptchaApiKey, //this value will be replaced by build tool. from gulp-config/
             'callback': () => {
               var response = grecaptcha.getResponse();
               if (response === '' || response === undefined || response.length === 0) {

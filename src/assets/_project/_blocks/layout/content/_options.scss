@@ -15,7 +15,7 @@
   }
 
   .btn-default {
-    @include button-variant(#fff, $qg-feedback-btn-bg-color, transparent);
+    @include button-variant($qg-feedback-btn-bg-color, $qg-feedback-btn-bg-color);
   }
 }
 
@@ -125,10 +125,6 @@
     @include make-col(6);
   }
   @extend .order-sm-1;
-
-  //@include make-xs-column(12);
-  //@include make-sm-column(6);
-  //@include make-sm-column-pull(6);
   text-align: center;
 
   @media (min-width: $screen-sm-min) {
@@ -164,29 +160,8 @@
     margin-left: 0;
   }
 
-  .invalid {
-    color: $qg-error-red;
-
-    label {
-      color: $qg-error-red;
-    }
-
-    input {
-      border: 2px solid $qg-error-red;
-    }
-
-    textarea {
-      border: 2px solid $qg-error-red;
-    }
-
-  }
-
   .alert {
     width: 100%;
-    //padding-left: 1em;
-    //display: inline;
-    //color: $qg-error-red;
-    //@include fontSize(16px);
     .fa {
       @include rem(font-size, 24px);
     }
@@ -218,71 +193,12 @@
       }
 
     }
-
-    ol, ol.questions, ul, ul.questions {
-      margin: 0;
-      padding: 1em 0;
-      list-style-type: none;
-    }
-
-    ul.actions li {
-      display: inline-block;
-      margin-right: 1em;
-      text-align: center;
+    .radio {
+      padding-left: 20px;
     }
 
     .label {
-      color: #000 !important;
-      font-weight: normal;
-      @include rem(font-size, 16px);
       display: inline;
-      position: static;
-      width:auto;
-      max-width: auto;
-      margin: 0;
-      padding:0;
-      white-space: normal;
-    }
-
-    fieldset {
-      color: #000;
-      margin: 0;
-      padding:0;
-
-      legend {
-        color: #000;
-        margin: 0;
-        padding:0;
-        border-bottom: none;
-      }
-
-    }
-
-    label {
-      font-weight: normal;
-      font-size: 1em;
-      color: #000;
-      display: inline;
-      position: static;
-      width:auto;
-      max-width: auto;
-      margin: 0;
-      padding:0;
-    }
-
-    input {
-      display: inline;
-      position: static;
-      width:auto;
-      max-width: auto;
-      margin: 0;
-      padding:0;
-    }
-
-    #feedback-page-list {
-      li {
-        clear: none;
-      }
     }
   }
 }
