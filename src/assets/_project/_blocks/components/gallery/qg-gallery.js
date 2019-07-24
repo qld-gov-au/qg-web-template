@@ -1,13 +1,19 @@
 if ($('.qg-image-gallery')) {
-  var load = require('loadjs');
-  load(['{{CDN}}/assets/v3.1/latest/lib/ext/fancybox/jquery.fancybox.min.css', '{{CDN}}/assets/v3.1/latest/lib/ext/fancybox/jquery.fancybox.min.js'], function () {
+  require('loadjs')(['{{CDN}}/assets/v3.1/latest/lib/ext/fancybox/jquery.fancybox.min.css', '{{CDN}}/assets/v3.1/latest/lib/ext/fancybox/jquery.fancybox.min.js'], function () {
     $('[data-fancybox^="gallery"]').fancybox({
       buttons: ['thumbs', 'close'],
+      mobile: {
+        preventCaptionOverlap: false,
+        idleTime: false,
+        clickSlide: function (current, event) {
+          return current.type === 'image' ? 'close' : 'close';
+        },
+      },
       baseTpl: `
         <div class="fancybox-container" role="dialog" tabindex="-1">
           <div class="fancybox-bg"></div>
           <div class="fancybox-inner">
-                <div class="fancybox-infobar"><button data-fancybox-prev="" class="fancybox-button fancybox-button--arrow_left" title="Previous"><div><span class="font-awesome fa-2x fa-caret-left"></span></div></button><span data-fancybox-index></span>&nbsp;/&nbsp;<span data-fancybox-count></span><button data-fancybox-next="" class="fancybox-button fancybox-button--arrow_right" title="Next"><div><span class="font-awesome fa-2x fa-caret-right"></span></div></button></div>
+                <div class="fancybox-infobar"><button data-fancybox-prev="" class="fancybox-button fancybox-button--arrow_left p-0" title="Previous"><span class="font-awesome fa-2x fa-caret-left"></span></button><span data-fancybox-index></span>&nbsp;/&nbsp;<span data-fancybox-count></span><button data-fancybox-next="" class="fancybox-button fancybox-button--arrow_right p-0" title="Next"><span class="font-awesome fa-2x fa-caret-right"></span></button></div>
                 <div class="fancybox-toolbar">{{buttons}}</div>
                 <div class="fancybox-navigation">{{arrows}}</div>
                 <div class="fancybox-stage"></div>
@@ -17,13 +23,13 @@ if ($('.qg-image-gallery')) {
       `,
       btnTpl: {
         arrowLeft: `
-          <button data-fancybox-prev class="fancybox-button fancybox-button--arrow_left" title="{{PREV}}">
-            <div><span class="font-awesome fa-2x fa-caret-left"></span></div>
+          <button data-fancybox-prev class="fancybox-button fancybox-button--arrow_left p-0" title="{{PREV}}">
+            <span class="font-awesome fa-2x fa-caret-left"></span>
           </button>
         `,
         arrowRight: `
-           <button data-fancybox-next class="fancybox-button fancybox-button--arrow_right" title="{{NEXT}}">
-             <div><span class="font-awesome fa-2x fa-caret-right"></span></div>
+           <button data-fancybox-next class="fancybox-button fancybox-button--arrow_right p-0" title="{{NEXT}}">
+            <span class="font-awesome fa-2x fa-caret-right"></span>
           </button>
         `,
       },

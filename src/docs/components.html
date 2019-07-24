@@ -284,25 +284,34 @@
         <h2 id="blockquote" class="category">Blockquote</h2>
 
 <p>
-Publishers may use blockquotes to indicate the quotation of a large section of text from another source, which isn’t already mentioned in the article.
+Publishers may use blockquotes to indicate the quotation of a section of text from another source, which isn’t already mentioned in the article.
 </p>
 
         <div class="qg-tmplt-example">
           <div class="panel-body">
-        <blockquote cite="#"><p>The <em>Disposal of Uncollected Goods Act 1967</em> covers inspection, custody, storage, repair and other treatment of goods. Under this Act, uncollected goods may be sold six months after the date on which they were ready for collection.</p></blockquote>
+
+            <blockquote cite="#">
+            <p>The terms <em>inspection</em>, <em>custody</em>, <em>storage</em>, <em>repair</em> or <em>other treatment</em> shall include, where applicable, the transport or towing of any goods to the premises used or appropriated by the bailee for acceptance for any such inspection, custody, storage, repair or other treatment as the case may be.</p>
+            <footer>
+            <cite> <a href="#"> Disposal of Uncollected Act 1967 </a> </cite>
+            </footer>
+            </blockquote>
+
         </div>
           </div>
 
         <h3> HTML </h3>
         <pre><code class="language-markup">
 &lt;blockquote cite="#">
-&lt;p>The &lt;em>Disposal of Uncollected Goods Act 1967&lt;/em> covers inspection, custody, storage, repair and other treatment of goods. Under this Act, uncollected goods may be sold six months after the date on which they were ready for collection.&lt;/p>
+    &lt;p>The terms &lt;em>inspection&lt;/em>, &lt;em>custody&lt;/em>, &lt;em>storage&lt;/em>, &lt;em>repair&lt;/em> or &lt;em>other treatment&lt;/em> shall include, where applicable, the transport or towing of any goods to the premises used or appropriated by the bailee for acceptance for any such inspection, custody, storage, repair or other treatment as the case may be.&lt;/p>
+    &lt;footer>&lt;cite> &lt;a href="#"> Disposal of Uncollected Act 1967 &lt;/a> &lt;/cite>&lt;/footer>
 &lt;/blockquote>
                                   </code></pre>
 
 <br/><p><i>Configuration options</i></p>
 <ul>
-<li>The cite attribute is optional and, although user agents may allow users to follow such citation links, is intended for private use.</li>
+<li>It is recommended that, when available, a URL for the source of the quotation is provided using the cite attribute.</li>
+<li>Similarly, a text representation of the source can be presented using the &lt;cite> element. Linking this to the source is optional.</li>
 </ul>
 
         <!-- ################################## -->
@@ -685,63 +694,63 @@ Publishers may use blockquotes to indicate the quotation of a large section of t
 
         <!-- ################################## -->
 
-<!--        <h2 id="qg-gallery" class="category">Gallery</h2>-->
-<!--<p> The Gallery component displays images in a thumbnail grid. When a thumbnail is clicked, the image is enlarged and can be scrolled through to view images one after another. Publishers may also add captions to images, which will be displayed beneath the enlarged images. </p>-->
+        <h2 id="qg-gallery" class="category">Gallery</h2>
+<p> The Gallery component displays images in a thumbnail grid. When a thumbnail is clicked, the image is enlarged and can be scrolled through to view images one after another. Publishers may also add captions to images, which will be displayed beneath the enlarged images. </p>
 
-<!--<div class="qg-tmplt-example panel panel-default">-->
-<!--  <div class="panel-body">-->
+<div class="qg-tmplt-example panel panel-default">
+  <div class="panel-body">
 
-<!--        <div class="qg-image-gallery">-->
-<!--          <ul>-->
-<!--            <li><a title="eligible-soft-drink-cans.jpg" data-fancybox="gallery-92732"-->
-<!--                   data-caption="Eligible: Soft drink cans - between 150ml and 3L"-->
-<!--                   href="https://via.placeholder.com/450"><img alt="" src="https://via.placeholder.com/150"></a>-->
-<!--            </li>-->
-<!--            <li><a title="eligible-soft-drink-bottles.jpg" data-fancybox="gallery-92732" data-caption=""-->
-<!--                   href="https://via.placeholder.com/450"><img-->
-<!--              alt="" src="https://via.placeholder.com/150"></a>-->
-<!--            </li>-->
-<!--            <li><a title="sports-energy-drinks.jpg" data-fancybox="gallery-92732" data-caption=""-->
-<!--                   href="https://via.placeholder.com/450g"><img alt="" src="https://via.placeholder.com/150"></a>-->
-<!--            </li>-->
-<!--            <li><a title="eligible-water-bottles.jpg" data-fancybox="gallery-92732" data-caption=""-->
-<!--                   href="https://via.placeholder.com/450"><img alt="" src="https://via.placeholder.com/150"></a>-->
-<!--            </li>-->
-<!--            <li><a title="eligible-beer-bottles.jpg" data-fancybox="gallery-92732" data-caption=""-->
-<!--                   href="https://via.placeholder.com/450"><img alt="" src="https://via.placeholder.com/150"></a>-->
-<!--            </li>-->
-<!--            <li><a title="eligible-fruit-veg-juice-bottles.jpg" data-fancybox="gallery-92732" data-caption=""-->
-<!--                   href="https://via.placeholder.com/450"><img alt="" src="https://via.placeholder.com/150"></a></li>-->
-<!--          </ul>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
+        <div class="qg-image-gallery">
+          <ul>
+            <li><a title="eligible-soft-drink-cans.jpg" data-fancybox="gallery-92732"
+                   data-caption="Eligible: Soft drink cans - between 150ml and 3L"
+                   href="https://via.placeholder.com/450"><img alt="" src="https://via.placeholder.com/150"></a>
+            </li>
+            <li><a title="eligible-soft-drink-bottles.jpg" data-fancybox="gallery-92732" data-caption=""
+                   href="https://via.placeholder.com/450"><img
+              alt="" src="https://via.placeholder.com/150"></a>
+            </li>
+            <li><a title="sports-energy-drinks.jpg" data-fancybox="gallery-92732" data-caption=""
+                   href="https://via.placeholder.com/450g"><img alt="" src="https://via.placeholder.com/150"></a>
+            </li>
+            <li><a title="eligible-water-bottles.jpg" data-fancybox="gallery-92732" data-caption=""
+                   href="https://via.placeholder.com/450"><img alt="" src="https://via.placeholder.com/150"></a>
+            </li>
+            <li><a title="eligible-beer-bottles.jpg" data-fancybox="gallery-92732" data-caption=""
+                   href="https://via.placeholder.com/450"><img alt="" src="https://via.placeholder.com/150"></a>
+            </li>
+            <li><a title="eligible-fruit-veg-juice-bottles.jpg" data-fancybox="gallery-92732" data-caption=""
+                   href="https://via.placeholder.com/450"><img alt="" src="https://via.placeholder.com/150"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
-<!--        <h3>HTML</h3>-->
+        <h3>HTML</h3>
 
-<!--        <pre><code class="language-markup">-->
-<!--   &#x3C;div class=&#x22;qg-image-gallery&#x22;&#x3E;-->
-<!--       &#x3C;ul&#x3E;-->
-<!--            &#x3C;li&#x3E;&#x3C;a title=&#x22;caption 1&#x22; data-fancybox=&#x22;gallery-92732&#x22; data-caption=&#x22;caption 1&#x22;-->
-<!--                   href=&#x22;https://via.placeholder.com/450&#x22;&#x3E;&#x3C;img alt=&#x22;&#x22; src=&#x22;https://via.placeholder.com/150&#x22;&#x3E;&#x3C;/a&#x3E;-->
-<!--            &#x3C;/li&#x3E;-->
-<!--            &#x3C;li&#x3E;&#x3C;a title=&#x22;caption 2&#x22; data-fancybox=&#x22;gallery-92732&#x22; data-caption=&#x22;caption 2&#x22;-->
-<!--                   href=&#x22;https://via.placeholder.com/450&#x22;&#x3E;&#x3C;img alt=&#x22;&#x22; src=&#x22;https://via.placeholder.com/150&#x22;&#x3E;&#x3C;/a&#x3E;-->
-<!--            &#x3C;/li&#x3E;-->
-<!--            &#x3C;li&#x3E;&#x3C;a title=&#x22;caption 3&#x22; data-fancybox=&#x22;gallery-92732&#x22; data-caption=&#x22;caption 3&#x22;-->
-<!--                   href=&#x22;https://via.placeholder.com/450g&#x22;&#x3E;&#x3C;img alt=&#x22;&#x22; src=&#x22;https://via.placeholder.com/150&#x22;&#x3E;&#x3C;/a&#x3E;-->
-<!--            &#x3C;/li&#x3E;-->
-<!--            &#x3C;li&#x3E;&#x3C;a title=&#x22;caption 4&#x22; data-fancybox=&#x22;gallery-92732&#x22; data-caption=&#x22;caption 4&#x22;-->
-<!--                   href=&#x22;https://via.placeholder.com/450&#x22;&#x3E;&#x3C;img alt=&#x22;&#x22; src=&#x22;https://via.placeholder.com/150&#x22;&#x3E;&#x3C;/a&#x3E;-->
-<!--            &#x3C;/li&#x3E;-->
-<!--            &#x3C;li&#x3E;&#x3C;a title=&#x22;caption 5&#x22; data-fancybox=&#x22;gallery-92732&#x22; data-caption=&#x22;caption 5&#x22;-->
-<!--                   href=&#x22;https://via.placeholder.com/450&#x22;&#x3E;&#x3C;img alt=&#x22;&#x22; src=&#x22;https://via.placeholder.com/150&#x22;&#x3E;&#x3C;/a&#x3E;-->
-<!--            &#x3C;/li&#x3E;-->
-<!--            &#x3C;li&#x3E;&#x3C;a title=&#x22;caption 6&#x22; data-fancybox=&#x22;gallery-92732&#x22; data-caption=&#x22;caption 6&#x22;-->
-<!--                   href=&#x22;https://via.placeholder.com/450&#x22;&#x3E;&#x3C;img alt=&#x22;&#x22; src=&#x22;https://via.placeholder.com/150&#x22;&#x3E;&#x3C;/a&#x3E;&#x3C;/li&#x3E;-->
-<!--       &#x3C;/ul&#x3E;-->
-<!--   &#x3C;/div&#x3E;-->
-<!--  </code></pre>-->
+        <pre><code class="language-markup">
+   &#x3C;div class=&#x22;qg-image-gallery&#x22;&#x3E;
+       &#x3C;ul&#x3E;
+            &#x3C;li&#x3E;&#x3C;a title=&#x22;caption 1&#x22; data-fancybox=&#x22;gallery-92732&#x22; data-caption=&#x22;caption 1&#x22;
+                   href=&#x22;https://via.placeholder.com/450&#x22;&#x3E;&#x3C;img alt=&#x22;&#x22; src=&#x22;https://via.placeholder.com/150&#x22;&#x3E;&#x3C;/a&#x3E;
+            &#x3C;/li&#x3E;
+            &#x3C;li&#x3E;&#x3C;a title=&#x22;caption 2&#x22; data-fancybox=&#x22;gallery-92732&#x22; data-caption=&#x22;caption 2&#x22;
+                   href=&#x22;https://via.placeholder.com/450&#x22;&#x3E;&#x3C;img alt=&#x22;&#x22; src=&#x22;https://via.placeholder.com/150&#x22;&#x3E;&#x3C;/a&#x3E;
+            &#x3C;/li&#x3E;
+            &#x3C;li&#x3E;&#x3C;a title=&#x22;caption 3&#x22; data-fancybox=&#x22;gallery-92732&#x22; data-caption=&#x22;caption 3&#x22;
+                   href=&#x22;https://via.placeholder.com/450g&#x22;&#x3E;&#x3C;img alt=&#x22;&#x22; src=&#x22;https://via.placeholder.com/150&#x22;&#x3E;&#x3C;/a&#x3E;
+            &#x3C;/li&#x3E;
+            &#x3C;li&#x3E;&#x3C;a title=&#x22;caption 4&#x22; data-fancybox=&#x22;gallery-92732&#x22; data-caption=&#x22;caption 4&#x22;
+                   href=&#x22;https://via.placeholder.com/450&#x22;&#x3E;&#x3C;img alt=&#x22;&#x22; src=&#x22;https://via.placeholder.com/150&#x22;&#x3E;&#x3C;/a&#x3E;
+            &#x3C;/li&#x3E;
+            &#x3C;li&#x3E;&#x3C;a title=&#x22;caption 5&#x22; data-fancybox=&#x22;gallery-92732&#x22; data-caption=&#x22;caption 5&#x22;
+                   href=&#x22;https://via.placeholder.com/450&#x22;&#x3E;&#x3C;img alt=&#x22;&#x22; src=&#x22;https://via.placeholder.com/150&#x22;&#x3E;&#x3C;/a&#x3E;
+            &#x3C;/li&#x3E;
+            &#x3C;li&#x3E;&#x3C;a title=&#x22;caption 6&#x22; data-fancybox=&#x22;gallery-92732&#x22; data-caption=&#x22;caption 6&#x22;
+                   href=&#x22;https://via.placeholder.com/450&#x22;&#x3E;&#x3C;img alt=&#x22;&#x22; src=&#x22;https://via.placeholder.com/150&#x22;&#x3E;&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+       &#x3C;/ul&#x3E;
+   &#x3C;/div&#x3E;
+  </code></pre>
 
         <!-- ################################## -->
 
@@ -1499,7 +1508,7 @@ Publishers may use blockquotes to indicate the quotation of a large section of t
             <li><a href="#qg-cards">QG Cards</a></li>
             <li><a href="#qg-banner">QG Banner Blurb</a></li>
             <li><a href="#carousel">Carousel</a></li>
-<!--            <li><a href="#qg-gallery">Gallery</a></li>-->
+            <li><a href="#qg-gallery">Gallery</a></li>
             <li><a href="#downloadable-document-link">Downloadable document link</a></li>
             <li><a href="#facebook-feed">Facebook Feed</a></li>
             <li><a href="#forms">Forms</a></li>

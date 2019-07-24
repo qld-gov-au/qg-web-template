@@ -351,15 +351,6 @@
 // feedback form
 #qg-page-feedback-form {
   width: 100%;
-  #feedback-page-list {
-    @include make-row();
-  }
-}
-
-
-//buttons
-.btn-primary{
-  @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
 }
 
 //alerts
@@ -461,17 +452,6 @@ pre {
   color: #fff;
   background-color: #828a8f;
   border-color: #979ea2;
-}
-
-.btn-default {
-  color: #fff;
-  background-color: #585e62;
-  border-color: #585e62;
-  &:link, &:visited, &:hover, &:active {
-    color: #fff;
-    background-color: #646b6f;
-    border-color: #646b6f;
-  }
 }
 
 .btn-xs, .btn-group-xs > .btn, .btn-group-xs > .qg-btn {
