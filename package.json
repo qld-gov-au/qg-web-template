@@ -17,7 +17,7 @@
     "prerelease": "gulp clean-release",
     "release": "export NODE_ENV=prod && gulp test:e2e && npm run build && gulp release && node gulp/release-tasks/node-template-flatten.js && gulp replace-links",
     "postrelease": "gulp clean-redundant-release",
-    "start": "yarn build && gulp watch",
+    "start": "npm build && gulp watch",
     "watch": "gulp watch",
     "publish-npm": "gulp wt-clean && gulp wt-clone && gulp wt-sync && gulp wt-updateVersion && gulp wt-npm && gulp wt-add && gulp wt-commit && gulp wt-tag && gulp wt-push",
     "create-swe-release": "gulp swe-add && gulp swe-tag && gulp swe-commit && gulp swe-push",

@@ -1,5 +1,5 @@
 if ($('.qg-image-gallery')) {
-  require('loadjs')(['{{CDN}}/assets/v3.1/latest/lib/ext/fancybox/jquery.fancybox.min.css', '{{CDN}}/assets/v3.1/latest/lib/ext/fancybox/jquery.fancybox.min.js'], function () {
+  require('loadjs')(['{{CDN}}/latest/lib/ext/fancybox/jquery.fancybox.min.css', '{{CDN}}/latest/lib/ext/fancybox/jquery.fancybox.min.js'], function () {
     $('[data-fancybox^="gallery"]').fancybox({
       buttons: ['thumbs', 'close'],
       mobile: {

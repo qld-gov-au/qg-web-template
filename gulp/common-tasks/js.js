@@ -2,7 +2,6 @@
 
 /*const UglifyJSPlugin = require('uglifyjs-webpack-plugin');*/
 /*const CopyWebpackPlugin = require('copy-webpack-plugin');*/
-
 module.exports = function (gulp, plugins, config, webpack, destFolder, type = 'build') {
   return function (cb) {
     let src = [
@@ -40,7 +39,7 @@ module.exports = function (gulp, plugins, config, webpack, destFolder, type = 'b
           loader: 'webpack-replace',
           query: {
             search: '{{CDN}}',
-            replace: process.env.NODE_ENV === 'prod' ? `https://static.qgov.net.au` : '',
+            replace: process.env.NODE_ENV === 'prod' ? `https://static.qgov.net.au/assets/${config.versionName}` : `/assets/${config.versionName}`,
           },
         },
         {

@@ -175,13 +175,11 @@
     padding-bottom: $qg-spacing-xs / 2;
     @include qg-responsive-spacing('padding-left');
     @include qg-responsive-spacing('padding-right');
-
     .panel{
       @extend .panel-unstyled;
       // Bootstrap over-ride
       // TODO: Turn this into a global class
     }
-
     @media (max-width: $screen-sm-max) {
 
       h2, p {
@@ -196,7 +194,11 @@
     .radio {
       padding-left: 20px;
     }
-
+    .btn-primary{
+      &:hover {
+        outline: inherit;
+      }
+    }
     .label {
       display: inline;
     }
