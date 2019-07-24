@@ -2,6 +2,13 @@ if ($('.qg-image-gallery')) {
   require('loadjs')(['{{CDN}}/assets/v3.1/latest/lib/ext/fancybox/jquery.fancybox.min.css', '{{CDN}}/assets/v3.1/latest/lib/ext/fancybox/jquery.fancybox.min.js'], function () {
     $('[data-fancybox^="gallery"]').fancybox({
       buttons: ['thumbs', 'close'],
+      mobile: {
+        preventCaptionOverlap: false,
+        idleTime: false,
+        clickSlide: function (current, event) {
+          return current.type === 'image' ? 'close' : 'close';
+        },
+      },
       baseTpl: `
         <div class="fancybox-container" role="dialog" tabindex="-1">
           <div class="fancybox-bg"></div>
