@@ -1,4 +1,4 @@
-if ($('.qg-image-gallery')) {
+if ($('.qg-image-gallery') || $('.qg-lightbox')) {
   require('loadjs')(['{{CDN}}/latest/lib/ext/fancybox/jquery.fancybox.min.css', '{{CDN}}/latest/lib/ext/fancybox/jquery.fancybox.min.js'], function () {
     $('[data-fancybox^="gallery"]').fancybox({
       buttons: ['thumbs', 'close'],
