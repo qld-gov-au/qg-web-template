@@ -1,15 +1,17 @@
-if ($('.qg-image-gallery') || $('.qg-lightbox')) {
-  require('loadjs')(['{{CDN}}/latest/lib/ext/fancybox/jquery.fancybox.min.css', '{{CDN}}/latest/lib/ext/fancybox/jquery.fancybox.min.js'], function () {
-    $('[data-fancybox^="gallery"]').fancybox({
-      buttons: ['thumbs', 'close'],
-      mobile: {
-        preventCaptionOverlap: false,
-        idleTime: false,
-        clickSlide: function (current, event) {
-          return current.type === 'image' ? 'close' : 'close';
-        },
-      },
-      baseTpl: `
+$(window).on('load', function () {
+  if ($("script[src*='jquery.fancybox']").length === 0) {
+    if ($('.qg-image-gallery') || $('.qg-lightbox')) {
+      require('loadjs')(['{{CDN}}/latest/lib/ext/fancybox/jquery.fancybox.min.css', '{{CDN}}/latest/lib/ext/fancybox/jquery.fancybox.min.js'], function () {
+        $('[data-fancybox^="gallery"]').fancybox({
+          buttons: ['thumbs', 'close'],
+          mobile: {
+            preventCaptionOverlap: false,
+            idleTime: false,
+            clickSlide: function (current, event) {
+              return current.type === 'image' ? 'close' : 'close';
+            },
+          },
+          baseTpl: `
         <div class="fancybox-container" role="dialog" tabindex="-1">
           <div class="fancybox-bg"></div>
           <div class="fancybox-inner">
@@ -21,27 +23,29 @@ if ($('.qg-image-gallery') || $('.qg-lightbox')) {
           </div>
         </div>
       `,
-      btnTpl: {
-        arrowLeft: `
+          btnTpl: {
+            arrowLeft: `
           <button data-fancybox-prev class="fancybox-button fancybox-button--arrow_left p-0" title="{{PREV}}">
             <span class="font-awesome fa-2x fa-caret-left"></span>
           </button>
         `,
-        arrowRight: `
+            arrowRight: `
            <button data-fancybox-next class="fancybox-button fancybox-button--arrow_right p-0" title="{{NEXT}}">
             <span class="font-awesome fa-2x fa-caret-right"></span>
           </button>
         `,
-      },
-      caption: function (instance, item) {
-        var caption = $(this).data('caption') || '';
+          },
+          caption: function (instance, item) {
+            var caption = $(this).data('caption') || '';
 
-        if (item.type === 'image') {
-          caption = '<div class="fancybox-border">' + (caption.length ? caption : '') + '</div>';
-        }
-        return caption;
-      },
-    });
-  });
-}
+            if (item.type === 'image') {
+              caption = '<div class="fancybox-border">' + (caption.length ? caption : '') + '</div>';
+            }
+            return caption;
+          },
+        });
+      });
+    }
+  }
+});
 
