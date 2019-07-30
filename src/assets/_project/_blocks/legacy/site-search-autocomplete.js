@@ -18,7 +18,7 @@ $(function () {
 
     // setup for each form
     // TODO hardcoded to find.search.qld.gov.au
-    $('form').filter('[action*="//find.search.qld.gov.au/"]').each(function () {
+    $('form').filter('[action*="qld.gov.au/search"]').each(function () {
         var form = this;
         var searchField = $(form.elements.query).filter('[name="query"]');
         // var lastSearch = searchField.val();
