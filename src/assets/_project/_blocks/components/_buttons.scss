@@ -1,17 +1,28 @@
 .btn-primary{
   @include button-variant($qg-light-green, $qg-light-green, lighten($qg-light-green, 7.5%), $hover-border: $qg-light-green, $active-background:$qg-light-green, $active-border: $qg-light-green);
-  color: #000;
+  color: #000 !important;
   &:focus, &:hover, &:link, &:visited, &:active {
-    color: #000;
+    text-decoration: none !important;
+    color: #000 !important;
   }
 }
 
 .btn-secondary {
   @include button-variant($qg-blue, $qg-blue);
+  color: #fff !important;
+  &:focus, &:hover, &:link, &:visited, &:active {
+    color: #fff !important;
+    text-decoration: none !important;
+  }
 }
 
 .btn-default {
   @include button-variant($qg-dark-grey, $qg-dark-grey);
+  color: #fff !important;
+  &:focus, &:hover, &:link, &:visited, &:active {
+    color: #fff !important;
+    text-decoration: none !important;
+  }
 }
 
 .qg-btn {
@@ -19,6 +30,7 @@
 }
 
 #feature-search-submit{
+  @include button-variant($qg-light-green, $qg-light-green, lighten($qg-light-green, 7.5%), $hover-border: $qg-light-green, $active-background:$qg-light-green, $active-border: $qg-light-green);
   padding: 8px 10px;
   border-radius: 0;
 }

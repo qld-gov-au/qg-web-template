@@ -6,9 +6,9 @@
 * */
 
 /*globals grecaptcha, qg*/
-import keys from "../../data/qg-google-keys";
+import keys from '../../data/qg-google-keys';
 
-(function($, swe) {
+(function ($, swe) {
   let googleRecaptchaApiKey =
     window.location.hostname.search(
       /\bdev\b|\btest\b|\blocalhost\b|\buat\b/
@@ -19,41 +19,41 @@ import keys from "../../data/qg-google-keys";
     // eslint-disable-line
     $('form[data-recaptcha="true"]')
       .find('input[type="submit"], button[type="submit"]')
-      .on("click", e => {
+      .on('click', e => {
         e.preventDefault();
         let subBtn = e.target;
-        let form = $(subBtn).parents("form");
+        let form = $(subBtn).parents('form');
         try {
-            grecaptcha.render(subBtn, {
-              sitekey: googleRecaptchaApiKey, //this value will be replaced by build tool. from gulp-config/
-              callback: () => {
-                var response = grecaptcha.getResponse();
-                if (
-                  response === "" ||
+          grecaptcha.render(subBtn, {
+            sitekey: googleRecaptchaApiKey, //this value will be replaced by build tool. from gulp-config/
+            callback: () => {
+              var response = grecaptcha.getResponse();
+              if (
+                response === '' ||
                   response === undefined ||
                   response.length === 0
-                ) {
-                  console.log("Invalid recaptcha");
-                  return false;
-                } else {
-                  form.submit();
-                }
+              ) {
+                console.log('Invalid recaptcha');
+                return false;
+              } else {
+                form.submit();
               }
-            });
+            },
+          });
         } catch (e) {
           grecaptcha.reset();
           return false;
         }
         grecaptcha.execute();
       });
-    };
+  };
   if ($('form[data-recaptcha="true"]').length > 0) {
     //enable recaptcha on form submits
     swe.ajaxCall(
-      "https://www.google.com/recaptcha/api.js",
-      "script",
+      'https://www.google.com/recaptcha/api.js',
+      'script',
       onloadRecaptcha,
-      "Recaptcha unavailable"
+      'Recaptcha unavailable'
     );
   }
 })(jQuery, qg.swe);
