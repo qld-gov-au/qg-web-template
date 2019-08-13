@@ -30,7 +30,6 @@
 }
 
 #feature-search-submit{
-  @include button-variant($qg-light-green, $qg-light-green, lighten($qg-light-green, 7.5%), $hover-border: $qg-light-green, $active-background:$qg-light-green, $active-border: $qg-light-green);
   padding: 8px 10px;
   border-radius: 0;
 }
