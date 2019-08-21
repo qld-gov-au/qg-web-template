@@ -30,7 +30,12 @@
     border-left: 5px solid $brand-warning;
     background-color: #ffedde;
   }
-  &.alert-success, &.alert-info, &.alert-warning, &.alert-tip, &.alert-danger{
+  &.alert-fail{
+    border: none;
+    border-left: 5px solid $brand-danger;
+    background-color:#faebea;
+  }
+  &.alert-success, &.alert-info, &.alert-warning, &.alert-tip, &.alert-danger, &.alert-fail{
     font-weight: normal;
     color: #000;
     margin: 0;
@@ -63,7 +68,7 @@
   &.warn {
     border-color: #f9af71 !important;
   }
-  &.success , &.info, &.tip , &.warn{
+  &.success , &.info, &.tip , &.warn, &.fail{
     position: relative;
     border: 0;
     border-left: 5px solid;
