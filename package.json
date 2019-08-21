@@ -36,7 +36,7 @@
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.1",
     "cssnano": "^3.10.0",
-    "del": "^2.2.2",
+    "del": "^5.0.0",
     "eslint": "^6.0.1",
     "eslint-config-semistandard": "^7.0.0",
     "eslint-config-standard": "^6.0.1",
