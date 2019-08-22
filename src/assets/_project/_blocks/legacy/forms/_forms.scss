@@ -435,9 +435,9 @@ textarea {
   overflow: auto;
 }
 
-select {
-  overflow-x: hidden;
-}
+//select {
+//  overflow-x: hidden;
+//}
 
 textarea.large-compact {
   height: 4.5em;
@@ -1187,6 +1187,9 @@ form {
     //top: inherit;
   }
   .questions {
+    select{
+      overflow: auto;
+    }
     @-moz-document url-prefix() {
       input[type=radio]{
         box-shadow: 0 0 1px $qg-dark-grey;
