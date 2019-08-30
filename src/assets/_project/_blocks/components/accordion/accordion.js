@@ -8,6 +8,7 @@
 (function ($) {
   let accordion = '.qg-accordion';
   if ($(accordion).length > 0) {
+    let tabindex = 1;
     let accordionControls = 'input[name=control]';
     let linkedpanel =  window.location.hash && $('input[aria-controls=' + window.location.hash.substring(1) + ']');
 
@@ -31,5 +32,14 @@
     if (linkedpanel.length > 0) {
       linkedpanel.prop('checked', true);
     }
+
+    // inserting tab index dynamically
+    $('.qg-accordion article').each(function () {
+      if (this.type !== 'hidden') {
+        var $input = $(this);
+        $input.attr('tabindex', tabindex);
+        tabindex++;
+      }
+    });
   }
 }(jQuery));

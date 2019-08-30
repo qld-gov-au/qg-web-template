@@ -23,6 +23,12 @@
       margin: 0;
       position: relative;
       padding: 0.4rem 0.7rem;
+      .title{
+        display: block;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
       label {
         position: relative;
         display: block;
@@ -86,6 +92,9 @@
     &[type=checkbox]:checked + .acc-heading label i {
       transform: rotate(-135deg);
       -webkit-transform: rotate(-135deg);
+    }
+    &[type=checkbox]:checked + .acc-heading .title{
+      text-decoration: underline;
     }
     &.expand:checked ~ article {
       .collapsing-section {

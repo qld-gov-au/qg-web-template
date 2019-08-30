@@ -14,3 +14,12 @@
     text-decoration: none;
   }
 }
+
+//table style
+.qg-table{
+  @extend .table;
+  thead > tr > th, thead > tr > td {
+    background-color: $qg-blue-dark;
+    color: #fff;
+  }
+}
