@@ -161,9 +161,17 @@
 
         <h2 class="category" id="alerts">Alerts</h2>
         <p><span class="label label-primary" title="Heavily customised bootstrap implementation">Customised</span></p>
-        <p>Alerts are used to help direct a user's attention to important snippets of information such as an excerpt of text, notification or error message.</p>
-        <p>The thick lefthand border, typography, colours and padding have been used to achieve greater visual prominence and convey the message type. The use of an icon may increase this prominence and enhance understanding.</p>
-        <p>Inline icons are optional and to be selected from the <a href="https://fontawesome.com/icons?d=gallery&m=free"target="_blank">Font Awesome</a> icon set.</p>
+        <p>Alerts are used to notify users of important time-sensitive information or changes, in a way that attracts the user's attention.</p>
+        <p>This component is assigned <code>role="alert"</code> to signify information requiring the user's immediate attention. For people using assistive technologies, this role will listen for such an event and notify the user accordingly:</p>
+        <ul>
+          <li>Screen readers may immediately announce or display the alert message</li>
+          <li>Screen magnifiers may visually indicate that an alert occurred and what the alert text was</li>
+        </ul>
+        <p> Usage considerations</p>
+        <ul>
+          <li>If this component is used incorrectly (e.g. to display content that doesn't require the user's immediate attention), this may pose an accessibility issue.</li>
+          <li>Inline icons are optional and to be selected from the Font Awesome (Opens in new window) icon set</li>
+        </ul>
         <p>See <a href="https://getbootstrap.com/components/#alerts">Bootstrap alerts documentation</a> for more information.</p>
 
         <h3> Success message </h3>
