@@ -1,18 +1,24 @@
 .pagination {
-  .qg-previous:before, .qg-next:after {
-    font-family: FontAwesome;
+  .page-link{
+    padding: 0.7rem 1rem 0.7rem 1rem;
+    text-decoration: none !important;
+    border: 1px solid #808080;
+    .fa-angle-left {
+      padding-right: 9px;
+    }
+    .fa-angle-right {
+      padding-left: 9px;
+    }
   }
-  .qg-previous:before {
-    content: '\f137';
-    padding-right: .3em;
+  .page-item.disabled .page-link {
+    color: #6c757d;
+    pointer-events: none;
+    cursor: auto;
+    background-color: #fff;
+    border-color: #808080;
   }
-  .qg-next:after {
-    content: '\f138';
-    padding-left: .3em;
-  }
-}
-.pagination-container{
-  .pagination > li > a {
-    padding: 6px 12px;
+  .page-item.active .page-link{
+    background-color: #13578B;
+    border-color: #13578B;
   }
 }
