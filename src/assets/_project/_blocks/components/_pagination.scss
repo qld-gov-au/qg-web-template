@@ -1,4 +1,4 @@
-.pagination {
+.pagination, .qg-pagination {
   .page-link{
     padding: 0.7rem 1rem 0.7rem 1rem;
     text-decoration: none !important;
@@ -9,9 +9,12 @@
     .fa-angle-right {
       padding-left: 9px;
     }
+    &:focus, &:visited, &:link, &:active {
+      color: #13578b !important;
+    }
   }
   .page-item.disabled .page-link {
-    color: #6c757d;
+    color: #6c757d !important;
     pointer-events: none;
     cursor: auto;
     background-color: #fff;
@@ -20,5 +23,6 @@
   .page-item.active .page-link{
     background-color: #13578B;
     border-color: #13578B;
+    color: #fff !important;
   }
 }

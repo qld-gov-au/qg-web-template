@@ -34,12 +34,20 @@
     }
 
     // inserting tab index dynamically
-    $('.qg-accordion article').each(function () {
+    $('.qg-accordion .acc-heading').each(function () {
       if (this.type !== 'hidden') {
         var $input = $(this);
         $input.attr('tabindex', tabindex);
         tabindex++;
       }
+    });
+
+    // highlight title on hover
+    $('.qg-accordion article').hover(function () {
+      $(accordion).find('.title').removeClass('ht');
+      $(this).find('.title').addClass('ht');
+    }, function () {
+      $(accordion).find('.title').removeClass('ht');
     });
   }
 }(jQuery));

@@ -45,6 +45,10 @@
             a {
               color: #fff;
               text-decoration: underline;
+              &:hover, &:active, &:focus{
+                color: #fff !important;
+                text-decoration: none !important;
+              }
             }
           }
         }
