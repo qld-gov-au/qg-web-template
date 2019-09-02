@@ -2,7 +2,7 @@
   .page-link{
     padding: 0.7rem 1rem 0.7rem 1rem;
     text-decoration: none !important;
-    border: 1px solid #808080;
+    border: 1px solid $qg-pagination-border !important;
     .fa-angle-left {
       padding-right: 9px;
     }
@@ -10,19 +10,18 @@
       padding-left: 9px;
     }
     &:focus, &:visited, &:link, &:active {
-      color: #13578b !important;
+      color: $qg-pagination-link-color !important;
     }
   }
   .page-item.disabled .page-link {
-    color: #6c757d !important;
+    color: $qg-pagination-disabled-color !important;
     pointer-events: none;
     cursor: auto;
     background-color: #fff;
-    border-color: #808080;
   }
   .page-item.active .page-link{
-    background-color: #13578B;
-    border-color: #13578B;
+    background-color: $qg-pagination-link-color;
+    border-color: $qg-pagination-link-color;
     color: #fff !important;
   }
 }
