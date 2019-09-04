@@ -122,6 +122,46 @@
             </article>
           </section>
 
+          <section class="qg-accordion mt-5" aria-label="Accordion Label">
+            <input type="radio" name="control" id="collapse" class="controls collapse" value="collapse" role="radio">
+            <label for="collapse" class="controls">Collapse all</label>
+            <span class="controls">&#124;</span>
+            <input type="radio" name="control" id="expand" class="controls expand" value="expand" role="radio">
+            <label for="expand" class="controls">Expand all</label>
+
+            <article>
+              <input id="without-icon-1" type="checkbox" name="tabs" aria-controls="id-panel-content-1" aria-expanded="false" role="checkbox">
+              <h3 class="acc-heading"><label for="without-icon-1"><span class="title">Without icon</span> <span class="subtitle">Subtitle can go here (optional)</span><span class="arrow"> <i></i></span></label></h3>
+              <div class="collapsing-section"  aria-hidden="true" id="id-panel-content-1">
+                <p> Content related to header. </p>
+                <ul>
+                  <li>If dot points are available</li>
+                  <li>Can go here</li>
+                </ul>
+                <p>Or provide any semantic html structure</p>
+              </div>
+            </article>
+            <article>
+              <input id="with-icon-1" type="checkbox" name="tabs" aria-controls="id-panel-content-2" aria-expanded="false" role="checkbox">
+              <h3 class="acc-heading"><img src="https://placeimg.com/20/20/nature" alt=""><label for="with-icon-1"><span class="title">With icon</span> <span class="subtitle">Subtitle can go here (optional)</span><span class="arrow"> <i></i></span></label></h3>
+              <div class="collapsing-section" aria-hidden="true" id="id-panel-content-2">
+                <h4>Heading</h4>
+                <p> Content related to header. </p>
+                <ul>
+                  <li>If dot points are available</li>
+                  <li>Can go here</li>
+                </ul>
+                <p>Or provide any semantic html structure</p>
+                <button type="button" class="qg-btn btn-default">Default</button>
+                <button type="button" class="qg-btn btn-primary">Primary</button>
+                <button type="button" class="qg-btn btn-secondary">Primary Alt</button>
+                <button type="button" class="qg-btn btn-link">Link</button>
+              </div>
+            </article>
+          </section>
+
+
+
           </br><p> HTML </p>
 
           <pre><code class="language-markup">

@@ -23,15 +23,29 @@
     });
 
     //expand all click
-    $(accordion).find(accordionControls).on('change', function () {
-      $(this).find('~ article input').prop('checked', $(this).val() === 'expand');
-      $(accordion).find('article input').trigger('change');
+    $("label[for='expand']").click(function (e) {
+      e.preventDefault();
+      $(this).parent('.qg-accordion').find('input:checkbox').prop('checked', true);
     });
 
-    //Ability to direct link to each section and expand the linked section
-    if (linkedpanel.length > 0) {
-      linkedpanel.prop('checked', true);
-    }
+    // collapse all click
+    $("label[for='collapse']").click(function (e) {
+      e.preventDefault();
+      $(this).parent('.qg-accordion').find('input:checkbox').prop('checked', false);
+    });
+
+    const hashTrigger = function () {
+      linkedpanel = window.location.hash && $('input[aria-controls=' + window.location.hash.substring(1) + ']');
+      if (linkedpanel.length > 0) {
+        linkedpanel.parents(accordion).find('~ article input').prop('checked', false); //clears expand/collapse selection
+        linkedpanel.prop('checked', true);
+        $('html, body').animate({
+          'scrollTop': linkedpanel.offset().top,
+        }, 500);
+      }
+    };
+    hashTrigger();
+    window.onhashchange = hashTrigger;
 
     // inserting tab index dynamically
     $('.qg-accordion .acc-heading').each(function () {
