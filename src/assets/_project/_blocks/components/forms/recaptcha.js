@@ -4,7 +4,6 @@
 *   - Local - by test key in build process (gulp/gulp-config.js, gulp/common-tasks/js.js)
 *   - Dev, Test, Staging, Beta - in bamboo deployment plan - https://servicesmadesimpler.govnet.qld.gov.au/bitbucket/projects/CDN/repos/static-qld_cloudformation/browse/deployment_swev3.yml
 * */
-
 /*globals grecaptcha, qg*/
 (function ($, swe) {
   let onloadRecaptcha = () => { // eslint-disable-line
@@ -12,24 +11,18 @@
       e.preventDefault();
       let subBtn = e.target;
       let form = $(subBtn).parents('form');
-
-      grecaptcha.render(subBtn, {
-        'sitekey': window.qg.googleRecaptchaApiKey, //this value will be replaced by build tool. from gulp-config/
-        'callback': () => {
-          var response = grecaptcha.getResponse();
-          if (response === '' || response === undefined || response.length === 0) {
-            console.log('Invalid recaptcha');
-            return false;
-          } else {
-            form.submit();
-          }
-        },
+      grecaptcha.execute(window.qg.googleRecaptchaApiKey, { action: 'contact' }).then(function (token) {
+        var greptchaKey = $('<input type="hidden"/>');
+        greptchaKey.attr('name', 'greptchaToken');
+        greptchaKey.attr('value', token);
+        form.append(greptchaKey);
+        if (greptchaKey.attr('value').length > 0) {
+          form.submit();
+        }
       });
-      grecaptcha.execute();
     });
   };
-
-  if ($('form[data-recaptcha="true"]').length > 0) {	//enable recaptcha on form submits
-    swe.ajaxCall('https://www.google.com/recaptcha/api.js', 'script', onloadRecaptcha, 'Recaptcha unavailable');
+  if ($('form[data-recaptcha="true"]').length > 0) {
+    swe.ajaxCall('https://www.google.com/recaptcha/api.js?render=' + window.qg.googleRecaptchaApiKey + '', 'script', onloadRecaptcha, 'Recaptcha unavailable');
   }
 }(jQuery, qg.swe));
