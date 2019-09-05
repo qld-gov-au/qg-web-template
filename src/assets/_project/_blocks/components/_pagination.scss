@@ -1,4 +1,8 @@
 .pagination, .qg-pagination {
+  @extend .flex-wrap;
+  .prev, .next {
+    white-space: nowrap;
+  }
   .page-link{
     padding: 0.7rem 1rem 0.7rem 1rem;
     text-decoration: none !important;
@@ -11,6 +15,9 @@
     }
     &:focus, &:visited, &:link, &:active {
       color: $qg-pagination-link-color !important;
+    }
+    @include media-breakpoint-down(md) {
+      padding: 0.3em 0.6em;
     }
   }
   .page-item.disabled .page-link {

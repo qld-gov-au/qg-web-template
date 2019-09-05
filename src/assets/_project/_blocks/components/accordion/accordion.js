@@ -34,6 +34,7 @@
       $(this).parent('.qg-accordion').find('input:checkbox').prop('checked', false);
     });
 
+    // open on page load
     const hashTrigger = function () {
       linkedpanel = window.location.hash && $('input[aria-controls=' + window.location.hash.substring(1) + ']');
       if (linkedpanel.length > 0) {
@@ -54,6 +55,9 @@
         $input.attr('tabindex', tabindex);
         tabindex++;
       }
+    });
+    $('input[name=tabs]').click(function () {
+      $(this).parent('article').find('.acc-heading').focus();
     });
 
     // highlight title on hover
