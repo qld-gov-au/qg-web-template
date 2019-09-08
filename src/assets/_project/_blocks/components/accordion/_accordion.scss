@@ -128,3 +128,10 @@
     font-size: 1em;
   }
 }
+
+// IOS safari specific styles
+@media not all and (min-resolution:.001dpcm) {
+  .qg-accordion .acc-heading:focus {
+    outline: 1px dotted $qg-blue;
+  }
+}
