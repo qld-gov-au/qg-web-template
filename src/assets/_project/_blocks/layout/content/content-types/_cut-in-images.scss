@@ -1,6 +1,5 @@
 .qg-cut-in, .qg-cut-in-alt {
   position: relative;
-  float: right;
   @include rem(max-width, 374px);
   @include rem(font-size, 14px);
   @include rem(padding, 7px);
@@ -33,4 +32,10 @@
     margin: 0 !important;
     padding: 0 !important;
   }
+}
+.qg-cut-in{
+ float: right;
+}
+.qg-cut-in-alt{
+  float: left;
 }

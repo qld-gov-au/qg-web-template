@@ -8,6 +8,7 @@
 (function ($) {
   let accordion = '.qg-accordion';
   if ($(accordion).length > 0) {
+    let tabindex = 1;
     let accordionControls = 'input[name=control]';
     let linkedpanel =  window.location.hash && $('input[aria-controls=' + window.location.hash.substring(1) + ']');
 
@@ -22,14 +23,49 @@
     });
 
     //expand all click
-    $(accordion).find(accordionControls).on('change', function () {
-      $(this).find('~ article input').prop('checked', $(this).val() === 'expand');
-      $(accordion).find('article input').trigger('change');
+    $("label[for='expand']").click(function (e) {
+      e.preventDefault();
+      $(this).parent('.qg-accordion').find('input:checkbox').prop('checked', true);
     });
 
-    //Ability to direct link to each section and expand the linked section
-    if (linkedpanel.length > 0) {
-      linkedpanel.prop('checked', true);
-    }
+    // collapse all click
+    $("label[for='collapse']").click(function (e) {
+      e.preventDefault();
+      $(this).parent('.qg-accordion').find('input:checkbox').prop('checked', false);
+    });
+
+    // open on page load
+    const hashTrigger = function () {
+      linkedpanel = window.location.hash && $('input[aria-controls=' + window.location.hash.substring(1) + ']');
+      if (linkedpanel.length > 0) {
+        linkedpanel.parents(accordion).find('~ article input').prop('checked', false); //clears expand/collapse selection
+        linkedpanel.prop('checked', true);
+        $('html, body').animate({
+          'scrollTop': linkedpanel.offset().top,
+        }, 500);
+      }
+    };
+    hashTrigger();
+    window.onhashchange = hashTrigger;
+
+    // inserting tab index dynamically
+    $('.qg-accordion .acc-heading').each(function () {
+      if (this.type !== 'hidden') {
+        var $input = $(this);
+        $input.attr('tabindex', tabindex);
+        tabindex++;
+      }
+    });
+    $('input[name=tabs]').click(function () {
+      $(this).parent('article').find('.acc-heading').focus();
+    });
+
+    // highlight title on hover
+    $('.qg-accordion article').hover(function () {
+      $(accordion).find('.title').removeClass('ht');
+      $(this).find('.title').addClass('ht');
+    }, function () {
+      $(accordion).find('.title').removeClass('ht');
+    });
   }
 }(jQuery));

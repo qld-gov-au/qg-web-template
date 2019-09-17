@@ -6,30 +6,54 @@
 * */
 
 /*globals grecaptcha, qg*/
+import keys from '../../data/qg-google-keys';
+
 (function ($, swe) {
-  let onloadRecaptcha = () => { // eslint-disable-line
-    $('form[data-recaptcha="true"]').find('input[type="submit"], button[type="submit"]').on('click', (e) => {
-      e.preventDefault();
-      let subBtn = e.target;
-      let form = $(subBtn).parents('form');
-
-      grecaptcha.render(subBtn, {
-        'sitekey': window.qg.googleRecaptchaApiKey, //this value will be replaced by build tool. from gulp-config/
-        'callback': () => {
-          var response = grecaptcha.getResponse();
-          if (response === '' || response === undefined || response.length === 0) {
-            console.log('Invalid recaptcha');
-            return false;
-          } else {
-            form.submit();
-          }
-        },
+  let googleRecaptchaApiKey =
+    window.location.hostname.search(
+      /\bdev\b|\btest\b|\blocalhost\b|\buat\b/
+    ) !== -1
+      ? keys.defGoogleRecaptcha.uat
+      : keys.defGoogleRecaptcha.prod;
+  let onloadRecaptcha = () => {
+    // eslint-disable-line
+    $('form[data-recaptcha="true"]')
+      .find('input[type="submit"], button[type="submit"]')
+      .on('click', e => {
+        e.preventDefault();
+        let subBtn = e.target;
+        let form = $(subBtn).parents('form');
+        try {
+          grecaptcha.render(subBtn, {
+            sitekey: googleRecaptchaApiKey, //this value will be replaced by build tool. from gulp-config/
+            callback: () => {
+              var response = grecaptcha.getResponse();
+              if (
+                response === '' ||
+                  response === undefined ||
+                  response.length === 0
+              ) {
+                console.log('Invalid recaptcha');
+                return false;
+              } else {
+                form.submit();
+              }
+            },
+          });
+        } catch (e) {
+          grecaptcha.reset();
+          return false;
+        }
+        grecaptcha.execute();
       });
-      grecaptcha.execute();
-    });
   };
-
-  if ($('form[data-recaptcha="true"]').length > 0) {	//enable recaptcha on form submits
-    swe.ajaxCall('https://www.google.com/recaptcha/api.js', 'script', onloadRecaptcha, 'Recaptcha unavailable');
+  if ($('form[data-recaptcha="true"]').length > 0) {
+    //enable recaptcha on form submits
+    swe.ajaxCall(
+      'https://www.google.com/recaptcha/api.js',
+      'script',
+      onloadRecaptcha,
+      'Recaptcha unavailable'
+    );
   }
-}(jQuery, qg.swe));
+})(jQuery, qg.swe);

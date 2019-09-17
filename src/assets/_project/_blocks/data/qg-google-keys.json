@@ -1,6 +1,7 @@
 {
   "defGoogle" : {
-    "uat" : "AIzaSyCKuaFIFo7YYZXHZ5zaiEZdJx0UBoyfuAE",
+    "test" : "AIzaSyCKuaFIFo7YYZXHZ5zaiEZdJx0UBoyfuAE",
+    "docs" : "AIzaSyBE95_qL90MT9loY1roLnHJ3uaBYbleYeM",
     "prod" : "AIzaSyANZv-2WcXRzkBqtgEcLTZq7zVy-9eNWgw"
   },
   "defGoogleRecaptcha" : {

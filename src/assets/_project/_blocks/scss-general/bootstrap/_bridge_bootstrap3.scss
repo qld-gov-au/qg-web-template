@@ -351,15 +351,6 @@
 // feedback form
 #qg-page-feedback-form {
   width: 100%;
-  #feedback-page-list {
-    @include make-row();
-  }
-}
-
-
-//buttons
-.btn-primary{
-  @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
 }
 
 //alerts
@@ -463,17 +454,6 @@ pre {
   border-color: #979ea2;
 }
 
-.btn-default {
-  color: #fff;
-  background-color: #585e62;
-  border-color: #585e62;
-  &:link, &:visited, &:hover, &:active {
-    color: #fff;
-    background-color: #646b6f;
-    border-color: #646b6f;
-  }
-}
-
 .btn-xs, .btn-group-xs > .btn, .btn-group-xs > .qg-btn {
   padding: 1.4px 9px;
   font-size: 14px;
@@ -498,44 +478,11 @@ blockquote ol:last-child, blockquote p:last-child, blockquote ul:last-child {
   margin-bottom: 0;
 }
 
-//pagination
-.pagination {
-  display: inline-block;
-  padding-left: 0;
-  margin: 24px 0;
-  border-radius: 0;
-}
-.pagination>li {
-  display: inline;
-}
 .qg-print-guide {
   .pagination>li>a, .pagination>li>span {
     padding: 8.4px 21.6px
   }
 }
-.pagination>li>a, .pagination>li>span {
-  position: relative;
-  float: left;
-  line-height: 1.5;
-  text-decoration: none;
-  color: #13578b;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  margin-left: -1px;
-}
-.pagination a:not(.print-content-link):visited, .pagination a:not(.print-content-link):visited {
-  color: initial;
-}
-.pagination .active a {
-  color: #fff !important;
-}
-.pagination > li > a:hover, .pagination > li > a:focus, .pagination > li > span:hover, .pagination > li > span:focus {
-  z-index: 2;
-  color: #0a2d48;
-  background-color: #eeeeee;
-  border-color: #ddd;
-}
-
 .hide {
   display: none!important;
 }

@@ -1,77 +1,7 @@
-//.status {
-//  margin: 0.5em 0 0.5em 4em;
-//  padding: 1em 2em;
-//  background: #EEF4F6;
-//  position: relative;
-//  word-wrap: break-word; }
-//
-//.status:before {
-//  display: block;
-//  content: "";
-//  position: absolute;
-//  top: 0;
-//  margin-left: -2.4em;
-//  width: 1.8em;
-//  height: 1.8em;
-//  text-align: center;
-//  color: #000000;
-//  padding: 0.4em; }
-
 /* status in butterfly lightbox */
 #jb-window .status {
   margin: 0;
 }
-
-//.status h2 {
-//  margin-top: 0;
-//}
-
-//.info, .status {
-//  background-color: #EEF4F6;
-//  color: #000000;
-//  clear: both;
-//}
-
-//.info:before, .status:before {
-//  display: inline-block;
-//  font-family: FontAwesome;
-//  -webkit-font-smoothing: antialiased;
-//  -moz-osx-font-smoothing: grayscale;
-//  font-style: normal;
-//  font-weight: normal;
-//  font-size: 40px;
-//  font-size: 2.5rem;
-//  line-height: 1;
-//  padding-right: 16px;
-//  padding-right: 1rem;
-//  content: "";
-//  text-decoration: inherit;
-//  background: inherit;
-//  color: #000;
-//}
-
-//.info:hover:before, .status:hover:before {
-//  display: inline-block;
-//  font-family: FontAwesome;
-//  -webkit-font-smoothing: antialiased;
-//  -moz-osx-font-smoothing: grayscale;
-//  font-style: normal;
-//  font-weight: normal;
-//  font-size: 40px;
-//  font-size: 2.5rem;
-//  line-height: 1;
-//  padding-right: 16px;
-//  padding-right: 1rem;
-//  content: "";
-//  text-decoration: none;
-//  background: inherit;
-//  color: #000;
-//}
-
-//.info:before, .info:hover:before, .status:before, .status:hover:before {
-//  background: #EEF4F6;
-//  color: #759BF3;
-//}
 
 .success-step {
   background-color: #EEF4F6;
@@ -505,9 +435,9 @@ textarea {
   overflow: auto;
 }
 
-select {
-  overflow-x: hidden;
-}
+//select {
+//  overflow-x: hidden;
+//}
 
 textarea.large-compact {
   height: 4.5em;
@@ -584,7 +514,7 @@ textarea.large-compact:focus {
 
 .actions a {
   display: inline-block;
-  margin: 0.75em 0;
+  //margin: 0.75em 0;
 }
 
 /* disabled items */
@@ -1003,7 +933,7 @@ input[type=image],
 input[type=reset] {
   cursor: pointer;
   pointer-events: auto;
-  border-radius: 0;
+  //border-radius: 0;
 }
 
 .button,
@@ -1072,8 +1002,6 @@ form button:focus,
 .actions input:hover,
 .actions input:focus {
   color: #000000;
-  background-color: #7d858a;
-  outline: 1px solid #585E62;
   outline-offset: -1px;
 }
 
@@ -1258,6 +1186,16 @@ form {
     padding: 0;
     //top: inherit;
   }
+  .questions {
+    select{
+      overflow: auto;
+    }
+    @-moz-document url-prefix() {
+      input[type=radio]{
+        box-shadow: 0 0 1px $qg-dark-grey;
+      }
+    }
+   }
 }
 
 #qg-page-feedback{

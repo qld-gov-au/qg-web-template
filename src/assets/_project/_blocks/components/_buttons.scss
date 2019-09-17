@@ -1,6 +1,28 @@
-// Secondary button appears in QLD blue
+.btn-primary{
+  @include button-variant($qg-light-green, $qg-light-green, lighten($qg-light-green, 7.5%), $hover-border: $qg-light-green, $active-background:$qg-light-green, $active-border: $qg-light-green);
+  color: #000;
+  a, &:focus, &:hover, &:link, &:visited, &:active {
+    text-decoration: none !important;
+    color: #000 !important;
+  }
+}
+
 .btn-secondary {
-  @include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+  @include button-variant($qg-blue, $qg-blue);
+  color: #fff;
+  a, &:focus, &:hover, &:link, &:visited, &:active {
+    color: #fff !important;
+    text-decoration: none !important;
+  }
+}
+
+.btn-default {
+  @include button-variant($qg-dark-grey, $qg-dark-grey);
+  color: #fff;
+  a, &:focus, &:hover, &:link, &:visited, &:active {
+    color: #fff !important;
+    text-decoration: none !important;
+  }
 }
 
 .qg-btn {

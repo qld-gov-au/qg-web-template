@@ -22,6 +22,14 @@
       }
       .details{
         padding: 1em;
+        a {
+          color: #fff;
+          text-decoration: underline;
+           &:hover, &:active, &:focus, &:visited{
+            color: #fff !important;
+            text-decoration: none !important;
+          }
+        }
         ul {
           padding: 0;
           li {
@@ -36,15 +44,11 @@
               line-height: 1;
               content: "\f054";
               margin-right: .6rem;
-              font-size: 1.2rem;
+              font-size: 0.8rem;
               position: absolute;
               padding-right: .8rem;
               left: 0;
-              top: .6rem;
-            }
-            a {
-              color: #fff;
-              text-decoration: underline;
+              top: .5rem;
             }
           }
         }
