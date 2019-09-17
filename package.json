@@ -79,7 +79,7 @@
     "gulp-sass": "^4.0.2",
     "gulp-shell": "^0.5.2",
     "gulp-sourcemaps": "^2.6.5",
-    "gulp-uglify": "^2.1.2",
+    "gulp-uglify": "^3.0.2",
     "gulp-wait": "0.0.2",
     "gulp-webpack": "^1.5.0",
     "historyjs": "^1.8.0-b2",
