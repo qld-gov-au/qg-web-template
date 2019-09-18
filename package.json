@@ -100,7 +100,7 @@
     "vinyl-fs": "^3.0.3",
     "webpack": "^2.5.1",
     "webpack-replace": "^1.0.0",
-    "webpack-stream": "^3.2.0",
+    "webpack-stream": "^5.2.1",
     "yargs": "^5.0.0"
   },
   "dependencies": {
