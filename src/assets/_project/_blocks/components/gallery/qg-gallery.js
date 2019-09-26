@@ -1,7 +1,8 @@
 $(window).on('load', function () {
   if ($("script[src*='jquery.fancybox']").length === 0) {
     if ($('.qg-image-gallery') || $('.qg-lightbox')) {
-      require('loadjs')(['{{CDN}}/latest/lib/ext/fancybox/jquery.fancybox.min.css', '{{CDN}}/latest/lib/ext/fancybox/jquery.fancybox.min.js'], function () {
+      $('head').append($("<link rel='stylesheet' href='{{CDN}}/latest/lib/ext/fancybox/jquery.fancybox.min.css' type='text/css' media='screen' />"));
+      $.getScript('{{CDN}}/latest/lib/ext/fancybox/jquery.fancybox.min.js', function () {
         $('[data-fancybox^="gallery"]').fancybox({
           buttons: ['thumbs', 'close'],
           mobile: {
