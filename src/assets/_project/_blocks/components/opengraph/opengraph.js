@@ -1,17 +1,17 @@
 (function ($) {
     'use strict';
-    const fields = {
-        $ogTitle: $('meta[property="og:title"]'),
-        $ogDescrip: $('meta[property="og:description"]'),
-        $ogUrl: $('meta[property="og:url"]')
-    };
+    const fields = [
+        {property: $('meta[property="og:title"]'), content: 'document.title'},
+        {property: $('meta[property="og:description"]'), content: $('meta[name="DCTERMS.description"]').attr('content')},
+        {property: $('meta[property="og:url"]'), content: 'window.location.href'}
+    ];
     const openGraph = {
         init: function () {
-            if (fields.$ogTitle.length && fields.$ogDescrip.length && fields.$ogUrl.length) {
-                fields.$ogTitle.attr('content', document.title);
-                fields.$ogDescrip.attr('content', $('meta[name="DCTERMS.description"]').attr('content'));
-                fields.$ogUrl.attr('content', window.location.href);
-            }
+            $(fields).each(function (val) {
+                if ($(val.property).length && $(val.property).attr('content') === '') {
+                    $(val.property).attr(val.content);
+                }
+            });
         }
     };
     openGraph.init();
