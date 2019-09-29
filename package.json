@@ -110,7 +110,6 @@
     "dotenv": "^4.0.0",
     "jquery": "^3.3.1",
     "lato-webfont": "^2.15.1",
-    "loadjs": "^3.5.5",
     "node-bourbon": "^4.2.8",
     "replace-string": "^2.0.0",
     "responsive-toolkit": "^2.6.3"
