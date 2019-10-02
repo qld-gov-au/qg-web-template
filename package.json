@@ -16,7 +16,7 @@
     "test": "jest",
     "postbuild": "gulp clean-redundant-build",
     "prerelease": "gulp clean-release",
-    "release": "export NODE_ENV=prod && gulp test:e2e && npm run build && gulp release && node gulp/release-tasks/node-template-flatten.js && gulp replace-links",
+    "release": "export NODE_ENV=prod && npm run build && gulp release && node gulp/release-tasks/node-template-flatten.js && gulp replace-links",
     "postrelease": "gulp clean-redundant-release",
     "start": "yarn build && gulp watch",
     "watch": "gulp watch",
