@@ -4,4 +4,3 @@ module.exports = {
   testEnvironment: './e2e/config/puppeteer_environment.js',
 };
 
-jest.setTimeout(30000)
