@@ -8,6 +8,8 @@ import './forms/recaptcha';
 import './forms/qg-address-autocomplete';
 import './qg-document-links';
 import './gallery/qg-gallery';
+import './opengraph/opengraph';
+
 import accessibility      from './accessibility/accessibility';
 
 accessibility.init();
