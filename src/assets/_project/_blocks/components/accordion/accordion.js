@@ -25,6 +25,7 @@
     //expand all click
     $("label[for='expand']").click(function (e) {
       e.preventDefault();
+      $(this).focus();
       $(this).parent('.qg-accordion').find('input:checkbox').prop('checked', true);
     });
 
@@ -49,7 +50,7 @@
     window.onhashchange = hashTrigger;
 
     // inserting tab index dynamically
-    $('.qg-accordion .acc-heading').each(function () {
+    $('.qg-accordion .acc-heading, label[for=\'expand\'], label[for=\'collapse\']').each(function () {
       if (this.type !== 'hidden') {
         var $input = $(this);
         $input.attr('tabindex', tabindex);
