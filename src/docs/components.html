@@ -85,12 +85,11 @@
           <p>Displays collapsible content panels for presenting information in a limited amount of space.</p>
           <p>Click headers to expand/collapse content that is categorised into logical sections.</p>
           <section class="qg-accordion qg-dark-accordion" aria-label="Accordion Label">
-            <input type="radio" name="control" id="collapse" class="controls collapse" value="collapse" role="radio">
-            <label for="collapse" class="controls">Collapse all</label>
-            <span class="controls">&#124;</span>
-            <input type="radio" name="control" id="expand" class="controls expand" value="expand" role="radio">
-            <label for="expand" class="controls">Expand all</label>
-
+            <div class="qg-acc-controls">
+              <label for="expand" class="controls">Expand all</label>
+              <span class="controls">&#124;</span>
+              <label for="collapse" class="controls">Collapse all</label>
+            </div>
             <article>
               <input id="without-icon" type="checkbox" name="tabs" aria-controls="id-panel-content-1" aria-expanded="false" role="checkbox">
               <h3 class="acc-heading"><label for="without-icon"><span class="title">Without icon</span><span class="arrow"> <i></i></span></label></h3>
@@ -123,12 +122,11 @@
           </section>
 
           <section class="qg-accordion mt-5" aria-label="Accordion Label">
-            <input type="radio" name="control" id="collapse" class="controls collapse" value="collapse" role="radio">
-            <label for="collapse" class="controls">Collapse all</label>
-            <span class="controls">&#124;</span>
-            <input type="radio" name="control" id="expand" class="controls expand" value="expand" role="radio">
-            <label for="expand" class="controls">Expand all</label>
-
+            <div class="qg-acc-controls">
+              <label for="expand" class="controls">Expand all</label>
+              <span class="controls">&#124;</span>
+              <label for="collapse" class="controls">Collapse all</label>
+            </div>
             <article>
               <input id="without-icon-1" type="checkbox" name="tabs" aria-controls="id-panel-content-1" aria-expanded="false" role="checkbox">
               <h3 class="acc-heading"><label for="without-icon-1"><span class="title">Without icon</span> <span class="subtitle">Subtitle can go here (optional)</span><span class="arrow"> <i></i></span></label></h3>
@@ -873,6 +871,76 @@ Publishers may use blockquotes to indicate the quotation of a section of text fr
 
         <p>Forms are not implemented using the standard bootstrap layout. Instead, forms use the <a href="http://qld-gov-au.github.io/form-builder/form-builder.html">Queensland Government form builder</a>.</p>
         <p>For the user interface, see the <a href="https://github.com/qld-gov-au/pattern-library/blob/master/source/patterns-for-web-forms.md">SWE 2 pattern library for forms</a>.</p>
+
+        <p><strong>Radio button and Checkbox pattern</strong></p>
+        <pre><code class="language-markup">
+               &lt;figure&gt;
+                 &lt;img src="https://via.placeholder.com/300.png/ccc/ccc" alt="" /&gt;
+                 &lt;figcaption>
+                   Caption text here
+                 &lt;div class="figure-credits"&gt;Figure credits here&lt;/div&gt;
+                 &lt;/figcaption&gt;
+               &lt;/figure&gt;
+                </code></pre>
+
+        <form action="https://www.smartservice.qld.gov.au/services/submissions/email/yrcl/jp-resign" method="post" id="jpresign" class="form">
+          <ol class="questions">
+            <li class="section">
+            <fieldset>
+               <legend>
+                <span class="h3">Radio button theme</span>
+               </legend>
+               <ol class="questions ">
+                 <li>
+                  <fieldset>
+                    <legend>
+                     <span class="label">This Radio button custom theme can be implemented by adding 'rc-theme' class.</span>
+                    </legend>
+                    <ul class="choices compact rc-theme">
+                      <li>
+                        <input type="radio" name="current-test" value="Yes" required="required" class="r1" id="current-test-yes"><label for="current-test-yes">Yes</label>
+                      </li>
+                      <li>
+                        <input type="radio" name="current-test" value="No" required="required" class="r2" id="current-test-no"><label for="current-test-no">No</label>
+                      </li>
+                    </ul>
+                  </fieldset>
+                 </li>
+
+              </ol>
+            </fieldset>
+            </li>
+            <li class="section">
+              <fieldset><legend>
+                <span class="h3">Check Box theme</span>
+              </legend>
+                <ul class="choices rc-theme">
+                  <li>
+                    <fieldset><legend> <span class="label" style="visibility:hidden;height:0;">Acknowledgement</span></legend>
+                      <input id="conditions-of-use1" value="true" name="conditions-of-use1" type="checkbox"><label for="conditions-of-use1">Lorem ipsum dolor sit amet.</label>
+                    </fieldset></li>
+
+                  <li>
+                    <fieldset><legend> <span class="label" style="visibility:hidden;height:0;">Acknowledgement</span></legend>
+                      <input id="conditions-of-use2" value="true" name="conditions-of-use2" type="checkbox"><label for="conditions-of-use2">Lorem ipsum dolor sit amet.</label>
+                    </fieldset></li>
+
+                  <li>
+                    <fieldset><legend> <span class="label" style="visibility:hidden;height:0;">Acknowledgement</span></legend>
+                      <input id="conditions-of-use3" value="true" name="conditions-of-use3" type="checkbox"><label for="conditions-of-use3">Lorem ipsum dolor sit amet.</label>
+                    </fieldset></li>
+
+                  <li>
+                    <fieldset><legend> <span class="label" style="visibility:hidden;height:0;">Acknowledgement</span></legend>
+                      <input id="conditions-of-use4" value="true" name="conditions-of-use4" type="checkbox"><label for="conditions-of-use4">Lorem ipsum dolor sit amet.</label>
+                    </fieldset></li>
+
+                </ul></fieldset></li>
+
+
+          </ol>
+        </form>
+
 
         <!-- ################################## -->
 

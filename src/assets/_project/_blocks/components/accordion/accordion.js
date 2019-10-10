@@ -26,13 +26,13 @@
     $("label[for='expand']").click(function (e) {
       e.preventDefault();
       $(this).focus();
-      $(this).parent('.qg-accordion').find('input:checkbox').prop('checked', true);
+      $(this).parents('.qg-accordion').find('input:checkbox').prop('checked', true);
     });
 
     // collapse all click
     $("label[for='collapse']").click(function (e) {
       e.preventDefault();
-      $(this).parent('.qg-accordion').find('input:checkbox').prop('checked', false);
+      $(this).parents('.qg-accordion').find('input:checkbox').prop('checked', false);
     });
 
     // open on page load
