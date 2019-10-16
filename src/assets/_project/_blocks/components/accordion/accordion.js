@@ -23,15 +23,18 @@
     });
 
     //expand all click
-    $("label[for='expand']").click(function (e) {
+    // label selector is to provide backward compatibility in case projects are using old markup
+    $('.qg-acc-controls .expand, label[for=\'expand\']').click(function (e) {
       e.preventDefault();
-      $(this).parent('.qg-accordion').find('input:checkbox').prop('checked', true);
+      $(this).focus();
+      $(this).parents('.qg-accordion').find('input:checkbox').prop('checked', true);
     });
 
     // collapse all click
-    $("label[for='collapse']").click(function (e) {
+    // label selector is to provide backward compatibility in case projects are using old markup
+    $('.qg-acc-controls .collapse, label[for=\'collapse\']').click(function (e) {
       e.preventDefault();
-      $(this).parent('.qg-accordion').find('input:checkbox').prop('checked', false);
+      $(this).parents('.qg-accordion').find('input:checkbox').prop('checked', false);
     });
 
     // open on page load
@@ -49,7 +52,8 @@
     window.onhashchange = hashTrigger;
 
     // inserting tab index dynamically
-    $('.qg-accordion .acc-heading').each(function () {
+    // label selector is to provide backward compatibility in case projects are using old markup
+    $('.qg-accordion .acc-heading, .qg-acc-controls .expand, .qg-acc-controls .collapse, label[for="expand"], label[for="collapse"]').each(function () {
       if (this.type !== 'hidden') {
         var $input = $(this);
         $input.attr('tabindex', tabindex);

@@ -2,11 +2,24 @@
   &.qg-dark-accordion article {
     background-color: #f5f5f5;
   }
-  .controls {
-    float: right;
-    padding: 0 0.5rem;
-    color: $qg-blue-dark;
+  .qg-acc-controls{
+    text-align: right;
+    margin-bottom: 0.4em;
+    a{
+      text-decoration: none !important;
+      padding: 0 0.7rem;
+      color: $qg-blue-dark !important;
+      font-weight: bold;
+      display: inline-block;
+    }
+  }
+  //label selector is to provide backward compatibility in case projects are using old markup
+  label[for="expand"], label[for="collapse"] {
+    text-decoration: none !important;
+    padding: 0 0.7rem;
+    color: $qg-blue-dark !important;
     font-weight: bold;
+    display: inline-block;
   }
   .ht{
     text-decoration: underline;

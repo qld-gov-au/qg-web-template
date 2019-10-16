@@ -16,18 +16,4 @@ describe('SWE templates testing', function () {
     browser.driver.sleep(500);
     expect(element(by.id('qg-page-feedback')).getAttribute('class')).toBe('row collapse show');
   });
-  /* Running tests on opengraph */
-  it('Open graph behaving as expected', function () {
-    browser.driver.sleep(500);
-    expect(element(by.property('og:title')).getAttribute('content')).not.toBe('');
-    expect(element(by.property('og:description')).getAttribute('content')).not.toBe('');
-    expect(element(by.property('og:image')).getAttribute('content ')).not.toBe('');
-    expect(element(by.property('og:url')).getAttribute('content')).not.toBe('');
-    expect(element(by.property('og:type')).getAttribute('content')).not.toBe('');
-    expect(element(by.name('twitter:card')).getAttribute('content')).not.toBe('');
-    expect(element(by.name('twitter:site')).getAttribute('content')).not.toBe('');
-    expect(element(by.name('twitter:title')).getAttribute('content')).not.toBe('');
-    expect(element(by.name('twitter:description')).getAttribute('content')).not.toBe('');
-    expect(element(by.name('twitter:image')).getAttribute('content')).not.toBe('');
-  });
 });

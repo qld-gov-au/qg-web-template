@@ -36,9 +36,6 @@
     margin: 0;
     border-radius: 0;
     padding: 0.75rem 1.25rem;
-    ul {
-      padding-left: 0 !important;
-    }
     h2{
       i {
         @include rem(font-size, 24px);
