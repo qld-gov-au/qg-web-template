@@ -30,8 +30,6 @@
   <meta name="DCTERMS.license" scheme="DCTERMS.URI" content="http://creativecommons.org/licenses/by/3.0/au/">
 
   <!--#include virtual="/assets/includes-local/head-assets.html"-->
-
-  <link href="/assets/_project/latest/css/qg-documentation.css" rel="stylesheet" type="text/css" media="all">
   <link href="./assets/css/prism.css" media="all" rel="stylesheet" type="text/css">
 
 </head>
@@ -95,7 +93,7 @@
 
             <article>
               <input id="without-icon" type="checkbox" name="tabs" aria-controls="id-panel-content-1" aria-expanded="false" role="checkbox">
-              <h3 class="acc-heading"><label for="without-icon">Without icon <span class="subtitle">Subtitle can go here (optional)</span><span class="arrow"> <i></i></span></label></h3>
+              <h3 class="acc-heading"><label for="without-icon"><span class="title">Without icon</span><span class="arrow"> <i></i></span></label></h3>
               <div class="collapsing-section"  aria-hidden="true" id="id-panel-content-1">
                 <p> Content related to header. </p>
                 <ul>
@@ -107,8 +105,34 @@
             </article>
             <article>
               <input id="with-icon" type="checkbox" name="tabs" aria-controls="id-panel-content-2" aria-expanded="false" role="checkbox">
-              <h3 class="acc-heading"><img src="https://placeimg.com/20/20/nature" alt=""><label for="with-icon">With icon <span class="subtitle">Subtitle can go here (optional)</span><span class="arrow"> <i></i></span></label></h3>
+              <h3 class="acc-heading"><img src="https://placeimg.com/20/20/nature" alt=""><label for="with-icon"><span class="title">With icon</span> <span class="subtitle">Subtitle can go here (optional)</span><span class="arrow"> <i></i></span></label></h3>
               <div class="collapsing-section" aria-hidden="true" id="id-panel-content-2">
+                <h4>Heading</h4>
+                <p> Content related to header. </p>
+                <ul>
+                  <li>If dot points are available</li>
+                  <li>Can go here</li>
+                </ul>
+                <p>Or provide any semantic html structure</p>
+                  <button type="button" class="qg-btn btn-default">Default</button>
+                  <button type="button" class="qg-btn btn-primary">Primary</button>
+                  <button type="button" class="qg-btn btn-secondary">Primary Alt</button>
+                  <button type="button" class="qg-btn btn-link">Link</button>
+              </div>
+            </article>
+          </section>
+
+          <section class="qg-accordion mt-5" aria-label="Accordion Label">
+            <input type="radio" name="control" id="collapse" class="controls collapse" value="collapse" role="radio">
+            <label for="collapse" class="controls">Collapse all</label>
+            <span class="controls">&#124;</span>
+            <input type="radio" name="control" id="expand" class="controls expand" value="expand" role="radio">
+            <label for="expand" class="controls">Expand all</label>
+
+            <article>
+              <input id="without-icon-1" type="checkbox" name="tabs" aria-controls="id-panel-content-1" aria-expanded="false" role="checkbox">
+              <h3 class="acc-heading"><label for="without-icon-1"><span class="title">Without icon</span> <span class="subtitle">Subtitle can go here (optional)</span><span class="arrow"> <i></i></span></label></h3>
+              <div class="collapsing-section"  aria-hidden="true" id="id-panel-content-1">
                 <p> Content related to header. </p>
                 <ul>
                   <li>If dot points are available</li>
@@ -117,7 +141,26 @@
                 <p>Or provide any semantic html structure</p>
               </div>
             </article>
+            <article>
+              <input id="with-icon-1" type="checkbox" name="tabs" aria-controls="id-panel-content-2" aria-expanded="false" role="checkbox">
+              <h3 class="acc-heading"><img src="https://placeimg.com/20/20/nature" alt=""><label for="with-icon-1"><span class="title">With icon</span> <span class="subtitle">Subtitle can go here (optional)</span><span class="arrow"> <i></i></span></label></h3>
+              <div class="collapsing-section" aria-hidden="true" id="id-panel-content-2">
+                <h4>Heading</h4>
+                <p> Content related to header. </p>
+                <ul>
+                  <li>If dot points are available</li>
+                  <li>Can go here</li>
+                </ul>
+                <p>Or provide any semantic html structure</p>
+                <button type="button" class="qg-btn btn-default">Default</button>
+                <button type="button" class="qg-btn btn-primary">Primary</button>
+                <button type="button" class="qg-btn btn-secondary">Primary Alt</button>
+                <button type="button" class="qg-btn btn-link">Link</button>
+              </div>
+            </article>
           </section>
+
+
 
           </br><p> HTML </p>
 
@@ -131,7 +174,7 @@
 
                     &lt;article>
                         &lt;input id="without-icon" type="checkbox" name="tabs" aria-controls="id-panel-content-1" aria-expanded="false" role="checkbox">
-                        &lt;h3 class="acc-heading">&lt;label for="without-icon">Without icon &lt;span class="subtitle">Subtitle can go here (optional)&lt;/span>&lt;span class="arrow"> &lt;i>&lt;/i>&lt;/span>&lt;/label>&lt;/h3>
+                        &lt;h3 class="acc-heading">&lt;label for="without-icon">&lt;span class="title"&gt;Without icon&lt;/span&gt; &lt;span class="subtitle">Subtitle can go here (optional)&lt;/span>&lt;span class="arrow"> &lt;i>&lt;/i>&lt;/span>&lt;/label>&lt;/h3>
                         &lt;div class="collapsing-section"  aria-hidden="true" id="id-panel-content-1">
                             &lt;p> Content related to header. &lt;/p>
                             &lt;ul>
@@ -912,22 +955,43 @@ Publishers may use blockquotes to indicate the quotation of a section of text fr
 
         <div class="qg-tmplt-example">
           <div class="panel-body">
-            <nav aria-label="Page navigation">
+            <nav aria-label="Page navigation example">
               <ul class="pagination">
-                <li>
-                  <a href="#" class="qg-previous">
-                    Previous
-                  </a>
+                <li class="page-item"><a class="page-link" href="rem#"><i class="fa fa-angle-left" aria-hidden="true"></i> Previous</a></li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"> <a class="page-link" href="#">Next <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+              </ul>
+            </nav>
+            <nav aria-label="Page navigation example">
+              <ul class="pagination flex-wrap">
+                <li class="page-item disabled"><a class="page-link" href="#"><i class="fa fa-angle-left" aria-hidden="true"></i> Previous</a></li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                <li class="page-item"><a class="page-link" href="#">5</a></li>
+                <li class="page-item"><a class="page-link" href="#">6</a></li>
+                <li class="page-item"><a class="page-link" href="#">7</a></li>
+                <li class="page-item"><a class="page-link" href="#">8</a></li>
+                <li class="page-item"><a class="page-link" href="#">9</a></li>
+                <li class="page-item"> <a class="page-link" href="#">Next <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+              </ul>
+            </nav>
+            <nav aria-label="...">
+              <ul class="pagination flex-wrap">
+                <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-left" aria-hidden="true"></i> Previous</a></li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item active">
+      <span class="page-link">
+        2
+        <span class="sr-only">(current)</span>
+      </span>
                 </li>
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li>
-                  <a href="#" class="qg-next">
-                    Next
-                  </a>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item disabled">
+                  <a class="page-link" href="#">Next <i class="fa fa-angle-right" aria-hidden="true"></i></a>
                 </li>
               </ul>
             </nav>

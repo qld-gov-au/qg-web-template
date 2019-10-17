@@ -39,7 +39,6 @@ node_modules
 _local.*
 _local*/**/*
 tests/reports/**/*
-tests/e2e/screenshots/actual/**
 .idea/
 
 ### macOS ###
@@ -53,3 +52,4 @@ etc/
 release
 package-lock.json
 web-template-release/
+template-pages/sample/*

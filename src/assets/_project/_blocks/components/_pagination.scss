@@ -1,18 +1,34 @@
-.pagination {
-  .qg-previous:before, .qg-next:after {
-    font-family: FontAwesome;
+.pagination, .qg-pagination {
+  @extend .flex-wrap;
+  .prev, .next {
+    white-space: nowrap;
   }
-  .qg-previous:before {
-    content: '\f137';
-    padding-right: .3em;
+  .page-link{
+    padding: 0.7rem 1rem 0.7rem 1rem;
+    text-decoration: none !important;
+    border: 1px solid $qg-pagination-border !important;
+    .fa-angle-left {
+      padding-right: 9px;
+    }
+    .fa-angle-right {
+      padding-left: 9px;
+    }
+    &:focus, &:visited, &:link, &:active {
+      color: $qg-pagination-link-color !important;
+    }
+    @include media-breakpoint-down(md) {
+      padding: 0.3em 0.6em;
+    }
   }
-  .qg-next:after {
-    content: '\f138';
-    padding-left: .3em;
+  .page-item.disabled .page-link {
+    color: $qg-pagination-disabled-color !important;
+    pointer-events: none;
+    cursor: auto;
+    background-color: #fff;
   }
-}
-.pagination-container{
-  .pagination > li > a {
-    padding: 6px 12px;
+  .page-item.active .page-link{
+    background-color: $qg-pagination-link-color;
+    border-color: $qg-pagination-link-color;
+    color: #fff !important;
   }
 }

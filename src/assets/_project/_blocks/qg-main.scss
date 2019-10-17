@@ -15,7 +15,6 @@
 @import "scss-general/bootstrap/rem";
 @import "scss-general/bootstrap/variables";
 @import "scss-general/bootstrap/bootstrap-imports";
-@import "scss-general/bootstrap/buttons";
 // the purpose of bridge_bootstrap3 is to make existing templates running on various apps to work with Bootstrap 4 updates
 @import "scss-general/bootstrap/bridge_bootstrap3";
 @import "../../../../node_modules/font-awesome/css/font-awesome";
@@ -40,6 +39,7 @@
 @import "components/buttons";
 @import "components/carousel/carousel";
 @import "components/accordion/accordion";
+@import "components/pagination";
 @import "components/visually-hidden";
 @import "components/gallery/qg-gallery";
 @import "components/dropdowns"; // Extends bootstrap dropdowns
