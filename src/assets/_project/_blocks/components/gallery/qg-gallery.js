@@ -3,6 +3,21 @@ $(window).on('load', function () {
     if ($('.qg-image-gallery') || $('.qg-lightbox')) {
       $('head').append($("<link rel='stylesheet' href='{{CDN}}/latest/lib/ext/fancybox/jquery.fancybox.min.css' type='text/css' media='screen' />"));
       $.getScript('{{CDN}}/latest/lib/ext/fancybox/jquery.fancybox.min.js', function () {
+        // image gallery
+        $('.qg-image-gallery').each(function (index) {
+          $(this).find('a').each(function () {
+            if (!$(this).is('[data-fancybox]')) {
+              $(this).attr('data-fancybox', `gallery-${index}`);
+            }
+            if (!$(this).is('[data-caption]')) {
+              $(this).attr('data-caption', $(this).attr('title'));
+            }
+          });
+        });
+        // cut in images caption
+        var cutInLink = $('.cut-in .caption a');
+        $(cutInLink).attr('data-fancybox', 'images');
+
         $('[data-fancybox^="gallery"]').fancybox({
           buttons: ['thumbs', 'close'],
           mobile: {
