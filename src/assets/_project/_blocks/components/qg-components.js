@@ -3,6 +3,7 @@ import './progressive-reveal';
 import './license';
 import './carousel/carousel';
 import './quick-exit/quick-exit';
+import './tables/index.js';
 import './accordion/accordion';
 import './forms/recaptcha';
 import './forms/qg-address-autocomplete';
