@@ -21,6 +21,11 @@
     font-weight: bold;
     display: inline-block;
   }
+  .expand, .collapse, label[for="expand"], label[for="collapse"] {
+    &:hover {
+      text-decoration: underline !important;
+    }
+  }
   .ht{
     text-decoration: underline;
   }
