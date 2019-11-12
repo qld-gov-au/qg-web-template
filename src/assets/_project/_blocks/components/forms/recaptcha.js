@@ -14,46 +14,104 @@ import keys from '../../data/qg-google-keys';
       /\bdev\b|\btest\b|\blocalhost\b|\buat\b/
     ) !== -1
       ? keys.defGoogleRecaptcha.uat
-      : keys.defGoogleRecaptcha.prod;
-  let onloadRecaptcha = () => {
-    // eslint-disable-line
-    $('form[data-recaptcha="true"]')
-      .find('input[type="submit"], button[type="submit"]')
-      .on('click', e => {
-        e.preventDefault();
-        let subBtn = e.target;
-        let form = $(subBtn).parents('form');
-        try {
-          grecaptcha.render(subBtn, {
-            sitekey: googleRecaptchaApiKey, //this value will be replaced by build tool. from gulp-config/
-            callback: () => {
-              var response = grecaptcha.getResponse();
-              if (
-                response === '' ||
-                  response === undefined ||
-                  response.length === 0
-              ) {
-                console.log('Invalid recaptcha');
-                return false;
-              } else {
-                form.submit();
-              }
-            },
-          });
-        } catch (e) {
-          grecaptcha.reset();
-          return false;
+      : keys.defGoogleRecaptcha.prod;//This is a v2 key
+  let footerFeedbackGoogleRecaptchaApiKey =
+    window.location.hostname.search(
+      /\bdev\b|\btest\b|\blocalhost\b|\buat\b/
+    ) !== -1
+      ? keys.defFeedbackGoogleRecaptcha.uat
+      : keys.defFeedbackGoogleRecaptcha.prod;//This is a v3 key
+  //v3 Captcha, can have multiples
+  let v3Captcha = (form, greptcha, key, action) => {
+    try {
+      grecaptcha.execute(key, {action: action})
+      .then(function (token) {
+        if (greptcha.length > 0) {
+          if (
+            greptcha.attr('value') !== '' ||
+            greptcha.attr('value').length !== 0 ||
+            greptcha.attr('value') !== undefined) {
+            greptcha.val(token);
+            form.submit();
+            return true;
+          }
         }
-        grecaptcha.execute();
+        return false;
       });
+    } catch (e) {
+      return false;
+    }
   };
+
+  //v2 Captcha, usually is singular
+  let v2Captcha = (form, subBtn, key) => {
+    try {
+      grecaptcha.render(subBtn, {
+        sitekey: key,
+        callback: () => {
+          var response = grecaptcha.getResponse();
+          if (
+            response === '' ||
+              response === undefined ||
+              response.length === 0
+          ) {
+            console.log('Invalid recaptcha');
+            return false;
+          } else {
+            form.submit();
+          }
+        },
+      });
+    } catch (e) {
+      grecaptcha.reset();
+      return false;
+    }
+    grecaptcha.execute();
+  };
+
+  let onloadRecaptcha = () => {
+    grecaptcha.ready(function () {
+    // eslint-disable-line
+    //v2 Forms
+      $('form[data-recaptcha="true"]')
+        .find('input[type="submit"], button[type="submit"]')
+        .on('click', e => {
+          e.preventDefault();
+          let subBtn = e.target;
+          let form = $(subBtn).parents('form');
+          var greptcha = form.find('input[name="g-recaptcha-response"]');
+          let manualSitekey = form.attr('data-sitekey');
+          let manualAction = form.attr('data-action');
+          if (form.attr('id') === 'qg-page-feedback-form') { //Footer feedback
+            v3Captcha(form, greptcha, footerFeedbackGoogleRecaptchaApiKey, 'feedback');
+          } else if (manualSitekey !== undefined && manualAction !== undefined) { //v3 manual form
+            v3Captcha(form, greptcha, manualSitekey, manualAction);
+          } else if (manualAction !== undefined) { //v3 manual with feedback key but differnt action
+            v3Captcha(form, greptcha, footerFeedbackGoogleRecaptchaApiKey, manualAction);
+          } else if (manualSitekey !== undefined && manualAction === undefined) { //v2 manual (no action in v2)
+            v2Captcha(form, subBtn, manualSitekey);
+          } else { //default v2 with default key
+            v2Captcha(form, subBtn, googleRecaptchaApiKey);
+          }
+        });
+    });
+  };
+  //Setup recaptcha if on the page
   if ($('form[data-recaptcha="true"]').length > 0) {
-    //enable recaptcha on form submits
+    //enable recaptcha on form submits, load latest v3 version of recaptcha
     swe.ajaxCall(
-      'https://www.google.com/recaptcha/api.js',
+      'https://www.google.com/recaptcha/api.js?render=' + footerFeedbackGoogleRecaptchaApiKey,
       'script',
       onloadRecaptcha,
       'Recaptcha unavailable'
     );
+    //If all forms have captchaPrivacyTerms, we can hide reCAPTCHA Badge
+    if ($('p[class="captchaPrivacyTerms"]').length === $('form[data-recaptcha="true"]').length) {
+      var hidegrecaptchaBadge = '.grecaptcha-badge { visibility: hidden; }';
+      var styleSheet = document.createElement('style');
+      styleSheet.type = 'text/css';
+      styleSheet.innerText = hidegrecaptchaBadge;
+      document.head.appendChild(styleSheet);
+    }
   }
 })(jQuery, qg.swe);
