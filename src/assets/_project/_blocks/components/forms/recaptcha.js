@@ -12,13 +12,15 @@ import keys from '../../data/qg-google-keys';
   let checkEnv = window.location.hostname.search(/\bdev\b|\btest\b|\blocalhost\b|\buat\b/);
   let $feedbackForm = $('#qg-page-feedback-form');
 
-  let setUrlEnableCaptcha = () => {
-    // if environment is not PROD then use test submission handler link
-    checkEnv !== -1 ? $feedbackForm.attr('action', 'https://test.smartservice.qld.gov.au/services/submissions/email/feedback/feedback') : '';
-    // if data-recaptcha attribute is not present then insert it
-    !$feedbackForm.attr('data-recaptcha') ? $feedbackForm.attr('data-recaptcha', 'true') : '';
-  };
-  setUrlEnableCaptcha();
+  if ($feedbackForm.length > 0) {
+    let setUrlEnableCaptcha = () => {
+      // if environment is not PROD then use test submission handler link
+      checkEnv !== -1 ? $feedbackForm.attr('action', 'https://test.smartservice.qld.gov.au/services/submissions/email/feedback/feedback') : '';
+      // if data-recaptcha attribute is not present then insert it
+      !$feedbackForm.attr('data-recaptcha') ? $feedbackForm.attr('data-recaptcha', 'true') : '';
+    };
+    setUrlEnableCaptcha();
+  }
 
   let googleRecaptchaApiKey = checkEnv !== -1
     ? keys.defGoogleRecaptcha.uat
