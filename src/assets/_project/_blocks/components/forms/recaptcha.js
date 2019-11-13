@@ -17,7 +17,9 @@ import keys from '../../data/qg-google-keys';
       // if environment is not PROD then use test submission handler link
       checkEnv !== -1 ? $feedbackForm.attr('action', 'https://test.smartservice.qld.gov.au/services/submissions/email/feedback/feedback') : '';
       // if data-recaptcha attribute is not present then insert it
-      !$feedbackForm.attr('data-recaptcha') ? $feedbackForm.attr('data-recaptcha', 'true') : '';
+      if ($feedbackForm.attr('data-recaptcha') === undefined) {
+        $feedbackForm.attr('data-recaptcha', 'true');
+      }
     };
     setUrlEnableCaptcha();
   }
