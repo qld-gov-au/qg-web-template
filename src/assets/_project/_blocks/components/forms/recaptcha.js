@@ -9,35 +9,40 @@
 import keys from '../../data/qg-google-keys';
 
 (function ($, swe) {
-  let googleRecaptchaApiKey =
-    window.location.hostname.search(
-      /\bdev\b|\btest\b|\blocalhost\b|\buat\b/
-    ) !== -1
-      ? keys.defGoogleRecaptcha.uat
-      : keys.defGoogleRecaptcha.prod;//This is a v2 key
-  let footerFeedbackGoogleRecaptchaApiKey =
-    window.location.hostname.search(
-      /\bdev\b|\btest\b|\blocalhost\b|\buat\b/
-    ) !== -1
-      ? keys.defFeedbackGoogleRecaptcha.uat
-      : keys.defFeedbackGoogleRecaptcha.prod;//This is a v3 key
+  let checkEnv = window.location.hostname.search(/\bdev\b|\btest\b|\blocalhost\b|\buat\b/);
+  let $feedbackForm = $('#qg-page-feedback-form');
+
+  let setUrlEnableCaptcha = () => {
+    // if environment is not PROD then use test submission handler link
+    checkEnv !== -1 ? $feedbackForm.attr('action', 'https://test.smartservice.qld.gov.au/services/submissions/email/feedback/feedback') : '';
+    // if data-recaptcha attribute is not present then insert it
+    !$feedbackForm.attr('data-recaptcha') ? $feedbackForm.attr('data-recaptcha', 'true') : '';
+  };
+  setUrlEnableCaptcha();
+
+  let googleRecaptchaApiKey = checkEnv !== -1
+    ? keys.defGoogleRecaptcha.uat
+    : keys.defGoogleRecaptcha.prod;//This is a v2 key
+  let footerFeedbackGoogleRecaptchaApiKey = checkEnv !== -1
+    ? keys.defFeedbackGoogleRecaptcha.uat
+    : keys.defFeedbackGoogleRecaptcha.prod;//This is a v3 key
   //v3 Captcha, can have multiples
   let v3Captcha = (form, greptcha, key, action) => {
     try {
       grecaptcha.execute(key, {action: action})
-      .then(function (token) {
-        if (greptcha.length > 0) {
-          if (
-            greptcha.attr('value') !== '' ||
+        .then(function (token) {
+          if (greptcha.length > 0) {
+            if (
+              greptcha.attr('value') !== '' ||
             greptcha.attr('value').length !== 0 ||
             greptcha.attr('value') !== undefined) {
-            greptcha.val(token);
-            form.submit();
-            return true;
+              greptcha.val(token);
+              form.submit();
+              return true;
+            }
           }
-        }
-        return false;
-      });
+          return false;
+        });
     } catch (e) {
       return false;
     }
