@@ -173,10 +173,19 @@
 &lt;/ul>
         </code></pre>
 
+        <h4> Example </h4>
         <div class="qg-tmplt-example">
           <div class="panel-body">
-<p style="color:red;">ADD EXAMPLE</p>
+            <form>
+            <ul class="actions">
+                <li><strong><input type="submit" value="Primary alt" /></strong></li>
+                <li><input type="submit" value="Secondary" /></li>
+                <li><a href="#" class="button">Link button</a></li>
+                <li><a href="#">Cancel</a></li>
+            </ul>
+          </form>
           </div>
+
         </div>
 </br>
         <p>Notes:</p>
@@ -238,10 +247,16 @@
 &lt;/label>
 
 </code></pre>
-
+<h4> Example </h4>
 <div class="qg-tmplt-example">
   <div class="panel-body">
-<p style="color:red;">ADD EXAMPLE</p>
+<form>
+    <label for="car-make-model">
+        <span class="label">Car make and model</span>
+        <small class="hint">Example: Holden Commodore, Toyota Camry</small>
+    </label>
+</form>
+
   </div>
 </div>
 
@@ -272,15 +287,25 @@
       &lt;span class="label">Card security code&lt;/span>
       &lt;small class="hint">
           3- or 4-digit code on the back of your card.
-          &lt;a class="help" href="help.html#csc">What is a card security code?&lt;/a>
+          &lt;a class="help" href="#">What is a card security code?&lt;/a>
       &lt;/small>
   &lt;/label>
 
 </code></pre>
-
+<h4> Example </h4>
 <div class="qg-tmplt-example">
   <div class="panel-body">
-<p style="color:red;">ADD EXAMPLE</p>
+
+<form>
+  <label for="card-security-code">
+        <span class="label">Card security code</span>
+        <small class="hint">
+            3- or 4-digit code on the back of your card.
+            <a class="help" href="#">What is a card security code?</a>
+        </small>
+    </label>
+</form>
+
   </div>
 </div>
 
@@ -292,19 +317,31 @@
 <h5>XHTML</h5>
 
 <pre><code class="language-markup">
+&lt;ol class="questions">
   &lt;li>
       &lt;label for="email">
           &lt;span class="label">Email</span>
       &lt;/label>
       &lt;input type="email" name="email" id="email" size="40" />
   &lt;/li>
+&lt;/ol>
 
 </code></pre>
 
+<h5>Example</h5>
 <div class="qg-tmplt-example">
   <div class="panel-body">
 
-<p style="color:red;">ADD EXAMPLE</p>
+<form>
+  <ol class="questions">
+  <li>
+        <label for="email">
+            <span class="label">Email
+        </label>
+        <input type="email" name="email" id="email" size="40" />
+    </li>
+  </ol>
+</form>
 
   </div>
 </div>
@@ -365,6 +402,7 @@
 
 
 <pre><code class="language-markup">
+&lt;ol class="questions">
 &lt;li>
     &lt;fieldset>
         &lt;legend>
@@ -386,14 +424,38 @@
         &lt;/ul>
     &lt;/fieldset>
 &lt;/li>
+&lt;/ol>
 
 </code></pre>
 
+<h6> Example</h6>
 <div class="qg-tmplt-example">
   <div class="panel-body">
-
-<p style="color:red;">ADD EXAMPLE</p>
-
+<form>
+  <ol class="questions">
+    <li>
+        <fieldset>
+            <legend>
+                <span class="label">Flavours</span>
+            </legend>
+            <ul class="choices">
+                <li>
+                    <input type="checkbox" name="flavours" value="Chocolate" id="flavours-chocolate" />
+                    <label for="flavours-chocolate">Chocolate</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="flavours" value="Strawberry" id="flavours-strawberry" />
+                    <label for="flavours-strawberry">Strawberry</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="flavours" value="Vanilla" id="flavours-vanilla" />
+                    <label for="flavours-vanilla">Vanilla</label>
+                </li>
+            </ul>
+        </fieldset>
+    </li>
+  </ol>
+</form>
   </div>
 </div>
 
@@ -487,14 +549,82 @@
 
 </code></pre>
 
+</br><h5>Example</h5>
+
 <div class="qg-tmplt-example">
   <div class="panel-body">
 
-<p style="color:red;">ADD EXAMPLE</p>
+<form>
+
+<ol class="questions">
+  <li class="group atomic">
+      <fieldset>
+          <legend>
+              <span class="label">Postal address</span>
+          </legend>
+          <ol class="questions">
+              <li>
+                  <label for="streetaddress1">
+                      <span class="label">Address line 1</span>
+                      <abbr title="(required)">*</abbr>
+                  </label>
+                  <input type="text" name="streetaddress1" id="streetaddress1" size="20" value="" required="required" />
+              </li>
+              <li>
+                  <label for="streetaddress2">
+                      <span class="label">Address line 2</span>
+                  </label>
+                  <input type="text" name="streetaddress2" id="streetaddress2" size="20" value="" />
+              </li>
+              <li>
+                  <label for="streetaddress3">
+                      <span class="label">Address line 3</span>
+                  </label>
+                  <input type="text" name="streetaddress3" id="streetaddress3" size="20" value="" />
+              </li>
+              <li class="group">
+                  <ol class="questions compact">
+                      <li>
+                          <label for="city">
+                              <span class="label">Town or suburb</span>
+                              <abbr title="(required)">*</abbr>
+                          </label>
+                          <input type="text" name="city" id="city" size="20" value="" required="required" />
+                      </li>
+                      <li>
+                          <label for="state">
+                              <span class="label">State</span>
+                              <abbr title="(required)">*</abbr>
+                          </label>
+                          <input type="text" name="state" id="state" size="5" value="QLD" required="required" />
+                      </li>
+                      <li>
+                          <label for="postcode">
+                              <span class="label">Postcode</span>
+                              <abbr title="(required)">*</abbr>
+                          </label>
+                          <input type="text" name="postcode" id="postcode" size="5" value="" required="required" />
+                      </li>
+                  </ol>
+              </li>
+              <li>
+                  <label for="country">
+                      <span class="label">Country</span>
+                      <abbr title="(required)">*</abbr>
+                  </label>
+                  <input type="text" name="country" id="country" size="20" value="Australia" required="required" />
+              </li>
+          </ol>
+      </fieldset>
+  </li>
+</ol>
+
+</form>
+
 
   </div>
 </div>
-
+<br>
 <h4>Collecting personal information</h4>
 
 <p>Refer to <a href"http://www.qgcio.qld.gov.au/products/qgea-documents/548-information/2333-information-access-and-use-is33-info">Information access and use policy - IS33</a> for guidance on information privacy.</p>
@@ -536,14 +666,44 @@
   &lt;/ol>
 
 </code></pre>
+<br>
 
+<h5>Example</h5>
 <div class="qg-tmplt-example">
   <div class="panel-body">
-
-<p style="color:red;">ADD EXAMPLE</p>
-
+<form>
+    <ol type="A" class="xor">
+          <li>
+              <h2>Queensland Government account</h2>
+              <p>You’ll only need to confirm your identity once, instead of each time for each Queensland Government services.</p>
+              <ul class="actions">
+                  <li>
+                      <strong>
+                          <a href="#" class="button">Register</a>
+                      </strong>
+                  </li>
+                  <li>
+                      <a href="#" class="button">Log in</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+              <h2>Other provider</h2>
+              <ul class="actions">
+                  <li>
+                      <em>
+                          <a href="#" class="button">Use provider account</a>
+                      </em>
+                  </li>
+              </ul>
+          </li>
+      </ol>
+</form>
   </div>
 </div>
+
+<br>
+<h5>HTML</h5>
 
 <pre><code class="language-markup">
   &lt;ol type="A" class="xor">
@@ -577,12 +737,43 @@
       &lt;/li>
   &lt;/ol>
 </code></pre>
+<br>
+<h5>Example</h5>
 
 <div class="qg-tmplt-example">
   <div class="panel-body">
-
-<p style="color:red;">ADD EXAMPLE</p>
-
+<form>
+    <ol type="A" class="xor">
+          <li>
+              <label for="dob">
+                  <span class="label">Year of birth</span>
+                  <small class="hint">Examples: 1901, 11/07/1876, 04/1913</small>
+              </label>
+              <input type="search" id="dob" name="ChildDateOfBirth" size="15" placeholder="dd/mm/yyyy" min="1829-01-01" max="1914-12-31" />
+          </li>
+          <li class="group atomic">
+              <fieldset id="dob-range">
+                  <legend>
+                      <span class="label">Date of birth range</span>
+                      <small class="hint">Examples: 1901, 11/07/1876, 04/1913</small>
+                  </legend>
+                  <ol class="questions compact">
+                      <li>
+                          <label for="dob-min">
+                              <span class="label">From</span>
+                          </label>
+                          <input type="search" id="dob-min" name="ChildDateOfBirth_lower" size="15" placeholder="dd/mm/yyyy" min="1829-01-01" max="1914-12-31" />
+                      </li>
+                      <li>
+                          <label for="dob-max">
+                              <span class="label">Until (optional)</span>
+                          </label>
+                          <input type="search" id="dob-max" name="ChildDateOfBirth_upper" size="15" placeholder="dd/mm/yyyy" min="1829-01-01" max="1914-12-31" />
+                      </li>
+              </fieldset>
+          </li>
+      </ol>
+    </form>
   </div>
 </div>
 
@@ -601,7 +792,6 @@
 <h4>HTML</h4>
 
 <pre><code class="language-markup">
-
   &lt;label for="email">
       &lt;span class="label">Email&lt;/span>
       &lt;abbr title="(required)">*&lt;/abbr>
@@ -610,15 +800,29 @@
   &lt;/label>
 
 </code></pre>
+<br>
+<h4>Example</h4>
 
 <div class="qg-tmplt-example">
   <div class="panel-body">
 
-<p style="color:red;">ADD EXAMPLE</p>
+<form>
+  <ol class="questions invalid">
+    <li>
+      <label for="email2">
+         <span class="label">Email</span>
+         <abbr title="(required)">*</abbr>
+         <em class="alert">Must be a valid email address</em>
+         <small class="hint privacy">We will never share your email address</small>
+         <input type="email" name="email2" id="email2" size="40" />
+       </label>
+  </li>
+</ol>
+</form>
 
-  </div>
 </div>
-
+</div>
+<br>
 <p>Replace <code>label</code> with <code>legend</code> for fieldsets.</p>
 
 <p>Only include <code>em.alert</code> in server-side validation. Client-side validation will manage <code>em.alert</code> for you.</p>
@@ -684,9 +888,32 @@
 
 <div class="qg-tmplt-example">
   <div class="panel-body">
+    <br>
+    <h4>Example</h4>
 
-<p style="color:red;">ADD EXAMPLE</p>
-
+<form>
+  <ol class="questions">
+    <li>
+          <fieldset>
+              <legend>
+                  <span class="label">Would you like a reply?</span>
+                  <abbr title="(required)">*</abbr>
+              </legend>
+              <ul class="choices compact">
+                 <li><input type="radio" name="replyRequested" id="reply-requested-yes" value="yes" /><label for="reply-requested-yes">Yes</label></li>
+                 <li><input type="radio" name="replyRequested" id="reply-requested-no" value="no" /><label for="reply-requested-no">No</label></li>
+              </ul>
+          </fieldset>
+      </li>
+      <li>
+          <label for="customer-email">
+              <span class="label">Email</span>
+              <abbr title="(required)">*</abbr>
+          </label>
+          <input type="email" id="customer-email" name="emailField" required="required" size="40" />
+      </li>
+    </ol>
+</form>
   </div>
 </div>
 
@@ -740,9 +967,30 @@ $( '#email' ).closest( '.section' ).relevance( 'relevantWhen', { name: 'replyReq
 
 <div class="qg-tmplt-example">
   <div class="panel-body">
-
-<p style="color:red;">ADD EXAMPLE</p>
-
+<form>
+  <ol class="questions">
+    <li>
+          <fieldset>
+              <legend>
+                  <span class="label">Would you like a reply?</span>
+                  <abbr title="(required)">*</abbr>
+              </legend>
+              <ul class="choices compact">
+                 <li><input type="radio" name="replyRequested" id="reply-requested-yes-2" value="yes" /><label for="reply-requested-yes-2">Yes</label></li>
+                 <li><input type="radio" name="replyRequested" id="reply-requested-no-2" value="no" /><label for="reply-requested-no-2">No</label></li>
+              </ul>
+          </fieldset>
+      </li>
+      <li>
+          <label for="customer-email-2">
+              <span class="label">Email</span>
+              <abbr title="(required)">*</abbr>
+              <small class="relevance">(If you chose ‘Yes’ above)</small>
+          </label>
+          <input type="email" id="customer-email-2" name="emailField" required="required" size="40" />
+      </li>
+</ol>
+    </form>
   </div>
 </div>
 
