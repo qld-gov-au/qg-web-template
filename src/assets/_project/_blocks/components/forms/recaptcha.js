@@ -23,6 +23,7 @@ import keys from '../../data/qg-google-keys';
       : keys.defFeedbackGoogleRecaptcha.prod;//This is a v3 key
   //v3 Captcha, can have multiples
   let v3Captcha = (form, greptcha, key, action) => {
+    //console.log('v3 key: ' + key);
     try {
       grecaptcha.execute(key, {action: action})
       .then(function (token) {
@@ -46,6 +47,7 @@ import keys from '../../data/qg-google-keys';
   //v2 Captcha, usually is singular
   let v2Captcha = (form, subBtn, key) => {
     try {
+      //console.log('v2 key: ' + key);
       grecaptcha.render(subBtn, {
         sitekey: key,
         callback: () => {
@@ -111,12 +113,15 @@ import keys from '../../data/qg-google-keys';
       let manualSitekey = $(this).attr('data-sitekey');
       let manualAction = $(this).attr('data-action');
       if ($(this).attr('id') === 'qg-page-feedback-form') { //Footer feedback
-        swe.ajaxCall(
-          'https://www.google.com/recaptcha/api.js?render=' + footerFeedbackGoogleRecaptchaApiKey,
-          'script',
-           onloadRecaptcha,
-          'Recaptcha unavailable'
-        );
+        //Only load if the feedback button is clicked
+        $('#page-feedback-useful').one('click', function () {
+          swe.ajaxCall(
+            'https://www.google.com/recaptcha/api.js?render=' + footerFeedbackGoogleRecaptchaApiKey,
+            'script',
+            onloadRecaptcha,
+            'Recaptcha unavailable'
+          );
+        });
       } else if (manualSitekey !== undefined && manualAction !== undefined) { //v3 manual form
         swe.ajaxCall(
           'https://www.google.com/recaptcha/api.js?render=' + manualSitekey,
