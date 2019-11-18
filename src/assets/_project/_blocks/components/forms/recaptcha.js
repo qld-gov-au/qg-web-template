@@ -9,7 +9,7 @@
 import keys from '../../data/qg-google-keys';
 
 (function ($, swe) {
-  let checkEnv = window.location.hostname.search(/\bdev\b|\btest\b|\blocalhost\b|\buat\b/);
+  let checkEnv = window.location.hostname.search(/\bdev\b|\btest\b|\blocalhost\b|\bgithub\b|\buat\b/);
   let $feedbackForm = $('#qg-page-feedback-form');
 
   if ($feedbackForm.length > 0) {
