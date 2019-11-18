@@ -115,6 +115,8 @@ import keys from '../../data/qg-google-keys';
   //https://github.com/google/recaptcha/issues/281
   //https://www.hackviking.com/development/multiple-recaptcha-on-the-same-page/
   //Setup recaptcha if on the page
+  let loadFooter = false;
+  let requireDefaultKey = false;
   if ($('form[data-recaptcha="true"]').length > 0) {
     //enable recaptcha on form submits, load latest v3 version of recaptcha
     let v2Loaded = false;
@@ -123,14 +125,7 @@ import keys from '../../data/qg-google-keys';
       let manualAction = $(this).attr('data-action');
       if ($(this).attr('id') === 'qg-page-feedback-form') { //Footer feedback
         //Only load if the feedback button is clicked
-        $('#page-feedback-useful').one('click', function () {
-          swe.ajaxCall(
-            'https://www.google.com/recaptcha/api.js?render=' + footerFeedbackGoogleRecaptchaApiKey,
-            'script',
-            onloadRecaptcha,
-            'Recaptcha unavailable'
-          );
-        });
+        loadFooter = true;
       } else if (manualSitekey !== undefined && manualAction !== undefined) { //v3 manual form
         swe.ajaxCall(
           'https://www.google.com/recaptcha/api.js?render=' + manualSitekey,
@@ -138,6 +133,8 @@ import keys from '../../data/qg-google-keys';
            onloadRecaptcha,
           'Recaptcha unavailable'
         );
+      } else if (manualSitekey === undefined && manualAction !== undefined) {
+        requireDefaultKey = true;
       } else {
         if (!v2Loaded) {
           swe.ajaxCall(
@@ -150,6 +147,28 @@ import keys from '../../data/qg-google-keys';
         }
       }
     });
+    //As v3 key is used in footer and could also be used on the page with a differnt action, we need to ensure we only load it once
+    if (requireDefaultKey) {
+        //load right away
+        swe.ajaxCall(
+          'https://www.google.com/recaptcha/api.js?render=' + footerFeedbackGoogleRecaptchaApiKey,
+          'script',
+          onloadRecaptcha,
+          'Recaptcha unavailable'
+        );
+      } else {
+      if (loadFooter) {
+        //Only load if the feedback button is clicked
+        $('#page-feedback-useful').one('click', function () {
+          swe.ajaxCall(
+            'https://www.google.com/recaptcha/api.js?render=' + footerFeedbackGoogleRecaptchaApiKey,
+            'script',
+            onloadRecaptcha,
+            'Recaptcha unavailable'
+          );
+        });
+      }
+    }
 
     //If all forms have captchaPrivacyTerms, we can hide reCAPTCHA Badge
     if ($('p[class="captchaPrivacyTerms"]').length === $('form[data-recaptcha="true"]').length) {
