@@ -21,10 +21,10 @@ describe('SWE Mobile Interactions', () => {
   }, ct.TO);
 
   test('Should display the search on clicking search icon', async () => {
-    expect(await page.evaluate("document.querySelector('#qg-search-form').getAttribute('class')")).not.toMatch(/col-xs-12 col-md-3 qg-search-form collapse show/);
+    expect(await page.evaluate("document.querySelector('#qg-search-form').getAttribute('class')")).not.toMatch(/col-xs-12 col-md-3 qg-web-autocomplete show/);
     (await page.$('#qg-show-search')).click();
     await page.waitFor(ct.WT);
-    expect(await page.evaluate("document.querySelector('#qg-search-form').getAttribute('class')")).toMatch(/col-xs-12 col-md-3 qg-search-form collapse show/);
+    expect(await page.evaluate("document.querySelector('#qg-search-form').getAttribute('class')")).toMatch(/col-xs-12 col-md-3 qg-web-autocomplete collapse show/);
   }, ct.TO);
 
   test('Should display the site map', async () => {
