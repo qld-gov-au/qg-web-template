@@ -18,7 +18,10 @@ $(function () {
 
   // setup for each form
   // TODO hardcoded to find.search.qld.gov.au
-  $('.qg-search-form').each(function () {
+  if ($('#qg-search-form.qg-web-autocomplete').length <= 0) {
+    $('#qg-search-form').addClass('qg-web-autocomplete');
+  }
+  $('.qg-web-autocomplete').each(function () {
     var form = this;
     var searchField = $(form.elements.query).filter('[name="query"]');
     // var lastSearch = searchField.val();
