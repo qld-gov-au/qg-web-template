@@ -974,9 +974,9 @@ form button,
   color: #ffffff;
   background: #585E62;
   border: none;
-  border-radius: 0;
-  -moz-border-radius: 0;
-  -webkit-border-radius: 0;
+  //border-radius: 0;
+  //-moz-border-radius: 0;
+  //-webkit-border-radius: 0;
 }
 
 /* slimmer buttons in asides */
@@ -1046,8 +1046,8 @@ strong .ui-button:focus,
 .actions strong input:hover,
 .actions strong input:focus {
   background-color: #b1e455;
-  outline: 1px solid #78BA00;
-  outline-offset: -1px;
+  //outline: 1px solid #78BA00;
+  //outline-offset: -1px;
 }
 
 form strong button:active,
