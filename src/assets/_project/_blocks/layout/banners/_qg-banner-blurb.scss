@@ -15,7 +15,7 @@
     color: #fff;
     text-decoration: underline;
     &:hover, &:active, &:focus, &:visited{
-      color: #fff !important;
+      color: #000 !important;
       text-decoration: none !important;
     }
   }
@@ -33,6 +33,18 @@
     padding: 1.2em;
     margin:1.2em;
     width: 27.5em;
+    &.light{
+      background: none !important;
+      * {
+        color: #000 !important;
+      }
+    }
+    .b-cta{
+      margin-top: 1em;
+    }
+    .b-sub{
+      margin-top: 1.5em;
+    }
     h1{
       color: #fff;
       padding: 0;
