@@ -11,7 +11,7 @@
     @include make-col-ready();
     @include make-col(12);
     margin-bottom: $qg-spacing;
-
+    word-wrap: break-word;
     img {
       width: 75px;
       height: 75px;

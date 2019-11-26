@@ -2,11 +2,29 @@
   &.qg-dark-accordion article {
     background-color: #f5f5f5;
   }
-  .controls {
-    float: right;
-    padding: 0 0.5rem;
-    color: $qg-blue-dark;
+  .qg-acc-controls{
+    text-align: right;
+    margin-bottom: 0.4em;
+    a{
+      text-decoration: none !important;
+      padding: 0 0.7rem;
+      color: $qg-blue-dark !important;
+      font-weight: bold;
+      display: inline-block;
+    }
+  }
+  //label selector is to provide backward compatibility in case projects are using old markup
+  label[for="expand"], label[for="collapse"] {
+    text-decoration: none !important;
+    padding: 0 0.7rem;
+    color: $qg-blue-dark !important;
     font-weight: bold;
+    display: inline-block;
+  }
+  .expand, .collapse, label[for="expand"], label[for="collapse"] {
+    &:hover {
+      text-decoration: underline !important;
+    }
   }
   .ht{
     text-decoration: underline;
@@ -131,7 +149,7 @@
 
 // IOS safari specific styles
 @media not all and (min-resolution:.001dpcm) {
-  .qg-accordion .acc-heading:focus {
+  .qg-accordion .acc-heading:focus, .qg-accordion .expand:focus, .qg-accordion .collapse:focus {
     outline: 1px dotted $qg-blue;
   }
 }

@@ -47,6 +47,7 @@ function init (franchiseTitle) {
   addHiddenInput('rspUsrAgent', navigator.userAgent);
   addHiddenInput('browserName', browserName);
   addHiddenInput('OS', navigator.platform);
+  addHiddenInput('g-recaptcha-response', '');
 }
 
 module.exports = { init: init };

@@ -140,7 +140,7 @@
   color: #000;
   @include rem(font-size, 16px);
 
-  #feedback-captcha-container {
+  #feedback-captcha-container, #feedback-captcha-container2 {
     display:none;
   }
 

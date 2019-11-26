@@ -85,12 +85,11 @@
           <p>Displays collapsible content panels for presenting information in a limited amount of space.</p>
           <p>Click headers to expand/collapse content that is categorised into logical sections.</p>
           <section class="qg-accordion qg-dark-accordion" aria-label="Accordion Label">
-            <input type="radio" name="control" id="collapse" class="controls collapse" value="collapse" role="radio">
-            <label for="collapse" class="controls">Collapse all</label>
-            <span class="controls">&#124;</span>
-            <input type="radio" name="control" id="expand" class="controls expand" value="expand" role="radio">
-            <label for="expand" class="controls">Expand all</label>
-
+            <div class="qg-acc-controls">
+              <a href="#" class="controls expand">Expand all</a>
+              <span class="controls">&#124;</span>
+              <a href="#" class="controls collapse">Collapse all</a>
+            </div>
             <article>
               <input id="without-icon" type="checkbox" name="tabs" aria-controls="id-panel-content-1" aria-expanded="false" role="checkbox">
               <h3 class="acc-heading"><label for="without-icon"><span class="title">Without icon</span><span class="arrow"> <i></i></span></label></h3>
@@ -123,12 +122,11 @@
           </section>
 
           <section class="qg-accordion mt-5" aria-label="Accordion Label">
-            <input type="radio" name="control" id="collapse" class="controls collapse" value="collapse" role="radio">
-            <label for="collapse" class="controls">Collapse all</label>
-            <span class="controls">&#124;</span>
-            <input type="radio" name="control" id="expand" class="controls expand" value="expand" role="radio">
-            <label for="expand" class="controls">Expand all</label>
-
+            <div class="qg-acc-controls">
+              <a href="#" class="controls expand">Expand all</a>
+              <span class="controls">&#124;</span>
+              <a href="#" class="controls collapse">Collapse all</a>
+            </div>
             <article>
               <input id="without-icon-1" type="checkbox" name="tabs" aria-controls="id-panel-content-1" aria-expanded="false" role="checkbox">
               <h3 class="acc-heading"><label for="without-icon-1"><span class="title">Without icon</span> <span class="subtitle">Subtitle can go here (optional)</span><span class="arrow"> <i></i></span></label></h3>
@@ -237,7 +235,10 @@
           <div class="panel-body">
             <div class="alert alert-info" role="alert">
               <h2><i class="fa fa-comments"></i>Tell us what you think about our website</h2>
-              <p>Is there anything we could improve?</p>
+              <ul>
+                <li>lorem ipsum</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A animi at culpa doloremque, eligendi, et facere, impedit nesciunt non pariatur qui saepe similique sit sunt voluptas. Asperiores assumenda cum nam!</li>
+              </ul>
               <button type="button" class="qg-btn btn-default">Give us your feedback</button>
             </div>
           </div>
@@ -753,24 +754,23 @@ Publishers may use blockquotes to indicate the quotation of a section of text fr
 
         <div class="qg-image-gallery">
           <ul>
-            <li><a title="eligible-soft-drink-cans.jpg" data-fancybox="gallery-92732"
-                   data-caption="Eligible: Soft drink cans - between 150ml and 3L"
+            <li><a title="eligible-soft-drink-cans.jpg"
                    href="https://via.placeholder.com/450"><img alt="" src="https://via.placeholder.com/150"></a>
             </li>
-            <li><a title="eligible-soft-drink-bottles.jpg" data-fancybox="gallery-92732" data-caption=""
+            <li><a title="eligible-soft-drink-bottles.jpg"
                    href="https://via.placeholder.com/450"><img
               alt="" src="https://via.placeholder.com/150"></a>
             </li>
-            <li><a title="sports-energy-drinks.jpg" data-fancybox="gallery-92732" data-caption=""
+            <li><a title="sports-energy-drinks.jpg"
                    href="https://via.placeholder.com/450g"><img alt="" src="https://via.placeholder.com/150"></a>
             </li>
-            <li><a title="eligible-water-bottles.jpg" data-fancybox="gallery-92732" data-caption=""
+            <li><a title="eligible-water-bottles.jpg"
                    href="https://via.placeholder.com/450"><img alt="" src="https://via.placeholder.com/150"></a>
             </li>
-            <li><a title="eligible-beer-bottles.jpg" data-fancybox="gallery-92732" data-caption=""
+            <li><a title="eligible-beer-bottles.jpg"
                    href="https://via.placeholder.com/450"><img alt="" src="https://via.placeholder.com/150"></a>
             </li>
-            <li><a title="eligible-fruit-veg-juice-bottles.jpg" data-fancybox="gallery-92732" data-caption=""
+            <li><a title="eligible-fruit-veg-juice-bottles.jpg"
                    href="https://via.placeholder.com/450"><img alt="" src="https://via.placeholder.com/150"></a></li>
           </ul>
         </div>
