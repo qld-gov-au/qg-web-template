@@ -92,7 +92,7 @@
     "node-sass": "^4.12.0",
     "node-ssi": "^0.3.2",
     "npm": ">=6.13.4",
-    "run-sequence": "^1.1.5",
+    "run-sequence": "^2.2.1",
     "sass-loader": "^6.0.5",
     "style-loader": "^0.17.0",
     "uglifyjs-webpack-plugin": "^0.4.3",
