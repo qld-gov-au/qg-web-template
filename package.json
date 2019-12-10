@@ -117,6 +117,7 @@
     "responsive-toolkit": "^2.6.3"
   },
   "jest-junit":{
-   "output": "./test-results/junit/results.xml"
+   "suiteName": "SWE tests",
+   "outputDirectory": "./test-results/junit/junit.xml"
   }
 }
