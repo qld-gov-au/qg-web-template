@@ -33,6 +33,9 @@ jobs:
 
       - run: npx jest
 
+      - store_test_results:
+          path: test-results
+
       - store_artifacts:
           path: e2e/__tests__/__image_snapshots__/__diff_output__
           destination: image_snapshot_diff
