@@ -49,7 +49,7 @@ describe('SWE Components testing', () => {
     await page.waitFor(ct.WT);
     expect(await page.evaluate(() => location.href)).toBe('https://www.google.com.au/');
     await page.goBack();
-    expect(await page.evaluate(() => location.href)).not.toBe(`${ct.APP_URL}/docs/quick-exit.html`);
+    expect(await page.evaluate(() => location.href)).toBe(`${ct.APP_URL}/docs/quick-exit.html`);
   }, ct.TO);
 
   afterAll(async () => {
