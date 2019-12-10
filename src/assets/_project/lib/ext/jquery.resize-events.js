@@ -1,3 +1,4 @@
+// TODO - this lib is no more required - please do testing on Squiz and some other projects and then remove this
 /**
  * Resize Events
  * @version 2.1
@@ -71,7 +72,7 @@ var ResizeEvents = {
 };
 
 /*global qg*/
-(function ($, qg) { /* start closure */
+(function ($) { /* start closure */
 	'use strict';
 
 	/* http://paulirish.com/2011/requestanimationframe-for-smart-animating/ */
@@ -283,4 +284,4 @@ var ResizeEvents = {
 		ResizeEvents.throttleStates[id] = true;
 		callback.apply();
 	};
-}(jQuery, qg)); /* end closure */
+}(jQuery)); /* end closure */

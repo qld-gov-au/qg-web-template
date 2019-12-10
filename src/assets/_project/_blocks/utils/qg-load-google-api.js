@@ -12,10 +12,8 @@ import keys from '../data/qg-google-keys';
 
   // check if the hostname contains a specific word and assign the key accordingly
   if (window.location.hostname.search(/\bgithub\b/) !== -1) {
-    console.log('docs key in use');
     googleApiKey = keys.defGoogle.docs;
   } else if (window.location.hostname.search(/\bdev\b|\btest\b|\blocalhost\b/) !== -1) {
-    console.log('test key in use');
     googleApiKey = keys.defGoogle.test;
   } else {
     googleApiKey = keys.defGoogle.prod;
