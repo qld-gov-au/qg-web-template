@@ -31,7 +31,11 @@ jobs:
           command: npx gulp serve
           background: true
 
-      - run: npx jest --ci --reporters=default --reporters=jest-junit
+      - run:
+          name: Run Tests
+          command: |
+            mkdir -p ./test-results/junit
+            yarn test --ci --reporters=jest-junit
 
       - store_artifacts:
           path: ./test-results/junit
