@@ -31,7 +31,7 @@ jobs:
           command: npx gulp serve
           background: true
 
-      - run: npx jest
+      - run: npx jest --ci --reporters=default --reporters=jest-junit
 
       - store_test_results:
           path: /tmp/test
