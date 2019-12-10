@@ -34,10 +34,9 @@ jobs:
       - run: npx jest --ci --reporters=default --reporters=jest-junit
 
       - store_test_results:
-          path: /e2e/reports
+          path: ~/repo/junit.xml
 
       - store_artifacts:
-          path: e2e/__tests__/__image_snapshots__/__diff_output__
-          destination: image_snapshot_diff
+          path: ~/repo/junit.xml
 
 
