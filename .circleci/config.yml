@@ -33,10 +33,10 @@ jobs:
 
       - run: npx jest --ci --reporters=default --reporters=jest-junit
 
-      - store_test_results:
-          path: ~/repo/junit.xml
-
       - store_artifacts:
-          path: ~/repo/junit.xml
+          path: ./test-results/junit
+
+      - store_test_results:
+          path: ./test-results
 
 
