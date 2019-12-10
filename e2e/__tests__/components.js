@@ -32,19 +32,19 @@ describe('SWE Components testing', () => {
 
   test('Quick exit is working as expected', async () => {
     await page.goto(`${ct.APP_URL}/docs/quick-exit.html`, { waitUntil: 'networkidle0' });
-    // quick exit exist on the page
+    // 1. -> quick exit exist on the page
     const searchInput = await page.$('.qg-quick-exit');
     expect(searchInput).toBeTruthy();
-    // tooltip is working as expected
+    // 2. -> tooltip is working as expected
     expect(await page.evaluate('window.getComputedStyle(document.querySelector(\'.qg-tooltip__wrapper\')).getPropertyValue("display")')).toBe('none');
     await page.click('.qg-tooltip__prompt');
     expect(await page.evaluate('window.getComputedStyle(document.querySelector(\'.qg-tooltip__wrapper\')).getPropertyValue("display")')).not.toBe('none');
-    // 'tips to browse safely' navigating to the correct link
+    // 3. -> 'tips to browse safely' navigating to the correct link
     await page.click('.qg-quick-exit__tip-link');
     await page.waitFor(ct.WT);
     expect(await page.evaluate(() => location.href)).toBe('https://www.qld.gov.au/help/tips-to-browse-safely-online');
     await page.goBack();
-    // 'close this site' is working as expected and browser back is not taking to the same page
+    // 4. -> 'close this site' is working as expected and browser back is not taking to the same page
     await page.click('.qg-quick-exit__button');
     await page.waitFor(ct.WT);
     expect(await page.evaluate(() => location.href)).toBe('https://www.google.com.au/');
