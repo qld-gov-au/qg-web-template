@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="8" failures="1" time="16.619">
+  <testsuite name="SWE templates testing" errors="0" failures="0" skipped="0" timestamp="2019-12-10T05:46:56" time="8.083" tests="2">
+    <testcase classname="SWE templates testing Autocomplete is working as expected" name="SWE templates testing Autocomplete is working as expected" time="0.251">
+    </testcase>
+    <testcase classname="SWE templates testing Feedback form is working as expected" name="SWE templates testing Feedback form is working as expected" time="3.008">
+    </testcase>
+  </testsuite>
+  <testsuite name="SWE Mobile Interactions" errors="0" failures="0" skipped="0" timestamp="2019-12-10T05:46:56" time="13.826" tests="3">
+    <testcase classname="SWE Mobile Interactions Should display the menu clicking menu icon" name="SWE Mobile Interactions Should display the menu clicking menu icon" time="3.009">
+    </testcase>
+    <testcase classname="SWE Mobile Interactions Should display the search on clicking search icon" name="SWE Mobile Interactions Should display the search on clicking search icon" time="3.004">
+    </testcase>
+    <testcase classname="SWE Mobile Interactions Should display the site map" name="SWE Mobile Interactions Should display the site map" time="3.006">
+    </testcase>
+  </testsuite>
+  <testsuite name="SWE Components testing" errors="0" failures="1" skipped="0" timestamp="2019-12-10T05:46:56" time="16.288" tests="3">
+    <testcase classname="SWE Components testing Twitter and Facebook feed is working as expected" name="SWE Components testing Twitter and Facebook feed is working as expected" time="0.01">
+    </testcase>
+    <testcase classname="SWE Components testing Carousel is working as expected" name="SWE Components testing Carousel is working as expected" time="3.042">
+    </testcase>
+    <testcase classname="SWE Components testing Quick exit is working as expected" name="SWE Components testing Quick exit is working as expected" time="8.524">
+      <failure>Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: &quot;http://localhost:8086/docs/quickexit.html&quot;
+Received: &quot;http://localhost:8086/docs/components.html&quot;
+    at Object.toBe (/media/aminaz/1tb/ubuntuserver/my-project/public/github/official/qg-web-template/e2e/__tests__/components.js:52:54)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
+    </testcase>
+  </testsuite>
+</testsuites>
