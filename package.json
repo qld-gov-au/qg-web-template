@@ -116,8 +116,8 @@
     "replace-string": "^2.0.0",
     "responsive-toolkit": "^2.6.3"
   },
-  "jest-junit":{
-   "suiteName": "SWE tests",
-   "outputDirectory": "./test-results/junit/junit.xml"
+  "jest-junit": {
+    "suiteName": "SWE tests",
+    "outputDirectory": "./test-results/junit/junit.xml"
   }
 }
