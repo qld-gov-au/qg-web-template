@@ -49,8 +49,11 @@
   dd {
     display: inline-block;
     float: left;
-    margin-left: 0.35em;
+    margin-left: 0.35em !important;
     margin-bottom: 0;
+    margin-top: 0!important;
+    border-left: none !important;
+    padding-left: 0 !important;
   }
 
   #document-licence {
@@ -73,6 +76,15 @@ a {
   }
 }
 #qg-primary-content, #qg-secondary-content {
+  dt{
+    font-weight: bold;
+  }
+  dl>dd {
+    margin-left: 0;
+    margin-top: .5rem;
+    border-left: solid 1px;
+    padding-left: .5rem;
+  }
   a:not(.print-content-link) {
     &:focus, &:hover, &:link, &:visited {
       text-decoration: underline;
