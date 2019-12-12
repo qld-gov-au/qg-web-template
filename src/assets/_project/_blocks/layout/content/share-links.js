@@ -38,7 +38,7 @@ function renderSocialURL (who, from, title, domain, description) {
   case 'facebook':
     return `http://www.facebook.com/share.php?u=${from}&title=${title}`;
   case 'twitter':
-    return `http://twitter.com/share?url=${from}`;
+    return `https://twitter.com/share?url=${encodeURI(from)}`;
   case 'linkedin':
     return `http://www.linkedin.com/shareArticle?mini=true&url=${from}&title=${title}&source=${domain}`;
   case 'others':
@@ -77,8 +77,7 @@ function renderHidden () {
 }
 
 function renderLink (url, title, icon, hidden = '') {
-  return `<li>
-            <a class="qg-share-link qg-accessibility-off" href="${url}" title="${title}">${icon}<span class="title ${hidden}"">${title}</span></a>
+  return `<li><a class="qg-share-link qg-accessibility-off" href="${url}" title="${title}">${icon}<span class="title ${hidden}"">${title}</span></a>
           </li>`;
 }
 
