@@ -41,3 +41,4 @@ This repo should contain three main branches. DO NOT WORK DIRECTLY INTO THESE BR
 ### Generated directories
 * build/ - For testing your changes
 * release/ - Makes the template ready for deployment
+
