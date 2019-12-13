@@ -114,7 +114,8 @@
     "node-bourbon": "^4.2.8",
     "puppeteer-core": "^1.20.0",
     "replace-string": "^2.0.0",
-    "responsive-toolkit": "^2.6.3"
+    "responsive-toolkit": "^2.6.3",
+    "stickyfilljs": "^2.1.0"
   },
   "jest-junit": {
     "suiteName": "SWE tests",
