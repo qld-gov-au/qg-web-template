@@ -77,8 +77,7 @@ function renderHidden () {
 }
 
 function renderLink (url, title, icon, hidden = '') {
-  return `<li><a class="qg-share-link qg-accessibility-off" href="${url}" title="${title}">${icon}<span class="title ${hidden}"">${title}</span></a>
-          </li>`;
+  return `<li><a class="qg-share-link qg-accessibility-off" href="${url}" title="${title}">${icon}<span class="title ${hidden}"">${title}</span></a></li>`;
 }
 
 function renderShareButtons () {
