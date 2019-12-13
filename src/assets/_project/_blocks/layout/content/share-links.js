@@ -38,7 +38,7 @@ function renderSocialURL (who, from, title, domain, description) {
   case 'facebook':
     return `http://www.facebook.com/share.php?u=${from}&title=${title}`;
   case 'twitter':
-    return `http://twitter.com/home?status=${title}+${from}`;
+    return `https://twitter.com/share?url=${encodeURI(from)}`;
   case 'linkedin':
     return `http://www.linkedin.com/shareArticle?mini=true&url=${from}&title=${title}&source=${domain}`;
   case 'others':

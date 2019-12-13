@@ -1,8 +1,8 @@
 {
   "name": "Queensland-Government-Web-Template",
-  "version": "3.1.8",
-  "subVersion": "1.0.8",
-  "wt-version": "3.1.8",
+  "version": "3.1.9",
+  "subVersion": "1.0.9",
+  "wt-version": "3.1.9",
   "description": "This template is designed to provide a template for all Franchise websites, and the underpinning technology for new Agency websites.",
   "main": "gulpfile.js",
   "repository": {
@@ -87,6 +87,8 @@
     "html-webpack-plugin": "^2.28.0",
     "image-webpack-loader": "^3.3.1",
     "jest": "^23.6.0",
+    "jest-html-reporter": "^2.7.0",
+    "jest-junit": "^10.0.0",
     "node-sass": "^4.12.0",
     "node-ssi": "^0.3.2",
     "npm": "^5.6.0",
@@ -113,5 +115,9 @@
     "puppeteer-core": "^1.20.0",
     "replace-string": "^2.0.0",
     "responsive-toolkit": "^2.6.3"
+  },
+  "jest-junit": {
+    "suiteName": "SWE tests",
+    "outputDirectory": "./test-results/junit/junit.xml"
   }
 }
