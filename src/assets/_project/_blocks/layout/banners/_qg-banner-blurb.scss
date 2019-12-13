@@ -61,5 +61,25 @@
   }
   @include breakpoint(xs) {
     min-height: 192px;
+    background-position:top !important;
+    background-size:contain !important;
+    padding:0;
+    padding-top:28%;
+    &.hide-xs-hero-img{
+      background-image:none !important;
+      min-height:inherit !important;
+      padding-top:0 !important;
+    }
+    .blurb{
+      width:auto;
+      max-width:100%;
+      margin:0;
+      color: #000000;
+      background-color: #ffffff;
+      padding-bottom: 0;
+      h1 {
+        color: #000000;
+      }
+    }
   }
 }
