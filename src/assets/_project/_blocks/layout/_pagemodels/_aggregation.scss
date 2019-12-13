@@ -1,5 +1,22 @@
-//display: flex;
-//flex-wrap: wrap;
+.aggregation-index {
+  .additional-information {
+    h2 {
+      font-size: 1.56rem;
+    }
+    background: $qg-grey-light;
+    padding-bottom: 3rem;
+    >.row {
+      width: 90%;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      div[class~=col] {
+        flex-grow: 1;
+      }
+    }
+  }
+}
+
 .qg-feature, .wrapper {
   @include make-row();
   width: 90%;
