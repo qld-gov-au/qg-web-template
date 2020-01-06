@@ -12,7 +12,7 @@
   "scripts": {
     "clean": "gulp clean-build && gulp clean-release",
     "prebuild": "gulp clean-build",
-    "build": "gulp build && node gulp/build-tasks/node-docs-flatten.js && gulp wt-updateVersion",
+    "build": "gulp build && node gulp/build-tasks/node-docs-flatten.js && gulp wt-updateVersion && gulp/release-tasks/node-template-flatten.js",
     "test": "jest",
     "postbuild": "gulp clean-redundant-build",
     "prerelease": "gulp clean-release",
