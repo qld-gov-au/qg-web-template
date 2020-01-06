@@ -43,16 +43,11 @@ jobs:
       - store_test_results:
           path: ./test-results
 
+        # build job omitted for brevity
 
-    # build job omitted for brevity
-    deploy:
-      docker:
-        - image: circleci/python:3.7-stretch
-      working_directory: ~/circleci-docs
-      steps:
-        - run:
-            name: Install awscli
-            command: sudo pip install awscli
-        - run:
-            name: Deploy to S3
-            command: . s3://circle-production-static-site/docs/
+      - run:
+          name: Install awscli
+          command: sudo pip install awscli
+      - run:
+          name: Deploy to S3
+          command: . s3://circle-production-static-site/docs/
