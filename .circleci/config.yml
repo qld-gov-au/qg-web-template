@@ -39,7 +39,10 @@ jobs:
             yarn test --ci --reporters=jest-junit
       - run:
           name: Install awscli
-          command: sudo pip install awscli
+          command: |
+            sudo apt update
+            sudo apt install python3-pip
+            sudo pip install awscli
       - run:
           name: Deploy to S3
           command: . s3://circle-production-static-site/docs/
