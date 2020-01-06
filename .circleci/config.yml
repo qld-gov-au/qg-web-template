@@ -47,7 +47,7 @@ jobs:
             sudo pip install awscli
       - run:
           name: Deploy to S3
-          command: . s3://circle-production-static-site/docs/
+          command: . s3://testcircleci
 
       - store_artifacts:
           path: ./test-results/junit
