@@ -29,7 +29,7 @@ jobs:
 
       - run:
           name: Local Server
-          command: npx gulp serve
+          command: npx gulp serve --root=release
           background: true
 
       - run:
@@ -53,7 +53,7 @@ jobs:
           name: "Return bucket path"
       - run:
           name: Deploy to S3
-          command: aws s3 sync build s3://testcircleci
+          command: aws s3 sync release s3://testcircleci
 
       - store_artifacts:
           path: ./test-results/junit

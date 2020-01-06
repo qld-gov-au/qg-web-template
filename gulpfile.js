@@ -76,12 +76,11 @@ gulp.task('release-other-files', require('./gulp/release-tasks/other-files')(gul
 gulp.task('replace-links', require('./gulp/release-tasks/replace-links')(gulp, plugins, es, config));
 gulp.task('release-files', require('./gulp/release-tasks/files')(gulp, plugins, config, es, webpack, path, banner));
 
-gulp.task('release', (done) => {
-  gulp.series(
-    'release-files',
-    'scss-src',
-    'release-other-files',
-  );
+gulp.task('release', gulp.series(
+  'release-files',
+  'scss-src',
+  'release-other-files',
+), function (done) {
   done();
 });
 
