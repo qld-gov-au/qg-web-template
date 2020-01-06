@@ -69,25 +69,6 @@ gulp.task('assets-includes-local', require('./gulp/build-tasks/assets-includes')
 gulp.task('assets-includes-docs', require('./gulp/build-tasks/assets-includes')(gulp, plugins, config, 'docs/assets/includes-local', true, true));
 gulp.task('assets-includes-cdn', require('./gulp/build-tasks/assets-includes')(gulp, plugins, config, 'assets/includes-cdn'));
 
-gulp.task('build', (done) => {
-  gulp.series(
-    'test:eslint',
-    'assets-includes-docs',
-    'assets-includes-cdn',
-    'assets-includes-local',
-    'template-pages',
-    'js',
-    'scss',
-    'other-assets',
-    'build-other-files',
-    'template-pages-docs',
-    'template-pages-to-docs',
-  );
-  done();
-});
-
-gulp.task('default', gulp.series('build'));
-
 /* RELEASE TASKS */
 // Grabs SCSS from SRC and moves to release, does not process
 gulp.task('scss-src', require('./gulp/release-tasks/scss-src')(gulp, plugins, config));
@@ -111,6 +92,24 @@ gulp.task('serve', require('./gulp/build-tasks/serve')(gulp, plugins, connect, c
 /* TEST TASKS */
 gulp.task('test:eslint', require('./gulp/test-tasks/lint')(gulp, plugins, config, fsPath, eslintReporter));
 
+/* Build task  */
+gulp.task('build', gulp.series(
+  'test:eslint',
+  'assets-includes-docs',
+  'assets-includes-cdn',
+  'assets-includes-local',
+  'template-pages',
+  'js',
+  'scss',
+  'other-assets',
+  'build-other-files',
+  'template-pages-docs',
+  'template-pages-to-docs',
+), function (done) {
+  done();
+});
+
+gulp.task('default', gulp.series('build'));
 /* PUBLISH TASKS */
 
 // web template release
