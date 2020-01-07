@@ -29,7 +29,7 @@ jobs:
 
       - run:
           name: Local Server
-          command: npx gulp serve --root=release
+          command: npx gulp serve
           background: true
 
       - run:
