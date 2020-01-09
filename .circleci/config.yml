@@ -46,12 +46,6 @@ jobs:
             pip --version
             sudo pip install awscli
       - run:
-          command: "aws s3 ls"
-          name: "List all buckets"
-      - run:
-          command: "aws s3 ls s3://testcircleci"
-          name: "Return bucket path"
-      - run:
           name: Deploy to S3
           command: aws s3 sync build s3://testcircleci
 
