@@ -65,13 +65,31 @@
     personal_details.relevance("relevant", false);
     eligible_n_1.relevance("relevant", false);
     eligible_n_2.relevance("relevant", false);
+    $('#if-RFS-member').relevance('relevant', false);
+    $('#if-SES-member').relevance('relevant', false);
     input_btn.prop("disabled", true);
     $('#total-days').attr('value',day_increment);
   }
 
+  // stop future date selection
+
+  var dtToday = new Date();
+
+  var month = dtToday.getMonth() + 1;
+  var day = dtToday.getDate();
+  var year = dtToday.getFullYear();
+  if(month < 10)
+    month = '0' + month.toString();
+  if(day < 10)
+    day = '0' + day.toString();
+
+  var maxDate = year + '-' + month + '-' + day;
+  $('.date-input').attr('max', maxDate);
+
   //OnReady/directed - reset selections
   $(document).ready(function() {
     formReady();
+
   });
 
   //On change events, trigger relevance
@@ -125,16 +143,20 @@
     }
   });
 
-  RFS_member_checkbox.on("change", function() {
+  $('#RFS_member').on("change", function() {
+    console.log('you chnages rfs number');
     if ($(this).is(":checked")) {
-      RFS_member_input.relevance('relevant', true);
+      $('#if-RFS-member').relevance('relevant', true);
     } else {
-      RFS_member_input.relevance('relevant', false);
+      $('#if-RFS-member').relevance('relevant', false);
     }
   });
 
   //Add new table append function
-  add_new.click(function() {
+  $(document).on('click', '#new_excess_day', function(){
+    setTimeout(function () {
+      $('.date-input').attr('max', maxDate);
+    },0);
     day_increment = day_increment + 1;
     $('#total-days').attr('value',day_increment);
     var new_day = "\
@@ -166,12 +188,14 @@
           }
           return val;
         }
-        total_claim = getNum(total_claim) + parseInt(getNum($(this).val()));
+        if($(this).val()){
+          total_claim = getNum(total_claim) + parseInt(getNum($(this).val()));
+        }
       });
       total_claim_input.attr('value',total_claim);
       total_claim_input_display.text(total_claim);
 
-      if(total_claim >= 6000){
+      if(total_claim > 6000){
         $(total_claim_input)[0].setCustomValidity('Total must not exceed $6000')
       } else {
         $(total_claim_input)[0].setCustomValidity('')
@@ -237,6 +261,13 @@
   //Check to see if date already exists
   $(document).on('keyup', '.claim_value', function(){
     var total_claim = 0;
+    if($(this).val() > 300){
+      if($(this).parent().find( ".hint").length <= 0){
+        $( "<small class=\"hint\"><em>Claim must not exceed $300</em></small>" ).insertAfter($(this));
+      }
+    } else {
+      $(this).parent().find( ".hint").remove();
+    }
     $('.claim_value').each(function () {
       if($(this).val() > 300){
         $(this)[0].setCustomValidity('Claim must not exceed $300')
@@ -249,7 +280,9 @@
         }
         return val;
       }
-      total_claim = getNum(total_claim) + parseInt(getNum($(this).val()));
+      if($(this).val()){
+        total_claim = getNum(total_claim) + parseInt(getNum($(this).val()));
+      }
     });
     total_claim_input.attr('value',total_claim);
     total_claim_input_display.text(total_claim);
@@ -316,6 +349,40 @@
   //   minOneCheckboxCheckedCheck();
   // });
   //Call it regardless
+
+
+  var minOneCheckboxGroups = [ 'member' , 'volunteer-role' ],
+    seen = {},
+
+    // check that at least one checkbox is checked
+    minOneCheckboxCheckedCheck = function() {
+      var checkboxes = $( this.form.elements[ this.name ] ),
+        validitionMessage = ''
+      ;
+      // must have 1 item selected
+      if ( checkboxes.filter( ':checked' ).length === 0 ) {
+        validitionMessage = 'Must be completed';
+      }
+      // set validity on every checkbox in the group (UI isn't updated otherwise)
+      checkboxes.each(function() {
+        this.setCustomValidity( validitionMessage );
+      });
+    };
+  // find checkboxes
+  minOneCheckboxGroups = $( 'input' ).filter(function() {
+    return $.inArray( this.name, minOneCheckboxGroups ) >= 0;
+  });
+  // initial validity for group
+  minOneCheckboxGroups.each(function() {
+    if ( ! seen[ this.name ] ) {
+      seen[ this.name ] = true;
+      minOneCheckboxCheckedCheck.apply( this );
+    }
+  })
+    // setup event handler
+    .on( 'change', minOneCheckboxCheckedCheck );
+
+
   formReady();
 
 })(jQuery, qg);

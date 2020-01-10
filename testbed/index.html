@@ -315,6 +315,7 @@
               </li>
 
               <h2>Volunteering details</h2>
+              <p>Please select the service you volunteer for. If you volunteer for both services, please fill out your details for each service. You can combine eligible activities for your ten days minimum and lost income claim </p>
 
               <!-- Volunteering questions -->
               <li class="atomic group">
@@ -337,35 +338,39 @@
                   </ol>
                 </fieldset>
               </li>
-
-              <li id="if-RFS-member" hidden="hidden" aria-hidden="true" class="mt-2">
+              <div id="if-RFS-member" hidden="hidden" aria-hidden="true">
+              <li  class="mt-2">
                 <label for="RFS-volunteer-ID">
                   <span class="label">Volunteer ID number</span>
                   <abbr class="required" title="(required)">*</abbr>
                 </label>
-                <input type="text" name="RFS-volunteer-ID" size="20" required="required" id="RFS-volunteer-ID">
-                <br><br>
+                <input type="text" name="RFS-volunteer-ID" size="20" required="required" id="RFS-volunteer-ID" disabled="disabled">
+
+              </li>
+              <li>
                 <label for="RFS-brigade">
                   <span class="label">Brigade name</span>
                   <abbr class="required" title="(required)">*</abbr>
                 </label>
-                <input type="text" name="RFS-brigade" size="50" required="required" id="RFS-brigade">
+                <input type="text" name="RFS-brigade" size="50" required="required" id="RFS-brigade" disabled="disabled">
               </li>
-
-              <li id="if-SES-member" class="choices" hidden="hidden" aria-hidden="true"
-                  class="mt-2">
+              </div>
+              <div id="if-SES-member" hidden="hidden" aria-hidden="true">
+              <li  class="choices"  class="mt-2">
                 <label for="SES-volunteer-ID">
                   <span class="label">Membership ID number</span>
                   <abbr class="required" title="(required)">*</abbr>
                 </label>
-                <input type="text" name="SES-volunteer-ID" size="20" required="required" id="SES-volunteer-ID">
-                <br><br>
+                <input type="text" name="SES-volunteer-ID" size="20" required="required" id="SES-volunteer-ID" disabled="disabled">
+              </li>
+                <li>
                 <label for="SES-brigade">
                   <span class="label">SES Group name</span>
                   <abbr class="required" title="(required)">*</abbr>
                 </label>
-                <input type="text" name="SES-brigade" size="50" required="required" id="SES-brigade">
+                <input type="text" name="SES-brigade" size="50" required="required" id="SES-brigade" disabled="disabled">
               </li>
+              </div>
 
               <!-- Volunteer roles -->
               <li class="atomic group">
@@ -404,18 +409,18 @@
                     <li>
                       <input id="volunteer-role-equipment_officers" name="volunteer-role"
                              value="Equipment Officers" type="checkbox">
-                      <label for="volunteer-role-equipment_officers">Equipment Officers</label>
+                      <label for="volunteer-role-equipment_officers">Equipment Officer</label>
                     </li>
                     <li>
                       <input id="volunteer-role-peer_support_officers" name="volunteer-role"
                              value="Peer Support Officers" type="checkbox">
-                      <label for="volunteer-role-peer_support_officers">Peer Support Officers</label>
+                      <label for="volunteer-role-peer_support_officers">Peer Support Officer</label>
                     </li>
 
                     <li>
                       <input id="volunteer-role-community_educators" name="volunteer-role"
                              value="Community Educators" type="checkbox">
-                      <label for="volunteer-role-community_educators">Community Educators</label>
+                      <label for="volunteer-role-community_educators">Community Educator</label>
                     </li>
                     <li>
                       <input id="volunteer-role-incident_management" name="volunteer-role"
@@ -434,12 +439,18 @@
               <!--<p>Please provide the total number of days volunteered in excess of 10 days in the period 1 July 2019 and 30 June 2020. The maximum amount for a volunteer to claim is $6,000.</p>
           -->
 
-              <p>Please enter information into the table below.
-                Provide details on the dates of your first 10 volunteer days (you do not need to enter a claim amounts
-                for the first 10 days),
-                and then enter the dates for which you are claiming lost income.
-                Please note you have to have volunteered in the period 1 July 2019 and 30 June 2020.
-                The maximum amount for a volunteer to claim is $6,000. The maximum amount per day is $300.</p>
+              <p>Please enter information in the table below.
+                Provide the dates of your first 10 volunteer days. You can not enter claim amounts
+                for these days. Then enter the dates for which you are claiming lost income for.
+                Please note:</p>
+              <ul>
+                <li style="list-style: inherit">You must have volunteered in the period 1 July 2019 and 30 June 2020.</li>
+                <li style="list-style: inherit">The maximum amount for a volunteer to claim is $6,000.</li>
+                <li style="list-style: inherit">The maximum amount per day is $300.</li>
+                <li style="list-style: inherit">You can only claim for the net income you lost because you were volunteering and not working</li>
+              </ul>
+
+
 
               <ol class="questions mt-4">
                 <table class="tbl-volunteer-dates">
@@ -645,7 +656,7 @@
                 <li class="atomic group mt-4">
                   <fieldset>
                     <legend>
-                      <span class="label">Where any of the days served outside of Queensland?</span>
+                      <span class="label">Where any of these days served outside of Queensland?</span>
                       <abbr class="required" title="(required)">*</abbr>
                     </legend>
                     <ol class="choices">
@@ -1029,7 +1040,7 @@
 
       <form id="qg-page-feedback-form"
             method="post"
-            action="https://www.smartservice.qld.gov.au/services/submissions/email/feedback/feedback" class="form" data-recaptcha="true">
+            action="https://www.smartservice.qld.gov.au/services/submissions/email/feedback/feedback" class="form">
 
         <ol class="questions">
           <li>
