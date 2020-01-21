@@ -27,8 +27,9 @@ module.exports = function (gulp, plugins, config, es, dest) {
       ),
       gulp.src([`${config.basepath.src}/docs/**/*.js`, `${config.basepath.src}/docs/**/*.png`, `${config.basepath.src}/docs/**/*.css`, `${config.basepath.src}/docs/**/release-notes/**/*`])
         .pipe(plugins.if(dest === 'docs/assets', gulp.dest(`${config.basepath.build}/docs/`))),
+
+      gulp.src(config.extLib.transferToBuild)
+        .pipe(gulp.dest(`${config.basepath.build}/${dest}/${config.versionName}/latest/lib/ext`)),
     ]);
-    // config.projects.map(function (element) {
-    // });
   };
 };
