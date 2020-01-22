@@ -60,6 +60,9 @@ module.exports = {
     css: [
       'butterfly/butterfly.css',
     ],
+    transferToBuild: [
+      './node_modules/nodep-date-input-polyfill/nodep-date-input-polyfill.dist.js',
+    ],
   },
   publish: {
     version: pjson.version,
