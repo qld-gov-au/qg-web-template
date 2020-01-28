@@ -130,6 +130,11 @@ $(function () {
       searchField.attr('aria-owns', suggestions.attr('id'));
 
       userTyped = this.value;
+
+      if ($(form.elements.profile).filter('[name="profile"]').val() > 0) {
+        var profile = $(form.elements.profile).filter('[name="profile"]').val() || 'qld_preview';
+      }
+
       if (userTyped.length < 3) {
         closeSuggestions();
         return;
@@ -164,7 +169,7 @@ $(function () {
           suggestions.html($.map(data, function (value) {
             var htmlValue = value.replace(/</g, '&lt;').replace(match, '<mark>' + safeInput + '</mark>');
             // use form.action + default params
-            return '<li><a href="https://find.search.qld.gov.au/s/search.html?collection=qld-gov&profile=qld&query=' + encodeURIComponent(value) + '">' + htmlValue + '</a></li>';
+            return '<li><a href="https://find.search.qld.gov.au/s/search.html?collection=qld-gov&profile=qld&query=' + encodeURIComponent(value) + '" data-analytics-link-group="qg-search-suggestion-from-' + profile + '">' + htmlValue + '</a></li>';
           }).join('\n'));
 
           // issue #3: issues with typing over selected suggestion
