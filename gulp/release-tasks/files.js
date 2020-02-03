@@ -54,6 +54,7 @@ module.exports = function (gulp, plugins, config, es, webpack, path, banner) {
                             output: {
                                 filename: filename,
                             },
+                            plugins: [new webpack.optimize.UglifyJsPlugin()],
                         }, webpack))
                         .pipe(plugins.insert.prepend(banner))
                         .pipe(gulp.dest(`${config.basepath.release}/template-local-ssi/assets/${config.versionName}/${destPath}`))
