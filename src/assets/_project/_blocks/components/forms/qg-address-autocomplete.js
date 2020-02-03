@@ -40,10 +40,15 @@ let qgInitAutocompleteAddress;
 
   // on autoComplete blur removing hidden fields values
   el.$autoComplete.blur(function () {
+    let itemFull = $('.pac-container .pac-item:first').text();
+    let itemQuery = $('.pac-container .pac-item:first .pac-item-query').text();
+    let firstResult = itemQuery + ' ' + itemFull.substring(itemQuery.length);
     if ($(this).val().length === 0) {
       el.$searchWidget.find(el.$latitude).val('')
         .end()
         .find(el.$longitude).val('');
+    } else if (firstResult.length > 1) {
+      $('.qg-location-autocomplete').val(firstResult);
     }
   });
   if ($('.' + inputLocationId).length > 0) {
