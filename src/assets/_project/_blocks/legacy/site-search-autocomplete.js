@@ -25,6 +25,8 @@ $(function () {
     var form = this;
     var searchField = $(form.elements.query).filter('[name="query"]');
     // var lastSearch = searchField.val();
+    var profile = $(form.elements.profile).filter('[name="profile"]').val() || 'qld_preview';
+    var submit = $(form.elements).filter('[type="submit"]');
     var userTyped = '';
 
     // ARIA
@@ -39,6 +41,10 @@ $(function () {
 
     // create the suggestion box
     var suggestions = $('<ul role="listbox" class="listbox" aria-busy="true"/>').generateId('suggestbox');
+
+    if (profile.length > 0) {
+      submit.attr('data-analytics-link-group', 'qg-search-submit-from-' + profile);
+    }
 
     function closeSuggestions () {
       suggestions.empty();
@@ -131,26 +137,20 @@ $(function () {
 
       userTyped = this.value;
 
-      if ($(form.elements.profile).filter('[name="profile"]').val() > 0) {
-        var profile = $(form.elements.profile).filter('[name="profile"]').val() || 'qld_preview';
-      }
-
       if (userTyped.length < 3) {
         closeSuggestions();
         return;
       }
 
       // console.log( 'fetch suggestions for ', userTyped );
-
       $.ajax({
         // cache! (the URL will be change with the search text)
         cache: true,
         dataType: 'jsonp',
         url: 'https://find.search.qld.gov.au/s/suggest.json?',
         data: {
-          // TODO read these from search form
           collection: $(form.elements.collection).filter('[name="collection"]').val() || 'qld-gov',
-          profile: $(form.elements.profile).filter('[name="profile"]').val() || 'qld_preview',
+          profile: profile || 'qld_preview',
           show: MAX_SUGGESTIONS,
           partial_query: userTyped,
         },
