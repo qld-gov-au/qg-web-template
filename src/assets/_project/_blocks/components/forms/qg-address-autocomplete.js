@@ -56,7 +56,7 @@ let qgInitAutocompleteAddress;
         .end()
         .find(el.$longitude).val('');
     } else if (firstResult.length > 1) {
-      $('.qg-location-autocomplete').val(firstResult);
+      el.$autoComplete.val(firstResult);
     }
   });
   if ($('.' + inputLocationId).length > 0) {
