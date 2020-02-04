@@ -7,7 +7,7 @@
     margin-bottom: 0.4em;
     a{
       text-decoration: none !important;
-      padding: 0 0.7rem;
+      padding: 0.4rem 0.7rem;
       color: $qg-blue-dark !important;
       font-weight: bold;
       display: inline-block;
@@ -40,9 +40,14 @@
       border-bottom: 1px solid $qg-light-gray;
     }
     .acc-heading {
-      margin: 5px;
+      //margin: 5px;
       position: relative;
       padding: 0.6rem 0.7rem;
+      width: 98.5%;
+      margin:5px;
+      background: transparent;
+      border:none;
+      text-align:left;
       .title{
         display: block;
         &:hover {
