@@ -3,6 +3,7 @@ jobs:
   build:
     docker:
       - image: circleci/node:10.16.0
+      - image: circleci/python:3.7-stretch
 
     working_directory: ~/repo
 
@@ -12,9 +13,9 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "package.json" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
 
       - run:
           name: Workaround for GoogleChrome/puppeteer#290
@@ -36,11 +37,20 @@ jobs:
           command: |
             mkdir -p ./test-results/junit
             yarn test --ci --reporters=jest-junit
+      - run:
+          name: Install awscli
+          command: |
+            sudo apt update
+            sudo apt install python-pip
+            python --version
+            pip --version
+            sudo pip install awscli
+      - run:
+          name: Deploy to S3
+          command: aws s3 sync build s3://testcircleci
 
       - store_artifacts:
           path: ./test-results/junit
 
       - store_test_results:
           path: ./test-results
-
-

@@ -10,6 +10,7 @@
   if ($(accordion).length > 0) {
     let tabindex = 1;
     let accordionControls = 'input[name=control]';
+    let accItem = $(accordion).find('article');
     let linkedpanel =  window.location.hash && $('input[aria-controls=' + window.location.hash.substring(1) + ']');
 
     //Handle events of accordion inputs
@@ -65,11 +66,22 @@
     });
 
     // highlight title on hover
-    $('.qg-accordion article').hover(function () {
+    accItem.hover(function () {
       $(accordion).find('.title').removeClass('ht');
       $(this).find('.title').addClass('ht');
     }, function () {
       $(accordion).find('.title').removeClass('ht');
+    });
+
+    // expand/collapse on enter keypress
+    accItem.keypress(function (event) {
+      if (event.which === 13) {
+        if ($(this).find('input[name="tabs"]:checked').length > 0) {
+          $(this).find('input[name="tabs"]').prop('checked', false);
+        } else {
+          $(this).find('input[name="tabs"]').prop('checked', true);
+        }
+      }
     });
   }
 }(jQuery));

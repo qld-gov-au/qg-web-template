@@ -99,6 +99,61 @@
                   <li>If dot points are available</li>
                   <li>Can go here</li>
                 </ul>
+                <p>Form example inside accordion</p>
+                <form name="feedback" action="" method="post">
+                  <ol class="sections">
+                    <li class="section"><fieldset><legend><span class="h3">Contact details</span></legend>
+                      <ol class="questions">
+                        <li>
+                          <label for="name">
+                            <span class="label">Name</span>
+                          </label>
+                          <input id="name"  name="name" size="20" type="text" />
+                        </li>
+                        <li>
+                          <label for="email">
+                            <span class="label">Email</span>
+                          </label>
+                          <input id="email" name="email" size="40" type="email" />
+                        </li>
+                        <li>
+                          <label for="phone">
+                            <span class="label">Phone</span>
+
+
+                          </label>
+                          <input id="phone" name="phone" size="40" type="text" />
+                        </li>
+                        <li>
+                          <label for="organisation">
+                            <span class="label">Organisation</span>
+                          </label>
+                          <input id="organisation" name="organisation" size="40" type="text" />
+                        </li>
+
+                        <li>
+                          <label for="additional-comments">
+                            <span class="label">Comments</span>
+                            <abbr class="required" title="(required)">*</abbr>
+                            <small class="hint">Please do not include private or sensitive information such as credit card numbers, bank account numbers, usernames and passwords.</small>
+                          </label>
+                          <textarea id="additional-comments" name="additional-comments" required="required" rows="10" cols="40"></textarea>
+                        </li>
+                      </ol>
+                    </fieldset>
+                    </li>
+
+
+
+                    <li class="footer">
+
+                      <input type="hidden" name="Last page visited" value="" />
+                      <ol class="actions">
+                        <li><strong><input value="Send message" type="submit" /></strong></li>
+                      </ol>
+                    </li>
+                  </ol>
+                </form>
                 <p>Or provide any semantic html structure</p>
               </div>
             </article>
