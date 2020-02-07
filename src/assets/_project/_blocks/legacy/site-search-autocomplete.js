@@ -23,7 +23,7 @@ $(function () {
   }
   $('.qg-web-autocomplete').each(function () {
     var form = this;
-    var searchField = $(form.elements.query).filter('[name="query"]');
+    var searchField = $(form.elements).filter('[name="query"]');
     // var lastSearch = searchField.val();
     var userTyped = '';
 
