@@ -4,14 +4,17 @@
 $black: #000000;
 
 // ## Primary blue ##
-$qg-blue: #005e85; // Primary blue
+$qg-blue: #007EB1; // Primary blue
 $qg-blue-dark: #13578b; // Primary link colour (see bootstrap-variables.scss), accordion expan/collapse
-$qg-blue-darker: #063652;
+$qg-blue-darker: #005375;
 
-// ## Greyscale of primary blue
-$qg-blue-grey: #565656;
-$qg-blue-dark-grey: #515151;
-$qg-blue-darker-grey: #313131;
+// ## Global Primary Colours
+$qg-global-primary: #005e85;
+$qg-global-primary-dark: #063652;
+
+// ## Greyscale of Global Primary Colours
+$qg-global-primary-grey: #565656;
+$qg-global-primary-dark-grey: #313131;
 
 $qg-light-green: #9AC02C;
 $qg-green: #78ba00;
@@ -142,7 +145,7 @@ $qg-nav-tabs-link-hover-color: #fff;
 // Rulers & spacing
 
 $qg-max-container-width: 1327px; // old SWE width
-$qg-max-container-width-new: 1180px; 
+$qg-global-max-container-width: 1180px;
 
 $qg-spacing: 50px; // Note: Used by $grid-gutter-width
 $qg-spacing-large: $qg-spacing * 1.5;
