@@ -50,6 +50,15 @@
     hashTrigger();
     window.onhashchange = hashTrigger;
 
+    // inserting tab index dynamically
+    // label selector is to provide backward compatibility in case projects are using old markup
+    $('.qg-accordion .acc-heading, .qg-acc-controls .expand, .qg-acc-controls .collapse, label[for="expand"], label[for="collapse"]').each(function () {
+      if (this.type !== 'hidden') {
+        var $input = $(this);
+        $input.attr('tabindex', tabindex);
+        tabindex++;
+      }
+    });
     $('input[name=tabs]').click(function () {
       $(this).parent('article').find('.acc-heading').focus();
     });
