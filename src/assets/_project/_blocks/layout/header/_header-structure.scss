@@ -1,11 +1,15 @@
 #qg-site-header {
-  background-color: $qg-blue-grey;
-
-  @media (min-width: $screen-sm-min) {
-    //margin-top: 32px;
-  }
+  background-color: $qg-global-primary-grey;
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  top: 0;
 
   @media print {
     border-bottom: 1px solid black;
   }
+}
+
+#qg-content {
+  margin-top: 201px;
 }
