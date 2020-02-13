@@ -50,21 +50,24 @@
     <!--#include virtual="/assets/includes-local/analytics.html"-->
     <!--#include virtual="/assets/includes-local/header/access.html"-->
 
-    <div class="container-fluid qg-site-width">
-
         <header id="qg-site-header">
-            <!--#include virtual="/assets/includes-local/header/coat-of-arms.html"-->
-
-            <!--#include virtual="/assets/includes-local/header/site-utilities.html"-->
-
-            <!--#include virtual="/assets/includes-local/header/site-search.html"-->
-
-            <!--#include virtual="/assets/includes-local/header/global-alert.html"-->
-
-            <!--#include virtual="/assets/includes-local/header/site-nav.html"-->
+          <!--#include virtual="/assets/includes-local/header/portal-links.html"-->
+      
+          <div class="container-fluid qg-site-width">
+            <div class="row align-items-center">
+              <!--#include virtual="/assets/includes-local/header/coat-of-arms.html"-->
+      
+              <!--#include virtual="/assets/includes-local/header/site-search.html"-->
+            </div>
+            <div class="row align-items-center justify-content-between">
+              <!--#include virtual="/assets/includes-local/header/site-nav.html"-->
+      
+              <!--#include virtual="/assets/includes-local/header/location.html"-->
+            </div>
+          </div>
         </header>
-
         <div id="qg-content">
+          <div class="container-fluid qg-site-width">
             <div id="qg-one-col" class="row wide">
 
               <!--#include virtual="/assets/includes-local/breadcrumbs/breadcrumb-demo.html"-->
@@ -192,9 +195,8 @@
             </div>
           </section>
             <!--#include virtual="/assets/includes-local/content/options.html"-->
-
+          </div>
         </div>
-
         <footer>
             <!--#include virtual="/assets/includes-local/footer/footer-site-map.html"-->
             <!--#include virtual="/assets/includes-local/footer/footer-legals.html"-->

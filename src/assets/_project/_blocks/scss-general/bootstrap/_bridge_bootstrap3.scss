@@ -115,11 +115,6 @@
   @extend .col-12
 }
 
-#qg-search-form {
-  @include media-breakpoint-up(md) {
-    @include make-col(3);
-  }
-}
 .list-unstyled {
   padding-left: 0;
   list-style: none;

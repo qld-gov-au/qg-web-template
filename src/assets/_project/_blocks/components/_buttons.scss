@@ -1,3 +1,17 @@
+.btn-primary-new{
+  color: #fff;
+  background-color: $qg-blue-darker-grey;
+  font-weight: bold;
+  border-radius: 4px;
+  padding: 9px 24px;
+
+  &:hover, &:focus {
+    text-decoration: underline;
+    color: #fff;
+    background-color: $qg-blue-darker-grey;
+  }
+}
+
 .btn-primary{
   @include button-variant($qg-light-green, $qg-light-green, lighten($qg-light-green, 7.5%), $hover-border: $qg-light-green, $active-background:$qg-light-green, $active-border: $qg-light-green);
   color: #000;
@@ -27,9 +41,4 @@
 
 .qg-btn {
   @extend .btn;
-}
-
-#feature-search-submit{
-  padding: 8px 10px;
-  border-radius: 0;
 }

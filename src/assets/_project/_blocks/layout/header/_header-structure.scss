@@ -1,9 +1,5 @@
 #qg-site-header {
-  @include make-row();
-  background-color: $qg-site-header-bg-color;
-  margin-top: 0;
-  padding-top: 16px;
-  padding-bottom: 0;
+  background-color: $qg-blue-grey;
 
   @media (min-width: $screen-sm-min) {
     //margin-top: 32px;

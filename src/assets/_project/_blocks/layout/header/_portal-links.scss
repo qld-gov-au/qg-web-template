@@ -1,0 +1,30 @@
+.qg-portal-links {
+    background-color: $qg-dark-grey-dark;
+
+    ul {
+        list-style: none;
+        margin: 0 -25px;
+        padding: 0;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        li {
+            padding: 10px 20px 10px 15px;
+
+            &.dropdown {
+                > a:after {
+                    content: "\f0d7";
+                    color: #fff;
+                    font-family: FontAwesome;
+                    margin-left: 10px;
+                }
+            }
+
+            a {
+                color: #fff;
+                text-decoration: none;
+            }
+        }
+    }
+}
