@@ -5,11 +5,27 @@
   width: 100%;
   top: 0;
 
+  @include media-breakpoint-down(sm) {
+    height: 130px;
+  }
+
+  @include media-breakpoint-down(xs) {
+    height: 100px;
+  }
+
   @media print {
     border-bottom: 1px solid black;
   }
 }
 
 #qg-content {
-  margin-top: 201px;
+  margin-top: 200px;
+
+  @include media-breakpoint-down(sm) {
+    margin-top: 174px;
+  }
+
+  @include media-breakpoint-down(xs) {
+    margin-top: 144px;
+  }
 }

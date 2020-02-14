@@ -1,5 +1,5 @@
 .qg-portal-links {
-    background-color: $qg-global-primary-dark-grey;
+    background-color: $qg-dark-grey-dark;
 
     ul {
         list-style: none;
@@ -24,7 +24,27 @@
             a {
                 color: #fff;
                 text-decoration: none;
+
+                &:hover,&:focus {
+                    text-decoration: underline;
+                }
             }
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        background-color: transparent;
+
+        .container-fluid {
+            padding: 0;
+        }
+
+        ul {
+            background-color: $qg-dark-grey-dark;
+            display: block;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 0 10px;
         }
     }
 }

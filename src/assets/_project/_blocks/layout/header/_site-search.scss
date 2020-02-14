@@ -75,6 +75,19 @@
     }
   }
 
+  @include media-breakpoint-down(sm) {
+    margin: 0 30px;
+
+    .input-group {
+      max-width: none;
+      margin-bottom: 10px;
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    margin: 0 12px;
+  }
+
   @media print {
     display: none;
   }

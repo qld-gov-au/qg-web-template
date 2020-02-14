@@ -3,12 +3,21 @@
   padding-left: 13px;
   overflow: hidden;
 
-  img {
-    height: 40px;
+  @include media-breakpoint-down(sm) {
+    position: absolute;
+    top: -90px;
+    left: 50%;
+    padding: 0;
+    transform: translateX(-50%);
+    width: auto;
+  }
 
-    @media (min-width: $screen-sm-min) {
-      height: 49px;
-    }
+  @include media-breakpoint-down(xs) {
+    top: -75px;
+  }
+
+  img {
+    height: 50px;
   }
 
   @media print {

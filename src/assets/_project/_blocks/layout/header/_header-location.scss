@@ -1,0 +1,55 @@
+.header-location{
+    padding-top: 22px;
+    padding-right:12px;
+
+    button {
+        background-color: transparent;
+        border: 0;
+        color: #fff;
+        padding: 0;
+    }
+
+    .location-name {
+        text-decoration: underline;
+    }
+
+    .fa-map-marker {
+        font-size: 20px;
+        margin-left: 10px;
+    }
+
+    @include media-breakpoint-down(sm) {
+        position: absolute;
+        top: 0;
+        background-color: $qg-global-primary-light-grey;
+        width: 100%;
+        padding: 10px 0;
+        z-index: -1;
+
+        button {
+            display: flex;
+            margin: auto;
+            color: #000;
+
+            .fa {
+                order: 1;
+                margin: 0 10px 0 0;
+            }
+
+            .location-name {
+                order: 3;
+                margin-left: 3px;
+            }
+            
+            span {
+                order: 2;
+            } 
+        }
+    }
+
+    @include media-breakpoint-down(xs) {
+        button {
+            margin: 0 15px;
+        }
+    }
+}
