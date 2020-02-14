@@ -19,8 +19,8 @@
     }
 
     @include media-breakpoint-down(sm) {
-        position: absolute;
-        top: 0;
+        position: fixed;
+        top: 131px;
         background-color: $qg-global-primary-light-grey;
         width: 100%;
         padding: 10px 0;
@@ -48,6 +48,8 @@
     }
 
     @include media-breakpoint-down(xs) {
+        top: 97px;
+
         button {
             margin: 0 15px;
         }

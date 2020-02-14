@@ -1,5 +1,6 @@
 .qg-portal-links {
     background-color: $qg-dark-grey-dark;
+    order: 1;
 
     ul {
         list-style: none;
@@ -34,6 +35,7 @@
 
     @include media-breakpoint-down(sm) {
         background-color: transparent;
+        order: 2;
 
         .container-fluid {
             padding: 0;
@@ -44,6 +46,12 @@
             display: block;
             border-radius: 4px;
             overflow: hidden;
+            margin: 0 25px;
+        }
+    }
+
+    @include media-breakpoint-down(xs) {
+        ul {
             margin: 0 10px;
         }
     }

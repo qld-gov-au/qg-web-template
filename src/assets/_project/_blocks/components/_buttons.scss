@@ -5,6 +5,10 @@
   border-radius: 4px;
   padding: 9px 24px;
 
+  @include media-breakpoint-down(sm) {
+    padding: 9px 11px;
+  }
+
   &:hover, &:focus {
     text-decoration: underline;
     color: #fff;

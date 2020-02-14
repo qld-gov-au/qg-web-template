@@ -1,4 +1,4 @@
-#qg-site-header {
+#qg-site-header, #qg-site-header:after {
     background-color: $qg-global-primary;
 }
 
@@ -28,9 +28,5 @@
 
     .header-location {
         background-color: $qg-global-primary-light;
-    }
-
-    #qg-nav-wrap {
-        background-color: $qg-global-primary;
     }
 }

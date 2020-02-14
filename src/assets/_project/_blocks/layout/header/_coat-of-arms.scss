@@ -4,16 +4,8 @@
   overflow: hidden;
 
   @include media-breakpoint-down(sm) {
-    position: absolute;
-    top: -90px;
-    left: 50%;
     padding: 0;
-    transform: translateX(-50%);
     width: auto;
-  }
-
-  @include media-breakpoint-down(xs) {
-    top: -75px;
   }
 
   img {
