@@ -30,7 +30,7 @@ const buildHours = (buildDate.getHours() + 1) < 10 ? '0' + (buildDate.getHours()
 const buildMinutes = buildDate.getMinutes() < 10 ? '0' + buildDate.getMinutes() : buildDate.getMinutes();
 const banner = '/*! SWE' +
     ' ' + pjson.version +
-    ' ' + buildDate.getFullYear() + buildMonth + buildDay + 'T' + buildHours + buildMinutes +	' */' +
+    ' ' + buildDate.getFullYear() + buildMonth + buildDay + 'T' + buildHours + buildMinutes + ' */' +
     '\n';
 
 /* CLEAN TASKS */
