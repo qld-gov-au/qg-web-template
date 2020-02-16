@@ -25,7 +25,7 @@ $(function () {
     var form = this;
     var searchField = $(form.elements).filter('[name="query"]');
     // var lastSearch = searchField.val();
-    var profile = $(form.elements.profile).filter('[name="profile"]').val() || 'qld_preview';
+    var profile = $(form.elements).filter('[name="profile"]').val() || 'qld_preview';
     var submit = $(form.elements).filter('[type="submit"]');
     var userTyped = '';
 
@@ -42,7 +42,7 @@ $(function () {
     // create the suggestion box
     var suggestions = $('<ul role="listbox" class="listbox" aria-busy="true"/>').generateId('suggestbox');
 
-    if (profile.length > 0) {
+    if (profile.length > 0 && submit.length > 0) {
       submit.attr('data-analytics-link-group', 'qg-search-submit-from-' + profile);
     }
 
