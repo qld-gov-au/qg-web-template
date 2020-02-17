@@ -1,12 +1,11 @@
 #qg-site-header {
   background-color: $qg-global-primary-grey;
-  position: fixed;
-  z-index: 10;
-  width: 100%;
-  top: 0;
   display: flex;
-  flex-wrap: wrap;
   flex-flow: column;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 
   @media print {
     border-bottom: 1px solid black;
@@ -21,10 +20,6 @@
   &-bottom {
     order:3;
   }
-}
-
-#qg-content {
-  margin-top: 201px;
 }
 
 @include media-breakpoint-down(sm) {
@@ -48,19 +43,11 @@
   .qg-site-header-top {
     padding: 30px 50px;
   }
-
-  #qg-content {
-    margin-top: 175px;
-  }
 }
 
 @include media-breakpoint-down(xs) {
 
   .qg-site-header-top {
     padding: 13px 36px;
-  }
-
-  #qg-content {
-    margin-top: 141px;
   }
 }
