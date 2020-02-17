@@ -27,7 +27,7 @@
     };
 
     //Handle events of accordion inputs
-    $(accordion).find('article input').on('change', function () {
+    $(accordion).find('article input[name=tabs]').on('change', function () {
       let checkedStatus = $(this).prop('checked');
       let controlledPanedId = $('#' + $(this).attr('aria-controls'));
       $(this)
@@ -74,13 +74,15 @@
       }
     });
     accItem.on('click', function (event) {
-      if (event.clientX !== 0) {
-        if ($(this).find('input[name="tabs"]:checked').length > 0) {
-          $(this).find('input[name="tabs"]').prop('checked', false);
-        } else {
-          $(this).find('input[name="tabs"]').prop('checked', true);
+      if(event.target == event.currentTarget) {
+        if (event.clientX !== 0) {
+          if ($(this).find('input[name="tabs"]:checked').length > 0) {
+            $(this).find('input[name="tabs"]').prop('checked', false);
+          } else {
+            $(this).find('input[name="tabs"]').prop('checked', true);
+          }
+          return false;
         }
-        return false;
       }
     });
     //expand all click
@@ -102,3 +104,4 @@
     });
   }
 }(jQuery));
+

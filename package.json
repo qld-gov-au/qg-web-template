@@ -1,8 +1,8 @@
 {
   "name": "Queensland-Government-Web-Template",
-  "version": "3.1.9",
-  "subVersion": "1.0.10",
-  "wt-version": "3.1.9",
+  "version": "3.1.10",
+  "subVersion": "1.0.11",
+  "wt-version": "3.1.10",
   "description": "This template is designed to provide a template for all Franchise websites, and the underpinning technology for new Agency websites.",
   "main": "gulpfile.js",
   "repository": {
