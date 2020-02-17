@@ -2291,12 +2291,18 @@
 
 /***/ }),
 /* 13 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';$(function () {
 	    'use strict';
 	
-	    // Exception for Mobile Menu as Bootstrap collapse doesn't work smoothly for this
+	    // Polyfill for position: sticky;
+	    var Stickyfill = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"stickyfill\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	    var stickyfill = Stickyfill();
+	    var elements = $('.sticky');
+	    stickyfill.add(elements);
+	
+	    // Mobile menu & Search events to prevent both of them opening at the same time
 	    $('.qg-show-menu, .qg-show-search').on('click', function () {
 	        if ($(this).attr('aria-expanded') === 'false') {
 	            $('#qg-site-header').addClass('active');
