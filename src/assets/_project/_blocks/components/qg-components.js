@@ -1,6 +1,6 @@
 import './qg-social-media';
 import './progressive-reveal';
-import './qg-mobile-menu';
+import './qg-header';
 import './license';
 import './carousel/carousel';
 import './quick-exit/quick-exit';
