@@ -2305,12 +2305,12 @@
 	    // Mobile menu & Search events to prevent both of them opening at the same time
 	    $('.qg-show-menu, .qg-show-search').on('click', function () {
 	        if ($(this).attr('aria-expanded') === 'false') {
-	            $('#qg-site-header').addClass('active');
+	            $('.qg-site-header').addClass('active');
 	        } else {
-	            $('#qg-site-header').removeClass('active');
+	            $('.qg-site-header').removeClass('active');
 	        }
 	        if ($(this).hasClass('qg-show-menu')) {
-	            $('#qg-search-form').collapse('hide');
+	            $('.qg-search-form').collapse('hide');
 	        } else {
 	            $('.qg-navigation').collapse('hide');
 	        }
