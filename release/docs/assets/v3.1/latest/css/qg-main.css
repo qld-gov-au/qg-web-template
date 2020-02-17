@@ -12207,7 +12207,7 @@ a .meta {
   .qg-coat-of-arms a:after {
     content: ""; } }
 
-#qg-site-header {
+.qg-site-header {
   background-color: #565656;
   display: -ms-flexbox;
   display: flex;
@@ -12215,13 +12215,11 @@ a .meta {
   flex-flow: column;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
+  position: relative;
   z-index: 10; }
 
 @media print {
-  #qg-site-header {
+  .qg-site-header {
     border-bottom: 1px solid black; } }
 
 .qg-site-header-top {
@@ -12233,7 +12231,11 @@ a .meta {
   order: 3; }
 
 @media (max-width: 991.98px) {
-  #qg-site-header:after {
+  .qg-site-header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0; }
+  .qg-site-header:after {
     background-color: #565656;
     content: "";
     position: absolute;
@@ -12241,7 +12243,7 @@ a .meta {
     width: 100%;
     z-index: -1;
     transition: height 0.3s ease 0.3s; }
-  #qg-site-header.active:after {
+  .qg-site-header.active:after {
     height: 100vh;
     transition-delay: 0s; }
   .qg-site-header-top {
@@ -12257,11 +12259,11 @@ a .meta {
 #qg-site-name h2 {
   margin: .3em 0; }
 
-#qg-search-form {
+.qg-search-form {
   padding-right: 10px;
   padding-top: 25px; }
 
-#qg-search-form .listbox {
+.qg-search-form .listbox {
   list-style: none;
   position: absolute;
   top: 100%;
@@ -12272,17 +12274,17 @@ a .meta {
   border-top: 1px solid #EEE;
   background: #f9f9f9; }
 
-#qg-search-form .listbox[aria-busy="true"] {
+.qg-search-form .listbox[aria-busy="true"] {
   display: none;
   border-top-style: hidden; }
 
-#qg-search-form .listbox li {
+.qg-search-form .listbox li {
   width: 100%; }
 
-#qg-search-form .listbox li:hover {
+.qg-search-form .listbox li:hover {
   background: #f2f7f9; }
 
-#qg-search-form .listbox a {
+.qg-search-form .listbox a {
   display: block;
   background: transparent;
   color: #000;
@@ -12290,27 +12292,27 @@ a .meta {
   white-space: normal;
   padding: 0.5em 0.7em; }
 
-#qg-search-form .listbox a:hover, #qg-search-form .listbox a:focus, #qg-search-form .listbox a.focus {
+.qg-search-form .listbox a:hover, .qg-search-form .listbox a:focus, .qg-search-form .listbox a.focus {
   background: #fff;
   color: #939393;
   border: none; }
 
-#qg-search-form .listbox mark {
+.qg-search-form .listbox mark {
   font-weight: bold;
   background-color: transparent;
   padding: 0; }
 
-#qg-search-form .input-group {
+.qg-search-form .input-group {
   float: right;
   position: relative;
   max-width: 525px; }
 
-#qg-search-form .input-group input[type=text] {
+.qg-search-form .input-group input[type=text] {
   border-radius: 4px;
   border: 3px solid #fff;
   padding: 10px 100px 10px 38px; }
 
-#qg-search-form .input-group .fa-search {
+.qg-search-form .input-group .fa-search {
   font-size: 18px;
   color: #939393;
   position: absolute;
@@ -12318,25 +12320,25 @@ a .meta {
   top: 50%;
   transform: translateY(-50%); }
 
-#qg-search-form .input-group .btn, #qg-search-form .input-group .qg-btn {
+.qg-search-form .input-group .btn, .qg-search-form .input-group .qg-btn {
   position: absolute;
   right: 3px;
   top: 50%;
   transform: translateY(-50%); }
 
 @media (max-width: 991.98px) {
-  #qg-search-form {
+  .qg-search-form {
     margin: 0; }
-  #qg-search-form .input-group {
+  .qg-search-form .input-group {
     max-width: none;
     margin-top: 30px; } }
 
 @media (max-width: 767.98px) {
-  #qg-search-form .input-group {
+  .qg-search-form .input-group {
     margin-top: 15px; } }
 
 @media print {
-  #qg-search-form {
+  .qg-search-form {
     display: none; } }
 
 #qg-site-nav {

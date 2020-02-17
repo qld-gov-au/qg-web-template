@@ -1,18 +1,15 @@
-#qg-site-header {
+.qg-site-header {
   background-color: $qg-global-primary-grey;
   display: flex;
   flex-flow: column;
   flex-wrap: wrap;
-  position: sticky;
-  top: 0;
+  position: relative;
   z-index: 10;
 
   @media print {
     border-bottom: 1px solid black;
   }
-}
 
-.qg-site-header {
   &-top {
     order: 2;
   }
@@ -23,7 +20,10 @@
 }
 
 @include media-breakpoint-down(sm) {
-  #qg-site-header{
+  .qg-site-header{
+    position: sticky;
+    top: 0;
+
     &:after {
       background-color: $qg-global-primary-grey;
       content: "";
