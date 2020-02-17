@@ -49,20 +49,21 @@
  <!--#include virtual="/assets/includes-local/analytics.html"-->
     <!--#include virtual="/assets/includes-local/header/access.html"-->
 
+    
+
+    <header id="qg-site-header">
+        <!--#include virtual="/assets/includes-local/header/coat-of-arms.html"-->
+
+        <!--#include virtual="/assets/includes-local/header/site-utilities.html"-->
+
+        <!--#include virtual="/assets/includes-local/header/site-search.html"-->
+
+        <!--#include virtual="/assets/includes-local/header/global-alert.html"-->
+
+        <!--#include virtual="/assets/includes-local/header/site-nav.html"-->
+    </header>
+
     <div class="container-fluid qg-site-width">
-
-        <header id="qg-site-header">
-            <!--#include virtual="/assets/includes-local/header/coat-of-arms.html"-->
-
-            <!--#include virtual="/assets/includes-local/header/site-utilities.html"-->
-
-            <!--#include virtual="/assets/includes-local/header/site-search.html"-->
-
-            <!--#include virtual="/assets/includes-local/header/global-alert.html"-->
-
-            <!--#include virtual="/assets/includes-local/header/site-nav.html"-->
-        </header>
-
         <div id="qg-content">
             <div id="qg-one-col" class="row wide">
 
@@ -112,12 +113,14 @@
             <!--#include virtual="/assets/includes-local/content/options.html"-->
 
         </div>
-
-        <footer>
-            <!--#include virtual="/assets/includes-local/footer/footer-site-map.html"-->
-            <!--#include virtual="/assets/includes-local/footer/footer-legals.html"-->
-        </footer>
     </div>
+
+    <footer class="qg-site-footer">
+        <div class="container-fluid qg-site-width">
+          <!--#include virtual="/assets/includes-local/footer/footer-site-map.html"-->
+          <!--#include virtual="/assets/includes-local/footer/footer-legals.html"-->
+        </div>
+      </footer>
 
     <script>
       var qg = qg || {};

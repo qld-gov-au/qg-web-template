@@ -50,20 +50,19 @@
     <!--#include virtual="/assets/includes-local/analytics.html"-->
     <!--#include virtual="/assets/includes-local/header/access.html"-->
 
+    <header id="qg-site-header">
+        <!--#include virtual="/assets/includes-local/header/coat-of-arms.html"-->
+
+        <!--#include virtual="/assets/includes-local/header/site-utilities.html"-->
+
+        <!--#include virtual="/assets/includes-local/header/site-search.html"-->
+
+        <!--#include virtual="/assets/includes-local/header/global-alert.html"-->
+
+        <!--#include virtual="/assets/includes-local/header/site-nav.html"-->
+    </header>
+
     <div class="container-fluid qg-site-width">
-
-        <header id="qg-site-header">
-            <!--#include virtual="/assets/includes-local/header/coat-of-arms.html"-->
-
-            <!--#include virtual="/assets/includes-local/header/site-utilities.html"-->
-
-            <!--#include virtual="/assets/includes-local/header/site-search.html"-->
-
-            <!--#include virtual="/assets/includes-local/header/global-alert.html"-->
-
-            <!--#include virtual="/assets/includes-local/header/site-nav.html"-->
-        </header>
-
         <div id="qg-content">
             <div id="qg-three-col" class="row">
 
@@ -110,20 +109,20 @@
                 </div>
 
                 <aside id="qg-secondary-content">
-                  <!--#include virtual="/assets/includes-local/asides/aside-disaster-alert.html"-->
-                  <!--#include virtual="/assets/includes-local/asides/aside-contact-qgov.html"-->
-                  <!--#include virtual="/assets/includes-local/asides/aside-download-qgov.html"-->
-                  <!--#include virtual="/assets/includes-local/asides/aside-emergency-contact.html"-->
-                  <!--#include virtual="/assets/includes-local/asides/aside-feedback-qgov.html"-->
-                  <!--#include virtual="/assets/includes-local/asides/aside-global.html"-->
-                  <!--#include virtual="/assets/includes-local/asides/aside-idm-widget.html"-->
-                  <!--#include virtual="/assets/includes-local/asides/aside-minicart.html"-->
-                  <!--#include virtual="/assets/includes-local/asides/aside-search-qgov.html"-->
-                  <!--#include virtual="/assets/includes-local/asides/aside-search-smartjobs.html"-->
-                  <!--#include virtual="/assets/includes-local/asides/aside-story-qgov.html"-->
-                  <!--#include virtual="/assets/includes-local/asides/aside-subscribe-qgov.html"-->
-                  <!--#include virtual="/assets/includes-local/asides/aside-tip-qgov.html"-->
-                  <!--#include virtual="/assets/includes-local/asides/aside-your-say-qgov.html"-->
+                    <!--#include virtual="/assets/includes-local/asides/aside-disaster-alert.html"-->
+                    <!--#include virtual="/assets/includes-local/asides/aside-contact-qgov.html"-->
+                    <!--#include virtual="/assets/includes-local/asides/aside-download-qgov.html"-->
+                    <!--#include virtual="/assets/includes-local/asides/aside-emergency-contact.html"-->
+                    <!--#include virtual="/assets/includes-local/asides/aside-feedback-qgov.html"-->
+                    <!--#include virtual="/assets/includes-local/asides/aside-global.html"-->
+                    <!--#include virtual="/assets/includes-local/asides/aside-idm-widget.html"-->
+                    <!--#include virtual="/assets/includes-local/asides/aside-minicart.html"-->
+                    <!--#include virtual="/assets/includes-local/asides/aside-search-qgov.html"-->
+                    <!--#include virtual="/assets/includes-local/asides/aside-search-smartjobs.html"-->
+                    <!--#include virtual="/assets/includes-local/asides/aside-story-qgov.html"-->
+                    <!--#include virtual="/assets/includes-local/asides/aside-subscribe-qgov.html"-->
+                    <!--#include virtual="/assets/includes-local/asides/aside-tip-qgov.html"-->
+                    <!--#include virtual="/assets/includes-local/asides/aside-your-say-qgov.html"-->
                 </aside>
 
                 <!--#include virtual="/assets/includes-local/section-nav/sample.html"-->
@@ -132,12 +131,14 @@
             <!--#include virtual="/assets/includes-local/content/options.html"-->
 
         </div>
-
-        <footer>
-            <!--#include virtual="/assets/includes-local/footer/footer-site-map.html"-->
-            <!--#include virtual="/assets/includes-local/footer/footer-legals.html"-->
-        </footer>
     </div>
+    
+    <footer class="qg-site-footer">
+        <div class="container-fluid qg-site-width">
+          <!--#include virtual="/assets/includes-local/footer/footer-site-map.html"-->
+          <!--#include virtual="/assets/includes-local/footer/footer-legals.html"-->
+        </div>
+    </footer>
 
     <script>
       var qg = qg || {};

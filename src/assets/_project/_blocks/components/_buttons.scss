@@ -1,3 +1,55 @@
+.btn-global-primary{
+  color: #fff;
+  background-color: $qg-global-primary-dark-grey;
+  font-weight: bold;
+  border-radius: 4px;
+  padding: 9px 24px;
+
+  @include media-breakpoint-down(sm) {
+    padding: 9px 11px;
+  }
+
+  &:hover, &:focus {
+    text-decoration: underline;
+    color: #fff;
+    background-color: $qg-global-primary-dark-grey;
+  }
+}
+
+.btn-global-primary-white{
+  color: $qg-global-primary-dark-grey;
+  background-color: #fff;
+  font-weight: bold;
+  border-radius: 4px;
+  padding: 9px 24px;
+  display: table;
+
+  @include media-breakpoint-down(sm) {
+    padding: 9px 11px;
+  }
+
+  &:hover, &:focus {
+    color: $qg-global-primary-dark-grey;
+    text-decoration: underline;
+  }
+}
+
+.btn-global-secondary{
+  color: #fff;
+  background-color: transparent;
+  border: solid 3px #fff;
+  display: table;
+  font-weight: bold;
+  border-radius: 4px;
+  padding: 7px 24px;
+  text-decoration: none;
+
+  &:hover, &:focus {
+    color: #fff;
+    text-decoration: underline;
+  }
+}
+
 .btn-primary{
   @include button-variant($qg-light-green, $qg-light-green, lighten($qg-light-green, 7.5%), $hover-border: $qg-light-green, $active-background:$qg-light-green, $active-border: $qg-light-green);
   color: #000;
