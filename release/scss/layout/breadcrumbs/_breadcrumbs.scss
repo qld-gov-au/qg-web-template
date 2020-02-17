@@ -1,0 +1,117 @@
+// Breadcrumbs layout partial
+// Controls the look and behaviour of the breadcrumbs section
+
+#qg-breadcrumb {
+  @include make-col-ready();
+  @include make-col(12);
+  @include media-breakpoint-down(md) {
+    padding-right: $qg-grid-gutter-width-small/2;
+    padding-left: $qg-grid-gutter-width-small/2;
+  }
+	background: $qg-breadcrumb-bg-color;
+
+	h1, h2 {
+		 color: #FFF;
+	}
+
+	a {
+		color: #FFF;
+		text-decoration: none;
+	}
+
+	a:hover {
+		text-decoration: underline;
+	}
+
+	span.fa {
+		font-size: 1.2em;
+		margin-right: .3em;
+	}
+
+	ol {
+		margin-left: 0;
+		margin-bottom: 0;
+
+		padding-top: 1.5em;
+		padding-bottom: 1.5em;
+
+		color: #FFF;
+		text-align: left;
+    @include rem(font-size, 17px);
+    @media all and (max-width: $screen-md) {
+      @include rem(font-size, 15px);
+    }
+
+    @include media-breakpoint-up(lg) {
+	      padding-left: $qg-spacing / 2;
+	    }
+	}
+
+	li {
+		display: block;
+    padding-left: 14px;
+    &:first-child:before {
+      content: "\f19c";
+      margin: 0 0.6em 0 0;
+
+      color: #fff;
+      font-family: FontAwesome;
+      font-size: 1.1em;
+      text-align: center;
+      font-weight: normal;
+    }
+
+		& + li:before {
+			content: "\f054";
+			display: inline;
+			margin:  0 0.6em 0 0;
+
+			color: #FFF;
+			font-family: FontAwesome;
+			font-size: .7em;
+			text-align: center;
+			font-weight: normal;
+		}
+
+		& + li {
+      @media all and (max-width: $screen-md){
+        padding-left: 15px;
+        padding-top: 10px;
+        &:before {
+          padding-right: 7px;
+        }
+      }
+    }
+	}
+
+  @include media-breakpoint-up(md) {
+		margin: 0;
+
+		&.collapse {
+			display: block;
+		}
+
+		li {
+			display: inline-block;
+
+			&:last-child {
+				font-size: 100%;
+        font-weight: bold;
+			}
+		}
+	}
+
+	@media print {
+		a:after {
+			content: ''; // Over-ride link urls
+		}
+	}
+}
+
+@include media-breakpoint-up(md) {
+	// Set to shown to prevent breadcrumbs from being hidden
+	#qg-breadcrumb.collapse{
+	   display: block;
+	   height: auto !important;
+	}
+}

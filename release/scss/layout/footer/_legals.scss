@@ -1,0 +1,79 @@
+/* these styles mimic the old SWE legals style for continuity */
+.qg-legal {
+  text-align: center;
+  padding-top: 1em;
+  padding-bottom: 45px;
+  @include rem(font-size, 12px);
+  font-family: Verdana, Arial, Helvetica, san-serif;
+  font-weight: 900;
+  line-height: 7px;
+
+  .row {
+    background-color: #FFF;
+  }
+  ul{
+    @include rem(margin-top, 24px);
+  }
+  p {
+    @include rem(font-size, 12px);
+    @include make-col-ready();
+    @include make-col(12);
+    &.qg-copyright {
+      @include rem(margin-bottom, 24px);
+    }
+  }
+
+  ul {
+    //@include make-xs-column(12);
+    @include make-col-ready();
+    @include make-col(12);
+    @include media-breakpoint-up(lg) {
+      padding-left: ($grid-gutter-width / 2);
+      padding-right: ($grid-gutter-width / 2);
+    }
+    @include media-breakpoint-down(md) {
+      padding-right: $qg-grid-gutter-width-small/2;
+      padding-left: $qg-grid-gutter-width-small/2;
+    }
+    li {
+      padding: 0.5em 0;
+      margin: 0;
+      a {
+        padding: 0.2em 1em;
+        display: block;
+      }
+    }
+
+    li + li a {
+      border-left: 1px solid #999;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: #000;
+  }
+
+  a:focus, a:hover {
+    text-decoration: underline;
+    color: #000;
+  }
+
+  @media print {
+    border-top: 1px solid black;
+
+    ul {
+      li {
+        display: block;
+
+        & + li a {
+          border-left: none;
+        }
+      }
+    }
+
+    .no-print {
+      display:none;
+    }
+  }
+}

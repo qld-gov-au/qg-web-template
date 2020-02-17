@@ -1,0 +1,20 @@
+.qg-coat-of-arms {
+  padding-top: 20px;
+  padding-left: 13px;
+  overflow: hidden;
+
+  @include media-breakpoint-down(sm) {
+    padding: 0;
+    width: auto;
+  }
+
+  img {
+    height: 50px;
+  }
+
+  @media print {
+    a:after {
+      content: "";
+    }
+  }
+}
