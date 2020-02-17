@@ -24,9 +24,10 @@
         a {
             color: #fff;
             text-decoration: none;
+            transition: opacity .1s linear;
 
             &:hover, &:focus {
-                opacity: 0.8;
+                opacity: 0.7;
             }
         }
     }
@@ -59,9 +60,10 @@
             a {
                 color: #FFF;
                 text-decoration: underline;
+                transition: opacity .1s linear;
         
                 &:hover, &:focus {
-                    opacity: 0.8;
+                    opacity: 0.7;
                 }
             }
 
