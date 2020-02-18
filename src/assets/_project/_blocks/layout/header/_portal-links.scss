@@ -54,19 +54,28 @@
         background-color: $qg-global-dark-grey-active;
         border: 0;
         box-shadow: 0 4px 6px 0 rgba(32, 33, 36, 0.47);
+        display: block;
+        opacity: 0;
         margin: 0;
+        transition: opacity .3s linear;
+        visibility: hidden;
         width: 327px;
+
+        &.show {
+            opacity: 1;
+            visibility: visible;
+        }
     }
 
     .qg-dropdown-wrapper {
-        padding: 16px 32px;
+        padding: 5px 35px;
     }
 
     .dropdown-item {
         color: #fff;
-        padding: 16px 0;
+        padding: 13px 0;
         white-space: normal;
-        @include css-chevron-inline-right(6px, #fff, 16px, before, 28px);
+        @include css-chevron-inline-right(6px, #fff, 21px, before, 26px);
 
         &:hover,&:focus {
             @include portal-link-hover();
@@ -100,9 +109,11 @@
                 display: block;
                 position: relative;
                 max-height: 0;
+                opacity: 1;
                 overflow: hidden;
                 padding: 0;
                 transition: max-height 0.3s ease;
+                visibility: visible;
                 width: 100%;
             }
         }
@@ -147,7 +158,7 @@
                 }
 
                 + .dropdown-menu {
-                    max-height: 1000px;
+                    max-height: 735px;
                 }
             }
         }
