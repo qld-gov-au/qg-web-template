@@ -1,7 +1,27 @@
 <div class="header-location">
-    <button>
+    <button class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span>Your location is</span>
         <span class="location-name">unknown</span>
         <span class="fa fa-map-marker"></span>
     </button>
+    <div class="dropdown-menu">
+        <p>Help us provide you with the most useful information by setting your location.</p>
+        <button class="btn btn-global-primary detect-location" type="button">Use device location</button>
+        <span class="header-location-divider">or</span>
+        <form class="header-location-form">
+            <label>Start typing your town or suburb</label>
+            <input type="text" placeholder="e.g. Cooladdi"/>
+            <div class="header-location-autocomplete" style="display:none">
+                <ul>
+                    <li><button><b>Coola</b>bine, Sunshine Coast Regional</button></li>
+                    <li><button><b>Coola</b>bunia, South Burnett Regional</button></li>
+                    <li><button><b>Coola</b>ddi, Murweh Shire</button></li>
+                    <li><button><b>Coola</b>na, Somerset Regional</button></li>
+                    <li><button><b>Coola</b>ngatta, Gold Coast City</button></li>
+                </ul>
+            </div>
+            <button class="btn btn-global-primary set-location" type="button">Set location</button>
+        </form>
+        <button class="header-location-close">Close</button>
+    </div>
 </div>

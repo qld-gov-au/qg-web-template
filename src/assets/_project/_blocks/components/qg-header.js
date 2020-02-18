@@ -20,4 +20,14 @@ $(function () {
             $('.qg-navigation').collapse('hide');
         }
     });
+
+    // Keep location dropdown open the elements inside of the dropdown are clicked
+    $('.header-location .dropdown-menu').click(function(e) {
+        e.stopPropagation();
+    });
+
+    // Exception for the close button
+    $('.header-location-close').click(function(e) {
+        $('.header-location').dropdown('toggle');
+    });
 });
