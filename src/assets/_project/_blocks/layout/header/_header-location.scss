@@ -16,6 +16,7 @@
         border: 0;
         color: #fff;
         padding: 0;
+        outline: 0;
 
         &:after {
             display: none;
@@ -28,6 +29,16 @@
         box-shadow: 0 4px 6px 0 rgba(32, 33, 36, 0.47);
         width: 270px;
         padding: 16px 16px 13px 16px;
+        opacity: 0;
+        display: block;
+        transition: opacity .3s linear, visibility 0s linear .3s;
+        visibility: hidden;
+
+        &.show {
+            opacity: 1;
+            transition: opacity .3s linear;
+            visibility: visible;
+        }
 
         &:before {
             content: "";

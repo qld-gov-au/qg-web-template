@@ -26,8 +26,8 @@ $(function () {
         e.stopPropagation();
     });
 
-    // Exception for the close button
-    $('.header-location-close').click(function(e) {
+    // Except for these button
+    $('.header-location-close, .clear-location, .detect-location, .set-location').click(function(e) {
         $('.header-location').dropdown('toggle');
     });
 });
