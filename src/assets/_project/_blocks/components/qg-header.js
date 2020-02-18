@@ -27,7 +27,13 @@ $(function () {
     });
 
     // Except for these button
-    $('.header-location-close, .clear-location, .detect-location, .set-location').click(function(e) {
+    $('.clear-location, .detect-location, .set-location').click(function(e) {
         $('.header-location').dropdown('toggle');
+    });
+
+    $('.header-location-close').click(function(e) {
+        $('.header-location .dropdown-menu').addClass('closed');
+        $('.header-location').dropdown('toggle');
+        setTimeout(function(){ $('.header-location .dropdown-menu').removeClass('closed'); }, 300);
     });
 });

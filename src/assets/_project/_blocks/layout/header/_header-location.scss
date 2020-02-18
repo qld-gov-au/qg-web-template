@@ -40,6 +40,10 @@
             visibility: visible;
         }
 
+        &.closed {
+            display: none;
+        }
+
         &:before {
             content: "";
             position: absolute;
@@ -106,6 +110,7 @@
             padding: 10px 12px 9px;
             margin-bottom: 15px;
             width: 100%;
+            -webkit-appearance: none;
 
             &:focus + div {
                 display:block !important;
@@ -207,7 +212,7 @@
         }
 
         .qg-site-header.active & {
-            z-index: -1;
+            z-index: -2;
             transition-delay: 0s;
         }
     }
