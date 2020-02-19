@@ -120,7 +120,47 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
       </div>
     </div>
-    
+    <div id="qg-portal-links"class="qg-portal-links qg-navigation collapse">
+    <div class="container-fluid qg-site-width">
+        <nav class="navbar navbar-expand">
+            <div class="collapse navbar-collapse" id="qgPortalLinksDropdown">
+                <ul class="qg-portal-links__list navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-analytics-link-group=“qg-portal-links-link“>Find services</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="qg-portal-links__btn dropdown-toggle" type="button" id="qgPortalLinkBusiness" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Business and industry</button>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="qgPortalLinkBusiness">
+                            <div class="qg-dropdown-wrapper">
+                                <a class="dropdown-item" href="#" data-analytics-link-group=“qg-portal-links-link“>Starting a business</a>
+                                <a class="dropdown-item" href="#" data-analytics-link-group=“qg-portal-links-link“>Running a business</a>
+                                <a class="dropdown-item" href="#" data-analytics-link-group=“qg-portal-links-link“>Employing people</a>
+                                <a class="dropdown-item" href="#" data-analytics-link-group=“qg-portal-links-link“>Payroll tax</a>
+                                <a class="dropdown-item" href="#" data-analytics-link-group=“qg-portal-links-link“>Industries</a>
+                                <a class="dropdown-item" href="#" data-analytics-link-group=“qg-portal-links-link“>Investing in Queensland</a>
+                                <a class="qg-dropdown-all dropdown-item" href="#" data-analytics-link-group=“qg-portal-links-all-category“>All categories</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="qg-portal-links__btn dropdown-toggle" type="button" id="qgPortalLinkGovernment" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Government employees</button>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="qgPortalLinkGovernment">
+                            <div class="qg-dropdown-wrapper">
+                                <a class="dropdown-item" href="#" data-analytics-link-group=“qg-portal-links-link“>Working in the public service</a>
+                                <a class="dropdown-item" href="#" data-analytics-link-group=“qg-portal-links-link“>Human resources</a>
+                                <a class="dropdown-item" href="#" data-analytics-link-group=“qg-portal-links-link“>Finance and procurement</a>
+                                <a class="dropdown-item" href="#" data-analytics-link-group=“qg-portal-links-link“>Information and communication technology</a>
+                                <a class="dropdown-item" href="#" data-analytics-link-group=“qg-portal-links-link“>Service delivery and community support</a>
+                                <a class="dropdown-item" href="#" data-analytics-link-group=“qg-portal-links-link“>Mail, facilities and vehicles</a>
+                                <a class="qg-dropdown-all dropdown-item" href="#" data-analytics-link-group=“qg-portal-links-all-category“>All categories</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
     <div class="container-fluid qg-site-width qg-site-header-bottom">
       <div class="row align-items-center justify-content-between">
         
@@ -218,216 +258,45 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
 
         </div>
-        <div id="qg-options" class="row">
-    <div id="qg-share" class="qg-share"></div>
-
-    <div id="qg-feedback-btn">
-        <button class="btn btn-default qg-toggle-btn collapsed qg-icon" id="page-feedback-useful"
-            data-toggle="collapse"
-            data-target="#qg-page-feedback">Feedback</button>
-    </div>
-</div>
-
-<div id="qg-page-feedback" class="row collapse">
-
-    <form id="qg-page-feedback-form"
-        method="post"
-        action="https://www.smartservice.qld.gov.au/services/submissions/email/feedback/feedback"
-        class="form"
-        data-recaptcha="true"><!-- data-toggle="true" -->
-
-        <ol class="questions">
-            <li>
-                  <fieldset id="page-feedback-about">
-                      <legend><span class="label">Is your feedback about:</span></legend>
-                      <div class="radio">
-                        <input name="page-feedback-about" id="page-feedback-about-this-website" type="radio" value="this website"
-                               data-qg-pr="default"
-                               data-parent="#qg-page-feedback-form"
-                               data-target="#feedback-page">
-                        <label for="page-feedback-about-this-website">this website</label>
-                      </div>
-                      <div class="radio">
-                        <input name="page-feedback-about" id="page-feedback-about-a-government-service" type="radio" value="a government service"
-                               data-qg-pr="default"
-                               data-parent="#qg-page-feedback-form"
-                               data-target="#feedback-serv-dep-staff">
-                        <label for="page-feedback-about-a-government-service">a government service, department or staff member?</label>
-                      </div>
-                  </fieldset>
-            </li>
-        </ol>
-
-        <div class="panel">
-
-            <div id="feedback-serv-dep-staff" class="status info panel-collapse collapse">
-                <h2>Feedback on government services, departments and staff</h2>
-                <p>Please use our <a href="https://www.qld.gov.au/contact-us/complaints/">complaints and compliments form</a>.</p>
-            </div>
-
-            <div id="feedback-page" class="panel-collapse collapse">
-
-                <h2>Page feedback</h2>
-
-                <ol id="feedback-page-list" class="questions">
-
-                    <li class="col-12">
-
-                        <fieldset>
-
-                            <legend>
-                                <span class="label">How satisfied are you with your experience today?</span>
-                                <abbr title="(required)" class="required">*</abbr>
-                            </legend>
-                            <div class="radio">
-                              <input type="radio" name="feedback-satisfaction" value="Very dissatisfied" required="" id="fs-very-dissatisfied" />
-                              <label for="fs-very-dissatisfied">Very dissatisfied (1)</label>
-                            </div>
-                            <div class="radio">
-                              <input type="radio" name="feedback-satisfaction" value="Dissatisfied" required="" id="fs-dissatisfied" />
-                              <label for="fs-dissatisfied">Dissatisfied (2)</label>
-                            </div>
-                            <div class="radio">
-                              <input type="radio" name="feedback-satisfaction" value="Neither satisfied or dissatisfied" required="" id="fs-neither-satisfied-or-dissatisfied" />
-                              <label for="fs-neither-satisfied-or-dissatisfied">Neither satisfied or dissatisfied (3)</label>
-                            </div>
-                            <div class="radio">
-                              <input type="radio" name="feedback-satisfaction" value="Satisfied" required="" id="fs-satisfied" />
-                              <label for="fs-satisfied">Satisfied (4)</label>
-                            </div>
-                            <div class="radio">
-                              <input type="radio" name="feedback-satisfaction" value="Very satisfied" required="" id="fs-very-satisfied" />
-                              <label for="fs-very-satisfied">Very satisfied (5)</label>
-                            </div>
-
-                        </fieldset>
-                    </li>
-
-                    <li class="col-12">
-                      <div class="form-group">
-                          <label for="comments">
-                              <span class="label">Comments</span>
-                              <abbr title="(required)" class="required">*</abbr>
-                          </label>
-                          <textarea class="form-control" name="comments" id="comments" rows="10" cols="40" required="required"></textarea>
-                      </div>
-                    </li>
-
-                    <li id="feedback-captcha-container2" class="col-md-12">
-                        <div class="form-group">
-                            <label for="feedback-captchaCatch">Please leave this blank (this helps us identify automatic spam)</label>
-                            <input class="form-control" type="text" name="captchaCatch" id="feedback-captchaCatch" value="" />
-                        </div>
-                    </li>
-
-                    <li id="feedback-captcha-container" class="col-md-12">
-                      <div class="form-group">
-                          <label for="feedback-captcha">Please leave this blank (this helps us identify automatic spam)</label>
-                          <input class="form-control" type="text" name="captcha" id="feedback-captcha" value="" />
-                      </div>
-                    </li>
-
-                    <li class="footer col-md-12">
-                        <span id="feedback-hidden-inputs"></span>
-
-                        <ul class="actions">
-
-                            <li>
-                                <button type="submit" value="Submit feedback" class="qg-btn btn-primary">Submit feedback</button>
-                            </li>
-
-                        </ul>
-                        <p class="captchaPrivacyTerms">
-                                This site is protected by reCAPTCHA and the Google
-                                <a href="https://policies.google.com/privacy">Privacy Policy</a> and
-                                <a href="https://policies.google.com/terms">Terms of Service</a> apply.
-                        </p>
-                    </li>
-
-                </ol>
-
-            </div>
-
-        </div>
-
-    </form>
-
-</div>
-
-
         </div>
     </div>
-
-    <footer>
-        <div class="qg-site-map row">
-
-    <div>
+    <footer class="qg-site-footer">
+    <div class="container-fluid qg-site-width">
+      <div class="d-flex flex-wrap">
+    <div class="col">
         <h3>
-            <a href="https://www.qld.gov.au/">Queensland Government</a>
-            <button class="btn btn-link qg-toggle-icon-right collapsed visible-xs-inline-block" data-toggle="collapse" data-target="#footer-info-qg" aria-expanded="false" aria-controls="footer-info-qg"><span class="sr-only">More Queensland Government pages</span>&nbsp;</button>
+            <a href="#">Contact us</a>
         </h3>
-        <ul class="collapse" id="footer-info-qg">
-            <li><a href="https://www.qld.gov.au/about/contact-government/contacts/">Government contacts</a></li>
-            <li><a href="https://www.qld.gov.au/about/contact-government/have-your-say/">Have your say</a></li>
-            <li><a href="https://www.qld.gov.au/about/staying-informed/">Staying informed</a></li>
-            <li><a href="https://www.qld.gov.au/about/government-jobs/">Government jobs</a></li>
-            <li><a href="https://www.qld.gov.au/about/how-government-works/">How government works</a></li>
-            <li><a href="https://data.qld.gov.au/">Queensland Government data</a></li>
-            <li><a href="https://publications.qld.gov.au/">Queensland Government publications</a></li>
-            <li><a href="https://www.forgov.qld.gov.au/?utm_medium=website&utm_source=qgov-site&utm_campaign=dsiti-for-gov&utm_content=swe-footer">Government employees</a></li>
+        <p>Get in touch for enquiries, feedback, complaints and compliments.</p>
+        <ul>
+            <li class="phone"><span>13 QGOV (13 74 68)</span></li>
+            <li class="facebook"><a href="#">/QueenslandGovernment</a></li>
+            <li class="twitter"><a href="#">@QldGov</a></li>
         </ul>
-    </div>
 
-    <div>
+        <a class="btn btn-global-secondary" href="#">Other contact options</a>
+        <hr class="hidden-lg hidden-md">
+    </div>
+    <div class="col">
         <h3>
-            <a href="https://www.qld.gov.au/queenslanders/">For Queenslanders</a>
-            <button class="btn btn-link qg-toggle-icon-right collapsed visible-xs-inline-block" data-toggle="collapse" data-target="#footer-info-for-qld" aria-expanded="false" aria-controls="footer-info-qg"><span class="sr-only">More Queensland Government pages</span>&nbsp;</button>
+            <a href="#">Your nearest service centre</a>
         </h3>
-        <ul class="col-2 collapse"  id="footer-info-for-qld">
-            <li><a href="https://www.qld.gov.au/transport/">Transport and motoring</a></li>
-            <li><a href="https://www.qld.gov.au/jobs/">Employment and jobs</a></li>
-            <li><a href="https://www.qld.gov.au/housing/">Homes and housing</a></li>
-            <li><a href="https://www.qld.gov.au/education/">Education and training</a></li>
-            <li><a href="https://www.qld.gov.au/community/">Community support</a></li>
-            <li><a href="https://www.qld.gov.au/health/">Health and wellbeing</a></li>
-            <li><a href="https://www.qld.gov.au/emergency/">Emergency services and safety</a></li>
-            <li><a href="https://www.qld.gov.au/about/">About Queensland and its government</a></li>
-            <li><a href="https://www.qld.gov.au/families/">Parents and families</a></li>
-            <li><a href="https://www.qld.gov.au/disability/">People with disability</a></li>
-            <li><a href="https://www.qld.gov.au/seniors/">Seniors</a></li>
-            <li><a href="https://www.qld.gov.au/atsi/">Aboriginal and Torres Strait Islander peoples</a></li>
-            <li><a href="https://www.qld.gov.au/youth/">Youth</a></li>
-            <li><a href="https://www.qld.gov.au/environment/">Environment, land and water</a></li>
-            <li><a href="https://www.qld.gov.au/law/">Your rights, crime and the law</a></li>
-            <li><a href="https://www.qld.gov.au/recreation/">Recreation, sport and arts</a></li>
-        </ul>
+        <p>Help us provide you with the most useful information by setting your location.</p>
+        <button class="btn btn-global-primary-white">Set your location</button>
+        <hr>
+        <a href="#" class="btn btn-global-secondary">All service centre locations</a>
     </div>
-
-    <div>
+    <div class="col">
         <h3>
-            <a href="http://www.business.qld.gov.au/">Business and industry</a>
-            <button class="btn btn-link qg-toggle-icon-right collapsed visible-xs-inline-block" data-toggle="collapse" data-target="#footer-info-bi" aria-expanded="false" aria-controls="footer-info-qg"><span class="sr-only">More Queensland Government pages</span>&nbsp;</button>
+            <a href="#">Website feedback</a>
         </h3>
-        <ul class="collapse" id="footer-info-bi">
-          <li><a href="https://www.business.qld.gov.au/starting-business">Starting a business</a></li>
-          <li><a href="https://www.business.qld.gov.au/running-business">Running a business</a></li>
-          <li><a href="https://www.business.qld.gov.au/running-business/employing">Employing people</a></li>
-          <li><a href="https://www.business.qld.gov.au/running-business/employing/payroll-tax">Payroll tax</a></li>
-          <li><a href="https://www.business.qld.gov.au/industries">Industries</a></li>
-          <li><a href="https://www.business.qld.gov.au/industries/invest">Investing in Queensland</a></li>
-          <li><a href="https://www.business.qld.gov.au/industries/invest/chinese-s" lang="zh">昆士兰州的投资机会</a></li>
-          <li><a href="https://www.business.qld.gov.au/industries/invest/chinese-t" lang="zh">昆士蘭州的投資機會</a></li>
-          <li><a href="https://www.business.qld.gov.au/industries/invest/japanese" lang="ja">クイーンズランド州への投資機会</a></li>
-          <li><a href="https://www.business.qld.gov.au/industries/invest/korean" lang="ko">퀸즈랜드 투자 기회</a></li>
-          <li><a href="https://www.business.qld.gov.au/industries/invest/invertir-turismo" lang="sp">Oportunidades de inversión en Queensland</a></li>
-        </ul>
+        <p>Help us improve the content on our website or tell us what is working really well.</p>
+        <button class="btn btn-global-secondary">Leave your feedback</button>
     </div>
-
 </div>
 
-        <div class="qg-legal row">
-	<ul class="list-inline">
-		<li><a href="https://www.qld.gov.au/contact-us/" class="no-print">Contact us</a></li>
+      <div class="qg-legal d-flex flex-wrap align-items-end justify-content-between">
+	<ul class="list-inline col-lg-6 col-md-6">
 		<li><a href="https://www.qld.gov.au/help/" class="no-print">Help</a></li>
 		<li><a href="https://www.qld.gov.au/legal/copyright/">Copyright</a></li>
 		<li><a href="https://www.qld.gov.au/legal/disclaimer/">Disclaimer</a></li>
@@ -437,11 +306,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		<li><a href="http://www.smartjobs.qld.gov.au/" class="no-print">Jobs in Queensland Government</a></li>
 		<li id="link-languages"><a href="https://www.qld.gov.au/languages/" class="no-print">Other languages</a></li>
 	</ul>
-  <p class="qg-copyright">&copy; The State of Queensland <span id="qg-copyright-owner"></span><span id="qg-copyright-daterange"></span></p>
-	<p><a href="https://www.qld.gov.au/" accesskey="1">Queensland Government</a></p>
+  	<p class="qg-copyright col-lg-4 col-md-4">&copy; The State of Queensland <span id="qg-copyright-daterange"></span></p>
 </div>
 
-    </footer>
+    </div>
+</footer>
 
     <script>
       var qg = qg || {};
