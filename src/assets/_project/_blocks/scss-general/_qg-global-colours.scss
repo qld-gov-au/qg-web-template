@@ -2,9 +2,22 @@
     background-color: $qg-global-primary;
 }
 
-.btn-global-primary {
+.btn-global-primary, .qg-search-form .qg-search-concierge-group.highlight {
     background-color: $qg-global-primary-dark;
 }
+
+.qg-search-form .qg-search-concierge-group.helper {
+    background-color: $qg-global-primary-light
+}
+
+.qg-search-form .qg-search-concierge-group,
+.qg-search-form .qg-search-concierge-group .list-group-item button,
+.qg-search-form .qg-search-concierge-group .list-group-item a,
+.qg-search-form .qg-search-concierge-group.helper .all {
+    color: $qg-global-primary-darker;
+}
+
+
 
 .btn-global-primary-white {
     color: $qg-global-primary-dark;

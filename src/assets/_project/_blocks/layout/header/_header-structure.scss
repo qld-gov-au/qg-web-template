@@ -6,6 +6,11 @@
   position: relative;
   z-index: 10;
 
+  &.active {
+    height: 100vh;
+    overflow-y: scroll;
+  }
+
   @media print {
     border-bottom: 1px solid black;
   }

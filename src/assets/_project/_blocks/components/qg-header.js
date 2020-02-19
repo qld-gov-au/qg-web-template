@@ -20,4 +20,15 @@ $(function () {
             $('.qg-navigation').collapse('hide');
         }
     });
+
+    // Open/Close Search concierge
+    $('.qg-search-form input[type=text]').on('focus', function() {
+        $('.qg-search-form').addClass('active');
+        $('.qg-search-concierge').show();
+    });
+
+    $('.qg-search-form .qg-search-close-concierge').on('click', function() {
+        $('.qg-search-form').removeClass('active');
+        $('.qg-search-concierge').hide();
+    })
 });
