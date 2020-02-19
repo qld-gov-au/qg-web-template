@@ -12047,13 +12047,11 @@ a .meta {
   display: block;
   opacity: 0;
   margin: 0;
-  transition: opacity .3s linear;
-  visibility: hidden;
   width: 327px; }
 
 .qg-portal-links .dropdown-menu.show {
-  opacity: 1;
-  visibility: visible; }
+  transition: opacity 0.3s linear;
+  opacity: 1; }
 
 .qg-portal-links .qg-dropdown-wrapper {
   padding: 5px 35px; }

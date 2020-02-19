@@ -57,13 +57,11 @@
         display: block;
         opacity: 0;
         margin: 0;
-        transition: opacity .3s linear;
-        visibility: hidden;
         width: 327px;
 
         &.show {
+            transition: opacity 0.3s linear;
             opacity: 1;
-            visibility: visible;
         }
     }
 
