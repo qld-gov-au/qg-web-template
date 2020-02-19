@@ -23,6 +23,7 @@
   .qg-site-header{
     position: sticky;
     top: 0;
+    flex-wrap: nowrap;
 
     &:after {
       background-color: $qg-global-primary-grey;

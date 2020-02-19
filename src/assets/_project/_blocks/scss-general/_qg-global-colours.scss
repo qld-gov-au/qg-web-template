@@ -18,10 +18,15 @@
     }
 }
 
+#qg-site-nav .dropdown-menu.mega-menu,
+#qg-site-nav .show .nav-link,
+#qg-site-nav .show .nav-link:before {
+    background-color: $qg-global-primary-light;
+}
+
 @include media-breakpoint-down(sm) {
     #qg-site-nav {
-
-		ul {
+		.nav {
             background-color: $qg-global-primary-light;
         }
 
