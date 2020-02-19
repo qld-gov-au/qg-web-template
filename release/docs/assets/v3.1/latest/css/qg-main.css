@@ -13626,7 +13626,7 @@ a:active, a:hover, a:focus {
   flex-grow: 0;
   padding: 0 0 0 15px; }
 
-.qg-site-footer .col > * {
+.qg-site-footer .qg-footer-col-content {
   max-width: 270px; }
 
 .qg-site-footer hr {
