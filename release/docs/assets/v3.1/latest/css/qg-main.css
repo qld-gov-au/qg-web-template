@@ -13622,6 +13622,8 @@ a:active, a:hover, a:focus {
   line-height: 20px; }
 
 .qg-site-footer .col {
+  -ms-flex-positive: 0;
+  flex-grow: 0;
   padding: 0 0 0 15px; }
 
 .qg-site-footer .col > * {
