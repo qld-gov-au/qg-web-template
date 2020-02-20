@@ -8,7 +8,7 @@
                 }
             }
             
-            $(this).find('.qg-breadcrumb-list-item').eq(1).after("<li class='qg-breadcrumb-list-item shorten'><button class='qg-breadcrumb-toggle'>[...]</button></li>");
+            $(this).find('.qg-breadcrumb-list-item').eq(1).after("<li class='qg-breadcrumb-list-item shorten'><button class='qg-breadcrumb-toggle' aria-label='Expand the breadcrumbs'>[...]</button></li>");
         }
 
         $('.qg-breadcrumb-toggle').on('click', function() {
