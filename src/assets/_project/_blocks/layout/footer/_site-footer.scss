@@ -103,6 +103,7 @@
     @include media-breakpoint-down(sm) {
         .col {
             flex-basis: 50%;
+            max-width: 50%;
             padding: 0 40px;
             position: relative;
         }
@@ -115,6 +116,7 @@
     @media (max-width: 600px) {
         .col {
             flex-basis: 100%;
+            max-width: none;
             padding: 0 25px 35px;
 
             &:first-child {
