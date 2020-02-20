@@ -13688,6 +13688,7 @@ a:active, a:hover, a:focus {
   .qg-site-footer .col {
     -ms-flex-preferred-size: 50%;
     flex-basis: 50%;
+    max-width: 50%;
     padding: 0 40px;
     position: relative; }
   .qg-site-footer h3 {
@@ -13697,6 +13698,7 @@ a:active, a:hover, a:focus {
   .qg-site-footer .col {
     -ms-flex-preferred-size: 100%;
     flex-basis: 100%;
+    max-width: none;
     padding: 0 25px 35px; }
   .qg-site-footer .col:first-child {
     padding-left: 25px;
