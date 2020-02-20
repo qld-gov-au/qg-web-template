@@ -53,9 +53,11 @@
     .dropdown-menu {
         background-color: $qg-global-dark-grey-active;
         border: 0;
+        border-radius: 0 0 4px 4px;
         box-shadow: 0 4px 6px 0 rgba(32, 33, 36, 0.47);
         display: block;
         opacity: 0;
+        padding: 0;
         margin: 0;
         width: 327px;
 
@@ -66,7 +68,7 @@
     }
 
     .qg-dropdown-wrapper {
-        padding: 5px 35px;
+        padding: 13px 35px;
     }
 
     .dropdown-item {
@@ -85,6 +87,17 @@
 
             &:after {
                 border: none;
+            }
+        }
+    }
+
+    @include media-breakpoint-up(sm) {
+        .dropdown-menu {
+            height: 0;
+            overflow: hidden;
+
+            &.show {
+                height: auto;
             }
         }
     }

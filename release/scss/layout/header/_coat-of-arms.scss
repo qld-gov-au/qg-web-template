@@ -3,13 +3,20 @@
   padding-left: 13px;
   overflow: hidden;
 
+  img {
+    height: 50px;
+    width: 289px;
+  }
+
   @include media-breakpoint-down(sm) {
     padding: 0;
     width: auto;
   }
 
-  img {
-    height: 50px;
+  @include media-breakpoint-down(xs) {
+    img {
+      width: 153px;
+    }
   }
 
   @media print {
