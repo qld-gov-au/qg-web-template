@@ -1,0 +1,182 @@
+.qg-footer-feedback {
+    &-content {
+        background-color: #fff;
+        border-radius: 4px;
+        color: $qg-global-primary-darker-grey;
+        padding: 0 15px 15px;
+    }
+
+    .status {
+        margin: 0 0 10px !important;
+        padding: 15px 13px;
+
+        .fa {
+            @include rem(font-size, 18px);
+            margin-right: 10px;
+        }
+
+        h4 {
+            font-weight: 600;
+        }
+
+        p {
+            @include rem(font-size, 14px);
+            margin-bottom: 0;
+
+            a {
+                text-decoration: underline;
+
+                &:hover, &:focus {
+                    opacity: 0.7;
+                }
+            }
+        }
+    }
+
+    .questions {
+        li {
+            padding: 10px 0;
+        }
+        
+        legend {
+            @include rem(line-height, 22px);
+        }
+
+        .label {
+            display: inline;
+        }            
+
+        abbr.required,abbr[title*='required'] {
+            @include rem(font-size, 16px);
+            display: inline;
+            margin: 0;
+            position: static;
+        }
+
+        textarea.form-control {
+            border: 3px solid $qg-pagination-border;
+            width: 100%;
+        }
+
+        .actions li {
+            width: 100%;
+
+            .btn {
+                margin-top: 0;
+            }
+        }
+
+        .form-group {
+            margin-bottom: 0;
+        }
+
+        .captchaPrivacyTerms {
+            @include rem(font-size, 14px);
+
+            a {
+                text-decoration: underline;
+
+                &:hover, &:focus {
+                    opacity: 0.7;
+                }
+            }
+        }
+
+        .radio {
+            margin: 13px 0;
+    
+            input[type=radio] {
+                @extend .sr-only;
+            }
+    
+            label {
+                line-height: 22px;
+                padding-left: 27px;
+                position: relative;
+    
+                &:after,&:before {
+                    border-radius: 50%;
+                    content: '';
+                    position: absolute;
+                }
+    
+                &:after {
+                    background-color: $qg-global-primary-darker-grey;
+                    height: 12px;
+                    left: 3px;
+                    opacity: 0;
+                    top: 7px;
+                    transform: scale(0);
+                    transition: all .3s ease;
+                    width: 12px;
+                }
+    
+                &:before {
+                    border: 1px solid $qg-global-primary-darker-grey;
+                    height: 18px;
+                    left: 0;
+                    top: 4px;
+                    width: 18px;
+                }
+            }
+              
+            input[type=radio]:checked + label {
+                font-weight: normal;
+                color: $qg-global-primary-darker-grey;
+    
+                &:after {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+
+    .thankyou {
+        h1,h2,h3,h4,h5,h6 {
+            @include rem(font-size, 16px);
+            color: $qg-global-primary-dark-grey;
+            font-weight: 600;
+            margin: 0 0 20px 0;
+        }
+
+        p {
+            margin: 15px 0;
+
+            a {
+                text-decoration: underline;
+
+                &:hover, &:focus {
+                    opacity: 0.7;
+                }
+            }
+        }
+    }
+
+    &__close {
+        @include rem(font-size, 14px);
+        background-color: transparent;
+        border: 0;
+        color: $qg-pagination-border;
+        font-weight: normal;
+        padding: 0;
+        margin-top: 10px;
+        text-decoration: underline;
+    }
+}
+
+.qg-feedback-toggle {
+    transition: all .3s ease;
+
+    &[aria-expanded=true] {
+        color: $qg-global-primary-dark;
+        background-color: #fff;
+        text-align: left;
+        border-radius: 4px 4px 0 0;
+        padding: 8px 12px 0 12px;
+
+        + .qg-footer-feedback .qg-footer-feedback-content{
+            border-radius: 0 0 4px 4px;
+        }
+    }
+}

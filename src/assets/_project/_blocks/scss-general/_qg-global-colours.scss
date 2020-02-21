@@ -6,7 +6,7 @@
     background-color: $qg-global-primary-dark;
 }
 
-.btn-global-primary-white {
+.btn-global-primary-white, .qg-footer-feedback__title, .qg-footer-feedback .thankyou h4 {
     color: $qg-global-primary-dark;
 }
 
@@ -15,6 +15,12 @@
         .fa {
             color: $qg-global-primary;
         }
+    }
+}
+
+.qg-footer-feedback__close {
+    &:hover, &:focus {
+        color: $qg-global-primary-dark;
     }
 }
 
