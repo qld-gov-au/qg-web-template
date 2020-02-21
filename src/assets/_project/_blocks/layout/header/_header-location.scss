@@ -183,8 +183,6 @@
         background-color: $qg-global-primary-light-grey;
         width: 100%;
         padding: 10px 0;
-        z-index: 0;
-        transition-delay: 0.5s;
 
         .dropdown-toggle {
             display: flex;
@@ -209,11 +207,6 @@
         .dropdown-menu {
             left: -30px !important;
             top: 5px !important;
-        }
-
-        .qg-site-header.active & {
-            z-index: -2;
-            transition-delay: 0s;
         }
     }
 

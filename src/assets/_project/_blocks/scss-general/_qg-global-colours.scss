@@ -18,6 +18,17 @@
     }
 }
 
+.header-location .dropdown-menu p, .header-location-autocomplete ul li button {
+    color: $qg-global-primary-darker;
+}
+
+.qg-footer-feedback__close, .header-location-close {
+    &:hover, &:focus {
+        color: $qg-global-primary-dark;
+    }
+}
+
+
 @include media-breakpoint-down(sm) {
     #qg-site-nav {
 

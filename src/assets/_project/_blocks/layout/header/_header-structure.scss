@@ -20,24 +20,24 @@
 }
 
 @include media-breakpoint-down(sm) {
+  body.header-active {
+    overflow-y: hidden;
+
+    .qg-site-header {
+      height: 100vh;
+      overflow-y: scroll;
+    }
+
+    .header-location {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
   .qg-site-header{
     position: sticky;
     top: 0;
-
-    &:after {
-      background-color: $qg-global-primary-grey;
-      content: "";
-      position: absolute;
-      height: 1vh;
-      width: 100%;
-      z-index: -1;
-      transition: height 0.3s ease 0.3s;
-    }
-
-    &.active:after {
-      height: 100vh;
-      transition-delay: 0s;
-    }
+    flex-wrap: nowrap;
   }
 
   .qg-site-header-top {
