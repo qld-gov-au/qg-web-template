@@ -11972,8 +11972,7 @@ a .meta {
   .header-location {
     background-color: #f3f3f3;
     width: 100%;
-    padding: 10px 0;
-    z-index: -1; }
+    padding: 10px 0; }
   .header-location button {
     display: -ms-flexbox;
     display: flex;
@@ -12397,21 +12396,20 @@ a .meta {
   order: 3; }
 
 @media (max-width: 991.98px) {
+  body.header-active {
+    overflow-y: hidden; }
+  body.header-active .qg-site-header {
+    height: 100vh;
+    overflow-y: scroll; }
+  body.header-active .header-location {
+    opacity: 0;
+    pointer-events: none; }
   .qg-site-header {
     position: -webkit-sticky;
     position: sticky;
-    top: 0; }
-  .qg-site-header:after {
-    background-color: #565656;
-    content: "";
-    position: absolute;
-    height: 1vh;
-    width: 100%;
-    z-index: -1;
-    transition: height 0.3s ease 0.3s; }
-  .qg-site-header.active:after {
-    height: 100vh;
-    transition-delay: 0s; }
+    top: 0;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap; }
   .qg-site-header-top {
     padding: 30px 50px; } }
 
