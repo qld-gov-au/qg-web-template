@@ -61,6 +61,8 @@
 
 @import "layout/header/access";
 @import "layout/print";
+@import "layout/footer/site-footer";
+@import "layout/footer/legals";
 @import "layout/header/header-location";
 @import "layout/header/portal-links";
 @import "layout/header/mobile-menu-button";
@@ -81,8 +83,6 @@
 @import "layout/section-nav/guide-sub-nav";
 @import "layout/section-nav/mobile_step_nav";
 @import "layout/asides/asides";
-@import "layout/footer/site-footer";
-@import "layout/footer/legals";
 
 //themes
 @import "layout/_pagemodels/aggregation";
