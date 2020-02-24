@@ -58,8 +58,8 @@
 
         p {
             @include rem(font-size, 14px);
+            @include rem(line-height, 18px);
             color: $qg-global-primary-darker-grey;
-            line-height: 18px;
         }
 
         .btn-global-primary {
@@ -120,7 +120,7 @@
 
     &-autocomplete{
         position: absolute;
-        top: 69px;
+        transform: translateY(-18px);
         width: 100%;
 
         ul {
@@ -161,7 +161,7 @@
         background-color: transparent;
         border: 0;
         color: $qg-pagination-border;
-        margin-top: 23px;
+        margin-top: 25px;
         padding: 0;
         text-decoration: underline;
     }
