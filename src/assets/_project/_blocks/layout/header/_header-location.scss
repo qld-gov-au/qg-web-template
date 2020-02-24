@@ -109,6 +109,8 @@
             margin: 0;
 
             li {
+                margin: 0;
+                
                 &:first-child button {
                     padding-top: 15px;
                 }
@@ -139,7 +141,7 @@
         background-color: transparent;
         border: 0;
         color: $qg-pagination-border;
-        margin-top: 23px;
+        margin-top: 25px;
         padding: 0;
         text-decoration: underline;
     }
@@ -220,12 +222,29 @@
 
     p {
         @include rem(font-size, 14px);
+        @include rem(line-height, 18px);
         color: $qg-global-primary-darker-grey;
-        line-height: 18px;
+
+        &.error {
+            @include rem(line-height, 16px);
+            color: $qg-global-error;
+            font-style: italic;
+            margin-bottom: 0;
+        }
     }
 
     label {
         color: $qg-global-primary-darker-grey;
+        margin-bottom: 0;
+    }
+
+    input[type=text] {
+        margin-top: 5px;
+
+        &.error {
+            background-color: rgba($qg-global-error, 0.05);
+            border-color: $qg-global-error;
+        }
     }
 
     .btn-global-primary {

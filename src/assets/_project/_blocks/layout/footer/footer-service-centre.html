@@ -1,27 +1,36 @@
 <div class="col col-md-4">
-    <div class="qg-footer-col-content">
+    <div class="qg-footer-col-content qg-service-centre">
         <h3>Your nearest service centre</h3>
         <p>Help us provide you with the most useful information by setting your location.</p>
-        <button class="btn btn-global-primary-white" data-analytics-link-group=“qg-nearest-service-set-location“>Set your location</button>
-        <div class="qg-location-setter">
-            <p>Help us provide you with the most useful information by setting your location.</p>
-            <button class="btn btn-global-primary detect-location" type="button" data-analytics-link-group=“qg-location-device-location“>Use device location</button>
-            <span class="header-location-divider">or</span>
-            <form class="header-location-form">
-                <label>Start typing your town or suburb</label>
-                <input type="text" placeholder="e.g. Cooladdi"/>
-                <div class="header-location-autocomplete" style="display:none">
-                    <ul>
-                        <li><button><b>Coola</b>bine, Sunshine Coast Regional</button></li>
-                        <li><button><b>Coola</b>bunia, South Burnett Regional</button></li>
-                        <li><button><b>Coola</b>ddi, Murweh Shire</button></li>
-                        <li><button><b>Coola</b>na, Somerset Regional</button></li>
-                        <li><button><b>Coola</b>ngatta, Gold Coast City</button></li>
-                    </ul>
-                </div>
-                <button class="btn btn-global-primary set-location" type="button" data-analytics-link-group=“qg-location-manual-location“>Set location</button>
-            </form>
-            <button class="header-location-close">Close</button>
+
+        <a href="#" class="qg-service-centre__link" data-analytics-link-group=“qg-nearest-service-centre-details“>Quilpie Police Station</a>
+        <ul class="qg-service-centre-list">
+            <li class="qg-service-centre-list-item"><a href="#" data-analytics-link-group=“qg-nearest-service-centre-services“>Services available</a></li>
+            <li class="qg-service-centre-list-item">138 km away</li>
+            <li class="qg-service-centre-list-item"><span class="qg-service-centre__address">7 Bulnbuln Street</span><span class="qg-service-centre__address">Quilpie 4480</span></li>
+        </ul>
+        <button class="btn btn-global-primary-white qg-service-centre-set-location" data-analytics-link-group=“qg-nearest-service-set-location“ data-toggle="collapse" href="#qg-service-centre-location-setter" role="button" aria-expanded="false" aria-controls="qg-service-centre-location-setter">Set your location</button>
+        <div id="qg-service-centre-location-setter" class="collapse">
+            <div class="qg-location-setter">
+                <button class="btn btn-global-primary detect-location" type="button" data-analytics-link-group=“qg-location-device-location“>Use device location</button>
+                <span class="header-location-divider">or</span>
+                <form class="header-location-form">
+                    <label>Start typing your town or suburb</label>
+                    <p class="error">Please enter a location into the search box and try searching again.</p>
+                    <input type="text" class="error" placeholder="e.g. Cooladdi"/>
+                    <div class="header-location-autocomplete" style="display:none">
+                        <ul>
+                            <li><button><b>Coola</b>bine, Sunshine Coast Regional</button></li>
+                            <li><button><b>Coola</b>bunia, South Burnett Regional</button></li>
+                            <li><button><b>Coola</b>ddi, Murweh Shire</button></li>
+                            <li><button><b>Coola</b>na, Somerset Regional</button></li>
+                            <li><button><b>Coola</b>ngatta, Gold Coast City</button></li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-global-primary set-location" type="button" data-analytics-link-group=“qg-location-manual-location“>Set location</button>
+                </form>
+                <button class="header-location-close">Close</button>
+            </div>
         </div>
         <hr>
         <a href="#" class="btn btn-global-secondary" data-analytics-link-group=“qg-nearest-service-centre-all“>All service centre locations</a>
