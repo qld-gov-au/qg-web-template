@@ -6,7 +6,9 @@
     background-color: $qg-global-primary-dark;
 }
 
-.btn-global-primary-white, .qg-footer-feedback__title, .qg-footer-feedback .thankyou h4 {
+.btn-global-primary-white,
+.qg-footer-feedback__title,
+.qg-feedback-toggle[aria-expanded=true] {
     color: $qg-global-primary-dark;
 }
 
@@ -15,6 +17,25 @@
         .fa {
             color: $qg-global-primary;
         }
+    }
+}
+
+.qg-footer-feedback .questions .radio label:before {
+    border-color: $qg-global-primary-darker;
+}
+
+.qg-footer-feedback .questions .radio label:after {
+    background-color: $qg-global-primary-darker;
+}
+
+.qg-footer-feedback .questions .radio input[type=radio]:checked + label,
+.qg-footer-feedback-content {
+    color: $qg-global-primary-darker;
+}
+
+.qg-footer-feedback .thankyou {
+    h1,h2,h3,h4,h5,h6 {
+        color: $qg-global-primary-dark;
     }
 }
 
