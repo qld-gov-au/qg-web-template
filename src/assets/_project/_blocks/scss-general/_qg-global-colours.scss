@@ -24,6 +24,10 @@
     background-color: $qg-global-primary-light;
 }
 
+#qg-site-nav .show .nav-link {
+    color: $qg-global-primary-dark;
+}
+
 @include media-breakpoint-down(sm) {
     #qg-site-nav {
 		.nav {
