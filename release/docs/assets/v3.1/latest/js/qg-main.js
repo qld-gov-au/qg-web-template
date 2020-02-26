@@ -3911,33 +3911,32 @@
 	
 	var socialLinksList = {
 	  primary: [
-	  { title: 'Facebook', showTitle: false, icon: renderIcon('fa', 'facebook') },
-	  { title: 'Twitter', showTitle: false, icon: renderIcon('fa', 'twitter') },
-	  { title: 'LinkedIn', showTitle: false, icon: renderIcon('fa', 'linkedin') },
-	  { title: 'Others', showTitle: false, icon: renderIcon('fa', 'share-alt') }]
+	  { title: 'Facebook', showTitle: false, icon: renderIcon('fa', 'facebook-square'), ga: 'data-analytics-link-group="qg-sharing-facebook"' },
+	  { title: 'Twitter', showTitle: false, icon: renderIcon('fa', 'twitter-square'), ga: 'data-analytics-link-group="qg-sharing-twitter"' },
+	  { title: 'LinkedIn', showTitle: false, icon: renderIcon('fa', 'linkedin-square'), ga: 'data-analytics-link-group="qg-sharing-linkedin"' }]
 	
 	  /* secondary: [
-	                                                                                 // {title: 'Delicious',    showTitle: true, icon: renderIcon('fa', 'delicious')},
-	                                                                                 { title: "Digg", showTitle: true, icon: renderIcon("fa", "digg") },
-	                                                                                 // {title: 'Evernote',     showTitle: true, icon: renderIcon('svg', 'evernote', '/assets/v3/images/evernote-logo-white.svg')},
-	                                                                                 // {title: 'Reddit',       showTitle: true, icon: renderIcon('fa', 'reddit')},
-	                                                                                 // {title: 'StumbleUpon',  showTitle: true, icon: renderIcon('fa', 'stumbleupon')},
-	                                                                                 // {title: 'Tumblr',       showTitle: true, icon: renderIcon('fa', 'tumblr')},
-	                                                                                 { title: "Google+", showTitle: true, icon: renderIcon("fa", "google-plus") }
-	                                                                               ]*/ };
+	                                                                                                                                                // {title: 'Delicious',    showTitle: true, icon: renderIcon('fa', 'delicious')},
+	                                                                                                                                                { title: "Digg", showTitle: true, icon: renderIcon("fa", "digg") },
+	                                                                                                                                                // {title: 'Evernote',     showTitle: true, icon: renderIcon('svg', 'evernote', '/assets/v3/images/evernote-logo-white.svg')},
+	                                                                                                                                                // {title: 'Reddit',       showTitle: true, icon: renderIcon('fa', 'reddit')},
+	                                                                                                                                                // {title: 'StumbleUpon',  showTitle: true, icon: renderIcon('fa', 'stumbleupon')},
+	                                                                                                                                                // {title: 'Tumblr',       showTitle: true, icon: renderIcon('fa', 'tumblr')},
+	                                                                                                                                                { title: "Google+", showTitle: true, icon: renderIcon("fa", "google-plus") }
+	                                                                                                                                              ]*/ };
 	
 	
 	/**
-	                                                                                       * #####################################
-	                                                                                       * Views
-	                                                                                       **/
+	                                                                                                                                                      * #####################################
+	                                                                                                                                                      * Views
+	                                                                                                                                                      **/
 	
 	function renderSocialURL(who, from, title, domain, description) {
 	  switch (who) {
 	    case 'facebook':
 	      return 'http://www.facebook.com/share.php?u=' + from + '&title=' + title;
 	    case 'twitter':
-	      return 'http://twitter.com/home?status=' + title + '+' + from;
+	      return 'http://twitter.com/share?url=' + from;
 	    case 'linkedin':
 	      return 'http://www.linkedin.com/shareArticle?mini=true&url=' + from + '&title=' + title + '&source=' + domain;
 	    case 'others':
@@ -3975,14 +3974,14 @@
 	  return 'qg-visually-hidden';
 	}
 	
-	function renderLink(url, title, icon) {var hidden = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
-	  return '<li>\n            <a class="qg-share-link qg-accessibility-off" href="' +
-	  url + '" title="' + title + '">' + icon + '<span class="title ' + hidden + '"">' + title + '</span></a>\n          </li>';
+	function renderLink(url, title, icon, ga) {var hidden = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : '';
+	  return '<li class="qg-share-list-item">\n            <a class="qg-share-link qg-accessibility-off" href="' +
+	  url + '" title="' + title + '" ' + ga + ' >' + icon + '<span class="title ' + hidden + '"">' + title + '</span></a>\n          </li>';
 	
 	}
 	
 	function renderShareButtons() {
-	  return '<h2>Share:</h2>\n  <ul class="navbar navbar-right">\n    ' +
+	  return '<span class="navbar-brand qg-share__title">Share this page:</span>\n  <ul class="navbar navbar-right qg-share-list">\n    ' +
 	
 	  getLinks('primary') + '\n   </ul>';
 	
@@ -4012,7 +4011,7 @@
 	    if (entry.showTitle !== true) {
 	      hidden = renderHidden();
 	    }
-	    str = str + renderLink(url, entry.title, entry.icon, hidden);
+	    str = str + renderLink(url, entry.title, entry.icon, entry.ga, hidden);
 	  }
 	  return str;
 	}
