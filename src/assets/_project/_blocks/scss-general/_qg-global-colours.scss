@@ -18,6 +18,10 @@
     }
 }
 
+.qg-share__title {
+    color: $qg-global-primary-darker;
+}
+
 @include media-breakpoint-down(sm) {
     #qg-site-nav {
 
