@@ -3,11 +3,11 @@
         background-color: #fff;
         border-radius: 4px;
         color: $qg-global-primary-darker-grey;
-        padding: 0 15px 15px;
+        padding: 0 15px 25px 15px;
     }
 
     .status {
-        margin: 0 0 10px !important;
+        margin: 0 0 24px !important;
         padding: 15px 13px;
 
         .fa {
@@ -34,12 +34,13 @@
     }
 
     .questions {
+
         li {
-            padding: 10px 0;
+            padding: 3px 0 7px;
         }
         
         legend {
-            @include rem(line-height, 22px);
+            @include rem(line-height, 20px);
         }
 
         .label {
@@ -48,17 +49,22 @@
 
         abbr.required,abbr[title*='required'] {
             @include rem(font-size, 16px);
+            color: $qg-global-error;
             display: inline;
             margin: 0;
             position: static;
         }
 
         textarea.form-control {
+            @include rem(line-height, 19px);
             border: 3px solid $qg-pagination-border;
+            padding: 13px;
             width: 100%;
         }
 
         .actions li {
+            margin-right: 0;
+            margin-bottom: 20px;
             width: 100%;
 
             .btn {
@@ -72,6 +78,8 @@
 
         .captchaPrivacyTerms {
             @include rem(font-size, 14px);
+            @include rem(line-height, 16px);
+            margin-bottom: 0;
 
             a {
                 text-decoration: underline;
@@ -83,15 +91,15 @@
         }
 
         .radio {
-            margin: 13px 0;
+            margin: 16px 0;
     
             input[type=radio] {
                 @extend .sr-only;
             }
     
             label {
-                line-height: 22px;
-                padding-left: 27px;
+                @include rem(line-height, 20px);
+                padding-left: 29px;
                 position: relative;
     
                 &:after,&:before {
@@ -103,7 +111,7 @@
                 &:after {
                     background-color: $qg-global-primary-darker-grey;
                     height: 12px;
-                    left: 3px;
+                    left: 4px;
                     opacity: 0;
                     top: 7px;
                     transform: scale(0);
@@ -114,7 +122,7 @@
                 &:before {
                     border: 1px solid $qg-global-primary-darker-grey;
                     height: 18px;
-                    left: 0;
+                    left: 1px;
                     top: 4px;
                     width: 18px;
                 }
@@ -129,18 +137,36 @@
                     transform: scale(1);
                 }
             }
+
+            input[type=radio]:focus + label {
+                font-weight: bold;
+            }
+        }
+    }
+
+    .initial-question {
+        li {
+            padding: 13px 0 0 0;
         }
     }
 
     .thankyou {
+        margin-top: 30px;
+        padding-top: 15px;
+
         h1,h2,h3,h4,h5,h6 {
             @include rem(font-size, 16px);
             color: $qg-global-primary-dark-grey;
             font-weight: 600;
-            margin: 0 0 20px 0;
+            margin: 20px 0;
+        }
+
+        .thankyou__title {
+            margin-top: 0;
         }
 
         p {
+            @include rem(line-height, 19px);
             margin: 15px 0;
 
             a {
@@ -157,7 +183,7 @@
         @include rem(font-size, 14px);
         background-color: transparent;
         border: 0;
-        color: $qg-pagination-border;
+        color: $qg-global-primary-accesible-grey;
         font-weight: normal;
         padding: 0;
         margin-top: 10px;
@@ -165,18 +191,21 @@
     }
 }
 
-.qg-feedback-toggle {
-    transition: all .3s ease;
+.qg-site-footer {
+    .qg-feedback-toggle {
+        margin-top: 30px;
+        transition: all .3s ease;
 
-    &[aria-expanded=true] {
-        color: $qg-global-primary-dark-grey;
-        background-color: #fff;
-        text-align: left;
-        border-radius: 4px 4px 0 0;
-        padding: 8px 12px 0 12px;
+        &[aria-expanded=true] {
+            color: $qg-global-primary-dark-grey;
+            background-color: #fff;
+            text-align: left;
+            border-radius: 4px 4px 0 0;
+            padding: 8px 12px 0 12px;
 
-        + .qg-footer-feedback .qg-footer-feedback-content{
-            border-radius: 0 0 4px 4px;
+            + .qg-footer-feedback .qg-footer-feedback-content{
+                border-radius: 0 0 4px 4px;
+            }
         }
     }
 }
