@@ -2,13 +2,29 @@
 
     .qg-service-centre-set-location {
         padding: 9px 16px;
+        position: relative;
         transition: all .3s ease;
+
+        &__text {
+            display: inline-block;
+            transform: translateX(50%);
+
+            &-wrap {
+                transform: translateX(-25%);
+                transition: all .3s ease;
+            }
+        }
 
         &[aria-expanded=true] {
             border-radius: 4px 4px 0 0;
-            margin-top: 0;
-            text-align: left;
-            transform: translateY(4px);
+
+            .qg-service-centre-set-location__text-wrap {
+                transform: translateX(-50%);
+            }
+
+            + .qg-location-setter-wrap .qg-location-setter {
+                border-radius: 0 0 4px 4px;
+            }
         }
     }
 
@@ -58,5 +74,6 @@
     .qg-location-setter {
         padding-top: 20px;
         padding-bottom: 30px;
+        transition: all .3s ease;
     }
 }
