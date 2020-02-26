@@ -7,6 +7,7 @@
 // Variables
 // -------------------------
 @import "scss-general/qg-variables";
+@import "scss-general/qg-global-variables";
 @import "scss-general/qg-font-variables";
 //@import "scss-general/bootstrap-variables";
 
@@ -98,4 +99,4 @@
 @import "legacy/forms/forms";
 
 // Colour pallet
-@import "scss-general/qg-global-colours";
+@import "scss-general/qg-global-theme";
