@@ -12,9 +12,9 @@
 
 const socialLinksList = {
   primary: [
-    { title: 'Facebook', showTitle: false, icon: renderIcon('fa', 'facebook-square') , ga: 'data-analytics-link-group="qg-sharing-facebook"' },
-    { title: 'Twitter', showTitle: false, icon: renderIcon('fa', 'twitter-square') , ga: 'data-analytics-link-group="qg-sharing-twitter"' },
-    { title: 'LinkedIn', showTitle: false, icon: renderIcon('fa', 'linkedin-square') , ga: 'data-analytics-link-group="qg-sharing-linkedin"' }
+    { title: 'Facebook', showTitle: false, icon: renderIcon('fa', 'facebook-square'), ga: 'data-analytics-link-group="qg-sharing-facebook"' },
+    { title: 'Twitter', showTitle: false, icon: renderIcon('fa', 'twitter-square'), ga: 'data-analytics-link-group="qg-sharing-twitter"' },
+    { title: 'LinkedIn', showTitle: false, icon: renderIcon('fa', 'linkedin-square'), ga: 'data-analytics-link-group="qg-sharing-linkedin"' }
   ],
  /* secondary: [
     // {title: 'Delicious',    showTitle: true, icon: renderIcon('fa', 'delicious')},
@@ -112,7 +112,7 @@ function getLinks (type) {
     if (entry.showTitle !== true) {
       hidden = renderHidden();
     }
-    str = str + renderLink(url, entry.title, entry.icon, entry.ga, hidden, );
+    str = str + renderLink(url, entry.title, entry.icon, entry.ga, hidden);
   }
   return str;
 }
