@@ -22,10 +22,19 @@
     color: $qg-global-primary-darker;
 }
 
+#qg-site-nav .dropdown-menu.mega-menu,
+#qg-site-nav .show .nav-link,
+#qg-site-nav .show .nav-link:before {
+    background-color: $qg-global-primary-light;
+}
+
+#qg-site-nav .show .nav-link {
+    color: $qg-global-primary-dark;
+}
+
 @include media-breakpoint-down(sm) {
     #qg-site-nav {
-
-		ul {
+		.nav {
             background-color: $qg-global-primary-light;
         }
 
