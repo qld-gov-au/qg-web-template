@@ -22,7 +22,7 @@
     color: $qg-global-primary-darker;
 }
 
-.qg-footer-feedback__close, .header-location-close {
+.qg-footer-feedback__close, .qg-location-setter-close {
     &:hover, &:focus {
         color: $qg-global-primary-dark;
     }

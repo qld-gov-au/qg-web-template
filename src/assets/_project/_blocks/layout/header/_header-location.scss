@@ -23,25 +23,14 @@
         }
     }
 
-    .dropdown-menu {
-        border: 0;
-        border-radius: 4px;
-        box-shadow: 0 4px 6px 0 rgba(32, 33, 36, 0.47);
-        width: 270px;
-        padding: 16px 16px 13px 16px;
+    .qg-location-setter {
         opacity: 0;
-        display: block;
-        transition: opacity .3s linear, visibility 0s linear .3s;
         visibility: hidden;
-
+    
         &.show {
             opacity: 1;
             transition: opacity .3s linear;
             visibility: visible;
-        }
-
-        &.closed {
-            display: none;
         }
 
         &:before {
@@ -55,115 +44,6 @@
             top: -9px;
             left: 173px;
         }
-
-        p {
-            @include rem(font-size, 14px);
-            @include rem(line-height, 18px);
-            color: $qg-global-primary-darker-grey;
-        }
-
-        .btn-global-primary {
-            display: block;
-            width: 100%;
-        }
-    }
-
-    &-divider {
-        @include rem(font-size, 12px);
-        color: $qg-pagination-border;
-        display: block;
-        width: 100%;
-        position: relative;
-        text-align: center;
-        margin: 15px 0 10px;
-
-        &:before, &:after {
-            content: "";
-            position: absolute;
-            border-top: 1px solid $qg-pagination-border;
-            width: 46%;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        &:before {
-            left: 0;
-        }
-
-        &:after {
-            right: 0;
-        }
-    }
-
-    &-form {
-        position: relative;
-
-        label {
-            @include rem(font-size, 14px);
-        }
-
-        input[type=text] {
-            @include rem(font-size, 14px);
-            border: solid 3px $qg-pagination-border;
-            border-radius: 4px;
-            box-sizing: border-box;
-            padding: 10px 12px 9px;
-            margin-bottom: 15px;
-            width: 100%;
-            -webkit-appearance: none;
-
-            &:focus + div {
-                display:block !important;
-            }
-        }
-    }
-
-    &-autocomplete{
-        position: absolute;
-        transform: translateY(-18px);
-        width: 100%;
-
-        ul {
-            border: solid 3px $qg-pagination-border;
-            border-radius: 0 0 4px 4px;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-
-            li {
-                &:first-child button {
-                    padding-top: 15px;
-                }
-
-                &:last-child button {
-                    padding-bottom: 15px;
-                }
-
-                button {
-                    @include rem(font-size, 14px);
-                    color:$qg-global-primary-darker-grey;
-                    background-color: #fff;
-                    padding: 9px 12px;
-                    text-align: left;
-                    font-weight: 500;
-                    width: 100%;
-
-                    &:hover, &:focus {
-                        background-color: $qg-light-gray-dark;
-                    }
-                }
-            }
-        }
-    }
-
-    &-close {
-        @include rem(font-size, 14px);
-        background-color: transparent;
-        border: 0;
-        color: $qg-pagination-border;
-        margin-top: 25px;
-        padding: 0;
-        text-decoration: underline;
     }
 
     @media (max-width: 1250px) and (min-width: 992px) {

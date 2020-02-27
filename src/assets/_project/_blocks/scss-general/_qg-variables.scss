@@ -19,6 +19,7 @@ $qg-global-primary-grey: #565656;
 $qg-global-primary-dark-grey: #313131;
 $qg-global-primary-darker-grey: #292929;
 $qg-global-primary-light-grey: #f3f3f3;
+$qg-global-primary-accesible-grey: #767676; // Alternative of $qg-pagination-border as it's not accesible on white background
 
 $qg-light-green: #9AC02C;
 $qg-green: #78ba00;
@@ -44,6 +45,7 @@ $qg-grey-light: #f6f6f6; //Header light grey
 
 // ## Red ##
 $qg-red: #F85C50;
+$qg-global-error: #d60000;
 
 // ## Dark Blue ##
 $qg-dark-blue: #0B2E4C;
