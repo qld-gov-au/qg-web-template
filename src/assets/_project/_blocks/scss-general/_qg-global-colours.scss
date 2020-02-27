@@ -6,7 +6,9 @@
     background-color: $qg-global-primary-dark;
 }
 
-.btn-global-primary-white {
+.btn-global-primary-white,
+.qg-footer-feedback__title,
+.qg-feedback-toggle[aria-expanded=true] {
     color: $qg-global-primary-dark;
 }
 
@@ -18,10 +20,6 @@
     }
 }
 
-.qg-share__title {
-    color: $qg-global-primary-darker;
-}
-
 #qg-site-nav .dropdown-menu.mega-menu,
 #qg-site-nav .show .nav-link,
 #qg-site-nav .show .nav-link:before {
@@ -30,6 +28,32 @@
 
 #qg-site-nav .show .nav-link {
     color: $qg-global-primary-dark;
+}
+
+.qg-footer-feedback .questions .radio label:before {
+    border-color: $qg-global-primary-darker;
+}
+
+.qg-footer-feedback .questions .radio label:after {
+    background-color: $qg-global-primary-darker;
+}
+
+.qg-footer-feedback .questions .radio input[type=radio]:checked + label,
+.qg-footer-feedback-content,
+.qg-share__title  {
+    color: $qg-global-primary-darker;
+}
+
+.qg-footer-feedback .thankyou {
+    h1,h2,h3,h4,h5,h6 {
+        color: $qg-global-primary-dark;
+    }
+}
+
+.qg-footer-feedback__close {
+    &:hover, &:focus {
+        color: $qg-global-primary-dark;
+    }
 }
 
 @include media-breakpoint-down(sm) {
