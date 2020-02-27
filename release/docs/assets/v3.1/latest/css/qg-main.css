@@ -11720,7 +11720,7 @@ a .meta {
   clear: both; }
 
 #qg-access {
-  z-index: 11;
+  z-index: 1001;
   width: 100%;
   position: relative;
   background: #444; }
@@ -12090,7 +12090,7 @@ a .meta {
 .qg-portal-links .dropdown-item:last-child:after {
   border: none; }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .qg-portal-links .nav-item {
     max-height: 44px; }
   .qg-portal-links .dropdown-menu {
