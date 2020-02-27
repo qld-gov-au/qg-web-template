@@ -12091,6 +12091,8 @@ a .meta {
   border: none; }
 
 @media (min-width: 768px) {
+  .qg-portal-links .nav-item {
+    max-height: 44px; }
   .qg-portal-links .dropdown-menu {
     height: 0;
     overflow: hidden; }
