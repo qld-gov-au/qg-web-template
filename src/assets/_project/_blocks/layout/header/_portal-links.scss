@@ -92,6 +92,10 @@
     }
 
     @include media-breakpoint-up(sm) {
+        .nav-item {
+            max-height: 44px;
+        }
+
         .dropdown-menu {
             height: 0;
             overflow: hidden;
