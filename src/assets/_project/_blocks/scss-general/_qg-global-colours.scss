@@ -19,13 +19,13 @@
 }
 
 .header-location .dropdown-menu p,
-.header-location-autocomplete ul li button,
+.qg-location-setter-autocomplete ul li button,
 .qg-location-setter p,
 .qg-location-setter label {
     color: $qg-global-primary-darker;
 }
 
-.qg-footer-feedback__close, .header-location-close {
+.qg-footer-feedback__close, .qg-location-setter-close {
     &:hover, &:focus {
         color: $qg-global-primary-dark;
     }

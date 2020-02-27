@@ -144,5 +144,9 @@
         margin-top: 30px;
         padding: 0;
         text-decoration: underline;
+
+        &:hover, &:focus {
+            color: $qg-global-primary-dark-grey;
+        }
     }
 }
