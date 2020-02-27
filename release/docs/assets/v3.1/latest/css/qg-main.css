@@ -12383,7 +12383,7 @@ a .meta {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   position: relative;
-  z-index: 10; }
+  z-index: 1000; }
 
 @media print {
   .qg-site-header {
