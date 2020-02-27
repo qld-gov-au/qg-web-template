@@ -60,7 +60,7 @@
   &.warn {
     border-color: #f9af71 !important;
   }
-  &.success , &.info, &.tip , &.warn{
+  &.success , &.info, &.tip , &.warn, &.global-info{
     position: relative;
     border: 0;
     border-left: 5px solid;
@@ -77,5 +77,9 @@
   }
   &.info, &.tip{
     border-color: $brand-info;
+  }
+  &.global-info {
+    border-color: $brand-info;
+    background-color: $state-info-bg;
   }
 }
