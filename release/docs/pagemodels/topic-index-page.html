@@ -82,14 +82,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
     <header id="qg-site-header" class="qg-site-header sticky">
-    <div class="container-fluid qg-site-width qg-site-header-top">
-      <div class="row align-items-center justify-content-between">
-        <button id="#qg-show-menu" class="qg-show-menu" aria-label="Search" data-toggle="collapse" data-target=".qg-navigation" aria-expanded="false" aria-controls="qg-site-nav qg-portal-links">
+  <div class="container-fluid qg-site-width qg-site-header-top">
+    <div class="row align-items-center justify-content-between">
+      <button id="#qg-show-menu" class="qg-show-menu" aria-label="Search" data-toggle="collapse" data-target=".qg-navigation" aria-expanded="false" aria-controls="qg-site-nav qg-portal-links">
     <span class="fa fa-bars" aria-hidden="true"></span>
     <span>Menu</span>
 </button>
 
-        <div class="qg-coat-of-arms col-md-4">
+      <div class="qg-coat-of-arms col-md-4">
     <a href="//www.qld.gov.au" tabindex="0">
         <img src="https://static.qgov.net.au/assets/v3.1/latest/images/coat-of-arms/qg-coa-white.svg" alt="Queensland Government" class="hidden-xs">
         <img src="https://static.qgov.net.au/assets/v3.1/latest/images/coat-of-arms/qg-coa-stacked-white.svg" alt="Queensland Government" class="hidden-sm hidden-md hidden-lg">
@@ -97,15 +97,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 
 
-        <button id="qg-show-search" class="qg-show-search" aria-label="Search" data-toggle="collapse" data-target="#qg-search-form" aria-expanded="false">
-  <span class="fa fa-search" aria-hidden="true"></span>
+      <button id="qg-show-search" class="qg-show-search" aria-label="Search" data-toggle="collapse" data-target="#qg-search-form" aria-expanded="false">
+  <span class="fa fa-search fa-flip-horizontal" aria-hidden="true"></span>
   <span>Search</span>
 </button>
 <form action="https://www.qld.gov.au/search" id="qg-search-form" role="search" class="qg-search-form collapse col-md-8 qg-web-autocomplete">
     <div class="input-group">
         <label for="qg-search-query" class="qg-visually-hidden">Search Queensland Government</label>
         <input type="text" name="query" id="qg-search-query" class="form-control" placeholder="Search website" tabindex="0" aria-required="true" aria-expanded="false"/>
-        <span class="fa fa-search"></span>
+        <span class="fa fa-search fa-flip-horizontal"></span>
       <button type="submit" id="feature-search-submit" class="btn btn-global-primary" title="Search site">Search</button>
     </span>
     </div>
@@ -117,9 +117,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </form>
 
 
-      </div>
     </div>
-    <div id="qg-portal-links"class="qg-portal-links qg-navigation collapse">
+  </div>
+  <div id="qg-portal-links"class="qg-portal-links qg-navigation collapse">
     <div class="container-fluid qg-site-width">
         <nav class="navbar navbar-expand">
             <div class="collapse navbar-collapse" id="qgPortalLinksDropdown">
@@ -160,9 +160,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </nav>
     </div>
 </div>
-    <div class="container-fluid qg-site-width qg-site-header-bottom">
-      <div class="row align-items-center justify-content-between">
-        
+  <div class="container-fluid qg-site-width qg-site-header-bottom">
+    <div class="row align-items-center justify-content-between">
+      
 <nav id="qg-site-nav" class="qg-navigation collapse" role="navigation" aria-label="Main navigation">
 	<ul class="nav">
 		<li class="nav-item hidden-lg hidden-md">
@@ -200,16 +200,37 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </nav>
 
 
-        <div class="header-location">
-    <button>
+      <div class="header-location">
+    <button class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span>Your location is</span>
         <span class="location-name">unknown</span>
         <span class="fa fa-map-marker"></span>
     </button>
-</div>
-      </div>
+    <div class="dropdown-menu qg-location-setter">
+        <p>Help us provide you with the most useful information by setting your location.</p>
+        <button class="btn btn-global-primary detect-location" type="button">Use device location</button>
+        <span class="qg-location-setter-divider">or</span>
+        <form class="qg-location-setter-form">
+            <label>Start typing your town or suburb</label>
+            <input type="text" title="Start typing your town or suburb" placeholder="e.g. Cooladdi"/>
+            <div class="qg-location-setter-autocomplete" style="display:none">
+                <ul>
+                    <li><button><b>Coola</b>bine, Sunshine Coast Regional</button></li>
+                    <li><button><b>Coola</b>bunia, South Burnett Regional</button></li>
+                    <li><button><b>Coola</b>ddi, Murweh Shire</button></li>
+                    <li><button><b>Coola</b>na, Somerset Regional</button></li>
+                    <li><button><b>Coola</b>ngatta, Gold Coast City</button></li>
+                </ul>
+            </div>
+            <button class="btn btn-global-primary set-location" type="button">Set location</button>
+        </form>
+        <!-- <button class="btn btn-global-primary clear-location" type="button">Clear location</button> -->
+        <button class="qg-location-setter-close">Close</button>
     </div>
-  </header>
+</div>
+    </div>
+  </div>
+</header>
     <div class="container-fluid qg-site-width">
         <div id="qg-content">
             <div id="qg-three-col" class="row">

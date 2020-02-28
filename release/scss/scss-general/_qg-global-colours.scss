@@ -40,6 +40,8 @@
 
 .qg-footer-feedback .questions .radio input[type=radio]:checked + label,
 .qg-footer-feedback-content,
+.header-location .dropdown-menu p,
+.qg-location-setter-autocomplete ul li button,
 .qg-share__title  {
     color: $qg-global-primary-darker;
 }
@@ -50,7 +52,7 @@
     }
 }
 
-.qg-footer-feedback__close {
+.qg-footer-feedback__close, .qg-location-setter-close {
     &:hover, &:focus {
         color: $qg-global-primary-dark;
     }

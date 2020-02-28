@@ -146,6 +146,12 @@
 			}
 		}
 
+		.dropdown.mega-dropdown.show {
+			.dropdown-toggle:after {
+				transform: rotate(135deg);
+			}
+		}
+
 		.nav-link, .nav-link:link, .nav-link:visited {
 			color: $qg-global-primary-darker-grey;
 			padding: 12px 13px 11px;
