@@ -2,13 +2,6 @@
     padding-top: 22px;
     padding-right:12px;
 
-    button {
-        background-color: transparent;
-        border: 0;
-        color: #fff;
-        padding: 0;
-    }
-
     .location-name {
         text-decoration: underline;
     }
@@ -18,12 +11,65 @@
         margin-left: 10px;
     }
 
+    .dropdown-toggle {
+        background-color: transparent;
+        border: 0;
+        color: #fff;
+        padding: 0;
+        outline: 0;
+        transition: opacity .3s ease;
+
+        &:after {
+            display: none;
+        }
+
+        &:hover, &:focus {
+            opacity: .7;
+        }
+    }
+
+    .qg-location-setter {
+        opacity: 0;
+        visibility: hidden;
+    
+        &.show {
+            opacity: 1;
+            transition: opacity .3s linear;
+            visibility: visible;
+        }
+
+        &:before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 4.5px 9px 4.5px;
+            border-color: transparent transparent #fff transparent;
+            top: -9px;
+            left: 173px;
+        }
+    }
+
+    @media (max-width: 1250px) and (min-width: 992px) {
+        .dropdown-menu:before {
+            left: 220px;
+        }
+    }
+
+    @include media-breakpoint-up(sm) {
+        .dropdown-menu {
+            left: -35px !important;
+            top: 10px !important;
+        }
+    }
+
     @include media-breakpoint-down(sm) {
         background-color: $qg-global-primary-light-grey;
         width: 100%;
         padding: 10px 0;
 
-        button {
+        .dropdown-toggle {
             display: flex;
             margin: auto;
             color: #000;
@@ -42,11 +88,25 @@
                 order: 2;
             } 
         }
+
+        .dropdown-menu {
+            left: -30px !important;
+            top: 5px !important;
+        }
     }
 
     @include media-breakpoint-down(xs) {
-        button {
+        .dropdown-toggle {
             margin: 0 15px;
+        }
+
+        .dropdown-menu {
+            left: 10px !important;
+            top: 5px !important;
+
+            &:before {
+                left: 150px;
+            }
         }
     }
 }
