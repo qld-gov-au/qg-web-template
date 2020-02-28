@@ -11983,7 +11983,7 @@ a .meta {
 
 .qg-site-footer h3 a:hover, .qg-site-footer h3 a:focus {
   text-decoration: underline;
-  opacity: 0.7; }
+  color: #CCC; }
 
 .qg-site-footer p {
   line-height: 20px; }
@@ -12014,7 +12014,7 @@ a .meta {
   transition: opacity .1s linear; }
 
 .qg-site-footer ul li a:hover, .qg-site-footer ul li a:focus {
-  opacity: 0.7; }
+  color: #CCC; }
 
 .qg-site-footer ul li:before {
   font-size: 1.25rem;
@@ -15427,6 +15427,12 @@ form .questions select {
 
 .qg-show-menu[aria-expanded="true"] .fa, .qg-show-search[aria-expanded="true"] .fa {
   color: #005e85; }
+
+.qg-site-footer ul li a:hover,
+.qg-site-footer ul li a:focus,
+.qg-site-footer h3 a:hover,
+.qg-site-footer h3 a:focus {
+  color: #CCDFE7; }
 
 #qg-site-nav .dropdown-menu.mega-menu,
 #qg-site-nav .show .nav-link,
