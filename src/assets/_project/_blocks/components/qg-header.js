@@ -21,18 +21,20 @@ $(function () {
     });
 
     // Keep location dropdown open the elements inside of the dropdown are clicked
-    $('.header-location .dropdown-menu').click(function(e) {
+    $('.header-location .dropdown-menu').click(function (e) {
         e.stopPropagation();
     });
 
     // Except for these button
-    $('.clear-location, .detect-location, .set-location').click(function(e) {
+    $('.clear-location, .detect-location, .set-location').click(function (e) {
         $('.header-location').dropdown('toggle');
     });
 
-    $('.header-location-close').click(function(e) {
+    $('.header-location-close').click(function (e) {
         $('.header-location .dropdown-menu').addClass('closed');
         $('.header-location').dropdown('toggle');
-        setTimeout(function(){ $('.header-location .dropdown-menu').removeClass('closed'); }, 300);
+        setTimeout(function () {
+            $('.header-location .dropdown-menu').removeClass('closed');
+        }, 300);
     });
 });
