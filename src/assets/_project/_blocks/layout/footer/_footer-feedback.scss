@@ -207,5 +207,11 @@
                 border-radius: 0 0 4px 4px;
             }
         }
+
+        &.d-none {
+            + .qg-footer-feedback .qg-footer-feedback-content{
+                border-radius: 4px;
+            }
+        }
     }
 }
