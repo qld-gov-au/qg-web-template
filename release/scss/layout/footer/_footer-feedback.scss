@@ -191,6 +191,32 @@
     }
 }
 
+.no-js {
+    .qg-footer-feedback {
+        display: block;
+
+        .initial-question {
+            display: none;
+        }
+
+        .panel-collapse {
+            display: block;
+        }
+    }
+
+    .qg-feedback-toggle {
+        color: $qg-global-primary-dark-grey;
+        background-color: #fff;
+        text-align: left;
+        border-radius: 4px 4px 0 0;
+        padding: 8px 12px 0 12px;
+    }
+
+    .qg-footer-feedback-content {
+        border-radius: 0 0 4px 4px;
+    }
+}
+
 .qg-site-footer {
     .qg-feedback-toggle {
         margin-top: 30px;

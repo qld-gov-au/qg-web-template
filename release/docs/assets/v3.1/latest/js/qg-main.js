@@ -4125,6 +4125,8 @@
 	              * AJAX feedback form submission
 	              **/
 	
+	$('.no-js').removeClass('no-js');
+	
 	$('#qg-page-feedback-form').submit(function (event) {
 	  event.preventDefault();
 	  var postUrl = $(this).attr('action');
@@ -4147,6 +4149,12 @@
 	
 	$('.qg-footer-feedback__close').click(function () {
 	  $('.qg-feedback-toggle').removeClass('d-none');
+	});
+	
+	$('.qg-feedback-toggle').click(function () {
+	  if ($('#qg-page-feedback-form').hasClass('d-none')) {
+	    $(this).addClass('d-none');
+	  }
 	});
 	
 	/**
