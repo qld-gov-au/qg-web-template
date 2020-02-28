@@ -34,7 +34,6 @@ $('.qg-feedback-toggle').click(function () {
   }
 });
 
-
 /**
 * Adds page and user details to hidden inputs on the feedback form
 **/
