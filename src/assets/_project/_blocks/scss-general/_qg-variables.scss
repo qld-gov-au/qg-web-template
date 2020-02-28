@@ -8,19 +8,6 @@ $qg-blue: #007EB1; // Primary blue
 $qg-blue-dark: #13578b; // Primary link colour (see bootstrap-variables.scss), accordion expan/collapse
 $qg-blue-darker: #005375;
 
-// ## Global Primary Colours
-$qg-global-primary: #005e85;
-$qg-global-primary-dark: #063652;
-$qg-global-primary-darker: #212529;
-$qg-global-primary-light: #eff2f4;
-
-// ## Greyscale of Global Primary Colours
-$qg-global-primary-grey: #565656;
-$qg-global-primary-dark-grey: #313131;
-$qg-global-primary-darker-grey: #292929;
-$qg-global-primary-light-grey: #f3f3f3;
-$qg-global-primary-accesible-grey: #767676; // Alternative of $qg-pagination-border as it's not accesible on white background
-
 $qg-light-green: #9AC02C;
 $qg-green: #78ba00;
 
@@ -30,8 +17,6 @@ $qg-dark-gray-light: #717679; // Lightest for small text on white
 $qg-dark-grey: #585e62; // For default buttons, accordion subtitles
 $qg-dark-grey1: #939393; // For default buttons
 $qg-dark-grey-dark: #4a4a4a;
-$qg-global-dark-grey-active: #373737;
-$qg-global-dark-grey-dark-active: #303030;
 $qg-dark-grey-darker: #212529;
 
 // ## Light grey ##
@@ -39,7 +24,6 @@ $qg-light-gray-lighter: #fafafa;
 $qg-light-gray-lighter1: #f9f9f9; //list box background
 $qg-light-gray: #f6f6f6; // Primary brand light grey
 $qg-light-gray-darker: #d1d1d1;
-$qg-light-gray-dark: #efefef;
 $qg-grey-light: #f6f6f6; //Header light grey
 // $qg-light-gray-darker: #707070; // Dark grey
 
@@ -47,7 +31,6 @@ $qg-grey-light: #f6f6f6; //Header light grey
 
 // ## Red ##
 $qg-red: #F85C50;
-$qg-global-error: #d60000;
 
 // ## Dark Blue ##
 $qg-dark-blue: #0B2E4C;
@@ -153,8 +136,7 @@ $qg-nav-tabs-link-hover-color: #fff;
 // ###################################
 // Rulers & spacing
 
-$qg-max-container-width: 1327px; // old SWE width
-$qg-global-max-container-width: 1180px;
+$qg-max-container-width: 1327px;
 
 $qg-spacing: 50px; // Note: Used by $grid-gutter-width
 $qg-spacing-large: $qg-spacing * 1.5;
@@ -181,8 +163,3 @@ $qg-box-background: $qg-light-blue-gray3;
 $qg-pagination-border: #808080;
 $qg-pagination-link-color: #13578B;
 $qg-pagination-disabled-color: #6c757d;
-
-
-$qg-facebook: #3b5998;
-$qg-twitter: #1da1f2;
-$qg-linkedin: #0077b5;
