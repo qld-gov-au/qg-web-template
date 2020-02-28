@@ -28,7 +28,7 @@
 
             &:hover, &:focus {
                 text-decoration: underline;
-                opacity: 0.7;
+                color: $qg-global-primary-hover-grey;
             }
         }
     }
@@ -65,7 +65,7 @@
                 transition: opacity .1s linear;
         
                 &:hover, &:focus {
-                    opacity: 0.7;
+                    color: $qg-global-primary-hover-grey;
                 }
             }
 
