@@ -2,13 +2,18 @@
     background-color: $qg-global-primary;
 }
 
-.btn-global-primary {
+.btn-global-primary, .qg-search-form .qg-search-concierge-group.highlight {
     background-color: $qg-global-primary-dark;
 }
 
 .btn-global-primary-white,
 .qg-footer-feedback__title,
-.qg-feedback-toggle[aria-expanded=true] {
+.qg-feedback-toggle[aria-expanded=true],
+.qg-search-form .qg-search-concierge-group.helper {
+    background-color: $qg-global-primary-light
+}
+
+.btn-global-primary-white {
     color: $qg-global-primary-dark;
 }
 
@@ -44,6 +49,10 @@
 .qg-location-setter-autocomplete ul li button,
 .qg-location-setter p,
 .qg-location-setter label,
+.qg-search-form .qg-search-concierge-group,
+.qg-search-form .qg-search-concierge-group .list-group-item button,
+.qg-search-form .qg-search-concierge-group .list-group-item a,
+.qg-search-form .qg-search-concierge-group.helper .all,
 .qg-share__title  {
     color: $qg-global-primary-darker;
 }
