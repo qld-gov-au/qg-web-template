@@ -12337,6 +12337,9 @@ a .meta {
 .qg-site-footer .qg-feedback-toggle[aria-expanded=true] + .qg-footer-feedback .qg-footer-feedback-content {
   border-radius: 0 0 4px 4px; }
 
+.qg-site-footer .qg-feedback-toggle.d-none + .qg-footer-feedback .qg-footer-feedback-content {
+  border-radius: 4px; }
+
 .header-location {
   padding-top: 22px;
   padding-right: 12px; }
