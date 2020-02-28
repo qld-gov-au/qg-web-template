@@ -2,7 +2,7 @@
 let qgInitAutocompleteAddress;
 /* eslint-enable */
 
-(function ($, qg) {
+(function (qg, $) {
   'use strict';
 
   const el = {
@@ -296,5 +296,5 @@ let qgInitAutocompleteAddress;
     qg.loadGoogle(qgInitAutocompleteAddress);
   }
 /* eslint-disable */
-}(jQuery, qg));
+}(qg, jQuery));
 /* eslint-enable */
