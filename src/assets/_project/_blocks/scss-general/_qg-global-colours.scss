@@ -69,6 +69,14 @@
     }
 }
 
+.qg-breadcrumb-list-item__link {
+    color: $qg-global-primary-darker;
+    
+    &[href]:hover, &[href]:focus {
+        color: $qg-global-primary-dark;
+    }
+}
+
 @include media-breakpoint-down(sm) {
     #qg-site-nav {
 		.nav {
