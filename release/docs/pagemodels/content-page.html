@@ -106,8 +106,56 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <label for="qg-search-query" class="qg-visually-hidden">Search Queensland Government</label>
         <input type="text" name="query" id="qg-search-query" class="form-control" placeholder="Search website" tabindex="0" aria-required="true" aria-expanded="false"/>
         <span class="fa fa-search fa-flip-horizontal"></span>
+        <button class="qg-search-close-concierge" type="button" aria-label="Close Search Concierge"><span class="fa fa-close"></span></button>
       <button type="submit" id="feature-search-submit" class="btn btn-global-primary" title="Search site">Search</button>
-    </span>
+      <div class="qg-search-concierge">
+        <div class="qg-search-concierge-group suggestions">
+          <h4>Suggestions</h4>
+          <ul class="list-group">
+            <li class="list-group-item"><button><b>canc</b>el registration for osconnect</button></li>
+            <li class="list-group-item"><button><b>canc</b>el a booking</button></li>
+            <li class="list-group-item"><button><b>canc</b>el vehicle or boat registration</button></li>
+          </ul>
+        </div>
+        <div class="qg-search-concierge-group highlight">
+          <div class="d-flex justify-content-between align-content-center flex-wrap">
+            <h4>Need to cancel your rego?</h4>
+            <div>
+              <span class="fa fa-car"></span>
+              <span class="fa fa-motorcycle"></span>
+              <span class="fa fa-anchor"></span>
+            </div>
+          </div>
+          <p>Save time and cancel your vehicle or boat registration online.</p>
+          <a href="#" class="btn btn-global-primary-white">Cancel my registration</a>
+        </div>
+        <div class="qg-search-concierge-group helper">
+          <h4>Related services</h4>
+          <ul class="list-group">
+            <li class="list-group-item"><a href="#">Cancel a booking</a></li>
+            <li class="list-group-item"><a href="#">Cancel first aid training</a></li>
+            <li class="list-group-item"><a href="#">Cancel a disability parking permit</a></li>
+          </ul>
+        </div>
+        <div class="qg-search-concierge-group helper">
+          <h4>Popular services</h4>
+          <ul class="list-group">
+            <li class="list-group-item"><a href="#">Renew vehicle or boat rego</a></li>
+            <li class="list-group-item"><a href="#">Check my licence demerit points</a></li>
+            <li class="list-group-item"><a href="#">Renew my driving licence</a></li>
+          </ul>
+        </div>
+        <div class="qg-search-concierge-group helper">
+          <h4>Browse by category</h4>
+          <ul class="list-group">
+            <li class="list-group-item"><a href="#">Transport and motoring</a></li>
+            <li class="list-group-item"><a href="#">Employment and jobs</a></li>
+            <li class="list-group-item"><a href="#">Education and training</a></li>
+            <li class="list-group-item"><a href="#">Queensland and its government</a></li>
+          </ul>
+          <a href="#" class="all">Browse all categories</a>
+        </div>
+      </div>
     </div>
     <!--parameters to display results on search page-->
     <input type="hidden" name="num_ranks" value="10">
@@ -224,32 +272,54 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
             <button class="btn btn-global-primary set-location" type="button">Set location</button>
         </form>
-        <!-- <button class="btn btn-global-primary clear-location" type="button">Clear location</button> -->
         <button class="qg-location-setter-close">Close</button>
     </div>
 </div>
     </div>
   </div>
 </header>
+    <div class="qg-breadcrumb">
+  <div class="container-fluid qg-site-width">
+    <nav id="qg-breadcrumb" aria-label="breadcrumb" class="qg-breadcrumb-nav row">
+      <ol class="qg-breadcrumb-list">
+        <li class="qg-breadcrumb-list-item">
+          <a href="/" class="qg-breadcrumb-list-item__link">
+            Home
+          </a>
+        </li>
+        <li class="qg-breadcrumb-list-item">
+          <a href="#" class="qg-breadcrumb-list-item__link">
+            Community support
+          </a>
+        </li>
+        <li class="qg-breadcrumb-list-item">
+          <a href="#" class="qg-breadcrumb-list-item__link">
+            Cost of living support
+          </a>
+        </li>
+        <li class="qg-breadcrumb-list-item">
+          <a href="#" class="qg-breadcrumb-list-item__link">
+            Concessions
+          </a>
+        </li>
+        <li class="qg-breadcrumb-list-item">
+          <a href="#" class="qg-breadcrumb-list-item__link">
+            Energy concessions
+          </a>
+        </li>
+        <li class="qg-breadcrumb-list-item">
+          <a aria-current="page" class="qg-breadcrumb-list-item__link">
+            Electricity asset ownership dividend
+          </a>
+        </li>
+      </ol>
+    </nav>
+  </div>
+</div>
     <div class="container-fluid qg-site-width">
 
         <div id="qg-content">
             <div id="qg-three-col" class="row">
-
-                <nav id="qg-breadcrumb" role="navigation" aria-label="breadcrumb navigation" aria-labelledby="breadcrumb-heading" class="collapse">
-
-    <h2 id="breadcrumb-heading" class="qg-visually-hidden">You are here:</h2>
-
-    <ol class="list-inline">
-        <li><a href="index.html">Queensland Government home</a></li>
-        <li><a href="index.html">For Queenslanders</a></li>
-        <li><a href="index.html">Community support</a></li>
-        <li><a href="index.html">Support for carers</a></li>
-        <li>Who is a carer?</li>
-    </ol>
-
-</nav>
-
 
                 <div id="qg-primary-content" role="main">
 
@@ -625,21 +695,53 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <li class="facebook"><a href="https://www.facebook.com/QueenslandGovernment/">/QueenslandGovernment</a></li>
                 <li class="twitter"><a href="https://twitter.com/qldgov">@QldGov</a></li>
             </ul>
-
             <a class="btn btn-global-secondary" href="#">Other contact options</a>
             <hr class="hidden-lg hidden-md">
         </div>
     </div>
     <div class="col col-md-4">
-        <div class="qg-footer-col-content">
-            <h3>Your nearest service centre</h3>
-            <p>Help us provide you with the most useful information by setting your location.</p>
-            <button class="btn btn-global-primary-white">Set your location</button>
-            <hr>
-            <a href="#" class="btn btn-global-secondary">All service centre locations</a>
-            <hr class="hidden-lg hidden-md">
+    <div class="qg-footer-col-content qg-service-centre">
+        <h3>Your nearest service centre</h3>
+        <p>Help us provide you with the most useful information by setting your location.</p>
+
+        <a href="#" class="qg-service-centre__link" data-analytics-link-group=“qg-nearest-service-centre-details“>Quilpie Police Station</a>
+        <ul class="qg-service-centre-list">
+            <li class="qg-service-centre-list-item"><a href="#" data-analytics-link-group=“qg-nearest-service-centre-services“>Services available</a></li>
+            <li class="qg-service-centre-list-item">138 km away</li>
+            <li class="qg-service-centre-list-item"><span class="qg-service-centre__address">7 Bulnbuln Street</span><span class="qg-service-centre__address">Quilpie 4480</span></li>
+        </ul>
+        <a class="btn btn-global-primary-white qg-service-centre-set-location" data-analytics-link-group=“qg-nearest-service-set-location“ data-toggle="collapse" href="#qg-service-centre-location-setter" role="button" aria-expanded="false" aria-controls="qg-service-centre-location-setter">
+            <div class="qg-service-centre-set-location__text-wrap">
+                <span class="qg-service-centre-set-location__text">Set your location</span>
+            </div>
+        </a>
+        <div id="qg-service-centre-location-setter" class="qg-location-setter-wrap collapse">
+            <div class="qg-location-setter">
+                <button class="btn btn-global-primary detect-location" type="button" data-analytics-link-group=“qg-location-device-location“>Use device location</button>
+                <span class="qg-location-setter-divider">or</span>
+                <form class="qg-location-setter-form">
+                    <label>Start typing your town or suburb</label>
+                    <p class="error">Please enter a location into the search box and try searching again.</p>
+                    <input type="text" title="Start typing your town or suburb" class="error" placeholder="e.g. Cooladdi"/>
+                    <div class="qg-location-setter-autocomplete" style="display:none">
+                        <ul>
+                            <li><button><b>Coola</b>bine, Sunshine Coast Regional</button></li>
+                            <li><button><b>Coola</b>bunia, South Burnett Regional</button></li>
+                            <li><button><b>Coola</b>ddi, Murweh Shire</button></li>
+                            <li><button><b>Coola</b>na, Somerset Regional</button></li>
+                            <li><button><b>Coola</b>ngatta, Gold Coast City</button></li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-global-primary set-location" type="button" data-analytics-link-group=“qg-location-manual-location“>Set location</button>
+                </form>
+                <a class="qg-location-setter-close" data-toggle="collapse" href="#qg-service-centre-location-setter" role="button" aria-expanded="false" aria-controls="qg-service-centre-location-setter">Close</a>
+            </div>
         </div>
+        <hr>
+        <a href="#" class="btn btn-global-secondary" data-analytics-link-group=“qg-nearest-service-centre-all“>All service centre locations</a>
+        <hr class="hidden-lg hidden-md">
     </div>
+</div>
     <div class="col col-md-4">
     <div class="qg-footer-col-content">
         <h3>Website feedback</h3>
