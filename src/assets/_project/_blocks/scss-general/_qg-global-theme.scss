@@ -25,6 +25,13 @@
     }
 }
 
+.qg-site-footer ul li a:hover,
+.qg-site-footer ul li a:focus,
+.qg-site-footer h3 a:hover,
+.qg-site-footer h3 a:focus {
+    color: $qg-global-primary-hover;
+}
+
 #qg-site-nav .dropdown-menu.mega-menu,
 #qg-site-nav .show .nav-link,
 #qg-site-nav .show .nav-link:before {
