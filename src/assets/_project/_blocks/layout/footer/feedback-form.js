@@ -23,7 +23,7 @@ $('#qg-page-feedback-form').submit(function (event) {
 });
 
 $('.qg-footer-feedback__close').click(function () {
-  $('#qg-page-feedback-form, .qg-feedback-toggle').removeClass('d-none');
+  $('.qg-feedback-toggle').removeClass('d-none');
 });
 
 /**
