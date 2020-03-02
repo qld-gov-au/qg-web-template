@@ -2832,7 +2832,6 @@
 	      'event_location_set': 'qgLocationSet',
 	      'event_location_found': 'qgLocationFound',
 	      'event_location_cleared': 'qgLocationCleared',
-	      'panel_id': '',
 	      'error_message': '' } };
 	
 	
@@ -3014,6 +3013,39 @@
 	    }
 	  };
 	
+	  // Get suburb from suggestion click
+	  qgLocation.fn.getManualSuburbName = function (event) {
+	    event.stopPropagation();
+	
+	    var suburbButton = event['target'];
+	    var suburbName = suburbButton.getAttribute('data-location');
+	    var suburbFullArea = $(suburbButton).text();
+	
+	    // Update the input field
+	    var inputField = $('.qg-location-setter-form input[type=text]');
+	    inputField.attr('data-choice', suburbName);
+	    inputField.val(suburbFullArea);
+	
+	    // Hide the suggestions
+	    $('.qg-location-setter-autocomplete').addClass('hide');
+	  };
+	
+	  // Save manually selected suburb
+	  qgLocation.fn.setManualSuburb = function (event) {
+	    event.stopPropagation();
+	
+	    // Get manual suburb selection
+	    var inputField = $('.qg-location-setter-form input[type=text]');
+	    var savedSuburb = inputField.attr('data-choice');
+	
+	    qgLocation.fn.saveLocality(savedSuburb);
+	  };
+	
+	  // Prevent form from performing a submission
+	  qgLocation.fn.locationSubmitHandler = function (event) {
+	    event.preventDefault();
+	  };
+	
 	  //
 	  // Local data
 	  //
@@ -3022,14 +3054,14 @@
 	  qgLocation.fn.getExampleLocation = function () {
 	    var exampleResponse = { 'results': [{ 'address_components': [{ 'long_name': 'Browning St near Boundary Rd, stop 5', 'short_name': 'Browning St near Boundary Rd, stop 5', 'types': ['establishment', 'point_of_interest', 'transit_station'] }, { 'long_name': 'South Brisbane', 'short_name': 'South Brisbane', 'types': ['locality', 'political'] }, { 'long_name': 'Brisbane City', 'short_name': 'Brisbane', 'types': ['administrative_area_level_2', 'political'] }, { 'long_name': 'Queensland', 'short_name': 'QLD', 'types': ['administrative_area_level_1', 'political'] }, { 'long_name': 'Australia', 'short_name': 'AU', 'types': ['country', 'political'] }, { 'long_name': '4101', 'short_name': '4101', 'types': ['postal_code'] }], 'formatted_address': 'Browning St near Boundary Rd, stop 5, South Brisbane QLD 4101, Australia', 'geometry': { 'location': { 'lat': -27.477727, 'lng': 153.01314 }, 'location_type': 'GEOMETRIC_CENTER', 'viewport': { 'northeast': { 'lat': -27.4763780197085, 'lng': 153.0144889802915 }, 'southwest': { 'lat': -27.4790759802915, 'lng': 153.0117910197085 } } }, 'place_id': 'ChIJufdIyqBQkWsRlnW4qQxzN94', 'types': ['establishment', 'point_of_interest', 'transit_station'] }], 'status': 'OK' };
 	
-	    return JSON.stringify(exampleResponse);
+	    return exampleResponse;
 	  };
 	
 	  // Get local example of suburb lists
 	  qgLocation.fn.revealExampleLocations = function () {
-	    var exampleSuburbs = [{ 'name': 'coolabine, sunshine coast regional', 'name_friendly': 'Coolabine, Sunshine Coast Regional', 'name_formatted': '<b>Coola</b>bine, Sunshine Coast Regional' }, { 'name': 'coolabunia, south burnett regional', 'name_friendly': 'Coolabunia, South Burnett Regional', 'name_formatted': '<b>Coola</b>bunia, South Burnett Regional' }, { 'name': 'cooladdi, murweh shire', 'name_friendly': 'Cooladdi, Murweh Shire', 'name_formatted': '<b>Coola</b>ddi, Murweh Shire' }, { 'name': 'coolana, somerset regional', 'name_friendly': 'Coolana, Somerset Regional', 'name_formatted': '<b>Coola</b>na, Somerset Regional' }, { 'name': 'coolangatta, gold coast city', 'name_friendly': 'Coolangatta, Gold Coast City', 'name_formatted': '<b>Coola</b>ngatta, Gold Coast City' }];
+	    var exampleSuburbs = [{ 'name': 'coolabine, sunshine coast regional', 'name_friendly': 'Coolabine, Sunshine Coast Regional', 'name_formatted': '<b>Coola</b>bine, Sunshine Coast Regional', 'suburb': 'Coolabine' }, { 'name': 'coolabunia, south burnett regional', 'name_friendly': 'Coolabunia, South Burnett Regional', 'name_formatted': '<b>Coola</b>bunia, South Burnett Regional', 'suburb': 'Coolabunia' }, { 'name': 'cooladdi, murweh shire', 'name_friendly': 'Cooladdi, Murweh Shire', 'name_formatted': '<b>Coola</b>ddi, Murweh Shire', 'suburb': 'Cooladdi' }, { 'name': 'coolana, somerset regional', 'name_friendly': 'Coolana, Somerset Regional', 'name_formatted': '<b>Coola</b>na, Somerset Regional', 'suburb': 'Coolana' }, { 'name': 'coolangatta, gold coast city', 'name_friendly': 'Coolangatta, Gold Coast City', 'name_formatted': '<b>Coola</b>ngatta, Gold Coast City', 'suburb': 'Coolangatta' }];
 	
-	    return JSON.stringify(exampleSuburbs);
+	    return exampleSuburbs;
 	  };
 	
 	  //
@@ -3143,8 +3175,7 @@
 	  };
 	
 	  // Process the Google Maps API data
-	  qgLocation.fn.processLocality = function (response) {
-	    var jsonResponse = JSON.parse(response);
+	  qgLocation.fn.processLocality = function (jsonResponse) {
 	    var allAddresses = jsonResponse['results'];
 	    var targetType = 'locality';
 	    var locality = '';
@@ -3169,38 +3200,54 @@
 	
 	    // Proceed if an address is found
 	    if (locality !== '') {
-	      var storedData = qgLocation.fn.getStoredLocation();
-	      storedData['locality'] = locality;
-	
-	      // Save to cookie
-	      qgLocation.fn.saveLocationCookie(storedData);
-	
-	      // Notify the rest of the page
-	      $('body').trigger('custom', qgLocation['vars']['event_location_found']);
+	      qgLocation.fn.saveLocality(locality);
 	    }
 	  };
 	
+	  // Save the target locality
+	  qgLocation.fn.saveLocality = function (locality) {
+	    var storedData = qgLocation.fn.getStoredLocation();
+	
+	    // Handle no cookie present
+	    if (storedData === null) {
+	      storedData = {
+	        'locality': '' };
+	
+	    }
+	
+	    storedData['locality'] = locality;
+	
+	    // Save to cookie
+	    qgLocation.fn.saveLocationCookie(storedData);
+	
+	    // Notify the rest of the page
+	    $('body').trigger('custom', qgLocation['vars']['event_location_found']);
+	  };
+	
 	  // Populate the suburb suggestion list
-	  qgLocation.fn.displaySuburbSuggestions = function (response) {
-	    var suburbData = JSON.parse(response);
+	  qgLocation.fn.displaySuburbSuggestions = function (allSuburbs) {
 	    var targetContainer = $('.qg-location-setter.show .qg-location-setter-form');
+	    var suggestionHTML = '';
 	
 	    if (targetContainer) {
 	      // Check for returned data
-	      if (suburbData.length > 0) {
-	        var suggestionHTML = '<ul>';
+	      if (allSuburbs.length > 0) {
+	        suggestionHTML = '<ul>';
 	
-	        suburbData.forEach(function (suburb) {
-	          var suburbHTML = suburb['name_formatted'];
-	          suggestionHTML += '<li><button>' + suburbHTML + '</button></li>';
+	        allSuburbs.forEach(function (suburbData) {
+	          var suburbName = suburbData['suburb'];
+	          var suburbHTML = suburbData['name_formatted'];
+	
+	          suggestionHTML += '<li><button class="qg-location-manual" data-location="' + suburbName + '">' + suburbHTML + '</button></li>';
 	        });
 	
 	        suggestionHTML += '</ul>';
 	
 	        var suggestionList = targetContainer.find('.qg-location-setter-autocomplete');
 	        suggestionList.removeClass('hide');
-	        suggestionList.html(suggestionHTML);
 	      }
+	
+	      suggestionList.html(suggestionHTML);
 	    }
 	  };
 	
@@ -3249,7 +3296,10 @@
 	  $('body').on('custom', customEventHandler);
 	  $('body').on('click', '.qg-location-setter .detect-location', qgLocation.fn.getDeviceLocation);
 	  $('body').on('click', '.qg-location-setter .clear-location', qgLocation.fn.deletePositionData);
+	  $('body').on('click', '.qg-location-setter .qg-location-manual', qgLocation.fn.getManualSuburbName);
+	  $('body').on('click', '.qg-location-setter .set-location', qgLocation.fn.setManualSuburb);
 	  $('body').on('click', '.qg-location-setter .qg-location-setter-close', qgLocation.fn.closeLocationPopup);
+	  $('body').on('submit', '.qg-location-setter .qg-location-setter-form', qgLocation.fn.locationSubmitHandler);
 	});
 
 /***/ }),
