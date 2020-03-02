@@ -365,6 +365,11 @@ $(function () {
       var address = allAddresses[index];
       var addressComponents = address['address_components'];
 
+      // Break out of the loop if a locality is found
+      if (locality !== '') {
+        break;
+      }
+
       // Check over all address components
       for (var componentIndex = 0; componentIndex < addressComponents.length; componentIndex++) {
         var component = addressComponents[componentIndex];
