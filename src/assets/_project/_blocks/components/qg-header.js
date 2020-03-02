@@ -20,24 +20,6 @@ $(function () {
         }
     });
 
-    // Keep location dropdown open the elements inside of the dropdown are clicked
-    $('.header-location .dropdown-menu').click(function (e) {
-        e.stopPropagation();
-    });
-
-    // Except for these button
-    $('.clear-location, .detect-location, .set-location').click(function (e) {
-        $('.header-location').dropdown('toggle');
-    });
-
-    $('.header-location-close').click(function (e) {
-        $('.header-location .dropdown-menu').addClass('closed');
-        $('.header-location').dropdown('toggle');
-        setTimeout(function () {
-            $('.header-location .dropdown-menu').removeClass('closed');
-        }, 300);
-    });
-
     // Open/Close Search concierge
     $('.qg-search-form input[type=text]').on('focus', function () {
         $('.qg-search-form').addClass('active');
