@@ -13657,9 +13657,6 @@ a:active, a:hover, a:focus {
   width: 100%;
   -webkit-appearance: none; }
 
-.qg-location-setter-form input[type=text]:focus + div {
-  display: block !important; }
-
 .qg-location-setter-autocomplete {
   position: absolute;
   transform: translateY(-18px);

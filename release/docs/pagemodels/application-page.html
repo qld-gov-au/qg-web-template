@@ -256,24 +256,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <span class="fa fa-map-marker"></span>
     </button>
     <div class="dropdown-menu qg-location-setter">
-        <p>Help us provide you with the most useful information by setting your location.</p>
-        <button class="btn btn-global-primary detect-location" type="button">Use device location</button>
-        <span class="qg-location-setter-divider">or</span>
-        <form class="qg-location-setter-form">
-            <label>Start typing your town or suburb</label>
-            <input type="text" title="Start typing your town or suburb" placeholder="e.g. Cooladdi"/>
-            <div class="qg-location-setter-autocomplete" style="display:none">
-                <ul>
-                    <li><button><b>Coola</b>bine, Sunshine Coast Regional</button></li>
-                    <li><button><b>Coola</b>bunia, South Burnett Regional</button></li>
-                    <li><button><b>Coola</b>ddi, Murweh Shire</button></li>
-                    <li><button><b>Coola</b>na, Somerset Regional</button></li>
-                    <li><button><b>Coola</b>ngatta, Gold Coast City</button></li>
-                </ul>
-            </div>
-            <button class="btn btn-global-primary set-location" type="button">Set location</button>
-        </form>
-        <button class="qg-location-setter-close">Close</button>
+        <div class="qg-location-default" data-geolocation="https://www.qld.gov.au/_qgdesigns/integrations/global/rest/location-google-maps-api">
+    <p>Help us provide you with the most useful information by setting your location.</p>
+    <button class="btn btn-global-primary detect-location" type="button">Use device location</button>
+    <span class="qg-location-setter-divider">or</span>
+    <form class="qg-location-setter-form">
+        <label>Start typing your town or suburb</label>
+        <input type="text" title="Start typing your town or suburb" placeholder="e.g. Cooladdi" data-suburbs="https://www.qld.gov.au/_qgdesigns/integrations/global/rest/location-arcgis-suburb-and-lga-listing"/>
+        <div class="qg-location-setter-autocomplete hide">
+            <ul>
+                <li><button><b>Coola</b>bine, Sunshine Coast Regional</button></li>
+                <li><button><b>Coola</b>bunia, South Burnett Regional</button></li>
+                <li><button><b>Coola</b>ddi, Murweh Shire</button></li>
+                <li><button><b>Coola</b>na, Somerset Regional</button></li>
+                <li><button><b>Coola</b>ngatta, Gold Coast City</button></li>
+            </ul>
+        </div>
+        <button class="btn btn-global-primary set-location" type="button">Set location</button>
+    </form>
+</div>
+<div class="qg-location-set hide">
+    <button class="btn btn-global-primary clear-location" type="button">Clear location</button>
+</div>
+<button class="qg-location-setter-close">Close</button>
     </div>
 </div>
     </div>
