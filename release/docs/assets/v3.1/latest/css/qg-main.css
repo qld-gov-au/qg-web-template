@@ -13122,6 +13122,7 @@ a .meta {
   border: 0;
   border-radius: 0px 4px 4px 4px;
   box-shadow: 0 4px 6px 0 rgba(32, 33, 36, 0.47);
+  display: block;
   max-width: 1010px;
   padding: 25px 30px;
   width: 100%;
@@ -13249,6 +13250,15 @@ a .meta {
     display: none; } }
 
 @media (min-width: 992px) {
+  #qg-site-nav .dropdown-menu.mega-menu {
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s ease, visibility 0s ease .3s; }
+  #qg-site-nav .dropdown-menu.mega-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity .3s ease; }
   #qg-search-form.collapse, .qg-navigation.collapse {
     display: block; } }
 
