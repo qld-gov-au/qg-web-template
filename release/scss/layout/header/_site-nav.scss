@@ -119,7 +119,7 @@
 		text-decoration: none;
 	}
 
-	#qg-search-form, #qg-site-nav, .qg-portal-links {
+	.qg-search-form, #qg-site-nav, .qg-portal-links {
 		padding: 0;
 	}
 
@@ -249,7 +249,7 @@
 		}
 	}
 
-	#qg-search-form, .qg-navigation {
+	.qg-search-form, .qg-navigation {
 		&.collapse {
 			display: block;
 		}
