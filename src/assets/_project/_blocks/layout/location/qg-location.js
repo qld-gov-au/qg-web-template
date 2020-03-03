@@ -73,7 +73,7 @@ $(function () {
   // Hide the dropdown as the native dropdown() function doesn't work
   function closeDropdown () {
     $('.header-location').removeClass('show');
-    $('.header-location > .dropdown-toggle').attr('aria-expanded', 'false');
+    $('.header-location .dropdown-toggle').attr('aria-expanded', 'false');
     $('.header-location .qg-location-setter').removeClass('show');
   }
 
@@ -213,12 +213,13 @@ $(function () {
   // Save manually selected suburb
   qgLocation.fn.setManualSuburb = function (event) {
     event.stopPropagation();
-
-    // Get manual suburb selection
     var inputField = $('.qg-location-setter-form input[type=text]');
-    var savedSuburb = inputField.attr('data-choice');
-
-    qgLocation.fn.saveLocality(savedSuburb);
+    if (inputField.val().length > 2) {
+      closeDropdown();
+      // Get manual suburb selection
+      var savedSuburb = inputField.attr('data-choice');
+      qgLocation.fn.saveLocality(savedSuburb);
+    }
   };
 
   // Prevent form from performing a submission
@@ -296,6 +297,7 @@ $(function () {
     var positionData = response['coords'];
 
     qgLocation.fn.setPositionData(positionData);
+    closeDropdown();
   };
 
   // The user has blocked geolocation
@@ -435,12 +437,14 @@ $(function () {
   qgLocation.fn.setLocationName = function () {
     var storedData = qgLocation.fn.getStoredLocation();
     var locality = storedData['locality'];
+    console.log(storedData);
 
     // Update header
     $('.header-location .location-name').text(locality);
-    $('.header-location .qg-location-default').addClass('hide');
-    $('.header-location .qg-location-set').removeClass('hide');
-
+    setTimeout(function () {
+      $('.header-location .qg-location-default').addClass('hide');
+      $('.header-location .qg-location-set').removeClass('hide');
+    }, 300);
     // Update service centre
   };
 
@@ -458,6 +462,21 @@ $(function () {
     }, 300);
 
     // Update service centre
+  };
+
+  qgLocation.fn.closePopupIfOutside = function (e) {
+    if (!$(e.target).closest('#qg-location-dropdown').length && !$(e.target).is('#qg-location-dropdown') && !$(e.target).is('.dropdown-toggle') && $('.header-location .qg-location-setter').hasClass('show')) {
+      // Manually close the dropdown
+      closeDropdown();
+
+      // Add class to give immediate effect instead of transition
+      $('.header-location .dropdown-menu').addClass('closed');
+
+      // Remove this class after dropdown has closed
+      setTimeout(function () {
+        $('.header-location .dropdown-menu').removeClass('closed');
+      }, 300);
+    }
   };
 
   //
@@ -480,4 +499,5 @@ $(function () {
   $('body').on('click', '.qg-location-setter .set-location', qgLocation.fn.setManualSuburb);
   $('body').on('click', '.qg-location-setter .qg-location-setter-close', qgLocation.fn.closeLocationPopup);
   $('body').on('submit', '.qg-location-setter .qg-location-setter-form', qgLocation.fn.locationSubmitHandler);
+  $('body').on('click', qgLocation.fn.closePopupIfOutside);
 });
