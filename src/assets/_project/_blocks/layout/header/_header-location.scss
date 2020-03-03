@@ -1,12 +1,15 @@
 .header-location{
     padding-top: 22px;
     padding-right:12px;
+    position: relative;
 
     .location-name {
+        pointer-events: none;
         text-decoration: underline;
     }
 
     .fa-map-marker {
+        color: #fff;
         font-size: 20px;
         margin-left: 10px;
     }
@@ -15,7 +18,7 @@
         background-color: transparent;
         border: 0;
         color: #fff;
-        padding: 0;
+        padding: 0 0 0 5px;
         outline: 0;
         transition: opacity .3s ease;
 
@@ -28,12 +31,29 @@
         }
     }
 
+    &__title {
+        display: flex;
+    }
+
+    &__label {
+        color: #fff;
+    }
+
     .qg-location-setter {
+        display: block;
         opacity: 0;
+        transition: opacity .3s linear, visibility 0s linear .3s;
         visibility: hidden;
         width: 270px;
     
         &.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        &.collapsing {
+            height: auto !important;
+            overflow: visible;
             opacity: 1;
             transition: opacity .3s linear;
             visibility: visible;
@@ -60,8 +80,8 @@
 
     @include media-breakpoint-up(sm) {
         .dropdown-menu {
-            left: -35px !important;
-            top: 10px !important;
+            left: -35px;
+            top: calc(100% + 10px);
         }
     }
 
@@ -70,40 +90,42 @@
         width: 100%;
         padding: 10px 0;
 
-        .dropdown-toggle {
-            display: flex;
-            margin: auto;
-            color: #000;
-
-            .fa {
-                order: 1;
-                margin: 0 10px 0 0;
-            }
-
-            .location-name {
-                order: 3;
-                margin-left: 3px;
-            }
-            
-            span {
-                order: 2;
-            } 
+        .header-location__title {
+            justify-content: center;
         }
 
-        .dropdown-menu {
-            left: -30px !important;
-            top: 5px !important;
+        .dropdown-toggle {
+            color: #000;
+            order: 3;
+            margin-left: 3px;
+        }
+
+        .header-location__icon {
+            order: 1;
+            margin: 0 10px;
+            color: #000;
+        }
+
+        .header-location__label {
+            color: #000;
+            order: 2;
+        }
+
+        .qg-location-setter {
+            left:50%;
+            transform: translateX(-50%);
+            top: 100%;
         }
     }
 
     @include media-breakpoint-down(xs) {
-        .dropdown-toggle {
-            margin: 0 15px;
+        .header-location__title {
+            justify-content: flex-start;
         }
 
         .dropdown-menu {
-            left: 10px !important;
-            top: 5px !important;
+            left: 10px;
+            transform: none;
 
             &:before {
                 left: 150px;

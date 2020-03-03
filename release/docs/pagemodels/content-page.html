@@ -249,12 +249,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
       <div class="header-location">
-    <button class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span>Your location is</span>
-        <span class="location-name">unknown</span>
-        <span class="fa fa-map-marker"></span>
-    </button>
-    <div class="dropdown-menu qg-location-setter">
+    <div class="header-location__title">
+        <span class="header-location__label">Your location is</span>
+        <a class="dropdown-toggle" data-toggle="collapse" href="#qg-location-dropdown" role="button" aria-controls="qg-location-dropdown" aria-expanded="false">
+            <span class="location-name">unknown</span>
+        </a>
+        <span class="header-location__icon fa fa-map-marker"></span>
+    </div>
+    <div class="dropdown-menu qg-location-setter collapse" id="qg-location-dropdown">
         <div class="qg-location-default" data-geolocation="https://www.qld.gov.au/_qgdesigns/integrations/global/rest/location-google-maps-api">
     <p>Help us provide you with the most useful information by setting your location.</p>
     <button class="btn btn-global-primary detect-location" type="button">Use device location</button>
