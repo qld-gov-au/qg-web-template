@@ -7,8 +7,17 @@
     position: absolute;
     top: 100%;
     width: 100%;
-    display: none;
+    display: block;
     margin-bottom: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s ease, visibility 0s ease .3s;
+
+    &.show {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity .3s ease;
+    }
 
     &:after {
       content: "";
@@ -142,7 +151,7 @@
     input[type=text] {
       border-radius: 4px;
       border: 3px solid #fff;
-      padding: 10px 100px 10px 38px;
+      padding: 10px 140px 10px 38px;
       -webkit-appearance: none;
       z-index: 0;
     }
@@ -162,7 +171,7 @@
       background-color: transparent;
       padding: 14px;
       position: absolute;
-      right: 76px;
+      right: 100px;
       display: none;
 
       .fa {
@@ -254,6 +263,14 @@
     .input-group {
       max-width: none;
       margin-top: 30px;
+
+      input[type=text] {
+        padding-right: 110px;
+      }
+    }
+
+    .input-group .qg-search-close-concierge {
+      right: 76px;
     }
   }
 
