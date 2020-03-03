@@ -50,7 +50,8 @@ $(function () {
 
   // Wrap part of the string in bold tags
   function getBoldText (subString, stringToChange) {
-    var targetString = stringToChange.substr(0, subString.length);
+    var targetIndex = stringToChange.indexOf(subString);
+    var targetString = stringToChange.substr(targetIndex, subString.length);
 
     // Wrap the text in bold tags
     var formattedString = '<b>';
