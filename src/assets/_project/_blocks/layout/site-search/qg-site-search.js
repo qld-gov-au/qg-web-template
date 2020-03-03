@@ -77,10 +77,10 @@ $(function () {
 
     if (inputValue === '') {
       // Transition reveal initial state
-      initialConcierge.removeClass('hide');
+      initialConcierge.addClass('show');
     } else {
       // Immediately close the concierge
-      initialConcierge.addClass('hide');
+      initialConcierge.removeClass('show');
     }
   };
 
@@ -90,8 +90,13 @@ $(function () {
     var helpfulConcierge = $('.qg-search-concierge-help');
 
     // Immediately close both concierge panels
-    initialConcierge.addClass('hide');
-    helpfulConcierge.addClass('hide');
+    initialConcierge.addClass('hide').removeClass('show');
+    helpfulConcierge.addClass('hide').removeClass('show');
+
+    setTimeout(function () {
+      initialConcierge.removeClass('hide');
+      helpfulConcierge.removeClass('hide');
+    }, 300);
   };
 
   // Handle input value changes
@@ -101,12 +106,12 @@ $(function () {
 
     if (inputValue !== '') {
       // Remove initial state and transition reveal suggestions
-      initialConcierge.addClass('hide');
-      helpfulConcierge.removeClass('hide');
+      initialConcierge.removeClass('show');
+      helpfulConcierge.addClass('show');
     } else {
       // Remove suggestions and transition reveal initial state
-      initialConcierge.removeClass('hide');
-      helpfulConcierge.addClass('hide');
+      initialConcierge.addClass('show');
+      helpfulConcierge.removeClass('show');
     }
   };
 

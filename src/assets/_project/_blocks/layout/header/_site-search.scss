@@ -9,6 +9,15 @@
     width: 100%;
     display: block;
     margin-bottom: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s ease, visibility 0s ease .3s;
+
+    &.show {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity .3s ease;
+    }
 
     &:after {
       content: "";
