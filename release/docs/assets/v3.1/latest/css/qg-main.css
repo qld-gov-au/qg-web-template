@@ -12499,7 +12499,9 @@ a .meta {
 
 .qg-portal-links .qg-portal-links__list .nav-link:hover, .qg-portal-links .qg-portal-links__list .nav-link:focus {
   background-color: #373737;
-  text-decoration: underline; }
+  text-decoration: underline;
+  position: relative;
+  z-index: 2; }
 
 .qg-portal-links .qg-portal-links__btn {
   background-color: #4a4a4a;
@@ -12512,7 +12514,9 @@ a .meta {
 
 .qg-portal-links .qg-portal-links__btn:hover, .qg-portal-links .qg-portal-links__btn:focus, .qg-portal-links .qg-portal-links__btn[aria-expanded="true"] {
   background-color: #373737;
-  text-decoration: underline; }
+  text-decoration: underline;
+  z-index: 2;
+  position: relative; }
 
 .qg-portal-links .dropdown-menu {
   background-color: #373737;
@@ -12523,11 +12527,14 @@ a .meta {
   opacity: 0;
   padding: 0;
   margin: 0;
-  width: 327px; }
+  width: 327px;
+  visibility: hidden;
+  transition: opacity .3s ease, visibility 0s ease .3s; }
 
 .qg-portal-links .dropdown-menu.show {
   transition: opacity 0.3s linear;
-  opacity: 1; }
+  opacity: 1;
+  visibility: visible; }
 
 .qg-portal-links .qg-dropdown-wrapper {
   padding: 13px 35px; }
@@ -12629,7 +12636,9 @@ a .meta {
     right: 20px; }
   .qg-portal-links .qg-portal-links__btn:hover, .qg-portal-links .qg-portal-links__btn:focus, .qg-portal-links .qg-portal-links__btn[aria-expanded="true"] {
     background-color: #4a4a4a;
-    text-decoration: none; }
+    text-decoration: underline; }
+  .qg-portal-links .qg-portal-links__btn:focus {
+    outline-offset: -3px; }
   .qg-portal-links .qg-portal-links__btn[aria-expanded="true"]:after {
     transform: translateY(-50%) rotate(135deg); }
   .qg-portal-links .qg-portal-links__btn[aria-expanded="true"] + .dropdown-menu {
