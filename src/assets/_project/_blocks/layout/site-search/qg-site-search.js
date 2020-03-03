@@ -48,6 +48,18 @@ $(function () {
     };
   }
 
+  // Wrap part of the string in bold tags
+  function getBoldText (subString, stringToChange) {
+    var targetString = stringToChange.substr(0, subString.length);
+
+    // Wrap the text in bold tags
+    var formattedString = '<b>';
+    formattedString += targetString;
+    formattedString += '</b>';
+
+    return stringToChange.replace(targetString, formattedString);
+  }
+
   //
   // Events
   //
@@ -79,8 +91,8 @@ $(function () {
       // Transition reveal initial state
       initialConcierge.addClass('show');
     } else {
-      // Immediately close the concierge
-      initialConcierge.removeClass('show');
+      // Look for suggested results
+      qgSiteSearch.fn.checkForSuggestions(inputValue);
     }
   };
 
@@ -105,9 +117,8 @@ $(function () {
     var helpfulConcierge = $('.qg-search-concierge-help');
 
     if (inputValue !== '') {
-      // Remove initial state and transition reveal suggestions
-      initialConcierge.removeClass('show');
-      helpfulConcierge.addClass('show');
+      // Look for suggested results
+      qgSiteSearch.fn.checkForSuggestions(inputValue);
     } else {
       // Remove suggestions and transition reveal initial state
       initialConcierge.addClass('show');
@@ -119,9 +130,9 @@ $(function () {
   // Local data
   //
 
-  // Get local example of Google Maps API
+  // Get example suggestions from Funnelback
   qgSiteSearch.fn.getExampleSuggestions = function () {
-    var exampleResponse = {};
+    var exampleResponse = [{'key': 'cancelled', 'disp': 'cancelled', 'disp_t': 'T', 'wt': '77.44', 'cat': '', 'cat_t': '', 'action': '', 'action_t': 'S'}, {'key': 'cancellation', 'disp': 'cancellation', 'disp_t': 'T', 'wt': '72.139', 'cat': '', 'cat_t': '', 'action': '', 'action_t': 'S'}, {'key': 'cancel', 'disp': 'cancel', 'disp_t': 'T', 'wt': '69.493', 'cat': '', 'cat_t': '', 'action': '', 'action_t': 'S'}, {'key': 'cancelling', 'disp': 'cancelling', 'disp_t': 'T', 'wt': '43.151', 'cat': '', 'cat_t': '', 'action': '', 'action_t': 'S'}, {'key': 'cancellations', 'disp': 'cancellations', 'disp_t': 'T', 'wt': '32.28', 'cat': '', 'cat_t': '', 'action': '', 'action_t': 'S'}, {'key': 'cancellation of membership', 'disp': 'cancellation of membership', 'disp_t': 'T', 'wt': '2.2', 'cat': '', 'cat_t': '', 'action': '', 'action_t': 'S'}, {'key': 'cancellation form', 'disp': 'fill out this cancellation form', 'disp_t': 'T', 'wt': '2', 'cat': '', 'cat_t': '', 'action': '', 'action_t': 'S'}, {'key': 'cancel a booking', 'disp': 'cancel a booking', 'disp_t': 'T', 'wt': '1.1', 'cat': '', 'cat_t': '', 'action': '', 'action_t': 'S'}, {'key': 'cancel a disability parking permit', 'disp': 'cancel a disability parking permit', 'disp_t': 'T', 'wt': '1', 'cat': '', 'cat_t': '', 'action': '', 'action_t': 'S'}, {'key': 'cancelling your registration', 'disp': 'cancelling your registration', 'disp_t': 'T', 'wt': '1', 'cat': '', 'cat_t': '', 'action': '', 'action_t': 'S'}];
 
     return exampleResponse;
   };
@@ -129,6 +140,76 @@ $(function () {
   //
   // Functions
   //
+
+  // Check Funnelback for suggested results
+  qgSiteSearch.fn.checkForSuggestions = function (inputValue) {
+    var initialConcierge = $('.qg-search-concierge-initial');
+    var helpfulConcierge = $('.qg-search-concierge-help');
+    var numChars = inputValue.length;
+
+    // Remove initial state
+    initialConcierge.removeClass('show');
+
+    // Query Funnelback when three characters are entered
+    if (numChars >= 3) {
+      // Get suggestions
+      qgSiteSearch.fn.getSuggestions(inputValue);
+
+      // Transition reveal suggestions
+      helpfulConcierge.addClass('show');
+    }
+  };
+
+  // Get suggestion keywords
+  qgSiteSearch.fn.getSuggestions = function (inputValue) {
+    var searchForm = $('#qg-global-search-form');
+    var suggestURL = searchForm.attr('data-suggestions');
+
+    if (isDevelopment()) {
+      // Demonstrate functionality locally
+      var exampleSuggestions = qgSiteSearch.fn.getExampleSuggestions();
+      qgSiteSearch.fn.formatSuggestions(exampleSuggestions);
+    } else {
+      // Query Funnelback
+      $.ajax({
+        cache: true,
+        dataType: 'json',
+        url: suggestURL,
+        data: {
+          partial_query: inputValue
+        },
+        success: qgSiteSearch.fn.formatSuggestions
+      });
+    }
+  };
+
+  // Format suggestion keywords
+  qgSiteSearch.fn.formatSuggestions = function (suggestions) {
+    var inputField = $('#qg-search-query');
+    var inputValue = inputField.val();
+    var suggestionsContainer = $('.qg-search-concierge-group.suggestions');
+    var suggestionsHeading = '<h4>Suggestions</h4>';
+    var suggestionsHTML = '';
+
+    if (suggestions.length > 0) {
+      // Add the heading
+      suggestionsHTML += suggestionsHeading;
+      suggestionsHTML += '<ul class="list-group">';
+
+      suggestions.forEach(function (item) {
+        suggestionsHTML += '<li class="list-group-item">';
+        suggestionsHTML += '<button>';
+        suggestionsHTML += getBoldText(inputValue, item['disp']);
+        suggestionsHTML += '</button>';
+        suggestionsHTML += '</li>';
+      });
+
+      suggestionsHTML += '</ul>';
+    }
+
+    // Update the concierge container
+    suggestionsContainer.html(suggestionsHTML);
+  };
 
   //
   // Ready
