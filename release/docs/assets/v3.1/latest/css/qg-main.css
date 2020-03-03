@@ -12916,8 +12916,16 @@ a .meta {
   position: absolute;
   top: 100%;
   width: 100%;
-  display: none;
-  margin-bottom: 20px; }
+  display: block;
+  margin-bottom: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s ease, visibility 0s ease .3s; }
+
+.qg-search-form .qg-search-concierge.show {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity .3s ease; }
 
 .qg-search-form .qg-search-concierge:after {
   content: "";
@@ -13022,7 +13030,7 @@ a .meta {
 .qg-search-form .input-group input[type=text] {
   border-radius: 4px;
   border: 3px solid #fff;
-  padding: 10px 100px 10px 38px;
+  padding: 10px 140px 10px 38px;
   -webkit-appearance: none;
   z-index: 0; }
 
@@ -13040,7 +13048,7 @@ a .meta {
   background-color: transparent;
   padding: 14px;
   position: absolute;
-  right: 76px;
+  right: 100px;
   display: none; }
 
 .qg-search-form .input-group .qg-search-close-concierge .fa {
@@ -13092,7 +13100,11 @@ a .meta {
     left: 25px; }
   .qg-search-form .input-group {
     max-width: none;
-    margin-top: 30px; } }
+    margin-top: 30px; }
+  .qg-search-form .input-group input[type=text] {
+    padding-right: 110px; }
+  .qg-search-form .input-group .qg-search-close-concierge {
+    right: 76px; } }
 
 @media (max-width: 767.98px) {
   .qg-search-form .input-group {
@@ -13199,7 +13211,7 @@ a .meta {
 @media (max-width: 991.98px) {
   #qg-site-nav .show .nav-link {
     text-decoration: none; }
-  #qg-search-form, #qg-site-nav, .qg-portal-links {
+  .qg-search-form, #qg-site-nav, .qg-portal-links {
     padding: 0; }
   #qg-site-nav {
     width: 100%; }
@@ -13289,7 +13301,7 @@ a .meta {
     opacity: 1;
     visibility: visible;
     transition: opacity .3s ease; }
-  #qg-search-form.collapse, .qg-navigation.collapse {
+  .qg-search-form.collapse, .qg-navigation.collapse {
     display: block; } }
 
 /*
@@ -15424,26 +15436,26 @@ form .questions select {
 #qg-page-feedback .qg-status.qg-warn ol {
   list-style-type: decimal !important; }
 
-#qg-search-form .form-control {
+.qg-search-form .form-control {
   color: #949494; }
 
-#qg-search-form .form-control:-ms-input-placeholder {
+.qg-search-form .form-control:-ms-input-placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #949494;
   opacity: 1;
   /* Firefox */ }
 
-#qg-search-form .form-control::placeholder {
+.qg-search-form .form-control::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #949494;
   opacity: 1;
   /* Firefox */ }
 
-#qg-search-form .form-control:-ms-input-placeholder {
+.qg-search-form .form-control:-ms-input-placeholder {
   /* Internet Explorer 10-11 */
   color: #949494; }
 
-#qg-search-form .form-control::-ms-input-placeholder {
+.qg-search-form .form-control::-ms-input-placeholder {
   /* Microsoft Edge */
   color: #949494; }
 
