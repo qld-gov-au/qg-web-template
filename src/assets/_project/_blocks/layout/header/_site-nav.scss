@@ -42,7 +42,7 @@
 }
 
 @include media-breakpoint-down(sm) {
-	#qg-search-form, #qg-site-nav, .qg-portal-links {
+	.qg-search-form, #qg-site-nav, .qg-portal-links {
 		padding: 0;
 	}
 
@@ -90,7 +90,7 @@
 // Display search form and site nav at full screen
 
 @include media-breakpoint-up(md) {
-	#qg-search-form, .qg-navigation {
+	.qg-search-form, .qg-navigation {
 		&.collapse {
 			display: block;
 		}
