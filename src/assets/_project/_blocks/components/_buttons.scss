@@ -14,6 +14,11 @@
     color: #fff;
     background-color: $qg-global-primary-dark-grey;
   }
+
+  &:focus {
+    outline: 1px dotted #000;
+    outline: 5px auto -webkit-focus-ring-color;
+  }
 }
 
 .btn-global-primary-white{
@@ -33,6 +38,11 @@
     color: $qg-global-primary-dark-grey;
     text-decoration: underline;
   }
+
+  &:focus {
+    outline: 1px dotted #000;
+    outline: 5px auto -webkit-focus-ring-color;
+  }
 }
 
 .btn-global-secondary{
@@ -48,6 +58,11 @@
   &:hover, &:focus {
     color: #fff;
     text-decoration: underline;
+  }
+
+  &:focus {
+    outline: 1px dotted #000;
+    outline: 5px auto -webkit-focus-ring-color;
   }
 }
 
