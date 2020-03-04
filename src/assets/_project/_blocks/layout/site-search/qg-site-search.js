@@ -127,6 +127,16 @@ $(function () {
     }
   };
 
+  // Handle selecting a suggestion
+  qgSiteSearch.fn.searchSuggestionClick = function (event) {
+    var targetElement = $(event['currentTarget']);
+    var suggestionValue = targetElement.text();
+    var searchInput = $('#qg-search-query');
+
+    // Add suggestion to input value
+    searchInput.val(suggestionValue);
+  };
+
   //
   // Local data
   //
@@ -228,4 +238,5 @@ $(function () {
   });
 
   // Binds
+  $('body').on('click', '.qg-search-concierge-group.suggestions button', qgSiteSearch.fn.searchSuggestionClick);
 });
