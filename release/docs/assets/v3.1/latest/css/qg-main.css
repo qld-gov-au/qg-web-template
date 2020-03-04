@@ -10293,6 +10293,10 @@ body:not([data-accessibility=false]):not([data-access-new-window=false]) #qg-con
   color: #fff;
   background-color: #313131; }
 
+.btn-global-primary:focus {
+  outline: 1px dotted #000;
+  outline: 5px auto -webkit-focus-ring-color; }
+
 .btn-global-primary-white {
   color: #313131;
   background-color: #fff;
@@ -10310,6 +10314,10 @@ body:not([data-accessibility=false]):not([data-access-new-window=false]) #qg-con
   color: #313131;
   text-decoration: underline; }
 
+.btn-global-primary-white:focus {
+  outline: 1px dotted #000;
+  outline: 5px auto -webkit-focus-ring-color; }
+
 .btn-global-secondary {
   color: #fff;
   background-color: transparent;
@@ -10323,6 +10331,10 @@ body:not([data-accessibility=false]):not([data-access-new-window=false]) #qg-con
 .btn-global-secondary:hover, .btn-global-secondary:focus {
   color: #fff;
   text-decoration: underline; }
+
+.btn-global-secondary:focus {
+  outline: 1px dotted #000;
+  outline: 5px auto -webkit-focus-ring-color; }
 
 .btn-primary {
   color: #212529;
