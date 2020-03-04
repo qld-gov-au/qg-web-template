@@ -97,63 +97,73 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <span>Search</span>
 </button>
 
-<form action="https://www.qld.gov.au/search" id="qg-global-search-form" role="search" class="qg-search-form collapse col-md-8 qg-global-web-autocomplete" data-suggestions="https://find.search.qld.gov.au/s/suggest.json?collection=qld-gov&fmt=json%2B%2B&alpha=0.5&profile=services&partial_query=">
+<form action="https://www.qld.gov.au/search" id="qg-global-search-form" role="search" class="qg-search-form collapse col-md-8 qg-global-web-autocomplete" data-suggestions="https://find.search.qld.gov.au/s/suggest.json?collection=qld-gov&fmt=json%2B%2B&alpha=0.5&profile=services" data-results="http://find.search.qld.gov.au/s/search.json?collection=qld-gov&profile=qld_preview">
     <div class="input-group">
       <label for="qg-search-query" class="qg-visually-hidden">Search Queensland Government</label>
       <input type="text" name="query" id="qg-search-query" class="form-control" autocomplete="off" placeholder="Search website" tabindex="0" aria-required="true" aria-expanded="false"/>
       <span class="fa fa-search"></span>
       <button class="qg-search-close-concierge" type="button" aria-label="Close Search Concierge"><span class="fa fa-close"></span></button>
-      <button type="submit" id="feature-search-submit" class="btn btn-global-primary" title="Search site">Search</button>
       <div class="qg-search-concierge qg-search-concierge-initial">
         <div class="qg-search-concierge-group helper">
-          <h4>Popular services</h4>
-          <ul class="list-group">
-            <li class="list-group-item"><a href="#">Renew vehicle or boat rego</a></li>
-            <li class="list-group-item"><a href="#">Check my licence demerit points</a></li>
-            <li class="list-group-item"><a href="#">Renew my driving licence</a></li>
-          </ul>
+          <div class="qg-search-concierge-content">
+            <h4>Popular services</h4>
+            <ul class="list-group">
+              <li class="list-group-item"><a href="#">Renew vehicle or boat rego</a></li>
+              <li class="list-group-item"><a href="#">Check my licence demerit points</a></li>
+              <li class="list-group-item"><a href="#">Renew my driving licence</a></li>
+            </ul>
+          </div>
         </div>
         <div class="qg-search-concierge-group helper">
-          <h4>Browse by category</h4>
-          <ul class="list-group">
-            <li class="list-group-item"><a href="#">Transport and motoring</a></li>
-            <li class="list-group-item"><a href="#">Employment and jobs</a></li>
-            <li class="list-group-item"><a href="#">Education and training</a></li>
-            <li class="list-group-item"><a href="#">Queensland and its government</a></li>
-          </ul>
-          <a href="#" class="all">Browse all categories</a>
+          <div class="qg-search-concierge-content">
+            <h4>Browse by category</h4>
+            <ul class="list-group">
+              <li class="list-group-item"><a href="#">Transport and motoring</a></li>
+              <li class="list-group-item"><a href="#">Employment and jobs</a></li>
+              <li class="list-group-item"><a href="#">Education and training</a></li>
+              <li class="list-group-item"><a href="#">Queensland and its government</a></li>
+            </ul>
+            <a href="#" class="all">Browse all categories</a>
+          </div>
         </div>
       </div>
       <div class="qg-search-concierge qg-search-concierge-help">
         <div class="qg-search-concierge-group suggestions">
-          <h4>Suggestions</h4>
-          <ul class="list-group">
-            <li class="list-group-item"><button><b>canc</b>el registration for osconnect</button></li>
-            <li class="list-group-item"><button><b>canc</b>el a booking</button></li>
-            <li class="list-group-item"><button><b>canc</b>el vehicle or boat registration</button></li>
-          </ul>
+          <div class="qg-search-concierge-content">
+            <h4>Suggestions</h4>
+            <ul class="list-group">
+              <li class="list-group-item"><button><b>canc</b>el registration for osconnect</button></li>
+              <li class="list-group-item"><button><b>canc</b>el a booking</button></li>
+              <li class="list-group-item"><button><b>canc</b>el vehicle or boat registration</button></li>
+            </ul>
+          </div>
         </div>
         <div class="qg-search-concierge-group highlight">
-          <div class="d-flex justify-content-between align-content-center flex-wrap">
-            <h4>Need to cancel your rego?</h4>
-            <div>
-              <span class="fa fa-car"></span>
-              <span class="fa fa-motorcycle"></span>
-              <span class="fa fa-anchor"></span>
+          <div class="qg-search-concierge-content">
+            <div class="d-flex justify-content-between align-content-center flex-wrap">
+              <h4>Need to cancel your rego?</h4>
+              <div>
+                <span class="fa fa-car"></span>
+                <span class="fa fa-motorcycle"></span>
+                <span class="fa fa-anchor"></span>
+              </div>
             </div>
+            <p>Save time and cancel your vehicle or boat registration online.</p>
+            <a href="#" class="btn btn-global-primary-white">Cancel my registration</a>
           </div>
-          <p>Save time and cancel your vehicle or boat registration online.</p>
-          <a href="#" class="btn btn-global-primary-white">Cancel my registration</a>
         </div>
         <div class="qg-search-concierge-group helper">
-          <h4>Related services</h4>
-          <ul class="list-group">
-            <li class="list-group-item"><a href="#">Cancel a booking</a></li>
-            <li class="list-group-item"><a href="#">Cancel first aid training</a></li>
-            <li class="list-group-item"><a href="#">Cancel a disability parking permit</a></li>
-          </ul>
+          <div class="qg-search-concierge-content">
+            <h4>Related services</h4>
+            <ul class="list-group">
+              <li class="list-group-item"><a href="#">Cancel a booking</a></li>
+              <li class="list-group-item"><a href="#">Cancel first aid training</a></li>
+              <li class="list-group-item"><a href="#">Cancel a disability parking permit</a></li>
+            </ul>
+          </div>
         </div>
       </div>
+      <button type="submit" id="feature-search-submit" class="btn btn-global-primary" title="Search site">Search</button>
     </div>
     <!--parameters to display results on search page-->
     <input type="hidden" name="num_ranks" value="10">

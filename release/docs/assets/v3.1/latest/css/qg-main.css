@@ -12945,7 +12945,9 @@ a .meta {
   border-radius: 0 0 4px 4px; }
 
 .qg-search-form .qg-search-concierge-group.suggestions {
-  background-color: #fff;
+  background-color: #fff; }
+
+.qg-search-form .qg-search-concierge-group.suggestions .qg-search-concierge-content {
   padding-top: 33px;
   padding-bottom: 5px; }
 
@@ -12990,7 +12992,7 @@ a .meta {
   top: 17px;
   left: 37px; }
 
-.qg-search-form .qg-search-concierge-group > h4, .qg-search-form .qg-search-concierge-group > p, .qg-search-form .qg-search-concierge-group > a, .qg-search-form .qg-search-concierge-group > button, .qg-search-form .qg-search-concierge-group > div {
+.qg-search-form .qg-search-concierge-group .qg-search-concierge-content > h4, .qg-search-form .qg-search-concierge-group .qg-search-concierge-content > p, .qg-search-form .qg-search-concierge-group .qg-search-concierge-content > a, .qg-search-form .qg-search-concierge-group .qg-search-concierge-content > button, .qg-search-form .qg-search-concierge-group .qg-search-concierge-content > div {
   margin-right: 35px;
   margin-left: 35px; }
 

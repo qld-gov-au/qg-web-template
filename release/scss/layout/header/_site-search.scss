@@ -40,8 +40,11 @@
 
       &.suggestions {
         background-color: #fff;
-        padding-top: 33px;
-        padding-bottom: 5px;
+
+        .qg-search-concierge-content {
+          padding-top: 33px;
+          padding-bottom: 5px;
+        }
 
         .list-group {
           button, a {
@@ -100,10 +103,12 @@
         }
       }
 
-      > h4, > p, > a, > button, > div {
-        margin-right: 35px;
-        margin-left: 35px;
-      }
+      .qg-search-concierge-content {
+        > h4, > p, > a, > button, > div {
+          margin-right: 35px;
+          margin-left: 35px;
+        }
+      } 
 
       .fa {
         @include rem(font-size, 18px);
