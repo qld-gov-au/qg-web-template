@@ -50,7 +50,7 @@ $(function () {
 
   // Wrap part of the string in bold tags
   function getBoldText (subString, stringToChange) {
-    var targetIndex = stringToChange.indexOf(subString);
+    var targetIndex = stringToChange.indexOf(subString.toLowerCase());
     var targetString = stringToChange.substr(targetIndex, subString.length);
 
     // Wrap the text in bold tags
@@ -99,17 +99,8 @@ $(function () {
 
   // Handle clicking out of the input field
   qgSiteSearch.fn.onBlur = function (inputValue) {
-    var initialConcierge = $('.qg-search-concierge-initial');
-    var helpfulConcierge = $('.qg-search-concierge-help');
-
-    // Immediately close both concierge panels
-    initialConcierge.addClass('hide').removeClass('show');
-    helpfulConcierge.addClass('hide').removeClass('show');
-
-    setTimeout(function () {
-      initialConcierge.removeClass('hide');
-      helpfulConcierge.removeClass('hide');
-    }, 300);
+    // Close the concierge panels
+    qgSiteSearch.fn.closeConciergePanels();
   };
 
   // Handle input value changes
@@ -137,20 +128,55 @@ $(function () {
     searchInput.val(suggestionValue);
   };
 
+  // Handle background click to close concierge
+  qgSiteSearch.fn.handleBodyClick = function (event) {
+    var targetSelector = '#qg-global-search-form';
+
+    if ($(event['target']).closest(targetSelector).length === 0) {
+      // Close the concierge panels
+      qgSiteSearch.fn.closeConciergePanels();
+    }
+  };
+
+  // Handle search form submission
+  qgSiteSearch.fn.searchSubmitHandler = function (event) {
+    // Close the concierge panels
+    qgSiteSearch.fn.closeConciergePanels();
+  };
+
   //
   // Local data
   //
 
   // Get example suggestions from Funnelback
-  qgSiteSearch.fn.getExampleSuggestions = function () {
+  qgSiteSearch.fn.getExampleSuggestions = function (inputValue) {
     var exampleResponse = [{'key': 'cancelled', 'disp': 'cancelled', 'disp_t': 'T', 'wt': '77.44', 'cat': '', 'cat_t': '', 'action': '', 'action_t': 'S'}, {'key': 'cancellation', 'disp': 'cancellation', 'disp_t': 'T', 'wt': '72.139', 'cat': '', 'cat_t': '', 'action': '', 'action_t': 'S'}, {'key': 'cancel', 'disp': 'cancel', 'disp_t': 'T', 'wt': '69.493', 'cat': '', 'cat_t': '', 'action': '', 'action_t': 'S'}, {'key': 'cancelling', 'disp': 'cancelling', 'disp_t': 'T', 'wt': '43.151', 'cat': '', 'cat_t': '', 'action': '', 'action_t': 'S'}, {'key': 'cancellations', 'disp': 'cancellations', 'disp_t': 'T', 'wt': '32.28', 'cat': '', 'cat_t': '', 'action': '', 'action_t': 'S'}, {'key': 'cancellation of membership', 'disp': 'cancellation of membership', 'disp_t': 'T', 'wt': '2.2', 'cat': '', 'cat_t': '', 'action': '', 'action_t': 'S'}, {'key': 'cancellation form', 'disp': 'fill out this cancellation form', 'disp_t': 'T', 'wt': '2', 'cat': '', 'cat_t': '', 'action': '', 'action_t': 'S'}, {'key': 'cancel a booking', 'disp': 'cancel a booking', 'disp_t': 'T', 'wt': '1.1', 'cat': '', 'cat_t': '', 'action': '', 'action_t': 'S'}, {'key': 'cancel a disability parking permit', 'disp': 'cancel a disability parking permit', 'disp_t': 'T', 'wt': '1', 'cat': '', 'cat_t': '', 'action': '', 'action_t': 'S'}, {'key': 'cancelling your registration', 'disp': 'cancelling your registration', 'disp_t': 'T', 'wt': '1', 'cat': '', 'cat_t': '', 'action': '', 'action_t': 'S'}];
 
-    return exampleResponse;
+    var filteredResponse = exampleResponse.filter(function (el) {
+      return el['disp'].indexOf(inputValue.toLowerCase()) !== -1;
+    });
+
+    return filteredResponse;
   };
 
   //
   // Functions
   //
+
+  // Close the conceirge menus
+  qgSiteSearch.fn.closeConciergePanels = function () {
+    var initialConcierge = $('.qg-search-concierge-initial');
+    var helpfulConcierge = $('.qg-search-concierge-help');
+
+    // Immediately close both concierge panels
+    initialConcierge.addClass('hide').removeClass('show');
+    helpfulConcierge.addClass('hide').removeClass('show');
+
+    setTimeout(function () {
+      initialConcierge.removeClass('hide');
+      helpfulConcierge.removeClass('hide');
+    }, 300);
+  };
 
   // Check Funnelback for suggested results
   qgSiteSearch.fn.checkForSuggestions = function (inputValue) {
@@ -178,7 +204,7 @@ $(function () {
 
     if (isDevelopment()) {
       // Demonstrate functionality locally
-      var exampleSuggestions = qgSiteSearch.fn.getExampleSuggestions();
+      var exampleSuggestions = qgSiteSearch.fn.getExampleSuggestions(inputValue);
       qgSiteSearch.fn.formatSuggestions(exampleSuggestions);
     } else {
       // Query Funnelback
@@ -230,13 +256,11 @@ $(function () {
     var searchInput = $('#qg-search-query');
 
     // Set up events
-    searchInput.on('focus blur input', debouncer(qgSiteSearch.fn.inputEventHandler, 200));
-
-    if (isDevelopment()) {
-      console.log('development');
-    }
+    searchInput.on('focus input', debouncer(qgSiteSearch.fn.inputEventHandler, 200));
   });
 
   // Binds
+  $('body').on('click', qgSiteSearch.fn.handleBodyClick);
   $('body').on('click', '.qg-search-concierge-group.suggestions button', qgSiteSearch.fn.searchSuggestionClick);
+  $('body').on('submit', '#qg-global-search-form', qgSiteSearch.fn.searchSubmitHandler);
 });
