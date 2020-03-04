@@ -334,9 +334,7 @@ $(function () {
     qgSiteSearch.fn.formatFeaturedService(featuredService);
 
     // Format the related services
-    if (serviceResults.length > 0) {
-      qgSiteSearch.fn.formatServices(serviceResults);
-    }
+    qgSiteSearch.fn.formatServices(serviceResults);
   };
 
   // Format featured service
