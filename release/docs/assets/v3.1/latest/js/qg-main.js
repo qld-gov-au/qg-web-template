@@ -4574,9 +4574,7 @@
 	    }
 	
 	    // Format the featured suggested service
-	    if (featuredService) {
-	      qgSiteSearch.fn.formatFeaturedService(featuredService);
-	    }
+	    qgSiteSearch.fn.formatFeaturedService(featuredService);
 	
 	    // Format the related services
 	    if (serviceResults.length > 0) {
@@ -4591,26 +4589,29 @@
 	    var linkURL = featuredService['displayUrl'];
 	    var description = featuredService['descriptionHtml'];
 	    var additionalProperties = featuredService['additionalProperties'];
+	    var serviceHTML = '';
 	
-	    var serviceHTML = '<div class="qg-search-concierge-content">';
-	    serviceHTML += '<div class="d-flex justify-content-between align-content-center flex-wrap">';
-	    serviceHTML += '<h4>' + title + '</h4>';
+	    if (featuredService) {
+	      serviceHTML = '<div class="qg-search-concierge-content">';
+	      serviceHTML += '<div class="d-flex justify-content-between align-content-center flex-wrap">';
+	      serviceHTML += '<h4>' + title + '</h4>';
 	
-	    // Check for icons
-	    if (typeof additionalProperties['icon'] !== 'undefined') {
-	      var allIcons = additionalProperties['icon'].split(' ');
+	      // Check for icons
+	      if (typeof additionalProperties['icon'] !== 'undefined') {
+	        var allIcons = additionalProperties['icon'].split(' ');
 	
-	      var iconHTML = allIcons.map(function (icon) {
-	        return '<span class="fa ' + icon + '"></span>';
-	      });
+	        var iconHTML = allIcons.map(function (icon) {
+	          return '<span class="fa ' + icon + '"></span>';
+	        });
 	
-	      serviceHTML += '<div>' + iconHTML.join('') + '</div>';
+	        serviceHTML += '<div>' + iconHTML.join('') + '</div>';
+	      }
+	
+	      serviceHTML += '</div>';
+	      serviceHTML += '<p>' + description + '</p>';
+	      serviceHTML += '<a href="' + linkURL + '" class="btn btn-global-primary-white">Button</a>';
+	      serviceHTML += '</div>';
 	    }
-	
-	    serviceHTML += '</div>';
-	    serviceHTML += '<p>' + description + '</p>';
-	    serviceHTML += '<a href="' + linkURL + '" class="btn btn-global-primary-white">Button</a>';
-	    serviceHTML += '</div>';
 	
 	    featuredServiceContainer.html(serviceHTML);
 	  };
@@ -4619,32 +4620,35 @@
 	  qgSiteSearch.fn.formatServices = function (serviceResults) {
 	    var servicesContainer = $('.qg-search-concierge-group.helper');
 	    var servicesHeading = '<h4>Related services</h4>';
+	    var serviceHTML = '';
 	
-	    var serviceHTML = '<div class="qg-search-concierge-content">';
-	    serviceHTML += servicesHeading;
-	    serviceHTML += '<ul class="list-group">';
+	    if (serviceResults.length > 0) {
+	      serviceHTML = '<div class="qg-search-concierge-content">';
+	      serviceHTML += servicesHeading;
+	      serviceHTML += '<ul class="list-group">';
 	
-	    serviceResults.forEach(function (service) {
-	      var serviceName = service['title'];
-	      var serviceLink = service['liveUrl'];
+	      serviceResults.forEach(function (service) {
+	        var serviceName = service['title'];
+	        var serviceLink = service['liveUrl'];
 	
-	      if (typeof serviceName !== 'undefined') {
-	        serviceName = serviceName.split('|')[0].trim();
-	      } else {
-	        serviceName = service['titleHtml'];
-	      }
+	        if (typeof serviceName !== 'undefined') {
+	          serviceName = serviceName.split('|')[0].trim();
+	        } else {
+	          serviceName = service['titleHtml'];
+	        }
 	
-	      if (typeof serviceLink === 'undefined') {
-	        serviceLink = service['displayUrl'];
-	      }
+	        if (typeof serviceLink === 'undefined') {
+	          serviceLink = service['displayUrl'];
+	        }
 	
-	      serviceHTML += '<li class="list-group-item">';
-	      serviceHTML += '<a href="' + serviceLink + '">' + serviceName + '</a>';
-	      serviceHTML += '</li>';
-	    });
+	        serviceHTML += '<li class="list-group-item">';
+	        serviceHTML += '<a href="' + serviceLink + '">' + serviceName + '</a>';
+	        serviceHTML += '</li>';
+	      });
 	
-	    serviceHTML += '</ul>';
-	    serviceHTML += '</div>';
+	      serviceHTML += '</ul>';
+	      serviceHTML += '</div>';
+	    }
 	
 	    servicesContainer.html(serviceHTML);
 	  };
