@@ -56,8 +56,11 @@
       &.highlight {
         background-color: $qg-global-primary-dark-grey;
         color: #fff;
-        padding-top: 18px;
-        padding-bottom: 20px;
+
+        .qg-search-concierge-content {
+          padding-top: 18px;
+          padding-bottom: 20px;
+        }
 
         .list-group {
           button, a {
@@ -67,8 +70,11 @@
       }
 
       &.helper {
-        padding-top: 30px;
-        padding-bottom: 25px;
+
+        .qg-search-concierge-content {
+          padding-top: 30px;
+          padding-bottom: 25px;
+        }
 
         &:not(:last-child) {
           border-bottom: 1px solid $qg-pagination-border;
@@ -205,9 +211,11 @@
       @include rem(font-size, 14px);
 
       &-group {
-        > h4, > p, > a, > button, > div {
-          margin-right: 25px;
-          margin-left: 25px;
+        .qg-search-concierge-content {
+          > h4, > p, > a, > button, > div {
+            margin-right: 25px;
+            margin-left: 25px;
+          }
         }
 
         h4 {
@@ -227,7 +235,10 @@
         }
 
         &.suggestions {
-          padding-top: 28px;
+
+          .qg-search-concierge-content {
+            padding-top: 28px;
+          }
 
           h4 {
             margin-bottom: 15px;
@@ -243,7 +254,10 @@
         }
 
         &.helper {
-          padding-top: 23px;
+
+          .qg-search-concierge-content {
+            padding-top: 23px;
+          }
 
           h4 {
             margin-bottom: 15px;
