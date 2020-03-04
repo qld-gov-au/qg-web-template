@@ -12909,7 +12909,8 @@ a .meta {
 
 .qg-search-form {
   padding-right: 10px;
-  padding-top: 25px; }
+  padding-top: 25px;
+  z-index: 2; }
 
 .qg-search-form .qg-search-concierge {
   border-top: solid 1px #808080;
