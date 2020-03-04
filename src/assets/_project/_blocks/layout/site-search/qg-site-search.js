@@ -349,7 +349,7 @@ $(function () {
       var linkURL = featuredService['displayUrl'];
       var description = featuredService['descriptionHtml'];
       var additionalProperties = featuredService['additionalProperties'];
-      
+
       serviceHTML = '<div class="qg-search-concierge-content">';
       serviceHTML += '<div class="d-flex justify-content-between align-content-center flex-wrap">';
       serviceHTML += '<h4>' + title + '</h4>';
