@@ -16,6 +16,9 @@ $(function () {
         if ($(this).hasClass('qg-show-menu')) {
             $('.qg-search-form').collapse('hide');
         } else {
+            setTimeout(() => {
+                $('.qg-search-form .input-group input[type=text]').focus();
+            }, 300);
             $('.qg-navigation').collapse('hide');
         }
     });
