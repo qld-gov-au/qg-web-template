@@ -446,11 +446,12 @@ $(function () {
 
     // Update header
     $('.header-location .location-name').text(locality);
+
+    // Update all location containers
     setTimeout(function () {
-      $('.header-location .qg-location-default').addClass('hide');
-      $('.header-location .qg-location-set').removeClass('hide');
+      $('.qg-location-default').addClass('hide');
+      $('.qg-location-set').removeClass('hide');
     }, 300);
-    // Update service centre
   };
 
   // Restore location containers to default state after location cleared
@@ -461,12 +462,11 @@ $(function () {
     closeDropdown();
     $('.header-location .location-name').text(defaultLocation);
 
+    // Update all location containers
     setTimeout(function () {
-      $('.header-location .qg-location-default').removeClass('hide');
-      $('.header-location .qg-location-set').addClass('hide');
+      $('.qg-location-default').removeClass('hide');
+      $('.qg-location-set').addClass('hide');
     }, 300);
-
-    // Update service centre
   };
 
   qgLocation.fn.closePopupIfOutside = function (e) {
