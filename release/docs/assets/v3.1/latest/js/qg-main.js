@@ -2322,6 +2322,20 @@
 	            $('.qg-navigation').collapse('hide');
 	        }
 	    });
+	
+	    function reorderTabbing() {
+	        if (window.innerWidth > 991) {
+	            $('.qg-portal-links button, .qg-portal-links a').attr('tabindex', '2');
+	        } else {
+	            $('.qg-portal-links button, .qg-portal-links a').attr('tabindex', '0');
+	        }
+	    }
+	
+	    reorderTabbing();
+	
+	    window.addEventListener('resize', function () {
+	        reorderTabbing();
+	    });
 	});
 
 /***/ }),
