@@ -3099,8 +3099,8 @@
 	
 	  // Set up input field listeners
 	  qgLocation.fn.setUpListeners = function () {
-	    var headerInputField = $('.header-location .qg-location-setter-form input[type=text]');
-	    headerInputField.on('keyup', debouncer(qgLocation.fn.initManualSearch, 200));
+	    var suburbInputField = $('.qg-location-setter-form input[type=text]');
+	    suburbInputField.on('keyup', debouncer(qgLocation.fn.initManualSearch, 200));
 	  };
 	
 	  // Check for saved location
