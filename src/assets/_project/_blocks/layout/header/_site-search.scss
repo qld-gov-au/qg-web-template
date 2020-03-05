@@ -11,6 +11,7 @@
     display: block;
     margin-bottom: 20px;
     opacity: 0;
+    left: 0;
     visibility: hidden;
     transition: opacity .3s ease, visibility 0s ease .3s;
 
@@ -166,6 +167,10 @@
       padding: 10px 140px 10px 38px;
       -webkit-appearance: none;
       z-index: 0;
+
+      &::-ms-clear {
+        display: none;
+      }
     }
 
     .fa-search {

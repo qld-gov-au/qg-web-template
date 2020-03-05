@@ -276,7 +276,7 @@ $(function () {
 
       suggestions.forEach(function (item) {
         suggestionsHTML += '<li class="list-group-item">';
-        suggestionsHTML += '<button>';
+        suggestionsHTML += '<button data-analytics-link-group="qg-global-search-suggestion">';
         suggestionsHTML += getBoldText(inputValue, item['disp']);
         suggestionsHTML += '</button>';
         suggestionsHTML += '</li>';
@@ -390,7 +390,7 @@ $(function () {
 
       serviceHTML += '</div>';
       serviceHTML += '<p>' + description + '</p>';
-      serviceHTML += '<a href="' + linkURL + '" class="btn btn-global-primary-white">Button</a>';
+      serviceHTML += '<a href="' + linkURL + '" data-analytics-link-group="qg-global-search-feature" class="btn btn-global-primary-white">Button</a>';
       serviceHTML += '</div>';
     }
 
@@ -423,7 +423,7 @@ $(function () {
         }
 
         serviceHTML += '<li class="list-group-item">';
-        serviceHTML += '<a href="' + serviceLink + '">' + serviceName + '</a>';
+        serviceHTML += '<a href="' + serviceLink + '" data-analytics-link-group="qg-global-search-related-service">' + serviceName + '</a>';
         serviceHTML += '</li>';
       });
 
