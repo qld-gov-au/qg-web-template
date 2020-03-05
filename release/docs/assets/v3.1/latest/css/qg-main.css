@@ -12612,7 +12612,6 @@ a .meta {
     overflow: hidden;
     padding: 0;
     transition: max-height 0.3s ease;
-    visibility: visible;
     width: 100%; }
   .qg-portal-links .qg-portal-links__list {
     background-color: #4a4a4a;
@@ -13186,8 +13185,12 @@ a .meta {
   display: block;
   max-width: 1010px;
   padding: 25px 30px;
+  visibility: hidden;
   width: 100%;
   z-index: 0; }
+
+#qg-site-nav .dropdown-menu.mega-menu.show {
+  visibility: visible; }
 
 #qg-site-nav .dropdown-menu.mega-menu ul {
   column-count: 3;
@@ -13314,11 +13317,9 @@ a .meta {
   #qg-site-nav .dropdown-menu.mega-menu {
     display: block;
     opacity: 0;
-    visibility: hidden;
     transition: opacity .3s ease, visibility 0s ease .3s; }
   #qg-site-nav .dropdown-menu.mega-menu.show {
     opacity: 1;
-    visibility: visible;
     transition: opacity .3s ease; }
   .qg-search-form.collapse, .qg-navigation.collapse {
     display: block; } }
