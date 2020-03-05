@@ -64,8 +64,13 @@
 		display: block;
 		max-width: 1010px;
 		padding: 25px 30px;
+		visibility: hidden;
 		width: 100%;
 		z-index: 0;
+
+		&.show {
+			visibility: visible;
+		}
 
 		ul {
 			column-count: 3;
@@ -239,12 +244,10 @@
 	#qg-site-nav .dropdown-menu.mega-menu {
 		display: block;
 		opacity: 0;
-		visibility: hidden;
 		transition: opacity .3s ease, visibility 0s ease .3s;
 
 		&.show {
 			opacity: 1;
-			visibility: visible;
 			transition: opacity .3s ease;
 		}
 	}
