@@ -15484,12 +15484,6 @@ form .questions select {
 .btn-global-primary, .qg-search-form .qg-search-concierge-group.highlight {
   background-color: #063652; }
 
-.btn-global-primary-white,
-.qg-footer-feedback__title,
-.qg-feedback-toggle[aria-expanded=true],
-.qg-search-form .qg-search-concierge-group.helper {
-  background-color: #eff2f4; }
-
 .btn-global-primary-white {
   color: #063652; }
 
@@ -15504,7 +15498,8 @@ form .questions select {
 
 #qg-site-nav .dropdown-menu.mega-menu,
 #qg-site-nav .show .nav-link,
-#qg-site-nav .show .nav-link:before {
+#qg-site-nav .show .nav-link:before,
+.qg-search-form .qg-search-concierge-group.helper {
   background-color: #eff2f4; }
 
 #qg-site-nav .show .nav-link {
