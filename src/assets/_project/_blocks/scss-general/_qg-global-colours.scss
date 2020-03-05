@@ -19,7 +19,9 @@
 }
 
 .header-location .dropdown-menu p,
-.qg-location-setter-autocomplete ul li button {
+.qg-location-setter-autocomplete ul li button,
+.qg-location-setter p,
+.qg-location-setter label {
     color: $qg-global-primary-darker;
 }
 
@@ -28,7 +30,6 @@
         color: $qg-global-primary-dark;
     }
 }
-
 
 @include media-breakpoint-down(sm) {
     #qg-site-nav {

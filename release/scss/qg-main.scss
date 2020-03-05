@@ -26,6 +26,7 @@
 @import "scss-general/mixins/font-size";
 @import "scss-general/mixins/qg-responsive-spacing";
 @import "scss-general/mixins/bootstrap-breakpoints";
+@import "scss-general/mixins/qg-style-helpers";
 
 // QG typography
 @import "layout/typography";
@@ -80,7 +81,7 @@
 @import "layout/section-nav/guide-sub-nav";
 @import "layout/section-nav/mobile_step_nav";
 @import "layout/asides/asides";
-@import "layout/footer/site-map";
+@import "layout/footer/site-footer";
 @import "layout/footer/legals";
 
 //themes

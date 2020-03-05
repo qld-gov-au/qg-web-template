@@ -116,6 +116,11 @@
             transform: translateX(-50%);
             top: 100%;
         }
+
+        .dropdown-menu {
+            left: -30px !important;
+            top: 5px !important;
+        }
     }
 
     @include media-breakpoint-down(xs) {
@@ -126,6 +131,15 @@
         .dropdown-menu {
             left: 10px;
             transform: none;
+
+            &:before {
+                left: 150px;
+            }
+        }
+
+        .dropdown-menu {
+            left: 10px !important;
+            top: 5px !important;
 
             &:before {
                 left: 150px;
