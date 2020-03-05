@@ -9,7 +9,8 @@ $(function () {
     'fn': {},
     'vars': {
       'cookie_name': 'qg-location',
-      'event_location_set': 'qgLocationSet',
+      'event_coordinates_set': 'qgLocationCoordsSet',
+      'event_locality_set': 'qgLocationLocalitySet',
       'event_location_found': 'qgLocationFound',
       'event_location_cleared': 'qgLocationCleared',
       'error_message': ''
@@ -80,8 +81,11 @@ $(function () {
   // Handle custom events
   function customEventHandler (event, eventName) {
     switch (eventName) {
-      case qgLocation['vars']['event_location_set']:
+      case qgLocation['vars']['event_coordinates_set']:
         qgLocation.fn.getLocality();
+        break;
+      case qgLocation['vars']['event_locality_set']:
+        qgLocation.fn.getCoordinates();
         break;
       case qgLocation['vars']['event_location_found']:
         qgLocation.fn.setLocationName();
@@ -134,7 +138,7 @@ $(function () {
     event.stopPropagation();
 
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(qgLocation.fn.success, qgLocation.fn.failure);
+      navigator.geolocation.getCurrentPosition(qgLocation.fn.processPositionData, qgLocation.fn.failure);
     }
   };
 
@@ -204,6 +208,7 @@ $(function () {
     // Update the input field
     var inputField = $('.qg-location-setter-form input[type=text]');
     inputField.attr('data-choice', suburbName);
+    inputField.attr('data-choice-full', suburbFullArea);
     inputField.val(suburbFullArea);
 
     // Hide the suggestions
@@ -218,7 +223,9 @@ $(function () {
       closeDropdown();
       // Get manual suburb selection
       var savedSuburb = inputField.attr('data-choice');
-      qgLocation.fn.saveLocality(savedSuburb);
+      var savedSuburbFull = inputField.attr('data-choice-full');
+
+      qgLocation.fn.saveLocality(savedSuburb, savedSuburbFull);
     }
   };
 
@@ -245,6 +252,13 @@ $(function () {
     return exampleSuburbs;
   };
 
+  // Get local example of service centres
+  qgLocation.fn.getExampleServiceCentres = function () {
+    var exampleCentres = {'response': {'resultPacket': {'results': [{'rank': 1, 'title': 'Justices of the Peace Branch', 'kmFromOrigin': 0.2, 'metaData': {'area': 'Brisbane City', 'hours': 'Monday to Friday, 10am-2pm|Mon,Mon,Tues,Tues,Wednes,Wednes,Thurs,Thurs,Fri,Fri,', 'agency': 'DJAG', 'address2': 'Level 6, 154 Melbourne Street', 'address1': 'See reception', 'viewpageassetid': '21806', 'postcode': '4101', 'type': 'Service', 's': 'Volunteer Justice of the Peace or Commissioner for Declarations', 't': 'Justices of the Peace Branch', 'phone': '1300 301 147', 'datasource': 'JP', 'suburb': 'SOUTH BRISBANE', 'location': '-27.4761712;153.0149019', 'id': '92'}}, {'rank': 2, 'title': 'Family Court Brisbane', 'kmFromOrigin': 1.2, 'metaData': {'area': 'Brisbane City', 'hours': 'Monday, Thursday and Friday 9am-2pm Note this service is for Family Court matters only. Hours of service may vary daily.|Mon,Mon,Thurs,Thurs,Fri,Fri,', 'agency': 'DJAG', 'address2': '(Entrance via Tank Street)', 'address1': 'Corner North Quay and Tank Streets', 'viewpageassetid': '21806', 'postcode': '4000', 'type': 'Service', 's': 'Hours of service vary daily, please phone before attending. Volunteer Justice of the Peace or Commissioner for Declarations', 't': 'Family Court Brisbane', 'datasource': 'JP', 'suburb': 'BRISBANE', 'location': '-27.468426;153.019921', 'id': '62'}}]}}};
+
+    return exampleCentres;
+  };
+
   //
   // Functions
   //
@@ -260,12 +274,15 @@ $(function () {
     if (storedData) {
       var dataEvent = '';
 
-      if (storedData['locality'] !== '') {
-        // Coordinates exist, find locality
-        dataEvent = qgLocation['vars']['event_location_found'];
-      } else {
-        // Locality exists, update page
-        dataEvent = qgLocation['vars']['event_location_set'];
+      // Check for coordinates
+      if (typeof (storedData['latitude']) !== 'undefined') {
+        if (storedData['locality'] !== 'unknown') {
+          // All location data found, update the page
+          dataEvent = qgLocation['vars']['event_locality_set'];
+        } else {
+          // Coordinates exist, find locality
+          dataEvent = qgLocation['vars']['event_coordinates_set'];
+        }
       }
 
       // Notify the rest of the page
@@ -292,8 +309,42 @@ $(function () {
     }
   };
 
+  // Find coordinates based on suburb
+  qgLocation.fn.getCoordinates = function () {
+    var storedData = qgLocation.fn.getStoredLocation();
+
+    if (typeof (storedData['latitude']) === 'undefined') {
+      var locality = storedData['locality'];
+
+      if (locality !== 'unknown') {
+        if (isDevelopment()) {
+          // Demonstrate functionality locally
+          var exampleData = qgLocation.fn.getExampleLocation();
+          qgLocation.fn.processCoordinates(exampleData);
+        } else {
+          // Query the Google Maps API with location
+          var targetURL = $('.qg-location-default').attr('data-geolocation');
+          var locationSuburb = storedData['locality'];
+
+          $.ajax({
+            cache: true,
+            dataType: 'json',
+            url: targetURL,
+            data: {
+              address: locationSuburb
+            },
+            success: qgLocation.fn.processCoordinates
+          });
+        }
+      }
+    } else {
+      // Notify the rest of the page
+      $('body').trigger('custom', qgLocation['vars']['event_location_found']);
+    }
+  };
+
   // The user has allowed geolocation
-  qgLocation.fn.success = function (response) {
+  qgLocation.fn.processPositionData = function (response) {
     var positionData = response['coords'];
 
     qgLocation.fn.setPositionData(positionData);
@@ -319,7 +370,7 @@ $(function () {
     qgLocation.fn.saveLocationCookie(location);
 
     // Notify the rest of the page
-    $('body').trigger('custom', qgLocation['vars']['event_location_set']);
+    $('body').trigger('custom', qgLocation['vars']['event_coordinates_set']);
   };
 
   // Save data to the location cookie
@@ -356,11 +407,11 @@ $(function () {
     }
   };
 
-  // Process the Google Maps API data
+  // Process the Google Maps API data for a suburb
   qgLocation.fn.processLocality = function (jsonResponse) {
     var allAddresses = jsonResponse['results'];
     var targetType = 'locality';
-    var locality = '';
+    var locality = 'unknown';
 
     // Check over all address matches
     for (var index = 0; index < allAddresses.length; index++) {
@@ -368,7 +419,7 @@ $(function () {
       var addressComponents = address['address_components'];
 
       // Break out of the loop if a locality is found
-      if (locality !== '') {
+      if (locality !== 'unknown') {
         break;
       }
 
@@ -386,23 +437,72 @@ $(function () {
     }
 
     // Proceed if an address is found
-    if (locality !== '') {
+    if (locality !== 'unknown') {
       qgLocation.fn.saveLocality(locality);
     }
   };
 
+  // Process the Google Maps API data for coordinates
+  qgLocation.fn.processCoordinates = function (jsonResponse) {
+    var allAddresses = jsonResponse['results'];
+    var coordinates = null;
+
+    // Check over all address matches
+    for (var index = 0; index < allAddresses.length; index++) {
+      var address = allAddresses[index];
+      var geometry = address['geometry'];
+
+      if (typeof (geometry) !== 'undefined') {
+        coordinates = geometry['location'];
+
+        if (typeof (coordinates) !== 'undefined') {
+          break;
+        }
+      }
+    }
+
+    // Proceed if coordinates are found
+    if (coordinates !== null) {
+      qgLocation.fn.saveCoordinates(coordinates);
+    }
+  };
+
   // Save the target locality
-  qgLocation.fn.saveLocality = function (locality) {
+  qgLocation.fn.saveLocality = function (locality, address) {
     var storedData = qgLocation.fn.getStoredLocation();
 
     // Handle no cookie present
     if (storedData === null) {
       storedData = {
-        'locality': ''
+        'locality': 'unknown'
       };
     }
 
+    // Handle optional address value
+    if (address) {
+      storedData['address'] = address;
+    }
+
     storedData['locality'] = locality;
+
+    // Save to cookie
+    qgLocation.fn.saveLocationCookie(storedData);
+
+    // Notify the rest of the page
+    $('body').trigger('custom', qgLocation['vars']['event_locality_set']);
+  };
+
+  // Save the suburb coordinates
+  qgLocation.fn.saveCoordinates = function (coordinates) {
+    var storedData = qgLocation.fn.getStoredLocation();
+
+    // Handle no cookie present
+    if (storedData === null) {
+      storedData = {};
+    }
+
+    storedData['latitude'] = coordinates['lat'];
+    storedData['longitude'] = coordinates['lng'];
 
     // Save to cookie
     qgLocation.fn.saveLocationCookie(storedData);
