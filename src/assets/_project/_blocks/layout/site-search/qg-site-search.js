@@ -99,6 +99,11 @@ $(function () {
 
   // Handle clicking out of the input field
   qgSiteSearch.fn.onBlur = function (inputValue) {
+    var clearButton = $('.qg-search-close-concierge');
+
+    // Remove the clear button
+    clearButton.addClass('hide');
+
     // Close the concierge panels
     qgSiteSearch.fn.closeConciergePanels();
   };
@@ -107,15 +112,35 @@ $(function () {
   qgSiteSearch.fn.onInput = function (inputValue) {
     var initialConcierge = $('.qg-search-concierge-initial');
     var helpfulConcierge = $('.qg-search-concierge-help');
+    var clearButton = $('.qg-search-close-concierge');
 
     if (inputValue !== '') {
+      // Reveal the clear button
+      clearButton.removeClass('hide');
+
       // Look for suggested results
       qgSiteSearch.fn.checkForSuggestions(inputValue);
     } else {
+      // Remove the clear button
+      clearButton.addClass('hide');
+
       // Remove suggestions and transition reveal initial state
       initialConcierge.addClass('show');
       helpfulConcierge.removeClass('show');
     }
+  };
+
+  // Handle clearing the input field via button
+  qgSiteSearch.fn.clearInputField = function (event) {
+    var clearButton = $('.qg-search-close-concierge');
+    var searchInput = $('#qg-search-query');
+    searchInput.val('');
+
+    // Remove the button
+    clearButton.addClass('hide');
+
+    // Close the concierge panels
+    qgSiteSearch.fn.closeConciergePanels();
   };
 
   // Handle selecting a suggestion
@@ -238,7 +263,7 @@ $(function () {
   qgSiteSearch.fn.formatSuggestions = function (suggestions) {
     var inputField = $('#qg-search-query');
     var inputValue = inputField.val();
-    var suggestionsContainer = $('.qg-search-concierge-group.suggestions');
+    var suggestionsContainer = $('.qg-search-concierge-help .qg-search-concierge-group.suggestions');
     var suggestionsHeading = '<h4>Suggestions</h4>';
     var suggestionsHTML = '';
 
@@ -339,7 +364,7 @@ $(function () {
 
   // Format featured service
   qgSiteSearch.fn.formatFeaturedService = function (featuredService) {
-    var featuredServiceContainer = $('.qg-search-concierge-group.highlight');
+    var featuredServiceContainer = $('.qg-search-concierge-help .qg-search-concierge-group.highlight');
     var serviceHTML = '';
 
     if (featuredService) {
@@ -374,7 +399,7 @@ $(function () {
 
   // Format suggested services
   qgSiteSearch.fn.formatServices = function (serviceResults) {
-    var servicesContainer = $('.qg-search-concierge-group.helper');
+    var servicesContainer = $('.qg-search-concierge-help .qg-search-concierge-group.helper');
     var servicesHeading = '<h4>Related services</h4>';
     var serviceHTML = '';
 
@@ -422,6 +447,7 @@ $(function () {
 
   // Binds
   $('body').on('click', qgSiteSearch.fn.handleBodyClick);
+  $('body').on('click', '.qg-search-close-concierge', qgSiteSearch.fn.clearInputField);
   $('body').on('click', '.qg-search-concierge-group.suggestions button', qgSiteSearch.fn.searchSuggestionClick);
   $('body').on('submit', '#qg-global-search-form', qgSiteSearch.fn.searchSubmitHandler);
 });
