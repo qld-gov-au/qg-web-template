@@ -6,13 +6,6 @@
     background-color: $qg-global-primary-dark;
 }
 
-.btn-global-primary-white,
-.qg-footer-feedback__title,
-.qg-feedback-toggle[aria-expanded=true],
-.qg-search-form .qg-search-concierge-group.helper {
-    background-color: $qg-global-primary-light
-}
-
 .btn-global-primary-white {
     color: $qg-global-primary-dark;
 }
@@ -34,7 +27,8 @@
 
 #qg-site-nav .dropdown-menu.mega-menu,
 #qg-site-nav .show .nav-link,
-#qg-site-nav .show .nav-link:before {
+#qg-site-nav .show .nav-link:before,
+.qg-search-form .qg-search-concierge-group.helper {
     background-color: $qg-global-primary-light;
 }
 
