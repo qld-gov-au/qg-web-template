@@ -13670,7 +13670,7 @@ a:active, a:hover, a:focus {
 
 .qg-location-setter p.error {
   line-height: 1rem;
-  color: #d60000;
+  color: #d60000 !important;
   font-style: italic;
   margin-bottom: 0; }
 
