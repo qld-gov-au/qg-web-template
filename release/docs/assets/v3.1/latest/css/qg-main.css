@@ -13324,7 +13324,9 @@ a .meta {
   #qg-site-nav .dropdown-menu.mega-menu.show {
     opacity: 1;
     transition: opacity .3s ease; }
-  .qg-search-form.collapse, .qg-navigation.collapse {
+  #qa-site .nav-item {
+    max-height: 45px; }
+  #qg-search-form.collapse, .qg-navigation.collapse {
     display: block; } }
 
 /*
