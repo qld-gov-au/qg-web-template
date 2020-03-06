@@ -176,7 +176,7 @@ $(function () {
     var numChars = inputValue.length;
 
     $('.qg-location-setter-form input[type=text]').removeClass('error');
-    if($('.qg-location-setter-form p.error').length) {
+    if ($('.qg-location-setter-form p.error').length) {
       $('.qg-location-setter-form p.error').remove();
     }
 
