@@ -110,6 +110,7 @@
     "chromium": "^2.1.1",
     "dotenv": "^4.0.0",
     "jquery": "^3.3.1",
+    "jquery-ui": "^1.12.1",
     "lato-webfont": "^2.15.1",
     "node-bourbon": "^4.2.8",
     "nodep-date-input-polyfill": "^5.2.0",
