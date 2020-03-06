@@ -248,14 +248,18 @@
 		top: -1px;
 		transition: none;
 		visibility: hidden;
-		
+
 		&.show {
 			opacity: 1;
 			transition: opacity .3s ease;
 		}
 	}
 
-	.qg-search-form, .qg-navigation {
+	#qa-site .nav-item {
+		max-height: 45px;
+	}
+
+	#qg-search-form, .qg-navigation {
 		&.collapse {
 			display: block;
 		}
