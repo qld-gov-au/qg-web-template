@@ -175,6 +175,11 @@ $(function () {
     var inputValue = inputField['value'];
     var numChars = inputValue.length;
 
+    $('.qg-location-setter-form input[type=text]').removeClass('error');
+    if($('.qg-location-setter-form p.error').length) {
+      $('.qg-location-setter-form p.error').remove();
+    }
+
     if (numChars >= 3) {
       if (isDevelopment()) {
         // Demonstrate functionality locally
@@ -194,6 +199,8 @@ $(function () {
           success: qgLocation.fn.displaySuburbSuggestions
         });
       }
+    } else {
+      $('.qg-location-setter-autocomplete').addClass('hide');
     }
   };
 
@@ -226,6 +233,9 @@ $(function () {
       var savedSuburbFull = inputField.attr('data-choice-full');
 
       qgLocation.fn.saveLocality(savedSuburb, savedSuburbFull);
+    } else {
+      inputField.addClass('error');
+      inputField.before('<p class="error">Please enter a location into the search box and try searching again.</p>');
     }
   };
 
@@ -545,6 +555,7 @@ $(function () {
     console.log(storedData);
 
     // Update header
+    $('.header-location .dropdown-toggle').attr('arisa-label', 'Your location is ' + locality);
     $('.header-location .location-name').text(locality);
 
     // Update all location containers
@@ -560,6 +571,7 @@ $(function () {
 
     // Update header
     closeDropdown();
+    $('.header-location .dropdown-toggle').attr('arisa-label', 'Your location is ' + defaultLocation);
     $('.header-location .location-name').text(defaultLocation);
 
     // Update all location containers

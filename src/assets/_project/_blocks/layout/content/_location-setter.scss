@@ -19,7 +19,7 @@
 
         &.error {
             @include rem(line-height, 16px);
-            color: $qg-global-error;
+            color: $qg-global-error!important;
             font-style: italic;
             margin-bottom: 0;
         }
