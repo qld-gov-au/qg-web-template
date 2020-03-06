@@ -240,9 +240,10 @@
 	#qg-site-nav .dropdown-menu.mega-menu {
 		display: block;
 		opacity: 0;
-		visibility: hidden;
-		transition: none;
 		top: -1px;
+		transition: none;
+		visibility: hidden;
+		
 
 		&.show {
 			opacity: 1;
