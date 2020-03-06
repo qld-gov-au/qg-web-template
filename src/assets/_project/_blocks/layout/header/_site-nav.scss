@@ -38,6 +38,7 @@
 	.nav-link {
 		display: inline-block;
 		background-color: transparent;
+		border: 0;
 		border-radius: 4px 4px 0 0;
 		padding: 16px 16px 5px;
 
@@ -244,7 +245,13 @@
 	#qg-site-nav .dropdown-menu.mega-menu {
 		display: block;
 		opacity: 0;
+<<<<<<< HEAD
 		transition: opacity .3s ease, visibility 0s ease .3s;
+=======
+		visibility: hidden;
+		transition: none;
+		top: -1px;
+>>>>>>> feature/SSQGHF-25
 
 		&.show {
 			opacity: 1;
