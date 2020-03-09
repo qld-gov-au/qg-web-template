@@ -63,25 +63,27 @@
     });
 
     // expand/collapse on enter keypress
-    accItem.on('keypress', function (event) {
+    accItem.find('.acc-heading').on('keypress', function (event) {
       if (event.target === event.currentTarget) {
         event.preventDefault();
         if (a11yClick(event) === true) {
-          if ($(this).find('input[name="tabs"]:checked').length > 0) {
-            $(this).find('input[name="tabs"]').prop('checked', false);
+          let parent = $(this).parent();
+          if (parent.find('input[name="tabs"]:checked').length > 0) {
+            parent.find('input[name="tabs"]').prop('checked', false);
           } else {
-            $(this).find('input[name="tabs"]').prop('checked', true);
+            parent.find('input[name="tabs"]').prop('checked', true);
           }
         }
       }
     });
-    accItem.on('click', function (event) {
+    accItem.find('.acc-heading').on('click', function (event) {
       if (event.target === event.currentTarget) {
         if (event.clientX !== 0) {
-          if ($(this).find('input[name="tabs"]:checked').length > 0) {
-            $(this).find('input[name="tabs"]').prop('checked', false);
+          let parent = $(this).parent();
+          if (parent.find('input[name="tabs"]:checked').length > 0) {
+            parent.find('input[name="tabs"]').prop('checked', false);
           } else {
-            $(this).find('input[name="tabs"]').prop('checked', true);
+            parent.find('input[name="tabs"]').prop('checked', true);
           }
           return false;
         }
