@@ -128,6 +128,9 @@ $(function () {
     var eventTarget = event['target'];
     var targetElement = eventTarget['tagName'].toLowerCase();
 
+    // Close suburb list if clicking outside
+    qgLocation.fn.closeSuburbsIfOutside(e);
+
     if (targetElement !== 'button') {
       e.stopPropagation();
     }
@@ -176,9 +179,6 @@ $(function () {
     var numChars = inputValue.length;
 
     $('.qg-location-setter-form input[type=text]').removeClass('error');
-    if ($('.qg-location-setter-form p.error').length) {
-      $('.qg-location-setter-form p.error').remove();
-    }
 
     if (numChars >= 3) {
       if (isDevelopment()) {
@@ -226,22 +226,56 @@ $(function () {
   qgLocation.fn.setManualSuburb = function (event) {
     event.stopPropagation();
     var inputField = $('.qg-location-setter-form input[type=text]');
+    var inputError = $('.qg-location-setter-error');
+
     if (inputField.val().length > 2) {
-      closeDropdown();
+      inputError.addClass('hide');
+
       // Get manual suburb selection
       var savedSuburb = inputField.attr('data-choice');
       var savedSuburbFull = inputField.attr('data-choice-full');
 
-      qgLocation.fn.saveLocality(savedSuburb, savedSuburbFull);
+      if (savedSuburb === '') {
+        inputField.addClass('error');
+        inputError.removeClass('hide');
+      } else {
+        // Manually close the dropdown
+        closeDropdown();
+
+        qgLocation.fn.saveLocality(savedSuburb, savedSuburbFull);
+      }
     } else {
       inputField.addClass('error');
-      inputField.before('<p class="error">Please enter a location into the search box and try searching again.</p>');
+      inputError.removeClass('hide');
     }
   };
 
   // Prevent form from performing a submission
   qgLocation.fn.locationSubmitHandler = function (event) {
     event.preventDefault();
+  };
+
+  // Close popup if clicking outside
+  qgLocation.fn.closePopupIfOutside = function (e) {
+    if (!$(e.target).closest('#qg-location-dropdown').length && !$(e.target).is('#qg-location-dropdown') && !$(e.target).is('.dropdown-toggle') && $('.header-location .qg-location-setter').hasClass('show')) {
+      // Manually close the dropdown
+      closeDropdown();
+
+      // Add class to give immediate effect instead of transition
+      $('.header-location .dropdown-menu').addClass('closed');
+
+      // Remove this class after dropdown has closed
+      setTimeout(function () {
+        $('.header-location .dropdown-menu').removeClass('closed');
+      }, 300);
+    }
+  };
+
+  // Close suburb list if clicking outside
+  qgLocation.fn.closeSuburbsIfOutside = function (event) {
+    if (!$(event['target']).closest('.qg-location-setter-form').length) {
+      $('.qg-location-setter-autocomplete').addClass('hide');
+    }
   };
 
   //
@@ -527,6 +561,8 @@ $(function () {
     var suggestionHTML = '';
 
     if (targetContainer) {
+      var suggestionList = targetContainer.find('.qg-location-setter-autocomplete');
+
       // Check for returned data
       if (allSuburbs.length > 0) {
         suggestionHTML = '<ul>';
@@ -540,7 +576,6 @@ $(function () {
 
         suggestionHTML += '</ul>';
 
-        var suggestionList = targetContainer.find('.qg-location-setter-autocomplete');
         suggestionList.removeClass('hide');
       }
 
@@ -568,32 +603,24 @@ $(function () {
   // Restore location containers to default state after location cleared
   qgLocation.fn.resetLocationContainers = function () {
     var defaultLocation = 'unknown';
+    var inputField = $('.qg-location-setter-form input[type=text]');
 
     // Update header
     closeDropdown();
     $('.header-location .dropdown-toggle').attr('arisa-label', 'Your location is ' + defaultLocation);
     $('.header-location .location-name').text(defaultLocation);
 
+    // Update suburb section
+    $('.qg-location-setter-error').addClass('hide');
+    inputField.attr('data-choice', '');
+    inputField.attr('data-choice-full', '');
+    inputField.val('');
+
     // Update all location containers
     setTimeout(function () {
       $('.qg-location-default').removeClass('hide');
       $('.qg-location-set').addClass('hide');
     }, 300);
-  };
-
-  qgLocation.fn.closePopupIfOutside = function (e) {
-    if (!$(e.target).closest('#qg-location-dropdown').length && !$(e.target).is('#qg-location-dropdown') && !$(e.target).is('.dropdown-toggle') && $('.header-location .qg-location-setter').hasClass('show')) {
-      // Manually close the dropdown
-      closeDropdown();
-
-      // Add class to give immediate effect instead of transition
-      $('.header-location .dropdown-menu').addClass('closed');
-
-      // Remove this class after dropdown has closed
-      setTimeout(function () {
-        $('.header-location .dropdown-menu').removeClass('closed');
-      }, 300);
-    }
   };
 
   //
@@ -617,4 +644,5 @@ $(function () {
   $('body').on('click', '.qg-location-setter .qg-location-setter-close', qgLocation.fn.closeLocationPopup);
   $('body').on('submit', '.qg-location-setter .qg-location-setter-form', qgLocation.fn.locationSubmitHandler);
   $('body').on('click', qgLocation.fn.closePopupIfOutside);
+  $('body').on('click', qgLocation.fn.closeSuburbsIfOutside);
 });

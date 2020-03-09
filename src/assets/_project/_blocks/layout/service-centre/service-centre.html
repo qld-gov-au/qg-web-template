@@ -8,14 +8,7 @@
         </button>
         <div id="qg-service-centre-location-setter" class="qg-location-setter-wrap collapse" style="">
             <div class="qg-location-setter show">
-                <button class="btn btn-global-primary detect-location" data-analytics-link-group="qg-location-device-location" type="button">Use device location</button>
-                <span class="qg-location-setter-divider">or</span>
-                <form class="qg-location-setter-form" novalidate="true">
-                    <label>Start typing your town or suburb</label>
-                    <input type="text" title="Start typing your town or suburb" placeholder="e.g. Cooladdi" data-suburbs="https://www.qld.gov.au/_qgdesigns/integrations/global/rest/location-arcgis-suburb-and-lga-listing">
-                    <div class="qg-location-setter-autocomplete hide"></div>
-                    <button class="btn btn-global-primary set-location" data-analytics-link-group="qg-location-manual-location" type="button">Set location</button>
-                </form>
+                <!--#include virtual="/assets/includes-local/location/location-shared-controls.html"-->
             </div>
         </div>
     </div>
