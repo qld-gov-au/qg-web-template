@@ -3450,7 +3450,7 @@
 	      } else {
 	        // Query Funnelback with location and service centre types
 	        var locationOrigin = storedData['latitude'] + ',' + storedData['longitude'];
-	        var targetURL = serviceCentreModule.getAttribute('data-centres');
+	        var targetURL = serviceCentreModule.attr('data-centres');
 	        var queryMetadata = centreTypes.join('+');
 	
 	        $.ajax({
