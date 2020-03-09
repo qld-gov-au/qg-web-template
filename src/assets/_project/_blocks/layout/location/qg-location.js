@@ -89,6 +89,7 @@ $(function () {
         break;
       case qgLocation['vars']['event_location_found']:
         qgLocation.fn.setLocationName();
+        qgLocation.fn.initServiceCentre();
         break;
       case qgLocation['vars']['event_location_cleared']:
         qgLocation.fn.resetLocationContainers();
@@ -298,7 +299,7 @@ $(function () {
 
   // Get local example of service centres
   qgLocation.fn.getExampleServiceCentres = function () {
-    var exampleCentres = {'response': {'resultPacket': {'results': [{'rank': 1, 'title': 'Justices of the Peace Branch', 'kmFromOrigin': 0.2, 'metaData': {'area': 'Brisbane City', 'hours': 'Monday to Friday, 10am-2pm|Mon,Mon,Tues,Tues,Wednes,Wednes,Thurs,Thurs,Fri,Fri,', 'agency': 'DJAG', 'address2': 'Level 6, 154 Melbourne Street', 'address1': 'See reception', 'viewpageassetid': '21806', 'postcode': '4101', 'type': 'Service', 's': 'Volunteer Justice of the Peace or Commissioner for Declarations', 't': 'Justices of the Peace Branch', 'phone': '1300 301 147', 'datasource': 'JP', 'suburb': 'SOUTH BRISBANE', 'location': '-27.4761712;153.0149019', 'id': '92'}}, {'rank': 2, 'title': 'Family Court Brisbane', 'kmFromOrigin': 1.2, 'metaData': {'area': 'Brisbane City', 'hours': 'Monday, Thursday and Friday 9am-2pm Note this service is for Family Court matters only. Hours of service may vary daily.|Mon,Mon,Thurs,Thurs,Fri,Fri,', 'agency': 'DJAG', 'address2': '(Entrance via Tank Street)', 'address1': 'Corner North Quay and Tank Streets', 'viewpageassetid': '21806', 'postcode': '4000', 'type': 'Service', 's': 'Hours of service vary daily, please phone before attending. Volunteer Justice of the Peace or Commissioner for Declarations', 't': 'Family Court Brisbane', 'datasource': 'JP', 'suburb': 'BRISBANE', 'location': '-27.468426;153.019921', 'id': '62'}}]}}};
+    var exampleCentres = {'question': {'rawInputParameters': {'origin': ['-27.477413799999997;153.01329099999998']}}, 'response': {'resultPacket': {'results': [{'rank': 1, 'title': 'Justices of the Peace Branch', 'kmFromOrigin': 0.2, 'metaData': {'area': 'Brisbane City', 'hours': 'Monday to Friday, 10am-2pm|Mon,Mon,Tues,Tues,Wednes,Wednes,Thurs,Thurs,Fri,Fri,', 'agency': 'DJAG', 'address2': 'Level 6, 154 Melbourne Street', 'address1': 'See reception', 'viewpageassetid': '21806', 'postcode': '4101', 'type': 'Service', 's': 'Volunteer Justice of the Peace or Commissioner for Declarations', 't': 'Justices of the Peace Branch', 'phone': '1300 301 147', 'datasource': 'JP', 'suburb': 'SOUTH BRISBANE', 'location': '-27.4761712;153.0149019', 'id': '92'}}, {'rank': 2, 'title': 'Family Court Brisbane', 'kmFromOrigin': 1.2, 'metaData': {'area': 'Brisbane City', 'hours': 'Monday, Thursday and Friday 9am-2pm Note this service is for Family Court matters only. Hours of service may vary daily.|Mon,Mon,Thurs,Thurs,Fri,Fri,', 'agency': 'DJAG', 'address2': '(Entrance via Tank Street)', 'address1': 'Corner North Quay and Tank Streets', 'viewpageassetid': '21806', 'postcode': '4000', 'type': 'Service', 's': 'Hours of service vary daily, please phone before attending. Volunteer Justice of the Peace or Commissioner for Declarations', 't': 'Family Court Brisbane', 'datasource': 'JP', 'suburb': 'BRISBANE', 'location': '-27.468426;153.019921', 'id': '62'}}]}}};
 
     return exampleCentres;
   };
@@ -598,6 +599,86 @@ $(function () {
       $('.qg-location-default').addClass('hide');
       $('.qg-location-set').removeClass('hide');
     }, 300);
+  };
+
+  // Initialise functions for finding the nearest service centre
+  qgLocation.fn.initServiceCentre = function () {
+    var serviceCentreModule = $('.qg-service-centre__wrapper');
+
+    if (serviceCentreModule.length > 0) {
+      var storedData = qgLocation.fn.getStoredLocation();
+      var centreTypes = serviceCentreModule.attr('data-types').split('; ');
+      var noneIndex = centreTypes.indexOf('None');
+
+      console.log(centreTypes);
+      // Remove "None" from centre types
+      if (noneIndex !== -1) {
+        centreTypes.splice(noneIndex, 1);
+      }
+
+      if (isDevelopment()) {
+        // Demonstrate functionality locally
+        var exampleData = qgLocation.fn.getExampleServiceCentres();
+        qgLocation.fn.findServiceCentre(exampleData);
+      } else {
+        // Query Funnelback with location and service centre types
+        var locationOrigin = storedData['latitude'] + ',' + storedData['longitude'];
+        var targetURL = serviceCentreModule.getAttribute('data-centres');
+        var queryMetadata = centreTypes.join('+');
+
+        $.ajax({
+          cache: true,
+          dataType: 'json',
+          url: targetURL,
+          data: {
+            origin: locationOrigin,
+            meta_datasource_orsand: queryMetadata
+          },
+          success: qgLocation.fn.findServiceCentre
+        });
+      }
+    }
+  };
+
+  // Process the service centre response
+  qgLocation.fn.findServiceCentre = function (jsonResponse) {
+    var results = jsonResponse['response']['resultPacket']['results'];
+    var centreData = null;
+    var centreContainer = $('.qg-service-centre__results');
+    var centreHTML = '';
+
+    if (results.length > 0) {
+      centreData = results[0];
+    }
+
+    if (centreData) {
+      var centreName = centreData['metaData']['t'];
+      var centreDistance = centreData['kmFromOrigin'];
+      var centreAddress1 = centreData['metaData']['address1'];
+      var centreAddress2 = centreData['metaData']['address2'];
+      var origin = jsonResponse['question']['rawInputParameters']['origin'];
+
+      // Build URL
+      var centreURL = centreContainer.attr('data-destination');
+      centreURL = centreURL.replace('QG_CENTRE', centreName);
+      centreURL = centreURL.replace('QG_DISTANCE', centreDistance);
+      centreURL = centreURL.replace('QG_ORIGIN', origin);
+
+      // Build HTML
+      centreHTML += '<a href="' + centreURL + '" class="qg-service-centre__link" target="_blank" data-analytics-link-group="qg-nearest-service-centre-details">' + centreName + '</a>';
+      centreHTML += '<ul class="qg-service-centre-list">';
+      centreHTML += '<li class="qg-service-centre-list-item">';
+      centreHTML += '<a href="' + centreURL + '" data-analytics-link-group="qg-nearest-service-centre-services">Services available</a>';
+      centreHTML += '</li>';
+      centreHTML += '<li class="qg-service-centre-list-item">' + centreDistance + ' km away</li>';
+      centreHTML += '<li class="qg-service-centre-list-item">';
+      centreHTML += '<span class="qg-service-centre__address">' + centreAddress1 + '</span>';
+      centreHTML += '<span class="qg-service-centre__address">' + centreAddress2 + '</span>';
+      centreHTML += '</li>';
+      centreHTML += '</ul>';
+    }
+
+    centreContainer.html(centreHTML);
   };
 
   // Restore location containers to default state after location cleared
