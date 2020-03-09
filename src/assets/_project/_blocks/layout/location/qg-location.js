@@ -176,9 +176,6 @@ $(function () {
     var numChars = inputValue.length;
 
     $('.qg-location-setter-form input[type=text]').removeClass('error');
-    if ($('.qg-location-setter-form p.error').length) {
-      $('.qg-location-setter-form p.error').remove();
-    }
 
     if (numChars >= 3) {
       if (isDevelopment()) {
@@ -226,7 +223,11 @@ $(function () {
   qgLocation.fn.setManualSuburb = function (event) {
     event.stopPropagation();
     var inputField = $('.qg-location-setter-form input[type=text]');
+    var inputError = $('.qg-location-setter-error');
+
     if (inputField.val().length > 2) {
+      inputError.addClass('hide');
+
       closeDropdown();
       // Get manual suburb selection
       var savedSuburb = inputField.attr('data-choice');
@@ -234,8 +235,9 @@ $(function () {
 
       qgLocation.fn.saveLocality(savedSuburb, savedSuburbFull);
     } else {
+      console.log('error');
       inputField.addClass('error');
-      inputField.before('<p class="error">Please enter a location into the search box and try searching again.</p>');
+      inputError.removeClass('hide');
     }
   };
 
@@ -568,11 +570,18 @@ $(function () {
   // Restore location containers to default state after location cleared
   qgLocation.fn.resetLocationContainers = function () {
     var defaultLocation = 'unknown';
+    var inputField = $('.qg-location-setter-form input[type=text]');
 
     // Update header
     closeDropdown();
     $('.header-location .dropdown-toggle').attr('arisa-label', 'Your location is ' + defaultLocation);
     $('.header-location .location-name').text(defaultLocation);
+
+    // Update suburb section
+    $('.qg-location-setter-error').addClass('hide');
+    inputField.attr('data-choice', '');
+    inputField.attr('data-choice-full', '');
+    inputField.val('');
 
     // Update all location containers
     setTimeout(function () {
