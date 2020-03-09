@@ -656,13 +656,11 @@ $(function () {
       var centreDistance = centreData['kmFromOrigin'];
       var centreAddress1 = centreData['metaData']['address1'];
       var centreAddress2 = centreData['metaData']['address2'];
-      var origin = jsonResponse['question']['rawInputParameters']['origin'];
 
       // Build URL
-      var centreURL = centreContainer.attr('data-destination');
-      centreURL = centreURL.replace('QG_CENTRE', centreName);
-      centreURL = centreURL.replace('QG_DISTANCE', centreDistance);
-      centreURL = centreURL.replace('QG_ORIGIN', origin);
+      var centreType = centreData['metaData']['datasource'].toLowerCase();
+      var centreURL = centreContainer.attr('data-' + centreType);
+      centreURL += centreName;
 
       // Build HTML
       centreHTML += '<a href="' + centreURL + '" class="qg-service-centre__link" data-analytics-link-group="qg-nearest-service-centre-details">' + centreName + '</a>';
