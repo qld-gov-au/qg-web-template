@@ -63,9 +63,9 @@ module.exports = {
     transferToBuild: [
       './node_modules/nodep-date-input-polyfill/nodep-date-input-polyfill.dist.js',
       './node_modules/stickyfilljs/dist/stickyfill.min.js',
-      './node_modules/jquery-ui/ui/widgets/datepicker.js',
-      './node_modules/jquery-ui/themes/base/theme.css',
-      './node_modules/jquery-ui/themes/base/datepicker.css',
+      './node_modules/jquery-ui-bundle/jquery-ui.min.css',
+      './node_modules/jquery-ui-bundle/jquery-ui.min.js',
+      './node_modules/jquery-ui-bundle/images/**',
     ],
   },
   publish: {

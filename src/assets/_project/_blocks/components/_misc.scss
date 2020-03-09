@@ -23,3 +23,8 @@ a{
     color: #fff;
   }
 }
+
+// datepicker prev and next button positioning
+.ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-prev-hover, .ui-datepicker .ui-datepicker-next, .ui-datepicker .ui-datepicker-next-hover {
+  top: 8px !important;
+}

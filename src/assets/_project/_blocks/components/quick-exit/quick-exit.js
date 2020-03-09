@@ -15,7 +15,7 @@
 
       // load a plugin only on IE browser to support position:sticky
       if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
-        $.getScript('{{CDN}}/latest/lib/ext/stickyfill.min.js', function () {
+        $.getScript('{{CDN}}/latest/lib/ext/stickyfilljs/dist/stickyfill.min.js', function () {
           /*global Stickyfill*/
           console.log('loaded stickyfill');
           Stickyfill.add($quickExit);
