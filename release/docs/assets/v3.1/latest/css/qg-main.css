@@ -12680,27 +12680,50 @@ a .meta {
   color: #fff;
   margin: auto; }
 
-.qg-show-menu .fa, .qg-show-search .fa {
+.qg-show-menu .qg-global-icons, .qg-show-search .qg-global-icons {
   border: 2px solid #fff;
   border-radius: 4px;
-  padding: 12px 13px;
   margin: 0 auto 1px;
-  transition: background-color .3s ease-in-out, color .3s ease-in-out; }
+  padding: 8px 10px;
+  transition: background-color .3s ease-in-out, color .3s ease-in-out;
+  width: 44px; }
 
-.qg-show-menu[aria-expanded="true"] .fa, .qg-show-search[aria-expanded="true"] .fa {
-  background-color: #fff;
-  color: #565656;
-  font-size: 25px;
-  padding: 8px 10px; }
+.qg-show-menu .qg-global-icons .qg-icon--menu-close, .qg-show-search .qg-global-icons .qg-icon--menu-close {
+  display: none; }
 
-.qg-show-menu[aria-expanded="true"] .fa:before, .qg-show-search[aria-expanded="true"] .fa:before {
-  content: "\f00d"; }
+.qg-show-menu .qg-global-icons svg, .qg-show-search .qg-global-icons svg {
+  height: 20px;
+  width: 20px; }
+
+.qg-show-menu[aria-expanded="true"] .qg-global-icons, .qg-show-search[aria-expanded="true"] .qg-global-icons {
+  background-color: #fff; }
+
+.qg-show-menu[aria-expanded="true"] .qg-global-icons .qg-icon--menu-close, .qg-show-search[aria-expanded="true"] .qg-global-icons .qg-icon--menu-close {
+  display: block; }
 
 .qg-show-menu {
   left: 24px; }
 
+.qg-show-menu .qg-global-icons svg rect {
+  fill: #fff; }
+
+.qg-show-menu[aria-expanded="true"] .qg-icon--menu-default {
+  display: none; }
+
+.qg-show-menu[aria-expanded="true"] svg rect {
+  fill: #565656; }
+
 .qg-show-search {
   right: 24px; }
+
+.qg-show-search .qg-global-icons svg g g {
+  fill: #fff; }
+
+.qg-show-search[aria-expanded="true"] .qg-icon--mobile-search-default {
+  display: none; }
+
+.qg-show-search[aria-expanded="true"] svg g g {
+  fill: #565656; }
 
 @media (max-width: 767.98px) {
   .qg-show-menu {
@@ -15493,8 +15516,8 @@ form .questions select {
 .btn-global-primary-white {
   color: #063652; }
 
-.qg-show-menu[aria-expanded="true"] .fa, .qg-show-search[aria-expanded="true"] .fa {
-  color: #005e85; }
+.qg-show-menu[aria-expanded="true"] .qg-global-icons svg rect, .qg-show-search[aria-expanded="true"] .qg-global-icons svg rect {
+  fill: #005e85; }
 
 .qg-site-footer ul li a:hover,
 .qg-site-footer ul li a:focus,
