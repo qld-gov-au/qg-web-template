@@ -12,8 +12,8 @@
 
 .qg-show-menu, .qg-show-search {
     &[aria-expanded="true"] {
-        .fa {
-            color: $qg-global-primary;
+        .qg-global-icons svg rect {
+            fill: $qg-global-primary;
         }
     }
 }
