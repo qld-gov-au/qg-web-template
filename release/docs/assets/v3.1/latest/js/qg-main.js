@@ -3492,7 +3492,7 @@
 	      centreURL = centreURL.replace('QG_ORIGIN', origin);
 	
 	      // Build HTML
-	      centreHTML += '<a href="' + centreURL + '" class="qg-service-centre__link" target="_blank" data-analytics-link-group="qg-nearest-service-centre-details">' + centreName + '</a>';
+	      centreHTML += '<a href="' + centreURL + '" class="qg-service-centre__link" data-analytics-link-group="qg-nearest-service-centre-details">' + centreName + '</a>';
 	      centreHTML += '<ul class="qg-service-centre-list">';
 	      centreHTML += '<li class="qg-service-centre-list-item">';
 	      centreHTML += '<a href="' + centreURL + '" data-analytics-link-group="qg-nearest-service-centre-services">Services available</a>';
