@@ -3181,14 +3181,14 @@
 	    }
 	  };
 	
-	  // Find coordinates based on suburb
+	  // Find coordinates based on address
 	  qgLocation.fn.getCoordinates = function () {
 	    var storedData = qgLocation.fn.getStoredLocation();
 	
 	    if (typeof storedData['latitude'] === 'undefined') {
-	      var locality = storedData['locality'];
+	      var address = storedData['address'];
 	
-	      if (locality !== 'unknown') {
+	      if (address) {
 	        if (isDevelopment()) {
 	          // Demonstrate functionality locally
 	          var exampleData = qgLocation.fn.getExampleLocation();
@@ -3196,14 +3196,14 @@
 	        } else {
 	          // Query the Google Maps API with location
 	          var targetURL = $('.qg-location-default').attr('data-geolocation');
-	          var locationSuburb = storedData['locality'];
+	          var locationAddress = storedData['address'];
 	
 	          $.ajax({
 	            cache: true,
 	            dataType: 'json',
 	            url: targetURL,
 	            data: {
-	              address: locationSuburb },
+	              address: locationAddress },
 	
 	            success: qgLocation.fn.processCoordinates });
 	
