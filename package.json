@@ -94,7 +94,7 @@
     "npm": ">=6.13.4",
     "run-sequence": "^1.1.5",
     "sass-loader": "^6.0.5",
-    "style-loader": "^0.17.0",
+    "style-loader": "^0.23.1",
     "uglifyjs-webpack-plugin": "^0.4.3",
     "url-loader": "^0.5.8",
     "vinyl-fs": "^3.0.3",
