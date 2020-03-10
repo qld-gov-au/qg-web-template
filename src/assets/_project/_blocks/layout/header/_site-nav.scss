@@ -179,9 +179,25 @@
 
 		.dropdown.mega-dropdown {
 			position: relative;
+
+			.btn.btn-global-primary {
+				width: 100%;
+				text-align: left;
+				padding: 12px 13px;
+				border-radius: 0 0 0 0;
+				border: 0;
+				background-color: #fff;
+				font-weight: normal;
+
+				&:focus,&:hover {
+					opacity: 0.7;
+				}
+			}
 		}
 
 		.dropdown-toggle {
+			text-align: left;
+
 			&:after {
                 border: none;
             }
@@ -221,6 +237,7 @@
 
 						&:hover,&:focus{
 							opacity:0.7;
+							text-decoration: underline;
 						}
 					}
 
