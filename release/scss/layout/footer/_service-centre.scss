@@ -3,14 +3,16 @@
     .qg-service-centre-set-location {
         padding: 9px 16px;
         position: relative;
+        height: 44px;
         transition: all .3s ease;
 
-        &__text {
-            display: inline-block;
-            transform: translateX(50%);
-
+        &__text{
+            white-space: nowrap;
+            
             &-wrap {
-                transform: translateX(-25%);
+                left: 50%;
+                position: absolute;
+                transform: translateX(-50%);
                 transition: all .3s ease;
             }
         }
@@ -19,7 +21,8 @@
             border-radius: 4px 4px 0 0;
 
             .qg-service-centre-set-location__text-wrap {
-                transform: translateX(-50%);
+                left: 16px;
+                transform: translateX(0px);
             }
 
             + .qg-location-setter-wrap .qg-location-setter {
@@ -75,5 +78,11 @@
         padding-top: 15px;
         padding-bottom: 30px;
         transition: all .3s ease;
+    }
+
+    @include media-breakpoint-down(sm) {
+        .qg-location-setter {
+            max-width: 420px;
+        }
     }
 }
