@@ -16,12 +16,23 @@
       background: #444444;
       position: relative;
       overflow: hidden;
+      border-radius: 4px;
       img {
         width: 100%;
         height: auto;
       }
+      .qg-card__cta{
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        width: 92% !important;
+      }
       .details{
         padding: 1em;
+        margin-bottom: 4em;
         a {
           color: #fff;
           text-decoration: underline;
@@ -50,13 +61,6 @@
               left: 0;
               top: .5rem;
             }
-          }
-        }
-        a.btn, a.btn:visited, a.btn:focus{
-          color: inherit !important;
-          text-decoration: none !important;
-          &:hover {
-            background: rgba(0,126,177,.6) !important;
           }
         }
       }
@@ -88,6 +92,13 @@
         height: auto;
         max-width: 699px;
         display: block;
+      }
+      a.btn, a.btn:visited, a.btn:focus{
+        color: inherit !important;
+        text-decoration: none !important;
+        &:hover {
+          background: rgba(0,126,177,.6) !important;
+        }
       }
     }
   }

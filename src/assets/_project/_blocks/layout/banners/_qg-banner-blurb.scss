@@ -15,7 +15,7 @@
     color: #fff;
     text-decoration: underline;
     &:hover, &:active, &:focus, &:visited{
-      color: #fff !important;
+      color: #000 !important;
       text-decoration: none !important;
     }
   }
@@ -33,6 +33,18 @@
     padding: 1.2em;
     margin:1.2em;
     width: 27.5em;
+    &.light{
+      background: none !important;
+      * {
+        color: #000 !important;
+      }
+    }
+    .b-cta{
+      margin-top: 1em;
+    }
+    .b-sub{
+      margin-top: 1.5em;
+    }
     h1{
       color: #fff;
       padding: 0;
@@ -49,5 +61,25 @@
   }
   @include breakpoint(xs) {
     min-height: 192px;
+    background-position:top !important;
+    background-size:contain !important;
+    padding:0;
+    padding-top:28%;
+    &.hide-xs-hero-img{
+      background-image:none !important;
+      min-height:inherit !important;
+      padding-top:0 !important;
+    }
+    .blurb{
+      width:auto;
+      max-width:100%;
+      margin:0;
+      color: #000000;
+      background-color: #ffffff;
+      padding-bottom: 0;
+      h1 {
+        color: #000000;
+      }
+    }
   }
 }

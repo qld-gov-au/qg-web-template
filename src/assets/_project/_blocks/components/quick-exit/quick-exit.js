@@ -1,38 +1,31 @@
-(function ($) {
-  'use strict';
-  var quickExit = {
-    el: '#qg-quick-exit',
-    init: function () {
-      $(this.el).empty().append(this.template);
-      this.methods();
-    },
-    template: '<header><strong>Quick exit</strong></header><ul><li><a target="_top" data-accesskey="Esc" href="http://www.abc.net.au/tv/epg/#/" title="ABC"><img src="https://www.qld.gov.au/_resources/images/icons/abc-bw.png" alt="ABC"></a></li></ul><footer><strong>press \'Esc\'</strong></footer>',
-    methods: function () {
-      var quickExitLinks = $(this.el).find('a');
-      var escLink = $(this.el).find('a[data-accesskey="Esc"]').attr('href');
-      // action on esc key press
-
-      if ($(this.el).length > 0) {
+var quickExit = {
+  el: '.qg-quick-exit',
+  init: function () {
+    this.methods();
+  },
+  methods: function () {
+    var newloc = 'https://www.google.com.au';
+    var el = $(this.el);
+    if (el.length > 0) {
+      $.getScript('{{CDN}}/latest/lib/ext/stickyfill.min.js', function () {
+        // IE 11 fix
+        /*global Stickyfill*/
+        Stickyfill.add(el);
+        // navigating on pressing Escape key
         $(document).keydown(function (e) {
           if (e.keyCode === 27) {
-            window.location.replace(escLink);
+            window.open(newloc, '_blank', '');
+            window.location.replace(newloc);
             return false;
           }
         });
-
-        // clicking on the quick exit block
-        $(document).on('click', this.el, function () {
-          window.location.replace(escLink);
+        // clicking on the quick exit button
+        $('body').on('click', '.qg-quick-exit__button', function () {
+          window.open(newloc, '_blank', '');
+          window.location.replace(newloc);
         });
-
-        //clicking on the links inside the quick exit block
-        quickExitLinks.click(function (e) {
-          e.stopPropagation();
-          e.preventDefault();
-          window.location.replace($(this).attr('href'));
-        });
-      }
-    },
-  };
-  quickExit.init();
-}(jQuery));
+      });
+    }
+  },
+};
+quickExit.init();

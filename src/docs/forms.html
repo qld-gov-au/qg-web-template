@@ -1340,6 +1340,72 @@ $( '#email' ).closest( '.section' ).relevance( 'relevantWhen', { name: 'replyReq
           <li><a href="http://www.qld.gov.au/web/cue/module4/">Module 4 Online Forms (Consistent User Experience standard)</a></li>
           <li><a href="http://www.webdirections.org/resources/aaron-gustafson/">Learning to love forms (Aaron Gustafson, 2007)</a></li>
         </ul>
+        <hr />
+        <h2>Radio button and Checkbox pattern</h2>
+
+        <form action="https://www.smartservice.qld.gov.au/services/submissions/email/yrcl/jp-resign" method="post" id="jpresign" class="form">
+          <ol class="questions">
+            <li class="section">
+              <fieldset>
+                <legend>
+                  <span class="h3">Radio button theme</span>
+                </legend>
+                <ol class="questions ">
+                  <li>
+                    <fieldset>
+                      <legend>
+                        <span class="label">This Radio button custom theme can be implemented by adding 'rc-theme' class.</span>
+                      </legend>
+                      <ul class="choices compact rc-theme">
+                        <li>
+                          <input type="radio" name="current-test" value="Yes" required="required" class="r1" id="current-test-yes"><label for="current-test-yes">Yes</label>
+                        </li>
+                        <li>
+                          <input type="radio" name="current-test" value="No" required="required" class="r2" id="current-test-no"><label for="current-test-no">No</label>
+                        </li>
+                      </ul>
+                    </fieldset>
+                  </li>
+
+                </ol>
+              </fieldset>
+            </li>
+            <li class="section">
+              <fieldset><legend>
+                <span class="h3">Check Box theme</span>
+              </legend>
+                <ul class="choices rc-theme">
+                  <li>
+                    <fieldset><legend> <span class="label" style="visibility:hidden;height:0;">Acknowledgement</span></legend>
+                      <input id="conditions-of-use1" value="true" name="conditions-of-use1" type="checkbox"><label for="conditions-of-use1">Lorem ipsum dolor sit amet.</label>
+                    </fieldset></li>
+
+                  <li>
+                    <fieldset><legend> <span class="label" style="visibility:hidden;height:0;">Acknowledgement</span></legend>
+                      <input id="conditions-of-use2" value="true" name="conditions-of-use2" type="checkbox"><label for="conditions-of-use2">Lorem ipsum dolor sit amet.</label>
+                    </fieldset></li>
+
+                  <li>
+                    <fieldset><legend> <span class="label" style="visibility:hidden;height:0;">Acknowledgement</span></legend>
+                      <input id="conditions-of-use3" value="true" name="conditions-of-use3" type="checkbox"><label for="conditions-of-use3">Lorem ipsum dolor sit amet.</label>
+                    </fieldset></li>
+
+                  <li>
+                    <fieldset><legend> <span class="label" style="visibility:hidden;height:0;">Acknowledgement</span></legend>
+                      <input id="conditions-of-use4" value="true" name="conditions-of-use4" type="checkbox"><label for="conditions-of-use4">Lorem ipsum dolor sit amet.</label>
+                    </fieldset></li>
+
+                </ul></fieldset></li>
+
+
+          </ol>
+        </form>
+
+
+        <!-- ################################## -->
+
+        <!-- ################################## -->
+
 
         <!-- ################################## -->
         <div class="qg-content-footer">
