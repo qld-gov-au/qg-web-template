@@ -266,8 +266,13 @@ $(function () {
     var suggestionsContainer = $('.qg-search-concierge-help .qg-search-concierge-group.suggestions');
     var suggestionsHeading = '<h4>Suggestions</h4>';
     var suggestionsHTML = '';
+    var maxSuggestions = 3;
 
     if (suggestions.length > 0) {
+      // Reduce count to maximum limit
+      suggestions = suggestions.slice(0, maxSuggestions);
+
+      // Start the HTML for suggestions listing
       suggestionsHTML += '<div class="qg-search-concierge-content">';
 
       // Add the heading
