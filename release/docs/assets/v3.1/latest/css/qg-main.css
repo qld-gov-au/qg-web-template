@@ -12056,6 +12056,8 @@ a .meta {
     max-width: 50%;
     padding: 0 40px;
     position: relative; }
+  .qg-site-footer .qg-footer-col-content {
+    max-width: 420px; }
   .qg-site-footer h3 {
     margin-top: 20px; } }
 
