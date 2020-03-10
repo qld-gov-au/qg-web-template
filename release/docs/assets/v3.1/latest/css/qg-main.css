@@ -12142,7 +12142,8 @@ a .meta {
   left: 50%;
   position: absolute;
   transform: translateX(-50%);
-  transition: all .3s ease; }
+  transition: all .3s ease;
+  top: 9px; }
 
 .qg-service-centre .qg-service-centre-set-location[aria-expanded=true] {
   border-radius: 4px 4px 0 0; }
