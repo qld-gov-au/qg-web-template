@@ -702,6 +702,11 @@ $(function () {
     }, 300);
   };
 
+  // Close service centre collapsible
+  qgLocation.fn.closeServiceCentre = function () {
+    $('#qg-service-centre-location-setter').collapse('hide');
+  };
+
   //
   // Ready
   //
@@ -724,4 +729,5 @@ $(function () {
   $('body').on('submit', '.qg-location-setter .qg-location-setter-form', qgLocation.fn.locationSubmitHandler);
   $('body').on('click', qgLocation.fn.closePopupIfOutside);
   $('body').on('click', qgLocation.fn.closeSuburbsIfOutside);
+  $('body').on('click', '.qg-location-setter-close', qgLocation.fn.closeServiceCentre);
 });
