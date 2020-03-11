@@ -40,7 +40,13 @@ function addHiddenInput (key, val) {
   $('#feedback-hidden-inputs').append(newHiddenInput);
 }
 function init (franchiseTitle) {
-  addHiddenInput('franchise', location.pathname.split('/')[1]);
+  var franchise;
+  if (franchiseTitle) {
+    franchise = franchiseTitle;
+  } else {
+    franchise = location.pathname.split('/')[1];
+  }
+  addHiddenInput('franchise', franchise);
   addHiddenInput('page-title', $(document).find('title').text());
   addHiddenInput('page-url', window.location.href);
   addHiddenInput('page-referer', document.referrer);

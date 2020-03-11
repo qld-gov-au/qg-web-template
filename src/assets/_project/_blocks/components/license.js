@@ -7,7 +7,7 @@
   'use strict';
   const licenceOptions = {
     url: '//creativecommons.org/licenses/',
-    imgSrc: qg.cdn + qg.swe.paths.images + '/licences/',
+    imgSrc: '{{CDN}}/latest/images/licences/',
     types: {
       'by': {
         'name': 'Attribution',

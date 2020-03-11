@@ -1,6 +1,5 @@
 // env initialization
-import qg from './utils/qg-env';
-
+import './utils/qg-env';
 // utils import
 import './utils/qg-util';
 
@@ -22,7 +21,7 @@ import feedbackForm       from './layout/footer/feedback-form';
 
 (function () {
   'use strict';
-  let franchiseTitle = qg && qg.swe && qg.swe.franchiseTitle;
+  let franchiseTitle = window.qg.swe.franchiseTitle;
   activeSideNav.highlightNavItem();
   stepNav.init();
   feedbackForm.init(franchiseTitle);
