@@ -6,28 +6,32 @@
         height: 44px;
         transition: all .3s ease;
 
-        &__text{
+
+        &__text {
+            left: 50%;
+            position: absolute;
+            transform: translateX(-50%);
+            transition: all .3s ease;
             white-space: nowrap;
-            
-            &-wrap {
-                left: 50%;
-                position: absolute;
-                transform: translateX(-50%);
-                transition: all .3s ease;
-                top: 9px;
-            }
+            top: 9px;
         }
 
         &[aria-expanded=true] {
             border-radius: 4px 4px 0 0;
 
-            .qg-service-centre-set-location__text-wrap {
+            .qg-service-centre-set-location__text {
                 left: 16px;
                 transform: translateX(0px);
             }
 
             + .qg-location-setter-wrap .qg-location-setter {
                 border-radius: 0 0 4px 4px;
+            }
+        }
+
+        &:hover,&:focus {
+            .qg-service-centre-set-location__text {
+                text-decoration: underline;
             }
         }
     }

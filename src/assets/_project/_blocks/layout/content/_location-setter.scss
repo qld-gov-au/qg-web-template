@@ -116,6 +116,7 @@
 
                 button {
                     @include rem(font-size, 14px);
+                    border: 0;
                     color:$qg-global-primary-darker-grey;
                     background-color: #fff;
                     padding: 9px 12px;
