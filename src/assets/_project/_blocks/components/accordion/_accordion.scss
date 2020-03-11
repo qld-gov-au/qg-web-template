@@ -5,12 +5,21 @@
   .qg-acc-controls{
     text-align: right;
     margin-bottom: 0.4em;
+     button{
+       border: none;
+       background: none;
+       color: #13578b!important;
+       font-weight: 700;
+     }
     a{
       text-decoration: none !important;
       padding: 0.4rem 0.7rem;
       color: $qg-blue-dark !important;
       font-weight: bold;
       display: inline-block;
+    }
+    .collapse:not(.show) {
+      display: inline;
     }
   }
   //label selector is to provide backward compatibility in case projects are using old markup
