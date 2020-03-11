@@ -163,6 +163,10 @@ $(function () {
     }
   };
 
+  qgSiteSearch.fn.handleFocus = function (event) {
+    qgSiteSearch.fn.closeConciergePanels();
+  };
+
   // Handle search form submission
   qgSiteSearch.fn.searchSubmitHandler = function (event) {
     // Close the concierge panels
@@ -452,6 +456,7 @@ $(function () {
   });
 
   // Binds
+  $('body').on('focusin', '.qg-navigation .nav-link', qgSiteSearch.fn.handleFocus);
   $('body').on('click', qgSiteSearch.fn.handleBodyClick);
   $('body').on('click', '.qg-search-close-concierge', qgSiteSearch.fn.clearInputField);
   $('body').on('click', '.qg-search-concierge-group.suggestions button', qgSiteSearch.fn.searchSuggestionClick);

@@ -159,7 +159,7 @@
   .input-group {
     float: right;
     position: relative;
-    max-width: 525px;
+    width: 525px;
     
     input[type=text] {
       border-radius: 4px;
@@ -173,25 +173,33 @@
       }
     }
 
-    .fa-search {
-      @include rem(font-size, 18px);
-      color: $qg-dark-grey1;
+    .qg-search__icon {
+      height: 22px;
+      width: 22px;
       position: absolute;
-      left: 15px;
+      left: 13px;
       top: 50%;
       transform: translateY(-50%);
+
+      path {
+        fill: $qg-dark-grey1;
+      }
     }
 
     .qg-search-close-concierge {
-      color: $qg-dark-grey1;
       border: 0;
       background-color: transparent;
       padding: 14px;
       position: absolute;
       right: 100px;
 
-      .fa {
-        @include rem(font-size, 22px);
+      svg {
+        height: 22px;
+        width: 22px;
+
+        rect {
+          fill: $qg-dark-grey1;
+        }
       }
     }
 
@@ -211,6 +219,7 @@
 
   @include media-breakpoint-down(sm) {
     margin: 0;
+    width: 100%;
 
     .qg-search-concierge {
       @include rem(font-size, 14px);
@@ -287,6 +296,7 @@
     .input-group {
       max-width: none;
       margin-top: 30px;
+      width: 100%;
 
       input[type=text] {
         padding-right: 110px;
