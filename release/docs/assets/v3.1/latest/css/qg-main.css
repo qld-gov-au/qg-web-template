@@ -12136,24 +12136,25 @@ a .meta {
   transition: all .3s ease; }
 
 .qg-service-centre .qg-service-centre-set-location__text {
-  white-space: nowrap; }
-
-.qg-service-centre .qg-service-centre-set-location__text-wrap {
   left: 50%;
   position: absolute;
   transform: translateX(-50%);
   transition: all .3s ease;
+  white-space: nowrap;
   top: 9px; }
 
 .qg-service-centre .qg-service-centre-set-location[aria-expanded=true] {
   border-radius: 4px 4px 0 0; }
 
-.qg-service-centre .qg-service-centre-set-location[aria-expanded=true] .qg-service-centre-set-location__text-wrap {
+.qg-service-centre .qg-service-centre-set-location[aria-expanded=true] .qg-service-centre-set-location__text {
   left: 16px;
   transform: translateX(0px); }
 
 .qg-service-centre .qg-service-centre-set-location[aria-expanded=true] + .qg-location-setter-wrap .qg-location-setter {
   border-radius: 0 0 4px 4px; }
+
+.qg-service-centre .qg-service-centre-set-location:hover .qg-service-centre-set-location__text, .qg-service-centre .qg-service-centre-set-location:focus .qg-service-centre-set-location__text {
+  text-decoration: underline; }
 
 .qg-service-centre__link {
   font-size: 1.125rem;
@@ -13830,6 +13831,7 @@ a:active, a:hover, a:focus {
 
 .qg-location-setter-autocomplete ul li button {
   font-size: 0.875rem;
+  border: 0;
   color: #292929;
   background-color: #fff;
   padding: 9px 12px;
