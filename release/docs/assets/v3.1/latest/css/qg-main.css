@@ -13074,7 +13074,7 @@ a .meta {
 .qg-search-form .input-group {
   float: right;
   position: relative;
-  max-width: 525px; }
+  width: 525px; }
 
 .qg-search-form .input-group input[type=text] {
   border-radius: 4px;
@@ -13086,24 +13086,30 @@ a .meta {
 .qg-search-form .input-group input[type=text]::-ms-clear {
   display: none; }
 
-.qg-search-form .input-group .fa-search {
-  font-size: 1.125rem;
-  color: #939393;
+.qg-search-form .input-group .qg-search__icon {
+  height: 22px;
+  width: 22px;
   position: absolute;
-  left: 15px;
+  left: 13px;
   top: 50%;
   transform: translateY(-50%); }
 
+.qg-search-form .input-group .qg-search__icon path {
+  fill: #939393; }
+
 .qg-search-form .input-group .qg-search-close-concierge {
-  color: #939393;
   border: 0;
   background-color: transparent;
   padding: 14px;
   position: absolute;
   right: 100px; }
 
-.qg-search-form .input-group .qg-search-close-concierge .fa {
-  font-size: 1.375rem; }
+.qg-search-form .input-group .qg-search-close-concierge svg {
+  height: 22px;
+  width: 22px; }
+
+.qg-search-form .input-group .qg-search-close-concierge svg rect {
+  fill: #939393; }
 
 .qg-search-form .input-group .btn[type=submit], .qg-search-form .input-group .qg-btn[type=submit] {
   position: absolute;
@@ -13116,7 +13122,8 @@ a .meta {
 
 @media (max-width: 991.98px) {
   .qg-search-form {
-    margin: 0; }
+    margin: 0;
+    width: 100%; }
   .qg-search-form .qg-search-concierge {
     font-size: 0.875rem; }
   .qg-search-form .qg-search-concierge-group .qg-search-concierge-content > h4, .qg-search-form .qg-search-concierge-group .qg-search-concierge-content > p, .qg-search-form .qg-search-concierge-group .qg-search-concierge-content > a, .qg-search-form .qg-search-concierge-group .qg-search-concierge-content > button, .qg-search-form .qg-search-concierge-group .qg-search-concierge-content > div {
@@ -13151,7 +13158,8 @@ a .meta {
     left: 25px; }
   .qg-search-form .input-group {
     max-width: none;
-    margin-top: 30px; }
+    margin-top: 30px;
+    width: 100%; }
   .qg-search-form .input-group input[type=text] {
     padding-right: 110px; }
   .qg-search-form .input-group .qg-search-close-concierge {
@@ -15572,6 +15580,7 @@ form .questions select {
 .qg-search-form .qg-search-concierge-group .list-group-item button,
 .qg-search-form .qg-search-concierge-group .list-group-item a,
 .qg-search-form .qg-search-concierge-group.helper .all,
+.qg-search-form #qg-search-query,
 .qg-share__title {
   color: #212529; }
 

@@ -4642,6 +4642,10 @@
 	    }
 	  };
 	
+	  qgSiteSearch.fn.handleFocus = function (event) {
+	    qgSiteSearch.fn.closeConciergePanels();
+	  };
+	
 	  // Handle search form submission
 	  qgSiteSearch.fn.searchSubmitHandler = function (event) {
 	    // Close the concierge panels
@@ -4745,8 +4749,13 @@
 	    var suggestionsContainer = $('.qg-search-concierge-help .qg-search-concierge-group.suggestions');
 	    var suggestionsHeading = '<h4>Suggestions</h4>';
 	    var suggestionsHTML = '';
+	    var maxSuggestions = 3;
 	
 	    if (suggestions.length > 0) {
+	      // Reduce count to maximum limit
+	      suggestions = suggestions.slice(0, maxSuggestions);
+	
+	      // Start the HTML for suggestions listing
 	      suggestionsHTML += '<div class="qg-search-concierge-content">';
 	
 	      // Add the heading
@@ -4926,6 +4935,7 @@
 	  });
 	
 	  // Binds
+	  $('body').on('focusin', '.qg-navigation .nav-link', qgSiteSearch.fn.handleFocus);
 	  $('body').on('click', qgSiteSearch.fn.handleBodyClick);
 	  $('body').on('click', '.qg-search-close-concierge', qgSiteSearch.fn.clearInputField);
 	  $('body').on('click', '.qg-search-concierge-group.suggestions button', qgSiteSearch.fn.searchSuggestionClick);
