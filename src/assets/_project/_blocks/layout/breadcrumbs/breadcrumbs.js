@@ -1,5 +1,5 @@
 (function () {
-    $('.qg-breadcrumb-list').each(function () {
+    $('.qg-global-breadcrumb .qg-breadcrumb-list').each(function () {
         var breadcrumbLength = $(this).find('.qg-breadcrumb-list-item').length;
         if (breadcrumbLength > 4) {
             for (var i = 0; i < breadcrumbLength; i++) {
