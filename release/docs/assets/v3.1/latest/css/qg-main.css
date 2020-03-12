@@ -13811,6 +13811,10 @@ a:active, a:hover, a:focus {
   width: 100%;
   -webkit-appearance: none; }
 
+.qg-location-setter-form input[type=text]:focus {
+  position: relative;
+  z-index: 1; }
+
 .qg-location-setter-autocomplete {
   position: absolute;
   transform: translateY(-18px);
@@ -13844,6 +13848,9 @@ a:active, a:hover, a:focus {
 
 .qg-location-setter-autocomplete ul li button:hover, .qg-location-setter-autocomplete ul li button:focus {
   background-color: #efefef; }
+
+.qg-location-setter-autocomplete ul li button:focus {
+  position: relative; }
 
 .qg-location-setter-close {
   font-size: 0.875rem;

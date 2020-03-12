@@ -2957,7 +2957,9 @@
 	    var targetElement = eventTarget['tagName'].toLowerCase();
 	
 	    // Close suburb list if clicking outside
-	    qgLocation.fn.closeSuburbsIfOutside(e);
+	    if (event['keyCode'] !== 40 && event['keyCode'] !== 38) {
+	      qgLocation.fn.closeSuburbsIfOutside(e);
+	    }
 	
 	    if (targetElement !== 'button') {
 	      e.stopPropagation();
@@ -3003,12 +3005,18 @@
 	  // Manually search for location
 	  qgLocation.fn.initManualSearch = function (event) {
 	    var inputField = event['target'];
+	    var keyCode = event['keyCode'];
 	    var inputValue = inputField['value'];
 	    var numChars = inputValue.length;
 	
 	    $('.qg-location-setter-form input[type=text]').removeClass('error');
 	
-	    if (numChars >= 3) {
+	    if (keyCode === 40) {
+	      if ($('.qg-location-setter-autocomplete button').length) {
+	        $('.qg-location-setter-autocomplete button')[0].focus();
+	        $('.qg-location-setter-form input[type=text]').attr('data-navindex', '0');
+	      }
+	    } else if (numChars >= 3) {
 	      if (isDevelopment()) {
 	        // Demonstrate functionality locally
 	        var exampleData = qgLocation.fn.revealExampleLocations();
@@ -3030,6 +3038,22 @@
 	    } else {
 	      $('.qg-location-setter-autocomplete').addClass('hide');
 	    }
+	  };
+	
+	  qgLocation.fn.keyboardNavigation = function (event) {
+	    var navIndex = parseInt($('.qg-location-setter-form input[type=text]').attr('data-navindex'));
+	    if (event['keyCode'] === 40) {
+	      navIndex++;
+	      $('.qg-location-setter-autocomplete button')[navIndex].focus();
+	    } else if (event['keyCode'] === 38) {
+	      if (navIndex > 0) {
+	        navIndex--;
+	        $('.qg-location-setter-autocomplete button')[navIndex].focus();
+	      } else {
+	        $('.qg-location-setter-form input[type=text]').focus();
+	      }
+	    }
+	    $('.qg-location-setter-form input[type=text]').attr('data-navindex', navIndex);
 	  };
 	
 	  // Get suburb from suggestion click
@@ -3101,7 +3125,7 @@
 	
 	  // Close suburb list if clicking outside
 	  qgLocation.fn.closeSuburbsIfOutside = function (event) {
-	    if (!$(event['target']).closest('.qg-location-setter-form').length) {
+	    if (!$(event['target']).closest('.qg-location-setter-form').length && event['view'] !== undefined) {
 	      $('.qg-location-setter-autocomplete').addClass('hide');
 	    }
 	  };
@@ -3399,7 +3423,7 @@
 	          var suburbName = suburbData['suburb'];
 	          var suburbHTML = suburbData['name_formatted'];
 	
-	          suggestionHTML += '<li><button class="qg-location-manual" data-location="' + suburbName + '">' + suburbHTML + '</button></li>';
+	          suggestionHTML += '<li><button class="qg-location-manual" tabindex="-1" data-location="' + suburbName + '">' + suburbHTML + '</button></li>';
 	        });
 	
 	        suggestionHTML += '</ul>';
@@ -3518,6 +3542,7 @@
 	
 	    // Update suburb section
 	    $('.qg-location-setter-error').addClass('hide');
+	    $('.qg-location-setter-form input[type=text]').removeClass('error');
 	    inputField.attr('data-choice', '');
 	    inputField.attr('data-choice-full', '');
 	    inputField.val('');
@@ -3533,6 +3558,10 @@
 	  qgLocation.fn.closeServiceCentre = function () {
 	    $('#qg-service-centre-location-setter').collapse('hide');
 	  };
+	
+	  $('.qg-location-setter .set-location').on('focus', function () {
+	    $('.qg-location-setter-autocomplete').addClass('hide');
+	  });
 	
 	  //
 	  // Ready
@@ -3557,6 +3586,7 @@
 	  $('body').on('click', qgLocation.fn.closePopupIfOutside);
 	  $('body').on('click', qgLocation.fn.closeSuburbsIfOutside);
 	  $('body').on('click', '.qg-location-setter-close', qgLocation.fn.closeServiceCentre);
+	  $('body').on('keydown', '.qg-location-setter-autocomplete button', qgLocation.fn.keyboardNavigation);
 	});
 
 /***/ }),
