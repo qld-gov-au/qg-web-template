@@ -143,7 +143,6 @@ $(function () {
   qgLocation.fn.getDeviceLocation = function (event) {
     event.stopPropagation();
 
-
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(qgLocation.fn.processPositionData, qgLocation.fn.failure);
     }
