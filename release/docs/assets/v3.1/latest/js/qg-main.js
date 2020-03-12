@@ -4794,7 +4794,7 @@
 	
 	      suggestions.forEach(function (item) {
 	        suggestionsHTML += '<li class="list-group-item">';
-	        suggestionsHTML += '<button data-analytics-link-group="qg-global-search-suggestion">';
+	        suggestionsHTML += '<button tabindex="-1" data-analytics-link-group="qg-global-search-suggestion">';
 	        suggestionsHTML += getBoldText(inputValue, item['disp']);
 	        suggestionsHTML += '</button>';
 	        suggestionsHTML += '</li>';
@@ -4908,7 +4908,7 @@
 	
 	      serviceHTML += '</div>';
 	      serviceHTML += '<p>' + description + '</p>';
-	      serviceHTML += '<a href="' + linkURL + '" data-analytics-link-group="qg-global-search-feature" class="btn btn-global-primary-white">' + additionalProperties['buttonText'] + '</a>';
+	      serviceHTML += '<a href="' + linkURL + '"  tabindex="-1" data-analytics-link-group="qg-global-search-feature" class="btn btn-global-primary-white">' + additionalProperties['buttonText'] + '</a>';
 	      serviceHTML += '</div>';
 	    }
 	
@@ -4941,7 +4941,7 @@
 	        }
 	
 	        serviceHTML += '<li class="list-group-item">';
-	        serviceHTML += '<a href="' + serviceLink + '" data-analytics-link-group="qg-global-search-related-service">' + serviceName + '</a>';
+	        serviceHTML += '<a href="' + serviceLink + '" tabindex="-1" data-analytics-link-group="qg-global-search-related-service">' + serviceName + '</a>';
 	        serviceHTML += '</li>';
 	      });
 	

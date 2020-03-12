@@ -12372,7 +12372,8 @@ a .meta {
 .qg-site-footer .qg-feedback-toggle {
   height: 44px;
   position: relative;
-  transition: all .3s ease; }
+  transition: all .3s ease;
+  z-index: 1; }
 
 .qg-site-footer .qg-feedback-toggle__text {
   left: 50%;
@@ -12381,6 +12382,9 @@ a .meta {
   white-space: nowrap;
   transition: all .3s ease;
   top: 7px; }
+
+.qg-site-footer .qg-feedback-toggle:hover .qg-feedback-toggle__text, .qg-site-footer .qg-feedback-toggle:focus .qg-feedback-toggle__text {
+  text-decoration: underline; }
 
 .qg-site-footer .qg-feedback-toggle[aria-expanded=true] {
   background-color: #fff;
@@ -15582,7 +15586,8 @@ form .questions select {
 .qg-search-form .qg-search-concierge-group.helper {
   background-color: #eff2f4; }
 
-#qg-site-nav .show .nav-link {
+#qg-site-nav .show .nav-link,
+.qg-site-footer .qg-feedback-toggle[aria-expanded=true] .qg-feedback-toggle__text {
   color: #063652; }
 
 .qg-footer-feedback .questions .radio label:before {

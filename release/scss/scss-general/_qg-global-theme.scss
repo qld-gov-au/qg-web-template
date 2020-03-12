@@ -32,7 +32,8 @@
     background-color: $qg-global-primary-light;
 }
 
-#qg-site-nav .show .nav-link {
+#qg-site-nav .show .nav-link,
+.qg-site-footer .qg-feedback-toggle[aria-expanded=true] .qg-feedback-toggle__text {
     color: $qg-global-primary-dark;
 }
 

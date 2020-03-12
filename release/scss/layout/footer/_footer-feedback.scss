@@ -229,6 +229,7 @@
         height: 44px;
         position: relative;
         transition: all .3s ease;
+        z-index: 1;
 
         &__text {
             left: 50%;
@@ -237,6 +238,12 @@
             white-space: nowrap;
             transition: all .3s ease;
             top: 7px;
+        }
+
+        &:hover,&:focus{
+            .qg-feedback-toggle__text {
+                text-decoration: underline;
+            }
         }
 
         &[aria-expanded=true] {
