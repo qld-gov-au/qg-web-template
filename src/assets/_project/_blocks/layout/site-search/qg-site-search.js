@@ -115,7 +115,10 @@ $(function () {
     var helpfulConcierge = $('.qg-search-concierge-help');
     var clearButton = $('.qg-search-close-concierge');
 
-    if (inputValue !== '') {
+    if (keyCode === 40) {
+      $('.qg-search-form').attr('data-navindex', '0');
+      setTimeout($('.qg-search-concierge.show').find('a, button')[0].focus(), 300);
+    } else if (inputValue !== '') {
       // Reveal the clear button
       clearButton.removeClass('hide');
 
@@ -128,11 +131,6 @@ $(function () {
       // Remove suggestions and transition reveal initial state
       initialConcierge.addClass('show');
       helpfulConcierge.removeClass('show');
-    }
-
-    if (keyCode === 40) {
-      $('.qg-search-form').attr('data-navindex', '0');
-      $('.qg-search-concierge.show').find('a, button')[0].focus();
     }
   };
 
