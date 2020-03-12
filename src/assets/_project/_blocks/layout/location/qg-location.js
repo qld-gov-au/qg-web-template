@@ -143,6 +143,7 @@ $(function () {
   qgLocation.fn.getDeviceLocation = function (event) {
     event.stopPropagation();
 
+
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(qgLocation.fn.processPositionData, qgLocation.fn.failure);
     }
@@ -715,6 +716,7 @@ $(function () {
 
     // Update suburb section
     $('.qg-location-setter-error').addClass('hide');
+    $('.qg-location-setter-form input[type=text]').removeClass('error');
     inputField.attr('data-choice', '');
     inputField.attr('data-choice-full', '');
     inputField.val('');
