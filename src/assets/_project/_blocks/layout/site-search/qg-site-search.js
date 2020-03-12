@@ -69,6 +69,7 @@ $(function () {
   qgSiteSearch.fn.inputEventHandler = function (event) {
     var eventType = event['type'];
     var targetInput = $(event['target']);
+    var keyCode = event['keyCode'];
     var inputValue = targetInput.val();
 
     switch (eventType) {
@@ -78,8 +79,8 @@ $(function () {
       case 'blur':
         qgSiteSearch.fn.onBlur(inputValue);
         break;
-      case 'input':
-        qgSiteSearch.fn.onInput(inputValue);
+      case 'keydown':
+        qgSiteSearch.fn.onKeydown(inputValue, keyCode);
         break;
     }
   };
@@ -109,7 +110,7 @@ $(function () {
   };
 
   // Handle input value changes
-  qgSiteSearch.fn.onInput = function (inputValue) {
+  qgSiteSearch.fn.onKeydown = function (inputValue, keyCode) {
     var initialConcierge = $('.qg-search-concierge-initial');
     var helpfulConcierge = $('.qg-search-concierge-help');
     var clearButton = $('.qg-search-close-concierge');
@@ -127,6 +128,31 @@ $(function () {
       // Remove suggestions and transition reveal initial state
       initialConcierge.addClass('show');
       helpfulConcierge.removeClass('show');
+    }
+
+    if (keyCode === 40) {
+      $('.qg-search-form').attr('data-navindex', '0');
+      $('.qg-search-concierge.show').find('a, button')[0].focus();
+    }
+  };
+
+  qgSiteSearch.fn.keyboardNavigation = function (event) {
+    var keyCode = event['keyCode'];
+    var focusableList = $('.qg-search-concierge.show').find('a, button');
+    var currentIndex = $('.qg-search-form').attr('data-navindex');
+
+    if (keyCode === 40 && focusableList.length > currentIndex - 1) {
+      currentIndex++;
+      focusableList[currentIndex].focus();
+      $('.qg-search-form').attr('data-navindex', currentIndex);
+    } else if (keyCode === 38) {
+      if (currentIndex > 0) {
+        currentIndex--;
+        focusableList[currentIndex].focus();
+        $('.qg-search-form').attr('data-navindex', currentIndex);
+      } else {
+        $('.qg-search-form input[type=text].form-control').focus();
+      }
     }
   };
 
@@ -397,7 +423,6 @@ $(function () {
         serviceHTML += '<div>' + iconHTML.join('') + '</div>';
       }
 
-      console.log(featuredService);
       serviceHTML += '</div>';
       serviceHTML += '<p>' + description + '</p>';
       serviceHTML += '<a href="' + linkURL + '" data-analytics-link-group="qg-global-search-feature" class="btn btn-global-primary-white">' + additionalProperties['buttonText'] + '</a>';
@@ -452,7 +477,7 @@ $(function () {
     var searchInput = $('#qg-search-query');
 
     // Set up events
-    searchInput.on('focus input', debouncer(qgSiteSearch.fn.inputEventHandler, 200));
+    searchInput.on('focus keydown', debouncer(qgSiteSearch.fn.inputEventHandler, 200));
   });
 
   // Binds
@@ -461,4 +486,5 @@ $(function () {
   $('body').on('click', '.qg-search-close-concierge', qgSiteSearch.fn.clearInputField);
   $('body').on('click', '.qg-search-concierge-group.suggestions button', qgSiteSearch.fn.searchSuggestionClick);
   $('body').on('submit', '#qg-global-search-form', qgSiteSearch.fn.searchSubmitHandler);
+  $('body').on('keydown', '.qg-search-concierge-group a, .qg-search-concierge-group button', qgSiteSearch.fn.keyboardNavigation);
 });
