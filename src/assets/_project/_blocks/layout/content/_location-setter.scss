@@ -88,6 +88,11 @@
             margin-bottom: 15px;
             width: 100%;
             -webkit-appearance: none;
+
+            &:focus {
+                position: relative;
+                z-index: 1;
+            }
         }
     }
 
@@ -126,6 +131,10 @@
 
                     &:hover, &:focus {
                         background-color: $qg-light-gray-dark;
+                    }
+
+                    &:focus {
+                        position: relative;
                     }
                 }
             }
