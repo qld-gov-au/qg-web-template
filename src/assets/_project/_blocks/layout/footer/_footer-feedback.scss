@@ -240,6 +240,12 @@
             top: 7px;
         }
 
+        &:hover,&:focus{
+            .qg-feedback-toggle__text {
+                text-decoration: underline;
+            }
+        }
+
         &[aria-expanded=true] {
             background-color: #fff;
             border-radius: 4px 4px 0 0;
