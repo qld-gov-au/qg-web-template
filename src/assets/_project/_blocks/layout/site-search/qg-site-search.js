@@ -423,7 +423,13 @@ $(function () {
 
       serviceHTML += '</div>';
       serviceHTML += '<p>' + description + '</p>';
-      serviceHTML += '<a href="' + linkURL + '"  tabindex="-1" data-analytics-link-group="qg-global-search-feature" class="btn btn-global-primary-white">' + additionalProperties['buttonText'] + '</a>';
+      if (linkURL) {
+        if (additionalProperties['buttonText']) {
+          serviceHTML += '<a href="' + linkURL + '"  tabindex="-1" data-analytics-link-group="qg-global-search-feature" class="btn btn-global-primary-white">' + additionalProperties['buttonText'] + '</a>';
+        } else {
+          serviceHTML += '<a href="' + linkURL + '"  tabindex="-1" data-analytics-link-group="qg-global-search-feature" class="btn btn-global-primary-white">Continue</a>';
+        }
+      }
       serviceHTML += '</div>';
     }
 
