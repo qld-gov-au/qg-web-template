@@ -263,6 +263,24 @@
   .qg-featured.qg-aside .carousel {
     width: 50%;
   }
+
+  //SSQGHF styles START 
+  .qg-site-footer .qg-footer-col-content, #qg-portal-links, .qg-coat-of-arms img, #qg-show-menu, #qg-show-search {
+    display: none !important;
+  }
+  .qg-breadcrumb-list-item.shortened {
+    max-width: 400px;
+  }
+  #qg-breadcrumb .qg-breadcrumb-list-item.shorten {
+    display: none !important;
+  }
+  #qg-content {
+    clear: both
+  }
+  .qg-coat-of-arms .qg-print-coat-of-arms {
+    display: block !important;
+  }
+  //SSQGHF styles END
 }
 
 /*print styles for forms*/
