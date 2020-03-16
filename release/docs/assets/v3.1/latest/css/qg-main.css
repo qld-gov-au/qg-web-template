@@ -11021,7 +11021,6 @@ body:not([data-accessibility=false]):not([data-access-new-window=false]) #qg-con
   border: 1px solid #f6f6f6;
   box-shadow: 0 0 2px 1px #000;
   box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
-  -o-object-fit: cover;
   object-fit: cover; }
 
 .qg-image-gallery li, .image-gallery li {
@@ -12441,7 +12440,6 @@ a .meta {
   border: 0;
   color: #fff;
   padding: 0 0 0 5px;
-  outline: 0;
   transition: opacity .3s ease; }
 
 .header-location .dropdown-toggle:after {
