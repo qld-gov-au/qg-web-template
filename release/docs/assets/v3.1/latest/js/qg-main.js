@@ -3439,10 +3439,9 @@
 	  qgLocation.fn.setLocationName = function () {
 	    var storedData = qgLocation.fn.getStoredLocation();
 	    var locality = storedData['locality'];
-	    console.log(storedData);
 	
 	    // Update header
-	    $('.header-location .dropdown-toggle').attr('arisa-label', 'Your location is ' + locality);
+	    $('.header-location .dropdown-toggle').attr('aria-label', 'Your location is ' + locality);
 	    $('.header-location .location-name').text(locality);
 	
 	    // Update all location containers
@@ -3461,7 +3460,6 @@
 	      var centreTypes = serviceCentreModule.attr('data-types').split('; ');
 	      var noneIndex = centreTypes.indexOf('None');
 	
-	      console.log(centreTypes);
 	      // Remove "None" from centre types
 	      if (noneIndex !== -1) {
 	        centreTypes.splice(noneIndex, 1);
@@ -3481,10 +3479,7 @@
 	          cache: true,
 	          dataType: 'json',
 	          url: targetURL,
-	          data: {
-	            origin: locationOrigin,
-	            meta_datasource_orsand: queryMetadata },
-	
+	          data: '&origin=' + locationOrigin + '&meta_datasource_orsand=' + queryMetadata,
 	          success: qgLocation.fn.findServiceCentre });
 	
 	      }
@@ -3521,10 +3516,16 @@
 	      centreHTML += '</li>';
 	      centreHTML += '<li class="qg-service-centre-list-item">' + centreDistance + ' km away</li>';
 	      centreHTML += '<li class="qg-service-centre-list-item">';
-	      centreHTML += '<span class="qg-service-centre__address">' + centreAddress1 + '</span>';
-	      centreHTML += '<span class="qg-service-centre__address">' + centreAddress2 + '</span>';
+	      if (centreAddress1 !== undefined) {
+	        centreHTML += '<span class="qg-service-centre__address">' + centreAddress1 + '</span>';
+	      }
+	      if (centreAddress2 !== undefined) {
+	        centreHTML += '<span class="qg-service-centre__address">' + centreAddress2 + '</span>';
+	      }
 	      centreHTML += '</li>';
 	      centreHTML += '</ul>';
+	    } else {
+	      centreHTML += '<p>Browse all service centre locations to find the nearest one to you.</p>';
 	    }
 	
 	    centreContainer.html(centreHTML);
