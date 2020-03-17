@@ -91,7 +91,7 @@ const gitFunctions = {
           if (err) throw err;
         });
       } else {
-        return git.push('origin', [`v${pjson.version}-test`], {args: ' --tags'}, function (err) {
+        return git.push('origin', [`v${pjson.version}-test`], {args: ' -f'}, function (err) {
           if (err) throw err;
         });
       }
