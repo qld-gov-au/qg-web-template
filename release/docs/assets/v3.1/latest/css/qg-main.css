@@ -11480,6 +11480,9 @@ a .meta {
   background-color: #13578b;
   color: #fff; }
 
+.fancybox-active .fancybox-container {
+  z-index: 1001; }
+
 .container-fluid.qg-site-width, .qg-site-width.container-sm, .qg-site-width.container-md, .qg-site-width.container-lg, .qg-site-width.container-xl {
   max-width: 1327px; }
 
