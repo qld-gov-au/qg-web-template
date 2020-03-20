@@ -352,7 +352,6 @@ $(function () {
 
   // Process suggested services and filter out bad results
   qgSiteSearch.fn.processServices = function (services) {
-    var allResults = services['response']['resultPacket']['results'];
     var serviceResults = [];
     var featuredService = null;
     var curatorIndex = services['response']['curator'];
@@ -379,6 +378,42 @@ $(function () {
       }
     }
 
+    // Format the featured suggested service
+    qgSiteSearch.fn.formatFeaturedService(featuredService);
+
+    qgSiteSearch.fn.getRelatedServices(serviceResults);
+  };
+
+  // Get all related services
+  qgSiteSearch.fn.getRelatedServices = function (serviceResults) {
+    var searchForm = $('#qg-global-search-form');
+    var resultsURL = searchForm.attr('data-results');
+    var inputValue = $('#qg-search-query').val();
+
+    // Query Funnelback (with meta_sfinder_sand=yes)
+    if (isDevelopment()) {
+      // Demonstrate functionality locally
+      var exampleServices = qgSiteSearch.fn.getExampleServices();
+      qgSiteSearch.fn.processRelatedServices(exampleServices);
+    } else {
+      $.ajax({
+        cache: true,
+        dataType: 'json',
+        url: resultsURL,
+        data: {
+          query: inputValue,
+          meta_sfinder_sand: 'yes'
+        },
+        success: function (response) {
+          qgSiteSearch.fn.processRelatedServices(response, serviceResults);
+        }
+      });
+    }
+  };
+
+  qgSiteSearch.fn.processRelatedServices = function (services, serviceResults) {
+    var allResults = services['response']['resultPacket']['results'];
+
     // Look for services in standard results
     if (allResults.length > 0) {
       var filteredResults = allResults.filter(function (result) {
@@ -387,9 +422,6 @@ $(function () {
 
       serviceResults = serviceResults.concat(filteredResults);
     }
-
-    // Format the featured suggested service
-    qgSiteSearch.fn.formatFeaturedService(featuredService);
 
     // Format the related services
     qgSiteSearch.fn.formatServices(serviceResults);
