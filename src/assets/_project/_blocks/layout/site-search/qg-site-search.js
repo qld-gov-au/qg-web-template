@@ -420,7 +420,11 @@ $(function () {
         return result['metaData']['sfinder'] === 'yes';
       });
 
-      serviceResults = serviceResults.concat(filteredResults);
+      if (serviceResults) {
+        serviceResults = serviceResults.concat(filteredResults);
+      } else {
+        serviceResults = filteredResults;
+      }
     }
 
     // Format the related services
@@ -473,30 +477,35 @@ $(function () {
     var servicesContainer = $('.qg-search-concierge-help .qg-search-concierge-group.helper');
     var servicesHeading = '<h4>Related services</h4>';
     var serviceHTML = '';
+    var serviceLength = serviceResults.length;
 
-    if (serviceResults.length > 0) {
+    if (serviceLength > 0) {
       serviceHTML = '<div class="qg-search-concierge-content">';
       serviceHTML += servicesHeading;
       serviceHTML += '<ul class="list-group">';
 
-      serviceResults.forEach(function (service) {
-        var serviceName = service['title'];
-        var serviceLink = service['liveUrl'];
+      if (serviceLength > 3) {
+        serviceLength = 3;
+      }
+
+      for (var i = 0; i < serviceLength; i++) {
+        var serviceName = serviceResults[i]['title'];
+        var serviceLink = serviceResults[i]['liveUrl'];
 
         if (typeof (serviceName) !== 'undefined') {
           serviceName = serviceName.split('|')[0].trim();
         } else {
-          serviceName = service['titleHtml'];
+          serviceName = serviceResults[i]['titleHtml'];
         }
 
         if (typeof (serviceLink) === 'undefined') {
-          serviceLink = service['displayUrl'];
+          serviceLink = serviceResults[i]['displayUrl'];
         }
 
         serviceHTML += '<li class="list-group-item">';
         serviceHTML += '<a href="' + serviceLink + '" tabindex="-1" data-analytics-link-group="qg-global-search-related-service">' + serviceName + '</a>';
         serviceHTML += '</li>';
-      });
+      }
 
       serviceHTML += '</ul>';
       serviceHTML += '</div>';
