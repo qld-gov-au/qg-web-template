@@ -118,10 +118,12 @@
     "puppeteer-core": "^1.20.0",
     "replace-string": "^2.0.0",
     "responsive-toolkit": "^2.6.3",
-    "stickyfilljs": "^2.1.0"
+    "stickyfill": "^1.1.1-strict",
+    "yarn": "^1.22.0"
   },
   "jest-junit": {
     "suiteName": "SWE tests",
     "outputDirectory": "./test-results/junit/junit.xml"
+    "responsive-toolkit": "^2.6.3"
   }
 }
