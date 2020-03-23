@@ -52,10 +52,6 @@
 			}
 			
 			&:last-child {
-				.qg-breadcrumb-list-item__link {
-					pointer-events: none;
-				}
-
 				&:after {
 					display: none;
 				}
