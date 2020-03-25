@@ -62,7 +62,7 @@ module.exports = {
     ],
     transferToBuild: [
       './node_modules/nodep-date-input-polyfill/nodep-date-input-polyfill.dist.js',
-      './node_modules/stickyfilljs/dist/stickyfill.min.js',
+      './node_modules/stickyfill/index.js',
       './node_modules/jquery-ui-bundle/jquery-ui.min.css',
       './node_modules/jquery-ui-bundle/jquery-ui.min.js',
       './node_modules/jquery-ui-bundle/images/**',

@@ -1526,9 +1526,34 @@
         </div>
         <h3>HTML</h3>
         <pre><code class="language-markup">
-&lt;div id="qg-quick-exit">
-  &lt;header>&lt;strong>Quick exit to&lt;/strong>&lt;/header>
-&lt;/div>
+&lt;div class=&quot;qg-quick-exit&quot;&gt;
+  &lt;div class=&quot;qg-quick-exit__inner container-fluid qg-site-width&quot;&gt;
+    &lt;div class=&quot;qg-quick-exit__tips&quot;&gt;
+      &lt;a href=&quot;https://www.qld.gov.au/help/tips-to-browse-safely-online&quot; class=&quot;qg-quick-exit__tip-link&quot;&gt;
+        &lt;span class=&quot;fa fa-question-circle&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;qg-quick-exit__tip-title&quot;&gt;Tips to browse safely online&lt;/span&gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;qg-quick-exit__actions&quot;&gt;
+      &lt;ul class=&quot;qg-quick-exit__list&quot;&gt;
+        &lt;li class=&quot;qg-quick-exit__item&quot;&gt;
+          &lt;input type=&quot;checkbox&quot; id=&quot;qg-quick-exit__input&quot; class=&quot;qg-quick-exit__input sr-only&quot;&gt;
+          &lt;label for=&quot;qg-quick-exit__input&quot; class=&quot;qg-quick-exit__label qg-tooltip__parent&quot;&gt;
+            &lt;span class=&quot;qg-tooltip__prompt&quot;&gt;What is this?&lt;/span&gt;
+            &lt;div class=&quot;qg-tooltip__wrapper&quot;&gt;
+              &lt;div class=&quot;qg-tooltip&quot;&gt;
+                &lt;span class=&quot;qg-tooltip__content&quot;&gt;To leave this site quickly, click the &#39;Close this site&#39; button. You will be taken to https://www.google.com.au.&lt;/span&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/label&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;qg-quick-exit__item&quot;&gt;
+          &lt;button class=&quot;qg-quick-exit__button&quot;&gt;Close this site&lt;/button&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 
 </code></pre>
 

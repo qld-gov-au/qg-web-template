@@ -1,6 +1,7 @@
 
 (function () {
   var $quickExit = $('.qg-quick-exit');
+  var Stickyfill = require('stickyfill');
   if ($quickExit.length > 0 && $('.qg-quick-exit__button').length > 0) {
     var quickExitInit = function () {
       var button = document.querySelector('.qg-quick-exit__button');
@@ -15,11 +16,7 @@
 
       // load a plugin only on IE browser to support position:sticky
       if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
-        $.getScript('{{CDN}}/latest/lib/ext/stickyfilljs/dist/stickyfill.min.js', function () {
-          /*global Stickyfill*/
-          console.log('loaded stickyfill');
-          Stickyfill.add($quickExit);
-        });
+        Stickyfill.add($quickExit);
       }
 
       // add hotkey trigger

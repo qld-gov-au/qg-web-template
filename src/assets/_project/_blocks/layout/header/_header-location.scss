@@ -43,8 +43,8 @@
         opacity: 0;
         transition: opacity .3s linear, visibility 0s linear .3s;
         visibility: hidden;
-        width: 270px;
-    
+        width: 244px;
+
         &.show {
             opacity: 1;
             visibility: visible;
