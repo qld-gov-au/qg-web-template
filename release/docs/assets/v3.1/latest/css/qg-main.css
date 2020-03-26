@@ -13665,9 +13665,6 @@ a .meta {
 .qg-breadcrumb-list-item__link[href]:hover, .qg-breadcrumb-list-item__link[href]:focus {
   color: #313131; }
 
-.qg-breadcrumb-list-item:last-child .qg-breadcrumb-list-item__link {
-  pointer-events: none; }
-
 .qg-breadcrumb-list-item:last-child:after {
   display: none; }
 
