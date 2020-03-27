@@ -215,7 +215,6 @@ $(function () {
   // Get example service results from Funnelback
   qgSiteSearch.fn.getExampleServices = function () {
     var exampleResponse = {'response': {'resultPacket': {'query': 'grants', 'results': [{'rank': 1, 'title': 'Grants and funding | Environment, land and water | Queensland Government', 'collection': 'qgov-web', 'metaData': {'license': 'https://creativecommons.org/licenses/by/4.0/', 'r': 'all', 'c': 'Grants and funding are available to support environmental programs in Queensland. This includes koala and marine life conservation, and nature refuges.', 'C': 'Grants and funding are available to support environmental programs in Queensland. This includes koala and marine life conservation, and nature refuges.', 's': 'Grant; funding; nature assist; koala; Everyones environment; Indigenous sea rangers; research; NatureAssist; Indigenous Sea Country Management Grants Program; Koala Rescue and Rehabilitation Grants Program; Koala Research Grant Program; koala', 'd': '2019-07-31', 't': 'Grants and funding | Environment, land and water | Queensland Government;Grants and funding | Environment and pollution management', 'e': 'Text', 'f': 'guidelines', 'j': 'https://www.qld.gov.au/environment/pollution/funding'}, 'liveUrl': 'https://www.qld.gov.au/environment/pollution/funding', 'clickTrackingUrl': '/s/redirect?collection=qld-gov&url=https%3A%2F%2Fwww.qld.gov.au%2Fenvironment%2Fpollution%2Ffunding&index_url=https%3A%2F%2Fwww.qld.gov.au%2Fenvironment%2Fpollution%2Ffunding&auth=qzUXw9sTwPwOdKvslCPbog&profile=qld_preview&rank=1&query=grants', 'explain': null, 'indexUrl': 'https://www.qld.gov.au/environment/pollution/funding'}, {'rank': 2, 'title': 'Funding and grants | Recreation, sport and arts | Queensland Government', 'collection': 'qgov-web', 'metaData': {'c': 'Find what funding and grants are available for young athletes and for clubs to upgrade sport and recreation facilities or equipment.', 'C': 'Find what funding and grants are available for young athletes and for clubs to upgrade sport and recreation facilities or equipment.', 'sprequired': 'yes', 'd': '2019-07-19', 'e': 'Collection', 'f': 'index', 'stype': 'apply-for-it', 'j': 'https://www.qld.gov.au/recreation/sports/funding', 'sid': 'P001085', 'sfinder': 'yes', 'license': 'https://creativecommons.org/licenses/by/4.0/', 'scategory': 'recreation-sports-and-arts', 'r': 'all', 's': 'Funding and grants; funding for young athletes; grants for young athletes; athlete scholarships; funding for kids and young people; funding for clubs and organisations; grants for clubs and organisations; funding to upgrade sport and recreation', 't': 'Funding and grants | Recreation, sport and arts | Queensland Government;Funding and grants | Sport', 'skioskonly': 'no'}, 'liveUrl': 'https://www.qld.gov.au/recreation/sports/funding', 'clickTrackingUrl': '/s/redirect?collection=qld-gov&url=https%3A%2F%2Fwww.qld.gov.au%2Frecreation%2Fsports%2Ffunding&index_url=https%3A%2F%2Fwww.qld.gov.au%2Frecreation%2Fsports%2Ffunding&auth=cM3gwHE6wlGI5UzFw2iszA&profile=qld_preview&rank=2&query=grants', 'explain': null, 'indexUrl': 'https://www.qld.gov.au/recreation/sports/funding'}, {'rank': 3, 'title': 'Everyones Environment grants program | Environment, land and water | Queensland Government', 'collection': 'qgov-web', 'metaData': {'c': 'This program provides funding for Queensland community groups with projects aimed at delivering practical actions for local environmental improvements.', 'C': 'This program provides funding for Queensland community groups with projects aimed at delivering practical actions for local environmental improvements.', 'sprequired': 'no', 'd': '2015-03-23', 'e': 'Text', 'f': 'guidelines', 'stype': 'find-it', 'j': 'https://www.qld.gov.au/environment/pollution/funding/everyones', 'sid': 'P000369', 'sfinder': 'yes', 'license': 'https://creativecommons.org/licenses/by/4.0/', 'scategory': 'environment-land-and-water', 'r': 'all', 's': 'Grants; everyone; environment; heritage; Queensland; funding', 't': 'Everyones Environment grants program | Environment, land and water | Queensland Government;Everyones Environment grants program | Grants and funding', 'skioskonly': 'no'}, 'liveUrl': 'https://www.qld.gov.au/environment/pollution/funding/everyones', 'clickTrackingUrl': '/s/redirect?collection=qld-gov&url=https%3A%2F%2Fwww.qld.gov.au%2Fenvironment%2Fpollution%2Ffunding%2Feveryones&index_url=https%3A%2F%2Fwww.qld.gov.au%2Fenvironment%2Fpollution%2Ffunding%2Feveryones&auth=QaZNQYwacyhU7xtVcs%2FPbg&profile=qld_preview&rank=3&query=grants', 'explain': null, 'indexUrl': 'https://www.qld.gov.au/environment/pollution/funding/everyones'}], 'error': null}, 'curator': {'exhibits': [{'titleHtml': 'Queensland Government Grants Finder', 'displayUrl': 'https://www.grants.services.qld.gov.au/#/', 'linkUrl': '/s/redirect?collection=qld-gov&url=https%3A%2F%2Fwww.grants.services.qld.gov.au%2F%23%2F&index_url=https%3A%2F%2Fwww.grants.services.qld.gov.au%2F%23%2F&auth=wEzza0HDD%2BGN4WIzBUq0%2Fg&profile=qld_preview&type=FP', 'descriptionHtml': 'The Queensland Government Grants Finder is a comprehensive list of our grants and funding programs.', 'additionalProperties': {'icon': 'fa-car fa-motorcycle fa-address-card', 'buttonText': 'Find out more', 'service': 'yes'}, 'category': ''}, {'titleHtml': 'North Queensland flood assistance', 'displayUrl': 'https://www.qld.gov.au/community/disasters-emergencies/queensland-disasters/fnq-monsoonal-trough', 'linkUrl': '/s/redirect?collection=qld-gov&url=https%3A%2F%2Fwww.qld.gov.au%2Fcommunity%2Fdisasters-emergencies%2Fqueensland-disasters%2Ffnq-monsoonal-trough&index_url=https%3A%2F%2Fwww.qld.gov.au%2Fcommunity%2Fdisasters-emergencies%2Fqueensland-disasters%2Ffnq-monsoonal-trough&auth=qbavFamsPcqvWK5M3INRmA&profile=qld_preview&type=FP', 'descriptionHtml': 'Personal hardship financial assistance has been activated for some communities at this time.', 'additionalProperties': {}, 'category': ''}, {'titleHtml': 'Change of address', 'displayUrl': 'https://www.change-of-address.services.qld.gov.au/', 'linkUrl': '/s/redirect?collection=qld-gov&url=https%3A%2F%2Fwww.change-of-address.services.qld.gov.au%2F&index_url=https%3A%2F%2Fwww.change-of-address.services.qld.gov.au%2F&auth=RrjhEMq01%2B%2BZwQhpwXAjPg&profile=qld_preview&type=FP', 'descriptionHtml': 'Use this online form to change your home and/or postal address online, rather than contacting multiple Queensland Government departments/services.', 'additionalProperties': {'icon': 'fa-car fa-motorcycle fa-address-card', 'service': 'yes'}, 'category': ''}]}}};
-
     return exampleResponse;
   };
 
@@ -352,6 +351,7 @@ $(function () {
 
   // Process suggested services and filter out bad results
   qgSiteSearch.fn.processServices = function (services) {
+    var allResults = services['response']['resultPacket']['results'];
     var serviceResults = [];
     var featuredService = null;
     var curatorIndex = services['response']['curator'];
@@ -378,54 +378,21 @@ $(function () {
       }
     }
 
-    // Format the featured suggested service
-    qgSiteSearch.fn.formatFeaturedService(featuredService);
-
-    qgSiteSearch.fn.getRelatedServices(serviceResults);
-  };
-
-  // Get all related services
-  qgSiteSearch.fn.getRelatedServices = function (serviceResults) {
-    var searchForm = $('#qg-global-search-form');
-    var resultsURL = searchForm.attr('data-results');
-    var inputValue = $('#qg-search-query').val();
-
-    // Query Funnelback (with meta_sfinder_sand=yes)
-    if (isDevelopment()) {
-      // Demonstrate functionality locally
-      var exampleServices = qgSiteSearch.fn.getExampleServices();
-      qgSiteSearch.fn.processRelatedServices(exampleServices);
-    } else {
-      $.ajax({
-        cache: true,
-        dataType: 'json',
-        url: resultsURL,
-        data: {
-          query: inputValue,
-          meta_sfinder_sand: 'yes'
-        },
-        success: function (response) {
-          qgSiteSearch.fn.processRelatedServices(response, serviceResults);
-        }
-      });
-    }
-  };
-
-  qgSiteSearch.fn.processRelatedServices = function (services, serviceResults) {
-    var allResults = services['response']['resultPacket']['results'];
-
     // Look for services in standard results
     if (allResults.length > 0) {
       var filteredResults = allResults.filter(function (result) {
         return result['metaData']['sfinder'] === 'yes';
       });
 
-      if (serviceResults) {
-        serviceResults = serviceResults.concat(filteredResults);
-      } else {
-        serviceResults = filteredResults;
+      serviceResults = serviceResults.concat(filteredResults);
+
+      if (serviceResults.length > 3) {
+        serviceResults = serviceResults.slice(0, 3);
       }
     }
+
+    // Format the featured suggested service
+    qgSiteSearch.fn.formatFeaturedService(featuredService);
 
     // Format the related services
     qgSiteSearch.fn.formatServices(serviceResults);
@@ -477,35 +444,30 @@ $(function () {
     var servicesContainer = $('.qg-search-concierge-help .qg-search-concierge-group.helper');
     var servicesHeading = '<h4>Related services</h4>';
     var serviceHTML = '';
-    var serviceLength = serviceResults.length;
 
-    if (serviceLength > 0) {
+    if (serviceResults.length > 0) {
       serviceHTML = '<div class="qg-search-concierge-content">';
       serviceHTML += servicesHeading;
       serviceHTML += '<ul class="list-group">';
 
-      if (serviceLength > 3) {
-        serviceLength = 3;
-      }
-
-      for (var i = 0; i < serviceLength; i++) {
-        var serviceName = serviceResults[i]['title'];
-        var serviceLink = serviceResults[i]['liveUrl'];
+      serviceResults.forEach(function (service) {
+        var serviceName = service['title'];
+        var serviceLink = service['liveUrl'];
 
         if (typeof (serviceName) !== 'undefined') {
           serviceName = serviceName.split('|')[0].trim();
         } else {
-          serviceName = serviceResults[i]['titleHtml'];
+          serviceName = service['titleHtml'];
         }
 
         if (typeof (serviceLink) === 'undefined') {
-          serviceLink = serviceResults[i]['displayUrl'];
+          serviceLink = service['displayUrl'];
         }
 
         serviceHTML += '<li class="list-group-item">';
         serviceHTML += '<a href="' + serviceLink + '" tabindex="-1" data-analytics-link-group="qg-global-search-related-service">' + serviceName + '</a>';
         serviceHTML += '</li>';
-      }
+      });
 
       serviceHTML += '</ul>';
       serviceHTML += '</div>';
