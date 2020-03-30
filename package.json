@@ -19,7 +19,7 @@
     "release": "export NODE_ENV=prod && npm run build && gulp release && node gulp/release-tasks/node-template-flatten.js && gulp replace-links",
     "release:test": "export NODE_ENV=test && npm run build && gulp release && node gulp/release-tasks/node-template-flatten.js && gulp replace-links",
     "postrelease": "gulp clean-redundant-release",
-    "start": "yarn build && gulp watch",
+    "start": "npm run build && gulp watch",
     "watch": "gulp watch",
     "publish-npm": "export NODE_ENV=prod && gulp wt-clean && gulp wt-clone && gulp wt-sync && gulp wt-updateVersion && gulp wt-npm && gulp wt-add && gulp wt-commit && gulp wt-tag && gulp wt-push",
     "publish-test": "export NODE_ENV=test && gulp cdn-clean && gulp cdn-clone && gulp cdn-branch && gulp cdn-transfer && gulp cdn-add && gulp cdn-commit",
