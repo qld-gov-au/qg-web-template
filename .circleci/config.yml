@@ -31,12 +31,6 @@ jobs:
           name: Local Server
           command: npx gulp serve
           background: true
-
-      - run:
-          name: Run Tests
-          command: |
-            mkdir -p ./test-results/junit
-            yarn test --ci --reporters=jest-junit
       - run:
           name: Install awscli
           command: |
