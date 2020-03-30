@@ -20,6 +20,16 @@ module.exports = function (gulp, plugins, config, webpack, destFolder, type = 'b
       destFolder = [destFolder];
     }
 
+    let cdnLink = function () {
+      if (process.env.NODE_ENV === 'prod') {
+        return `https://static.qgov.net.au/assets/${config.versionName}`;
+      } else if (process.env.NODE_ENV === 'test') {
+        return `https://test-static.qgov.net.au/assets/${config.versionName}`;
+      } else {
+        return `/assets/${config.versionName}`;
+      }
+    };
+
     let webpackSettings = {
       output: {
         filename: 'qg-main.js',
@@ -39,7 +49,7 @@ module.exports = function (gulp, plugins, config, webpack, destFolder, type = 'b
           loader: 'webpack-replace',
           query: {
             search: '{{CDN}}',
-            replace: process.env.NODE_ENV === 'prod' ? `https://static.qgov.net.au/assets/${config.versionName}` : `/assets/${config.versionName}`,
+            replace: cdnLink(),
           },
         },
         {
@@ -75,11 +85,11 @@ module.exports = function (gulp, plugins, config, webpack, destFolder, type = 'b
     // }
 
     return gulp.src(src)
-        .pipe(webpack(webpackSettings))
-        .pipe(plugins.if(typeof destFolder[0] !== 'undefined', gulp.dest(`${dest.base}/${destFolder[0]}/${dest.ext}`)))
-        .pipe(plugins.if(typeof destFolder[1] !== 'undefined', gulp.dest(`${dest.base}/${destFolder[1]}/${dest.ext}`)))
-        .pipe(plugins.if(typeof destFolder[2] !== 'undefined', gulp.dest(`${dest.base}/${destFolder[2]}/${dest.ext}`)))
-        .pipe(plugins.if(typeof destFolder[3] !== 'undefined', gulp.dest(`${dest.base}/${destFolder[3]}/${dest.ext}`)))
-        .pipe(plugins.if(typeof destFolder[4] !== 'undefined', gulp.dest(`${dest.base}/${destFolder[4]}/${dest.ext}`)));
+      .pipe(webpack(webpackSettings))
+      .pipe(plugins.if(typeof destFolder[0] !== 'undefined', gulp.dest(`${dest.base}/${destFolder[0]}/${dest.ext}`)))
+      .pipe(plugins.if(typeof destFolder[1] !== 'undefined', gulp.dest(`${dest.base}/${destFolder[1]}/${dest.ext}`)))
+      .pipe(plugins.if(typeof destFolder[2] !== 'undefined', gulp.dest(`${dest.base}/${destFolder[2]}/${dest.ext}`)))
+      .pipe(plugins.if(typeof destFolder[3] !== 'undefined', gulp.dest(`${dest.base}/${destFolder[3]}/${dest.ext}`)))
+      .pipe(plugins.if(typeof destFolder[4] !== 'undefined', gulp.dest(`${dest.base}/${destFolder[4]}/${dest.ext}`)));
   };
 };
