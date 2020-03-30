@@ -1,8 +1,8 @@
 {
   "name": "Queensland-Government-Web-Template",
-  "version": "3.1.10",
-  "subVersion": "1.0.11",
-  "wt-version": "3.1.10",
+  "version": "4.0.0",
+  "subVersion": "4.0.0",
+  "wt-version": "4.0.0",
   "description": "This template is designed to provide a template for all Franchise websites, and the underpinning technology for new Agency websites.",
   "main": "gulpfile.js",
   "repository": {
@@ -21,7 +21,7 @@
     "start": "yarn build && gulp watch",
     "watch": "gulp watch",
     "publish-npm": "export NODE_ENV=prod && gulp wt-clean && gulp wt-clone && gulp wt-sync && gulp wt-updateVersion && gulp wt-npm && gulp wt-add && gulp wt-commit && gulp wt-tag && gulp wt-push",
-    "publish-test": "export NODE_ENV=test && gulp wt-clean && gulp wt-clone && gulp wt-sync && gulp wt-branch && gulp wt-updateVersion && gulp wt-add && gulp wt-commit && gulp wt-push",
+    "publish-test": "export NODE_ENV=test && gulp cdn-clean && gulp cdn-clone && gulp cdn-branch && gulp cdn-transfer && gulp cdn-add && gulp cdn-commit",
     "create-swe-release": "gulp swe-add && gulp swe-tag && gulp swe-commit && gulp swe-push",
     "publish-cdn": "gulp cdn-clean && gulp cdn-clone && gulp cdn-transfer && gulp cdn-add && gulp cdn-commit && gulp cdn-push",
     "prepublish": "npm run release",

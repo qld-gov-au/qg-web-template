@@ -4,10 +4,10 @@ const path        = require('path');
 const pjson       = require('../package.json');
 
 module.exports = {
-  versionName: 'v3.1',
+  versionName: 'v4',
   version: {
-    major: 3,
-    minor: 1,
+    major: 4,
+    minor: 0,
     patch: 0,
   },
   phase: 'Alpha',

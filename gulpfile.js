@@ -140,8 +140,6 @@ gulp.task('test:eslint', require('./gulp/test-tasks/lint')(gulp, plugins, config
 // web template release
 gulp.task('wt-clean', require('./gulp/publish-tasks/git').clean(config.webTemplateRepo.folder));
 gulp.task('wt-clone', require('./gulp/publish-tasks/git').clone(config.webTemplateRepo.url, config.webTemplateRepo.folder));
-// wt-branch task creates a test branch on 'web-template-release'.
-gulp.task('wt-branch', require('./gulp/publish-tasks/git').branch(config.webTemplateRepo.folder));
 gulp.task('wt-sync', require('./gulp/publish-tasks/git').sync(config.basepath.release, config.webTemplateRepo.folder, ['package.json']));
 gulp.task('wt-updateVersion', require('./gulp/publish-tasks/git').updateVersion(config.webTemplateRepo.folder, pjson['wt-version']));
 gulp.task('wt-add', require('./gulp/publish-tasks/git').add(config.webTemplateRepo.folder));
@@ -156,6 +154,7 @@ gulp.task('cdn-clone', require('./gulp/publish-tasks/git').clone(config.staticCd
 gulp.task('cdn-transfer', require('./gulp/publish-tasks/git').transfer());
 gulp.task('cdn-add', require('./gulp/publish-tasks/git').add(config.staticCdnRepo.folder));
 gulp.task('cdn-commit', require('./gulp/publish-tasks/git').commit(config.staticCdnRepo.folder, pjson.version));
+gulp.task('cdn-branch', require('./gulp/publish-tasks/git').branch(config.webTemplateRepo.folder));
 gulp.task('cdn-push', require('./gulp/publish-tasks/git').push(config.staticCdnRepo.folder));
 
 // SWE release

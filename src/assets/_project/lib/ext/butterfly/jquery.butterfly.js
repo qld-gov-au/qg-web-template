@@ -1,9 +1,9 @@
 /*
  * "Float like a butterfly"
  *              Muhammad Ali (a not-so-lightboxer).
- * 
+ *
  * jquery.butterfly is a fairly light-weight and fully accessible lightbox implementation for jQuery.
- * 
+ *
  * jquery.butterfly.js
  * @version 0.13
  * Changelog:
@@ -24,10 +24,10 @@
  * @author Andrew Ramsden <http://irama.org/>
  * @see http://irama.org/web/dhtml/butterfly/
  * @license GNU GENERAL PUBLIC LICENSE (GPL) <http://www.gnu.org/licenses/gpl.html>
- * 
+ *
  * @requires jQuery (tested with 1.8.3) <http://jquery.com/>
  * @requires jQuery jARIA plugin <http://outstandingelephant.com/jaria/>
- * 
+ *
  * @optional (but reccommended) jQuery ResizeEvents plugin <http://irama.org/web/dhtml/resize-events/>
  * @optional (but reccommended) jQuery Got Style? plugin <http://irama.org/web/dhtml/got-style/>
  * @optional (but reccommended) jQuery ARIA keyboard navigation plugin <http://irama.org/web/dhtml/aria/key-nav/>
@@ -48,7 +48,7 @@ jQuery.butterfly.defaultOptions = {
 	collapseHeightWhenPossible: true, // When content is shorter than available height, collapse height of lightbox
 	reuseFragment: false, // When using a fragment from the same page as the link, reuse the same DOM nodes (persisting their state) or clone a new copy?
 	closeButton: true, // Should we have a close button?
-	closeButtonImage: 'https://static.qgov.net.au/assets/v3.1/latest/lib/ext/butterfly/close.png', // Set to the path of your close button image
+	closeButtonImage: 'https://static.qgov.net.au/assets/v4/latest/lib/ext/butterfly/close.png', // Set to the path of your close button image
 	closeButtonCorner: 'tr', // Top left 'tl' or top right 'tr' or bottom left (bl) or bottom right (br) - top left is the most intuitive option that doesn't overlap scrollabrs
 	clickOverlayCloses: true, // Will clicking the overlay layer (the dark tinted area) close the lightbox?
 	preloadLoadingImage: '', // Specify an image path here and it will be preloaded
@@ -98,7 +98,7 @@ jQuery.butterfly.linkCount = 0;
 		lightBoxKeypress, overlayClicked, loadLightBoxComplete, galleryControlsClick,
 		isImage, parsePixels, findOffsetToCentre, checkForContent;
 
-	
+
 	// helper functions
 
 	/**
@@ -106,7 +106,7 @@ jQuery.butterfly.linkCount = 0;
 	 */
 	function getKeyCode(evt) {
 		evt = evt || window.event;
-		
+
 		if (evt.keyCode) {
 			return evt.keyCode;
 		} else if (evt.which) {
@@ -114,7 +114,7 @@ jQuery.butterfly.linkCount = 0;
 		}
 		return null;
 	}
-	
+
 	/**
 	 * jQuery plugin that returns the text nodes within the target element, combined/concatenated with any alt text.
 	 */
@@ -147,7 +147,7 @@ jQuery.butterfly.linkCount = 0;
 				return;
 			}
 		*/
-		
+
 		// If ResizeEvents plugin is available, listen for resize events
 		if (typeof ResizeEvents !== 'undefined') {
 			$(this).each(function(){
@@ -168,13 +168,13 @@ jQuery.butterfly.linkCount = 0;
 				'left': ( $(window).width() - this.outerWidth() ) / 2 + 'px'
 			});
 		};
-		
+
 		// Create containers
 		$( document.body )
 			.append( '<div id="jb-overlay"></div><div id="jb-window"><div id="jb-window-inner"><div id="jb-window-content" style="width: auto; height: auto;" tabindex="0"></div></div></div>')
 			.bind( 'keydown', lightBoxKeypress )
 		;
-		
+
 		$( '#jb-overlay' )
 			.fadeTo( 0, $.butterfly.conf.overlayOpacity, function() {
 				// hide when animation complete
@@ -194,7 +194,7 @@ jQuery.butterfly.linkCount = 0;
 			})
 			.hide()
 		;
-		
+
 		$.history.init(
 			function( hash ){
 				if( hash === '' ) {
@@ -213,12 +213,12 @@ jQuery.butterfly.linkCount = 0;
 
 
 	$.fn.butterfly = function( options ) {
-		
+
 		// IE6 fails, bail here.
 			/*if ($.browser.msie && $.browser.version < 7) {
 				return;
 			}*/
-		
+
 		options = typeof options !== 'undefined' ? options : {};
 
 		// Pre-load images
@@ -241,7 +241,7 @@ jQuery.butterfly.linkCount = 0;
 
 	initLightBox = function( options ) {
 		var pxToEmExists = (typeof Number.prototype.pxToEm !== 'undefined') ? true : false;
-		
+
 		// Merge runtime options with defaults
 		// Note: The first argument sent to extend is an empty object to
 		// prevent extend from overriding the default $.AKN.defaultOptions object.
@@ -249,7 +249,7 @@ jQuery.butterfly.linkCount = 0;
 				? $.butterfly.defaultOptions
 				: $.extend({}, $.butterfly.defaultOptions, options)
 			;
-		
+
 		if (options.lightBoxMargin === null) {
 			// if no margin specified, use 2em if pxToEm available, otherwise use 20px
 			options.lightBoxMargin = pxToEmExists ? '2em' : '20px' ;
@@ -258,14 +258,14 @@ jQuery.butterfly.linkCount = 0;
 			// if no default width specified, use 50em if pxToEm available, otherwise use 700px (good line lengths for legibility)
 			options.contentDefaultWidth = pxToEmExists ? '50em' : '700px' ;
 		}
-		
+
 		// Assign an id if none exists
 			if (typeof $(this).attr('id') === 'undefined' || $(this).attr('id') === '') { // cater for jquery 1.6 and previous versions
 				$(this).attr('id', $.butterfly.conf.lightboxClass+'-uid-'+$.butterfly.linkCount);
 			}
 			options.linkID = $(this).attr('id');
 			$.butterfly.linkCount++;
-		
+
 		$(this).data('options', options);
 		$(this).addClass($.butterfly.conf.lightboxClass);
 		$(this).click(openLightBox);
@@ -274,18 +274,18 @@ jQuery.butterfly.linkCount = 0;
 
 	openLightBox = function( e, storeState ) {
 		var options, originalTrigger, href, location, title, linkText, thisLink, selector, previousOptions;
-		
+
 		if (typeof e !== 'undefined') {
 			e.preventDefault(); // so that links aren't followed
 		}
-		
+
 		// Add state to history
 		storeState = (typeof storeState !== 'undefined') ? storeState : true ;
 		if (storeState) {
 			$.history.load('!'+$(this).attr('id'));
 			return; // This function will be called again by history.load after storing the state in the hash
 		}
-		
+
 		// when opening, overflow should always be set to hidden (it is changed as appropriate later once the content loads)
 		$('#jb-window-inner').css('overflow','hidden');
 
@@ -309,7 +309,7 @@ jQuery.butterfly.linkCount = 0;
 		}
 		title = $(this).attr('title');
 		linkText = $(this).accessibleText();
-			
+
 		// get options
 		options = $(this).data('options');
 		options.href = href;
@@ -391,46 +391,46 @@ jQuery.butterfly.linkCount = 0;
 		// Temporarily focus here, until loading is complete
 		$('#jb-window').append('<p id="jb-loading">Loading...</p>');
 		$('#jb-loading').attr('tabindex', '0').focus();
-		
+
 		if ($('#jb-overlay').is(':visible')) {
 			// if lightbox is open:
-			
+
 			// cleanup after fragment positioning
 			if (previousOptions.linkType === 'fragment' && previousOptions.reuseFragment) {
 				$('.jb-placeholder').after($(previousOptions.href));
 				$('.jb-placeholder').remove();
 				$(previousOptions.href).disableFocussableElements();
 			}
-			
+
 			// hide/clear content
 			$('#jb-window-content')
 				.hide()
 				.empty()
 			;
 			$('#jb-window').addClass('loading');
-			
+
 			loadLightBoxContent.apply(this, [loadLightBoxComplete]);
-				
+
 		} else {
 			// if lightbox is closed:
 			// Disable focussable elements
 			$( document.body ).disableFocussableElements( '#jb-window *' );
-				
+
 			// hide button
 			$('#jb-close-button').hide();
-			
+
 			// hide gallery controls
 			$('#jb-gallery-controls').hide();
-				
+
 			// show overlay
 			$('#jb-overlay').fadeIn(options.animationSpeed).centre();
-			
+
 			// open small lightbox with loading spinner
 			$('#jb-window')
 				.addClass('loading')
 				.show()
 			;
-			
+
 			// to zoom or not to zoom?
 			if (options.zoomFromClicked) {
 				// align window with clicked element (for 'zoom in' effect)
@@ -450,7 +450,7 @@ jQuery.butterfly.linkCount = 0;
 					.centre()
 				;
 			}
-			
+
 			// load new content to hidden layer
 			loadLightBoxContent.apply(this, [loadLightBoxComplete]);
 		}
@@ -462,18 +462,18 @@ jQuery.butterfly.linkCount = 0;
 		// once loaded
 			// init options
 			var options = $('#jb-overlay').data('options');
-			
+
 			// restore focussable elements inside content (in case content cloned from current page)
 			$('#jb-window').restoreFocussableElements();
-			
+
 			// remove spinner
 			$('#jb-window').removeClass('loading');
-			
-			
+
+
 			// Redundant settimeout for webkit, cause otherwise dimensions are 0 when image loaded from cache. Thanks JKS! <http://stackoverflow.com/users/144149/jks>
 			// @see http://stackoverflow.com/questions/318630/get-real-image-width-and-height-with-javascript-in-safari-chrome#answer-4909227
 			setTimeout(function(){
-				
+
 				// Establish appropriate classes for new content type before fade in
 				$('#jb-window').removeClass('type-media type-image type-fragment type-ajax');
 				switch (options.linkType) {
@@ -497,38 +497,38 @@ jQuery.butterfly.linkCount = 0;
 				if (options.treatAsMedia) {
 					$('#jb-window').addClass('type-media');
 				}
-				
+
 				// resize
 				resizeLightBox.apply(this, [function(){
 					var nextControl;
-						
+
 					if (options.linkType === 'iframe') {
 						$('#jb-window-content').css('visibility', 'visible');
 					}
 					// fade in new content
 					$('#jb-window-content').fadeIn(options.animationSpeed, function(){
-						
+
 						// set focus to start of lightbox content
 						$('#jb-window-content')
 							//.attr('tabindex',0) // add to tab index (now occurs during initialisation)
 							.focus() // set focus
 						;
-						
+
 						// Remove temporary loading message
 						$('#jb-loading').remove();
-					
+
 						// run postOpen callback function
 						if (options.callbackPostOpen !== null && typeof options.callbackPostOpen === 'function') {
 							options.callbackPostOpen.apply(this);
 						}
-						
+
 						// preload next gallery image?
 						nextControl = $('#jb-gallery-next');
 						if (
-							options.preloadNextGalleryImage && 
-							nextControl.length > 0 && 
-							nextControl.is(':visible') && 
-							nextControl.attr('href') !== '#' && 
+							options.preloadNextGalleryImage &&
+							nextControl.length > 0 &&
+							nextControl.is(':visible') &&
+							nextControl.attr('href') !== '#' &&
 							isImage(nextControl.attr('href'))
 						) {
 							$('<img src="'+nextControl.attr('href')+'" alt="" />');
@@ -550,17 +550,17 @@ jQuery.butterfly.linkCount = 0;
 		}
 
 		lbMargin = parseInt(parsePixels(options.lightBoxMargin), 10);
-		
+
 		availableWidth = $('#jb-window').width() - (lbMargin * 2);
 		availableHeight = $('#jb-window').height() - (lbMargin * 2);
-		
+
 		// find current default/max dimensions (convert to pixels if necessary)
 		contentDefaultWidth = parsePixels(options.contentDefaultWidth, availableWidth);
 		contentDefaultHeight = parsePixels(options.contentDefaultHeight, availableHeight);
 		mediaMaxWidth = parsePixels(options.mediaMaxWidth, availableWidth);
 		mediaMaxHeight = parsePixels(options.mediaMaxHeight, availableHeight);
-		
-		
+
+
 		// run preResize callback function
 			if (options.callbackPreResize !== null && typeof options.callbackPreResize === 'function') {
 				options.callbackPreResize.apply($('#jb-window'), [availableWidth, availableHeight, contentDefaultWidth, contentDefaultHeight, mediaMaxWidth, mediaMaxHeight]);
@@ -570,7 +570,7 @@ jQuery.butterfly.linkCount = 0;
 		if (
 			$.browser.msie && $.browser.version === 6
 		) {
-			
+
 			$('#jb-overlay, #jb-window').css({
 				position: 'absolute',
 				top: 0-$( document.body ).css('margin-top'),
@@ -578,19 +578,19 @@ jQuery.butterfly.linkCount = 0;
 				width: $(window).width(),
 				height: $(window).height()
 			});
-			
+
 		}
 			*/
 
 		if (options.linkType === 'image' || options.treatAsMedia) {
-			
-			
-			
+
+
+
 			// measure content size
 			w = $('#jb-window-content').lightBoxContentWidth();
 			h = $('#jb-window-content').lightBoxContentHeight();
-			
-				
+
+
 			// compare dimensions against max width and height
 			if (w > mediaMaxWidth) {
 				reductionRatio = w / mediaMaxWidth;
@@ -604,14 +604,14 @@ jQuery.butterfly.linkCount = 0;
 				w = w / reductionRatio;
 				// $.debug('h ratio = '+reductionRatio);
 			}
-			
+
 			// compare dimensions against available width and height
 			if (w > availableWidth) {
 				reductionRatio = w / availableWidth;
 				w = availableWidth;
 				h = h * reductionRatio;
 				// $.debug('w ratio = '+reductionRatio);
-			}				
+			}
 			if (h > availableHeight) {
 				reductionRatio = h / availableHeight;
 				h = availableHeight;
@@ -620,22 +620,22 @@ jQuery.butterfly.linkCount = 0;
 			}
 			// $.debug('max img width = '+options.mediaMaxWidth);
 			// $.debug('max img height = '+options.mediaMaxHeight);
-				
+
 		} else if (options.linkType === 'iframe') {
-			
+
 			w = contentDefaultWidth;
 			h = contentDefaultHeight;
-			
+
 		} else {
-			
+
 			// not an image or treat as media (must be content fragment)
-			
+
 			// $.debug('contentDefaultWidth = '+options.contentDefaultWidth);
 			// $.debug('contentDefaultHeight = '+options.contentDefaultHeight);
-			
+
 			// measure content width
 			w = $('#jb-window-content').lightBoxContentWidth();
-		
+
 			if (
 				contentDefaultWidth === '' ||
 				contentDefaultWidth === '100%' ||
@@ -645,20 +645,20 @@ jQuery.butterfly.linkCount = 0;
 			} else {
 				w = contentDefaultWidth;
 			}
-			
+
 			if (options.collapseHeightWhenPossible) {
-				
+
 				// set new width temporarily
 				prevWidth = $('#jb-window-inner').width();
 				//$('#jb-window-inner').width(w); // not kicking in fast enough, use animate to lock in new width
 				$('#jb-window-inner').animate({width: w}, 0);
-					
+
 				// measure height
 				h = $('#jb-window-content').lightBoxContentHeight( false );
-					
+
 				// set width back to previous value
 				$('#jb-window-inner').width(prevWidth);
-				
+
 				if (
 					availableHeight < h
 				) {
@@ -667,9 +667,9 @@ jQuery.butterfly.linkCount = 0;
 					// do nothing
 					// h = contentDefaultHeight;
 				}
-				
+
 			} else {
-				
+
 				// same height for all content boxes (based on contentDefaultHeight)
 				h = $('#jb-window-content').lightBoxContentHeight();
 				if (
@@ -683,36 +683,36 @@ jQuery.butterfly.linkCount = 0;
 				}
 			}
 		}
-		
+
 		// $.debug('availableWidth = '+availableWidth);
 		// $.debug('availableHeight = '+availableHeight);
-		// $.debug('final w = '+w);		
+		// $.debug('final w = '+w);
 		// $.debug('final h = '+h);
-				
+
 		topLeft = findOffsetToCentre(w, h);
-		
+
 		// if not animating resize, set speed to 0
 		animationSpeed = options.animateResize ? options.animationSpeed : 0;
-		
+
 		$('#jb-close-button').hide();
 		$('#jb-gallery-controls').hide();
-		
+
 		if (options.linkType === 'iframe') {
 			$('#jb-window-inner iframe').css('visibility','hidden');
 		}
-		
+
 		$('#jb-window-inner').animate({
 			'width' : w,
 			'height' : h,
 			'left' : topLeft[1],
 			'top' : topLeft[0]
 		}, animationSpeed, 0, function() {
-			
+
 			options = $('#jb-overlay').data('options');
 			w = $('#jb-window-inner').width();
 			h = $('#jb-window-inner').height();
-			
-			
+
+
 			// Show iframe
 			if (options.linkType === 'iframe') {
 				$('#jb-window-inner iframe')
@@ -721,12 +721,12 @@ jQuery.butterfly.linkCount = 0;
 				;
 				$('#jb-window-inner iframe').css('visibility','visible');
 			}
-			
+
 			// Show close button
 			if ($('#jb-close-button').length > 0) {
 				buttonWidth = parseInt($('#jb-close-button').width(), 10);
 				buttonHeight = parseInt($('#jb-close-button').height(), 10);
-				
+
 				switch (options.closeButtonCorner) {
 					case 'tr':
 						buttonLeft = topLeft[1] + w - buttonWidth/2;
@@ -745,7 +745,7 @@ jQuery.butterfly.linkCount = 0;
 						buttonLeft = topLeft[1] - buttonWidth/2;
 						buttonTop = topLeft[0] - buttonHeight/2;
 				}
-				
+
 				$('#jb-close-button')
 					.css({
 						position: 'absolute',
@@ -763,23 +763,23 @@ jQuery.butterfly.linkCount = 0;
 					prevTop = topLeft[0] + h/2 - options.galleryControlHeight/2;
 					prevLeft = topLeft[1] - options.galleryControlWidth;
 					$('#jb-gallery-prev').css({top: prevTop, left: prevLeft});
-					
+
 					nextTop = topLeft[0] + h/2 - options.galleryControlHeight/2;
 					nextLeft = topLeft[1] + w;
 					$('#jb-gallery-next').css({top: nextTop, left: nextLeft});
-					
+
 				// Show gallery controls
 					$('#jb-gallery-controls')
 						//.fadeIn()
 						.show() // faster!
 					;
 			}
-			
+
 			// run postResize callback function
 			if (options.callbackPostResize !== null && typeof options.callbackPostResize === 'function') {
 				options.callbackPostResize.apply($('#jb-window'), [availableWidth, availableHeight, contentDefaultWidth, contentDefaultHeight, mediaMaxWidth, mediaMaxHeight]);
 			}
-			
+
 			if (typeof callback !== 'undefined' && typeof callback.apply !== 'undefined') {
 				callback.apply();
 			}
@@ -788,12 +788,12 @@ jQuery.butterfly.linkCount = 0;
 
 
 	loadLightBoxContent = function( callback ) {
-		
+
 		var options = $( '#jb-overlay' ).data( 'options' ),
 			href = options.href,
 			caption, gallerySet, prevControl, nextControl, prevLink, nextLink,
 			lbMargin, availableWidth, availableHeight, contentDefaultWidth, contentDefaultHeight, ajaxHref;
-		
+
 		// Populate caption
 		switch (options.captionMode) {
 			case 'title':
@@ -807,18 +807,18 @@ jQuery.butterfly.linkCount = 0;
 			break;
 		}
 
-		
+
 		// remove previous error states
 		$('#jb-window').removeClass('error-no-content');
-		
+
 		// Setup/adjust gallery (next/prev) links
 		// Find the gallery set
 		gallerySet = $(options.gallerySelector);
-			
+
 		$('#jb-gallery-controls').removeClass('active');
 
 		if (gallerySet.length > 1 && gallerySet.isInSet('#'+options.linkID)) {
-			
+
 			// Setup the HTML for the gallery controls
 			if ($('#jb-gallery-controls').length === 0) {
 				$('#jb-window').append('<div id="jb-gallery-controls"></div>');
@@ -843,8 +843,8 @@ jQuery.butterfly.linkCount = 0;
 			}
 			$('#jb-gallery-controls').hide();
 			$('#jb-gallery-controls').addClass('active');
-			
-			
+
+
 			// Find previous link
 			prevLink = gallerySet.prevInSet('#'+options.linkID);
 			if (prevLink === false) {
@@ -865,7 +865,7 @@ jQuery.butterfly.linkCount = 0;
 				.data('linkID', prevLink.attr('id'))
 				.attr('title', $.trim( prevLink.accessibleText() ))
 			;
-			
+
 			// Find next link
 			nextLink = gallerySet.nextInSet('#'+options.linkID);
 			if (nextLink === false) {
@@ -886,27 +886,27 @@ jQuery.butterfly.linkCount = 0;
 				.data('linkID', nextLink.attr('id'))
 				.attr('title', $.trim( nextLink.accessibleText() ))
 			;
-					
+
 		} else {
 			$('#jb-gallery-controls').hide();
 		}
-		
+
 		switch (options.linkType) {
 			case 'fragment': // internal page fragment
-				
+
 				if (options.reuseFragment) {
 					$(href).after('<span class="jb-placeholder"></span>');
 					$('#jb-window-content').empty().append($(href)); // href becomes a selector for an id fragment
 				} else {
 					$('#jb-window-content').empty().append($(href).clone(true));
 				}
-				
+
 				checkForContent.apply(this, [options.linkType, href]);
 				callback.apply(this);
 			break;
 
 			case 'image': // link to image
-					
+
 					$('#jb-window-content').empty().append(
 						'<img src="'+href+'" alt="" style="max-width: 100%; max-height: 100%; float: left;" />'+caption
 					);
@@ -926,14 +926,14 @@ jQuery.butterfly.linkCount = 0;
 						'<iframe src="'+href+'" title="'+caption+'" width="100%" height="1000" />'
 					);
 					$('#jb-window-content').css('visibility', 'hidden');
-					
+
 					lbMargin = parseInt(parsePixels(options.lightBoxMargin), 10);
 					availableWidth = $('#jb-window').width() - (lbMargin * 2);
 					availableHeight = $('#jb-window').height() - (lbMargin * 2);
 					// find current default/max dimensions (convert to pixels if necessary)
 					contentDefaultWidth = parsePixels(options.contentDefaultWidth, availableWidth);
 					contentDefaultHeight = parsePixels(options.contentDefaultHeight, availableHeight);
-					
+
 					$('#jb-window-content > iframe')
 						.width(contentDefaultWidth)
 						.height(contentDefaultHeight)
@@ -962,13 +962,13 @@ jQuery.butterfly.linkCount = 0;
 				});
 		}
 	};
-	
-	
+
+
 	checkForContent = function( linkType, href, callback ) {
 		// check if no content loaded
 		var wasError = false,
 			options;
-			
+
 		// checkForContent only called for images on .error()
 		// otherwise, if no children() exist
 		if (linkType === 'image' || $('#jb-window-content').children().length === 0) {
@@ -990,7 +990,7 @@ jQuery.butterfly.linkCount = 0;
 			callback.apply(this);
 		}
 	};
-	
+
 
 	closeLightBox = function( evt ) {
 		var options, href, originalTriggerEL;
@@ -998,43 +998,43 @@ jQuery.butterfly.linkCount = 0;
 		if ( evt ) {
 			evt.preventDefault(); // prevent click from following link
 		}
-		
+
 		if ($('#jb-window:hidden').length) {
 			return; // Already closed, do nothing
 		}
-		
+
 		options = $('#jb-overlay').data('options');
 		href = options.href;
-		
+
 		// run preClose callback function
 		if (options.callbackPreClose !== null && typeof options.callbackPreClose === 'function') {
 			options.callbackPreClose.apply(options.trigger);
 		}
-		
+
 		// cleanup after fragment positioning
 		if (options.linkType === 'fragment' && options.reuseFragment) {
 			$('.jb-placeholder').after($(href));
 			$('.jb-placeholder').remove();
 		}
-		
-		
+
+
 		// Restore all focussable elements
 		$( document.body ).restoreFocussableElements();
-		
+
 		$('#jb-overlay').fadeOut(options.animationSpeed);
 		$('#jb-window').hide();
 		$('#jb-window-content').hide();
-		
+
 		// return focus to original trigger element
 		originalTriggerEL = $(options.originalTrigger);
 		if (typeof originalTriggerEL.attr('tabindex') === 'undefined') {
 			originalTriggerEL.attr('tabindex',0);
 		}
 		originalTriggerEL.focus();
-		
+
 		// Remove temporary loading message
 		$('#jb-loading').remove();
-		
+
 		// run postClose callback function
 		if (options.callbackPostClose !== null && typeof options.callbackPostClose === 'function') {
 			options.callbackPostClose.apply(options.trigger);
@@ -1042,7 +1042,7 @@ jQuery.butterfly.linkCount = 0;
 
 		// TODO pop history? ... if this was a gallery, pop the entire gallery?
 		// window.history.back();
-	
+
 		// Go back to previous screen, maintain screen pos and re-set focus
 		var screenPos = $(window).scrollTop();
 		$.history.load( '' );
@@ -1053,13 +1053,13 @@ jQuery.butterfly.linkCount = 0;
 	var progressFromLightbox = function (evt) {
 		// TODO: Add option to progress from this lightbox, leaving it in the history
 	}
-	
-	
+
+
 	/**
 	 * A plugin to measure the width of an element accurately (even if it is hidden)
 	 */
 	$.fn.lightBoxContentWidth = function () {
-		
+
 		var jbWindow = this.closest('#jb-window'),
 			jbWindowInner = $('#jb-window-inner'),
 			isImageType = jbWindow.hasClass('type-media') ? true : false,
@@ -1070,14 +1070,14 @@ jQuery.butterfly.linkCount = 0;
 			currentTop = jbWindowInner.css('top'),
 			fullWidth
 		;
-		
+
 		// relax size for measurement
-		/* 
+		/*
 		if (
 			$.browser.msie &&
 			$.browser.version === 7 &&
 			isImageType &&
-			isImageMedia && 
+			isImageMedia &&
 			this.find('img').outerWidth(true) === 0 // IE7 width === 0 on initial load
 		) { // only works with '100%' for IE7 on initial load
 			jbWindowInner.css({
@@ -1101,14 +1101,14 @@ jQuery.butterfly.linkCount = 0;
 			left:0,
 			top:0
 		});
-		
-		
+
+
 		// if element is hidden, unhide it, then measure
 		if ( this.css('display') === 'none') {
-						
+
 			// make element display for a nanosecond
 				this.css('display', 'block');
-				
+
 			// measure
 				if (isImageType) {
 					fullWidth = this.find('img').outerWidth(true);
@@ -1117,12 +1117,12 @@ jQuery.butterfly.linkCount = 0;
 				}
 			// restore
 				this.css('display', 'none');
-				
+
 		} else {
 			fullWidth = this.outerWidth(true);
 		}
-		
-		
+
+
 		// reinstate previous size/position
 		jbWindowInner.css({'left':currentLeft,'top':currentTop});
 		jbWindowInner.animate({
@@ -1134,18 +1134,18 @@ jQuery.butterfly.linkCount = 0;
 
 		return fullWidth;
 	};
-	
+
 
 	/**
 	 * A plugin to measure the height of an element accurately (even if it is hidden)
 	 */
 	$.fn.lightBoxContentHeight = function( relaxWidth ) {
-		
+
 		var jbWindow = this.closest('#jb-window'),
 			jbWindowInner = jbWindow.find( '#jb-window-inner' ),
 			isImageType = jbWindow.hasClass('type-media') ? true : false,
 			isImageMedia = jbWindow.hasClass('media-image') ? true : false,
-		
+
 			// always relax height
 			currentWidth = jbWindowInner.width(),
 			currentHeight = jbWindowInner.height(),
@@ -1156,13 +1156,13 @@ jQuery.butterfly.linkCount = 0;
 		;
 
 		relaxWidth = typeof relaxWidth !== 'undefined' ? relaxWidth : true;
-			
+
 		// relax size for measurement
 		/*
 		if (
-			$.browser.msie && 
-			$.browser.version === 7 && 
-			isImageType && 
+			$.browser.msie &&
+			$.browser.version === 7 &&
+			isImageType &&
 			isImageMedia &&
 			this.find('img').outerWidth(true) === 0 // IE7 width === 0 on initial load
 		) { // only works with '100%' for IE7 on initial load
@@ -1184,38 +1184,38 @@ jQuery.butterfly.linkCount = 0;
 			$('#jb-window-inner').width('auto').css({left:0,top:0});
 		}
 		// END Lifted code
-		
+
 		// if element is hidden, unhide it, then measure
 		if ( this.css('display') === 'none' ) {
-						
+
 			// make element display for a nanosecond
 			this.css('display', 'block');
-			
+
 			// measure
 			fullHeight = this.outerHeight(true);
-				
+
 			// restore
 			this.css('display', 'none');
-			
-				
+
+
 		} else {
 			fullHeight = $(this).outerHeight(true);
 		}
-		
+
 		// reinstate previous size
 			$('#jb-window-inner')
 				.width(currentWidth)
 				.height(currentHeight)
 				.css({left:currentLeft,top:currentTop})
 			;
-		
+
 		return fullHeight;
 	};
-	
-	
+
+
 	overlayClicked = function( evt ) {
 		var options = $('#jb-overlay').data('options');
-				
+
 		if ( evt.target === $('#jb-window').get(0) && options.clickOverlayCloses ) {
 			closeLightBox.apply();
 		// } else {
@@ -1231,7 +1231,7 @@ jQuery.butterfly.linkCount = 0;
 		var evtKeyCode;
 
 		//$.debug('Key pressed: '+evt.keyCode);
-		
+
 		// If lightbox is not open or if modifier keys are down, ignore key presses
 		if (
 			!$('#jb-overlay').is(':visible') ||
@@ -1242,11 +1242,11 @@ jQuery.butterfly.linkCount = 0;
 		) {
 			return true; /* facilitate further bubbling */
 		}
-	
+
 		// Get the key that was pressed
 		evtKeyCode = getKeyCode(evt);
-		
-		
+
+
 		// handle keypresses here
 		switch (evtKeyCode) {
 			case DOM_VK_UP:
@@ -1270,11 +1270,11 @@ jQuery.butterfly.linkCount = 0;
 				// A different (untracked) key was pressed, just ignore it
 				return true; /* facilitate further bubbling */
 		}
-		
+
 		// Event already handled, prevent default
 		evt.preventDefault();
 	};
-	
+
 
 	/**
 	 * Someone activated gallery 'next' or 'prev' links
@@ -1282,41 +1282,41 @@ jQuery.butterfly.linkCount = 0;
 	galleryControlsClick = function( evt ) {
 		var lightboxLink,
 			$this = $( this );
-		
+
 		// Prevent default action
 		evt.preventDefault();
 
 		// find the gallery link, and activate it
 		if ( $this.data( 'linkID' ) !== '' ) {
-			
+
 			$( '#jb-gallery-controls' ).hide(); // hide gallery controls for the transition
-			
+
 			lightboxLink = $( '#' + $this.data( 'linkID' ));
 			return lightboxLink.click();
 		}
 	};
 
 
-	
-	
+
+
 
 	findOffsetToCentre = function( w, h ) {
 		var topOffset = ( $(window).height() - h ) / 2,
 			leftOffset = ( $(window).width() - w ) / 2;
-		
+
 		//// $.debug ('w = '+w+' | h = '+h+' | top = '+top+' | left = '+left);
-		
+
 		return [ topOffset, leftOffset ];
 	};
-	
-	
+
+
 	/**
 	 * Find if the node is in the set of nodes
 	 */
 	$.fn.isInSet = function( currentElement ) {
 		return this.index( $( currentElement )) !== -1;
 	};
-	
+
 
 	/**
 	 * Find the next node in the currently selected set of nodes
@@ -1329,7 +1329,7 @@ jQuery.butterfly.linkCount = 0;
 			return false;
 		}
 	};
-	
+
 
 	/**
 	 * Find the previous node in the currently selected set of nodes
@@ -1342,7 +1342,7 @@ jQuery.butterfly.linkCount = 0;
 			return false;
 		}
 	};
-	
+
 
 	/**
 	 * Find the first node in the currently selected set of nodes
@@ -1354,8 +1354,8 @@ jQuery.butterfly.linkCount = 0;
 			return false;
 		}
 	};
-	
-	
+
+
 	/**
 	 * Find the last node in the currently selected set of nodes
 	 */
@@ -1366,13 +1366,13 @@ jQuery.butterfly.linkCount = 0;
 			return false;
 		}
 	};
-	
-	
+
+
 	/**
 	 * from: http://stackoverflow.com/questions/1933501/how-to-put-targetblank-in-jquery
 	 */
 	isImage = function( fileName ) {
-		
+
 		if (typeof fileName === 'undefined' || fileName === '') {
 			return false;
 		}
@@ -1385,8 +1385,8 @@ jQuery.butterfly.linkCount = 0;
 			return ( /^\.(jpg|png|gif|bmp|jpeg)$/i ).test( fileName.substring( pos ));
 		}
 	};
-	
-	
+
+
 	/**
 	 * Disable all focussable elements outside the lightbox. Stores previous tabindex for later restoration
 	 * Currently targets links, common form elements and anything with tabindex > -1
@@ -1417,11 +1417,11 @@ jQuery.butterfly.linkCount = 0;
 	 */
 	$.fn.restoreFocussableElements = function() {
 		var focussable = this.find( '.jb-unfocussed' );
-		
+
 		focussable.each(function() {
 			var $this = $( this ),
 				prevTabIndex = $this.data( 'prevTabIndex' );
-			
+
 			switch ( prevTabIndex ) {
 				case '':
 					$this.removeAttr( 'tabindex' );
@@ -1443,21 +1443,21 @@ jQuery.butterfly.linkCount = 0;
 	 * @return integer Converted dimension in pixels
 	 */
 	parsePixels = function( input, centDimension ) {
-		
+
 		centDimension = typeof centDimension !== 'undefined' ? centDimension : $( document.body ).width() ;
-		
+
 		input = input
 			.replace('px','') // remove px units if present
 			.replace(/^\s+|\s+$/g,"") // trim leading and trailing whitespace
 		;
-		
+
 		if (!isNaN(input)) {
 			// int already, return as pixels
 			return parseInt(input, 10);
 
 		} else if (input.substr(input.length - 1) === '%') {
 			// %, convert to pixels
-			
+
 			if (typeof centDimension !== 'undefined') {
 				input = parseInt(input
 					.substr(0, input.length - 1) // strip unit
@@ -1468,7 +1468,7 @@ jQuery.butterfly.linkCount = 0;
 				$.debug('Warning: percentage unit was supplied to parsePixels() but could not be calculated because centDimension was not supplied.');
 				return parseInt(input, 10);
 			}
-				
+
 		} else if (input.substr(input.length - 2) === 'em') {
 			// em, check for pxToEm and convert (or warn)
 			if (typeof Number.prototype.pxToEm !== 'undefined') {
