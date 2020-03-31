@@ -12328,9 +12328,6 @@ a .meta {
   opacity: 1;
   transform: scale(1); }
 
-.qg-footer-feedback .questions .radio input[type=radio]:focus + label {
-  font-weight: bold; }
-
 .qg-footer-feedback .initial-question li {
   padding: 13px 0 0 0; }
 
