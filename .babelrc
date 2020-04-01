@@ -1,4 +1,7 @@
 {
   "presets": ["es2015"],
-  "retainLines": true
+  "retainLines": true,
+  "test": [
+    "jest"
+  ]
 }
