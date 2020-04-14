@@ -16,8 +16,6 @@ const path            = require('path');
 const addSrc          = require('gulp-add-src');
 
 // For testing
-const fsPath            = require('fs-path');
-const eslintReporter    = require('eslint-html-reporter');
 const connectssi        = require('gulp-connect-ssi');
 const connect           = require('gulp-connect');
 // const wait              = require('gulp-wait');
@@ -72,18 +70,18 @@ gulp.task('assets-includes-cdn', require('./gulp/build-tasks/assets-includes')(g
 
 gulp.task('build', (cb) => {
   runSequence(
-      'test:eslint',
-      'assets-includes-docs',
-      'assets-includes-cdn',
-      'assets-includes-local',
-      'template-pages',
-      'js',
-      'scss',
-      'other-assets',
-      'build-other-files',
-      'template-pages-docs',
-      'template-pages-to-docs',
-      cb
+    'test:eslint',
+    'assets-includes-docs',
+    'assets-includes-cdn',
+    'assets-includes-local',
+    'template-pages',
+    'js',
+    'scss',
+    'other-assets',
+    'build-other-files',
+    'template-pages-docs',
+    'template-pages-to-docs',
+    cb,
   );
 });
 
@@ -124,7 +122,7 @@ gulp.task('release', (cb) => {
       'scss-src',
       'release-other-files',
     ],
-      cb
+    cb,
   );
 });
 
@@ -133,7 +131,7 @@ let randomPort = Math.floor(1000 + Math.random() * 9000);
 gulp.task('serve', require('./gulp/build-tasks/serve')(gulp, plugins, connect, connectssi, argv, path, randomPort));
 
 /* TEST TASKS */
-gulp.task('test:eslint', require('./gulp/test-tasks/lint')(gulp, plugins, config, fsPath, eslintReporter));
+gulp.task('test:eslint', require('./gulp/test-tasks/lint')(gulp, plugins, config));
 
 /* PUBLISH TASKS */
 
