@@ -3,7 +3,7 @@
 // Node.js task to convert SSI includes to inline html
 
 const path = require('path');
-const ssiToStatic = require('./ssi-to-static.js');
+const ssiToStatic = require('../ssi-to-static.js');
 
 let includeSrc = path.join('build');
 let src = path.join('build', 'docs');
