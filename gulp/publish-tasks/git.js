@@ -22,6 +22,15 @@ const gitFunctions = {
       });
     };
   },
+  // this task creates a test branch on 'web-template-release'.
+  branch: (folder) => {
+    return (cb) => {
+      if (folder) process.chdir(path.resolve(folder));
+      return git.checkout(`v${pjson.version}-test`, {args: '-b'}, function (err) {
+        if (err) throw err;
+      });
+    };
+  },
   sync: (from, to, ignore) => {
     return (cb) => {
       let ignoreFiles = ['.git', '.gitignore'].concat(ignore);
@@ -77,11 +86,16 @@ const gitFunctions = {
   push: (folder) => {
     return (cb) => {
       process.chdir(path.resolve(folder));
-      return git.push('origin', ['master'], {args: ' --tags'}, function (err) {
-        if (err) throw err;
-      });
+      if (process.env.NODE_ENV === 'prod') {
+        return git.push('origin', ['master'], {args: ' --tags'}, function (err) {
+          if (err) throw err;
+        });
+      } else {
+        return git.push('origin', [`v${pjson.version}-test`], {args: ' -f'}, function (err) {
+          if (err) throw err;
+        });
+      }
     };
   },
-
 };
 module.exports = gitFunctions;

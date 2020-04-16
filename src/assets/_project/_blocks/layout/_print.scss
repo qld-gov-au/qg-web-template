@@ -7,6 +7,9 @@
 }
 // print styles
 @media print {
+  .row{
+    display: block;
+  }
   *,
   *:before,
   *:after {
