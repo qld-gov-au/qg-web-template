@@ -1,31 +1,61 @@
-var quickExit = {
-  el: '.qg-quick-exit',
-  init: function () {
-    this.methods();
-  },
-  methods: function () {
-    var newloc = 'https://www.google.com.au';
-    var el = $(this.el);
-    if (el.length > 0) {
-      $.getScript('{{CDN}}/latest/lib/ext/stickyfill.min.js', function () {
-        // IE 11 fix
-        /*global Stickyfill*/
-        Stickyfill.add(el);
-        // navigating on pressing Escape key
-        $(document).keydown(function (e) {
-          if (e.keyCode === 27) {
-            window.open(newloc, '_blank', '');
-            window.location.replace(newloc);
-            return false;
+
+(function () {
+  var $quickExit = $('.qg-quick-exit');
+  if ($quickExit.length > 0 && $('.qg-quick-exit__button').length > 0) {
+    var quickExitInit = function () {
+      var button = document.querySelector('.qg-quick-exit__button');
+      var escapeSite = 'https://www.google.com.au/';
+      var hotkey = 27;
+
+      // add click handler
+      button.onclick = function (e) {
+        /*globals quickExit*/
+        return quickExit(escapeSite);
+      };
+
+      // load a plugin only on IE browser to support position:sticky
+      if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
+        $.getScript('{{CDN}}/latest/lib/ext/stickyfilljs/dist/stickyfill.min.js', function () {
+          /*global Stickyfill*/
+          console.log('loaded stickyfill');
+          Stickyfill.add($quickExit);
+        });
+      }
+
+      // add hotkey trigger
+      document.addEventListener('keydown', function (e) {
+        if (e.keyCode === hotkey) {
+          quickExit(escapeSite);
+
+          if (e) {
+            // stop escape from cancelling redirect
+            e.preventDefault();
+
+            // early IEs don't have preventDefault
+            e.returnValue = false;
           }
-        });
-        // clicking on the quick exit button
-        $('body').on('click', '.qg-quick-exit__button', function () {
-          window.open(newloc, '_blank', '');
-          window.location.replace(newloc);
-        });
+
+          return false;
+        }
       });
-    }
-  },
-};
-quickExit.init();
+    };
+    window.quickExit = function (site) {
+      // then redirect to a non-sensitive site
+      window.open(site, '_blank');
+      window.location.replace(site);
+
+      // remove as much info from URL as possible
+      if (window.history) {
+        try {
+          window.history.replaceState({}, '', '/');
+        } catch (e) {
+
+        }
+      }
+
+      // disable default event handling
+      return false;
+    };
+    quickExitInit();
+  }
+})();

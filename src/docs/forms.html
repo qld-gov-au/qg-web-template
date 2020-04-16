@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" xmlns="">
 
 <head>
 
@@ -72,7 +72,7 @@
 
       <div id="qg-primary-content" role="main">
 
-        <!-- # include virtual="/assets/includes-local/content/alert.html"-->
+        <!-- #include virtual="/assets/includes-local/content/alert.html"-->
 
         <!-- Start page content -->
 
@@ -748,7 +748,7 @@
                     <span class="label">Year of birth</span>
                     <small class="hint">Examples: 1901, 11/07/1876, 04/1913</small>
                   </label>
-                  <input type="search" id="dob" name="ChildDateOfBirth" size="15" placeholder="dd/mm/yyyy" min="1829-01-01" max="1914-12-31" />
+                  <input type="search" id="dob" class="qg-date-input" name="ChildDateOfBirth" size="15" placeholder="dd/mm/yyyy" min="1829-01-01" max="1914-12-31" />
                 </li>
                 <li class="group atomic">
                   <fieldset id="dob-range">
@@ -761,13 +761,13 @@
                         <label for="dob-min">
                           <span class="label">From</span>
                         </label>
-                        <input type="search" id="dob-min" name="ChildDateOfBirth_lower" size="15" placeholder="dd/mm/yyyy" min="1829-01-01" max="1914-12-31" />
+                        <input type="search" id="dob-min" class="qg-date-input" name="ChildDateOfBirth_lower" size="15" placeholder="dd/mm/yyyy" min="1829-01-01" max="1914-12-31" />
                       </li>
                       <li>
                         <label for="dob-max">
                           <span class="label">Until (optional)</span>
                         </label>
-                        <input type="search" id="dob-max" name="ChildDateOfBirth_upper" size="15" placeholder="dd/mm/yyyy" min="1829-01-01" max="1914-12-31" />
+                        <input type="search" id="dob-max" class="qg-date-input" name="ChildDateOfBirth_upper" size="15" placeholder="dd/mm/yyyy" min="1829-01-01" max="1914-12-31" />
                       </li>
                   </fieldset>
                 </li>
@@ -1335,6 +1335,19 @@ $( '#email' ).closest( '.section' ).relevance( 'relevantWhen', { name: 'replyReq
           </tr>
         </table>
 
+        <h2 id="datepicker">Datepicker</h2>
+        <p>There are 2 options to include a Datepicker</p>
+        <form>
+          <div class="form-group">
+            <label for="jqueryui-date">jQuery UI datepicker (using <strong>.qg-date-input</strong> class )</label>
+            <input type="text" class="qg-date-input" id="jqueryui-date">
+          </div>
+          <div class="form-group">
+            <label for="html5-date">HTML5 datepicker (using <strong>type="date"</strong>)</label>
+            <input type="date" class="form-control" id="html5-date" placeholder="Password">
+          </div>
+        </form>
+
         <h2 id="references">References</h2>
         <ul>
           <li><a href="http://www.qld.gov.au/web/cue/module4/">Module 4 Online Forms (Consistent User Experience standard)</a></li>
@@ -1439,7 +1452,12 @@ $( '#email' ).closest( '.section' ).relevance( 'relevantWhen', { name: 'replyReq
             <li><a href="#questions">Questions</a></li>
             <li><a href="#progressive-disclosure">Progressive disclosure</a></li>
             <li><a href="#autocomplete-address-form">Autocomplete address form</a></li>
-            <li><a href="#client-side-validation">Client-side validation</a></li>
+            <li>
+              <a href="#client-side-validation">Client-side validation</a>
+              <ul>
+                <li><a href="#datepicker">Datepicker</a></li>
+              </ul>
+            </li>
             <li><a href="#references">References</a></li>
           </ul>
           <p>
