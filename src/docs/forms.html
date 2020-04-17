@@ -835,6 +835,14 @@
         </ul>
 
         <h2 id="progressive-disclosure">Progressive disclosure</h2>
+        <h3>Visually hidden content</h3>
+        <p>Content which should be visually hidden, but remains accessible to assistive technologies such as screen readers, can be styled using the .sr-only class. This can be useful in situations where additional visual information or cues (such as meaning denoted through the use of colour) need to also be conveyed to non-visual users.</p>
+        <p> Similarly, when the progressive disclosure design pattern is used for forms (hiding and showing fields based on a particular selection), people using assistive technologies need a way to understand the condition behind a form control. This class can be used to convey this condition which otherwise can be conveyed through visual cues.</p>
+
+        Example:
+        <pre><code class="language-markup">&lt;p class=&quot;text-danger&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;Danger: &lt;/span&gt; This action is not reversible&lt;/p&gt;</code></pre>
+
+        For visually hidden interactive controls, such as traditional “skip” links, .sr-only can be combined with the .sr-only-focusable class. This will ensure that the control becomes visible once focused (for sighted keyboard users).
 
         <h3>Showing sections of a form one at a time (e.g. step-by-step wizard)</h3>
         <p>Server side implementation is recommended</p>
