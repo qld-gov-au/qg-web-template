@@ -13632,7 +13632,7 @@ a .meta {
 .qg-breadcrumb-list-item {
   display: block;
   float: left;
-  max-width: 400px;
+  max-width: 500px;
   white-space: nowrap;
   transition: max-width .3s ease; }
 
