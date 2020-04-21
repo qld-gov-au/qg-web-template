@@ -133,7 +133,7 @@
             }
               
             input[type=radio]:checked + label {
-                font-weight: normal;
+                font-weight: bold;
                 color: $qg-global-primary-darker-grey;
     
                 &:after {
