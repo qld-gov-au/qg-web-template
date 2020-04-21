@@ -12321,7 +12321,7 @@ a .meta {
   width: 18px; }
 
 .qg-footer-feedback .questions .radio input[type=radio]:checked + label {
-  font-weight: normal;
+  font-weight: bold;
   color: #292929; }
 
 .qg-footer-feedback .questions .radio input[type=radio]:checked + label:after {
