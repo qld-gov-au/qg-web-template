@@ -104,6 +104,12 @@
     background: #ffffff;
     color: #000000;
   }
+  .row {
+    display: block;
+  }
+  .qg-site-map {
+    display:none !important;
+  }
   #qg-primary-content{
     margin-top: 0;
     h1 {
