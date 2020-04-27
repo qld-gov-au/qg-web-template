@@ -6,16 +6,27 @@
 * */
 
 /*globals grecaptcha, qg*/
+// const successTemplate = require('./thank-you.html');
 import keys from '../../data/qg-google-keys';
 
 (function ($, swe) {
-  let checkEnv = window.location.hostname.search(/\bdev\b|\btest\b|\blocalhost\b|\bgithub\b|\buat\b/);
+  // let checkEnv = window.location.hostname.search(/\bdev\b|test|localhost|github|\buat\b/);
+  /*
+   * isProd function checks if keywords 'dev|test|localhost|github|uat' are not in the hostname then the environment is PROD.
+   * This may not work in all the cases.
+  */
+  let isProd = function () {
+    return window.location.hostname.search(/\bdev\b|test|localhost|github|\buat\b/) === -1;
+  };
+  isProd();
   let $feedbackForm = $('#qg-page-feedback-form');
 
   if ($feedbackForm.length > 0) {
     let setUrlEnableCaptcha = () => {
       // if environment is not PROD then use test submission handler link
-      checkEnv !== -1 ? $feedbackForm.attr('action', 'https://test.smartservice.qld.gov.au/services/submissions/email/feedback/feedback') : '';
+      if (!isProd()) {
+        $feedbackForm.attr('action', 'https://test.smartservice.qld.gov.au/services/submissions/email/feedback/feedback-v2');
+      }
       // if data-recaptcha attribute is not present then insert it
       if ($feedbackForm.attr('data-recaptcha') === undefined) {
         $feedbackForm.attr('data-recaptcha', 'true');
@@ -24,12 +35,12 @@ import keys from '../../data/qg-google-keys';
     setUrlEnableCaptcha();
   }
 
-  let googleRecaptchaApiKey = checkEnv !== -1
-    ? keys.defGoogleRecaptcha.uat
-    : keys.defGoogleRecaptcha.prod;//This is a v2 key
-  let footerFeedbackGoogleRecaptchaApiKey = checkEnv !== -1
-    ? keys.defFeedbackGoogleRecaptcha.uat
-    : keys.defFeedbackGoogleRecaptcha.prod;//This is a v3 key
+  let googleRecaptchaApiKey = isProd()
+    ? keys.defGoogleRecaptcha.prod
+    : keys.defGoogleRecaptcha.uat;//This is a v2 key
+  let footerFeedbackGoogleRecaptchaApiKey = isProd()
+    ? keys.defFeedbackGoogleRecaptcha.prod
+    : keys.defFeedbackGoogleRecaptcha.uat;//This is a v3 key
   //v3 Captcha, can have multiples
   let v3Captcha = (form, greptcha, key, action) => {
     //console.log('v3 key: ' + key);
@@ -39,8 +50,8 @@ import keys from '../../data/qg-google-keys';
           if (greptcha.length > 0) {
             if (
               greptcha.attr('value') !== '' ||
-            greptcha.attr('value').length !== 0 ||
-            greptcha.attr('value') !== undefined) {
+              greptcha.attr('value').length !== 0 ||
+              greptcha.attr('value') !== undefined) {
               greptcha.val(token);
               form.submit();
               return true;
@@ -63,8 +74,8 @@ import keys from '../../data/qg-google-keys';
           var response = grecaptcha.getResponse();
           if (
             response === '' ||
-              response === undefined ||
-              response.length === 0
+            response === undefined ||
+            response.length === 0
           ) {
             console.log('Invalid recaptcha');
             return false;
@@ -81,10 +92,47 @@ import keys from '../../data/qg-google-keys';
   };
 
   let loadedRecaptcha = false;
+  let onloadRecaptchaAjax = () => {
+    grecaptcha.ready(function () {
+      $('#qg-page-feedback-form').submit(function (event) {
+        var self = $(this);
+        event.preventDefault();
+        if ($('#qg-page-feedback-form li.invalid').length <= 0) {
+          var greptcha = $feedbackForm.find('input[name="g-recaptcha-response"]');
+          var postUrl = self.attr('action');
+          var requestMethod = self.attr('method');
+          var $successMsgContainer = $('.thankyou');
+          grecaptcha.execute(footerFeedbackGoogleRecaptchaApiKey, {action: 'feedback'})
+            .then(function (token) {
+              if (greptcha.length > 0) {
+                greptcha.val(token);
+                var formData = self.serialize();
+                $.ajax({
+                  url: postUrl,
+                  type: requestMethod,
+                  data: formData,
+                  contentType: 'application/x-www-form-urlencoded',
+                  cache: false,
+                  processData: false,
+                }).done(function (response) {
+                  var red = JSON.parse(response);
+                  $successMsgContainer.removeClass('d-none');
+                  $('#qg-page-feedback-form, .qg-feedback-toggle').addClass('d-none');
+                  var ddd = red.message;
+                  console.log(ddd);
+                  $successMsgContainer.append($.parseHTML(ddd));
+                });
+                return true;
+              }
+            });
+        }
+      });
+    });
+  };
   let onloadRecaptcha = () => {
     grecaptcha.ready(function () {
-    // eslint-disable-line
-    //v2 Forms
+      // eslint-disable-line
+      //v2 Forms
       if (!loadedRecaptcha) {
         $('form[data-recaptcha="true"]')
           .find('input[type="submit"], button[type="submit"]')
@@ -130,8 +178,8 @@ import keys from '../../data/qg-google-keys';
         swe.ajaxCall(
           'https://www.google.com/recaptcha/api.js?render=' + manualSitekey,
           'script',
-           onloadRecaptcha,
-          'Recaptcha unavailable'
+          onloadRecaptcha,
+          'Recaptcha unavailable',
         );
       } else if (manualSitekey === undefined && manualAction !== undefined) {
         requireDefaultKey = true;
@@ -141,7 +189,7 @@ import keys from '../../data/qg-google-keys';
             'https://www.google.com/recaptcha/api.js',
             'script',
             onloadRecaptcha,
-            'Recaptcha unavailable'
+            'Recaptcha unavailable',
           );
           v2Loaded = true;
         }
@@ -149,22 +197,22 @@ import keys from '../../data/qg-google-keys';
     });
     //As v3 key is used in footer and could also be used on the page with a differnt action, we need to ensure we only load it once
     if (requireDefaultKey) {
-        //load right away
-        swe.ajaxCall(
-          'https://www.google.com/recaptcha/api.js?render=' + footerFeedbackGoogleRecaptchaApiKey,
-          'script',
-          onloadRecaptcha,
-          'Recaptcha unavailable'
-        );
-      } else {
+      //load right away
+      swe.ajaxCall(
+        'https://www.google.com/recaptcha/api.js?render=' + footerFeedbackGoogleRecaptchaApiKey,
+        'script',
+        onloadRecaptcha,
+        'Recaptcha unavailable',
+      );
+    } else {
       if (loadFooter) {
         //Only load if the feedback button is clicked
-        $('#page-feedback-useful').one('click', function () {
+        $('.qg-feedback-toggle').one('click', function () {
           swe.ajaxCall(
             'https://www.google.com/recaptcha/api.js?render=' + footerFeedbackGoogleRecaptchaApiKey,
             'script',
-            onloadRecaptcha,
-            'Recaptcha unavailable'
+            onloadRecaptchaAjax,
+            'Recaptcha unavailable',
           );
         });
       }

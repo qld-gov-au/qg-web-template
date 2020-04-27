@@ -44,6 +44,10 @@ module.exports = function (gulp, plugins, config, webpack, destFolder, type = 'b
           },
         },
         {
+          test: /\.html$/,
+          loader: 'html-loader',
+        },
+        {
           test: /\.js$/,
           exclude: /(node_modules)/,
           loader: 'webpack-replace',

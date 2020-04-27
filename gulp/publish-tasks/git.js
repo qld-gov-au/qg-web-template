@@ -21,7 +21,6 @@ const gitFunctions = {
       });
     };
   },
-  // this task creates a test branch on 'web-template-release'.
   branch: (folder) => {
     return (cb) => {
       if (folder) process.chdir(path.resolve(folder));
