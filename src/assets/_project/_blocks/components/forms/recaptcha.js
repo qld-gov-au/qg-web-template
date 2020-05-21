@@ -17,14 +17,14 @@ import keys from '../../data/qg-google-keys';
   let isProd = function () {
     return window.location.hostname.search(/\bdev\b|test|localhost|github|\buat\b/) === -1;
   };
-  isProd();
   let $feedbackForm = $('#qg-page-feedback-form');
 
   if ($feedbackForm.length > 0) {
     let setUrlEnableCaptcha = () => {
       // if environment is not PROD then use test submission handler link
       if (!isProd()) {
-        $feedbackForm.attr('action', 'https://test.smartservice.qld.gov.au/services/submissions/email/feedback/feedback-v2');
+        var testUrl = $feedbackForm.attr('action').replace('www.smartservice.qld.gov.au', 'test.smartservice.qld.gov.au');
+        $feedbackForm.attr('action', testUrl);
       }
       // if data-recaptcha attribute is not present then insert it
       if ($feedbackForm.attr('data-recaptcha') === undefined) {
@@ -117,6 +117,10 @@ import keys from '../../data/qg-google-keys';
                   $successMsgContainer.removeClass('d-none');
                   $('#qg-page-feedback-form, .qg-feedback-toggle').addClass('d-none');
                   $successMsgContainer.append($.parseHTML(JSON.parse(response).message));
+                }).fail(function (xhr, status, error) {
+                  var errorMessage = xhr.status + ': ' + xhr.statusText;
+                  console.log('Error - ' + errorMessage);
+                  $successMsgContainer.append('<p>Request failed, please try again</p>');
                 });
                 return true;
               }
