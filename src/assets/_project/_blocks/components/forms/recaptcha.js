@@ -117,9 +117,7 @@ import keys from '../../data/qg-google-keys';
                   $successMsgContainer.removeClass('d-none');
                   $('#qg-page-feedback-form, .qg-feedback-toggle').addClass('d-none');
                   $successMsgContainer.append($.parseHTML(JSON.parse(response).message));
-                }).fail(function (xhr, status, error) {
-                  var errorMessage = xhr.status + ': ' + xhr.statusText;
-                  console.log('Error - ' + errorMessage);
+                }).fail(function () {
                   $successMsgContainer.append('<p>Request failed, please try again</p>');
                 });
                 return true;
