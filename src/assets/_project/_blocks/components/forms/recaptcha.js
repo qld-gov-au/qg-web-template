@@ -6,7 +6,6 @@
 * */
 
 /*globals grecaptcha, qg*/
-// const successTemplate = require('./thank-you.html');
 import keys from '../../data/qg-google-keys';
 
 (function ($, swe) {
@@ -115,12 +114,9 @@ import keys from '../../data/qg-google-keys';
                   cache: false,
                   processData: false,
                 }).done(function (response) {
-                  var red = JSON.parse(response);
                   $successMsgContainer.removeClass('d-none');
                   $('#qg-page-feedback-form, .qg-feedback-toggle').addClass('d-none');
-                  var ddd = red.message;
-                  console.log(ddd);
-                  $successMsgContainer.append($.parseHTML(ddd));
+                  $successMsgContainer.append($.parseHTML(JSON.parse(response).message));
                 });
                 return true;
               }
