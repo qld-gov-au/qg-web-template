@@ -13,7 +13,9 @@ $(function () {
       'event_locality_set': 'qgLocationLocalitySet',
       'event_location_found': 'qgLocationFound',
       'event_location_cleared': 'qgLocationCleared',
-      'error_message': ''
+      'error_message': '',
+      'maps_endpoint': 'https://maps.googleapis.com/maps/api/geocode/json?region=au',
+      'maps_key': 'AIzaSyDvR5MCDqi0HtcjkehKqbKhyoCxt4Khqac'
     }
   };
 
@@ -454,26 +456,24 @@ $(function () {
   // Get the locality from Google Maps API
   qgLocation.fn.getLocality = function () {
     var storedData = qgLocation.fn.getStoredLocation();
+    console.log('test');
 
-    if (isDevelopment()) {
-      // Demonstrate functionality locally
-      var exampleData = qgLocation.fn.getExampleLocation();
-      qgLocation.fn.processLocality(exampleData);
-    } else {
-      // Query the Google Maps API with location
-      var targetURL = $('.qg-location-default').attr('data-geolocation');
-      var locationOrigin = storedData['latitude'] + ',' + storedData['longitude'];
+    // Query the Google Maps API with location
+    var locationOrigin = storedData['latitude'] + ',' + storedData['longitude'];
+    var targetURL = qgLocation['vars']['maps_endpoint'];
 
-      $.ajax({
-        cache: true,
-        dataType: 'json',
-        url: targetURL,
-        data: {
-          address: locationOrigin
-        },
-        success: qgLocation.fn.processLocality
-      });
-    }
+    // Add the key and coordinates to the request
+    targetURL += '&key=' + qgLocation['vars']['maps_key'];
+    targetURL += '&address=' + locationOrigin;
+
+    console.log(targetURL);
+
+    $.ajax({
+      cache: true,
+      dataType: 'json',
+      url: targetURL,
+      success: qgLocation.fn.processLocality
+    });
   };
 
   // Process the Google Maps API data for a suburb
