@@ -3310,9 +3310,14 @@
 	    var storedData = qgLocation.fn.getStoredLocation();
 	
 	    // Query the Google Maps API with location coordinates
-	    var locationOrigin = storedData['latitude'] + ',' + storedData['longitude'];
+	    //var locationOrigin = storedData['latitude'] + ',' + storedData['longitude'];
 	    var geocoderLookup = new google.maps.Geocoder();
-	    var geocoderQuery = { 'location': locationOrigin };
+	    var geocoderQuery = {
+	      'location': {
+	        'lat': parseFloat(storedData['latitude']),
+	        'lng': parseFloat(storedData['longitude']) } };
+	
+	
 	
 	    console.log('Attempting geocode lookup');
 	
