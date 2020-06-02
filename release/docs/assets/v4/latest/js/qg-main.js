@@ -2849,7 +2849,10 @@
 /* 16 */
 /***/ (function(module, exports) {
 
-	'use strict';$(function () {
+	'use strict'; // Helper to pass linting with google APIs
+	/* eslint-disable no-undef */
+	
+	$(function () {
 	  'use strict';
 	
 	  //
@@ -2864,9 +2867,7 @@
 	      'event_locality_set': 'qgLocationLocalitySet',
 	      'event_location_found': 'qgLocationFound',
 	      'event_location_cleared': 'qgLocationCleared',
-	      'error_message': '',
-	      'maps_endpoint': 'https://maps.googleapis.com/maps/api/geocode/json?region=au',
-	      'maps_key': 'AIzaSyDvR5MCDqi0HtcjkehKqbKhyoCxt4Khqac' } };
+	      'error_message': '' } };
 	
 	
 	
@@ -3307,23 +3308,35 @@
 	  // Get the locality from Google Maps API
 	  qgLocation.fn.getLocality = function () {
 	    var storedData = qgLocation.fn.getStoredLocation();
-	    console.log('test');
 	
-	    // Query the Google Maps API with location
+	    // Query the Google Maps API with location coordinates
 	    var locationOrigin = storedData['latitude'] + ',' + storedData['longitude'];
-	    var targetURL = qgLocation['vars']['maps_endpoint'];
+	    var geocoderLookup = new google.maps.Geocoder();
+	    var geocoderQuery = { 'location': locationOrigin };
 	
-	    // Add the key and coordinates to the request
-	    targetURL += '&key=' + qgLocation['vars']['maps_key'];
-	    targetURL += '&address=' + locationOrigin;
+	    console.log('Attempting geocode lookup');
 	
-	    console.log(targetURL);
+	    geocoderLookup.geocode(geocoderQuery, function (results, status) {
+	      if (status === 'OK') {
+	        qgLocation.fn.processLocality(results);
+	      } else {
+	        window.alert('Geocoder failed due to: ' + status);
+	      }
+	    });
 	
-	    $.ajax({
-	      cache: true,
-	      dataType: 'json',
-	      url: targetURL,
-	      success: qgLocation.fn.processLocality });
+	    /*
+	        // Add the key and coordinates to the request
+	        targetURL += '&key=' + qgLocation['vars']['maps_key'];
+	        targetURL += '&address=' + locationOrigin;
+	         console.log(targetURL);
+	         $.ajax({
+	          cache: true,
+	          dataType: 'json',
+	          url: targetURL,
+	          success: qgLocation.fn.processLocality
+	        });
+	        */
+	
 	
 	  };
 	
