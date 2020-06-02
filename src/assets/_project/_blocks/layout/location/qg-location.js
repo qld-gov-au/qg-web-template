@@ -1,3 +1,6 @@
+// Helper to pass linting with google APIs
+/* eslint-disable no-undef */
+
 $(function () {
   'use strict';
 
@@ -13,9 +16,7 @@ $(function () {
       'event_locality_set': 'qgLocationLocalitySet',
       'event_location_found': 'qgLocationFound',
       'event_location_cleared': 'qgLocationCleared',
-      'error_message': '',
-      'maps_endpoint': 'https://maps.googleapis.com/maps/api/geocode/json?region=au',
-      'maps_key': 'AIzaSyDvR5MCDqi0HtcjkehKqbKhyoCxt4Khqac'
+      'error_message': ''
     }
   };
 
@@ -456,12 +457,23 @@ $(function () {
   // Get the locality from Google Maps API
   qgLocation.fn.getLocality = function () {
     var storedData = qgLocation.fn.getStoredLocation();
-    console.log('test');
 
-    // Query the Google Maps API with location
+    // Query the Google Maps API with location coordinates
     var locationOrigin = storedData['latitude'] + ',' + storedData['longitude'];
-    var targetURL = qgLocation['vars']['maps_endpoint'];
+    var geocoderLookup = new google.maps.Geocoder();
+    var geocoderQuery = {'location': locationOrigin};
 
+    console.log('Attempting geocode lookup');
+
+    geocoderLookup.geocode(geocoderQuery, function (results, status) {
+      if (status === 'OK') {
+        qgLocation.fn.processLocality(results);
+      } else {
+        window.alert('Geocoder failed due to: ' + status);
+      }
+    });
+
+    /*
     // Add the key and coordinates to the request
     targetURL += '&key=' + qgLocation['vars']['maps_key'];
     targetURL += '&address=' + locationOrigin;
@@ -474,6 +486,7 @@ $(function () {
       url: targetURL,
       success: qgLocation.fn.processLocality
     });
+    */
   };
 
   // Process the Google Maps API data for a suburb
