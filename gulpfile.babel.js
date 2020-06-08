@@ -53,7 +53,7 @@ gulp.task('template-pages-to-docs', require('./gulp/build-tasks/template-pages')
 
 let assetDests = ['assets', 'docs/assets'];
 gulp.task('scss', require('./gulp/common-tasks/scss')(gulp, plugins, config, assetDests, addSrc));
-gulp.task('js', require('./gulp/common-tasks/js-webpack.js')(gulp, plugins, config, assetDests));
+gulp.task('js', require('./gulp/common-tasks/js-webpack.js')(gulp, plugins, config, assetDests, banner));
 gulp.task('other-assets-root', require('./gulp/build-tasks/other-assets')(gulp, plugins, config, es, assetDests[0]));
 gulp.task('other-assets-docs', require('./gulp/build-tasks/other-assets')(gulp, plugins, config, es, assetDests[1]));
 gulp.task('other-assets', gulp.series('other-assets-root', 'other-assets-docs'));

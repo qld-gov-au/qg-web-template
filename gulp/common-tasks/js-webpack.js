@@ -1,7 +1,7 @@
 'use-strict';
 const webpack = require('webpack-stream');
 const TerserPlugin = require('terser-webpack-plugin');
-module.exports = function (gulp, plugins, config, destFolder) {
+module.exports = function (gulp, plugins, config, destFolder, banner) {
   return function (cb) {
     const src = [
       `${config.basepath.src}/assets/_project/_blocks/qg-main.js`,
@@ -77,6 +77,7 @@ module.exports = function (gulp, plugins, config, destFolder) {
     if (process.env.NODE_ENV === 'prod') {
       return gulp.src(src)
         .pipe(webpack(webpackProdSettings))
+        .pipe(plugins.insert.prepend(banner))
         .pipe(gulp.dest(`${config.basepath.release}/template-local-ssi/assets/${config.versionName}/latest/js/`))
         .pipe(gulp.dest(`${config.basepath.release}/template-local/assets/${config.versionName}/latest/js/`))
         .pipe(gulp.dest(`${config.basepath.static}/assets/${config.versionName}/latest/js/`));
