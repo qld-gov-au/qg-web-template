@@ -1,5 +1,5 @@
 const cssnano = require('cssnano');
-module.exports = function (gulp, plugins, config, es, webpack, path, banner) {
+module.exports = function (gulp, plugins, config, es, path, banner) {
   return function (done) {
     const target = [
       `${config.basepath.build}/**/*`,
@@ -44,24 +44,6 @@ module.exports = function (gulp, plugins, config, es, webpack, path, banner) {
     //assets with local assets links
     gulp.src(`${config.basepath.build}/assets/includes-local/**/*`, { dot: true })
       .pipe(gulp.dest(`${config.basepath.release}/template-local-ssi/assets/includes-local/`));
-
-    //JS task
-    gulp.src([`${config.basepath.build}/assets/${config.versionName}/**/*.js`, `!${config.basepath.build}/assets/${config.versionName}/**/lib/*.js`], { dot: true })
-      .pipe(plugins.foreach(function (stream, file) {
-        let filename = path.basename(file.path);
-        let destPath = file.path.split(file.base)[1].split(filename)[0];
-        return stream
-          .pipe(plugins.webpack({
-            output: {
-              filename: filename,
-            },
-            plugins: [new webpack.optimize.UglifyJsPlugin()],
-          }, webpack))
-          .pipe(plugins.insert.prepend(banner))
-          .pipe(gulp.dest(`${config.basepath.release}/template-local-ssi/assets/${config.versionName}/${destPath}`))
-          .pipe(gulp.dest(`${config.basepath.release}/template-local/assets/${config.versionName}/${destPath}`))
-          .pipe(gulp.dest(`${config.basepath.static}/assets/${config.versionName}/${destPath}`));
-      }));
 
     gulp.src(`${config.basepath.build}/assets/${config.versionName}/latest/lib/all-ext-min.js`)
       .pipe(plugins.insert.prepend(banner))

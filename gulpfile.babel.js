@@ -3,20 +3,18 @@
 require('dotenv').config();
 
 // Core
-const gulp            = require('gulp');
-const config          = require('./gulp/gulp-config.js');
-const del             = require('del');
-const gulpWebpack     = require('webpack-stream');
-const webpack         = require('webpack');
-const argv            = require('yargs').argv;
-const plugins         = require('gulp-load-plugins')();
-const es              = require('event-stream');
-const path            = require('path');
-const addSrc          = require('gulp-add-src');
+const gulp = require('gulp');
+const path = require('path');
+const config  = require('./gulp/gulp-config.js');
+const del  = require('del');
+const argv = require('yargs').argv;
+const plugins = require('gulp-load-plugins')();
+const es  = require('event-stream');
+const addSrc  = require('gulp-add-src');
 
 // For testing
-const connectssi        = require('gulp-connect-ssi');
-const connect           = require('gulp-connect');
+const connectssi = require('gulp-connect-ssi');
+const connect = require('gulp-connect');
 // const wait              = require('gulp-wait');
 const pjson = require('./package.json');
 
@@ -55,8 +53,7 @@ gulp.task('template-pages-to-docs', require('./gulp/build-tasks/template-pages')
 
 let assetDests = ['assets', 'docs/assets'];
 gulp.task('scss', require('./gulp/common-tasks/scss')(gulp, plugins, config, assetDests, addSrc));
-gulp.task('js', require('./gulp/common-tasks/js')(gulp, plugins, config, gulpWebpack, assetDests));
-
+gulp.task('js', require('./gulp/common-tasks/js-webpack.js')(gulp, plugins, config, assetDests));
 gulp.task('other-assets-root', require('./gulp/build-tasks/other-assets')(gulp, plugins, config, es, assetDests[0]));
 gulp.task('other-assets-docs', require('./gulp/build-tasks/other-assets')(gulp, plugins, config, es, assetDests[1]));
 gulp.task('other-assets', gulp.series('other-assets-root', 'other-assets-docs'));
@@ -94,7 +91,7 @@ gulp.task('build', gulp.series(
 gulp.task('scss-src', require('./gulp/release-tasks/scss-src')(gulp, plugins, config));
 gulp.task('release-other-files', require('./gulp/release-tasks/other-files')(gulp, plugins, config));
 gulp.task('replace-links', require('./gulp/release-tasks/replace-links')(gulp, plugins, es, config));
-gulp.task('release-files', require('./gulp/release-tasks/files')(gulp, plugins, config, es, webpack, path, banner));
+gulp.task('release-files', require('./gulp/release-tasks/files')(gulp, plugins, config, es, path, banner));
 
 gulp.task('release', gulp.series(
   'js',
