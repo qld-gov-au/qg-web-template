@@ -1,4 +1,4 @@
-/*global qg, jQuery, google*/
+/*global qg, google*/
 let qgInitAutocompleteAddress;
 
 (function (qg, $) {

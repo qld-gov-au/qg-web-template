@@ -26,6 +26,7 @@ const gitFunctions = {
       if (folder) process.chdir(path.resolve(folder));
       return git.checkout(`v${pjson.version}-test`, {args: '-B'}, function (err) {
         if (err) throw err;
+        cb();
       });
     };
   },
@@ -81,10 +82,12 @@ const gitFunctions = {
       if (process.env.NODE_ENV === 'prod') {
         return git.push('origin', ['master'], {args: ' --tags'}, function (err) {
           if (err) throw err;
+          cb();
         });
       } else {
         return git.push('origin', [`v${pjson.version}-test`], {args: ' -f'}, function (err) {
           if (err) throw err;
+          cb();
         });
       }
     };

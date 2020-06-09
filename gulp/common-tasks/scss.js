@@ -4,13 +4,13 @@ var sourcemaps = require('gulp-sourcemaps');
 sass.compiler = require('node-sass');
 
 module.exports = function (gulp, plugins, config, destFolder = 'assets', addSrc) {
-  let extLibCssTarget = config.extLib.css.map(function (s) { return `${config.basepath.src}/assets/_project/lib/ext/` + s + '.css'; });
+  const extLibCssTarget = config.extLib.css.map(function (s) { return `${config.basepath.src}/assets/_project/lib/ext/` + s; });
   return function (cb) {
-    let src = [
+    const src = [
       `${config.basepath.src}/assets/_project/_blocks/*.scss`,
       '!** /_*.scss',
     ];
-    let dest = {
+    const dest = {
       base: `${config.basepath.build}`,
       ext: `${config.versionName}/latest/css`,
     };
