@@ -2996,6 +2996,7 @@
 	  // Prompt the browser to access inbuilt geolocation functionality
 	  qgLocation.fn.getDeviceLocation = function (event) {
 	    event.stopPropagation();
+	    console.log('getdevicelocation');
 	
 	    if (navigator.geolocation) {
 	      navigator.geolocation.getCurrentPosition(qgLocation.fn.processPositionData, qgLocation.fn.failure);
@@ -3163,7 +3164,7 @@
 	
 	  // Get local example of Google Maps API
 	  qgLocation.fn.getExampleLocation = function () {
-	    var exampleResponse = { 'results': [{ 'address_components': [{ 'long_name': 'Browning St near Boundary Rd, stop 5', 'short_name': 'Browning St near Boundary Rd, stop 5', 'types': ['establishment', 'point_of_interest', 'transit_station'] }, { 'long_name': 'South Brisbane', 'short_name': 'South Brisbane', 'types': ['locality', 'political'] }, { 'long_name': 'Brisbane City', 'short_name': 'Brisbane', 'types': ['administrative_area_level_2', 'political'] }, { 'long_name': 'Queensland', 'short_name': 'QLD', 'types': ['administrative_area_level_1', 'political'] }, { 'long_name': 'Australia', 'short_name': 'AU', 'types': ['country', 'political'] }, { 'long_name': '4101', 'short_name': '4101', 'types': ['postal_code'] }], 'formatted_address': 'Browning St near Boundary Rd, stop 5, South Brisbane QLD 4101, Australia', 'geometry': { 'location': { 'lat': -27.477727, 'lng': 153.01314 }, 'location_type': 'GEOMETRIC_CENTER', 'viewport': { 'northeast': { 'lat': -27.4763780197085, 'lng': 153.0144889802915 }, 'southwest': { 'lat': -27.4790759802915, 'lng': 153.0117910197085 } } }, 'place_id': 'ChIJufdIyqBQkWsRlnW4qQxzN94', 'types': ['establishment', 'point_of_interest', 'transit_station'] }], 'status': 'OK' };
+	    var exampleResponse = [{ 'address_components': [{ 'long_name': 'Browning St near Boundary Rd, stop 5', 'short_name': 'Browning St near Boundary Rd, stop 5', 'types': ['establishment', 'point_of_interest', 'transit_station'] }, { 'long_name': 'South Brisbane', 'short_name': 'South Brisbane', 'types': ['locality', 'political'] }, { 'long_name': 'Brisbane City', 'short_name': 'Brisbane', 'types': ['administrative_area_level_2', 'political'] }, { 'long_name': 'Queensland', 'short_name': 'QLD', 'types': ['administrative_area_level_1', 'political'] }, { 'long_name': 'Australia', 'short_name': 'AU', 'types': ['country', 'political'] }, { 'long_name': '4101', 'short_name': '4101', 'types': ['postal_code'] }], 'formatted_address': 'Browning St near Boundary Rd, stop 5, South Brisbane QLD 4101, Australia', 'geometry': { 'location': { 'lat': -27.477727, 'lng': 153.01314 }, 'location_type': 'GEOMETRIC_CENTER', 'viewport': { 'northeast': { 'lat': -27.4763780197085, 'lng': 153.0144889802915 }, 'southwest': { 'lat': -27.4790759802915, 'lng': 153.0117910197085 } } }, 'place_id': 'ChIJufdIyqBQkWsRlnW4qQxzN94', 'types': ['establishment', 'point_of_interest', 'transit_station'] }];
 	
 	    return exampleResponse;
 	  };
@@ -3321,39 +3322,44 @@
 	
 	    console.log('Attempting geocode lookup');
 	
-	    geocoderLookup.geocode(geocoderQuery, function (results, status) {
-	      if (status === 'OK') {
-	        qgLocation.fn.processLocality(results);
-	      } else {
-	        window.alert('Geocoder failed due to: ' + status);
-	      }
-	    });
+	    if (isDevelopment()) {
+	      // Demonstrate functionality locally
+	      var exampleData = qgLocation.fn.getExampleLocation();
+	      qgLocation.fn.processLocality(exampleData);
+	    } else {
+	      geocoderLookup.geocode(geocoderQuery, function (results, status) {
+	        if (status === 'OK') {
+	          qgLocation.fn.processLocality(results);
+	        } else {
+	          window.alert('Geocoder failed due to: ' + status);
+	        }
+	      });
+	    }
 	
 	    /*
-	        // Add the key and coordinates to the request
-	        targetURL += '&key=' + qgLocation['vars']['maps_key'];
-	        targetURL += '&address=' + locationOrigin;
-	         console.log(targetURL);
-	         $.ajax({
-	          cache: true,
-	          dataType: 'json',
-	          url: targetURL,
-	          success: qgLocation.fn.processLocality
-	        });
-	        */
+	      // Add the key and coordinates to the request
+	      targetURL += '&key=' + qgLocation['vars']['maps_key'];
+	      targetURL += '&address=' + locationOrigin;
+	       console.log(targetURL);
+	       $.ajax({
+	        cache: true,
+	        dataType: 'json',
+	        url: targetURL,
+	        success: qgLocation.fn.processLocality
+	      });
+	      */
 	
 	
 	  };
 	
 	  // Process the Google Maps API data for a suburb
 	  qgLocation.fn.processLocality = function (jsonResponse) {
-	    var allAddresses = jsonResponse['results'];
 	    var targetType = 'locality';
 	    var locality = 'unknown';
 	
 	    // Check over all address matches
-	    for (var index = 0; index < allAddresses.length; index++) {
-	      var address = allAddresses[index];
+	    for (var index = 0; index < jsonResponse.length; index++) {
+	      var address = jsonResponse[index];
 	      var addressComponents = address['address_components'];
 	
 	      // Break out of the loop if a locality is found
