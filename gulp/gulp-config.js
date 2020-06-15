@@ -77,7 +77,7 @@ module.exports = {
     },
     // Linting source and exclusions
     lint: [
-      'gulpfile.js',
+      'gulpfile.babel.js',
       'src/**/*.js',
       'gulp/**/*.js',
       'tests/**/*.js',

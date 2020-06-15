@@ -6,14 +6,13 @@ module.exports = function (gulp, plugins, config, dest, local = false, relpath =
       `${config.basepath.src}/assets/_project/_blocks/layout/**/*.html`,
     ];
       //.concat(config.build.excludes); //remove concat excludes, remove from gulp-config.json also
-
-    let relLink = {
-      regex: new RegExp('="/assets/', 'g'),
-      replacement: '="assets/',
-    };
     let cdnLink = {
-      regex: new RegExp('="/assets/', 'g'),
-      replacement: '="https://static.qgov.net.au/assets/',
+      regex: new RegExp(`="/assets/${config.versionName}`, 'g'),
+      replacement: `="https://test-static.qgov.net.au/assets/${config.versionName}`,
+    };
+    let folderNameChange = {
+      regex: new RegExp(`="/assets/includes-local`, 'g'),
+      replacement: `="/assets/includes-cdn`,
     };
 
     // if (!Array.isArray(dest)) {
@@ -27,9 +26,8 @@ module.exports = function (gulp, plugins, config, dest, local = false, relpath =
       .pipe(plugins.include({ hardFail: true }))
       .on('error', console.log)
       .pipe(plugins.replace(projectAssets, `="$1assets/${config.versionName}/latest/`)) // Replace '_project' with 'v3'
-      .pipe(plugins.if(local !== true, plugins.replace(projectAssets, `="https://static.qgov.net.au/assets/${config.versionName}/latest/`)))
       .pipe(plugins.if(local !== true, plugins.replace(cdnLink.regex, cdnLink.replacement)))
-      .pipe(plugins.if(relpath === true, plugins.replace(relLink.regex, relLink.replacement)))
+      .pipe(plugins.if(local !== true, plugins.replace(folderNameChange.regex, folderNameChange.replacement)))
       .pipe(gulp.dest(`${config.basepath.build}/${dest}/`));
   };
 };

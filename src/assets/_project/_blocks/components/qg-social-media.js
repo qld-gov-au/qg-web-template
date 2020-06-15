@@ -1,4 +1,3 @@
-/*global jQuery*/
 (function ($) {
   'use strict';
 
@@ -14,9 +13,12 @@
         this.loadScript('script', 'twitter-wjs', twitterSdkScript);
       }
       if (this.config.$facebookEl.length > 0 && $('script[src*="' + facebookSdkScript + '"]').length <= 0) {
-        var fbUrl = this.config.$facebookEl.attr('data-href');
-        var fbhtml = '<div class="fb-page" data-href="' + fbUrl + '" data-tabs="timeline" data-small-header="true" data-width="10000"  data-adapt-container-width="true" data-show-facepile="false"></div>';
-        this.config.$facebookEl.append(fbhtml);
+        this.config.$facebookEl.each(function () {
+          var curr = $(this);
+          var fbUrl = curr.attr('data-href');
+          var fbhtml = '<div class="fb-page" data-href="' + fbUrl + '" data-tabs="timeline" data-small-header="true" data-width="10000"  data-adapt-container-width="true" data-show-facepile="false"></div>';
+          curr.append(fbhtml);
+        });
         this.loadScript('script', 'facebook-wjs', facebookSdkScript);
       }
     },
