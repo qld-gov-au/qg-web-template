@@ -17,8 +17,8 @@ $(function () {
       'event_location_found': 'qgLocationFound',
       'event_location_cleared': 'qgLocationCleared',
       'error_message': '',
-      'suburb_input': ''
-    }
+      'suburb_input': '',
+    },
   };
 
   //
@@ -85,19 +85,19 @@ $(function () {
   // Handle custom events
   function customEventHandler (event, eventName) {
     switch (eventName) {
-      case qgLocation['vars']['event_coordinates_set']:
-        qgLocation.fn.getLocality();
-        break;
-      case qgLocation['vars']['event_locality_set']:
-        qgLocation.fn.getCoordinates();
-        break;
-      case qgLocation['vars']['event_location_found']:
-        qgLocation.fn.setLocationName();
-        qgLocation.fn.initServiceCentre();
-        break;
-      case qgLocation['vars']['event_location_cleared']:
-        qgLocation.fn.resetLocationContainers();
-        break;
+    case qgLocation['vars']['event_coordinates_set']:
+      qgLocation.fn.getLocality();
+      break;
+    case qgLocation['vars']['event_locality_set']:
+      qgLocation.fn.getCoordinates();
+      break;
+    case qgLocation['vars']['event_location_found']:
+      qgLocation.fn.setLocationName();
+      qgLocation.fn.initServiceCentre();
+      break;
+    case qgLocation['vars']['event_location_cleared']:
+      qgLocation.fn.resetLocationContainers();
+      break;
     }
   }
 
@@ -106,21 +106,21 @@ $(function () {
     var timeout;
 
     return function executedFunction () {
-        var context = this;
-        var args = arguments;
+      var context = this;
+      var args = arguments;
 
-        var later = function () {
-            timeout = null;
-            if (!immediate) func.apply(context, args);
-        };
+      var later = function () {
+        timeout = null;
+        if (!immediate) func.apply(context, args);
+      };
 
-        var callNow = immediate && !timeout;
+      var callNow = immediate && !timeout;
 
-        clearTimeout(timeout);
+      clearTimeout(timeout);
 
-        timeout = setTimeout(later, wait);
+      timeout = setTimeout(later, wait);
 
-        if (callNow) func.apply(context, args);
+      if (callNow) func.apply(context, args);
     };
   }
 
@@ -129,9 +129,9 @@ $(function () {
     var splitStr = str.toLowerCase().split(' ');
 
     for (var i = 0; i < splitStr.length; i++) {
-        // You do not need to check if i is larger than splitStr length, as your for does that for you
-        // Assign it back to the array
-        splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
+      // You do not need to check if i is larger than splitStr length, as your for does that for you
+      // Assign it back to the array
+      splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
     }
 
     // Directly return the joined string
@@ -333,7 +333,7 @@ $(function () {
 
   // Get local example of service centres
   qgLocation.fn.getExampleServiceCentres = function () {
-    var exampleCentres = {'question': {'rawInputParameters': {'origin': ['-27.477413799999997;153.01329099999998']}}, 'response': {'resultPacket': {'results': [{'rank': 1, 'title': 'Justices of the Peace Branch', 'kmFromOrigin': 0.2, 'metaData': {'area': 'Brisbane City', 'hours': 'Monday to Friday, 10am-2pm|Mon,Mon,Tues,Tues,Wednes,Wednes,Thurs,Thurs,Fri,Fri,', 'agency': 'DJAG', 'address2': 'Level 6, 154 Melbourne Street', 'address1': 'See reception', 'viewpageassetid': '21806', 'postcode': '4101', 'type': 'Service', 's': 'Volunteer Justice of the Peace or Commissioner for Declarations', 't': 'Justices of the Peace Branch', 'phone': '1300 301 147', 'datasource': 'JP', 'suburb': 'SOUTH BRISBANE', 'location': '-27.4761712;153.0149019', 'id': '92'}}, {'rank': 2, 'title': 'Family Court Brisbane', 'kmFromOrigin': 1.2, 'metaData': {'area': 'Brisbane City', 'hours': 'Monday, Thursday and Friday 9am-2pm Note this service is for Family Court matters only. Hours of service may vary daily.|Mon,Mon,Thurs,Thurs,Fri,Fri,', 'agency': 'DJAG', 'address2': '(Entrance via Tank Street)', 'address1': 'Corner North Quay and Tank Streets', 'viewpageassetid': '21806', 'postcode': '4000', 'type': 'Service', 's': 'Hours of service vary daily, please phone before attending. Volunteer Justice of the Peace or Commissioner for Declarations', 't': 'Family Court Brisbane', 'datasource': 'JP', 'suburb': 'BRISBANE', 'location': '-27.468426;153.019921', 'id': '62'}}]}}};
+    var exampleCentres = {'question': {'rawInputParameters': {'origin': ['-27.477413799999997;153.01329099999998']}}, 'response': {'resultPacket': {'results': [{'rank': 1, 'title': 'Asif AMin Justices of the Peace Branch', 'kmFromOrigin': 0.2, 'metaData': {'area': 'Brisbane City', 'hours': 'Monday to Friday, 10am-2pm|Mon,Mon,Tues,Tues,Wednes,Wednes,Thurs,Thurs,Fri,Fri,', 'agency': 'DJAG', 'address2': 'Level 6, 154 Melbourne Street', 'address1': 'See reception', 'viewpageassetid': '21806', 'postcode': '4101', 'type': 'Service', 's': 'Volunteer Justice of the Peace or Commissioner for Declarations', 't': 'Justices of the Peace Branch', 'phone': '1300 301 147', 'datasource': 'JP', 'suburb': 'SOUTH BRISBANE', 'location': '-27.4761712;153.0149019', 'id': '92'}}, {'rank': 2, 'title': 'Family Court Brisbane', 'kmFromOrigin': 1.2, 'metaData': {'area': 'Brisbane City', 'hours': 'Monday, Thursday and Friday 9am-2pm Note this service is for Family Court matters only. Hours of service may vary daily.|Mon,Mon,Thurs,Thurs,Fri,Fri,', 'agency': 'DJAG', 'address2': '(Entrance via Tank Street)', 'address1': 'Corner North Quay and Tank Streets', 'viewpageassetid': '21806', 'postcode': '4000', 'type': 'Service', 's': 'Hours of service vary daily, please phone before attending. Volunteer Justice of the Peace or Commissioner for Declarations', 't': 'Family Court Brisbane', 'datasource': 'JP', 'suburb': 'BRISBANE', 'location': '-27.468426;153.019921', 'id': '62'}}]}}};
 
     return exampleCentres;
   };
@@ -370,8 +370,8 @@ $(function () {
     var geocoderQuery = {
       'location': {
         'lat': parseFloat(storedData['latitude']),
-        'lng': parseFloat(storedData['longitude'])
-      }
+        'lng': parseFloat(storedData['longitude']),
+      },
     };
 
     // Query the Google Maps API with location coordinates
@@ -422,7 +422,7 @@ $(function () {
       if (address) {
         // Get location coordinates from storage
         var geocoderQuery = {
-          'address': storedData['address']
+          'address': storedData['address'],
         };
 
         // Query the Google Maps API with location coordinates
@@ -471,7 +471,7 @@ $(function () {
       'returnGeometry': 'false',
       'spatialRel': 'esriSpatialRelIntersects',
       'outFields': 'ADMINAREANAME',
-      'orderByFields': 'ADMINAREANAME%20ASC'
+      'orderByFields': 'ADMINAREANAME%20ASC',
     };
 
     // Construct query params from data
@@ -485,7 +485,7 @@ $(function () {
       cache: true,
       dataType: 'json',
       url: suburbsURL + suburbsQuery,
-      success: qgLocation.fn.processSuburbsData
+      success: qgLocation.fn.processSuburbsData,
     });
   };
 
@@ -495,29 +495,29 @@ $(function () {
     var userSuburb = qgLocation['vars']['suburb_input'];
 
     if (jsonResponse.hasOwnProperty('features')) {
-        // Add each suburb to the location list
-        jsonResponse['features'].forEach(function (object) {
-            var sourceName = object['attributes']['ADMINAREANAME'].toLowerCase();
-            var suburbLGA = titleCase(sourceName);
-            var suburbObject = {
-                'name': sourceName,
-                'name_friendly': suburbLGA,
-                'name_formatted': suburbLGA,
-                'suburb': suburbLGA.split(',')[0]
-            };
+      // Add each suburb to the location list
+      jsonResponse['features'].forEach(function (object) {
+        var sourceName = object['attributes']['ADMINAREANAME'].toLowerCase();
+        var suburbLGA = titleCase(sourceName);
+        var suburbObject = {
+          'name': sourceName,
+          'name_friendly': suburbLGA,
+          'name_formatted': suburbLGA,
+          'suburb': suburbLGA.split(',')[0],
+        };
 
-            // Filter out the suburb if user input exists
-            if (userSuburb !== '') {
-                // Compare values
-                if (sourceName.indexOf(userSuburb) === 0) {
-                  suburbObject['name_formatted'] = getBoldText(userSuburb, suburbLGA);
+        // Filter out the suburb if user input exists
+        if (userSuburb !== '') {
+          // Compare values
+          if (sourceName.indexOf(userSuburb) === 0) {
+            suburbObject['name_formatted'] = getBoldText(userSuburb, suburbLGA);
 
-                  locationList.push(suburbObject);
-                }
-            } else {
-              locationList.push(suburbObject);
-            }
-        });
+            locationList.push(suburbObject);
+          }
+        } else {
+          locationList.push(suburbObject);
+        }
+      });
     }
 
     qgLocation.fn.displaySuburbSuggestions(locationList);
@@ -593,7 +593,7 @@ $(function () {
     var location = {
       'latitude': positionData['latitude'],
       'longitude': positionData['longitude'],
-      'locality': 'unknown'
+      'locality': 'unknown',
     };
 
     // Save to cookie
@@ -619,7 +619,7 @@ $(function () {
     // Handle no cookie present
     if (storedData === null) {
       storedData = {
-        'locality': 'unknown'
+        'locality': 'unknown',
       };
     }
 
@@ -729,7 +729,7 @@ $(function () {
           dataType: 'json',
           url: targetURL,
           data: '&origin=' + locationOrigin + '&meta_datasource_orsand=' + queryMetadata,
-          success: qgLocation.fn.findServiceCentre
+          success: qgLocation.fn.findServiceCentre,
         });
       }
     }
