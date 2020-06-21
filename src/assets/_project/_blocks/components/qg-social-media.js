@@ -1,4 +1,3 @@
-/*global jQuery*/
 (function ($) {
   'use strict';
 
@@ -8,8 +7,8 @@
       $facebookEl: $('.qg-facebook-updates'),
     },
     init: function () {
-      let twitterSdkScript = 'platform.twitter.com/widgets.js';
-      let facebookSdkScript = 'connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.8';
+      const twitterSdkScript = 'platform.twitter.com/widgets.js';
+      const facebookSdkScript = 'connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.8';
       if (this.config.$twitterEl.length > 0 && $('script[src*="' + twitterSdkScript + '"]').length <= 0) {
         this.loadScript('script', 'twitter-wjs', twitterSdkScript);
       }

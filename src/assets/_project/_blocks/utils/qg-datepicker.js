@@ -5,6 +5,7 @@ function browserSupportsDateInput () {
 }
 if (!browserSupportsDateInput() && $('input[type=\'date\']').length > 0) {
   $.getScript('{{CDN}}/latest/lib/ext/nodep-date-input-polyfill/nodep-date-input-polyfill.dist.js', function () {
+    $('input[type="date"]').attr('lang', 'en-GB');
     console.log('date polyfill loaded');
   });
 }
