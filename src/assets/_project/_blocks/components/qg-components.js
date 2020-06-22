@@ -1,4 +1,4 @@
-import './qg-social-media';
+import './social-media/qg-social-media';
 import './progressive-reveal';
 import './qg-header';
 import '../layout/location/qg-location';
