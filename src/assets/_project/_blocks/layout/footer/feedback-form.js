@@ -1,3 +1,8 @@
+// unload event resets the feedback form to the initial state
+window.addEventListener('unload', function(event) {
+  $('#page-feedback-about-this-website').prop('checked', false);
+}, false);
+
 $('.no-js').removeClass('no-js');
 
 $('.qg-footer-feedback__close').click(function () {
