@@ -15,15 +15,15 @@ $(function () {
   //
 
   // Check if we're on a local environment
-  function isDevelopment () {
-    var location = window['location']['hostname'];
-
-    if (location === 'localhost') {
-      return true;
-    } else {
-      return false;
-    }
-  }
+  // function isDevelopment () {
+  //   var location = window['location']['hostname'];
+  //
+  //   if (location === 'localhost') {
+  //     return true;
+  //   } else {
+  //     return false;
+  //   }
+  // }
 
   // Event debouncer
   function debouncer (func, wait, immediate) {
