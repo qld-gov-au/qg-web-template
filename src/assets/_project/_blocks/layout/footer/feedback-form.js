@@ -1,6 +1,13 @@
 // unload event resets the feedback form to the initial state
+function reset () {
+  var list = document.querySelectorAll('#qg-page-feedback-form input[type="radio"]:checked');
+  list.forEach(element => {
+    console.log(element);
+    if (element.checked) { element.checked = false; }
+  });
+}
 window.addEventListener('load', function (event) {
-  $('#page-feedback-about-this-website').prop('checked', false);
+  reset();
 }, false);
 
 $('.no-js').removeClass('no-js');
