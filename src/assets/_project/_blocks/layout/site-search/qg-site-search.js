@@ -7,7 +7,7 @@ $(function () {
 
   var qgSiteSearch = {
     'fn': {},
-    'vars': {}
+    'vars': {},
   };
 
   //
@@ -30,21 +30,21 @@ $(function () {
     var timeout;
 
     return function executedFunction () {
-        var context = this;
-        var args = arguments;
+      var context = this;
+      var args = arguments;
 
-        var later = function () {
-            timeout = null;
-            if (!immediate) func.apply(context, args);
-        };
+      var later = function () {
+        timeout = null;
+        if (!immediate) func.apply(context, args);
+      };
 
-        var callNow = immediate && !timeout;
+      var callNow = immediate && !timeout;
 
-        clearTimeout(timeout);
+      clearTimeout(timeout);
 
-        timeout = setTimeout(later, wait);
+      timeout = setTimeout(later, wait);
 
-        if (callNow) func.apply(context, args);
+      if (callNow) func.apply(context, args);
     };
   }
 
@@ -73,15 +73,15 @@ $(function () {
     var inputValue = targetInput.val();
 
     switch (eventType) {
-      case 'focus':
-        qgSiteSearch.fn.onFocus(inputValue);
-        break;
-      case 'blur':
-        qgSiteSearch.fn.onBlur(inputValue);
-        break;
-      case 'keydown':
-        qgSiteSearch.fn.onKeydown(inputValue, keyCode);
-        break;
+    case 'focus':
+      qgSiteSearch.fn.onFocus(inputValue);
+      break;
+    case 'blur':
+      qgSiteSearch.fn.onBlur(inputValue);
+      break;
+    case 'keydown':
+      qgSiteSearch.fn.onKeydown(inputValue, keyCode);
+      break;
     }
   };
 
@@ -268,22 +268,15 @@ $(function () {
     var searchForm = $('#qg-global-search-form');
     var suggestURL = searchForm.attr('data-suggestions');
 
-    if (isDevelopment()) {
-      // Demonstrate functionality locally
-      var exampleSuggestions = qgSiteSearch.fn.getExampleSuggestions(inputValue);
-      qgSiteSearch.fn.formatSuggestions(exampleSuggestions);
-    } else {
-      // Query Funnelback
-      $.ajax({
-        cache: true,
-        dataType: 'json',
-        url: suggestURL,
-        data: {
-          partial_query: inputValue
-        },
-        success: qgSiteSearch.fn.formatSuggestions
-      });
-    }
+    $.ajax({
+      cache: true,
+      dataType: 'json',
+      url: suggestURL,
+      data: {
+        partial_query: inputValue,
+      },
+      success: qgSiteSearch.fn.formatSuggestions,
+    });
   };
 
   // Format suggestion keywords
@@ -331,22 +324,15 @@ $(function () {
     var searchForm = $('#qg-global-search-form');
     var resultsURL = searchForm.attr('data-results');
 
-    if (isDevelopment()) {
-      // Demonstrate functionality locally
-      var exampleServices = qgSiteSearch.fn.getExampleServices();
-      qgSiteSearch.fn.processServices(exampleServices);
-    } else {
-      // Query Funnelback
-      $.ajax({
-        cache: true,
-        dataType: 'json',
-        url: resultsURL,
-        data: {
-          query: inputValue
-        },
-        success: qgSiteSearch.fn.processServices
-      });
-    }
+    $.ajax({
+      cache: true,
+      dataType: 'json',
+      url: resultsURL,
+      data: {
+        query: inputValue,
+      },
+      success: qgSiteSearch.fn.processServices,
+    });
   };
 
   // Process suggested services and filter out bad results
