@@ -1,5 +1,5 @@
 // unload event resets the feedback form to the initial state
-window.addEventListener('unload', function(event) {
+window.addEventListener('load', function (event) {
   $('#page-feedback-about-this-website').prop('checked', false);
 }, false);
 
