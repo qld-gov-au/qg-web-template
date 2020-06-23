@@ -1,6 +1,6 @@
 .qg-search-form {
   padding-right: 10px;
-  padding-top: 25px;
+  padding-top: 20px;
   z-index: 2;
 
   .qg-search-concierge {
@@ -116,7 +116,7 @@
           margin-right: 35px;
           margin-left: 35px;
         }
-      } 
+      }
 
       .fa {
         @include rem(font-size, 18px);
@@ -137,7 +137,7 @@
           background-color: transparent;
           border: 0;
           padding: 0;
-          
+
           button, a {
             padding: 11px 35px;
             font-weight: normal;
@@ -160,7 +160,7 @@
     float: right;
     position: relative;
     width: 525px;
-    
+
     input[type=text] {
       border-radius: 4px;
       border: 3px solid #fff;
