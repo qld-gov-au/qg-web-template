@@ -36,6 +36,11 @@ module.exports = function (gulp, plugins, config, destFolder, banner) {
           {
             test: /\.js$/,
             exclude: /(node_modules)/,
+            loader: 'babel-loader',
+          },
+          {
+            test: /\.js$/,
+            exclude: /(node_modules)/,
             loader: 'string-replace-loader',
             options: {
               search: /{{CDN}}/g,
@@ -61,6 +66,11 @@ module.exports = function (gulp, plugins, config, destFolder, banner) {
       },
       module: {
         rules: [
+          {
+            test: /\.js$/,
+            exclude: /(node_modules)/,
+            loader: 'babel-loader',
+          },
           {
             test: /\.js$/,
             exclude: /(node_modules)/,

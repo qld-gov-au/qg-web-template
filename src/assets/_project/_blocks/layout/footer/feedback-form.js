@@ -1,7 +1,11 @@
 // unload event resets the feedback form to the initial state
 function reset () {
-  var list = document.querySelectorAll('#qg-page-feedback-form input[type="radio"]:checked');
-  list.forEach(element => {
+  var checkedRadioBtns = document.querySelectorAll('#qg-page-feedback-form input[type="radio"]:checked');
+  var textFields = document.querySelector('#qg-page-feedback-form #comments');
+  if (textFields.value) {
+    textFields.value = '';
+  }
+  checkedRadioBtns.forEach(element => {
     console.log(element);
     if (element.checked) { element.checked = false; }
   });
