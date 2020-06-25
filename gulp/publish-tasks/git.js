@@ -5,7 +5,6 @@ const gulp = require('gulp');
 const git = require('gulp-git');
 const del = require('del');
 const path = require('path');
-const fs = require('fs');
 const dirSync = require('gulp-directory-sync');
 const replace = require('gulp-replace');
 const pjson = require('../../package.json');
@@ -22,12 +21,12 @@ const gitFunctions = {
       });
     };
   },
-  // this task creates a test branch on 'web-template-release'.
   branch: (folder) => {
     return (cb) => {
       if (folder) process.chdir(path.resolve(folder));
-      return git.checkout(`v${pjson.version}-test`, {args: '-b'}, function (err) {
+      return git.checkout(`v${pjson.version}-test`, {args: '-B'}, function (err) {
         if (err) throw err;
+        cb();
       });
     };
   },
@@ -39,17 +38,11 @@ const gitFunctions = {
     };
   },
   transfer: () => {
-    if (!fs.existsSync(`${config.staticCdnRepo.folder}/assets/${config.versionName}/${pjson.subVersion}`)) {
-      return (cb) => {
-        return gulp.src(`${config.basepath.static}/assets/${config.versionName}/latest/**/*`)
-          .pipe(gulp.dest(`${config.staticCdnRepo.folder}/assets/${config.versionName}/latest/`, {followSymlinks: false}))
-          .pipe(gulp.dest(`${config.staticCdnRepo.folder}/assets/${config.versionName}/${pjson.subVersion}/`));
-      };
-    } else {
-      return (cb) => {
-        console.log('\x1b[31m', 'version directory already exist');
-      };
-    }
+    return (cb) => {
+      return gulp.src(`${config.basepath.static}/assets/${config.versionName}/latest/**/*`)
+        .pipe(gulp.dest(`${config.staticCdnRepo.folder}/assets/${config.versionName}/latest/`, {followSymlinks: false}))
+        .pipe(gulp.dest(`${config.staticCdnRepo.folder}/assets/${config.versionName}/${pjson.subVersion}/`));
+    };
   },
   updateVersion: (folder, version) => {
     return (cb) => {
@@ -89,10 +82,12 @@ const gitFunctions = {
       if (process.env.NODE_ENV === 'prod') {
         return git.push('origin', ['master'], {args: ' --tags'}, function (err) {
           if (err) throw err;
+          cb();
         });
       } else {
         return git.push('origin', [`v${pjson.version}-test`], {args: ' -f'}, function (err) {
           if (err) throw err;
+          cb();
         });
       }
     };

@@ -31,12 +31,6 @@ jobs:
           name: Local Server
           command: npx gulp serve
           background: true
-
-      - run:
-          name: Run Tests
-          command: |
-            mkdir -p ./test-results/junit
-            yarn test --ci --reporters=jest-junit
       - run:
           name: Install awscli
           command: |
@@ -47,7 +41,7 @@ jobs:
             sudo pip install awscli
       - run:
           name: Deploy to S3
-          command: aws s3 sync build s3://testcircleci
+          command: npm run release && aws s3 sync release s3://testcircleci
 
       - store_artifacts:
           path: ./test-results/junit

@@ -26,6 +26,7 @@
     "publish-cdn": "gulp cdn-clean && gulp cdn-clone && gulp cdn-transfer && gulp cdn-add && gulp cdn-commit && gulp cdn-push",
     "prepublish": "npm run release",
     "publish-npm-cdn": "npm run publish-npm && npm run publish-cdn",
+    "publish-test-cdn": "npm run release && export NODE_ENV=test && gulp cdn-clean && gulp cdn-clone && gulp cdn-transfer && gulp cdn-branch && gulp cdn-add && gulp cdn-commit && gulp cdn-push",
     "postpublish": "gulp clean-publish"
   },
   "authors": "Queensland Government",
