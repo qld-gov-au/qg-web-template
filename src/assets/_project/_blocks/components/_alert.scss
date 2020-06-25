@@ -1,7 +1,9 @@
 .alert {
   position: relative;
   color: #000;
-
+  & + P{
+    margin-top: 1em;
+  }
   h2 {
     margin-top: 5px;
     font-size: 1.2em;
