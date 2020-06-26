@@ -1,5 +1,18 @@
 const cssnano = require('cssnano');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 module.exports = function (gulp, plugins, config, es, webpack, path, banner) {
+  let src = [
+    `${config.basepath.src}/assets/_project/_blocks/qg-main.js`,
+  ];
+  const cdnLink = function () {
+    if (process.env.NODE_ENV === 'prod') {
+      return `https://static.qgov.net.au/assets/${config.versionName}`;
+    } else if (process.env.NODE_ENV === 'test') {
+      return `https://test-static.qgov.net.au/assets/${config.versionName}`;
+    } else {
+      return `/assets/${config.versionName}`;
+    }
+  };
   return function () {
     const target = [
       `${config.basepath.build}/**/*`,
@@ -47,7 +60,7 @@ module.exports = function (gulp, plugins, config, es, webpack, path, banner) {
         .pipe(gulp.dest(`${config.basepath.release}/template-local-ssi/assets/includes-local/`)),
 
       //JS task
-      gulp.src(`${config.basepath.build}/assets/${config.versionName}/latest/js/*.js`, { dot: true })
+      gulp.src(src, { dot: true })
         .pipe(plugins.foreach(function (stream, file) {
           let filename = path.basename(file.path);
           let destPath = file.path.split(file.base)[1].split(filename)[0];
@@ -56,7 +69,33 @@ module.exports = function (gulp, plugins, config, es, webpack, path, banner) {
               output: {
                 filename: filename,
               },
-              plugins: [new webpack.optimize.UglifyJsPlugin()],
+              module: {
+                loaders: [{
+                  test: /\.js$/,
+                  exclude: /(node_modules)/,
+                  loader: 'babel-loader',
+                  query: {
+                    presets: ['es2015'],
+                  },
+                },
+                {
+                  test: /\.js$/,
+                  exclude: /(node_modules)/,
+                  loader: 'webpack-replace',
+                  query: {
+                    search: '{{CDN}}',
+                    replace: cdnLink(),
+                  },
+                },
+                {
+                  test: /\.json$/,
+                  loader: 'json-loader',
+                },
+                ],
+              },
+              plugins: [
+                new UglifyJsPlugin(),
+              ],
             }, webpack))
             .pipe(plugins.insert.prepend(banner))
             .pipe(gulp.dest(`${config.basepath.release}/template-local-ssi/assets/${config.versionName}/latest/js/${destPath}`))
