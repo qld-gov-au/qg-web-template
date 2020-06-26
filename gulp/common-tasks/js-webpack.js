@@ -15,7 +15,6 @@ module.exports = function (gulp, plugins, config, destFolder, banner) {
         return `/assets/${config.versionName}`;
       }
     };
-
     let dest = {
       base: `${config.basepath.build}`,
       release: `${config.basepath.build}`,
