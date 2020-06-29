@@ -8,6 +8,11 @@ $(function () {
 
   // Mobile menu & Search events to prevent both of them opening at the same time
   $('.qg-show-menu, .qg-show-search').on('click', function () {
+    if (!$('#qg-content').is(':hidden')) {
+      $('#qg-content').hide();
+    } else {
+      $('#qg-content').show();
+    }
     if ($(this).attr('aria-expanded') === 'false') {
       $('body').addClass('header-active');
     } else {
@@ -22,7 +27,11 @@ $(function () {
       $('.qg-navigation').collapse('hide');
     }
   });
-
+  function reorderContent () {
+    if (window.innerHeight < 991) {
+      $('#qg-content').show();
+    }
+  }
   function reorderTabbing () {
     if (window.innerWidth > 991) {
       $('.qg-portal-links button, .qg-portal-links a').attr('tabindex', '2');
@@ -34,6 +43,7 @@ $(function () {
   reorderTabbing();
 
   window.addEventListener('resize', function () {
+    reorderContent();
     reorderTabbing();
   });
 });
