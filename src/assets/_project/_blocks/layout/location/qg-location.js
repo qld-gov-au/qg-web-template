@@ -26,15 +26,15 @@ $(function () {
   //
 
   // Check if we're on a local environment
-  function isDevelopment () {
-    var location = window['location']['hostname'];
-
-    if (location === 'localhost') {
-      return true;
-    } else {
-      return false;
-    }
-  }
+  // function isDevelopment () {
+  //   var location = window['location']['hostname'];
+  //
+  //   if (location === 'localhost') {
+  //     return true;
+  //   } else {
+  //     return false;
+  //   }
+  // }
 
   // Create a cookie
   function setCookie (cookieName, cookieValue, daysActive) {
@@ -346,20 +346,13 @@ $(function () {
   qgLocation.fn.queryLocationAPI = function (geocoderQuery, successCallback) {
     var geocoderLookup = new google.maps.Geocoder();
 
-    if (isDevelopment()) {
-      // Demonstrate functionality locally
-      var exampleData = qgLocation.fn.getExampleLocation();
-      successCallback(exampleData);
-    } else {
-      // Process results from API
-      geocoderLookup.geocode(geocoderQuery, function (results, status) {
-        if (status === 'OK') {
-          successCallback(results);
-        } else {
-          window.alert('Geocoder failed due to: ' + status);
-        }
-      });
-    }
+    geocoderLookup.geocode(geocoderQuery, function (results, status) {
+      if (status === 'OK') {
+        successCallback(results);
+      } else {
+        window.alert('Geocoder failed due to: ' + status);
+      }
+    });
   };
 
   // Get the locality from Google Maps API
@@ -647,13 +640,8 @@ $(function () {
     }
 
     // Data is processed differently depending on environment
-    if (isDevelopment()) {
-      storedData['latitude'] = coordinates['lat'];
-      storedData['longitude'] = coordinates['lng'];
-    } else {
-      storedData['latitude'] = coordinates.lat();
-      storedData['longitude'] = coordinates.lng();
-    }
+    storedData['latitude'] = coordinates.lat();
+    storedData['longitude'] = coordinates.lng();
 
     // Save to cookie
     qgLocation.fn.saveLocationCookie(storedData);
@@ -720,24 +708,18 @@ $(function () {
         centreTypes.splice(noneIndex, 1);
       }
 
-      if (isDevelopment()) {
-        // Demonstrate functionality locally
-        var exampleData = qgLocation.fn.getExampleServiceCentres();
-        qgLocation.fn.findServiceCentre(exampleData);
-      } else {
-        // Query Funnelback with location and service centre types
-        var locationOrigin = storedData['latitude'] + ',' + storedData['longitude'];
-        var targetURL = serviceCentreModule.attr('data-centres');
-        var queryMetadata = centreTypes.join('+');
+      // Query Funnelback with location and service centre types
+      var locationOrigin = storedData['latitude'] + ',' + storedData['longitude'];
+      var targetURL = serviceCentreModule.attr('data-centres');
+      var queryMetadata = centreTypes.join('+');
 
-        $.ajax({
-          cache: true,
-          dataType: 'json',
-          url: targetURL,
-          data: '&origin=' + locationOrigin + '&meta_datasource_orsand=' + queryMetadata,
-          success: qgLocation.fn.findServiceCentre,
-        });
-      }
+      $.ajax({
+        cache: true,
+        dataType: 'json',
+        url: targetURL,
+        data: '&origin=' + locationOrigin + '&meta_datasource_orsand=' + queryMetadata,
+        success: qgLocation.fn.findServiceCentre,
+      });
     }
   };
 
