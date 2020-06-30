@@ -646,8 +646,14 @@ $(function () {
       storedData = {};
     }
 
-    storedData['latitude'] = coordinates['lat'];
-    storedData['longitude'] = coordinates['lng'];
+    // Data is processed differently depending on environment
+    if (isDevelopment()) {
+      storedData['latitude'] = coordinates['lat'];
+      storedData['longitude'] = coordinates['lng'];
+    } else {
+      storedData['latitude'] = coordinates.lat();
+      storedData['longitude'] = coordinates.lng();
+    }
 
     // Save to cookie
     qgLocation.fn.saveLocationCookie(storedData);
