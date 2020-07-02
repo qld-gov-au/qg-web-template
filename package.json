@@ -93,7 +93,7 @@
     "run-sequence": "^1.1.5",
     "sass-loader": "^6.0.5",
     "style-loader": "^0.17.0",
-    "uglifyjs-webpack-plugin": "^0.4.3",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "url-loader": "^0.5.8",
     "vinyl-fs": "^3.0.3",
     "webpack": "^2.5.1",
