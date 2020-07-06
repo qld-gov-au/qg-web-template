@@ -24,7 +24,11 @@
     }
   }
   .qg-callout__cta{
-    //margin-top:1em;
+    align-self: center;
+    margin-right: 0 !important;
+    @include media-breakpoint-down(sm) {
+      margin-bottom: 20px;
+    }
   }
   .qg-callout__description{
     margin-bottom:1em;
