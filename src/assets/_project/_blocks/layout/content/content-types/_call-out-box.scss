@@ -1,11 +1,41 @@
 .qg-call-out-box {
+  @include make-row();
   background-color: $qg-box-background;
   clear: both;
-  padding: 2em 1em;
+  padding: 1em;
   width: 100%;
   box-sizing: border-box;
   margin: 0 auto;
   overflow: hidden;
+  .qg-callout__icon{
+    float:left;
+    i{
+      vertical-align: top;
+    }
+  }
+  .qg-callout__content{
+    align-self: center;
+  }
+  .qg-callout__image{
+    align-self: center;
+    img {
+      width:100%;
+      height: auto;
+    }
+  }
+  .qg-callout__cta{
+    //margin-top:1em;
+  }
+  .qg-callout__description{
+    margin-bottom:1em;
+  }
+  .qg-callout__icon{
+    font-size: 1.5rem;
+    margin-right: 10px;
+  }
+  .qg-callout__title{
+    margin-top: 0;
+  }
   a.qg-btn {
     float: left;
     margin-right: 1em;
