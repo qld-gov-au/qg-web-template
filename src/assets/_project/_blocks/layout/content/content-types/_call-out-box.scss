@@ -2,7 +2,6 @@
   @include make-row();
   background-color: $qg-box-background;
   clear: both;
-  padding: 1em;
   width: 100%;
   box-sizing: border-box;
   margin: 0 auto;
@@ -15,23 +14,40 @@
   }
   .qg-callout__content{
     align-self: center;
+    *{
+      margin-bottom: 0;
+    }
+    margin-bottom: 25px;
+    margin-top: 25px;
   }
   .qg-callout__image{
+    margin-bottom: 25px;
+    margin-top: 25px;
     align-self: center;
     img {
       width:100%;
       height: auto;
     }
+    @include media-breakpoint-down(sm) {
+      margin-top: 0;
+    }
+  }
+  .qg-callout__cta[class*='col-']{
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: 25px !important;
   }
   .qg-callout__cta{
     align-self: center;
     margin-right: 0 !important;
-    @include media-breakpoint-down(sm) {
-      margin-bottom: 20px;
-    }
+    margin-top: 25px;
+    margin-left: 30px;
+    //@include media-breakpoint-down(sm) {
+    //  margin-top: 25px;
+    //}
   }
   .qg-callout__description{
-    margin-bottom:1em;
+    //margin-bottom:1em;
   }
   .qg-callout__icon{
     font-size: 1.5rem;
