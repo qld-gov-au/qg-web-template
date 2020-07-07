@@ -36,6 +36,10 @@
     margin-top: 0;
     margin-left: auto;
     margin-right: 25px !important;
+    @include media-breakpoint-down(sm) {
+      margin-top: 25px;
+      margin-left: 25px;
+    }
   }
   .qg-callout__cta{
     align-self: center;
