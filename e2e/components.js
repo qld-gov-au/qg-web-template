@@ -1,6 +1,5 @@
 const puppeteer = require('puppeteer-core');
 const ct = require('./config/constants');
-
 let browser;
 let page;
 beforeAll(async () => {
