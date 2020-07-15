@@ -51,6 +51,12 @@ module.exports = function (gulp, plugins, config, es, path, banner) {
       .pipe(gulp.dest(`${config.basepath.release}/template-local/assets/${config.versionName}/latest/lib/`))
       .pipe(gulp.dest(`${config.basepath.static}/assets/${config.versionName}/latest/lib/`));
 
+    gulp.src([`${config.basepath.build}/assets/${config.versionName}/**/lib/**/*`])
+      .pipe(plugins.insert.prepend(banner))
+      .pipe(gulp.dest(`${config.basepath.release}/template-local-ssi/assets/${config.versionName}/`))
+      .pipe(gulp.dest(`${config.basepath.release}/template-local/assets/${config.versionName}/`))
+      .pipe(gulp.dest(`${config.basepath.static}/assets/${config.versionName}/`));
+
     //CSS task
     gulp.src(`${config.basepath.build}/assets/${config.versionName}/**/*.css`, { dot: true })
       .pipe(plugins.postcss([cssnano({
