@@ -3,15 +3,15 @@ let qgInitAutocompleteAddress;
 
 (function (qg, $) {
   'use strict';
-  let inputLocationId = 'qg-location-autocomplete';
+  let inputLocation = 'qg-location-autocomplete';
   let addressSelection = false;
 
   const el = {
-    $searchWidget: $('#qg-search-widget'),
+    $searchWidget: $('.qg-search-widget'),
     $autoComplete: $('.qg-location-autocomplete'),
-    $latitude: $('#latitude'),
-    $longitude: $('#longitude'),
-    $form: $('#qg-search-widget-form'),
+    $latitude: $('.qg-search-widget__latitude'),
+    $longitude: $('.qg-search-widget__longitude'),
+    $form: $('.qg-search-widget-form'),
   };
 
   // getting and setting input fields value using query parameter
@@ -31,7 +31,7 @@ let qgInitAutocompleteAddress;
   // removing hidden fields value on reset
   el.$searchWidget.find('button[type="reset"]').click(function (evt) {
     evt.preventDefault();
-    el.$form.find(':input:not(:checkbox):not(:radio), select, textarea').each(function () {
+    $(this).parent(el.$form).find(':input:not(:checkbox):not(:radio), select, textarea').each(function () {
       $(this).val('');
     }).end().find('input[type=checkbox], input[type=radio]').each(function () {
       $(this).prop('checked', false);
@@ -46,13 +46,13 @@ let qgInitAutocompleteAddress;
         .find(el.$longitude).val('');
     }
   });
-  if ($('.' + inputLocationId).length > 0) {
+  if ($('.' + inputLocation).length > 0) {
     let getLocationEle = $('.qg-app-geocoding');
     qgInitAutocompleteAddress = () => {
       let qldBounds = new google.maps.LatLngBounds(
         new google.maps.LatLng(-29, 138.0578426),
         new google.maps.LatLng(-9.9339, 153.63831));
-      let inputLocationEle = document.getElementsByClassName(inputLocationId);
+      let inputLocationEle = document.getElementsByClassName(inputLocation);
       let addressFormId = 'qg-address-autocomplete';
       $.each(inputLocationEle, function () {
         let dataStrictBounds = $(this).data('strictbounds') || true;
@@ -173,7 +173,7 @@ let qgInitAutocompleteAddress;
                 let longitude = position.coords.longitude;
                 let latlng = {lat: parseFloat(latitude), lng: parseFloat(longitude)};
                 let geocoder = new google.maps.Geocoder();
-                let locationInput = $(this).siblings('.' + inputLocationId);
+                let locationInput = $(this).siblings('.' + inputLocation);
                 el.$searchWidget.find(el.$latitude).val(latitude)
                   .end()
                   .find(el.$longitude).val(longitude);

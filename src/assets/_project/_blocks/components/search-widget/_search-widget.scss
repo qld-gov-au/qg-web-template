@@ -1,4 +1,13 @@
-#qg-search-widget{
+.qg-search-widget{
+  &.qg-search-widget__light-theme{
+    background: none;
+    .qg-fl{
+      .qg-app-geocoding{
+        width: inherit;
+        right: 10px;
+      }
+    }
+  }
   background: #f2f7f9;
   padding: .5em 1em;
 
@@ -11,7 +20,7 @@
     margin-left: 0;
     background: inherit;
   }
-  #qg-search-widget-form input{
+  .qg-search-widget-form input{
     position: initial;
     opacity: 1;
     z-index: initial;
@@ -28,7 +37,7 @@
       width: 90%;
       margin-right: 11px;
     }
-    #qg-app-geocoding{
+    .qg-app-geocoding{
       width: 47px;
       position: relative;
       bottom:0 !important;
@@ -41,7 +50,7 @@
       }
     }
   }
-  #search{
+  .search{
     margin-right: 10px;
   }
 
