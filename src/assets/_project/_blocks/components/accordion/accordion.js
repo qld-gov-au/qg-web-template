@@ -8,7 +8,6 @@
 (function ($) {
   let accordion = '.qg-accordion';
   if ($(accordion).length > 0) {
-    let accordionControls = 'input[name=control]';
     let accItem = $(accordion).find('article');
     let linkedpanel =  $(window.location.hash);
 
@@ -30,9 +29,7 @@
     $(accordion).find('article input[name=tabs]').on('change', function () {
       let checkedStatus = $(this).prop('checked');
       // let controlledPanedId = $('#' + $(this).attr('aria-controls'));
-      $(this)
-        .attr('aria-expanded', checkedStatus) //sets aria
-        .parents(accordion).find(accordionControls).prop('checked', false); //clears expand/collapse selection
+      $(this).attr('aria-expanded', checkedStatus); //clears expand/collapse selection
       $(this).parent('article').find('.collapsing-section').attr('aria-hidden', !checkedStatus);
     });
 
