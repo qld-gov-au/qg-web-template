@@ -10,7 +10,7 @@
   if ($(accordion).length > 0) {
     let accordionControls = 'input[name=control]';
     let accItem = $(accordion).find('article');
-    let linkedpanel =  window.location.hash && $('input[aria-controls=' + window.location.hash.substring(1) + ']');
+    let linkedpanel =  $(window.location.hash);
 
     // keyboard accessibility
     var a11yClick = function (event) {
@@ -29,21 +29,21 @@
     //Handle events of accordion inputs
     $(accordion).find('article input[name=tabs]').on('change', function () {
       let checkedStatus = $(this).prop('checked');
-      let controlledPanedId = $('#' + $(this).attr('aria-controls'));
+      // let controlledPanedId = $('#' + $(this).attr('aria-controls'));
       $(this)
         .attr('aria-expanded', checkedStatus) //sets aria
         .parents(accordion).find(accordionControls).prop('checked', false); //clears expand/collapse selection
-      controlledPanedId.attr('aria-hidden', !checkedStatus);
+      $(this).parent('article').find('.collapsing-section').attr('aria-hidden', !checkedStatus);
     });
 
     // open on page load
     const hashTrigger = function () {
-      linkedpanel = window.location.hash && $('input[aria-controls=' + window.location.hash.substring(1) + ']');
       if (linkedpanel.length > 0) {
-        linkedpanel.parents(accordion).find('~ article input').prop('checked', false); //clears expand/collapse selection
-        linkedpanel.prop('checked', true);
+        $(linkedpanel).parent(accordion).find('~ article input').prop('checked', false); //clears expand/collapse selection
+        $(linkedpanel).prop('checked', true).attr('aria-expanded', 'true');
+        $(linkedpanel).parent('article').find('.collapsing-section').attr('aria-hidden', 'false');
         $('html, body').animate({
-          'scrollTop': linkedpanel.offset().top,
+          'scrollTop': $(linkedpanel).offset().top,
         }, 500);
       }
     };
