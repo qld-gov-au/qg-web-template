@@ -754,6 +754,7 @@ $(function () {
 
     if (centreData) {
       var centreName = centreData['metaData']['t'];
+      var centreID = centreData['metaData']['id'];
       var centreDistance = centreData['kmFromOrigin'];
       var centreAddress1 = centreData['metaData']['address1'];
       var centreAddress2 = centreData['metaData']['address2'];
@@ -761,7 +762,15 @@ $(function () {
       // Build URL
       var centreType = centreData['metaData']['datasource'].toLowerCase();
       var centreURL = centreContainer.attr('data-' + centreType);
-      centreURL += centreName;
+
+      // Handle special cases
+      switch (centreType) {
+        case 'hsc':
+          centreURL += 'id=' + centreID + '&title=' + centreName;
+          break;
+        default:
+          centreURL += centreName;
+      }
 
       // Build HTML
       centreHTML += '<a href="' + centreURL + '" class="qg-service-centre__link" data-analytics-link-group="qg-nearest-service-centre-details">' + centreName + '</a>';
