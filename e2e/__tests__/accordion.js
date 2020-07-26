@@ -11,7 +11,7 @@ beforeAll(async () => {
 });
 
 describe('SWE templates testing', () => {
-  test('Autocomplete is working as expected', async () => {
+  test('Accordion is working as expected', async () => {
     expect(await page.evaluate('window.getComputedStyle(document.querySelector(\'.qg-search-concierge-initial\')).getPropertyValue("visibility")')).toBe('hidden');
     await page.click('input#qg-search-query');
     await page.waitFor(ct.WT);
