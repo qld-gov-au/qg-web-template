@@ -1,10 +1,26 @@
 (function ($) {
   'use strict';
   // qg radio buttons
-  $('.rc-theme li').click(function (event) {
-    $(this).find('input[type=radio]').prop('checked', true);
-    $(this).parent('.choices').find('.active').removeClass('active');
-    $(this).parent('ul').find('input[type=checkbox]').prop('checked', false);
-    $(this).addClass('active').find('input[type=checkbox]').prop('checked', true);
+  // $('.rc-theme li').click(function (event) {
+  //   $(this).toggleClass('rc-theme__active');
+  //   event.preventDefault();
+  //   event.stopPropagation();
+  // });
+  $('input[type="radio"]').change(function () {
+    if ($(this).is(':checked')) {
+      $(this).parents('.rc-theme').find('li').removeClass('rc-theme__active');
+      $(this).parents('li').addClass('rc-theme__active');
+    } else {
+      //$(this).prop('checked',true);
+      $(this).parents('li').removeClass('rc-theme__active');
+    }
+  });
+  $('input[type="checkbox"]').change(function () {
+    if ($(this).is(':checked')) {
+      $(this).parents('li').addClass('rc-theme__active');
+    } else {
+      //$(this).prop('checked',true);
+      $(this).parents('li').removeClass('rc-theme__active');
+    }
   });
 }(jQuery));
