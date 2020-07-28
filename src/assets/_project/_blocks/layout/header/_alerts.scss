@@ -1,93 +1,46 @@
 /* ! alert style */
-#qg-site-header .alert-danger, .qg-global-alert {
-  @include make-row();
+.qg-global-alert.qg-global__alt-theme{
+  background-color: #FFC444 !important;
+  header, section, a{
+    color: #000000 !important;
+  }
+}
+.qg-global-alert {
   width: 100%;
-  margin-left: 0;
-  margin-right: 0;
-  @include qg-responsive-spacing(padding-left, $large: full);
-  @include qg-responsive-spacing(padding-right, $large: full);
-
-  header {
-    @include make-col-ready();
-    @include make-col(12);
-    @include media-breakpoint-up(sm) {
-      @include make-col(4);
+  background-color: #8C0405 !important;
+  border:none !important;
+  padding: 0.4em !important;
+  .container-fluid{
+    display: flex !important;
+    header, section{
+      display: flex;
+      align-items: center;
     }
-    @include media-breakpoint-up(lg) {
-      @include make-col(4);
+    a {
+      color:#fff;
+      text-decoration: underline;
     }
-
-    position: relative;
-    padding-left: 0 !important;
-
-    border-bottom: 1px solid #fff;
-    border-collapse: collapse;
-
-    h2 {
-      margin-top: 0;
+    header {
+      *{
+        margin-top:0;
+      }
+      h2{
+        margin: 0 0.6em;
+        font-size: 1em;
+      }
+      &:before {
+        position: inherit !important;
+        font-size: 1.8rem !important;
+        content: '\f071';
+        display: inline-block;
+        font-family: fontAwesome;
+      }
     }
-
-    @media (min-width: $screen-sm-min) {
-      border-right: 1px solid #fff;
-      border-bottom: 0;
-    }
-
-    & > * {
-      padding-left: 60px;
-    }
-
-    &:before {
-      content: '\f071';
-      position: absolute;
-      display: inline-block;
-      float: left;
-      top: 0;
-      left: 0;
-      @include rem(font-size, 7px);
-      @include rem(font-size, 35px);
-      font-family: fontAwesome;
-      text-align: center;
-    }
-  }
-  section {
-    @include make-col-ready();
-    @include make-col-ready();
-    @include make-col(12);
-    @include media-breakpoint-up(sm) {
-      @include make-col(8);
-    }
-    @include media-breakpoint-up(lg) {
-      @include make-col(8);
-    }
-    padding-top: $qg-spacing / 4;
-    padding-right: 0 !important;
-
-    @media (min-width: $screen-sm-min) {
-      padding-top: 0;
-      padding-left: $qg-spacing / 2;
-    }
-  }
-}
-
-#qg-site-header .alert-danger {
-  margin-bottom: 1em;
-}
-.alert-danger {
-  background-color: #b90824;
-}
-
-
-#qg-primary-content .qg-global-alert {
-  header {
-    @include make-col(12);
-    @include media-breakpoint-up(sm) {
-      @include make-col(5);
-    }
-  }
-  section {
-    @include make-col(12);
-    @include media-breakpoint-up(sm) {
-      @include make-col(7);
+    section {
+      *{
+        margin-bottom:0;
+        margin-top:0;
+      }
     }
   }
 }
