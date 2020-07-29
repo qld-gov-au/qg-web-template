@@ -1,12 +1,16 @@
 //custom theme for radio buttons and checkbox
 .rc-theme {
+  .rc-theme__focus{
+    outline: 2px solid $qg-blue;
+    outline-offset: 1px;
+  }
   &.choices {
     display: flex;
     flex-wrap: wrap;
     margin-top:1em;
   }
   .rc-theme__active{
-    background-color: #007eb1 !important;
+    background-color: $qg-blue !important;
     [type="checkbox"]:checked + label .rc-theme__icon, [type="radio"]:checked + label .rc-theme__icon {
       fill: #fff;
     }
@@ -23,7 +27,7 @@
       margin-top: 15px;
     }
     .rc-theme__icon {
-      fill: #000000;
+      fill: $black;
     }
     .rc-theme__label-desc{
       display: inline-block;
@@ -44,7 +48,7 @@
       color: #000;
       background-color: #fff;
       border-radius: 3px;
-      border: 1px solid #808080 !important;
+      border: 1px solid $qg-pagination-border !important;
     }
     label {
       color: #000 !important;
@@ -54,7 +58,8 @@
 
   [type="radio"],
   [type="checkbox"] {
-   display:none;
+    position: absolute;
+    left: -9999px;
    &+label {
      position: relative;
      cursor: pointer;
@@ -124,6 +129,3 @@
     transform: scale(1);
   }
 }
-
-
-
