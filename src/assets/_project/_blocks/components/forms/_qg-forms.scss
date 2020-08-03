@@ -1,3 +1,10 @@
+// if the font size is less than 16px on mobile then the IOS will zoom the page and this makes the page unstable
+ @include media-breakpoint-down(md) {
+    input, select, textarea {
+      font-size: 1rem !important;
+    }
+  }
+
 //custom theme for radio buttons and checkbox
 .rc-theme {
   .rc-theme__focus{
