@@ -322,7 +322,7 @@ $(function () {
   // Get suggested services
   qgSiteSearch.fn.getServices = function (inputValue) {
     var searchForm = $('#qg-global-search-form');
-    var resultsURL = searchForm.attr('data-results');
+    var resultsURL = searchForm.attr('data-results-url');
 
     $.ajax({
       cache: true,
