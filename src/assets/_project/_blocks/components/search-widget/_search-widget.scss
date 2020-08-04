@@ -1,10 +1,13 @@
-.qg-search-widget{
-  &.qg-search-widget__light-theme{
+.qg-search-widget, #qg-search-widget{
+  &.theme__light-bg{
     background: none;
     .qg-fl{
       .qg-app-geocoding{
         width: inherit;
         right: 10px;
+        svg {
+          left: -52px;
+        }
       }
     }
   }
@@ -41,12 +44,19 @@
       width: 47px;
       position: relative;
       bottom:0 !important;
+      display: flex;
+      align-content: center;
       svg{
         display: block;
         margin: auto;
         position: absolute;
-        top: 5px;
-        right: 7px;
+        width: 2.2em;
+        height: 2.2em;
+        text-align: center;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
       }
     }
   }
