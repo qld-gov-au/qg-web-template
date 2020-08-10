@@ -71,8 +71,9 @@ const gitFunctions = {
   tag: (folder, version) => {
     return (cb) => {
       process.chdir(path.resolve(folder));
-      return git.tag(version, version, function (err) {
+      git.tag(version, version, function (err) {
         if (err) throw err;
+        cb();
       });
     };
   },

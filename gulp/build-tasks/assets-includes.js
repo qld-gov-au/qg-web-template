@@ -8,7 +8,7 @@ module.exports = function (gulp, plugins, config, dest, local = false, relpath =
       //.concat(config.build.excludes); //remove concat excludes, remove from gulp-config.json also
     let cdnLink = {
       regex: new RegExp(`="/assets/${config.versionName}`, 'g'),
-      replacement: `="https://test-static.qgov.net.au/assets/${config.versionName}`,
+      replacement: `="https://static.qgov.net.au/assets/${config.versionName}`,
     };
     let folderNameChange = {
       regex: new RegExp(`="/assets/includes-local`, 'g'),

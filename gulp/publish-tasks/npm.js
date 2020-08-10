@@ -54,6 +54,7 @@ module.exports = (cb) => {
                 throw Error(err);
               }
               console.log('Publish successfull: ' + JSON.stringify(res));
+              cb();
               return true;
             });
           });
