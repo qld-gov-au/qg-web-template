@@ -11,8 +11,17 @@
     color: #FFFFFF;
     margin-bottom: 2rem;
     display: flex;
+    &.light__theme{
+      .content{
+        background: none;
+        .details *:not(.btn) {
+          color: #000;
+        }
+      }
+    }
     .content{
       width: 100%;
+      border: solid 1px #d3d3d3;
       background: #444444;
       position: relative;
       overflow: hidden;
