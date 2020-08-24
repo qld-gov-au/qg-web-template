@@ -1,11 +1,3 @@
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 
 <html lang="en">
@@ -27,67 +19,7 @@
   <link rel="stylesheet" href="https://www.qld.gov.au/__data/assets/css_file/0028/89920/jquery.fancybox.min.css">
 
 
-  <link href="https://static.qgov.net.au/assets/v4/4.0.1/css/qg-main.css" rel="stylesheet" type="text/css" media="all">
-
-
-
-  <link href="https://www.qld.gov.au/_qgdesigns/css/qg-main.css?v=0.2.58" rel="stylesheet">
-
-
-
-
-  <link href="https://www.qld.gov.au/__data/assets/css_file_folder/0015/110823/qg-components.css?v=0.1.10" rel="stylesheet">
-
-
-  <!-- Frontend Metadata -->
-  <link rel="shortcut icon" href="https://www.qld.gov.au/__data/assets/file/0018/297/favicon.ico">
-
-
-  <meta name="DCTERMS.title" content="Queensland Border Declaration Pass (Essential Activity) | Queensland Border Declaration Pass">
-
-  <meta name="DCTERMS.publisher" scheme="AGLSTERMS.AglsAgent" content="corporateName=The State of Queensland; jurisdiction=Queensland" />
-  <meta name="DCTERMS.creator" content="c=AU; o=The State of Queensland;">
-  <meta name="DCTERMS.created" content="2020-07-11">
-  <meta name="DCTERMS.modified" content="2020-08-21">
-  <meta name="DCTERMS.description" content="Apply for Border Pass for Queensland resident or travelling to take up permanent Queensland residency or border resident commuting or accessing essential goods and services">
-  <meta name="DCTERMS.identifier" scheme="DCTERMS.URI" content="https://www.qld.gov.au/border-pass/essential-activity">
-  <meta name="DCTERMS.jurisdiction" scheme="AGLSTERMS.AglsJuri" content="Queensland">
-
-  <meta name="DCTERMS.type" scheme="DCTERMS.DCMIType" content="Text" />
-  <meta name="AGLSTERMS.documentType" scheme="AGLSTERMS.agls-document" content="guidelines" />
-
-
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>    <!-- page.footer-extra -->
-
-  <!-- END page.footer-extra -->
-  <!-- Global - Site Schema //-->
-
-  <!-- SEO (required) //-->
-  <meta name="description" content="Apply for Border Pass for Queensland resident or travelling to take up permanent Queensland residency or border resident commuting or accessing essential goods and services" />
-
-  <!-- SEO //-->
-  <meta name="keywords" content="" />
-  <meta name="DCTERMS.subject" content="" />
-  <meta name="DCTERMS.audience" content="all" scheme="AGLSTERMS.agls-audience" />
-  <meta name="DCTERMS.license" scheme="DCTERMS.URI" content="https://creativecommons.org/licenses/by/4.0/">
-
-  <!-- Open Graph //-->
-  <meta property="og:title" content="Queensland Border Declaration Pass (Essential Activity)" />
-  <meta name="twitter:title" content="Queensland Border Declaration Pass (Essential Activity)" />
-  <meta property="og:description" content="Apply for Border Pass for Queensland resident or travelling to take up permanent Queensland residency or border resident commuting or accessing essential goods and services" />
-  <meta name="twitter:description" content="Apply for Border Pass for Queensland resident or travelling to take up permanent Queensland residency or border resident commuting or accessing essential goods and services" />
-  <meta property="og:image" content="https://www.qld.gov.au/__data/assets/image/0012/110460/Opengraph-default-thumbnail.png">
-  <meta name="twitter:image:src" content="https://www.qld.gov.au/__data/assets/image/0012/110460/Opengraph-default-thumbnail.png" />
-  <meta property="og:url" content="https://www.qld.gov.au/border-pass/essential-activity" />
-  <meta property="og:type" content="article" />
-
-  <!-- Personalisation //-->
-  <meta name="page.tags" content="" />
-
-  <!-- News Schema //-->
-
-
-
+  <!--#include virtual="/assets/includes-local/head-assets.html"-->
 
 </head>
 
@@ -421,7 +353,7 @@
         </h2>
         <div><ul><li>National and state security officers, police or health or emergency services workers responding to an emergency in Queensland (eg a paramedic driving an ambulance across the border to transport a patient with life threatening injuries) and maritime crew entering Queensland in accordance with the protocol for maritime crew are&nbsp;not required to complete the Queensland Border Declaration Pass.</li><li>A separate declaration pass is required for each individual, including children, and all travellers in your party must be eligible to enter Queensland. If an individual seeking to enter Queensland is a child or a person with impaired capacity, a parent or guardian may complete this form on behalf of the person.</li><li>Once your Queensland Border Declaration Pass is approved it is valid for a 7-day period or until your circumstances change, whichever is shorter.&nbsp;&nbsp;If you need to enter Queensland after this period, you will need to apply for a new Queensland Border Declaration Pass.</li></ul></div>
       </div>
-        <form id="border-form" action="https://www.smartservice.qld.gov.au/services/submissions/email/qld/border-pass-specialist" method="post" class="form" data-recaptcha="true" novalidate="true">
+        <form id="border-form" action="https://www.test-smartservice.qld.gov.au/services/submissions/email/qld/border-pass-specialist" method="post" class="form" data-recaptcha="true" novalidate="true">
           <ol class="questions">
             <li>
               <fieldset>
@@ -451,7 +383,7 @@
                   <!-- Yes to Covid - Not permitted - NOTE 1 -->
                   <li>
                     <small class="hint relevance visuallyhidden">(If you chose 'Yes, confirmed case of COVID-19' above)</small>
-                    <div class="status warn" role="alert" style="color:black !important;">
+                    <div class="alert alert-warning" role="alert" style="color:black !important;">
                       <h2>You are not permitted to enter Queensland.</h2>
                       <p style="font-weight:normal !important;">You are not permitted to enter Queensland unless you have been granted an exemption from the <a href="https://www.qld.gov.au/health/conditions/health-alerts/coronavirus-covid-19/current-status/public-health-directions/cho-exemption-request" target="_blank" title="Opens in new window">Chief Health Officer</a>.</p>
                     </div>
@@ -482,7 +414,7 @@
                       <!-- No to hotspot - Note 2 - GP -->
                       <li>
                         <small class="hint relevance visuallyhidden">(If you chose 'No, have not been hotspot' above)</small>
-                        <div class="status warn" role="alert" style="color:black !important;">
+                        <div class="alert alert-warning" role="alert" style="color:black !important;">
                           <h2>Notice:</h2>
                           <p>You are permitted to enter Queensland and not required to quarantine upon arrival to Queensland. You need to complete and submit the General <a href="https://www.qld.gov.au/border-pass/general" target="_blank">Queensland Border Declaration Pass</a>.</p>
                         </div>
@@ -518,7 +450,7 @@
                           <!-- Not essential activity - Note 3 - Not permitted -->
                           <li>
                             <small class="hint relevance visuallyhidden">(If you chose 'Not performing an essential activity' above)</small>
-                            <div class="status warn" role="alert" style="color:black !important;">
+                            <div class="alert alert-warning" role="alert" style="color:black !important;">
                               <h2>You are not permitted to enter Queensland</h2>
                               <p style="font-weight:normal !important;">If you are a Queensland Resident, you need to complete and submit the General <a href="https://www.qld.gov.au/border-pass/general" target="_blank">Queensland Border Declaration Pass</a>.  You need to describe your circumstances as “Queensland is your
                                 usual place of residence” and you will be required to Quarantine upon arrival to Queensland at your own
@@ -531,7 +463,7 @@
                           <!-- Yes to F&L - Note 5 - Redirect to FPass -->
                           <li>
                             <small class="hint relevance visuallyhidden">(If you chose 'Performing a Freight and Logistics essential activity' above)</small>
-                            <div class="status warn" role="alert" style="color:black !important;">
+                            <div class="alert alert-warning" role="alert" style="color:black !important;">
                               <h2>Notice:</h2>
                               <p style="font-weight:normal !important;">You need to complete the <a href="https://www.qld.gov.au/border-pass/freight-and-logistics">Freight and Logistics Border Declaration Pass</a>.</p>
                             </div>
@@ -616,7 +548,7 @@
                                   <!-- Left Qld for non work related - Not permitted - Note3 -->
                                   <li>
                                     <small class="hint relevance visuallyhidden">(If you chose 'Non work-related purposes, for example personal or recreational purposes' above)</small>
-                                    <div class="status warn" role="alert" style="color:black !important;">
+                                    <div class="alert alert-warning" role="alert" style="color:black !important;">
                                       <h2>You are not permitted to enter Queensland</h2>
                                       <p style="font-weight:normal !important;">If you are a Queensland Resident, you need to complete and submit the General <a href="https://www.qld.gov.au/border-pass/general" target="_blank">Queensland Border Declaration Pass</a>.  You need to describe your circumstances as “Queensland is your
                                         usual place of residence” and you will be required to Quarantine upon arrival to Queensland at your own
@@ -667,7 +599,7 @@
                                   <!-- If chose 'Specialist worker' show alert -->
                                   <li>
                                     <small class="hint relevance visuallyhidden">(If you chose 'Specialist Worker' above)</small>
-                                    <div class="status warn" role="alert" style="color:black !important;">
+                                    <div class="alert alert-warning" role="alert" style="color:black !important;">
                                       <h2>Important notice</h2>
                                       <p style="font-weight:normal !important;">A person’s status as a specialist worker must be approved by the Chief Health Officer. Exemptions are considered on a case by case basis, to apply for a specialist worker exemption complete the application specific to your industry:</p>
                                       <ul>
@@ -716,7 +648,7 @@
                                     <!-- None Defence specific activity - Not permitted - Note 3 -->
                                   <li>
                                     <small class="hint relevance visuallyhidden">(If you chose 'None of the above (defence)' above)</small>
-                                    <div class="status warn" role="alert" style="color:black !important;">
+                                    <div class="alert alert-warning" role="alert" style="color:black !important;">
                                       <h2>You are not permitted to enter Queensland</h2>
                                       <p style="font-weight:normal !important;">If you are a Queensland Resident, you need to complete and submit the General <a href="https://www.qld.gov.au/border-pass/general" target="_blank">Queensland Border Declaration Pass</a>.  You need to describe your circumstances as “Queensland is your
                                         usual place of residence” and you will be required to Quarantine upon arrival to Queensland at your own
@@ -751,7 +683,7 @@
                                       <!-- No via air - Not permitted - Note 1-->
                                       <li>
                                         <small class="hint relevance visuallyhidden">(If you chose 'No, via air' above)</small>
-                                        <div class="status warn" role="alert" style="color:black !important;">
+                                        <div class="alert alert-warning" role="alert" style="color:black !important;">
                                           <h2>You are not permitted to enter Queensland.</h2>
                                           <p style="font-weight:normal !important;">Read more on <a href="https://www.covid19.qld.gov.au/government-actions/border-closing" title="links to COVID-19 border restrictions" target="_blank">COVID-19 border restrictions.</a></p>
                                         </div>
@@ -781,7 +713,7 @@
                                           <!-- Yes, through Tullamarine - Not permitted - Note 1 -->
                                           <li>
                                             <small class="hint relevance visuallyhidden">(If you chose 'Yes, via Tullamarine' above)</small>
-                                            <div class="status warn" role="alert" style="color:black !important;">
+                                            <div class="alert alert-warning" role="alert" style="color:black !important;">
                                               <h2>Important:</h2>
                                               <p style="font-weight:normal !important;">You are required to quarantine upon entry to Queensland at government nominated accommodation at your own expense.</p>
                                             </div>
@@ -909,7 +841,7 @@
                                   <!-- None Health specific activity - Not permitted - Note 3 -->
                                   <li>
                                     <small class="hint relevance visuallyhidden">(If you chose 'None of the above (health)' above)</small>
-                                    <div class="status warn" role="alert" style="color:black !important;">
+                                    <div class="alert alert-warning" role="alert" style="color:black !important;">
                                       <h2>You are not permitted to enter Queensland</h2>
                                       <p style="font-weight:normal !important;">If you are a Queensland Resident, you need to complete and submit the General <a href="https://www.qld.gov.au/border-pass/general" target="_blank">Queensland Border Declaration Pass</a>.  You need to describe your circumstances as “Queensland is your
                                         usual place of residence” and you will be required to Quarantine upon arrival to Queensland at your own
@@ -1078,7 +1010,7 @@
 
                               <!-- Table 2 a -->
                               <li id="table2a" hidden="hidden" aria-hidden="true">
-                                <div class="status warn" role="alert" style="color:black !important;">
+                                <div class="alert alert-warning" role="alert" style="color:black !important;">
                                   <h2>Important:</h2>
                                   <p>You are required to Quarantine upon arrival for 14 days at a military base or military property.</p>
                                 </div>
@@ -1086,7 +1018,7 @@
 
                               <!-- Table 2 b -->
                               <li id="table2b" hidden="hidden" aria-hidden="true">
-                                <div class="status warn" role="alert" style="color:black !important;">
+                                <div class="alert alert-warning" role="alert" style="color:black !important;">
                                   <h2>Important:</h2>
                                   <p>If you have been on COVID-19 duties in the COVID-19 hotspot you must quarantine at government nominated accommodation.</p>
                                 </div>
@@ -1094,7 +1026,7 @@
 
                               <!-- Table 2 c -->
                               <li id="table2c" hidden="hidden" aria-hidden="true">
-                                <div class="status warn" role="alert" style="color:black !important;">
+                                <div class="alert alert-warning" role="alert" style="color:black !important;">
                                   <h2>Important:</h2>
                                   <p>You are required to quarantine upon entry to Queensland at government nominated accommodation at your own expense.</p>
                                 </div>
@@ -1102,7 +1034,7 @@
 
                               <!-- Table 2 d -->
                               <li id="table2d" hidden="hidden" aria-hidden="true">
-                                <div class="status warn" role="alert" style="color:black !important;">
+                                <div class="alert alert-warning" role="alert" style="color:black !important;">
                                   <h2>Important:</h2>
                                   <p>You are required to quarantine upon entry to Queensland either at government nominated accommodation or your home residence.</p>
                                 </div>
@@ -1110,7 +1042,7 @@
 
                               <!-- Table 2 e -->
                               <li id="table2e" hidden="hidden" aria-hidden="true">
-                                <div class="status warn" role="alert" style="color:black !important;">
+                                <div class="alert alert-warning" role="alert" style="color:black !important;">
                                   <h2>Important:</h2>
                                   <p>You are permitted to enter Queensland and required to quarantine at Government nominated accommodation unless you have been granted a class <a target="_blank" href="https://www.qld.gov.au/health/conditions/health-alerts/coronavirus-covid-19/current-status/public-health-directions/cho-exemption-request">exemption from the Chief Health Officer</a>.</p>
                                 </div>
@@ -1118,7 +1050,7 @@
 
                               <!-- Table 2 f -->
                               <li id="table2f" hidden="hidden" aria-hidden="true">
-                                <div class="status warn" role="alert" style="color:black !important;">
+                                <div class="alert alert-warning" role="alert" style="color:black !important;">
                                   <h2>Important:</h2>
                                   <p>Maritime crew must enter Queensland in accordance with the <a target="_blank" href="https://www.health.qld.gov.au/system-governance/legislation/cho-public-health-directions-under-expanded-public-health-act-powers/border-restrictions/protocol-for-maritime-crew">protocol approved by the Chief Health Officer</a></p>
                                 </div>
@@ -1153,7 +1085,7 @@
 
                               <!-- Note 4 -->
                               <li id="note4" hidden="hidden" aria-hidden="true">
-                                <div class="status warn" role="alert" style="color:black !important;">
+                                <div class="alert alert-warning" role="alert" style="color:black !important;">
                                   <h2>Important:</h2>
                                   <p>You are required to quarantine upon arrival to Queensland at your own expense and to comply with the quarantine requirements.</p>
                                 </div>
@@ -1995,34 +1927,7 @@
   </div>
 </footer>
 
-
-
-<script src="https://www.qld.gov.au/__data/assets/js_file_folder/0013/337/all-ext-min.js?v=0.3.0"></script>
-
-
-<script src="https://www.qld.gov.au/__data/assets/js_file_folder/0004/130/qg-main.js?v=0.3.0"></script>
-
-
-
-
-<script src="https://test-static.qgov.net.au/assets/v4/latest/lib/all-ext-min.js"></script>
-
-<!-- Require main javascript -->
-<!--<script src="/assets/v3/js/qg-env.js"></script>-->
-<script src="https://test-static.qgov.net.au/assets/v4/latest/js/qg-main.js"></script>
-
-
-
-<script type="text/javascript" language="javascript" charset="utf-8" src="https://osr.inq.com/chatskins/launch/inqChatLaunch10005896.js"></script>
-
-
-<script type="text/javascript" language="javascript" charset="utf-8" src="https://www.qld.gov.au/__data/assets/js_file/0027/86634/cleanup.js"></script>
-
-
-<!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvR5MCDqi0HtcjkehKqbKhyoCxt4Khqac"></script>-->
-
-
-
+<!--#include virtual="/assets/includes-local/footer/footer-scripts.html"-->
 
 <!-- endnoindex -->
 
