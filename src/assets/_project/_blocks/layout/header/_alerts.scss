@@ -44,3 +44,12 @@
     }
   }
 }
+
+@media screen and (max-width: 767px) {
+  .qg-global-alert .qg-site-width {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    //font-size: .9rem;
+  }
+}
