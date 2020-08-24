@@ -73,7 +73,6 @@
       if (this.validity.valid) {
         // is it part of a group that contain other invalid controls?
         if ($this.formValidation('question').find('.alert').filter(alertElement).length > 0) {
-          console.log("one");
           alertElement.remove();
         } else {
           // update message from first invalid field in group
@@ -81,7 +80,6 @@
           if (invalidContainers.length > 0) {
             alertElement.text(invalidContainers.formValidation('getValidationMessage'));
           } else {
-            console.log("two");
             // all fields valid
             alertElement.remove();
           }
