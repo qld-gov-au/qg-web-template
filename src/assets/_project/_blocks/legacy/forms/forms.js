@@ -4,9 +4,9 @@
 (function ($) {
   'use strict';
 
-
+  var validationErrorMessage = 'Please check your answers';
   var SUBMIT_TOLERANCE = 10000,
-    DEFAULT_STATUS_HTML = '<div class="alert alert-warning mt-4" id="qg-forms__validation-errors" role="alert"><div class="inner"><h2><i class="fa fa-exclamation-triangle"></i>Please check your answers</h2><ol></ol></div></div>',
+    DEFAULT_STATUS_HTML = `<div class="alert alert-warning mt-4" id="qg-forms__validation-errors" role="alert"><div class="inner"><h2><i class="fa fa-exclamation-triangle"></i>${validationErrorMessage}</h2><ol></ol></div></div>`,
     // fields that validate
     candidateForValidation = 'input, select, textarea',
 
@@ -73,6 +73,7 @@
       if (this.validity.valid) {
         // is it part of a group that contain other invalid controls?
         if ($this.formValidation('question').find('.alert').filter(alertElement).length > 0) {
+          console.log("one");
           alertElement.remove();
         } else {
           // update message from first invalid field in group
@@ -80,6 +81,7 @@
           if (invalidContainers.length > 0) {
             alertElement.text(invalidContainers.formValidation('getValidationMessage'));
           } else {
+            console.log("two");
             // all fields valid
             alertElement.remove();
           }
@@ -92,7 +94,7 @@
         // remove .invalid class
           .removeClass('invalid')
           // remove old alerts (change handler should have already done this)
-          .find('.alert')
+          .find( $( `.alert:contains(${validationErrorMessage})` ) )
           .remove();
       } else {
         // does alert exist?
@@ -210,7 +212,7 @@
       // remove .invalid class
         .removeClass( 'invalid' )
         // remove old alerts (change handler should have already done this)
-        .find( '#qg-forms__validation-errors' )
+        .find( $( `.alert:contains(${validationErrorMessage})` ) )
         .remove()
       ;
 
@@ -225,7 +227,7 @@
         (function(form) {
           var summary = pluginData.call( form, 'summaryElement' );
           // hide any previous status blocks
-          form.prev( '#qg-forms__validation-errors' ).not( summary ).remove();
+          form.prev( `.alert:contains(${validationErrorMessage})` ).not( summary ).remove();
           // show the new summary
           form.before( summary.fadeIn() );
           // focus/scroll summary element
