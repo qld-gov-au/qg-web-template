@@ -4,7 +4,6 @@
   "subVersion": "4.0.1",
   "wt-version": "4.0.1",
   "description": "This template is designed to provide a template for all Franchise websites, and the underpinning technology for new Agency websites.",
-
   "main": "gulpfile.babel.js",
   "repository": {
     "type": "git",
