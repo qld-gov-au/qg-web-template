@@ -6,7 +6,7 @@
 
 
   var SUBMIT_TOLERANCE = 10000,
-    DEFAULT_STATUS_HTML = '<div class="alert alert-warning" role="alert"><div class="inner"><h2><i class="fa fa-exclamation-triangle"></i>Please check your answers</h2><ol></ol></div></div>',
+    DEFAULT_STATUS_HTML = '<div class="alert alert-warning mt-4" id="qg-forms__validation-errors" role="alert"><div class="inner"><h2><i class="fa fa-exclamation-triangle"></i>Please check your answers</h2><ol></ol></div></div>',
     // fields that validate
     candidateForValidation = 'input, select, textarea',
 
@@ -210,7 +210,7 @@
       // remove .invalid class
         .removeClass( 'invalid' )
         // remove old alerts (change handler should have already done this)
-        .find( '.alert' )
+        .find( '#qg-forms__validation-errors' )
         .remove()
       ;
 
@@ -225,7 +225,7 @@
         (function(form) {
           var summary = pluginData.call( form, 'summaryElement' );
           // hide any previous status blocks
-          form.prev( '.alert' ).not( summary ).remove();
+          form.prev( '#qg-forms__validation-errors' ).not( summary ).remove();
           // show the new summary
           form.before( summary.fadeIn() );
           // focus/scroll summary element
