@@ -4,9 +4,9 @@
 (function ($) {
   'use strict';
 
-
+  var validationErrorMessage = 'Please check your answers';
   var SUBMIT_TOLERANCE = 10000,
-    DEFAULT_STATUS_HTML = '<div class="alert alert-warning" role="alert"><div class="inner"><h2><i class="fa fa-exclamation-triangle"></i>Please check your answers</h2><ol></ol></div></div>',
+    DEFAULT_STATUS_HTML = `<div class="alert alert-warning mt-4" id="qg-forms__validation-errors" role="alert"><div class="inner"><h2><i class="fa fa-exclamation-triangle"></i>${validationErrorMessage}</h2><ol></ol></div></div>`,
     // fields that validate
     candidateForValidation = 'input, select, textarea',
 
@@ -89,10 +89,10 @@
         $this.parentsUntil('form', '.invalid').filter(function () {
           return $(this).find(candidateForValidation).filter(invalidFilter).length === 0;
         })
-        // remove .invalid class
+          // remove .invalid class
           .removeClass('invalid')
           // remove old alerts (change handler should have already done this)
-          .find('.alert')
+          .find( $( `.alert:contains(${validationErrorMessage})` ) )
           .remove();
       } else {
         // does alert exist?
@@ -207,10 +207,10 @@
       form.find( '.invalid' ).filter(function() {
         return $( this ).find( candidateForValidation ).filter( invalidFilter ).length === 0;
       })
-      // remove .invalid class
+        // remove .invalid class
         .removeClass( 'invalid' )
         // remove old alerts (change handler should have already done this)
-        .find( '.alert' )
+        .find( $( `.alert:contains(${validationErrorMessage})` ) )
         .remove()
       ;
 
@@ -225,7 +225,7 @@
         (function(form) {
           var summary = pluginData.call( form, 'summaryElement' );
           // hide any previous status blocks
-          form.prev( '.alert' ).not( summary ).remove();
+          form.prev( `.alert:contains(${validationErrorMessage})` ).not( summary ).remove();
           // show the new summary
           form.before( summary.fadeIn() );
           // focus/scroll summary element
@@ -241,7 +241,7 @@
           // update inline alerts
           changeValidityCheck.call( this );
         })
-        // set .invalid on ancestor LI elements
+          // set .invalid on ancestor LI elements
           .parentsUntil( 'form', '.questions > li' )
           // but not sections
           .not( '.section, .compact' )
@@ -362,7 +362,7 @@
       validate : function() {
         return this.each(function() {
           $( this ).closest( 'form' )
-          // turn off native validation
+            // turn off native validation
             .attr( 'novalidate', true )
             // unbind and rebind handlers
             .off( 'submit', submitDoneHandler )
@@ -919,17 +919,17 @@ if ( jQuery !== 'undefined' ) {
 
       countable.on('keyup blur paste', function(e) {
         switch (e.type) {
-          case 'keyup':
-            // Skip navigational key presses
-            if ($.inArray(e.which, navKeys) < 0) { countCheck(); }
-            break;
-          case 'paste':
-            // Wait a few miliseconds if a paste event
-            setTimeout(countCheck, (e.type === 'paste' ? 5 : 0));
-            break;
-          default:
-            countCheck();
-            break;
+        case 'keyup':
+          // Skip navigational key presses
+          if ($.inArray(e.which, navKeys) < 0) { countCheck(); }
+          break;
+        case 'paste':
+          // Wait a few miliseconds if a paste event
+          setTimeout(countCheck, (e.type === 'paste' ? 5 : 0));
+          break;
+        default:
+          countCheck();
+          break;
         }
       });
 
@@ -1064,7 +1064,7 @@ if ( jQuery !== 'undefined' ) {
         show: function() {
           // enable elements before they are shown
           this.add( this.find( elementsToDisable ))
-          // but not any controls that will remain irrelevant
+            // but not any controls that will remain irrelevant
             .not( this.find( '[hidden]' ).find( elementsToDisable ))
             .each(function() {
               this.removeAttribute( 'disabled' );
@@ -1309,7 +1309,7 @@ if ( jQuery !== 'undefined' ) {
       // window.console.info( 'file size validation:', total, '<', maxFileSize, total < maxFileSize );
 
       $( ':file', this.form )
-      // update validity for :file inputs with values
+        // update validity for :file inputs with values
         .filter(function() {
           return !!this.value;
         })
