@@ -29,6 +29,11 @@
       img {
         width: 100%;
         height: auto;
+        //outline:1px solid red;
+        & + .details a.qg-btn{
+          margin-bottom: 0.5em;
+          margin-top: 0.5em !important;
+        }
       }
       .qg-card__cta{
         position: absolute;
@@ -41,17 +46,31 @@
       }
       .details{
         padding: 1em;
-        //margin-bottom: 4em;
+        h2{
+          //line-height: 1em;
+        }
         > :first-child {
           padding-top: 0;
           margin-top: 0;
         }
         a {
-          color: #fff;
+          &.btn-link{
+            padding-left: 0;
+            text-decoration: underline !important;
+            &:hover, &:active, &:focus, &:visited{
+              color: #13578b !important;
+            }
+          }
+          &.btn {
+            margin-top: 1em;
+            padding-top: 0.5em;
+            padding-bottom: 0.5em;
+          }
+          //color: #fff;
           text-decoration: underline;
            &:hover, &:active, &:focus, &:visited{
-            color: #fff !important;
-            text-decoration: none !important;
+            //color: #fff !important;
+            //text-decoration: none !important;
           }
         }
         ul {
@@ -78,11 +97,11 @@
         }
       }
       .btn {
-        background: #017eb1;
-        display: inline-block;
+        //background: #017eb1;
+        //display: inline-block;
         width: 100%;
-        color: #FFFFFF;
-        border: none;
+        //color: #FFFFFF;
+        //border: none;
       }
       @include breakpoint(sm) {
         .qg-pin-bottom {
@@ -106,10 +125,10 @@
         display: block;
       }
       a.btn, a.btn:visited, a.btn:focus{
-        color: inherit !important;
+        //color: inherit !important;
         text-decoration: none !important;
         &:hover {
-          background: rgba(0,126,177,.6) !important;
+          //background: rgba(0,126,177,.6) !important;
         }
       }
     }
