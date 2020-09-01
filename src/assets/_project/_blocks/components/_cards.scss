@@ -11,18 +11,29 @@
     color: #FFFFFF;
     margin-bottom: 2rem;
     display: flex;
+    .btn-primary{
+      @extend .btn-secondary;
+      width: 100%;
+    }
     .qg-card__footer{
-      padding: 1.4em;
-      border-top: 1px solid #d3d3d3;
+      padding: 1em;
+      border-top: 1px solid rgba(211, 211, 211, 0.7);
       //this condition is to support legacy Aggregation page HTML
-      .btn-primary{
-        @extend .btn-secondary
-      }
       .btn {
         width: 100%;
       }
+      .btn-link{
+        padding-left: 0;
+        text-align: left;
+        color: #fff !important;
+        text-decoration: underline !important;
+        &:hover, &:active, &:focus, &:visited{
+          color: #fff !important;
+          text-decoration: none !important;
+        }
+      }
       a.btn, a.btn:visited, a.btn:focus{
-        text-decoration: none !important;
+        //text-decoration: none !important;
       }
     }
     &.light__theme{
@@ -38,6 +49,7 @@
           }
         }
         .qg-card__footer{
+          border-top: 1px solid rgba(211, 211, 211, 1);
           .btn-link{
             padding-left: 0;
             text-align: left;
