@@ -8,7 +8,7 @@ module.exports = {
   version: {
     major: 4,
     minor: 0,
-    patch: 2,
+    patch: 3,
   },
   phase: 'Alpha',
   basepath: {
