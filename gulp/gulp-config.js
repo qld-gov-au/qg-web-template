@@ -4,10 +4,10 @@ const path        = require('path');
 const pjson       = require('../package.json');
 
 module.exports = {
-  versionName: 'v3.1',
+  versionName: 'v4',
   version: {
-    major: 3,
-    minor: 1,
+    major: 4,
+    minor: 0,
     patch: 0,
   },
   phase: 'Alpha',
@@ -62,7 +62,7 @@ module.exports = {
     ],
     transferToBuild: [
       './node_modules/nodep-date-input-polyfill/nodep-date-input-polyfill.dist.js',
-      './node_modules/stickyfilljs/dist/stickyfill.min.js',
+      './node_modules/stickyfill/index.js',
       './node_modules/jquery-ui-bundle/jquery-ui.min.css',
       './node_modules/jquery-ui-bundle/jquery-ui.min.js',
       './node_modules/jquery-ui-bundle/images/**',
@@ -77,7 +77,7 @@ module.exports = {
     },
     // Linting source and exclusions
     lint: [
-      'gulpfile.js',
+      'gulpfile.babel.js',
       'src/**/*.js',
       'gulp/**/*.js',
       'tests/**/*.js',

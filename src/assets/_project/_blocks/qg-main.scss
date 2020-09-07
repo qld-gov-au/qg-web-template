@@ -7,6 +7,7 @@
 // Variables
 // -------------------------
 @import "scss-general/qg-variables";
+@import "scss-general/qg-global-variables";
 @import "scss-general/qg-font-variables";
 //@import "scss-general/bootstrap-variables";
 
@@ -26,6 +27,7 @@
 @import "scss-general/mixins/font-size";
 @import "scss-general/mixins/qg-responsive-spacing";
 @import "scss-general/mixins/bootstrap-breakpoints";
+@import "scss-general/mixins/qg-style-helpers";
 
 // QG typography
 @import "layout/typography";
@@ -53,6 +55,8 @@
 @import "components/search-widget/search-widget";
 @import "components/_correct-incorrect"; // Adds correct / incorrect styling
 @import "components/_misc";
+@import "components/fancybox";
+
 // QG layout components
 @import "layout/layout-scaffolding"; // Primary layout structure
 
@@ -60,25 +64,31 @@
 
 @import "layout/header/access";
 @import "layout/print";
+@import "layout/footer/site-footer";
+@import "layout/footer/legals";
+@import "layout/footer/service-centre";
+@import "layout/footer/footer-feedback";
+@import "layout/header/header-location";
+@import "layout/header/portal-links";
+@import "layout/header/mobile-menu-button";
 @import "layout/header/alerts";
 @import "layout/header/coat-of-arms";
 @import "layout/header/header-structure";
 @import "layout/header/site-name";
-@import "layout/header/site-nav";
 @import "layout/header/site-search";
+@import "layout/header/site-nav";
 @import "layout/header/site-utilities";
 @import "layout/banners/qg-banner-blurb";
 
 @import "layout/breadcrumbs/breadcrumbs";
 @import "layout/content/content";
+@import "layout/content/location-setter";
 @import "layout/content/options";
 @import "layout/content/content-types";
 @import "layout/section-nav/section-nav";
 @import "layout/section-nav/guide-sub-nav";
 @import "layout/section-nav/mobile_step_nav";
 @import "layout/asides/asides";
-@import "layout/footer/site-map";
-@import "layout/footer/legals";
 
 //themes
 @import "layout/_pagemodels/aggregation";
@@ -92,3 +102,6 @@
 
 @import "legacy/forms/forms-reset";
 @import "legacy/forms/forms";
+
+// Colour pallet
+@import "scss-general/qg-global-theme";

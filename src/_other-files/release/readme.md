@@ -17,10 +17,10 @@ This template is for anyone in Queensland Government developing a Franchise (SWE
      - Assets in the template will be requested from static CDN - https://static.qgov.net.au/
      - Server side includes are converted to static html
  - **template-local-ssi** -
-       - Assets in the template will be requested from local - /assets/v3.1/latest/
+       - Assets in the template will be requested from local - /assets/v4/latest/
        - Contains server side includes
   - **template-local** -
-      - Assets in the template will be requested from local - /assets/v3.1/latest/
+      - Assets in the template will be requested from local - /assets/v4/latest/
       - Server side includes are converted to static html
 
 

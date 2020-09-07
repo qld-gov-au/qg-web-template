@@ -14,7 +14,8 @@ import './components/qg-components';
 import './layout/footer/footer-legals';
 import activeSideNav      from './layout/section-nav/section-nav';
 import stepNav      from './layout/section-nav/step-nav';
-import shareLinks         from './layout/content/share-links';
+import './layout/content/share-links';
+import './layout/breadcrumbs/breadcrumbs';
 import './layout/content/content';
 import './layout/content/content-types/figure-credits-toggle';
 import feedbackForm       from './layout/footer/feedback-form';
@@ -25,6 +26,5 @@ import feedbackForm       from './layout/footer/feedback-form';
   activeSideNav.highlightNavItem();
   stepNav.init();
   feedbackForm.init(franchiseTitle);
-  shareLinks.init();
 }());
 

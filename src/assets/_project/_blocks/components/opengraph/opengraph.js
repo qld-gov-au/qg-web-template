@@ -13,7 +13,7 @@
     ];
     const openGraph = {
         init: function () {
-            let graphImg = '/assets/v3.1/latest/images/coat-of-arms/coa-thumbnail.png';
+            let graphImg = '/assets/v4/latest/images/coat-of-arms/coa-thumbnail.png';
             let descriptionMeta = $('meta[name="DCTERMS.description"]').attr('content', '');
             $.each(fields, function (key, val) {
                 let itemObj = $(val.property);

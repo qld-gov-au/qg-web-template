@@ -1,14 +1,21 @@
 .qg-coat-of-arms {
-  padding-bottom: 16px*.8;
+  padding: 13px;
+  padding-top: 20px;
   overflow: hidden;
 
-  @include qg-responsive-spacing(padding-left, $large: full);
-
   img {
-    height: 40px;
+    height: 50px;
+    width: 289px;
+  }
 
-    @media (min-width: $screen-sm-min) {
-      height: 50px;
+  @include media-breakpoint-down(sm) {
+    padding: 0;
+    width: auto;
+  }
+
+  @include media-breakpoint-down(xs) {
+    img {
+      width: 153px;
     }
   }
 

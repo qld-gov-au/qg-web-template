@@ -27,19 +27,19 @@
     <meta name="AGLSTERMS.documentType" scheme="AGLSTERMS.agls-document" content="guidelines">
     <meta name="DCTERMS.audience" scheme="AGLSTERMS.agls-audience" content="">
     <meta name="DCTERMS.jurisdiction" scheme="AGLSTERMS.AglsJuri" content="Queensland">
-    
+
     <!-- Open graph -->
     <meta property="og:title" content="Queensland Government">
     <meta property="og:description" content="DESCRIPTION">
-    <meta property="og:image" content="/assets/v3.1/latest/images/coat-of-arms/coa-thumbnail.png">
+    <meta property="og:image" content="/assets/v4/latest/images/coat-of-arms/coa-thumbnail.png">
     <meta property="og:url" content="">
-    <meta property="og:type" content="article" /> 
+    <meta property="og:type" content="article" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Queensland Government" />
     <meta name="twitter:description" content="DESCRIPTION" />
-    <meta name="twitter:image" content="/assets/v3.1/latest/images/coat-of-arms/coa-thumbnail.png" />
+    <meta name="twitter:image" content="/assets/v4/latest/images/coat-of-arms/coa-thumbnail.png" />
 
     <!-- Open graph -->
     <meta property="og:title" content="Queensland Government">
@@ -75,24 +75,11 @@
     <!--#include virtual="/assets/includes-local/analytics.html"-->
     <!--#include virtual="/assets/includes-local/header/access.html"-->
 
+    <!--#include virtual="/assets/includes-local/header/header.html"-->
+    <!--#include virtual="/assets/includes-local/breadcrumbs/breadcrumb-global.html"-->
     <div class="container-fluid qg-site-width">
-
-        <header id="qg-site-header">
-            <!--#include virtual="/assets/includes-local/header/coat-of-arms.html"-->
-
-            <!--#include virtual="/assets/includes-local/header/site-utilities.html"-->
-
-            <!--#include virtual="/assets/includes-local/header/site-search.html"-->
-
-            <!--#include virtual="/assets/includes-local/header/global-alert.html"-->
-
-            <!--#include virtual="/assets/includes-local/header/site-nav.html"-->
-        </header>
-
         <div id="qg-content">
             <div id="qg-two-col-aside" class="row wide">
-
-                <!--#include virtual="/assets/includes-local/breadcrumbs/breadcrumb-demo.html"-->
 
                 <!--#include virtual="/assets/includes-local/content/alert.html"-->
 
@@ -161,6 +148,7 @@
 
 
                     </div>
+                    <!--#include virtual="/assets/includes-local/content/options.html"-->
                 </div>
 
 
@@ -168,25 +156,28 @@
                     <!--#include virtual="/assets/includes-local/asides/aside-contact-qgov.html"-->
                     <!--#include virtual="/assets/includes-local/asides/aside-feedback-qgov.html"-->
                     <div class="qg-aside" role="complementary">
-                      <h2>Report an issue</h2>
-                      <ul><li><strong>1300 130 372 (Option 3)</strong></li>
+                        <h2>Report an issue</h2>
+                        <ul><li><strong>1300 130 372 (Option 3)</strong></li>
                         <li>Email <a href="mailto:PollutionHotline@des.qld.gov.au">PollutionHotline@des.qld.gov.au</a>
                         </li>
-                      </ul>
+                        </ul>
 
                     </div>
                 </aside>
 
             </div>
-            <!--#include virtual="/assets/includes-local/content/options.html"-->
 
         </div>
-
-        <footer>
-            <!--#include virtual="/assets/includes-local/footer/footer-site-map.html"-->
-            <!--#include virtual="/assets/includes-local/footer/footer-legals.html"-->
-        </footer>
     </div>
+
+    <!--#include virtual="/assets/includes-local/footer/footer.html"-->
+
+    <script>
+      var qg = qg || {};
+      qg.swe = qg.swe || {};
+      // Used by the feedback form.
+      qg.swe.franchiseTitle = 'Franchise Title';
+    </script>
 
     <!--#include virtual="/assets/includes-local/footer/footer-scripts.html"-->
 

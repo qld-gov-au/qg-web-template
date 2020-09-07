@@ -1,3 +1,31 @@
+// unload event resets the feedback form to the initial state
+function reset () {
+  var checkedRadioBtns = document.querySelectorAll('#qg-page-feedback-form input[type="radio"]:checked');
+  var textFields = document.querySelector('#qg-page-feedback-form #comments');
+  if (textFields.value) {
+    textFields.value = '';
+  }
+  checkedRadioBtns.forEach(element => {
+    console.log(element);
+    if (element.checked) { element.checked = false; }
+  });
+}
+window.addEventListener('load', function (event) {
+  reset();
+}, false);
+
+$('.no-js').removeClass('no-js');
+
+$('.qg-footer-feedback__close').click(function () {
+  $('.qg-feedback-toggle').removeClass('d-none');
+});
+
+$('.qg-feedback-toggle').click(function () {
+  if ($('#qg-page-feedback-form').hasClass('d-none')) {
+    $(this).addClass('d-none');
+  }
+});
+
 /**
 * Adds page and user details to hidden inputs on the feedback form
 **/

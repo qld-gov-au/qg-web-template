@@ -1,14 +1,10 @@
-const puppeteer = require('puppeteer-core');
+const puppeteer = require('puppeteer');
 const ct = require('../config/constants');
-
 let browser;
 let page;
 
-
 beforeAll(async () => {
-  browser = await puppeteer.launch({
-    executablePath: ct.CHROME_PATH
-  });
+  browser = await puppeteer.launch({headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox']});
   page = await browser.newPage();
   await page.setViewport({ width: ct.BT_XL, height: ct.WH });
   await page.goto(`${ct.APP_URL}/docs/components.html`, { waitUntil: 'networkidle0' });
@@ -16,20 +12,17 @@ beforeAll(async () => {
 
 describe('SWE templates testing', () => {
   test('Autocomplete is working as expected', async () => {
-    await page.type('input[id=qg-search-query]', 'jobs', { delay: 20 });
-    await page.waitForSelector('.listbox li');
-    const list = (await page.$$('.listbox li')).length;
-    expect(list).toBeGreaterThan(0);
-  }, ct.TO);
-
-  test('Feedback form is working as expected', async () => {
-    const pf = '#page-feedback-useful';
-    await page.waitForSelector(pf);
-    expect(await page.evaluate('window.getComputedStyle(document.getElementById(\'qg-page-feedback\')).getPropertyValue("display")')).toBe('none');
-    (await page.$(pf)).click();
+    expect(await page.evaluate('window.getComputedStyle(document.querySelector(\'.qg-search-concierge-initial\')).getPropertyValue("visibility")')).toBe('hidden');
+    await page.click('input#qg-search-query');
     await page.waitFor(ct.WT);
-    expect(await page.evaluate('window.getComputedStyle(document.getElementById(\'qg-page-feedback\')).getPropertyValue("display")')).not.toBe('none');
+    expect(await page.evaluate('window.getComputedStyle(document.querySelector(\'.qg-search-concierge-initial\')).getPropertyValue("visibility")')).toBe('visible');
+    await page.type('#qg-search-query', 'jobs', { delay: 20 });
+    await page.waitFor(ct.WT);
+    const element = await page.$('.qg-search-concierge-content li button');
+    const text = await page.evaluate(element => element.textContent, element);
+    expect(text).toMatch(/jobs/);
   });
+
   afterAll(async () => {
     await browser.close();
   });

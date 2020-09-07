@@ -18,8 +18,8 @@
   <meta name="DCTERMS.publisher" scheme="AGLSTERMS.AglsAgent" content="corporateName=The State of Queensland; jurisdiction=Queensland">
   <meta name="DCTERMS.created" content="2010-11-04">
   <meta name="DCTERMS.modified" content="2011-03-05">
-  <meta name="DCTERMS.title" content="Components">
-  <meta name="DCTERMS.alternative" content="Who is a carer?">
+  <meta name="DCTERMS.title" content="Add your heading">
+  <meta name="DCTERMS.alternative" content="Add your heading">
   <meta name="DCTERMS.description" content="DESCRIPTION">
   <meta name="DCTERMS.subject" scheme="AGLSTERMS.APAIS" content="SUBJECT">
   <meta name="AGLSTERMS.function" scheme="AGLSTERMS.AGIFT" content="FUNCTION">
@@ -27,48 +27,56 @@
   <meta name="AGLSTERMS.documentType" scheme="AGLSTERMS.agls-document" content="guidelines">
   <meta name="DCTERMS.audience" scheme="AGLSTERMS.agls-audience" content="">
   <meta name="DCTERMS.jurisdiction" scheme="AGLSTERMS.AglsJuri" content="Queensland">
-  <meta name="DCTERMS.license" scheme="DCTERMS.URI" content="http://creativecommons.org/licenses/by/3.0/au/">
+
+  <!-- Open graph -->
+  <meta property="og:title" content="Queensland Government">
+  <meta property="og:description" content="DESCRIPTION">
+  <meta property="og:image" content="/assets/v4/latest/images/coat-of-arms/coa-thumbnail.png">
+  <meta property="og:url" content="">
+  <meta property="og:type" content="article" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Queensland Government" />
+  <meta name="twitter:description" content="DESCRIPTION" />
+  <meta name="twitter:image" content="/assets/v4/latest/images/coat-of-arms/coa-thumbnail.png" />
 
   <!--#include virtual="/assets/includes-local/head-assets.html"-->
-  <link href="./assets/css/prism.css" media="all" rel="stylesheet" type="text/css">
 
 </head>
 
-<body data-qg-accessibility="true"
-      data-spy="scroll" data-target="#page-nav">
+<body data-qg-accessibility="true">
 
 <!--#include virtual="/assets/includes-local/analytics.html"-->
 <!--#include virtual="/assets/includes-local/header/access.html"-->
 
+<!--#include virtual="/assets/includes-local/header/header.html"-->
+<div class="qg-global-breadcrumb qg-breadcrumb">
+  <div class="container-fluid qg-site-width">
+    <nav id="qg-breadcrumb" aria-label="breadcrumb" class="qg-breadcrumb-nav row">
+      <ol class="qg-breadcrumb-list">
+        <li class="qg-breadcrumb-list-item">
+          <a href="https://www.qld.gov.au/" class="qg-breadcrumb-list-item__link">
+            Home
+          </a>
+        </li>
+        <li class="qg-breadcrumb-list-item">
+          <a href="index.html" class="qg-breadcrumb-list-item__link">
+            Web Template Documentation
+          </a>
+        </li>
+        <li class="qg-breadcrumb-list-item">
+          <a href="#" class="qg-breadcrumb-list-item__link">
+            Forms
+          </a>
+        </li>
+      </ol>
+    </nav>
+  </div>
+</div>
 <div class="container-fluid qg-site-width">
-
-  <header id="qg-site-header">
-    <!--#include virtual="/assets/includes-local/header/coat-of-arms.html"-->
-
-    <!--#include virtual="/assets/includes-local/header/site-utilities.html"-->
-
-    <!--#include virtual="/assets/includes-local/header/site-search.html"-->
-
-    <!--#include virtual="/assets/includes-local/header/global-alert.html"-->
-
-    <!--#include virtual="/assets/includes-local/header/site-nav.html"-->
-  </header>
-
   <div id="qg-content">
     <div id="qg-three-col" class="row">
-
-      <!-- START Breadcrumbs -->
-      <nav id="qg-breadcrumb" role="navigation" aria-label="breadcrumb navigation" aria-labelledby="breadcrumb-heading" class="collapse">
-
-        <h2 id="breadcrumb-heading" class="qg-visually-hidden">You are here:</h2>
-
-        <ol class="list-inline">
-          <!--#include virtual="/assets/includes-local/breadcrumbs/breadcrumb-docs.html"-->
-          <li>Forms</li>
-        </ol>
-
-      </nav>
-      <!-- / END Breadcrumbs -->
 
       <div id="qg-primary-content" role="main">
 
@@ -1371,10 +1379,46 @@ $( '#email' ).closest( '.section' ).relevance( 'relevantWhen', { name: 'replyReq
                       </legend>
                       <ul class="choices compact rc-theme">
                         <li>
-                          <input type="radio" name="current-test" value="Yes" required="required" class="r1" id="current-test-yes"><label for="current-test-yes">Yes</label>
+                          <input type="radio" name="current-test" value="Yes" required="required" class="r1" id="current-test-yes-1">
+                          <label for="current-test-yes-1" class="rc-theme__label">
+                            <span class="rc-theme__label-desc">Lorem ipsum dolor sit amet.</span>
+                          </label>
                         </li>
                         <li>
-                          <input type="radio" name="current-test" value="No" required="required" class="r2" id="current-test-no"><label for="current-test-no">No</label>
+                          <input type="radio" name="current-test" value="No" required="required" class="r2" id="current-test-no-1">
+                          <label for="current-test-no-1" class="rc-theme__label">
+                            <span class="rc-theme__label-desc">Lorem ipsum dolor sit amet.</span>
+                          </label>
+                        </li>
+                      </ul>
+                    </fieldset>
+                  </li>
+
+                </ol>
+                <ol class="questions ">
+                  <li>
+                    <fieldset>
+                      <legend>
+                        <span class="label">This Radio button custom theme can be implemented by adding 'rc-theme' class.</span>
+                      </legend>
+                      <ul class="choices compact rc-theme">
+                        <li>
+                          <input type="radio" name="current-test-1" value="Yes" required="required" class="r1" id="current-test-yes">
+                          <label for="current-test-yes" class="rc-theme__with-image">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="58" height="58" viewBox="0 0 32 32">
+                              <path class="rc-theme__icon" d="M30.148 5.588c-2.934-3.42-7.288-5.588-12.148-5.588-8.837 0-16 7.163-16 16s7.163 16 16 16c4.86 0 9.213-2.167 12.148-5.588l-10.148-10.412 10.148-10.412zM22 3.769c1.232 0 2.231 0.999 2.231 2.231s-0.999 2.231-2.231 2.231-2.231-0.999-2.231-2.231c0-1.232 0.999-2.231 2.231-2.231z"></path>
+                            </svg>
+                            <span class="rc-theme__label-desc">Lorem ipsum dolor sit amet.</span>
+                          </label>
+                        </li>
+                        <li>
+                          <input type="radio" name="current-test-1" value="No" required="required" class="r2" id="current-test-no">
+                          <label for="current-test-no" class="rc-theme__with-image">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="58" height="58" viewBox="0 0 32 32">
+                              <path class="rc-theme__icon" d="M30.148 5.588c-2.934-3.42-7.288-5.588-12.148-5.588-8.837 0-16 7.163-16 16s7.163 16 16 16c4.86 0 9.213-2.167 12.148-5.588l-10.148-10.412 10.148-10.412zM22 3.769c1.232 0 2.231 0.999 2.231 2.231s-0.999 2.231-2.231 2.231-2.231-0.999-2.231-2.231c0-1.232 0.999-2.231 2.231-2.231z"></path>
+                            </svg>
+                            <span class="rc-theme__label-desc">Lorem ipsum dolor sit amet.</span>
+                          </label>
                         </li>
                       </ul>
                     </fieldset>
@@ -1389,23 +1433,41 @@ $( '#email' ).closest( '.section' ).relevance( 'relevantWhen', { name: 'replyReq
               </legend>
                 <ul class="choices rc-theme">
                   <li>
-                    <fieldset><legend> <span class="label" style="visibility:hidden;height:0;">Acknowledgement</span></legend>
-                      <input id="conditions-of-use1" value="true" name="conditions-of-use1" type="checkbox"><label for="conditions-of-use1">Lorem ipsum dolor sit amet.</label>
+                    <fieldset><legend> <span class="label d-none">Acknowledgement</span></legend>
+                      <input id="conditions-of-use1" class="regular-checkbox big-checkbox" value="true" name="conditions-of-use1" type="checkbox">
+                      <label for="conditions-of-use1" class="rc-theme__with-image">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="58" height="58" viewBox="0 0 32 32">
+                          <path class="rc-theme__icon" d="M30.148 5.588c-2.934-3.42-7.288-5.588-12.148-5.588-8.837 0-16 7.163-16 16s7.163 16 16 16c4.86 0 9.213-2.167 12.148-5.588l-10.148-10.412 10.148-10.412zM22 3.769c1.232 0 2.231 0.999 2.231 2.231s-0.999 2.231-2.231 2.231-2.231-0.999-2.231-2.231c0-1.232 0.999-2.231 2.231-2.231z"></path>
+                        </svg>
+                        <span class="rc-theme__label-desc">Lorem ipsum dolor sit amet.</span>
+                      </label>
+                    </fieldset></li>
+
+                  <li>
+                    <fieldset><legend> <span class="label d-none">Acknowledgement</span></legend>
+                      <input id="conditions-of-use2" class="regular-checkbox big-checkbox" value="true" name="conditions-of-use2" type="checkbox">
+                      <label for="conditions-of-use2" class="rc-theme__with-image">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="58" height="58" viewBox="0 0 32 32">
+                          <path class="rc-theme__icon" d="M30.148 5.588c-2.934-3.42-7.288-5.588-12.148-5.588-8.837 0-16 7.163-16 16s7.163 16 16 16c4.86 0 9.213-2.167 12.148-5.588l-10.148-10.412 10.148-10.412zM22 3.769c1.232 0 2.231 0.999 2.231 2.231s-0.999 2.231-2.231 2.231-2.231-0.999-2.231-2.231c0-1.232 0.999-2.231 2.231-2.231z"></path>
+                        </svg>
+                        <span class="rc-theme__label-desc">Lorem ipsum dolor sit amet.</span>
+                      </label>
                     </fieldset></li>
 
                   <li>
                     <fieldset><legend> <span class="label" style="visibility:hidden;height:0;">Acknowledgement</span></legend>
-                      <input id="conditions-of-use2" value="true" name="conditions-of-use2" type="checkbox"><label for="conditions-of-use2">Lorem ipsum dolor sit amet.</label>
+                      <input class="regular-checkbox big-checkbox" id="conditions-of-use3" value="true" name="conditions-of-use3" type="checkbox">
+                      <label for="conditions-of-use3" class="rc-theme__label">
+                        <span class="rc-theme__label-desc">Lorem ipsum dolor sit amet.</span>
+                      </label>
                     </fieldset></li>
 
                   <li>
                     <fieldset><legend> <span class="label" style="visibility:hidden;height:0;">Acknowledgement</span></legend>
-                      <input id="conditions-of-use3" value="true" name="conditions-of-use3" type="checkbox"><label for="conditions-of-use3">Lorem ipsum dolor sit amet.</label>
-                    </fieldset></li>
-
-                  <li>
-                    <fieldset><legend> <span class="label" style="visibility:hidden;height:0;">Acknowledgement</span></legend>
-                      <input id="conditions-of-use4" value="true" name="conditions-of-use4" type="checkbox"><label for="conditions-of-use4">Lorem ipsum dolor sit amet.</label>
+                      <input class="regular-checkbox big-checkbox" id="conditions-of-use4" value="true" name="conditions-of-use4" type="checkbox">
+                      <label for="conditions-of-use4" class="rc-theme__label">
+                        <span class="rc-theme__label-desc">Lorem ipsum dolor sit at.Lorem ipsum dolor sit at.Lorem ipsum dolor sit at</span>
+                      </label>
                     </fieldset></li>
 
                 </ul></fieldset></li>
@@ -1470,14 +1532,12 @@ $( '#email' ).closest( '.section' ).relevance( 'relevantWhen', { name: 'replyReq
       <!--#include virtual="/assets/includes-local/section-nav/docs-nav.html"-->
 
     </div>
-    <!--#include virtual="/assets/includes-local/content/options.html"-->
-  </div>
 
-  <footer>
-    <!--#include virtual="/assets/includes-local/footer/footer-site-map.html"-->
-    <!--#include virtual="/assets/includes-local/footer/footer-legals.html"-->
-  </footer>
+  </div>
 </div>
+
+<!--#include virtual="/assets/includes-local/footer/footer.html"-->
+
 
 <script>
   var qg = qg || {};
@@ -1487,7 +1547,6 @@ $( '#email' ).closest( '.section' ).relevance( 'relevantWhen', { name: 'replyReq
 </script>
 
 <!--#include virtual="/assets/includes-local/footer/footer-scripts.html"-->
-<script type="text/javascript" src="./assets/js/prism.js"></script>
 
 </body>
 

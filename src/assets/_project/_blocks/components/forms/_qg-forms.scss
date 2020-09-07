@@ -1,10 +1,51 @@
+// if the font size is less than 16px on mobile then the IOS will zoom the page and this makes the page unstable
+ @include media-breakpoint-down(md) {
+    input, select, textarea {
+      font-size: 1rem !important;
+    }
+  }
+
 //custom theme for radio buttons and checkbox
 .rc-theme {
+  .rc-theme__focus{
+    outline: 2px solid $qg-blue;
+    outline-offset: 1px;
+  }
   &.choices {
     display: flex;
     flex-wrap: wrap;
     margin-top:1em;
   }
+  .rc-theme__active{
+    background-color: $qg-blue !important;
+    [type="checkbox"]:checked + label .rc-theme__icon, [type="radio"]:checked + label .rc-theme__icon {
+      fill: #fff;
+    }
+    .rc-theme__label-desc{
+      color: #fff;
+    }
+  }
+  .rc-theme__label{
+    padding-left: 35px;
+  }
+  .rc-theme__with-image{
+    text-align: center;
+    svg{
+      margin-top: 15px;
+    }
+    .rc-theme__icon {
+      fill: $black;
+    }
+    .rc-theme__label-desc{
+      display: inline-block;
+      margin-top: 19px;
+    }
+  }
+
+  //[type="checkbox"]:checked + label .rc-theme__icon, [type="radio"]:checked + label .rc-theme__icon {
+  //  background-color: #007eb1 !important;
+  //  fill: #fff;
+  //}
   &.choices {
     li {
       width: 255px;
@@ -14,32 +55,27 @@
       color: #000;
       background-color: #fff;
       border-radius: 3px;
-      border: 2px solid #000 !important;
+      border: 1px solid $qg-pagination-border !important;
     }
     label {
       color: #000 !important;
       font-weight: normal;
     }
   }
-  [type="radio"]:checked,
-  [type="checkbox"]:checked,
-  [type="radio"]:not(:checked),
-  [type="checkbox"]:not(:checked) {
+
+  [type="radio"],
+  [type="checkbox"] {
     position: absolute;
     left: -9999px;
+   &+label {
+     position: relative;
+     cursor: pointer;
+     line-height: 20px;
+     display: inline-block;
+     color: #666;
+   }
   }
-  [type="radio"]:checked + label,
-  [type="checkbox"]:checked + label,
-  [type="radio"]:not(:checked) + label,
-  [type="checkbox"]:not(:checked) + label
-  {
-    position: relative;
-    padding-left: 34px;
-    cursor: pointer;
-    line-height: 20px;
-    display: inline-block;
-    color: #666;
-  }
+
   [type="radio"]:checked + label:before,
   [type="radio"]:not(:checked) + label:before{
     content: '';
@@ -99,14 +135,4 @@
     -webkit-transform: scale(1);
     transform: scale(1);
   }
-  /** Button is active **/
-  li.active {
-    background-color: #007eb1 !important;
-    label{
-      color: #fff !important;
-    }
-  }
 }
-
-
-

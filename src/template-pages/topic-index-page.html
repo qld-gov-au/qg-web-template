@@ -27,19 +27,19 @@
     <meta name="AGLSTERMS.documentType" scheme="AGLSTERMS.agls-document" content="guidelines">
     <meta name="DCTERMS.audience" scheme="AGLSTERMS.agls-audience" content="">
     <meta name="DCTERMS.jurisdiction" scheme="AGLSTERMS.AglsJuri" content="Queensland">
-    
+
     <!-- Open graph -->
     <meta property="og:title" content="Queensland Government">
     <meta property="og:description" content="DESCRIPTION">
-    <meta property="og:image" content="/assets/v3.1/latest/images/coat-of-arms/coa-thumbnail.png">
+    <meta property="og:image" content="/assets/v4/latest/images/coat-of-arms/coa-thumbnail.png">
     <meta property="og:url" content="">
-    <meta property="og:type" content="article" /> 
+    <meta property="og:type" content="article" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Queensland Government" />
     <meta name="twitter:description" content="DESCRIPTION" />
-    <meta name="twitter:image" content="/assets/v3.1/latest/images/coat-of-arms/coa-thumbnail.png" />
+    <meta name="twitter:image" content="/assets/v4/latest/images/coat-of-arms/coa-thumbnail.png" />
 
     <!-- Open graph -->
     <meta property="og:title" content="Queensland Government">
@@ -76,24 +76,11 @@
     <!--#include virtual="/assets/includes-local/analytics.html"-->
     <!--#include virtual="/assets/includes-local/header/access.html"-->
 
+    <!--#include virtual="/assets/includes-local/header/header.html"-->
+    <!--#include virtual="/assets/includes-local/breadcrumbs/breadcrumb-global.html"-->
     <div class="container-fluid qg-site-width">
-
-        <header id="qg-site-header">
-            <!--#include virtual="/assets/includes-local/header/coat-of-arms.html"-->
-
-            <!--#include virtual="/assets/includes-local/header/site-utilities.html"-->
-
-            <!--#include virtual="/assets/includes-local/header/site-search.html"-->
-
-            <!--#include virtual="/assets/includes-local/header/global-alert.html"-->
-
-            <!--#include virtual="/assets/includes-local/header/site-nav.html"-->
-        </header>
-
         <div id="qg-content">
             <div id="qg-three-col" class="row">
-
-                <!--#include virtual="/assets/includes-local/breadcrumbs/breadcrumb-demo.html"-->
 
                 <!--#include virtual="/assets/includes-local/content/alert.html"-->
 
@@ -101,55 +88,31 @@
 
                     <h1>Index page template</h1>
 
-                    <div class="qg-index-links row">
-
-                        <div class="qg-index-item">
-
-                            <h2><a href="#"><img src="http://via.placeholder.com/75x75" alt=""><span>Index item heading</span></a></h2>
-                            <ul>
-                                <li><a href="#">Link 1</a></li>
-                                <li><a href="#">Link 2</a></li>
-                                <li><a href="#">Link 3</a></li>
-                                <li><a href="#">Link 4</a></li>
-                            </ul>
-                        </div>
-
-                        <div class="qg-index-item">
-                            <h2><a href="#"><img src="http://via.placeholder.com/75x75" alt=""><span>Index item heading</span></a></h2>
-                            <ul>
-                                <li><a href="#">Link 1</a></li>
-                                <li><a href="#">Link 2</a></li>
-                                <li><a href="#">Link 3</a></li>
-                                <li><a href="#">Link 4</a></li>
-                            </ul>
-                        </div>
-
-                        <div class="qg-index-item">
-                            <h2><a href="#"><img src="http://via.placeholder.com/75x75" alt=""><span>Index item heading</span></a></h2>
-                            <ul>
-                                <li><a href="#">Link 1</a></li>
-                                <li><a href="#">Link 2</a></li>
-                                <li><a href="#">Link 3</a></li>
-                                <li><a href="#">Link 4</a></li>
-                            </ul>
-                        </div>
-
-                        <div class="qg-index-item">
-                            <h2><a href="#"><img src="http://via.placeholder.com/75x75" alt=""><span>Index item heading</span></a></h2>
-                            <ul>
-                                <li><a href="#">Link 1</a></li>
-                                <li><a href="#">Link 2</a></li>
-                                <li><a href="#">Link 3</a></li>
-                                <li><a href="#">Link 4</a></li>
-                            </ul>
-                        </div>
-
-                        <div class="qg-index-item">
-                            <h2><a href="#"><img src="http://via.placeholder.com/75x75" alt=""><span>Index item heading</span></a></h2>
-                            <p>ubi litteris consectetur, culpa id te anim ullamco, aut dolore</p>
-                        </div>
-
+                  <section class="qg-call-out-box">
+                    <div class="qg-callout__header col-12">
+                      <span class="qg-callout__icon"><i class="fa fa-comments"></i></span>
+                      <h2 class="qg-callout__title">Tell us what you think about our website</h2>
                     </div>
+                    <div class="qg-callout__content col-12 col-md-10">
+                      <div class="qg-callout__description">
+                        <p>Paragraph tag dolor sit amet</p>
+                        <span>Span tag</span>
+                        <div>Div tag
+                        </div>
+                        <ul>
+                          <li>Ul list</li>
+                        </ul>
+                        <ol>
+                          <li>ol list Lorem ipsum dolor sit amet.</li>
+
+                        </ol>
+                      </div>
+                      <a class="qg-btn btn-primary qg-callout__cta" href="">Pay now</a>
+                    </div>
+                    <div class="qg-callout__image col-7 col-sm-5 col-md-2">
+                      <img src="https://via.placeholder.com/80.png/09f/09f" alt="">
+                    </div>
+                  </section>
 
                     <div class="qg-content-footer">
 
@@ -162,6 +125,7 @@
 
 
                     </div>
+                    <!--#include virtual="/assets/includes-local/content/options.html"-->
                 </div>
 
 
@@ -169,18 +133,21 @@
                     <!--#include virtual="/assets/includes-local/asides/aside-contact-qgov.html"-->
                     <!--#include virtual="/assets/includes-local/asides/aside-feedback-qgov.html"-->
                 </aside>
-              <!--#include virtual="/assets/includes-local/section-nav/sample.html"-->
+            <!--#include virtual="/assets/includes-local/section-nav/sample.html"-->
 
             </div>
-            <!--#include virtual="/assets/includes-local/content/options.html"-->
 
         </div>
-
-        <footer>
-            <!--#include virtual="/assets/includes-local/footer/footer-site-map.html"-->
-            <!--#include virtual="/assets/includes-local/footer/footer-legals.html"-->
-        </footer>
     </div>
+
+    <!--#include virtual="/assets/includes-local/footer/footer.html"-->
+
+    <script>
+      var qg = qg || {};
+      qg.swe = qg.swe || {};
+      // Used by the feedback form.
+      qg.swe.franchiseTitle = 'Franchise Title';
+    </script>
 
     <!--#include virtual="/assets/includes-local/footer/footer-scripts.html"-->
 
