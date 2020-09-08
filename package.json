@@ -115,7 +115,7 @@
     "lato-webfont": "^2.15.1",
     "node-bourbon": "^4.2.8",
     "nodep-date-input-polyfill": "^5.2.0",
-    "puppeteer-core": "^1.20.0",
+    "puppeteer-core": "^5.2.1",
     "responsive-toolkit": "^2.6.3",
     "stickyfill": "^1.1.1-strict",
     "yarn": "^1.22.0"
