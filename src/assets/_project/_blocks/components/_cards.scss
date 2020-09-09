@@ -5,12 +5,14 @@
   &:before, &:after {
     content: normal;
   }
+  .qg-card {
+    @include breakpoint(md) {
+      padding-left:1em !important;
+      padding-right:1em !important;
+    }
+  }
 }
 .qg-card {
-  @include breakpoint(md) {
-    padding-left:1em !important;
-    padding-right:1em !important;
-  }
   color: #FFFFFF;
   margin-bottom: 2rem;
   display: flex;
@@ -146,7 +148,6 @@
     }
   }
 }
-
 
 
 // card with full width
