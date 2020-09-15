@@ -96,3 +96,17 @@
 .qg-btn {
   @extend .btn;
 }
+
+//AGDS Overrides
+.au-btn.au-btn--secondary{
+  color: $qg-global-primary;
+  border-color: $qg-global-primary;
+  &:hover, &:active {
+    color: $qg-global-primary-darker;
+    border-color: $qg-global-primary-darker;
+  }
+  &.au-btn--dark {
+    color: #ffffff;
+    border-color: #ffffff;
+  }
+}

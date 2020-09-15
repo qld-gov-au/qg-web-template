@@ -20,6 +20,13 @@
 @import "scss-general/bootstrap/bridge_bootstrap3";
 @import "../../../../node_modules/font-awesome/css/font-awesome";
 
+//AGDS imports
+@import "../../../../node_modules/@gov.au/core/lib/sass/globals";
+// @import "../../../../node_modules/@gov.au/buttons/lib/css/styles.css";
+@import "../../../../node_modules/@gov.au/buttons/lib/sass/globals";
+@import "../../../../node_modules/@gov.au/buttons/lib/sass//module";
+@import "../../../../node_modules/@gov.au/buttons/lib/sass/print";
+
 // Queensland government styles
 // -------------------------
 
