@@ -1,7 +1,4 @@
 'use strict';
-// init env variables
-require('dotenv').config();
-
 // Core
 const gulp = require('gulp');
 const path = require('path');
