@@ -1,17 +1,14 @@
-// unload event resets the feedback form to the initial state
-function reset () {
-  var checkedRadioBtns = document.querySelectorAll('#qg-page-feedback-form input[type="radio"]:checked');
-  var textFields = document.querySelector('#qg-page-feedback-form #comments');
-  if (textFields.value) {
-    textFields.value = '';
-  }
-  checkedRadioBtns.forEach(element => {
-    console.log(element);
-    if (element.checked) { element.checked = false; }
+// load event resets the feedback form to the initial state
+function resetForm () {
+  $('#qg-page-feedback-form  :input:not(:checkbox):not(:button):not(:radio):not(:submit)').each(function () {
+    $(this).val('');
+  });
+  $('#qg-page-feedback-form  :input:checkbox,  :input:radio').each(function (element) {
+    $(this).prop('checked', false);
   });
 }
 window.addEventListener('load', function (event) {
-  reset();
+  resetForm();
 }, false);
 
 $('.no-js').removeClass('no-js');
