@@ -8,7 +8,8 @@ $(function () {
 
   // Mobile menu & Search events to prevent both of them opening at the same time
   $('.qg-show-menu, .qg-show-search').on('click', function () {
-    if (!$('#qg-content').is(':hidden')) {
+    var otherMenu = $(this).hasClass('qg-show-menu') ? $('#qg-global-search-form') : $('.qg-navigation');
+    if (!$('#qg-content').is(':hidden') || !otherMenu.is(':hidden')) {
       $('#qg-content').hide();
     } else {
       $('#qg-content').show();
