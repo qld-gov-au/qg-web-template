@@ -1,9 +1,9 @@
 // load event resets the feedback form to the initial state
 function resetForm () {
-  $('#qg-page-feedback-form  :input:not(:checkbox):not(:button):not(:radio):not(:submit)').each(function () {
+  $('#qg-page-feedback-form :input:not(:checkbox):not(:button):not(:radio):not(:submit)').each(function () {
     $(this).val('');
   });
-  $('#qg-page-feedback-form  :input:checkbox,  :input:radio').each(function (element) {
+  $('#qg-page-feedback-form :input:checkbox, :input:radio').each(function (element) {
     $(this).prop('checked', false);
   });
 }
