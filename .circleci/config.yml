@@ -40,7 +40,11 @@ jobs:
             pip --version
             sudo pip install awscli
 
-      - run: npx jest
+      - run:
+          name: Test
+          command: |
+            npx jest
+            mkdir test-results
 
       - store_artifacts:
           path: ./test-results/junit

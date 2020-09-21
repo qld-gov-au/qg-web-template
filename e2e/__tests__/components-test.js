@@ -4,11 +4,10 @@ let browser;
 let page;
 
 beforeAll(async () => {
-  browser = await puppeteer.launch({headless: false, args: ['--no-sandbox', '--disable-setuid-sandbox']});
+  browser = await puppeteer.launch({headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox']});
   page = await browser.newPage();
   await page.setViewport({ width: ct.BT_XL, height: ct.WH });
   await page.goto(`${ct.APP_URL}/docs/components.html`, { waitUntil: 'networkidle0' });
-  await page.addScriptTag({url: 'https://code.jquery.com/jquery-3.2.1.min.js'});
 });
 
 describe('SWE Components testing', () => {
@@ -18,7 +17,7 @@ describe('SWE Components testing', () => {
     expect(searchInput).toBeTruthy();
     //facebook widget exist
     const getFbAttr = await page.evaluate('document.querySelector(".fb_iframe_widget").getElementsByTagName("iframe")[0].getAttribute("src")');
-    expect(getFbAttr).toMatch(/https:\/\/www.facebook.com/);
+    expect(getFbAttr).toMatch(/facebook.com/);
   });
 
   test('Carousel is working as expected', async () => {

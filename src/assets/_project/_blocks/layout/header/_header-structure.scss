@@ -33,6 +33,12 @@
       pointer-events: none;
     }
   }
+
+  .qg-site-header{
+    top: 0;
+    flex-wrap: nowrap;
+  }
+
   .qg-site-header-top {
     padding: 30px 50px;
   }

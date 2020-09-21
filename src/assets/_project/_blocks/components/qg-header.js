@@ -7,11 +7,14 @@ $(function () {
   stickyfill.add($('.sticky')[0]);
 
   // Mobile menu & Search events to prevent both of them opening at the same time
+  var $qgContent = $('#qg-content');
+  var $qgNav = $('.qg-navigation');
   $('.qg-show-menu, .qg-show-search').on('click', function () {
-    if (!$('#qg-content').is(':hidden')) {
-      $('#qg-content').hide();
+    var otherMenu = $(this).hasClass('qg-show-menu') ? $('#qg-global-search-form') : $qgNav;
+    if (!$qgContent.is(':hidden') || !otherMenu.is(':hidden')) {
+      $qgContent.hide();
     } else {
-      $('#qg-content').show();
+      $qgContent.show();
     }
     if ($(this).attr('aria-expanded') === 'false') {
       $('body').addClass('header-active');
@@ -24,12 +27,12 @@ $(function () {
       setTimeout(() => {
         $('.qg-search-form .input-group input[type=text]').focus();
       }, 300);
-      $('.qg-navigation').collapse('hide');
+      $qgNav.collapse('hide');
     }
   });
   function reorderContent () {
     if (window.innerHeight < 991) {
-      $('#qg-content').show();
+      $qgContent.show();
     }
   }
   function reorderTabbing () {
