@@ -15,7 +15,7 @@ import keys from '../../data/qg-google-keys';
    * This may not work in all the cases.
   */
   let isProd = function () {
-    return window.location.hostname.search(/dev|test|localhost|github|\buat\b/) === -1;
+    return window.location.hostname.search(/dev|test|localhost|\buat\b/) === -1;
   };
   let $feedbackForm = $('#qg-page-feedback-form');
 
