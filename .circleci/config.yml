@@ -39,9 +39,12 @@ jobs:
             python --version
             pip --version
             sudo pip install awscli
+
       - run:
-          name: Deploy to S3
-          command: npm run release && aws s3 sync release s3://testcircleci
+          name: Test
+          command: |
+            npx jest
+            mkdir test-results
 
       - store_artifacts:
           path: ./test-results/junit

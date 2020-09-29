@@ -509,19 +509,79 @@
         <p>Publishers may use the call out box to help direct a user’s attention to an excerpt of text or call to action.</p>
         <div class="qg-tmplt-example">
           <div class="panel-body">
-            <div class="qg-call-out-box">
-              <a class="qg-btn btn-primary" href="">Pay now</a>
-              <p>Some text to provide context around what happens when a user presses this button.</p>
-            </div>
+            <section class="qg-callout__box qg-callout__grey-theme">
+              <div class="qg-callout__header col-12">
+                                            <span class="qg-callout__icon">
+                            <i class="fa fa-comments"></i>
+                         </span>
+                <h2 class="qg-callout__title">Tell us what you think about our website</h2>
+              </div>
+
+              <div class="qg-callout__content col-12">
+
+                <div class="qg-callout__bottom-alignment">
+                  <div class="qg-callout__description">
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                      when an unknown printer took a galley of type and scrambled it to make a type
+                      specimen book. It has survived not only five centuries.</p>
+                  </div>
+                  <a class="qg-btn btn-secondary qg-callout__cta" href="btnlink">btntext</a>
+                </div>
+              </div>
+            </section>
+            <section class="qg-callout__box qg-callout__default-theme">
+
+              <div class="qg-callout__content col-12">
+
+                <div class="qg-callout__right-alignment">
+                  <div class="qg-callout__description">
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                      when an unknown printer took a galley of type and scrambled it to make a type
+                      specimen book. It has survived not only five centuries.</p>
+                  </div>
+                  <div class="qg-callout__image">
+                    <img src="https://via.placeholder.com/96X132" alt="">
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="qg-callout__box qg-callout__default-theme">
+              <div class="qg-callout__content col-12">
+                <div class="qg-callout__left-alignment">
+                  <div class="qg-callout__description">
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                      when an unknown printer.</p>
+                  </div>
+                  <a class="qg-btn btn-primary qg-callout__cta" href="left">Pay now</a>
+                </div>
+              </div>
+            </section>
           </div>
         </div>
 
         <h3>HTML</h3>
         <pre><code class="language-markup">
-&lt;div class="qg-call-out-box">
-  &lt;a class="qg-btn btn-primary" href="">Pay now&lt;/a>
-  &lt;p>Some text to provide context around what happens when a user presses this button.&lt;/p>
-&lt;/div>
+        &lt;section class=&quot;qg-callout__box&quot;&gt;
+          &lt;div class=&quot;qg-callout__header col-12&quot;&gt;
+             &lt;span class=&quot;qg-callout__icon&quot;&gt;
+                 &lt;i class=&quot;fa fa-comments&quot;&gt;&lt;/i&gt;
+             &lt;/span&gt;
+            &lt;h2 class=&quot;qg-callout__title&quot;&gt;Tell us what you think about our website&lt;/h2&gt;
+          &lt;/div&gt;
+
+          &lt;div class=&quot;qg-callout__content col-12&quot;&gt;
+
+            &lt;div class=&quot;qg-callout__bottom-alignment&quot;&gt;
+              &lt;div class=&quot;qg-callout__description&quot;&gt;
+                &lt;p&gt;Paragraph tag dolor sit amet&lt;span&gt;Span tag &lt;/span&gt;Paragraph tag dolor sit amet&lt;span&gt;Span tag &lt;/span&gt;Paragraph tag dolor sit amet&lt;span&gt;Span tag &lt;/span&gt;Paragraph tag dolor sit amet&lt;span&gt;Span tag&lt;/span&gt;Paragraph tag dolor sit amet&lt;span&gt;Span tag &lt;/span&gt;Paragraph tag dolor sit amet&lt;span&gt;Span tag &lt;/span&gt;Paragraph tag dolor sit amet&lt;span&gt;Span tag &lt;/span&gt;Paragraph tag dolor sit amet&lt;span&gt;Span tag&lt;/span&gt;&lt;/p&gt;
+              &lt;/div&gt;
+              &lt;a class=&quot;qg-btn btn-secondary qg-callout__cta&quot; href=&quot;btnlink&quot;&gt;btntext&lt;/a&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/section&gt;
                 						</code></pre>
         <br />
         <p><i>Configuration options</i></p>
@@ -1638,8 +1698,8 @@
                 </svg>
               </a>
             </div>
-            <input id="latitude" name="latitude" value="" type="hidden" placeholder="Latitude">
-            <input id="longitude" name="longitude" value="" type="hidden" placeholder="Longitude">
+            <input id="latitude" class="qg-search-widget__latitude" name="latitude" value="" type="hidden" placeholder="Latitude">
+            <input id="longitude" class="qg-search-widget__longitude" name="longitude" value="" type="hidden" placeholder="Longitude">
             <br>
             <button type="submit" class="btn btn-primary" id="search">Submit</button>
             <button type="reset" class="btn btn-secondary">Reset</button>

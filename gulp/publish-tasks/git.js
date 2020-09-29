@@ -70,6 +70,7 @@ const gitFunctions = {
   },
   tag: (folder, version) => {
     return (cb) => {
+      console.log(folder, version);
       process.chdir(path.resolve(folder));
       git.tag(version, version, function (err) {
         if (err) throw err;

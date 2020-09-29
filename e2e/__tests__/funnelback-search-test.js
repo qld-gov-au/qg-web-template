@@ -10,8 +10,8 @@ beforeAll(async () => {
   await page.goto(`${ct.APP_URL}/docs/components.html`, { waitUntil: 'networkidle0' });
 });
 
-describe('SWE templates testing', () => {
-  test('Autocomplete is working as expected', async () => {
+describe('SWE Header testing', () => {
+  test('Funnelback search is working as expected', async () => {
     expect(await page.evaluate('window.getComputedStyle(document.querySelector(\'.qg-search-concierge-initial\')).getPropertyValue("visibility")')).toBe('hidden');
     await page.click('input#qg-search-query');
     await page.waitFor(ct.WT);
