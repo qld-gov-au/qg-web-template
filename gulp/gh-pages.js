@@ -1,4 +1,4 @@
-const ghpages = require('gulp/gh-pages');
+const ghpages = require('gh-pages');
 const replace = require('replace-in-file');
 
 replace.sync({
