@@ -95,4 +95,25 @@
 
 .qg-btn {
   @extend .btn;
+  &.btn-outline-dark{
+    color: $qg-outline-dark;
+    background-color: transparent !important;
+    border:3px solid $qg-outline-dark;
+    &:hover, &:active, &:focus{
+      border:3px solid $qg-outline-dark-hover;
+      color: $qg-outline-dark-hover !important;
+      text-decoration: underline;
+    }
+  }
+  &.btn-outline-light{
+    color: #ffffff !important;
+    background-color: transparent !important;
+    border:3px solid #ffffff;
+    &:hover, &:active, &:focus{
+      text-decoration: underline;
+    }
+  }
+  &.btn-link.light{
+    color:#ffffff;
+  }
 }
