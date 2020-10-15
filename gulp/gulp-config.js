@@ -55,7 +55,6 @@ module.exports = {
       'jquery.resize-events.js',
       'butterfly/jquery.history.js',
       'butterfly/jquery.butterfly.js',
-      'bootstrap.js',
     ],
     css: [
       'butterfly/butterfly.css',

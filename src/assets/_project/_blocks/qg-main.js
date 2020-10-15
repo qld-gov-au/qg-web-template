@@ -1,3 +1,5 @@
+import 'bootstrap';
+
 // env initialization
 import './utils/qg-env';
 // utils import
