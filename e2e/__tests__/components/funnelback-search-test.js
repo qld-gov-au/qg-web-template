@@ -1,5 +1,5 @@
 const puppeteer = require('puppeteer');
-const ct = require('../config/constants');
+const ct = require('../../config/constants');
 let browser;
 let page;
 
