@@ -13,11 +13,16 @@ beforeAll(async () => {
 describe('SWE Footer testing', () => {
   test('Footer feedback', async () => {
     await page.click('.qg-feedback-toggle');
+    // check getRecaptcha input value is populated as expected and is false by default
+    const getRecaptcha =  await page.$eval('input[name=g-recaptcha-response]', el => $(el).val());
+    expect(getRecaptcha).toMatch(/false/);
     await page.click('#page-feedback-about-this-website');
     await page.click('#fs-very-satisfied');
     await page.type('#comments', 'Useful website', { delay: 20 });
     await page.click('#feedback-page .btn-global-primary');
     await page.waitFor(ct.WT);
+    // check getRecaptcha input value changed
+    expect(await page.$eval('input[name=g-recaptcha-response]', el => $(el).val())).not.toMatch(/false/);
     const element = await page.$('.thankyou');
     const text = await page.evaluate(element => element.textContent, element);
     expect(text).toMatch(/Thank you for your feedback. Your feedback is important to us and will be used to improve the website./);
