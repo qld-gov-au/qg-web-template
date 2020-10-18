@@ -525,7 +525,7 @@ $(function () {
     var scriptID = 'googleapi';
 
     if ($('#' + scriptID).length === 0) {
-      console.log('Maps not loaded');
+      //console.log('Maps not loaded');
       // Maps not loaded
       // Create script tag
       var apiKey = 'AIzaSyDvR5MCDqi0HtcjkehKqbKhyoCxt4Khqac';
@@ -543,7 +543,7 @@ $(function () {
 				qgLocation.fn.init();
 			};
     } else {
-      console.log('Maps already loaded on page');
+      //console.log('Maps already loaded on page');
       // Maps already loaded on page
       // Initialise location module
       qgLocation.fn.init();
