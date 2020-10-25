@@ -40,6 +40,16 @@ import keys from '../../data/qg-google-keys';
   let footerFeedbackGoogleRecaptchaApiKey = isProd()
     ? keys.defFeedbackGoogleRecaptcha.prod
     : keys.defFeedbackGoogleRecaptcha.uat;//This is a v3 key
+
+  let ajaxMethod = function () {
+    swe.ajaxCall(
+      'https://www.google.com/recaptcha/api.js?render=' + footerFeedbackGoogleRecaptchaApiKey,
+      'script',
+      onloadRecaptchaAjax,
+      'Recaptcha unavailable',
+    );
+  };
+
   //v3 Captcha, can have multiples
   let v3Captcha = (form, greptcha, key, action) => {
     //console.log('v3 key: ' + key);
@@ -202,17 +212,11 @@ import keys from '../../data/qg-google-keys';
         onloadRecaptcha,
         'Recaptcha unavailable',
       );
+      $('.qg-feedback-toggle').one('click', ajaxMethod);
     } else {
       if (loadFooter) {
         //Only load if the feedback button is clicked
-        $('.qg-feedback-toggle').one('click', function () {
-          swe.ajaxCall(
-            'https://www.google.com/recaptcha/api.js?render=' + footerFeedbackGoogleRecaptchaApiKey,
-            'script',
-            onloadRecaptchaAjax,
-            'Recaptcha unavailable',
-          );
-        });
+        $('.qg-feedback-toggle').one('click', ajaxMethod);
       }
     }
 
