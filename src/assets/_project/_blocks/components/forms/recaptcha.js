@@ -172,7 +172,6 @@ import keys from '../../data/qg-google-keys';
   //https://www.hackviking.com/development/multiple-recaptcha-on-the-same-page/
   //Setup recaptcha if on the page
   let loadFooter = false;
-  let requireDefaultKey = false;
   if ($('form[data-recaptcha="true"]').length > 0) {
     //enable recaptcha on form submits, load latest v3 version of recaptcha
     let v2Loaded = false;
@@ -189,8 +188,6 @@ import keys from '../../data/qg-google-keys';
           onloadRecaptcha,
           'Recaptcha unavailable',
         );
-      } else if (manualSitekey === undefined && manualAction !== undefined) {
-        requireDefaultKey = true;
       } else {
         if (!v2Loaded) {
           swe.ajaxCall(
@@ -204,22 +201,17 @@ import keys from '../../data/qg-google-keys';
       }
     });
     //As v3 key is used in footer and could also be used on the page with a differnt action, we need to ensure we only load it once
-    if (requireDefaultKey) {
-      //load right away
+    if (loadFooter) {
+      //Only load if the feedback button is clicked
+      $('.qg-feedback-toggle').one('click', ajaxMethod);
+    } else {
       swe.ajaxCall(
         'https://www.google.com/recaptcha/api.js?render=' + footerFeedbackGoogleRecaptchaApiKey,
         'script',
         onloadRecaptcha,
         'Recaptcha unavailable',
       );
-      $('.qg-feedback-toggle').one('click', ajaxMethod);
-    } else {
-      if (loadFooter) {
-        //Only load if the feedback button is clicked
-        $('.qg-feedback-toggle').one('click', ajaxMethod);
-      }
     }
-
     //If all forms have captchaPrivacyTerms, we can hide reCAPTCHA Badge
     if ($('p[class="captchaPrivacyTerms"]').length === $('form[data-recaptcha="true"]').length) {
       var hidegrecaptchaBadge = '.grecaptcha-badge { visibility: hidden; }';
