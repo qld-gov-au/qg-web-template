@@ -8,7 +8,9 @@ function resetForm () {
   });
 }
 window.addEventListener('load', function (event) {
-  resetForm();
+  if ($('#page-feedback-about-this-website').is(':checked')) {
+    resetForm();
+  }
 }, false);
 
 $('.no-js').removeClass('no-js');
