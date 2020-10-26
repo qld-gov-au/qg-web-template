@@ -204,7 +204,6 @@ import keys from '../../data/qg-google-keys';
     if (loadFooter) {
       //Only load if the feedback button is clicked
       $('.qg-feedback-toggle').one('click', ajaxMethod);
-    } else {
       swe.ajaxCall(
         'https://www.google.com/recaptcha/api.js?render=' + footerFeedbackGoogleRecaptchaApiKey,
         'script',
