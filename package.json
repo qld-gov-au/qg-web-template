@@ -20,7 +20,7 @@
     "start": "npm run build && gulp watch",
     "watch": "gulp watch",
     "gh-pages": "export NODE_ENV=prod && npm run release && node gulp/gh-pages.js",
-    "publish-npm": "export NODE_ENV=prod && npm run release && gulp wt-clean && gulp wt-clone && gulp wt-sync && cd web-template-release && git add . && git commit -m ${npm_package_version} && npm login && npm version && np ${npm_package_version}",
+    "publish-npm": "export NODE_ENV=prod && npm run release && gulp wt-clean && gulp wt-clone && gulp wt-sync && cd web-template-release && git add . && git commit -m ${npm_package_version} && npm login && np ${npm_package_version}",
     "publish-test-npm": "npm run release && export NODE_ENV=test &&  gulp wt-clean && gulp wt-clone && gulp wt-sync && gulp wt-branch && gulp wt-updateVersion && gulp wt-add && gulp wt-commit && gulp wt-push",
     "create-swe-release": "export NODE_ENV=prod && gulp swe-add && gulp swe-tag && gulp swe-commit && gulp swe-push",
     "publish-cdn": "export NODE_ENV=prod && npm run release && gulp cdn-clean && gulp cdn-clone && gulp cdn-transfer && gulp cdn-add && gulp cdn-commit && gulp cdn-push",
