@@ -56,6 +56,7 @@ gulp.task('other-assets-docs', require('./gulp/build-tasks/other-assets')(gulp, 
 gulp.task('other-assets', gulp.series('other-assets-root', 'other-assets-docs'));
 
 gulp.task('build-other-files', require('./gulp/build-tasks/other-files')(gulp, plugins, config));
+gulp.task('external-plugins-bundle', require('./gulp/build-tasks/externalLib')(gulp, plugins, config));
 
 gulp.task('assets-includes-local', require('./gulp/build-tasks/assets-includes')(gulp, plugins, config, 'assets/includes-local', true));
 gulp.task('assets-includes-docs', require('./gulp/build-tasks/assets-includes')(gulp, plugins, config, 'docs/assets/includes-local', true, true));
@@ -77,6 +78,7 @@ gulp.task('build', gulp.series(
   'build-other-files',
   'template-pages-docs',
   'template-pages-to-docs',
+  'external-plugins-bundle',
 ), function (done) {
   done();
 });

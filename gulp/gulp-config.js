@@ -55,6 +55,7 @@ module.exports = {
       'jquery.resize-events.js',
       'butterfly/jquery.history.js',
       'butterfly/jquery.butterfly.js',
+      'bootstrap/dist/js/bootstrap.bundle.min.js',
     ],
     css: [
       'butterfly/butterfly.css',
@@ -64,6 +65,7 @@ module.exports = {
       './node_modules/stickyfill/index.js',
       './node_modules/jquery-ui-bundle/jquery-ui.min.css',
       './node_modules/jquery-ui-bundle/jquery-ui.min.js',
+      './node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
       './node_modules/jquery-ui-bundle/images/**',
     ],
   },
