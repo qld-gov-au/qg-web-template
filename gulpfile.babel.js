@@ -118,7 +118,6 @@ gulp.task('wt-add', require('./gulp/publish-tasks/git').add(config.webTemplateRe
 gulp.task('wt-commit', require('./gulp/publish-tasks/git').commit(config.webTemplateRepo.folder, pjson['wt-version']));
 gulp.task('wt-tag', require('./gulp/publish-tasks/git').tag(config.webTemplateRepo.folder, pjson['wt-version']));
 gulp.task('wt-push', require('./gulp/publish-tasks/git').push(config.webTemplateRepo.folder));
-gulp.task('wt-npm', require('./gulp/publish-tasks/npm'));
 
 // CDN release
 gulp.task('cdn-clean', require('./gulp/publish-tasks/git').clean(config.staticCdnRepo.folder));
