@@ -7,8 +7,12 @@
 }
 // print styles
 @media print {
-  .row{
-    display: block;
+  * {
+    float:none!important;
+    position:static!important;
+  }
+  .row {
+    display:block!important;
   }
   *,
   *:before,
@@ -145,6 +149,7 @@
   .print-content-link,
   #qg-site-header form,
   .qg-utilities,
+  #qg-location-dropdown,
   .qg-legal li {
     display: none;
   }
@@ -273,7 +278,7 @@
     width: 50%;
   }
 
-  //SSQGHF styles START 
+  //SSQGHF styles START
   .qg-site-footer .qg-footer-col-content, #qg-portal-links, .qg-coat-of-arms img, #qg-show-menu, #qg-show-search {
     display: none !important;
   }
