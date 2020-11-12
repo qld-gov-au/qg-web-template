@@ -7,6 +7,10 @@
 }
 // print styles
 @media print {
+  * {
+    float:none;
+    position:static;
+  }
   .row{
     display: block;
   }
