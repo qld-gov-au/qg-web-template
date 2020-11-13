@@ -8,7 +8,6 @@
   font-style: italic;
   border: 1px solid #eee;
   img {
-    max-width: 100%!important;
     height: auto!important;
     margin: 0 auto;
     display: block;
@@ -23,14 +22,13 @@
     font-style: italic;
   }
   .figure-credits-toggle {
-    display: block;
     position: absolute;
-    height: 30px;
-    top: 10px !important;
-    right: 10px !important;
-    text-align: right;
-    margin: 0 !important;
-    padding: 0 !important;
+    top: 0;
+    right: 0.6rem;
+    height: 3rem;
+    background: transparent;
+    opacity: 0.7;
+    border: 0;
   }
 }
 .qg-cut-in{
@@ -38,4 +36,10 @@
 }
 .qg-cut-in-alt{
   float: left;
+}
+.qg-cut-in.qg-cut-in__fw {
+  width: min-content;
+  float: initial;
+  padding: 1em;
+  margin: 1em auto;
 }
