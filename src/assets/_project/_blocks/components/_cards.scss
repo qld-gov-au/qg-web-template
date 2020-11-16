@@ -6,6 +6,13 @@
     content: normal;
   }
   .qg-card {
+    .qg-card__thumbnail{
+      width: 47%;
+      padding: 1em 1em 0 1em;
+      .details , .qg-card__title {
+        padding-bottom:0;
+      }
+    }
     @include breakpoint(md) {
       padding-left:1em !important;
       padding-right:1em !important;
@@ -56,7 +63,7 @@
           }
         }
         .stretched-link{
-          color: #00698f;
+          color: #00698f !important;
           text-decoration: underline;
           &:active, &:visited{
             color: #00698f !important;
