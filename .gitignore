@@ -49,8 +49,8 @@ etc/
 
 ### Build & Release ###
 /build/**
-#/release/**
-#release
+/release/**
+release
 package-lock.json
 web-template-release/
 template-pages/sample/*
