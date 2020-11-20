@@ -7,11 +7,9 @@
   }
   .qg-card {
     .qg-card__thumbnail{
-      width: 47%;
-      padding: 1em 1em 0 1em;
-      .details , .qg-card__title {
-        padding-bottom:0;
-      }
+      width:75px;
+      height:75px;
+      margin:1em;
     }
     @include breakpoint(md) {
       padding-left:1em !important;
@@ -23,7 +21,13 @@
   color: #FFFFFF;
   margin-bottom: 2rem;
   display: flex;
-  &.card__clickable{
+  &.qg-card__clickable{
+    .content {
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      &:hover{
+       box-shadow: none;
+      }
+    }
     .content:focus-within {
       box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
     }
@@ -51,7 +55,7 @@
     }
   }
   // card with light theme styles
-  &.card__light-theme{
+  &.qg-card__light-theme{
     .content{
       background: none;
       .details {
