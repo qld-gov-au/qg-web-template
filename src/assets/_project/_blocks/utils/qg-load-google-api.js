@@ -27,7 +27,6 @@ import keys from '../data/qg-google-keys';
     keys.franchises.forEach(function (e) {
       if (firstFolderPath === e.name) {
         googleApiKey = e.apiKey;
-        console.log('googleApiKey in use', googleApiKey);
       }
     });
   }
