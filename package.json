@@ -76,7 +76,7 @@
     "gulp-plumber": "^1.0.1",
     "gulp-postcss": "^7.0.1",
     "gulp-prompt": "^0.2.0",
-    "gulp-replace": "^0.5.4",
+    "gulp-replace": "^1.0.0",
     "gulp-sass": "^4.0.2",
     "gulp-shell": "^0.8.0",
     "gulp-sourcemaps": "^2.6.5",

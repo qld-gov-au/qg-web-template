@@ -20,6 +20,7 @@ module.exports = function (gulp, plugins, config, es, dest) {
       .pipe(plugins.if(dest === 'docs/assets', gulp.dest(`${config.basepath.build}/docs/`)));
 
     gulp.src(config.extLib.transferToBuild, { base: './node_modules' })
+      .pipe(plugins.replace(/\/\/# sourceMappingURL=(.*)/g, ''))
       .pipe(gulp.dest(`${config.basepath.build}/${dest}/${config.versionName}/latest/lib/ext`));
 
     done();
