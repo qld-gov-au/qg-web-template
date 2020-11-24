@@ -87,28 +87,64 @@
       <div id="qg-primary-content" role="main">
         <h1>Cards</h1>
         <p>The card component is used to provide a brief summary of content or a task, often with a link to more detail. Cards are frequently displayed alongside other cards to group related content or tasks. Cards can contain multiple elements, such as images, links, actions, text and more.</p>
-        <h2>Light style cards</h2>
-        <h3>Image and action</h3>
+        <h2 class="anchored">Thumbnail cards</h2>
+        <h2 class="anchored">Clickable cards</h2>
         <section class="row qg-cards cards__equal-height">
-          <article class="qg-card card__light-theme col-12 col-sm-6 col-lg-4">
+          <article class="qg-card qg-card__light-theme qg-card__clickable col-12 col-sm-6 col-lg-4">
             <div class="content">
-              <img src="http://via.placeholder.com/840x460" alt="">
-              <div class="qg-card__footer">
-                <a href="#" class="qg-btn btn-link">Button Text</a>
+              <img src="http://via.placeholder.com/840x460/ddd/ddd" class="qg-card__thumbnail" alt="">
+              <div class="details">
+                <h2 class="qg-card__title"><a href="/docs/components.html" class="stretched-link">Title</a></h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur cupiditate eius facere hic molestiae quasi sapiente. Accusantium beatae consectetur cumque, eaque fugit labore officia quisquam quod reprehenderit suscipit! Consectetur, magni!</p>
               </div>
             </div>
           </article>
-          <article class="qg-card card__light-theme col-12 col-sm-6 col-lg-4">
+          <article class="qg-card qg-card__light-theme qg-card__clickable col-12 col-sm-6 col-lg-4">
             <div class="content">
-              <img src="http://via.placeholder.com/840x460" alt="">
+              <img src="http://via.placeholder.com/840x460/ddd/ddd" class="qg-card__thumbnail" alt="">
+              <div class="details">
+                <h2 class="qg-card__title"><a href="/docs/components.html" class="stretched-link">Title</a></h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur cupiditate eius facere hic molestiae quasi sapiente. Accusantium beatae consectetur cumque, eaque fugit labore officia quisquam quod reprehenderit suscipit! Consectetur, magni!</p>
+                <ul><li><a href="lorem">Lorem ipsum tipsum</a></li><li><a href="lorem">Lorem ipsum tipsum</a></li><li><a href="lorem">Lorem ipsum tipsum</a></li><li><a href="lorem">Lorem ipsum tipsum</a></li></ul>
+              </div>
+            </div>
+          </article>
+          <article class="qg-card qg-card__light-theme qg-card__clickable col-12 col-sm-6 col-lg-4">
+            <div class="content">
+              <img src="http://via.placeholder.com/840x460/ddd/ddd" class="qg-card__thumbnail" alt="">
+              <div class="details">
+                <h2 class="qg-card__title"><a href="/docs/components.html" class="stretched-link">Title</a></h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur cupiditate eius facere hic molestiae quasi sapiente. Accusantium beatae consectetur cumque, eaque fugit labore officia quisquam quod reprehenderit suscipit! Consectetur, magni!</p>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <br />
+        <hr>
+        <br />
+        <h2>Light style cards</h2>
+        <h3>Image and action</h3>
+        <section class="row qg-cards cards__equal-height">
+          <article class="qg-card qg-card__light-theme col-12 col-sm-6 col-lg-4">
+            <div class="content">
+              <img src="http://via.placeholder.com/840x460/ddd/ddd" alt="">
+              <div class="qg-card__footer">
+                <a href="/docs/components.html" class="qg-btn btn-link stretched-link">Button Text</a>
+              </div>
+            </div>
+          </article>
+          <article class="qg-card qg-card__light-theme col-12 col-sm-6 col-lg-4">
+            <div class="content">
+              <img src="http://via.placeholder.com/840x460/ddd/ddd" alt="">
               <div class="qg-card__footer">
                 <a href="#" class="qg-btn btn-secondary">Button Text</a>
               </div>
             </div>
           </article>
-          <article class="qg-card card__light-theme col-12 col-sm-6 col-lg-4">
+          <article class="qg-card qg-card__light-theme col-12 col-sm-6 col-lg-4">
             <div class="content">
-              <img src="http://via.placeholder.com/840x460" alt="">
+              <img src="http://via.placeholder.com/840x460/ddd/ddd" alt="">
               <div class="qg-card__footer">
                 <a href="#" class="qg-btn btn-secondary">Button Text</a>
               </div>
@@ -117,7 +153,7 @@
         </section>
         <h3>Title, a brief summary and action</h3>
         <section class="row qg-cards cards__equal-height">
-          <article class="qg-card card__light-theme col-12 col-sm-6 col-lg-4">
+          <article class="qg-card qg-card__light-theme col-12 col-sm-6 col-lg-4">
             <div class="content">
               <div class="details">
                 <h2>Title</h2>
@@ -128,19 +164,18 @@
               </div>
             </div>
           </article>
-          <article class="qg-card card__light-theme col-12 col-sm-6 col-lg-4">
+          <article class="qg-card qg-card__light-theme col-12 col-sm-6 col-lg-4">
             <div class="content">
               <div class="details">
                 <h2>Title</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur cupiditate eius facere hic molestiae quasi sapiente. Accusantium beatae consectetur cumque, eaque fugit labore officia quisquam quod reprehenderit suscipit! Consectetur, magni!</p>
-                <ul><li><a href="lorem">Lorem ipsum tipsum</a></li><li><a href="lorem">Lorem ipsum tipsum</a></li><li><a href="lorem">Lorem ipsum tipsum</a></li><li><a href="lorem">Lorem ipsum tipsum</a></li></ul>
               </div>
               <div class="qg-card__footer">
                 <a href="#" class="qg-btn btn-secondary">Button Text</a>
               </div>
             </div>
           </article>
-          <article class="qg-card card__light-theme col-12 col-sm-6 col-lg-4">
+          <article class="qg-card qg-card__light-theme col-12 col-sm-6 col-lg-4">
             <div class="content">
               <div class="details">
                 <h2>Title</h2>
@@ -155,9 +190,9 @@
         </section>
         <h3>Image, title, a brief summary and action</h3>
         <section class="row qg-cards cards__equal-height">
-          <article class="qg-card card__light-theme col-12 col-sm-6 col-lg-4">
+          <article class="qg-card qg-card__light-theme col-12 col-sm-6 col-lg-4">
             <div class="content">
-              <img src="http://via.placeholder.com/840x460" alt="">
+              <img src="http://via.placeholder.com/840x460/ddd/ddd" alt="">
               <div class="details">
                 <h2>Title</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur cupiditate eius facere hic molestiae quasi sapiente. Accusantium beatae consectetur cumque, eaque fugit labore officia quisquam quod reprehenderit suscipit! Consectetur, magni!</p>
@@ -167,9 +202,9 @@
               </div>
             </div>
           </article>
-          <article class="qg-card card__light-theme col-12 col-sm-6 col-lg-4">
+          <article class="qg-card qg-card__light-theme col-12 col-sm-6 col-lg-4">
             <div class="content">
-              <img src="http://via.placeholder.com/840x460" alt="">
+              <img src="http://via.placeholder.com/840x460/ddd/ddd" alt="">
               <div class="details">
                 <h2>Title</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur cupiditate eius facere hic molestiae quasi sapiente. Accusantium beatae consectetur cumque, eaque fugit labore officia quisquam quod reprehenderit suscipit! Consectetur, magni!</p>
@@ -180,9 +215,9 @@
               </div>
             </div>
           </article>
-          <article class="qg-card card__light-theme col-12 col-sm-6 col-lg-4">
+          <article class="qg-card qg-card__light-theme col-12 col-sm-6 col-lg-4">
             <div class="content">
-              <img src="http://via.placeholder.com/840x460" alt="">
+              <img src="http://via.placeholder.com/840x460/ddd/ddd" alt="">
               <div class="details">
                 <h2>Title</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur cupiditate eius facere hic molestiae quasi sapiente. Accusantium beatae consectetur cumque, eaque fugit labore officia quisquam quod reprehenderit suscipit! Consectetur, magni!</p>
@@ -203,7 +238,7 @@
         <section class="row qg-cards cards__equal-height">
           <article class="qg-card col-12 col-sm-6 col-lg-4">
             <div class="content">
-              <img src="http://via.placeholder.com/840x460" alt="">
+              <img src="http://via.placeholder.com/840x460/ddd/ddd" alt="">
               <div class="qg-card__footer">
                 <a href="#" class="qg-btn btn-link">Button Text</a>
               </div>
@@ -211,7 +246,7 @@
           </article>
           <article class="qg-card col-12 col-sm-6 col-lg-4">
             <div class="content">
-              <img src="http://via.placeholder.com/840x460" alt="">
+              <img src="http://via.placeholder.com/840x460/ddd/ddd" alt="">
               <div class="qg-card__footer">
                 <a href="#" class="qg-btn btn-secondary">Button Text</a>
               </div>
@@ -219,7 +254,7 @@
           </article>
           <article class="qg-card col-12 col-sm-6 col-lg-4">
             <div class="content">
-              <img src="http://via.placeholder.com/840x460" alt="">
+              <img src="http://via.placeholder.com/840x460/ddd/ddd" alt="">
               <div class="qg-card__footer">
                 <a href="#" class="qg-btn btn-link">Button Text</a>
               </div>
@@ -267,7 +302,7 @@
         <section class="row qg-cards cards__equal-height">
           <article class="qg-card col-12 col-sm-6 col-lg-4">
             <div class="content">
-              <img src="http://via.placeholder.com/840x460" alt="">
+              <img src="http://via.placeholder.com/840x460/ddd/ddd" alt="">
               <div class="details">
                 <h2>Title</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur cupiditate eius facere hic molestiae quasi sapiente. Accusantium beatae consectetur cumque, eaque fugit labore officia quisquam quod reprehenderit suscipit! Consectetur, magni!</p>
@@ -280,7 +315,7 @@
           </article>
           <article class="qg-card col-12 col-sm-6 col-lg-4">
             <div class="content">
-              <img src="http://via.placeholder.com/840x460" alt="">
+              <img src="http://via.placeholder.com/840x460/ddd/ddd" alt="">
               <div class="details">
                 <h2>Title</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur cupiditate eius facere hic molestiae quasi sapiente. Accusantium beatae consectetur cumque, eaque fugit labore officia quisquam quod reprehenderit suscipit! Consectetur, magni!</p>
@@ -293,7 +328,7 @@
           </article>
           <article class="qg-card col-12 col-sm-6 col-lg-4">
             <div class="content">
-              <img src="http://via.placeholder.com/840x460" alt="">
+              <img src="http://via.placeholder.com/840x460/ddd/ddd" alt="">
               <div class="details">
                 <h2>Title</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur cupiditate eius facere hic molestiae quasi sapiente. Accusantium beatae consectetur cumque, eaque fugit labore officia quisquam quod reprehenderit suscipit! Consectetur, magni!</p>
@@ -315,7 +350,7 @@
 
   <h2>Block style cards</h2>
   <p>Block style cards extend to the full width of the container.</p>
-  <article class="qg-card card__full-width card__light-theme">
+  <article class="qg-card card__full-width qg-card__light-theme">
     <div class="content">
       <div class="details">
         <h2>Title</h2>
@@ -327,7 +362,7 @@
       </div>
     </div>
   </article>
-  <article class="qg-card card__full-width card__light-theme">
+  <article class="qg-card card__full-width qg-card__light-theme">
     <div class="content">
       <div class="details">
         <h2>Title</h2>
@@ -365,6 +400,7 @@
 </script>
 
 <!--#include virtual="/assets/includes-local/footer/footer-scripts.html"-->
+<!--#include virtual="/assets/includes-local/footer/footer-docs-extra.html"-->
 
 </body>
 
