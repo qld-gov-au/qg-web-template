@@ -136,3 +136,9 @@
     transform: scale(1);
   }
 }
+
+// hint text
+.hint{
+  color: $qg-dark-gray-light;
+  @include rem(font-size, 14px);
+}

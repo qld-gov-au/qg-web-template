@@ -1,6 +1,6 @@
 module.exports = function (gulp, plugins, connect, connectssi, argv, path, randomPort) {
   'use strict';
-  return () => {
+  return (cb) => {
     let root = argv.root ? path.resolve(argv.root) : path.resolve('build');
     let connectServer = (root, subpath, port) => {
       connect.server({
@@ -23,5 +23,6 @@ module.exports = function (gulp, plugins, connect, connectssi, argv, path, rando
     } else {
       connectServer(root);
     }
+    cb();
   };
 };

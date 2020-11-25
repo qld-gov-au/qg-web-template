@@ -56,6 +56,7 @@ gulp.task('other-assets-docs', require('./gulp/build-tasks/other-assets')(gulp, 
 gulp.task('other-assets', gulp.series('other-assets-root', 'other-assets-docs'));
 
 gulp.task('build-other-files', require('./gulp/build-tasks/other-files')(gulp, plugins, config));
+gulp.task('external-plugins-bundle', require('./gulp/build-tasks/externalLib')(gulp, plugins, config));
 
 gulp.task('assets-includes-local', require('./gulp/build-tasks/assets-includes')(gulp, plugins, config, 'assets/includes-local', true));
 gulp.task('assets-includes-docs', require('./gulp/build-tasks/assets-includes')(gulp, plugins, config, 'docs/assets/includes-local', true, true));
@@ -77,6 +78,7 @@ gulp.task('build', gulp.series(
   'build-other-files',
   'template-pages-docs',
   'template-pages-to-docs',
+  'external-plugins-bundle',
 ), function (done) {
   done();
 });
@@ -108,13 +110,14 @@ gulp.task('serve', require('./gulp/build-tasks/serve')(gulp, plugins, connect, c
 // web template release
 gulp.task('wt-clean', require('./gulp/publish-tasks/git').clean(config.webTemplateRepo.folder));
 gulp.task('wt-clone', require('./gulp/publish-tasks/git').clone(config.webTemplateRepo.url, config.webTemplateRepo.folder));
+// wt-branch task creates a test branch on 'web-template-release'.
+gulp.task('wt-branch', require('./gulp/publish-tasks/git').branch(config.webTemplateRepo.folder));
 gulp.task('wt-sync', require('./gulp/publish-tasks/git').sync(config.basepath.release, config.webTemplateRepo.folder, ['package.json']));
 gulp.task('wt-updateVersion', require('./gulp/publish-tasks/git').updateVersion(config.webTemplateRepo.folder, pjson['wt-version']));
 gulp.task('wt-add', require('./gulp/publish-tasks/git').add(config.webTemplateRepo.folder));
 gulp.task('wt-commit', require('./gulp/publish-tasks/git').commit(config.webTemplateRepo.folder, pjson['wt-version']));
 gulp.task('wt-tag', require('./gulp/publish-tasks/git').tag(config.webTemplateRepo.folder, pjson['wt-version']));
 gulp.task('wt-push', require('./gulp/publish-tasks/git').push(config.webTemplateRepo.folder));
-gulp.task('wt-npm', require('./gulp/publish-tasks/npm'));
 
 // CDN release
 gulp.task('cdn-clean', require('./gulp/publish-tasks/git').clean(config.staticCdnRepo.folder));

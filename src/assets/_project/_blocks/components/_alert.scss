@@ -8,12 +8,10 @@
   }
 
   &.alert-danger {
-    color: #fff !important;
+    color: #000000;
+    border: none;
     border-left: 5px solid $brand-danger;
-    background-color: #b90824;
-    a {
-      color: #FF0;
-    }
+    background-color: #FCF4F6;
   }
   &.alert-success {
     border: none;

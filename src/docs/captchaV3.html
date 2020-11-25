@@ -6,7 +6,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-  <title>Components | Web Template | Queensland Government</title>
+  <title>CaptchaV3 testing</title>
 
   <meta name="description" content="DESCRIPTION">
   <meta name="keywords" content="KEYWORDS">
@@ -46,70 +46,65 @@
 </head>
 
 <body data-qg-accessibility="true">
-
 <!--#include virtual="/assets/includes-local/analytics.html"-->
 <!--#include virtual="/assets/includes-local/header/access.html"-->
 
+
+
 <!--#include virtual="/assets/includes-local/header/header.html"-->
-<div class="qg-global-breadcrumb qg-breadcrumb">
-  <div class="container-fluid qg-site-width">
-    <nav id="qg-breadcrumb" aria-label="breadcrumb" class="qg-breadcrumb-nav row">
-      <ol class="qg-breadcrumb-list">
-        <li class="qg-breadcrumb-list-item">
-          <a href="https://www.qld.gov.au/" class="qg-breadcrumb-list-item__link">
-            Home
-          </a>
-        </li>
-        <li class="qg-breadcrumb-list-item">
-          <a href="index.html" class="qg-breadcrumb-list-item__link">
-            Web Template Documentation
-          </a>
-        </li>
-        <li class="qg-breadcrumb-list-item">
-          <a href="#" class="qg-breadcrumb-list-item__link">
-            Components
-          </a>
-        </li>
-      </ol>
-    </nav>
-  </div>
-</div>
+<!--#include virtual="/assets/includes-local/breadcrumbs/breadcrumb-global.html"-->
 <div class="container-fluid qg-site-width">
   <div id="qg-content">
-    <div id="qg-three-col" class="row">
-
+    <div id="qg-one-col" class="row wide">
       <div id="qg-primary-content" role="main">
-        <!--#include virtual="/assets/includes-local/content/alert.html"-->
-        <h1>Components</h1>
 
-        <p class="lead">Reusable components for your Queensland Government websites and web applications</p>
+        <!-- #include virtual="/assets/includes-local/content/alert.html"-->
 
-        <ol class="list" >
-          <li><a href="./components/accordion.html">Accordion</a></li>
-          <li><a href="./components/alerts.html">Alerts</a></li>
-          <li><a href="./components/asides.html">Asides</a></li>
-          <li><a href="./components/stand-first.html">Stand First</a></li>
-          <li><a href="./components/blockquote.html">Blockquote</a></li>
-          <li><a href="./components/buttons.html">Buttons</a></li>
-          <li><a href="./components/call-out-box.html">Call out box</a></li>
-          <li><a href="./components/cards.html">QG Cards</a></li>
-          <li><a href="./components/banner-blurb.html">QG Banner Blurb</a></li>
-          <li><a href="./components/carousel.html">Carousel</a></li>
-          <li><a href="./components/gallery.html">Gallery</a></li>
-          <li><a href="./components/document-link.html">Downloadable document link</a></li>
-          <li><a href="./components/facebook-feed.html">Facebook Feed</a></li>
-          <li><a href="./components/forms.html">Forms</a></li>
-          <li><a href="./components/images.html">Images</a></li>
-          <li><a href="./components/pagination.html">Pagination</a></li>
-          <li><a href="./components/promotions.html">Promotions</a></li>
-          <li><a href="./components/correct-incorrect.html">QG correct / incorrect</a></li>
-          <li><a href="./components/quick-exit.html">Quick Exit</a></li>
-          <li><a href="./components/survey.html">Survey</a></li>
-          <li><a href="./components/twitter-feed.html">Twitter Feed</a></li>
-          <li><a href="./components/google-autocomplete.html">Google Address Autocomplete</a></li>
-        </ol>
+        <!-- Start page content -->
 
-        <p></p>
+        <h1>ReCaptcha Loadings</h1>
+        <a href="captcha-footer-old.html">Footer old</a><br/>
+        <a href="captcha-footer-only.html">Footer only</a><br/>
+
+        <div id="test1">
+          <h1>Test 1 v3 replace action only data-action="homepage"</h1>
+          <form method="post" id="qg-page-feedback-form-1"
+                action="https://test.smartservice.qld.gov.au/services/submissions/email/feedback/feedback"
+                class="form"
+                data-recaptcha="true"
+                data-action="homepage">
+            <input class="form-control" type="hidden" name="g-recaptcha-response" value="" />
+            <h2>Page feedback A</h2>
+            <ol class="questions">
+              <li class="col-12">
+                <div class="form-group">
+                  <label for="comments-a">
+                    <span class="label">Comments</span>
+                    <abbr title="(required)" class="required">*</abbr>
+                  </label>
+                  <textarea class="form-control" name="comments" id="comments-a" rows="1" cols="40" required="required">Test 1 v3 replace action only data-action="homepage"</textarea>
+                </div>
+              </li>
+              <li class="col-md-12">
+              <li class="footer col-md-12">
+
+                <ul class="actions">
+                  <li>
+                    <button type="submit" value="Submit feedback" class="qg-btn btn-primary">Submit feedback</button>
+                  </li>
+                </ul>
+                <p class="captchaPrivacyTerms">
+                  This site is protected by reCAPTCHA and the Google
+                  <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+                  <a href="https://policies.google.com/terms">Terms of Service</a> apply.
+                </p>
+              </li>
+            </ol>
+          </form>
+        </div>
+
+
+
 
 
         <!-- ################################## -->
@@ -117,7 +112,9 @@
 
           <dl>
             <dt>Last updated:</dt>
-            <dd>13 October 2020</dd>
+            <dd>15 October 2019</dd>
+            <dt>Last reviewed:</dt>
+            <dd>15 October 2019</dd>
           </dl>
 
         </div>
@@ -126,18 +123,13 @@
         <!-- ################################## -->
 
       </div>
-
-      <aside id="qg-secondary-content"></aside>
-
-      <!--#include virtual="/assets/includes-local/section-nav/docs-nav.html"-->
-
     </div>
-
   </div>
 </div>
-
+<br />
+<br />
+<br />
 <!--#include virtual="/assets/includes-local/footer/footer.html"-->
-
 
 <script>
   var qg = qg || {};
