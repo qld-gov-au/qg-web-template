@@ -115,6 +115,12 @@
     display:none !important;
   }
   #qg-primary-content{
+    max-width: 100% !important;
+    width:100% !important;
+    left:0 !important;
+    table{
+      font-size: 14px !important;
+    }
     margin-top: 0;
     h1 {
       margin-top: 12px;
