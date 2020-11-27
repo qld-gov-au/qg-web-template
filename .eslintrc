@@ -21,6 +21,8 @@
     "no-path-concat": 0,
     "valid-jsdoc": "warn",
     "spaced-comment": 0,
+    "space-before-blocks": 0,
+    "space-before-function-paren": 0,
     "comma-dangle": [1, "always-multiline"],
     "eol-last": 1,
     "no-multi-spaces": [

@@ -12,13 +12,13 @@ import './components/qg-components';
 
 // Layout imports
 import './layout/footer/footer-legals';
-import activeSideNav      from './layout/section-nav/section-nav';
-import stepNav      from './layout/section-nav/step-nav';
+import activeSideNav from './layout/section-nav/section-nav';
+import stepNav from './layout/section-nav/step-nav';
 import './layout/content/share-links';
 import './layout/breadcrumbs/breadcrumbs';
 import './layout/content/content';
 import './layout/content/content-types/figure-credits-toggle';
-import feedbackForm       from './layout/footer/feedback-form';
+import feedbackForm from './layout/footer/feedback-form';
 
 (function () {
   'use strict';
@@ -26,5 +26,4 @@ import feedbackForm       from './layout/footer/feedback-form';
   activeSideNav.highlightNavItem();
   stepNav.init();
   feedbackForm.init(franchiseTitle);
-}());
-
+})();
