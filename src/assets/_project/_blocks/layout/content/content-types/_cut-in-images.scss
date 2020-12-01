@@ -33,15 +33,23 @@
 }
 .qg-cut-in{
  float: right;
-}
-.qg-cut-in-alt{
-  float: left;
-}
-.qg-cut-in.qg-cut-in__fw {
+ &.qg-cut-in__fw {
   width: min-content;
   float: initial;
   padding: 1em;
   margin: 1em auto;
+}
+ & + .qg-cut-in {
+  float: right;
+  clear: right;
+ }
+}
+.qg-cut-in-alt{
+  float: left;
+  & + .cut-in-alt {
+    float: left;
+    clear: left;
+   }
 }
 
 .figure-credits-toggle {
