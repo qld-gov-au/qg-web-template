@@ -74,8 +74,11 @@
       .details {
         color: #000;
 
-        a:not(.btn), a:not(.qg-btn) {
+        a:not(.btn):not(.stretched-link), a:not(.qg-btn):not(.stretched-link) {
           color: #000000;
+          &:hover, &:active, &:focus, &:visited {
+            color: #000000 !important;
+          }
         }
 
         .stretched-link {
