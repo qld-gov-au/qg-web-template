@@ -9,9 +9,6 @@
     "type": "git",
     "url": "https://github.com/qld-gov-au/qg-web-template.git"
   },
-  "prettier": {
-    "singleQuote": true
-  },
   "scripts": {
     "clean": "gulp clean-build && gulp clean-release",
     "prebuild": "gulp clean-build",

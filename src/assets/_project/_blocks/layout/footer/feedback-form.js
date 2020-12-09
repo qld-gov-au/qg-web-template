@@ -3,7 +3,7 @@ function resetForm () {
   $('#qg-page-feedback-form :input:not(:checkbox):not(:hidden):not(:button):not(:radio):not(:submit)').each(function () {
     $(this).val('');
   });
-  $('#qg-page-feedback-form :input:checkbox, :input:radio').each(function (element) {
+  $('#qg-page-feedback-form :input:checkbox, #qg-page-feedback-form :input:radio').each(function (element) {
     $(this).prop('checked', false);
   });
 }
