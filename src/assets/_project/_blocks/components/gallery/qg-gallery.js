@@ -1,5 +1,5 @@
 if ($("script[src*='jquery.fancybox']").length === 0) {
-  if ($('.qg-image-gallery').length > 0 || $('.qg-lightbox').length > 0 || $('.image-gallery').length > 0 || $('.cut-in').length > 0) {
+  if ($('.qg-image-gallery').length > 0 || $('.qg-lightbox').length > 0 || $('.image-gallery').length > 0 || $('[class*="cut-in"]').length > 0) {
     $('head').append($("<link rel='stylesheet' href='{{CDN}}/latest/lib/ext/fancybox/jquery.fancybox.min.css' type='text/css' media='screen' />"));
     $.getScript('{{CDN}}/latest/lib/ext/fancybox/jquery.fancybox.min.js', function () {
       // image gallery
