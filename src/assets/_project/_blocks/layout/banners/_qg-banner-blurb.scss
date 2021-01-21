@@ -1,7 +1,7 @@
 #qg-banner-blurb{
   @include make-col-ready();
   @include make-col(12);
-  background: #F1F1F1;
+  background: #f5f5f5;
   min-height: 361px;
   height: auto;
   box-sizing: border-box;
@@ -9,13 +9,13 @@
   clear: both;
   position: relative;
   .qg-banner-blurb_wrapper{
-    margin: 2em auto;
+    margin: 3em auto;
     max-width: $qg-max-container-width;
     width: 100%;
   }
   &.theme_nobg {
     .qg-banner-blurb_wrapper{
-      margin: 1em auto;
+      margin: 4em auto;
     }
     .blurb {
         padding: 0;
@@ -26,9 +26,13 @@
         }
     }
     @include breakpoint(xs) {
+      background: none;
       min-height: auto;
       height: auto;
       padding: 0 25px 0 25px;
+      .qg-banner-blurb_wrapper{
+        margin: 1em auto;
+      }
     }
   }
   .bottom-right {
@@ -90,12 +94,12 @@
       h1 {
         color: #000000;
       }
-    } 
+    }
   }
   @include breakpoint(sm) {
-    &.theme_nobg {
-      padding: 1em 0 1em 0;
-    }
+    //&.theme_nobg {
+    //  padding: 1em 0 1em 0;
+    //}
   }
   @include breakpoint(xs) {
     min-height: 192px;
