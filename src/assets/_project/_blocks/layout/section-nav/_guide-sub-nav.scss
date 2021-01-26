@@ -2,6 +2,7 @@
   .guide-sub-nav {
     padding-left: 0;
     a {
+      // @include rem(font-size, 14px);
       padding-left: 3.75em;
       &:before {
         content: "";
