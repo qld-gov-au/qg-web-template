@@ -43,6 +43,7 @@
     width: 100%;
     color: $black;
     overflow: hidden;
+    padding: 2px;
     border: 0;
     border-bottom: 1px solid #dedede;
     &:last-child {
@@ -52,8 +53,7 @@
       //margin: 5px;
       position: relative;
       padding: 0.6rem 0.7rem;
-      width: 98.5%;
-      margin:5px;
+      width: 100%;
       background: transparent;
       border:none;
       text-align:left;
