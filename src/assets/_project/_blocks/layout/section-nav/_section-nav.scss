@@ -1,13 +1,13 @@
 /* ! section (side) navigation */
 
+// NEW NAV PATTERN  (QOL-7546 Section navigation enhancements)
 @media (max-width: $screen-md){
-  #qg-content #qg-section-nav{
+  #qg-content .qg-section-nav{
     margin-bottom: 4em;
   }
 }
 
-#qg-content #qg-section-nav {
-  //background-color: $qg-section-nav-bg-color;
+#qg-content .qg-section-nav {
   h2 {
     border-bottom: 2px solid $qg-dark-grey;
     padding-bottom: 0.7em;
@@ -26,13 +26,8 @@
       padding-left: 1em;
     }
   }
-  a {
-    // color: $qg-blue-dark;
-  }
-
   > ul {
     margin: 0;
-    //padding: 0 0 ($qg-spacing-small * 0.7) 0;
     padding-left: 0;
     > li {
       border-bottom: 1px solid $qg-dark-grey;
@@ -46,7 +41,6 @@
     transition: all 0.2s;
     list-style-type: none;
     @include rem(font-size, 14px);
-    //font-weight: 700;
 
     a {
       display: block;
@@ -66,28 +60,12 @@
       font-weight: bold;
     }
 
-    //a:before {
-    //  position: absolute;
-    //  top: .95em;
-    //  left: 10px;
-    //
-    //  display: inline-block !important;
-    //  content: "\f054";
-    //  margin: 0;
-    //  padding: 0 0.3em 0 0;
-    //  text-decoration: none;
-    //  opacity: .5;
-    //
-    //  font-family: FontAwesome;
-    //  font-size: .9em;
-    //}
     a.active:before {
       opacity: 1;
     }
-    ul {  //nested nav styles
+    ul {
       padding: 0;
       li {
-        //margin-left: 3rem;
         @include rem(margin-left, 30px);
         a {
           &:before {
@@ -99,24 +77,115 @@
   }
 
   @include media-breakpoint-up(md) {
-    //background-color: transparent;
+    li {
+      a:before {
+        left: ($qg-spacing-xs / 2);
+      }
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    li {
+      a:before {
+        left: ($qg-spacing);
+      }
+    }
+  }
 
-    h2, ul {
-      //background-color: $qg-section-nav-bg-color
+  @media print {
+    display: none;
+  }
+}
+
+
+// EXSITING NAV Pattern
+// TO BE DELETED after successfull implementation of (QOL-7546 Section navigation enhancements)
+
+#qg-content #qg-section-nav {
+  background-color: $qg-section-nav-bg-color;
+
+  h2 {
+    padding-left: 2.5em;
+    padding-top: 2.4em;
+    padding-bottom: 0.3em;
+    color: #000;
+    margin: 0;
+    @include rem(font-size, 19px);
+  }
+  ul {
+    margin: 0;
+    padding: 0 0 ($qg-spacing-small * 0.7) 0;
+  }
+
+  li {
+    position: relative;
+    padding: 0;
+    transition: all 0.2s;
+    list-style-type: none;
+    @include rem(font-size, 14px);
+    font-weight: 700;
+
+    a {
+      display: block;
+      margin: 0;
+      padding: .7em 0 0.9em 10 + 15px;
+
+      color: $qg-blue-darker;
+      text-decoration: none;
     }
 
-    // h2 {
-    //   padding-bottom: $qg-spacing-xs-small;
-    //   padding-left: ($qg-spacing-xs / 2);
-    //   padding-right: ($qg-spacing-xs / 2);
-    // }
+    a:hover {
+      text-decoration: none;
+      background-color: $qg-section-nav-link-hover-bg-color;
+    }
+
+    a.active, a.visited {
+      color: #FFF;
+      background-color: $qg-blue;
+    }
+
+    a:before {
+      position: absolute;
+      top: .95em;
+      left: 10px;
+
+      display: inline-block !important;
+      content: "\f054";
+      margin: 0;
+      padding: 0 0.3em 0 0;
+      text-decoration: none;
+      opacity: .5;
+
+      font-family: FontAwesome;
+      font-size: .9em;
+    }
+    a.active:before {
+      opacity: 1;
+    }
     ul {
-      //padding: 0 0 ($qg-spacing * 0.7) 0;
+      padding: 0;
+      li {
+        @include rem(margin-left, 30px);
+        a {
+          &:before {
+            content: "";
+          }
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    background-color: transparent;
+
+    h2, ul {
+      background-color: $qg-section-nav-bg-color
+    }
+    ul {
+      padding: 0 0 ($qg-spacing * 0.7) 0;
     }
     li {
       a {
-        // padding: .7em ($qg-spacing/2) .7em ($qg-spacing + 15px);
-        //padding-left: ($qg-spacing-xs / 2) + 15px;
+        padding-left: ($qg-spacing-xs / 2) + 15px;
       }
       a:before {
         left: ($qg-spacing-xs / 2);
@@ -124,12 +193,9 @@
     }
   }
   @include media-breakpoint-up(lg) {
-    // h2 {
-    //   padding: $qg-spacing $qg-spacing $qg-spacing-xs-small $qg-spacing;
-    // }
     li {
       a {
-        //padding: .7em ($qg-spacing/2) .7em ($qg-spacing + 15px);
+        padding: .7em ($qg-spacing/2) .7em ($qg-spacing + 15px);
       }
       a:before {
         left: ($qg-spacing);
