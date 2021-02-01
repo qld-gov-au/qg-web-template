@@ -13,11 +13,12 @@ window.addEventListener('load', function (event) {
 
 $('.no-js').removeClass('no-js');
 
-$('.qg-footer-feedback__close').click(function () {
+$('.qg-footer-feedback__close').on('click', function (e) {
   $('.qg-feedback-toggle').removeClass('d-none');
 });
 
-$('.qg-feedback-toggle').click(function () {
+$('.qg-feedback-toggle').on('click', function (e) {
+  e.preventDefault();
   if ($('#qg-page-feedback-form').hasClass('d-none')) {
     $(this).addClass('d-none');
   }
