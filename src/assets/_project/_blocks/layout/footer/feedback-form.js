@@ -14,6 +14,7 @@ window.addEventListener('load', function (event) {
 $('.no-js').removeClass('no-js');
 
 $('.qg-footer-feedback__close').on('click', function (e) {
+  e.preventDefault();
   $('.qg-feedback-toggle').removeClass('d-none');
 });
 
