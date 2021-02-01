@@ -11,5 +11,54 @@
   "defFeedbackGoogleRecaptcha" : {
     "uat" : "6Lf3uLEUAAAAAKbnWYc0iXtctL8TeFC26l43Qyt2",
     "prod" : "6LcTNMIUAAAAAHiGXUnaO1xlELzXgpWujzEJbFjS"
-  }
+  },
+  "franchises": [{
+    "name": "about",
+    "apiKey": "AIzaSyBi-T3vrvcYwouFPqPI5IgLoQxl2hz6Ogs"
+  }, {
+    "name": "atsi",
+    "apiKey": "AIzaSyB2mTTDd1CcLEYrLHJJHlzX60vQ68snyko"
+  }, {
+    "name": "community",
+    "apiKey": "AIzaSyCJwNeGu0XT1lvhg-2cm7S27BQo9k7Jd9E"
+  }, {
+    "name": "disability",
+    "apiKey": "AIzaSyC-KQFfBhoGle7kJJhY1Pf_GvR_qC5jzN4"
+  },{
+    "name": "education",
+    "apiKey": "AIzaSyDeeYKKOyQCYkpVWXRLLxyNjfy2dhyWVls"
+  }, {
+    "name": "emergency",
+    "apiKey": "AIzaSyD1xT_2Dh2EZ7Iy6SLodeH8CJzbXlp6vgE"
+  }, {
+    "name": "environment",
+    "apiKey": "AIzaSyAZJjfwIKDPlQs-S3id-CGp8U_S4U7idFI"
+  }, {
+    "name": "families",
+    "apiKey": "AIzaSyBucRn0YhJhQ-ELSS-MM7JvYb19-I1bqqI"
+  }, {
+    "name": "health",
+    "apiKey": "AIzaSyD_Xzvr6nBm5PlpANw2UZ2df3-U5eeOlvY"
+  }, {
+    "name": "housing",
+    "apiKey": "AIzaSyCgMKJlbP1SRIf3xCMFDbBImNkF_BCubvk"
+  },{
+    "name": "jobs",
+    "apiKey": "AIzaSyBXmI1DZvPFVQ_h-E1TNsPNdlNuqDd7MVo"
+  },{
+    "name": "law",
+    "apiKey": "AIzaSyBeij584IMIZqpftyhMCt_lZ_hBK_h8hMc"
+  },{
+    "name": "recreation",
+    "apiKey": "AIzaSyDJmfdqYI3eyV8-ivwPWVIIHxBzqo5_v2I"
+  },{
+    "name": "seniors",
+    "apiKey": "AIzaSyA3PDnd30Twv3Zr3JKqiAUYNO1983ZDBe0"
+  },{
+    "name": "transport",
+    "apiKey": "AIzaSyARzyCPigCt9cW1F6ua0_U3NVLdRbxwLyg"
+  },{
+    "name": "youth",
+    "apiKey": "AIzaSyCe7FYHy28So2Uio_OEQje0o0Pr23s7gt0"
+  }]
 }
