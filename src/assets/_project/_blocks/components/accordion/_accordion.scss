@@ -163,7 +163,11 @@
 
 // IOS safari specific styles
 @media not all and (min-resolution:.001dpcm) {
-  .qg-accordion .acc-heading:focus, .qg-accordion .expand:focus, .qg-accordion .collapse:focus {
-    outline: 1px dotted $qg-blue;
+  .qg-accordion .acc-heading:focus {
+    outline: 2px solid $qg-blue;
+  }
+  .qg-accordion .expand:focus, .qg-accordion .expand:active, .qg-accordion .collapse:focus, .qg-accordion .collapse:active{
+    outline: 2px solid $qg-blue !important;
+    outline-offset: -2px;
   }
 }
