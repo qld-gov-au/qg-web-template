@@ -34,10 +34,9 @@
       $(this).parent('article').find('.collapsing-section').attr('aria-hidden', !checkedStatus);
     });
 
-    // open on page load
+    // hashTrigger function open matching accordion if it finds #title-Of-Accordion in the url
     const hashTrigger = function () {
       let hashVal = urlHash();
-      console.log(hashVal);
       let $qgAccordion = $('.qg-accordion');
       if (hashVal.length > 0) {
         var findHashVal = $qgAccordion.find('#' + hashVal + '');
