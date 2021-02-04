@@ -41,14 +41,16 @@
     height: auto;
   }
 }
-.qg-card {
-  @include breakpoint(xs) {
-    padding-right: 0;
-    padding-left: 0;
-  }
-  @include breakpoint(sm) {
-    padding-left: 1em;
-    padding-right: 1em;
+.qg-cards{
+  .qg-card {
+    @include breakpoint(xs) {
+      padding-right: 0;
+      padding-left: 0;
+    }
+    @include breakpoint(sm) {
+      padding-left: 1em;
+      padding-right: 1em;
+    }
   }
 }
 .qg-feature {
