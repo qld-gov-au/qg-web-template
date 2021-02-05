@@ -12,10 +12,9 @@ beforeAll(async () => {
 
 describe('SWE Components testing', () => {
   test('Quick exit is working as expected', async () => {
-    await page.goto(`${ct.APP_URL}/docs/quick-exit.html`, { waitUntil: 'networkidle0' });
+    await page.goto(`${ct.APP_URL}/docs/components/quick-exit.html`, { waitUntil: 'networkidle0' });
     // 1. -> quick exit exist on the page
-    const searchInput = await page.$('.qg-quick-exit');
-    expect(searchInput).toBeTruthy();
+    await page.waitForSelector('.qg-quick-exit');
     // 2. -> tooltip is working as expected
     expect(await page.evaluate('window.getComputedStyle(document.querySelector(\'.qg-tooltip__wrapper\')).getPropertyValue("display")')).toBe('none');
     await page.click('.qg-tooltip__prompt');
