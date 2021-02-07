@@ -1,7 +1,7 @@
 #qg-banner-blurb{
   @include make-col-ready();
   @include make-col(12);
-  background: #F1F1F1;
+  background: #f5f5f5;
   min-height: 361px;
   height: auto;
   box-sizing: border-box;
@@ -9,17 +9,30 @@
   clear: both;
   position: relative;
   .qg-banner-blurb_wrapper{
-    margin: 2em auto;
+    margin: 3em auto;
     max-width: $qg-max-container-width;
     width: 100%;
   }
-  &.theme_no_bgimg {
+  &.theme_nobg {
+    .qg-banner-blurb_wrapper{
+      margin: 4em auto;
+    }
     .blurb {
+        padding: 0;
         background: transparent;
         color:#000;
         h1{
           color: #000;
         }
+    }
+    @include breakpoint(xs) {
+      background: none;
+      min-height: auto;
+      height: auto;
+      padding: 0 25px 0 25px;
+      .qg-banner-blurb_wrapper{
+        margin: 1em auto;
+      }
     }
   }
   .bottom-right {
@@ -72,7 +85,21 @@
     }
     @include breakpoint(xs) {
       width: 76%;
+      width:auto;
+      max-width:100%;
+      margin:0;
+      color: #000000;
+      background-color: #ffffff;
+      padding: 25px 25px 0 25px;
+      h1 {
+        color: #000000;
+      }
     }
+  }
+  @include breakpoint(sm) {
+    //&.theme_nobg {
+    //  padding: 1em 0 1em 0;
+    //}
   }
   @include breakpoint(xs) {
     min-height: 192px;
@@ -80,21 +107,13 @@
     background-size:contain !important;
     padding:0;
     padding-top:28%;
+    .qg-banner-blurb_wrapper{
+      margin: 0;
+    }
     &.hide-xs-hero-img{
       background-image:none !important;
       min-height:inherit !important;
       padding-top:0 !important;
-    }
-    .blurb{
-      width:auto;
-      max-width:100%;
-      margin:0;
-      color: #000000;
-      background-color: #ffffff;
-      padding-bottom: 0;
-      h1 {
-        color: #000000;
-      }
     }
   }
 }

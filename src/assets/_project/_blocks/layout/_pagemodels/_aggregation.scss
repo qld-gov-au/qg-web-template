@@ -11,27 +11,28 @@
     }
     background: $qg-grey-light;
     padding-bottom: 3rem;
-    >.row {
-      width: 90%;
+    > .row {
+      width: 100%;
       margin: 0 auto;
       display: flex;
       flex-wrap: wrap;
-      div[class~=col] {
+      div[class~="col"] {
         flex-grow: 1;
       }
     }
   }
 }
 
-.qg-feature, .wrapper {
+.qg-feature,
+.wrapper {
   @include make-row();
-  width: 90%;
+  // width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
 
-.qg-feature{
-  &.row [class*="col-"]{
+.qg-feature {
+  &.row [class*="col-"] {
     margin-bottom: 3em;
   }
 
@@ -40,16 +41,27 @@
     height: auto;
   }
 }
-
+.qg-cards{
+  .qg-card {
+    @include breakpoint(xs) {
+      padding-right: 0;
+      padding-left: 0;
+    }
+    @include breakpoint(sm) {
+      padding-left: 1em;
+      padding-right: 1em;
+    }
+  }
+}
 .qg-feature {
   article {
     color: #fff;
-    .content{
+    .content {
       height: 100%;
       background: #444444;
       position: relative;
       overflow: hidden;
-      .details{
+      .details {
         padding: 1em;
       }
       @include breakpoint(sm) {
@@ -70,7 +82,7 @@
       }
     }
     .btn {
-      background: #007EB1;
+      background: #007eb1;
       display: inline-block;
       width: 100%;
       color: #fff;
@@ -78,10 +90,16 @@
     }
   }
 }
-.qg-media{
-  background: #F6F6F6;
-  .wrapper{
+.qg-media {
+  background: #f6f6f6;
+  .wrapper {
+    max-width: $qg-max-container-width;
     padding: 25px;
   }
+  @include breakpoint(xs) {
+    article[class*="col-"] {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
 }
-
