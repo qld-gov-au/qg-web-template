@@ -2,12 +2,12 @@
 
 // NEW NAV PATTERN  (QOL-7546 Section navigation enhancements)
 #qg-content .qg-section-nav {
-  margin-bottom: 4em;
+  margin-bottom: 4rem;
   h2 {
     border-bottom: 2px solid $qg-dark-grey;
     padding: 0.7rem 0 0.7rem 1rem;
     color: #000;
-    margin-top: 1.7em;
+    margin-top: 1.9rem;
     margin-bottom: 0;
     @include rem(font-size, 19px);
     &:hover {
@@ -59,8 +59,8 @@
     ul {
       padding: 0;
       li {
-        @include rem(margin-left, 30px);
         a {
+          @include rem(padding-left, 30px);
           &:before {
             content: "";
           }
