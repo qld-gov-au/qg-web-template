@@ -4,7 +4,6 @@
 *   - Local - by test key in build process (gulp/gulp-config.js, gulp/common-tasks/js.js)
 *   - Dev, Test, Staging, Beta - in bamboo deployment plan - https://servicesmadesimpler.govnet.qld.gov.au/bitbucket/projects/CDN/repos/static-qld_cloudformation/browse/deployment_swev3.yml
 * */
-
 /*globals grecaptcha, qg*/
 import keys from '../../data/qg-google-keys';
 
@@ -18,6 +17,16 @@ import keys from '../../data/qg-google-keys';
     return window.location.hostname.search(/dev|test|localhost|github|\buat\b/) === -1;
   };
   let $feedbackForm = $('#qg-page-feedback-form');
+  let hideCaptchaBadge = function (){
+    // If all forms have captchaPrivacyTerms, we can hide reCAPTCHA Badge
+    if ($('p[class="captchaPrivacyTerms"]').length > 0) {
+      var hidegrecaptchaBadge = '.grecaptcha-badge { visibility: hidden; }';
+      var styleSheet = document.createElement('style');
+      styleSheet.type = 'text/css';
+      styleSheet.innerText = hidegrecaptchaBadge;
+      document.head.appendChild(styleSheet);
+    }
+  };
 
   if ($feedbackForm.length > 0) {
     let setUrlEnableCaptcha = () => {
@@ -48,6 +57,7 @@ import keys from '../../data/qg-google-keys';
       onloadRecaptchaAjax,
       'Recaptcha unavailable',
     );
+    hideCaptchaBadge();
   };
 
   //v3 Captcha, can have multiples
@@ -188,6 +198,7 @@ import keys from '../../data/qg-google-keys';
           onloadRecaptcha,
           'Recaptcha unavailable',
         );
+        hideCaptchaBadge();
       } else {
         if (!v2Loaded) {
           swe.ajaxCall(
@@ -204,20 +215,6 @@ import keys from '../../data/qg-google-keys';
     if (loadFooter) {
       //Only load if the feedback button is clicked
       $('.qg-feedback-toggle').one('click', ajaxMethod);
-      swe.ajaxCall(
-        'https://www.google.com/recaptcha/api.js?render=' + footerFeedbackGoogleRecaptchaApiKey,
-        'script',
-        onloadRecaptcha,
-        'Recaptcha unavailable',
-      );
-    }
-    //If all forms have captchaPrivacyTerms, we can hide reCAPTCHA Badge
-    if ($('p[class="captchaPrivacyTerms"]').length === $('form[data-recaptcha="true"]').length) {
-      var hidegrecaptchaBadge = '.grecaptcha-badge { visibility: hidden; }';
-      var styleSheet = document.createElement('style');
-      styleSheet.type = 'text/css';
-      styleSheet.innerText = hidegrecaptchaBadge;
-      document.head.appendChild(styleSheet);
     }
   }
 })(jQuery, qg.swe);
