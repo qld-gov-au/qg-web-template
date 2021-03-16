@@ -46,6 +46,7 @@
     };
     window.onhashchange = hashTrigger();
 
+    // focus heading on click
     $('input[name=tabs]').click(function () {
       $(this).parent('article').find('.acc-heading').focus();
     });
