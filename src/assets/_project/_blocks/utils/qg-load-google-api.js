@@ -30,6 +30,7 @@ import keys from '../data/qg-google-keys';
       }
     });
   }
+  // this function generate static image url (TODO - transfer to Matrix as it is dependent on the Matrix component config)
   function generateStaticMapImg (ele) {
     let lat = ele.attr('data-lat') || -27.4673;
     let lon = ele.attr('data-long') || 153.0233;
@@ -37,7 +38,7 @@ import keys from '../data/qg-google-keys';
     let height = ele.attr('data-height') || 189;
     return 'https://maps.googleapis.com/maps/api/staticmap?size=373x' + height + '&maptype=roadmap&markers=' + lat + '%2C' + lon + '&key=' + googleApiKey + '&sensor=false&zoom=' + zoom;
   }
-
+  // append static image on the maps description page (TODO - transfer to Matrix as it is dependent on the Matrix component config)
   if ($mapImg.length > 0) {
     var htmlInsert = $('<div>');
     $mapImg.each(function () {
