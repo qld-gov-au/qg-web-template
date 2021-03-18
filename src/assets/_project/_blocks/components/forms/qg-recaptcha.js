@@ -1,17 +1,10 @@
-/*
-* Any form with form attribute data-recaptcha="true", will run and validate with Google invisible recaptcha
-* The site key, will be replaced
-*   - Local - by test key in build process (gulp/gulp-config.js, gulp/common-tasks/js.js)
-*   - Dev, Test, Staging, Beta - in bamboo deployment plan - https://servicesmadesimpler.govnet.qld.gov.au/bitbucket/projects/CDN/repos/static-qld_cloudformation/browse/deployment_swev3.yml
-* */
-
 /*globals grecaptcha, qg*/
 import keys from '../../../data/qg-google-keys';
 
 (function ($, swe) {
   'use strict';
   /**
-   * Google recaptcha
+   * Google recaptcha for SWE global footer feedback which uses AJAX to communicate with the submission handler.
    **/
   var qgGlobalFooterRecaptcha = {
     config: {
@@ -48,6 +41,7 @@ import keys from '../../../data/qg-google-keys';
     },
     footerFeedbackRecaptcha: function() {
       var selfObj = this;
+      this.hideCaptchaBanner();
       /**
        * call recaptcha api to load script with the key on .qg-feedback-toggle click
        **/
@@ -102,6 +96,19 @@ import keys from '../../../data/qg-google-keys';
           });
         });
       };
+    },
+    /**
+     * If all forms have captchaPrivacyTerms, we can hide reCAPTCHA Badge
+     * @return {undefined}
+     **/
+    hideCaptchaBanner: function (){
+      if ($('p[class="captchaPrivacyTerms"]').length === $('form[data-recaptcha="true"]').length) {
+        var hidegrecaptchaBadge = '.grecaptcha-badge { visibility: hidden; }';
+        var styleSheet = document.createElement('style');
+        styleSheet.type = 'text/css';
+        styleSheet.innerText = hidegrecaptchaBadge;
+        document.head.appendChild(styleSheet);
+      }
     },
   };
   qgGlobalFooterRecaptcha.init();
