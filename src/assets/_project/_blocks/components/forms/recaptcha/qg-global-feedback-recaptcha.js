@@ -6,14 +6,14 @@
 * */
 
 /*globals grecaptcha, qg*/
-import keys from '../../data/qg-google-keys';
+import keys from '../../../data/qg-google-keys';
 
 (function ($, swe) {
   'use strict';
   /**
    * Google recaptcha
    **/
-  var qgRecaptcha = {
+  var qgGlobalFooterRecaptcha = {
     config: {
       $feedbackForm: $('#qg-page-feedback-form'),
       $recaptchaOnPage: $('form[data-recaptcha="true"]'),
@@ -30,62 +30,20 @@ import keys from '../../data/qg-google-keys';
     init: function() {
       let $feedbackForm = this.config.$feedbackForm;
       if ($feedbackForm.length > 0) {
+        /**
+         * check if env is not the prod env then change submission handler url to test.smartservice.qld.gov.au
+         **/
         if (!this.isProd()) {
           var testUrl = $feedbackForm.attr('action').replace('www.smartservice.qld.gov.au', 'test.smartservice.qld.gov.au');
           $feedbackForm.attr('action', testUrl);
         }
-        // if data-recaptcha attribute is not present then insert it
+        /**
+         * if data-recaptcha attribute is not present then insert it
+         **/
         if ($feedbackForm.attr('data-recaptcha') === undefined) {
           $feedbackForm.attr('data-recaptcha', 'true');
         }
         this.footerFeedbackRecaptcha();
-      }
-    },
-    // recaptcha version 2
-    v2Captcha: (form, subBtn, key) => {
-      try {
-        //console.log('v2 key: ' + key);
-        grecaptcha.render(subBtn, {
-          sitekey: key,
-          callback: function() {
-            var response = grecaptcha.getResponse();
-            if (
-              response === '' ||
-              response === undefined ||
-              response.length === 0
-            ) {
-              console.log('Invalid recaptcha');
-              return false;
-            } else {
-              form.submit();
-            }
-          },
-        });
-      } catch (e) {
-        grecaptcha.reset();
-        return false;
-      }
-      grecaptcha.execute();
-    },
-    // recaptcha version 3
-    v3Captcha: (form, greptcha, key, action) => {
-      try {
-        grecaptcha.execute(key, {action: action})
-          .then(function (token) {
-            if (greptcha.length > 0) {
-              if (
-                greptcha.attr('value') !== '' ||
-                greptcha.attr('value').length !== 0 ||
-                greptcha.attr('value') !== undefined) {
-                greptcha.val(token);
-                form.submit();
-                return true;
-              }
-            }
-            return false;
-          });
-      } catch (e) {
-        return false;
       }
     },
     footerFeedbackRecaptcha: function() {
@@ -102,11 +60,11 @@ import keys from '../../data/qg-google-keys';
         );
       });
       /**
-       * @return {undefined}
-       * On ready function is executed after calling recaptcha api in the above code
+       * onReady function is executed after calling recaptcha api in the above code
        * This function creates a submit event
        * Call submission handler api
        * Get and display success message
+       * @return {undefined}
        **/
       let onReady = function (){
         grecaptcha.ready(function () {
@@ -146,5 +104,5 @@ import keys from '../../data/qg-google-keys';
       };
     },
   };
-  qgRecaptcha.init();
+  qgGlobalFooterRecaptcha.init();
 })(jQuery, qg.swe);

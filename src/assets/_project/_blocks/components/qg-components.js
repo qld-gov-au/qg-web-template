@@ -7,7 +7,7 @@ import './carousel/carousel';
 import './quick-exit/quick-exit';
 import './tables/index.js';
 import './accordion/accordion';
-import './forms/recaptcha';
+import './forms/recaptcha/qg-global-feedback-recaptcha';
 import './forms/qg-address-autocomplete';
 import './forms/_qg-forms';
 import './qg-document-links';
