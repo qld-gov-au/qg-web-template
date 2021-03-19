@@ -1,14 +1,14 @@
 import breakpoints from '../../utils/breakpoints.js';
 let stepNav = {
   config: {
-    $guideSubNav: $('#qg-section-nav .guide-sub-nav'),
-    $qgSectionNav: $('#qg-section-nav'),
-    $qgSectionNavListItems: $('#qg-section-nav .guide-sub-nav li'),
+    $guideSubNav: $('.qg-section-nav .guide-sub-nav'),
+    $qgSectionNav: $('.qg-section-nav', '.qg-section-nav'),
+    $qgSectionNavListItems: $('.qg-section-nav .guide-sub-nav li'),
     $stepNav: $('#step-nav'),
     $heading: $('#qg-primary-content h1'),
   },
   init () {
-    if (this.config.$guideSubNav.length > 0) {
+    if (this.config.$guideSubNav.length) {
       this.createStepNav();
       $(window).resize(() => this.createStepNav());
     }

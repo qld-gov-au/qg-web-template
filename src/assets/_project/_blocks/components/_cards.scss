@@ -2,63 +2,109 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+
   &:before, &:after {
     content: normal;
   }
+
   .qg-card {
+    .qg-card__thumbnail {
+      width: 75px;
+      height: 75px;
+      margin: 1em 1em 0 1em;
+    }
+
     @include breakpoint(md) {
-      padding-left:1em !important;
-      padding-right:1em !important;
+      padding-left: 1em !important;
+      padding-right: 1em !important;
     }
   }
 }
+
 .qg-card {
   color: #FFFFFF;
   margin-bottom: 2rem;
   display: flex;
-  .btn-primary{
+
+  &.qg-card__clickable {
+    .content {
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+
+      &:hover {
+        box-shadow: none;
+      }
+    }
+
+    .content:focus-within {
+      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+  }
+
+  .btn-primary {
     @extend .btn-secondary;
     width: 100%;
   }
-  .qg-card__footer{
+
+  .qg-card__footer {
     padding: 1em;
-    border-top: 1px solid hsla(0,0%,50%,.7);
+    border-top: 1px solid hsla(0, 0%, 50%, .7);
     //this condition is to support legacy Aggregation page HTML
     .btn {
       width: 100%;
     }
-    .btn-link{
+
+    .btn-link {
       padding-left: 0;
       text-align: left;
       color: #fff !important;
       text-decoration: underline !important;
-      &:hover, &:active, &:focus, &:visited{
+
+      &:hover, &:active, &:focus, &:visited {
         color: #fff !important;
         text-decoration: none !important;
       }
     }
   }
+
   // card with light theme styles
-  &.card__light-theme{
-    .content{
+  &.qg-card__light-theme {
+    .content {
       background: none;
+
       .details {
         color: #000;
-        a:not(.btn), a:not(.qg-btn) {
-          color:#000000;
-          &:hover, &:active, &:focus, &:visited{
+
+        a:not(.btn):not(.stretched-link), a:not(.qg-btn):not(.stretched-link) {
+          color: #000000;
+          &:hover, &:active, &:focus, &:visited {
+            color: #000000 !important;
+          }
+        }
+
+        .stretched-link {
+          color: #00698f !important;
+          text-decoration: underline;
+
+          &:active, &:visited {
+            color: #00698f !important;
+          }
+
+          &:hover {
             color: #000000 !important;
           }
         }
       }
-      .qg-card__footer{
+
+      .qg-card__footer {
         border-top: 1px solid rgba(211, 211, 211, 1);
-        .btn-link{
+
+        .btn-link {
           padding-left: 0;
           text-align: left;
           text-decoration: underline !important;
           color: #13578b !important;
-          &:hover, &:active, &:focus, &:visited{
+
+          &:hover, &:active, &:focus, &:visited {
             color: #13578b !important;
             text-decoration: none !important;
           }
@@ -66,49 +112,59 @@
       }
     }
   }
-  .content{
+
+  .content {
     width: 100%;
     border: solid 1px #d3d3d3;
     background: #444444;
     position: relative;
     overflow: hidden;
     border-radius: 4px;
+
     img {
       width: 100%;
       height: auto;
-      & + .details a.qg-btn{
+
+      & + .details a.qg-btn {
         margin-bottom: 0.5em;
         margin-top: 0.5em !important;
       }
     }
-    .details{
+
+    .details {
       padding: 1em;
+
       > :first-child {
         padding-top: 0;
         margin-top: 0;
       }
+
       a {
         color: #FFFFFF;
-        &:hover, &:active, &:focus, &:visited{
+
+        &:hover, &:active, &:focus, &:visited {
           color: #FFFFFF !important;
           text-decoration: none !important;
         }
+
         &.btn {
           margin-top: 1em;
           padding-top: 0.5em;
           padding-bottom: 0.5em;
         }
+
         text-decoration: underline;
-        &:hover, &:active, &:focus, &:visited{
-        }
       }
+
       ul {
         padding: 0;
+
         li {
           position: relative;
           padding-left: 1.6rem;
           list-style: none;
           margin: 0;
+
           &:before {
             font-family: FontAwesome;
             font-style: normal;
@@ -125,6 +181,7 @@
         }
       }
     }
+
     @include breakpoint(sm) {
       .qg-pin-bottom {
         position: absolute;
@@ -141,6 +198,7 @@
         box-sizing: border-box;
       }
     }
+
     img {
       width: 100%;
       height: auto;
@@ -151,12 +209,13 @@
 
 
 // card with full width
-.qg-card.card__full-width{
+.qg-card.card__full-width {
   padding: 0 !important;
   @include breakpoint(md) {
     padding: inherit;
   }
-  .qg-card__footer{
+
+  .qg-card__footer {
     .qg-btn {
       width: 100%;
       @include breakpoint(sm) {
@@ -164,7 +223,8 @@
       }
     }
   }
+
   .details > h2 {
-    margin-top:0;
+    margin-top: 0;
   }
 }

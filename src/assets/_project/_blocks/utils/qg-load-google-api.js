@@ -9,11 +9,14 @@ import keys from '../data/qg-google-keys';
   let googleApiKey;
   let firstFolderPath = location.pathname.split('/')[1];
   let $mapImg = $('.qg-static-map');
+  let isProd = function () {
+    return window.location.hostname.search(/dev|test|localhost|github|\buat\b/) === -1;
+  };
 
   // check if the hostname contains a specific word and assign the key accordingly
   if (window.location.hostname.search(/\bgithub\b/) !== -1) {
     googleApiKey = keys.defGoogle.docs;
-  } else if (window.location.hostname.search(/dev|test|localhost/) !== -1) {
+  } else if (!isProd()) {
     googleApiKey = keys.defGoogle.test;
   } else {
     googleApiKey = keys.defGoogle.prod;

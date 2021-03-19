@@ -3,7 +3,7 @@ function resetForm () {
   $('#qg-page-feedback-form :input:not(:checkbox):not(:hidden):not(:button):not(:radio):not(:submit)').each(function () {
     $(this).val('');
   });
-  $('#qg-page-feedback-form :input:checkbox, :input:radio').each(function (element) {
+  $('#qg-page-feedback-form :input:checkbox, #qg-page-feedback-form :input:radio').each(function (element) {
     $(this).prop('checked', false);
   });
 }
@@ -13,11 +13,13 @@ window.addEventListener('load', function (event) {
 
 $('.no-js').removeClass('no-js');
 
-$('.qg-footer-feedback__close').click(function () {
+$('.qg-footer-feedback__close').on('click', function (e) {
+  e.preventDefault();
   $('.qg-feedback-toggle').removeClass('d-none');
 });
 
-$('.qg-feedback-toggle').click(function () {
+$('.qg-feedback-toggle').on('click', function (e) {
+  e.preventDefault();
   if ($('#qg-page-feedback-form').hasClass('d-none')) {
     $(this).addClass('d-none');
   }

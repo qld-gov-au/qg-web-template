@@ -24,19 +24,32 @@
     reuseFragment: true,
   });
   // this function equals the height of the cards in a group, if it finds a class '.cards__equal-height'.
-  if ($('.cards__equal-height').length > 0) {
-    $('.qg-cards.cards__equal-height').each(function () {
-      // Cache the highest
-      var highestBox = 0;
-      // Select and loop the elements you want to equalise
-      $(this).find('.details').each(function () {
-        // If this box is higher than the cached highest then store it
-        if ($(this).height() > highestBox) {
-          highestBox = $(this).height();
-        }
+  function setHeight() {
+    if ($('.cards__equal-height').length > 0) {
+      $('.qg-cards.cards__equal-height').each(function () {
+        // Cache the highest
+        var highestBox = 0;
+        // Select and loop the elements you want to equalise
+        $(this)
+          .find('.details')
+          .each(function () {
+            // If this box is higher than the cached highest then store it
+            if ($(this).height() > highestBox) {
+              highestBox = $(this).height();
+            }
+          });
+        // Set the height of all those children to whichever was highest
+        $(this).find('.details').height(highestBox);
       });
-      // Set the height of all those children to whichever was highest
-      $(this).find('.details').height(highestBox);
-    });
+    }
   }
-}(jQuery, qg.swe));
+  setHeight();
+  $(window).on('resize', function () {
+    var $windowSize = $(window).width();
+    if ($windowSize < 767) {
+      $('.cards__equal-height').find('.details').removeAttr('style');
+    } else {
+      setHeight();
+    }
+  });
+})(jQuery, qg.swe);

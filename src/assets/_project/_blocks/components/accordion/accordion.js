@@ -9,8 +9,9 @@
   let accordion = '.qg-accordion';
   if ($(accordion).length > 0) {
     let accItem = $(accordion).find('article');
-    let linkedpanel =  $(window.location.hash);
-
+    let urlHash = function () {
+      return decodeURI(window.location.hash.replace(/\/|#|{|}|\+|\\/g, ''));
+    };
     // keyboard accessibility
     var a11yClick = function (event) {
       if (event.type === 'click') {
@@ -33,19 +34,17 @@
       $(this).parent('article').find('.collapsing-section').attr('aria-hidden', !checkedStatus);
     });
 
-    // open on page load
+    // hashTrigger function open matching accordion if it finds #title-Of-Accordion in the url
     const hashTrigger = function () {
-      if (linkedpanel.length > 0) {
-        $(linkedpanel).parent(accordion).find('~ article input').prop('checked', false); //clears expand/collapse selection
-        $(linkedpanel).prop('checked', true).attr('aria-expanded', 'true');
-        $(linkedpanel).parent('article').find('.collapsing-section').attr('aria-hidden', 'false');
-        $('html, body').animate({
-          'scrollTop': $(linkedpanel).offset().top,
-        }, 500);
+      let hashVal = urlHash();
+      let $qgAccordion = $('.qg-accordion');
+      if (hashVal.length > 0) {
+        var findHashVal = $qgAccordion.find('#' + hashVal + '');
+        findHashVal.click();
+        findHashVal.parent('article').find('.acc-heading').focus();
       }
     };
-    hashTrigger();
-    window.onhashchange = hashTrigger;
+    window.onhashchange = hashTrigger();
 
     $('input[name=tabs]').click(function () {
       $(this).parent('article').find('.acc-heading').focus();
