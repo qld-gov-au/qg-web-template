@@ -1,5 +1,5 @@
 /*globals grecaptcha, qg*/
-import keys from '../../../data/qg-google-keys';
+import keys from '../../data/qg-google-keys';
 
 (function ($, swe) {
   'use strict';
@@ -22,6 +22,8 @@ import keys from '../../../data/qg-google-keys';
     },
     init: function() {
       let $feedbackForm = this.config.$feedbackForm;
+      let selfObj = this;
+
       if ($feedbackForm.length > 0) {
         /**
          * check if env is not the prod env then change submission handler url to test.smartservice.qld.gov.au
@@ -37,8 +39,69 @@ import keys from '../../../data/qg-google-keys';
           $feedbackForm.attr('data-recaptcha', 'true');
         }
         this.footerFeedbackRecaptcha();
+        let loadedRecaptcha = false;
+        let onloadRecaptcha = () => {
+          this.hideCaptchaBanner();
+          grecaptcha.ready(function () {
+            //v2 Forms
+            if (!loadedRecaptcha) {
+              $('[data-recaptcha="true"]:not(#qg-page-feedback-form)')
+                .find('input[type="submit"], button[type="submit"]')
+                .on('click', e => {
+                  // eslint-disable-next-line no-debugger
+                  debugger;
+                  e.preventDefault();
+                  let subBtn = e.target;
+                  let form = $(subBtn).parents('form');
+                  var greptcha = form.find('input[name="g-recaptcha-response"]');
+                  let manualSitekey = form.attr('data-sitekey');
+                  let manualAction = form.attr('data-action');
+                  if (manualSitekey !== undefined && manualAction !== undefined) { //v3 manual form
+                    selfObj.v3Captcha(form, greptcha, manualSitekey, manualAction);
+                  } else if (manualAction !== undefined) { //v3 manual with feedback key but differnt action
+                    selfObj.v3Captcha(form, greptcha, selfObj.footerFeedbackGoogleRecaptchaApiKey, manualAction);
+                  } else if (manualSitekey !== undefined) { //v2 manual (no action in v2)
+                    selfObj.v2Captcha(form, subBtn, manualSitekey);
+                  } else { //default v2 with default key
+                    selfObj.v2Captcha(form, subBtn, selfObj.googleRecaptchaApiKey);
+                  }
+                });
+              loadedRecaptcha = true;
+            }
+          });
+        };
+        if ($('form[data-recaptcha="true"]').length > 0) {
+          //enable recaptcha on form submits, load latest v3 version of recaptcha
+          let v2Loaded = false;
+          $('form[data-recaptcha="true"]').each(function () {
+            let manualSitekey = $(this).attr('data-sitekey');
+            let manualAction = $(this).attr('data-action');
+            if (manualSitekey !== undefined && manualAction !== undefined) { //v3 manual form
+              swe.ajaxCall(
+                'https://www.google.com/recaptcha/api.js?render=' + manualSitekey,
+                'script',
+                onloadRecaptcha,
+                'Recaptcha unavailable',
+              );
+            } else {
+              if (!v2Loaded) {
+                swe.ajaxCall(
+                  'https://www.google.com/recaptcha/api.js',
+                  'script',
+                  onloadRecaptcha,
+                  'Recaptcha unavailable',
+                );
+                v2Loaded = true;
+              }
+            }
+          });
+        }
       }
     },
+    /**
+     * From SWE4 onwards footer feedback is AJAX based
+     * @return {undefined}
+     **/
     footerFeedbackRecaptcha: function() {
       var selfObj = this;
       this.hideCaptchaBanner();
@@ -108,6 +171,52 @@ import keys from '../../../data/qg-google-keys';
         styleSheet.type = 'text/css';
         styleSheet.innerText = hidegrecaptchaBadge;
         document.head.appendChild(styleSheet);
+      }
+    },
+    v2Captcha: function (form, subBtn, key){
+      try {
+        //console.log('v2 key: ' + key);
+        grecaptcha.render(subBtn, {
+          sitekey: key,
+          callback: () => {
+            var response = grecaptcha.getResponse();
+            if (
+              response === '' ||
+              response === undefined ||
+              response.length === 0
+            ) {
+              console.log('Invalid recaptcha');
+              return false;
+            } else {
+              form.submit();
+            }
+          },
+        });
+      } catch (e) {
+        grecaptcha.reset();
+        return false;
+      }
+      grecaptcha.execute();
+    },
+    v3Captcha: function (form, greptcha, key, action){
+      //console.log('v3 key: ' + key);
+      try {
+        grecaptcha.execute(key, {action: action})
+          .then(function (token) {
+            if (greptcha.length > 0) {
+              if (
+                greptcha.attr('value') !== '' ||
+                greptcha.attr('value').length !== 0 ||
+                greptcha.attr('value') !== undefined) {
+                greptcha.val(token);
+                form.submit();
+                return true;
+              }
+            }
+            return false;
+          });
+      } catch (e) {
+        return false;
       }
     },
   };
