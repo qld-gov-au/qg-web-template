@@ -26,6 +26,7 @@
     },
     /**
      * hashTrigger function open matching accordion if it finds #title-Of-Accordion in the url
+     * @return {undefined}
      **/
     hashTrigger: function (){
       let hashVal = this.urlHash();
@@ -46,7 +47,7 @@
       }
     },
     /**
-     * if data-recaptcha attribute is not present then insert it
+     * @return {undefined}
      **/
     accordionClick: function(){
       let self = this;
@@ -95,7 +96,8 @@
       });
     },
     /**
-     * if data-recaptcha attribute is not present then insert it
+     * legacyAccordion function supports swe2 accordion in use at some places
+     * @return {undefined}
      **/
     legacyAccordion: function (){
       let self = this;
