@@ -94,16 +94,15 @@
             <li>Remember to structure textual content correctly in accordions, for example use heading tags where appropriate.</li>
           </ul>
 
-          <section class="qg-accordion qg-dark-accordion" aria-label="Accordion Label">
+          <section class="qg-accordion qg-accordion__accessible qg-dark-accordion" aria-label="Accordion Label">
             <div class="qg-acc-controls">
               <button class="controls expand">Expand all</button>
               <span class="controls">&#124;</span>
               <button class="controls collapse">Collapse all</button>
             </div>
             <article>
-              <input id="without-icon" type="checkbox" name="tabs" aria-controls="id-panel-content-1" aria-expanded="false" role="checkbox" tabindex="-1">
-              <button class="acc-heading"><label for="without-icon"><span class="title">Without icon</span><span class="arrow"> <i></i></span></label></button>
-              <div class="collapsing-section"  aria-hidden="true" id="id-panel-content-1">
+              <button class="acc-heading qg-accordion--closed" aria-controls="accordion-default" aria-expanded="true" ><span class="accordion-label"><span class="title">Without icon</span></span></button>
+              <div class="collapsing-section">
                 <p> Content related to header. </p>
                 <ul>
                   <li>If dot points are available</li>
@@ -188,9 +187,8 @@
               </div>
             </article>
             <article>
-              <input id="with-icon" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-2" aria-expanded="false" role="checkbox">
-              <button class="acc-heading"><img src="https://placeimg.com/20/20/nature" alt=""><label for="with-icon"><span class="title">With icon</span> <span class="subtitle">Subtitle can go here (optional)</span><span class="arrow"> <i></i></span></label></button>
-              <div class="collapsing-section" aria-hidden="true" id="id-panel-content-2">
+              <button class="acc-heading qg-accordion--closed" aria-controls="accordion-default" aria-expanded="true" ><img src="https://placeimg.com/20/20/nature" alt=""><span class="accordion-label"><span class="title">With icon</span> <span class="subtitle">Subtitle can go here (optional)</span></span></button>
+              <div class="collapsing-section au-accordion--closed">
                 <h4>Heading</h4>
                 <p> Content related to header. </p>
                 <ul>

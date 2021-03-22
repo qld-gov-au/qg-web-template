@@ -1,6 +1,45 @@
 .qg-accordion {
+  button:focus{
+    outline: 2px solid #C390F9 !important;
+  }
   &.qg-dark-accordion article {
     background-color: #f5f5f5;
+  }
+  &.qg-accordion__accessible{
+    .acc-heading{
+      padding: 1.2rem;
+      &:after {
+        content: ' ';
+        position: absolute;
+        top: 50%;
+        margin-top: rem(-9px);
+        right: rem(16px);
+        width: rem(14px);
+        height: rem(14px);
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Cpath fill='%2300698f' d='M64 0l64 64-16 16-64-64'/%3E%3Cpath fill='%2300698f' d='M64 0l16 16-64 64L0 64'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: 101;
+        transition: transform 0.25s ease-in;
+      }
+      img + .accordion-label{
+        display: block;
+        margin-left: 2rem;
+        margin-bottom: 0;
+      }
+    }
+    .qg-accordion--open:after{
+      transform: rotate(0deg);
+    }
+    .qg-accordion--closed:after{
+      transform: rotate(-180deg);
+    }
+    .qg-accordion--open + .collapsing-section {
+      display: block;
+      visibility: inherit;
+      opacity: inherit;
+      max-height: inherit;
+    }
   }
   .qg-acc-controls{
     text-align: right;
