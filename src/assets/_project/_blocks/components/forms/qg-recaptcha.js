@@ -6,7 +6,7 @@ import keys from '../../data/qg-google-keys';
   /**
    * Google recaptcha for SWE global footer feedback which uses AJAX to communicate with the submission handler.
    **/
-  var qgGlobalFooterRecaptcha = {
+  var qgRecaptcha = {
     config: {
       $feedbackForm: $('#qg-page-feedback-form'),
       $recaptchaOnPage: $('form[data-recaptcha="true"]'),
@@ -40,6 +40,10 @@ import keys from '../../data/qg-google-keys';
         }
         this.footerFeedbackRecaptcha();
         let loadedRecaptcha = false;
+        /**
+         * onloadRecaptcha
+         * @return {undefined}
+         **/
         let onloadRecaptcha = () => {
           this.hideCaptchaBanner();
           grecaptcha.ready(function () {
@@ -48,8 +52,6 @@ import keys from '../../data/qg-google-keys';
               $('[data-recaptcha="true"]:not(#qg-page-feedback-form)')
                 .find('input[type="submit"], button[type="submit"]')
                 .on('click', e => {
-                  // eslint-disable-next-line no-debugger
-                  debugger;
                   e.preventDefault();
                   let subBtn = e.target;
                   let form = $(subBtn).parents('form');
@@ -70,6 +72,9 @@ import keys from '../../data/qg-google-keys';
             }
           });
         };
+        /**
+         * onloadRecaptcha
+         **/
         if ($('form[data-recaptcha="true"]').length > 0) {
           //enable recaptcha on form submits, load latest v3 version of recaptcha
           let v2Loaded = false;
@@ -220,5 +225,5 @@ import keys from '../../data/qg-google-keys';
       }
     },
   };
-  qgGlobalFooterRecaptcha.init();
+  qgRecaptcha.init();
 })(jQuery, qg.swe);
