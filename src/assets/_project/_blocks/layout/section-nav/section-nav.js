@@ -1,8 +1,6 @@
 'use strict';
 
 var activeSideNav = (function () {
-  // const currentFilename = window.location.pathname.substr(window.location.pathname.lastIndexOf('/') + 1);
-
   function refineText (text) {
     return text.toLowerCase().replace(/ /g, '');
   }
@@ -23,9 +21,9 @@ var activeSideNav = (function () {
 
   function highlightNavItem () {
     var currentPageTitle = getCurrentTitle();
-    $('#qg-section-nav ul>li', '.qg-section-nav ul>li').each(function () {
-      if (refineText($(this).text()) === $.trim(currentPageTitle)) {
-        /*$(this).find('a').addClass('active');*/
+    $('.qg-section-nav ul>li, #qg-section-nav ul>li').each(function () {
+      if ($.trim(refineText($(this).text())) === $.trim(currentPageTitle)) {
+        $(this).find('a').addClass('active').removeAttr('href');
       }
     });
   }
