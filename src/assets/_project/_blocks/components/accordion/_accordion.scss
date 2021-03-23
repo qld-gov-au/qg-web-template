@@ -1,13 +1,15 @@
 .qg-accordion {
   button:focus{
-    outline: 2px solid #C390F9 !important;
+    outline: 2px solid #0096d6 !important;
+    outline-offset: 2px;
+    z-index: 100;
   }
   &.qg-dark-accordion article {
     background-color: #f5f5f5;
   }
   &.qg-accordion__accessible{
     .acc-heading{
-      padding: 1.2rem;
+      padding: 1rem;
       &:after {
         content: ' ';
         position: absolute;
@@ -24,7 +26,7 @@
       }
       img + .accordion-label{
         display: block;
-        margin-left: 2rem;
+        margin-left: 2.5rem;
         margin-bottom: 0;
       }
     }
@@ -78,29 +80,31 @@
     text-decoration: underline;
   }
   article {
+    border: 1px solid gray;
     position: relative;
     width: 100%;
     color: $black;
-    overflow: hidden;
-    padding: 2px;
-    border: 0;
-    border-bottom: 1px solid #dedede;
-    &:last-child {
-      border-bottom: 1px solid $qg-light-gray;
+    & + article{
+      border-top:none;
     }
     .acc-heading {
-      //margin: 5px;
       position: relative;
       padding: 0.6rem 0.7rem;
       width: 100%;
+      border: none;
       background: transparent;
-      border:none;
       text-align:left;
-      .title{
-        display: block;
-        &:hover {
-          text-decoration: underline;
+      &:hover {
+        .title{
+          text-decoration: none;
+          color: $qg-dark-grey-darker;
         }
+      }
+      .title{
+        color: $qg-blue-dark;
+        text-decoration: underline;
+        font-weight: bold;
+        display: block;
       }
       label {
         position: relative;
@@ -131,25 +135,25 @@
         @include rem(font-size, 16px);
         font-weight: 400;
         display: block;
-        margin-top: 0.3rem;
         color: #000;
       }
     }
   }
   .collapsing-section {
+    border-top: 1px solid gray;
     background: #fff;
     max-height: 0;
     overflow: hidden;
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s linear 900ms, opacity 900ms;
-    border: 0;
-    padding-left: 2.5rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding: 1rem;
     display: none;
-    p {
-      margin-top: 0 !important;
+    & *:first-child {
+      margin-top: 0;
+    }
+    & *:last-child {
+      margin-bottom: 0;
     }
   }
   input[name=tabs],input[name=control] {
