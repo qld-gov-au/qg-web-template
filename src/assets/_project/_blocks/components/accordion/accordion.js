@@ -101,7 +101,7 @@
      **/
     legacyAccordion: function (){
       let self = this;
-      let accItem = $('.qg-accordion:not(.qg-accordion__accessible)').find('article');
+      let accItem = $('.qg-accordion:not(.qg-accordion-v2)').find('article');
       accItem.find('.acc-heading').on('keypress', function (event) {
         if (event.target === event.currentTarget) {
           event.preventDefault();
