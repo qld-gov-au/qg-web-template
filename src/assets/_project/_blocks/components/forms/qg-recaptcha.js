@@ -10,6 +10,7 @@ import keys from '../../data/qg-google-keys';
     config: {
       $feedbackForm: $('#qg-page-feedback-form'),
       $recaptchaOnPage: $('form[data-recaptcha="true"]'),
+      $grecaptchaBadge: $('.grecaptcha-badge'),
     },
     googleRecaptchaApiKey: function() {
       return this.isProd() ? keys.defGoogleRecaptcha.prod : keys.defGoogleRecaptcha.uat;
@@ -36,14 +37,11 @@ import keys from '../../data/qg-google-keys';
         if ($feedbackForm.attr('data-recaptcha') === undefined) {
           $feedbackForm.attr('data-recaptcha', 'true');
         }
-        /**
-         * footerFeedbackRecaptcha supports global footer feedback ajax based submissions.
-         **/
+        // If all forms have captchaPrivacyTerms, we can hide reCAPTCHA Badge
+        this.hideCaptchaBanner();
+        // footerFeedbackRecaptcha supports global footer feedback ajax based submissions.
         this.footerFeedbackRecaptcha();
-        /**
-         * for Backward compatibility
-         * legacyRecaptcha supports both version v2 and v3 for non ajax based submissions.
-         **/
+        //for Backward compatibility legacyRecaptcha supports both version v2 and v3 for non ajax based submissions.
         this.legacyRecaptcha();
       }
     },
@@ -53,7 +51,6 @@ import keys from '../../data/qg-google-keys';
      **/
     footerFeedbackRecaptcha: function() {
       var selfObj = this;
-      this.hideCaptchaBanner();
       /**
        * call recaptcha api to load script with the key on .qg-feedback-toggle click
        **/
@@ -114,7 +111,7 @@ import keys from '../../data/qg-google-keys';
      * @return {undefined}
      **/
     hideCaptchaBanner: function (){
-      if ($('p[class="captchaPrivacyTerms"]').length === $('form[data-recaptcha="true"]').length) {
+      if (($('p[class="captchaPrivacyTerms"]').length === $('form[data-recaptcha="true"]').length) && (this.config.$grecaptchaBadge.css('visibility') !== 'hidden')) {
         var hidegrecaptchaBadge = '.grecaptcha-badge { visibility: hidden; }';
         var styleSheet = document.createElement('style');
         styleSheet.type = 'text/css';
@@ -183,7 +180,6 @@ import keys from '../../data/qg-google-keys';
        * @return {undefined}
        **/
       let onloadRecaptcha = () => {
-        this.hideCaptchaBanner();
         grecaptcha.ready(function () {
           //v2 Forms
           if (!loadedRecaptcha) {
