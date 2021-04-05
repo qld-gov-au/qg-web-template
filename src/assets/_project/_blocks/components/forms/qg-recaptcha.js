@@ -22,8 +22,6 @@ import keys from '../../data/qg-google-keys';
     },
     init: function() {
       let $feedbackForm = this.config.$feedbackForm;
-      let selfObj = this;
-
       if ($feedbackForm.length > 0) {
         /**
          * check if env is not the prod env then change submission handler url to test.smartservice.qld.gov.au
@@ -38,69 +36,15 @@ import keys from '../../data/qg-google-keys';
         if ($feedbackForm.attr('data-recaptcha') === undefined) {
           $feedbackForm.attr('data-recaptcha', 'true');
         }
+        /**
+         * footerFeedbackRecaptcha supports global footer feedback ajax based submissions.
+         **/
         this.footerFeedbackRecaptcha();
-        let loadedRecaptcha = false;
         /**
-         * onloadRecaptcha
-         * @return {undefined}
+         * for Backward compatibility
+         * legacyRecaptcha supports both version v2 and v3 for non ajax based submissions.
          **/
-        let onloadRecaptcha = () => {
-          this.hideCaptchaBanner();
-          grecaptcha.ready(function () {
-            //v2 Forms
-            if (!loadedRecaptcha) {
-              $('[data-recaptcha="true"]:not(#qg-page-feedback-form)')
-                .find('input[type="submit"], button[type="submit"]')
-                .on('click', e => {
-                  e.preventDefault();
-                  let subBtn = e.target;
-                  let form = $(subBtn).parents('form');
-                  var greptcha = form.find('input[name="g-recaptcha-response"]');
-                  let manualSitekey = form.attr('data-sitekey');
-                  let manualAction = form.attr('data-action');
-                  if (manualSitekey !== undefined && manualAction !== undefined) { //v3 manual form
-                    selfObj.v3Captcha(form, greptcha, manualSitekey, manualAction);
-                  } else if (manualAction !== undefined) { //v3 manual with feedback key but differnt action
-                    selfObj.v3Captcha(form, greptcha, selfObj.footerFeedbackGoogleRecaptchaApiKey, manualAction);
-                  } else if (manualSitekey !== undefined) { //v2 manual (no action in v2)
-                    selfObj.v2Captcha(form, subBtn, manualSitekey);
-                  } else { //default v2 with default key
-                    selfObj.v2Captcha(form, subBtn, selfObj.googleRecaptchaApiKey);
-                  }
-                });
-              loadedRecaptcha = true;
-            }
-          });
-        };
-        /**
-         * onloadRecaptcha
-         **/
-        if ($('form[data-recaptcha="true"]').length > 0) {
-          //enable recaptcha on form submits, load latest v3 version of recaptcha
-          let v2Loaded = false;
-          $('form[data-recaptcha="true"]').each(function () {
-            let manualSitekey = $(this).attr('data-sitekey');
-            let manualAction = $(this).attr('data-action');
-            if (manualSitekey !== undefined && manualAction !== undefined) { //v3 manual form
-              swe.ajaxCall(
-                'https://www.google.com/recaptcha/api.js?render=' + manualSitekey,
-                'script',
-                onloadRecaptcha,
-                'Recaptcha unavailable',
-              );
-            } else {
-              if (!v2Loaded) {
-                swe.ajaxCall(
-                  'https://www.google.com/recaptcha/api.js',
-                  'script',
-                  onloadRecaptcha,
-                  'Recaptcha unavailable',
-                );
-                v2Loaded = true;
-              }
-            }
-          });
-        }
+        this.legacyRecaptcha();
       }
     },
     /**
@@ -222,6 +166,76 @@ import keys from '../../data/qg-google-keys';
           });
       } catch (e) {
         return false;
+      }
+    },
+    /**
+     * for Backward compatibility
+     * legacyRecaptcha supports both version v2 and v3 for non ajax based submissions.
+     *  @return {undefined}
+     **/
+    legacyRecaptcha: function(){
+      let self = this;
+      let loadedRecaptcha = false;
+      /**
+       * onloadRecaptcha
+       * @return {undefined}
+       **/
+      let onloadRecaptcha = () => {
+        this.hideCaptchaBanner();
+        grecaptcha.ready(function () {
+          //v2 Forms
+          if (!loadedRecaptcha) {
+            $('[data-recaptcha="true"]:not(#qg-page-feedback-form)')
+              .find('input[type="submit"], button[type="submit"]')
+              .on('click', e => {
+                e.preventDefault();
+                let subBtn = e.target;
+                let form = $(subBtn).parents('form');
+                var greptcha = form.find('input[name="g-recaptcha-response"]');
+                let manualSitekey = form.attr('data-sitekey');
+                let manualAction = form.attr('data-action');
+                if (manualSitekey !== undefined && manualAction !== undefined) { //v3 manual form
+                  self.v3Captcha(form, greptcha, manualSitekey, manualAction);
+                } else if (manualAction !== undefined) { //v3 manual with feedback key but differnt action
+                  self.v3Captcha(form, greptcha, self.footerFeedbackGoogleRecaptchaApiKey, manualAction);
+                } else if (manualSitekey !== undefined) { //v2 manual (no action in v2)
+                  self.v2Captcha(form, subBtn, manualSitekey);
+                } else { //default v2 with default key
+                  self.v2Captcha(form, subBtn, self.googleRecaptchaApiKey);
+                }
+              });
+            loadedRecaptcha = true;
+          }
+        });
+      };
+      /**
+       * onloadRecaptcha
+       **/
+      if ($('form[data-recaptcha="true"]').length > 0) {
+        //enable recaptcha on form submits, load latest v3 version of recaptcha
+        let v2Loaded = false;
+        $('form[data-recaptcha="true"]').each(function () {
+          let manualSitekey = $(this).attr('data-sitekey');
+          let manualAction = $(this).attr('data-action');
+          if (manualSitekey !== undefined && manualAction !== undefined) { //v3 manual form
+            swe.ajaxCall(
+              'https://www.google.com/recaptcha/api.js?render=' + manualSitekey,
+              'script',
+              onloadRecaptcha,
+              'Recaptcha unavailable',
+            );
+          } else {
+            if (!v2Loaded) {
+              swe.ajaxCall(
+                'https://www.google.com/recaptcha/api.js',
+                'script',
+                onloadRecaptcha,
+                'Recaptcha unavailable',
+              );
+              v2Loaded = true;
+            }
+          }
+        });
       }
     },
   };
