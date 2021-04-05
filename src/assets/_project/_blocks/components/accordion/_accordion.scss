@@ -113,15 +113,11 @@
     position: relative;
     width: 100%;
     color: $black;
-    //padding: 2px;
-    //border: 0;
     border-bottom: 1px solid #dedede;
-    //border-bottom: 1px solid $qg-light-gray;
     &:last-child {
       border-bottom: none;
     }
     .acc-heading {
-      //margin: 5px;
       position: relative;
       padding: 0.6rem 0.7rem;
       width: 100%;
