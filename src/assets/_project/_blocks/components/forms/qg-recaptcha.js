@@ -122,6 +122,7 @@ import keys from '../../data/qg-google-keys';
         document.head.appendChild(styleSheet);
       }
     },
+    // Recaptcha version 2
     v2Captcha: function (form, subBtn, key){
       try {
         //console.log('v2 key: ' + key);
@@ -147,6 +148,7 @@ import keys from '../../data/qg-google-keys';
       }
       grecaptcha.execute();
     },
+    // Recaptcha version 3
     v3Captcha: function (form, greptcha, key, action){
       //console.log('v3 key: ' + key);
       try {
