@@ -1,16 +1,87 @@
 .qg-accordion {
+  &.qg-accordion-v2{
+    button:focus{
+      outline: 2px solid #0096d6 !important;
+      outline-offset: 2px;
+      z-index: 100;
+    }
+    article{
+      border: 1px solid gray;
+      &:last-child {
+        border-bottom: 1px solid gray !important;
+      }
+      & + article{
+        border-top:none;
+      }
+      .collapsing-section {
+        border-top: 1px solid gray;
+        padding: 1rem;
+        & *:first-child {
+          margin-top: 0;
+        }
+        & *:last-child {
+          margin-bottom: 0;
+        }
+      }
+      .acc-heading{
+        padding: 1rem;
+        .title {
+          color: $qg-blue-dark;
+          text-decoration: underline;
+          font-weight: bold;
+        }
+        &:hover {
+          .title{
+            text-decoration: none;
+            color: $qg-dark-grey-darker;
+          }
+        }
+        &:after {
+          content: ' ';
+          position: absolute;
+          top: 50%;
+          margin-top: rem(-9px);
+          right: rem(16px);
+          width: rem(14px);
+          height: rem(14px);
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Cpath fill='%2300698f' d='M64 0l64 64-16 16-64-64'/%3E%3Cpath fill='%2300698f' d='M64 0l16 16-64 64L0 64'/%3E%3C/svg%3E");
+          background-repeat: no-repeat;
+          background-position: center;
+          z-index: 101;
+          transition: transform 0.25s ease-in;
+        }
+        img + .accordion-label{
+          display: block;
+          margin-left: 2.5rem;
+          margin-bottom: 0;
+        }
+      }
+      .qg-accordion--open:after{
+        transform: rotate(0deg);
+      }
+      .qg-accordion--closed:after{
+        transform: rotate(-180deg);
+      }
+      .qg-accordion--open + .collapsing-section {
+        display: block;
+        visibility: inherit;
+        opacity: inherit;
+        max-height: inherit;
+      }
+    }
+  }
   &.qg-dark-accordion article {
     background-color: #f5f5f5;
   }
   .qg-acc-controls{
     text-align: right;
     margin-bottom: 0.4em;
-     button{
-       border: none;
-       background: none;
-       color: #13578b!important;
-       font-weight: 700;
-     }
+    button{
+      border: none;
+      background: none;
+      color: #13578b!important;
+      font-weight: 700;
+    }
     a{
       text-decoration: none !important;
       padding: 0.4rem 0.7rem;
@@ -42,15 +113,11 @@
     position: relative;
     width: 100%;
     color: $black;
-    overflow: hidden;
-    padding: 2px;
-    border: 0;
     border-bottom: 1px solid #dedede;
     &:last-child {
-      border-bottom: 1px solid $qg-light-gray;
+      border-bottom: none;
     }
     .acc-heading {
-      //margin: 5px;
       position: relative;
       padding: 0.6rem 0.7rem;
       width: 100%;
@@ -105,9 +172,7 @@
     opacity: 0;
     transition: visibility 0s linear 900ms, opacity 900ms;
     border: 0;
-    padding-left: 2.5rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding: 1rem 2.5rem;
     display: none;
     p {
       margin-top: 0 !important;
