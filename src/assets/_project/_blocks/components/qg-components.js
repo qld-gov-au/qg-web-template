@@ -9,7 +9,7 @@ import './tables/index.js';
 import './accordion/accordion';
 import './forms/qg-recaptcha';
 import './forms/qg-address-autocomplete';
-import './forms/_qg-forms';
+import './forms/qg-forms';
 import './qg-document-links';
 import './gallery/qg-gallery';
 import './opengraph/opengraph';

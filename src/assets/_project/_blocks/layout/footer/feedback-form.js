@@ -11,7 +11,7 @@ var feedbackForm = {
       franchise = location.pathname.split('/')[1];
     }
     /**
-     * Add hidden input
+     * Add hidden inputs
      **/
     this.addHiddenInput('franchise', franchise);
     this.addHiddenInput('page-title', $(document).find('title').text());

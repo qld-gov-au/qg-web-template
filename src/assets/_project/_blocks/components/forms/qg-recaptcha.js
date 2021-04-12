@@ -1,11 +1,11 @@
 /*globals grecaptcha, qg*/
+/*
+* Any form with form attribute data-recaptcha="true", will run and validate with Google invisible recaptcha
+*/
 import keys from '../../data/qg-google-keys';
 
 (function ($, swe) {
   'use strict';
-  /**
-   * Google recaptcha for SWE global footer feedback which uses AJAX to communicate with the submission handler.
-   **/
   var qgRecaptcha = {
     config: {
       $feedbackForm: $('#qg-page-feedback-form'),
