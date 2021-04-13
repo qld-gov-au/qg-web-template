@@ -1,0 +1,19 @@
+.qg-inpage-nav {
+  padding-left: rem(18px);
+  border-left: solid 4px #005e85;
+  height: auto;
+  .qg-inpage-nav_heading {
+    font-size: rem(16px);
+    font-weight: 800;
+    line-height: 1.25;
+  }
+  .qg-inpage-nav_list {
+    list-style: none;
+    padding: 0;
+  }
+  .qg-inpage-nav_list li {
+    font-size: rem(16px);
+    line-height: 1.5;
+    margin: rem(8px) 0;
+  }
+}
