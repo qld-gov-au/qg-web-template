@@ -94,7 +94,7 @@
             <li>Remember to structure textual content correctly in accordions, for example use heading tags where appropriate.</li>
           </ul>
 
-          <section class="qg-accordion qg-accordion-v2 qg-dark-accordion" aria-label="Accordion Label">
+          <section class="qg-accordion qg-accordion-v2 qg-dark-accordion mb-4" aria-label="Accordion Label">
             <div class="qg-acc-controls">
               <button class="controls expand">Expand all</button>
               <span class="controls">&#124;</span>
@@ -203,29 +203,26 @@
               </div>
             </article>
           </section>
-
-          <section class="qg-accordion mt-5" aria-label="Accordion Label">
+          <section class="qg-accordion qg-accordion-v2 mt-4" aria-label="Accordion Label">
             <div class="qg-acc-controls">
               <button class="controls expand">Expand all</button>
               <span class="controls">&#124;</span>
               <button class="controls collapse">Collapse all</button>
             </div>
             <article>
-              <input id="without-icon-1" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1" aria-expanded="false" role="checkbox">
-              <button class="acc-heading"><label for="without-icon-1"><span class="title">Without icon</span> <span class="subtitle">Subtitle can go here (optional)</span><span class="arrow"> <i></i></span></label></button>
-              <div class="collapsing-section"  aria-hidden="true" id="id-panel-content-3">
+              <button class="acc-heading qg-accordion--closed" aria-controls="accordion-default" aria-expanded="true" ><span class="accordion-label"><span class="title">Without icon</span></span></button>
+              <div class="collapsing-section">
                 <p> Content related to header. </p>
                 <ul>
                   <li>If dot points are available</li>
                   <li>Can go here</li>
                 </ul>
-                <p>Or provide any semantic html structure</p>
+                <p>Form example inside accordion</p>
               </div>
             </article>
             <article>
-              <input id="with-icon-1" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-2" aria-expanded="false" role="checkbox">
-              <button class="acc-heading"><img src="https://placeimg.com/20/20/nature" alt=""><label for="with-icon-1"><span class="title">With icon</span> <span class="subtitle">Subtitle can go here (optional)</span><span class="arrow"> <i></i></span></label></button>
-              <div class="collapsing-section" aria-hidden="true" id="id-panel-content-4">
+              <button class="acc-heading qg-accordion--closed" aria-controls="accordion-default" aria-expanded="true" ><img src="https://placeimg.com/20/20/nature" alt=""><span class="accordion-label"><span class="title">With icon</span> <span class="subtitle">Subtitle can go here (optional)</span></span></button>
+              <div class="collapsing-section au-accordion--closed">
                 <h4>Heading</h4>
                 <p> Content related to header. </p>
                 <ul>
@@ -243,32 +240,61 @@
 
 
 
+
           </br><p> HTML </p>
 
           <pre><code class="language-markup">
-                &lt;section class="qg-accordion qg-dark-accordion" aria-label="Accordion Label">
-                    &lt;input type="radio" name="control" id="collapse" class="controls collapse" value="collapse" role="radio">
-                    &lt;label for="collapse" class="controls">Collapse all&lt;/label>
-                    &lt;span class="controls">&#124;&lt;/span>
-                    &lt;input type="radio" name="control" id="expand" class="controls expand" value="expand" role="radio">
-                    &lt;label for="expand" class="controls">Expand all&lt;/label>
-
-                    &lt;article>
-                        &lt;input id="without-icon" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1" aria-expanded="false" role="checkbox">
-                        &lt;h3 class="acc-heading">&lt;label for="without-icon">&lt;span class="title"&gt;Without icon&lt;/span&gt; &lt;span class="subtitle">Subtitle can go here (optional)&lt;/span>&lt;span class="arrow"> &lt;i>&lt;/i>&lt;/span>&lt;/label>&lt;/h3>
-                        &lt;div class="collapsing-section"  aria-hidden="true" id="id-panel-content-1">
-                            &lt;p> Content related to header. &lt;/p>
-                            &lt;ul>
-                                &lt;li>If dot points are available&lt;/li>
-                                &lt;li>Can go here&lt;/li>
-                            &lt;/ul>
-                            &lt;p>Or provide any semantic html structure&lt;/p>
-                        &lt;/div>
-                    &lt;/article>
-                &lt;/section>
-                                    </code></pre>
-          <p>Fontawesome icon can also be used instead of image. To use the default theme remove <span class="text-nowrap"><strong>qg-dark-accordion</strong></span> class.</p>
-          <p class="alert alert-info">Accordion without icons or images is advised best practice. </p>
+          &lt;section class=&quot;qg-accordion qg-accordion-v2&quot; aria-label=&quot;Accordion Label&quot;&gt;
+            &lt;div class=&quot;qg-acc-controls&quot;&gt;
+              &lt;button class=&quot;controls expand&quot;&gt;Expand all&lt;/button&gt;
+              &lt;span class=&quot;controls&quot;&gt;&amp;#124;&lt;/span&gt;
+              &lt;button class=&quot;controls collapse&quot;&gt;Collapse all&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;article&gt;
+              &lt;button class=&quot;acc-heading qg-accordion--closed&quot; aria-controls=&quot;accordion-default&quot; aria-expanded=&quot;true&quot; &gt;&lt;span class=&quot;accordion-label&quot;&gt;&lt;span class=&quot;title&quot;&gt;Without icon&lt;/span&gt;&lt;/span&gt;&lt;/button&gt;
+              &lt;div class=&quot;collapsing-section&quot;&gt;
+                &lt;p&gt; Content related to header. &lt;/p&gt;
+                &lt;ul&gt;
+                  &lt;li&gt;If dot points are available&lt;/li&gt;
+                  &lt;li&gt;Can go here&lt;/li&gt;
+                &lt;/ul&gt;
+                &lt;p&gt;Form example inside accordion&lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/article&gt;
+            &lt;article&gt;
+              &lt;button class=&quot;acc-heading qg-accordion--closed&quot; aria-controls=&quot;accordion-default&quot; aria-expanded=&quot;true&quot; &gt;&lt;img src=&quot;https://placeimg.com/20/20/nature&quot; alt=&quot;&quot;&gt;&lt;span class=&quot;accordion-label&quot;&gt;&lt;span class=&quot;title&quot;&gt;With icon&lt;/span&gt; &lt;span class=&quot;subtitle&quot;&gt;Subtitle can go here (optional)&lt;/span&gt;&lt;/span&gt;&lt;/button&gt;
+              &lt;div class=&quot;collapsing-section au-accordion--closed&quot;&gt;
+                &lt;h4&gt;Heading&lt;/h4&gt;
+                &lt;p&gt; Content related to header. &lt;/p&gt;
+                &lt;ul&gt;
+                  &lt;li&gt;If dot points are available&lt;/li&gt;
+                  &lt;li&gt;Can go here&lt;/li&gt;
+                &lt;/ul&gt;
+                &lt;p&gt;Or provide any semantic html structure&lt;/p&gt;
+                &lt;button type=&quot;button&quot; class=&quot;qg-btn btn-default&quot;&gt;Default&lt;/button&gt;
+                &lt;button type=&quot;button&quot; class=&quot;qg-btn btn-primary&quot;&gt;Primary&lt;/button&gt;
+                &lt;button type=&quot;button&quot; class=&quot;qg-btn btn-secondary&quot;&gt;Primary Alt&lt;/button&gt;
+                &lt;button type=&quot;button&quot; class=&quot;qg-btn btn-link&quot;&gt;Link&lt;/button&gt;
+              &lt;/div&gt;
+            &lt;/article&gt;
+          &lt;/section&gt;
+          </code></pre>
+          <table class="mb-4 mt-4">
+            <tr>
+              <th>Class</th>
+              <th>Usage</th>
+            </tr>
+            <tr>
+              <td><span class="text-nowrap"><strong>qg-dark-accordion</strong></span></td>
+              <td>Dark theme</td>
+            </tr>
+            <tr>
+              <td><span class="text-nowrap"><strong>qg-accordion-v2</strong></span></td>
+              <td>Accordion enhancements (accessibility and design). For backward compatibility accordions already in use without this new class will work as expected</td>
+            </tr>
+          </table>
+          <p class="mt-4">Fontawesome icon can also be used instead of image.</p>
+          <p class="alert alert-info mb-2">Accordion without icons or images is advised best practice. </p>
           <pre><code class="language-markdown">
                 &lt;i class="fa fa-car" aria-hidden="true">&lt;/i>
                 or
