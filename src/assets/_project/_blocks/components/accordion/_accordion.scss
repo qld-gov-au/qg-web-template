@@ -37,7 +37,7 @@
             color: $qg-dark-grey-darker;
           }
         }
-        &:after {
+        .qg-accordion--ga:after {
           content: ' ';
           position: absolute;
           top: 50%;
@@ -57,10 +57,13 @@
           margin-bottom: 0;
         }
       }
-      .qg-accordion--open:after{
+      .qg-accordion--ga{
+        text-decoration:none !important;
+      }
+      .qg-accordion--open .qg-accordion--ga:after{
         transform: rotate(0deg);
       }
-      .qg-accordion--closed:after{
+      .qg-accordion--closed .qg-accordion--ga:after{
         transform: rotate(-180deg);
       }
       .qg-accordion--open + .collapsing-section {

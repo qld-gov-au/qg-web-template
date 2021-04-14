@@ -98,9 +98,9 @@
       });
     },
     gaTracking: function(){
-      this.config.$accordion.find('.accordion-label').each(function(){
+      this.config.$accordion.find('.qg-accordion--ga').each(function(){
         let title = 'accordion title - ' + $(this).find($('.title')).text();
-        $(this).find($('[data-analytics-link-group="accordion-interaction"]')).attr('data-analytics-link-group', title);
+        $(this).attr('data-analytics-link-group', title);
       });
     },
     /**
