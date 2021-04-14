@@ -17,6 +17,8 @@
         this.collapseAll();
         this.expandAll();
         this.hashTrigger();
+        // enable GA tracking
+        this.gaTracking();
         // legacyAccordion is to support SWE2 accordion
         this.legacyAccordion();
       }
@@ -93,6 +95,12 @@
           $(this).parents('.qg-accordion').find('input:checkbox').prop('checked', true);
           event.preventDefault();
         }
+      });
+    },
+    gaTracking: function(){
+      this.config.$accordion.find('.accordion-label').each(function(){
+        let title = 'accordion title - ' + $(this).find($('.title')).text();
+        $(this).find($('[data-analytics-link-group="accordion-interaction"]')).attr('data-analytics-link-group', title);
       });
     },
     /**
