@@ -11,8 +11,9 @@ beforeAll(async () => {
 });
 
 describe('SWE Components testing', () => {
-  test('Twitter and Facebook feed is working as expected', async () => {
+  test('Check Twitter Feed is working as expected', async () => {
     // twitter widget exist
+    await page.waitForSelector('.twitter-widget-0');
     const searchInput = await page.$('#twitter-widget-0');
     expect(searchInput).toBeTruthy();
   });

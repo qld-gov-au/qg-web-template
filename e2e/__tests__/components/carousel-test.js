@@ -11,7 +11,7 @@ beforeAll(async () => {
 });
 
 describe('SWE Components testing', () => {
-  test('Carousel is working as expected', async () => {
+  test('Check Carousel is working as expected', async () => {
     const carItem1 = await page.evaluate("document.querySelectorAll('.carousel-item')[0].getAttribute('class')");
     expect(carItem1).toMatch(/active/);
     await page.click('.right.carousel-control');
