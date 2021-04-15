@@ -21,12 +21,12 @@ describe('SWE Components testing', () => {
     expect(await page.evaluate('window.getComputedStyle(document.querySelector(\'.qg-tooltip__wrapper\')).getPropertyValue("display")')).not.toBe('none');
     // 3. -> 'tips to browse safely' navigating to the correct link
     await page.click('.qg-quick-exit__tip-link');
-    await page.waitFor(ct.WT);
+    await page.waitForTimeout(ct.WT);
     expect(await page.evaluate(() => location.href)).toBe('https://www.qld.gov.au/help/tips-to-browse-safely-online');
     await page.goBack();
     // 4. -> 'close this site' is working as expected and browser back is not taking to the same page
     await page.click('.qg-quick-exit__button');
-    await page.waitFor(ct.WT);
+    await page.waitForTimeout(ct.WT);
     expect(await page.evaluate(() => location.href)).toBe('https://www.google.com.au/');
     await page.goBack();
     expect(await page.evaluate(() => location.href)).not.toBe(`${ct.APP_URL}/docs/quick-exit.html`);

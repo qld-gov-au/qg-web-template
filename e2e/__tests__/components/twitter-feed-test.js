@@ -13,7 +13,7 @@ beforeAll(async () => {
 describe('SWE Components testing', () => {
   test('Check Twitter Feed is working as expected', async () => {
     // twitter widget exist
-    await page.waitForSelector('.twitter-widget-0');
+    await page.waitForTimeout(ct.WT);
     const searchInput = await page.$('#twitter-widget-0');
     expect(searchInput).toBeTruthy();
   });
