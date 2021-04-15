@@ -12,9 +12,11 @@ beforeAll(async () => {
 
 describe('SWE Components testing', () => {
   test('Check Facebook feed is working as expected', async () => {
-    await page.waitForSelector('.fb_iframe_widget', {visible: true});
-    const getFbAttr = await page.evaluate('document.querySelector(".fb_iframe_widget").getElementsByTagName("iframe")[0].getAttribute("src")');
-    expect(getFbAttr).toMatch(/facebook.com/);
+    // twitter widget exist
+    await page.waitForTimeout(ct.WT);
+    const searchInput = await page.$('.qg-facebook-updates');
+    expect(searchInput).toBeTruthy();
+    console.log('sjkdfjkasdf');
   });
   afterAll(async () => {
     await browser.close();
