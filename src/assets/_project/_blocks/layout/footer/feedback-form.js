@@ -13,15 +13,19 @@ var feedbackForm = {
     /**
      * Add hidden inputs
      **/
-    this.addHiddenInput('franchise', franchise);
-    this.addHiddenInput('page-title', $(document).find('title').text());
-    this.addHiddenInput('page-url', window.location.href);
-    this.addHiddenInput('page-referer', document.referrer);
-    this.addHiddenInput('rspUsrAgent', navigator.userAgent);
-    this.addHiddenInput('browserName', this.predictBrowserName().name + ' ' + this.predictBrowserName().version);
-    this.addHiddenInput('OS', navigator.platform);
-    this.addHiddenInput('g-recaptcha-response', '');
-
+    const hiddenInputs = {
+      'franchise': franchise,
+      'page-title': $(document).find('title').text(),
+      'page-url': window.location.href,
+      'page-referer': document.referrer,
+      'rspUsrAgent': navigator.userAgent,
+      'browserName': this.predictBrowserName().name + ' ' + this.predictBrowserName().version,
+      'OS': navigator.platform,
+      'g-recaptcha-response': '',
+    };
+    for (const prop in hiddenInputs) {
+      this.addHiddenInput(`${prop}`, `${hiddenInputs[prop]}`);
+    }
     /**
      * events to show/hide feedback component
      **/
