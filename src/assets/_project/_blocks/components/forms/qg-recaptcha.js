@@ -48,14 +48,14 @@ import keys from '../../data/qg-google-keys';
       return window.location.hostname.search(/dev|test|localhost|github|\buat\b/) === -1;
     },
     /**
-     * googleRecaptchaApiKey check environment and return a key accordingly
+     * googleRecaptchaApiKey -> check environment and return a key accordingly
      * @return {undefined}
      **/
     googleRecaptchaApiKey: function() {
       return this.isProd() ? keys.defGoogleRecaptcha.prod : keys.defGoogleRecaptcha.uat;
     },
     /**
-     * footerFeedbackGoogleRecaptchaApiKey check environment and return a key accordingly for footer feedback form
+     * footerFeedbackGoogleRecaptchaApiKey -> check environment and return a key accordingly for footer feedback form
      * @return {undefined}
      **/
     footerFeedbackGoogleRecaptchaApiKey: function() {

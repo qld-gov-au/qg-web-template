@@ -1,4 +1,9 @@
 var feedbackForm = {
+  /**
+   * Initialise feedbackForm
+   * @param {string} franchiseTitle - Franchise title if any present on a page
+   * @return {undefined}
+   **/
   init: function(franchiseTitle) {
     $('.no-js').removeClass('no-js');
     /**
