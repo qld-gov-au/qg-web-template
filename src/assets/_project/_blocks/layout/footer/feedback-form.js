@@ -1,4 +1,9 @@
 var feedbackForm = {
+  /**
+   * Initialise feedbackForm
+   * @param {string} franchiseTitle - Franchise title if any present on a page
+   * @return {undefined}
+   **/
   init: function(franchiseTitle) {
     $('.no-js').removeClass('no-js');
     /**
@@ -11,17 +16,21 @@ var feedbackForm = {
       franchise = location.pathname.split('/')[1];
     }
     /**
-     * Add hidden inputs
+     * Add hidden inputs on a page
      **/
-    this.addHiddenInput('franchise', franchise);
-    this.addHiddenInput('page-title', $(document).find('title').text());
-    this.addHiddenInput('page-url', window.location.href);
-    this.addHiddenInput('page-referer', document.referrer);
-    this.addHiddenInput('rspUsrAgent', navigator.userAgent);
-    this.addHiddenInput('browserName', this.predictBrowserName().name + ' ' + this.predictBrowserName().version);
-    this.addHiddenInput('OS', navigator.platform);
-    this.addHiddenInput('g-recaptcha-response', '');
-
+    const hiddenInputs = {
+      'franchise': franchise,
+      'page-title': $(document).find('title').text(),
+      'page-url': window.location.href,
+      'page-referer': document.referrer,
+      'rspUsrAgent': navigator.userAgent,
+      'browserName': this.predictBrowserName().name + ' ' + this.predictBrowserName().version,
+      'OS': navigator.platform,
+      'g-recaptcha-response': '',
+    };
+    for (const prop in hiddenInputs) {
+      this.addHiddenInput(`${prop}`, `${hiddenInputs[prop]}`);
+    }
     /**
      * events to show/hide feedback component
      **/
@@ -38,9 +47,9 @@ var feedbackForm = {
     });
   },
   /**
+   * Sanitize string (remove tags to avoid XSS attack)
    * @return {undefined}
    * @param {string} str - string to sanitize
-   * Sanitize string (remove tags to avoid XSS attack)
    **/
   sanitize: function (str) {
     if (!str) {
@@ -56,8 +65,8 @@ var feedbackForm = {
       .replace(/}/g, '&#124;'); // strip )
   },
   /**
-   * @return {Object}
    * Predict user browser (this function only predicts based on certain browser values and may not work with all the browsers)
+   * @return {Object}
    **/
   predictBrowserName: function () {
     var navigatorUserAgent = navigator.userAgent;
@@ -80,6 +89,7 @@ var feedbackForm = {
     };
   },
   /**
+   * Add hidden inputs function
    * @return {undefined}
    * @param {string} key - name of the hidden input
    * @param {string} val - value of the hidden input

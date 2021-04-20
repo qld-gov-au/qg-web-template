@@ -12,15 +12,10 @@ import keys from '../../data/qg-google-keys';
       $recaptchaOnPage: $('form[data-recaptcha="true"]'),
       $grecaptchaBadge: $('.grecaptcha-badge'),
     },
-    googleRecaptchaApiKey: function() {
-      return this.isProd() ? keys.defGoogleRecaptcha.prod : keys.defGoogleRecaptcha.uat;
-    },
-    footerFeedbackGoogleRecaptchaApiKey: function() {
-      return this.isProd() ? keys.defFeedbackGoogleRecaptcha.prod : keys.defFeedbackGoogleRecaptcha.uat;
-    },
-    isProd: function() {
-      return window.location.hostname.search(/dev|test|localhost|github|\buat\b/) === -1;
-    },
+    /**
+     * Initialise qgRecaptcha
+     * @return {undefined}
+     **/
     init: function() {
       let $feedbackForm = this.config.$feedbackForm;
       if ($feedbackForm.length > 0) {
@@ -44,6 +39,27 @@ import keys from '../../data/qg-google-keys';
         //for Backward compatibility legacyRecaptcha supports both version v2 and v3 for non ajax based submissions.
         this.legacyRecaptcha();
       }
+    },
+    /**
+     * check hostname and determine environment
+     * @return {undefined}
+     **/
+    isProd: function() {
+      return window.location.hostname.search(/dev|test|localhost|github|\buat\b/) === -1;
+    },
+    /**
+     * googleRecaptchaApiKey -> check environment and return a key accordingly
+     * @return {undefined}
+     **/
+    googleRecaptchaApiKey: function() {
+      return this.isProd() ? keys.defGoogleRecaptcha.prod : keys.defGoogleRecaptcha.uat;
+    },
+    /**
+     * footerFeedbackGoogleRecaptchaApiKey -> check environment and return a key accordingly for footer feedback form
+     * @return {undefined}
+     **/
+    footerFeedbackGoogleRecaptchaApiKey: function() {
+      return this.isProd() ? keys.defFeedbackGoogleRecaptcha.prod : keys.defFeedbackGoogleRecaptcha.uat;
     },
     /**
      * From SWE4 onwards footer feedback is AJAX based

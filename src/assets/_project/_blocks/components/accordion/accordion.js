@@ -11,6 +11,10 @@
       $accordion: $('.qg-accordion'),
       $accHeading: $('.acc-heading'),
     },
+    /**
+     * Initialise qgAccordion
+     * @return {undefined}
+     **/
     init: function() {
       if (this.config.$accordion.length > 0) {
         this.accordionClick();
@@ -49,6 +53,7 @@
       }
     },
     /**
+     * accordionClick -> click on an accordion
      * @return {undefined}
      **/
     accordionClick: function(){
@@ -58,6 +63,11 @@
         self.toggleOpenCloseClass($(this));
       });
     },
+    /**
+     * keyboardAccessibility -> accordion to work with keyboard
+     * @param {string} event -> click , keypress etc
+     * @return {undefined}
+     **/
     keyboardAccessibility: function (event){
       if (event.type === 'click') {
         return true;
@@ -70,6 +80,10 @@
         return false;
       }
     },
+    /**
+     * collapseAll -> collapse all accordion on a page
+     * @return {undefined}
+     **/
     collapseAll: function (){
       var self = this;
       // collapse all click
@@ -83,6 +97,10 @@
         }
       });
     },
+    /**
+     * expandAll -> expand all accordion on a page
+     * @return {undefined}
+     **/
     expandAll: function (){
       var self = this;
       //expand all click
@@ -97,6 +115,10 @@
         }
       });
     },
+    /**
+     * gaTracking -> enable tracking on accordion, this function adds an attribute 'data-analytics-link-group' with a acc title
+     * @return {undefined}
+     **/
     gaTracking: function(){
       this.config.$accordion.find('.qg-accordion--ga').each(function(){
         let title = 'accordion title - ' + $(this).find($('.title')).text();
