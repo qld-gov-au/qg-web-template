@@ -1,59 +1,85 @@
+var Stickyfill = require('stickyfill');
+var stickyfill = Stickyfill();
 
-(function () {
-  var $quickExit = $('.qg-quick-exit');
-  var Stickyfill = require('stickyfill');
-  var stickyfill = Stickyfill();
-  if ($quickExit.length > 0 && $('.qg-quick-exit__button').length > 0) {
-    var quickExitInit = function () {
-      var button = document.querySelector('.qg-quick-exit__button');
-      var escapeSite = 'https://www.google.com.au/';
-      var hotkey = 27;
-
-      // add click handler
-      button.onclick = function (e) {
-        /*globals quickExit*/
-        return quickExit(escapeSite);
-      };
-
-      // load a plugin only on IE browser to support position:sticky
-      if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
-        stickyfill.add($('.qg-quick-exit')[0]);
-      }
-
-      // add hotkey trigger
-      document.addEventListener('keydown', function (e) {
-        if (e.keyCode === hotkey) {
-          quickExit(escapeSite);
-
-          if (e) {
-            // stop escape from cancelling redirect
-            e.preventDefault();
-
-            // early IEs don't have preventDefault
-            e.returnValue = false;
-          }
-
-          return false;
-        }
-      });
-    };
-    window.quickExit = function (site) {
-      // then redirect to a non-sensitive site
-      window.open(site, '_blank');
-      window.location.replace(site);
-
-      // remove as much info from URL as possible
-      if (window.history) {
-        try {
-          window.history.replaceState({}, '', '/');
-        } catch (e) {
-
-        }
-      }
-
-      // disable default event handling
-      return false;
-    };
-    quickExitInit();
+export class QgQuickExit {
+  constructor () {
+    this.$quickExit = $('.qg-quick-exit');
+    this.quickExitButton = document.querySelector('.qg-quick-exit__button');
+    this.escapeSite = 'https://www.google.com.au/';
+    this.hotkey = 27;
   }
-})();
+
+  /**
+  * Initialise QgQuickExit
+  * @return {undefined}
+  **/
+  init() {
+    if (this.$quickExit.length > 0 && typeof (this.quickExitButton) !== 'undefined' && this.quickExitButton != null) {
+      this.onbtnClick();
+      this.ieFix();
+      this.onKeyDown();
+    }
+  }
+
+  /**
+  * quickExit function redirects a user on click and Esc key down
+  * @return {undefined}
+  **/
+  quickExit(site) {
+    // then redirect to a non-sensitive site
+    window.open(site, '_blank');
+    window.location.replace(site);
+    // remove as much info from URL as possible
+    if (window.history) {
+      try {
+        window.history.replaceState({}, '', '/');
+      } catch (e){
+      }
+    }
+    // disable default event handling
+    return false;
+  }
+
+  /**
+  * onbtnClick -> clicking quick exit button a page
+  * @return {undefined}
+  **/
+  onbtnClick () {
+    let self = this;
+    this.quickExitButton.onclick = function (e) {
+      return self.quickExit(self.escapeSite);
+    };
+  }
+
+  /**
+  * onKeyDown -> escape keydown event
+  * @return {undefined}
+  **/
+  onKeyDown (){
+    let self = this;
+    // add hotkey trigger
+    document.addEventListener('keydown', function (e) {
+      if (e.keyCode === self.hotkey) {
+        self.quickExit(self.escapeSite);
+        if (e) {
+          // stop escape from cancelling redirect
+          e.preventDefault();
+          // early IEs don't have preventDefault
+          e.returnValue = false;
+        }
+        return false;
+      }
+    });
+  }
+
+  /**
+  * ieFix -> stickyfill lib to provide support for position:sticky.
+  * @return {undefined}
+  **/
+  ieFix() {
+    // load a plugin only on IE browser to support position:sticky
+    if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
+      stickyfill.add($('.qg-quick-exit')[0]);
+    }
+  }
+}
