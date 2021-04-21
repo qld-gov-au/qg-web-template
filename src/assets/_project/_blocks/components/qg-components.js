@@ -17,5 +17,7 @@ import '../layout/site-search/qg-site-search';
 
 import accessibility      from './accessibility/accessibility';
 accessibility.init();
+
+// quick exit
 const quickExit = new QgQuickExit();
 quickExit.init();
