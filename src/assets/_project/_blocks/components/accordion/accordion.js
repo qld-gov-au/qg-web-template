@@ -9,6 +9,8 @@
   var qgAccordion = {
     config: {
       $accordion: $('.qg-accordion'),
+      // qg-accordion-v2 adds accessibility enhancement to the exiting accordion. The reason for creating a new selector is to maintain backward compatibility with the existing accordion (swe2 accordion).
+      $accordion_v2: $('.qg-accordion-v2'),
       $accHeading: $('.acc-heading'),
     },
     /**
@@ -58,7 +60,7 @@
      **/
     accordionClick: function(){
       let self = this;
-      let accHeading = this.config.$accHeading;
+      let accHeading = this.config.$accordion_v2.find(this.config.$accHeading);
       accHeading.on('click', function (event) {
         self.toggleOpenCloseClass($(this));
       });
