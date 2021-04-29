@@ -1,0 +1,28 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "19:00"
+  open-pull-requests-limit: 10
+  reviewers:
+  - duttonw
+  - asifamingov
+  - andersmx
+  assignees:
+  - asifamingov
+  - andersmx
+  ignore:
+  - dependency-name: cssnano
+    versions:
+    - 4.1.10
+    - 4.1.11
+    - 5.0.0
+    - 5.0.1
+  - dependency-name: terser-webpack-plugin
+    versions:
+    - 5.0.3
+  - dependency-name: webpack-stream
+    versions:
+    - 6.1.1
