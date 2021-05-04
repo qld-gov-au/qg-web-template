@@ -186,53 +186,43 @@
                 var formContainer = $('.qg-fl');
                 var errorMessage = $('<p class="text-danger font-italic pt-2 pl-2">No result found</p>');
                 var errorHandler = $('<div class="error-handler"></div>');
-                if (!$('.error-handler').length > 0) { errorHandler.insertAfter(formContainer); }
+                if (!$('.error-handler').length > 0) {
+                  errorHandler.insertAfter(formContainer);
+                }
                 let itemFull = $('.pac-container .pac-item:first').text();
-                console.log(itemFull, 'itemFull');
                 let itemQuery = $('.pac-container .pac-item:first .pac-item-query').text();
-                console.log(itemQuery, 'itemQuery');
                 let firstResult = itemQuery + ' ' + itemFull.substring(itemQuery.length);
-                if (e.keyCode === 13 || e.keyCode === 9) {
-                  console.log('yes 4');
-                  e.preventDefault();
-                  console.log(firstResult, 'firstResult');
-                  if (firstResult.length > 1 && reqReady === true) {
-                    console.log('just below if');
-                    $('.qg-location-autocomplete').val(firstResult);
-                    let geocoder = new google.maps.Geocoder();
-                    console.log(geocoder);
-                    geocoder.geocode({ 'address': firstResult }, function (results, status) {
-                      console.log('results', results);
-                      if (status === 'OK') {
-                        reqReady = false;
-                        if (results) {
-                          $('.qg-location-autocomplete').val(results[0].formatted_address);
-                          let latitude = results[0].geometry.location.lat();
-                          let longitude = results[0].geometry.location.lng();
-                          $('.error-handler').html('');
-                          addressSelection = true;
-                          console.log(latitude, longitude);
-                          self.config.$searchWidget.find(self.config.$latitude).val(latitude)
-                            .end()
-                            .find(self.config.$longitude).val(longitude);
-                          setTimeout(function () {
-                            reqReady = true;
-                          }, 1000);
-                        } else {
+                e.preventDefault();
+                if (firstResult.length > 1 && reqReady === true) {
+                  $('.qg-location-autocomplete').val(firstResult);
+                  let geocoder = new google.maps.Geocoder();
+                  geocoder.geocode({ 'address': firstResult }, function (results, status) {
+                    if (status === 'OK') {
+                      reqReady = false;
+                      if (results) {
+                        $('.qg-location-autocomplete').val(results[0].formatted_address);
+                        let latitude = results[0].geometry.location.lat();
+                        let longitude = results[0].geometry.location.lng();
+                        $('.error-handler').html('');
+                        addressSelection = true;
+                        self.config.$searchWidget.find(self.config.$latitude).val(latitude)
+                          .end()
+                          .find(self.config.$longitude).val(longitude);
+                        setTimeout(function () {
                           reqReady = true;
-                          $('.error-handler').html(errorMessage);
-                        }
+                        }, 1000);
                       } else {
                         reqReady = true;
-                        if (status === 'ZERO_RESULTS' || status === 'OVER_QUERY_LIMIT' || status === undefined) {
-                          $('.error-handler').html(errorMessage);
-                        }
+                        $('.error-handler').html(errorMessage);
                       }
-                    });
-                  }
+                    } else {
+                      reqReady = true;
+                      if (status === 'ZERO_RESULTS' || status === 'OVER_QUERY_LIMIT' || status === undefined) {
+                        $('.error-handler').html(errorMessage);
+                      }
+                    }
+                  });
                 }
-              } else {
-                addressSelection = false;
               }
             });
           });
