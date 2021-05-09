@@ -171,7 +171,7 @@ $(function () {
             var htmlValue = value.replace(/</g, '&lt;').replace(match, '<mark>' + safeInput + '</mark>');
             // use form.action + default params
             return '<li><a href="https://find.search.qld.gov.au/s/search.html?collection=qld-gov&profile=qld&query=' + encodeURIComponent(value) + '" data-analytics-link-group="qg-search-suggestion-from-' + profile + '">' + htmlValue + '</a></li>';
-          }).join('\n')).fadeIn(400).prepend('<li class="qg-search-results__label ml-2">Suggestions</li>');
+          }).join('\n')).fadeIn(200).prepend('<li class="qg-search-results__label ml-2">Suggestions</li>');
 
           // issue #3: issues with typing over selected suggestion
           // https://github.com/qld-gov-au/jquery.autocomplete/issues/3
