@@ -109,7 +109,6 @@
       // label selector is to provide backward compatibility in case projects are using old markup
       $('.qg-acc-controls .expand, label[for=\'expand\']').on('click keypress', function (event) {
         if (self.keyboardAccessibility(event) === true) {
-          console.log('yes inside');
           $(this).parents('.qg-accordion').find('.acc-heading').removeClass('qg-accordion--closed').addClass('qg-accordion--open');
           // backward compatible code to support SWE2 accordion
           $(this).parents('.qg-accordion').find('input:checkbox').prop('checked', true);
