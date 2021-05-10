@@ -1,5 +1,8 @@
 (function ($) {
   'use strict';
+  /**
+   * This adds a pattern for radio button and checkbox , more info https://qld-gov-au.github.io/web-template-release/forms.html
+   **/
   var $rcTheme = $('.rc-theme');
   function toggleFocus (e) {
     if (e.type === 'focus') {

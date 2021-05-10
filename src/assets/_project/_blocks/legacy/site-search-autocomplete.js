@@ -40,13 +40,14 @@ $(function () {
     // keep it wide while interacting with the search form (box, button, autosuggest list)
 
     // create the suggestion box
-    var suggestions = $('<ul role="listbox" class="listbox" aria-busy="true"/>').generateId('suggestbox');
+    var suggestions = $('<ul role="listbox" id="suggestions_listbox" class="listbox" aria-busy="true"/>');
 
     if (profile.length > 0 && submit.length > 0) {
       submit.attr('data-analytics-link-group', 'qg-search-submit-from-' + profile);
     }
 
     function closeSuggestions () {
+      suggestions.remove();
       suggestions.empty();
       suggestions.attr('aria-busy', 'true');
     }
@@ -166,11 +167,11 @@ $(function () {
           // console.log( 'suggestions for ', userTyped, data, 'user has typed', searchField.val() );
           var match = new RegExp(userTyped.replace(/([.+*?\[^\]$(){}=!<>|:-\\,])/g, '\\$1'), 'g');
           var safeInput = userTyped.replace(/</g, '&lt;');
-          suggestions.html($.map(data, function (value) {
+          suggestions.hide().html($.map(data, function (value) {
             var htmlValue = value.replace(/</g, '&lt;').replace(match, '<mark>' + safeInput + '</mark>');
             // use form.action + default params
             return '<li><a href="https://find.search.qld.gov.au/s/search.html?collection=qld-gov&profile=qld&query=' + encodeURIComponent(value) + '" data-analytics-link-group="qg-search-suggestion-from-' + profile + '">' + htmlValue + '</a></li>';
-          }).join('\n'));
+          }).join('\n')).fadeIn(300).prepend('<li class="qg-search-results__label ml-2">Suggestions</li>');
 
           // issue #3: issues with typing over selected suggestion
           // https://github.com/qld-gov-au/jquery.autocomplete/issues/3

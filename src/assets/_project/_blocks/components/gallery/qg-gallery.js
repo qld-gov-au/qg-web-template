@@ -1,6 +1,9 @@
 if ($("script[src*='jquery.fancybox']").length === 0) {
+  // load scripts and styles only if any of the selectors are present on the page
   if ($('.qg-image-gallery').length > 0 || $('.qg-lightbox').length > 0 || $('.image-gallery').length > 0 || $('[class*="cut-in"]').length > 0) {
+    // append style
     $('head').append($("<link rel='stylesheet' href='{{CDN}}/latest/lib/ext/fancybox/jquery.fancybox.min.css' type='text/css' media='screen' />"));
+    // load script
     $.getScript('{{CDN}}/latest/lib/ext/fancybox/jquery.fancybox.min.js', function () {
       // image gallery
       $('.qg-image-gallery, .image-gallery').each(function (index) {
@@ -17,6 +20,7 @@ if ($("script[src*='jquery.fancybox']").length === 0) {
       var cutInLink = $('.cut-in .caption a');
       $(cutInLink).attr('data-fancybox', 'images');
 
+      // initialize fancybox , please check fancybox plugin doc for more details regarding the config http://fancyapps.com/fancybox/
       $('[data-fancybox^="gallery"]').fancybox({
         buttons: ['thumbs', 'close'],
         mobile: {

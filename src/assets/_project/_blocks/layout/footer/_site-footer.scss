@@ -15,7 +15,7 @@
             opacity: 1;
         }
     }
-    
+
     h3 {
         @include rem(font-size, 20px);
         font-weight: bold;
@@ -54,36 +54,31 @@
     ul {
         list-style: none;
         padding: 0;
-        margin: 5px 0;
-
+        p, li{
+          &.phone:before {
+            content: "\f095";
+          }
+          &:before{
+            @include rem(font-size, 20px);
+            color: #FFF;
+            font-family: FontAwesome;
+            margin-right: 10px;
+          }
+        }
         li {
-            margin-top: 5px;
-
+            margin-top: rem(16px);
             a {
                 color: #FFF;
                 text-decoration: underline;
                 transition: opacity .1s linear;
-        
+
                 &:hover, &:focus {
                     color: $qg-global-primary-hover-grey;
                 }
             }
-
-            &:before{
-                @include rem(font-size, 20px);
-                color: #FFF;
-                font-family: FontAwesome;
-                margin-right: 10px;
-            }
-
-            &.phone:before {
-                content: "\f095";
-            }
-
             &.facebook:before {
                 content: "\f082";
             }
-
             &.twitter:before {
                 content: "\f081";
             }
@@ -134,10 +129,10 @@
                 }
             }
 
-        
+
             > * {
                 margin-left: auto;
-                margin-right: auto; 
+                margin-right: auto;
             }
         }
     }

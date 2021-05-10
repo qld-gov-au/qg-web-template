@@ -42,17 +42,16 @@
       color: $qg-dark-grey;
       text-decoration: none;
     }
-
-    a:hover {
+    a:not(.active):hover {
       text-decoration: underline;
       background-color: #F5F5F5;
     }
-
     a.active, a.visited {
+      background: none;
+      text-decoration: none;
       color: $qg-dark-grey-darker;
       font-weight: bold;
     }
-
     a.active:before {
       opacity: 1;
     }
@@ -90,8 +89,7 @@
 }
 
 
-// EXSITING NAV Pattern
-// TO BE DELETED after the implementation of (QOL-7546 Section navigation enhancements)
+// existing NAV Pattern for backward compatibility
 
 #qg-content #qg-section-nav {
   background-color: $qg-section-nav-bg-color;

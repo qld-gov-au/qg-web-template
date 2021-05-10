@@ -17,7 +17,7 @@
     if (!results || !results[2]) return false;
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
   };
-  // Maps view full screen customization code
+  // Maps view full screen customization code (TODO move this to Matrix assets as this is related with Matrix Map component)
   $('.map-modal').butterfly({
     contentDefaultWidth: '90%',
     contentDefaultHeight: '90%',

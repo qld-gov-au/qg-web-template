@@ -4,8 +4,6 @@
 
 This template is designed to provide a template for all Franchise websites, and the underpinning technology for new Agency websites.
 
-_This project is currently a work in progress._
-
 - [Getting started](readme/getting-started.md)
 - [Working in GIT](readme/git.md)
 - [Making changes](readme/making-changes.md)
