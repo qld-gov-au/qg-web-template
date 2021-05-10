@@ -31,7 +31,7 @@ var activeSideNav = (function () {
  **/
   function highlightNavItem () {
     var currentPageTitle = getCurrentTitle();
-    if ($('.guide-sub-nav').length > 0){
+    if ($('.guide-sub-nav').length > 0) {
       // In case of Guide Navigation, sub heading are in H2 tags.
       let contentHeading = $.trim($('h2', '#qg-primary-content').eq(0).text());
       $('.guide-sub-nav >li').each(function () {

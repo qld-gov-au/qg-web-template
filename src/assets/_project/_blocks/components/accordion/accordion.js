@@ -17,7 +17,7 @@
      * Initialise qgAccordion
      * @return {undefined}
      **/
-    init: function() {
+    init: function () {
       if (this.config.$accordion.length > 0) {
         this.accordionClick();
         this.collapseAll();
@@ -29,14 +29,14 @@
         this.legacyAccordion();
       }
     },
-    urlHash: function (){
+    urlHash: function () {
       return decodeURI(window.location.hash.replace(/\/|#|{|}|\+|\\/g, ''));
     },
     /**
      * hashTrigger function open matching accordion if it finds #title-Of-Accordion in the url
      * @return {undefined}
      **/
-    hashTrigger: function (){
+    hashTrigger: function () {
       let hashVal = this.urlHash();
       if (hashVal.length > 0) {
         let findHashVal = this.config.$accordion.find('#' + hashVal + '');
@@ -45,8 +45,8 @@
         findHashVal.parent('article').find('.acc-heading').focus();
       }
     },
-    toggleOpenCloseClass: function(curr){
-      if (curr.hasClass('qg-accordion--open')){
+    toggleOpenCloseClass: function (curr) {
+      if (curr.hasClass('qg-accordion--open')) {
         curr.removeClass('qg-accordion--open').addClass('qg-accordion--closed');
         curr.attr('aria-expanded', 'false');
       } else {
@@ -58,7 +58,7 @@
      * accordionClick -> click on an accordion
      * @return {undefined}
      **/
-    accordionClick: function(){
+    accordionClick: function () {
       let self = this;
       let accHeading = this.config.$accordion_v2.find(this.config.$accHeading);
       accHeading.on('click', function (event) {
@@ -70,7 +70,7 @@
      * @param {string} event -> click , keypress etc
      * @return {undefined}
      **/
-    keyboardAccessibility: function (event){
+    keyboardAccessibility: function (event) {
       if (event.type === 'click') {
         return true;
       } else if (event.type === 'keypress') {
@@ -86,7 +86,7 @@
      * collapseAll -> collapse all accordion on a page
      * @return {undefined}
      **/
-    collapseAll: function (){
+    collapseAll: function () {
       var self = this;
       // collapse all click
       // label selector is to provide backward compatibility in case projects are using old markup
@@ -103,7 +103,7 @@
      * expandAll -> expand all accordion on a page
      * @return {undefined}
      **/
-    expandAll: function (){
+    expandAll: function () {
       var self = this;
       //expand all click
       // label selector is to provide backward compatibility in case projects are using old markup
@@ -120,8 +120,8 @@
      * gaTracking -> enable tracking on accordion, this function adds an attribute 'data-analytics-link-group' with a acc title
      * @return {undefined}
      **/
-    gaTracking: function(){
-      this.config.$accordion.find('.qg-accordion--ga').each(function(){
+    gaTracking: function () {
+      this.config.$accordion.find('.qg-accordion--ga').each(function () {
         let title = 'accordion title - ' + $(this).find($('.title')).text();
         $(this).attr('data-analytics-link-group', title);
       });
@@ -130,7 +130,7 @@
      * legacyAccordion function supports swe2 accordion in use at some places
      * @return {undefined}
      **/
-    legacyAccordion: function (){
+    legacyAccordion: function () {
       let self = this;
       let accItem = $('.qg-accordion:not(.qg-accordion-v2)').find('article');
       accItem.find('.acc-heading').on('keypress', function (event) {

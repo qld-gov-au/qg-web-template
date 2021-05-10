@@ -4,7 +4,7 @@ var feedbackForm = {
    * @param {string} franchiseTitle - Franchise title if any present on a page
    * @return {undefined}
    **/
-  init: function(franchiseTitle) {
+  init: function (franchiseTitle) {
     $('.no-js').removeClass('no-js');
     /**
      * Check franchise title is present on the page else get it from the URL
@@ -72,11 +72,11 @@ var feedbackForm = {
     var navigatorUserAgent = navigator.userAgent;
     var predictVersion;
     var matchBrowser = navigatorUserAgent.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
-    if (/trident/i.test(matchBrowser[1])){
+    if (/trident/i.test(matchBrowser[1])) {
       predictVersion = /\brv[ :]+(\d+)/g.exec(navigatorUserAgent) || [];
       return {name: 'IE', version: (predictVersion[1] || '')};
     }
-    if (matchBrowser[1] === 'Chrome'){
+    if (matchBrowser[1] === 'Chrome') {
       predictVersion = navigatorUserAgent.match(/\bOPR|Edge\/(\d+)/);
       if (predictVersion != null) { return {name: 'Edge', version: predictVersion[1]}; }
     }

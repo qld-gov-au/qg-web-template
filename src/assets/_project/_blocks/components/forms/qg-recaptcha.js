@@ -16,7 +16,7 @@ import keys from '../../data/qg-google-keys';
      * Initialise qgRecaptcha
      * @return {undefined}
      **/
-    init: function() {
+    init: function () {
       let $feedbackForm = this.config.$feedbackForm;
       if ($feedbackForm.length > 0) {
         /**
@@ -44,33 +44,33 @@ import keys from '../../data/qg-google-keys';
      * check hostname and determine environment
      * @return {undefined}
      **/
-    isProd: function() {
+    isProd: function () {
       return window.location.hostname.search(/dev|test|localhost|github|\buat\b/) === -1;
     },
     /**
      * googleRecaptchaApiKey -> check environment and return a key accordingly
      * @return {undefined}
      **/
-    googleRecaptchaApiKey: function() {
+    googleRecaptchaApiKey: function () {
       return this.isProd() ? keys.defGoogleRecaptcha.prod : keys.defGoogleRecaptcha.uat;
     },
     /**
      * footerFeedbackGoogleRecaptchaApiKey -> check environment and return a key accordingly for footer feedback form
      * @return {undefined}
      **/
-    footerFeedbackGoogleRecaptchaApiKey: function() {
+    footerFeedbackGoogleRecaptchaApiKey: function () {
       return this.isProd() ? keys.defFeedbackGoogleRecaptcha.prod : keys.defFeedbackGoogleRecaptcha.uat;
     },
     /**
      * From SWE4 onwards footer feedback is AJAX based
      * @return {undefined}
      **/
-    footerFeedbackRecaptcha: function() {
+    footerFeedbackRecaptcha: function () {
       var selfObj = this;
       /**
        * call recaptcha api to load script with the key on .qg-feedback-toggle click
        **/
-      $('.qg-feedback-toggle').one('click', function(){
+      $('.qg-feedback-toggle').one('click', function () {
         swe.ajaxCall(
           'https://www.google.com/recaptcha/api.js?render=' + selfObj.footerFeedbackGoogleRecaptchaApiKey(),
           'script',
@@ -85,7 +85,7 @@ import keys from '../../data/qg-google-keys';
        * Get and display success message
        * @return {undefined}
        **/
-      let onReady = function (){
+      let onReady = function () {
         grecaptcha.ready(function () {
           $('#qg-page-feedback-form').submit(function (event) {
             var self = $(this);
@@ -126,7 +126,7 @@ import keys from '../../data/qg-google-keys';
      * If all forms have captchaPrivacyTerms, we can hide reCAPTCHA Badge
      * @return {undefined}
      **/
-    hideCaptchaBanner: function (){
+    hideCaptchaBanner: function () {
       if (($('p[class="captchaPrivacyTerms"]').length === $('form[data-recaptcha="true"]').length) && (this.config.$grecaptchaBadge.css('visibility') !== 'hidden')) {
         var hidegrecaptchaBadge = '.grecaptcha-badge { visibility: hidden; }';
         var styleSheet = document.createElement('style');
@@ -136,7 +136,7 @@ import keys from '../../data/qg-google-keys';
       }
     },
     // Recaptcha version 2
-    v2Captcha: function (form, subBtn, key){
+    v2Captcha: function (form, subBtn, key) {
       try {
         //console.log('v2 key: ' + key);
         grecaptcha.render(subBtn, {
@@ -162,7 +162,7 @@ import keys from '../../data/qg-google-keys';
       grecaptcha.execute();
     },
     // Recaptcha version 3
-    v3Captcha: function (form, greptcha, key, action){
+    v3Captcha: function (form, greptcha, key, action) {
       //console.log('v3 key: ' + key);
       try {
         grecaptcha.execute(key, {action: action})
@@ -188,7 +188,7 @@ import keys from '../../data/qg-google-keys';
      * legacyRecaptcha supports both version v2 and v3 for non ajax based submissions.
      *  @return {undefined}
      **/
-    legacyRecaptcha: function(){
+    legacyRecaptcha: function () {
       let self = this;
       let loadedRecaptcha = false;
       /**

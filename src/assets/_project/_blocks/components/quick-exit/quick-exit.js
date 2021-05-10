@@ -13,7 +13,7 @@ export class QgQuickExit {
   * Initialise QgQuickExit
   * @return {undefined}
   **/
-  init() {
+  init () {
     if (this.$quickExit.length > 0 && typeof (this.quickExitButton) !== 'undefined' && this.quickExitButton != null) {
       this.onbtnClick();
       this.ieFix();
@@ -25,7 +25,7 @@ export class QgQuickExit {
   * quickExit function redirects a user on click and Esc key down
   * @return {undefined}
   **/
-  quickExit(site) {
+  quickExit (site) {
     // then redirect to a non-sensitive site
     window.open(site, '_blank');
     window.location.replace(site);
@@ -33,7 +33,7 @@ export class QgQuickExit {
     if (window.history) {
       try {
         window.history.replaceState({}, '', '/');
-      } catch (e){
+      } catch (e) {
       }
     }
     // disable default event handling
@@ -55,7 +55,7 @@ export class QgQuickExit {
   * onKeyDown -> escape keydown event
   * @return {undefined}
   **/
-  onKeyDown (){
+  onKeyDown () {
     let self = this;
     // add hotkey trigger
     document.addEventListener('keydown', function (e) {
@@ -76,7 +76,7 @@ export class QgQuickExit {
   * ieFix -> stickyfill lib to provide support for position:sticky.
   * @return {undefined}
   **/
-  ieFix() {
+  ieFix () {
     // load a plugin only on IE browser to support position:sticky
     if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
       stickyfill.add($('.qg-quick-exit')[0]);

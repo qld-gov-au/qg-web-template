@@ -24,7 +24,7 @@
     reuseFragment: true,
   });
   // this function equals the height of the cards in a group, if it finds a class '.cards__equal-height'.
-  function setHeight() {
+  function setHeight () {
     if ($('.cards__equal-height').length > 0) {
       $('.qg-cards.cards__equal-height').each(function () {
         // Cache the highest
