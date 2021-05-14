@@ -69,39 +69,40 @@ $(function () {
   qgSiteSearch.fn.inputEventHandler = function (event) {
     var eventType = event['type'];
     var targetInput = $(event['target']);
+    // console.log('targetInput inside inputEventHandler', targetInput);
     var keyCode = event['keyCode'];
     var inputValue = targetInput.val();
 
     switch (eventType) {
     case 'focus':
-      qgSiteSearch.fn.onFocus(inputValue);
+      qgSiteSearch.fn.onFocus(inputValue, targetInput);
       break;
     case 'blur':
-      qgSiteSearch.fn.onBlur(inputValue);
+      qgSiteSearch.fn.onBlur(inputValue, targetInput);
       break;
     case 'keydown':
-      qgSiteSearch.fn.onKeydown(inputValue, keyCode);
+      qgSiteSearch.fn.onKeydown(inputValue, keyCode, targetInput);
       break;
     }
   };
 
   // Handle clicking into the input field
-  qgSiteSearch.fn.onFocus = function (inputValue) {
-    var initialConcierge = $('.qg-search-concierge-initial');
-
+  qgSiteSearch.fn.onFocus = function (inputValue, targetInput) {
+    // console.log(targetInput, 'targetInput inside onfocus');
+    var initialConcierge = targetInput.parent().find($('.qg-search-concierge-initial'));
     if (inputValue === '') {
       // Transition reveal initial state
       initialConcierge.addClass('show');
     } else {
       // Look for suggested results
-      qgSiteSearch.fn.checkForSuggestions(inputValue);
+      // console.log('inside else', targetInput);
+      qgSiteSearch.fn.checkForSuggestions(inputValue, targetInput);
     }
   };
 
   // Handle clicking out of the input field
-  qgSiteSearch.fn.onBlur = function (inputValue) {
-    var clearButton = $('.qg-search-close-concierge');
-
+  qgSiteSearch.fn.onBlur = function (inputValue, targetInput) {
+    var clearButton = targetInput.parent().find($('.qg-search-close-concierge'));
     // Remove the clear button
     clearButton.addClass('hide');
 
@@ -110,11 +111,10 @@ $(function () {
   };
 
   // Handle input value changes
-  qgSiteSearch.fn.onKeydown = function (inputValue, keyCode) {
-    var initialConcierge = $('.qg-search-concierge-initial');
-    var helpfulConcierge = $('.qg-search-concierge-help');
-    var clearButton = $('.qg-search-close-concierge');
-
+  qgSiteSearch.fn.onKeydown = function (inputValue, keyCode, targetInput) {
+    var initialConcierge = targetInput.parent().find($('.qg-search-concierge-initial'));
+    var helpfulConcierge = targetInput.parent().find($('.qg-search-concierge-help'));
+    var clearButton = targetInput.parent().find($('.qg-search-close-concierge'));
     if (keyCode === 40) {
       $('.qg-search-form').attr('data-navindex', '0');
       setTimeout($('.qg-search-concierge.show').find('a, button')[0].focus(), 300);
@@ -123,7 +123,7 @@ $(function () {
       clearButton.removeClass('hide');
 
       // Look for suggested results
-      qgSiteSearch.fn.checkForSuggestions(inputValue);
+      qgSiteSearch.fn.checkForSuggestions(inputValue, targetInput);
     } else {
       // Remove the clear button
       clearButton.addClass('hide');
@@ -156,8 +156,8 @@ $(function () {
 
   // Handle clearing the input field via button
   qgSiteSearch.fn.clearInputField = function (event) {
-    var clearButton = $('.qg-search-close-concierge');
-    var searchInput = $('#qg-search-query');
+    var clearButton = $(this).parent().find($('.qg-search-close-concierge'));
+    var searchInput = $(this).parent().find($('.qg-search-site__input'));
     searchInput.val('');
 
     // Remove the button
@@ -171,7 +171,7 @@ $(function () {
   qgSiteSearch.fn.searchSuggestionClick = function (event) {
     var targetElement = $(event['currentTarget']);
     var suggestionValue = targetElement.text();
-    var searchInput = $('#qg-search-query');
+    var searchInput = $('.qg-search-site__input');
 
     // Add suggestion to input value
     searchInput.val(suggestionValue);
@@ -238,9 +238,9 @@ $(function () {
   };
 
   // Check Funnelback for suggested results
-  qgSiteSearch.fn.checkForSuggestions = function (inputValue) {
-    var initialConcierge = $('.qg-search-concierge-initial');
-    var helpfulConcierge = $('.qg-search-concierge-help');
+  qgSiteSearch.fn.checkForSuggestions = function (inputValue, targetInput) {
+    var initialConcierge = targetInput.parent().find($('.qg-search-concierge-initial'));
+    var helpfulConcierge = targetInput.parent().find($('.qg-search-concierge-help'));
     var numChars = inputValue.length;
 
     // Remove initial state
@@ -249,10 +249,10 @@ $(function () {
     // Query Funnelback when three characters are entered
     if (numChars >= 3) {
       // Get suggestions
-      qgSiteSearch.fn.getSuggestions(inputValue);
+      qgSiteSearch.fn.getSuggestions(inputValue, targetInput);
 
       // Get services
-      qgSiteSearch.fn.getServices(inputValue);
+      qgSiteSearch.fn.getServices(inputValue, targetInput);
 
       // Transition reveal suggestions
       helpfulConcierge.addClass('show');
@@ -264,9 +264,9 @@ $(function () {
   //
 
   // Get suggestion keywords
-  qgSiteSearch.fn.getSuggestions = function (inputValue) {
-    var searchForm = $('#qg-global-search-form');
-    var suggestURL = searchForm.attr('data-suggestions');
+  qgSiteSearch.fn.getSuggestions = function (inputValue, targetInput) {
+    var suggestURL = targetInput.parents('.qg-site-search__form').attr('data-suggestions');
+    // var suggestURL = searchForm.attr('data-suggestions');
 
     $.ajax({
       cache: true,
@@ -275,15 +275,19 @@ $(function () {
       data: {
         partial_query: inputValue,
       },
-      success: qgSiteSearch.fn.formatSuggestions,
+      success: function (suggestions){
+        qgSiteSearch.fn.formatSuggestions(suggestions, targetInput);
+      },
     });
   };
 
   // Format suggestion keywords
-  qgSiteSearch.fn.formatSuggestions = function (suggestions) {
-    var inputField = $('#qg-search-query');
+  qgSiteSearch.fn.formatSuggestions = function (suggestions, targetInput) {
+    console.log(suggestions, 'suggestions');
+    console.log(targetInput, 'targetInput');
+    var inputField = targetInput.parent().find($('.qg-search-site__input'));
     var inputValue = inputField.val();
-    var suggestionsContainer = $('.qg-search-concierge-help .qg-search-concierge-group.suggestions');
+    var suggestionsContainer = targetInput.parent().find($('.qg-search-concierge-help .qg-search-concierge-group.suggestions'));
     var suggestionsHeading = '<h4>Suggestions</h4>';
     var suggestionsHTML = '';
     var maxSuggestions = 3;
@@ -467,8 +471,7 @@ $(function () {
   //
 
   $(document).ready(function () {
-    var searchInput = $('#qg-search-query');
-
+    var searchInput = $('.qg-search-site__input');
     // Set up events
     searchInput.on('focus keydown', debouncer(qgSiteSearch.fn.inputEventHandler, 200));
   });
