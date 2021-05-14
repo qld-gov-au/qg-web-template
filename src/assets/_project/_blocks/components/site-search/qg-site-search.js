@@ -69,7 +69,6 @@ $(function () {
   qgSiteSearch.fn.inputEventHandler = function (event) {
     var eventType = event['type'];
     var targetInput = $(event['target']);
-    // console.log('targetInput inside inputEventHandler', targetInput);
     var keyCode = event['keyCode'];
     var inputValue = targetInput.val();
 
@@ -88,14 +87,11 @@ $(function () {
 
   // Handle clicking into the input field
   qgSiteSearch.fn.onFocus = function (inputValue, targetInput) {
-    // console.log(targetInput, 'targetInput inside onfocus');
     var initialConcierge = targetInput.parent().find($('.qg-search-concierge-initial'));
     if (inputValue === '') {
       // Transition reveal initial state
       initialConcierge.addClass('show');
     } else {
-      // Look for suggested results
-      // console.log('inside else', targetInput);
       qgSiteSearch.fn.checkForSuggestions(inputValue, targetInput);
     }
   };
@@ -283,8 +279,6 @@ $(function () {
 
   // Format suggestion keywords
   qgSiteSearch.fn.formatSuggestions = function (suggestions, targetInput) {
-    console.log(suggestions, 'suggestions');
-    console.log(targetInput, 'targetInput');
     var inputField = targetInput.parent().find($('.qg-search-site__input'));
     var inputValue = inputField.val();
     var suggestionsContainer = targetInput.parent().find($('.qg-search-concierge-help .qg-search-concierge-group.suggestions'));
