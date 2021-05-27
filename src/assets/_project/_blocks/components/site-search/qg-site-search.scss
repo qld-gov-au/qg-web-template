@@ -1,35 +1,61 @@
 .qg-site-search__page{
-  .input-group{
-    float: inherit !important;
-    width: 100% !important;
-    .qg-search-close-concierge {
-      top: 8px;
-    }
-  }
-  .highlight{
-    .btn {
-      color: #063652 !important;
-      text-decoration: none !important;
-      &:hover {
+  &.qg-site-search__form{
+    .input-group{
+      float: inherit !important;
+      width: 100% !important;
+      .qg-search-close-concierge {
+        top: 6px;
+        right: 93px;
+        @media (max-width: $screen-xs-max) {
+          right: 60px;
+        }
+      }
+      .list-group-item a {
         color: #000 !important;
-        text-decoration: underline !important;
+        text-decoration: none !important;
+        &:hover {
+          text-decoration: underline !important;
+        }
+      }
+      .qg-search__icon {
+        height: 24px;
+        width: 24px;
+      }
+      .highlight{
+        .btn {
+          color: $qg-global-primary-dark !important;
+          text-decoration: none !important;
+          &:hover {
+            color: #000 !important;
+            text-decoration: underline;
+          }
+        }
+      }
+      .qg-search-site__input{
+        color: $qg-global-primary-darker;
+        border: 3px solid #808080;
+        border-radius: 7px;
+        padding: 1rem;
+        //&.qg-search__suggestion-visible {
+        //  border-bottom-left-radius: 0;
+        //  border-bottom-right-radius: 0;
+        //}
+      }
+      #qg-site-search__submit{
+        padding: 9px 16px;
+      }
+      .qg-search-concierge{
+        top: 92%;
+        &.show {
+          z-index: 9999999;
+          border: 3px solid #808080;
+          border-radius: 0 0 7px 7px;
+        }
+        &:after{
+          background: none !important;
+        }
       }
     }
-  }
-  .qg-search-concierge{
-    &.show {
-      z-index: 9999999;
-      border: 3px solid #808080;
-      border-top: none;
-    }
-    &:after{
-      background: none !important;
-    }
-  }
-  .qg-search-site__input{
-    border: 3px solid #808080 !important;
-    border-radius: 7px;
-    padding: 1rem !important;
   }
   #qg-site-search__submit{
     color: #000;

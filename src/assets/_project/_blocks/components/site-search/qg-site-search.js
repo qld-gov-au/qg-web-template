@@ -103,7 +103,7 @@ $(function () {
     clearButton.addClass('hide');
 
     // Close the concierge panels
-    qgSiteSearch.fn.closeConciergePanels();
+    qgSiteSearch.fn.closeConciergePanels(targetInput);
   };
 
   // Handle input value changes
@@ -112,7 +112,7 @@ $(function () {
     var helpfulConcierge = targetInput.parent().find($('.qg-search-concierge-help'));
     var clearButton = targetInput.parent().find($('.qg-search-close-concierge'));
     if (keyCode === 40) {
-      $('.qg-search-form').attr('data-navindex', '0');
+      targetInput.parents($('.qg-site-search__form')).attr('data-navindex', '0');
       setTimeout($('.qg-search-concierge.show').find('a, button')[0].focus(), 300);
     } else if (inputValue !== '') {
       // Reveal the clear button
@@ -131,27 +131,29 @@ $(function () {
   };
 
   qgSiteSearch.fn.keyboardNavigation = function (event) {
+    var self = $(this);
     var keyCode = event['keyCode'];
-    var focusableList = $('.qg-search-concierge.show').find('a, button');
-    var currentIndex = $('.qg-search-form').attr('data-navindex');
+    var focusableList = self.parents('.qg-site-search__form').find($('.qg-search-concierge.show')).find('a, button');
+    var currentIndex = self.parents('.qg-site-search__form').attr('data-navindex');
 
     if (keyCode === 40 && focusableList.length > currentIndex - 1) {
       currentIndex++;
       focusableList[currentIndex].focus();
-      $('.qg-search-form').attr('data-navindex', currentIndex);
+      self.parents('.qg-site-search__form').attr('data-navindex', currentIndex);
     } else if (keyCode === 38) {
       if (currentIndex > 0) {
         currentIndex--;
         focusableList[currentIndex].focus();
-        $('.qg-search-form').attr('data-navindex', currentIndex);
+        self.parents('.qg-site-search__form').attr('data-navindex', currentIndex);
       } else {
-        $('.qg-search-form input[type=text].form-control').focus();
+        self.parents('.qg-site-search__form').find($('input[type=text].form-control')).focus();
       }
     }
   };
 
   // Handle clearing the input field via button
   qgSiteSearch.fn.clearInputField = function (event) {
+    let inputTarget = event.target;
     var clearButton = $(this).parent().find($('.qg-search-close-concierge'));
     var searchInput = $(this).parent().find($('.qg-search-site__input'));
     searchInput.val('');
@@ -160,7 +162,7 @@ $(function () {
     clearButton.addClass('hide');
 
     // Close the concierge panels
-    qgSiteSearch.fn.closeConciergePanels();
+    qgSiteSearch.fn.closeConciergePanels(inputTarget);
   };
 
   // Handle selecting a suggestion
@@ -174,23 +176,26 @@ $(function () {
   };
 
   // Handle background click to close concierge
-  qgSiteSearch.fn.handleBodyClick = function (event) {
+  qgSiteSearch.fn.handleBodyClick = function (event, targetInput) {
+    let self = event.target;
     var targetSelector = '#qg-global-search-form';
 
     if ($(event['target']).closest(targetSelector).length === 0) {
       // Close the concierge panels
-      qgSiteSearch.fn.closeConciergePanels();
+      qgSiteSearch.fn.closeConciergePanels(self);
     }
   };
 
   qgSiteSearch.fn.handleFocus = function (event) {
-    qgSiteSearch.fn.closeConciergePanels();
+    let targetInput = event.target;
+    qgSiteSearch.fn.closeConciergePanels(targetInput);
   };
 
   // Handle search form submission
   qgSiteSearch.fn.searchSubmitHandler = function (event) {
+    let targetInput = event.target;
     // Close the concierge panels
-    qgSiteSearch.fn.closeConciergePanels();
+    qgSiteSearch.fn.closeConciergePanels(targetInput);
   };
 
   //
@@ -287,6 +292,7 @@ $(function () {
     var maxSuggestions = 3;
 
     if (suggestions.length > 0) {
+      targetInput.parent().find($('.qg-search-concierge-help')).show();
       // Reduce count to maximum limit
       suggestions = suggestions.slice(0, maxSuggestions);
 
@@ -307,8 +313,9 @@ $(function () {
 
       suggestionsHTML += '</ul>';
       suggestionsHTML += '</div>';
+    } else {
+      targetInput.parent().find($('.qg-search-concierge-help')).hide();
     }
-
     // Update the concierge container
     suggestionsContainer.html(suggestionsHTML);
   };
