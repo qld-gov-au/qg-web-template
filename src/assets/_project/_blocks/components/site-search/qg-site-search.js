@@ -187,15 +187,13 @@ $(function () {
   };
 
   qgSiteSearch.fn.handleFocus = function (event) {
-    let targetInput = event.target;
-    qgSiteSearch.fn.closeConciergePanels(targetInput);
+    qgSiteSearch.fn.closeConciergePanels(event.target);
   };
 
   // Handle search form submission
   qgSiteSearch.fn.searchSubmitHandler = function (event) {
-    let targetInput = event.target;
     // Close the concierge panels
-    qgSiteSearch.fn.closeConciergePanels(targetInput);
+    qgSiteSearch.fn.closeConciergePanels(event.target);
   };
 
   //

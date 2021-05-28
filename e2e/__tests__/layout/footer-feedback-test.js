@@ -20,14 +20,14 @@ describe('SWE Footer testing', () => {
     await page.click('#fs-very-satisfied');
     await page.type('#comments', 'Useful website', { delay: 20 });
     await page.click('#feedback-page .btn-global-primary');
-    await page.waitFor(ct.WT);
+    await page.waitForTimeout(ct.WT);
     // check getRecaptcha input value changed
     expect(await page.$eval('input[name=g-recaptcha-response]', el => $(el).val())).not.toMatch(/false/);
     const element = await page.$('.thankyou');
     const text = await page.evaluate(element => element.textContent, element);
     expect(text).toMatch(/Thank you for your feedback. Your feedback is important to us and will be used to improve the website./);
     await page.click('#qg-primary-content li a');
-    await page.waitFor(ct.WT);
+    await page.waitForTimeout(ct.WT);
     // check franchise input value is populated as expected
     const franchiseVal =  await page.$eval('input[name=franchise]', el => $(el).val());
     expect(franchiseVal).toMatch(/Franchise Title/);
