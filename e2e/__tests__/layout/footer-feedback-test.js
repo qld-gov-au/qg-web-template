@@ -16,6 +16,7 @@ describe('SWE Footer testing', () => {
     // check getRecaptcha input value is populated as expected and is false by default
     const getRecaptcha =  await page.$eval('input[name=g-recaptcha-response]', el => $(el).val());
     expect(getRecaptcha).toMatch(/false/);
+    await page.waitForTimeout(ct.WT);
     await page.click('#page-feedback-about-this-website');
     await page.click('#fs-very-satisfied');
     await page.type('#comments', 'Useful website', { delay: 20 });
