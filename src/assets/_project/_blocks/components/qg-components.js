@@ -13,7 +13,7 @@ import './forms/qg-forms';
 import './qg-document-links';
 import './gallery/qg-gallery';
 import './opengraph/opengraph';
-import '../layout/site-search/qg-site-search';
+import './site-search/qg-site-search';
 
 import accessibility      from './accessibility/accessibility';
 accessibility.init();

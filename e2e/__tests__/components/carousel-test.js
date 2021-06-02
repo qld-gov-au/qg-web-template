@@ -15,7 +15,7 @@ describe('SWE Components testing', () => {
     const carItem1 = await page.evaluate("document.querySelectorAll('.carousel-item')[0].getAttribute('class')");
     expect(carItem1).toMatch(/active/);
     await page.click('.right.carousel-control');
-    await page.waitFor(ct.WT);
+    await page.waitForTimeout(ct.WT);
     expect(await page.evaluate("document.querySelectorAll('.carousel-item')[1].getAttribute('class')")).toMatch(/active/);
   }, ct.TO);
 
