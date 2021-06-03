@@ -1,4 +1,9 @@
 .qg-search-widget, #qg-search-widget{
+  background: #f2f7f9;
+  margin-bottom: 1em;
+  padding: 1em;
+
+  // light theme for autocomplete
   &.theme__light-bg{
     background: none;
     .qg-fl{
@@ -11,9 +16,6 @@
       }
     }
   }
-  background: #f2f7f9;
-  padding: 1em;
-
   select{
     width: 100%;
   }
@@ -23,13 +25,22 @@
     margin-left: 0;
     background: inherit;
   }
-  .qg-search-widget-form input{
-    position: initial;
-    opacity: 1;
-    z-index: initial;
+  .qg-search-widget-form{
+    padding: 0.5rem;
+    input{
+      position: initial;
+      opacity: 1;
+      z-index: initial;
+    }
   }
-  .qg-accordion article .acc-heading label {
-    padding: 10px 50px 10px 0;
+  .qg-accordion article .acc-heading {
+    position: relative;
+    padding: 0;
+    width: 100%;
+    background: transparent;
+    border: none;
+    text-align: left;
+    margin-top: 0;
   }
   .qg-fl{
     display: flex;

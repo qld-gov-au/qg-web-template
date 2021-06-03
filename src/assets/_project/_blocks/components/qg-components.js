@@ -1,21 +1,21 @@
 import './social-media/qg-social-media';
-import './progressive-reveal';
-import './qg-header';
+import './misc/qg-progressive-reveal';
+import './misc/qg-header';
 import '../layout/location/qg-location';
-import './license';
-import './carousel/carousel';
-import { QgQuickExit } from './quick-exit/quick-exit';
-import './tables/index.js';
-import './accordion/accordion';
+import './misc/qg-license';
+import './carousel/qg-carousel';
+import { QgQuickExit } from './quick-exit/qg-quick-exit';
+import './tables';
+import './accordion/qg-accordion';
 import './forms/qg-recaptcha';
 import './forms/qg-address-autocomplete';
 import './forms/qg-forms';
-import './qg-document-links';
+import './misc/qg-document-links';
 import './gallery/qg-gallery';
-import './opengraph/opengraph';
+import './opengraph/qg-opengraph';
 import './site-search/qg-site-search';
 
-import accessibility      from './accessibility/accessibility';
+import accessibility      from './accessibility/qg-accessibility';
 accessibility.init();
 
 // quick exit

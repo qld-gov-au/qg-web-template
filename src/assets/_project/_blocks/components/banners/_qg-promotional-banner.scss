@@ -1,0 +1,16 @@
+.qg-promotional-banner__container{
+  background: #f6f6f6;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 2rem 0;
+  .qg-promotional-banner__info{
+    @include media-breakpoint-down(sm) {
+      margin-bottom: 3rem;
+    }
+  }
+  .qg-promotional-banner__popular-apps {
+    .qg-promotional-banner__popular-apps-title{
+      font-weight: bold;
+    }
+  }
+}
