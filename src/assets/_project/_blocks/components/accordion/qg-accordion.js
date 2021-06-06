@@ -39,11 +39,11 @@
      * hashTrigger function open matching accordion if it finds #title-Of-Accordion in the url
      * @return {undefined}
      **/
+    // TODO check hashTrigger function looks like not working
     hashTrigger: function (){
       let hashVal = this.urlHash();
       if (hashVal.length > 0) {
         let findHashVal = this.config.$accordion.find('#' + hashVal + '');
-        console.log(findHashVal);
         findHashVal.click();
         findHashVal.parent('article').find('.acc-heading').focus();
       }
