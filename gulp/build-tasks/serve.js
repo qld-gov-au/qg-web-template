@@ -7,7 +7,7 @@ module.exports = function (gulp, plugins, connect, connectssi, argv, path, rando
         root: subpath ? `${root}/${subpath}` : `${root}`,
         port: port || argv.port || 8086,
         livereload: true,
-        host: '0.0.0.0',
+        host: 'localhost',
         middleware: function () {
           return [connectssi({
             baseDir: root,
