@@ -21,6 +21,7 @@ describe('SWE Footer testing', () => {
     await page.type('#comments', 'Useful website', { delay: 20 });
     await page.click('#feedback-page .btn-global-primary');
     await page.waitForTimeout(ct.WT);
+    await page.waitForSelector('.thankyou p');
     const element = await page.$('.thankyou');
     const text = await page.evaluate(element => element.textContent, element);
     expect(text).toMatch(/Thank you for your feedback. Your feedback is important to us and will be used to improve the website./);
