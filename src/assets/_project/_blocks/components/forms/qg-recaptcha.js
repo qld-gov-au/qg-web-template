@@ -210,7 +210,7 @@ import keys from '../../data/qg-google-keys';
                 if (manualSitekey !== undefined && manualAction !== undefined) { //v3 manual form
                   self.v3Captcha(form, greptcha, manualSitekey, manualAction);
                 } else if (manualAction !== undefined) { //v3 manual with feedback key but differnt action
-                  self.v3Captcha(form, greptcha, self.footerFeedbackGoogleRecaptchaApiKey, manualAction);
+                  self.v3Captcha(form, greptcha, self.footerFeedbackGoogleRecaptchaApiKey(), manualAction);
                 } else if (manualSitekey !== undefined) { //v2 manual (no action in v2)
                   self.v2Captcha(form, subBtn, manualSitekey);
                 } else { //default v2 with default key
