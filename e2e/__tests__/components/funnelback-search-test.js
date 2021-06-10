@@ -13,7 +13,7 @@ beforeAll(async () => {
 describe('SWE Header testing', () => {
   test('Funnelback search is working as expected', async () => {
     expect(await page.evaluate('window.getComputedStyle(document.querySelector(\'.qg-search-concierge-initial\')).getPropertyValue("visibility")')).toBe('hidden');
-    await page.click('#qg-search-query');
+    await page.click('input#qg-search-query');
     await page.waitForTimeout(ct.WT);
     expect(await page.evaluate('window.getComputedStyle(document.querySelector(\'.qg-search-concierge-initial\')).getPropertyValue("visibility")')).toBe('visible');
     await page.type('#qg-search-query', 'jobs', { delay: 20 });

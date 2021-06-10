@@ -3,8 +3,6 @@
 * Any form with form attribute data-recaptcha="true", will run and validate with Google invisible recaptcha
 */
 import keys from '../../data/qg-google-keys';
-console.log(keys.defFeedbackGoogleRecaptcha.uat, 'uat key');
-console.log(keys.defFeedbackGoogleRecaptcha.prod, 'prod key');
 (function ($, swe) {
   'use strict';
   var qgRecaptcha = {
@@ -139,6 +137,7 @@ console.log(keys.defFeedbackGoogleRecaptcha.prod, 'prod key');
     // Recaptcha version 2
     v2Captcha: function (form, subBtn, key){
       try {
+        // console.log('v2 key: ' + key);
         grecaptcha.render(subBtn, {
           sitekey: key,
           callback: () => {
@@ -163,8 +162,8 @@ console.log(keys.defFeedbackGoogleRecaptcha.prod, 'prod key');
     },
     // Recaptcha version 3
     v3Captcha: function (form, greptcha, key, action){
+      // console.log('v3 key: ' + key);
       try {
-        console.log('v3 key: ' + key);
         grecaptcha.execute(key, {action: action})
           .then(function (token) {
             if (greptcha.length > 0) {
@@ -211,7 +210,7 @@ console.log(keys.defFeedbackGoogleRecaptcha.prod, 'prod key');
                 if (manualSitekey !== undefined && manualAction !== undefined) { //v3 manual form
                   self.v3Captcha(form, greptcha, manualSitekey, manualAction);
                 } else if (manualAction !== undefined) { //v3 manual with feedback key but differnt action
-                  self.v3Captcha(form, greptcha, self.footerFeedbackGoogleRecaptchaApiKey, manualAction);
+                  self.v3Captcha(form, greptcha, self.footerFeedbackGoogleRecaptchaApiKey(), manualAction);
                 } else if (manualSitekey !== undefined) { //v2 manual (no action in v2)
                   self.v2Captcha(form, subBtn, manualSitekey);
                 } else { //default v2 with default key
