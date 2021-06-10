@@ -12,6 +12,8 @@ var feedbackForm = {
     let franchise;
     if (franchiseTitle) {
       franchise = franchiseTitle;
+    } else if ($('.qg-site-footer[data-site=forgov]').length) {
+      franchise = 'gov';
     } else {
       franchise = location.pathname.split('/')[1];
     }
