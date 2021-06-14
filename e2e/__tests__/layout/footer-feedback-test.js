@@ -14,6 +14,7 @@ describe('SWE Footer testing', () => {
   test('Footer feedback', async () => {
     await page.click('.qg-feedback-toggle');
     // check getRecaptcha input value is populated as expected and is false by default
+    await page.waitForTimeout(ct.WT);
     const getRecaptcha =  await page.$eval('input[name=g-recaptcha-response]', el => $(el).val());
     expect(getRecaptcha).toMatch(/false/);
     await page.click('#page-feedback-about-this-website');
