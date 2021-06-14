@@ -44,7 +44,7 @@
     text-decoration: underline;
     &:hover, &:active, &:focus, &:visited{
       color: #000;
-      text-decoration: none !important;
+      text-decoration: none;
     }
   }
   img {
