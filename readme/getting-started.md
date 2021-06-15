@@ -18,8 +18,8 @@ npm install or yarn install
 ```
 ## 3. NPM Scripts descriptions
 | Name        | Description     |
-| ------------- |:-------------:|
-| npm **start**      | Start a local server and watch for changes |
+| ------------- | ------------- |
+| npm **start**  | Start a local server and watch for changes
 | npm run **release**  | Create a release folder with all the minified files and templates |
 | npm run **publish-npm** | Publish the release folder on NPM package manager. |
 | npm run **publish-cdn** | Publish the release folder on Static CDN      |
