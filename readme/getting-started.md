@@ -16,8 +16,19 @@ Install all the node packages (If behind a corporate web proxy please have a loo
 ```bash
 npm install or yarn install
 ```
+## 3. NPM Scripts descriptions
+| Name        | Description     |
+| ------------- |:-------------:|
+| npm **start**      | Start a local server and watch for changes |
+| npm run **release**  | Create a release folder with all the minified files and templates |
+| npm run **publish-npm** | Publish the release folder on NPM package manager. |
+| npm run **publish-cdn** | Publish the release folder on Static CDN      |
+| npm run **create-swe-release**  | Create a Github release on qg-web-template repository      |
+| npm run **publish-test-npm** | Creates a branch release-vX.Y.Z-test on web-template-release repo which can be deployed on Matrix for testing    |
+| npm run **publish-test-cdn** | Creates a branch release-vX.Y.Z-test on static CDN repository which can be deployed on TEST environment of applications using Bamboo for testing
+| npm **test** | Run tests (Jest and Puppeteer)
 
-## 3. Testing Setup
+## 4. Testing Setup
 
 **To start a local server**
 ```bash
