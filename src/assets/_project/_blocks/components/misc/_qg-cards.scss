@@ -137,6 +137,10 @@
       > :first-child {
         padding-top: 0;
         margin-top: 0;
+        margin-bottom: 0;
+      }
+      > :nth-child(2) {
+        margin-top: 0.75rem;
       }
 
       a {
@@ -144,7 +148,7 @@
 
         &:hover, &:active, &:focus, &:visited {
           color: #FFFFFF !important;
-          text-decoration: none !important;
+        text-decoration: none !important;
         }
 
         &.btn {

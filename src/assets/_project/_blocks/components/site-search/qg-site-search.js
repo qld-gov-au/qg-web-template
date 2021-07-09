@@ -74,56 +74,52 @@ $(function () {
 
     switch (eventType) {
     case 'focus':
-      qgSiteSearch.fn.onFocus(inputValue);
+      qgSiteSearch.fn.onFocus(inputValue, targetInput);
       break;
     case 'blur':
-      qgSiteSearch.fn.onBlur(inputValue);
+      qgSiteSearch.fn.onBlur(inputValue, targetInput);
       break;
     case 'keydown':
-      qgSiteSearch.fn.onKeydown(inputValue, keyCode);
+      qgSiteSearch.fn.onKeydown(inputValue, keyCode, targetInput);
       break;
     }
   };
 
   // Handle clicking into the input field
-  qgSiteSearch.fn.onFocus = function (inputValue) {
-    var initialConcierge = $('.qg-search-concierge-initial');
-
+  qgSiteSearch.fn.onFocus = function (inputValue, targetInput) {
+    var initialConcierge = targetInput.parent().find($('.qg-search-concierge-initial'));
     if (inputValue === '') {
       // Transition reveal initial state
       initialConcierge.addClass('show');
     } else {
-      // Look for suggested results
-      qgSiteSearch.fn.checkForSuggestions(inputValue);
+      qgSiteSearch.fn.checkForSuggestions(inputValue, targetInput);
     }
   };
 
   // Handle clicking out of the input field
-  qgSiteSearch.fn.onBlur = function (inputValue) {
-    var clearButton = $('.qg-search-close-concierge');
-
+  qgSiteSearch.fn.onBlur = function (inputValue, targetInput) {
+    var clearButton = targetInput.parent().find($('.qg-search-close-concierge'));
     // Remove the clear button
     clearButton.addClass('hide');
 
     // Close the concierge panels
-    qgSiteSearch.fn.closeConciergePanels();
+    qgSiteSearch.fn.closeConciergePanels(targetInput);
   };
 
   // Handle input value changes
-  qgSiteSearch.fn.onKeydown = function (inputValue, keyCode) {
-    var initialConcierge = $('.qg-search-concierge-initial');
-    var helpfulConcierge = $('.qg-search-concierge-help');
-    var clearButton = $('.qg-search-close-concierge');
-
+  qgSiteSearch.fn.onKeydown = function (inputValue, keyCode, targetInput) {
+    var initialConcierge = targetInput.parent().find($('.qg-search-concierge-initial'));
+    var helpfulConcierge = targetInput.parent().find($('.qg-search-concierge-help'));
+    var clearButton = targetInput.parent().find($('.qg-search-close-concierge'));
     if (keyCode === 40) {
-      $('.qg-search-form').attr('data-navindex', '0');
+      targetInput.parents($('.qg-site-search__form')).attr('data-navindex', '0');
       setTimeout($('.qg-search-concierge.show').find('a, button')[0].focus(), 300);
     } else if (inputValue !== '') {
       // Reveal the clear button
       clearButton.removeClass('hide');
 
       // Look for suggested results
-      qgSiteSearch.fn.checkForSuggestions(inputValue);
+      qgSiteSearch.fn.checkForSuggestions(inputValue, targetInput);
     } else {
       // Remove the clear button
       clearButton.addClass('hide');
@@ -135,66 +131,69 @@ $(function () {
   };
 
   qgSiteSearch.fn.keyboardNavigation = function (event) {
+    var self = $(this);
     var keyCode = event['keyCode'];
-    var focusableList = $('.qg-search-concierge.show').find('a, button');
-    var currentIndex = $('.qg-search-form').attr('data-navindex');
+    var focusableList = self.parents('.qg-site-search__form').find($('.qg-search-concierge.show')).find('a, button');
+    var currentIndex = self.parents('.qg-site-search__form').attr('data-navindex');
 
     if (keyCode === 40 && focusableList.length > currentIndex - 1) {
       currentIndex++;
       focusableList[currentIndex].focus();
-      $('.qg-search-form').attr('data-navindex', currentIndex);
+      self.parents('.qg-site-search__form').attr('data-navindex', currentIndex);
     } else if (keyCode === 38) {
       if (currentIndex > 0) {
         currentIndex--;
         focusableList[currentIndex].focus();
-        $('.qg-search-form').attr('data-navindex', currentIndex);
+        self.parents('.qg-site-search__form').attr('data-navindex', currentIndex);
       } else {
-        $('.qg-search-form input[type=text].form-control').focus();
+        self.parents('.qg-site-search__form').find($('input[type=text].form-control')).focus();
       }
     }
   };
 
   // Handle clearing the input field via button
   qgSiteSearch.fn.clearInputField = function (event) {
-    var clearButton = $('.qg-search-close-concierge');
-    var searchInput = $('#qg-search-query');
+    let inputTarget = event.target;
+    var clearButton = $(this).parent().find($('.qg-search-close-concierge'));
+    var searchInput = $(this).parent().find($('.qg-search-site__input'));
     searchInput.val('');
 
     // Remove the button
     clearButton.addClass('hide');
 
     // Close the concierge panels
-    qgSiteSearch.fn.closeConciergePanels();
+    qgSiteSearch.fn.closeConciergePanels(inputTarget);
   };
 
   // Handle selecting a suggestion
   qgSiteSearch.fn.searchSuggestionClick = function (event) {
     var targetElement = $(event['currentTarget']);
     var suggestionValue = targetElement.text();
-    var searchInput = $('#qg-search-query');
+    var searchInput = $('.qg-search-site__input');
 
     // Add suggestion to input value
     searchInput.val(suggestionValue);
   };
 
   // Handle background click to close concierge
-  qgSiteSearch.fn.handleBodyClick = function (event) {
+  qgSiteSearch.fn.handleBodyClick = function (event, targetInput) {
+    let self = event.target;
     var targetSelector = '#qg-global-search-form';
 
     if ($(event['target']).closest(targetSelector).length === 0) {
       // Close the concierge panels
-      qgSiteSearch.fn.closeConciergePanels();
+      qgSiteSearch.fn.closeConciergePanels(self);
     }
   };
 
   qgSiteSearch.fn.handleFocus = function (event) {
-    qgSiteSearch.fn.closeConciergePanels();
+    qgSiteSearch.fn.closeConciergePanels(event.target);
   };
 
   // Handle search form submission
   qgSiteSearch.fn.searchSubmitHandler = function (event) {
     // Close the concierge panels
-    qgSiteSearch.fn.closeConciergePanels();
+    qgSiteSearch.fn.closeConciergePanels(event.target);
   };
 
   //
@@ -238,9 +237,9 @@ $(function () {
   };
 
   // Check Funnelback for suggested results
-  qgSiteSearch.fn.checkForSuggestions = function (inputValue) {
-    var initialConcierge = $('.qg-search-concierge-initial');
-    var helpfulConcierge = $('.qg-search-concierge-help');
+  qgSiteSearch.fn.checkForSuggestions = function (inputValue, targetInput) {
+    var initialConcierge = targetInput.parent().find($('.qg-search-concierge-initial'));
+    var helpfulConcierge = targetInput.parent().find($('.qg-search-concierge-help'));
     var numChars = inputValue.length;
 
     // Remove initial state
@@ -249,10 +248,10 @@ $(function () {
     // Query Funnelback when three characters are entered
     if (numChars >= 3) {
       // Get suggestions
-      qgSiteSearch.fn.getSuggestions(inputValue);
+      qgSiteSearch.fn.getSuggestions(inputValue, targetInput);
 
       // Get services
-      qgSiteSearch.fn.getServices(inputValue);
+      qgSiteSearch.fn.getServices(inputValue, targetInput);
 
       // Transition reveal suggestions
       helpfulConcierge.addClass('show');
@@ -264,9 +263,9 @@ $(function () {
   //
 
   // Get suggestion keywords
-  qgSiteSearch.fn.getSuggestions = function (inputValue) {
-    var searchForm = $('#qg-global-search-form');
-    var suggestURL = searchForm.attr('data-suggestions');
+  qgSiteSearch.fn.getSuggestions = function (inputValue, targetInput) {
+    var suggestURL = targetInput.parents('.qg-site-search__form').attr('data-suggestions');
+    // var suggestURL = searchForm.attr('data-suggestions');
 
     $.ajax({
       cache: true,
@@ -275,20 +274,23 @@ $(function () {
       data: {
         partial_query: inputValue,
       },
-      success: qgSiteSearch.fn.formatSuggestions,
+      success: function (suggestions){
+        qgSiteSearch.fn.formatSuggestions(suggestions, targetInput);
+      },
     });
   };
 
   // Format suggestion keywords
-  qgSiteSearch.fn.formatSuggestions = function (suggestions) {
-    var inputField = $('#qg-search-query');
+  qgSiteSearch.fn.formatSuggestions = function (suggestions, targetInput) {
+    var inputField = targetInput.parent().find($('.qg-search-site__input'));
     var inputValue = inputField.val();
-    var suggestionsContainer = $('.qg-search-concierge-help .qg-search-concierge-group.suggestions');
+    var suggestionsContainer = targetInput.parent().find($('.qg-search-concierge-help .qg-search-concierge-group.suggestions'));
     var suggestionsHeading = '<h4>Suggestions</h4>';
     var suggestionsHTML = '';
     var maxSuggestions = 3;
 
     if (suggestions.length > 0) {
+      targetInput.parent().find($('.qg-search-concierge-help')).show();
       // Reduce count to maximum limit
       suggestions = suggestions.slice(0, maxSuggestions);
 
@@ -309,8 +311,9 @@ $(function () {
 
       suggestionsHTML += '</ul>';
       suggestionsHTML += '</div>';
+    } else {
+      targetInput.parent().find($('.qg-search-concierge-help')).hide();
     }
-
     // Update the concierge container
     suggestionsContainer.html(suggestionsHTML);
   };
@@ -467,8 +470,7 @@ $(function () {
   //
 
   $(document).ready(function () {
-    var searchInput = $('#qg-search-query');
-
+    var searchInput = $('.qg-search-site__input');
     // Set up events
     searchInput.on('focus keydown', debouncer(qgSiteSearch.fn.inputEventHandler, 200));
   });
