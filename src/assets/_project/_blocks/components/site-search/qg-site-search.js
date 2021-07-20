@@ -14,17 +14,6 @@ $(function () {
   // Helpers
   //
 
-  // Check if we're on a local environment
-  // function isDevelopment () {
-  //   var location = window['location']['hostname'];
-  //
-  //   if (location === 'localhost') {
-  //     return true;
-  //   } else {
-  //     return false;
-  //   }
-  // }
-
   // Event debouncer
   function debouncer (func, wait, immediate) {
     var timeout;
@@ -482,4 +471,9 @@ $(function () {
   $('body').on('click', '.qg-search-concierge-group.suggestions button', qgSiteSearch.fn.searchSuggestionClick);
   $('body').on('submit', '#qg-global-search-form', qgSiteSearch.fn.searchSubmitHandler);
   $('body').on('keydown', '.qg-search-concierge-group a, .qg-search-concierge-group button', qgSiteSearch.fn.keyboardNavigation);
+
+  // on load check if input has a value then display a close icon
+  if (document.getElementsByClassName('qg-search-site__input')[1].value.length > 0){
+    $('.qg-search-close-concierge').removeClass('hide');
+  }
 });
