@@ -4,8 +4,7 @@
 import keys from '../data/qg-google-keys';
 
 export class QgLoadGoogleApi {
-  constructor(callback) {
-    this._loadGoogleApi(callback);
+  constructor() {
     this.firstFolderPath = location.pathname.split('/')[1];
   }
 
@@ -26,21 +25,24 @@ export class QgLoadGoogleApi {
     let self = this;
     // check if a particular franchise key is required by checking the folder path in the URL
     if (self.firstFolderPath) {
+      console.log(self.firstFolderPath);
       keys.franchises.forEach(function (e) {
         if (self.firstFolderPath === e.name) {
           googleApiKey = e.apiKey;
         }
       });
-    } else {
-      // if no franchise name identified then use the default key according to the environment
-      if (window.location.hostname.search(/\bgithub\b/) !== -1) {
-        googleApiKey = keys.defGoogle.docs;
-      } else if (!this._isProd()) {
-        googleApiKey = keys.defGoogle.test;
-      } else {
-        googleApiKey = keys.defGoogle.prod;
-      }
     }
+    // if no franchise name identified then use the default key according to the environment
+    if (window.location.hostname.search(/\bgithub\b/) !== -1) {
+      googleApiKey = keys.defGoogle.docs;
+    } else if (!this._isProd()) {
+      console.log('not prod');
+      googleApiKey = keys.defGoogle.test;
+    } else {
+      googleApiKey = keys.defGoogle.prod;
+    }
+
+    console.log(googleApiKey);
     return googleApiKey;
   }
 
@@ -49,9 +51,7 @@ export class QgLoadGoogleApi {
    * @return {undefined}
    **/
   _loadGoogleApi (callback) {
-    alert('loadgoogle now using class');
     let googleApiKey = this._checkEnvAndSetKey();
-    console.log(googleApiKey);
     let appendScript = url => {
       $('head').append('<script type="text/javascript" src="' + url + '"></script>');
     };

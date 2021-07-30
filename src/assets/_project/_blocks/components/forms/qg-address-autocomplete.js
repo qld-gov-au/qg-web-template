@@ -1,7 +1,6 @@
 /*global qg, google*/
 console.log('%c inside qg address automcomplete V1', 'background: #222; color: #bada55');
 import { QgLoadGoogleApi } from '../../utils/qg-load-google-api';
-
 const loadGoogleApi = new QgLoadGoogleApi();
 
 export class QgAddressAutocomplete {
@@ -13,11 +12,13 @@ export class QgAddressAutocomplete {
     this.$form = $('.qg-search-widget-form');
     this.$getCurrentLocIcon = $('.qg-app-geocoding');
 
-    this._setValFromUrlParameters();
-    this._resetValue();
-    this._onBlue();
-    this._getCurrentLocation();
-    this._addressAutocomplete();
+    if (this.$searchWidget.length > 0 || this.$inpuField.length > 0){
+      this._setValFromUrlParameters();
+      this._resetValue();
+      this._onBlue();
+      this._getCurrentLocation();
+      this._addressAutocomplete();
+    }
   }
 
   /**
@@ -145,6 +146,6 @@ export class QgAddressAutocomplete {
       });
     };
     // load google api with a valid key
-    loadGoogleApi(googleAddressAutocomplete);
+    loadGoogleApi._loadGoogleApi(googleAddressAutocomplete);
   }
 }
