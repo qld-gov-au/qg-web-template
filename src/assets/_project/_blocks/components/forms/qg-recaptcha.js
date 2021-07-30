@@ -11,6 +11,7 @@ import keys from '../../data/qg-google-keys';
       $recaptchaOnPage: $('form[data-recaptcha="true"]'),
       $grecaptchaBadge: $('.grecaptcha-badge'),
     },
+
     /**
      * Initialise qgRecaptcha
      * @return {undefined}
@@ -39,6 +40,7 @@ import keys from '../../data/qg-google-keys';
         this.legacyRecaptcha();
       }
     },
+
     /**
      * check hostname and determine environment
      * @return {undefined}
@@ -46,6 +48,7 @@ import keys from '../../data/qg-google-keys';
     isProd: function() {
       return window.location.hostname.search(/dev|test|localhost|github|\buat\b/) === -1;
     },
+
     /**
      * googleRecaptchaApiKey -> check environment and return a key accordingly
      * @return {undefined}
@@ -53,6 +56,7 @@ import keys from '../../data/qg-google-keys';
     googleRecaptchaApiKey: function() {
       return this.isProd() ? keys.defGoogleRecaptcha.prod : keys.defGoogleRecaptcha.uat;
     },
+
     /**
      * footerFeedbackGoogleRecaptchaApiKey -> check environment and return a key accordingly for footer feedback form
      * @return {undefined}
@@ -60,6 +64,7 @@ import keys from '../../data/qg-google-keys';
     footerFeedbackGoogleRecaptchaApiKey: function() {
       return this.isProd() ? keys.defFeedbackGoogleRecaptcha.prod : keys.defFeedbackGoogleRecaptcha.uat;
     },
+
     /**
      * From SWE4 onwards footer feedback is AJAX based
      * @return {undefined}
@@ -77,6 +82,7 @@ import keys from '../../data/qg-google-keys';
           'Recaptcha unavailable',
         );
       });
+
       /**
        * onReady function is executed after calling recaptcha api in the above code
        * This function creates a submit event
@@ -121,6 +127,7 @@ import keys from '../../data/qg-google-keys';
         });
       };
     },
+
     /**
      * If all forms have captchaPrivacyTerms, we can hide reCAPTCHA Badge
      * @return {undefined}
@@ -182,6 +189,7 @@ import keys from '../../data/qg-google-keys';
         return false;
       }
     },
+
     /**
      * for Backward compatibility
      * legacyRecaptcha supports both version v2 and v3 for non ajax based submissions.
