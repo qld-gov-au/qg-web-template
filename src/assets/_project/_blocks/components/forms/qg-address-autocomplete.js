@@ -1,5 +1,8 @@
 /*global qg, google*/
 console.log('%c inside qg address automcomplete V1', 'background: #222; color: #bada55');
+import { QgLoadGoogleApi } from '../../utils/qg-load-google-api';
+
+const loadGoogleApi = new QgLoadGoogleApi();
 
 export class QgAddressAutocomplete {
   constructor () {
@@ -142,6 +145,6 @@ export class QgAddressAutocomplete {
       });
     };
     // load google api with a valid key
-    qg.loadGoogle(googleAddressAutocomplete);
+    loadGoogleApi(googleAddressAutocomplete);
   }
 }
