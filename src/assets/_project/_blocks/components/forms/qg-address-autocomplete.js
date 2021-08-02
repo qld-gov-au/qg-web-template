@@ -7,6 +7,7 @@ export class QgAddressAutocomplete {
   constructor () {
     this.$searchWidget = $('.qg-search-widget');
     this.$inpuField = $('.qg-location-autocomplete');
+    this.$inpuFieldContainer = $('.qg-fl');
     this.$latitude = $('.qg-search-widget__latitude');
     this.$longitude = $('.qg-search-widget__longitude');
     this.$form = $('.qg-search-widget-form');
@@ -15,6 +16,7 @@ export class QgAddressAutocomplete {
     if (this.$searchWidget.length > 0 || this.$inpuField.length > 0){
       this._setValFromUrlParameters();
       this._resetValue();
+      this._keypress();
       this._onBlue();
       this._getCurrentLocation();
       this._addressAutocomplete();
@@ -69,7 +71,7 @@ export class QgAddressAutocomplete {
   }
 
   /**
-   * onbtnClick -> clicking quick exit button a page
+   * _getCurrentLocation -> get current location
    * @return {undefined}
    **/
   _getCurrentLocation (){
@@ -124,7 +126,7 @@ export class QgAddressAutocomplete {
   }
 
   /**
-   * onbtnClick -> clicking quick exit button a page
+   * _addressAutocomplete -> handles autocomplete using Google API
    * @return {undefined}
    **/
   _addressAutocomplete () {
@@ -134,6 +136,7 @@ export class QgAddressAutocomplete {
         new google.maps.LatLng(-29, 138.0578426),
         new google.maps.LatLng(-9.9339, 153.63831),
       );
+      // set events on all autocomplete fields (there can be more than one autocomplete on a same page)
       $.each(self.$inpuField, function () {
         let dataStrictBounds = $(this).data('strictbounds') || true;
         let options = {
@@ -141,11 +144,76 @@ export class QgAddressAutocomplete {
           strictBounds: dataStrictBounds,
           types: ['geocode'],
         };
-        // eslint-disable-next-line no-new
-        new google.maps.places.Autocomplete(this, options);
+        let autocomplete = new google.maps.places.Autocomplete(this, options);
+
+        // add lat and lng values after a option is selection from the autocomplete options
+        autocomplete.addListener('place_changed', function(){
+          let place = autocomplete.getPlace();
+          if (place.geometry) {
+            self.$searchWidget.find(self.$latitude).val(place.geometry.location.lat())
+              .end()
+              .find(self.$longitude).val(place.geometry.location.lng());
+          }
+        });
       });
     };
     // load google api with a valid key
     loadGoogleApi._loadGoogleApi(googleAddressAutocomplete);
+  }
+
+  /**
+   * _keypress -> keypress event track any enter or tab on input field
+   * If there is a enter or tab press then it takes the first result
+   * @return {undefined}
+   **/
+  _keypress () {
+    let self = this;
+    // eslint-disable-next-line no-unused-vars
+    let addressSelection = false;
+    let reqReady = true;
+
+    self.$inpuField.keypress(function (event) {
+      if ($(this).val().length >= 1) {
+        if (event.keyCode === 13 || event.keyCode === 9) {
+          event.preventDefault();
+          // get the value from the autocomplete options
+          let itemFull = $('.pac-container .pac-item:first').text();
+          let itemQuery = $('.pac-container .pac-item:first .pac-item-query').text();
+          let firstResult = itemQuery + ' ' + itemFull.substring(itemQuery.length);
+          // check if results are there
+          if (firstResult.length > 1 && reqReady === true) {
+            self.$inpuField.val(firstResult);
+            let geocoder = new google.maps.Geocoder();
+            geocoder.geocode({ 'address': firstResult }, function (results, status) {
+              if (status === 'OK') {
+                reqReady = false;
+                if (results) {
+                  alert('results');
+                  console.log(results, 'results');
+                  $('.qg-location-autocomplete').val(results[0].formatted_address);
+                  let latitude = results[0].geometry.location.lat();
+                  let longitude = results[0].geometry.location.lng();
+                  // $('.error-handler').html('');
+                  addressSelection = true;
+                  self.$searchWidget.find(self.$latitude).val(latitude)
+                    .end()
+                    .find(self.$longitude).val(longitude);
+                  setTimeout(function () {
+                    reqReady = true;
+                  }, 1000);
+                } else {
+                  reqReady = true;
+                }
+              } else {
+                reqReady = true;
+                if (status === 'ZERO_RESULTS' || status === 'OVER_QUERY_LIMIT' || status === undefined) {
+                  console.error(status);
+                }
+              }
+            });
+          }
+        }
+      }
+    });
   }
 }
