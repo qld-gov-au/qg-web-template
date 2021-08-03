@@ -1,5 +1,12 @@
+/*
+FAQ -
+Q1 where this class in use ?
+A1 On Maps Autocomplete
+- https://www.qld.gov.au/transport/contacts/centres/_nocache
+- https://www.qld.gov.au/law/legal-mediation-and-justice-of-the-peace/about-justice-of-the-peace/search-for-your-nearest-jp-or-cdec
+ */
+
 /*global qg, google*/
-console.log('%c inside qg address automcomplete V1', 'background: #222; color: #bada55');
 import { QgLoadGoogleApi } from '../../utils/qg-load-google-api';
 const loadGoogleApi = new QgLoadGoogleApi();
 
@@ -24,7 +31,7 @@ export class QgAddressAutocomplete {
   }
 
   /**
-   * onbtnClick -> clicking quick exit button a page
+   * _setValFromUrlParameters -> set value of the input fields from the URL
    * @return {undefined}
    **/
   _setValFromUrlParameters () {
@@ -40,7 +47,7 @@ export class QgAddressAutocomplete {
   }
 
   /**
-   * onbtnClick -> clicking quick exit button a page
+   * _resetValue -> reset form values
    * @return {undefined}
    **/
   _resetValue () {
@@ -55,7 +62,7 @@ export class QgAddressAutocomplete {
   }
 
   /**
-   * onbtnClick -> clicking quick exit button a page
+   * _onBlue -> reset hidden field values if a user move focus out of the search box
    * @return {undefined}
    **/
   _onBlue () {
@@ -88,8 +95,7 @@ export class QgAddressAutocomplete {
               let latlng = {lat: parseFloat(latitude), lng: parseFloat(longitude)};
               let geocoder = new google.maps.Geocoder();
               let locationInput = $(this).parent().find(self.$inpuField);
-              console.log(self, 'inside click function');
-              // fill latitude and longitude value
+              // Insert latitude and longitude value to the hidden input fields
               self.$searchWidget.find(self.$latitude).val(latitude)
                 .end()
                 .find(self.$longitude).val(longitude);
@@ -188,12 +194,9 @@ export class QgAddressAutocomplete {
               if (status === 'OK') {
                 reqReady = false;
                 if (results) {
-                  alert('results');
-                  console.log(results, 'results');
                   $('.qg-location-autocomplete').val(results[0].formatted_address);
                   let latitude = results[0].geometry.location.lat();
                   let longitude = results[0].geometry.location.lng();
-                  // $('.error-handler').html('');
                   addressSelection = true;
                   self.$searchWidget.find(self.$latitude).val(latitude)
                     .end()
