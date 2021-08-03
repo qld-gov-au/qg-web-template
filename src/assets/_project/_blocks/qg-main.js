@@ -5,7 +5,6 @@ import './utils/qg-util';
 
 // legacy module imports
 import './legacy/forms/forms';
-import './legacy/site-search-autocomplete.js';
 
 // components import
 import './components/qg-components';
