@@ -141,7 +141,14 @@ import keys from '../../data/qg-google-keys';
         document.head.appendChild(styleSheet);
       }
     },
-    // Recaptcha version 2
+
+    /**
+     * Google recaptcha v2 (Version 2)
+     * @return {undefined}
+     * @param {string} form - form selector
+     * @param {string} subBtn - form submit button selector
+     * @param {string} key - Google recaptcha ket for V2
+     **/
     v2Captcha: function (form, subBtn, key){
       try {
         // console.log('v2 key: ' + key);
@@ -167,7 +174,15 @@ import keys from '../../data/qg-google-keys';
       }
       grecaptcha.execute();
     },
-    // Recaptcha version 3
+
+    /**
+     * Google recaptcha v3 (Version 3)
+     * @return {undefined}
+     * @param {string} form - form selector
+     * @param {string} greptcha - hidden input field where token can be inserted (g-recaptcha-response)
+     * @param {string} key - Google recaptcha ket for V3
+     * @param {string} action - event to trigger after execution
+     **/
     v3Captcha: function (form, greptcha, key, action){
       // console.log('v3 key: ' + key);
       try {
