@@ -1,65 +1,65 @@
 /**
  * When using functionality related to google libraries, this fuction comes handy to check if libraries already exists and then execute custom function
  */
-/* globals qg */
 import keys from '../data/qg-google-keys';
 
-(function (qg, $) {
-  'use strict';
-  let googleApiKey;
-  let firstFolderPath = location.pathname.split('/')[1];
-  let $mapImg = $('.qg-static-map');
-  let isProd = function () {
+export class QgLoadGoogleApi {
+  constructor() {
+    this.firstFolderPath = location.pathname.split('/')[1];
+  }
+
+  /**
+   * onbtnClick -> clicking quick exit button a page
+   * @return {undefined}
+   **/
+  _isProd () {
     return window.location.hostname.search(/dev|test|localhost|github|\buat\b/) === -1;
-  };
-
-  // check if the hostname contains a specific word and assign the key accordingly
-  if (window.location.hostname.search(/\bgithub\b/) !== -1) {
-    googleApiKey = keys.defGoogle.docs;
-  } else if (!isProd()) {
-    googleApiKey = keys.defGoogle.test;
-  } else {
-    googleApiKey = keys.defGoogle.prod;
   }
 
-  // check if first folder path exist and match to see if this is a valid franchise name or not
-  if (firstFolderPath) {
-    keys.franchises.forEach(function (e) {
-      if (firstFolderPath === e.name) {
-        googleApiKey = e.apiKey;
-      }
-    });
+  /**
+   * onbtnClick -> clicking quick exit button a page
+   * @return {undefined}
+   **/
+  _checkEnvAndSetKey () {
+    let googleApiKey;
+    let self = this;
+    // check if a particular franchise key is required by checking the folder path in the URL
+    if (self.firstFolderPath) {
+      console.log(self.firstFolderPath);
+      keys.franchises.forEach(function (e) {
+        if (self.firstFolderPath === e.name) {
+          googleApiKey = e.apiKey;
+        }
+      });
+    }
+    // if no franchise name identified then use the default key according to the environment
+    if (window.location.hostname.search(/\bgithub\b/) !== -1) {
+      googleApiKey = keys.defGoogle.docs;
+    } else if (!this._isProd()) {
+      console.log('not prod');
+      googleApiKey = keys.defGoogle.test;
+    } else {
+      googleApiKey = keys.defGoogle.prod;
+    }
+
+    console.log(googleApiKey);
+    return googleApiKey;
   }
-  // this function generate static image url (TODO - transfer to Matrix as it is dependent on the Matrix component config)
-  function generateStaticMapImg (ele) {
-    let lat = ele.attr('data-lat') || -27.4673;
-    let lon = ele.attr('data-long') || 153.0233;
-    let zoom = ele.attr('data-zoom') || 17;
-    let height = ele.attr('data-height') || 189;
-    return 'https://maps.googleapis.com/maps/api/staticmap?size=373x' + height + '&maptype=roadmap&markers=' + lat + '%2C' + lon + '&key=' + googleApiKey + '&sensor=false&zoom=' + zoom;
-  }
-  // append static image on the maps description page (TODO - transfer to Matrix as it is dependent on the Matrix component config)
-  if ($mapImg.length > 0) {
-    var htmlInsert = $('<div>');
-    $mapImg.each(function () {
-      let $this = $(this);
-      $this.find('img').attr('src', generateStaticMapImg($this.find('img')));
-      htmlInsert.append($this);
-    });
-    $('aside').prepend(htmlInsert);
-    $('a.qg-static-map').wrap("<div class='qg-aside st-map-static'>");
-    $('.st-map-static').eq(0).prepend("<h2><i class='fa fa-compass' aria-hidden='true'></i>Maps</h2>");
-  }
-  function lazyScript (url) {
-    $('head').append('<script type="text/javascript" src="' + url + '"></script>');
-  }
-  //load Google APi
-  qg.loadGoogle = function (callback) {
+
+  /**
+   * onbtnClick -> clicking quick exit button a page
+   * @return {undefined}
+   **/
+  _loadGoogleApi (callback) {
+    let googleApiKey = this._checkEnvAndSetKey();
+    let appendScript = url => {
+      $('head').append('<script type="text/javascript" src="' + url + '"></script>');
+    };
     let next = () => {
       if (typeof callback === 'function') {
         callback();
       } else {
-        lazyScript(callback);
+        appendScript(callback);
       }
     };
     if ($('#googleapi').length <= 0) {
@@ -88,5 +88,5 @@ import keys from '../data/qg-google-keys';
         next();
       }
     }
-  };
-}(qg, jQuery));
+  }
+}

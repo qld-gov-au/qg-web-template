@@ -46,6 +46,7 @@ var feedbackForm = {
       }
     });
   },
+
   /**
    * Sanitize string (remove tags to avoid XSS attack)
    * @return {undefined}
@@ -64,6 +65,7 @@ var feedbackForm = {
       .replace(/{/g, '&#123;') // strip (
       .replace(/}/g, '&#124;'); // strip )
   },
+
   /**
    * Predict user browser (this function only predicts based on certain browser values and may not work with all the browsers)
    * @return {Object}
@@ -88,6 +90,7 @@ var feedbackForm = {
       version: matchBrowser[1],
     };
   },
+
   /**
    * Add hidden inputs function
    * @return {undefined}
@@ -100,6 +103,7 @@ var feedbackForm = {
     newHiddenInput.attr('value', this.sanitize(val));
     $('#feedback-hidden-inputs').append(newHiddenInput);
   },
+
   /**
    * This function reset the value of feedback form on page load.
    * @return {undefined}
