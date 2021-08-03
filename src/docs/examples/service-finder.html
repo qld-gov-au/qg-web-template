@@ -27,18 +27,18 @@
   <link rel="stylesheet" href="https://oss-uat.clients.squiz.net/__data/assets/css_file/0028/89920/jquery.fancybox.min.css">
 
 
-  <link href="/assets/v4/latest/css/qg-main.css" rel="stylesheet" type="text/css" media="all">
+  <link href="https://oss-uat.clients.squiz.net/__data/assets/git_bridge/0029/95447/static.qgov.net.au/assets/v4/latest/css/qg-main.css?h=ad39310" rel="stylesheet" />
 
 
 
-  <link href="https://oss-uat.clients.squiz.net/_qgdesigns/css/qg-main.css?v=0.3.2" rel="stylesheet">
+  <link href="https://oss-uat.clients.squiz.net/_qgdesigns/css/qg-main.css?v=0.2.77" rel="stylesheet">
 
 
 
 
   <link href="https://oss-uat.clients.squiz.net/__data/assets/css_file_folder/0015/110823/qg-components.css?v=0.1.10" rel="stylesheet">
 
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <!-- Frontend Metadata -->
   <link rel="shortcut icon" href="https://oss-uat.clients.squiz.net/__data/assets/file/0018/297/favicon.ico">
 
@@ -47,8 +47,8 @@
 
   <meta name="DCTERMS.publisher" scheme="AGLSTERMS.AglsAgent" content="corporateName=The State of Queensland; jurisdiction=Queensland" />
   <meta name="DCTERMS.creator" content="c=AU; o=The State of Queensland;">
-  <meta name="DCTERMS.created" content="2017-11-09">
-  <meta name="DCTERMS.modified" content="2021-02-23">
+  <meta name="DCTERMS.created" content="2021-06-29">
+  <meta name="DCTERMS.modified" content="1970-01-01">
   <meta name="DCTERMS.description" content="">
   <meta name="DCTERMS.identifier" scheme="DCTERMS.URI" content="https://oss-uat.clients.squiz.net/dev/asif/service-finder">
   <meta name="DCTERMS.jurisdiction" scheme="AGLSTERMS.AglsJuri" content="Queensland">
@@ -59,26 +59,96 @@
 
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>    <!-- page.footer-extra -->
-  <link href="https://oss-uat.clients.squiz.net/dev/asif/service-finder?a=171235" rel="stylesheet">
+  <style>
+    .qg-service-finder__container {
+      padding: 0;
+      margin-bottom: 0;
+    }
+    .qg-service-finder__container .qg-search-form .input-group {
+      float: inherit;
+      position: relative;
+      width: 100%;
+    }
+    .qg-service-finder__container .qg-search-form .qg-search-concierge-group.highlight {
+      color: #063652 !important;
+    }
+    .qg-service-finder__container .qg-search-form .form-control {
+      color: #000;
+    }
+    .qg-service-finder__container .qg-search-form .form-control {
+      color: #000 !important;
+    }
+    .qg-service-finder__container .qg-search-form .qg-search-concierge.show {
+      z-index: 9;
+    }
+    .qg-service-finder__container .qg-search-form {
+      padding-top: 0;
+    }
+    .qg-service-finder__container .highlight .qg-search-concierge-content {
+      color: #fff;
+    }
+    .qg-service-finder__container .highlight .qg-search-concierge-content p {
+      margin-left: 35px !important;
+    }
+    .qg-service-finder__container .qg-service-finder__popular-apps a {
+      text-decoration: none;
+    }
+    .qg-service-finder__popular-apps-title {
+      margin-left: 0;
+    }
+    .qg-banner-blurb_wrapper .blurb {
+      width: 100% !important;
+      background: initial !important;
+    }
+    #qg-banner-blurb .blurb {
+      margin: 0;
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+    #qg-banner-blurb a {
+      text-decoration: none;
+      color: inherit;
+    }
+    #qg-banner-blurb .blurb p {
+      margin-left: 0;
+      font-weight: bold;
+      margin-bottom: 0.5em;
+    }
+    #qg-banner-blurb .blurb a:hover, #qg-banner-blurb a:visited, #qg-banner-blurb a:active {
+      text-decoration: underline !important;
+    }
+    .qg-promotional-banner__popular-apps .qg-btn {
+      text-decoration: none !important;
+    }
+    .qg-promotional-banner__popular-apps .qg-btn:hover, .qg-promotional-banner__popular-apps .qg-btn:visited, .qg-promotional-banner__popular-apps .qg-btn:active {
+      text-decoration: underline !important;
+    }
+    @media (max-width: 992px) {
+      .qg-service-finder__info {
+        margin-bottom: 2em;
+      }
+    }
+    @media (min-width: 992px) {
+      .qg-service-finder__popular-apps {
+        margin-top: -3em;
+      }
+    }
+    @media (max-width: 767px) {
+      #qg-banner-blurb {
+        padding-top: 0;
+        background-size: inherit !important;
+      }
+    }
+  </style>
 
   <!-- END page.footer-extra -->
-  <!-- Dynamic Content Schema //-->
-
-  <!-- Functional //-->
-  <meta name="content.franchise" content="qgov" />
-  <meta name="content.tags" content="" />
-  <meta name="content.type" content="" />
-  <meta name="content.icon" content="" />
-  <meta name="content.button-text" content="" />
-  <meta name="content.button-link" content="" />
-
   <!-- Global - Site Schema //-->
 
   <!-- SEO (required) //-->
   <meta name="description" content="" />
 
   <!-- SEO //-->
-  <meta name="keywords" content="sper; fees and fines; enforcement" />
+  <meta name="keywords" content="" />
   <meta name="DCTERMS.subject" content="" />
   <meta name="DCTERMS.audience" content="all" scheme="AGLSTERMS.agls-audience" />
   <meta name="DCTERMS.license" scheme="DCTERMS.URI" content="https://creativecommons.org/licenses/by/4.0/">
@@ -245,10 +315,29 @@
           </div>
         </div>
         <span>Search</span>
-      </button><form action="https://oss-uat.clients.squiz.net/search" id="qg-global-search-form" role="search" class="qg-site-search__form qg-search-form collapse qg-global-web-autocomplete" data-suggestions="https://find.search.qld.gov.au/s/suggest.json?collection=qld-gov&fmt=json%2B%2B&alpha=0.5&profile=qld" data-results-url="https://find.search.qld.gov.au/s/search.json?collection=qld-gov&profile=qld&meta_sfinder_sand=yes">
+      </button>
+      <style>
+        .qg-search-state__container{
+          color:#fff;
+          margin-top: 0.8em;
+          margin-right: 1em;
+          cursor: pointer;
+        }
+        .qg-search-state__container p:hover {
+          text-decoration: underline;
+        }
+        .qg-search-state__container .fa {
+          line-height: inherit;
+        }
+        .qg-sf-global {
+          display:none !important;
+        }
+      </style>
+
+      <form action="https://oss-uat.clients.squiz.net/search" id="qg-global-search-form" role="search" class="qg-site-search__form qg-search-form collapse qg-global-web-autocomplete qg-sf-global" data-suggestions="https://find.search.qld.gov.au/s/suggest.json?collection=qld-gov&fmt=json%2B%2B&alpha=0.5&profile=qld" data-results-url="https://find.search.qld.gov.au/s/search.json?collection=qld-gov&profile=qld&meta_sfinder_sand=yes">
       <div class="input-group">
         <label for="qg-search-query" class="qg-visually-hidden">Search Queensland Government</label>
-        <input type="text" name="query" id="qg-search-query" class="form-control qg-search-site__input" accesskey="5" class="form-control" autocomplete="off" placeholder="Search website" tabindex="0" aria-required="true" aria-expanded="false"/>
+        <input type="text" name="query" id="qg-search-query" class="form-control qg-search-site__input" accesskey="5" autocomplete="off" placeholder="Search website" tabindex="0" aria-required="true" aria-expanded="false"/>
         <svg class="qg-search__icon" width="512px" height="512px" viewBox="0 0 512 512">
           <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
             <g transform="translate(67.298684, 71.201316)">
@@ -408,7 +497,7 @@
 </header>
 
 
-<!-- Override: 0--><!--[{"asset_assetid":"157","asset_name":"Queensland Government","asset_url":"https://oss-uat.clients.squiz.net","asset_type_code":"site","asset_status_description":"Safe Editing"},{"asset_assetid":"169583","asset_name":"Service Finder","asset_url":"https://oss-uat.clients.squiz.net/dev/asif/service-finder","asset_type_code":"page_standard","asset_status_description":"Under Construction"}]--><div class="qg-global-breadcrumb qg-breadcrumb"><div class="container-fluid qg-site-width"><nav id="qg-breadcrumb" aria-label="breadcrumb" class="qg-breadcrumb-nav row test"><ol class="qg-breadcrumb-list" data-items-after-collapse=""><li class="qg-breadcrumb-list-item"><a class="qg-breadcrumb-list-item__link" href="https://oss-uat.clients.squiz.net">Home</a></li><li class="qg-breadcrumb-list-item"><span aria-current="page">Service Finder</span></li></ol></nav></div></div>
+<!-- Override: 0--><!--[{"asset_assetid":"157","asset_name":"Queensland Government","asset_url":"https://oss-uat.clients.squiz.net","asset_type_code":"site","asset_status_description":"Safe Editing"},{"asset_assetid":"175552","asset_name":"Service Finder","asset_url":"https://oss-uat.clients.squiz.net/dev/asif/service-finder","asset_type_code":"page_standard","asset_status_description":"Under Construction"}]--><div class="qg-global-breadcrumb qg-breadcrumb"><div class="container-fluid qg-site-width"><nav id="qg-breadcrumb" aria-label="breadcrumb" class="qg-breadcrumb-nav row test"><ol class="qg-breadcrumb-list" data-items-after-collapse=""><li class="qg-breadcrumb-list-item"><a class="qg-breadcrumb-list-item__link" href="https://oss-uat.clients.squiz.net">Home</a></li><li class="qg-breadcrumb-list-item"><span aria-current="page">Service Finder</span></li></ol></nav></div></div>
 
 
 
@@ -421,8 +510,9 @@
 
 
 
-<div class="container-fluid">
+<div class="container-fluid aggregation-index-layout">
   <div id="qg-content">
+
 
 
     <div id="qg-one-col" class="row wide">
@@ -431,180 +521,183 @@
 
 
 
-
-
-      <section id="qg-banner-blurb"
-               style="background:#f5f5f5 url('https://oss-uat.clients.squiz.net/__data/assets/image/0012/171201/varieties/1600x361.png') no-repeat center/cover;"
-               class="hide-xs-hero-img ">
+      <section id="qg-banner-blurb" style="background:#f5f5f5 url('https://oss-uat.clients.squiz.net/health/_resources/images/aggregation-images2/aggregation-images/service-finder-hero-flat-dark-1.png/1600x361.png') no-repeat center/cover;" class="hero-img ">
         <div class="qg-banner-blurb_wrapper">
           <div class="blurb dark  top-left ">
             <h1>Service Finder</h1>
             <p class="b-sub"></p>
 
 
-            <section class="qg-service-finder__container row">
-              <div class="qg-service-finder__info col-12 col-sm-5">
-                <form action="https://www.qld.gov.au/search" role="search" class="qg-site-search__form qg-search-form qg-global-web-autocomplete"  data-suggestions="https://find.search.qld.gov.au/s/suggest.json?collection=qld-gov&fmt=json%2B%2B&alpha=0.5&profile=qld" data-results-url="https://find.search.qld.gov.au/s/search.json?collection=qld-gov&profile=qld&meta_sfinder_sand=yes">
-                  <label for="qg-search-query">What can we help you find?</label>
-                  <div class="input-group">
-                    <input type="text" name="query" class="form-control qg-search-site__input"
-                           autocomplete="off" placeholder="Search website" tabindex="0"
-                           aria-required="true" aria-expanded="false"/>
-                    <svg class="qg-search__icon" width="512px" height="512px" viewBox="0 0 512 512">
-                      <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                        <g transform="translate(67.298684, 71.201316)">
-                          <path
-                            d="M108.7791,227.405285 L11.3079182,324.876467 C5.45005384,330.734332 5.45005384,340.231806 11.3079182,346.089671 L27.4103294,362.192082 C33.2681938,368.049946 42.7656685,368.049946 48.6235328,362.192082 L146.094715,264.7209 C151.952579,258.863035 151.952579,249.365561 146.094715,243.507696 L129.992304,227.405285 C124.134439,221.547421 114.636965,221.547421 108.7791,227.405285 Z"></path>
-                          <path
-                            d="M221.701316,0.798683501 C305.096314,0.798683501 372.701316,68.6275439 372.701316,152.298684 C372.701316,235.969823 305.096314,303.798684 221.701316,303.798684 C138.306319,303.798684 70.7013165,235.969823 70.7013165,152.298684 C70.7013165,68.6275439 138.306319,0.798683501 221.701316,0.798683501 Z M221.310125,54.0389936 C167.081772,54.0389936 123.121006,98.2066236 123.121006,152.690156 C123.121006,207.173689 167.081772,251.341319 221.310125,251.341319 C275.538478,251.341319 319.499244,207.173689 319.499244,152.690156 C319.499244,98.2066236 275.538478,54.0389936 221.310125,54.0389936 Z"
-                            fill-rule="nonzero"
-                            transform="translate(221.701316, 152.298684) scale(-1, 1) translate(-221.701316, -152.298684) "></path>
-                        </g>
-                      </g>
-                    </svg>
-                    <button class="qg-search-close-concierge hide" type="button"
-                            aria-label="Close Search Concierge">
-                      <svg width="512px" height="512px" viewBox="0 0 512 512">
+            <section class="qg-service-finder__container">
+              <div class="row w-100">
+                <div class="qg-service-finder__info col-12 col-sm-12 col-md-5">
+                  <form action="https://www.qld.gov.au/search" role="search" class="qg-site-search__form qg-search-form qg-global-web-autocomplete"  data-suggestions="https://find.search.qld.gov.au/s/suggest.json?collection=qld-gov&fmt=json%2B%2B&alpha=0.5&profile=qld" data-results-url="https://find.search.qld.gov.au/s/search.json?collection=qld-gov&profile=qld&meta_sfinder_sand=yes">
+                    <label for="qg-search-query">What can we help you find?</label>
+                    <div class="input-group">
+                      <input type="text" name="query" class="form-control qg-search-site__input"
+                             autocomplete="off" placeholder="Search website" tabindex="0"
+                             aria-required="true" aria-expanded="false"/>
+                      <svg class="qg-search__icon" width="512px" height="512px" viewBox="0 0 512 512">
                         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                          <rect
-                            transform="translate(256.500000, 256.000000) scale(1, -1) rotate(45.000000) translate(-256.500000, -256.000000) "
-                            x="32" y="220" width="449" height="72" rx="15"></rect>
-                          <rect
-                            transform="translate(256.500000, 256.000000) rotate(45.000000) translate(-256.500000, -256.000000) "
-                            x="32" y="220" width="449" height="72" rx="15"></rect>
+                          <g transform="translate(67.298684, 71.201316)">
+                            <path
+                              d="M108.7791,227.405285 L11.3079182,324.876467 C5.45005384,330.734332 5.45005384,340.231806 11.3079182,346.089671 L27.4103294,362.192082 C33.2681938,368.049946 42.7656685,368.049946 48.6235328,362.192082 L146.094715,264.7209 C151.952579,258.863035 151.952579,249.365561 146.094715,243.507696 L129.992304,227.405285 C124.134439,221.547421 114.636965,221.547421 108.7791,227.405285 Z"></path>
+                            <path
+                              d="M221.701316,0.798683501 C305.096314,0.798683501 372.701316,68.6275439 372.701316,152.298684 C372.701316,235.969823 305.096314,303.798684 221.701316,303.798684 C138.306319,303.798684 70.7013165,235.969823 70.7013165,152.298684 C70.7013165,68.6275439 138.306319,0.798683501 221.701316,0.798683501 Z M221.310125,54.0389936 C167.081772,54.0389936 123.121006,98.2066236 123.121006,152.690156 C123.121006,207.173689 167.081772,251.341319 221.310125,251.341319 C275.538478,251.341319 319.499244,207.173689 319.499244,152.690156 C319.499244,98.2066236 275.538478,54.0389936 221.310125,54.0389936 Z"
+                              fill-rule="nonzero"
+                              transform="translate(221.701316, 152.298684) scale(-1, 1) translate(-221.701316, -152.298684) "></path>
+                          </g>
                         </g>
                       </svg>
-                    </button>
-                    <button type="submit" class="btn btn-global-primary" title="Search site"
-                            data-analytics-link-group="qg-global-search-submit">Search
-                    </button>
-                    <div class="qg-search-concierge qg-search-concierge-initial">
-                      <div class="qg-search-concierge-group helper">
-                        <div class="qg-search-concierge-content">
-                          <h4>Popular services</h4>
-                          <ul class="list-group">
-                            <li class="list-group-item"><a
-                              href="https://www.service.transport.qld.gov.au/renewregistration/public/Welcome.xhtml?"
-                              tabindex="-1"
-                              data-analytics-link-group="qg-global-search-popular-services">Renew
-                              vehicle or boat rego</a></li>
-                            <li class="list-group-item"><a
-                              href="https://www.service.transport.qld.gov.au/checkmydemeritpoints/public/Welcome.xhtml?"
-                              tabindex="-1"
-                              data-analytics-link-group="qg-global-search-popular-services">Check my
-                              licence demerit points</a></li>
-                            <li class="list-group-item"><a
-                              href="https://www.qld.gov.au/transport/licensing/driver-licensing/renew-replace/renew/online"
-                              tabindex="-1"
-                              data-analytics-link-group="qg-global-search-popular-services">Renew my
-                              driving licence</a></li>
-                            <li class="list-group-item"><a
-                              href="https://www.change-of-address.services.qld.gov.au" tabindex="-1"
-                              data-analytics-link-group="qg-global-search-popular-services">Change
-                              my address</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="qg-search-concierge-group helper">
-                        <div class="qg-search-concierge-content">
-                          <h4>Browse by category</h4>
-                          <ul class="list-group">
-                            <li class="list-group-item"><a tabindex="-1"
-                                                           href="https://www.qld.gov.au/queenslanders/transport-and-motoring">Transport
-                              and motoring</a></li>
-                            <li class="list-group-item"><a tabindex="-1"
-                                                           href="https://www.qld.gov.au/queenslanders/employment-and-jobs">Employment
-                              and jobs</a></li>
-                            <li class="list-group-item"><a tabindex="-1"
-                                                           href="https://www.qld.gov.au/queenslanders/education-and-training">Education
-                              and training</a></li>
-                            <li class="list-group-item"><a tabindex="-1"
-                                                           href="https://www.qld.gov.au/queenslanders/queensland-and-its-government">Queensland
-                              and its government</a></li>
-                          </ul>
-                          <a href="https://www.qld.gov.au/queenslanders" tabindex="-1" class="all"
-                             data-analytics-link-group="qg-global-search-category">Browse all
-                            categories</a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="qg-search-concierge qg-search-concierge-help">
-                      <div class="qg-search-concierge-group suggestions">
-                        <div class="qg-search-concierge-content">
-                          <h4>Suggestions</h4>
-                          <ul class="list-group">
-                            <li class="list-group-item">
-                              <button tabindex="-1"
-                                      data-analytics-link-group="qg-global-search-suggestion"><b>canc</b>el
-                                registration for osconnect
-                              </button>
-                            </li>
-                            <li class="list-group-item">
-                              <button tabindex="-1"
-                                      data-analytics-link-group="qg-global-search-suggestion"><b>canc</b>el
-                                a booking
-                              </button>
-                            </li>
-                            <li class="list-group-item">
-                              <button tabindex="-1"
-                                      data-analytics-link-group="qg-global-search-suggestion"><b>canc</b>el
-                                vehicle or boat registration
-                              </button>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="qg-search-concierge-group highlight">
-                        <div class="qg-search-concierge-content">
-                          <div
-                            class="d-flex justify-content-between align-content-center flex-wrap">
-                            <h4>Need to cancel your rego?</h4>
-                            <div>
-                              <span class="fa fa-car"></span>
-                              <span class="fa fa-motorcycle"></span>
-                              <span class="fa fa-anchor"></span>
-                            </div>
+                      <button class="qg-search-close-concierge hide" type="button"
+                              aria-label="Close Search Concierge">
+                        <svg width="512px" height="512px" viewBox="0 0 512 512">
+                          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <rect
+                              transform="translate(256.500000, 256.000000) scale(1, -1) rotate(45.000000) translate(-256.500000, -256.000000) "
+                              x="32" y="220" width="449" height="72" rx="15"></rect>
+                            <rect
+                              transform="translate(256.500000, 256.000000) rotate(45.000000) translate(-256.500000, -256.000000) "
+                              x="32" y="220" width="449" height="72" rx="15"></rect>
+                          </g>
+                        </svg>
+                      </button>
+                      <button type="submit" class="btn btn-global-primary" title="Search site"
+                              data-analytics-link-group="qg-global-search-submit">Search
+                      </button>
+                      <div class="qg-search-concierge qg-search-concierge-initial">
+                        <div class="qg-search-concierge-group helper">
+                          <div class="qg-search-concierge-content">
+                            <h4>Popular services</h4>
+                            <ul class="list-group">
+                              <li class="list-group-item"><a
+                                href="https://www.service.transport.qld.gov.au/renewregistration/public/Welcome.xhtml?"
+                                tabindex="-1"
+                                data-analytics-link-group="qg-global-search-popular-services">Renew
+                                vehicle or boat rego</a></li>
+                              <li class="list-group-item"><a
+                                href="https://www.service.transport.qld.gov.au/checkmydemeritpoints/public/Welcome.xhtml?"
+                                tabindex="-1"
+                                data-analytics-link-group="qg-global-search-popular-services">Check my
+                                licence demerit points</a></li>
+                              <li class="list-group-item"><a
+                                href="https://www.qld.gov.au/transport/licensing/driver-licensing/renew-replace/renew/online"
+                                tabindex="-1"
+                                data-analytics-link-group="qg-global-search-popular-services">Renew my
+                                driving licence</a></li>
+                              <li class="list-group-item"><a
+                                href="https://www.change-of-address.services.qld.gov.au" tabindex="-1"
+                                data-analytics-link-group="qg-global-search-popular-services">Change
+                                my address</a></li>
+                            </ul>
                           </div>
-                          <p>Save time and cancel your vehicle or boat registration online.</p>
-                          <a href="#" tabindex="-1" class="btn btn-global-primary-white"
-                             data-analytics-link-group="qg-global-search-feature">Cancel my
-                            registration</a>
+                        </div>
+                        <div class="qg-search-concierge-group helper">
+                          <div class="qg-search-concierge-content">
+                            <h4>Browse by category</h4>
+                            <ul class="list-group">
+                              <li class="list-group-item"><a tabindex="-1"
+                                                             href="https://www.qld.gov.au/queenslanders/transport-and-motoring">Transport
+                                and motoring</a></li>
+                              <li class="list-group-item"><a tabindex="-1"
+                                                             href="https://www.qld.gov.au/queenslanders/employment-and-jobs">Employment
+                                and jobs</a></li>
+                              <li class="list-group-item"><a tabindex="-1"
+                                                             href="https://www.qld.gov.au/queenslanders/education-and-training">Education
+                                and training</a></li>
+                              <li class="list-group-item"><a tabindex="-1"
+                                                             href="https://www.qld.gov.au/queenslanders/queensland-and-its-government">Queensland
+                                and its government</a></li>
+                            </ul>
+                            <a href="https://www.qld.gov.au/queenslanders" tabindex="-1" class="all"
+                               data-analytics-link-group="qg-global-search-category">Browse all
+                              categories</a>
+                          </div>
                         </div>
                       </div>
-                      <div class="qg-search-concierge-group helper">
-                        <div class="qg-search-concierge-content">
-                          <h4>Related services</h4>
-                          <ul class="list-group">
-                            <li class="list-group-item"><a tabindex="-1" href="#"
-                                                           data-analytics-link-group="qg-global-search-related-service">Cancel
-                              a booking</a></li>
-                            <li class="list-group-item"><a tabindex="-1" href="#"
-                                                           data-analytics-link-group="qg-global-search-related-service">Cancel
-                              first aid training</a></li>
-                            <li class="list-group-item"><a tabindex="-1" href="#"
-                                                           data-analytics-link-group="qg-global-search-related-service">Cancel
-                              a disability parking permit</a></li>
-                          </ul>
+                      <div class="qg-search-concierge qg-search-concierge-help">
+                        <div class="qg-search-concierge-group suggestions">
+                          <div class="qg-search-concierge-content">
+                            <h4>Suggestions</h4>
+                            <ul class="list-group">
+                              <li class="list-group-item">
+                                <button tabindex="-1"
+                                        data-analytics-link-group="qg-global-search-suggestion"><b>canc</b>el
+                                  registration for osconnect
+                                </button>
+                              </li>
+                              <li class="list-group-item">
+                                <button tabindex="-1"
+                                        data-analytics-link-group="qg-global-search-suggestion"><b>canc</b>el
+                                  a booking
+                                </button>
+                              </li>
+                              <li class="list-group-item">
+                                <button tabindex="-1"
+                                        data-analytics-link-group="qg-global-search-suggestion"><b>canc</b>el
+                                  vehicle or boat registration
+                                </button>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="qg-search-concierge-group highlight">
+                          <div class="qg-search-concierge-content">
+                            <div
+                              class="d-flex justify-content-between align-content-center flex-wrap">
+                              <h4>Need to cancel your rego?</h4>
+                              <div>
+                                <span class="fa fa-car"></span>
+                                <span class="fa fa-motorcycle"></span>
+                                <span class="fa fa-anchor"></span>
+                              </div>
+                            </div>
+                            <p>Save time and cancel your vehicle or boat registration online.</p>
+                            <a href="#" tabindex="-1" class="btn btn-global-primary-white"
+                               data-analytics-link-group="qg-global-search-feature">Cancel my
+                              registration</a>
+                          </div>
+                        </div>
+                        <div class="qg-search-concierge-group helper">
+                          <div class="qg-search-concierge-content">
+                            <h4>Related services</h4>
+                            <ul class="list-group">
+                              <li class="list-group-item"><a tabindex="-1" href="#"
+                                                             data-analytics-link-group="qg-global-search-related-service">Cancel
+                                a booking</a></li>
+                              <li class="list-group-item"><a tabindex="-1" href="#"
+                                                             data-analytics-link-group="qg-global-search-related-service">Cancel
+                                first aid training</a></li>
+                              <li class="list-group-item"><a tabindex="-1" href="#"
+                                                             data-analytics-link-group="qg-global-search-related-service">Cancel
+                                a disability parking permit</a></li>
+                            </ul>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <input type="hidden" name="num_ranks" value="10">
-                  <input type="hidden" name="tiers" value="off">
-                  <input type="hidden" name="collection" value="qld-gov">
-                  <input type="hidden" name="profile" value="qld">
-                </form>
+                    <input type="hidden" name="num_ranks" value="10">
+                    <input type="hidden" name="tiers" value="off">
+                    <input type="hidden" name="collection" value="qld-gov">
+                    <input type="hidden" name="profile" value="qld">
+                  </form>
 
-              </div><div class="qg-service-finder__popular-apps col-12 col-sm-5 offset-md-1"><p class="qg-service-finder__popular-apps-title">Popular services</p><a href="?clicked_fluster=covid-19+vaccine&amp;cluster0=covid&amp;tiers=off&amp;query=%60COVID-19+vaccine%60&amp;num_ranks=10&amp;profile=qld&amp;collection=qld-gov&amp;start_rank=1" class="qg-btn btn-outline-light m-1"><strong> covid </strong>-19 Vaccine</a><a href="?clicked_fluster=queensland+covid&amp;cluster0=covid&amp;tiers=off&amp;query=%60Queensland+COVID%60&amp;num_ranks=10&amp;profile=qld&amp;collection=qld-gov&amp;start_rank=1" class="qg-btn btn-outline-light m-1">Queensland<strong> covid </strong></a><a href="?clicked_fluster=covid-19+hotspots&amp;cluster0=covid&amp;tiers=off&amp;query=%60COVID-19+hotspots%60&amp;num_ranks=10&amp;profile=qld&amp;collection=qld-gov&amp;start_rank=1" class="qg-btn btn-outline-light m-1"><strong> covid </strong>-19 Hotspots</a><a href="?clicked_fluster=covid-19+updates&amp;cluster0=covid&amp;tiers=off&amp;query=%60COVID-19+updates%60&amp;num_ranks=10&amp;profile=qld&amp;collection=qld-gov&amp;start_rank=1" class="qg-btn btn-outline-light m-1"><strong> covid </strong>-19 Updates </a><a href="?clicked_fluster=covid+safe&amp;cluster0=covid&amp;tiers=off&amp;query=%60COVID+safe%60&amp;num_ranks=10&amp;profile=qld&amp;collection=qld-gov&amp;start_rank=1" class="qg-btn btn-outline-light m-1"><strong> covid </strong>Safe</a><a href="?clicked_fluster=during+covid-19&amp;cluster0=covid&amp;tiers=off&amp;query=%60during+COVID-19%60&amp;num_ranks=10&amp;profile=qld&amp;collection=qld-gov&amp;start_rank=1" class="qg-btn btn-outline-light m-1">During COVID-19</a><a href="?clicked_fluster=about+covid&amp;cluster0=covid&amp;tiers=off&amp;query=%60about+COVID%60&amp;num_ranks=10&amp;profile=qld&amp;collection=qld-gov&amp;start_rank=1" class="qg-btn btn-outline-light m-1">About<strong> covid </strong></a><a href="?clicked_fluster=covid-19+pandemic&amp;cluster0=covid&amp;tiers=off&amp;query=%60COVID-19+pandemic%60&amp;num_ranks=10&amp;profile=qld&amp;collection=qld-gov&amp;start_rank=1" class="qg-btn btn-outline-light m-1"><strong> covid </strong>-19 Pandemic</a></div> </section>
+                </div>
+                <div class="qg-service-finder__popular-apps col-12 col-sm-12 col-md-5 offset-sm-0 offset-md-2">
+                  <p class="qg-service-finder__popular-apps-title">Popular services</p><a href="?clicked_fluster=covid-19+vaccine&amp;cluster0=covid&amp;tiers=off&amp;query=%60COVID-19+vaccine%60&amp;num_ranks=10&amp;profile=qld&amp;collection=qld-gov&amp;start_rank=1" class="qg-btn btn-outline-light m-1"><strong> covid </strong>-19 Vaccine</a><a href="?clicked_fluster=queensland+covid&amp;cluster0=covid&amp;tiers=off&amp;query=%60Queensland+COVID%60&amp;num_ranks=10&amp;profile=qld&amp;collection=qld-gov&amp;start_rank=1" class="qg-btn btn-outline-light m-1">Queensland<strong> covid </strong></a><a href="?clicked_fluster=covid-19+hotspots&amp;cluster0=covid&amp;tiers=off&amp;query=%60COVID-19+hotspots%60&amp;num_ranks=10&amp;profile=qld&amp;collection=qld-gov&amp;start_rank=1" class="qg-btn btn-outline-light m-1"><strong> covid </strong>-19 Hotspots</a><a href="?clicked_fluster=covid-19+updates&amp;cluster0=covid&amp;tiers=off&amp;query=%60COVID-19+updates%60&amp;num_ranks=10&amp;profile=qld&amp;collection=qld-gov&amp;start_rank=1" class="qg-btn btn-outline-light m-1"><strong> covid </strong>-19 Updates </a><a href="?clicked_fluster=covid+safe&amp;cluster0=covid&amp;tiers=off&amp;query=%60COVID+safe%60&amp;num_ranks=10&amp;profile=qld&amp;collection=qld-gov&amp;start_rank=1" class="qg-btn btn-outline-light m-1"><strong> covid </strong>Safe</a><a href="?clicked_fluster=during+covid-19&amp;cluster0=covid&amp;tiers=off&amp;query=%60during+COVID-19%60&amp;num_ranks=10&amp;profile=qld&amp;collection=qld-gov&amp;start_rank=1" class="qg-btn btn-outline-light m-1">During COVID-19</a><a href="?clicked_fluster=about+covid&amp;cluster0=covid&amp;tiers=off&amp;query=%60about+COVID%60&amp;num_ranks=10&amp;profile=qld&amp;collection=qld-gov&amp;start_rank=1" class="qg-btn btn-outline-light m-1">About<strong> covid </strong></a><a href="?clicked_fluster=covid-19+pandemic&amp;cluster0=covid&amp;tiers=off&amp;query=%60COVID-19+pandemic%60&amp;num_ranks=10&amp;profile=qld&amp;collection=qld-gov&amp;start_rank=1" class="qg-btn btn-outline-light m-1"><strong> covid </strong>-19 Pandemic</a>
+                </div>
+              </div>
+            </section>
+
           </div>
         </div>
-
       </section>
 
 
 
 
-      <div id="qg-primary-content" role="main">
+      <div id="qg-primary-content" class="aggregation-index_primary-content" role="main">
+
 
 
 
@@ -627,7 +720,7 @@
         <!--New Layout if theme metadata is available-->
         <section class="row qg-cards qg-cards__equal-height">
 
-          <article class="qg-card qg-card__light-theme col-12 col-sm-6 col-lg-4 ">
+          <article class="qg-card  col-12 col-sm-6 col-lg-4 ">
             <div class="content">
               <img src="https://oss-uat.clients.squiz.net/__data/assets/image/0020/115508/SPER-icon-wallet.jpg" alt="" class="">
 
@@ -635,38 +728,54 @@
                 <h2>Pay your overdue fine</h2>
                 <p><ul><li><a href="https://portal.sper.qld.gov.au/pay-now/login">Pay your debt</a></li><li><a href="https://portal.sper.qld.gov.au/pay-by-instalments/login">Pay by instalments</a></li><li><a href="https://portal.sper.qld.gov.au/check-balance/login">Check balance</a></li></ul></p>
               </div>
+              <div class="qg-card__footer">
+                <a href="https://www.qld.gov.au/law/fines-and-penalties/overdue-fines/payment-options" class="qg-btn btn-outline-light">Payment options</a>
+              </div>
             </div>
           </article>
-          <article class="qg-card qg-card__light-theme col-12 col-sm-6 col-lg-4 ">
+          <article class="qg-card  col-12 col-sm-6 col-lg-4 ">
             <div class="content">
               <img src="https://oss-uat.clients.squiz.net/__data/assets/image/0017/115523/SPER-icon-head.jpg" alt="" class="">
               <div class="details qg-cards__row-1 ">
                 <h2>Manage your debt online</h2>
                 <p><ul><li><a href="https://portal.sper.qld.gov.au/view-debts/login">View your current debts </a></li><li><a href="https://portal.sper.qld.gov.au/manage-account/login">Manage payment plan</a></li></ul></p>
               </div>
+              <div class="qg-card__footer">
+                <a href="https://portal.sper.qld.gov.au/manage-account/login" class="qg-btn btn-outline-light">Manage account</a>
+              </div>
             </div>
           </article>
-          <article class="qg-card qg-card__light-theme col-12 col-sm-6 col-lg-4 ">
+          <article class="qg-card  col-12 col-sm-6 col-lg-4 ">
             <div class="content">
-              <img src="https://oss-uat.clients.squiz.net/__data/assets/image/0017/115523/SPER-icon-head.jpg" alt="" class="">
+              <img src="https://oss-uat.clients.squiz.net/__data/assets/image/0015/115521/SPER-icon-tow.jpg" alt="" class="">
               <div class="details qg-cards__row-1 ">
                 <h2>If you ignore your fine</h2>
                 <p><ul><li><a href="https://oss-uat.clients.squiz.net/law/fines-and-penalties/overdue-fines/enforcement-order">Enforcement order</a></li><li><a href="https://oss-uat.clients.squiz.net/law/fines-and-penalties/fine-enforcement/licence-suspension">Suspend your driver licence</a></li><li><a href="https://oss-uat.clients.squiz.net/law/fines-and-penalties/fine-enforcement/fine-collection-notices">Take money from your wages or bank account</a></li></ul></p>
+              </div>
+              <div class="qg-card__footer">
+                <a href="https://www.qld.gov.au/law/fines-and-penalties/fine-enforcement" class="qg-btn btn-outline-light">Learn more about enforcement actions</a>
               </div>
             </div>
           </article>
         </section>
         <!--  start of  qg-promotional-banner__container-->
         <section class="qg-promotional-banner__container row">
-          <div class="qg-site-width">
-            <div class="row">
-              <div class="qg-promotional-banner__info col-12 col-sm-6">
-                <h2>Mobile apps</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam cupiditate dolorem doloremque, eaque eos labore maxime modi nam quia quidem! Assumenda autem blanditiis deleniti deserunt natus odio quia, quisquam sint!</p><div><a href="#" class="qg-btn btn-primary">CTA</a></div>
-              </div>
-              <div class="qg-promotional-banner__popular-apps col-12 col-sm-6">
-                <p class="qg-promotional-banner__popular-apps-title">Popular apps</p><section class="qg-promotional-banner__tags-container"><a href="?clicked_fluster=covid-19+vaccine&amp;cluster0=covid&amp;tiers=off&amp;query=%60COVID-19+vaccine%60&amp;num_ranks=10&amp;profile=qld&amp;collection=qld-gov&amp;start_rank=1" class="qg-btn btn-outline-dark m-1"><strong> covid </strong>-19 Vaccine</a><a href="?clicked_fluster=queensland+covid&amp;cluster0=covid&amp;tiers=off&amp;query=%60Queensland+COVID%60&amp;num_ranks=10&amp;profile=qld&amp;collection=qld-gov&amp;start_rank=1" class="qg-btn btn-outline-dark m-1">Queensland<strong> covid </strong></a><a href="?clicked_fluster=covid-19+hotspots&amp;cluster0=covid&amp;tiers=off&amp;query=%60COVID-19+hotspots%60&amp;num_ranks=10&amp;profile=qld&amp;collection=qld-gov&amp;start_rank=1" class="qg-btn btn-outline-dark m-1"><strong> covid </strong>-19 Hotspots</a><a href="?clicked_fluster=covid-19+updates&amp;cluster0=covid&amp;tiers=off&amp;query=%60COVID-19+updates%60&amp;num_ranks=10&amp;profile=qld&amp;collection=qld-gov&amp;start_rank=1" class="qg-btn btn-outline-dark m-1"><strong> covid </strong>-19 Updates </a><a href="?clicked_fluster=covid+safe&amp;cluster0=covid&amp;tiers=off&amp;query=%60COVID+safe%60&amp;num_ranks=10&amp;profile=qld&amp;collection=qld-gov&amp;start_rank=1" class="qg-btn btn-outline-dark m-1"><strong> covid </strong>Safe</a><a href="?clicked_fluster=during+covid-19&amp;cluster0=covid&amp;tiers=off&amp;query=%60during+COVID-19%60&amp;num_ranks=10&amp;profile=qld&amp;collection=qld-gov&amp;start_rank=1" class="qg-btn btn-outline-dark m-1">During COVID-19</a><a href="?clicked_fluster=about+covid&amp;cluster0=covid&amp;tiers=off&amp;query=%60about+COVID%60&amp;num_ranks=10&amp;profile=qld&amp;collection=qld-gov&amp;start_rank=1" class="qg-btn btn-outline-dark m-1">About<strong> covid </strong></a><a href="?clicked_fluster=covid-19+pandemic&amp;cluster0=covid&amp;tiers=off&amp;query=%60COVID-19+pandemic%60&amp;num_ranks=10&amp;profile=qld&amp;collection=qld-gov&amp;start_rank=1" class="qg-btn btn-outline-dark m-1"><strong> covid </strong>-19 Pandemic</a></section>
-
-              </div>
+          <div class="wrapper qg-site-width container-fluid">
+            <div class="qg-promotional-banner__info col-12 col-sm-6">
+              <h2>Mobile apps</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam cupiditate dolorem doloremque, eaque eos labore maxime modi nam quia quidem! Assumenda autem blanditiis deleniti deserunt natus odio quia, quisquam sint!</p>
+              <a href="#" class="qg-btn btn-primary">CTA</a>
+            </div>
+            <div class="qg-promotional-banner__popular-apps col-12 col-sm-6">
+              <p class="qg-promotional-banner__popular-apps-title">Popular apps</p>
+              <a href="?clicked_fluster=covid-19+vaccine&amp;cluster0=covid&amp;tiers=off&amp;query=%60COVID-19+vaccine%60&amp;num_ranks=10&amp;profile=qld&amp;collection=qld-gov&amp;start_rank=1" class="qg-btn btn-outline-dark m-1"><strong> covid </strong>-19 Vaccine</a>
+              <a href="?clicked_fluster=queensland+covid&amp;cluster0=covid&amp;tiers=off&amp;query=%60Queensland+COVID%60&amp;num_ranks=10&amp;profile=qld&amp;collection=qld-gov&amp;start_rank=1" class="qg-btn btn-outline-dark m-1">Queensland<strong> covid </strong></a>
+              <a href="?clicked_fluster=covid-19+hotspots&amp;cluster0=covid&amp;tiers=off&amp;query=%60COVID-19+hotspots%60&amp;num_ranks=10&amp;profile=qld&amp;collection=qld-gov&amp;start_rank=1" class="qg-btn btn-outline-dark m-1"><strong> covid </strong>-19 Hotspots</a>
+              <a href="?clicked_fluster=covid-19+updates&amp;cluster0=covid&amp;tiers=off&amp;query=%60COVID-19+updates%60&amp;num_ranks=10&amp;profile=qld&amp;collection=qld-gov&amp;start_rank=1" class="qg-btn btn-outline-dark m-1"><strong> covid </strong>-19 Updates</a>
+              <a href="?clicked_fluster=covid+safe&amp;cluster0=covid&amp;tiers=off&amp;query=%60COVID+safe%60&amp;num_ranks=10&amp;profile=qld&amp;collection=qld-gov&amp;start_rank=1" class="qg-btn btn-outline-dark m-1"><strong> covid </strong>Safe</a>
+              <a href="?clicked_fluster=during+covid-19&amp;cluster0=covid&amp;tiers=off&amp;query=%60during+COVID-19%60&amp;num_ranks=10&amp;profile=qld&amp;collection=qld-gov&amp;start_rank=1" class="qg-btn btn-outline-dark m-1">During COVID-19</a>
+              <a href="?clicked_fluster=about+covid&amp;cluster0=covid&amp;tiers=off&amp;query=%60about+COVID%60&amp;num_ranks=10&amp;profile=qld&amp;collection=qld-gov&amp;start_rank=1" class="qg-btn btn-outline-dark m-1">About<strong> covid </strong></a>
+              <a href="?clicked_fluster=covid-19+pandemic&amp;cluster0=covid&amp;tiers=off&amp;query=%60COVID-19+pandemic%60&amp;num_ranks=10&amp;profile=qld&amp;collection=qld-gov&amp;start_rank=1" class="qg-btn btn-outline-dark m-1"><strong> covid </strong>-19 Pandemic</a>
             </div>
           </div>
         </section>
@@ -724,7 +833,7 @@
           </div>
         </div>
 
-      </div> <!-- end qg-primary-content -->
+      </div>
 
 
 
@@ -739,19 +848,20 @@
       <!-- noindex -->
       <!-- endnoindex -->
 
-    </div>
-  </div> <!-- end #qg-two-col-nav (application)-->
-</div> <!-- end #qg-three-col (application)-->
-</div> <!-- end #qg-one-col (application) -->
-</div> <!-- end #qg-one-col (aggregation-index) -->
-</div> <!-- end #qg-two-col-aside (search-results) -->
-</div> <!-- end #qg-two-col-aside (advance-franchise-index) -->
-</div> <!-- end #qg-two-col-aside (franchise-index) -->
-</div> <!-- end #qg-content (aggregation-index) -->
-</div> <!-- end div.container-fluid.qg-site-width (aggregation-index) -->
-</div>
+    </div><!-- /page type -->
+
+  </div><!-- /.container-fluid -->
 </div>
 
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 
 
@@ -806,7 +916,7 @@
 
 
       <small>(#
-        169583
+        175552
         )</small>
 
       <!--<div class="button-panel">-->
@@ -821,13 +931,13 @@
     <!--<dl>-->
     <!--    <dt>Asset ID:</dt>-->
     <!--    <dd>-->
-    <!--        169583-->
+    <!--        175552-->
     <!--    </dd>-->
     <!--</dl>-->
     <dl>
       <dt>Created:</dt>
       <dd>
-        28 May 2021
+        29 Jun 2021
       </dd>
 
       <dt>Created by:</dt>
@@ -838,7 +948,7 @@
     <dl>
       <dt>Updated:</dt>
       <dd>
-        09 Jun 2021
+        29 Jun 2021
       </dd>
 
       <dt>Updated by:</dt>
@@ -867,13 +977,11 @@
 
 
 
-      <dt>Head extra: </dt><dd> 171240</dd><br/>
+      <dt>Head extra: </dt><dd> 175567</dd><br/>
 
 
 
 
-
-      <dt>Footer extra: </dt><dd> ["95879"]</dd><br/>
 
 
 
@@ -900,23 +1008,13 @@
             <pre>
 
 
-&lt;!-- Dynamic Content Schema //--&gt;
-
-&lt;!-- Functional //--&gt;
-&lt;meta name=&quot;content.franchise&quot; content=&quot;qgov&quot; /&gt;
-&lt;meta name=&quot;content.tags&quot; content=&quot;&quot; /&gt;
-&lt;meta name=&quot;content.type&quot; content=&quot;&quot; /&gt;
-&lt;meta name=&quot;content.icon&quot; content=&quot;&quot; /&gt;
-&lt;meta name=&quot;content.button-text&quot; content=&quot;&quot; /&gt;
-&lt;meta name=&quot;content.button-link&quot; content=&quot;&quot; /&gt;
-
 &lt;!-- Global - Site Schema //--&gt;
 
 &lt;!-- SEO (required) //--&gt;
 &lt;meta name=&quot;description&quot; content=&quot;&quot; /&gt;
 
 &lt;!-- SEO //--&gt;
-&lt;meta name=&quot;keywords&quot; content=&quot;sper; fees and fines; enforcement&quot; /&gt;
+&lt;meta name=&quot;keywords&quot; content=&quot;&quot; /&gt;
 &lt;meta name=&quot;DCTERMS.subject&quot; content=&quot;&quot; /&gt;
 &lt;meta name=&quot;DCTERMS.audience&quot; content=&quot;all&quot; scheme=&quot;AGLSTERMS.agls-audience&quot; /&gt;
 &lt;meta name=&quot;DCTERMS.license&quot; scheme=&quot;DCTERMS.URI&quot; content=&quot;https://creativecommons.org/licenses/by/4.0/&quot;&gt;
@@ -1123,56 +1221,65 @@
 
 
 
-
-<script type="text/javascript" src="https://oss-uat.clients.squiz.net/__data/assets/git_bridge/0029/95447/static.qgov.net.au/assets/v4/latest/lib/all-ext-min.js?h=9e6d532"></script>
-<script type="text/javascript" src="https://oss-uat.clients.squiz.net/__data/assets/git_bridge/0029/95447/static.qgov.net.au/assets/v4/latest/js/qg-main.js?h=9e6d532"></script>
-
-
-
-<script type="text/javascript" language="javascript" charset="utf-8" src="https://osr.inq.com/chatskins/launch/inqChatLaunch10005896.js"></script>
-
-
-<script type="text/javascript" language="javascript" charset="utf-8" src="https://oss-uat.clients.squiz.net/__data/assets/js_file/0027/86634/cleanup.js"></script>
-
-
-<!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvR5MCDqi0HtcjkehKqbKhyoCxt4Khqac"></script>-->
-
-
-
 <script>
-  function cidmWrappedLogin()
-  {
-    var url = 'https://login.auth.staging-services.qld.gov.au/authorize?connection=CIDM-AAL2&client_id=aRqdww3aCXCrKZb8y8jS5o6RYOMSH4WK&response_type=token&prompt=select_account&max_age=1&require_login=true&audience=https://auth.staging-services.qld.gov.au&scope=openid%20Level_2&redirect_uri=https://uat.online.sper.qld.gov.au/CACSGIIA/Debtor/pdDebtorLanding.jsp&nonce=';
-    url += randomString(16);
-    //console.log('the login url is: ' + url);
-    window.location = url;
-    return null;
-  }
-
-  function randomString(length) {
-    var charset = '0123456789ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz-._~'
-    result = ''
-
-    while (length > 0) {
-      var bytes = new Uint8Array(16);
-      var random = window.crypto.getRandomValues(bytes);
-
-      random.forEach(function(c) {
-        if (length == 0) {
-          return;
-        }
-        if (c < charset.length) {
-          result += charset[c];
-          length--;
-        }
-      });
-    }
-    return result;
-  }
-
+  var qg = qg || {};
+  qg.swe = qg.swe || {};
+  // Used by the feedback form.
+  qg.swe.franchiseTitle = 'Franchise Title';
 </script>
+<!--#include virtual="/assets/includes-local/footer/footer-scripts.html"-->
+
+
+
+
 <!-- endnoindex -->
 
+<script>
+  if ($(window).width() > 992){
+
+    // waitForFinalEvent function to wait for some time before executing, this avoid multiple function call on every browser resize
+    var waitForFinalEvent = function () {
+      var trackingObject = {}
+      return function (callback, timeout) {
+        trackingObject[callback] && clearTimeout(trackingObject[callback]);
+        trackingObject[callback] = setTimeout(callback, timeout)
+      }
+    }();
+
+    // 'Search all information & services' markup which on click show the global search form
+    var searchStateContainer = "<div class=\"qg-search-state__container  align-self-center row\" style=\"\">\n <i class=\"fa fa-search\" aria-hidden=\"true\"></i>\n <p class=\"ml-2 mb-0\">Search all information &amp; services</p>\n </div>";
+      // insert on the page
+    $(searchStateContainer).insertBefore('#qg-global-search-form');
+
+    // hide global search form on page load
+    $('#qg-global-search-form').hide();
+
+    // toggle global search form on click
+    $('.qg-search-state__container').click(function(){
+      $(this).toggle();
+      $('#qg-global-search-form').removeClass('qg-sf-global').toggle('fast');
+    });
+
+    // toggle global search on interacting with the service finder search
+    $('.qg-service-finder__container .qg-search-site__input').click(function() {
+      $('#qg-global-search-form').hide();
+      $('.qg-search-state__container').show();
+    });
+  } else {
+    $('#qg-global-search-form').removeClass('qg-sf-global');
+  }
+
+  // disable show and hide global search feature on mobile
+  $(window).on('resize', function () {
+    let $windowSize = $(window).width();
+    waitForFinalEvent(function(){
+      if ($windowSize < 995) {
+        $('.qg-search-state__container').hide();
+        $('#qg-global-search-form').removeClass('qg-sf-global').removeAttr('style');
+      }
+    }, 200)
+  });
+</script>
 
 </body>
 </html>
