@@ -147,7 +147,7 @@ import keys from '../../data/qg-google-keys';
      * @return {undefined}
      * @param {string} form - form selector
      * @param {string} subBtn - form submit button selector
-     * @param {string} key - Google recaptcha ket for V2
+     * @param {string} key - Google recaptcha key
      **/
     v2Captcha: function (form, subBtn, key){
       try {
@@ -179,8 +179,8 @@ import keys from '../../data/qg-google-keys';
      * Google recaptcha v3 (Version 3)
      * @return {undefined}
      * @param {string} form - form selector
-     * @param {string} greptcha - hidden input field where token can be inserted (g-recaptcha-response)
-     * @param {string} key - Google recaptcha ket for V3
+     * @param {string} greptcha - hidden input field for the retrieved token (g-recaptcha-response)
+     * @param {string} key - Google recaptcha ket
      * @param {string} action - event to trigger after execution
      **/
     v3Captcha: function (form, greptcha, key, action){
