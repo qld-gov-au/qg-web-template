@@ -1,5 +1,8 @@
-/**
- * When using functionality related to google libraries, this fuction comes handy to check if libraries already exists and then execute custom function
+/*
+FAQ -
+Q1 What this class do ?
+A1 This class determine the franchise (if available) and the environment using the hostname and then loads Google Maps API using that key
+  - Key is loaded using the qg-google-keys.json file
  */
 import keys from '../data/qg-google-keys';
 
@@ -48,6 +51,7 @@ export class QgLoadGoogleApi {
 
   /**
    * onbtnClick -> clicking quick exit button a page
+   * @param {function} callback - execute after successful loading of a key
    * @return {undefined}
    **/
   _loadGoogleApi (callback) {

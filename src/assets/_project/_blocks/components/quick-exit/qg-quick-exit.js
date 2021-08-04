@@ -1,3 +1,10 @@
+/*
+FAQ -
+Q1 Where this class in use and what it do ?
+A1 Quick exit function to exit from a page on 'Esc' key or clicking 'Close this site' button
+- https://www.qld.gov.au/law/crime-and-police/abuse-family-matters-and-protection-orders/apply-for-a-protection-order
+ */
+
 var Stickyfill = require('stickyfill');
 var stickyfill = Stickyfill();
 
@@ -23,6 +30,7 @@ export class QgQuickExit {
 
   /**
   * quickExit function redirects a user on click and Esc key down
+  * @param {string} site - site to replace on initiating the 'quick exit' ('Esc' key or clicking 'Close this site' button) function
   * @return {undefined}
   **/
   quickExit(site) {
