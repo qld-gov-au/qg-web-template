@@ -1,7 +1,10 @@
-/**
- * if there is not a #document-licence present
- * this script will add one based on the DCTERMS.license metadata
+/*
+FAQ -
+Q1 Where this function in use and what it do ?
+A1 This function checks meta tag [name="DCTERMS.license] and then insert markup on the bottom of the content section, function is in use where license field is set to true on Matrix metadata.
+- https://www.qld.gov.au/transport/contacts/centres
  */
+
 /*globals qg*/
 (function ($, qg) {
   'use strict';
@@ -123,11 +126,11 @@
       // if we have licence details…
       if (licence) {
         $('.qg-content-footer').append(
-        '<p id="document-licence">' +
+          '<p id="document-licence">' +
           '<a rel="license" href="' + licence.url + licence.version.urlPath + '" title="Text available under Creative Commons ' + licence.name + ' ' + licence.version.title + ' licence">' +
           '<img src="' + licence.imgPath + '" alt="Creative Commons ' + licence.name + ' ' + licence.version.title + '" />' +
           '</a>' +
-          '</p>'
+          '</p>',
         );
       }
     });
