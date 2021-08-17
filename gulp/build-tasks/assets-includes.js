@@ -19,13 +19,12 @@ module.exports = function (gulp, plugins, config, dest, local = false, relpath =
       regex: new RegExp(`="/assets/includes-local`, 'g'),
       replacement: `="/assets/includes-cdn`,
     };
-    // const projectAssets = new RegExp('="(/)?assets/_project/', 'g');
 
     // Test if the element is set to deploy this component
     return gulp.src(src, { dot: true })
       .pipe(plugins.include({ hardFail: true }))
       .on('error', console.log)
-      // .pipe(plugins.replace(projectAssets, `="$1assets/${config.versionName}/latest/`)) // Replace '_project' with 'v3'
+      // To replace local URL (/assets/...) to the static CDN URL (https://static.qgov.net.au/) for release in Prod
       .pipe(plugins.if(local !== true, plugins.replace(cdnLink.regex, cdnLink.replacement)))
       .pipe(plugins.if(local !== true, plugins.replace(folderNameChange.regex, folderNameChange.replacement)))
       .pipe(plugins.replace(versionLocked.regex, versionLocked.replacement))
