@@ -13,6 +13,7 @@
       $accordion_v2: $('.qg-accordion-v2'),
       $accHeading: $('.acc-heading'),
     },
+
     /**
      * Initialise qgAccordion
      * @return {undefined}
@@ -29,22 +30,25 @@
         this.legacyAccordion();
       }
     },
+
     urlHash: function (){
       return decodeURI(window.location.hash.replace(/\/|#|{|}|\+|\\/g, ''));
     },
+
     /**
      * hashTrigger function open matching accordion if it finds #title-Of-Accordion in the url
      * @return {undefined}
      **/
+    // TODO check hashTrigger function looks like not working
     hashTrigger: function (){
       let hashVal = this.urlHash();
       if (hashVal.length > 0) {
         let findHashVal = this.config.$accordion.find('#' + hashVal + '');
-        console.log(findHashVal);
         findHashVal.click();
         findHashVal.parent('article').find('.acc-heading').focus();
       }
     },
+
     toggleOpenCloseClass: function(curr){
       if (curr.hasClass('qg-accordion--open')){
         curr.removeClass('qg-accordion--open').addClass('qg-accordion--closed');
@@ -54,6 +58,7 @@
         curr.attr('aria-expanded', 'true');
       }
     },
+
     /**
      * accordionClick -> click on an accordion
      * @return {undefined}
@@ -65,6 +70,7 @@
         self.toggleOpenCloseClass($(this));
       });
     },
+
     /**
      * keyboardAccessibility -> accordion to work with keyboard
      * @param {string} event -> click , keypress etc
@@ -82,6 +88,7 @@
         return false;
       }
     },
+
     /**
      * collapseAll -> collapse all accordion on a page
      * @return {undefined}
@@ -99,6 +106,7 @@
         }
       });
     },
+
     /**
      * expandAll -> expand all accordion on a page
      * @return {undefined}
@@ -116,6 +124,7 @@
         }
       });
     },
+
     /**
      * gaTracking -> enable tracking on accordion, this function adds an attribute 'data-analytics-link-group' with a acc title
      * @return {undefined}
@@ -126,6 +135,7 @@
         $(this).attr('data-analytics-link-group', title);
       });
     },
+
     /**
      * legacyAccordion function supports swe2 accordion in use at some places
      * @return {undefined}
@@ -146,6 +156,7 @@
           }
         }
       });
+
       // focus heading on click
       $('input[name=tabs]').click(function () {
         $(this).parent('article').find('.acc-heading').focus();

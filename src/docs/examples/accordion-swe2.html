@@ -377,6 +377,306 @@
     <div id="qg-one-col" class="row wide">
 
       <div id="qg-primary-content" role="main">
+        <form
+          action="https://www.smartservice.qld.gov.au/services/submissions/email/qld/responsive-maintenance-request"
+          method="post" class="form" data-recaptcha="true">
+
+          <ol class="questions">
+            <li>
+              <label for="name-of-tenant">
+                <span class="label">Name of tenant</span>
+                <abbr class="required" title="(required)">*</abbr>
+              </label>
+              <input id="name-of-tenant" name="name-of-tenant" size="30" required="required"
+                     type="text" />
+            </li>
+
+            <li>
+              <label for="caller-s-name-and-relationship-to-tenant">
+                <span class="label">Callers name and relationship to tenant</span>
+                <small class="hint">If caller is not tenant, fill in relationship details
+                  below</small>
+              </label>
+              <textarea id="caller-s-name-and-relationship-to-tenant"
+                        name="caller-s-name-and-relationship-to-tenant" rows="2" cols="40"></textarea>
+            </li>
+
+            <li>
+              <label for="contact-telephone-numbers">
+                <span class="label">Contact telephone numbers</span>
+                <abbr class="required" title="(required)">*</abbr>
+              </label>
+              <input id="contact-telephone-numbers" name="contact-telephone-numbers" size="20"
+                     type="text" required="required" />
+            </li>
+
+            <li>
+              <label for="rental-agreement-number-or-tenant-s-date-of-birth">
+                <span class="label">Rental agreement number or tenant's date of birth</span>
+              </label>
+              <input id="rental-agreement-number-or-tenant-s-date-of-birth"
+                     name="rental-agreement-number-or-tenant-s-date-of-birth" size="20" type="text" />
+            </li>
+
+            <li class="atomic group">
+              <fieldset>
+                <legend>
+                  <span class="label">Address</span>
+                </legend>
+                <ol class="questions">
+                  <li>
+                    <label for="streetaddress1">
+                      <span class="label">Address line 1</span>
+                      <abbr class="required" title="(required)">*</abbr>
+                    </label>
+                    <input name="streetaddress1" id="streetaddress1" size="20" value=""
+                           required="required" type="text" />
+                  </li>
+                  <li>
+                    <label for="streetaddress2">
+                      <span class="label">Address line 2</span>
+                    </label>
+                    <input name="streetaddress2" id="streetaddress2" size="20" value=""
+                           type="text" />
+                  </li>
+                  <li>
+                    <label for="streetaddress3">
+                      <span class="label">Address line 3</span>
+                    </label>
+                    <input name="streetaddress3" id="streetaddress3" size="20" value=""
+                           type="text" />
+                  </li>
+                  <li class="group">
+                    <ol class="questions compact">
+                      <li>
+                        <label for="town">
+                          <span class="label">Town, city or suburb</span>
+                          <abbr class="required" title="(required)">*</abbr>
+                        </label>
+                        <input name="town" id="town" size="20" value="" required="required"
+                               type="text" />
+                      </li>
+                      <li>
+                        <label for="state">
+                          <span class="label">State</span>
+                          <abbr class="required" title="(required)">*</abbr>
+                        </label>
+                        <input name="state" id="state" size="5" value="QLD"
+                               required="required" type="text" />
+                      </li>
+                      <li>
+                        <label for="postcode">
+                          <span class="label">Postcode</span>
+                          <abbr class="required" title="(required)">*</abbr>
+                        </label>
+                        <input name="postcode" id="postcode" size="5" value=""
+                               required="required" type="text" />
+                      </li>
+                    </ol>
+                  </li>
+                </ol>
+              </fieldset>
+            </li>
+
+            <li>
+              <label for="work-order-text">
+                <span class="label">Service request text</span>
+                <abbr class="required" title="(required)">*</abbr>
+              </label>
+              <textarea id="work-order-text" name="work-order-text" rows="10" cols="40"
+                        required="required"></textarea>
+            </li>
+
+            <li>
+              <fieldset>
+                <legend>
+                  <span class="label">Priority level</span>
+                  <abbr class="required" title="(required)">*</abbr>
+                </legend>
+                <ol class="choices">
+                  <li><input id="priority-level-immediate-1-hour" name="priority-level"
+                             value="Immediate (1 hour)" required="required" type="radio" /><label
+                    for="priority-level-immediate-1-hour">Immediate (1
+                    hour)</label></li>
+                  <li><input id="priority-level-urgent-4-hour" name="priority-level"
+                             value="Urgent (4 hour)" required="required" type="radio" /><label
+                    for="priority-level-urgent-4-hour">Urgent (4
+                    hour)</label></li>
+                  <li><input id="priority-level-priority-24-hour" name="priority-level"
+                             value="Priority (24 hour)" required="required" type="radio" /><label
+                    for="priority-level-priority-24-hour">Priority
+                    (next business day)</label></li>
+                  <li><input id="priority-level-normal-14-days" name="priority-level"
+                             value="Normal (14 days)" required="required" type="radio" /><label
+                    for="priority-level-normal-14-days">Normal (14
+                    days)</label></li>
+                </ol>
+              </fieldset>
+            </li>
+
+            <li id="was-this-issue-reported-after-hours">
+              <fieldset>
+                <legend>
+                  <span class="label">Was this issue reported after hours</span>
+                  <abbr class="required" title="(required)">*</abbr>
+                  <small class="hint">
+                    <a href="#" href="#" data-toggle="modal" data-target="#afterHoursModal">What is after hours?</a></small>
+                </legend>
+                <ol class="choices compact">
+                  <li>
+                    <input id="was-this-issue-reported-after-hours-yes"
+                           name="was-this-issue-reported-after-hours" value="Yes"
+                           required="required" type="radio" /><label
+                    for="was-this-issue-reported-after-hours-yes" disabled="disabled">Yes</label>
+                  </li>
+                  <li>
+                    <input id="was-this-issue-reported-after-hours-no"
+                           name="was-this-issue-reported-after-hours" value="No"
+                           required="required" type="radio" /><label
+                    for="was-this-issue-reported-after-hours-no" disabled="disabled">No</label>
+                  </li>
+                </ol>
+              </fieldset>
+            </li>
+
+            <li id="after-hours-contact">
+              <fieldset>
+                <legend>
+                                        <span class="h2">After hours contractor / Building and Asset Services
+                                            supervisor</span>
+                  <small class="hint relevance">(If you chose 'Yes' above)</small>
+                </legend>
+                <ol class="questions">
+                  <li>
+                    <label for="name">
+                      <span class="label">Name</span>
+                      <abbr class="required" title="(required)">*</abbr>
+                    </label>
+                    <input id="name" name="name" size="30" required="required" type="text" />
+                  </li>
+                  <li>
+                    <label for="company-or-qbuild">
+                      <span class="label">Company or Building and Asset Services</span>
+                      <abbr class="required" title="(required)">*</abbr>
+                    </label>
+                    <input id="company-or-qbuild" name="company-or-qbuild" size="30"
+                           required="required" type="text" />
+                  </li>
+                  <li>
+                    <label for="phone-number">
+                      <span class="label">Phone number</span>
+                      <abbr class="required" title="(required)">*</abbr>
+                      <small class="hint">Please include area code</small>
+                    </label>
+                    <input id="phone-number" name="phone-number" size="20" required="required"
+                           type="text" />
+                  </li>
+                </ol>
+              </fieldset>
+            </li>
+
+            <li id="has-qbuild-been-contacted">
+              <fieldset>
+                <legend>
+                                        <span class="label">Is there a  <a href="#" data-toggle="modal" data-target="#contactModal">requirement</a> for Building and Asset services to be
+                                           contacted?</span>
+                  <abbr class="required" title="(required)">*</abbr>
+                  <small class="hint">For all 'immediate' or 'urgent  after 3.30pm)'
+                    requests</small>
+                </legend>
+                <ol class="choices compact">
+                  <li><input id="has-qbuild-been-contacted-yes" name="has-qbuild-been-contacted"
+                             value="Yes" required="required" type="radio" /><label
+                    for="has-qbuild-been-contacted-yes">Yes</label>
+                  </li>
+                  <li><input id="has-qbuild-been-contacted-no" name="has-qbuild-been-contacted"
+                             value="No" required="required" type="radio" /><label
+                    for="has-qbuild-been-contacted-no">No</label></li>
+                </ol>
+              </fieldset>
+            </li>
+
+            <li id="qbuild-information" class="section">
+              <fieldset>
+                <legend>
+                  <span class="h2">Building and Asset Services information</span>
+                </legend>
+                <ol class="questions">
+                  <li>
+                    <label for="qbuild-office-notified">
+                      <span class="label">Building and Asset Services office notified</span>
+                      <abbr class="required" title="(required)">*</abbr>
+                      <small class="hint">Example: Cannon Hill</small>
+                    </label>
+                    <input id="qbuild-office-notified" name="qbuild-office-notified" size="30"
+                           required="required" type="text" />
+                  </li>
+                  <li>
+                    <label for="staff-member-name">
+                      <span class="label">Building and Asset Services staff member name</span>
+                      <abbr class="required" title="(required)">*</abbr>
+                    </label>
+                    <input id="staff-member-name" name="staff-member-name" size="30"
+                           required="required" type="text" />
+                  </li>
+                </ol>
+              </fieldset>
+            </li>
+
+            <li id="lodgment-details">
+              <fieldset>
+                <legend>
+                  <span class="h2">Lodgement details</span>
+                </legend>
+                <ol class="questions">
+                  <li class="group">
+                    <ol class="questions compact">
+                      <li>
+                        <label for="date">
+                          <span class="label">Date</span>
+                          <abbr class="required" title="(required)">*</abbr>
+
+                        </label>
+                        <input id="date" name="date" size="10" required="required"
+                               type="text" />
+                      </li>
+                      <li>
+                        <label for="time">
+                          <span class="label">Time</span>
+                          <abbr class="required" title="(required)">*</abbr>
+
+                        </label>
+                        <input id="time" name="time" size="10" required="required"
+                               type="text" />
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    <label for="csa-s-name">
+                      <span class="label">CSA's name</span>
+                      <abbr class="required" title="(required)">*</abbr>
+                      <small class="hint">First then last name</small>
+                    </label>
+                    <input id="csa-s-name" name="csa-s-name" size="30" required="required"
+                           type="text" />
+                  </li>
+                </ol>
+              </fieldset>
+            </li>
+
+            <li class="footer">
+              <ul class="actions">
+                <li><strong><input value="Send email" type="submit" /></strong></li>
+              </ul>
+
+              <input type="hidden" name="captcha" value="" />
+
+              <!-- could rely on client-side validation. fields that may be irrelevant cannot be in this list (server-side does not understand relevance) -->
+              <input type="hidden" name="mandatory_fields"
+                     value="name-of-tenant,contact-telephone-numbers,streetaddress1,town,state,postcode,work-order-text,priority-level,was-this-issue-reported-after-hours,date,time,csa-s-name" />
+            </li>
+          </ol>
+        </form>
         <h1 id="accordion" class="category">Accordion</h1>
         <section>
           <p>Accordions display collapsible content panels for presenting information in a limited amount of space. Accordions help users see only the content they need, while everything else is easily accessible.</p>

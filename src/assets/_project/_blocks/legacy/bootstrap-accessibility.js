@@ -1,6 +1,6 @@
 /*
 
- * Extended bootstrap-accessibility.js to allow elements without href attribute to accept collapse extension
+ * Extended bootstrap-qg-accessibility.js to allow elements without href attribute to accept collapse extension
 
  * Extended by QLD Gov, DSITI, OSSSIO, Digital Channels
 
@@ -217,7 +217,7 @@
 
     /*
     // Disabled because it was creating accessibility issues
-    
+
     var $colltabs =  $('[data-toggle="collapse"]')
     $colltabs.attr({ 'role':'tab', 'aria-selected':'false', 'aria-expanded':'false' })
     $colltabs.each(function( index ) {

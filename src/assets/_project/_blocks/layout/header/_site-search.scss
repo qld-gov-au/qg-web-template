@@ -63,7 +63,6 @@
           padding-top: 18px;
           padding-bottom: 20px;
           a:not(.btn) {
-            color: #fff !important;
             text-decoration:underline;
             &:hover {
               text-decoration:none;
@@ -325,4 +324,8 @@
   @media print {
     display: none;
   }
+}
+
+.highlight .qg-search-concierge-content .justify-content-between *:not(h4) {
+  margin-left: 35px;
 }

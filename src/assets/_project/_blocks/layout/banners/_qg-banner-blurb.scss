@@ -43,8 +43,8 @@
     color: #fff;
     text-decoration: underline;
     &:hover, &:active, &:focus, &:visited{
-      color: #000 !important;
-      text-decoration: none !important;
+      color: #000;
+      text-decoration: none;
     }
   }
   img {

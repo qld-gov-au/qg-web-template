@@ -1,12 +1,16 @@
 .alert {
   position: relative;
   color: #000;
-
+  & > :first-child{
+    margin-bottom:0;
+  }
+  & > :nth-child(2){
+    margin-top: 0.75rem;
+  }
   h2 {
     margin-top: 5px;
     font-size: 1.2em;
   }
-
   &.alert-danger {
     color: #000000;
     border: none;
