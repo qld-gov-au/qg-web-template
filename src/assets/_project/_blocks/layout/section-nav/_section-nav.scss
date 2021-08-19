@@ -71,7 +71,7 @@
   @include media-breakpoint-up(md) {
     li {
       a:before {
-        left: ($qg-spacing-xs / 2);
+        left: ($qg-spacing-xs * 0.5);
       }
     }
   }
@@ -176,17 +176,17 @@
     }
     li {
       a {
-        padding-left: ($qg-spacing-xs / 2) + 15px;
+        padding-left: ($qg-spacing-xs * 0.5) + 15px;
       }
       a:before {
-        left: ($qg-spacing-xs / 2);
+        left: ($qg-spacing-xs * 0.5);
       }
     }
   }
   @include media-breakpoint-up(lg) {
     li {
       a {
-        padding: .7em ($qg-spacing/2) .7em ($qg-spacing + 15px);
+        padding: .7em ($qg-spacing*0.5) .7em ($qg-spacing + 15px);
       }
       a:before {
         left: ($qg-spacing);

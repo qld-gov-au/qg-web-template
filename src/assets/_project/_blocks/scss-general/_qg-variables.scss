@@ -146,11 +146,11 @@ $qg-max-container-width: 1327px;
 
 $qg-spacing: 50px; // Note: Used by $grid-gutter-width
 $qg-spacing-large: $qg-spacing * 1.5;
-$qg-spacing-small: $qg-spacing / 2;
+$qg-spacing-small: $qg-spacing * 0.5;
 
 $qg-spacing-xs: 30px;
 $qg-spacing-xs-large: $qg-spacing-xs * 1.5;
-$qg-spacing-xs-small: $qg-spacing-xs / 2;
+$qg-spacing-xs-small: $qg-spacing-xs * 0.5;
 
 
 // Notes:

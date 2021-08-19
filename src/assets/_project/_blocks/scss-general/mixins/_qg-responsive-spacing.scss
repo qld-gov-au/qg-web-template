@@ -3,8 +3,8 @@
 
 // Settings
 @mixin qg-responsive-spacing ($prop, $scale: notset, $large: notset, $small: notset) {
-  $default-small: $qg-spacing-xs / 2;
-  $default-large: $qg-spacing / 2;
+  $default-small: $qg-spacing-xs * 0.5;
+  $default-large: $qg-spacing * 0.5;
 
   @if $scale != 'notset' AND $large == 'notset' AND $small == 'notset' {
     $small: $scale;
