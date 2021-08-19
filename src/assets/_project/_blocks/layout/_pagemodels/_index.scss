@@ -59,7 +59,7 @@
 
     }
     h2, p, ul, &> div &> span {
-      padding-left: ($qg-spacing / 2) + 75px;
+      padding-left: ($qg-spacing * 0.5) + 75px;
     }
     h2 {
       margin-top: 0;

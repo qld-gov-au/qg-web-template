@@ -1,8 +1,10 @@
 // Font size
 // use: @include fontSize(Xpx);
 
+@use "sass:math";
+
 @function calculateRem($size) {
-  $remSize: $size / 10px;
+  $remSize: math.div($size, 10px);
   @return #{$remSize}rem;
 }
 @mixin fontSize($size) {

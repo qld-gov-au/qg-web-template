@@ -1,7 +1,6 @@
 'use-strict';
-var sass = require('gulp-sass');
+var sass = require('gulp-sass')(require('sass'));
 var sourcemaps = require('gulp-sourcemaps');
-sass.compiler = require('node-sass');
 
 module.exports = function (gulp, plugins, config, destFolder = 'assets', addSrc) {
   const extLibCssTarget = config.extLib.css.map(function (s) { return `${config.basepath.src}/assets/_project/lib/ext/` + s; });
@@ -18,12 +17,12 @@ module.exports = function (gulp, plugins, config, destFolder = 'assets', addSrc)
       destFolder = [destFolder];
     }
     return gulp.src(src)
+      .pipe(sourcemaps.init())
       .pipe(sass({
         includePaths: [
           '../../../../node_modules/',
         ],
       }))
-      .pipe(sourcemaps.init())
       .pipe(plugins.plumber())
       .pipe(sass({
         includePaths: [config.basepath.src],
@@ -34,9 +33,7 @@ module.exports = function (gulp, plugins, config, destFolder = 'assets', addSrc)
         browsers: plugins.supportedBrowser,
         cascade: false,
       }))
-      .pipe(sourcemaps.write('.', {
-        sourceRoot: config.basepath.src,
-      }))
+      .pipe(sourcemaps.write())
       // .pipe(plugins.if(type === 'release', plugins.cleanCss()))
       .pipe(plugins.if(typeof destFolder[0] !== 'undefined', gulp.dest(`${dest.base}/${destFolder[0]}/${dest.ext}`)))
       .pipe(plugins.if(typeof destFolder[1] !== 'undefined', gulp.dest(`${dest.base}/${destFolder[1]}/${dest.ext}`)))
