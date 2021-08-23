@@ -32,7 +32,9 @@
   }
 }
 .qg-cut-in{
- float: right;
+  @include media-breakpoint-up(sm) {
+    float: right;
+  }
  &.qg-cut-in__fw {
   width: min-content;
   float: initial;
