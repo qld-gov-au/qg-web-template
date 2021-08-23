@@ -14,9 +14,9 @@
 
 		&-item {
 			display: block;
-    		float: left;
+      float: left;
 			max-width: 500px;
-			white-space: nowrap;
+			//white-space: nowrap;
 			transition: max-width .3s ease;
 
 			&:first-child:before {
@@ -50,7 +50,7 @@
 					}
 				}
 			}
-			
+
 			&:last-child {
 				&:after {
 					display: none;
