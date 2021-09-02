@@ -34,8 +34,9 @@
 			}
 
 			&.shortened {
+        height: 0;
 				overflow: hidden;
-				max-width: 0px;
+				max-width: 0;
 				transition: max-width 0s;
 			}
 
