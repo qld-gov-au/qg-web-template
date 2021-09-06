@@ -195,7 +195,6 @@ import keys from '../../data/qg-google-keys';
        * handles footer feedback recaptcha load
        **/
       $('.qg-feedback-toggle').one('click', function(){
-        alert('load footer recp');
         $.getScript('https://www.google.com/recaptcha/api.js?render=' + self.footerFeedbackGoogleRecaptchaApiKey(), function (){
           self.footerFeedbackRecaptcha();
         });
@@ -216,7 +215,6 @@ import keys from '../../data/qg-google-keys';
               });
             } else {
               if (!v2Loaded) {
-                alert('loaded');
                 $.getScript('https://www.google.com/recaptcha/api.js', function (){
                   self.onloadRecaptcha();
                 });
