@@ -28,7 +28,6 @@ export class QgLoadGoogleApi {
     let self = this;
     // check if a particular franchise key is required by checking the folder path in the URL
     if (self.firstFolderPath) {
-      console.log(self.firstFolderPath);
       keys.franchises.forEach(function (e) {
         if (self.firstFolderPath === e.name) {
           googleApiKey = e.apiKey;
@@ -39,13 +38,10 @@ export class QgLoadGoogleApi {
     if (window.location.hostname.search(/\bgithub\b/) !== -1) {
       googleApiKey = keys.defGoogle.docs;
     } else if (!this._isProd()) {
-      console.log('not prod');
       googleApiKey = keys.defGoogle.test;
     } else {
       googleApiKey = keys.defGoogle.prod;
     }
-
-    console.log(googleApiKey);
     return googleApiKey;
   }
 
