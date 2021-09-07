@@ -65,13 +65,13 @@ import keys from '../../data/qg-google-keys';
 
     /**
      * from swe4 onwards footer feedback is ajax based
-     * footerFeedbackRecaptcha function handles recaptcha on ajax based form.
+     * footerFeedbackSubmitWithRecaptchaCheck function handles recaptcha on ajax based form.
      * This function creates a submit event
      * Call submission handler api
      * Get and display success message
      * @return {undefined}
      **/
-    footerFeedbackRecaptcha: function() {
+    footerFeedbackSubmitWithRecaptchaCheck: function() {
       var self = this;
       grecaptcha.ready(() => {
         $('#qg-page-feedback-form').submit(function (event) {
@@ -196,7 +196,7 @@ import keys from '../../data/qg-google-keys';
        **/
       $('.qg-feedback-toggle').one('click', function(){
         $.getScript('https://www.google.com/recaptcha/api.js?render=' + self.footerFeedbackGoogleRecaptchaApiKey(), function (){
-          self.footerFeedbackRecaptcha();
+          self.footerFeedbackSubmitWithRecaptchaCheck();
         });
       });
       /**
