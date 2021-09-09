@@ -14,6 +14,16 @@ $(function () {
   // Helpers
   //
 
+  // for backward compatibility with ID qg-global-search-form and qg-search-query and no class attribute
+  // changed to class based so that we can have more than one site search on a same page
+  // check if class is present, if not then add qg-search-site__input
+  if (!$('#qg-search-query').hasClass('qg-search-site__input')){
+    $('#qg-search-query').addClass('qg-search-site__input');
+  }
+  if (!$('#qg-global-search-form').hasClass('qg-site-search__form')){
+    $('#qg-global-search-form').addClass('qg-site-search__form');
+  }
+
   // Event debouncer
   function debouncer (func, wait, immediate) {
     var timeout;
