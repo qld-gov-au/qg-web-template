@@ -52,4 +52,9 @@
       setHeight();
     }
   });
+  // check if a view is loaded in an iframe , this is to detect Squiz Matrix preview mode
+  // and insert a class so that additional styles can be applied
+  if (window.frameElement.getAttribute('Name') === 'ees_modePreviewFrame'){
+    $('.container-fluid').addClass('qg-edit-plus-styles');
+  }
 })(jQuery, qg.swe);
