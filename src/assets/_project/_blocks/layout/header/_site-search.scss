@@ -168,7 +168,8 @@
     width: 525px;
 
     input[type=text] {
-      border-radius: 4px;
+      // use of !important to overwrite Boostrap input style
+      border-radius: 4px !important;
       border: 3px solid #fff;
       padding: 10px 140px 10px 38px;
       -webkit-appearance: none;

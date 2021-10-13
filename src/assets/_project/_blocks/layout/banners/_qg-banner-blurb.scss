@@ -96,13 +96,9 @@
       }
     }
   }
-  @include breakpoint(sm) {
-    //&.theme_nobg {
-    //  padding: 1em 0 1em 0;
-    //}
-  }
   @include breakpoint(xs) {
     min-height: 192px;
+    background-color: #fff !important;
     background-position:top !important;
     background-size:contain !important;
     padding:0;

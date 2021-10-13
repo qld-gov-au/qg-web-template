@@ -5,10 +5,10 @@ import '../layout/location/qg-location';
 import './misc/qg-license';
 import './carousel/qg-carousel';
 import { QgQuickExit } from './quick-exit/qg-quick-exit';
+import { QgAddressAutocomplete } from './forms/qg-address-autocomplete';
 import './tables';
 import './accordion/qg-accordion';
 import './forms/qg-recaptcha';
-import './forms/qg-address-autocomplete';
 import './forms/qg-forms';
 import './misc/qg-document-links';
 import './gallery/qg-gallery';
@@ -21,3 +21,7 @@ accessibility.init();
 // quick exit
 const quickExit = new QgQuickExit();
 quickExit.init();
+
+// autocomplete
+// eslint-disable-next-line no-unused-vars
+const qgAddressAutocomplete = new QgAddressAutocomplete();

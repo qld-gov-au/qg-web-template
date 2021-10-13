@@ -49,6 +49,11 @@
       }
     },
 
+    /**
+     * toggleOpenCloseClass function toggle the class and 'aria-expanded' value according to the accordion state
+     * @param {selector} curr - target selector
+     * @return {undefined}
+     **/
     toggleOpenCloseClass: function(curr){
       if (curr.hasClass('qg-accordion--open')){
         curr.removeClass('qg-accordion--open').addClass('qg-accordion--closed');
@@ -90,7 +95,7 @@
     },
 
     /**
-     * collapseAll -> collapse all accordion on a page
+     * collapseAll -> collapse all accordion on a page on clicking 'Collapse all' button
      * @return {undefined}
      **/
     collapseAll: function (){
@@ -108,7 +113,7 @@
     },
 
     /**
-     * expandAll -> expand all accordion on a page
+     * expandAll -> expand all accordion on a page on clicking 'Expand all' button
      * @return {undefined}
      **/
     expandAll: function (){

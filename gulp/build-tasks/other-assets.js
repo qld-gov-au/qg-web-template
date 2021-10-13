@@ -1,11 +1,11 @@
+// other assets -> images, external libraries and fonts
 module.exports = function (gulp, plugins, config, es, dest) {
   return function (done) {
     // Images
     gulp.src(`${config.basepath.src}/assets/_project/images/**/*`).pipe(
       gulp.dest(`${config.basepath.build}/${dest}/${config.versionName}/latest/images/`),
     );
-    // Libraries
-    // just handle non js and css (all the js and css to be minified and combined)
+    // external Libraries
     gulp.src(`${config.basepath.src}/assets/_project/lib/**`).pipe(
       gulp.dest(`${config.basepath.build}/${dest}/${config.versionName}/latest/lib/`),
     );

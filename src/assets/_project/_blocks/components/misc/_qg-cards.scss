@@ -52,7 +52,15 @@
     .btn {
       width: 100%;
     }
-
+    .btn-outline-light {
+      text-decoration: none !important;
+      &:hover, &:active, &:focus, &:visited {
+        text-decoration: underline !important;
+      }
+      &:visited {
+        color: #fff;
+      }
+    }
     .btn-link {
       padding-left: 0;
       text-align: left;
@@ -97,7 +105,15 @@
 
       .qg-card__footer {
         border-top: 1px solid rgba(211, 211, 211, 1);
-
+        .btn-outline-dark {
+          text-decoration: none !important;
+          &:hover, &:active, &:focus, &:visited {
+            text-decoration: underline !important;
+          }
+          &:visited {
+            color: #00698f !important;
+          }
+        }
         .btn-link {
           padding-left: 0;
           text-align: left;
@@ -135,6 +151,7 @@
       padding: 1em;
 
       > :first-child {
+        padding-right: 1rem;
         padding-top: 0;
         margin-top: 0;
         margin-bottom: 0;

@@ -1,22 +1,41 @@
+/*
+FAQ -
+Q1 Where this class in use ?
+A1 On Maps Autocomplete
+- https://www.qld.gov.au/transport/contacts/centres/_nocache
+- https://www.qld.gov.au/law/legal-mediation-and-justice-of-the-peace/about-justice-of-the-peace/search-for-your-nearest-jp-or-cdec
+ */
+
 /*global qg, google*/
-let qgInitAutocompleteAddress;
+import { QgLoadGoogleApi } from '../../utils/qg-load-google-api';
+const loadGoogleApi = new QgLoadGoogleApi();
 
-(function (qg, $) {
-  'use strict';
-  let inputLocation = 'qg-location-autocomplete';
-  let addressSelection = false;
+export class QgAddressAutocomplete {
+  constructor () {
+    this.$searchWidget = $('.qg-search-widget');
+    this.$inpuField = $('.qg-location-autocomplete');
+    this.$inpuFieldContainer = $('.qg-fl');
+    this.$latitude = $('.qg-search-widget__latitude');
+    this.$longitude = $('.qg-search-widget__longitude');
+    this.$form = $('.qg-search-widget-form');
+    this.$getCurrentLocIcon = $('.qg-app-geocoding');
 
-  const el = {
-    $searchWidget: $('.qg-search-widget'),
-    $autoComplete: $('.qg-location-autocomplete'),
-    $latitude: $('.qg-search-widget__latitude'),
-    $longitude: $('.qg-search-widget__longitude'),
-    $form: $('.qg-search-widget-form'),
-  };
+    if (this.$searchWidget.length > 0 || this.$inpuField.length > 0){
+      this._setValFromUrlParameters();
+      this._resetValue();
+      this._keypress();
+      this._onBlue();
+      this._getCurrentLocation();
+      this._addressAutocomplete();
+    }
+  }
 
-  // getting and setting input fields value using query parameter
-  var setsValue = function () {
-    el.$form.find(':input:not(:checkbox):not(:radio), select, textarea').each(function () {
+  /**
+   * _setValFromUrlParameters -> set value of the input fields from the URL
+   * @return {undefined}
+   **/
+  _setValFromUrlParameters () {
+    this.$form.find(':input:not(:checkbox):not(:radio), select, textarea').each(function () {
       let name = $(this).attr('name');
       let getParameterVal = qg.swe.getParameterByName($(this).attr('name'));
       getParameterVal !== false ? $('[name="' + name + '"]').val(getParameterVal) : '';
@@ -25,36 +44,106 @@ let qgInitAutocompleteAddress;
       let getParameterVal = qg.swe.getParameterByName(name);
       getParameterVal !== false ? $('[value="' + getParameterVal + '"]').prop('checked', true) : '';
     });
-  };
-  setsValue();
+  }
 
-  // removing hidden fields value on reset
-  el.$searchWidget.find('button[type="reset"]').click(function (evt) {
-    evt.preventDefault();
-    $(this).parent(el.$form).find(':input:not(:checkbox):not(:radio), select, textarea').each(function () {
-      $(this).val('');
-    }).end().find('input[type=checkbox], input[type=radio]').each(function () {
-      $(this).prop('checked', false);
+  /**
+   * _resetValue -> reset form values
+   * @return {undefined}
+   **/
+  _resetValue () {
+    this.$searchWidget.find('button[type="reset"]').click(function (evt) {
+      evt.preventDefault();
+      $(this).parent(this.$form).find(':input:not(:checkbox):not(:radio), select, textarea').each(function () {
+        $(this).val('');
+      }).end().find('input[type=checkbox], input[type=radio]').each(function () {
+        $(this).prop('checked', false);
+      });
     });
-  });
+  }
 
-  // on autoComplete blur removing hidden fields values
-  el.$autoComplete.blur(function () {
-    if ($(this).val().length === 0) {
-      el.$searchWidget.find(el.$latitude).val('')
-        .end()
-        .find(el.$longitude).val('');
+  /**
+   * _onBlue -> reset hidden field values if a user move focus out of the search box
+   * @return {undefined}
+   **/
+  _onBlue () {
+    let self = this;
+    this.$inpuField.blur(function () {
+      console.log('blur');
+      if ($(this).val().length === 0) {
+        this.$searchWidget.find(self.$latitude).val('')
+          .end()
+          .find(self.$longitude).val('');
+      }
+    });
+  }
+
+  /**
+   * _getCurrentLocation -> get current location
+   * @return {undefined}
+   **/
+  _getCurrentLocation (){
+    let self = this;
+    if (this.$getCurrentLocIcon.length > 0) {
+      $.each(this.$getCurrentLocIcon, (i, ele) => {
+        $(ele).on('click', function (event) {
+          event.preventDefault();
+          if (navigator.geolocation) {
+            let showLocation = (position) => {
+              // get latitude and longitude
+              let latitude = position.coords.latitude;
+              let longitude = position.coords.longitude;
+              let latlng = {lat: parseFloat(latitude), lng: parseFloat(longitude)};
+              let geocoder = new google.maps.Geocoder();
+              let locationInput = $(this).parent().find(self.$inpuField);
+              // Insert latitude and longitude value to the hidden input fields
+              self.$searchWidget.find(self.$latitude).val(latitude)
+                .end()
+                .find(self.$longitude).val(longitude);
+              // get address using latitude and longitude from Google maps api
+              geocoder.geocode({'location': latlng}, (results, status) => {
+                if (status === 'OK') {
+                  if (results[1]) {
+                    locationInput.val(results[1].formatted_address);
+                    locationInput.trigger('place_changed');
+                  } else {
+                    window.alert('No results found');
+                  }
+                } else {
+                  window.alert('Geocoder failed due to: ' + status);
+                }
+              });
+            };
+            let errorHandler = (err) => {
+              if (err.code === 1) {
+                alert('Error: Access is denied!');
+              } else if (err.code === 2) {
+                alert('Error: Position is unavailable!');
+              }
+            };
+            let options = {timeout: 60000};
+            navigator.geolocation.getCurrentPosition(showLocation, errorHandler, options);
+          } else {
+            // Browser doesn't support Geolocation
+            window.alert('Your browser does not support Geolocation');
+          }
+        });
+      });
     }
-  });
-  if ($('.' + inputLocation).length > 0) {
-    let getLocationEle = $('.qg-app-geocoding');
-    qgInitAutocompleteAddress = () => {
+  }
+
+  /**
+   * _addressAutocomplete -> handles autocomplete using Google API
+   * @return {undefined}
+   **/
+  _addressAutocomplete () {
+    let self = this;
+    let googleAddressAutocomplete = function (){
       let qldBounds = new google.maps.LatLngBounds(
         new google.maps.LatLng(-29, 138.0578426),
-        new google.maps.LatLng(-9.9339, 153.63831));
-      let inputLocationEle = document.getElementsByClassName(inputLocation);
-      let addressFormId = 'qg-address-autocomplete';
-      $.each(inputLocationEle, function () {
+        new google.maps.LatLng(-9.9339, 153.63831),
+      );
+      // set events on all autocomplete fields (there can be more than one autocomplete on a same page)
+      $.each(self.$inpuField, function () {
         let dataStrictBounds = $(this).data('strictbounds') || true;
         let options = {
           bounds: qldBounds,
@@ -62,154 +151,72 @@ let qgInitAutocompleteAddress;
           types: ['geocode'],
         };
         let autocomplete = new google.maps.places.Autocomplete(this, options);
-        //if address form exists fill the selection
-        let form = $(this).siblings('.' + addressFormId);
-        if (form.length > 0) {
-          let formFields = {
-            street_number: {dataType: 'street', name: 'short_name'},
-            route: {dataType: 'street', name: 'long_name'},
-            locality: {dataType: 'city', name: 'long_name'},
-            administrative_area_level_1: {dataType: 'state', name: 'short_name'},
-            country: {dataType: 'country', name: 'long_name'},
-            postal_code: {dataType: 'zip', name: 'short_name'},
-          };
-          let fillInAddress = () => {
-            let loc = autocomplete.getPlace();
-            if ($('.error-handler').length > 0) { $('.error-handler').html(''); }
-            //clear form
-            $.each(formFields, (i, v) => {
-              form.find('input[data-type="' + v.dataType + '"]').val('');
-            });
-            for (let i = 0; i < loc.address_components.length; i++) {
-              let type = loc.address_components[i].types[0];
-              if (formFields[type] !== undefined && formFields[type].dataType !== undefined) {
-                let inputEle = form.find('input[data-type="' + formFields[type].dataType + '"]');
-                if (inputEle.length > 0) {
-                  let val = inputEle.val() + ' ' + loc.address_components[i][formFields[type].name];
-                  inputEle.val(val);
-                  inputEle.change();
-                }
-              }
-            }
-          };
-          autocomplete.addListener('place_changed', fillInAddress);
-        } else {
-          var fillInAddress = () => {
-            var place = autocomplete.getPlace();
-            if ($('.error-handler').length > 0 && $('.error-handler').val()) { $('.error-handler').html(''); }
-            $('.qg-result-title h2').append(`near '<strong><em>${place.formatted_address}'</em></strong>`);
-            if (place.geometry) {
-              el.$searchWidget.find(el.$latitude).val(place.geometry.location.lat())
-                .end()
-                .find(el.$longitude).val(place.geometry.location.lng());
-            }
-          };
-          autocomplete.addListener('place_changed', fillInAddress);
-        }
-        el.$form.find('.qg-location-autocomplete').keydown(function (e) {
-          if (addressSelection === false && $(this).val().length > 1) {
-            if (e.keyCode === 13 || e.keyCode === 9) {
-              e.preventDefault();
-            }
-          }
-        });
-        el.$form.find('.qg-location-autocomplete').keyup(function (e) {
-          if ($(this).val().length > 1) {
-            var reqReady = true;
-            var formContainer = $('.qg-fl');
-            var errorMessage = $('<p class="text-danger font-italic pt-2 pl-2">No result found</p>');
-            var errorHandler = $('<div class="error-handler"></div>');
-            if (!$('.error-handler').length > 0) { errorHandler.insertAfter(formContainer); }
-            let itemFull = $('.pac-container .pac-item:first').text();
-            let itemQuery = $('.pac-container .pac-item:first .pac-item-query').text();
-            let firstResult = itemQuery + ' ' + itemFull.substring(itemQuery.length);
-            if (e.keyCode === 13 || e.keyCode === 9) {
-              e.preventDefault();
-              if (firstResult.length > 1 && reqReady === true) {
-                $('.qg-location-autocomplete').val(firstResult);
-                let geocoder = new google.maps.Geocoder();
-                geocoder.geocode({ 'address': firstResult }, function (results, status) {
-                  if (status === 'OK') {
-                    reqReady = false;
-                    if (results) {
-                      $('.qg-location-autocomplete').val(results[0].formatted_address);
-                      let latitude = results[0].geometry.location.lat();
-                      let longitude = results[0].geometry.location.lng();
-                      $('.error-handler').html('');
-                      addressSelection = true;
-                      el.$searchWidget.find(el.$latitude).val(latitude)
-                        .end()
-                        .find(el.$longitude).val(longitude);
-                      setTimeout(function () {
-                        reqReady = true;
-                      }, 1000);
-                    } else {
-                      reqReady = true;
-                      $('.error-handler').html(errorMessage);
-                    }
-                  } else {
-                    reqReady = true;
-                    if (status === 'ZERO_RESULTS' || status === 'OVER_QUERY_LIMIT' || status === undefined) {
-                      $('.error-handler').html(errorMessage);
-                    }
-                  }
-                });
-              }
-            }
-          } else {
-            addressSelection = false;
+
+        // add lat and lng values after a option is selection from the autocomplete options
+        autocomplete.addListener('place_changed', function(){
+          let place = autocomplete.getPlace();
+          if (place.geometry) {
+            self.$searchWidget.find(self.$latitude).val(place.geometry.location.lat())
+              .end()
+              .find(self.$longitude).val(place.geometry.location.lng());
           }
         });
       });
-
-      //Get current location
-      if (getLocationEle.length > 0) {
-        $.each(getLocationEle, (i, ele) => {
-          $(ele).on('click', function (event) {
-            event.preventDefault();
-            if (navigator.geolocation) {
-              let showLocation = (position) => {
-                let latitude = position.coords.latitude;
-                let longitude = position.coords.longitude;
-                let latlng = {lat: parseFloat(latitude), lng: parseFloat(longitude)};
-                let geocoder = new google.maps.Geocoder();
-                let locationInput = $(this).siblings('.' + inputLocation);
-                el.$searchWidget.find(el.$latitude).val(latitude)
-                  .end()
-                  .find(el.$longitude).val(longitude);
-                if (locationInput.length > 0) {
-                  geocoder.geocode({'location': latlng}, (results, status) => {
-                    if (status === 'OK') {
-                      if ($('.error-handler').length > 0) { $('.error-handler').html(''); }
-                      if (results[1]) {
-                        locationInput.val(results[1].formatted_address);
-                        locationInput.trigger('place_changed');
-                      } else {
-                        window.alert('No results found');
-                      }
-                    } else {
-                      window.alert('Geocoder failed due to: ' + status);
-                    }
-                  });
-                }
-              };
-              let errorHandler = (err) => {
-                if (err.code === 1) {
-                  alert('Error: Access is denied!');
-                } else if (err.code === 2) {
-                  alert('Error: Position is unavailable!');
-                }
-              };
-              let options = {timeout: 60000};
-              navigator.geolocation.getCurrentPosition(showLocation, errorHandler, options);
-            } else {
-              // Browser doesn't support Geolocation
-              window.alert('Your browser does not support Geolocation');
-            }
-          });
-        });
-      }
     };
-    qg.loadGoogle(qgInitAutocompleteAddress);
+    // load google api with a valid key
+    loadGoogleApi._loadGoogleApi(googleAddressAutocomplete);
   }
-}(qg, jQuery));
+
+  /**
+   * _keypress -> keypress event track any enter or tab on input field
+   * If there is a enter or tab press then it takes the first result
+   * @return {undefined}
+   **/
+  _keypress () {
+    let self = this;
+    // eslint-disable-next-line no-unused-vars
+    let addressSelection = false;
+    let reqReady = true;
+
+    self.$inpuField.keypress(function (event) {
+      if ($(this).val().length >= 1) {
+        if (event.keyCode === 13 || event.keyCode === 9) {
+          event.preventDefault();
+          // get the value from the autocomplete options
+          let itemFull = $('.pac-container .pac-item:first').text();
+          let itemQuery = $('.pac-container .pac-item:first .pac-item-query').text();
+          let firstResult = itemQuery + ' ' + itemFull.substring(itemQuery.length);
+          // check if results are there
+          if (firstResult.length > 1 && reqReady === true) {
+            self.$inpuField.val(firstResult);
+            let geocoder = new google.maps.Geocoder();
+            geocoder.geocode({ 'address': firstResult }, function (results, status) {
+              if (status === 'OK') {
+                reqReady = false;
+                if (results) {
+                  $('.qg-location-autocomplete').val(results[0].formatted_address);
+                  let latitude = results[0].geometry.location.lat();
+                  let longitude = results[0].geometry.location.lng();
+                  addressSelection = true;
+                  self.$searchWidget.find(self.$latitude).val(latitude)
+                    .end()
+                    .find(self.$longitude).val(longitude);
+                  setTimeout(function () {
+                    reqReady = true;
+                  }, 1000);
+                } else {
+                  reqReady = true;
+                }
+              } else {
+                reqReady = true;
+                if (status === 'ZERO_RESULTS' || status === 'OVER_QUERY_LIMIT' || status === undefined) {
+                  console.error(status);
+                }
+              }
+            });
+          }
+        }
+      }
+    });
+  }
+}

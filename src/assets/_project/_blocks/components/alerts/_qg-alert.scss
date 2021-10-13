@@ -11,6 +11,9 @@
     margin-top: 5px;
     font-size: 1.2em;
   }
+  & + p{
+    margin-top: 1em;
+  }
   &.alert-danger {
     color: #000000;
     border: none;
