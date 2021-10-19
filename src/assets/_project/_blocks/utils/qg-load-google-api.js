@@ -27,14 +27,6 @@ export class QgLoadGoogleApi {
   _checkEnvAndSetKey () {
     let googleApiKey;
     let self = this;
-    // check if a particular franchise key is required by checking the folder path in the URL
-    if (self.firstFolderPath) {
-      keys.franchises.forEach(function (e) {
-        if (self.firstFolderPath === e.name) {
-          googleApiKey = e.apiKey;
-        }
-      });
-    }
     // if no franchise name identified then use the default key according to the environment
     if (window.location.hostname.search(/\bgithub\b/) !== -1) {
       googleApiKey = keys.defGoogle.docs;
@@ -42,6 +34,14 @@ export class QgLoadGoogleApi {
       googleApiKey = keys.defGoogle.test;
     } else {
       googleApiKey = keys.defGoogle.prod;
+    }
+    // check if a particular franchise key is required by checking the folder path in the URL
+    if (self.firstFolderPath) {
+      keys.franchises.forEach(function (e) {
+        if (self.firstFolderPath === e.name) {
+          googleApiKey = e.apiKey;
+        }
+      });
     }
     return googleApiKey;
   }
