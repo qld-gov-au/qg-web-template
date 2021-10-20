@@ -9,6 +9,7 @@ import keys from '../data/qg-google-keys';
 export class QgLoadGoogleApi {
   constructor() {
     this.firstFolderPath = location.pathname.split('/')[1];
+    this._staticMaps();
   }
 
   /**
@@ -26,14 +27,6 @@ export class QgLoadGoogleApi {
   _checkEnvAndSetKey () {
     let googleApiKey;
     let self = this;
-    // check if a particular franchise key is required by checking the folder path in the URL
-    if (self.firstFolderPath) {
-      keys.franchises.forEach(function (e) {
-        if (self.firstFolderPath === e.name) {
-          googleApiKey = e.apiKey;
-        }
-      });
-    }
     // if no franchise name identified then use the default key according to the environment
     if (window.location.hostname.search(/\bgithub\b/) !== -1) {
       googleApiKey = keys.defGoogle.docs;
@@ -42,7 +35,44 @@ export class QgLoadGoogleApi {
     } else {
       googleApiKey = keys.defGoogle.prod;
     }
+    // check if a particular franchise key is required by checking the folder path in the URL
+    if (self.firstFolderPath) {
+      keys.franchises.forEach(function (e) {
+        if (self.firstFolderPath === e.name) {
+          googleApiKey = e.apiKey;
+        }
+      });
+    }
     return googleApiKey;
+  }
+
+  /**
+   * TODO trasnfer to Matrix plateform as this is only valid with Matrix Map component
+   * _staticMaps -> static maps on description pages
+   * @return {undefined}
+   **/
+  _staticMaps () {
+    let googleApiKey = this._checkEnvAndSetKey();
+    var $mapImg = $('.qg-static-map');
+    function generateStaticMapImg (ele) {
+      let lat = ele.attr('data-lat') || -27.4673;
+      let lon = ele.attr('data-long') || 153.0233;
+      let zoom = ele.attr('data-zoom') || 17;
+      let height = ele.attr('data-height') || 189;
+      return 'https://maps.googleapis.com/maps/api/staticmap?size=373x' + height + '&maptype=roadmap&markers=' + lat + '%2C' + lon + '&key=' + googleApiKey + '&sensor=false&zoom=' + zoom;
+    }
+    // append static image on the maps description page
+    if ($mapImg.length > 0) {
+      var htmlInsert = $('<div>');
+      $mapImg.each(function () {
+        let $this = $(this);
+        $this.find('img').attr('src', generateStaticMapImg($this.find('img')));
+        htmlInsert.append($this);
+      });
+      $('aside').prepend(htmlInsert);
+      $('a.qg-static-map').wrap("<div class='qg-aside st-map-static'>");
+      $('.st-map-static').eq(0).prepend("<h2><i class='fa fa-compass' aria-hidden='true'></i>Maps</h2>");
+    }
   }
 
   /**
