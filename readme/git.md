@@ -4,7 +4,7 @@
 
 **WARNING: Do not work directly in 'working', 'beta', or 'master' branches**
 
-To keep the repository clean, branches must be prefixed into categories with a forwardslash /. Categories come from JIRA and are (note capitalisation): 
+To keep the repository clean, branches must be prefixed into categories with a forwardslash /. Categories come from JIRA and are (note capitalisation):
 
 - Bugfix: For bugs and errors that will be released on the standard schedule
 - Feature: For new features
@@ -16,7 +16,7 @@ Add the JIRA job number after the category type, and your initials so we can tra
 **Example 1: Bugfix/QOL-0000-Fixing-nav-nesting-issue**
 **Example 2: Bugfix/NE-Fixing-nav-nesting-issue**
 
-It's best to checkout files from working, or beta. *Note: working may not always be stable, in those instances use beta.*
+It's best to checkout files from a latest feature release branch (example release-vX.X.XX) and then send a pull request to merge changes back to the feature branch.
 
 **If you use git command line, use the following commands to create your branch**
 
