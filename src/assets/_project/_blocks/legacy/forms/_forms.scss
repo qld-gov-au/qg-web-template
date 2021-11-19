@@ -528,6 +528,12 @@ select[disabled],
 textarea[disabled] {
   background: transparent;
   color: #777777;
+  cursor: not-allowed;
+
+  +label {
+    cursor: not-allowed;
+    color: #777777;
+  }
 }
 
 input[readonly],
