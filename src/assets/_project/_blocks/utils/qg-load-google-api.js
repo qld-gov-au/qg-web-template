@@ -1,6 +1,6 @@
 /*
 FAQ -
-Q1 What this class do ?
+Q1 Where is this class in use, and what it does ?
 A1 This class determine the franchise (if available) and the environment using the hostname and then loads Google Maps API using that key
   - Key is loaded using the qg-google-keys.json file
  */
