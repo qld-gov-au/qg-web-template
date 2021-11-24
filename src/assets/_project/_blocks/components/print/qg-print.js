@@ -1,6 +1,6 @@
 /*
 FAQ -
-Q1 Where this class in use and what it do ?
+Q1 Where is this class in use, and what it does ?
 A1 Print button in the content section and the guide pages, there is an option in the Matrix Metadata to enable this on a page. Functions are triggered if a particular ID and a class is present on a page.
 Example - https://www.qld.gov.au/recreation/activities/areas-facilities/centres/sunshine-coast-recreation-centre
  */

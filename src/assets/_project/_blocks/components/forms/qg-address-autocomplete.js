@@ -1,6 +1,6 @@
 /*
 FAQ -
-Q1 Where this class in use ?
+Q1 Where is this class in use, and what it does ?
 A1 On Maps Autocomplete
 - https://www.qld.gov.au/transport/contacts/centres/_nocache
 - https://www.qld.gov.au/law/legal-mediation-and-justice-of-the-peace/about-justice-of-the-peace/search-for-your-nearest-jp-or-cdec
