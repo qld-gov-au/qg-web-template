@@ -1,0 +1,228 @@
+/* Search state container styles*/
+.qg-search-state__container {
+  color: #fff;
+  margin-top: 0.8em;
+  margin-right: 1em;
+  cursor: pointer;
+
+  p:hover {
+    text-decoration: underline;
+  }
+
+  .fa {
+    line-height: inherit;
+  }
+}
+
+.qg-sf-global {
+  display: none !important;
+}
+
+/*Service Finder banner styles*/
+.qg-service-finder__container {
+  padding: 0;
+  margin-bottom: 0;
+
+  .qg-search-form .input-group .qg-search-close-concierge {
+    right: 46px;
+  }
+
+  .qg-service-finder__search-bar {
+    li a {
+      color: #000 !important;
+
+      &:hover, &:visited, &:active {
+        text-decoration: underline !important;
+        color: #000 !important;
+      }
+    }
+
+    .qg-search-concierge-content > .list-group + a {
+      text-decoration: underline !important;
+    }
+
+    .qg-search-form {
+      .input-group {
+        float: inherit;
+        position: relative;
+        width: 100%;
+      }
+
+      .qg-search-concierge-group.highlight {
+        color: #063652 !important;
+      }
+
+      .form-control {
+        color: #000;
+        color: #000 !important;
+      }
+
+      .qg-search-concierge.show {
+        z-index: 9;
+      }
+
+      padding-top: 0;
+    }
+
+    .highlight .qg-search-concierge-content {
+      color: #fff;
+
+      p {
+        margin-left: 35px !important;
+      }
+    }
+  }
+
+  .qg-service-finder__popular-apps {
+    a {
+      text-decoration: none;
+      border: 3px solid #fff !important;
+
+      &:hover, &:active, &:focus, &:visited {
+        color: #fff !important;
+      }
+    }
+
+    .qg-service-finder__popular-apps-title {
+      margin-left: 0;
+    }
+
+    .qg-service-finder__popular-apps-tags ul {
+      padding: 0;
+
+      li {
+        display: inline;
+      }
+    }
+  }
+}
+
+/*banner blurb styles*/
+
+.qg-banner-blurb_wrapper .blurb {
+  width: 100% !important;
+  background: initial !important;
+}
+
+#qg-banner-blurb {
+  .blurb {
+    margin: 0;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  a {
+    border: none;
+    text-decoration: none;
+  }
+
+  .blurb {
+    p {
+      margin-left: 0;
+      font-weight: bold;
+      margin-bottom: 0.5em;
+    }
+
+    a:hover {
+      text-decoration: underline !important;
+    }
+  }
+
+  a {
+    &:visited, &:active {
+      text-decoration: underline !important;
+    }
+  }
+}
+
+/*promotional banner*/
+
+.qg-promotional-banner__popular-apps {
+  .qg-btn {
+    text-decoration: none !important;
+  }
+
+  ul {
+    padding: 0;
+
+    li {
+      display: inline;
+    }
+  }
+}
+
+.qg-promotional-banner__info > h2 {
+  margin-top: 0;
+}
+
+.qg-promotional-banner__popular-apps .qg-btn {
+  &:hover, &:visited, &:active {
+    text-decoration: underline !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .qg-service-finder__container {
+    .qg-search-form .input-group input[type=text] {
+      padding: 13px 140px 13px 15px;
+    }
+    .qg-service-finder__search-bar {
+      margin-bottom: 2em;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .qg-service-finder__popular-apps {
+    margin-top: -3em;
+  }
+}
+
+/*mobile size*/
+@media (max-width: 767px) {
+  .qg-service-finder__container {
+    .btn-global-primary {
+      background-color: #9AC02C;
+      padding: 9px 13px;
+
+      .fa-search {
+        color: #000;
+      }
+
+      &:hover .fa-search {
+        color: #fff;
+      }
+    }
+    .qg-search-form .input-group input[type=text] {
+      border: 1px solid #808080;
+      box-shadow: 0 2px 3px 0 rgb(32 33 36 / 47%);
+      padding: 13px 140px 13px 20px;
+    }
+    .qg-service-finder__popular-apps a {
+      &:hover, &:active, &:focus, &:visited {
+        color: #005e85 !important;
+        text-decoration: underline;
+      }
+      border: 3px solid #005e85 !important;
+    }
+   }
+  #qg-banner-blurb {
+    padding-top: 0;
+    background-size: inherit !important;
+    .blurb {
+      h1 {
+        color: initial;
+      }
+
+      color: initial;
+
+      p {
+        font-size: 1.2rem;
+      }
+    }
+    a {
+      color: #005e85;
+      text-decoration: none;
+    }
+  }
+}

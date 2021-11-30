@@ -59,137 +59,7 @@
 
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>    <!-- page.footer-extra -->
-  <style>
-    .qg-search-state__container {
-      color: #fff;
-      margin-top: 0.8em;
-      margin-right: 1em;
-      cursor: pointer;
-    }
-    .qg-search-state__container p:hover {
-      text-decoration: underline;
-    }
-    .qg-search-state__container .fa {
-      line-height: inherit;
-    }
-    .qg-sf-global {
-      display: none !important;
-    }
-    .qg-service-finder__container {
-      padding: 0;
-      margin-bottom: 0;
-    }
-    .qg-service-finder__container .qg-service-finder__search-bar li a {
-      color: #000 !important;
-    }
-    .qg-service-finder__container .qg-service-finder__search-bar li a:hover, .qg-service-finder__container .qg-service-finder__search-bar li a:visited, .qg-service-finder__container .qg-service-finder__search-bar li a:active {
-      text-decoration: underline !important;
-      color: #000 !important;
-    }
-    .qg-service-finder__container .qg-service-finder__search-bar .qg-search-concierge-content > .list-group + a {
-      text-decoration: underline !important;
-    }
-    .qg-service-finder__container .qg-service-finder__search-bar .qg-search-form .input-group {
-      float: inherit;
-      position: relative;
-      width: 100%;
-    }
-    .qg-service-finder__container .qg-service-finder__search-bar .qg-search-form .qg-search-concierge-group.highlight {
-      color: #063652 !important;
-    }
-    .qg-service-finder__container .qg-service-finder__search-bar .qg-search-form .form-control {
-      color: #000;
-    }
-    .qg-service-finder__container .qg-service-finder__search-bar .qg-search-form .form-control {
-      color: #000 !important;
-    }
-    .qg-service-finder__container .qg-service-finder__search-bar .qg-search-form .qg-search-concierge.show {
-      z-index: 9;
-    }
-    .qg-service-finder__container .qg-service-finder__search-bar .qg-search-form {
-      padding-top: 0;
-    }
-    .qg-service-finder__container .qg-service-finder__search-bar .highlight .qg-search-concierge-content {
-      color: #fff;
-    }
-    .qg-service-finder__container .qg-service-finder__search-bar .highlight .qg-search-concierge-content p {
-      margin-left: 35px !important;
-    }
-    .qg-service-finder__container .qg-service-finder__popular-apps a {
-      text-decoration: none;
-      border: 3px solid #fff !important;
-    }
-    .qg-service-finder__container .qg-service-finder__popular-apps a:hover, .qg-service-finder__container .qg-service-finder__popular-apps a:active, .qg-service-finder__container .qg-service-finder__popular-apps a:focus, .qg-service-finder__container .qg-service-finder__popular-apps a:visited {
-      color: #fff !important;
-    }
-    .qg-service-finder__container .qg-service-finder__popular-apps .qg-service-finder__popular-apps-title {
-      margin-left: 0;
-    }
-    .qg-service-finder__container .qg-service-finder__popular-apps .qg-service-finder__popular-apps-tags ul {
-      padding: 0;
-    }
-    .qg-service-finder__container .qg-service-finder__popular-apps .qg-service-finder__popular-apps-tags ul li {
-      display: inline;
-    }
-    .qg-banner-blurb_wrapper .blurb {
-      width: 100% !important;
-      background: initial !important;
-    }
-    #qg-banner-blurb .blurb {
-      margin: 0;
-      padding-left: 25px;
-      padding-right: 25px;
-    }
-    #qg-banner-blurb a {
-      border: none;
-      text-decoration: none;
-    }
-    #qg-banner-blurb .blurb p {
-      margin-left: 0;
-      font-weight: bold;
-      margin-bottom: 0.5em;
-    }
-    #qg-banner-blurb .blurb a:hover, #qg-banner-blurb a:visited, #qg-banner-blurb a:active {
-      text-decoration: underline !important;
-    }
-    .qg-promotional-banner__popular-apps .qg-btn {
-      text-decoration: none !important;
-    }
-    .qg-promotional-banner__popular-apps ul {
-      padding: 0;
-    }
-    .qg-promotional-banner__popular-apps ul li {
-      display: inline;
-    }
-    .qg-promotional-banner__info > h2 {
-      margin-top: 0;
-    }
-    .qg-promotional-banner__popular-apps .qg-btn:hover, .qg-promotional-banner__popular-apps .qg-btn:visited, .qg-promotional-banner__popular-apps .qg-btn:active {
-      text-decoration: underline !important;
-    }
-    @media (max-width: 992px) {
-      .qg-service-finder__search-bar {
-        margin-bottom: 2em;
-      }
-    }
-    @media (min-width: 992px) {
-      .qg-service-finder__popular-apps {
-        margin-top: -3em;
-      }
-    }
-    @media (max-width: 767px) {
-      #qg-banner-blurb {
-        padding-top: 0;
-        background-size: inherit !important;
-      }
-      #qg-banner-blurb .blurb h1 {
-        color: #fff;
-      }
-      #qg-banner-blurb .blurb {
-        color: #fff;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="../assets/scss/service-finder.css">
 
   <!-- END page.footer-extra -->
   <!-- Global - Site Schema //-->
@@ -324,7 +194,7 @@
       </button><form action="https://oss-uat.clients.squiz.net/search" id="qg-global-search-form" role="search" class="qg-search-form collapse qg-global-web-autocomplete" data-suggestions="https://find.search.qld.gov.au/s/suggest.json?collection=qld-gov&fmt=json%2B%2B&alpha=0.5&profile=qld" data-results-url="https://find.search.qld.gov.au/s/search.json?collection=qld-gov&profile=qld&meta_sfinder_sand=yes">
       <div class="input-group">
         <label for="qg-search-query" class="qg-visually-hidden">Search Queensland Government</label>
-        <input type="text" name="query" id="qg-search-query" accesskey="5" class="form-control" autocomplete="off" placeholder="Search website" tabindex="0" aria-required="true" aria-expanded="false"/>
+        <input type="text" name="query" id="qg-search-query" accesskey="5" class="form-control" autocomplete="off" placeholder="Search for online services" tabindex="0" aria-required="true" aria-expanded="false"/>
         <svg class="qg-search__icon" width="512px" height="512px" viewBox="0 0 512 512">
           <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
             <g transform="translate(67.298684, 71.201316)">
@@ -508,7 +378,7 @@
 
 
 
-      <section id="qg-banner-blurb"style="background:#f5f5f5 url('https://oss-uat.clients.squiz.net/health/_resources/images/aggregation-images2/aggregation-images/service-finder-hero-flat-dark-1.png/1600x361.png') no-repeat center/cover;" class="hero-img ">
+      <section id="qg-banner-blurb"style="background:#f5f5f5 url('https://picsum.photos/seed/picsum/1312/361') no-repeat center/cover;" class="hide-xs-hero-img">
         <div class="qg-banner-blurb_wrapper">
           <div class="blurb dark  top-left ">
             <h1>Service finder</h1>
@@ -516,14 +386,16 @@
             <!---->
 
             <section class="qg-service-finder__container">
-              <div class="row w-100">        <div class="qg-service-finder__search-bar col-12 col-sm-12 col-md-5">
+              <div class="row">
+                <div class="qg-service-finder__search-bar col-12 col-sm-12 col-md-5">
+
                 <form action="https://www.qld.gov.au/search" role="search" class="qg-site-search__form qg-search-form qg-global-web-autocomplete"  data-suggestions="https://find.search.qld.gov.au/s/suggest.json?collection=qld-gov&fmt=json%2B%2B&alpha=0.5&profile=qld" data-results-url="https://find.search.qld.gov.au/s/search.json?collection=qld-gov&profile=qld&meta_sfinder_sand=yes">
                   <label for="qg-search-query">What can we help you find?</label>
                   <div class="input-group">
                     <input type="text" name="query" class="form-control qg-search-site__input"
                            autocomplete="off" placeholder="Search website" tabindex="0"
                            aria-required="true" aria-expanded="false"/>
-                    <svg class="qg-search__icon" width="512px" height="512px" viewBox="0 0 512 512">
+                    <svg class="qg-search__icon d-none d-md-block d-lg-block" width="512px" height="512px" viewBox="0 0 512 512">
                       <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                         <g transform="translate(67.298684, 71.201316)">
                           <path
@@ -549,7 +421,9 @@
                       </svg>
                     </button>
                     <button type="submit" class="btn btn-global-primary" title="Search site"
-                            data-analytics-link-group="qg-global-search-submit">Search
+                            data-analytics-link-group="qg-global-search-submit">
+                      <span class="d-none d-md-block d-lg-block">Search</span>
+                      <i class="fa fa-search fa-rotate-90 d-md-none d-lg-none"></i>
                     </button>
                     <div class="qg-search-concierge qg-search-concierge-initial">
                       <div class="qg-search-concierge-group helper">
@@ -668,7 +542,8 @@
                   <input type="hidden" name="profile" value="qld">
                 </form>
 
-              </div><div class="qg-service-finder__popular-apps col-12 col-sm-12 col-md-5 offset-sm-0 offset-md-2"><p class="qg-service-finder__popular-apps-title">Popular services</p><section class="qg-service-finder__popular-apps-tags"><ul><li><a href="https://www.qld.gov.au/transport/registration/register/renew" class="qg-btn btn-outline-dark m-1">Renew my registration</a></li><li><a href="https://www.qld.gov.au/transport/licensing/driver-licensing/renew-replace/renew" class="qg-btn btn-outline-dark m-1">Renew my driver licence</a></li><li><a href="https://www.qld.gov.au/transport/safety/fines/pay" class="qg-btn btn-outline-dark m-1">Pay a driving infringement notice</a></li><li><a href="https://www.qld.gov.au/law/fines-and-penalties/overdue-fines/payment-options" class="qg-btn btn-outline-dark m-1">Pay a SPER fine</a></li><li><a href="https://www.qld.gov.au/law/laws-regulated-industries-and-accountability/queensland-laws-and-regulations/regulated-industries-and-licensing/blue-card-services" class="qg-btn btn-outline-dark m-1">Blue card services</a></li><li><a href="https://www.service.transport.qld.gov.au/checkmydemeritpoints/public/Welcome.xhtml?dswid=-3036" class="qg-btn btn-outline-dark m-1">Check my demerit points</a></li></ul></section></div>    </div>
+              </div>
+                <div class="qg-service-finder__popular-apps col-12 col-sm-12 col-md-5 offset-sm-0 offset-md-2"><p class="qg-service-finder__popular-apps-title">Popular services</p><section class="qg-service-finder__popular-apps-tags"><ul><li><a href="https://www.qld.gov.au/transport/registration/register/renew" class="qg-btn btn-outline-dark m-1">Renew my registration</a></li><li><a href="https://www.qld.gov.au/transport/licensing/driver-licensing/renew-replace/renew" class="qg-btn btn-outline-dark m-1">Renew my driver licence</a></li><li><a href="https://www.qld.gov.au/transport/safety/fines/pay" class="qg-btn btn-outline-dark m-1">Pay a driving infringement notice</a></li><li><a href="https://www.qld.gov.au/law/fines-and-penalties/overdue-fines/payment-options" class="qg-btn btn-outline-dark m-1">Pay a SPER fine</a></li><li><a href="https://www.qld.gov.au/law/laws-regulated-industries-and-accountability/queensland-laws-and-regulations/regulated-industries-and-licensing/blue-card-services" class="qg-btn btn-outline-dark m-1">Blue card services</a></li><li><a href="https://www.service.transport.qld.gov.au/checkmydemeritpoints/public/Welcome.xhtml?dswid=-3036" class="qg-btn btn-outline-dark m-1">Check my demerit points</a></li></ul></section></div>    </div>
             </section>
           </div>
         </div>
@@ -1201,30 +1076,75 @@
 
 
 <script>
+   var serviceFinder = {
+     config: {
+       $smallBreakPoint: 992,
+       $searchStateContainer: 'qg-search-state__container',
+       $globalSearchForm: $('#qg-global-search-form'),
+       $serviceFinderContainer: $('.qg-service-finder__container'),
+       $globalSearchInput: $('#qg-search-query'),
+     },
+     /**
+      * Initialise serviceFinder
+      * @return {undefined}
+      **/
+     init: function() {
+       this.onResize();
+       // trigger resize on page load
+       $(window).trigger('resize');
+     },
+     addSearchToggleMarkup: function (){
+       var self = this;
+       if($('.' + self.config.$searchStateContainer).length <= 0){
+         // 'Search all information & services' markup which on click show the global search form
+         var searchStateContainerMarkup = "<div class=\"qg-search-state__container  align-self-center row\" style=\"\">\n <i class=\"fa fa-search\" aria-hidden=\"true\"></i>\n <p class=\"ml-2 mb-0\">Search all information and services</p>\n </div>";
 
-  // toggle global search on interacting with the service finder search
-  function searchToggle(){
-    // 'Search all information & services' markup which on click show the global search form
-    var searchStateContainer = "<div class=\"qg-search-state__container  align-self-center row\" style=\"\">\n <i class=\"fa fa-search\" aria-hidden=\"true\"></i>\n <p class=\"ml-2 mb-0\">Search all information and services</p>\n </div>";
-
-    $(searchStateContainer).insertBefore('#qg-global-search-form');
-
-    // hide global search form on page load
-    $('#qg-global-search-form').hide();
-
-    // toggle global search form on click
-    $('.qg-search-state__container').click(function(){
-      $(this).toggle();
-      $('#qg-global-search-form').removeClass('qg-sf-global').toggle('fast');
-    });
-
-    // toggle global search on interacting with the service finder search
-    $('.qg-service-finder__container .qg-search-site__input').click(function() {
-      $('#qg-global-search-form').hide();
-      $('.qg-search-state__container').show();
-    });
-  }
-  searchToggle();
+         $(searchStateContainerMarkup).insertBefore('#qg-global-search-form');
+         // hide global search form on page load
+         self.config.$globalSearchForm.hide();
+       }
+     },
+     onServiceFinderSearchClick: function (){
+       var self = this;
+         // toggle global search on interacting with the service finder search
+         self.config.$serviceFinderContainer.find('.qg-search-site__input').click(function() {
+           if ($(window).width() >= self.config.$smallBreakPoint) {
+             self.config.$globalSearchForm.hide();
+             $('.' + self.config.$searchStateContainer).show();
+           }
+         });
+     },
+     onSearchStateContainerClick: function (){
+       var self = this;
+         // toggle global search form on click
+         $('.' + self.config.$searchStateContainer).on('click', function (){
+           $(this).hide();
+           self.config.$globalSearchForm.show('fast');
+         })
+     },
+     onResize: function (){
+       var self = this;
+       var resizeTimer;
+       $(window).resize(function(e) {
+         clearTimeout(resizeTimer);
+         resizeTimer = setTimeout(function (){
+           if ($(this).width() >= self.config.$smallBreakPoint) {
+             self.config.$globalSearchForm.hide();
+             if($('#qg-search-query').is(":hidden")){
+               $('.' + self.config.$searchStateContainer).show();
+             }
+             self.addSearchToggleMarkup();
+             self.onServiceFinderSearchClick();
+             self.onSearchStateContainerClick();
+           } else {
+             self.config.$globalSearchForm.removeAttr('style').removeClass('show');
+             $('.' + self.config.$searchStateContainer).hide();
+           }
+         },0)
+       });
+     }
+   }
+   serviceFinder.init();
 </script>
 <!-- endnoindex -->
 
