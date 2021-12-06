@@ -10,10 +10,8 @@ updates:
   reviewers:
   - duttonw
   - asifamingov
-  - andersmx
   assignees:
   - asifamingov
-  - andersmx
   ignore:
   - dependency-name: cssnano
     versions:
