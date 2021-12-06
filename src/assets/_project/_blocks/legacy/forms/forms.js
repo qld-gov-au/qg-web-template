@@ -6,7 +6,7 @@
 
   var validationErrorMessage = 'Please check your answers';
   var SUBMIT_TOLERANCE = 10000,
-    DEFAULT_STATUS_HTML = `<div class="alert alert-warning mt-4" id="qg-forms__validation-errors" role="alert"><div class="inner"><h2><i class="fa fa-exclamation-triangle"></i>${validationErrorMessage}</h2><ol></ol></div></div>`,
+    DEFAULT_STATUS_HTML = `<div class="alert alert-warning mt-4" id="qg-forms__validation-errors" role="alert"><div class="inner"><h2><span class="fa fa-exclamation-triangle"></span>${validationErrorMessage}</h2><ol></ol></div></div>`,
     // fields that validate
     candidateForValidation = 'input, select, textarea',
 
