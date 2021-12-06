@@ -5,6 +5,7 @@ import '../layout/location/qg-location';
 import './misc/qg-license';
 import './carousel/qg-carousel';
 import { QgQuickExit } from './quick-exit/qg-quick-exit';
+import { QgPrint } from './print/qg-print';
 import { QgAddressAutocomplete } from './forms/qg-address-autocomplete';
 import './tables';
 import './accordion/qg-accordion';
@@ -25,3 +26,7 @@ quickExit.init();
 // autocomplete
 // eslint-disable-next-line no-unused-vars
 const qgAddressAutocomplete = new QgAddressAutocomplete();
+
+// print
+// eslint-disable-next-line no-unused-vars
+const qgPrint = new QgPrint();

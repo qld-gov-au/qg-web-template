@@ -1,7 +1,7 @@
 /*
 FAQ -
-Q1 Where this function in use and what it do ?
-A1 This function checks meta tag [name="DCTERMS.license] and then insert markup on the bottom of the content section, function is in use where license field is set to true on Matrix metadata.
+Q1 Where is this class in use, and what it does ?
+A1 This function checks meta tag [name="DCTERMS.license] and then insert markup on the bottom of the content section. There is an option to enable this using Matrix metadata.
 - https://www.qld.gov.au/transport/contacts/centres
  */
 
