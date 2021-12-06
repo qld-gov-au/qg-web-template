@@ -54,7 +54,7 @@
     border-radius: 0;
     padding: 0.75rem 1.25rem;
     h2{
-      i {
+      span {
         @include rem(font-size, 24px);
         margin-right: 10px;
       }
