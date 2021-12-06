@@ -1,4 +1,5 @@
 /* Search state container styles*/
+
 .qg-search-state__container {
   color: #fff;
   margin-top: 0.8em;
@@ -23,9 +24,9 @@
   padding: 0;
   margin-bottom: 0;
 
-  .qg-search-form .input-group .qg-search-close-concierge {
-    right: 46px;
-  }
+  //   .qg-search-form .input-group .qg-search-close-concierge {
+  //     right: 46px;
+  //   }
 
   .qg-service-finder__search-bar {
     li a {
@@ -138,6 +139,9 @@
 /*promotional banner*/
 
 .qg-promotional-banner__popular-apps {
+  .qg-btn.btn-outline-dark {
+    color: #00698f !important;
+  }
   .qg-btn {
     text-decoration: none !important;
   }
@@ -163,6 +167,12 @@
 
 @media (max-width: 992px) {
   .qg-service-finder__container {
+    .qg-search-form .input-group .qg-search-close-concierge {
+      right: 46px;
+    }
+    .btn-global-primary {
+      padding: 9px 13px;
+    }
     .qg-search-form .input-group input[type=text] {
       padding: 13px 140px 13px 15px;
     }
@@ -183,7 +193,6 @@
   .qg-service-finder__container {
     .btn-global-primary {
       background-color: #9AC02C;
-      padding: 9px 13px;
 
       .fa-search {
         color: #000;
@@ -204,25 +213,6 @@
         text-decoration: underline;
       }
       border: 3px solid #005e85 !important;
-    }
-   }
-  #qg-banner-blurb {
-    padding-top: 0;
-    background-size: inherit !important;
-    .blurb {
-      h1 {
-        color: initial;
-      }
-
-      color: initial;
-
-      p {
-        font-size: 1.2rem;
-      }
-    }
-    a {
-      color: #005e85;
-      text-decoration: none;
     }
   }
 }

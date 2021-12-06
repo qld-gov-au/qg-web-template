@@ -13,6 +13,9 @@
     display: block;
     width: 100%;
   }
+  .qg-image-width {
+    width: inherit;
+  }
   .figure-credits {
     @include rem(padding, 0 20px);
   }

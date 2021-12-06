@@ -1,0 +1,168 @@
+/* Search state container styles*/
+.qg-search-state__container {
+  color: #fff;
+  margin-top: 0.8em;
+  margin-right: 1em;
+  cursor: pointer;
+}
+.qg-search-state__container p:hover {
+  text-decoration: underline;
+}
+.qg-search-state__container .fa {
+  line-height: inherit;
+}
+
+.qg-sf-global {
+  display: none !important;
+}
+
+/*Service Finder banner styles*/
+.qg-service-finder__container {
+  padding: 0;
+  margin-bottom: 0;
+}
+.qg-service-finder__container .qg-service-finder__search-bar li a {
+  color: #000 !important;
+}
+.qg-service-finder__container .qg-service-finder__search-bar li a:hover, .qg-service-finder__container .qg-service-finder__search-bar li a:visited, .qg-service-finder__container .qg-service-finder__search-bar li a:active {
+  text-decoration: underline !important;
+  color: #000 !important;
+}
+.qg-service-finder__container .qg-service-finder__search-bar .qg-search-concierge-content > .list-group + a {
+  text-decoration: underline !important;
+}
+.qg-service-finder__container .qg-service-finder__search-bar .qg-search-form {
+  padding-top: 0;
+}
+.qg-service-finder__container .qg-service-finder__search-bar .qg-search-form .input-group {
+  float: inherit;
+  position: relative;
+  width: 100%;
+}
+.qg-service-finder__container .qg-service-finder__search-bar .qg-search-form .qg-search-concierge-group.highlight {
+  color: #063652 !important;
+}
+.qg-service-finder__container .qg-service-finder__search-bar .qg-search-form .form-control {
+  color: #000;
+  color: #000 !important;
+}
+.qg-service-finder__container .qg-service-finder__search-bar .qg-search-form .qg-search-concierge.show {
+  z-index: 9;
+}
+.qg-service-finder__container .qg-service-finder__search-bar .highlight .qg-search-concierge-content {
+  color: #fff;
+}
+.qg-service-finder__container .qg-service-finder__search-bar .highlight .qg-search-concierge-content p {
+  margin-left: 35px !important;
+}
+.qg-service-finder__container .qg-service-finder__popular-apps a {
+  text-decoration: none;
+  border: 3px solid #fff !important;
+}
+.qg-service-finder__container .qg-service-finder__popular-apps a:hover, .qg-service-finder__container .qg-service-finder__popular-apps a:active, .qg-service-finder__container .qg-service-finder__popular-apps a:focus, .qg-service-finder__container .qg-service-finder__popular-apps a:visited {
+  color: #fff !important;
+}
+.qg-service-finder__container .qg-service-finder__popular-apps .qg-service-finder__popular-apps-title {
+  margin-left: 0;
+}
+.qg-service-finder__container .qg-service-finder__popular-apps .qg-service-finder__popular-apps-tags ul {
+  padding: 0;
+}
+.qg-service-finder__container .qg-service-finder__popular-apps .qg-service-finder__popular-apps-tags ul li {
+  display: inline;
+}
+
+/*banner blurb styles*/
+.qg-banner-blurb_wrapper .blurb {
+  width: 100% !important;
+  background: initial !important;
+}
+
+#qg-banner-blurb .blurb {
+  margin: 0;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+#qg-banner-blurb a {
+  border: none;
+  text-decoration: none;
+}
+#qg-banner-blurb .blurb p {
+  margin-left: 0;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+#qg-banner-blurb .blurb a:hover {
+  text-decoration: underline !important;
+}
+#qg-banner-blurb a:visited, #qg-banner-blurb a:active {
+  text-decoration: underline !important;
+}
+
+/*promotional banner*/
+.qg-promotional-banner__popular-apps .qg-btn.btn-outline-dark {
+  color: #00698f !important;
+}
+.qg-promotional-banner__popular-apps .qg-btn {
+  text-decoration: none !important;
+}
+.qg-promotional-banner__popular-apps ul {
+  padding: 0;
+}
+.qg-promotional-banner__popular-apps ul li {
+  display: inline;
+}
+
+.qg-promotional-banner__info > h2 {
+  margin-top: 0;
+}
+
+.qg-promotional-banner__popular-apps .qg-btn:hover, .qg-promotional-banner__popular-apps .qg-btn:visited, .qg-promotional-banner__popular-apps .qg-btn:active {
+  text-decoration: underline !important;
+}
+
+@media (max-width: 992px) {
+  .qg-service-finder__container .qg-search-form .input-group .qg-search-close-concierge {
+    right: 46px;
+  }
+  .qg-service-finder__container .btn-global-primary {
+    padding: 9px 13px;
+  }
+  .qg-service-finder__container .qg-search-form .input-group input[type=text] {
+    padding: 13px 140px 13px 15px;
+  }
+  .qg-service-finder__container .qg-service-finder__search-bar {
+    margin-bottom: 2em;
+  }
+}
+@media (min-width: 992px) {
+  .qg-service-finder__popular-apps {
+    margin-top: -3em;
+  }
+}
+/*mobile size*/
+@media (max-width: 767px) {
+  .qg-service-finder__container .btn-global-primary {
+    background-color: #9AC02C;
+  }
+  .qg-service-finder__container .btn-global-primary .fa-search {
+    color: #000;
+  }
+  .qg-service-finder__container .btn-global-primary:hover .fa-search {
+    color: #fff;
+  }
+  .qg-service-finder__container .qg-search-form .input-group input[type=text] {
+    border: 1px solid #808080;
+    box-shadow: 0 2px 3px 0 rgba(32, 33, 36, 0.47);
+    padding: 13px 140px 13px 20px;
+  }
+  .qg-service-finder__container .qg-service-finder__popular-apps a {
+    border: 3px solid #005e85 !important;
+  }
+  .qg-service-finder__container .qg-service-finder__popular-apps a:hover, .qg-service-finder__container .qg-service-finder__popular-apps a:active, .qg-service-finder__container .qg-service-finder__popular-apps a:focus, .qg-service-finder__container .qg-service-finder__popular-apps a:visited {
+    color: #005e85 !important;
+    text-decoration: underline;
+  }
+}
+
+/*# sourceMappingURL=service-finder.css.map */
