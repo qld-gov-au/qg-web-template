@@ -3,7 +3,6 @@ styles for forms.io forms
  */
 
 #qg-primary-content {
-  #formio {
     //Style variables ------------------------------------------------
     $fontFace: inherit;
     $defaultRem: 1rem !important;
@@ -270,5 +269,4 @@ styles for forms.io forms
     div[ref="header"] {
       display: none !important;
     }
-  }
 }
