@@ -28,11 +28,4 @@ npm install or yarn install
 | npm run **publish-test-cdn** | Creates a branch release-vX.Y.Z-test on static CDN repository which can be deployed on TEST environment of applications using Bamboo for testing
 | npm **test** | Run tests (Jest and Puppeteer)
 
-## 4. Testing Setup
-
-**To start a local server**
-```bash
-npm run start or yarn start
-```
-
 Next, guidelines and how to for [working in the Web Template git repo](git.md)
