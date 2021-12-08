@@ -4,7 +4,7 @@ let browser;
 let page;
 
 beforeAll(async () => {
-  browser = await puppeteer.launch({headless: false, args: ['--no-sandbox', '--disable-setuid-sandbox']});
+  browser = await puppeteer.launch({headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox']});
   page = await browser.newPage();
   await page.setViewport({ width: ct.BT_XL, height: ct.WH });
 });
@@ -38,7 +38,7 @@ describe('SWE Components testing', () => {
     await page.reload({ waitUntil: ['networkidle0', 'domcontentloaded'] });
     await page.waitForTimeout(1000);
     expect(await page.evaluate('$(".title:contains(\'With icon\')").parents(\'article\').find(\'.collapsing-section\').css(\'display\');')).not.toBe('none');
-  }, ct.TO);
+  });
 
   afterAll(async () => {
     await browser.close();
