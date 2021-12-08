@@ -12,7 +12,7 @@ beforeAll(async () => {
 describe('SWE Components testing', () => {
   test('Accordion is working as expected', async () => {
     await page.goto(`${ct.APP_URL}/docs/components/accordion.html`, { waitUntil: 'networkidle0' });
-    // 1. -> accordion exit exist on the page
+    // 1. -> accordion exist on the page
     await page.waitForSelector('.qg-accordion-v2');
 
     // 2. -> check all the collapsing-sections are closed on page load
