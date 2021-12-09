@@ -32,7 +32,7 @@ export class QgAccordion {
   }
 
   /**
-   * hashTrigger function open matching accordion if it finds #title-Of-Accordion in the url
+   * hashTrigger function open matching accordion if it finds #title-Of-Accordion or #id-panel-section in the url
    * function trims down the hash value, and then it matches with the titles of the accordion, and if there is a matching title, then it open that panel
    * @return {undefined}
    **/
@@ -41,12 +41,6 @@ export class QgAccordion {
     let hashValTrimmed = this.filterSpecialChar(window.location.hash);
     let hashValueIdMatch = window.location.hash.replace('#', '');
     if (hashValTrimmed.length > 0) {
-      // supports title match
-      self.$accordion.find('.title').each(function (index, titleEl){
-        if (self.filterSpecialChar($(titleEl).text()) === hashValTrimmed){
-          $(this).parents(self.$accHeading).trigger('click');
-        }
-      });
       // supports ID match
       self.$accordion.find('.collapsing-section').each(function (index, titleEl){
         if ($(this).attr('id') === hashValueIdMatch){
@@ -54,6 +48,16 @@ export class QgAccordion {
           $(this).parent('article').find(self.$accHeading).trigger('click');
         }
       });
+
+      // supports title match
+      // check if any panel already open that worked with ID matching
+      if ($('.qg-accordion--open').length <= 0){
+        self.$accordion.find('.title').each(function (index, titleEl){
+          if (self.filterSpecialChar($(titleEl).text()) === hashValTrimmed){
+            $(this).parents(self.$accHeading).trigger('click');
+          }
+        });
+      }
     }
   }
 
