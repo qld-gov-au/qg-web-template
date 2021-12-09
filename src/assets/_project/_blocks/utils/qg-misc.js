@@ -72,7 +72,7 @@
   ];
   deprecationWarnings.forEach(({selector, label}) => {
     if ($(selector).length > 0) {
-      console.info(`Please change the font awesome element in ${label} from i to span, we'll be removing the css in this element before june22. Please refer to the https://github.com/qld-gov-au/qg-web-template/pull/391 for more details.`);
+      console.info(`Please change the font awesome element in ${label} from i to span, we'll be removing the css in this element before 22nd june 2022. Please refer to the https://github.com/qld-gov-au/qg-web-template/pull/391 for more details.`);
     }
   });
 })(jQuery, qg.swe);
