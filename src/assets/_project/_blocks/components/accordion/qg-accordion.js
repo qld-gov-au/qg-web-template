@@ -44,7 +44,6 @@ export class QgAccordion {
       // supports ID match
       self.$accordion.find('.collapsing-section').each(function (index, titleEl){
         if ($(this).attr('id') === hashValueIdMatch){
-          console.log(hashValueIdMatch === $(this).attr('id'));
           $(this).parent('article').find(self.$accHeading).trigger('click');
         }
       });
