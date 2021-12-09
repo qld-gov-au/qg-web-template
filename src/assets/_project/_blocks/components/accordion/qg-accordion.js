@@ -39,10 +39,19 @@ export class QgAccordion {
   hashTrigger(){
     let self = this;
     let hashValTrimmed = this.filterSpecialChar(window.location.hash);
+    let hashValueIdMatch = window.location.hash.replace('#', '');
     if (hashValTrimmed.length > 0) {
+      // supports title match
       self.$accordion.find('.title').each(function (index, titleEl){
         if (self.filterSpecialChar($(titleEl).text()) === hashValTrimmed){
           $(this).parents(self.$accHeading).trigger('click');
+        }
+      });
+      // supports ID match
+      self.$accordion.find('.collapsing-section').each(function (index, titleEl){
+        if ($(this).attr('id') === hashValueIdMatch){
+          console.log(hashValueIdMatch === $(this).attr('id'));
+          $(this).parent('article').find(self.$accHeading).trigger('click');
         }
       });
     }
