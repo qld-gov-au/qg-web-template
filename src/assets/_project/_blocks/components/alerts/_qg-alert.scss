@@ -58,6 +58,11 @@
         @include rem(font-size, 24px);
         margin-right: 10px;
       }
+      // we'll remove this block of css that support the i element before 22nd June
+      i {
+        @include rem(font-size, 24px);
+        margin-right: 10px;
+      }
     }
   }
 
