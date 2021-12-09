@@ -58,4 +58,21 @@
   if (frameAttr && frameAttr === 'ees_modePreviewFrame'){
     $('.container-fluid').addClass('qg-edit-plus-styles');
   }
+
+  // temporary warning for fa icon that using `i` instead of `span` element
+  const deprecationWarnings = [
+    {
+      selector: '.qg-callout__box .qg-callout__icon i.fa',
+      label: 'Callout box',
+    },
+    {
+      selector: '.alert h2 i.fa',
+      label: 'Alert',
+    },
+  ];
+  deprecationWarnings.forEach(({selector, label}) => {
+    if ($(selector).length > 0) {
+      console.info(`Please change the font awesome element in ${label} from i to span, we'll be removing the css in this element before june22. Please refer to the https://github.com/qld-gov-au/qg-web-template/pull/391 for more details.`);
+    }
+  });
 })(jQuery, qg.swe);
