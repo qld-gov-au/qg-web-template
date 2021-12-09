@@ -12,10 +12,10 @@ beforeAll(async () => {
 
 describe('SWE Header testing', () => {
   test('Funnelback search is working as expected', async () => {
-    expect(await page.evaluate('window.getComputedStyle(document.querySelector(\'.qg-search-concierge-initial\')).getPropertyValue("visibility")')).toBe('hidden');
+    expect(await page.evaluate('$(\'.qg-search-concierge-initial\').css(\'visibility\')')).toBe('hidden');
     await page.click('input#qg-search-query');
     await page.waitForTimeout(ct.WT);
-    expect(await page.evaluate('window.getComputedStyle(document.querySelector(\'.qg-search-concierge-initial\')).getPropertyValue("visibility")')).toBe('visible');
+    expect(await page.evaluate('$(\'.qg-search-concierge-initial\').css(\'visibility\')')).toBe('visible');
     await page.type('#qg-search-query', 'jobs', { delay: 20 });
     await page.waitForTimeout(ct.WT);
     const element = await page.$('.qg-search-concierge-content li button');
