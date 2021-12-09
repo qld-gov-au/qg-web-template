@@ -38,6 +38,13 @@ describe('SWE Components testing', () => {
     await page.reload({ waitUntil: ['networkidle0', 'domcontentloaded'] });
     await page.waitForTimeout(1000);
     expect(await page.evaluate('$(".title:contains(\'With icon\')").parents(\'article\').find(\'.collapsing-section\').css(\'display\');')).not.toBe('none');
+
+    // 7. -> check hashtrigger function by inserting a ID in the URL (#id-panel-1) and check that particular accordion panel open
+    await page.click('.controls.collapse');
+    await page.goto(`${ct.APP_URL}/docs/components/accordion.html#id-panel-1`, { waitUntil: 'networkidle0' });
+    await page.reload({ waitUntil: ['networkidle0', 'domcontentloaded'] });
+    await page.waitForTimeout(1000);
+    expect(await page.evaluate('$(\'#id-panel-1\').css(\'display\');')).not.toBe('none');
   });
 
   afterAll(async () => {
