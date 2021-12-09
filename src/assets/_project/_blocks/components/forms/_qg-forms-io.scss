@@ -2,7 +2,7 @@
 styles for forms.io forms
  */
 
-#qg-primary-content {
+#qg-primary-content form , #qg-primary-content #formio {
     //Style variables ------------------------------------------------
     $fontFace: inherit;
     $defaultRem: 1rem !important;
@@ -114,11 +114,8 @@ styles for forms.io forms
         right: 0;
       }
     }
-    .form-group {
-      //margin-bottom: 1rem !important;
-    }
     .formio-hidden {
-      margin-bottom: 0rem !important;
+      margin-bottom: 0 !important;
     }
     .alert {
       margin-bottom: $defaultRem;
@@ -233,7 +230,7 @@ styles for forms.io forms
 
     //Add default margins to sections and fieldsets
     fieldset {
-      margin: 1rem 0rem 1rem 0rem;
+      margin: 1rem 0 1rem 0;
       //nested fieldsets
       .fieldset-body {
         label {
