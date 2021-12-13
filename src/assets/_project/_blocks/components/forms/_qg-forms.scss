@@ -1,3 +1,271 @@
+// SWE forms and forms.io styles
+// adding a new class qg-forms-v2 to make styles of all the new forms consistent (SWE forms and forms.io forms);
+#qg-primary-content #formio, #qg-primary-content .qg-forms-v2 {
+  //Style variables ------------------------------------------------
+  $fontFace: inherit;
+  $defaultRem: 1rem !important;
+
+  $labelHeadingColour: #000;
+  $labelHeadingSize: 20px;
+  $labelHeadingWeight: 900;
+
+  $labelSize: 16px;
+  $labelColour: #000;
+  $labelWeight: 600;
+
+  $hintSize: 16px;
+  $hintColour: #767676 !important;
+  $hintWeight: 400;
+  $borderRadius: 4px;
+  $borderWidth: 3px;
+  $none: 0px !important;
+  $checkboxWeight: 400;
+
+  $inputHeight: 46px;
+  $inputWidth: 100%;
+  $inputBackground: #fff;
+
+  $SecondaryColor: #005e85 !important;
+  $buttonSecondaryBackground: transparent !important;
+  $buttonSecondaryBorder: 3px solid $SecondaryColor;
+
+  $defaultBorder: #ebebeb;
+  $disabledBorder: #ebebeb;
+  $focusBorder: #9263de;
+  $alertBorder: #ed1b2f;
+
+  //Danger
+  $alertDangerBackground: #fdf0f0;
+
+  //Warning
+  $alertWarningBorder: #f9af71;
+  $alertWarningBackground: #ffedde;
+
+  //Inputs --------------------------------------------------------
+  //Styles
+  input[type="date"],
+  input[type="datetime"],
+  input[type="email"],
+  input[type="number"],
+  input[type="password"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="text"],
+  input[type="time"],
+  input[type="url"],
+  input[type="radio"],
+  input[type="checkbox"],
+  input:not([type]),
+  select,
+  textarea,
+  div.formio-choices div.selection {
+    //min-height: $inputHeight;
+    border-radius: $borderRadius;
+    border-width: $borderWidth;
+  }
+  label {
+    font-size: $labelSize;
+    color: $labelColour;
+    font-weight: $labelWeight;
+  }
+  .hint {
+    font-size: $hintSize;
+    color: $hintColour;
+    font-weight: $hintWeight;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  legend {
+    font-size: $labelHeadingSize;
+    color: $labelHeadingColour;
+    font-weight: $labelHeadingWeight;
+  }
+  .checkbox,
+  .form-radio {
+    div.form-check {
+      padding-bottom: $defaultRem;
+    }
+    label {
+      display: inline-block;
+      span {
+        font-weight: $checkboxWeight;
+        margin-left: $defaultRem;
+        margin-right: 0.5rem !important;
+        float: right;
+      }
+      input.form-check-input {
+        width: 25px;
+        height: 25px;
+        top: $none;
+        margin-top: $none;
+        border-radius: $borderRadius;
+        border-width: $borderWidth;
+        float: left;
+      }
+    }
+    .field-required:after {
+      position: absolute;
+      float: right;
+      top: 0;
+      right: 0;
+    }
+  }
+  .formio-hidden {
+    margin-bottom: 0 !important;
+  }
+  .alert {
+    margin-bottom: $defaultRem;
+  }
+  .text-muted {
+    color: $hintColour;
+  }
+  .qg-link {
+    cursor: pointer;
+  }
+
+  //Action buttons ------------------------------------------------------
+  button.btn-secondary {
+    color: $SecondaryColor;
+    background-color: white;
+    border: $buttonSecondaryBorder;
+  }
+
+  button.btn-secondary:hover {
+    color: $SecondaryColor;
+  }
+
+  //Errors  -------------------------------------------------------------
+
+  //error alert
+  .alert-danger {
+    li {
+      text-decoration: underline;
+      span {
+        color: $SecondaryColor;
+      }
+    }
+    background-color: $alertWarningBackground;
+    border-color: $alertWarningBorder;
+  }
+
+  //error on fields
+  .is-invalid {
+    //border-color:;
+    background-color: white;
+    background-image: none !important;
+  }
+
+  //error container
+  .formio-error-wrapper {
+    color: white !important;
+    background-color: white !important;
+    border-color: white !important;
+    padding: $none;
+  }
+
+  //error labels
+  .formio-errors {
+    div.error {
+      font-size: $hintSize;
+    }
+  }
+
+  div.has_error {
+    margin-top: $defaultRem;
+  }
+
+  //Layout modifications -------------------------------------------------
+  //Align individual field descriptions before input element
+
+  .formio-component-textfield,
+  .formio-component-textarea,
+  .formio-component-hidden,
+  .formio-component-checkbox,
+  .formio-component-email,
+  .formio-component-password,
+  .formio-component-radio,
+  .formio-component-currency,
+  .formio-component-number,
+  .formio-component-selectboxes,
+  .formio-component-url,
+  .formio-component-phoneNumber,
+  .formio-component-datetime,
+  .formio-component-day,
+  .formio-component-datetime,
+  .formio-component-currency {
+    display: inline-grid;
+    //Fallback
+    display: grid;
+    div.col-form-label {
+      order: 0;
+    }
+    div.text-muted {
+      order: 1;
+      margin-bottom: 0.25rem;
+    }
+    div.formio-errors {
+      order: 2;
+      margin-bottom: 0.5rem;
+    }
+    div[ref="element"],
+    div.row,
+    div.form-radio,
+    div.checkbox,
+    div.address-autocomplete-container {
+      order: 3;
+    }
+  }
+
+  //Can be affected by above grid
+  .formio-component-submitButton,
+  .formio-component-submit,
+  .formio-component-form,
+  .fieldset-body {
+    display: block !important;
+  }
+
+  //Add default margins to sections and fieldsets
+  fieldset {
+    margin: 1rem 0 1rem 0;
+    //nested fieldsets
+    .fieldset-body {
+      label {
+        font-weight: $labelWeight;
+      }
+    }
+  }
+
+  //Workarounds -----------------------------------------------------
+  //Workarounds for instances where panel/card is applied to form body
+  .border {
+    border: $none;
+  }
+  .card {
+    position: relative;
+    display: inherit !important;
+    flex-direction: inherit !important;
+    min-width: inherit !important;
+    word-wrap: inherit !important;
+    background-color: white;
+    background-clip: inherit !important;
+    border: none !important;
+    border-radius: 0 !important;
+  }
+  .card-body {
+    display: inherit !important;
+    min-height: inherit !important;
+    padding: inherit !important;
+  }
+
+  //Turn off wizard/panel nav
+  nav,
+  div[ref="header"] {
+    display: none !important;
+  }
+}
+
 //custom theme for radio buttons and checkbox
 .rc-theme {
   .rc-theme__focus{
