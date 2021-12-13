@@ -147,7 +147,7 @@
         &lt;section class=&quot;qg-callout__box&quot;&gt;
           &lt;div class=&quot;qg-callout__header col-12&quot;&gt;
              &lt;span class=&quot;qg-callout__icon&quot;&gt;
-                 &lt;i class=&quot;fa fa-comments&quot;&gt;&lt;/i&gt;
+                 &lt;span class=&quot;fa fa-comments&quot;&gt;&lt;/span&gt;
              &lt;/span&gt;
             &lt;h2 class=&quot;qg-callout__title&quot;&gt;Tell us what you think about our website&lt;/h2&gt;
           &lt;/div&gt;
@@ -168,7 +168,37 @@
         <ul>
           <li>This component supports having some contextual text to accompany a button.</li>
         </ul>
-
+        <h3>Deprecation</h3>
+        <p>
+          We will deprecate the CSS support for &lt;i class="fa ..."&gt; Font Awesome icons due to incompatible to semantic HTML (https://github.com/qld-gov-au/qg-web-template/pull/391).
+          <br/>
+          Please replace &lt;i&gt; with &lt;span&gt; for Font Awesome icons if they are used in your application by 22nd June 2022.
+        </p>
+        <section class="qg-callout__box qg-callout__grey-theme">
+          <div class="qg-callout__header col-12">
+            <span class="qg-callout__icon">
+              <i class="fa fa-comments"></i>
+            </span>
+            <h2 class="qg-callout__title">Call out box using &lt;i&gt; as Font Awesome icon</h2>
+          </div>
+          <div class="qg-callout__content col-12">
+            <div class="qg-callout__bottom-alignment">
+              <div class="qg-callout__description">
+                <p>A warning will appear in console to remind developer to replace the Font Awesome icon if &lt;i&gt; is used.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <p>Please modify your code from:</p>
+        <pre>
+        <code class="language-markup">&lt;span class=&quot;qg-callout__icon&quot;&gt;
+          &lt;i class=&quot;fa fa-comments&quot;&gt;&lt;/i&gt;
+        &lt;/span&gt;</code></pre>
+        <p>to:</p>
+        <pre>
+        <code class="language-markup">&lt;span class=&quot;qg-callout__icon&quot;&gt;
+          &lt;span class=&quot;fa fa-comments&quot;&gt;&lt;/span&gt;
+        &lt;/span&gt;</code></pre>
       </div>
     </div>
   </div>

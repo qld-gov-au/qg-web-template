@@ -188,8 +188,27 @@
   &lt;h2>Alert title&lt;/h2>
   &lt;p>Alert content&lt;/p>
 &lt;/div>
-                                        </code></pre>
-
+        </code></pre>
+        <h3>Deprecation</h3>
+        <p>
+          We will deprecate the CSS support for &lt;i class="fa ..."&gt; Font Awesome icons due to incompatible to semantic HTML (https://github.com/qld-gov-au/qg-web-template/pull/391).
+          <br/>
+          Please replace &lt;i&gt; with &lt;span&gt; for Font Awesome icons if they are used in your application by 22nd June 2022.
+        </p>
+        <div class="alert alert-danger" role="alert">
+          <h2><i class="fa fa-ban"></i> Alert using &lt;i&gt; as Font Awesome icon</h2>
+          <p>A warning will appear in console to remind developer to replace the Font Awesome icon if &lt;i&gt; is used.</p>
+        </div>
+        <p>Please modify your code from:</p>
+        <pre>
+<code class="language-markup">&lt;div class="alert alert-warning" role="alert">
+  &lt;h2>&lt;i class="fa fa-exclamation-triangle">&lt;/i>Alert title&lt;/h2>
+&lt;/div></code></pre>
+        <p>to:</p>
+        <pre>
+<code class="language-markup">&lt;div class="alert alert-warning" role="alert">
+  &lt;h2>&lt;span class="fa fa-exclamation-triangle">&lt;/span>Alert masssage&lt;/h2>
+&lt;/div></code></pre>
       </div>
     </div>
   </div>
