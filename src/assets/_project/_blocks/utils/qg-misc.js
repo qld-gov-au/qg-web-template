@@ -70,6 +70,7 @@
       label: 'Alert',
     },
   ];
+  // setTimeout is just a temporary solution for display the warning message in SPA as elements are created on the fly
   setTimeout(
     () => {
       deprecationWarnings.forEach(({selector, label}) => {
