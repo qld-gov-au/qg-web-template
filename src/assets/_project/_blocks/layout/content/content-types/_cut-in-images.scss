@@ -1,4 +1,21 @@
+#qg-primary-content {
+  .cut-in, .qg-cut-in, .qg-cut-in-alt {
+    &:not(.print-content-link):active, &:not(.print-content-link):focus, &:not(.print-content-link):visited{
+      color: #13578b;
+    }
+    &:not(.print-content-link):link {
+      text-decoration: none;
+    }
+    &:not(.print-content-link):hover {
+      .qg-cut-in-alt__label {
+        text-decoration: underline;
+        background: #F5F5F5;
+      }
+    }
+  }
+}
 .cut-in, .qg-cut-in, .qg-cut-in-alt {
+  display:block;
   position: relative;
   @include rem(max-width, 374px);
   @include rem(font-size, 14px);
@@ -7,6 +24,34 @@
   text-align: center;
   font-style: italic;
   border: 1px solid #eee;
+  transition: all 0.5s ease;
+  &:hover{
+    cursor: pointer;
+    .qg-cut-in__large-image a:not(.print-content-link) {
+      text-decoration: underline !important;
+    }
+    .qg-cut-in__img-container{
+      outline: 1px solid #0066CC;
+    }
+    .qg-cut-in-alt__expand-icon {
+      display: block;
+    }
+  }
+  .qg-cut-in-alt__expand-icon {
+    transition: all 0.5s ease;
+    display: none;
+    width: 50px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .qg-cut-in-alt__label {
+    display: block;
+    text-align: right;
+    font-style: normal;
+  }
   img {
     height: auto;
     margin: 0 auto;
