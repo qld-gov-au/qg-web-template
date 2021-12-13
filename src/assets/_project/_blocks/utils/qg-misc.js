@@ -70,10 +70,15 @@
       label: 'Alert',
     },
   ];
-  deprecationWarnings.forEach(({selector, label}) => {
-    // use `show` if the element is created on the fly
-    $(selector).show(() => {
-      console.warn(`Please change the font awesome element in ${label} from i to span, we'll be removing the css in this element before 22nd june 2022. Please refer to the https://github.com/qld-gov-au/qg-web-template/pull/391 for more details.`);
-    });
-  });
+  // setTimeout is just a temporary solution for display the warning message in SPA as elements are created on the fly
+  setTimeout(
+    () => {
+      deprecationWarnings.forEach(({selector, label}) => {
+        if ($(selector).length) {
+          console.warn(`Please change the font awesome element in ${label} from i to span, we'll be removing the css in this element before 22nd june 2022. Please refer to the https://github.com/qld-gov-au/qg-web-template/pull/391 for more details.`);
+        }
+      });
+    },
+    5000,
+  );
 })(jQuery, qg.swe);
