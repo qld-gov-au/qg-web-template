@@ -17,6 +17,7 @@ describe('SWE Components testing', () => {
     // 1. -> call out box contains deprecate icon
     await page.waitForSelector('.qg-callout__box .qg-callout__icon i.fa');
     // 2. -> warning appears in console
+    await page.waitForTimeout(5000);
     expect(consoleMsg).toEqual('Please change the font awesome element in Callout box from i to span, we\'ll be removing the css in this element before 22nd june 2022. Please refer to the https://github.com/qld-gov-au/qg-web-template/pull/391 for more details.');
   });
 
