@@ -6,7 +6,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-  <title>Call Out Box</title>
+  <title>Images</title>
 
   <meta name="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur cupiditate eius facere hic molestiae quasi sapiente. Accusantium beatae consectetur cumque, eaque fugit labore officia quisquam quod reprehenderit suscipit! Consectetur, magni!" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur cupiditate eius facere hic molestiae quasi sapiente. Accusantium beatae consectetur cumque, eaque fugit labore officia quisquam quod reprehenderit suscipit! Consectetur, magni!">
   <meta name="keywords" content="KEYWORDS">
@@ -73,7 +73,7 @@
         </li>
         <li class="qg-breadcrumb-list-item">
           <a href="#" class="qg-breadcrumb-list-item__link">
-            Call out box
+            Images
           </a>
         </li>
       </ol>
@@ -85,89 +85,73 @@
     <div id="qg-one-col" class="row wide">
 
       <div id="qg-primary-content" role="main">
-        <h1 id="call-out-box" class="category">Call out box</h1>
-        <p><span class="label label-primary" title="Custom QG styles">Custom</span></p>
-        <p>Publishers may use the call out box to help direct a user’s attention to an excerpt of text or call to action.</p>
+        <h1 id="images" class="category">Images</h1>
+        <p><span class="label label-primary" title="Heavily customised bootstrap implementation">Customised</span></p>
+        <p>Publishers can use images to provide a visual representation of context.</p>
+        <p>Publishers can use standard <a href="https://getbootstrap.com/css/#floating-images.html">Bootstrap image utilities</a> as well as the following custom image features.</p>
+
+        <h3 id="figures">Figures</h3>
+        <p><span class="label label-default" title="Default HTML5 implementation">Default HTML5</span></p>
+        <p> </p>
+        <p>To use figures, just add the standard HTML5 figure code in the <code>&lt;div id="qg-primary-content"&gt;</code> element, or add the class <code>qg-fig</code> to any figure element outside of the qg-primary-content element:</p>
+
+        <br/><h4>HTML</h4>
+        <pre><code class="language-markup">
+   &lt;figure&gt;
+     &lt;img src="https://via.placeholder.com/300.png/ccc/ccc" alt="" /&gt;
+     &lt;figcaption>
+       Caption text here
+     &lt;div class="figure-credits"&gt;Figure credits here&lt;/div&gt;
+     &lt;/figcaption&gt;
+   &lt;/figure&gt;
+                </code></pre>
+
         <div class="qg-tmplt-example">
           <div class="panel-body">
-            <section class="qg-callout__box qg-callout__grey-theme">
-              <div class="qg-callout__header col-12">
-                                            <span class="qg-callout__icon">
-                            <span class="fa fa-comments"></span>
-                         </span>
-                <h2 class="qg-callout__title">Tell us what you think about our website</h2>
-              </div>
-
-              <div class="qg-callout__content col-12">
-
-                <div class="qg-callout__bottom-alignment">
-                  <div class="qg-callout__description">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                      when an unknown printer took a galley of type and scrambled it to make a type
-                      specimen book. It has survived not only five centuries.</p>
-                  </div>
-                  <a class="qg-btn btn-secondary qg-callout__cta" href="btnlink">btntext</a>
-                </div>
-              </div>
-            </section>
-
-              <div class="qg-callout__content col-12">
-
-                <div class="qg-callout__right-alignment">
-                  <div class="qg-callout__description">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                      when an unknown printer took a galley of type and scrambled it to make a type
-                      specimen book. It has survived not only five centuries.</p>
-                  </div>
-                  <div class="qg-callout__image">
-                    <img src="https://via.placeholder.com/96X132" alt="">
-                  </div>
-                </div>
-              </div>
-            </section>
-            <section class="qg-callout__box qg-callout__default-theme">
-              <div class="qg-callout__content col-12">
-                <div class="qg-callout__left-alignment">
-                  <div class="qg-callout__description">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                      when an unknown printer.</p>
-                  </div>
-                  <a class="qg-btn btn-primary qg-callout__cta" href="left">Pay now</a>
-                </div>
-              </div>
-            </section>
+            <figure>
+              <img src="https://via.placeholder.com/300.png/ccc/ccc" alt=""/>
+              <figcaption>
+                Caption text here
+                <div class="figure-credits">Figure credits here</div>
+              </figcaption>
+            </figure>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           </div>
         </div>
 
-        <h3>HTML</h3>
-        <pre><code class="language-markup">
-        &lt;section class=&quot;qg-callout__box&quot;&gt;
-          &lt;div class=&quot;qg-callout__header col-12&quot;&gt;
-             &lt;span class=&quot;qg-callout__icon&quot;&gt;
-                 &lt;i class=&quot;fa fa-comments&quot;&gt;&lt;/i&gt;
-             &lt;/span&gt;
-            &lt;h2 class=&quot;qg-callout__title&quot;&gt;Tell us what you think about our website&lt;/h2&gt;
-          &lt;/div&gt;
+        <p>You can pull this figure left or right (turning it into a cut-in image) by adding the class <code>pull-right</code> or <code>pull-left</code> to the figure element <code>&lt;figure class="pull-right"&gt;</code>.</p>
 
-          &lt;div class=&quot;qg-callout__content col-12&quot;&gt;
+        <div class="qg-tmplt-example">
+          <div class="panel-body">
+            <figure class="pull-right">
+              <img src="https://via.placeholder.com/300.png/ccc/ccc" alt=""/>
+              <figcaption>
+                Caption text here
+                <div class="figure-credits">Figure credits here</div>
+              </figcaption>
+            </figure>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+        </div>
 
-            &lt;div class=&quot;qg-callout__bottom-alignment&quot;&gt;
-              &lt;div class=&quot;qg-callout__description&quot;&gt;
-                &lt;p&gt;Paragraph tag dolor sit amet&lt;span&gt;Span tag &lt;/span&gt;Paragraph tag dolor sit amet&lt;span&gt;Span tag &lt;/span&gt;Paragraph tag dolor sit amet&lt;span&gt;Span tag &lt;/span&gt;Paragraph tag dolor sit amet&lt;span&gt;Span tag&lt;/span&gt;Paragraph tag dolor sit amet&lt;span&gt;Span tag &lt;/span&gt;Paragraph tag dolor sit amet&lt;span&gt;Span tag &lt;/span&gt;Paragraph tag dolor sit amet&lt;span&gt;Span tag &lt;/span&gt;Paragraph tag dolor sit amet&lt;span&gt;Span tag&lt;/span&gt;&lt;/p&gt;
-              &lt;/div&gt;
-              &lt;a class=&quot;qg-btn btn-secondary qg-callout__cta&quot; href=&quot;btnlink&quot;&gt;btntext&lt;/a&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
-        &lt;/section&gt;
-                						</code></pre>
-        <br />
-        <p><i>Configuration options</i></p>
-        <ul>
-          <li>This component supports having some contextual text to accompany a button.</li>
-        </ul>
+        <p>You can also unstyled the figure by adding <code>qg-unstyled</code> to the figure <code>&lt;figure class="qg-unstyled"&gt;</code>. Unstyled figures also work with pull-right and pull-left.</p>
+
+        <div class="qg-tmplt-example">
+          <div class="panel-body">
+            <figure class="qg-unstyled">
+              <img src="https://via.placeholder.com/300.png/ccc/ccc" alt="" />
+              <figcaption>
+                Caption text here
+                <div class="figure-credits">Figure credits here</div>
+              </figcaption>
+            </figure>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.</p>
+          </div>
+        </div>
+
+        <p>If you need to remove the standard styling of a figure element in the qg-primary-content element, add the
+          class <code>qg-nofig</code> to the figure element <code>&lt;figure class="qg-nofig"&gt;</code>.</p>
 
       </div>
     </div>
