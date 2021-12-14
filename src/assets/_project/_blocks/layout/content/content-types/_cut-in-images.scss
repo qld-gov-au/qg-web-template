@@ -60,7 +60,7 @@
   }
 }
 
-// cut in specific styles
+// 'cut in' specific styles
 .qg-cut-in{
   @include media-breakpoint-up(md) {
     float: right;
@@ -77,7 +77,7 @@
  }
 }
 
-// cut in alt specific styles
+// 'cut in alt' specific styles
 .qg-cut-in-alt{
   float: left;
   & + .cut-in-alt {
@@ -86,7 +86,7 @@
    }
 }
 
- //links overwrite for Cut in components
+ //links overwrite for 'Cut in' component
 #qg-primary-content {
   .cut-in, .qg-cut-in, .qg-cut-in-alt {
     a:not(.print-content-link):active, a:not(.print-content-link):focus, a:not(.print-content-link):visited{
