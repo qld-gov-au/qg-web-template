@@ -1,12 +1,12 @@
 #qg-primary-content {
   .cut-in, .qg-cut-in, .qg-cut-in-alt {
-    &:not(.print-content-link):active, &:not(.print-content-link):focus, &:not(.print-content-link):visited{
+    a:not(.print-content-link):active, a:not(.print-content-link):focus, a:not(.print-content-link):visited{
       color: #13578b;
     }
-    &:not(.print-content-link):link {
+    a:not(.print-content-link):link {
       text-decoration: none;
     }
-    &:not(.print-content-link):hover {
+    a:not(.print-content-link):hover {
       .qg-cut-in-alt__label {
         text-decoration: underline;
         background: #F5F5F5;
@@ -40,7 +40,7 @@
   .qg-cut-in-alt__expand-icon {
     transition: all 0.5s ease;
     display: none;
-    width: 50px;
+    @include rem(width, 50px);
     height: auto;
     position: absolute;
     top: 50%;
@@ -51,6 +51,7 @@
     display: block;
     text-align: right;
     font-style: normal;
+    @include rem(padding-right, 3px);
   }
   img {
     height: auto;
@@ -58,23 +59,19 @@
     display: block;
     width: 100%;
   }
-  .figure-credits {
-    @include rem(padding, 0 20px);
-  }
-  .caption {
-    @include rem(max-width, 284px);
-    @include rem(margin, 6px auto);
+  .qg-cut-in__ref {
     text-align: left;
-    font-style: italic;
-  }
-  .figure-credits-toggle {
-    position: absolute;
-    top: 0;
-    right: 0.6rem;
-    height: 3rem;
-    background: transparent;
-    opacity: 0.7;
-    border: 0;
+    .qg-cut-in__figure-credits {
+      display: block;
+      color: #757575;
+      font-style: normal;
+    }
+    .qg-cut-in__figure-caption {
+      display: block;
+      @include rem(margin, 6px 0 0 0);
+      text-align: left;
+      font-style: italic;
+    }
   }
 }
 .qg-cut-in{
