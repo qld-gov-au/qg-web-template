@@ -195,7 +195,7 @@
                   <span class="accordion-label"><span class="title">With icon</span> <span class="subtitle">Subtitle can go here (optional)</span></span>
                 </a>
               </button>
-              <div class="collapsing-section au-accordion--closed" id="id-panel-4">
+              <div class="collapsing-section " id="id-panel-4">
                 <h4>Heading</h4>
                 <p> Content related to header. </p>
                 <ul>
@@ -243,7 +243,7 @@
                   </span>
                 </a>
               </button>
-              <div class="collapsing-section au-accordion--closed" id="id-panel-2">
+              <div class="collapsing-section " id="id-panel-2">
                 <h4>Heading</h4>
                 <p> Content related to header. </p>
                 <ul>
@@ -284,7 +284,7 @@
             &lt;/article&gt;
             &lt;article&gt;
               &lt;button class=&quot;acc-heading qg-accordion--closed&quot; aria-controls=&quot;accordion-default&quot; aria-expanded=&quot;true&quot; &gt;&lt;img src=&quot;https://placeimg.com/20/20/nature&quot; alt=&quot;&quot;&gt;&lt;span class=&quot;accordion-label&quot;&gt;&lt;span class=&quot;title&quot;&gt;With icon&lt;/span&gt; &lt;span class=&quot;subtitle&quot;&gt;Subtitle can go here (optional)&lt;/span&gt;&lt;/span&gt;&lt;/button&gt;
-              &lt;div class=&quot;collapsing-section au-accordion--closed&quot;&gt;
+              &lt;div class=&quot;collapsing-section &quot;&gt;
                 &lt;h4&gt;Heading&lt;/h4&gt;
                 &lt;p&gt; Content related to header. &lt;/p&gt;
                 &lt;ul&gt;
@@ -314,13 +314,20 @@
               <td>Accordion enhancements (accessibility and design). For backward compatibility accordions already in use without this new class will work as expected</td>
             </tr>
           </table>
+          <p>Use 'title of an accordion' or an 'ID of an accordion' to open a panel</p>
+          <div>
+              <ul>
+                 <li>We can use a 'title of an accordion'. For example , https://qld-gov-au.github.io/web-template-release/components/accordion.html#With-icon</li>
+                <li>Similarly we can use an ID to open a panel For example , https://qld-gov-au.github.io/web-template-release/components/accordion.html##id-panel-3</li>
+             </ul>
+          </div>
           <p class="mt-4">Fontawesome icon can also be used instead of image.</p>
           <p class="alert alert-info mb-2">Accordion without icons or images is advised best practice. </p>
           <pre><code class="language-markdown">
                 &lt;i class="fa fa-car" aria-hidden="true">&lt;/i>
                 or
                 &lt;img src="{{path of the image}}" alt="">
-                                    </code></pre>
+          </code></pre>
         </section>
 
       </div>
