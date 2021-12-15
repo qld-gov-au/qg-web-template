@@ -9,12 +9,14 @@ export class QgAccordion {
     this.$accordion = $('.qg-accordion');
     this.$accordion_v2 = $('.qg-accordion-v2');
     this.$accHeading = $('.acc-heading');
-
+    this.urlHash = window.location.hash;
     if (this.$accordion.length > 0) {
       this.accordionPanelClick();
       this.collapseAll();
       this.expandAll();
-      this.hashTrigger();
+      if (this.urlHash){
+        this.hashTrigger();
+      }
       // enable GA tracking
       this.gaTracking();
       // legacyAccordion is to support SWE2 accordion
@@ -38,8 +40,8 @@ export class QgAccordion {
    **/
   hashTrigger(){
     let self = this;
-    let hashValTrimmed = this.filterSpecialChar(window.location.hash);
-    let hashValueIdMatch = window.location.hash.replace('#', '');
+    let hashValTrimmed = this.filterSpecialChar(self.urlHash);
+    let hashValueIdMatch = self.urlHash.replace('#', '');
     if (hashValTrimmed.length > 0) {
       // supports title match
       self.$accordion.find('.title').each(function (index, titleEl){
