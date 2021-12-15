@@ -54,7 +54,7 @@ export class QgAccordion {
       });
 
       // supports title match
-      // check if any panel already open that worked with ID matching
+      // check if any panel is already open that worked with the ID matching function
       if ($('.qg-accordion--open').length <= 0){
         self.$accordion.find('.title').each(function (index, titleEl){
           if (self.filterSpecialChar($(titleEl).text()) === hashValTrimmed){
