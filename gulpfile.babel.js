@@ -22,9 +22,9 @@ const buildDay = buildDate.getDate() < 10 ? '0' + buildDate.getDate() : buildDat
 const buildHours = (buildDate.getHours() + 1) < 10 ? '0' + (buildDate.getHours() + 1) : buildDate.getHours();
 const buildMinutes = buildDate.getMinutes() < 10 ? '0' + buildDate.getMinutes() : buildDate.getMinutes();
 const banner = '/*! SWE' +
-    ' ' + pjson.version +
-    ' ' + buildDate.getFullYear() + buildMonth + buildDay + 'T' + buildHours + buildMinutes +	' */' +
-    '\n';
+  ' ' + pjson.version +
+  ' ' + buildDate.getFullYear() + buildMonth + buildDay + 'T' + buildHours + buildMinutes +	' */' +
+  '\n';
 
 /* CLEAN TASKS */
 gulp.task('clean-build', (cb) => {

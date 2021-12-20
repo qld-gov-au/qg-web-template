@@ -1,20 +1,25 @@
 /**
- * This will handle functionalities like
+ * This handles functionalities like
  * - Expand all / Collapse all link
  * - Ability to direct link to each section and expand the linked section
  * - Handles aria-expanded values
+ * - Open an accordion panel if it finds #title-Of-Accordion or #id-panel-section in the url
  */
 export class QgAccordion {
   constructor () {
     this.$accordion = $('.qg-accordion');
     this.$accordion_v2 = $('.qg-accordion-v2');
     this.$accHeading = $('.acc-heading');
+    this.urlHashVal = window.location.hash;
 
     if (this.$accordion.length > 0) {
       this.accordionPanelClick();
       this.collapseAll();
       this.expandAll();
-      this.hashTrigger();
+      // check and enable hashtrigger function
+      if (this.urlHashVal){
+        this.hashTrigger();
+      }
       // enable GA tracking
       this.gaTracking();
       // legacyAccordion is to support SWE2 accordion
@@ -38,8 +43,8 @@ export class QgAccordion {
    **/
   hashTrigger(){
     let self = this;
-    let hashValTrimmed = this.filterSpecialChar(window.location.hash);
-    let hashValueIdMatch = window.location.hash.replace('#', '');
+    let hashValTrimmed = this.filterSpecialChar(self.urlHashVal);
+    let hashValueIdMatch = self.urlHashVal.replace('#', '');
     if (hashValTrimmed.length > 0) {
       // supports ID match
       self.$accordion.find('.collapsing-section').each(function (index, titleEl){
@@ -49,7 +54,7 @@ export class QgAccordion {
       });
 
       // supports title match
-      // check if any panel already open that worked with ID matching
+      // check if any panel is already open that worked with the ID matching function
       if ($('.qg-accordion--open').length <= 0){
         self.$accordion.find('.title').each(function (index, titleEl){
           if (self.filterSpecialChar($(titleEl).text()) === hashValTrimmed){
