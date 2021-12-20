@@ -29,6 +29,7 @@ describe('SWE Components testing', () => {
     await page.waitForTimeout(ct.WT);
     expect(await page.evaluate(() => location.href)).toBe('https://www.google.com.au/');
     await page.goBack();
+    await page.waitForTimeout(ct.WT);
     expect(await page.evaluate(() => location.href)).not.toBe(`${ct.APP_URL}/docs/quick-exit.html`);
   }, ct.TO);
 
