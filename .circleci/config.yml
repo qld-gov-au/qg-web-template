@@ -20,6 +20,7 @@ jobs:
           name: Workaround for GoogleChrome/puppeteer#290
           command: 'sh .circleci/setup_puppeteer.sh'
 
+      - run: npm install --save --legacy-peer-deps
       - run: npm install
 
       - run:
