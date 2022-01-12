@@ -13,3 +13,8 @@ blockquote {
 [dir="rtl"] {
   text-align: right;
 }
+
+//no wrap any telephone numbers
+a[href^="tel:"] {
+  white-space: nowrap;
+}
