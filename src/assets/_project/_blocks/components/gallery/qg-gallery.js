@@ -1,6 +1,6 @@
 if ($("script[src*='jquery.fancybox']").length === 0) {
   // load scripts and styles only if any of the selectors are present on the page
-  if ($('.qg-image-gallery').length > 0 || $('.qg-lightbox').length > 0 || $('.image-gallery').length > 0 || $('[class*="cut-in"]').length > 0) {
+  if ($('[data-fancybox]').length > 0 || $('.qg-image-gallery').length > 0 || $('.qg-lightbox').length > 0 || $('.image-gallery').length > 0 || $('[class*="cut-in"]').length > 0) {
     // append style
     $('head').append($("<link rel='stylesheet' href='{{CDN}}/latest/lib/ext/fancybox/jquery.fancybox.min.css' type='text/css' media='screen' />"));
     // load script

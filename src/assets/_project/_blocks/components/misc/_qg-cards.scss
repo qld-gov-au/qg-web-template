@@ -1,3 +1,12 @@
+//default color overwrite
+#qg-primary-content {
+  .qg-card:not(.qg-card__light-theme) {
+    h2 {
+      color: #fff;
+    }
+  }
+}
+// cards styles
 .qg-cards {
   display: flex;
   flex-direction: row;
@@ -149,7 +158,9 @@
 
     .details {
       padding: 1em;
-
+      h2 {
+        color: #fff;
+      }
       > :first-child {
         padding-right: 1rem;
         padding-top: 0;
