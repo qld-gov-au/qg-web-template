@@ -1,0 +1,46 @@
+<!-- Checkbox.stories.mdx -->
+import { createElement } from "./Button.js"
+
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+
+<Meta title="Components/Test" />
+
+# Test
+
+With `MDX`, we can define a story for `Checkbox` right in the middle of our Markdown documentation.
+
+<Canvas>
+  <Story name="test">
+    {()=>createElement(`
+<div id="qg-primary-content" role="main">
+  <figure>
+    <img src="https://via.placeholder.com/300.png/ccc/ccc" alt=""/>
+    <figcaption>
+      Caption text here
+      <div class="figure-credits">Figure credits here</div>
+    </figcaption>
+  </figure>
+</div>
+`)}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="enlarge">
+    {()=>createElement(`
+<div id="qg-primary-content" role="main">
+  <figure>
+    <a href="https://picsum.photos/id/237/1200/700" data-fancybox="gallery_id">
+      <span>View larger image</span>
+      <img src="https://picsum.photos/id/237/500/200" alt="image_description"/>
+      <img class="figure__expand-icon" src="/assets/v4/latest/images/Expand.svg" alt="Enlarge image">
+    </a>
+    <figcaption>
+      Caption text here
+      <div class="figure-credits">Figure credits here</div>
+    </figcaption>
+  </figure>
+</div>
+`)}
+  </Story>
+</Canvas>

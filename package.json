@@ -23,7 +23,9 @@
     "create-swe-release": "export NODE_ENV=prod && gulp swe-add && gulp swe-tag && gulp swe-commit && gulp swe-push",
     "publish-cdn": "export NODE_ENV=prod && npm run release && gulp cdn-clean && gulp cdn-clone && gulp cdn-transfer && gulp cdn-add && gulp cdn-commit && gulp cdn-push",
     "publish-test-cdn": "npm run release && export NODE_ENV=test && gulp cdn-clean && gulp cdn-clone && gulp cdn-transfer && gulp cdn-branch && gulp cdn-add && gulp cdn-commit && gulp cdn-push",
-    "postpublish": "gulp clean-publish"
+    "postpublish": "gulp clean-publish",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "authors": "Queensland Government",
   "licence": "all rights reserved",
@@ -33,6 +35,10 @@
     "@babel/plugin-transform-runtime": "^7.10.5",
     "@babel/preset-env": "^7.10.2",
     "@babel/register": "^7.10.1",
+    "@storybook/addon-actions": "^6.4.10",
+    "@storybook/addon-essentials": "^6.4.10",
+    "@storybook/addon-links": "^6.4.10",
+    "@storybook/html": "^6.4.10",
     "babel-loader": "^8.1.0",
     "copy-webpack-plugin": "^4.0.1",
     "core-js": "^3.6.5",
