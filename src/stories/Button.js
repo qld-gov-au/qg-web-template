@@ -1,11 +1,5 @@
 import './button.css';
 
-export const createElement = (innerHTML) => {
-  const div = document.createElement('div');
-  div.innerHTML = innerHTML;
-  return div.firstElementChild;
-};
-
 export const createButton = ({
   primary = false,
   size = 'medium',

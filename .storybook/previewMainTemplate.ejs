@@ -52,11 +52,35 @@
     <% }); %>
     <script src="/assets/v4/latest/lib/all-ext-min.js"></script>
     <script>
-      setTimeout(()=>{
+      function handleStoryInit(canvas) {
         const script = document.createElement('script');
         script.src = "/assets/v4/latest/js/qg-main.js";
         document.getElementsByTagName('head')[0].appendChild(script);
-      })
+      }
+
+      // set up the mutation observer
+      var observer = new MutationObserver(function (mutations, me) {
+        // `mutations` is an array of mutations that occurred
+        // `me` is the MutationObserver instance
+        var canvas = document.getElementById('my-canvas');
+        if ($("#root").children.length > 0 || $("#docs-root").children.length > 0) {
+          handleStoryInit(canvas);
+          me.disconnect(); // stop observing
+          return;
+        }
+      });
+
+      // start observing
+      observer.observe(document, {
+        childList: true,
+        subtree: true
+      });
+
+      // setTimeout(()=>{
+      //   const script = document.createElement('script');
+      //   script.src = "/assets/v4/latest/js/qg-main.js";
+      //   document.getElementsByTagName('head')[0].appendChild(script);
+      // },100)
     </script>
   </body>
 </html>

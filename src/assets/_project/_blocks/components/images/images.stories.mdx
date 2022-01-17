@@ -1,0 +1,99 @@
+<!-- Checkbox.stories.mdx -->
+import { createElement } from "../../../../../stories/utils.js";
+
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+
+<Meta title="Components/Images" />
+
+# Images
+
+Publishers can use this component to provide a visual representation of context, it inherits and extends the [Bootstrap image utilities](https://getbootstrap.com/docs/3.4/css/#images).
+
+## Basic standalone image
+
+Add classes to an `<img>` element to easily style images in any project.
+
+<Canvas withSource="open">
+  <Story name="basic">
+    {()=>createElement(`
+<div>
+  <h3>Default</h3>
+  <img src="https://picsum.photos/id/237/500/200" alt="image_description"/>
+  <h3>class="img-thumbnail"</h3>
+  <img src="https://picsum.photos/id/237/500/200" alt="image_description" class="img-thumbnail">
+</div>
+`)}
+  </Story>
+</Canvas>
+
+## Image with figure and caption/description
+
+We use `<figure>` together with image to improve accessibility with caption, just add the standard HTML5 figure code in the `<div id="qg-primary-content">` element, or add the class `qg-fig` to any figure element outside of the qg-primary-content element.
+
+You can control the image description alignment left or right (turning it into a cut-in image) by adding the class `pull-right` or `pull-left` to the figure element `<figure class="pull-right">`, 
+you also need to add `class="clearfix"` to the parent container.
+
+<Canvas withSource="open">
+  <Story name="figure">
+    {()=>createElement(`
+<div>
+  <h3>Stack image description</h3>
+  <div>
+    <figure class="qg-fig">
+      <img src="https://via.placeholder.com/300.png/ccc/ccc" alt="image_description"/>
+      <figcaption>
+        Caption text here
+        <div class="figure-credits">Figure credits here</div>
+      </figcaption>
+    </figure>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  </div>
+  <h3>Image description right</h3>
+  <div class="clearfix">
+    <figure class="qg-fig pull-left">
+      <img src="https://via.placeholder.com/300.png/ccc/ccc" alt="image_description"/>
+      <figcaption>
+        Caption text here
+        <div class="figure-credits">Figure credits here</div>
+      </figcaption>
+    </figure>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  </div>
+  <h3>Image description left</h3>
+  <div class="clearfix">
+    <figure class="qg-fig pull-right">
+      <img src="https://via.placeholder.com/300.png/ccc/ccc" alt="image_description"/>
+      <figcaption>
+        Caption text here
+        <div class="figure-credits">Figure credits here</div>
+      </figcaption>
+    </figure>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  </div>
+</div>
+`)}
+  </Story>
+</Canvas>
+
+## Enlarge image
+
+We are using the Fancybox library for lightbox function, please check [fancybox plugin doc](http://fancyapps.com/fancybox/) for more details regarding the config.
+You are required to provide the attribute `data-fancybox` an gallery id which begin with `gallery`.
+
+<Canvas withSource="open">
+  <Story name="enlarge">
+    {()=>createElement(`
+<figure class="qg-fig pull-left">
+  <a href="https://picsum.photos/id/237/1200/700" data-fancybox="gallery_id">
+    <span>View larger image</span>
+    <img src="https://picsum.photos/id/237/500/200" alt="image_description"/>
+    <img class="figure__expand-icon" src="/assets/v4/latest/images/Expand.svg" alt="Enlarge image">
+  </a>
+  <figcaption>
+    Caption text here
+    <div class="figure-credits">Figure credits here</div>
+  </figcaption>
+</figure>
+`)}
+  </Story>
+</Canvas>

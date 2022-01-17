@@ -19,7 +19,6 @@ if ($("script[src*='jquery.fancybox']").length === 0) {
       // cut in images caption
       var cutInLink = $('.cut-in .caption a');
       $(cutInLink).attr('data-fancybox', 'images');
-
       // initialize fancybox , please check fancybox plugin doc for more details regarding the config http://fancyapps.com/fancybox/
       $('[data-fancybox^="gallery"]').fancybox({
         buttons: ['thumbs', 'close'],
