@@ -24,7 +24,7 @@
     "publish-cdn": "export NODE_ENV=prod && npm run release && gulp cdn-clean && gulp cdn-clone && gulp cdn-transfer && gulp cdn-add && gulp cdn-commit && gulp cdn-push",
     "publish-test-cdn": "npm run release && export NODE_ENV=test && gulp cdn-clean && gulp cdn-clone && gulp cdn-transfer && gulp cdn-branch && gulp cdn-add && gulp cdn-commit && gulp cdn-push",
     "postpublish": "gulp clean-publish",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "concurrently \"start-storybook -p 6006\" \"npm:watch\"",
     "build-storybook": "build-storybook"
   },
   "authors": "Queensland Government",
@@ -40,6 +40,7 @@
     "@storybook/addon-links": "^6.4.10",
     "@storybook/html": "^6.4.10",
     "babel-loader": "^8.1.0",
+    "concurrently": "^7.0.0",
     "copy-webpack-plugin": "^4.0.1",
     "core-js": "^3.6.5",
     "css-loader": "^0.28.1",
