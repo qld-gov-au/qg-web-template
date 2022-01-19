@@ -28,8 +28,8 @@ export class QgPrint {
   onClickContentBtn() {
     let self = this;
     if (self.$printContentLink.length > 0) {
-      self.$printContentLink.on('click', function (e) {
-        e.preventDefault();
+      $(document).on('click', '.print-content-link', function(event) {
+        event.preventDefault();
         window.print();
       });
     }
