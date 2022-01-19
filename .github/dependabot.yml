@@ -2,6 +2,7 @@ version: 2
 updates:
 - package-ecosystem: npm
   directory: "/"
+  target-branch: "develop"
   schedule:
     interval: daily
     time: "19:00"
@@ -9,10 +10,8 @@ updates:
   reviewers:
   - duttonw
   - asifamingov
-  - andersmx
   assignees:
   - asifamingov
-  - andersmx
   ignore:
   - dependency-name: cssnano
     versions:

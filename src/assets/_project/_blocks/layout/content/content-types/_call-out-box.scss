@@ -72,7 +72,11 @@
   .qg-callout__icon{
     float:left;
     height: 20px;
-    i{
+    span {
+      vertical-align: top;
+    }
+    // we'll remove this block of css that support the i element before 22nd June
+    i {
       vertical-align: top;
     }
   }

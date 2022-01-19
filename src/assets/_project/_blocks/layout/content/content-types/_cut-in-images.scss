@@ -1,4 +1,6 @@
+// common styles
 .cut-in, .qg-cut-in, .qg-cut-in-alt {
+  display:block;
   position: relative;
   @include rem(max-width, 374px);
   @include rem(font-size, 14px);
@@ -7,31 +9,58 @@
   text-align: center;
   font-style: italic;
   border: 1px solid #eee;
+  transition: all 0.5s ease;
+  .qg-cut-in-alt__anchor:hover{
+    cursor: pointer;
+    .qg-cut-in__large-image a:not(.print-content-link) {
+      text-decoration: underline !important;
+    }
+    .qg-cut-in__img-container{
+      outline: 1px solid #0066CC;
+    }
+    .qg-cut-in-alt__expand-icon {
+      display: block;
+    }
+  }
+  .qg-cut-in-alt__expand-icon {
+    transition: all 0.5s ease;
+    display: none;
+    @include rem(width, 50px);
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .qg-cut-in-alt__label {
+    display: block;
+    text-align: right;
+    font-style: normal;
+    @include rem(padding-right, 3px);
+  }
   img {
     height: auto;
     margin: 0 auto;
     display: block;
     width: 100%;
   }
-  .figure-credits {
-    @include rem(padding, 0 20px);
-  }
-  .caption {
-    @include rem(max-width, 284px);
-    @include rem(margin, 6px auto);
+  .qg-cut-in__ref {
     text-align: left;
-    font-style: italic;
-  }
-  .figure-credits-toggle {
-    position: absolute;
-    top: 0;
-    right: 0.6rem;
-    height: 3rem;
-    background: transparent;
-    opacity: 0.7;
-    border: 0;
+    .qg-cut-in__figure-credits {
+      display: block;
+      color: #757575;
+      font-style: normal;
+    }
+    .qg-cut-in__figure-caption {
+      display: block;
+      @include rem(margin, 6px 0 0 0);
+      text-align: left;
+      font-style: italic;
+    }
   }
 }
+
+// 'cut in' specific styles
 .qg-cut-in{
   @include media-breakpoint-up(md) {
     float: right;
@@ -47,6 +76,8 @@
   clear: right;
  }
 }
+
+// 'cut in alt' specific styles
 .qg-cut-in-alt{
   float: left;
   & + .cut-in-alt {
@@ -55,12 +86,20 @@
    }
 }
 
-.figure-credits-toggle {
-  position: absolute;
-  top: 0;
-  right: 0.6rem;
-  height: 3rem;
-  background: transparent;
-  opacity: 0.7;
-  border: 0;
+ //links overwrite for 'Cut in' component
+#qg-primary-content {
+  .cut-in, .qg-cut-in, .qg-cut-in-alt {
+    a:not(.print-content-link):active, a:not(.print-content-link):focus, a:not(.print-content-link):visited{
+      color: #13578b;
+    }
+    a:not(.print-content-link):link {
+      text-decoration: none;
+    }
+    a:not(.print-content-link):hover {
+      .qg-cut-in-alt__label {
+        text-decoration: underline;
+        background: #F5F5F5;
+      }
+    }
+  }
 }
