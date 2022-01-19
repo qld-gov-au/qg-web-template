@@ -527,7 +527,13 @@ input[disabled],
 select[disabled],
 textarea[disabled] {
   background: transparent;
-  color: #777777;
+  color: $qg-dark-gray-light;
+  cursor: not-allowed;
+
+  +label {
+    cursor: not-allowed;
+    color: $qg-dark-gray-light;
+  }
 }
 
 input[readonly],

@@ -1,6 +1,6 @@
 /*
 FAQ -
-Q1 What this class do ?
+Q1 Where is this class in use, and what it does ?
 A1 This class determine the franchise (if available) and the environment using the hostname and then loads Google Maps API using that key
   - Key is loaded using the qg-google-keys.json file
  */
@@ -71,7 +71,7 @@ export class QgLoadGoogleApi {
       });
       $('aside').prepend(htmlInsert);
       $('a.qg-static-map').wrap("<div class='qg-aside st-map-static'>");
-      $('.st-map-static').eq(0).prepend("<h2><i class='fa fa-compass' aria-hidden='true'></i>Maps</h2>");
+      $('.st-map-static').eq(0).prepend("<h2><span class='fa fa-compass' aria-hidden='true'></span>Maps</h2>");
     }
   }
 

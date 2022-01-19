@@ -10,10 +10,6 @@
 
   <meta name="description" content="DESCRIPTION">
   <meta name="keywords" content="KEYWORDS">
-
-  <link rel="schema.DCTERMS" href="http://purl.org/dc/terms/">
-  <link rel="schema.AGLSTERMS" href="http://www.agls.gov.au/agls/terms/">
-
   <meta name="DCTERMS.creator" scheme="AGLSTERMS.GOLD" content="c=AU; o=The State of Queensland; ou=DEPARTMENT NAME; ou=UNIT NAME">
   <meta name="DCTERMS.publisher" scheme="AGLSTERMS.AglsAgent" content="corporateName=The State of Queensland; jurisdiction=Queensland">
   <meta name="DCTERMS.created" content="2010-11-04">
@@ -426,6 +422,10 @@
                 &lt;input type="checkbox" name="flavours" value="Vanilla" id="flavours-vanilla" />
                 &lt;label for="flavours-vanilla">Vanilla&lt;/label>
             &lt;/li>
+            &lt;li>
+                &lt;input type="checkbox" name="flavours" value="Blueberry" id="flavours-blueberry" disabled />
+                &lt;label for="flavours-blueberry">Blueberry&lt;/label>
+            &lt;/li>
         &lt;/ul>
     &lt;/fieldset>
 &lt;/li>
@@ -455,6 +455,43 @@
                       <li>
                         <input type="checkbox" name="flavours" value="Vanilla" id="flavours-vanilla" />
                         <label for="flavours-vanilla">Vanilla</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" name="flavours" value="Blueberry" id="flavours-blueberry" disabled />
+                        <label for="flavours-blueberry">Blueberry</label>
+                      </li>
+                    </ul>
+                  </fieldset>
+                </li>
+              </ol>
+            </form>
+          </div>
+        </div>
+        <div class="qg-tmplt-example">
+          <div class="panel-body">
+            <form>
+              <ol class="questions">
+                <li>
+                  <fieldset>
+                    <legend>
+                      <span class="label">Device</span>
+                    </legend>
+                    <ul class="choices">
+                      <li>
+                        <input type="radio" name="device" value="Laptop" id="device-laptop" />
+                        <label for="device-laptop">Laptop</label>
+                      </li>
+                      <li>
+                        <input type="radio" name="device" value="Phone" id="device-phone" />
+                        <label for="device-phone">Phone</label>
+                      </li>
+                      <li>
+                        <input type="radio" name="device" value="Tablet" id="device-tablet" />
+                        <label for="device-tablet">Tablet</label>
+                      </li>
+                      <li>
+                        <input type="radio" name="device" value="Desktop" id="device-desktop" disabled />
+                        <label for="device-desktop">Desktop</label>
                       </li>
                     </ul>
                   </fieldset>
@@ -1360,31 +1397,42 @@ $( '#email' ).closest( '.section' ).relevance( 'relevantWhen', { name: 'replyReq
           <li><a href="http://www.webdirections.org/resources/aaron-gustafson/">Learning to love forms (Aaron Gustafson, 2007)</a></li>
         </ul>
         <hr />
-        <h2 class="anchored">Radio button and Checkbox pattern</h2>
+        <h2 class="anchored">Radio button and checkbox custom theme</h2>
 
         <form action="https://www.smartservice.qld.gov.au/services/submissions/email/yrcl/jp-resign" method="post" id="jpresign" class="form">
-          <ol class="questions">
-            <li class="section">
+
               <fieldset>
                 <legend>
-                  <span class="h3">Radio button theme</span>
+                  <span class="h3">Radio button custom theme</span>
                 </legend>
                 <ol class="questions ">
                   <li>
                     <fieldset>
                       <legend>
-                        <span class="label">This Radio button custom theme can be implemented by adding 'rc-theme' class.</span>
+                        <span class="label">This radio button custom theme can be implemented by adding 'rc-theme' class.</span>
                       </legend>
                       <ul class="choices compact rc-theme">
                         <li>
-                          <input type="radio" name="current-test" value="Yes" required="required" class="r1" id="current-test-yes-1">
+                          <input type="radio" name="current-test" value="Yes" required="required" id="current-test-yes-1">
                           <label for="current-test-yes-1" class="rc-theme__label">
                             <span class="rc-theme__label-desc">Lorem ipsum dolor sit amet.</span>
                           </label>
                         </li>
                         <li>
-                          <input type="radio" name="current-test" value="No" required="required" class="r2" id="current-test-no-1">
+                          <input type="radio" name="current-test" value="Yes" required="required" id="current-test-yes-2">
+                          <label for="current-test-yes-2" class="rc-theme__label">
+                            <span class="rc-theme__label-desc">Lorem ipsum dolor sit amet.</span>
+                          </label>
+                        </li>
+                        <li>
+                          <input type="radio" name="current-test" value="No" required="required" id="current-test-no-1" >
                           <label for="current-test-no-1" class="rc-theme__label">
+                            <span class="rc-theme__label-desc">Lorem ipsum dolor sit amet.</span>
+                          </label>
+                        </li>
+                        <li>
+                          <input type="radio" name="current-test" value="No" required="required" id="current-test-no-2" disabled>
+                          <label for="current-test-no-2" class="rc-theme__label">
                             <span class="rc-theme__label-desc">Lorem ipsum dolor sit amet.</span>
                           </label>
                         </li>
@@ -1397,11 +1445,11 @@ $( '#email' ).closest( '.section' ).relevance( 'relevantWhen', { name: 'replyReq
                   <li>
                     <fieldset>
                       <legend>
-                        <span class="label">This Radio button custom theme can be implemented by adding 'rc-theme' class.</span>
+                        <span class="label">Example with an SVG icon.</span>
                       </legend>
                       <ul class="choices compact rc-theme">
                         <li>
-                          <input type="radio" name="current-test-1" value="Yes" required="required" class="r1" id="current-test-yes">
+                          <input type="radio" name="current-test1" value="Yes" required="required" id="current-test-yes">
                           <label for="current-test-yes" class="rc-theme__with-image">
                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="58" height="58" viewBox="0 0 32 32">
                               <path class="rc-theme__icon" d="M30.148 5.588c-2.934-3.42-7.288-5.588-12.148-5.588-8.837 0-16 7.163-16 16s7.163 16 16 16c4.86 0 9.213-2.167 12.148-5.588l-10.148-10.412 10.148-10.412zM22 3.769c1.232 0 2.231 0.999 2.231 2.231s-0.999 2.231-2.231 2.231-2.231-0.999-2.231-2.231c0-1.232 0.999-2.231 2.231-2.231z"></path>
@@ -1410,8 +1458,26 @@ $( '#email' ).closest( '.section' ).relevance( 'relevantWhen', { name: 'replyReq
                           </label>
                         </li>
                         <li>
-                          <input type="radio" name="current-test-1" value="No" required="required" class="r2" id="current-test-no">
+                          <input type="radio" name="current-test1" value="Yes" required="required" id="current-test-yes2">
+                          <label for="current-test-yes2" class="rc-theme__with-image">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="58" height="58" viewBox="0 0 32 32">
+                              <path class="rc-theme__icon" d="M30.148 5.588c-2.934-3.42-7.288-5.588-12.148-5.588-8.837 0-16 7.163-16 16s7.163 16 16 16c4.86 0 9.213-2.167 12.148-5.588l-10.148-10.412 10.148-10.412zM22 3.769c1.232 0 2.231 0.999 2.231 2.231s-0.999 2.231-2.231 2.231-2.231-0.999-2.231-2.231c0-1.232 0.999-2.231 2.231-2.231z"></path>
+                            </svg>
+                            <span class="rc-theme__label-desc">Lorem ipsum dolor sit amet.</span>
+                          </label>
+                        </li>
+                        <li>
+                          <input type="radio" name="current-test1" value="Yes" required="required" id="current-test-no">
                           <label for="current-test-no" class="rc-theme__with-image">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="58" height="58" viewBox="0 0 32 32">
+                              <path class="rc-theme__icon" d="M30.148 5.588c-2.934-3.42-7.288-5.588-12.148-5.588-8.837 0-16 7.163-16 16s7.163 16 16 16c4.86 0 9.213-2.167 12.148-5.588l-10.148-10.412 10.148-10.412zM22 3.769c1.232 0 2.231 0.999 2.231 2.231s-0.999 2.231-2.231 2.231-2.231-0.999-2.231-2.231c0-1.232 0.999-2.231 2.231-2.231z"></path>
+                            </svg>
+                            <span class="rc-theme__label-desc">Lorem ipsum dolor sit amet.</span>
+                          </label>
+                        </li>
+                        <li>
+                          <input type="radio" name="current-test1" value="No" required="required" id="current-test-no1" disabled>
+                          <label for="current-test-no1" class="rc-theme__with-image">
                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="58" height="58" viewBox="0 0 32 32">
                               <path class="rc-theme__icon" d="M30.148 5.588c-2.934-3.42-7.288-5.588-12.148-5.588-8.837 0-16 7.163-16 16s7.163 16 16 16c4.86 0 9.213-2.167 12.148-5.588l-10.148-10.412 10.148-10.412zM22 3.769c1.232 0 2.231 0.999 2.231 2.231s-0.999 2.231-2.231 2.231-2.231-0.999-2.231-2.231c0-1.232 0.999-2.231 2.231-2.231z"></path>
                             </svg>
@@ -1424,54 +1490,97 @@ $( '#email' ).closest( '.section' ).relevance( 'relevantWhen', { name: 'replyReq
 
                 </ol>
               </fieldset>
-            </li>
-            <li class="section">
-              <fieldset><legend>
-                <span class="h3">Check Box theme</span>
-              </legend>
-                <ul class="choices rc-theme">
+
+              <fieldset>
+                <legend>
+                  <span class="h3">Checkbox custom theme</span>
+                </legend>
+                <ol class="questions ">
                   <li>
-                    <fieldset><legend> <span class="label d-none">Acknowledgement</span></legend>
-                      <input id="conditions-of-use1" class="regular-checkbox big-checkbox" value="true" name="conditions-of-use1" type="checkbox">
-                      <label for="conditions-of-use1" class="rc-theme__with-image">
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="58" height="58" viewBox="0 0 32 32">
-                          <path class="rc-theme__icon" d="M30.148 5.588c-2.934-3.42-7.288-5.588-12.148-5.588-8.837 0-16 7.163-16 16s7.163 16 16 16c4.86 0 9.213-2.167 12.148-5.588l-10.148-10.412 10.148-10.412zM22 3.769c1.232 0 2.231 0.999 2.231 2.231s-0.999 2.231-2.231 2.231-2.231-0.999-2.231-2.231c0-1.232 0.999-2.231 2.231-2.231z"></path>
-                        </svg>
-                        <span class="rc-theme__label-desc">Lorem ipsum dolor sit amet.</span>
-                      </label>
-                    </fieldset></li>
+                    <fieldset>
+                      <legend>
+                        <span class="label">This checkbox custom theme can be implemented by adding 'rc-theme' class.</span>
+                      </legend>
+                      <ul class="choices compact rc-theme">
+                        <li>
+                          <input class="regular-checkbox big-checkbox" id="conditions-of-use1" value="true" name="conditions-of-use" type="checkbox">
+                          <label for="conditions-of-use1" class="rc-theme__label">
+                            <span class="rc-theme__label-desc">Lorem ipsum dolor sit amet.</span>
+                          </label>
+                        </li>
+                        <li>
+                          <input class="regular-checkbox big-checkbox" id="conditions-of-use2" value="true" name="conditions-of-use" type="checkbox">
+                          <label for="conditions-of-use2" class="rc-theme__label">
+                            <span class="rc-theme__label-desc">Lorem ipsum dolor sit amet.</span>
+                          </label>
+                        </li>
+                        <li>
+                          <input class="regular-checkbox big-checkbox" id="conditions-of-use3" value="true" name="conditions-of-use" type="checkbox">
+                          <label for="conditions-of-use3" class="rc-theme__label">
+                            <span class="rc-theme__label-desc">Lorem ipsum dolor sit amet.</span>
+                          </label>
+                        </li>
+                        <li>
+                          <input class="regular-checkbox big-checkbox" id="conditions-of-use4" value="true" name="conditions-of-use" type="checkbox" disabled>
+                          <label for="conditions-of-use4" class="rc-theme__label">
+                            <span class="rc-theme__label-desc">Lorem ipsum dolor sit amet.</span>
+                          </label>
+                        </li>
+                      </ul>
+                    </fieldset>
+                  </li>
 
+                </ol>
+                <ol class="questions ">
                   <li>
-                    <fieldset><legend> <span class="label d-none">Acknowledgement</span></legend>
-                      <input id="conditions-of-use2" class="regular-checkbox big-checkbox" value="true" name="conditions-of-use2" type="checkbox">
-                      <label for="conditions-of-use2" class="rc-theme__with-image">
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="58" height="58" viewBox="0 0 32 32">
-                          <path class="rc-theme__icon" d="M30.148 5.588c-2.934-3.42-7.288-5.588-12.148-5.588-8.837 0-16 7.163-16 16s7.163 16 16 16c4.86 0 9.213-2.167 12.148-5.588l-10.148-10.412 10.148-10.412zM22 3.769c1.232 0 2.231 0.999 2.231 2.231s-0.999 2.231-2.231 2.231-2.231-0.999-2.231-2.231c0-1.232 0.999-2.231 2.231-2.231z"></path>
-                        </svg>
-                        <span class="rc-theme__label-desc">Lorem ipsum dolor sit amet.</span>
-                      </label>
-                    </fieldset></li>
+                    <fieldset>
+                      <legend>
+                        <span class="label">Example with an SVG icon.</span>
+                      </legend>
+                      <ul class="choices compact rc-theme">
+                        <li>
+                          <input id="conditions-of-use5" class="regular-checkbox big-checkbox" value="true" name="conditions-of-use1" type="checkbox">
+                          <label for="conditions-of-use5" class="rc-theme__with-image">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="58" height="58" viewBox="0 0 32 32">
+                              <path class="rc-theme__icon" d="M30.148 5.588c-2.934-3.42-7.288-5.588-12.148-5.588-8.837 0-16 7.163-16 16s7.163 16 16 16c4.86 0 9.213-2.167 12.148-5.588l-10.148-10.412 10.148-10.412zM22 3.769c1.232 0 2.231 0.999 2.231 2.231s-0.999 2.231-2.231 2.231-2.231-0.999-2.231-2.231c0-1.232 0.999-2.231 2.231-2.231z"></path>
+                            </svg>
+                            <span class="rc-theme__label-desc">Lorem ipsum dolor sit amet.</span>
+                          </label>
+                        </li>
+                        <li>
+                          <input id="conditions-of-use6" class="regular-checkbox big-checkbox" value="true" name="conditions-of-use1" type="checkbox">
+                          <label for="conditions-of-use6" class="rc-theme__with-image">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="58" height="58" viewBox="0 0 32 32">
+                              <path class="rc-theme__icon" d="M30.148 5.588c-2.934-3.42-7.288-5.588-12.148-5.588-8.837 0-16 7.163-16 16s7.163 16 16 16c4.86 0 9.213-2.167 12.148-5.588l-10.148-10.412 10.148-10.412zM22 3.769c1.232 0 2.231 0.999 2.231 2.231s-0.999 2.231-2.231 2.231-2.231-0.999-2.231-2.231c0-1.232 0.999-2.231 2.231-2.231z"></path>
+                            </svg>
+                            <span class="rc-theme__label-desc">Lorem ipsum dolor sit amet.</span>
+                          </label>
+                        </li>
+                        <li>
+                          <input id="conditions-of-use7" class="regular-checkbox big-checkbox" value="true" name="conditions-of-use1" type="checkbox">
+                          <label for="conditions-of-use7" class="rc-theme__with-image">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="58" height="58" viewBox="0 0 32 32">
+                              <path class="rc-theme__icon" d="M30.148 5.588c-2.934-3.42-7.288-5.588-12.148-5.588-8.837 0-16 7.163-16 16s7.163 16 16 16c4.86 0 9.213-2.167 12.148-5.588l-10.148-10.412 10.148-10.412zM22 3.769c1.232 0 2.231 0.999 2.231 2.231s-0.999 2.231-2.231 2.231-2.231-0.999-2.231-2.231c0-1.232 0.999-2.231 2.231-2.231z"></path>
+                            </svg>
+                            <span class="rc-theme__label-desc">Lorem ipsum dolor sit amet.</span>
+                          </label>
+                        </li>
+                        <li>
+                          <input id="conditions-of-use8" class="regular-checkbox big-checkbox" value="true" name="conditions-of-use1" type="checkbox" disabled >
+                          <label for="conditions-of-use8" class="rc-theme__with-image">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="58" height="58" viewBox="0 0 32 32">
+                              <path class="rc-theme__icon" d="M30.148 5.588c-2.934-3.42-7.288-5.588-12.148-5.588-8.837 0-16 7.163-16 16s7.163 16 16 16c4.86 0 9.213-2.167 12.148-5.588l-10.148-10.412 10.148-10.412zM22 3.769c1.232 0 2.231 0.999 2.231 2.231s-0.999 2.231-2.231 2.231-2.231-0.999-2.231-2.231c0-1.232 0.999-2.231 2.231-2.231z"></path>
+                            </svg>
+                            <span class="rc-theme__label-desc">Lorem ipsum dolor sit amet.</span>
+                          </label>
+                        </li>
+                      </ul>
+                    </fieldset>
+                  </li>
 
-                  <li>
-                    <fieldset><legend> <span class="label" style="visibility:hidden;height:0;">Acknowledgement</span></legend>
-                      <input class="regular-checkbox big-checkbox" id="conditions-of-use3" value="true" name="conditions-of-use3" type="checkbox">
-                      <label for="conditions-of-use3" class="rc-theme__label">
-                        <span class="rc-theme__label-desc">Lorem ipsum dolor sit amet.</span>
-                      </label>
-                    </fieldset></li>
+                </ol>
+              </fieldset>
 
-                  <li>
-                    <fieldset><legend> <span class="label" style="visibility:hidden;height:0;">Acknowledgement</span></legend>
-                      <input class="regular-checkbox big-checkbox" id="conditions-of-use4" value="true" name="conditions-of-use4" type="checkbox">
-                      <label for="conditions-of-use4" class="rc-theme__label">
-                        <span class="rc-theme__label-desc">Lorem ipsum dolor sit at.Lorem ipsum dolor sit at.Lorem ipsum dolor sit at</span>
-                      </label>
-                    </fieldset></li>
-
-                </ul></fieldset></li>
-
-
-          </ol>
         </form>
 
 
