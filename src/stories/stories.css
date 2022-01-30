@@ -1,0 +1,36 @@
+.story-grid-4-cols {
+  display: grid; 
+  grid-template-columns: repeat(4, max-content); 
+  justify-items: start; 
+  gap: 1em;
+}
+
+.story-grid-4-cols.even-space {
+  grid-template-columns: repeat(4, 1fr); 
+}
+
+.story-grid-4-cols.stretch {
+  justify-items: stretch; 
+}
+
+div.story-color-swatch {
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+div.story-color-swatch-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.25em;
+  align-items: baseline;
+}
+
+div.story-color-swatch-label>div:last-of-type {
+  font-size: 0.75em;
+}
+
+.story-color-swatch-sample {
+  height: 1.5em;
+  border-radius: 1.5em;
+}

@@ -1,0 +1,64 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import Tags from './templates/Tags.html';
+import Sizes from './templates/Sizes.html';
+import BlockSizes from './templates/BlockSizes.html';
+import States from './templates/States.html';
+
+<Meta title="Components/UI/Buttons" />
+
+# Buttons
+
+Publishers can use this component to provide a visual representation of context, it inherits and extends the [Bootstrap image utilities](https://getbootstrap.com/docs/3.4/css/#images).
+
+## Button tags
+
+Use the button classes on an `<a>`, `<button>`, or `<input>` element.
+For more details please refer to [Bootstrap](https://getbootstrap.com/docs/3.4/css/#buttons-tags).
+
+<Canvas withSource="open">
+  <Story name="Tags">
+    {()=>Tags}
+  </Story>
+</Canvas>
+
+## Options and States
+
+### Options
+
+Use any of the available button classes to quickly create a styled button.
+The SWE leverages the button component from Bootstrap, with the addition of the `Secondary` button.
+
+Publishers may choose between dark and light Outline button according to the background colour, light version by using class `.btn-outline-light` and dark version by using class `.btn-outline-dark`
+
+### States
+
+For **active** state, there's no need to add `:active`/ as it's a pseudo-class, but if you need to force the same appearance, go ahead and add `.active`.
+
+For **disabled** state, add the `disabled` attribute to `<button>` buttons or add the `.disabled` class to `<a>` buttons.
+
+For **focus** state, there's no need to add `:focus`/ as it's a pseudo-class, but if you need to force the same appearance, go ahead and add `.focus`.
+
+<Canvas withSource="open">
+  <Story name="States">
+    {()=>States}
+  </Story>
+</Canvas>
+
+## Sizes
+
+Fancy larger or smaller buttons? Add `.btn-lg`, `.btn-sm`, or `.btn-xs` for additional sizes.
+
+<Canvas withSource="open">
+  <Story name="Sizes">
+    {()=>Sizes}
+  </Story>
+</Canvas>
+
+Create block level buttons—those that span the full width of a parent— by adding `.btn-block`.
+
+<Canvas withSource="open">
+  <Story name="BlockSizes">
+    {()=>BlockSizes}
+  </Story>
+</Canvas>
