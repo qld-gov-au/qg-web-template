@@ -209,7 +209,7 @@ $(function () {
   qgLocation.fn.initManualSearch = function (event) {
     var inputField = event['target'];
     var keyCode = event['keyCode'];
-    var inputValue = inputField['value'];
+    var inputValue = inputField['value'].toLowerCase();
     var numChars = inputValue.length;
 
     $('.qg-location-setter-form input[type=text]').removeClass('error');
@@ -540,8 +540,8 @@ $(function () {
       // Insert into the DOM
       document.querySelector('body').appendChild(scriptElement);
       scriptElement.onload = function () {
-				qgLocation.fn.init();
-			};
+        qgLocation.fn.init();
+      };
     } else {
       //console.log('Maps already loaded on page');
       // Maps already loaded on page
@@ -777,11 +777,11 @@ $(function () {
 
       // Handle special cases
       switch (centreType) {
-        case 'hsc':
-          centreURL += 'id=' + centreID + '&title=' + centreName;
-          break;
-        default:
-          centreURL += centreName;
+      case 'hsc':
+        centreURL += 'id=' + centreID + '&title=' + centreName;
+        break;
+      default:
+        centreURL += centreName;
       }
 
       // Build HTML
