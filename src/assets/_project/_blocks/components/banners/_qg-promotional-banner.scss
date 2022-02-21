@@ -13,4 +13,10 @@
       font-weight: bold;
     }
   }
+  .wrapper {
+    @include media-breakpoint-down(xs) {
+      margin-right: -25px;
+      margin-left: -25px;
+    }
+  }
 }
