@@ -11,7 +11,11 @@
   .qg-promotional-banner__popular-apps {
     .qg-promotional-banner__popular-apps-title{
       font-weight: bold;
+      margin-left: 4px;
+      margin-right: 4px;
     }
+    margin-left: -4px;
+    margin-right: -4px;
   }
   .wrapper {
     @include media-breakpoint-down(xs) {
