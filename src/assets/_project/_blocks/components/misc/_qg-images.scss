@@ -5,13 +5,17 @@
 // figures / cut ins
 
 #qg-primary-content figure:not(.qg-nofig), figure.qg-fig {
-  max-width: 374px !important;
+  max-width: 300px !important;
   max-height: auto !important;
 
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 1em;
   text-align: center;
+
+  @media (max-width: $screen-md) {
+    max-width: 374px !important;
+  }
 
   &:not(.qg-unstyled) {
     border: 1px solid #EEE;
