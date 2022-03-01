@@ -20,9 +20,15 @@
 
   &.pull-right{
     margin-left: 1em;
+    &+figure {
+      clear: right;
+    }
   }
   &.pull-left {
     margin-right: 1em;
+    &+figure {
+      clear: left;
+    }
   }
 
   img {
@@ -71,6 +77,9 @@
       margin-top: -0.25em;
       display: inline-block;
       text-decoration: underline;
+    }
+    @media print {
+      word-break: break-all;
     }
   }
 }
