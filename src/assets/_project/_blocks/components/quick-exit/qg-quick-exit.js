@@ -1,7 +1,7 @@
 /*
 FAQ -
-Q1 Where this class in use and what it do ?
-A1 Quick exit function to exit from a page on 'Esc' key or clicking 'Close this site' button
+Q1 Where is this class in use, and what it does ?
+A1 Quick exit function to exit from a page on 'Esc' key or 'Close this site' button click
 - https://www.qld.gov.au/law/crime-and-police/abuse-family-matters-and-protection-orders/apply-for-a-protection-order
  */
 

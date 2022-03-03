@@ -135,7 +135,25 @@
     -webkit-transform: scale(1);
     transform: scale(1);
   }
+  [type="radio"]:disabled,
+  [type="checkbox"]:disabled {
+    background: transparent;
+    color: $qg-dark-gray-light;
+    cursor: not-allowed;
+    +label, +label:before {
+      cursor: not-allowed;
+      color: $qg-dark-gray-light !important;
+    }
+    +label:before {
+      border-color: $qg-dark-gray-light;
+    }
+    +label svg path.rc-theme__icon {
+      fill: $qg-dark-gray-light;
+    }
+  }
+
 }
+
 
 // hint text
 .hint{

@@ -5,13 +5,17 @@
 // figures / cut ins
 
 #qg-primary-content figure:not(.qg-nofig), figure.qg-fig {
-  max-width: 374px !important;
+  max-width: 300px !important;
   max-height: auto !important;
 
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 1em;
   text-align: center;
+
+  @media (max-width: $screen-md) {
+    max-width: 374px !important;
+  }
 
   &:not(.qg-unstyled) {
     border: 1px solid #EEE;
@@ -20,9 +24,15 @@
 
   &.pull-right{
     margin-left: 1em;
+    &+figure {
+      clear: right;
+    }
   }
   &.pull-left {
     margin-right: 1em;
+    &+figure {
+      clear: left;
+    }
   }
 
   img {
@@ -35,9 +45,45 @@
     @include rem(font-size, 14px);
     text-align: left;
     font-style: italic;
-    .figure-credits {
+    margin-top: 0.5em;
+    .figure-credits, .figure-cc {
       font-style: normal;
       color: #757575;
+    }
+  }
+
+  a[data-fancybox] {
+    @include rem(font-size, 14px);
+    display: block;
+    text-align: right;
+    position: relative;
+    &:hover {
+      >span, >img:not(.figure__expand-icon) {
+        outline: 1px solid #0066CC;
+        background: #F5F5F5;
+      }
+      .figure__expand-icon {
+        display: block;
+      }
+    }
+    .figure__expand-icon {
+      position: absolute;
+      display: none;
+      top: calc(50% + 15px);
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 3.125rem;
+      height: auto;
+    }
+    >span {
+      padding: 0.5em;
+      padding-top: 0.25em;
+      margin-top: -0.25em;
+      display: inline-block;
+      text-decoration: underline;
+    }
+    @media print {
+      word-break: break-all;
     }
   }
 }

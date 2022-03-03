@@ -38,4 +38,15 @@
     ],
     "no-warning-comments": 1,
   },
+  "overrides": [
+    {
+      "files": [
+        "e2e/__tests__/**/*-test.js",
+        "jest.setup.js"
+      ],
+      "env": {
+        "jest": true
+      }
+    }
+  ]
 }
