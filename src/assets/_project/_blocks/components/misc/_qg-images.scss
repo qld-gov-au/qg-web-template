@@ -5,13 +5,17 @@
 // figures / cut ins
 
 #qg-primary-content figure:not(.qg-nofig), figure.qg-fig {
-  max-width: 374px !important;
+  max-width: 300px !important;
   max-height: auto !important;
 
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 1em;
   text-align: center;
+
+  @media (max-width: $screen-md) {
+    max-width: 374px !important;
+  }
 
   &:not(.qg-unstyled) {
     border: 1px solid #EEE;
@@ -20,9 +24,15 @@
 
   &.pull-right{
     margin-left: 1em;
+    &+figure {
+      clear: right;
+    }
   }
   &.pull-left {
     margin-right: 1em;
+    &+figure {
+      clear: left;
+    }
   }
 
   img {
@@ -71,6 +81,9 @@
       margin-top: -0.25em;
       display: inline-block;
       text-decoration: underline;
+    }
+    @media print {
+      word-break: break-all;
     }
   }
 }
