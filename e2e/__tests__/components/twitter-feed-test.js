@@ -2,7 +2,7 @@ const puppeteer = require('puppeteer');
 const ct = require('../../config/constants');
 let browser;
 let page;
-
+jest.setTimeout(40000);
 beforeAll(async () => {
   browser = await puppeteer.launch({headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox']});
   page = await browser.newPage();
