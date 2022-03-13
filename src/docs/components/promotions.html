@@ -82,14 +82,31 @@
 
       <div id="qg-primary-content" role="main">
         <h1 id="promotions" class="category">Promotions</h1>
+        <nav class="qg-inpage-nav" aria-label="in this section navigation">
+          <h2 class="qg-inpage-nav_heading">On this page</h2>
+          <ul class="qg-inpage-nav_list">
+            <li>
+              <a href="#promotional-tile" title="promotional tile">
+                Promotional tile
+              </a>
+            </li>
+            <li>
+              <a href="#promotional-banner" title="promotional banner">
+                Promotional banner
+              </a>
+            </li>
+          </ul>
+        </nav>
         <p>Publishers may use the promotions component to display promotional items. Preferably shown at the bottom of index pages.</p>
-        <div class="qg-tmplt-example">
+        <hr />
+        <h2 class="bg-light p-2">Promotional tile</h2>
+        <div class="qg-tmplt-example" id="promotional-tile">
           <div class="panel-body">
             <section class="qg-promotional-content">
               <div class="row">
                 <div class="col-lg-4 col-sm-6">
                   <article class="promotions">
-                    <h2>Promotion heading</h2>
+                    <h3>Title 1</h3>
                     <div class="figure">
                       <img src="http://via.placeholder.com/276x110" class="promotion-image">
                       <p class="caption">© Image caption.</p>
@@ -102,7 +119,7 @@
                 </div>
                 <div class="col-lg-4 col-sm-6">
                   <article class="promotions">
-                    <h2>Promotion heading</h2>
+                    <h3>Title 2</h3>
                     <div class="figure">
                       <img src="http://via.placeholder.com/276x110" class="promotion-image">
                       <p class="caption">© Image caption.</p>
@@ -115,7 +132,7 @@
                 </div>
                 <div class="col-lg-4 col-sm-6">
                   <article class="promotions">
-                    <h2>Promotion heading</h2>
+                    <h3>Title 3</h3>
                     <div class="figure">
                       <img src="http://via.placeholder.com/276x110" class="promotion-image">
                       <p class="caption">© Image caption.</p>
@@ -176,6 +193,37 @@
                     &lt;/div>
                 &lt;/section>
                 						</code></pre>
+        <hr />
+        <h2 class="bg-light p-2">Promotional banner</h2>
+        <div id="promotional-banner">
+          <section class="qg-promotional-banner__container">
+            <div class="wrapper qg-site-width container-fluid">
+              <div class="qg-promotional-banner__info col-12 col-sm-6">
+                <h2>Title</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <a href="https://www.qld.gov.au/services/mobile" class="qg-btn btn-primary mt-2">CTA</a>
+              </div>
+              <div class="qg-promotional-banner__popular-apps col-12 col-sm-6">
+                <p class="qg-promotional-banner__popular-apps-title">Featured section</p><section class="qg-promotional-banner__popular-apps-tags"><ul><li><a href="#" class="qg-btn btn-outline-dark m-1">Check In Qld</a></li><li><a href="#" class="qg-btn btn-outline-dark m-1">MyTransLink</a></li><li><a href="#" class="qg-btn btn-outline-dark m-1">QLDTraffic</a></li><li><a href="#" class="qg-btn btn-outline-dark m-1">Queensland Learner Logbook</a></li><li><a href="#" class="qg-btn btn-outline-dark m-1">Weed Spotter</a></li></ul></section>
+              </div>
+            </div>
+          </section>
+        </div>
+        <h3>HTML</h3>
+        <pre><code class="language-markup">
+     &lt;section class=&quot;qg-promotional-banner__container&quot;
+          &lt;div class=&quot;wrapper qg-site-width container-fluid&quot;&gt;
+            &lt;div class=&quot;qg-promotional-banner__info col-12 col-sm-6&quot;&gt;
+              &lt;h2&gt;Title&lt;/h2&gt;
+              &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/p&gt;
+              &lt;a href=&quot;https://www.qld.gov.au/services/mobile&quot; class=&quot;qg-btn btn-primary mt-2&quot;&gt;CTA&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;qg-promotional-banner__popular-apps col-12 col-sm-6&quot;&gt;
+              &lt;p class=&quot;qg-promotional-banner__popular-apps-title&quot;&gt;Featured section&lt;/p&gt;&lt;section class=&quot;qg-promotional-banner__popular-apps-tags&quot;&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;qg-btn btn-outline-dark m-1&quot;&gt;Check In Qld&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;qg-btn btn-outline-dark m-1&quot;&gt;MyTransLink&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;qg-btn btn-outline-dark m-1&quot;&gt;QLDTraffic&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;qg-btn btn-outline-dark m-1&quot;&gt;Queensland Learner Logbook&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;qg-btn btn-outline-dark m-1&quot;&gt;Weed Spotter&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/section&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+     &lt;/section&gt;
+        </code></pre>
 
 
       </div>
