@@ -162,23 +162,23 @@
 // Updated form styles (migrated from forms.io repository to make all forms look the same)
 //------------------------------------------------------------------------------------
 
-.qg-forms-v2 {
-  input[type="date"],
-  input[type="datetime"],
-  input[type="email"],
-  input[type="number"],
-  input[type="password"],
-  input[type="search"],
-  input[type="tel"],
-  input[type="text"],
-  input[type="time"],
-  input[type="url"],
-  input[type="radio"],
-  input[type="checkbox"],
+.qg-forms-v2, #formio {
+  [type="date"],
+  [type="datetime"],
+  [type="email"],
+  [type="number"],
+  [type="password"],
+  [type="search"],
+  [type="tel"],
+  [type="text"],
+  [type="time"],
+  [type="url"],
+  [type="radio"],
+  [type="checkbox"],
   input:not([type]),
   select,
   textarea,
-  div.formio-choices div.selection {
+  .formio-choices .selection {
     border-radius: $borderRadius;
     border-width: $borderWidth;
   }
