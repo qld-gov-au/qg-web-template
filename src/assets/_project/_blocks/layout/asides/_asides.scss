@@ -10,13 +10,18 @@
     @include qg-responsive-spacing(padding);
 
     margin: 0;
-    background-color: #f2f7f9;
+    background-color: #e7f5fe;
 
     &:last-child{
       border-bottom: none;
     }
     &:first-child {
       @include qg-responsive-spacing(padding-top, full);
+    }
+
+    img:not(.open-data):not(.actual-image-size) {
+      width: 100%;
+      height: auto;
     }
 
     .container{
@@ -37,7 +42,6 @@
 
       .fa {
         padding-right: .3em;
-
         color: $qg-icon-color;
         font-size: 1.3em;
       }
