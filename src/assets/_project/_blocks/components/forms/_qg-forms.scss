@@ -163,8 +163,6 @@
 //------------------------------------------------------------------------------------
 
 .qg-forms-v2 {
-  //Inputs --------------------------------------------------------
-  //Styles
   input[type="date"],
   input[type="datetime"],
   input[type="email"],
@@ -181,7 +179,6 @@
   select,
   textarea,
   div.formio-choices div.selection {
-    //min-height: $inputHeight;
     border-radius: $borderRadius;
     border-width: $borderWidth;
   }
@@ -238,7 +235,7 @@
     //margin-bottom: 1rem !important;
   }
   .formio-hidden {
-    margin-bottom: 0rem !important;
+    margin-bottom: 0 !important;
   }
   .alert {
     margin-bottom: $defaultRem;
@@ -353,7 +350,7 @@
 
   //Add default margins to sections and fieldsets
   fieldset {
-    margin: 1rem 0rem 1rem 0rem;
+    margin: 1rem 0 1rem 0;
     //nested fieldsets
     .fieldset-body {
       label {
