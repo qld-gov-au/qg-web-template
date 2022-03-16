@@ -163,19 +163,7 @@
 //------------------------------------------------------------------------------------
 
 .qg-forms-v2, #formio {
-  [type="date"],
-  [type="datetime"],
-  [type="email"],
-  [type="number"],
-  [type="password"],
-  [type="search"],
-  [type="tel"],
-  [type="text"],
-  [type="time"],
-  [type="url"],
-  [type="radio"],
-  [type="checkbox"],
-  input:not([type]),
+  input:not([type=button]):not([type=reset]):not([type=submit]):not([type=image]):not([type]),
   select,
   textarea,
   .formio-choices .selection {
