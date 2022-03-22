@@ -32,3 +32,31 @@
         text-align: right;
     }
 }
+
+// promotional banner styles
+.qg-promotional-banner__popular-apps {
+  .qg-btn.btn-outline-dark {
+    color: #00698f !important;
+  }
+  .qg-btn {
+    text-decoration: none !important;
+  }
+
+  ul {
+    padding: 0;
+
+    li {
+      display: inline;
+    }
+  }
+}
+
+.qg-promotional-banner__info > h2 {
+  margin-top: 0;
+}
+
+.qg-promotional-banner__popular-apps .qg-btn {
+  &:hover, &:visited, &:active {
+    text-decoration: underline !important;
+  }
+}
