@@ -10,6 +10,7 @@ import keys from '../../data/qg-google-keys';
       $feedbackForm: $('#qg-page-feedback-form'),
       $recaptchaOnPage: $('form[data-recaptcha="true"]'),
       $grecaptchaBadge: $('.grecaptcha-badge'),
+      loadedRecaptcha: false,
     },
 
     /**
@@ -18,6 +19,7 @@ import keys from '../../data/qg-google-keys';
      **/
     init: function() {
       let $feedbackForm = this.config.$feedbackForm;
+      // let loadedRecaptcha = false;
       if ($feedbackForm.length > 0) {
         /**
          * check if env is not the prod env then change submission handler url to test.smartservice.qld.gov.au
@@ -131,8 +133,9 @@ import keys from '../../data/qg-google-keys';
      * @param {string} key - Google recaptcha key
      **/
     v2Captcha: function (form, subBtn, key){
+      console.log('inside v2 captcha');
       try {
-        // console.log('v2 key: ' + key);
+        console.log('v2 key: ' + key);
         grecaptcha.render(subBtn, {
           sitekey: key,
           callback: () => {
@@ -150,6 +153,7 @@ import keys from '../../data/qg-google-keys';
           },
         });
       } catch (e) {
+        console.log(e);
         grecaptcha.reset();
         return false;
       }
@@ -219,6 +223,7 @@ import keys from '../../data/qg-google-keys';
               });
             } else {
               if (!v2Loaded) {
+                console.log('load v2');
                 $.getScript('https://www.google.com/recaptcha/api.js', function (){
                   self.onloadRecaptcha();
                 });
@@ -234,11 +239,10 @@ import keys from '../../data/qg-google-keys';
      * @return {undefined}
      **/
     onloadRecaptcha: function(){
-      let self = qgRecaptcha;
-      let loadedRecaptcha = false;
+      let self = this;
       grecaptcha.ready(function () {
         //v2 Forms
-        if (!loadedRecaptcha) {
+        if (!self.config.loadedRecaptcha) {
           $('[data-recaptcha="true"]:not(#qg-page-feedback-form)')
             .find('input[type="submit"], button[type="submit"]')
             .on('click', e => {
@@ -258,7 +262,7 @@ import keys from '../../data/qg-google-keys';
                 self.v2Captcha(form, subBtn, self.googleRecaptchaApiKey());
               }
             });
-          loadedRecaptcha = true;
+          self.config.loadedRecaptcha = true;
         }
       });
     },
