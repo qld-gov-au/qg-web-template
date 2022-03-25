@@ -59,7 +59,7 @@ import keys from '../../data/qg-google-keys';
      * footerFeedbackGoogleRecaptchaApiKey -> check environment and return a key accordingly for footer feedback form
      * @return {undefined}
      **/
-    footerFeedbackGoogleRecaptchaApiKey: function() {
+    feedbackGoogleRecaptchaApiKey: function() {
       return this.isProd() ? keys.defFeedbackGoogleRecaptcha.prod : keys.defFeedbackGoogleRecaptcha.uat;
     },
 
@@ -82,7 +82,7 @@ import keys from '../../data/qg-google-keys';
             let postUrl = targetFormSubmit.attr('action');
             let requestMethod = targetFormSubmit.attr('method');
             let $successMsgContainer = $('.thankyou');
-            grecaptcha.execute(self.footerFeedbackGoogleRecaptchaApiKey(), {action: 'feedback'})
+            grecaptcha.execute(self.feedbackGoogleRecaptchaApiKey(), {action: 'feedback'})
               .then(function (token) {
                 if ($inputRecaptchaResponseElem.length > 0) {
                   $inputRecaptchaResponseElem.val(token);
@@ -195,7 +195,7 @@ import keys from '../../data/qg-google-keys';
        * handles footer feedback recaptcha load
        **/
       $('.qg-feedback-toggle').one('click', function(){
-        $.getScript('https://www.google.com/recaptcha/api.js?render=' + self.footerFeedbackGoogleRecaptchaApiKey(), function (){
+        $.getScript('https://www.google.com/recaptcha/api.js?render=' + self.feedbackGoogleRecaptchaApiKey(), function (){
           self.footerFeedbackSubmitWithRecaptchaCheck();
         });
       });
@@ -211,6 +211,10 @@ import keys from '../../data/qg-google-keys';
             let manualAction = $(this).attr('data-action');
             if (manualSitekey !== undefined && manualAction !== undefined) { //v3 manual form
               $.getScript('https://www.google.com/recaptcha/api.js?render=' + manualSitekey, function (){
+                self.onloadRecaptcha();
+              });
+            } else if (manualAction !== undefined) {
+              $.getScript('https://www.google.com/recaptcha/api.js?render=' + self.feedbackGoogleRecaptchaApiKey(), function (){
                 self.onloadRecaptcha();
               });
             } else {
@@ -247,7 +251,7 @@ import keys from '../../data/qg-google-keys';
               if (manualSitekey !== undefined && manualAction !== undefined) { //v3 manual form
                 self.v3Captcha(form, $inputRecaptchaResponseElem, manualSitekey, manualAction);
               } else if (manualAction !== undefined) { //v3 manual with feedback key but differnt action
-                self.v3Captcha(form, $inputRecaptchaResponseElem, self.footerFeedbackGoogleRecaptchaApiKey(), manualAction);
+                self.v3Captcha(form, $inputRecaptchaResponseElem, self.feedbackGoogleRecaptchaApiKey(), manualAction);
               } else if (manualSitekey !== undefined) { //v2 manual (no action in v2)
                 self.v2Captcha(form, subBtn, manualSitekey);
               } else { //default v2 with default key
