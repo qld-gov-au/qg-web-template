@@ -143,6 +143,7 @@ import keys from '../../data/qg-google-keys';
               response === undefined ||
               response.length === 0
             ) {
+              console.log('Invalid recaptcha');
               return false;
             } else {
               form.submit();
