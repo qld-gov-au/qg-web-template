@@ -133,9 +133,7 @@ import keys from '../../data/qg-google-keys';
      * @param {string} key - Google recaptcha key
      **/
     v2Captcha: function (form, subBtn, key){
-      console.log('inside v2 captcha');
       try {
-        console.log('v2 key: ' + key);
         grecaptcha.render(subBtn, {
           sitekey: key,
           callback: () => {
@@ -145,7 +143,6 @@ import keys from '../../data/qg-google-keys';
               response === undefined ||
               response.length === 0
             ) {
-              console.log('Invalid recaptcha');
               return false;
             } else {
               form.submit();
@@ -186,6 +183,7 @@ import keys from '../../data/qg-google-keys';
             return false;
           });
       } catch (e) {
+        console.log(e);
         return false;
       }
     },
@@ -223,7 +221,6 @@ import keys from '../../data/qg-google-keys';
               });
             } else {
               if (!v2Loaded) {
-                console.log('load v2');
                 $.getScript('https://www.google.com/recaptcha/api.js', function (){
                   self.onloadRecaptcha();
                 });
