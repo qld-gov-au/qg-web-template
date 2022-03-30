@@ -57,8 +57,13 @@ jobs:
       - name: Install #run on lint step (Which is cached)
         run: | # Install packages
           npm install --prefer-offline --no-audit
+      - name: Build 🔧
+        run: |
+          npm run build
       - name: Test 🔧
         run: |
+          npm run watch &
+          echo "sleeping 10"; sleep 10;
           npm run test
       - name: Build 🔧
         run: |
