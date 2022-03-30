@@ -153,10 +153,228 @@
   }
 
 }
-
-
 // hint text
 .hint{
   color: $qg-dark-gray-light;
   @include rem(font-size, 14px);
+}
+//------------------------------------------------------------------------------------
+// Updated form styles (migrated from forms.io repository to make all forms look the same)
+//------------------------------------------------------------------------------------
+
+.qg-forms-v2, #formio {
+  input:not([type=button]):not([type=reset]):not([type=submit]):not([type=image]):not([type]),
+  input[type=text], input[type=password], input[type=search], input[type=email], input[type=tel], input[type=url], input[type=date], input[type=time], input[type=datetime], input[type=number], select, textarea,
+  select,
+  textarea,
+  .formio-choices .selection {
+    border-radius: $borderRadius;
+    border-width: $borderWidth;
+  }
+  label, .label {
+    font-size: $labelSize;
+    color: $labelColour;
+    font-weight: $labelWeight;
+  }
+  .hint {
+    font-size: $hintSize;
+    color: $hintColour;
+    font-weight: $hintWeight;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  legend {
+    font-size: $labelHeadingSize;
+    color: $labelHeadingColour;
+    font-weight: $labelHeadingWeight;
+  }
+  .checkbox, .qg-forms-v2__checkbox,
+  .form-radio, .qg-forms-v2__radio {
+    div.form-check {
+      padding-bottom: $defaultRem;
+    }
+    input[type=radio], input[type=checkbox] {
+      width: 25px;
+      height: 25px;
+      padding-right: 1rem;
+      top: $none;
+      margin-top: $none;
+      border-radius: $borderRadius;
+      border-width: $borderWidth;
+      float: left;
+    }
+    label {
+      margin-left: rem(12px);
+      display: inline-block;
+      span {
+        font-weight: $checkboxWeight;
+        margin-left: $defaultRem;
+        margin-right: 0.5rem !important;
+        float: right;
+      }
+    }
+    .field-required:after {
+      position: absolute;
+      float: right;
+      top: 0;
+      right: 0;
+    }
+  }
+  .form-group {
+    //margin-bottom: 1rem !important;
+  }
+  .formio-hidden {
+    margin-bottom: 0 !important;
+  }
+  .alert {
+    margin-bottom: $defaultRem;
+  }
+  .text-muted {
+    color: $hintColour;
+  }
+  .qg-link {
+    cursor: pointer;
+  }
+
+  //Action buttons ------------------------------------------------------
+  button.btn-secondary {
+    color: $SecondaryColor;
+    background-color: white;
+    border: $buttonSecondaryBorder;
+  }
+
+  button.btn-secondary:hover {
+    color: $SecondaryColor;
+  }
+
+  //Errors  -------------------------------------------------------------
+
+  //error alert
+  .alert-danger {
+    li {
+      text-decoration: underline;
+      span {
+        color: $SecondaryColor;
+      }
+    }
+    background-color: $alertWarningBackground;
+    border-color: $alertWarningBorder;
+  }
+
+  //error on fields
+  .is-invalid {
+    //border-color:;
+    background-color: white;
+    background-image: none !important;
+  }
+
+  //error container
+  .formio-error-wrapper {
+    color: white !important;
+    background-color: white !important;
+    border-color: white !important;
+    padding: $none;
+  }
+
+  //error labels
+  .formio-errors {
+    div.error {
+      font-size: $hintSize;
+    }
+  }
+
+  div.has_error {
+    margin-top: $defaultRem;
+  }
+
+  //Layout modifications -------------------------------------------------
+  //Align individual field descriptions before input element
+
+  .formio-component-textfield,
+  .formio-component-textarea,
+  .formio-component-hidden,
+  .formio-component-checkbox,
+  .formio-component-email,
+  .formio-component-password,
+  .formio-component-radio,
+  .formio-component-currency,
+  .formio-component-number,
+  .formio-component-selectboxes,
+  .formio-component-url,
+  .formio-component-phoneNumber,
+  .formio-component-datetime,
+  .formio-component-day,
+  .formio-component-datetime,
+  .formio-component-currency {
+    display: inline-grid;
+    //Fallback
+    display: grid;
+    div.col-form-label {
+      order: 0;
+    }
+    div.text-muted {
+      order: 1;
+      margin-bottom: 0.25rem;
+    }
+    div.formio-errors {
+      order: 2;
+      margin-bottom: 0.5rem;
+    }
+    div[ref="element"],
+    div.row,
+    div.form-radio,
+    div.checkbox,
+    div.address-autocomplete-container {
+      order: 3;
+    }
+  }
+
+  //Can be affected by above grid
+  .formio-component-submitButton,
+  .formio-component-submit,
+  .formio-component-form,
+  .fieldset-body {
+    display: block !important;
+  }
+
+  //Add default margins to sections and fieldsets
+  fieldset {
+    // margin: 1rem 0 1rem 0;
+    //nested fieldsets
+    .fieldset-body {
+      label {
+        font-weight: $labelWeight;
+      }
+    }
+  }
+
+  //Workarounds -----------------------------------------------------
+  //Workarounds for instances where panel/card is applied to form body
+  .border {
+    border: $none;
+  }
+  .card {
+    position: relative;
+    display: inherit !important;
+    flex-direction: inherit !important;
+    min-width: inherit !important;
+    word-wrap: inherit !important;
+    background-color: white;
+    background-clip: inherit !important;
+    border: none !important;
+    border-radius: 0 !important;
+  }
+  .card-body {
+    display: inherit !important;
+    min-height: inherit !important;
+    padding: inherit !important;
+  }
+
+  //Turn off wizard/panel nav
+  nav,
+  div[ref="header"] {
+    display: none !important;
+  }
 }
