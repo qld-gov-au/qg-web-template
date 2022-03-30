@@ -71,7 +71,7 @@ jobs:
       - name: setup Package
         run: |
           ls -ltr
-          # mkdir -p ./target/docs
+          mkdir -p ./target/
           # cp -r ./storybook-static ./target/docs
           cp -r ./release/* ./target/.
 
