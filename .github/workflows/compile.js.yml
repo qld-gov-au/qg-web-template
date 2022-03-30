@@ -1,0 +1,119 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Build and Test
+
+on:
+  push:
+  pull_request:
+
+concurrency:
+  group: compile-${{ github.workflow }}-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
+  cancel-in-progress: true
+
+jobs:
+#  validate:
+#
+#    runs-on: ubuntu-latest
+#    strategy:
+#      matrix:
+#        node: [ '16']
+#    name: Lint test on Node ${{ matrix.node }}
+#    steps:
+#      - run: echo ${{github.ref}}
+#
+#      - uses: actions/checkout@v2
+#
+#      - name: Use Node.js
+#        uses: actions/setup-node@v2
+#        with:
+#          node-version: ${{ matrix.node }}
+#          cache: 'npm'
+#      - name: Install
+#        run: | # Install packages
+#         npm install --prefer-offline --no-audit
+#      - name: Lint
+#        run: |
+#          npm run lint
+#      - name: Test
+#        run: |
+#          npm run test
+
+  build:
+#    needs: validate
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [ '16' ]
+    name: Build and Deploy on Node ${{ matrix.node }}
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node }}
+          cache: 'npm'
+      - name: Install #run on lint step (Which is cached)
+        run: | # Install packages
+          npm install --prefer-offline --no-audit
+      - name: Test 🔧
+        run: | # build the files
+          npm run test
+      - name: Build (release) 🔧
+        run: | # build the files
+          npm run release
+#      - name: Build storybook 🔧
+#        run: | # build the Storybook files
+#          npm run build-storybook
+
+      - name: setup Package
+        run: |
+          ls -ltr
+#          mkdir -p ./target/docs
+#          cp -r ./storybook-static ./target/docs
+          cp -r ./release/* ./target/.
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Package
+          path: ./target
+
+
+      - name: Extract branch name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch
+
+      - name: display branch name
+        shell: bash
+        run: echo "${{ steps.extract_branch.outputs.branch }}"
+#
+#      - name: setup Publish
+#        run: |
+#          set -x
+#          cp -r ./binary-repo/* ./dist
+#
+#      - name: Publish
+#        uses: qld-gov-au/gha-publish-to-git@master
+#        with:
+#          repository: ${{ secrets.TARGET_REPO }}
+#          git_ref: '${{ github.ref }}'
+#          branch: '${{ steps.extract_branch.outputs.branch }}'
+#          github_token: '${{ secrets.GH_TOKEN }}'
+#          github_pat: '${{ secrets.GH_PAT }}'
+#          source_folder: dist
+#          tag_branch: main
+#        if: success()
+#
+#      - name: Publish to formio-qld-cdn
+#        uses: qld-gov-au/gha-cdn-version-tree-by-tag-builder@main
+#        with:
+#          repository: 'qld-gov-au/formio-qld-cdn'
+#          git_ref: '${{ github.ref }}'
+#          branch: 'release'
+#          github_token: '${{ secrets.GH_TOKEN }}'
+#          github_pat: '${{ secrets.GH_PAT }}'
+#          source_folder: dist
+#        if: success()
+
