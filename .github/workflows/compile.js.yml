@@ -59,7 +59,7 @@ jobs:
           npm install --prefer-offline --no-audit
       - name: Test 🔧
         run: |
-          npm run test
+          npm run start && npm run test
       - name: Build 🔧
         run: |
           npm run release
