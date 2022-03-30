@@ -51,6 +51,5 @@ etc/
 /build/**
 /release/**
 release
-package-lock.json
 web-template-release/
 template-pages/sample/*
