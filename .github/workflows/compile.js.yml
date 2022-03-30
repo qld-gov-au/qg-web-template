@@ -58,20 +58,16 @@ jobs:
         run: | # Install packages
           npm install --prefer-offline --no-audit
       - name: Test 🔧
-        run: | # build the files
+        run: |
           npm run test
-      - name: Build (release) 🔧
-        run: | # build the files
+      - name: Build 🔧
+        run: |
           npm run release
-#      - name: Build storybook 🔧
-#        run: | # build the Storybook files
-#          npm run build-storybook
-
       - name: setup Package
         run: |
           ls -ltr
-#          mkdir -p ./target/docs
-#          cp -r ./storybook-static ./target/docs
+          # mkdir -p ./target/docs
+          # cp -r ./storybook-static ./target/docs
           cp -r ./release/* ./target/.
 
       - uses: actions/upload-artifact@v2
