@@ -42,10 +42,6 @@
     }
   }
 
-  //[type="checkbox"]:checked + label .rc-theme__icon, [type="radio"]:checked + label .rc-theme__icon {
-  //  background-color: #007eb1 !important;
-  //  fill: #fff;
-  //}
   &.choices {
     li {
       width: 255px;
@@ -192,8 +188,16 @@
   }
   .checkbox, .qg-forms-v2__checkbox,
   .form-radio, .qg-forms-v2__radio {
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    margin: 0;
+    .radio {
+      margin: 0;
+    }
+
     div.form-check {
       padding-bottom: $defaultRem;
+      padding-left: 0
     }
     input[type=radio], input[type=checkbox] {
       width: 25px;
@@ -206,7 +210,7 @@
       float: left;
     }
     label {
-      margin-left: rem(12px);
+      margin-left: rem(16px);
       display: inline-block;
       span {
         font-weight: $checkboxWeight;
