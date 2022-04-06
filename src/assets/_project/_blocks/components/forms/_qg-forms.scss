@@ -203,8 +203,7 @@
       width: 25px;
       height: 25px;
       padding-right: 1rem;
-      top: $none;
-      margin-top: $none;
+      margin-top: 0;
       border-radius: $borderRadius;
       border-width: $borderWidth;
       float: left;
@@ -279,7 +278,7 @@
     color: white !important;
     background-color: white !important;
     border-color: white !important;
-    padding: $none;
+    padding: 0;
   }
 
   //error labels
@@ -357,7 +356,7 @@
   //Workarounds -----------------------------------------------------
   //Workarounds for instances where panel/card is applied to form body
   .border {
-    border: $none;
+    border: 0;
   }
   .card {
     position: relative;
