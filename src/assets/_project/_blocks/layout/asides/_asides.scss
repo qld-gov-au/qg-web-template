@@ -19,6 +19,11 @@
       @include qg-responsive-spacing(padding-top, full);
     }
 
+    img:not(.open-data):not(.actual-image-size) {
+      width: 100%;
+      height: auto;
+    }
+
     .container{
       width:100%;
       padding-left: 0;
@@ -37,7 +42,6 @@
 
       .fa {
         padding-right: .3em;
-
         color: $qg-icon-color;
         font-size: 1.3em;
       }
