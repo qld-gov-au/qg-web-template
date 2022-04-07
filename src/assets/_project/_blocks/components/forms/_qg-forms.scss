@@ -186,6 +186,14 @@
     color: $labelHeadingColour;
     font-weight: $labelHeadingWeight;
   }
+  .qg-forms-v2__checkbox, .qg-forms-v2__radio {
+    label {
+      margin-bottom: rem(14px);
+    }
+    input[type=radio], input[type=checkbox] {
+      top:0;
+    }
+  }
   .checkbox, .qg-forms-v2__checkbox,
   .form-radio, .qg-forms-v2__radio {
     padding-top: 0.8rem;
@@ -194,7 +202,6 @@
     .radio {
       margin: 0;
     }
-
     div.form-check {
       padding-bottom: $defaultRem;
       padding-left: 0
@@ -209,6 +216,7 @@
       float: left;
     }
     label {
+      font-weight: normal;
       margin-left: rem(16px);
       display: inline-block;
       span {
@@ -231,8 +239,12 @@
   .formio-hidden {
     margin-bottom: 0 !important;
   }
+  .invalid .alert{
+    font-weight: normal;
+  }
   .alert {
     margin-bottom: $defaultRem;
+    font-size: rem(16px);
   }
   .text-muted {
     color: $hintColour;
