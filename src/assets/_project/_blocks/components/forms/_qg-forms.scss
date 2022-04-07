@@ -42,10 +42,6 @@
     }
   }
 
-  //[type="checkbox"]:checked + label .rc-theme__icon, [type="radio"]:checked + label .rc-theme__icon {
-  //  background-color: #007eb1 !important;
-  //  fill: #fff;
-  //}
   &.choices {
     li {
       width: 255px;
@@ -190,23 +186,38 @@
     color: $labelHeadingColour;
     font-weight: $labelHeadingWeight;
   }
-  .checkbox, .qg-forms-v2__checkbox,
-  .form-radio, .qg-forms-v2__radio {
-    div.form-check {
-      padding-bottom: $defaultRem;
+  .qg-forms-v2__checkbox, .qg-forms-v2__radio {
+    label {
+      margin-bottom: rem(14px);
     }
     input[type=radio], input[type=checkbox] {
-      width: 25px;
-      height: 25px;
+      top:0;
+    }
+  }
+  .checkbox, .qg-forms-v2__checkbox,
+  .form-radio, .qg-forms-v2__radio {
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    margin: 0;
+    .radio {
+      margin: 0;
+    }
+    div.form-check {
+      padding-bottom: $defaultRem;
+      padding-left: 0
+    }
+    input[type=radio], input[type=checkbox] {
+      width: rem(25px);
+      height: rem(25px);
       padding-right: 1rem;
-      top: $none;
-      margin-top: $none;
+      margin-top: 0;
       border-radius: $borderRadius;
       border-width: $borderWidth;
       float: left;
     }
     label {
-      margin-left: rem(12px);
+      font-weight: normal;
+      margin-left: rem(16px);
       display: inline-block;
       span {
         font-weight: $checkboxWeight;
@@ -228,8 +239,12 @@
   .formio-hidden {
     margin-bottom: 0 !important;
   }
+  .invalid .alert{
+    font-weight: normal;
+  }
   .alert {
     margin-bottom: $defaultRem;
+    font-size: rem(16px);
   }
   .text-muted {
     color: $hintColour;
@@ -275,7 +290,7 @@
     color: white !important;
     background-color: white !important;
     border-color: white !important;
-    padding: $none;
+    padding: 0;
   }
 
   //error labels
@@ -353,7 +368,7 @@
   //Workarounds -----------------------------------------------------
   //Workarounds for instances where panel/card is applied to form body
   .border {
-    border: $none;
+    border: 0;
   }
   .card {
     position: relative;
