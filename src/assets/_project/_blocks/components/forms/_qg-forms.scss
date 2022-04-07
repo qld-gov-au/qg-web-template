@@ -164,13 +164,14 @@
 
 .qg-forms-v2, #formio {
   input:not([type=button]):not([type=reset]):not([type=submit]):not([type=image]):not([type]),
+  input[type=text], input[type=password], input[type=search], input[type=email], input[type=tel], input[type=url], input[type=date], input[type=time], input[type=datetime], input[type=number], select, textarea,
   select,
   textarea,
   .formio-choices .selection {
     border-radius: $borderRadius;
     border-width: $borderWidth;
   }
-  label {
+  label, .label {
     font-size: $labelSize;
     color: $labelColour;
     font-weight: $labelWeight;
@@ -189,27 +190,29 @@
     color: $labelHeadingColour;
     font-weight: $labelHeadingWeight;
   }
-  .checkbox,
-  .form-radio {
+  .checkbox, .qg-forms-v2__checkbox,
+  .form-radio, .qg-forms-v2__radio {
     div.form-check {
       padding-bottom: $defaultRem;
     }
+    input[type=radio], input[type=checkbox] {
+      width: 25px;
+      height: 25px;
+      padding-right: 1rem;
+      top: $none;
+      margin-top: $none;
+      border-radius: $borderRadius;
+      border-width: $borderWidth;
+      float: left;
+    }
     label {
+      margin-left: rem(12px);
       display: inline-block;
       span {
         font-weight: $checkboxWeight;
         margin-left: $defaultRem;
         margin-right: 0.5rem !important;
         float: right;
-      }
-      input.form-check-input {
-        width: 25px;
-        height: 25px;
-        top: $none;
-        margin-top: $none;
-        border-radius: $borderRadius;
-        border-width: $borderWidth;
-        float: left;
       }
     }
     .field-required:after {
@@ -338,7 +341,7 @@
 
   //Add default margins to sections and fieldsets
   fieldset {
-    margin: 1rem 0 1rem 0;
+    // margin: 1rem 0 1rem 0;
     //nested fieldsets
     .fieldset-body {
       label {
