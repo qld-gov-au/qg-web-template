@@ -207,8 +207,8 @@
       padding-left: 0
     }
     input[type=radio], input[type=checkbox] {
-      width: 25px;
-      height: 25px;
+      width: rem(25px);
+      height: rem(25px);
       padding-right: 1rem;
       margin-top: 0;
       border-radius: $borderRadius;
