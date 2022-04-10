@@ -166,6 +166,13 @@
   .formio-choices .selection {
     border-radius: $borderRadius;
     border-width: $borderWidth;
+    &:focus {
+      color: #495057;
+      background-color: #fff;
+      border-color: #80bdff;
+      outline: 0;
+      box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
+    }
   }
   label, .label {
     font-size: $labelSize;
@@ -214,6 +221,9 @@
       border-radius: $borderRadius;
       border-width: $borderWidth;
       float: left;
+      &:checked + label {
+        color: inherit;
+      }
     }
     label {
       font-weight: normal;
