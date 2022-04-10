@@ -203,15 +203,17 @@
   }
   .checkbox, .qg-forms-v2__checkbox,
   .form-radio, .qg-forms-v2__radio {
-    padding-top: 0.8rem;
-    padding-bottom: 0.8rem;
+    padding: 0.8rem 0 0.8rem 0;
     margin: 0;
     .radio {
       margin: 0;
     }
-    div.form-check {
+    .form-check {
       padding-bottom: $defaultRem;
       padding-left: 0
+    }
+    .form-check-input{
+      margin-left: -1rem;
     }
     input[type=radio], input[type=checkbox] {
       width: rem(25px);
@@ -233,18 +235,12 @@
         font-weight: $checkboxWeight;
         margin-left: $defaultRem;
         margin-right: 0.5rem !important;
-        float: right;
       }
     }
     .field-required:after {
       position: absolute;
       float: right;
-      top: 0;
-      right: 0;
     }
-  }
-  .form-group {
-    //margin-bottom: 1rem !important;
   }
   .formio-hidden {
     margin-bottom: 0 !important;
