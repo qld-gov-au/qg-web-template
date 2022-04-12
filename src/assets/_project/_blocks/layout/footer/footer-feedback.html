@@ -8,20 +8,18 @@
             </a>
             <div id="qg-footer-feedback" class="qg-footer-feedback collapse">
                 <div class="qg-footer-feedback-content">
-                    <form id="qg-page-feedback-form" method="post" action="https://www.smartservice.qld.gov.au/services/submissions/email/feedback/feedback-v2" class="form" data-recaptcha="true" data-action="feedback" novalidate>
+                    <form id="qg-page-feedback-form" method="post" action="https://www.smartservice.qld.gov.au/services/submissions/email/feedback/feedback-v2" class="form qg-forms-v2" data-recaptcha="true" data-action="feedback" novalidate>
 
                         <ol class="questions initial-question">
                             <li>
                                 <fieldset id="page-feedback-about">
                                     <legend><span class="label">Is your feedback about:</span></legend>
-                                    <div class="radio">
-                                        <input name="page-feedback-about" id="page-feedback-about-this-website" type="radio" value="this website" data-qg-pr="default" data-parent="#qg-page-feedback-form" data-target="#feedback-page" data-toggle="false" data-hide-others="true">
-                                        <label for="page-feedback-about-this-website">this website</label>
-                                    </div>
-                                    <div class="radio">
-                                        <input name="page-feedback-about" id="page-feedback-about-a-government-service" type="radio" value="a government service" data-qg-pr="default" data-parent="#qg-page-feedback-form" data-target="#feedback-serv-dep-staff" data-toggle="false" data-hide-others="true">
-                                        <label for="page-feedback-about-a-government-service">a government service, department or staff member?</label>
-                                    </div>
+                                    <ul class="radio qg-forms-v2__radio">
+                                      <li>  <input name="page-feedback-about" id="page-feedback-about-this-website" type="radio" value="this website" data-qg-pr="default" data-parent="#qg-page-feedback-form" data-target="#feedback-page" data-toggle="false" data-hide-others="true">
+                                        <label for="page-feedback-about-this-website">this website</label></li>
+                                      <li><input name="page-feedback-about" id="page-feedback-about-a-government-service" type="radio" value="a government service" data-qg-pr="default" data-parent="#qg-page-feedback-form" data-target="#feedback-serv-dep-staff" data-toggle="false" data-hide-others="true">
+                                        <label for="page-feedback-about-a-government-service">a government service, department or staff member?</label></li>
+                                    </ul>
                                 </fieldset>
                             </li>
                         </ol>
@@ -33,39 +31,29 @@
                                 <p>Please use our <a href="https://www.qld.gov.au/contact-us/complaints/" data-analytics-link-group="qg-feedback-non-website">complaints and compliments form</a>.</p>
                             </div>
 
-                            <div id="feedback-page" class="panel-collapse collapse">
+                            <ul id="feedback-page" class="panel-collapse collapse">
 
                                 <ol id="feedback-page-list" class="questions">
-
                                     <li>
-
                                         <fieldset>
-
                                             <legend>
                                                 <span class="label">How satisfied are you with your experience today?</span>
                                                 <abbr title="(required)" class="required">*</abbr>
                                             </legend>
-                                            <div class="radio">
-                                                <input type="radio" name="feedback-satisfaction" value="Very dissatisfied" required="" id="fs-very-dissatisfied">
-                                                <label for="fs-very-dissatisfied">Very dissatisfied (1)</label>
-                                            </div>
-                                            <div class="radio">
-                                                <input type="radio" name="feedback-satisfaction" value="Dissatisfied" required="" id="fs-dissatisfied">
-                                                <label for="fs-dissatisfied">Dissatisfied (2)</label>
-                                            </div>
-                                            <div class="radio">
-                                                <input type="radio" name="feedback-satisfaction" value="Neither satisfied or dissatisfied" required="" id="fs-neither-satisfied-or-dissatisfied">
-                                                <label for="fs-neither-satisfied-or-dissatisfied">Neither satisfied or dissatisfied (3)</label>
-                                            </div>
-                                            <div class="radio">
-                                                <input type="radio" name="feedback-satisfaction" value="Satisfied" required="" id="fs-satisfied">
-                                                <label for="fs-satisfied">Satisfied (4)</label>
-                                            </div>
-                                            <div class="radio">
-                                                <input type="radio" name="feedback-satisfaction" value="Very satisfied" required="" id="fs-very-satisfied">
-                                                <label for="fs-very-satisfied">Very satisfied (5)</label>
-                                            </div>
-
+                                            <ul class="radio qg-forms-v2__radio">
+                                               <li>
+                                  <input type="radio" name="feedback-satisfaction" value="Very dissatisfied" required="" id="fs-very-dissatisfied">
+                                  <label for="fs-very-dissatisfied">Very dissatisfied (1)</label>
+                                </li>
+                                              <li><input type="radio" name="feedback-satisfaction" value="Dissatisfied" required="" id="fs-dissatisfied">
+                                                <label for="fs-dissatisfied">Dissatisfied (2)</label></li>
+                                              <li> <input type="radio" name="feedback-satisfaction" value="Neither satisfied or dissatisfied" required="" id="fs-neither-satisfied-or-dissatisfied">
+                                                <label for="fs-neither-satisfied-or-dissatisfied">Neither satisfied or dissatisfied (3)</label></li>
+                                              <li><input type="radio" name="feedback-satisfaction" value="Satisfied" required="" id="fs-satisfied">
+                                                <label for="fs-satisfied">Satisfied (4)</label></li>
+                                              <li> <input type="radio" name="feedback-satisfaction" value="Very satisfied" required="" id="fs-very-satisfied">
+                                                <label for="fs-very-satisfied">Very satisfied (5)</label></li>
+                                            </ul>
                                         </fieldset>
                                     </li>
 

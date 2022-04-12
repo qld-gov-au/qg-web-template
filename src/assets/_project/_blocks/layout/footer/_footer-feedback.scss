@@ -1,9 +1,21 @@
 .qg-footer-feedback {
+  .qg-forms-v2__radio {
+    li {
+      margin-top: 0;
+    }
+    label {
+      display: initial;
+    }
+    input[type=radio], input[type=checkbox] {
+      width: 29px;
+      height: 29px;
+    }
+  }
     &-content {
         background-color: #fff;
         border-radius: 4px;
         color: $qg-global-primary-darker-grey;
-        padding: 0 15px 25px 15px;
+        padding: 0 15px 0 15px;
     }
 
     &-wrap {
@@ -38,15 +50,12 @@
     }
 
     .questions {
-
         li {
-            padding: 3px 0 7px;
+            padding: 0;
         }
-
         legend {
             @include rem(line-height, 20px);
         }
-
         .label {
             display: inline;
         }
@@ -87,71 +96,71 @@
 
             a {
                 text-decoration: underline;
-
+                color: #13578b;
                 &:hover, &:focus {
                     opacity: 0.7;
                 }
             }
         }
 
-        .radio {
-            margin: 16px 0;
-
-            input[type=radio] {
-                //@extend .sr-only;
-              position: absolute;
-              border: 1px solid #292929;
-              height: 18px;
-              left: 1px;
-              top: 4px;
-              width: 18px;
-            }
-
-            label {
-                @include rem(line-height, 20px);
-                padding-left: 29px;
-                position: relative;
-
-                &:after,&:before {
-                    border-radius: 50%;
-                    content: '';
-                    position: absolute;
-                }
-
-                &:after {
-                    background-color: $qg-global-primary-darker-grey;
-                    height: 12px;
-                    left: 4px;
-                    opacity: 0;
-                    top: 7px;
-                    transform: scale(0);
-                    transition: all .3s ease;
-                    width: 12px;
-                }
-                &:before {
-                    border: 1px solid $qg-global-primary-darker-grey;
-                    height: 18px;
-                    left: 1px;
-                    top: 4px;
-                    width: 18px;
-                }
-            }
-
-            input[type=radio]:checked + label {
-                font-weight: bold;
-                color: $qg-global-primary-darker-grey;
-
-                &:after {
-                    opacity: 1;
-                    transform: scale(1);
-                }
-            }
-        }
+        //.radio {
+        //    margin: 16px 0;
+        //
+        //    input[type=radio] {
+        //        //@extend .sr-only;
+        //      position: absolute;
+        //      border: 1px solid #292929;
+        //      height: 18px;
+        //      left: 1px;
+        //      top: 4px;
+        //      width: 18px;
+        //    }
+        //
+        //    label {
+        //        @include rem(line-height, 20px);
+        //        padding-left: 29px;
+        //        position: relative;
+        //
+        //        &:after,&:before {
+        //            border-radius: 50%;
+        //            content: '';
+        //            position: absolute;
+        //        }
+        //
+        //        &:after {
+        //            background-color: $qg-global-primary-darker-grey;
+        //            height: 12px;
+        //            left: 4px;
+        //            opacity: 0;
+        //            top: 7px;
+        //            transform: scale(0);
+        //            transition: all .3s ease;
+        //            width: 12px;
+        //        }
+        //        &:before {
+        //            border: 1px solid $qg-global-primary-darker-grey;
+        //            height: 18px;
+        //            left: 1px;
+        //            top: 4px;
+        //            width: 18px;
+        //        }
+        //    }
+        //
+        //    input[type=radio]:checked + label {
+        //        font-weight: bold;
+        //        color: $qg-global-primary-darker-grey;
+        //
+        //        &:after {
+        //            opacity: 1;
+        //            transform: scale(1);
+        //        }
+        //    }
+        //}
     }
 
     .initial-question {
         li {
-            padding: 13px 0 0 0;
+          margin: 0.1em 0;
         }
     }
 
@@ -271,6 +280,11 @@
     }
 
     .qg-footer-feedback {
-        transform: translateY(-6px)
+        transform: translateY(-6px);
+        background: #fff;
+      .qg-footer-feedback__close{
+        padding: 0 0 15px 15px;
+        display: inline-block;
+      }
     }
 }
