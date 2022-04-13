@@ -25,23 +25,18 @@
     .status {
         margin: 0 0 24px !important;
         padding: 15px 13px;
-
         .fa {
             @include rem(font-size, 18px);
             margin-right: 10px;
         }
-
         h4 {
-            font-weight: 600;
+          font-size:initial;
         }
-
         p {
             @include rem(font-size, 14px);
             margin-bottom: 0;
-
             a {
                 text-decoration: underline;
-
                 &:hover, &:focus {
                     opacity: 0.7;
                 }
@@ -165,7 +160,8 @@
     }
 
     .thankyou {
-        padding-top: 15px;
+        color: initial;
+        padding: 15px 15px 0 15px;
 
         h1,h2,h3,h4,h5,h6 {
             @include rem(font-size, 16px);
@@ -282,6 +278,7 @@
     .qg-footer-feedback {
         transform: translateY(-6px);
         background: #fff;
+        border-radius: 4px;
       .qg-footer-feedback__close{
         padding: 0 0 15px 15px;
         display: inline-block;
