@@ -69,10 +69,10 @@
         }
 
         textarea.form-control {
-            @include rem(line-height, 19px);
-            border: 3px solid $qg-pagination-border;
-            padding: 13px;
-            width: 100%;
+            //@include rem(line-height, 19px);
+            //border: 3px solid $qg-pagination-border;
+            //padding: 13px;
+            //width: 100%;
         }
 
         .actions li {
