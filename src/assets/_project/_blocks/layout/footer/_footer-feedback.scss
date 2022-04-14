@@ -68,13 +68,6 @@
             position: static;
         }
 
-        textarea.form-control {
-            //@include rem(line-height, 19px);
-            //border: 3px solid $qg-pagination-border;
-            //padding: 13px;
-            //width: 100%;
-        }
-
         .actions li {
             margin-right: 0;
             margin-bottom: 20px;
@@ -102,60 +95,6 @@
                 }
             }
         }
-
-        //.radio {
-        //    margin: 16px 0;
-        //
-        //    input[type=radio] {
-        //        //@extend .sr-only;
-        //      position: absolute;
-        //      border: 1px solid #292929;
-        //      height: 18px;
-        //      left: 1px;
-        //      top: 4px;
-        //      width: 18px;
-        //    }
-        //
-        //    label {
-        //        @include rem(line-height, 20px);
-        //        padding-left: 29px;
-        //        position: relative;
-        //
-        //        &:after,&:before {
-        //            border-radius: 50%;
-        //            content: '';
-        //            position: absolute;
-        //        }
-        //
-        //        &:after {
-        //            background-color: $qg-global-primary-darker-grey;
-        //            height: 12px;
-        //            left: 4px;
-        //            opacity: 0;
-        //            top: 7px;
-        //            transform: scale(0);
-        //            transition: all .3s ease;
-        //            width: 12px;
-        //        }
-        //        &:before {
-        //            border: 1px solid $qg-global-primary-darker-grey;
-        //            height: 18px;
-        //            left: 1px;
-        //            top: 4px;
-        //            width: 18px;
-        //        }
-        //    }
-        //
-        //    input[type=radio]:checked + label {
-        //        font-weight: bold;
-        //        color: $qg-global-primary-darker-grey;
-        //
-        //        &:after {
-        //            opacity: 1;
-        //            transform: scale(1);
-        //        }
-        //    }
-        //}
     }
 
     .initial-question {
