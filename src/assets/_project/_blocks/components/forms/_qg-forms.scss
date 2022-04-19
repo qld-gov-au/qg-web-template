@@ -194,8 +194,14 @@
     font-weight: $labelHeadingWeight;
   }
   .qg-forms-v2__checkbox, .qg-forms-v2__radio {
+    display: flex;
+    flex-direction: column;
     label {
+      width:100%;
       margin-bottom: rem(14px);
+    }
+    li{
+      display:flex;
     }
     input[type=radio], input[type=checkbox] {
       top:0;
@@ -216,8 +222,8 @@
       margin-left: -1rem;
     }
     input[type=radio], input[type=checkbox] {
-      width: rem(25px);
-      height: rem(25px);
+      width: 25px;
+      height: 25px;
       padding-right: 1rem;
       margin-top: 0;
       border-radius: $borderRadius;
@@ -249,7 +255,6 @@
     font-weight: normal;
   }
   .alert {
-    margin-bottom: $defaultRem;
     font-size: rem(16px);
   }
   .text-muted {

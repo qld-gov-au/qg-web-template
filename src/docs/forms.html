@@ -1011,7 +1011,7 @@ $( '#email' ).closest( '.section' ).relevance( 'relevantWhen', { name: 'replyReq
           <div class="panel-body">
             <form class="qg-forms-v2">
               <ol class="questions">
-                <li>
+                <li class="qg-forms-v2__radio">
                   <fieldset>
                     <legend>
                       <span class="label">Would you like a reply?</span>
@@ -1579,8 +1579,10 @@ $( '#email' ).closest( '.section' ).relevance( 'relevantWhen', { name: 'replyReq
 
         <h2 id="recaptcha" class="anchored">Google reCAPTCHA</h2>
         <p>The SWE code for Google reCAPTCHA includes both the version 3 and version 2, the SWE Feedback footer uses the version 3</p>
-        <p>Multiple reCAPTCHAs can be loaded on the same page</p>
-        <a href="https://qld-gov-au.github.io/web-template-release/captcha.html">reCAPTCHA examples</a>
+        <p>reCAPTCHAs Multiple reCAPTCHAs can be loaded on the same page</p>
+        <p>To enable recaptcha on a form with the default SWE Google recaptcha key, set <strong class="text-nowrap">data-recaptcha=true</strong></p>
+        <p>You can set a custom key by using the attribute <strong class="text-nowrap">data-sitekey="KEY"</strong>.  For the feature to work, the combination server key must be used on Form Submission handler</p>
+        <a href="https://qld-gov-au.github.io/qg-web-template/captcha.html">reCAPTCHA examples</a>
 
 
 

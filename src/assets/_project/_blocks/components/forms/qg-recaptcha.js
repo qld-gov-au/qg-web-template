@@ -116,7 +116,7 @@ import keys from '../../data/qg-google-keys';
      * @return {undefined}
      **/
     hideCaptchaBanner: function (){
-      if (($('p[class="captchaPrivacyTerms"]').length === $('form[data-recaptcha="true"]').length) && (this.config.$grecaptchaBadge.css('visibility') !== 'hidden')) {
+      if (($('p.captchaPrivacyTerms').length === $('form[data-recaptcha="true"]').length) && (this.config.$grecaptchaBadge.css('visibility') !== 'hidden')) {
         var hidegrecaptchaBadge = '.grecaptcha-badge { visibility: hidden; }';
         var styleSheet = document.createElement('style');
         styleSheet.type = 'text/css';
