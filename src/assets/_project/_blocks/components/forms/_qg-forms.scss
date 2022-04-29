@@ -158,7 +158,7 @@
 // Updated form styles (migrated from forms.io repository to make all forms look the same)
 //------------------------------------------------------------------------------------
 
-.qg-forms-v2, #formio {
+.qg-forms-v2{
   input:not([type=button]):not([type=reset]):not([type=submit]):not([type=image]):not([type]),
   input[type=text], input[type=password], input[type=search], input[type=email], input[type=tel], input[type=url], input[type=date], input[type=time], input[type=datetime], input[type=number], select, textarea,
   select,
