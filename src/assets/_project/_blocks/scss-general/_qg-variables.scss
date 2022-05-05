@@ -187,3 +187,38 @@ $tables-processing-border-color: #dddddd;
 $tables-processing-color: #999999;
 $tables-paginate-disabled-previous-color: #939393;
 $tables-paginate-enabled-previous-next-color: #111111;
+
+// forms
+$fontFace: inherit;
+$defaultRem: 1.2rem;
+
+$labelHeadingColour: #000;
+$labelHeadingSize: 20px;
+$labelHeadingWeight: 900;
+
+$labelSize: 16px;
+$labelColour: #000;
+$labelWeight: 600;
+
+$hintSize: 16px;
+$hintColour: #767676 !important;
+$hintWeight: 400;
+$borderRadius: 4px;
+$borderWidth: 3px;
+$checkboxWeight: 400;
+
+$inputHeight: 46px;
+$inputWidth: 100%;
+$inputBackground: #fff;
+
+$SecondaryColor: #005e85 !important;
+$buttonSecondaryBackground: transparent !important;
+$buttonSecondaryBorder: 3px solid $SecondaryColor;
+
+$defaultBorder: #ebebeb;
+$disabledBorder: #ebebeb;
+$focusBorder: #9263de;
+$alertBorder: #ed1b2f;
+$alertDangerBackground: #fdf0f0;
+$alertWarningBorder: #f9af71;
+$alertWarningBackground: #ffedde;

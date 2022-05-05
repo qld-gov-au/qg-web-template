@@ -6,6 +6,7 @@ This template is designed to provide a template for all Franchise websites, and 
 
 - [Getting started](readme/getting-started.md)
 - [Working in GIT](readme/git.md)
+- [Tech in use](readme/tech-in-use.md)
 - [Making changes](readme/making-changes.md)
 - [Deploying the template](readme/deploy.md)
 
