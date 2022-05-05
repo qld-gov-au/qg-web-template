@@ -10,6 +10,7 @@ import keys from '../../data/qg-google-keys';
       $feedbackForm: $('#qg-page-feedback-form'),
       $recaptchaOnPage: $('form[data-recaptcha="true"]'),
       $grecaptchaBadge: $('.grecaptcha-badge'),
+      loadedRecaptcha: false,
     },
 
     /**
@@ -18,6 +19,7 @@ import keys from '../../data/qg-google-keys';
      **/
     init: function() {
       let $feedbackForm = this.config.$feedbackForm;
+      // let loadedRecaptcha = false;
       if ($feedbackForm.length > 0) {
         /**
          * check if env is not the prod env then change submission handler url to test.smartservice.qld.gov.au
@@ -59,7 +61,7 @@ import keys from '../../data/qg-google-keys';
      * footerFeedbackGoogleRecaptchaApiKey -> check environment and return a key accordingly for footer feedback form
      * @return {undefined}
      **/
-    footerFeedbackGoogleRecaptchaApiKey: function() {
+    feedbackGoogleRecaptchaApiKey: function() {
       return this.isProd() ? keys.defFeedbackGoogleRecaptcha.prod : keys.defFeedbackGoogleRecaptcha.uat;
     },
 
@@ -82,7 +84,7 @@ import keys from '../../data/qg-google-keys';
             let postUrl = targetFormSubmit.attr('action');
             let requestMethod = targetFormSubmit.attr('method');
             let $successMsgContainer = $('.thankyou');
-            grecaptcha.execute(self.footerFeedbackGoogleRecaptchaApiKey(), {action: 'feedback'})
+            grecaptcha.execute(self.feedbackGoogleRecaptchaApiKey(), {action: 'feedback'})
               .then(function (token) {
                 if ($inputRecaptchaResponseElem.length > 0) {
                   $inputRecaptchaResponseElem.val(token);
@@ -114,7 +116,7 @@ import keys from '../../data/qg-google-keys';
      * @return {undefined}
      **/
     hideCaptchaBanner: function (){
-      if (($('p[class="captchaPrivacyTerms"]').length === $('form[data-recaptcha="true"]').length) && (this.config.$grecaptchaBadge.css('visibility') !== 'hidden')) {
+      if (($('p.captchaPrivacyTerms').length === $('form[data-recaptcha="true"]').length) && (this.config.$grecaptchaBadge.css('visibility') !== 'hidden')) {
         var hidegrecaptchaBadge = '.grecaptcha-badge { visibility: hidden; }';
         var styleSheet = document.createElement('style');
         styleSheet.type = 'text/css';
@@ -132,7 +134,6 @@ import keys from '../../data/qg-google-keys';
      **/
     v2Captcha: function (form, subBtn, key){
       try {
-        // console.log('v2 key: ' + key);
         grecaptcha.render(subBtn, {
           sitekey: key,
           callback: () => {
@@ -150,6 +151,7 @@ import keys from '../../data/qg-google-keys';
           },
         });
       } catch (e) {
+        console.log(e);
         grecaptcha.reset();
         return false;
       }
@@ -182,6 +184,7 @@ import keys from '../../data/qg-google-keys';
             return false;
           });
       } catch (e) {
+        console.log(e);
         return false;
       }
     },
@@ -195,7 +198,7 @@ import keys from '../../data/qg-google-keys';
        * handles footer feedback recaptcha load
        **/
       $('.qg-feedback-toggle').one('click', function(){
-        $.getScript('https://www.google.com/recaptcha/api.js?render=' + self.footerFeedbackGoogleRecaptchaApiKey(), function (){
+        $.getScript('https://www.google.com/recaptcha/api.js?render=' + self.feedbackGoogleRecaptchaApiKey(), function (){
           self.footerFeedbackSubmitWithRecaptchaCheck();
         });
       });
@@ -211,6 +214,10 @@ import keys from '../../data/qg-google-keys';
             let manualAction = $(this).attr('data-action');
             if (manualSitekey !== undefined && manualAction !== undefined) { //v3 manual form
               $.getScript('https://www.google.com/recaptcha/api.js?render=' + manualSitekey, function (){
+                self.onloadRecaptcha();
+              });
+            } else if (manualAction !== undefined) {
+              $.getScript('https://www.google.com/recaptcha/api.js?render=' + self.feedbackGoogleRecaptchaApiKey(), function (){
                 self.onloadRecaptcha();
               });
             } else {
@@ -230,11 +237,10 @@ import keys from '../../data/qg-google-keys';
      * @return {undefined}
      **/
     onloadRecaptcha: function(){
-      let self = qgRecaptcha;
-      let loadedRecaptcha = false;
+      let self = this;
       grecaptcha.ready(function () {
         //v2 Forms
-        if (!loadedRecaptcha) {
+        if (!self.config.loadedRecaptcha) {
           $('[data-recaptcha="true"]:not(#qg-page-feedback-form)')
             .find('input[type="submit"], button[type="submit"]')
             .on('click', e => {
@@ -247,14 +253,14 @@ import keys from '../../data/qg-google-keys';
               if (manualSitekey !== undefined && manualAction !== undefined) { //v3 manual form
                 self.v3Captcha(form, $inputRecaptchaResponseElem, manualSitekey, manualAction);
               } else if (manualAction !== undefined) { //v3 manual with feedback key but differnt action
-                self.v3Captcha(form, $inputRecaptchaResponseElem, self.footerFeedbackGoogleRecaptchaApiKey(), manualAction);
+                self.v3Captcha(form, $inputRecaptchaResponseElem, self.feedbackGoogleRecaptchaApiKey(), manualAction);
               } else if (manualSitekey !== undefined) { //v2 manual (no action in v2)
                 self.v2Captcha(form, subBtn, manualSitekey);
               } else { //default v2 with default key
                 self.v2Captcha(form, subBtn, self.googleRecaptchaApiKey());
               }
             });
-          loadedRecaptcha = true;
+          self.config.loadedRecaptcha = true;
         }
       });
     },
