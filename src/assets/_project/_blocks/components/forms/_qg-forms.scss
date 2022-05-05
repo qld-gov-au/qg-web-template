@@ -237,7 +237,7 @@
       font-weight: normal;
       margin-left: rem(16px);
       display: inline-block;
-      span {
+      > span {
         font-weight: $checkboxWeight;
         margin-left: $defaultRem;
         margin-right: 0.5rem !important;
@@ -257,6 +257,10 @@
   .alert {
     margin-bottom: 1em;
     font-size: rem(16px);
+    &.alert-danger {
+      background-color: #ffedde;
+      border-color: #f9af71;
+    }
   }
   .text-muted {
     color: $hintColour;
@@ -405,11 +409,109 @@
     display: none !important;
   }
 }
-.formio-select-autocomplete-input {
-  opacity: 0;
-  position: relative;
-  z-index: -1;
-  display: block;
-  height: 0;
-  border: none;
+
+.formio-form {
+  .formio-select-autocomplete-input {
+    opacity: 0;
+    position: relative;
+    z-index: -1;
+    display: block;
+    height: 0;
+    border: none;
+  }
+
+  .formio-component-panel {
+    .card.mb-2 {
+      margin-bottom: 0 !important;
+      border: none !important;
+    }
+    .card-body {
+      border: 1px solid gray;
+      padding: 1rem;
+      margin-top: -1px;
+    }
+    .card-header {
+      position: relative;
+      display: block;
+      border: 1px solid gray;
+      border-radius: 0;
+      background-color: transparent !important;
+      padding: 1rem;
+      margin-top: -1px;
+      color: #13578b;
+      font-weight: 700;
+      text-decoration: underline;
+      .card-title {
+        color: #13578b !important;
+        padding-right: 1.8rem;
+      }
+      &:hover {
+        text-decoration: none;
+        .text-light, .text-muted {
+          color: #212529 !important;
+        }
+      }
+      .formio-collapse-icon {
+        display: none;
+      }
+      &:after {
+        content: " ";
+        position: absolute;
+        top: 50%;
+        margin-top: -0.5625rem;
+        right: 1rem;
+        width: 0.875rem;
+        height: 0.875rem;
+        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Cpath fill='%2300698f' d='M64 0l64 64-16 16-64-64'/%3E%3Cpath fill='%2300698f' d='M64 0l16 16-64 64L0 64'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: 50%;
+        z-index: 101;
+        transition: transform .25s ease-in;
+      }
+      &[aria-expanded="false"]:after {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  &>div>nav {
+    display: block;
+    &>ul.pagination {
+      .page-item .page-link {
+          background: none !important;
+          color: #13578b !important;
+          font-weight: 700;
+          display: inline-block;
+          padding: 1rem;
+          border-radius: 0 !important;
+          margin: 0;
+          margin-right: -1px;
+          text-decoration: underline !important;
+      }
+      .page-item:not(.active):hover .page-link {
+          text-decoration: none !important;
+          background-color: #f5f5f5 !important;
+      }
+      .page-item.active .page-link {
+          color: #212529 !important;
+          text-decoration: none !important;
+          background-color: #f5f5f5 !important;
+      }
+    }
+  }
+}
+
+#qg-primary-content {
+  .qg-forms-v2 .formio-component-panel .card-header,
+  #formio .formio-component-panel .card-header {
+      display: block !important; 
+  }
+  .qg-forms-v2 .formio-component-panel .card-body,
+  #formio .formio-component-panel .card-body {
+      padding: 1rem !important; 
+  }
+  .qg-forms-v2 .formio-form nav,
+  #formio .formio-form nav {
+    display: block !important;
+  }
 }
