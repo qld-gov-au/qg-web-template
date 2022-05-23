@@ -11,6 +11,7 @@ export class QgSearchMinimize {
     this.smBreakPoint = 992;
     this.searchStateContainer = 'qg-search-state__container';
     this.$globalSearchForm = $('#qg-global-search-form');
+    this.$siteSearchInput = $('.qg-search-site__input');
     this.$multipleForms = $('.qg-site-search__multiple-forms');
   }
 
@@ -27,7 +28,7 @@ export class QgSearchMinimize {
       var searchStateContainerMarkup = `<div class="qg-search-state__container  align-self-center row"> <i class="fa fa-search" aria-hidden="true"></i>
 <p class="ml-2 mb-0">Search all information and services</p> </div>`;
 
-      $(searchStateContainerMarkup).insertBefore('#qg-global-search-form');
+      $(searchStateContainerMarkup).insertBefore(self.$globalSearchForm);
       // hide global search form on page load
       self.$globalSearchForm.hide();
     }
@@ -36,7 +37,7 @@ export class QgSearchMinimize {
   onServiceFinderSearchClick () {
     let self = this;
     // toggle global search on interacting with the service finder search
-    self.$multipleForms.find('.qg-search-site__input').click(function() {
+    self.$multipleForms.find(self.$siteSearchInput).click(function() {
       if ($(window).width() >= self.smBreakPoint) {
         self.$globalSearchForm.hide();
         $('.' + self.searchStateContainer).show();
