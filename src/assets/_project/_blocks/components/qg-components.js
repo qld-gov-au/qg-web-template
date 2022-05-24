@@ -8,6 +8,7 @@ import { QgQuickExit } from './quick-exit/qg-quick-exit';
 import { QgPrint } from './print/qg-print';
 import { QgAccordion } from './accordion/qg-accordion';
 import { QgAddressAutocomplete } from './forms/qg-address-autocomplete';
+import { QgSearchMinimize } from './site-search/qg-search-minimize';
 import './tables';
 import './forms/qg-recaptcha';
 import './forms/qg-forms';
@@ -34,3 +35,10 @@ const qgPrint = new QgPrint();
 // QG accordion
 // eslint-disable-next-line no-unused-vars
 const qgAccordion = new QgAccordion();
+
+// QG Search minimize
+// check and initialize class if required
+if (document.querySelector('.qg-site-search__multiple-forms')) {
+  const qgSearchMinimize = new QgSearchMinimize();
+  qgSearchMinimize.init();
+}
