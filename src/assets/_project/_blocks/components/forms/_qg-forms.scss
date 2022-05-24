@@ -193,6 +193,13 @@
     color: $labelHeadingColour;
     font-weight: $labelHeadingWeight;
   }
+  input.choices__input {
+    border:none;
+    padding: 0;
+    &:focus {
+      box-shadow: none;
+    }
+  }
   .qg-forms-v2__checkbox, .qg-forms-v2__radio {
     display: flex;
     flex-direction: column;
@@ -504,11 +511,11 @@
 #qg-primary-content {
   .qg-forms-v2 .formio-component-panel .card-header,
   #formio .formio-component-panel .card-header {
-      display: block !important; 
+      display: block !important;
   }
   .qg-forms-v2 .formio-component-panel .card-body,
   #formio .formio-component-panel .card-body {
-      padding: 1rem !important; 
+      padding: 1rem !important;
   }
   .qg-forms-v2 .formio-form nav,
   #formio .formio-form nav {
