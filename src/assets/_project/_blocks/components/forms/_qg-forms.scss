@@ -193,6 +193,10 @@
     color: $labelHeadingColour;
     font-weight: $labelHeadingWeight;
   }
+  .choices__list--multiple .choices__item{
+    margin-bottom: 0;
+    padding: 4px 10px;
+  }
   input.choices__input {
     border:none;
     padding: 0;
