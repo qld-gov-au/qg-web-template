@@ -196,6 +196,10 @@
   .choices__list.choices__list--dropdown{
     border: 2px solid #ddd;
   }
+  .choices__list--multiple .choices__item{
+    margin-bottom: 0;
+    padding: 4px 10px;
+  }
   input.choices__input {
     border:none;
     padding: 0;
