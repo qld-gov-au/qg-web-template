@@ -193,6 +193,9 @@
     color: $labelHeadingColour;
     font-weight: $labelHeadingWeight;
   }
+  .choices__list.choices__list--dropdown{
+    border: 2px solid #ddd;
+  }
   input.choices__input {
     border:none;
     padding: 0;
