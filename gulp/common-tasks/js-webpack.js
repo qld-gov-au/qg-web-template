@@ -93,7 +93,8 @@ module.exports = function (gulp, plugins, config, destFolder, banner) {
     } else {
       return gulp.src(src)
         .pipe(webpack(webpackDevSettings))
-        .pipe(plugins.if(typeof destFolder[0] !== 'undefined', gulp.dest(`${dest.base}/${destFolder[0]}/${dest.ext}`)));
+        .pipe(plugins.if(typeof destFolder[0] !== 'undefined', gulp.dest(`${dest.base}/${destFolder[0]}/${dest.ext}`)))
+        .pipe(gulp.dest(`${config.basepath.static}/assets/${config.versionName}/latest/js/`));
     }
   };
 };

@@ -1,6 +1,21 @@
 /*aside carousel play and pause feature*/
 'use strict';
 
+$.getScript('{{CDN}}/latest/lib/ext/flickity/dist/flickity.pkgd.min.js', function () {
+  console.log('loader flicikity from cdn');
+  $('head').append($("<link rel='stylesheet' href='{{CDN}}/latest/lib/ext/flickity/dist/flickity.min.css' type='text/css' media='screen' />"));
+
+  const elem = document.querySelector('.qg-carousel-v2');
+
+  // eslint-disable-next-line no-unused-vars,no-undef
+  const flkty = new Flickity(elem, {
+    lazyLoad: 4,
+    initialIndex: 0,
+    cellAlign: 'left',
+    contain: true,
+  });
+});
+
 (function ($) {
   let carousels = [];
   let eqHeight = (carousels) => {

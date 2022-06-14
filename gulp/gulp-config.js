@@ -67,6 +67,8 @@ module.exports = {
       './node_modules/jquery-ui-bundle/jquery-ui.min.js',
       './node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
       './node_modules/jquery-ui-bundle/images/**',
+      './node_modules/flickity/dist/flickity.min.css',
+      './node_modules/flickity/dist/flickity.pkgd.min.js',
     ],
   },
   publish: {
