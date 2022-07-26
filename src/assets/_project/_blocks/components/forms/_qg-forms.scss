@@ -163,16 +163,21 @@
   input[type=text], input[type=password], input[type=search], input[type=email], input[type=tel], input[type=url], input[type=date], input[type=time], input[type=datetime], input[type=number], select, textarea,
   select,
   textarea,
-  .formio-choices .selection {
+  .formio-choices .selection, .form-control.dropdown {
     border-radius: $borderRadius;
-    border-width: $borderWidth;
-    &:focus {
+    &:focus-within {
       color: #495057;
       background-color: #fff;
       border-color: #80bdff;
       outline: 0;
       box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
     }
+  }
+  .choices__list--dropdown{
+    box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
+  }
+  .form-control, .form-control.dropdown, .form-check-input{
+    border: 2px solid #818181;
   }
   label, .label {
     font-size: $labelSize;
@@ -192,6 +197,30 @@
     font-size: $labelHeadingSize;
     color: $labelHeadingColour;
     font-weight: $labelHeadingWeight;
+  }
+  // choices__list--multiple styles
+  .formio-choices{
+    .choices__list--multiple .choices__item[data-deletable] {
+      padding-right: 10px;
+      margin: 5px;
+    }
+    input.choices__input:focus{
+      box-shadow: none !important;
+    }
+    .choices__item {
+      margin-bottom:0;
+      padding: 4px 10px;
+      font-size: 1rem;
+    }
+    .choices__item.choices__item--selectable:not(.choices__item--choice){
+      background: #F3F3F3;
+      border-radius: 6px;
+      border: none;
+      color: #212529;
+    }
+    .choices__button{
+      background-color: #008fa1;
+    }
   }
   .qg-forms-v2__checkbox, .qg-forms-v2__radio {
     display: flex;
@@ -226,8 +255,6 @@
       height: 25px;
       padding-right: 1rem;
       margin-top: 0;
-      border-radius: $borderRadius;
-      border-width: $borderWidth;
       float: left;
       &:checked + label {
         color: inherit;
@@ -504,11 +531,11 @@
 #qg-primary-content {
   .qg-forms-v2 .formio-component-panel .card-header,
   #formio .formio-component-panel .card-header {
-      display: block !important; 
+      display: block !important;
   }
   .qg-forms-v2 .formio-component-panel .card-body,
   #formio .formio-component-panel .card-body {
-      padding: 1rem !important; 
+      padding: 1rem !important;
   }
   .qg-forms-v2 .formio-form nav,
   #formio .formio-form nav {
