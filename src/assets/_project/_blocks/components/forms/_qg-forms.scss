@@ -164,6 +164,7 @@
   select,
   textarea,
   .formio-choices .selection, .form-control.dropdown {
+    padding: 0.5em 0.7em;
     border-radius: $borderRadius;
     &:focus-within {
       color: #495057;
@@ -209,11 +210,16 @@
     border-left: none;
   }
   .formio-choices{
+    .choices__item.choices__item--selectable {
+      white-space: break-spaces;
+      word-break: break-word;
+    }
     .choices__list--multiple .choices__item[data-deletable] {
       padding-right: rem(10px);
-      margin: rem(5px);
+      margin: 0.5rem;
     }
     input.choices__input{
+      padding: 0;
       border:none;
       &:focus{
         box-shadow: none !important;
