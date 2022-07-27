@@ -179,6 +179,9 @@
   .form-control, .form-control.dropdown, .form-check-input{
     border: 2px solid #818181;
   }
+  .form-check-input, .form-control.dropdown, .form-check-input{
+    border: 2px solid #818181;
+  }
   label, .label {
     font-size: $labelSize;
     color: $labelColour;
@@ -199,27 +202,40 @@
     font-weight: $labelHeadingWeight;
   }
   // choices__list--multiple styles
+  .choices[data-type*=select-multiple] .choices__button, .choices[data-type*=text] .choices__button {
+    background-image: url(../images/x-icon.svg);
+    background-size: rem(11px);
+    vertical-align: middle;
+    border-left: none;
+  }
   .formio-choices{
     .choices__list--multiple .choices__item[data-deletable] {
-      padding-right: 10px;
-      margin: 5px;
+      padding-right: rem(10px);
+      margin: rem(5px);
+    }
+    input.choices__input{
+      border:none;
+      &:focus{
+        box-shadow: none !important;
+      }
     }
     input.choices__input:focus{
       box-shadow: none !important;
     }
     .choices__item {
       margin-bottom:0;
-      padding: 4px 10px;
+      padding: rem(4px) rem(10px);
+      line-height: inherit;
       font-size: 1rem;
     }
     .choices__item.choices__item--selectable:not(.choices__item--choice){
       background: #F3F3F3;
-      border-radius: 6px;
+      border-radius: rem(6px);
       border: none;
       color: #212529;
     }
     .choices__button{
-      background-color: #008fa1;
+      background-color: initial;
     }
   }
   .qg-forms-v2__checkbox, .qg-forms-v2__radio {
