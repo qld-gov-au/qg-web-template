@@ -164,7 +164,7 @@
   select,
   textarea,
   .formio-choices .selection, .form-control.dropdown {
-    padding: 0.5em 0.7em;
+    padding: rem(8px);
     border-radius: $borderRadius;
     &:focus-within {
       color: #495057;
@@ -173,9 +173,6 @@
       outline: 0;
       box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
     }
-  }
-  .choices__list--dropdown{
-    box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
   }
   .form-control, .form-control.dropdown, .form-check-input{
     border: 2px solid #818181;
@@ -202,7 +199,11 @@
     color: $labelHeadingColour;
     font-weight: $labelHeadingWeight;
   }
-  // choices__list--multiple styles
+
+  // choices list styles (forms.io styles overrides)
+  .choices__list--dropdown{
+    box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
+  }
   .choices[data-type*=select-multiple] .choices__button, .choices[data-type*=text] .choices__button {
     background-image: url(../images/x-icon.svg);
     background-size: rem(11px);
@@ -216,7 +217,7 @@
     }
     .choices__list--multiple .choices__item[data-deletable] {
       padding-right: rem(10px);
-      margin: 0.5rem;
+      margin: rem(4px) rem(8px);
     }
     input.choices__input{
       padding: 0;
@@ -229,10 +230,12 @@
       box-shadow: none !important;
     }
     .choices__item {
-      margin-bottom:0;
       padding: rem(4px) rem(10px);
       line-height: inherit;
       font-size: 1rem;
+    }
+    .choices__list--dropdown .choices__item--selectable {
+      padding: rem(8px) rem(14px);
     }
     .choices__item.choices__item--selectable:not(.choices__item--choice){
       background: #F3F3F3;
@@ -244,6 +247,9 @@
       background-color: initial;
     }
   }
+  // end of choices list styles (forms.io styles overrides)
+
+
   .qg-forms-v2__checkbox, .qg-forms-v2__radio {
     display: flex;
     flex-direction: column;
