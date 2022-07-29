@@ -235,7 +235,7 @@
       padding: rem(8px) rem(14px);
     }
     .choices__item.choices__item--selectable:not(.choices__item--choice){
-      background: #F3F3F3;
+      background: $qg-global-primary-light-grey;
       border-radius: rem(6px);
       border: none;
       color: $qg-global-primary-darker;
