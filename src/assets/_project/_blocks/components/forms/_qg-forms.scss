@@ -177,9 +177,6 @@
   .form-control, .form-control.dropdown, .form-check-input{
     border: 2px solid #818181;
   }
-  .form-check-input, .form-control.dropdown, .form-check-input{
-    border: 2px solid #818181;
-  }
   label, .label {
     font-size: $labelSize;
     color: $labelColour;
@@ -241,7 +238,7 @@
       background: #F3F3F3;
       border-radius: rem(6px);
       border: none;
-      color: #212529;
+      color: $qg-global-primary-darker;
     }
     .choices__button{
       background-color: initial;
