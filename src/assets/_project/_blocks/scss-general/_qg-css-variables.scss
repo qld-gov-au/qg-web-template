@@ -1,0 +1,29 @@
+// expose color variables to all application
+:root {
+  --qg-color-primary: #{$qg-global-primary};
+  --qg-color-primary-dark: #{$qg-global-primary-dark};
+  --qg-color-primary-darker: #{$qg-global-primary-darker};
+  --qg-color-primary-light: #{$qg-global-primary-light};
+  --qg-color-primary-hover: #{$qg-global-primary-hover};
+
+  --qg-color-primary-grey: #{$qg-global-primary-grey};
+  --qg-color-primary-dark-grey: #{$qg-global-primary-dark-grey};
+  --qg-color-primary-darker-grey: #{$qg-global-primary-darker-grey};
+  --qg-color-primary-light-grey: #{$qg-global-primary-light-grey};
+  --qg-color-primary-hover-grey: #{$qg-global-primary-hover-grey};
+
+  --qg-color-prominent: #{$qg-global-prominent};
+
+  --qg-color-dark-grey-active: #{$qg-global-dark-grey-active};
+  --qg-color-dark-grey-dark-active: #{$qg-global-dark-grey-dark-active};
+  --qg-color-primary-accesible-grey: #{$qg-global-primary-accesible-grey};
+  --qg-color-light-gray-dark: #{$qg-light-gray-dark};
+
+  --qg-color-error: #{$qg-global-error};
+
+  --qg-color-facebook: #{$qg-facebook};
+  --qg-color-twitter: #{$qg-twitter};
+  --qg-color-linkedin: #{$qg-linkedin};
+
+  --qg-gutter-width: #{$grid-gutter-width * 0.5};
+}
