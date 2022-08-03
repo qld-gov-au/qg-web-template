@@ -1,0 +1,54 @@
+.qg-spinner {
+  text-align: center;
+  .spinner-border {
+    color: $qg-global-prominent;
+    width: 30px;
+    height: 30px;
+  }
+  .qg-spinner-label {
+    @extend .h3;
+    margin-top: 0.75rem;
+    margin-bottom: 0;
+  }
+  &.align-left {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    .spinner-border {
+      margin-right: 1rem;
+    }
+    .qg-spinner-label {
+      margin-top: 0;
+    }
+  }
+}
+
+.qg-btn {
+  .spinner-border {
+    vertical-align: middle;
+    margin-right: 0.5rem;
+    width: 22px;
+    height: 22px;
+    margin-top: -6px;
+    margin-bottom: -2px;
+    border-width: 4px;
+  }
+  &.btn-xs {
+    .spinner-border {
+      width: 14px;
+      height: 14px;
+    }
+  }
+  &.btn-sm {
+    .spinner-border {
+      width: 18px;
+      height: 18px;
+    }
+  }
+  &.btn-lg {
+    .spinner-border {
+      width: 26px;
+      height: 26px;
+    }
+  }
+}

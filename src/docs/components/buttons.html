@@ -120,6 +120,29 @@
             </p>
           </div>
         </div>
+
+<h3>Loading button</h3>
+<p>When the loading is triggerd by an "action" button. The primary button is used and the spinner size is reduced to fit/match the font size.</p>
+<p>Button is disabled when spinner is visible (when loading is occuring).</p>
+<p>Button text should remain the same so that the user still knows what action is occurring. If space allows, you can change it to describe the action, e.g. "Submitting...", "Saving...", "Downloading...", "Processing...".</p>
+<p>Button text to be sentence case.</p>
+<p>Spinner is the same font colour as the button label.</p>
+<div class="qg-tmplt-example">
+  <div class="panel-body mb-2 p-4">
+      <button type="button" class="qg-btn btn-default btn-xs" disabled><span class="spinner-border" role="status"><span class="sr-only">Loading...</span></span> Default</button>
+      <button type="button" class="qg-btn btn-primary btn-sm ml-3" disabled><span class="spinner-border" role="status"><span class="sr-only">Loading...</span></span> Primary</button>
+      <button type="button" class="qg-btn btn-secondary ml-3" disabled><span class="spinner-border" role="status"><span class="sr-only">Loading...</span></span> Primary Alt</button>
+      <button type="button" class="qg-btn btn-outline-dark ml-3 btn-lg" disabled><span class="spinner-border" role="status"><span class="sr-only">Loading...</span></span> Outline button dark</button>
+  </div>
+</div>
+<br/>
+<pre><code class="language-markup">&lt;button type="button" class="qg-btn btn-primary" disabled&gt;
+  &lt;span class="spinner-border" role="status"&gt;
+    &lt;span class="sr-only" role="status"&gt;Loading...&lt;/span&gt;
+  &lt;/span&gt; 
+  Button label
+&lt;/button&gt;</code></pre>
+
         <h3> HTML </h3>
         <p>Please refer to <a href="http://getbootstrap.com/css/#buttons">Bootstrap's button component</a> for additional implementation advice.</p>
 
