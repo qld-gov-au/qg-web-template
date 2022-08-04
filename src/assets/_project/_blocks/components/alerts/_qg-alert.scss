@@ -1,3 +1,9 @@
+// global alert styles
+.qg-global-alert {
+  margin-bottom: 0;
+}
+
+// content alert and global alert styles
 .alert {
   position: relative;
   color: #000;
@@ -22,38 +28,25 @@
     border: none;
     border-left: 5px solid $brand-danger;
     background-color: #FCF4F6;
-    & + .alert-danger{
-      @extend .mt-4
-    }
   }
   &.alert-success {
     border: none;
     border-left: 5px solid $brand-success;
     background-color: #f2f7ea;
-    & + .alert-success{
-      @extend .mt-4
-    }
   }
   &.alert-info {
     border: none;
     border-left: 5px solid $brand-info;
     background-color: #eff5f6;
-    & + .alert-info{
-      @extend .mt-4
-    }
   }
   &.alert-warning {
     border: none;
     border-left: 5px solid $brand-warning;
     background-color: #ffedde;
-    & + .alert-warning{
-      @extend .mt-4
-    }
   }
   &.alert-success, &.alert-info, &.alert-warning, &.alert-tip, &.alert-danger{
     font-weight: normal;
     color: #000;
-    margin: 0;
     border-radius: 0;
     padding: 0.75rem 1.25rem;
     h2{
