@@ -79,15 +79,10 @@
 
       <div id="qg-primary-content" role="main">
         <h1 class="category" id="spinners">Spinners</h1>
-        <p><span class="label label-primary" title="Heavily customised bootstrap implementation">Customised</span></p>
-        <p>The spinner component below extends the <a href="https://getbootstrap.com/docs/4.6/components/spinners/" target="_blank">Bootstrap Spinners</a>.</p>
-        <p>Spinners indicate the loading state of a component or page with Bootstrap spinners, built entirely with HTML, CSS, and no JavaScript.</p>
-        <p>Avoid showing multiple loading spinners on a single page.</p>
-        <h2>Loading page or content area</h2>
-        <ul>
-          <li>Spinner to be placed in the part of the page that is loading. </li>
-          <li>At a minimum, use Heading 3 font size, and a spinner with a height and width of 30px.</li>
-        </ul>
+        <h2>Documentation</h2>
+        <div class="alert alert-info mb-4" role="alert">
+          <p>Find the <a href="https://www.forgov.qld.gov.au/information-and-communication-technology/communication-and-publishing/website-and-digital-publishing/website-standards-guidelines-and-templates/swe/components/spinners">implementation and usage guidance</a> for this component in the SWE documentation on For Government.</p>
+        </div>
         <h3>Default = center aligned</h3>
         <div class="container-fluid">
           <div class="row" style="gap: var(--qg-gutter-width)">
@@ -114,13 +109,8 @@
           </div>
         </div>
         <br/>
-        <pre><code class="language-markup">&lt;div class="qg-spinner" role="status"&gt;
-  &lt;div class="spinner-border"&gt;&lt;/div&gt;
-  &lt;div class="qg-spinner-label"&gt;
-    Loading contact form...
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-        <p>If possible, provide text to explain what is loading, otherwise fallback to describing the state of the loading element e.g. “Loading...”, “Saving...”, “Processing...”.</p>
+
+        <h3>Default = center aligned, label without specification</h3>
         <div class="container-fluid">
           <div class="row" style="gap: var(--qg-gutter-width)">
             <div class="card col-sm">
@@ -146,12 +136,6 @@
           </div>
         </div>
         <br/>
-        <pre><code class="language-markup">&lt;div class="qg-spinner" role="status"&gt;
-  &lt;div class="spinner-border"&gt;&lt;/div&gt;
-  &lt;div class="qg-spinner-label"&gt;
-    Loading...
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre>
 
 <h3>Alternative = left aligned</h3>
 <div class="container-fluid">
@@ -179,15 +163,8 @@
   </div>
 </div>
 <br/>
-<pre><code class="language-markup">&lt;div class="qg-spinner align-left" role="status"&gt;
-&lt;div class="spinner-border"&gt;&lt;/div&gt;
-&lt;div class="qg-spinner-label"&gt;
-  Loading...
-&lt;/div&gt;
-&lt;/div&gt;</code></pre>
 
 <h3>Absolute center position</h3>
-<p>Please use the helper class <code>qg-absolute-center</code> if use want to align the spinner in the middle of a container with defined height.</p>
 <div class="container-fluid">
   <div class="row" style="gap: var(--qg-gutter-width)">
     <div class="card col" style="background-color: var(--qg-color-primary); color: white; min-height: 300px;">
@@ -203,14 +180,6 @@
   </div>
 </div>
 <br/>
-<pre><code class="language-markup">&lt;div style="min-height: 300px;"&gt;
-  &lt;div class="qg-spinner qg-absolute-center" role="status"&gt;
-    &lt;div class="spinner-border"&gt;&lt;/div&gt;
-    &lt;div class="qg-spinner-label"&gt;
-      Loading...
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre>
 
       </div>
     </div>
