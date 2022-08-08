@@ -554,16 +554,13 @@
 }
 
 #qg-primary-content {
-  .qg-forms-v2 .formio-component-panel .card-header,
-  #formio .formio-component-panel .card-header {
-      display: block !important;
+  .qg-forms-v2 .formio-component-panel .card-header {
+      display: block;
   }
-  .qg-forms-v2 .formio-component-panel .card-body,
-  #formio .formio-component-panel .card-body {
-      padding: 1rem !important;
+  .qg-forms-v2 .formio-component-panel .card-body{
+      padding: 1rem;
   }
-  .qg-forms-v2 .formio-form nav,
-  #formio .formio-form nav {
-    display: block !important;
+  .qg-forms-v2 .formio-form nav {
+    display: block;
   }
 }
