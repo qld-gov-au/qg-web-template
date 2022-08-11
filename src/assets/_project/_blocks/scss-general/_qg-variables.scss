@@ -204,7 +204,7 @@ $hintSize: 16px;
 $hintColour: #767676 !important;
 $hintWeight: 400;
 $borderRadius: 4px;
-$borderWidth: 3px;
+$borderWidth: 2px;
 $checkboxWeight: 400;
 
 $inputHeight: 46px;
@@ -217,7 +217,8 @@ $buttonSecondaryBorder: 3px solid $SecondaryColor;
 
 $defaultBorder: #ebebeb;
 $disabledBorder: #ebebeb;
-$focusBorder: #9263de;
+$focusBorderColor: #80bdff;
+$focusBoxShadow: #007BFF3F;
 $alertBorder: #ed1b2f;
 $alertDangerBackground: #fdf0f0;
 $alertWarningBorder: #f9af71;
