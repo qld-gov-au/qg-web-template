@@ -1,24 +1,26 @@
 .qg-spinner {
-  text-align: center;
+  text-align: left;
+  display: flex;
+  align-items: center;
   .spinner-border {
     color: $qg-global-prominent;
     width: 30px;
     height: 30px;
+    margin-right: 1rem;
   }
   .qg-spinner-label {
     @extend .h3;
-    margin-top: 0.75rem;
+    margin-top: 0;
     margin-bottom: 0;
   }
-  &.align-left {
-    text-align: left;
-    display: flex;
-    align-items: center;
+  &.align-center {
+    text-align: center;
+    display: block;
     .spinner-border {
-      margin-right: 1rem;
+      margin-right: 0;
     }
     .qg-spinner-label {
-      margin-top: 0;
+      margin-top: 0.75rem;
     }
   }
 }
