@@ -171,7 +171,7 @@
       background-color: #fff;
       border-color: #80bdff;
       outline: 0;
-      box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
+      box-shadow: 0 0 0 0.2rem #007BFF3F;
     }
   }
   .form-control, .form-control.dropdown, .form-check-input{
@@ -199,7 +199,7 @@
 
   // choices list styles (forms.io styles overrides)
   .choices__list--dropdown{
-    box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
+    box-shadow: 0 0 0 0.2rem #007BFF3F;
   }
   .choices[data-type*=select-multiple] .choices__button, .choices[data-type*=text] .choices__button {
     background-image: url(../images/x-icon.svg);
@@ -219,12 +219,12 @@
     input.choices__input{
       padding: 0;
       border:none;
+      font-size: 1rem;
+      padding-right: 0.625rem;
+      margin: 0.25rem 0.5rem;
       &:focus{
         box-shadow: none !important;
       }
-    }
-    input.choices__input:focus{
-      box-shadow: none !important;
     }
     .choices__item {
       padding: rem(4px) rem(10px);
@@ -554,16 +554,13 @@
 }
 
 #qg-primary-content {
-  .qg-forms-v2 .formio-component-panel .card-header,
-  #formio .formio-component-panel .card-header {
-      display: block !important;
+  .qg-forms-v2 .formio-component-panel .card-header {
+      display: block;
   }
-  .qg-forms-v2 .formio-component-panel .card-body,
-  #formio .formio-component-panel .card-body {
-      padding: 1rem !important;
+  .qg-forms-v2 .formio-component-panel .card-body{
+      padding: 1rem;
   }
-  .qg-forms-v2 .formio-form nav,
-  #formio .formio-form nav {
-    display: block !important;
+  .qg-forms-v2 .formio-form nav {
+    display: block;
   }
 }
