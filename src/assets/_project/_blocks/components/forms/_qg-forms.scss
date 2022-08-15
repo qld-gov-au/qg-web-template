@@ -202,6 +202,9 @@
     box-shadow: 0 0 0 $borderWidth $focusBoxShadow;
     margin-top: 8px;
     border: $borderWidth solid $focusBorderColor !important;
+    .choices__item--selectable {
+      padding: 8px 14px;
+    }
   }
   .choices[data-type*=select-multiple] .choices__button, .choices[data-type*=text] .choices__button {
     background-image: url(../images/x-icon.svg);
@@ -218,23 +221,27 @@
       padding-right: 10px;
       margin: 4px 8px;
     }
-    input.choices__input{
-      padding: 0;
+    input.choices__input:not(.choices__input--cloned){
       border:none;
       font-size: 1rem;
-      padding-right: 10px;
+      padding: 0 10px 0 0;
       margin: 4px 8px;
       &:focus{
         box-shadow: none !important;
       }
     }
+    .choices__input--cloned{
+      font-size: 1rem;
+      border: 0;
+      padding: 0 0 0 8px;
+      border-radius: 0;
+      background: initial;
+      box-shadow: none !important;
+    }
     .choices__item {
       padding: 4px 10px;
       line-height: inherit;
       font-size: 1rem;
-    }
-    .choices__list--dropdown .choices__item--selectable {
-      padding: 8px 14px;
     }
     .choices__item.choices__item--selectable:not(.choices__item--choice){
       background: $qg-global-primary-light-grey;
