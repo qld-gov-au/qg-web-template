@@ -454,12 +454,6 @@
     min-height: inherit !important;
     padding: inherit !important;
   }
-
-  //Turn off wizard/panel nav
-  nav,
-  div[ref="header"] {
-    display: none !important;
-  }
 }
 
 .formio-form {
