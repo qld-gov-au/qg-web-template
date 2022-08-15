@@ -277,12 +277,12 @@
     .radio {
       margin: 0;
     }
-    .form-check {
+    .form-check, .form-check-inline {
       padding-bottom: $defaultRem;
-      padding-left: 0
-    }
-    .form-check-input{
-      margin-left: -16px;
+      padding-left: 0;
+      .form-check-input{
+        margin-left: -16px;
+      }
     }
     input[type=radio], input[type=checkbox] {
       width: 25px;
@@ -299,6 +299,7 @@
       margin-left: 16px;
       display: inline-block;
       > span {
+        float: right;
         font-weight: $checkboxWeight;
         margin-left: $defaultRem;
         margin-right: 8px !important;
@@ -447,19 +448,19 @@
   }
   .card {
     position: relative;
-    display: inherit !important;
-    flex-direction: inherit !important;
-    min-width: inherit !important;
-    word-wrap: inherit !important;
+    display: inherit;
+    flex-direction: inherit;
+    min-width: inherit;
+    word-wrap: inherit;
     background-color: white;
-    background-clip: inherit !important;
-    border: none !important;
-    border-radius: 0 !important;
+    background-clip: inherit;
+    border: none;
+    border-radius: 0;
   }
   .card-body {
-    display: inherit !important;
-    min-height: inherit !important;
-    padding: inherit !important;
+    display: inherit;
+    min-height: inherit;
+    padding: inherit;
   }
 }
 
