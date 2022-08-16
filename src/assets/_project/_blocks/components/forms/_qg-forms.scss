@@ -198,10 +198,14 @@
   }
 
   // choices list styles (forms.io styles overrides)
+  .is-flipped .choices__list--dropdown {
+    margin-bottom: 8px;
+  }
   .choices__list--dropdown{
     box-shadow: 0 0 0 $borderWidth $focusBoxShadow;
     margin-top: 8px;
     border: $borderWidth solid $focusBorderColor !important;
+    border-radius: 4px;
     .choices__item--selectable {
       padding: 8px 14px;
     }
@@ -219,13 +223,13 @@
     }
     .choices__list--multiple .choices__item[data-deletable] {
       padding-right: 10px;
-      margin: 4px 8px;
+      margin: 4px 8px 4px 0;
     }
     input.choices__input:not(.choices__input--cloned){
       border:none;
       font-size: 1rem;
       padding: 0 10px 0 0;
-      margin: 4px 8px;
+      margin: 4px 8px 4px 0;
       &:focus{
         box-shadow: none !important;
       }
@@ -284,30 +288,31 @@
         margin-left: -16px;
       }
     }
+    .form-check-inline .form-check-input {
+      margin-right: 0;
+    }
     input[type=radio], input[type=checkbox] {
       width: 25px;
       height: 25px;
       padding-right: 16px;
       margin-top: 0;
-      float: left;
       &:checked + label {
         color: inherit;
       }
     }
     label {
+      display:flex;
       font-weight: normal;
       margin-left: 16px;
-      display: inline-block;
       > span {
-        float: right;
+        flex: 1;
         font-weight: $checkboxWeight;
         margin-left: $defaultRem;
-        margin-right: 8px !important;
       }
     }
     .field-required:after {
-      position: absolute;
-      float: right;
+      //position: absolute;
+      //float: right;
     }
   }
   .formio-hidden {
