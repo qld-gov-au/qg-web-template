@@ -260,6 +260,8 @@
   // end of choices list styles (forms.io styles overrides)
 
 
+  // forms.io radio button and checkbox specific styles overrides
+  // ------------------------------------------------------------
   .qg-forms-v2__checkbox, .qg-forms-v2__radio {
     display: flex;
     flex-direction: column;
@@ -310,11 +312,23 @@
         margin-left: $defaultRem;
       }
     }
-    .field-required:after {
-      //position: absolute;
-      //float: right;
+  }
+
+  // changing the position of required asterisk for better CSS handling
+  .formio-component-checkbox {
+    .field-required {
+      &:after {
+        display: none;
+      }
+      input + span:after {
+        content: " *";
+        color: #eb0000;
+      }
     }
   }
+  // ------------------------------------------------------------------
+  // end of forms.io radio button and checkbox specific styles overrides
+
   .formio-hidden {
     margin-bottom: 0 !important;
   }
@@ -448,24 +462,25 @@
 
   //Workarounds -----------------------------------------------------
   //Workarounds for instances where panel/card is applied to form body
+  // TODO I think this is not in use currently and not sure what is the use case for this, card styles are migrated from forms V1 styles. Will investigate and delete.
   .border {
     border: 0;
   }
   .card {
     position: relative;
-    display: inherit;
-    flex-direction: inherit;
-    min-width: inherit;
-    word-wrap: inherit;
+    display: inherit !important;
+    flex-direction: inherit !important;
+    min-width: inherit !important;
+    word-wrap: inherit !important;
     background-color: white;
-    background-clip: inherit;
-    border: none;
-    border-radius: 0;
+    background-clip: inherit !important;
+    border: none !important;
+    border-radius: 0 !important;
   }
   .card-body {
-    display: inherit;
-    min-height: inherit;
-    padding: inherit;
+    display: inherit !important;
+    min-height: inherit !important;
+    padding: inherit !important;
   }
 }
 
