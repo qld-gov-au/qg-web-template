@@ -81,11 +81,11 @@
     <div id="qg-one-col" class="row wide">
 
       <div id="qg-primary-content" role="main">
-        <h2 id="buttons" class="category">Buttons</h2>
-        <p><span class="label label-default" title="Default bootstrap implementation">Default Bootstrap</span></p>
-        <p>Publishers can use buttons to express what action will occur when the user clicks it. Buttons are used to initialise an action</p>
-        <h3> Standard buttons </h3>
-        <p>The SWE leverages the button component from Bootstrap, with the addition of the 'Primary Alt' button.</p>
+        <h1 class="category" id="buttons">Buttons</h1>
+        <h2>Documentation</h2>
+        <div class="alert alert-info mb-4" role="alert">
+          <p>Find the <a href="https://www.forgov.qld.gov.au/information-and-communication-technology/communication-and-publishing/website-and-digital-publishing/website-standards-guidelines-and-templates/swe/components/buttons">implementation and usage guidance</a> for this component in the SWE documentation on For Government.</p>
+        </div>
         <div class="qg-tmplt-example">
           <div class="panel-body mb-2 p-4">
               <button type="button" class="qg-btn btn-default">Default</button>
@@ -94,11 +94,9 @@
               <button type="button" class="qg-btn btn-link ml-3">Link</button>
               <button type="button" class="qg-btn btn-outline-dark ml-3">Outline button dark</button>
           </div>
-          <p>Publishers may choose between dark and light Outline button according to the background colour, light version by using class <code>.btn-outline-light</code> and dark version by using class <code>.btn-outline-dark</code> </p>
         </div>
 
         <h3> Sizes </h3>
-        <p> Publishers may choose the size of the buttons by using classes <code>.btn-lg</code> for larger buttons and <code>.btn-sm</code> and <code>.btn-xs</code> for smaller buttons. </p>
         <div class="qg-tmplt-example">
           <div class="panel-body">
             <p>
@@ -111,7 +109,6 @@
         </div>
 
         <h3> Block level buttons </h3>
-        <p>Publishers can create block level buttons which span the full width of a parent by adding <code>.btn-block</code>.</p>
         <div class="qg-tmplt-example">
           <div class="panel-body">
             <p>
@@ -120,9 +117,16 @@
             </p>
           </div>
         </div>
-        <h3> HTML </h3>
-        <p>Please refer to <a href="http://getbootstrap.com/css/#buttons">Bootstrap's button component</a> for additional implementation advice.</p>
 
+<h3>Loading button</h3>
+<div class="qg-tmplt-example">
+  <div class="panel-body mb-2 p-4">
+      <button type="button" class="qg-btn btn-default btn-xs" disabled><span class="spinner-border" role="status"><span class="sr-only">Loading...</span></span> Default</button>
+      <button type="button" class="qg-btn btn-primary btn-sm ml-3" disabled><span class="spinner-border" role="status"><span class="sr-only">Loading...</span></span> Primary</button>
+      <button type="button" class="qg-btn btn-secondary ml-3" disabled><span class="spinner-border" role="status"><span class="sr-only">Loading...</span></span> Primary Alt</button>
+      <button type="button" class="qg-btn btn-outline-dark ml-3 btn-lg" disabled><span class="spinner-border" role="status"><span class="sr-only">Loading...</span></span> Outline button dark</button>
+  </div>
+</div>
       </div>
     </div>
   </div>

@@ -14,10 +14,7 @@
 
 		&-item {
 			display: block;
-      float: left;
-			max-width: 500px;
-			//white-space: nowrap;
-			transition: max-width .3s ease;
+      		float: left;
 
 			&:first-child:before {
 				display: none;

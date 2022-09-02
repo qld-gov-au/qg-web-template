@@ -46,8 +46,8 @@
     li {
       width: 255px;
       padding: 15px !important;
-      margin-bottom: 1rem;
-      margin-right: 2rem !important;
+      margin-bottom: 16px;
+      margin-right: 32px !important;
       color: #000;
       background-color: #fff;
       border-radius: 3px;
@@ -163,16 +163,19 @@
   input[type=text], input[type=password], input[type=search], input[type=email], input[type=tel], input[type=url], input[type=date], input[type=time], input[type=datetime], input[type=number], select, textarea,
   select,
   textarea,
-  .formio-choices .selection {
+  .formio-choices .selection, .form-control.dropdown {
+    padding: 8px;
     border-radius: $borderRadius;
-    border-width: $borderWidth;
-    &:focus {
+    &:focus-within {
       color: #495057;
       background-color: #fff;
-      border-color: #80bdff;
+      border-color: $focusBorderColor;
       outline: 0;
-      box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
+      box-shadow: 0 0 0 $borderWidth $focusBoxShadow;
     }
+  }
+  .form-control, .form-control.dropdown, .form-check-input{
+    border: $borderWidth solid #818181;
   }
   label, .label {
     font-size: $labelSize;
@@ -193,12 +196,78 @@
     color: $labelHeadingColour;
     font-weight: $labelHeadingWeight;
   }
+
+  // choices list styles (forms.io styles overrides)
+  .is-flipped .choices__list--dropdown {
+    margin-bottom: 8px;
+  }
+  .choices__list--dropdown{
+    box-shadow: 0 0 0 $borderWidth $focusBoxShadow;
+    margin-top: 8px;
+    border: $borderWidth solid $focusBorderColor !important;
+    border-radius: 4px;
+    .choices__item--selectable {
+      padding: 8px 14px;
+    }
+  }
+  .choices[data-type*=select-multiple] .choices__button, .choices[data-type*=text] .choices__button {
+    background-image: url(../images/x-icon.svg);
+    background-size: 11px;
+    vertical-align: middle;
+    border-left: none;
+  }
+  .formio-choices{
+    .choices__item.choices__item--selectable {
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .choices__list--multiple .choices__item[data-deletable] {
+      padding-right: 10px;
+      margin: 4px 8px 4px 0;
+    }
+    input.choices__input:not(.choices__input--cloned){
+      border:none;
+      font-size: 1rem;
+      padding: 0 10px 0 0;
+      margin: 4px 8px 4px 0;
+      &:focus{
+        box-shadow: none !important;
+      }
+    }
+    .choices__input--cloned{
+      font-size: 1rem;
+      border: 0;
+      padding: 0 0 0 8px;
+      border-radius: 0;
+      background: initial;
+      box-shadow: none !important;
+    }
+    .choices__item {
+      padding: 4px 10px;
+      line-height: inherit;
+      font-size: 1rem;
+    }
+    .choices__item.choices__item--selectable:not(.choices__item--choice){
+      background: $qg-global-primary-light-grey;
+      border-radius: 6px;
+      border: none;
+      color: $qg-global-primary-darker;
+    }
+    .choices__button{
+      background-color: initial;
+    }
+  }
+  // end of choices list styles (forms.io styles overrides)
+
+
+  // forms.io radio button and checkbox specific styles overrides
+  // ------------------------------------------------------------
   .qg-forms-v2__checkbox, .qg-forms-v2__radio {
     display: flex;
     flex-direction: column;
     label {
       width:100%;
-      margin-bottom: rem(14px);
+      margin-bottom: 14px;
     }
     li{
       display:flex;
@@ -209,45 +278,57 @@
   }
   .checkbox, .qg-forms-v2__checkbox,
   .form-radio, .qg-forms-v2__radio {
-    padding: 0.8rem 0 0.8rem 0;
+    padding: 12px 0 12px 0;
     margin: 0;
     .radio {
       margin: 0;
     }
-    .form-check {
+    .form-check, .form-check-inline {
       padding-bottom: $defaultRem;
-      padding-left: 0
+      padding-left: 0;
+      .form-check-input{
+        margin-left: -16px;
+      }
     }
-    .form-check-input{
-      margin-left: -1rem;
+    .form-check-inline .form-check-input {
+      margin-right: 0;
     }
     input[type=radio], input[type=checkbox] {
       width: 25px;
       height: 25px;
-      padding-right: 1rem;
+      padding-right: 16px;
       margin-top: 0;
-      border-radius: $borderRadius;
-      border-width: $borderWidth;
-      float: left;
       &:checked + label {
         color: inherit;
       }
     }
     label {
+      display:flex;
       font-weight: normal;
-      margin-left: rem(16px);
-      display: inline-block;
-      span {
+      margin-left: 16px;
+      > span {
+        flex: 1;
         font-weight: $checkboxWeight;
         margin-left: $defaultRem;
-        margin-right: 0.5rem !important;
       }
     }
-    .field-required:after {
-      position: absolute;
-      float: right;
+  }
+
+  // changing the position of required asterisk for better CSS handling
+  .formio-component-checkbox {
+    .field-required {
+      &:after {
+        display: none;
+      }
+      input + span:after {
+        content: " *";
+        color: #eb0000;
+      }
     }
   }
+  // ------------------------------------------------------------------
+  // end of forms.io radio button and checkbox specific styles overrides
+
   .formio-hidden {
     margin-bottom: 0 !important;
   }
@@ -255,8 +336,12 @@
     font-weight: normal;
   }
   .alert {
-    margin-bottom: 1em;
-    font-size: rem(16px);
+    margin-bottom: 16px;
+    font-size: 1rem;
+    &.alert-danger {
+      background-color: #ffedde;
+      border-color: #f9af71;
+    }
   }
   .text-muted {
     color: $hintColour;
@@ -343,11 +428,11 @@
     }
     div.text-muted {
       order: 1;
-      margin-bottom: 0.25rem;
+      margin-bottom: 4px;
     }
     div.formio-errors {
       order: 2;
-      margin-bottom: 0.5rem;
+      margin-bottom: 8px;
     }
     div[ref="element"],
     div.row,
@@ -368,8 +453,6 @@
 
   //Add default margins to sections and fieldsets
   fieldset {
-    // margin: 1rem 0 1rem 0;
-    //nested fieldsets
     .fieldset-body {
       label {
         font-weight: $labelWeight;
@@ -379,6 +462,7 @@
 
   //Workarounds -----------------------------------------------------
   //Workarounds for instances where panel/card is applied to form body
+  // TODO I think this is not in use currently and not sure what is the use case for this, card styles are migrated from forms V1 styles. Will investigate and delete.
   .border {
     border: 0;
   }
@@ -398,18 +482,107 @@
     min-height: inherit !important;
     padding: inherit !important;
   }
+}
 
-  //Turn off wizard/panel nav
-  nav,
-  div[ref="header"] {
-    display: none !important;
+.formio-form {
+  .formio-select-autocomplete-input {
+    opacity: 0;
+    position: relative;
+    z-index: -1;
+    display: block;
+    height: 0;
+    border: none;
+  }
+
+  .formio-component-panel {
+    .card.mb-2 {
+      margin-bottom: 0 !important;
+      border: none !important;
+    }
+    .card-body {
+      border: 1px solid gray;
+      padding: 16px;
+      margin-top: -1px;
+    }
+    .card-header {
+      position: relative;
+      display: block;
+      border: 1px solid gray;
+      border-radius: 0;
+      background-color: transparent !important;
+      padding: 16px;
+      margin-top: -1px;
+      color: #13578b;
+      font-weight: 700;
+      text-decoration: underline;
+      .card-title {
+        color: #13578b !important;
+        padding-right: 28px;
+      }
+      &:hover {
+        text-decoration: none;
+        .text-light, .text-muted {
+          color: #212529 !important;
+        }
+      }
+      .formio-collapse-icon {
+        display: none;
+      }
+      &:after {
+        content: " ";
+        position: absolute;
+        top: 50%;
+        margin-top: -9px;
+        right: 16px;
+        width: 14px;
+        height: 14px;
+        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Cpath fill='%2300698f' d='M64 0l64 64-16 16-64-64'/%3E%3Cpath fill='%2300698f' d='M64 0l16 16-64 64L0 64'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: 50%;
+        z-index: 101;
+        transition: transform .25s ease-in;
+      }
+      &[aria-expanded="false"]:after {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  &>div>nav {
+    display: block;
+    &>ul.pagination {
+      .page-item .page-link {
+          background: none !important;
+          color: #13578b !important;
+          font-weight: 700;
+          display: inline-block;
+          padding: 16px;
+          border-radius: 0 !important;
+          margin: 0;
+          margin-right: -1px;
+          text-decoration: underline !important;
+      }
+      .page-item:not(.active):hover .page-link {
+          text-decoration: none !important;
+          background-color: #f5f5f5 !important;
+      }
+      .page-item.active .page-link {
+          color: #212529 !important;
+          text-decoration: none !important;
+          background-color: #f5f5f5 !important;
+      }
+    }
   }
 }
-.formio-select-autocomplete-input {
-  opacity: 0;
-  position: relative;
-  z-index: -1;
-  display: block;
-  height: 0;
-  border: none;
+
+#qg-primary-content {
+  .qg-forms-v2 .formio-component-panel .card-header {
+      display: block;
+  }
+  .qg-forms-v2 .formio-component-panel .card-body{
+      padding: 16px;
+  }
+  .qg-forms-v2 .formio-form nav {
+    display: block;
+  }
 }

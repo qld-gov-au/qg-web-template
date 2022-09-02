@@ -33,7 +33,7 @@ module.exports = function (gulp, plugins, config, destFolder = 'assets', addSrc)
         browsers: plugins.supportedBrowser,
         cascade: false,
       }))
-      .pipe(sourcemaps.write())
+      .pipe(sourcemaps.write('.'))
       // .pipe(plugins.if(type === 'release', plugins.cleanCss()))
       .pipe(plugins.if(typeof destFolder[0] !== 'undefined', gulp.dest(`${dest.base}/${destFolder[0]}/${dest.ext}`)))
       .pipe(plugins.if(typeof destFolder[1] !== 'undefined', gulp.dest(`${dest.base}/${destFolder[1]}/${dest.ext}`)))

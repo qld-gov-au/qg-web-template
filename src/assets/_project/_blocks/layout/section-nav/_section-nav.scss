@@ -10,13 +10,17 @@
     margin-top: 1.9rem;
     margin-bottom: 0;
     @include rem(font-size, 19px);
-    &:hover {
-      background-color: #F5F5F5;
-      text-decoration: underline;
-    }
-    a{
+    a {
+      margin: -0.7rem 0 -0.7rem -1rem;
+      padding: 0.7rem 0 0.7rem 1rem;
+      width: calc(100% + 1rem);
+      display: inline-block;
       color: $qg-dark-grey-darker !important;
       font-size: 1rem;
+      &:hover {
+        background-color: #F5F5F5;
+        text-decoration: underline;
+      }
     }
   }
   > ul {
