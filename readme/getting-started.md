@@ -36,4 +36,12 @@ npm run start
 npm run test
 ```
 
+**To start in the Storybook dev environment**
+We have added a Storybook develop environment for providing better UI component isolation and making visual testing possible, currently stories construction is WIP and will be replace the legacy dev environment if finished.
+```bash
+npm run start-new
+npm run test
+```
+For more details of develop component is Storybook, please refer to [Develop in Storybook](readme/develop-in-storybook.md).
+
 Next, guidelines and how to for [working in the Web Template git repo](git.md)
