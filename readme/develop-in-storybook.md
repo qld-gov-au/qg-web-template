@@ -35,7 +35,7 @@ Each component will have its own story folder which contains:
 - Create different states of a component in a story so it they are testable.
 - Create story for different viewport size so they are testable.
 - Use [decorators](https://storybook.js.org/docs/react/writing-stories/decorators) to keep the code snippet clean and out of noise.
-- We don't need to add description to the stories as it will be handled by Forgov documentation.
+- We are not required to add author usage descriptions as [Forgov documentation ](https://www.forgov.qld.gov.au/information-and-communication-technology/communication-and-publishing/website-and-digital-publishing/website-standards-guidelines-and-templates/swe) will cover it, you can however add developer detailed descriptions where required.
 
 ## Attention
 - Switch from one story to another story will not initiate the component instance javascript, so you will need to refresh the page to make the component functional.
