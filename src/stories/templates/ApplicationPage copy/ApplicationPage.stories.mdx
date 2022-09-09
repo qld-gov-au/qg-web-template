@@ -1,0 +1,22 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+
+import { getCanvasMobileProps, getStoryMobileParameters } from "../../helpers";
+
+import Default from "../../../template-pages/application-page.html";
+import Mobile from "../../../template-pages/application-page.html";
+
+<Meta title="Templates/ApplicationPage" />
+
+# Application Page
+
+## Default
+
+<Canvas withSource="close">
+  <Story name="Default">{() => Default}</Story>
+</Canvas>
+
+## Mobile
+
+<Canvas withSource="none" {...getCanvasMobileProps()}>
+  <Story name="Mobile" parameters={getStoryMobileParameters()}>{() => Mobile}</Story>
+</Canvas>
