@@ -1,0 +1,34 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+
+import Information from "./templates/Information.html";
+import Success from "./templates/Success.html";
+import Warning from "./templates/Warning.html";
+import Critical from "./templates/Critical.html";
+
+<Meta title="Components/Alert" />
+
+# Alert
+
+## Information
+
+<Canvas withSource="open">
+  <Story name="Information">{() => Information}</Story>
+</Canvas>
+
+## Success
+
+<Canvas withSource="open">
+  <Story name="Success">{() => Success}</Story>
+</Canvas>
+
+## Warning
+
+<Canvas withSource="open">
+  <Story name="Warning">{() => Warning}</Story>
+</Canvas>
+
+## Critical
+
+<Canvas withSource="open">
+  <Story name="Critical">{() => Critical}</Story>
+</Canvas>
