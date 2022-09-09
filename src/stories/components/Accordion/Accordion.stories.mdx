@@ -1,6 +1,6 @@
 import { Canvas, Meta, Story } from "@storybook/addon-docs";
 
-import { getCanvasMobileProps, getStoryMobileParameters } from "../../helpers";
+import { getCanvasMobileProps, getStoryMobileParameters, getStoryMobileHeight } from "../../helpers";
 
 import Default from "./templates/Default.html";
 import Subtitle from "./templates/Subtitle.html";
@@ -39,7 +39,7 @@ import Mobile from "./templates/Default.html";
 ## Mobile
 
 <Canvas withSource="none" {...getCanvasMobileProps()}>
-  <Story name="Mobile" parameters={getStoryMobileParameters()}>
+  <Story name="Mobile" parameters={getStoryMobileParameters()} height={getStoryMobileHeight()}>
     {() => Mobile}
   </Story>
 </Canvas>

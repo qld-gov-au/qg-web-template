@@ -1,6 +1,6 @@
 import { Canvas, Meta, Story } from "@storybook/addon-docs";
 
-import { getCanvasMobileProps, getStoryMobileParameters } from "../../helpers";
+import { getCanvasMobileProps, getStoryMobileParameters, getStoryMobileHeight } from "../../helpers";
 
 import BreadcrumbAgency from "./templates/BreadcrumbAgency.html";
 import BreadcrumbGlobal from "./templates/BreadcrumbGlobal.html";
@@ -25,5 +25,5 @@ import Mobile from "./templates/BreadcrumbGlobal.html";
 ## Mobile
 
 <Canvas withSource="none" {...getCanvasMobileProps()}>
-  <Story name="Mobile" parameters={getStoryMobileParameters()}>{() => Mobile}</Story>
+  <Story name="Mobile" parameters={getStoryMobileParameters()} height={getStoryMobileHeight()}>{() => Mobile}</Story>
 </Canvas>
