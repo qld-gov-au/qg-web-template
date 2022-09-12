@@ -20,7 +20,10 @@ jobs:
         node: [ '16' ]
     name: Build and Deploy on Node ${{ matrix.node }}
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 # 👈 Required to retrieve git history
 
       - name: Use Node.js
         uses: actions/setup-node@v2
