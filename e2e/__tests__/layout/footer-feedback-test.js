@@ -41,7 +41,7 @@ describe('SWE Footer testing', () => {
     const currentReferrer = await page.evaluate(id => document.referrer);
     const getReferrer =  await page.$eval('input[name=page-referer]', el => $(el).val());
     expect(getReferrer).toMatch(currentReferrer);
-  }, ct.TO);
+  }, ct.TO * 2);
 
   afterAll(async () => {
     await browser.close();

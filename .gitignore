@@ -54,3 +54,4 @@ release
 package-lock.json
 web-template-release/
 template-pages/sample/*
+storybook-static/
