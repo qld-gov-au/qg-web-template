@@ -1,0 +1,30 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+
+import Alert from "./templates/Alert.html";
+import Brand from "./templates/Brand.html";
+import Text from "./templates/Text.html";
+
+import { QgContent } from "../../decorators";
+
+<Meta title="Foundations/Color" />
+
+# Color
+
+## Text
+
+<Canvas>
+  <Story name="Text">{() => Text}</Story>
+</Canvas>
+
+## Brand
+
+<Canvas>
+  <Story name="Brand">{() => Brand}</Story>
+</Canvas>
+
+## Alert
+
+<Canvas>
+  <Story name="Alert">{() => Alert}</Story>
+</Canvas>
+

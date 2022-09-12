@@ -1,0 +1,26 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+
+import Default from "./templates/Default.html";
+
+import { QgPrimaryContent } from "../../decorators";
+
+<Meta title="Components/Blockquote" decorators={[QgPrimaryContent]} />
+
+# Blockquote
+
+## Default
+
+<Canvas withSource="open">
+  <Story
+    name="Default"
+    parameters={{
+      docs: {
+        source: {
+          code: Default,
+        },
+      },
+    }}
+  >
+    {() => Default}
+  </Story>
+</Canvas>

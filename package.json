@@ -109,12 +109,14 @@
     "run-sequence": "^1.1.5",
     "sass": "^1.38.0",
     "sass-migrator": "^1.5.1",
+    "storybook-addon-pseudo-states": "^1.15.1",
     "string-replace-loader": "^2.3.0",
     "style-loader": "^0.17.0",
     "terser-webpack-plugin": "^3.0.3",
     "url-loader": "^0.5.8",
     "vinyl-fs": "^3.0.3",
     "webpack": "^4.43.0",
+    "webpack-ssi-include-loader": "^1.6.1",
     "webpack-stream": "^5.2.1"
   },
   "dependencies": {
