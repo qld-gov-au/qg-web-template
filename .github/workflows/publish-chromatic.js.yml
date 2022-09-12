@@ -1,7 +1,7 @@
 # This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: Publish Storybook
+name: Publish Chromatic
 
 on:
   push:
@@ -34,8 +34,6 @@ jobs:
           npm run build
       - name: Test 🔧
         run: |
-          npm run watch &
-          echo "sleeping 10"; sleep 10;
           npm run test
       - name: Build Storybook 🔧
         run: |
