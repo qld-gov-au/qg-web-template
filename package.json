@@ -5,7 +5,7 @@
   "main": "gulpfile.babel.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/qld-gov-au/qg-web-template.git"
+    "url": "git+https://github.com/qld-gov-au/qg-web-template.git"
   },
   "scripts": {
     "clean": "gulp clean-build && gulp clean-release",
@@ -27,7 +27,8 @@
     "publish-test-cdn": "npm run release && export NODE_ENV=test && gulp cdn-clean && gulp cdn-clone && gulp cdn-transfer && gulp cdn-branch && gulp cdn-add && gulp cdn-commit && gulp cdn-push",
     "postpublish": "gulp clean-publish",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "chromatic": "npx chromatic --exit-zero-on-changes"
   },
   "authors": "Queensland Government",
   "licence": "all rights reserved",
@@ -46,6 +47,7 @@
     "@storybook/manager-webpack4": "^6.5.10",
     "@storybook/testing-library": "^0.0.13",
     "babel-loader": "^8.1.0",
+    "chromatic": "^6.9.0",
     "concurrently": "^7.4.0",
     "copy-webpack-plugin": "^4.0.1",
     "core-js": "^3.6.5",
@@ -132,5 +134,9 @@
     "popper.js": "^1.16.1",
     "responsive-toolkit": "^2.6.3",
     "stickyfill": "^1.1.1-strict"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/qld-gov-au/qg-web-template/issues"
+  },
+  "_id": "Queensland-Government-Web-Template@4.0.13"
 }
