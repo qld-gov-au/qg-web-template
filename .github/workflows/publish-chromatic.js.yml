@@ -1,11 +1,12 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+# This workflow is for Chromatic trial run, deploy to a trial Chromatic account, for official implementation, please replace the CHROMATIC_PROJECT_TOKEN in Github secrets.
+# Further details on Chromatic setup: https://www.chromatic.com/docs/github-actions
 
 name: Publish Chromatic
 
 on:
   push:
-  pull_request:
+    branches-ignore:
+      - 'gh-pages' # 👈 Excludes the gh-pages branch
 
 concurrency:
   group: compile-${{ github.workflow }}-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
@@ -37,9 +38,9 @@ jobs:
           npm run watch &
           echo "sleeping 10"; sleep 10;
           npm run test
-      - name: Build Storybook 🔧
-        run: |
-          npm run build-storybook
-      - name: Chromatic 🔧
-        run: | # publish Storybook and run visual tests
-          npm run chromatic
+      - name: Publish to Chromatic
+        uses: chromaui/action@v1
+        # Options required to the GitHub Chromatic Action
+        with:
+          # 👇 Chromatic projectToken, refer to the manage page to obtain it.
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}

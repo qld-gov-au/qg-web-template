@@ -1,13 +1,13 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code, run tests across different versions of node
+# build the Storybook and deploy it to Github Pages.
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
 name: Publish Storybook
 
 on:
   push:
-# test building on any branches  
-#    branches:
-#      - master
+    branches:
+      - master
 
 concurrency:
   group: compile-${{ github.workflow }}-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
