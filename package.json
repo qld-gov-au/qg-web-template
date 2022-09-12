@@ -12,6 +12,7 @@
     "prebuild": "gulp clean-build",
     "build": "gulp build",
     "test": "jest",
+    "test-ci": "npm run watch & (echo \"sleeping 10\"; sleep 10;) && npm run test",
     "postbuild": "gulp clean-redundant-build",
     "release": "gulp clean-release && export NODE_ENV=prod && npm run build && node gulp/build-tasks/node-docs-flatten.js && gulp release && node gulp/release-tasks/node-template-flatten.js && gulp replace-links",
     "postrelease": "gulp clean-redundant-release",
@@ -19,7 +20,7 @@
     "start": "npm run build && concurrently \"gulp watch\" \"npm:storybook\"",
     "watch": "gulp watch",
     "gh-pages-legacy": "export NODE_ENV=prod && npm run release && node gulp/gh-pages.js",
-    "gh-pages": "export PUBLIC_PATH=https://qld-gov-au.github.io/qg-web-template && npm run build-storybook && node gulp/gh-pages.js && echo 'publishing complete.'",
+    "gh-pages": "npm run build-storybook-gh-pages && npm run build-storybook && node gulp/gh-pages.js && echo 'publishing complete.'",
     "publish-npm": "export NODE_ENV=prod && npm run release && gulp wt-clean && gulp wt-clone && gulp wt-sync && cd web-template-release && git add . && git commit -m ${npm_package_version} && npm login && np ${npm_package_version}",
     "publish-test-npm": "npm run release && export NODE_ENV=test &&  gulp wt-clean && gulp wt-clone && gulp wt-sync && gulp wt-branch && gulp wt-updateVersion && gulp wt-add && gulp wt-commit && gulp wt-push",
     "create-swe-release": "export NODE_ENV=prod && gulp swe-add && gulp swe-tag && gulp swe-commit && gulp swe-push",
@@ -30,8 +31,7 @@
     "storybook-ci": "start-storybook -p 6006 --ci",
     "build-storybook": "build-storybook",
     "build-storybook-ci": "npm run storybook-ci & (echo \"sleeping 25\"; sleep 25;) && npm run build-storybook",
-    "build-storybook-gh-pages": "export PUBLIC_PATH=https://qld-gov-au.github.io/qg-web-template/ && build-storybook",
-    "test-ci": "npm run watch & (echo \"sleeping 10\"; sleep 10;) && npm run test"
+    "build-storybook-gh-pages": "export PUBLIC_PATH=https://qld-gov-au.github.io/qg-web-template/ && build-storybook"
   },
   "authors": "Queensland Government",
   "licence": "all rights reserved",
