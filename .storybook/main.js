@@ -6,6 +6,7 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
+    "storybook-addon-pseudo-states",
   ],
   staticDirs: ["../build"],
   previewMainTemplate: "./.storybook/previewMainTemplate.ejs",
