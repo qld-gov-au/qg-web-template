@@ -28,7 +28,10 @@ module.exports = {
             onFileMatch: (filePath, fileContent, isLocal) => {
               return fileContent.replaceAll(
                 'virtual=".',
-                `virtual="${process.env.PUBLIC_PATH?.replace(/\/+$/, '') || ""}${filePath.slice(0, filePath.lastIndexOf("/"))}/.`
+                `virtual="${filePath.slice(0, filePath.lastIndexOf("/"))}/.`
+              ).replaceAll(
+                'virtual="/assets',
+                `virtual="${process.env.PUBLIC_PATH?.replace(/\/+$/, '') || ""}/assets`
               ).replaceAll(
                 'src="/assets',
                 `src="${process.env.PUBLIC_PATH?.replace(/\/+$/, '') || ""}/assets`
