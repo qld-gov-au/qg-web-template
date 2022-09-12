@@ -31,13 +31,14 @@ module.exports = {
                 `virtual="${filePath.slice(0, filePath.lastIndexOf("/"))}/.`
               ).replaceAll(
                 'src="/assets',
-                'src="./assets'
+                `src="${process.env.PUBLIC_PATH || ""}/assets`
               );
             },
           },
         },
       ],
     });
+    if (process.env.PUBLIC_PATH) config.output.publicPath = process.env.PUBLIC_PATH;
     return config;
   },
 };
