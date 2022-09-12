@@ -1,5 +1,5 @@
 # This workflow is for Chromatic trial run, deploy to a trial Chromatic account, for official implementation, please replace the CHROMATIC_PROJECT_TOKEN in Github secrets.
-# Further details on Chromatic setup: https://www.chromatic.com/docs/github-actions
+# Further details on Chromatic setup: https://www.chromatic.com/docs/github-actions.
 
 name: Publish Chromatic
 
