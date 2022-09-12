@@ -134,9 +134,5 @@
     "popper.js": "^1.16.1",
     "responsive-toolkit": "^2.6.3",
     "stickyfill": "^1.1.1-strict"
-  },
-  "bugs": {
-    "url": "https://github.com/qld-gov-au/qg-web-template/issues"
-  },
-  "_id": "Queensland-Government-Web-Template@4.0.13"
+  }
 }
