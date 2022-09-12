@@ -20,6 +20,17 @@ module.exports = {
     config.module.rules.push({
       test: /\.html?$/,
       use: [
+        // {
+        //   loader: "html-loader",
+        //   options: {
+        //     preprocessor: (content, loaderContext) => {
+        //       return content.replaceAll(
+        //         'virtual="/assets',
+        //         `virtual="${process.env.PUBLIC_PATH?.replace(/\/+$/, '') || ""}/assets`
+        //       );
+        //     },
+        //   }
+        // },
         {
           loader: "webpack-ssi-include-loader",
           options: {
@@ -30,9 +41,6 @@ module.exports = {
                 'virtual=".',
                 `virtual="${filePath.slice(0, filePath.lastIndexOf("/"))}/.`
               ).replaceAll(
-                'virtual="/assets',
-                `virtual="${process.env.PUBLIC_PATH?.replace(/\/+$/, '') || ""}/assets`
-              ).replaceAll(
                 'src="/assets',
                 `src="${process.env.PUBLIC_PATH?.replace(/\/+$/, '') || ""}/assets`
               );
@@ -42,6 +50,7 @@ module.exports = {
       ],
     });
     if (process.env.PUBLIC_PATH) config.output.publicPath = process.env.PUBLIC_PATH;
+    console.warn("test444", config.module.rules)
     return config;
   },
 };
