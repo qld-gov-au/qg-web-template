@@ -36,6 +36,8 @@ jobs:
           npm run build
       - name: Test 🔧
         run: |
+          npm run watch &
+          echo "sleeping 10"; sleep 10;
           npm run test
       - name: Build Storybook 🔧
         run: |
