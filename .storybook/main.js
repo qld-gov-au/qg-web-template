@@ -29,6 +29,9 @@ module.exports = {
               return fileContent.replaceAll(
                 'virtual=".',
                 `virtual="${filePath.slice(0, filePath.lastIndexOf("/"))}/.`
+              ).replaceAll(
+                'src="/assets',
+                'src="./assets'
               );
             },
           },

@@ -19,7 +19,7 @@
     "start": "npm run build && concurrently \"gulp watch\" \"npm:storybook\"",
     "watch": "gulp watch",
     "gh-pages-legacy": "export NODE_ENV=prod && npm run release && node gulp/gh-pages.js",
-    "gh-pages": "export NODE_ENV=prod && npm run build-storybook && node gulp/gh-pages.js",
+    "gh-pages": "export NODE_ENV=prod && npm run build-storybook && node gulp/gh-pages.js && echo 'publishing complete.'",
     "publish-npm": "export NODE_ENV=prod && npm run release && gulp wt-clean && gulp wt-clone && gulp wt-sync && cd web-template-release && git add . && git commit -m ${npm_package_version} && npm login && np ${npm_package_version}",
     "publish-test-npm": "npm run release && export NODE_ENV=test &&  gulp wt-clean && gulp wt-clone && gulp wt-sync && gulp wt-branch && gulp wt-updateVersion && gulp wt-add && gulp wt-commit && gulp wt-push",
     "create-swe-release": "export NODE_ENV=prod && gulp swe-add && gulp swe-tag && gulp swe-commit && gulp swe-push",
