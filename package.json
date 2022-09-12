@@ -27,6 +27,7 @@
     "publish-test-cdn": "npm run release && export NODE_ENV=test && gulp cdn-clean && gulp cdn-clone && gulp cdn-transfer && gulp cdn-branch && gulp cdn-add && gulp cdn-commit && gulp cdn-push",
     "postpublish": "gulp clean-publish",
     "storybook": "start-storybook -p 6006",
+    "storybook-ci": "start-storybook -p 6006 --ci",
     "build-storybook": "build-storybook",
     "build-storybook-gh-pages": "export PUBLIC_PATH=https://qld-gov-au.github.io/qg-web-template/ && build-storybook"
   },
