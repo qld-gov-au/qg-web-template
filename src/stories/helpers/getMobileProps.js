@@ -11,6 +11,7 @@ export const getStoryMobileParameters = () => ({
     // Opt-out of inline rendering
     inlineStories: false,
   },
+  chromatic: { viewports: [INITIAL_VIEWPORTS.iphone12.styles.width, INITIAL_VIEWPORTS.iphone12.styles.height] },
 });
 
 export const getStoryMobileHeight = () => INITIAL_VIEWPORTS.iphone12.styles.height;
