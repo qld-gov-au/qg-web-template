@@ -95,7 +95,7 @@
     "puppeteer": "^10.0.0",
     "regenerator-runtime": "^0.13.5",
     "replace-in-file": "^6.1.0",
-    "run-sequence": "^1.1.5",
+    "run-sequence": "^2.2.1",
     "sass": "^1.38.0",
     "sass-migrator": "^1.5.1",
     "string-replace-loader": "^3.1.0",
