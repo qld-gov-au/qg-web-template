@@ -26,7 +26,7 @@
           font-weight: bold;
           padding-right: 1.8rem;
         }
-        &:hover {
+        &:hover, &.hover {
           .title{
             text-decoration: none;
             color: $qg-dark-grey-darker;
@@ -69,7 +69,7 @@
       }
     }
   }
-  button:focus{
+  button:focus, button.focus {
     outline: 2px solid #0096d6 !important;
     outline-offset: 2px;
     z-index: 100;
@@ -106,7 +106,7 @@
     display: inline-block;
   }
   .expand, .collapse, label[for="expand"], label[for="collapse"] {
-    &:hover {
+    &:hover, &.hover {
       text-decoration: underline !important;
     }
   }
@@ -233,10 +233,11 @@
 
 // IOS safari specific styles
 @media not all and (min-resolution:.001dpcm) {
-  .qg-accordion .acc-heading:focus {
+  .qg-accordion .acc-heading:focus, .qg-accordion .acc-heading.focus {
     outline: 2px solid $qg-blue;
   }
-  .qg-accordion .expand:focus, .qg-accordion .expand:active, .qg-accordion .collapse:focus, .qg-accordion .collapse:active{
+  .qg-accordion .expand:focus, .qg-accordion .expand:active, .qg-accordion .collapse:focus, .qg-accordion .collapse:active, 
+  .qg-accordion .expand.focus, .qg-accordion .expand.active, .qg-accordion .collapse.focus, .qg-accordion .collapse.active {
     outline: 2px solid $qg-blue !important;
     outline-offset: -2px;
   }
