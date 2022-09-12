@@ -20,17 +20,13 @@ module.exports = {
     config.module.rules.push({
       test: /\.html?$/,
       use: [
-        // {
-        //   loader: "html-loader",
-        //   options: {
-        //     preprocessor: (content, loaderContext) => {
-        //       return content.replaceAll(
-        //         'virtual="/assets',
-        //         `virtual="${process.env.PUBLIC_PATH?.replace(/\/+$/, '') || ""}/assets`
-        //       );
-        //     },
-        //   }
-        // },
+        {
+          loader: "string-replace-loader",
+          options: {
+            search: 'virtual="/assets',
+            replace: `virtual="${process.env.PUBLIC_PATH?.replace(/\/+$/, '') || ""}/assets`,
+          }
+        },
         {
           loader: "webpack-ssi-include-loader",
           options: {
@@ -50,7 +46,6 @@ module.exports = {
       ],
     });
     if (process.env.PUBLIC_PATH) config.output.publicPath = process.env.PUBLIC_PATH;
-    console.warn("test444", config.module.rules)
     return config;
   },
 };
