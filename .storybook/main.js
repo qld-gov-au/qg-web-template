@@ -21,24 +21,17 @@ module.exports = {
       test: /\.html?$/,
       use: [
         {
-          loader: "string-replace-loader",
-          options: {
-            search: 'virtual="/assets',
-            replace: `virtual="${process.env.PUBLIC_PATH?.replace(/\/+$/, '') || ""}/assets`,
-          }
-        },
-        {
           loader: "webpack-ssi-include-loader",
           options: {
             localPath: "/",
-            location: "http://localhost:6006", // http url where the file can be dl
+            location: process.env.PUBLIC_PATH ? process.env.PUBLIC_PATH.replace(/\/+$/, '') : "http://localhost:6006", // http url where the file can be dl
             onFileMatch: (filePath, fileContent, isLocal) => {
               return fileContent.replaceAll(
                 'virtual=".',
                 `virtual="${filePath.slice(0, filePath.lastIndexOf("/"))}/.`
               ).replaceAll(
                 'src="/assets',
-                `src="${process.env.PUBLIC_PATH?.replace(/\/+$/, '') || ""}/assets`
+                `src="/assets`
               );
             },
           },
