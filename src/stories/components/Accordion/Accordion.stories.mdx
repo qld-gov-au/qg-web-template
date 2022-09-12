@@ -1,9 +1,15 @@
 import { Canvas, Meta, Story } from "@storybook/addon-docs";
 
+import { Grid } from "../../decorators";
+
+import { getCanvasMobileProps, getStoryMobileParameters, getStoryMobileHeight } from "../../helpers";
+
 import Default from "./templates/Default.html";
 import Subtitle from "./templates/Subtitle.html";
 import Icon from "./templates/Icon.html";
 import Expandable from "./templates/Expandable.html";
+import Mobile from "./templates/Default.html";
+import States from "./templates/States.html";
 
 <Meta title="Components/Accordion" />
 
@@ -31,4 +37,27 @@ import Expandable from "./templates/Expandable.html";
 
 <Canvas withSource="open">
   <Story name="Expandable">{() => Expandable}</Story>
+</Canvas>
+
+## States
+
+<Canvas withSource="close">
+  <Story name="States"
+    decorators={[Grid(2)]}
+    parameters={{
+      docs: {
+        source: {
+          code: States,
+        },
+      }
+    }}
+  >{() => States}</Story>
+</Canvas>
+
+## Mobile
+
+<Canvas withSource="none" {...getCanvasMobileProps()}>
+  <Story name="Mobile" parameters={getStoryMobileParameters()} height={getStoryMobileHeight()}>
+    {() => Mobile}
+  </Story>
 </Canvas>
