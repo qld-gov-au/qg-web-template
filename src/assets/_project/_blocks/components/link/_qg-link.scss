@@ -1,0 +1,32 @@
+//links styles
+a {
+  color: $qg-blue-dark;
+  &:active, &:hover, &:focus {
+    color: $qg-blue-dark;
+  }
+}
+#qg-primary-content, #qg-secondary-content {
+  a:not(.print-content-link) {
+    &:focus, &:hover, &:link, &:visited {
+      text-underline-offset: 5px;
+    }
+    &:link {
+      text-decoration: underline 0.5px solid;
+    }
+    &:hover {
+      text-decoration: underline 2px solid;
+    }
+    &:active, &:focus {
+      outline: 3px solid #0096D6;
+      outline-offset: 2px;
+    }
+    &:visited {
+      color: #80b;
+    }
+    &:visited:hover {
+      text-decoration: underline 2px solid;
+      text-decoration-color: #80b;
+    }
+  }
+}
+

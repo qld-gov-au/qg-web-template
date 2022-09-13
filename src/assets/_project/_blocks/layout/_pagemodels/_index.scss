@@ -35,7 +35,8 @@
     ul:not(.qg-unstyled) {
       li {
         position: relative;
-        padding-left: 1em;
+        padding-left: 16px;
+        padding-bottom: 10px;
         list-style: none;
         @include rem(line-height, 24px);
         a {
@@ -54,9 +55,7 @@
             content: "\f054";
           }
         }
-
       }
-
     }
     h2, p, ul, &> div &> span {
       padding-left: ($qg-spacing * 0.5) + 75px;
