@@ -21,7 +21,7 @@ describe('SWE Footer testing', () => {
     await page.click('#fs-very-satisfied');
     await page.type('#comments', 'Useful website', { delay: 20 });
     // this test case causing massive fail in circleci, which have issue when submitting a real form with remote api, disabled this test for now.
-    // as we are moving out from circleci, Github Actions pipeline doesn't has this
+    // as we are moving out from circleci, Github Actions pipeline doesn't has this issues
     /*
     await page.click('#feedback-page .btn-global-primary');
     await page.waitForTimeout(ct.WT);
