@@ -1,4 +1,4 @@
-version: 2
+version: 2.1
 jobs:
   build:
     docker:
@@ -51,6 +51,7 @@ jobs:
 
       - store_test_results:
           path: ./test-results
+
 workflows:
   build:
     jobs:
