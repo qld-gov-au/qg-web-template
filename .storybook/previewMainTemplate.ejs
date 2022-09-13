@@ -51,10 +51,16 @@
     <script src="<%= file %>"></script>
     <% }); %>
     <script>
+      function addScript(src) {
+        if (document.querySelectorAll(`script[src$="${src.substring(src.lastIndexOf('/') + 1)}"]`).length === 0) {
+          const script = document.createElement('script');
+          script.src = src;
+          document.getElementsByTagName('head')[0].appendChild(script);
+        };
+      }
       function handleStoryInit(canvas) {
-        const script = document.createElement('script');
-        script.src = "./assets/v4/latest/js/qg-main.js";
-        document.getElementsByTagName('head')[0].appendChild(script);
+        addScript("./assets/v4/latest/lib/all-ext-min.js");
+        addScript("./assets/v4/latest/js/qg-main.js");
       }
 
       // set up the mutation observer
