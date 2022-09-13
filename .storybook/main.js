@@ -39,6 +39,8 @@ module.exports = {
       ],
     });
     if (process.env.PUBLIC_PATH) config.output.publicPath = process.env.PUBLIC_PATH;
+    // force source snippet to be un-minified
+    config.mode = "development";
     return config;
   },
 };
