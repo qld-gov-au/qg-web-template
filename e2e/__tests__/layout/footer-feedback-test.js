@@ -10,9 +10,6 @@ beforeAll(async () => {
   await page.goto(`${ct.APP_URL}/docs/components.html`, { waitUntil: 'networkidle0' });
 });
 
-// this test case causing massive fail in circleci, which have issue when submitting a real form with remote api, disabled this test for now.
-// as we are moving out from circleci, Github Actions pipeline doesn't have this issue.
-/*
 describe('SWE Footer testing', () => {
   test('Footer feedback', async () => {
     await page.click('.qg-feedback-toggle');
@@ -23,6 +20,9 @@ describe('SWE Footer testing', () => {
     await page.click('#page-feedback-about-this-website');
     await page.click('#fs-very-satisfied');
     await page.type('#comments', 'Useful website', { delay: 20 });
+    // this test case causing massive fail in circleci, which have issue when submitting a real form with remote api, disabled this test for now.
+    // as we are moving out from circleci, Github Actions pipeline doesn't has this
+    /*
     await page.click('#feedback-page .btn-global-primary');
     await page.waitForTimeout(ct.WT);
     await page.waitForSelector('.thankyou p');
@@ -44,10 +44,10 @@ describe('SWE Footer testing', () => {
     const currentReferrer = await page.evaluate(id => document.referrer);
     const getReferrer =  await page.$eval('input[name=page-referer]', el => $(el).val());
     expect(getReferrer).toMatch(currentReferrer);
+    */
   }, ct.TO * 2);
 
   afterAll(async () => {
     await browser.close();
   });
 });
-*/
