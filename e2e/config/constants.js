@@ -7,5 +7,5 @@ module.exports = {
   BT_XL: 1200,
   WH: 800,
   WT: 3000,
-  TO: 50000,
+  TO: 60000,
 };
