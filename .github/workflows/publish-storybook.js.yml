@@ -40,7 +40,7 @@ jobs:
           npm run test-ci
       - name: Build Storybook 🔧
         run: |
-          npm run build-storybook-ci
+          npm run build-storybook-gh
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:

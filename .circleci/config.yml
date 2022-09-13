@@ -51,3 +51,11 @@ jobs:
 
       - store_test_results:
           path: ./test-results
+workflows:
+  build:
+    jobs:
+      - build:
+          filters:
+            branches:
+              ignore:
+                - gh-pages
