@@ -43,7 +43,7 @@ jobs:
       - run:
           name: Test
           command: |
-            npx jest
+            npm run test
             mkdir test-results
 
       - store_artifacts:

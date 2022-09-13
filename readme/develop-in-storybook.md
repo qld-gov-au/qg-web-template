@@ -14,13 +14,21 @@ npm run start-new
 ```
 ### Build and serve the Storybook locally
 ```
-npm run start-new
+npm run build-storybook
 npx http-server storybook-static
 ```
 ### Release the Storybook to Github Page
+
+The Storybook will publish to GH pages on every `push` in `master` branch with Github Actions workflow.
+
+Other than that, you could publish Storybook to GH Pages manually from any branches with the `gh-pages` script.
 ```
 npm run gh-pages
 ```
+
+### Publish Storybook to Chromatic
+
+The `publish-storybook` Github Actions workflow will automatically publish Storybook to Chromatic and generating visual testing snapshots on every `push` in any branch. Visual testing needs to be approved manually on every pull requests.
 
 ## Folder structure
 To minimise the change on the existing folder structure, all the component stories contain in the folder `src/stories`.
