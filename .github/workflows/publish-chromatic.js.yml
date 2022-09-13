@@ -34,10 +34,10 @@ jobs:
           cache: 'npm'
       - name: Install #run on lint step (Which is cached)
         run: | # Install packages
+          sudo apt-get install -y libpng-dev
           npm install --prefer-offline --no-audit
       - name: Build 🔧
         run: |
-          apt-get install -y libpng-dev
           npm run build
       - name: Test 🔧
         run: |
