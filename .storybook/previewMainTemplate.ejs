@@ -32,6 +32,10 @@
         color: inherit;
         word-wrap: break-word;
       }
+      #jb-overlay, #jb-window {
+        /* butterfly doesn't work well with Storybook */
+        display: none;
+      }
     </style>
   </head>
   <body>
@@ -80,12 +84,6 @@
         childList: true,
         subtree: true
       });
-
-      // setTimeout(()=>{
-      //   const script = document.createElement('script');
-      //   script.src = "/assets/v4/latest/js/qg-main.js";
-      //   document.getElementsByTagName('head')[0].appendChild(script);
-      // },100)
     </script>
   </body>
 </html>
