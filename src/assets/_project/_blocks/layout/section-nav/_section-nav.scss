@@ -17,10 +17,6 @@
       display: inline-block;
       color: $qg-dark-grey-darker !important;
       font-size: 1rem;
-      &:hover {
-        background-color: #F5F5F5;
-        text-decoration: underline;
-      }
     }
   }
   > ul {
@@ -44,7 +40,9 @@
       margin: 0;
       padding: 1em;
       color: $qg-dark-grey;
-      text-decoration: none;
+      &:link {
+        text-decoration: none;
+      }
     }
     a:not(.active):hover {
       text-decoration: underline;
