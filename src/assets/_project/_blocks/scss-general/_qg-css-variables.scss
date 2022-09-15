@@ -25,5 +25,25 @@
   --qg-color-twitter: #{$qg-twitter};
   --qg-color-linkedin: #{$qg-linkedin};
 
+  --qg-color-brand-success: #{$brand-success};
+  --qg-color-brand-info: #{$brand-info};
+  --qg-color-brand-warning: #{$brand-warning};
+  --qg-color-brand-danger: #{$brand-danger};
+
+  --qg-color-blue: #{$qg-blue};
+  --qg-color-blue-dark: #{$qg-blue-dark};
+  --qg-color-blue-darker: #{$qg-blue-darker};
+
+  --qg-color-light-green: #{$qg-light-green};
+  --qg-color-green: #{$qg-green};
+
+  --qg-color-dark-grey-lightest: #{$qg-dark-grey-lightest};
+  --qg-color-dark-gray-lighter: #{$qg-dark-gray-lighter};
+  --qg-color-dark-gray-light: #{$qg-dark-gray-light};
+  --qg-color-dark-grey: #{$qg-dark-grey};
+  --qg-color-dark-grey1: #{$qg-dark-grey1};
+  --qg-color-dark-grey-dark: #{$qg-dark-grey-dark};
+  --qg-color-dark-grey-darker: #{$qg-dark-grey-darker};
+
   --qg-gutter-width: #{$grid-gutter-width * 0.5};
 }
