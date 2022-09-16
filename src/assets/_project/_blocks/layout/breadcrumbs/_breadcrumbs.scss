@@ -39,13 +39,7 @@
 
 			.qg-breadcrumb-list-item__link {
 				color: $qg-global-primary-darker-grey;
-
-        &:link {
-          text-decoration: underline 0.5px solid;
-        }
-        &:hover {
-          text-decoration: underline 2px solid;
-        }
+        @extend .qg-link-styles__default;
 			}
 
 			&:last-child {

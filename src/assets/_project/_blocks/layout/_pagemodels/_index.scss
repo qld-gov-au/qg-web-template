@@ -1,4 +1,4 @@
-.qg-index-links {
+#qg-primary-content .qg-index-links {
   @extend .d-flex;
   @extend .flex-wrap;
   .qg-index-item.content-only{
@@ -32,28 +32,15 @@
       }
 
     }
-    ul:not(.qg-unstyled) {
+    ul {
       li {
         position: relative;
         padding-left: 16px;
         padding-bottom: 10px;
         list-style: none;
         @include rem(line-height, 24px);
-        a {
-          color: $qg-blue-dark;
-          &:active, &:hover, &:focus {
-            color: $qg-blue-dark;
-          }
-          &:before {
-            position: absolute;
-            left: 0;
-            top: 0.46rem;
-            font-family: FontAwesome;
-            font-size: 0.7rem;
-            line-height: 1;
-            padding-right: .8rem;
-            content: "\f054";
-          }
+        a{
+          @extend .qg-link-styles__no-underline;
         }
       }
     }
@@ -63,6 +50,9 @@
     h2 {
       margin-top: 0;
       @include rem(font-size, 19px);
+      a{
+        @extend .qg-link-styles__no-underline;
+      }
     }
     & > ul:not(.qg-unstyled) {
       list-style: none;

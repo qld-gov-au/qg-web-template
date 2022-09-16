@@ -5,29 +5,41 @@ a {
     color: $qg-blue-dark;
   }
 }
-#qg-primary-content, #qg-secondary-content, #qg-content .qg-section-nav, .qg-breadcrumb{
-  a, .qg-breadcrumb-list-item__link {
-    &:focus, &:hover, &:link, &:visited {
-      text-underline-offset: 5px;
-    }
-    &:link {
-      text-decoration: underline 0.5px solid;
-    }
-    &:hover {
-      text-decoration: underline 2px solid;
-    }
-    &:active, &:focus{
-      outline: 3px solid #0096D6;
-      outline-offset: 2px;
-    }
-    &:visited {
-      color: #80b;
-    }
-    &:visited:hover {
-      color: #80b;
-      text-decoration: underline 2px solid;
-      text-decoration-color: #80b;
-    }
+
+.qg-global-link-styles{
+  &:focus, &:hover, &:link, &:visited {
+    text-underline-offset: 5px;
+  }
+  &:active, &:focus{
+    outline: 3px solid #0096D6;
+    outline-offset: 2px;
+  }
+  &:visited {
+    color: #80b;
+  }
+  &:visited:hover {
+    color: #80b;
+    text-decoration: underline 2px solid;
+    text-decoration-color: #80b;
   }
 }
 
+.qg-link-styles__default{
+  @extend .qg-global-link-styles;
+  &:link {
+    text-decoration: underline 0.5px solid;
+  }
+  &:hover {
+    text-decoration: underline 2px solid;
+  }
+}
+
+.qg-link-styles__no-underline{
+  @extend .qg-global-link-styles;
+  &:link {
+    text-decoration: none 0.5px solid;
+  }
+  &:hover {
+    text-decoration: underline 2px solid;
+  }
+}
