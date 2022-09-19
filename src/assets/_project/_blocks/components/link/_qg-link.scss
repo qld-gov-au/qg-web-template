@@ -16,24 +16,12 @@ a {
   }
 }
 
-.qg-link-styles__visited-change{
-  &:visited {
-    color: #80b;
-  }
-  &:visited:hover {
-    color: #80b;
-    text-decoration: underline 2px solid;
-    text-decoration-color: #80b;
-  }
-}
-
 .qg-link-styles__default{
   @extend .qg-global-link-styles;
-  &:link {
-    text-decoration: underline 0.5px solid;
-  }
+  color: #292929;
+  text-decoration: underline 0.5px solid #737678;
   &:hover {
-    text-decoration: underline 2px solid;
+    text-decoration: underline 2px solid #292929;
   }
 }
 
@@ -44,5 +32,16 @@ a {
   }
   &:hover {
     text-decoration: underline 2px solid;
+  }
+}
+
+.qg-link-styles__visited-change{
+  &:visited {
+    color: #80b;
+  }
+  &:visited:hover {
+    color: #80b;
+    text-decoration: underline 2px solid;
+    text-decoration-color: #80b;
   }
 }
