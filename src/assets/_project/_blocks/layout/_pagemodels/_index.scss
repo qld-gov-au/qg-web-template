@@ -40,6 +40,17 @@
         list-style: none;
         @include rem(line-height, 24px);
         a{
+          font-size: 1rem;
+          &:before {
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            font-family: FontAwesome;
+            font-size: 0.7rem;
+            line-height: 1;
+            padding-right: 0.8rem;
+            content: "\f054";
+          }
           @extend .qg-link-styles__no-underline;
         }
       }

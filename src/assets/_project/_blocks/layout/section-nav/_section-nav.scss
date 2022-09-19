@@ -45,22 +45,6 @@
       margin: 0;
       padding: 1em;
       color: $qg-dark-grey;
-      &:link {
-        text-decoration: none;
-      }
-    }
-    a:not(.active):hover {
-      text-decoration: underline;
-      background-color: #F5F5F5;
-    }
-    a.active, a.visited {
-      background: none;
-      text-decoration: none;
-      color: $qg-dark-grey-darker;
-      font-weight: bold;
-    }
-    a.active:before {
-      opacity: 1;
     }
     ul {
       padding: 0;
