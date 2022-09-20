@@ -71,15 +71,6 @@
         }
         li {
             margin-top: rem(16px);
-            a {
-                //color: #FFF;
-                //text-decoration: underline;
-                //transition: opacity .1s linear;
-                //
-                //&:hover, &:focus {
-                //    color: $qg-global-primary-hover-grey;
-                //}
-            }
             &.facebook:before {
                 content: "\f082";
             }
