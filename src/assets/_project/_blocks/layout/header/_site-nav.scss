@@ -14,10 +14,7 @@
 	.nav-link {
 		display: block;
 		padding: 5px 13px;
-	}
-
-	.nav-link, .nav-link:link, .nav-link:visited {
-		color: #FFF;
+    @extend .qg-link-styles__no-underline-white;
 	}
 
 	@media print {
@@ -86,7 +83,9 @@
 				display: inline-block;
 				position: relative;
 				width: 100%;
-
+        a {
+          @extend .qg-link-styles__no-underline-default
+        }
 				&:before {
 					@include rem(font-size, 12px);
 					content: "\f054";
@@ -235,17 +234,10 @@
 				li {
 					border-bottom: 1px solid rgba(0,0,0,0.1);
 					padding: 0;
-
 					a {
 						display: block;
 						padding: 12px 13px;
-
-						&:hover,&:focus{
-							opacity:0.7;
-							text-decoration: underline;
-						}
 					}
-
 					&:before {
 						display: none;
 					}

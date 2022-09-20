@@ -19,6 +19,7 @@
     text-decoration: underline 2px solid #13578b;
   }
 }
+
 //color theme blue no underline
 .qg-link-styles__no-underline-default{
   @extend .qg-global-link-styles;
@@ -53,11 +54,23 @@
   }
 }
 
-//color theme white no underline
+//color theme white
 .qg-link-styles__theme-white{
   @extend .qg-global-link-styles;
   color: #fff;
   text-decoration: underline 0.5px solid rgba(255, 255, 255, 0.72);
+  &:hover {
+    text-decoration: underline 2px solid #fff;
+  }
+}
+
+//color theme white no underline
+.qg-link-styles__no-underline-white{
+  @extend .qg-global-link-styles;
+  color: #fff;
+  &:link {
+    text-decoration: none 0.5px solid;
+  }
   &:hover {
     text-decoration: underline 2px solid #fff;
   }
