@@ -1,8 +1,7 @@
 import { DecoratorBase } from './DecoratorBase';
 
-export const QgContent = (Child) => {
+export const QgTwoColNav = (Child) => {
   const elem = DecoratorBase('div', Child);
-  elem.id = 'qg-content';
-  elem.className = 'qg-wide';
+  elem.id = 'qg-two-col-nav';
   return elem;
 };
