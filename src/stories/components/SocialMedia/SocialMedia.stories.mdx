@@ -17,11 +17,15 @@ import TwitterFeed from "./templates/TwitterFeed.html";
 ## FacebookFeed
 
 <Canvas withSource="open">
-  <Story name="FacebookFeed">{() => FacebookFeed}</Story>
+  <Story name="FacebookFeed" parameters={{ chromatic: { disableSnapshot: true } }}>
+    {() => FacebookFeed}
+  </Story>
 </Canvas>
 
 ## TwitterFeed
 
 <Canvas withSource="open">
-  <Story name="TwitterFeed">{() => TwitterFeed}</Story>
+  <Story name="TwitterFeed" parameters={{ chromatic: { disableSnapshot: true } }}>
+    {() => TwitterFeed}
+  </Story>
 </Canvas>
