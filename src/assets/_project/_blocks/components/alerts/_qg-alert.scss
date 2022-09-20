@@ -62,6 +62,19 @@
     }
   }
 
+  &.alert-content {
+    width: 100%;
+    padding: 15px 50px 5px;
+    border: none;
+    i {
+      float: left;
+      margin-right: 10px;
+      line-height: 24px;
+    }
+    & + #qg-primary-content {
+      margin-top: 50px;
+    }
+  }
 }
 
 .status{
