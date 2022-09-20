@@ -38,7 +38,8 @@
 			}
 
 			.qg-breadcrumb-list-item__link {
-        @extend .qg-link-styles__default;
+        color: #292929;
+        @extend .qg-link-styles__theme-black;
 			}
 
 			&:last-child {
@@ -49,11 +50,12 @@
 		}
 	}
 
-	&-toggle {
-		border: 0;
-		background-color: transparent;
-		padding: 0;
-	}
+  .qg-breadcrumb-toggle {
+    border: 0;
+    background-color: transparent;
+    padding: 0;
+    @extend .qg-global-link-styles;
+  }
 }
 
 @include media-breakpoint-down(sm) {

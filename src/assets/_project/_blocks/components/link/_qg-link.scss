@@ -1,11 +1,5 @@
-//links styles
-a {
-  color: $qg-blue-dark;
-  &:active, &:hover, &:focus {
-    color: $qg-blue-dark;
-  }
-}
 
+// global link styles
 .qg-global-link-styles{
   &:focus, &:hover, &:link, &:visited {
     text-underline-offset: 5px;
@@ -16,7 +10,41 @@ a {
   }
 }
 
+//color theme blue with underline
 .qg-link-styles__default{
+  @extend .qg-global-link-styles;
+  color: #13578b;
+  text-decoration: underline 0.5px solid #457AA3;
+  &:hover {
+    text-decoration: underline 2px solid #13578b;
+  }
+}
+//color theme blue no underline
+.qg-link-styles__no-underline-default{
+  @extend .qg-global-link-styles;
+  color: #13578b;
+  &:link {
+    text-decoration: none 0.5px solid;
+  }
+  &:hover {
+    text-decoration: underline 2px solid #13578b;
+  }
+}
+
+//color theme black no underline
+.qg-link-styles__no-underline-black{
+  @extend .qg-global-link-styles;
+  color: #292929;
+  &:link {
+    text-decoration: none 0.5px solid;
+  }
+  &:hover {
+    text-decoration: underline 2px solid #292929;
+  }
+}
+
+//color theme black with underline
+.qg-link-styles__theme-black{
   @extend .qg-global-link-styles;
   color: #292929;
   text-decoration: underline 0.5px solid #737678;
@@ -25,16 +53,17 @@ a {
   }
 }
 
-.qg-link-styles__no-underline{
+//color theme white no underline
+.qg-link-styles__theme-white{
   @extend .qg-global-link-styles;
-  &:link {
-    text-decoration: none 0.5px solid;
-  }
+  color: #fff;
+  text-decoration: underline 0.5px solid rgba(255, 255, 255, 0.72);
   &:hover {
-    text-decoration: underline 2px solid;
+    text-decoration: underline 2px solid #fff;
   }
 }
 
+//visited theme
 .qg-link-styles__visited-change{
   &:visited {
     color: #80b;

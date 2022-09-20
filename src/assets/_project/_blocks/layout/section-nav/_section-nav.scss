@@ -11,7 +11,7 @@
     margin-bottom: 0;
     @include rem(font-size, 19px);
     a {
-      @extend .qg-link-styles__no-underline;
+      @extend .qg-link-styles__no-underline-black;
       margin: -0.7rem 0 -0.7rem -1rem;
       padding: 0.7rem 0 0.7rem 1rem;
       width: calc(100% + 1rem);
@@ -40,7 +40,7 @@
     @include rem(font-size, 14px);
 
     a {
-      @extend .qg-link-styles__no-underline;
+      @extend .qg-link-styles__no-underline-black;
       display: block;
       margin: 0;
       padding: 1em;
