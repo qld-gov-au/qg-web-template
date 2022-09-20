@@ -24,15 +24,8 @@
         display: flex;
 
         .nav-link {
-            color: #fff;
             padding: 10px 20px 10px 15px;
-            text-decoration: none;
-
-            &:hover,&:focus {
-                @include portal-link-hover();
-                position: relative;
-                z-index: 2;
-            }
+            @extend .qg-link-styles__no-underline-white;
         }
     }
 
@@ -151,7 +144,7 @@
 
         .nav-item {
             border-bottom: 1px solid #000;
-    
+
             &:last-child {
                 border-bottom: none;
             }
