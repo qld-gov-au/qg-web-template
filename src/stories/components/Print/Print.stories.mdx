@@ -1,14 +1,14 @@
 import { Canvas, Meta, Story } from "@storybook/addon-docs";
 
+import { QgPrimaryContent } from "../../decorators";
+
 import Default from "./templates/Default.html";
-import Icon from "./templates/Icon.html";
+import PrintGuide from "./templates/PrintGuide.html";
 
-import { QgContent } from "../../decorators";
+<Meta title="Components/Print" decorators={[QgPrimaryContent]} />
 
-<Meta title="Components/Aside" decorators={[QgContent]} />
-
-# Aside
-Requires `#QgContent` ancestor.
+# Print
+Requires `#QgPrimaryContent` ancestor.
 
 ## Default
 
@@ -27,19 +27,19 @@ Requires `#QgContent` ancestor.
   </Story>
 </Canvas>
 
-## Icon
+## PrintGuide
 
 <Canvas withSource="open">
   <Story
-    name="Icon"
+    name="PrintGuide"
     parameters={{
       docs: {
         source: {
-          code: Icon,
+          code: Default,
         },
       },
     }}
   >
-    {() => Icon}
+    {() => PrintGuide}
   </Story>
 </Canvas>

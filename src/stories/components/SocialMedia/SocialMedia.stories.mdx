@@ -1,0 +1,27 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+
+import Default from "./templates/Default.html";
+import FacebookFeed from "./templates/FacebookFeed.html";
+import TwitterFeed from "./templates/TwitterFeed.html";
+
+<Meta title="Components/Social Media" />
+
+# Social Media
+
+## Default
+
+<Canvas withSource="open">
+  <Story name="Default">{() => Default}</Story>
+</Canvas>
+
+## FacebookFeed
+
+<Canvas withSource="open">
+  <Story name="FacebookFeed">{() => FacebookFeed}</Story>
+</Canvas>
+
+## TwitterFeed
+
+<Canvas withSource="open">
+  <Story name="TwitterFeed">{() => TwitterFeed}</Story>
+</Canvas>
