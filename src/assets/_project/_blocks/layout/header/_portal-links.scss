@@ -68,7 +68,6 @@
     white-space: normal;
     @include css-chevron-inline-right(6px, #fff, 21px, before, 26px);
     @extend .qg-link-styles__no-underline-white;
-
     &.qg-dropdown-all{
       @extend .qg-link-styles__theme-white;
       text-decoration: underline 0.5px solid rgba(255, 255, 255, 0.73);

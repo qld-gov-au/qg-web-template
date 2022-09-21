@@ -17,13 +17,14 @@
   &:active, &:focus{
     position: relative;
     z-index: 1;
+    background-color: transparent;
     outline: 3px solid #0096D6;
     outline-offset: 2px;
   }
 }
 
 //START theme BLUE
- // 1.) color theme blue with underline
+ // 1. color theme blue with underline
 .qg-link-styles__default{
   @extend .qg-global-link-styles;
   color: $qg-blue-dark;
@@ -33,7 +34,7 @@
   }
 }
 
-  // 2.) color theme blue no underline
+  // 2. color theme blue no underline
 .qg-link-styles__no-underline-default{
   @extend .qg-global-link-styles;
   color: $qg-blue-dark;
@@ -48,7 +49,7 @@
 
 
 // START theme BLACK
- // 1.) color theme black no underline
+ // 1. color theme black no underline
 .qg-link-styles__no-underline-black{
   @extend .qg-global-link-styles;
   color: $qg-global-primary-darker-grey;
@@ -60,7 +61,7 @@
   }
 }
 
- // 2.) color theme black with underline
+ // 2. color theme black with underline
 .qg-link-styles__theme-black{
   @extend .qg-global-link-styles;
   color: $qg-global-primary-darker-grey;
@@ -73,7 +74,7 @@
 
 
 // START theme WHITE
-  // 1.) with underline
+  // 1. with underline
   .qg-link-styles__theme-white{
     @extend .qg-global-link-styles;
     color: #fff;
@@ -82,7 +83,7 @@
       text-decoration: underline 2px solid #fff;
     }
   }
-  // 2.) without underline
+  // 2. without underline
   .qg-link-styles__no-underline-white{
     @extend .qg-global-link-styles;
     color: #fff;
