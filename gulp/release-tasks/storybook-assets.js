@@ -4,7 +4,7 @@ module.exports = function (gulp, plugins, config, src, dest) {
     gulp
       .src(`${config.basepath.src}/stories/components/**/*.html`, { dot: true })
       .on('error', console.log)
-      .pipe(gulp.dest(`${config.basepath.release}/stories/components/`));
+      .pipe(gulp.dest(`${config.basepath.static}/assets/${config.versionName}/latest/stories/components/`));
 
     gulp
       .src(`${config.basepath.src}/../storybook-static/**/*`, { dot: true })
