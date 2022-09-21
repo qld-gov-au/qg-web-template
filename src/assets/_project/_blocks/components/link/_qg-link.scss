@@ -6,8 +6,6 @@
 //   @extend .qg-link-styles__no-underline-white;
 //}
 
-
-
 // global link styles
 .qg-global-link-styles{
   text-underline-offset: 5px;
@@ -21,78 +19,85 @@
   }
 }
 
+//-------------------------------------------------
+
 //START theme BLUE
- // 1. color theme blue with underline
-.qg-link-styles__default{
-  @extend .qg-global-link-styles;
-  color: $qg-blue-dark;
-  text-decoration: underline 0.5px solid #457AA3;
-  &:hover {
-    text-decoration: underline 2px solid $qg-blue-dark;
-  }
-}
-
-  // 2. color theme blue no underline
-.qg-link-styles__no-underline-default{
-  @extend .qg-global-link-styles;
-  color: $qg-blue-dark;
-  &:link {
-    text-decoration: none 0.5px solid;
-  }
-  &:hover {
-    text-decoration: underline 2px solid $qg-blue-dark;
-  }
-}
-//END theme BLUE
-
-
-// START theme BLACK
- // 1. color theme black no underline
-.qg-link-styles__no-underline-black{
-  @extend .qg-global-link-styles;
-  color: $qg-global-primary-darker-grey;
-  &:link {
-    text-decoration: none 0.5px solid;
-  }
-  &:hover {
-    text-decoration: underline 2px solid $qg-global-primary-darker-grey;
-  }
-}
-
- // 2. color theme black with underline
-.qg-link-styles__theme-black{
-  @extend .qg-global-link-styles;
-  color: $qg-global-primary-darker-grey;
-  text-decoration: underline 0.5px solid #737678;
-  &:hover {
-    text-decoration: underline 2px solid $qg-global-primary-darker-grey;
-  }
-}
-// END theme BLACK
-
-
-// START theme WHITE
-  // 1. with underline
-  .qg-link-styles__theme-white{
+   // 1. color theme blue with underline
+  .qg-link-styles__default{
     @extend .qg-global-link-styles;
-    color: #fff;
-    text-decoration: underline 0.5px solid rgba(255, 255, 255, 0.73);
+    color: $qg-blue-dark;
+    text-decoration: underline 0.5px solid #457AA3;
     &:hover {
-      text-decoration: underline 2px solid #fff;
+      text-decoration: underline 2px solid $qg-blue-dark;
     }
   }
-  // 2. without underline
-  .qg-link-styles__no-underline-white{
+
+    // 2. color theme blue no underline
+  .qg-link-styles__no-underline-default{
     @extend .qg-global-link-styles;
-    color: #fff;
+    color: $qg-blue-dark;
     &:link {
       text-decoration: none 0.5px solid;
     }
     &:hover {
-      text-decoration: underline 2px solid #fff;
+      text-decoration: underline 2px solid $qg-blue-dark;
     }
   }
+//END theme BLUE
+
+//-------------------------------------------------
+
+// START theme BLACK
+   // 1. color theme black no underline
+  .qg-link-styles__no-underline-black{
+    @extend .qg-global-link-styles;
+    color: $qg-global-primary-darker-grey;
+    &:link {
+      text-decoration: none 0.5px solid;
+    }
+    &:hover {
+      text-decoration: underline 2px solid $qg-global-primary-darker-grey;
+    }
+  }
+
+   // 2. color theme black with underline
+  .qg-link-styles__theme-black{
+    @extend .qg-global-link-styles;
+    color: $qg-global-primary-darker-grey;
+    text-decoration: underline 0.5px solid #737678;
+    &:hover {
+      text-decoration: underline 2px solid $qg-global-primary-darker-grey;
+    }
+  }
+// END theme BLACK
+
+//-------------------------------------------------
+
+// START theme WHITE
+  // 2. With underline
+  .qg-link-styles__theme-white{
+      @extend .qg-global-link-styles;
+      color: #fff;
+      text-decoration: underline 0.5px solid rgba(255, 255, 255, 0.73);
+      &:hover {
+        text-decoration: underline 2px solid #fff;
+      }
+    }
+  // 2. without underline
+  .qg-link-styles__no-underline-white{
+      @extend .qg-global-link-styles;
+      color: #fff;
+      &:link {
+        text-decoration: none 0.5px solid;
+      }
+      &:hover {
+        text-decoration: underline 2px solid #fff;
+      }
+    }
 // END theme WHITE
+
+//-------------------------------------------------
+
 
 //visited theme
 .qg-link-styles__visited-change{
@@ -105,3 +110,5 @@
     text-decoration-color: #80b;
   }
 }
+
+//-------------------------------------------------
