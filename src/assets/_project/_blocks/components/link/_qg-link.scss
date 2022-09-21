@@ -1,8 +1,18 @@
+// This file contains all possible SWE link styling themes. Components extends these theme classes. As an example,
+//a {
+//  @extend .qg-link-styles__no-underline-default
+//}
+// .dropdown-item {
+//   @extend .qg-link-styles__no-underline-white;
+//}
+
+
 
 // global link styles
 .qg-global-link-styles{
-  &:focus, &:hover, &:link, &:visited {
-    text-underline-offset: 5px;
+  text-underline-offset: 5px;
+  &:hover {
+    background: none;
   }
   &:active, &:focus{
     outline: 3px solid #0096D6;
@@ -10,71 +20,78 @@
   }
 }
 
-//color theme blue with underline
+//START theme BLUE
+ // 1.) color theme blue with underline
 .qg-link-styles__default{
   @extend .qg-global-link-styles;
-  color: #13578b;
+  color: $qg-blue-dark;
   text-decoration: underline 0.5px solid #457AA3;
   &:hover {
-    text-decoration: underline 2px solid #13578b;
+    text-decoration: underline 2px solid $qg-blue-dark;
   }
 }
 
-//color theme blue no underline
+  // 2.) color theme blue no underline
 .qg-link-styles__no-underline-default{
   @extend .qg-global-link-styles;
-  color: #13578b;
+  color: $qg-blue-dark;
   &:link {
     text-decoration: none 0.5px solid;
   }
   &:hover {
-    text-decoration: underline 2px solid #13578b;
+    text-decoration: underline 2px solid $qg-blue-dark;
   }
 }
+//END theme BLUE
 
-//color theme black no underline
+
+// START theme BLACK
+ // 1.) color theme black no underline
 .qg-link-styles__no-underline-black{
   @extend .qg-global-link-styles;
-  color: #292929;
+  color: $qg-global-primary-darker-grey;
   &:link {
     text-decoration: none 0.5px solid;
   }
   &:hover {
-    text-decoration: underline 2px solid #292929;
+    text-decoration: underline 2px solid $qg-global-primary-darker-grey;
   }
 }
 
-//color theme black with underline
+ // 2.) color theme black with underline
 .qg-link-styles__theme-black{
   @extend .qg-global-link-styles;
-  color: #292929;
+  color: $qg-global-primary-darker-grey;
   text-decoration: underline 0.5px solid #737678;
   &:hover {
-    text-decoration: underline 2px solid #292929;
+    text-decoration: underline 2px solid $qg-global-primary-darker-grey;
   }
 }
+// END theme BLACK
 
-//color theme white
-.qg-link-styles__theme-white{
-  @extend .qg-global-link-styles;
-  color: #fff;
-  text-decoration: underline 0.5px solid rgba(255, 255, 255, 0.72);
-  &:hover {
-    text-decoration: underline 2px solid #fff;
-  }
-}
 
-//color theme white no underline
-.qg-link-styles__no-underline-white{
-  @extend .qg-global-link-styles;
-  color: #fff;
-  &:link {
-    text-decoration: none 0.5px solid;
+// START theme WHITE
+  // 1.) with underline
+  .qg-link-styles__theme-white{
+    @extend .qg-global-link-styles;
+    color: #fff;
+    text-decoration: underline 0.5px solid rgba(255, 255, 255, 0.73);
+    &:hover {
+      text-decoration: underline 2px solid #fff;
+    }
   }
-  &:hover {
-    text-decoration: underline 2px solid #fff;
+  // 2.) without underline
+  .qg-link-styles__no-underline-white{
+    @extend .qg-global-link-styles;
+    color: #fff;
+    &:link {
+      text-decoration: none 0.5px solid;
+    }
+    &:hover {
+      text-decoration: underline 2px solid #fff;
+    }
   }
-}
+// END theme WHITE
 
 //visited theme
 .qg-link-styles__visited-change{

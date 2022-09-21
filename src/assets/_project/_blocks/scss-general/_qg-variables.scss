@@ -167,14 +167,14 @@ $qg-box-background: $qg-light-blue-gray3;
 
 // pagination
 $qg-pagination-border: #808080;
-$qg-pagination-link-color: #13578B;
+$qg-pagination-link-color: $qg-blue-dark;
 $qg-pagination-disabled-color: #6c757d;
 
 //tables
 $tables-tbody-background-color: #f3f3f3;
-$tables-thead-background-color: #13578b;
+$tables-thead-background-color: $qg-blue-dark;
 $tables-odd-background-color: #f3f3f3;
-$tables-thead-background-color: #13578b;
+$tables-thead-background-color: $qg-blue-dark;
 $tables-thead-color: #FFFFFF;
 $tables-odd-background-color: #f3f3f3;
 $tables-even-background-color: #ffffff;
