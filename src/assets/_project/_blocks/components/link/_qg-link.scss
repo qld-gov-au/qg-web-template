@@ -15,8 +15,6 @@
     background: none;
   }
   &:active, &:focus{
-    position: relative;
-    z-index: 1;
     background-color: transparent;
     outline: 3px solid #0096D6;
     outline-offset: 2px;

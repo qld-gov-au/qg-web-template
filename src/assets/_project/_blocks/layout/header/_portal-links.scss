@@ -32,7 +32,10 @@
     border: none;
     color: #fff;
     padding: 10px 20px 10px 15px;
-
+    &:active, &:focus{
+      position: relative;
+      z-index: 1;
+    }
     &:after {
       margin-left: 8px;
     }
@@ -68,13 +71,17 @@
     white-space: normal;
     @include css-chevron-inline-right(6px, #fff, 21px, before, 26px);
     @extend .qg-link-styles__no-underline-white;
-    &.qg-dropdown-all{
+
+    &.qg-dropdown-all {
       @extend .qg-link-styles__theme-white;
       text-decoration: underline 0.5px solid rgba(255, 255, 255, 0.73);
+
       &:hover {
         text-decoration: underline 2px solid #fff;
       }
+
       padding-left: 0;
+
       &:after {
         border: none;
       }
@@ -138,22 +145,17 @@
     .qg-portal-links__btn {
       text-align: left;
       width: 100%;
-
       &:after {
         border: none;
       }
-
       @include css-chevron-inline-down(6px, #fff, 20px);
-
       &:hover, &:focus,
       &[aria-expanded="true"] {
         text-decoration: underline;
       }
-
       &:focus {
         outline-offset: -3px;
       }
-
       &[aria-expanded="true"] {
         &:after {
           transform: translateY(-50%) rotate(135deg);
