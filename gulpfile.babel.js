@@ -91,12 +91,14 @@ gulp.task('scss-src', require('./gulp/release-tasks/scss-src')(gulp, plugins, co
 gulp.task('release-other-files', require('./gulp/release-tasks/other-files')(gulp, plugins, config));
 gulp.task('replace-links', require('./gulp/release-tasks/replace-links')(gulp, plugins, es, config));
 gulp.task('release-files', require('./gulp/release-tasks/files')(gulp, plugins, config, es, path, banner));
+gulp.task('release-storybook-assets', require('./gulp/release-tasks/storybook-assets')(gulp, plugins, config, 'stories/components', 'stories/components'));
 
 gulp.task('release', gulp.series(
   'js',
   'release-files',
   'scss-src',
   'release-other-files',
+  'release-storybook-assets',
 ), function (done) {
   done();
 });

@@ -6,3 +6,4 @@ const ssiToStatic = require('../ssi-to-static.js');
 
 ssiToStatic(path.join('release', 'template-cdn-ssi'), path.join('release', 'template-cdn'), path.join('release', 'template-cdn'), []);
 ssiToStatic(path.join('release', 'template-local-ssi'), path.join('release', 'template-local'), path.join('release', 'template-local'), []);
+ssiToStatic(path.join('release', 'template-cdn-ssi'), path.join('release', 'stories'), path.join('release', 'stories'), []);
