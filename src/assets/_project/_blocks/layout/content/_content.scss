@@ -7,7 +7,7 @@
       display: block;
     }
   }
-  a{
+  a:not(.qg-btn):not(.btn){
     @extend .qg-link-styles__default
   }
   .print-content-link{

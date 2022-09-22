@@ -102,6 +102,10 @@
 }
 
 @include media-breakpoint-down(sm) {
+  //.nav-link {
+  //  outline: 10px solid red !important;
+  //  @extend .qg-link-styles__no-underline-black;
+  //}
 	#qg-site-nav .show .nav-link {
 		text-decoration: none;
 	}
@@ -133,7 +137,8 @@
 				transform: rotate(135deg);
 			}
 		}
-		.nav-link, .nav-link:link, .nav-link:visited {
+		.nav-link{
+      //@include qg-link-styles__no-underline-black;
 			color: $qg-global-primary-darker-grey;
 			padding: 12px 13px 11px;
 			width: 100%;
@@ -196,6 +201,7 @@
 				}
 			}
 			ul {
+        margin: 8px;
 				background-color: #fff;
 				column-count: initial;
 				li {
