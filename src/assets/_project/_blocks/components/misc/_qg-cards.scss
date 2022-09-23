@@ -1,5 +1,11 @@
 //default color overwrite
-#qg-primary-content {
+#qg-primary-content, #qg-content {
+  .qg-card:not(.qg-card__light-theme) {
+    h2 {
+      color: #fff;
+    }
+  }
+
   // cards styles
   .qg-cards {
     display: flex;
@@ -24,37 +30,21 @@
       margin-right: -1em;
     }
   }
-  // card with full width
-  .qg-card.card__full-width {
-    padding: 0 !important;
-    @include breakpoint(md) {
-      padding: inherit;
-    }
 
-    .qg-card__footer {
-      .qg-btn {
-        width: 100%;
-        @include breakpoint(sm) {
-          width: 200px;
-        }
-      }
-    }
-
-    .details > h2 {
-      margin-top: 0;
-    }
-  }
   .qg-card {
     color: #FFFFFF;
     margin-bottom: 2rem;
     display: flex;
+
     &.qg-card__clickable {
       .content {
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+
         &:hover {
           box-shadow: none;
         }
       }
+
       .content:focus-within {
         box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
       }
@@ -73,9 +63,9 @@
         width: 100%;
       }
       .btn-outline-light {
-        text-decoration: none;
+        text-decoration: none !important;
         &:hover, &:active, &:focus, &:visited {
-          text-decoration: underline;
+          text-decoration: underline !important;
         }
         &:visited {
           color: #fff;
@@ -84,12 +74,12 @@
       .btn-link {
         padding-left: 0;
         text-align: left;
-        color: #fff;
-        text-decoration: underline;
+        color: #fff !important;
+        text-decoration: underline !important;
 
         &:hover, &:active, &:focus, &:visited {
-          color: #fff;
-          text-decoration: none;
+          color: #fff !important;
+          text-decoration: none !important;
         }
       }
     }
@@ -105,20 +95,20 @@
           a:not(.btn):not(.stretched-link), a:not(.qg-btn):not(.stretched-link) {
             color: #000000;
             &:hover, &:active, &:focus, &:visited {
-              color: #000000;
+              color: #000000 !important;
             }
           }
 
           .stretched-link {
-            color: #00698f;
+            color: #00698f !important;
             text-decoration: underline;
 
             &:active, &:visited {
-              color: #00698f;
+              color: #00698f !important;
             }
 
             &:hover {
-              color: #000000;
+              color: #000000 !important;
             }
           }
         }
@@ -126,23 +116,23 @@
         .qg-card__footer {
           border-top: 1px solid rgba(211, 211, 211, 1);
           .btn-outline-dark {
-            text-decoration: none;
+            text-decoration: none !important;
             &:hover, &:active, &:focus, &:visited {
-              text-decoration: underline;
+              text-decoration: underline !important;
             }
             &:visited {
-              color: #00698f;
+              color: #00698f !important;
             }
           }
           .btn-link {
             padding-left: 0;
             text-align: left;
-            text-decoration: underline;
-            color: #13578b;
+            text-decoration: underline !important;
+            color: #13578b !important;
 
             &:hover, &:active, &:focus, &:visited {
-              color: #13578b;
-              text-decoration: none;
+              color: #13578b !important;
+              text-decoration: none !important;
             }
           }
         }
@@ -180,12 +170,20 @@
         }
 
         a {
-          @extend .qg-link-styles__theme-white;
+          color: #FFFFFF;
+
+          &:hover, &:active, &:focus, &:visited {
+            color: #FFFFFF !important;
+            text-decoration: none !important;
+          }
+
           &.btn {
             margin-top: 1em;
             padding-top: 0.5em;
             padding-bottom: 0.5em;
           }
+
+          text-decoration: underline;
         }
 
         ul {
@@ -238,9 +236,26 @@
       }
     }
   }
-  .qg-card:not(.qg-card__light-theme) {
-    h2 {
-      color: #fff;
+
+}
+
+// card with full width
+.qg-card.card__full-width {
+  padding: 0 !important;
+  @include breakpoint(md) {
+    padding: inherit;
+  }
+
+  .qg-card__footer {
+    .qg-btn {
+      width: 100%;
+      @include breakpoint(sm) {
+        width: 200px;
+      }
     }
+  }
+
+  .details > h2 {
+    margin-top: 0;
   }
 }
