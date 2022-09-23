@@ -104,6 +104,9 @@
 @include media-breakpoint-down(sm) {
   .nav-link {
     @include qg-link-styles__no-underline-black;
+    &:hover {
+      text-decoration: underline 2px solid $qg-global-primary-darker-grey !important;
+    }
   }
 	#qg-site-nav .show .nav-link {
 		text-decoration: none;
