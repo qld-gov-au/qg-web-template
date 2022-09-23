@@ -8,7 +8,7 @@
     }
 
     a:not(.btn){
-      @extend .qg-link-styles__theme-white;
+      @include qg-link-styles__theme-white;
     }
 
     .btn {

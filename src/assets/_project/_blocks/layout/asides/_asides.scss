@@ -12,7 +12,7 @@
     margin: 0;
     background-color: #f2f7f9;
     a {
-      @extend .qg-link-styles__default;
+      @include qg-link-styles__default;
     }
     &:last-child{
       border-bottom: none;

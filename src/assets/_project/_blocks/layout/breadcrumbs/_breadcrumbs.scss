@@ -39,7 +39,7 @@
 
 			.qg-breadcrumb-list-item__link {
         color: #292929;
-        @extend .qg-link-styles__theme-black;
+        @include qg-link-styles__theme-black;
 			}
 
 			&:last-child {
@@ -54,7 +54,7 @@
     border: 0;
     background-color: transparent;
     padding: 0;
-    @extend .qg-global-link-styles;
+    @include qg-global-link-styles;
   }
 }
 

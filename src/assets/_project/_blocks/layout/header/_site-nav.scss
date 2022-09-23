@@ -12,7 +12,7 @@
 	.nav-link {
 		display: block;
 		padding: 5px 13px;
-    @extend .qg-link-styles__no-underline-white;
+    @include qg-link-styles__no-underline-white;
 	}
 	@media print {
 		display: none !important;
@@ -69,7 +69,7 @@
 				position: relative;
 				width: 100%;
         a {
-          @extend .qg-link-styles__no-underline-default
+          @include qg-link-styles__no-underline-default
         }
 				&:before {
 					@include rem(font-size, 12px);
@@ -102,10 +102,9 @@
 }
 
 @include media-breakpoint-down(sm) {
-  //.nav-link {
-  //  outline: 10px solid red !important;
-  //  @extend .qg-link-styles__no-underline-black;
-  //}
+  .nav-link {
+    @include qg-link-styles__no-underline-black;
+  }
 	#qg-site-nav .show .nav-link {
 		text-decoration: none;
 	}

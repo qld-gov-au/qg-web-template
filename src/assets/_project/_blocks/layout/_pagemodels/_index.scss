@@ -51,7 +51,7 @@
             padding-right: 0.8rem;
             content: "\f054";
           }
-          @extend .qg-link-styles__no-underline-default;
+          @include qg-link-styles__no-underline-default;
         }
       }
     }
@@ -62,7 +62,7 @@
       margin-top: 0;
       @include rem(font-size, 19px);
       a{
-        @extend .qg-link-styles__no-underline-default;
+        @include qg-link-styles__no-underline-default;
       }
     }
     & > ul:not(.qg-unstyled) {

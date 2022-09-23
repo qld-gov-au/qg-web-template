@@ -20,7 +20,7 @@
         &:after {
             display: none;
         }
-        @extend .qg-link-styles__theme-white
+        @include qg-link-styles__theme-white
     }
     &__title {
         display: flex;

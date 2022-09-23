@@ -8,10 +8,10 @@
     }
   }
   a:not(.qg-btn):not(.btn){
-    @extend .qg-link-styles__default
+    @include qg-link-styles__default
   }
   .print-content-link{
-    @extend .qg-link-styles__no-underline-default
+    @include qg-link-styles__no-underline-default
   }
   caption{
     caption-side: inherit;
