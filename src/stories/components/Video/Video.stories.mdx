@@ -10,7 +10,9 @@ import Vimeo from "./templates/Vimeo.html";
 ## Youtube
 
 <Canvas withSource="open">
-  <Story name="Youtube">{() => Youtube}</Story>
+  <Story name="Youtube" parameters={{ chromatic: { pauseAnimationAtEnd: true } }}>
+    {() => Youtube}
+  </Story>
 </Canvas>
 
 ## Vimeo
