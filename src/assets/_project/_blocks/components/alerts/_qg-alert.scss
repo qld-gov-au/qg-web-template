@@ -1,6 +1,9 @@
 // global alert styles
 .qg-global-alert {
   margin-bottom: 0;
+  @media print {
+    display: none !important;;
+  }
 }
 
 // content alert and global alert styles

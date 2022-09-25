@@ -9,14 +9,16 @@ import {
 import Default from "./templates/Footer.html";
 import Mobile from "./templates/Footer.html";
 
-<Meta title="Components/Footer" parameters={{ chromatic: { delay: 500 } }} />
+<Meta title="Components/Footer" />
 
 # Footer
 
 ## Default
 
 <Canvas withSource="close">
-  <Story name="Default">{() => Default}</Story>
+  <Story name="Default" parameters={{ chromatic: { delay: 500 } }}>
+    {() => Default}
+  </Story>
 </Canvas>
 
 ## Mobile
