@@ -1,0 +1,53 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+
+import { Grid } from "../../decorators";
+
+import Default from "./templates/Default.html";
+import CenterAligned from "./templates/CenterAligned.html";
+import AbsoluteCenter from "./templates/AbsoluteCenter.html";
+
+<Meta title="Components/Loading Spinner" />
+
+# Loading Spinner
+
+## Default
+
+<Canvas withSource="open">
+  <Story
+    name="Default"
+    decorators={[Grid(2)]}
+    parameters={{
+      docs: {
+        source: {
+          code: Default,
+        },
+      },
+    }}
+  >
+    {() => Default}
+  </Story>
+</Canvas>
+
+## CenterAligned
+
+<Canvas withSource="open">
+  <Story
+    name="CenterAligned"
+    decorators={[Grid(2)]}
+    parameters={{
+      docs: {
+        source: {
+          code: CenterAligned,
+        },
+      },
+    }}
+  >
+    {() => CenterAligned}
+  </Story>
+</Canvas>
+
+## AbsoluteCenter
+
+<Canvas withSource="open">
+  <Story name="AbsoluteCenter">{() => AbsoluteCenter}</Story>
+</Canvas>

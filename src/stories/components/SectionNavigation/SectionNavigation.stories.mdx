@@ -1,0 +1,27 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+
+import { QgContent } from "../../decorators";
+
+import Default from "./templates/Default.html";
+
+<Meta title="Components/Section Navigation" decorators={[QgContent]} />
+
+# Section Navigation
+Requires `#QgContent` ancestor.
+
+## Default
+
+<Canvas withSource="open">
+  <Story
+    name="Default"
+    parameters={{
+      docs: {
+        source: {
+          code: Default,
+        },
+      },
+    }}
+  >
+    {() => Default}
+  </Story>
+</Canvas>

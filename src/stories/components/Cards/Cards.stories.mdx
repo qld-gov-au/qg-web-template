@@ -1,0 +1,41 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+
+import Basic from "./templates/Basic.html";
+import WithActionButton from "./templates/WithActionButton.html";
+import WithImage from "./templates/WithImage.html";
+import WithThumbnail from "./templates/WithThumbnail.html";
+import Clickable from "./templates/Clickable.html";
+
+<Meta title="Components/Cards" />
+
+# Cards
+
+## Basic
+
+<Canvas withSource="open">
+  <Story name="Basic">{() => Basic}</Story>
+</Canvas>
+
+## WithActionButton
+
+<Canvas withSource="open">
+  <Story name="WithActionButton">{() => WithActionButton}</Story>
+</Canvas>
+
+## WithImage
+
+<Canvas withSource="open">
+  <Story name="WithImage">{() => WithImage}</Story>
+</Canvas>
+
+## WithThumbnail
+
+<Canvas withSource="open">
+  <Story name="WithThumbnail">{() => WithThumbnail}</Story>
+</Canvas>
+
+## Clickable
+
+<Canvas withSource="open">
+  <Story name="Clickable">{() => Clickable}</Story>
+</Canvas>

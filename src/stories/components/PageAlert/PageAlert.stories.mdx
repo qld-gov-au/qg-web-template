@@ -1,0 +1,23 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+
+import { QgPrimaryContent } from "../../decorators";
+
+import Default from "./templates/Default.html";
+
+<Meta title="Components/Page Alert" decorators={[QgPrimaryContent]} />
+
+# Page Alert 
+Requires `#QgPrimaryContent` ancestor.
+
+## Default
+
+<Canvas withSource="open">
+  <Story name="Default"
+    parameters={{
+      docs: {
+        source: {
+          code: Default,
+        },
+      },
+    }}>{() => Default}</Story>
+</Canvas>

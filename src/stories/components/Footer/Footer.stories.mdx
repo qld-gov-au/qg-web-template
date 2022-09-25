@@ -1,0 +1,28 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+
+import {
+  getCanvasMobileProps,
+  getStoryMobileParameters,
+  getStoryMobileHeight,
+} from "../../helpers";
+
+import Default from "./templates/Footer.html";
+import Mobile from "./templates/Footer.html";
+
+<Meta title="Components/Footer" parameters={{ chromatic: { delay: 500 } }} />
+
+# Footer
+
+## Default
+
+<Canvas withSource="close">
+  <Story name="Default">{() => Default}</Story>
+</Canvas>
+
+## Mobile
+
+<Canvas withSource="none" {...getCanvasMobileProps()}>
+  <Story name="Mobile" parameters={getStoryMobileParameters()} height={getStoryMobileHeight()}>
+    {() => Mobile}
+  </Story>
+</Canvas>
