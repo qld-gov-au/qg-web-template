@@ -9,8 +9,12 @@ import Vimeo from "./templates/Vimeo.html";
 
 ## Youtube
 
+<!-- disabled snapshot for this story as youtube player animation cause story renewal in every generation. -->
 <Canvas withSource="open">
-  <Story name="Youtube" parameters={{ chromatic: { pauseAnimationAtEnd: true } }}>
+  <Story
+    name="Youtube"
+    parameters={{ chromatic: { pauseAnimationAtEnd: true, disableSnapshot: true } }}
+  >
     {() => Youtube}
   </Story>
 </Canvas>
