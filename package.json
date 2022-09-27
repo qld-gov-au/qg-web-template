@@ -99,7 +99,7 @@
     "sass": "^1.38.0",
     "sass-migrator": "^1.5.1",
     "string-replace-loader": "^3.1.0",
-    "style-loader": "^0.17.0",
+    "style-loader": "^3.3.1",
     "terser-webpack-plugin": "^5.3.6",
     "url-loader": "^4.1.1",
     "vinyl-fs": "^3.0.3",
