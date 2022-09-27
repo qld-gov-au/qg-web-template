@@ -48,7 +48,7 @@
     "eslint-html-reporter": "^0.7.4",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-import": "^2.25.3",
-    "eslint-plugin-promise": "^2.0.1",
+    "eslint-plugin-promise": "^6.0.1",
     "eslint-plugin-standard": "^2.0.0",
     "event-stream": "^3.3.4",
     "extract-text-webpack-plugin": "^2.1.0",
