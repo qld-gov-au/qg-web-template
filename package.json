@@ -45,8 +45,8 @@
     "eslint": "^6.0.1",
     "eslint-config-semistandard": "^7.0.0",
     "eslint-config-standard": "^6.0.1",
-    "eslint-html-reporter": "^0.5.2",
-    "eslint-loader": "^1.4.1",
+    "eslint-html-reporter": "^0.7.4",
+    "eslint-loader": "^4.0.2",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-promise": "^2.0.1",
     "eslint-plugin-standard": "^2.0.0",
@@ -74,7 +74,7 @@
     "gulp-load-plugins": "^2.0.2",
     "gulp-open": "^2.0.0",
     "gulp-plumber": "^1.0.1",
-    "gulp-postcss": "^7.0.1",
+    "gulp-postcss": "^9.0.1",
     "gulp-prompt": "^0.2.0",
     "gulp-replace": "^1.0.0",
     "gulp-sass": "^5.0.0",
@@ -86,7 +86,7 @@
     "historyjs": "^1.8.0-b2",
     "html-loader": "^0.5.1",
     "html-webpack-plugin": "^5.5.0",
-    "image-webpack-loader": "^3.3.1",
+    "image-webpack-loader": "^8.1.0",
     "jest": "^27.0.4",
     "jest-puppeteer": "^6.0.2",
     "json-loader": "^0.5.7",
@@ -104,7 +104,7 @@
     "url-loader": "^4.1.1",
     "vinyl-fs": "^3.0.3",
     "webpack": "^5.74.0",
-    "webpack-stream": "^5.2.1"
+    "webpack-stream": "^7.0.0"
   },
   "dependencies": {
     "@babel/runtime": "^7.10.5",
