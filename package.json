@@ -42,7 +42,7 @@
     "cssnano": "^5.1.13",
     "debug": "^4.1.1",
     "del": "^2.2.2",
-    "eslint": "^6.0.1",
+    "eslint": "^8.24.0",
     "eslint-config-semistandard": "^7.0.0",
     "eslint-config-standard": "^6.0.1",
     "eslint-html-reporter": "^0.7.4",
