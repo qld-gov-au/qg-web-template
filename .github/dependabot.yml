@@ -9,19 +9,12 @@ updates:
   open-pull-requests-limit: 10
   reviewers:
   - duttonw
-  - asifamingov
-  assignees:
-  - asifamingov
+  - qld-gov-au/qld-online-dev-team
   ignore:
   - dependency-name: cssnano
-    versions:
-    - 4.1.10
-    - 4.1.11
-    - 5.0.0
-    - 5.0.1
+  - dependency-name: jquery
+  - dependency-name: bootstrap
+  - dependency-name: del
   - dependency-name: terser-webpack-plugin
-    versions:
-    - 5.0.3
-  - dependency-name: webpack-stream
-    versions:
-    - 6.1.1
+  - dependency-name: eslint-config-semistandard
+  - dependency-name: eslint-config-standard

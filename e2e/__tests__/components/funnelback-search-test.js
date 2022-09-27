@@ -16,11 +16,12 @@ describe('SWE Header testing', () => {
     await page.click('input#qg-search-query');
     await page.waitForTimeout(ct.WT);
     expect(await page.evaluate('$(\'.qg-search-concierge-initial\').css(\'visibility\')')).toBe('visible');
-    await page.type('#qg-search-query', 'jobs', { delay: 20 });
     await page.waitForTimeout(ct.WT);
-    const element = await page.$('.qg-search-concierge-content li button');
-    const text = await page.evaluate(element => element.textContent, element);
-    expect(text).toMatch(/jobs/);
+    await page.type('input#qg-search-query', 'jobs', { delay: 40 });
+    await page.waitForTimeout(ct.WT);
+    expect(
+      await page.$$eval('.qg-search-concierge-content li button', nodes => nodes.map(n => n.textContent)),
+    ).toEqual(['jobs in qld government', 'jobs', 'jobs in the queensland government']);
   });
 
   afterAll(async () => {
