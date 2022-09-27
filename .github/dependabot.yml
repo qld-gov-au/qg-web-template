@@ -9,9 +9,7 @@ updates:
   open-pull-requests-limit: 10
   reviewers:
   - duttonw
-  - qld-online-dev-team
-  assignees:
-  - qld-online-dev-team
+  - qld-gov-au/qld-online-dev-team
   ignore:
   - dependency-name: cssnano
     versions:
