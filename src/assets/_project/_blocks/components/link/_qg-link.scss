@@ -6,14 +6,16 @@
 
 // global link styles
 @mixin qg-global-link-styles {
-  text-underline-offset: 5px;
-  &:hover {
+  text-underline-offset: $text-underline-offset;
+  &:hover, &.hover {
     background: none;
   }
-  &:active, &:focus {
-    background-color: transparent;
-    outline: 3px solid #0096D6;
-    outline-offset: 2px;
+  &:not(.btn-link) {
+    &:active, &:focus, &.active, &.focus {
+      background-color: transparent;
+      outline: 3px solid #0096D6;
+      outline-offset: 2px;
+    }
   }
 }
 
@@ -24,9 +26,9 @@
 @mixin qg-link-styles__default {
   @include qg-global-link-styles;
   color: $qg-blue-dark;
-  text-decoration: underline 0.5px solid #457AA3;
-  &:hover {
-    text-decoration: underline 2px solid $qg-blue-dark;
+  text-decoration: $qg-link-decoration #457AA3;
+  &:hover, &.hover {
+    text-decoration: $qg-link-hover-decoration;
   }
 }
 
@@ -35,10 +37,10 @@
   @include qg-global-link-styles;
   color: $qg-blue-dark;
   &:link {
-    text-decoration: none 0.5px solid;
+    text-decoration: $qg-link-none-decoration;
   }
-  &:hover {
-    text-decoration: underline 2px solid $qg-blue-dark;
+  &:hover, &.hover {
+    text-decoration: $qg-link-hover-decoration;
   }
 }
 
@@ -52,10 +54,10 @@
   @include qg-global-link-styles;
   color: $qg-global-primary-darker-grey;
   &:link {
-    text-decoration: none 0.5px solid;
+    text-decoration: $qg-link-none-decoration;
   }
-  &:hover {
-    text-decoration: underline 2px solid $qg-global-primary-darker-grey;
+  &:hover, &.hover {
+    text-decoration: $qg-link-hover-decoration;
   }
 }
 
@@ -63,10 +65,10 @@
   @include qg-global-link-styles;
   color: $qg-global-primary-darker-grey;
   &:link {
-    text-decoration: none 0.5px solid;
+    text-decoration: $qg-link-none-decoration;
   }
-  &:hover {
-    text-decoration: underline 2px solid $qg-global-primary-darker-grey;
+  &:hover, &.hover {
+    text-decoration: $qg-link-hover-decoration;
   }
 }
 
@@ -74,9 +76,9 @@
 @mixin qg-link-styles__theme-black {
   @include qg-global-link-styles;
   color: $qg-global-primary-darker-grey;
-  text-decoration: underline 0.5px solid #737678;
-  &:hover {
-    text-decoration: underline 2px solid $qg-global-primary-darker-grey;
+  text-decoration: $qg-link-decoration #737678;
+  &:hover, &.hover {
+    text-decoration: $qg-link-hover-decoration;
   }
 }
 
@@ -89,9 +91,9 @@
 @mixin qg-link-styles__theme-white {
   @include qg-global-link-styles;
   color: #fff;
-  text-decoration: underline 0.5px solid rgba(255, 255, 255, 0.73);
-  &:hover {
-    text-decoration: underline 2px solid #fff;
+  text-decoration: $qg-link-decoration rgba(255, 255, 255, 0.73);
+  &:hover, &.hover {
+    text-decoration: $qg-link-hover-decoration #fff;
   }
 }
 
@@ -100,10 +102,10 @@
   @include qg-global-link-styles;
   color: #fff;
   &:link {
-    text-decoration: none 0.5px solid;
+    text-decoration: $qg-link-none-decoration;
   }
-  &:hover {
-    text-decoration: underline 2px solid #fff;
+  &:hover, &.hover {
+    text-decoration: $qg-link-hover-decoration #fff;
   }
 }
 
@@ -120,7 +122,7 @@
 
   &:visited:hover {
     color: #80b;
-    text-decoration: underline 2px solid;
+    text-decoration: $qg-link-hover-decoration;
     text-decoration-color: #80b;
   }
 }

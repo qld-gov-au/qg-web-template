@@ -257,3 +257,9 @@ $qg-global-error: #d60000;
 $qg-facebook: #3b5998;
 $qg-twitter: #1da1f2;
 $qg-linkedin: #0077b5;
+
+// new link variables
+$qg-link-decoration: underline 0.5px solid !default;
+$qg-link-none-decoration: none 0.5px solid !default;
+$qg-link-hover-decoration: underline 2px solid !default;
+$text-underline-offset: 5px;
