@@ -17,7 +17,7 @@ describe('SWE Header testing', () => {
     await page.waitForTimeout(ct.WT);
     expect(await page.evaluate('$(\'.qg-search-concierge-initial\').css(\'visibility\')')).toBe('visible');
     await page.type('#qg-search-query', 'jobs', { delay: 20 });
-    await page.waitForTimeout(ct.WT);
+    await page.waitForTimeout(ct.WT * 2);
     const element = await page.$('.qg-search-concierge-content li button');
     const text = await page.evaluate(element => element.textContent, element);
     expect(text).toMatch(/jobs/);
