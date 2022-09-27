@@ -92,7 +92,7 @@
     "json-loader": "^0.5.7",
     "node-ssi": "^0.3.2",
     "np": "^6.5.0",
-    "puppeteer": "^10.0.0",
+    "puppeteer": "^18.0.5",
     "regenerator-runtime": "^0.13.5",
     "replace-in-file": "^6.1.0",
     "run-sequence": "^2.2.1",
