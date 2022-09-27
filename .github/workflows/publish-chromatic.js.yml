@@ -41,9 +41,9 @@ jobs:
       - name: Test 🔧
         run: |
           npm run test-ci
-      - name: Build Storybook 🔧
+      - name: Test release and build Storybook 🔧
         run: |
-          npm run build-storybook-ci
+          npm run release
       - name: Publish to Chromatic
         uses: chromaui/action@v1
         # Options required to the GitHub Chromatic Action

@@ -11,6 +11,7 @@ updates:
   - duttonw
   - qld-gov-au/qld-online-dev-team
   ignore:
+  - dependency-name: nth-check
   - dependency-name: cssnano
   - dependency-name: jquery
   - dependency-name: bootstrap
