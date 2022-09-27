@@ -37,7 +37,6 @@
 
       .fa {
         padding-right: .3em;
-
         color: $qg-icon-color;
         font-size: 1.3em;
       }
@@ -111,3 +110,9 @@
   }
 }
 
+.qg-aside {
+  img:not(.open-data):not(.actual-image-size) {
+    width: 100%;
+    height: auto;
+  }
+}

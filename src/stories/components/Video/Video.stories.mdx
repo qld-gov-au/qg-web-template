@@ -1,0 +1,26 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+
+import Youtube from "./templates/Youtube.html";
+import Vimeo from "./templates/Vimeo.html";
+
+<Meta title="Components/Video" />
+
+# Video
+
+## Youtube
+
+<!-- disabled snapshot for this story as youtube player animation cause story renewal in every generation. -->
+<Canvas withSource="open">
+  <Story
+    name="Youtube"
+    parameters={{ chromatic: { pauseAnimationAtEnd: true, disableSnapshot: true } }}
+  >
+    {() => Youtube}
+  </Story>
+</Canvas>
+
+## Vimeo
+
+<Canvas withSource="open">
+  <Story name="Vimeo">{() => Vimeo}</Story>
+</Canvas>

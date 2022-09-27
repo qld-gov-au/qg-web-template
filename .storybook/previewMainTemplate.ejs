@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title><%= htmlWebpackPlugin.options.title || 'Storybook'%></title>
+
+    <% if (htmlWebpackPlugin.files.favicon) { %>
+    <link rel="shortcut icon" href="<%= htmlWebpackPlugin.files.favicon%>" />
+    <% } %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="//fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css" />
+    <link href="./assets/v4/latest/css/qg-main.css" rel="stylesheet" type="text/css" media="all">
+    <noscript>
+      <link href="./assets/v4/latest/css/qg-noscript.css" rel="stylesheet" type="text/css" media="all">
+    </noscript>
+        <link href="./assets/v4/latest/css/qg-main.css" rel="stylesheet" type="text/css" media="all">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <% if (typeof headHtmlSnippet !== 'undefined') { %> <%= headHtmlSnippet %> <% } %> <%
+    htmlWebpackPlugin.files.css.forEach(file => { %>
+    <link href="<%= file %>" rel="stylesheet" />
+    <% }); %>
+
+    <style>
+      #root[hidden],
+      #docs-root[hidden] {
+        display: none !important;
+      }
+      pre {
+        font-size: 87.5%;
+        color: inherit;
+        word-wrap: break-word;
+      }
+      /* butterfly doesn't work well with Storybook */
+      #jb-overlay:not([style]), #jb-window:not([style]) {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <% if (typeof bodyHtmlSnippet !== 'undefined') { %> <%= bodyHtmlSnippet %> <% } %>
+
+    <div id="root"></div>
+    <div id="docs-root"></div>
+    <% if (typeof globals !== 'undefined' && Object.keys(globals).length) { %>
+    <script>
+      <% for (var varName in globals) { %>
+          <% if (globals[varName] != undefined) { %>
+            window['<%=varName%>'] = <%= JSON.stringify(globals[varName]) %>;
+          <% } %>
+      <% } %>
+    </script>
+    <% } %> <% htmlWebpackPlugin.files.js.forEach(file => { %>
+    <script src="<%= file %>"></script>
+    <% }); %>
+    <script src="./assets/v4/latest/lib/all-ext-min.js"></script>
+    <script>
+      function addScript(src) {
+        if (document.querySelectorAll(`script[src$="${src.substring(src.lastIndexOf('/') + 1)}"]`).length === 0) {
+          const script = document.createElement('script');
+          script.src = src;
+          document.getElementsByTagName('head')[0].appendChild(script);
+        };
+      }
+      function handleStoryInit(canvas) {
+        addScript("./assets/v4/latest/js/qg-main.js");
+      }
+
+      // set up the mutation observer
+      var observer = new MutationObserver(function (mutations, me) {
+        // `mutations` is an array of mutations that occurred
+        // `me` is the MutationObserver instance
+        var canvas = document.getElementById('my-canvas');
+        if ($("#root").children.length > 0 || $("#docs-root").children.length > 0) {
+          handleStoryInit(canvas);
+          me.disconnect(); // stop observing
+          return;
+        }
+      });
+
+      // start observing
+      observer.observe(document, {
+        childList: true,
+        subtree: true
+      });
+    </script>
+  </body>
+</html>

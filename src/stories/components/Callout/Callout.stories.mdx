@@ -1,0 +1,34 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+
+import Default from "./templates/Default.html";
+import Blue from "./templates/Blue.html";
+import WithButton from "./templates/WithButton.html";
+import WithImage from "./templates/WithImage.html";
+
+<Meta title="Components/Callout" />
+
+# Callout
+
+## Default
+
+<Canvas withSource="open">
+  <Story name="Default">{() => Default}</Story>
+</Canvas>
+
+## Blue
+
+<Canvas withSource="open">
+  <Story name="Blue">{() => Blue}</Story>
+</Canvas>
+
+## WithButton
+
+<Canvas withSource="open">
+  <Story name="WithButton">{() => WithButton}</Story>
+</Canvas>
+
+## WithImage
+
+<Canvas withSource="open">
+  <Story name="WithImage">{() => WithImage}</Story>
+</Canvas>

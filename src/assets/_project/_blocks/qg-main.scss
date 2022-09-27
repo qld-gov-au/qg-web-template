@@ -23,6 +23,12 @@
 // Queensland government styles
 // -------------------------
 
+// expose css variables
+@import "scss-general/qg-css-variables";
+
+// helper or utility class
+@import "scss-general/qg-css-helpers";
+
 // QG Mixins
 @import "scss-general/mixins/font-size";
 @import "scss-general/mixins/qg-responsive-spacing";
@@ -45,6 +51,7 @@
 @import "components/forms/qg-forms";
 @import "components/misc/qg-pagination";
 @import "components/tables/tables";
+@import "components/video/video";
 @import "components/misc/qg-visually-hidden";
 @import "components/gallery/qg-gallery";
 @import "components/print/qg-print";
@@ -60,6 +67,7 @@
 @import "components/misc/qg-correct-incorrect"; // Adds correct / incorrect styling
 @import "components/misc/qg-misc";
 @import "components/misc/qg-fancybox";
+@import "components/spinners/qg-spinners";
 
 // QG layout components
 @import "layout/layout-scaffolding"; // Primary layout structure

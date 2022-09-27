@@ -1,0 +1,55 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+
+import { Grid } from "../../decorators";
+
+import Primary from "./templates/Primary.html";
+import Secondary from "./templates/Secondary.html";
+import Tertiary from "./templates/Tertiary.html";
+import Loading from "./templates/Loading.html";
+import States from "./templates/States.html";
+
+<Meta title="Components/Buttons" />
+
+# Buttons
+
+## Primary
+
+<Canvas withSource="open">
+  <Story name="Primary">{() => Primary}</Story>
+</Canvas>
+
+## Secondary
+
+<Canvas withSource="open">
+  <Story name="Secondary">{() => Secondary}</Story>
+</Canvas>
+
+## Tertiary
+
+<Canvas withSource="open">
+  <Story name="Tertiary">{() => Tertiary}</Story>
+</Canvas>
+
+## Loading
+
+<Canvas withSource="open">
+  <Story name="Loading">{() => Loading}</Story>
+</Canvas>
+
+## States
+
+<Canvas withSource="close">
+  <Story
+    name="States"
+    decorators={[Grid(5)]}
+    parameters={{
+      docs: {
+        source: {
+          code: States,
+        },
+      }
+    }}
+  >
+    {() => States}
+  </Story>
+</Canvas>

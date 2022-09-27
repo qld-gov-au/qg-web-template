@@ -52,7 +52,7 @@ const gitFunctions = {
         )
         .pipe(
           gulp.dest(
-            `${config.staticCdnRepo.folder}/assets/${config.versionName}/${pjson.subVersion}/`
+            `${config.staticCdnRepo.folder}/assets/${config.versionName}/${pjson.version}/`
           )
         );
     };

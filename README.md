@@ -5,7 +5,9 @@
 This template is designed to provide a template for all Franchise websites, and the underpinning technology for new Agency websites.
 
 - [Getting started](readme/getting-started.md)
+- [Develop in Storybook](readme/develop-in-storybook.md)
 - [Working in GIT](readme/git.md)
+- [Tech in use](readme/tech-in-use.md)
 - [Making changes](readme/making-changes.md)
 - [Deploying the template](readme/deploy.md)
 

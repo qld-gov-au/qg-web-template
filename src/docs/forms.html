@@ -10,10 +10,6 @@
 
   <meta name="description" content="DESCRIPTION">
   <meta name="keywords" content="KEYWORDS">
-
-  <link rel="schema.DCTERMS" href="http://purl.org/dc/terms/">
-  <link rel="schema.AGLSTERMS" href="http://www.agls.gov.au/agls/terms/">
-
   <meta name="DCTERMS.creator" scheme="AGLSTERMS.GOLD" content="c=AU; o=The State of Queensland; ou=DEPARTMENT NAME; ou=UNIT NAME">
   <meta name="DCTERMS.publisher" scheme="AGLSTERMS.AglsAgent" content="corporateName=The State of Queensland; jurisdiction=Queensland">
   <meta name="DCTERMS.created" content="2010-11-04">
@@ -182,7 +178,7 @@
         <h4> Example </h4>
         <div class="qg-tmplt-example">
           <div class="panel-body">
-            <form>
+            <form class="qg-forms-v2">
               <ul class="actions">
                 <li><strong><input type="submit" value="Primary alt" class="qg-btn btn-primary" /></strong></li>
                 <li><input type="submit" value="Secondary" class="qg-btn btn-default"/></li>
@@ -255,7 +251,7 @@
         <h4> Example </h4>
         <div class="qg-tmplt-example">
           <div class="panel-body">
-            <form>
+            <form class="qg-forms-v2">
               <label for="car-make-model">
                 <span class="label">Car make and model</span>
                 <small class="hint">Example: Holden Commodore, Toyota Camry</small>
@@ -301,7 +297,7 @@
         <div class="qg-tmplt-example">
           <div class="panel-body">
 
-            <form>
+            <form class="qg-forms-v2">
               <label for="card-security-code">
                 <span class="label">Card security code</span>
                 <small class="hint">
@@ -337,7 +333,7 @@
         <div class="qg-tmplt-example">
           <div class="panel-body">
 
-            <form>
+            <form class="qg-forms-v2">
               <ol class="questions">
                 <li>
                   <label for="email">
@@ -440,14 +436,14 @@
         <h6> Example</h6>
         <div class="qg-tmplt-example">
           <div class="panel-body">
-            <form>
+            <form class="qg-forms-v2">
               <ol class="questions">
                 <li>
                   <fieldset>
                     <legend>
                       <span class="label">Flavours</span>
                     </legend>
-                    <ul class="choices">
+                    <ul class="choices qg-forms-v2__checkbox">
                       <li>
                         <input type="checkbox" name="flavours" value="Chocolate" id="flavours-chocolate" />
                         <label for="flavours-chocolate">Chocolate</label>
@@ -473,14 +469,14 @@
         </div>
         <div class="qg-tmplt-example">
           <div class="panel-body">
-            <form>
+            <form class="qg-forms-v2">
               <ol class="questions">
                 <li>
                   <fieldset>
                     <legend>
                       <span class="label">Device</span>
                     </legend>
-                    <ul class="choices">
+                    <ul class="choices qg-forms-v2__radio">
                       <li>
                         <input type="radio" name="device" value="Laptop" id="device-laptop" />
                         <label for="device-laptop">Laptop</label>
@@ -600,7 +596,7 @@
         <div class="qg-tmplt-example">
           <div class="panel-body">
 
-            <form>
+            <form class="qg-forms-v2">
 
               <ol class="questions">
                 <li class="group atomic">
@@ -717,7 +713,7 @@
         <h5>Example</h5>
         <div class="qg-tmplt-example">
           <div class="panel-body">
-            <form>
+            <form class="qg-forms-v2">
               <ol type="A" class="xor">
                 <li>
                   <h2>Queensland Government account</h2>
@@ -788,7 +784,7 @@
 
         <div class="qg-tmplt-example">
           <div class="panel-body">
-            <form>
+            <form class="qg-forms-v2">
               <ol type="A" class="xor">
                 <li>
                   <label for="dob">
@@ -852,7 +848,7 @@
         <div class="qg-tmplt-example">
           <div class="panel-body">
 
-            <form>
+            <form class="qg-forms-v2">
               <ol class="questions invalid">
                 <li>
                   <label for="email2">
@@ -937,7 +933,7 @@
             <br>
             <h4>Example</h4>
 
-            <form>
+            <form class="qg-forms-v2">
               <ol class="questions">
                 <li>
                   <fieldset>
@@ -1013,15 +1009,15 @@ $( '#email' ).closest( '.section' ).relevance( 'relevantWhen', { name: 'replyReq
 
         <div class="qg-tmplt-example">
           <div class="panel-body">
-            <form>
+            <form class="qg-forms-v2">
               <ol class="questions">
-                <li>
+                <li class="qg-forms-v2__radio">
                   <fieldset>
                     <legend>
                       <span class="label">Would you like a reply?</span>
                       <abbr title="(required)">*</abbr>
                     </legend>
-                    <ul class="choices compact">
+                    <ul class="choices compact qg-forms-v2__radio">
                       <li><input type="radio" name="replyRequested" id="reply-requested-yes-2" value="yes" /><label for="reply-requested-yes-2">Yes</label></li>
                       <li><input type="radio" name="replyRequested" id="reply-requested-no-2" value="no" /><label for="reply-requested-no-2">No</label></li>
                     </ul>
@@ -1384,7 +1380,7 @@ $( '#email' ).closest( '.section' ).relevance( 'relevantWhen', { name: 'replyReq
 
         <h2 class="anchored" id="datepicker">Datepicker</h2>
         <p>There are 2 options to include a Datepicker</p>
-        <form>
+        <form class="qg-forms-v2">
           <div class="form-group">
             <label for="jqueryui-date">jQuery UI datepicker (using <strong>.qg-date-input</strong> class )</label>
             <input type="text" class="qg-date-input" id="jqueryui-date">
@@ -1394,17 +1390,11 @@ $( '#email' ).closest( '.section' ).relevance( 'relevantWhen', { name: 'replyReq
             <input type="date" class="form-control" id="html5-date" placeholder="Password">
           </div>
         </form>
-
-        <h2 id="references">References</h2>
-        <ul>
-          <li><a href="http://www.qld.gov.au/web/cue/module4/">Module 4 Online Forms (Consistent User Experience standard)</a></li>
-          <li><a href="http://www.webdirections.org/resources/aaron-gustafson/">Learning to love forms (Aaron Gustafson, 2007)</a></li>
-        </ul>
         <hr />
-        <h2 class="anchored">Radio button and checkbox custom theme</h2>
+        <h2 id="radio-checkbox-custom-theme" class="anchored">Radio button and checkbox custom theme</h2>
 
-        <form action="https://www.smartservice.qld.gov.au/services/submissions/email/yrcl/jp-resign" method="post" id="jpresign" class="form">
-       
+        <form action="https://www.smartservice.qld.gov.au/services/submissions/email/yrcl/jp-resign" method="post" id="jpresign" class="form qg-forms-v2">
+
               <fieldset>
                 <legend>
                   <span class="h3">Radio button custom theme</span>
@@ -1584,8 +1574,23 @@ $( '#email' ).closest( '.section' ).relevance( 'relevantWhen', { name: 'replyReq
 
                 </ol>
               </fieldset>
-      
+
         </form>
+
+        <h2 id="recaptcha" class="anchored">Google reCAPTCHA</h2>
+        <p>The SWE code for Google reCAPTCHA includes both the version 3 and version 2, the SWE Feedback footer uses the version 3</p>
+        <p>reCAPTCHAs Multiple reCAPTCHAs can be loaded on the same page</p>
+        <p>To enable recaptcha on a form with the default SWE Google recaptcha key, set <strong class="text-nowrap">data-recaptcha=true</strong></p>
+        <p>You can set a custom key by using the attribute <strong class="text-nowrap">data-sitekey="KEY"</strong>.  For the feature to work, the combination server key must be used on Form Submission handler</p>
+        <a href="https://qld-gov-au.github.io/qg-web-template/captcha.html">reCAPTCHA examples</a>
+
+
+
+        <h2 id="references">References</h2>
+        <ul>
+          <li><a href="http://www.qld.gov.au/web/cue/module4/">Module 4 Online Forms (Consistent User Experience standard)</a></li>
+          <li><a href="http://www.webdirections.org/resources/aaron-gustafson/">Learning to love forms (Aaron Gustafson, 2007)</a></li>
+        </ul>
 
 
         <!-- ################################## -->
@@ -1631,6 +1636,8 @@ $( '#email' ).closest( '.section' ).relevance( 'relevantWhen', { name: 'replyReq
                 <li><a href="#datepicker">Datepicker</a></li>
               </ul>
             </li>
+            <li><a href="#radio-checkbox-custom-theme">Radio button and checkbox custom theme</a></li>
+            <li><a href="#recaptcha">Google recaptcha</a></li>
             <li><a href="#references">References</a></li>
           </ul>
           <p>

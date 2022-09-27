@@ -1,0 +1,55 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+
+import Headings from "./templates/Headings.html";
+import Paragraphs from "./templates/Paragraphs.html";
+import Links from "./templates/Links.html";
+import Lists from "./templates/Lists.html";
+import Code from "./templates/Code.html";
+
+import { QgContent } from "../../decorators";
+
+<Meta title="Foundations/Typography" />
+
+# Typography
+
+## Headings
+
+<Canvas withSource="open">
+  <Story name="Headings">{() => Headings}</Story>
+</Canvas>
+
+## Paragraphs
+
+<Canvas withSource="open">
+  <Story name="Paragraphs">{() => Paragraphs}</Story>
+</Canvas>
+
+## Links
+
+<Canvas withSource="open">
+  <Story
+    name="Links"
+    decorators={[QgContent]}
+    parameters={{
+      docs: {
+        source: {
+          code: Links,
+        },
+      },
+    }}
+  >
+    {() => Links}
+  </Story>
+</Canvas>
+
+## Lists
+
+<Canvas withSource="open">
+  <Story name="Lists">{() => Lists}</Story>
+</Canvas>
+
+## Code
+
+<Canvas withSource="open">
+  <Story name="Code">{() => Code}</Story>
+</Canvas>

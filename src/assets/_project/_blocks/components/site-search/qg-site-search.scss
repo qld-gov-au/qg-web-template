@@ -109,6 +109,15 @@
   }
 }
 
+// multiple search styling for global search
+.qg-search-state__container {
+  color: #fff;
+  margin-top: 0.8em;
+  margin-right: 1em;
+  cursor: pointer;
+  align-items: center;
+}
+
 @media (min-width: 992px) {
   .qg-site-search__component{
     .qg-search-site__input{

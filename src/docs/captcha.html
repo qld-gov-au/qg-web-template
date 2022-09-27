@@ -10,10 +10,6 @@
 
   <meta name="description" content="DESCRIPTION">
   <meta name="keywords" content="KEYWORDS">
-
-  <link rel="schema.DCTERMS" href="http://purl.org/dc/terms/">
-  <link rel="schema.AGLSTERMS" href="http://www.agls.gov.au/agls/terms/">
-
   <meta name="DCTERMS.creator" scheme="AGLSTERMS.GOLD" content="c=AU; o=The State of Queensland; ou=DEPARTMENT NAME; ou=UNIT NAME">
   <meta name="DCTERMS.publisher" scheme="AGLSTERMS.AglsAgent" content="corporateName=The State of Queensland; jurisdiction=Queensland">
   <meta name="DCTERMS.created" content="2010-11-04">
@@ -45,11 +41,26 @@
 <body data-qg-accessibility="true">
 <!--#include virtual="/assets/includes-local/analytics.html"-->
 <!--#include virtual="/assets/includes-local/header/access.html"-->
-
-
-
 <!--#include virtual="/assets/includes-local/header/header.html"-->
-<!--#include virtual="/assets/includes-local/breadcrumbs/breadcrumb-global.html"-->
+
+<div class="qg-global-breadcrumb qg-breadcrumb">
+  <div class="container-fluid qg-site-width">
+    <nav id="qg-breadcrumb" aria-label="breadcrumb" class="qg-breadcrumb-nav row">
+      <ol class="qg-breadcrumb-list">
+        <li class="qg-breadcrumb-list-item">
+          <a href="/" class="qg-breadcrumb-list-item__link">
+            Home
+          </a>
+        </li>
+        <li class="qg-breadcrumb-list-item">
+          <a href="/" class="qg-breadcrumb-list-item__link">
+            reCAPTCHA
+          </a>
+        </li>
+      </ol>
+    </nav>
+  </div>
+</div>
 <div class="container-fluid qg-site-width">
   <div id="qg-content">
     <div id="qg-one-col" class="row wide">
@@ -60,8 +71,6 @@
         <!-- Start page content -->
 
         <h1>ReCaptcha Loadings</h1>
-        <a href="captcha-footer-old.html">Footer old</a><br/>
-        <a href="captcha-footer-only.html">Footer only</a><br/>
 
         <div id="test1">
           <h1>Test 1 v3 replace action only data-action="homepage"</h1>

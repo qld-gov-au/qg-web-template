@@ -1,0 +1,15 @@
+.qg-video-wrapper{
+  .qg-video-nav-container {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    margin-top: 0.2em;
+    height: 1.5em;
+    .qg-video-duration-text {
+      font-size: 0.8em;
+    }
+    & * {
+      padding:3px;
+    }
+  }
+}

@@ -6,9 +6,10 @@ import './misc/qg-license';
 import './carousel/qg-carousel';
 import { QgQuickExit } from './quick-exit/qg-quick-exit';
 import { QgPrint } from './print/qg-print';
+import { QgAccordion } from './accordion/qg-accordion';
 import { QgAddressAutocomplete } from './forms/qg-address-autocomplete';
+import { QgSearchMinimize } from './site-search/qg-search-minimize';
 import './tables';
-import './accordion/qg-accordion';
 import './forms/qg-recaptcha';
 import './forms/qg-forms';
 import './misc/qg-document-links';
@@ -19,14 +20,25 @@ import './site-search/qg-site-search';
 import accessibility      from './accessibility/qg-accessibility';
 accessibility.init();
 
-// quick exit
+// QG quick exit
 const quickExit = new QgQuickExit();
 quickExit.init();
 
-// autocomplete
+// QG autocomplete
 // eslint-disable-next-line no-unused-vars
 const qgAddressAutocomplete = new QgAddressAutocomplete();
 
-// print
+// QG print
 // eslint-disable-next-line no-unused-vars
 const qgPrint = new QgPrint();
+
+// QG accordion
+// eslint-disable-next-line no-unused-vars
+const qgAccordion = new QgAccordion();
+
+// QG Search minimize
+// check and initialize class if required
+if (document.querySelector('.qg-site-search__multiple-forms')) {
+  const qgSearchMinimize = new QgSearchMinimize();
+  qgSearchMinimize.init();
+}

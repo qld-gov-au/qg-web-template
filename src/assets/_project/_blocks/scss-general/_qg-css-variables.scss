@@ -1,0 +1,49 @@
+// expose color variables to all application
+:root {
+  --qg-color-primary: #{$qg-global-primary};
+  --qg-color-primary-dark: #{$qg-global-primary-dark};
+  --qg-color-primary-darker: #{$qg-global-primary-darker};
+  --qg-color-primary-light: #{$qg-global-primary-light};
+  --qg-color-primary-hover: #{$qg-global-primary-hover};
+
+  --qg-color-primary-grey: #{$qg-global-primary-grey};
+  --qg-color-primary-dark-grey: #{$qg-global-primary-dark-grey};
+  --qg-color-primary-darker-grey: #{$qg-global-primary-darker-grey};
+  --qg-color-primary-light-grey: #{$qg-global-primary-light-grey};
+  --qg-color-primary-hover-grey: #{$qg-global-primary-hover-grey};
+
+  --qg-color-prominent: #{$qg-global-prominent};
+
+  --qg-color-dark-grey-active: #{$qg-global-dark-grey-active};
+  --qg-color-dark-grey-dark-active: #{$qg-global-dark-grey-dark-active};
+  --qg-color-primary-accesible-grey: #{$qg-global-primary-accesible-grey};
+  --qg-color-light-gray-dark: #{$qg-light-gray-dark};
+
+  --qg-color-error: #{$qg-global-error};
+
+  --qg-color-facebook: #{$qg-facebook};
+  --qg-color-twitter: #{$qg-twitter};
+  --qg-color-linkedin: #{$qg-linkedin};
+
+  --qg-color-brand-success: #{$brand-success};
+  --qg-color-brand-info: #{$brand-info};
+  --qg-color-brand-warning: #{$brand-warning};
+  --qg-color-brand-danger: #{$brand-danger};
+
+  --qg-color-blue: #{$qg-blue};
+  --qg-color-blue-dark: #{$qg-blue-dark};
+  --qg-color-blue-darker: #{$qg-blue-darker};
+
+  --qg-color-light-green: #{$qg-light-green};
+  --qg-color-green: #{$qg-green};
+
+  --qg-color-dark-grey-lightest: #{$qg-dark-grey-lightest};
+  --qg-color-dark-gray-lighter: #{$qg-dark-gray-lighter};
+  --qg-color-dark-gray-light: #{$qg-dark-gray-light};
+  --qg-color-dark-grey: #{$qg-dark-grey};
+  --qg-color-dark-grey1: #{$qg-dark-grey1};
+  --qg-color-dark-grey-dark: #{$qg-dark-grey-dark};
+  --qg-color-dark-grey-darker: #{$qg-dark-grey-darker};
+
+  --qg-gutter-width: #{$grid-gutter-width * 0.5};
+}

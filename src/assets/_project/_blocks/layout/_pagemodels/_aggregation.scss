@@ -1,8 +1,12 @@
 .aggregation-index {
   #qg-primary-content {
     margin-top: 2rem;
+    @include breakpoint(xs) {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
-  .qg-primary-content_notice {
+  .qg-primary-content_notice, .qg-content-alert-notice {
     margin-bottom: 2rem;
   }
   .additional-information {
@@ -39,18 +43,6 @@
   img {
     width: 100%;
     height: auto;
-  }
-}
-.qg-cards{
-  .qg-card {
-    @include breakpoint(xs) {
-      padding-right: 0;
-      padding-left: 0;
-    }
-    @include breakpoint(sm) {
-      padding-left: 1em;
-      padding-right: 1em;
-    }
   }
 }
 .qg-feature {

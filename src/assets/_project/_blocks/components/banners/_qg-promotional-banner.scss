@@ -9,8 +9,45 @@
     }
   }
   .qg-promotional-banner__popular-apps {
-    .qg-promotional-banner__popular-apps-title{
+    .qg-promotional-banner__popular-apps-title {
       font-weight: bold;
+    }
+      ul {
+        padding: 0;
+         li {
+          display: inline;
+          .qg-btn.btn-outline-dark, > a {
+            color: #00698f !important;
+          }
+          a {
+            @extend .m-1;
+            @extend .qg-btn;
+            @extend .btn-outline-dark;
+          }
+          .qg-btn {
+            text-decoration: none !important;
+          }
+        }
+      }
+    .qg-promotional-banner__popular-apps-tags {
+      margin-left: -4px;
+      margin-right: -4px;
+    }
+  }
+
+  .qg-promotional-banner__info > h2 {
+    margin-top: 0;
+  }
+
+  .qg-promotional-banner__popular-apps .qg-btn {
+    &:hover, &:visited, &:active {
+      text-decoration: underline !important;
+    }
+  }
+  .wrapper {
+    @include media-breakpoint-down(xs) {
+      margin-right: -25px;
+      margin-left: -25px;
     }
   }
 }

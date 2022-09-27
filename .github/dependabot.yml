@@ -9,11 +9,7 @@ updates:
   open-pull-requests-limit: 10
   reviewers:
   - duttonw
-  - asifamingov
-  - andersmx
-  assignees:
-  - asifamingov
-  - andersmx
+  - qld-gov-au/qld-online-dev-team
   ignore:
   - dependency-name: cssnano
     versions:
