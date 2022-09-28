@@ -1,41 +1,99 @@
 import { Canvas, Meta, Story } from "@storybook/addon-docs";
 
+import { QgContent } from "../../decorators";
+
 import Basic from "./templates/Basic.html";
 import WithActionButton from "./templates/WithActionButton.html";
 import WithImage from "./templates/WithImage.html";
 import WithThumbnail from "./templates/WithThumbnail.html";
 import Clickable from "./templates/Clickable.html";
 
-<Meta title="Components/Cards" />
+<Meta title="Components/Cards" decorators={[QgContent]} />
 
 # Cards
+Requires `#QgContent` ancestor.
 
 ## Basic
 
 <Canvas withSource="open">
-  <Story name="Basic">{() => Basic}</Story>
+  <Story
+    name="Basic"
+    parameters={{
+      docs: {
+        source: {
+          code: Basic,
+        },
+      },
+    }}
+  >
+    {() => Basic}
+  </Story>
 </Canvas>
 
 ## WithActionButton
 
 <Canvas withSource="open">
-  <Story name="WithActionButton">{() => WithActionButton}</Story>
+  <Story
+    name="WithActionButton"
+    parameters={{
+      docs: {
+        source: {
+          code: WithActionButton,
+        },
+      },
+    }}
+  >
+    {() => WithActionButton}
+  </Story>
 </Canvas>
 
 ## WithImage
 
 <Canvas withSource="open">
-  <Story name="WithImage">{() => WithImage}</Story>
+  <Story
+    name="WithImage"
+    parameters={{
+      docs: {
+        source: {
+          code: WithImage,
+        },
+      },
+    }}
+  >
+    {() => WithImage}
+  </Story>
 </Canvas>
 
 ## WithThumbnail
 
 <Canvas withSource="open">
-  <Story name="WithThumbnail">{() => WithThumbnail}</Story>
+  <Story
+    name="WithThumbnail"
+    parameters={{
+      docs: {
+        source: {
+          code: WithThumbnail,
+        },
+      },
+    }}
+  >
+    {() => WithThumbnail}
+  </Story>
 </Canvas>
 
 ## Clickable
 
 <Canvas withSource="open">
-  <Story name="Clickable">{() => Clickable}</Story>
+  <Story
+    name="Clickable"
+    parameters={{
+      docs: {
+        source: {
+          code: Clickable,
+        },
+      },
+    }}
+  >
+    {() => Clickable}
+  </Story>
 </Canvas>
