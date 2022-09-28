@@ -35,6 +35,9 @@ jobs:
       - name: Install #run on lint step (Which is cached)
         run: | # Install packages
           npm install --prefer-offline --no-audit
+      - name: Build 🔧
+        run: |
+          npm run build
       - name: Build Storybook 🔧
         run: |
           npm run build-storybook-ci
