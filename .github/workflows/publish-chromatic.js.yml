@@ -20,7 +20,7 @@ jobs:
     strategy:
       matrix:
         node: [ '16' ]
-    name: Build and Deploy on Node ${{ matrix.node }}
+    name: Build and test on Node ${{ matrix.node }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -42,6 +42,7 @@ jobs:
         run: |
           npm run test-ci
       - name: Publish to Chromatic
+        if: ${{ github.actor != 'dependabot[bot]' }}
         uses: chromaui/action@v1
         # Options required to the GitHub Chromatic Action
         with:
