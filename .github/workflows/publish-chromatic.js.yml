@@ -5,10 +5,10 @@
 name: Publish Chromatic
 
 on:
-  push:
-    branches-ignore:
-      - 'gh-pages' # 👈 Excludes the gh-pages branch
-      # - 'master' # 👈 Excludes the master branch
+  workflow_run:
+    workflows: [Build and Test Release] # Reuse the name of your tests workflow
+    types:
+      - completed
 
 concurrency:
   group: compile-${{ github.workflow }}-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
