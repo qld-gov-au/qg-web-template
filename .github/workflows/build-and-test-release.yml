@@ -2,7 +2,7 @@
 
 # Further details on Chromatic setup: https://www.chromatic.com/docs/github-actions
 
-name: Build and Test
+name: Build and Test Release
 
 on:
   push:
