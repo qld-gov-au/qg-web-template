@@ -38,9 +38,9 @@ jobs:
       - name: Build 🔧
         run: |
           npm run build
-      - name: Build 🔧
+      - name: Test 🔧
         run: |
-          npm run build
+          npm run test-ci
       - name: Test release 🔧
         run: |
           npm run release
