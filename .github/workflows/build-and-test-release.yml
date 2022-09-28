@@ -20,7 +20,7 @@ jobs:
     strategy:
       matrix:
         node: [ '16' ]
-    name: Build and Deploy on Node ${{ matrix.node }}
+    name: Build the release and test on Node ${{ matrix.node }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
