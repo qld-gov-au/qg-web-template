@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <title>Add your heading | Queensland Government</title>
+
+  <meta name="description" content="DESCRIPTION">
+  <meta name="keywords" content="KEYWORDS">
+  <meta name="DCTERMS.creator" scheme="AGLSTERMS.GOLD" content="c=AU; o=The State of Queensland; ou=DEPARTMENT NAME; ou=UNIT NAME">
+  <meta name="DCTERMS.publisher" scheme="AGLSTERMS.AglsAgent" content="corporateName=The State of Queensland; jurisdiction=Queensland">
+  <meta name="DCTERMS.created" content="2010-11-04">
+  <meta name="DCTERMS.modified" content="2011-03-05">
+  <meta name="DCTERMS.title" content="Add your heading">
+  <meta name="DCTERMS.alternative" content="Add your heading">
+  <meta name="DCTERMS.description" content="DESCRIPTION">
+  <meta name="DCTERMS.subject" scheme="AGLSTERMS.APAIS" content="SUBJECT">
+  <meta name="AGLSTERMS.function" scheme="AGLSTERMS.AGIFT" content="FUNCTION">
+  <meta name="DCTERMS.type" scheme="DCTERMS.DCMIType" content="Text">
+  <meta name="AGLSTERMS.documentType" scheme="AGLSTERMS.agls-document" content="guidelines">
+  <meta name="DCTERMS.audience" scheme="AGLSTERMS.agls-audience" content="">
+  <meta name="DCTERMS.jurisdiction" scheme="AGLSTERMS.AglsJuri" content="Queensland">
+  <meta content="https://creativecommons.org/licenses/by-nc-nd/4.0/" scheme="DCTERMS.URI" name="DCTERMS.license" />
+
+  <!--#include virtual="/assets/includes-local/head-assets.html"-->
+
+</head>
+
+<body data-qg-accessibility="true">
+
+<!--#include virtual="/assets/includes-local/analytics.html"-->
+<!--#include virtual="/assets/includes-local/header/access.html"-->
+
+<div class="container-fluid qg-site-width">
+
+  <header id="qg-site-header">
+    <!--#include virtual="/assets/includes-local/header/coat-of-arms.html"-->
+
+    <!--#include virtual="/assets/includes-local/header/site-utilities.html"-->
+
+    <!--#include virtual="/assets/includes-local/header/site-search.html"-->
+
+    <!--#include virtual="/assets/includes-local/header/global-alert.html"-->
+
+    <!--#include virtual="/assets/includes-local/header/site-nav.html"-->
+  </header>
+
+  <div id="qg-content">
+    <div id="qg-three-col" class="row">
+
+      <!--#include virtual="/assets/includes-local/breadcrumbs/breadcrumb-demo.html"-->
+
+      <div id="qg-primary-content" role="main">
+
+        <!--#include virtual="/assets/includes-local/content/alert.html"-->
+
+        <h1>Queensland Government Javascript Components Demo</h1>
+
+        <h2>Data from CKAN & Pagination</h2>
+        <div>
+          <a id="data-url" data-url="https://data.qld.gov.au/dataset/q-ride-providers/resource/0647759d-9f68-44f9-bd7e-eb96d37d11e4" style="display:none">View full Data</a>
+          <div class="search-results-container">
+            <ol class="search-results">
+
+            </ol>
+            <div class="pagination"></div>
+          </div>
+        </div>
+
+        <div class="qg-content-footer">
+
+          <dl>
+            <dt>Last updated:</dt>
+            <dd>11 January 2018</dd>
+            <dt>Last reviewed:</dt>
+            <dd>11 January 2018</dd>
+          </dl>
+
+
+        </div>
+      </div>
+
+      <aside id="qg-secondary-content">
+
+       <!--slider component demo-->
+        <div class="qg-aside">
+          <div data-role="qg-slider" data-options='{"src":"assets/data/featured/source.atom"}'>
+            <h2><span class="fa fa-file-text-o" aria-hidden="true"></span>Featured</h2>
+            <p class="more">
+              <a href="/demo/assets/data/featured/source.atom" class="">View all</a><small class="print-link-url"> ( https://www.qld.gov.au/education/assets/data/featured/source.atom )</small>
+            </p>
+          </div>
+        </div>
+        <!--slider component demo end-->
+
+        <!--social feed component demo-->
+        <div class="qg-aside">
+          <div data-role="qg-social-feed">
+            <div class="facebook-updates" data-href="https://www.facebook.com/TMRQld">
+              <div class="section-header"><h2>Facebook feed</h2></div>
+              <p class="more">
+                <a href="http://www.facebook.com/TMRQld" title="More from The Department of Transport and Main Roads on Facebook">View all</a>
+              </p>
+            </div>
+            <div class="twitter-updates" data-account="TMFranchise" data-list="transport-and-motoring" data-num="5" data-widgetid="377609440007954432">
+              <div class="section-header"><h2>Twitter feed</h2></div>
+              <p class="more"><a href="http://twitter.com/TMFranchise/lists/transport-and-motoring" title="More from the Transport and motoring franchise on Twitter">View all</a></p>
+            </div>
+          </div>
+        </div>
+        <!--social feed demo end-->
+      </aside>
+
+      <!--#include virtual="/assets/includes-local/section-nav/sample.html"-->
+
+    </div>
+    <!--#include virtual="/assets/includes-local/content/options.html"-->
+
+  </div>
+
+  <footer>
+    <!--#include virtual="/assets/includes-local/footer/footer-site-map.html"-->
+    <!--#include virtual="/assets/includes-local/footer/footer-legals.html"-->
+  </footer>
+</div>
+
+<script>
+  var qg = qg || {};
+  qg.swe = qg.swe || {};
+  // Used by the feedback form.
+  qg.swe.franchiseTitle = 'Franchise Title';
+
+
+</script>
+
+<!--#include virtual="/assets/includes-local/footer/footer-scripts.html"-->
+<script type="text/javascript">
+  $(window).on('load', function () {
+    qg.data.get('data.qld.gov.au', 'Select * from "0647759d-9f68-44f9-bd7e-eb96d37d11e4" LIMIT 10', {
+      cache: !0,
+      modalCloseButtonImage: 'assets/images/close.png',
+      successCallback: function (data) {
+        if (data.result.records.length > 0) {
+          $('.search-results').html('');
+          $.each(data.result.records, function (k, v) {
+            $('.search-results').append('<li>'+v.Title + '</li>');
+          });
+          $('.search-results-container').pajinate({
+            item_container_id: '.search-results',
+            nav_panel_id: '.pagination',
+            items_per_page: 5,
+            num_page_links_to_display: 5,
+            show_first_last: false,
+            slideTransition: true,
+            nav_label_prev: 'Previous',
+            nav_label_next: 'Next',
+
+          });
+        } else {
+          $('.search-result').html('No records found');
+        }
+      },
+    });
+  });
+</script>
+</body>
+
+</html>

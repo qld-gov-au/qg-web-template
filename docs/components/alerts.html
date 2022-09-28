@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <title>Alerts</title>
+
+  <meta name="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur cupiditate eius facere hic molestiae quasi sapiente. Accusantium beatae consectetur cumque, eaque fugit labore officia quisquam quod reprehenderit suscipit! Consectetur, magni!" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur cupiditate eius facere hic molestiae quasi sapiente. Accusantium beatae consectetur cumque, eaque fugit labore officia quisquam quod reprehenderit suscipit! Consectetur, magni!">
+  <meta name="keywords" content="KEYWORDS">
+
+  <meta name="DCTERMS.creator" scheme="AGLSTERMS.GOLD" content="c=AU; o=The State of Queensland; ou=DEPARTMENT NAME; ou=UNIT NAME">
+  <meta name="DCTERMS.publisher" scheme="AGLSTERMS.AglsAgent" content="corporateName=The State of Queensland; jurisdiction=Queensland">
+  <meta name="DCTERMS.created" content="2010-11-04">
+  <meta name="DCTERMS.modified" content="2011-03-05">
+  <meta name="DCTERMS.title" content="Add your heading">
+  <meta name="DCTERMS.alternative" content="Add your heading">
+  <meta name="DCTERMS.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur cupiditate eius facere hic molestiae quasi sapiente. Accusantium beatae consectetur cumque, eaque fugit labore officia quisquam quod reprehenderit suscipit! Consectetur, magni!" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur cupiditate eius facere hic molestiae quasi sapiente. Accusantium beatae consectetur cumque, eaque fugit labore officia quisquam quod reprehenderit suscipit! Consectetur, magni!">
+  <meta name="DCTERMS.subject" scheme="AGLSTERMS.APAIS" content="SUBJECT">
+  <meta name="AGLSTERMS.function" scheme="AGLSTERMS.AGIFT" content="FUNCTION">
+  <meta name="DCTERMS.type" scheme="DCTERMS.DCMIType" content="Text">
+  <meta name="AGLSTERMS.documentType" scheme="AGLSTERMS.agls-document" content="guidelines">
+  <meta name="DCTERMS.audience" scheme="AGLSTERMS.agls-audience" content="">
+  <meta name="DCTERMS.jurisdiction" scheme="AGLSTERMS.AglsJuri" content="Queensland">
+
+  <!-- Open graph -->
+  <meta property="og:title" content="Queensland Government">
+  <meta property="og:Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur cupiditate eius facere hic molestiae quasi sapiente. Accusantium beatae consectetur cumque, eaque fugit labore officia quisquam quod reprehenderit suscipit! Consectetur, magni!" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur cupiditate eius facere hic molestiae quasi sapiente. Accusantium beatae consectetur cumque, eaque fugit labore officia quisquam quod reprehenderit suscipit! Consectetur, magni!">
+  <meta property="og:image" content="/assets/v4/latest/images/coat-of-arms/coa-thumbnail.png">
+  <meta property="og:url" content="">
+  <meta property="og:type" content="article" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Queensland Government" />
+  <meta name="twitter:Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur cupiditate eius facere hic molestiae quasi sapiente. Accusantium beatae consectetur cumque, eaque fugit labore officia quisquam quod reprehenderit suscipit! Consectetur, magni!" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur cupiditate eius facere hic molestiae quasi sapiente. Accusantium beatae consectetur cumque, eaque fugit labore officia quisquam quod reprehenderit suscipit! Consectetur, magni!" />
+  <meta name="twitter:image" content="/assets/v4/latest/images/coat-of-arms/coa-thumbnail.png" />
+
+  <!--#include virtual="/assets/includes-local/head-assets.html"-->
+
+</head>
+
+<body data-qg-accessibility="true">
+<!--#include virtual="/assets/includes-local/analytics.html"-->
+<!--#include virtual="/assets/includes-local/header/access.html"-->
+
+
+
+<!--#include virtual="/assets/includes-local/header/header.html"-->
+<div class="qg-global-breadcrumb qg-breadcrumb">
+  <div class="container-fluid qg-site-width">
+    <nav id="qg-breadcrumb" aria-label="breadcrumb" class="qg-breadcrumb-nav row">
+      <ol class="qg-breadcrumb-list">
+        <li class="qg-breadcrumb-list-item">
+          <a href="/" class="qg-breadcrumb-list-item__link">
+            Home
+          </a>
+        </li>
+        <li class="qg-breadcrumb-list-item">
+          <a href="../" class="qg-breadcrumb-list-item__link">
+            Web Template Documentation
+          </a>
+        </li>
+        <li class="qg-breadcrumb-list-item">
+          <a href="../components.html" class="qg-breadcrumb-list-item__link">
+            Components
+          </a>
+        </li>
+        <li class="qg-breadcrumb-list-item">
+          <a href="#" class="qg-breadcrumb-list-item__link">
+            Alerts
+          </a>
+        </li>
+      </ol>
+    </nav>
+  </div>
+</div>
+<div class="container-fluid qg-site-width">
+  <div id="qg-content">
+    <div id="qg-one-col" class="row wide">
+
+      <div id="qg-primary-content" role="main">
+        <h1 class="category" id="alerts">Alerts</h1>
+        <p><span class="label label-primary" title="Heavily customised bootstrap implementation">Customised</span></p>
+        <p>Alerts are used to notify users of important time-sensitive information or changes, in a way that attracts the user's attention.</p>
+        <p>This component is assigned <code>role="alert"</code> to signify information requiring the user's immediate attention. For people using assistive technologies, this role will listen for such an event and notify the user accordingly:</p>
+        <ul>
+          <li>Screen readers may immediately announce or display the alert message</li>
+          <li>Screen magnifiers may visually indicate that an alert occurred and what the alert text was</li>
+        </ul>
+        <p> Usage considerations</p>
+        <ul>
+          <li>If this component is used incorrectly (e.g. to display content that doesn't require the user's immediate attention), this may pose an accessibility issue.</li>
+          <li>Inline icons are optional and to be selected from the Font Awesome (Opens in new window) icon set</li>
+        </ul>
+        <p>See <a href="https://getbootstrap.com/components/#alerts">Bootstrap alerts documentation</a> for more information.</p>
+
+        <h3> Success message </h3>
+        <div class="qg-tmplt-example panel panel-default">
+          <div class="panel-body">
+            <div class="alert alert-success" role="alert">
+              <h2><span class="fa fa-check-circle"></span> Thank you for your application</h2>
+              <p>You application is being processed and will be completed within the next 10 business days. You will
+                receive an email confirmation when it has been completed.</p>
+            </div>
+          </div>
+        </div>
+        </br><h4> HTML </h4>
+        <pre><code class="language-markup">
+&lt;div class="alert alert-success" role="alert">
+  &lt;h2>&lt;span class="fa fa-check-circle">&lt;/span>Thank you for your application&lt;/h2>
+  &lt;p>You application is being processed and will be completed within the next 10 business days. You will receive an email confirmation when it has been completed.&lt;/p>
+&lt;/div>
+                                        </code></pre>
+
+        <br/><h3> Information message </h3>
+        <div class="qg-tmplt-example panel panel-default">
+          <div class="panel-body">
+            <div class="alert alert-info" role="alert">
+              <h2><span class="fa fa-comments"></span>Tell us what you think about our website</h2>
+              <ul>
+                <li>lorem ipsum</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A animi at culpa doloremque, eligendi, et facere, impedit nesciunt non pariatur qui saepe similique sit sunt voluptas. Asperiores assumenda cum nam!</li>
+              </ul>
+              <button type="button" class="qg-btn btn-default">Give us your feedback</button>
+            </div>
+          </div>
+        </div>
+
+        <br/><h4> HTML </h4>
+        <pre><code class="language-markup">
+&lt;div class="alert alert-info" role="alert">
+  &lt;h2>&lt;span class="fa fa-comments">&lt;/span>Tell us what you think about our website&lt;/h2>
+  &lt;p>Is there anything we could improve?&lt;/p>
+  &lt;button type="button" class="qg-btn btn-default">Give us your feedback&lt;/button>
+&lt;/div>
+                                        </code></pre>
+
+        <br/><h3> Warning message </h3>
+        <div class="qg-tmplt-example panel panel-default">
+          <div class="panel-body">
+            <div class="alert alert-warning" role="alert">
+              <h2><span class="fa fa-exclamation-triangle"></span>Please check your answers</h2>
+              <ol>
+                <li><a href="#">Name: Must be completed</a></li>
+                <li><a href="#">Email: Must be a valid email address</a></li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        </br><h4> HTML </h4>
+        <pre><code class="language-markup">
+&lt;div class="alert alert-warning" role="alert">
+  &lt;h2>&lt;span class="fa fa-exclamation-triangle">&lt;/span>Please check your answers&lt;/h2>
+    &lt;ol>
+      &lt;li>&lt;a href="#">Name: Must be completed&lt;/a>&lt;/li>
+      &lt;li>&lt;a href="#">Email: Must be a valid email address&lt;/a>&lt;/li>
+    &lt;/ol>
+&lt;/div>
+                                        </code></pre>
+
+        <br/><h3> Danger message </h3>
+        <div class="qg-tmplt-example panel panel-default">
+          <div class="panel-body">
+            <div class="alert alert-danger" role="alert">
+              <h2><span class="fa fa-ban"></span> Alert title</h2>
+              <p>Alert content</p>
+              <ol>
+                <li>lorem ipsum <a href="#">link</a></li>
+                <li>lorem ipsum <a href="#">link</a></li>
+              </ol>
+              <ul>
+                <li>lorem ipsum <a href="#">link</a></li>
+                <li>lorem ipsum <a href="#">link</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        </br>
+        <h4> HTML </h4>
+        <pre><code class="language-markup">
+&lt;div class="alert alert-danger" role="alert">
+  &lt;h2>Alert title&lt;/h2>
+  &lt;p>Alert content&lt;/p>
+&lt;/div>
+        </code></pre>
+        <h3>Deprecation</h3>
+        <p>
+          We will deprecate the CSS support for &lt;i class="fa ..."&gt; Font Awesome icons due to incompatible to semantic HTML (https://github.com/qld-gov-au/qg-web-template/pull/391).
+          <br/>
+          Please replace &lt;i&gt; with &lt;span&gt; for Font Awesome icons if they are used in your application by 22nd June 2022.
+        </p>
+        <div class="alert alert-danger" role="alert">
+          <h2><i class="fa fa-ban"></i> Alert using &lt;i&gt; as Font Awesome icon</h2>
+          <p>A warning will appear in console to remind developer to replace the Font Awesome icon if &lt;i&gt; is used.</p>
+        </div>
+        <p>Please modify your code from:</p>
+        <pre>
+<code class="language-markup">&lt;div class="alert alert-warning" role="alert">
+  &lt;h2>&lt;i class="fa fa-exclamation-triangle">&lt;/i>Alert title&lt;/h2>
+&lt;/div></code></pre>
+        <p>to:</p>
+        <pre>
+<code class="language-markup">&lt;div class="alert alert-warning" role="alert">
+  &lt;h2>&lt;span class="fa fa-exclamation-triangle">&lt;/span>Alert masssage&lt;/h2>
+&lt;/div></code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+<br />
+<br />
+<br />
+<!--#include virtual="/assets/includes-local/footer/footer.html"-->
+
+<script>
+  var qg = qg || {};
+  qg.swe = qg.swe || {};
+  // Used by the feedback form.
+  qg.swe.franchiseTitle = 'Franchise Title';
+</script>
+
+<!--#include virtual="/assets/includes-local/footer/footer-scripts.html"-->
+
+</body>
+
+</html>

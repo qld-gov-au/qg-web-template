@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <title>Add your heading | Queensland Government</title>
+
+    <meta name="description" content="DESCRIPTION">
+    <meta name="keywords" content="KEYWORDS">
+    <meta name="DCTERMS.creator" scheme="AGLSTERMS.GOLD" content="c=AU; o=The State of Queensland; ou=DEPARTMENT NAME; ou=UNIT NAME">
+    <meta name="DCTERMS.publisher" scheme="AGLSTERMS.AglsAgent" content="corporateName=The State of Queensland; jurisdiction=Queensland">
+    <meta name="DCTERMS.created" content="2010-11-04">
+    <meta name="DCTERMS.modified" content="2011-03-05">
+    <meta name="DCTERMS.title" content="Add your heading">
+    <meta name="DCTERMS.alternative" content="Add your heading">
+    <meta name="DCTERMS.description" content="DESCRIPTION">
+    <meta name="DCTERMS.subject" scheme="AGLSTERMS.APAIS" content="SUBJECT">
+    <meta name="AGLSTERMS.function" scheme="AGLSTERMS.AGIFT" content="FUNCTION">
+    <meta name="DCTERMS.type" scheme="DCTERMS.DCMIType" content="Text">
+    <meta name="AGLSTERMS.documentType" scheme="AGLSTERMS.agls-document" content="guidelines">
+    <meta name="DCTERMS.audience" scheme="AGLSTERMS.agls-audience" content="">
+    <meta name="DCTERMS.jurisdiction" scheme="AGLSTERMS.AglsJuri" content="Queensland">
+
+    <!--#include virtual="/assets/includes-local/head-assets.html"-->
+
+</head>
+
+<body data-qg-accessibility="true">
+
+    <!--#include virtual="/assets/includes-local/analytics.html"-->
+    <!--#include virtual="/assets/includes-local/header/access.html"-->
+
+    <div class="container-fluid qg-site-width">
+
+        <header id="qg-site-header">
+            <!--#include virtual="/assets/includes-local/header/coat-of-arms.html"-->
+
+            <!--#include virtual="/assets/includes-local/header/site-utilities.html"-->
+
+            <!--#include virtual="/assets/includes-local/header/site-search.html"-->
+
+            <!--#include virtual="/assets/includes-local/header/global-alert.html"-->
+
+            <!--#include virtual="/assets/includes-local/header/site-nav.html"-->
+        </header>
+
+        <div id="qg-content">
+            <div id="qg-three-col" class="row">
+
+                <nav id="qg-breadcrumb" role="navigation" aria-label="breadcrumb navigation" aria-labelledby="breadcrumb-heading" class="collapse">
+
+                    <h2 id="breadcrumb-heading" class="qg-visually-hidden">You are here:</h2>
+
+                    <ol class="list-inline">
+                        <!--#include virtual="/assets/includes-local/breadcrumbs/breadcrumb-citizen.html"-->
+                        <li><a href="/about/">About Queensland and its government</a></li>
+                        <li><a href="/about/how-government-works/">How government works</a></li>
+                        <li><a href="/about/how-government-works/state-budget-economy/">State budget and economy</a></li>
+                        <li><a href="../">Investment Portal</a></li>
+                        <li>Program funding list</li>
+                    </ol>
+
+                </nav>
+
+                <div id="qg-primary-content" role="main">
+
+                    <!--#include virtual="/assets/includes-local/content/alert.html"-->
+
+                    <h1>Program funding</h1>
+
+                    <div class="status info">
+                        <h2>Program funding overview</h2>
+                        <p id="overview-funding"></p>
+                    </div>
+
+                    <div id="tableControls"></div>
+                        <div id="printInfo"></div>
+                        <table id="example" class="display" width="100%" cellspacing="0">
+                            <caption id="search-results-summary">Displaying search results <strong id="result-scope"></strong> of <strong id="total-result"></strong></caption>
+                            <thead>
+                                <tr>
+                                    <th width="5%" class="details-control-head"></th>
+                                    <th width="30%">Funding title</th>
+                                    <th width="30%">Program title</th>
+                                    <th width="20%">Funding agency</th>
+                                    <th width="15%">FY budget</th>
+                                </tr>
+                            </thead>
+                            <tbody id="results-table"><tr><td colspan="5"><p>Loading...</p></td></tr></tbody>
+                        </table>
+                        <div id="pagination"><ul></ul></div>
+
+                    <div class="qg-content-footer">
+
+                        <dl>
+                            <dt>Last updated:</dt>
+                            <dd>11 January 2018</dd>
+                            <dt>Last reviewed:</dt>
+                            <dd>11 January 2018</dd>
+                        </dl>
+
+
+                    </div>
+                </div>
+
+                <aside id="qg-secondary-content">
+                    <div class="qg-aside search">
+                        <div><h2>Refine your search</h2></div>
+                        <form>
+                            <div class="exlayouttable"><ol class="questions form-section">
+                                <li>
+                                    <label for="query"><span class="label">Keyword</span></label>
+                                    <input type="text" maxlength="60" size="40" value="" name="query" id="query" />
+                                </li>
+                                <li>
+                                    <label for="FundingType"><span class="label">FundingType</span></label>
+                                    <select size="5" id="FundingType" name="FundingType" multiple="multiple">
+                                        <option selected="selected" value="">All</option>
+                                        <option value="Frontline service procurement">Frontline service procurement</option>
+                                        <option value="Grants (to individuals)">Grants (to individuals)</option>
+                                        <option value="Grants (to provider/organisation/community group)">Grants (to provider/organisation/community group)</option>
+                                        <option value="Grants (to individuals AND provider/organisation/community group)">Grants (to individuals AND provider/organisation/community group)</option>
+                                        <option value="Individualised funding (disability services)">Individualised funding (disability services)</option>
+                                    </select>
+                                </li>
+                                <li class="qgip-checkbox">
+                                    <input id="OpenForApplication" name="OpenForApplication" value="Yes" type="checkbox" />
+                                    <label for="OpenForApplication">Programs open for application</label>
+                                </li>
+                                <li>
+                                    <label for="Category"><span class="label">Category</span></label>
+                                    <select size="5" id="Category" name="Category" multiple="multiple">
+                                        <option value="" selected="selected">All</option>
+                                        <option value="Aboriginal and Torres Strait Islander peoples">Aboriginal and Torres Strait Islander peoples</option>
+                                        <option value="About Queensland and its government">About Queensland and its government</option>
+                                        <option value="Business and industry">Business and industry</option>
+                                        <option value="Community support">Community support</option>
+                                        <option value="Education and training">Education and training</option>
+                                        <option value="Emergency services and safety">Emergency services and safety</option>
+                                        <option value="Employment and jobs">Employment and jobs</option>
+                                        <option value="Environment, land and water">Environment, land and water</option>
+                                        <option value="Health and wellbeing">Health and wellbeing</option>
+                                        <option value="Homes and housing">Homes and housing</option>
+                                        <option value="Parents and families">Parents and families</option>
+                                        <option value="People with disability">People with disability</option>
+                                        <option value="Recreation, sport and arts">Recreation, sport and arts</option>
+                                        <option value="Seniors">Seniors</option>
+                                        <option value="Transport and motoring">Transport and motoring</option>
+                                        <option value="Your rights, crime and the law">Your rights, crime and the law</option>
+                                        <option value="Youth">Youth</option>
+                                    </select>
+                                </li>
+                                <li>
+                                    <label for="ClientGroup"><span class="label">Client group</span></label>
+                                    <select size="5" id="ClientGroup" name="ClientGroup" multiple="multiple">
+                                        <option value="" selected="selected">All</option>
+                                        <option value="Aboriginal and Torres Strait Islanders">Aboriginal and Torres Strait Islanders</option>
+                                        <option value="Businesses">Businesses</option>
+                                        <option value="Carers">Carers</option>
+                                        <option value="Children under 16 years">Children under 16 years</option>
+                                        <option value="Commercial shipping ">Commercial shipping </option>
+                                        <option value="Community groups">Community groups</option>
+                                        <option value="Employees">Employees</option>
+                                        <option value="Employers">Employers</option>
+                                        <option value="Funding applicants">Funding applicants</option>
+                                        <option value="Government">Government</option>
+                                        <option value="Jobseekers">Jobseekers</option>
+                                        <option value="Lesbian, gay, bisexual, transgender and intersex">Lesbian, gay, bisexual, transgender and intersex</option>
+                                        <option value="Low-income earners">Low-income earners</option>
+                                        <option value="Men">Men</option>
+                                        <option value="Migrants">Migrants</option>
+                                        <option value="Motorists">Motorists</option>
+                                        <option value="Non-government organisations">Non-government organisations</option>
+                                        <option value="Parents">Parents</option>
+                                        <option value="People with disability">People with disability</option>
+                                        <option value="Primary industry">Primary industry</option>
+                                        <option value="Public transport users (inc. bus, coach and rail)">Public transport users (inc. bus, coach and rail)</option>
+                                        <option value="Recreational boating">Recreational boating</option>
+                                        <option value="Rural communities">Rural communities</option>
+                                        <option value="Seniors over 65 years">Seniors over 65 years</option>
+                                        <option value="Students">Students</option>
+                                        <option value="Taxi drivers and passengers">Taxi drivers and passengers</option>
+                                        <option value="Teachers">Teachers</option>
+                                        <option value="Tourists">Tourists</option>
+                                        <option value="Veterans">Veterans</option>
+                                        <option value="Victims of crime">Victims of crime</option>
+                                        <option value="Women">Women</option>
+                                        <option value="Young people 16-25 years">Young people 16-25 years</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </li>
+                                <li>
+                                    <label for="Agency"><span class="label">Department or organisation</span></label>
+                                    <select size="5" name="Agency" id="Agency" multiple="multiple">
+                                        <option value="" selected="selected">All</option>
+                                        <option value="DATSIP">Aboriginal and Torres Strait Islander Partnerships</option>
+                                        <option value="DAF">Agriculture and Fisheries</option>
+                                        <option value="DCCSDS">Communities, Child Safety and Disability Services</option>
+                                        <option value="DET">Education and Training</option>
+                                        <option value="DEWS">Energy and Water Supply</option>
+                                        <option value="DEHP">Environment and Heritage Protection</option>
+                                        <option value="DHPW">Housing and Public Works</option>
+                                        <option value="DJAG">Justice and Attorney-General</option>
+                                        <option value="DILGP">Infrastructure, Local Government and Planning</option>
+                                        <option value="DNPSR">National Parks Sport and Racing</option>
+                                        <option value="DNRM">Natural Resources and Mines</option>
+                                        <option value="DPC">Premier and Cabinet</option>
+                                        <option value="PSBA">Public Safety Business Agency</option>
+                                        <option value="QFES">Queensland Fire and Emergency Services</option>
+                                        <option value="QH">Queensland Health</option>
+                                        <option value="QPS">Queensland Policy Service</option>
+                                        <option value="QRA">Queensland Reconstruction Authority</option>
+                                        <option value="QT">Queensland Treasury</option>
+                                        <option value="DSITI">Science, Information Technology and Innovation</option>
+                                        <option value="DSD">State Development</option>
+                                        <option value="DTESB">Tourism, Major Events, Small Business and the Commonwealth Games</option>
+                                        <option value="DTMR">Transport and Main Roads</option>
+                                    </select>
+                                </li>
+
+                            </ol></div>
+                            <ol class="footer-section questions">
+                                <li class="footer">
+                                    <ul class="actions">
+                                        <li><strong><input type="submit" value="Search" /></strong></li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </form>
+                    </div>
+                    <div class="qg-aside">
+                        <div><h2>Disclaimer</h2></div>
+                        <p>The materials available on or through this website are distributed by the Queensland Government as an information source only.</p>
+                        <p>
+                    </div>
+                    <div class="qg-aside" role="complementary">
+                        <h2>Other Queensland Government grants</h2>
+                        <p>Read more about  <a href="/grants/">grants from other providers</a> and tips on applying.</p>
+                    </div>
+                </aside>
+
+                <nav class="qg-section-nav" aria-label="side navigation" role="navigation">
+
+                    <h2><a href="../">Queensland Government Investment Portal</a></h2>
+                    <ul aria-label="section navigation">
+                        <li><a href="../about-portal/">About the portal</a></li>
+                        <li><a href="../available-funding/">Program funding</a>
+                            <ul>
+                                <li><a href="../available-funding/faq.html">Frequently asked questions</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../expenditure/">Expenditure data</a></li>
+                    </ul>
+
+                </nav>
+
+            </div>
+            <!--#include virtual="/assets/includes-local/content/options.html"-->
+
+        </div>
+
+        <footer>
+            <!--#include virtual="/assets/includes-local/footer/footer-site-map.html"-->
+            <!--#include virtual="/assets/includes-local/footer/footer-legals.html"-->
+        </footer>
+    </div>
+
+    <script>
+      var qg = qg || {};
+      qg.swe = qg.swe || {};
+      // Used by the feedback form.
+      qg.swe.franchiseTitle = 'Franchise Title';
+    </script>
+
+    <!--#include virtual="/assets/includes-local/footer/footer-scripts.html"-->
+
+</body>
+
+</html>
