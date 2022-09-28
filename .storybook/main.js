@@ -48,6 +48,8 @@ module.exports = {
     if (process.env.PUBLIC_PATH) config.output.publicPath = process.env.PUBLIC_PATH;
     // force source snippet to be un-minified
     config.mode = "development";
+    // instead of default config.optimization.chunkIds = "natural", because there is github pages deployment issue, filename begin with 'node_modules' will get excluded by Jekyll build
+    config.optimization.chunkIds = "deterministic";
     return config;
   },
 };
