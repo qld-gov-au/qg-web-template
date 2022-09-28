@@ -35,15 +35,15 @@ jobs:
       - name: Install #run on lint step (Which is cached)
         run: | # Install packages
           npm install --prefer-offline --no-audit
+      - name: Test release 🔧
+        run: |
+          npm run release
       - name: Build 🔧
         run: |
           npm run build
       - name: Test 🔧
         run: |
           npm run test-ci
-      - name: Test release 🔧
-        run: |
-          npm run release
       - name: Publish to Chromatic
         uses: chromaui/action@v1
         # Options required to the GitHub Chromatic Action
