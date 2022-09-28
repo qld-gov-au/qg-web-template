@@ -37,10 +37,7 @@ jobs:
           npm install --prefer-offline --no-audit
       - name: Test release 🔧
         run: |
-          npm run release
-      - name: Build 🔧
-        run: |
-          npm run build
+          npm run test-release
       - name: Test 🔧
         run: |
           npm run test-ci
