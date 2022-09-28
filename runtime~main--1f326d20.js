@@ -137,13 +137,13 @@
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "" + chunkId + "." + __webpack_require__.h().slice(0, 8) + ".iframe.bundle.js";
+/******/ 			return "" + chunkId + "--" + __webpack_require__.h().slice(0, 8) + ".js";
 /******/ 		};
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("86281f2562074d675ddc")
+/******/ 		__webpack_require__.h = () => ("1f326d203686820d3a2e")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
@@ -349,4 +349,4 @@
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=runtime~main.86281f25.iframe.bundle.js.map
+//# sourceMappingURL=runtime~main--1f326d20.js.map
