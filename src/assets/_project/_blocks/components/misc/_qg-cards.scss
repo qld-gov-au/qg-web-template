@@ -2,6 +2,8 @@
   color: #ffffff;
   margin-bottom: 2rem;
   display: flex;
+  padding-left: 1em;
+  padding-right: 1em;
 
   &.qg-card__clickable {
     .content {
@@ -78,6 +80,12 @@
         margin-bottom: 0.5em;
         margin-top: 0.5em !important;
       }
+    }
+    
+    .qg-card__thumbnail {
+      width: 75px;
+      height: 75px;
+      margin: 1em 1em 0 1em;
     }
 
     .details {
@@ -184,15 +192,6 @@
 
   .qg-card {
     @include qg-card;
-    .content {
-      .qg-card__thumbnail {
-        width: 75px;
-        height: 75px;
-        margin: 1em 1em 0 1em;
-      }
-    }
-    padding-left: 1em;
-    padding-right: 1em;
   }
 }
 
