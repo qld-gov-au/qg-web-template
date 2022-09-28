@@ -1,8 +1,12 @@
 /* ! alert style */
 .qg-global-alert.qg-global__alt-theme{
   background-color: #FFC444 !important;
-  header, section, a{
+  header, section{
     color: #000000 !important;
+  }
+
+  a:not(.btn):not(.qg-btn) {
+    @include qg-link-styles__theme-black;
   }
 }
 .qg-global-alert {
@@ -10,16 +14,18 @@
   background-color: #8C0405 !important;
   border:none !important;
   padding: 0.4em !important;
+  margin-bottom: 0;
+
+  a:not(.btn):not(.qg-btn) {
+    @include qg-link-styles__theme-white;
+  }
+
   .container-fluid{
     display: flex !important;
     header, section{
       color:#ffffff;
       display: flex;
       align-items: center;
-    }
-    a {
-      color:#fff;
-      text-decoration: underline;
     }
     header {
       *{
@@ -43,6 +49,9 @@
         margin-top:0;
       }
     }
+  }
+  @media print {
+    display: none !important;
   }
 }
 
