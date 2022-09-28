@@ -2,13 +2,13 @@
 
 # Further details on Chromatic setup: https://www.chromatic.com/docs/github-actions
 
-name: Publish Chromatic
+name: Build and Test Release
 
 on:
-  workflow_run:
-    workflows: [Build and Test Release] # Reuse the name of your tests workflow
-    types:
-      - completed
+  push:
+    branches-ignore:
+      - 'gh-pages' # 👈 Excludes the gh-pages branch
+      # - 'master' # 👈 Excludes the master branch
 
 concurrency:
   group: compile-${{ github.workflow }}-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
@@ -20,7 +20,7 @@ jobs:
     strategy:
       matrix:
         node: [ '16' ]
-    name: Build and Deploy on Node ${{ matrix.node }}
+    name: Build the release and test on Node ${{ matrix.node }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -35,13 +35,12 @@ jobs:
       - name: Install #run on lint step (Which is cached)
         run: | # Install packages
           npm install --prefer-offline --no-audit
-      - name: Build Storybook 🔧
+      - name: Build 🔧
         run: |
-          npm run build-storybook-ci
-      - name: Publish to Chromatic
-        uses: chromaui/action@v1
-        # Options required to the GitHub Chromatic Action
-        with:
-          # 👇 Chromatic projectToken, refer to the manage page to obtain it.
-          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-          storybookBuildDir: "storybook-static"
+          npm run build
+      - name: Test 🔧
+        run: |
+          npm run test-ci
+      - name: Test release 🔧
+        run: |
+          npm run release
