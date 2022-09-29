@@ -52,6 +52,7 @@
     "babel-loader": "^8.2.5",
     "chromatic": "^6.10.1",
     "concurrently": "^7.4.0",
+    "copy-webpack-plugin": "^11.0.0",
     "cssnano": "^4.1.11",
     "del": "^2.2.2",
     "eslint": "^8.24.0",
