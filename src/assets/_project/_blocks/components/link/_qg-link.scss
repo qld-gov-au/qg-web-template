@@ -1,0 +1,130 @@
+// This file contains all possible SWE link styling themes. Components extends these theme classes. As an example,
+//a {
+//  @include .qg-link-styles__no-underline-default
+//}
+//-------------------------------------------------
+
+// global link styles
+@mixin qg-global-link-styles {
+  text-underline-offset: $text-underline-offset;
+  &:hover, &.hover {
+    background: none;
+  }
+  &:not(.btn-link) {
+    &:active, &:focus, &.active, &.focus {
+      background-color: transparent;
+      outline: 3px solid #0096D6;
+      outline-offset: 2px;
+    }
+  }
+}
+
+//-------------------------------------------------
+
+//START theme BLUE
+// 1. color theme blue with underline
+@mixin qg-link-styles__default {
+  @include qg-global-link-styles;
+  color: $qg-blue-dark;
+  text-decoration: $qg-link-decoration #457AA3;
+  &:hover, &.hover {
+    text-decoration: $qg-link-hover-decoration;
+  }
+}
+
+// 2. color theme blue no underline
+@mixin qg-link-styles__no-underline-default {
+  @include qg-global-link-styles;
+  color: $qg-blue-dark;
+  &:link {
+    text-decoration: $qg-link-none-decoration;
+  }
+  &:hover, &.hover {
+    text-decoration: $qg-link-hover-decoration;
+  }
+}
+
+//END theme BLUE
+
+//-------------------------------------------------
+
+// START theme BLACK
+// 1. color theme black no underline
+@mixin qg-link-styles__no-underline-black {
+  @include qg-global-link-styles;
+  color: $qg-global-primary-darker-grey;
+  &:link {
+    text-decoration: $qg-link-none-decoration;
+  }
+  &:hover, &.hover {
+    text-decoration: $qg-link-hover-decoration;
+  }
+}
+
+@mixin qg-link-styles__no-underline-black {
+  @include qg-global-link-styles;
+  color: $qg-global-primary-darker-grey;
+  &:link {
+    text-decoration: $qg-link-none-decoration;
+  }
+  &:hover, &.hover {
+    text-decoration: $qg-link-hover-decoration;
+  }
+}
+
+// 2. color theme black with underline
+@mixin qg-link-styles__theme-black {
+  @include qg-global-link-styles;
+  color: $qg-global-primary-darker-grey;
+  text-decoration: $qg-link-decoration #737678;
+  &:hover, &.hover {
+    text-decoration: $qg-link-hover-decoration;
+  }
+}
+
+// END theme BLACK
+
+//-------------------------------------------------
+
+// START theme WHITE
+// 2. With underline
+@mixin qg-link-styles__theme-white {
+  @include qg-global-link-styles;
+  color: #fff;
+  text-decoration: $qg-link-decoration rgba(255, 255, 255, 0.73);
+  &:hover, &.hover {
+    text-decoration: $qg-link-hover-decoration #fff;
+  }
+}
+
+// 2. without underline
+@mixin qg-link-styles__no-underline-white {
+  @include qg-global-link-styles;
+  color: #fff;
+  &:link {
+    text-decoration: $qg-link-none-decoration;
+  }
+  &:hover, &.hover {
+    text-decoration: $qg-link-hover-decoration #fff;
+  }
+}
+
+// END theme WHITE
+
+//-------------------------------------------------
+
+
+//visited theme
+.qg-link-styles__visited-change {
+  &:visited {
+    color: #80b;
+  }
+
+  &:visited:hover {
+    color: #80b;
+    text-decoration: $qg-link-hover-decoration;
+    text-decoration-color: #80b;
+  }
+}
+
+//-------------------------------------------------

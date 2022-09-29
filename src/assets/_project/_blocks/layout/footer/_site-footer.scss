@@ -1,10 +1,14 @@
 .qg-site-footer {
-    background-color: $qg-global-primary-grey;
+    background-color: $qg-global-primary;
     color: #fff;
     padding-top: 8px;
 
     .container-fluid {
         padding: 0;
+    }
+
+    a:not(.btn){
+      @include qg-link-styles__theme-white;
     }
 
     .btn {
@@ -67,15 +71,6 @@
         }
         li {
             margin-top: rem(16px);
-            a {
-                color: #FFF;
-                text-decoration: underline;
-                transition: opacity .1s linear;
-
-                &:hover, &:focus {
-                    color: $qg-global-primary-hover-grey;
-                }
-            }
             &.facebook:before {
                 content: "\f082";
             }

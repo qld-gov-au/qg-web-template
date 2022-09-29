@@ -11,15 +11,15 @@
     margin-bottom: 0;
     @include rem(font-size, 19px);
     a {
+      @include qg-link-styles__no-underline-black;
       margin: -0.7rem 0 -0.7rem -1rem;
       padding: 0.7rem 0 0.7rem 1rem;
       width: calc(100% + 1rem);
       display: inline-block;
       color: $qg-dark-grey-darker !important;
       font-size: 1rem;
-      &:hover {
-        background-color: #F5F5F5;
-        text-decoration: underline;
+      &:link {
+        text-decoration: none 0.5px solid;
       }
     }
   }
@@ -40,24 +40,15 @@
     @include rem(font-size, 14px);
 
     a {
+      @include qg-link-styles__no-underline-black;
       display: block;
       margin: 0;
       padding: 1em;
       color: $qg-dark-grey;
-      text-decoration: none;
-    }
-    a:not(.active):hover {
-      text-decoration: underline;
-      background-color: #F5F5F5;
-    }
-    a.active, a.visited {
-      background: none;
-      text-decoration: none;
-      color: $qg-dark-grey-darker;
-      font-weight: bold;
-    }
-    a.active:before {
-      opacity: 1;
+      &.active{
+        color: #212529;
+        font-weight: 700;
+      }
     }
     ul {
       padding: 0;
@@ -93,7 +84,7 @@
 }
 
 
-// existing NAV Pattern for backward compatibility
+// LEGACY NAV Pattern for backward compatibility
 
 #qg-content #qg-section-nav {
   background-color: $qg-section-nav-bg-color;
@@ -123,7 +114,6 @@
       display: block;
       margin: 0;
       padding: .7em 0 0.9em 10 + 15px;
-
       color: $qg-blue-darker;
       text-decoration: none;
     }
@@ -132,12 +122,6 @@
       text-decoration: none;
       background-color: $qg-section-nav-link-hover-bg-color;
     }
-
-    a.active, a.visited {
-      color: #FFF;
-      background-color: $qg-blue;
-    }
-
     a:before {
       position: absolute;
       top: .95em;
