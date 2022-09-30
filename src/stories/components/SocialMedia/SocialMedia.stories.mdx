@@ -1,23 +1,31 @@
 import { Canvas, Meta, Story } from "@storybook/addon-docs";
 
+import { QgPrimaryContent, QgContent } from "../../decorators";
+import { getDecoratedParameters } from "../../helpers";
+
 import Default from "./templates/Default.html";
 import FacebookFeed from "./templates/FacebookFeed.html";
 import TwitterFeed from "./templates/TwitterFeed.html";
 
-<Meta title="Components/Social Media" />
+<Meta title="Components/Social Media" decorators={[QgPrimaryContent, QgContent]} />
 
 # Social Media
 
 ## Default
 
 <Canvas withSource="open">
-  <Story name="Default">{() => Default}</Story>
+  <Story name="Default" parameters={getDecoratedParameters(Default)}>
+    {() => Default}
+  </Story>
 </Canvas>
 
 ## FacebookFeed
 
 <Canvas withSource="open">
-  <Story name="FacebookFeed" parameters={{ chromatic: { disableSnapshot: true } }}>
+  <Story
+    name="FacebookFeed"
+    parameters={{ ...getDecoratedParameters(Default), chromatic: { disableSnapshot: true } }}
+  >
     {() => FacebookFeed}
   </Story>
 </Canvas>
@@ -25,7 +33,10 @@ import TwitterFeed from "./templates/TwitterFeed.html";
 ## TwitterFeed
 
 <Canvas withSource="open">
-  <Story name="TwitterFeed" parameters={{ chromatic: { disableSnapshot: true } }}>
+  <Story
+    name="TwitterFeed"
+    parameters={{ ...getDecoratedParameters(Default), chromatic: { disableSnapshot: true } }}
+  >
     {() => TwitterFeed}
   </Story>
 </Canvas>

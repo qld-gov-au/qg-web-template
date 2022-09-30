@@ -1,13 +1,22 @@
 import { Canvas, Meta, Story } from "@storybook/addon-docs";
 
+import { QgPrimaryContent, QgContent } from "../../decorators";
+import { getDecoratedParameters } from "../../helpers";
+
 import Default from "./templates/Default.html";
 
-<Meta title="Components/Breadcrumbs" parameters={{ chromatic: { delay: 1000 } }} />
+<Meta
+  title="Components/Breadcrumbs"
+  parameters={{ chromatic: { delay: 1000 } }}
+  decorators={[QgPrimaryContent, QgContent]}
+/>
 
 # Breadcrumbs
 
 ## Default
 
 <Canvas withSource="open">
-  <Story name="Default">{() => Default}</Story>
+  <Story name="Default" parameters={getDecoratedParameters(Default)}>
+    {() => Default}
+  </Story>
 </Canvas>
