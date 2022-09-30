@@ -1,27 +1,36 @@
 import { Canvas, Meta, Story } from "@storybook/addon-docs";
 
+import { QgPrimaryContent, QgContent } from "../../decorators";
+import { getDecoratedParameters } from "../../helpers";
+
 import Short from "./templates/Short.html";
 import Long from "./templates/Long.html";
 import InTable from "./templates/InTable.html";
 
-<Meta title="Components/Correct Incorrect" />
+<Meta title="Components/Correct Incorrect" decorators={[QgPrimaryContent, QgContent]} />
 
 # Correct Incorrect
 
 ## Short
 
 <Canvas withSource="open">
-  <Story name="Short">{() => Short}</Story>
+  <Story name="Short" parameters={getDecoratedParameters(Short)}>
+    {() => Short}
+  </Story>
 </Canvas>
 
 ## Long
 
 <Canvas withSource="open">
-  <Story name="Long">{() => Long}</Story>
+  <Story name="Long" parameters={getDecoratedParameters(Long)}>
+    {() => Long}
+  </Story>
 </Canvas>
 
 ## InTable
 
 <Canvas withSource="open">
-  <Story name="InTable">{() => InTable}</Story>
+  <Story name="InTable" parameters={getDecoratedParameters(InTable)}>
+    {() => InTable}
+  </Story>
 </Canvas>

@@ -1,34 +1,37 @@
 import { Canvas, Meta, Story } from "@storybook/addon-docs";
 
+import { QgPrimaryContent, QgContent } from "../../decorators";
+import { getDecoratedParameters } from "../../helpers";
+
 import Information from "./templates/Information.html";
 import Success from "./templates/Success.html";
 import Warning from "./templates/Warning.html";
 import Critical from "./templates/Critical.html";
 
-<Meta title="Components/Alert" />
+<Meta title="Components/Alert" decorators={[QgPrimaryContent, QgContent]} />
 
 # Alert
 
 ## Information
 
 <Canvas withSource="open">
-  <Story name="Information">{() => Information}</Story>
+  <Story name="Information" parameters={getDecoratedParameters(Information)}>{() => Information}</Story>
 </Canvas>
 
 ## Success
 
 <Canvas withSource="open">
-  <Story name="Success">{() => Success}</Story>
+  <Story name="Success" parameters={getDecoratedParameters(Success)}>{() => Success}</Story>
 </Canvas>
 
 ## Warning
 
 <Canvas withSource="open">
-  <Story name="Warning">{() => Warning}</Story>
+  <Story name="Warning" parameters={getDecoratedParameters(Warning)}>{() => Warning}</Story>
 </Canvas>
 
 ## Critical
 
 <Canvas withSource="open">
-  <Story name="Critical">{() => Critical}</Story>
+  <Story name="Critical" parameters={getDecoratedParameters(Critical)}>{() => Critical}</Story>
 </Canvas>

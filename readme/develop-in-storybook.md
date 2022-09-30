@@ -10,7 +10,7 @@
 ## Commands
 ### Start the Storybook locally
 ```
-npm run start-new
+npm run start
 ```
 ### Build and serve the Storybook locally
 ```
