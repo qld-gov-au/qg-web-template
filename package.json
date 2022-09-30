@@ -111,7 +111,7 @@
   "dependencies": {
     "@babel/runtime": "^7.19.0",
     "bootstrap": "^4.6.2",
-    "chromium": "^3.0.3",
+    "chromium": "^3.2171.3008",
     "jquery": "^3.6.0",
     "jquery-ui-bundle": "^1.12.1",
     "nodep-date-input-polyfill": "^5.2.0",
