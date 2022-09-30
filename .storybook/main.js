@@ -1,4 +1,5 @@
 const path = require("path");
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   core: {
@@ -20,31 +21,47 @@ module.exports = {
     // 'PRODUCTION' is used when building the static version of storybook.
 
     // Make whatever fine-grained changes you need
-    config.module.rules.push({
-      test: /\.html?$/,
-      use: [
-        {
-          loader: "webpack-ssi-include-loader",
-          options: {
-            localPath: "/",
-            location: process.env.PUBLIC_PATH?.replace(/\/+$/, "") || "http://localhost:6006", // http url where the file can be dl
-            onFileMatch: (filePath, fileContent, isLocal) => {
-              return fileContent
-                .replaceAll(
-                  'virtual=".',
-                  `virtual="${filePath.slice(0, filePath.lastIndexOf("/"))}/.`
-                )
-                .replaceAll(
-                  'src="/assets',
-                  `src="${process.env.PUBLIC_PATH?.replace(/\/+$/, "") || ""}${
-                    process.env.ASSETS_PATH?.replace(/\/+$/, "") || ""
-                  }/assets`
-                );
+
+    config.module.rules.forEach((rule) => {
+      const pattern = /html-loader/
+      if (rule.use && pattern.test(rule.use)) {
+        rule.use = [
+          {
+            loader: "html-loader",
+            options: {
+              attributes: false
             },
           },
-        },
-      ],
-    });
+          {
+            loader: "webpack-ssi-include-loader",
+            options: {
+              localPath: "/",
+              location: process.env.PUBLIC_PATH?.replace(/\/+$/, "") || "http://localhost:6006", // http url where the file can be dl
+              onFileMatch: (filePath, fileContent, isLocal) => {
+                return fileContent
+                  .replaceAll(
+                    'virtual=".',
+                    `virtual="${filePath.slice(0, filePath.lastIndexOf("/"))}/.`
+                  )
+                  .replaceAll(
+                    'src="/assets',
+                    `src="${process.env.PUBLIC_PATH?.replace(/\/+$/, "") || ""}${
+                      process.env.ASSETS_PATH?.replace(/\/+$/, "") || ""
+                    }/assets`
+                  );
+              },
+            },
+          },
+        ]
+      }
+    })
+
+    config.plugins.push(
+      new CopyPlugin({
+        patterns: [{ from: path.resolve(__dirname, "../src/stories/assets"), to: "assets" }],
+      })
+    );
+
     if (process.env.PUBLIC_PATH) config.output.publicPath = process.env.PUBLIC_PATH;
     // force source snippet to be un-minified
     config.mode = "development";

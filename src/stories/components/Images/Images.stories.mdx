@@ -1,6 +1,7 @@
 import { Canvas, Meta, Story } from "@storybook/addon-docs";
 
-import { QgPrimaryContent } from "../../decorators";
+import { QgPrimaryContent, QgContent } from "../../decorators";
+import { getDecoratedParameters } from "../../helpers";
 
 import Default from "./templates/Default.html";
 import Figure from "./templates/Figure.html";
@@ -9,24 +10,16 @@ import PullLeftRight from "./templates/PullLeftRight.html";
 import WithLargerImage from "./templates/WithLargerImage.html";
 import WithoutBorder from "./templates/WithoutBorder.html";
 
-<Meta title="Components/Images" decorators={[QgPrimaryContent]} />
+<Meta title="Components/Images" decorators={[QgPrimaryContent, QgContent]} />
 
 # Cards
+
 Requires `#QgPrimaryContent` ancestor.
 
 ## Default
 
 <Canvas withSource="open">
-  <Story
-    name="Default"
-    parameters={{
-      docs: {
-        source: {
-          code: Default,
-        },
-      },
-    }}
-  >
+  <Story name="Default" parameters={getDecoratedParameters(Default)}>
     {() => Default}
   </Story>
 </Canvas>
@@ -34,16 +27,7 @@ Requires `#QgPrimaryContent` ancestor.
 ## Figure
 
 <Canvas withSource="open">
-  <Story
-    name="Figure"
-    parameters={{
-      docs: {
-        source: {
-          code: Default,
-        },
-      },
-    }}
-  >
+  <Story name="Figure" parameters={getDecoratedParameters(Figure)}>
     {() => Figure}
   </Story>
 </Canvas>
@@ -51,16 +35,7 @@ Requires `#QgPrimaryContent` ancestor.
 ## WithCaptionCredits
 
 <Canvas withSource="open">
-  <Story
-    name="WithCaptionCredits"
-    parameters={{
-      docs: {
-        source: {
-          code: Default,
-        },
-      },
-    }}
-  >
+  <Story name="WithCaptionCredits" parameters={getDecoratedParameters(WithCaptionCredits)}>
     {() => WithCaptionCredits}
   </Story>
 </Canvas>
@@ -68,16 +43,7 @@ Requires `#QgPrimaryContent` ancestor.
 ## PullLeftRight
 
 <Canvas withSource="open">
-  <Story
-    name="PullLeftRight"
-    parameters={{
-      docs: {
-        source: {
-          code: Default,
-        },
-      },
-    }}
-  >
+  <Story name="PullLeftRight" parameters={getDecoratedParameters(PullLeftRight)}>
     {() => PullLeftRight}
   </Story>
 </Canvas>
@@ -85,16 +51,7 @@ Requires `#QgPrimaryContent` ancestor.
 ## WithLargerImage
 
 <Canvas withSource="open">
-  <Story
-    name="WithLargerImage"
-    parameters={{
-      docs: {
-        source: {
-          code: Default,
-        },
-      },
-    }}
-  >
+  <Story name="WithLargerImage" parameters={getDecoratedParameters(WithLargerImage)}>
     {() => WithLargerImage}
   </Story>
 </Canvas>
@@ -102,16 +59,7 @@ Requires `#QgPrimaryContent` ancestor.
 ## WithoutBorder
 
 <Canvas withSource="open">
-  <Story
-    name="WithoutBorder"
-    parameters={{
-      docs: {
-        source: {
-          code: Default,
-        },
-      },
-    }}
-  >
+  <Story name="WithoutBorder" parameters={getDecoratedParameters(WithoutBorder)}>
     {() => WithoutBorder}
   </Story>
 </Canvas>

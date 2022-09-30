@@ -1,19 +1,26 @@
 import { Canvas, Meta, Story } from "@storybook/addon-docs";
 
+import { QgPrimaryContent, QgContent } from "../../decorators";
+import { getDecoratedParameters } from "../../helpers";
+
 import Youtube from "./templates/Youtube.html";
 import Vimeo from "./templates/Vimeo.html";
 
-<Meta title="Components/Video" />
+<Meta title="Components/Video" decorators={[QgPrimaryContent, QgContent]} />
 
 # Video
 
 ## Youtube
 
 <!-- disabled snapshot for this story as youtube player animation cause story renewal in every generation. -->
+
 <Canvas withSource="open">
   <Story
     name="Youtube"
-    parameters={{ chromatic: { pauseAnimationAtEnd: true, disableSnapshot: true } }}
+    parameters={{
+      ...getDecoratedParameters(Youtube),
+      chromatic: { pauseAnimationAtEnd: true, disableSnapshot: true },
+    }}
   >
     {() => Youtube}
   </Story>
@@ -22,5 +29,7 @@ import Vimeo from "./templates/Vimeo.html";
 ## Vimeo
 
 <Canvas withSource="open">
-  <Story name="Vimeo">{() => Vimeo}</Story>
+  <Story name="Vimeo" parameters={getDecoratedParameters(Vimeo)}>
+    {() => Vimeo}
+  </Story>
 </Canvas>

@@ -1,20 +1,27 @@
 import { Canvas, Meta, Story } from "@storybook/addon-docs";
 
+import { QgPrimaryContent, QgContent } from "../../decorators";
+import { getDecoratedParameters } from "../../helpers";
+
 import Default from "./templates/Default.html";
 import WithImage from "./templates/WithImage.html";
 
-<Meta title="Components/Promotional Banner" />
+<Meta title="Components/Promotional Banner" decorators={[QgPrimaryContent, QgContent]} />
 
 # Promotional Banner
 
 ## Default
 
 <Canvas withSource="open">
-  <Story name="Default">{() => Default}</Story>
+  <Story name="Default" parameters={getDecoratedParameters(Default)}>
+    {() => Default}
+  </Story>
 </Canvas>
 
 ## WithImage
 
 <Canvas withSource="open">
-  <Story name="WithImage">{() => WithImage}</Story>
+  <Story name="WithImage" parameters={getDecoratedParameters(WithImage)}>
+    {() => WithImage}
+  </Story>
 </Canvas>

@@ -1,29 +1,20 @@
 import { Canvas, Meta, Story } from "@storybook/addon-docs";
 
-import { Grid } from "../../decorators";
+import { QgPrimaryContent, QgContent, Grid } from "../../decorators";
+import { getDecoratedParameters } from "../../helpers";
 
 import Default from "./templates/Default.html";
 import CenterAligned from "./templates/CenterAligned.html";
 import AbsoluteCenter from "./templates/AbsoluteCenter.html";
 
-<Meta title="Components/Loading Spinner" />
+<Meta title="Components/Loading Spinner" decorators={[QgPrimaryContent, QgContent]} />
 
 # Loading Spinner
 
 ## Default
 
 <Canvas withSource="open">
-  <Story
-    name="Default"
-    decorators={[Grid(2)]}
-    parameters={{
-      docs: {
-        source: {
-          code: Default,
-        },
-      },
-    }}
-  >
+  <Story name="Default" decorators={[Grid(2)]} parameters={getDecoratedParameters(Default)}>
     {() => Default}
   </Story>
 </Canvas>
@@ -34,13 +25,7 @@ import AbsoluteCenter from "./templates/AbsoluteCenter.html";
   <Story
     name="CenterAligned"
     decorators={[Grid(2)]}
-    parameters={{
-      docs: {
-        source: {
-          code: CenterAligned,
-        },
-      },
-    }}
+    parameters={getDecoratedParameters(CenterAligned)}
   >
     {() => CenterAligned}
   </Story>
@@ -49,5 +34,7 @@ import AbsoluteCenter from "./templates/AbsoluteCenter.html";
 ## AbsoluteCenter
 
 <Canvas withSource="open">
-  <Story name="AbsoluteCenter">{() => AbsoluteCenter}</Story>
+  <Story name="AbsoluteCenter" parameters={getDecoratedParameters(AbsoluteCenter)}>
+    {() => AbsoluteCenter}
+  </Story>
 </Canvas>

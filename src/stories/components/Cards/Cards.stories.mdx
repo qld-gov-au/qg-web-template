@@ -1,6 +1,7 @@
 import { Canvas, Meta, Story } from "@storybook/addon-docs";
 
-import { QgContent } from "../../decorators";
+import { QgPrimaryContent, QgContent } from "../../decorators";
+import { getDecoratedParameters } from "../../helpers";
 
 import Basic from "./templates/Basic.html";
 import WithActionButton from "./templates/WithActionButton.html";
@@ -8,7 +9,7 @@ import WithImage from "./templates/WithImage.html";
 import WithThumbnail from "./templates/WithThumbnail.html";
 import Clickable from "./templates/Clickable.html";
 
-<Meta title="Components/Cards" decorators={[QgContent]} />
+<Meta title="Components/Cards" decorators={[QgPrimaryContent, QgContent]} />
 
 # Cards
 Requires `#QgContent` ancestor.
@@ -16,16 +17,7 @@ Requires `#QgContent` ancestor.
 ## Basic
 
 <Canvas withSource="open">
-  <Story
-    name="Basic"
-    parameters={{
-      docs: {
-        source: {
-          code: Basic,
-        },
-      },
-    }}
-  >
+  <Story name="Basic" parameters={getDecoratedParameters(Basic)}>
     {() => Basic}
   </Story>
 </Canvas>
@@ -33,16 +25,7 @@ Requires `#QgContent` ancestor.
 ## WithActionButton
 
 <Canvas withSource="open">
-  <Story
-    name="WithActionButton"
-    parameters={{
-      docs: {
-        source: {
-          code: WithActionButton,
-        },
-      },
-    }}
-  >
+  <Story name="WithActionButton" parameters={getDecoratedParameters(WithActionButton)}>
     {() => WithActionButton}
   </Story>
 </Canvas>
@@ -50,16 +33,7 @@ Requires `#QgContent` ancestor.
 ## WithImage
 
 <Canvas withSource="open">
-  <Story
-    name="WithImage"
-    parameters={{
-      docs: {
-        source: {
-          code: WithImage,
-        },
-      },
-    }}
-  >
+  <Story name="WithImage" parameters={getDecoratedParameters(WithImage)}>
     {() => WithImage}
   </Story>
 </Canvas>
@@ -67,16 +41,7 @@ Requires `#QgContent` ancestor.
 ## WithThumbnail
 
 <Canvas withSource="open">
-  <Story
-    name="WithThumbnail"
-    parameters={{
-      docs: {
-        source: {
-          code: WithThumbnail,
-        },
-      },
-    }}
-  >
+  <Story name="WithThumbnail" parameters={getDecoratedParameters(WithThumbnail)}>
     {() => WithThumbnail}
   </Story>
 </Canvas>
@@ -84,16 +49,7 @@ Requires `#QgContent` ancestor.
 ## Clickable
 
 <Canvas withSource="open">
-  <Story
-    name="Clickable"
-    parameters={{
-      docs: {
-        source: {
-          code: Clickable,
-        },
-      },
-    }}
-  >
+  <Story name="Clickable" parameters={getDecoratedParameters(Clickable)}>
     {() => Clickable}
   </Story>
 </Canvas>
