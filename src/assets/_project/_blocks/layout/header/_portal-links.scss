@@ -86,6 +86,10 @@
         border: none;
       }
     }
+
+    &:hover {
+      background-color: transparent;
+    }
   }
 
   @include media-breakpoint-up(md) {
