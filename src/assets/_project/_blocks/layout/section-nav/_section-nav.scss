@@ -11,14 +11,16 @@
     margin-bottom: 0;
     @include rem(font-size, 19px);
     a {
-      @include qg-link-styles__no-underline-black;
+      &:not(.active) {
+        @include qg-link-styles__no-underline-black;
+      }
       margin: -0.7rem 0 -0.7rem -1rem;
       padding: 0.7rem 0 0.7rem 1rem;
       width: calc(100% + 1rem);
       display: inline-block;
       color: $qg-dark-grey-darker !important;
       font-size: 1rem;
-      &:link {
+      &:link, &:hover {
         text-decoration: none 0.5px solid;
       }
     }
@@ -40,7 +42,9 @@
     @include rem(font-size, 14px);
 
     a {
-      @include qg-link-styles__no-underline-black;
+      &:not(.active) {
+        @include qg-link-styles__no-underline-black;
+      }
       display: block;
       margin: 0;
       padding: 1em;
@@ -48,6 +52,9 @@
       &.active{
         color: #212529;
         font-weight: 700;
+        &:link, &:hover {
+          text-decoration: none 0.5px solid;
+        }
       }
     }
     ul {

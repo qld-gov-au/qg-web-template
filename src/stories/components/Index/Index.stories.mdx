@@ -1,0 +1,25 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+
+import { QgPrimaryContent, QgContent } from "../../decorators";
+import { getDecoratedParameters } from "../../helpers";
+
+import Basic from "./templates/Basic.html";
+
+<Meta title="Components/Index" decorators={[QgPrimaryContent, QgContent]} />
+
+# Index
+Requires `#QgPrimaryContent` ancestor.
+
+This story mimic card usage on https://www.qld.gov.au/community homepage
+
+Some style is sitting in Squiz Matrix https://www.qld.gov.au/_qgdesigns/css/qg-main.css?v=0.4.2 which is better to move to SWE
+
+Not included in Forgov SWE documentation.
+
+## Basic
+
+<Canvas withSource="open">
+  <Story name="Basic" parameters={getDecoratedParameters(Basic)}>
+    {() => Basic}
+  </Story>
+</Canvas>
