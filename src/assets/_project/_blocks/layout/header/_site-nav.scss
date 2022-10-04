@@ -84,18 +84,21 @@
 	}
 	.show {
 		.nav-link {
-			color: $qg-global-primary-dark-grey;
-			background-color: $qg-global-primary-light-grey;
+			@include qg-link-styles__no-underline-black;
+			background-color: $qg-global-primary-light-grey !important;
 			position: relative;
 			z-index: 1;
 			&:before {
-				background-color: $qg-global-primary-light-grey;
+				background-color: $qg-global-primary-light-grey !important;
 				bottom: -2px;
 				content: '';
 				height: 2px;
 				left: 0;
 				position: absolute;
 				width: 100%;
+			}
+			&:focus {
+				outline: none;
 			}
 		}
 	}

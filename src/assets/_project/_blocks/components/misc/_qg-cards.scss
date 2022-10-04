@@ -1,9 +1,6 @@
 @mixin qg-card {
   color: #ffffff;
-  margin-bottom: 2rem;
   display: flex;
-  padding-left: 1em;
-  padding-right: 1em;
 
   &.qg-card__clickable {
     .content {
@@ -61,6 +58,12 @@
           @include qg-link-styles__default;
         }
       }
+    }
+  }
+  
+  &:not(.qg-card__light-theme) {
+    h2 {
+      color: #fff;
     }
   }
 
@@ -165,38 +168,43 @@
   }
 }
 
-//default color overwrite
-#qg-primary-content,
-#qg-content {
-  .qg-card:not(.qg-card__light-theme) {
-    h2 {
-      color: #fff;
-    }
+@mixin qg-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  &:before,
+  &:after {
+    content: normal;
   }
-
-  // cards styles
-  .qg-cards {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-
-    &:before,
-    &:after {
-      content: normal;
-    }
-    &.row {
-      margin-left: -1em;
-      margin-right: -1em;
-    }
+  &.row {
+    margin-left: -1em;
+    margin-right: -1em;
   }
 
   .qg-card {
-    @include qg-card;
+    padding-left: 1em;
+    padding-right: 1em;
   }
 }
 
+.qg-cards {
+  @include qg-cards;
+}
 .qg-card {
   @include qg-card;
+  margin-bottom: 2rem;
+}
+
+//default color overwrite
+#qg-primary-content,
+#qg-content {
+  .qg-cards {
+    @include qg-cards;
+  }
+  .qg-card {
+    @include qg-card;
+  }
 }
 
 // card with full width
