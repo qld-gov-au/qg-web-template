@@ -33,7 +33,7 @@
     "build-storybook": "build-storybook",
     "build-storybook-ci": "npm run storybook-ci & (echo \"sleeping 25\"; sleep 25;) && npm run build-storybook",
     "build-storybook-gh": "export ASSETS_PATH=/qg-web-template && npm run build-storybook-ci",
-    "chromatic": "echo \"This is for manual deployment, please replace the project-token from 1Password\" && npm build && npx chromatic --project-token=[token from 1password] -b build-storybook-ci"
+    "chromatic": "echo \"This is for manual deployment, please replace the project-token from 1Password.\" && npm build && npx chromatic --project-token=[token from 1password] -b build-storybook-ci"
   },
   "authors": "Queensland Government",
   "licence": "all rights reserved",
