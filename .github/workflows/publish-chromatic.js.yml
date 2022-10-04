@@ -47,6 +47,6 @@ jobs:
         # Options required to the GitHub Chromatic Action
         with:
           # 👇 Chromatic projectToken, refer to the manage page to obtain it.
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GH_TOKEN }}
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           storybookBuildDir: "storybook-static"
