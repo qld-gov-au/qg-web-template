@@ -2,6 +2,7 @@ import { Canvas, Meta, Story } from "@storybook/addon-docs";
 
 import AsideButton from "./templates/AsideButton.html";
 import DfvCards from "./templates/DfvCards.html";
+import DfvBack from "./templates/DfvBack.html";
 
 import { QgPrimaryContent, QgContent } from "../../decorators";
 
@@ -28,16 +29,15 @@ Not included in Forgov SWE documentation.
 ## AsideButton
 
 <Canvas withSource="open">
-  <Story
-    name="AsideButton"
-    parameters={{
-      docs: {
-        source: {
-          code: AsideButton,
-        },
-      },
-    }}
-  >
+  <Story name="AsideButton" parameters={getDecoratedParameters(AsideButton)}>
     {() => AsideButton}
+  </Story>
+</Canvas>
+
+## DfvBack
+
+<Canvas withSource="open">
+  <Story name="DfvBack" parameters={getDecoratedParameters(DfvBack)}>
+    {() => DfvBack}
   </Story>
 </Canvas>
