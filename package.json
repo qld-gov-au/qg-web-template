@@ -109,7 +109,7 @@
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
-    "@babel/runtime": "^7.19.0",
+    "@babel/runtime": "^7.19.4",
     "bootstrap": "^4.6.2",
     "chromium": "^3.0.3",
     "jquery": "^3.6.0",
