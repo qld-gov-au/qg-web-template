@@ -38,7 +38,7 @@
   "licence": "all rights reserved",
   "homepage": "http://www.qld.gov.au/",
   "devDependencies": {
-    "@babel/core": "^7.19.3",
+    "@babel/core": "^7.19.6",
     "@babel/plugin-transform-runtime": "^7.19.1",
     "@babel/preset-env": "^7.19.3",
     "@storybook/addon-actions": "^6.5.12",
