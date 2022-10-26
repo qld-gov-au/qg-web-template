@@ -99,8 +99,7 @@
 
 .btn-link {
   @include hover() {
-    color: $link-hover-color;
-    text-decoration: $link-hover-decoration;
+    @include link-hover;
   }
 }
 
