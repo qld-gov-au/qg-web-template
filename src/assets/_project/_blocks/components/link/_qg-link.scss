@@ -38,10 +38,11 @@
 @mixin qg-link-styles__default {
   @include qg-global-link-styles {
     color: $qg-blue-dark;
-    text-decoration: $qg-link-decoration #457aa3;
+    @include qg-link-decoration;
+    text-decoration-color: #457aa3;
     &:hover,
     &.hover {
-      text-decoration: $qg-link-hover-decoration;
+      @include qg-link-hover-decoration;
     }
   }
 }
@@ -51,11 +52,11 @@
   @include qg-global-link-styles {
     color: $qg-blue-dark;
     &:link {
-      text-decoration: $qg-link-none-decoration;
+      @include qg-link-none-decoration;
     }
     &:hover,
     &.hover {
-      text-decoration: $qg-link-hover-decoration;
+      @include qg-link-hover-decoration;
     }
   }
 }
@@ -70,11 +71,11 @@
   @include qg-global-link-styles {
     color: $qg-global-primary-darker-grey;
     &:link {
-      text-decoration: $qg-link-none-decoration;
+      @include qg-link-none-decoration;
     }
     &:hover,
     &.hover {
-      text-decoration: $qg-link-hover-decoration;
+      @include qg-link-hover-decoration;
     }
   }
 }
@@ -83,11 +84,11 @@
   @include qg-global-link-styles {
     color: $qg-global-primary-darker-grey;
     &:link {
-      text-decoration: $qg-link-none-decoration;
+      @include qg-link-none-decoration;
     }
     &:hover,
     &.hover {
-      text-decoration: $qg-link-hover-decoration;
+      @include qg-link-hover-decoration;
     }
   }
 }
@@ -96,10 +97,11 @@
 @mixin qg-link-styles__theme-black {
   @include qg-global-link-styles {
     color: $qg-global-primary-darker-grey;
-    text-decoration: $qg-link-decoration #737678;
+    @include qg-link-decoration;
+    text-decoration-color: #737678;
     &:hover,
     &.hover {
-      text-decoration: $qg-link-hover-decoration;
+      @include qg-link-hover-decoration;
     }
   }
 }
@@ -113,10 +115,12 @@
 @mixin qg-link-styles__theme-white {
   @include qg-global-link-styles {
     color: #fff;
-    text-decoration: $qg-link-decoration rgba(255, 255, 255, 0.73);
+    @include qg-link-decoration;
+    text-decoration-color: rgba(255, 255, 255, 0.73);
     &:hover,
     &.hover {
-      text-decoration: $qg-link-hover-decoration #fff;
+      @include qg-link-hover-decoration;
+      text-decoration-color: #fff;
     }
   }
 }
@@ -126,11 +130,12 @@
   @include qg-global-link-styles {
     color: #fff;
     &:link {
-      text-decoration: $qg-link-none-decoration;
+      @include qg-link-none-decoration;
     }
     &:hover,
     &.hover {
-      text-decoration: $qg-link-hover-decoration #fff;
+      @include qg-link-hover-decoration;
+      text-decoration-color: #fff;
     }
   }
 }
@@ -147,7 +152,7 @@
 
   &:visited:hover {
     color: #80b;
-    text-decoration: $qg-link-hover-decoration;
+    @include qg-link-hover-decoration;
     text-decoration-color: #80b;
   }
 }
