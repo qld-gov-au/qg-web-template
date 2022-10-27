@@ -158,3 +158,10 @@
 }
 
 //-------------------------------------------------
+
+// Apply default styling to all links that don't have a button class
+@mixin qg-non-button-link-styles__default {
+  a:not(.qg-btn):not(.btn):not(.button){
+    @include qg-link-styles__default
+  }
+}
