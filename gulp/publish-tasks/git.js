@@ -16,8 +16,15 @@ const gitFunctions = {
   },
   clone: (url, folder) => {
     return (cb) => {
-      return git.clone(url, { args: folder }, function (err) {
-        if (err) throw err;
+      // try to use an SSH URL instead of HTTP(S), so we can push to it gracefully
+      return git.clone(url.replace(/^https?:/, 'ssh:'), { args: folder }, function (err) {
+        if (err) {
+          return git.clone(url, { args: folder }, function (err2) {
+            if (err2) {
+              throw err2;
+            }
+          });
+        }
         cb();
       });
     };
