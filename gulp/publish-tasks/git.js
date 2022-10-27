@@ -44,7 +44,7 @@ const gitFunctions = {
       return gulp
         .src(`${from}/**/*`)
         .pipe(
-          dirSync(path.resolve(from), path.resolve(to), { printSummary: true, ignore: ignoreFiles })
+          dirSync(path.resolve(from), path.resolve(to), { printSummary: true, ignore: ignoreFiles }),
         );
     };
   },
@@ -55,12 +55,12 @@ const gitFunctions = {
         .pipe(
           gulp.dest(`${config.staticCdnRepo.folder}/assets/${config.versionName}/latest/`, {
             followSymlinks: false,
-          })
+          }),
         )
         .pipe(
           gulp.dest(
-            `${config.staticCdnRepo.folder}/assets/${config.versionName}/${pjson.version}/`
-          )
+            `${config.staticCdnRepo.folder}/assets/${config.versionName}/${pjson.version}/`,
+          ),
         );
     };
   },
@@ -86,7 +86,7 @@ const gitFunctions = {
       return gulp.src('./*').pipe(
         git.commit(version, {
           args: '-m  "' + process.env.COMMITMSG + '"',
-        })
+        }),
       );
     };
   },
