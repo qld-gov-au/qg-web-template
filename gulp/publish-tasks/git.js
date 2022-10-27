@@ -16,8 +16,15 @@ const gitFunctions = {
   },
   clone: (url, folder) => {
     return (cb) => {
-      return git.clone(url, { args: folder }, function (err) {
-        if (err) throw err;
+      // try to use an SSH URL instead of HTTP(S), so we can push to it gracefully
+      return git.clone(url.replace(/^https?:/, 'ssh:'), { args: folder }, function (err) {
+        if (err) {
+          return git.clone(url, { args: folder }, function (err2) {
+            if (err2) {
+              throw err2;
+            }
+          });
+        }
         cb();
       });
     };
@@ -37,7 +44,7 @@ const gitFunctions = {
       return gulp
         .src(`${from}/**/*`)
         .pipe(
-          dirSync(path.resolve(from), path.resolve(to), { printSummary: true, ignore: ignoreFiles })
+          dirSync(path.resolve(from), path.resolve(to), { printSummary: true, ignore: ignoreFiles }),
         );
     };
   },
@@ -48,12 +55,12 @@ const gitFunctions = {
         .pipe(
           gulp.dest(`${config.staticCdnRepo.folder}/assets/${config.versionName}/latest/`, {
             followSymlinks: false,
-          })
+          }),
         )
         .pipe(
           gulp.dest(
-            `${config.staticCdnRepo.folder}/assets/${config.versionName}/${pjson.version}/`
-          )
+            `${config.staticCdnRepo.folder}/assets/${config.versionName}/${pjson.version}/`,
+          ),
         );
     };
   },
@@ -79,7 +86,7 @@ const gitFunctions = {
       return gulp.src('./*').pipe(
         git.commit(version, {
           args: '-m  "' + process.env.COMMITMSG + '"',
-        })
+        }),
       );
     };
   },

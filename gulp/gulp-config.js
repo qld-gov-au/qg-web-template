@@ -27,7 +27,7 @@ module.exports = {
     folder: 'web-template-release',
   },
   staticCdnRepo: {
-    url: 'ssh://git@servicesmadesimpler.govnet.qld.gov.au:7999/cdn/static-qld_swe-v3_assets.git',
+    url: 'https://git@servicesmadesimpler.govnet.qld.gov.au:7999/cdn/static-qld_swe-v3_assets.git',
     folder: 'static-qld_swe-v3_assets',
   },
   projects: ['core'], // 'cue'
