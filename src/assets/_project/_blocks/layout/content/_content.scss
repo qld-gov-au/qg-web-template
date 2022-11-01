@@ -7,9 +7,7 @@
       display: block;
     }
   }
-  a:not(.qg-btn):not(.btn):not(.button){
-    @include qg-link-styles__default
-  }
+  @include qg-non-button-link-styles__default;
   .print-content-link{
     @include qg-link-styles__no-underline-default
   }
