@@ -27,11 +27,11 @@
 
         a {
             color: #fff;
-            text-decoration: none;
+            text-decoration-line: none;
             transition: opacity .1s linear;
 
             &:hover, &:focus {
-                text-decoration: underline;
+                text-decoration-line: underline;
                 color: $qg-global-primary-hover-grey;
             }
         }

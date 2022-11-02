@@ -22,7 +22,7 @@
         padding: 1rem;
         .title {
           color: $qg-blue-dark;
-          text-decoration: underline;
+          text-decoration-line: underline;
           font-weight: bold;
           padding-right: 1.8rem;
         }
@@ -107,11 +107,11 @@
   }
   .expand, .collapse, label[for="expand"], label[for="collapse"] {
     &:hover, &.hover {
-      text-decoration: underline !important;
+      text-decoration-line: underline !important;
     }
   }
   .ht{
-    text-decoration: underline;
+    text-decoration-line: underline;
   }
   article {
     position: relative;
@@ -131,7 +131,7 @@
       .title{
         display: block;
         &:hover {
-          text-decoration: underline;
+          text-decoration-line: underline;
         }
       }
       label {
@@ -199,7 +199,7 @@
       -webkit-transform: rotate(-135deg);
     }
     &[type=checkbox]:checked + .acc-heading .title{
-      text-decoration: underline;
+      text-decoration-line: underline;
     }
     &.expand:checked ~ article {
       .collapsing-section {
@@ -236,7 +236,7 @@
   .qg-accordion .acc-heading:focus, .qg-accordion .acc-heading.focus {
     outline: 2px solid $qg-blue;
   }
-  .qg-accordion .expand:focus, .qg-accordion .expand:active, .qg-accordion .collapse:focus, .qg-accordion .collapse:active, 
+  .qg-accordion .expand:focus, .qg-accordion .expand:active, .qg-accordion .collapse:focus, .qg-accordion .collapse:active,
   .qg-accordion .expand.focus, .qg-accordion .expand.active, .qg-accordion .collapse.focus, .qg-accordion .collapse.active {
     outline: 2px solid $qg-blue !important;
     outline-offset: -2px;

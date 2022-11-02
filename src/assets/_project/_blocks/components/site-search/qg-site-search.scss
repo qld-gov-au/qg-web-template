@@ -14,7 +14,7 @@
         color: #000 !important;
         text-decoration: none !important;
         &:hover {
-          text-decoration: underline !important;
+          text-decoration-line: underline !important;
         }
       }
       .qg-search__icon {
@@ -27,7 +27,7 @@
           text-decoration: none !important;
           &:hover {
             color: #000 !important;
-            text-decoration: underline;
+            text-decoration-line: underline;
           }
         }
       }
@@ -71,7 +71,7 @@
       border: 2px solid #00698f !important;
       &:hover, &:active, &:focus, &:visited {
         color: #00698f !important;
-        text-decoration: underline !important;
+        text-decoration-line: underline !important;
         font-size: 0.9em;
         padding: 0.7em;
         border: 2px solid #00698f !important;

@@ -74,10 +74,12 @@
 
     &.qg-dropdown-all {
       @include qg-link-styles__theme-white;
-      text-decoration: underline 0.5px solid rgba(255, 255, 255, 0.73);
+      text-decoration-thickness: 0.5px;
+      text-decoration-color: rgba(255, 255, 255, 0.73);
 
       &:hover {
-        text-decoration: underline 2px solid #fff;
+        text-decoration-thickness: 2px;
+        text-decoration-color: #fff;
       }
 
       padding-left: 0;
@@ -155,7 +157,7 @@
       @include css-chevron-inline-down(6px, #fff, 20px);
       &:hover, &:focus,
       &[aria-expanded="true"] {
-        text-decoration: underline;
+        text-decoration-line: underline;
       }
       &:focus {
         outline-offset: -3px;

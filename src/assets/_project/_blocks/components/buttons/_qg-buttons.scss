@@ -14,7 +14,7 @@
   }
 
   &:hover, &:focus, &.hover, &.focus {
-    text-decoration: underline;
+    text-decoration-line: underline;
     color: #fff;
     background-color: $qg-global-primary-dark-grey;
   }
@@ -40,7 +40,7 @@
 
   &:hover, &:focus, &.hover, &.focus {
     color: $qg-global-primary-dark-grey;
-    text-decoration: underline;
+    text-decoration-line: underline;
   }
 
   &:focus, &.focus {
@@ -61,7 +61,7 @@
 
   &:hover, &:focus, &.hover, &.focus {
     color: #fff;
-    text-decoration: underline;
+    text-decoration-line: underline;
   }
 
   &:focus, &.focus {
@@ -112,7 +112,7 @@
     &:hover:not(:disabled), &:active:not(:disabled), &:focus:not(:disabled), &.hover:not(:disabled), &.active:not(:disabled), &.focus:not(:disabled) {
       border:3px solid $qg-outline-dark-hover;
       color: $qg-outline-dark-hover !important;
-      text-decoration: underline;
+      text-decoration-line: underline;
     }
   }
   &.btn-outline-light{
@@ -120,7 +120,7 @@
     background-color: transparent !important;
     border:3px solid #ffffff;
     &:hover, &:active, &:focus, &.hover, &.active, &.focus {
-      text-decoration: underline;
+      text-decoration-line: underline;
     }
   }
   &.btn-link.light{

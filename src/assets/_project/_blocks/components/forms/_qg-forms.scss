@@ -366,7 +366,7 @@
   //error alert
   .alert-danger {
     li {
-      text-decoration: underline;
+      text-decoration-line: underline;
       span {
         color: $SecondaryColor;
       }
@@ -514,7 +514,7 @@
       margin-top: -1px;
       color: #13578b;
       font-weight: 700;
-      text-decoration: underline;
+      text-decoration-line: underline;
       .card-title {
         color: #13578b !important;
         padding-right: 28px;
@@ -560,7 +560,7 @@
           border-radius: 0 !important;
           margin: 0;
           margin-right: -1px;
-          text-decoration: underline !important;
+          text-decoration-line: underline !important;
       }
       .page-item:not(.active):hover .page-link {
           text-decoration: none !important;
