@@ -50,8 +50,8 @@
     "@storybook/html": "^6.5.13",
     "@storybook/manager-webpack5": "^6.5.13",
     "@storybook/testing-library": "^0.0.13",
-    "babel-loader": "^8.2.5",
-    "chromatic": "^6.11.0",
+    "babel-loader": "^9.0.1",
+    "chromatic": "^6.11.4",
     "concurrently": "^7.5.0",
     "copy-webpack-plugin": "^11.0.0",
     "cssnano": "^4.1.11",
@@ -110,7 +110,7 @@
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
-    "@babel/runtime": "^7.19.4",
+    "@babel/runtime": "^7.20.1",
     "bootstrap": "^4.6.2",
     "chromium": "^3.0.3",
     "jquery": "^3.6.0",

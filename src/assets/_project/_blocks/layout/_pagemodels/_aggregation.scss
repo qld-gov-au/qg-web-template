@@ -13,6 +13,7 @@
     h2 {
       font-size: 1.56rem;
     }
+    @include qg-non-button-link-styles__default;
     background: $qg-grey-light;
     padding-bottom: 3rem;
     > .row {
