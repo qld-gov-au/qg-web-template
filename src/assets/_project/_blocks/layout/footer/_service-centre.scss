@@ -31,7 +31,7 @@
 
         &:hover,&:focus {
             .qg-service-centre-set-location__text {
-                text-decoration: underline;
+                text-decoration-line: underline;
             }
         }
     }
@@ -41,7 +41,7 @@
         display: block;
         color: #fff;
         margin: 20px 0;
-        text-decoration: underline;
+        text-decoration-line: underline;
         transition: opacity .1s linear;
 
         &:hover, &:focus {
@@ -76,7 +76,7 @@
             &:nth-child(2):before {
                 content: "\f14e";
             }
-        } 
+        }
     }
 
     .qg-location-setter {

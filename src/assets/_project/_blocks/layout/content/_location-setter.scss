@@ -149,7 +149,7 @@
         display: block;
         margin-top: 30px;
         padding: 0;
-        text-decoration: underline;
+        text-decoration-line: underline;
 
         &:hover, &:focus {
             color: $qg-global-primary-dark-grey;

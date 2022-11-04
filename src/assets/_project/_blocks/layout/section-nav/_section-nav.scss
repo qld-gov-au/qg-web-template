@@ -21,7 +21,7 @@
       color: $qg-dark-grey-darker !important;
       font-size: 1rem;
       &:link, &:hover {
-        text-decoration: none 0.5px solid;
+        text-decoration-line: none;
       }
     }
   }
@@ -53,7 +53,7 @@
         color: #212529;
         font-weight: 700;
         &:link, &:hover {
-          text-decoration: none 0.5px solid;
+          text-decoration-line: none;
         }
       }
     }
