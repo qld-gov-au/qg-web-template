@@ -187,15 +187,6 @@
     color: $hintColour;
     font-weight: $hintWeight;
   }
-  h1,
-  h2,
-  h3,
-  h4,
-  legend {
-    font-size: $labelHeadingSize;
-    color: $labelHeadingColour;
-    font-weight: $labelHeadingWeight;
-  }
 
   // choices list styles (forms.io styles overrides)
   .is-flipped .choices__list--dropdown {
