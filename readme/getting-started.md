@@ -19,12 +19,15 @@ export PATH="/opt/node-v16.17.1-linux-x64/bin:$PATH"
 
 Install all the node packages (If behind a corporate web proxy please have a look at this website [How to setup Node.js and Npm behind a corporate web proxy](https://jjasonclark.com/how-to-setup-node-behind-web-proxy))
 ```bash
-npm install or yarn install
+npm install
 ```
+
+Recommend using VSCode as the IDE for development.
+
 ## 3. NPM Scripts descriptions
 | Name        | Description     |
 | ------------- | ------------- |
-| npm **start**  | Starts a local server and watch for changes
+| npm **start**  | Starts a local server (Storybook) and watch for changes
 | npm run **release**  | Create a release folder with all the minified files and templates |
 | npm run **publish-npm** | Publish the release folder on NPM package manager. (npm repo link https://github.com/qld-gov-au/web-template-release) |
 | npm run **publish-cdn** | Publish the release folder on Static CDN      |
