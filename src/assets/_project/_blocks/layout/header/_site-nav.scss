@@ -110,7 +110,7 @@
     .nav-link {
         @include qg-link-styles__no-underline-black;
         &:hover {
-            text-decoration-color: $qg-global-primary-darker-grey !important;
+            text-decoration-color: $qg-global-primary-darker-grey;
         }
     }
     #qg-site-nav .show .nav-link {
