@@ -12,7 +12,9 @@
     .nav-link {
         display: block;
         padding: 5px 13px;
-    @include qg-link-styles__no-underline-white;
+        @media (min-width: 992px) {
+            @include qg-link-styles__no-underline-white;
+        }
     }
     @media print {
         display: none !important;
