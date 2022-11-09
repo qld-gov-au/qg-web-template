@@ -50,7 +50,7 @@
     "@storybook/html": "^6.5.13",
     "@storybook/manager-webpack5": "^6.5.13",
     "@storybook/testing-library": "^0.0.13",
-    "babel-loader": "^9.0.1",
+    "babel-loader": "^9.1.0",
     "chromatic": "^6.11.4",
     "concurrently": "^7.5.0",
     "copy-webpack-plugin": "^11.0.0",
