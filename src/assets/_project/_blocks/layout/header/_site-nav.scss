@@ -13,7 +13,12 @@
         display: block;
         padding: 5px 13px;
         @media (min-width: 992px) {
-            @include qg-link-styles__no-underline-white;
+            [aria-expanded="true"] {
+                @include qg-link-styles__no-underline-default;
+            }
+            &:not([aria-expanded="true"]) {
+                @include qg-link-styles__no-underline-white;
+            }
         }
     }
     @media print {
