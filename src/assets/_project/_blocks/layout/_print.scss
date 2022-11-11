@@ -180,7 +180,7 @@
   /* Print link URLs */
   .print-link-url {
     display: inline;
-    text-decoration: none;
+    text-decoration-line: none;
     font-size: 100%;
     color: #0066cc;
   }
@@ -204,7 +204,7 @@
   #qg-breadcrumb li,
   #qg-breadcrumb li.last-child,
   #qg-breadcrumb a {
-    text-decoration: none !important;
+    text-decoration-line: none !important;
     color: black !important;
     display: inline !important;
     margin: 0 !important;
@@ -257,7 +257,7 @@
   #qg-coa img.qg-print-version {
     margin: 0;
     padding: 0;
-    text-decoration: none;
+    text-decoration-line: none;
     display: inline;
   }
 

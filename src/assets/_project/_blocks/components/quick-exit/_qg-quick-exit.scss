@@ -79,7 +79,7 @@
         .qg-quick-exit__button {
           border-radius: 4px;
           display: inline-block;
-          text-decoration: none;
+          text-decoration-line: none;
           border-color: #ffd200;
           background-color: #ffd200;
           color: #0c2e4c;
@@ -118,7 +118,7 @@
             display: flex;
             &:active, &:focus, &:hover {
               color: #fff;
-              text-decoration: none
+              text-decoration-line: none
             }
             .fa {
               font-size: 22px;
