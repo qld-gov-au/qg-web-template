@@ -60,7 +60,7 @@
       }
     }
   }
-  
+
   &:not(.qg-card__light-theme) {
     h2 {
       color: #fff;
@@ -76,15 +76,18 @@
     border-radius: 4px;
 
     img {
-      width: 100%;
-      height: auto;
+      display: block;
+      &:not(.actual-image-size) {
+        width: 100%;
+        height: auto;
+      }
 
       & + .details a.qg-btn {
         margin-bottom: 0.5em;
         margin-top: 0.5em !important;
       }
     }
-    
+
     .qg-card__thumbnail {
       width: 75px;
       height: 75px;
@@ -160,11 +163,6 @@
       }
     }
 
-    img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
   }
 }
 
