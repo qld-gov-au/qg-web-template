@@ -41,10 +41,12 @@
   }
   a {
     color: #fff;
+    text-underline-offset: $text-underline-offset;
     text-decoration-line: underline;
     &:hover, &:active, &:focus, &:visited{
       color: #000;
-      text-decoration: none;
+      text-decoration-thickness: 2px;
+      text-decoration-style: solid;
     }
   }
   img {

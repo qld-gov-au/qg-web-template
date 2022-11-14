@@ -28,7 +28,7 @@
         }
         &:hover, &.hover {
           .title{
-            text-decoration: none;
+            text-decoration-line: none;
             color: $qg-dark-grey-darker;
           }
         }
@@ -87,7 +87,7 @@
       font-weight: 700;
     }
     a{
-      text-decoration: none !important;
+      text-decoration-line: none !important;
       padding: 0.4rem 0.7rem;
       color: $qg-blue-dark !important;
       font-weight: bold;
@@ -99,7 +99,7 @@
   }
   //label selector is to provide backward compatibility in case projects are using old markup
   label[for="expand"], label[for="collapse"] {
-    text-decoration: none !important;
+    text-decoration-line: none !important;
     padding: 0 0.7rem;
     color: $qg-blue-dark !important;
     font-weight: bold;
