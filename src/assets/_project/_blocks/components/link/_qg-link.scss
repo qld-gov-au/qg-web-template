@@ -80,19 +80,6 @@
   }
 }
 
-@mixin qg-link-styles__no-underline-black {
-  @include qg-global-link-styles {
-    color: $qg-global-primary-darker-grey;
-    &:link {
-      @include qg-link-none-decoration;
-    }
-    &:hover,
-    &.hover {
-      @include qg-link-hover-decoration;
-    }
-  }
-}
-
 // 2. color theme black with underline
 @mixin qg-link-styles__theme-black {
   @include qg-global-link-styles {

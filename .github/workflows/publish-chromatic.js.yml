@@ -1,4 +1,4 @@
-# This workflow is for Chromatic trial run, deploy to a trial Chromatic account, for official implementation, please replace the CHROMATIC_PROJECT_TOKEN in Github secrets.
+# This workflow is for deploying Storybook to Chromatic qol.development@smartservice.qld.gov.au account, it will consume CHROMATIC_PROJECT_TOKEN in Github secrets.
 
 # Further details on Chromatic setup: https://www.chromatic.com/docs/github-actions
 

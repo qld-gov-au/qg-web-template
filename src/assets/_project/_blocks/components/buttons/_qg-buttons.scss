@@ -14,7 +14,7 @@
   }
 
   &:hover, &:focus, &.hover, &.focus {
-    text-decoration: underline;
+    text-decoration-line: underline;
     color: #fff;
     background-color: $qg-global-primary-dark-grey;
   }
@@ -40,7 +40,7 @@
 
   &:hover, &:focus, &.hover, &.focus {
     color: $qg-global-primary-dark-grey;
-    text-decoration: underline;
+    text-decoration-line: underline;
   }
 
   &:focus, &.focus {
@@ -57,11 +57,11 @@
   font-weight: bold;
   border-radius: 4px;
   padding: 7px 24px;
-  text-decoration: none;
+  text-decoration-line: none;
 
   &:hover, &:focus, &.hover, &.focus {
     color: #fff;
-    text-decoration: underline;
+    text-decoration-line: underline;
   }
 
   &:focus, &.focus {
@@ -74,7 +74,7 @@
   @include button-variant($qg-light-green, $qg-light-green, lighten($qg-light-green, 7.5%), $hover-border: $qg-light-green, $active-background:$qg-light-green, $active-border: $qg-light-green);
   color: #000;
   a, &:focus:not(:disabled), &:hover:not(:disabled), &:link:not(:disabled), &:visited:not(:disabled), &:active:not(:disabled), &.focus:not(:disabled), &.hover:not(:disabled), &.link:not(:disabled), &.visited:not(:disabled), &.active:not(:disabled) {
-    text-decoration: none !important;
+    text-decoration-line: none !important;
     color: #000 !important;
   }
 }
@@ -84,7 +84,7 @@
   color: #fff;
   a, &:focus, &:hover, &:link, &:visited, &:active, &.focus, &.hover, &.link, &.visited, &.active {
     color: #fff !important;
-    text-decoration: none !important;
+    text-decoration-line: none !important;
   }
 }
 
@@ -93,7 +93,7 @@
   color: #fff;
   a, &:focus, &:hover, &:link, &:visited, &:active, &.focus, &.hover, &.link, &.visited, &.active {
     color: #fff !important;
-    text-decoration: none !important;
+    text-decoration-line: none !important;
   }
 }
 
@@ -111,16 +111,16 @@
     border:3px solid $qg-outline-dark;
     &:hover:not(:disabled), &:active:not(:disabled), &:focus:not(:disabled), &.hover:not(:disabled), &.active:not(:disabled), &.focus:not(:disabled) {
       border:3px solid $qg-outline-dark-hover;
-      color: $qg-outline-dark-hover !important;
-      text-decoration: underline;
+      color: $qg-outline-dark-hover;
+      text-decoration-line: underline;
     }
   }
   &.btn-outline-light{
     color: #ffffff !important;
-    background-color: transparent !important;
+    background-color: transparent;
     border:3px solid #ffffff;
     &:hover, &:active, &:focus, &.hover, &.active, &.focus {
-      text-decoration: underline;
+      text-decoration-line: underline;
     }
   }
   &.btn-link.light{

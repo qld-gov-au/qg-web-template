@@ -10,7 +10,7 @@
     .carousel-inner{
       .carousel-item {
         a {
-          text-decoration: none !important;
+          text-decoration-line: none !important;
           display: block;
         }
         opacity: 0;
@@ -98,7 +98,7 @@
           margin-right: 0;
         }
         a {
-          text-decoration: none !important;
+          text-decoration-line: none !important;
         }
         a:active, a:focus {
           color: #c00;

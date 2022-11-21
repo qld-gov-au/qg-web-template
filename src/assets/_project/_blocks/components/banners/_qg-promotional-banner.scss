@@ -25,7 +25,7 @@
             @extend .btn-outline-dark;
           }
           .qg-btn {
-            text-decoration: none !important;
+            text-decoration-line: none !important;
           }
         }
       }
@@ -41,7 +41,7 @@
 
   .qg-promotional-banner__popular-apps .qg-btn {
     &:hover, &:visited, &:active {
-      text-decoration: underline !important;
+      text-decoration-line: underline !important;
     }
   }
   .wrapper {

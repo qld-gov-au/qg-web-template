@@ -12,9 +12,9 @@
       }
       .list-group-item a {
         color: #000 !important;
-        text-decoration: none !important;
+        text-decoration-line: none !important;
         &:hover {
-          text-decoration: underline !important;
+          text-decoration-line: underline !important;
         }
       }
       .qg-search__icon {
@@ -24,10 +24,10 @@
       .highlight{
         .btn {
           color: $qg-global-primary-dark !important;
-          text-decoration: none !important;
+          text-decoration-line: none !important;
           &:hover {
             color: #000 !important;
-            text-decoration: underline;
+            text-decoration-line: underline;
           }
         }
       }
@@ -67,11 +67,11 @@
       text-align: left;
       font-size: 0.9em;
       padding: 0.7em;
-      text-decoration: none !important;
+      text-decoration-line: none !important;
       border: 2px solid #00698f !important;
       &:hover, &:active, &:focus, &:visited {
         color: #00698f !important;
-        text-decoration: underline !important;
+        text-decoration-line: underline !important;
         font-size: 0.9em;
         padding: 0.7em;
         border: 2px solid #00698f !important;

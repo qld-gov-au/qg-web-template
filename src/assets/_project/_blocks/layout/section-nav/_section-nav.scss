@@ -21,7 +21,7 @@
       color: $qg-dark-grey-darker !important;
       font-size: 1rem;
       &:link, &:hover {
-        text-decoration: none 0.5px solid;
+        text-decoration-line: none;
       }
     }
   }
@@ -53,7 +53,7 @@
         color: #212529;
         font-weight: 700;
         &:link, &:hover {
-          text-decoration: none 0.5px solid;
+          text-decoration-line: none;
         }
       }
     }
@@ -122,11 +122,11 @@
       margin: 0;
       padding: .7em 0 0.9em 10 + 15px;
       color: $qg-blue-darker;
-      text-decoration: none;
+      text-decoration-line: none;
     }
 
     a:hover {
-      text-decoration: none;
+      text-decoration-line: none;
       background-color: $qg-section-nav-link-hover-bg-color;
     }
     a:before {
@@ -138,7 +138,7 @@
       content: "\f054";
       margin: 0;
       padding: 0 0.3em 0 0;
-      text-decoration: none;
+      text-decoration-line: none;
       opacity: .5;
 
       font-family: FontAwesome;
