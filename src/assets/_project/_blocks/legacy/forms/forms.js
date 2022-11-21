@@ -1617,7 +1617,7 @@ qg.date = (function() {
       counter;
 
     // add counter
-    counter = $( '<span/>' ).generateId( 'word-count' );
+    counter = $( '<span></span>' ).generateId( 'word-count' );
     //eg. Maximum: 50 words (50 remaining)
     hint.append( ' (', counter, ' remaining)' );
 
