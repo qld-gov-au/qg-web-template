@@ -11,7 +11,6 @@
 
     margin: 0;
     background-color: #f2f7f9;
-
     &:last-child{
       border-bottom: none;
     }
@@ -115,4 +114,5 @@
     width: 100%;
     height: auto;
   }
+  @include qg-non-button-link-styles__default;
 }

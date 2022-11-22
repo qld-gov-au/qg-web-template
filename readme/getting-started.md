@@ -12,6 +12,11 @@ git clone https://github.com/qld-gov-au/qg-web-template.git
 
 **Make sure you have Node version >= 14.0 and NPM >= 6.0
 
+Node.js can be downloaded from https://nodejs.org as an archive that simply needs to be unzipped and added to your PATH. For example, on Linux, if it is extracted to /opt/node-v16.17.1-linux-x64 then you could run:
+```bash
+export PATH="/opt/node-v16.17.1-linux-x64/bin:$PATH"
+```
+
 Install all the node packages (If behind a corporate web proxy please have a look at this website [How to setup Node.js and Npm behind a corporate web proxy](https://jjasonclark.com/how-to-setup-node-behind-web-proxy))
 ```bash
 npm install

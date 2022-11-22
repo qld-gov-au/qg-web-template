@@ -8,6 +8,7 @@ import Secondary from "./templates/Secondary.html";
 import Tertiary from "./templates/Tertiary.html";
 import Loading from "./templates/Loading.html";
 import States from "./templates/States.html";
+import Links from "./templates/Links.html";
 
 <Meta title="Components/Buttons" decorators={[QgPrimaryContent, QgContent]} />
 
@@ -50,5 +51,13 @@ import States from "./templates/States.html";
 <Canvas withSource="close">
   <Story name="States" decorators={[Grid(5)]} parameters={getDecoratedParameters(States)}>
     {() => States}
+  </Story>
+</Canvas>
+
+## Links
+
+<Canvas withSource="close">
+  <Story name="Links" decorators={[Grid(5)]} parameters={getDecoratedParameters(Links)}>
+    {() => Links}
   </Story>
 </Canvas>

@@ -46,11 +46,11 @@ $qg-dark-blue2: #005474;
 // ###################################
 
 // Light blue colours
-$qg-pale-blue-darker:	#cde8ec;
-$qg-pale-blue:			#e7f5fe;
+$qg-pale-blue-darker:   #cde8ec;
+$qg-pale-blue:          #e7f5fe;
 
-$qg-pale-blue-dark:		#cecece;
-$qg-pale-blue-light:	#f2f7f9;
+$qg-pale-blue-dark:     #cecece;
+$qg-pale-blue-light:    #f2f7f9;
 
 $qg-blueberry: #759BF3;
 
@@ -81,7 +81,7 @@ $qg-brown: #8a6d3b;
 // Note: Use US spelling for colour
 
 // ## Components
-$qg-icon-color: 		$qg-green;
+$qg-icon-color:         $qg-green;
 
 $brand-success:         #9ebf6d; // #5cb85c;
 $brand-info:            #1E77AA;
@@ -90,8 +90,8 @@ $brand-danger:          #B90824; //#fff;
 
 $state-success-bg:      #f2f7ea;
 $state-success-border:  darken(adjust-hue($state-success-bg, -10), 5%) !default;
-$state-info-bg:      	#eff5f6;
-$state-info-border:  	darken(adjust-hue($state-success-bg, -10), 5%) !default;
+$state-info-bg:         #eff5f6;
+$state-info-border:     darken(adjust-hue($state-success-bg, -10), 5%) !default;
 $state-warning-bg:      #ffedde;
 $state-warning-border:  darken(adjust-hue($state-success-bg, -10), 5%) !default;
 $state-danger-bg:       #B90824;
@@ -167,14 +167,14 @@ $qg-box-background: $qg-light-blue-gray3;
 
 // pagination
 $qg-pagination-border: #808080;
-$qg-pagination-link-color: #13578B;
+$qg-pagination-link-color: $qg-blue-dark;
 $qg-pagination-disabled-color: #6c757d;
 
 //tables
 $tables-tbody-background-color: #f3f3f3;
-$tables-thead-background-color: #13578b;
+$tables-thead-background-color: $qg-blue-dark;
 $tables-odd-background-color: #f3f3f3;
-$tables-thead-background-color: #13578b;
+$tables-thead-background-color: $qg-blue-dark;
 $tables-thead-color: #FFFFFF;
 $tables-odd-background-color: #f3f3f3;
 $tables-even-background-color: #ffffff;
@@ -223,3 +223,53 @@ $alertBorder: #ed1b2f;
 $alertDangerBackground: #fdf0f0;
 $alertWarningBorder: #f9af71;
 $alertWarningBackground: #ffedde;
+
+
+// Global colours
+
+// ## Global Primary Colours
+$qg-global-primary: #005e85;
+$qg-global-primary-dark: #063652;
+$qg-global-primary-darker: #212529;
+$qg-global-primary-light: #eff2f4;
+$qg-global-primary-hover:#CCDFE7;
+
+// ## Greyscale of Global Primary Colours
+$qg-global-primary-grey: #565656;
+$qg-global-primary-dark-grey: #313131;
+$qg-global-primary-darker-grey: #292929;
+$qg-global-primary-light-grey: #f3f3f3;
+$qg-global-primary-hover-grey:#CCC;
+
+// ## Global Prominent Colours
+$qg-global-prominent: $qg-light-green;
+
+// ## Dark grey
+$qg-global-dark-grey-active: #373737;
+$qg-global-dark-grey-dark-active: #303030;
+$qg-global-primary-accessible-grey: #767676; // Alternative of $qg-pagination-border as it's not accessible on white background
+$qg-light-gray-dark: #efefef;
+
+// ## Red
+$qg-global-error: #d60000;
+
+// ## Social Media
+$qg-facebook: #3b5998;
+$qg-twitter: #1da1f2;
+$qg-linkedin: #0077b5;
+
+// new link variables
+@mixin qg-link-decoration {
+  text-decoration-line: underline;
+  text-decoration-thickness: 0.5px;
+  text-decoration-style: solid;
+}
+@mixin qg-link-none-decoration {
+  text-decoration-line: none;
+}
+@mixin qg-link-hover-decoration {
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+  text-decoration-style: solid;
+}
+$text-underline-offset: 5px;
