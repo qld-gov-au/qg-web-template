@@ -77,7 +77,7 @@
 
     img {
       display: block;
-      &:not(.actual-image-size) {
+      &:not(.actual-image-size):not(.qg-card__thumbnail) {
         width: 100%;
         height: auto;
       }
