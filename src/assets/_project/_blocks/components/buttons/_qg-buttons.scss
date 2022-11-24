@@ -111,13 +111,13 @@
     border:3px solid $qg-outline-dark;
     &:hover:not(:disabled), &:active:not(:disabled), &:focus:not(:disabled), &.hover:not(:disabled), &.active:not(:disabled), &.focus:not(:disabled) {
       border:3px solid $qg-outline-dark-hover;
-      color: $qg-outline-dark-hover !important;
+      color: $qg-outline-dark-hover;
       text-decoration-line: underline;
     }
   }
   &.btn-outline-light{
     color: #ffffff !important;
-    background-color: transparent !important;
+    background-color: transparent;
     border:3px solid #ffffff;
     &:hover, &:active, &:focus, &.hover, &.active, &.focus {
       text-decoration-line: underline;
