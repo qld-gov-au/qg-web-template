@@ -62,8 +62,9 @@
   border-radius: 4px;
   padding: 7px 24px;
   text-decoration-line: none;
+  text-decoration-thickness: 2px;
 
-  &:hover, &:focus, &.hover, &.focus {
+  &:hover, &:focus, &.hover, &.focus, &:active {
     color: #fff;
     text-decoration-line: underline;
   }
@@ -130,4 +131,9 @@
   &.btn-link.light{
     color:#ffffff;
   }
+}
+
+#body .qg-btn, #body .btn, {
+  // override default .btn styling
+  @include qg-link-hover-decoration;
 }
