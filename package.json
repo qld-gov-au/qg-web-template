@@ -48,7 +48,7 @@
     "@storybook/addon-links": "^6.5.13",
     "@storybook/builder-webpack5": "^6.5.14",
     "@storybook/html": "^6.5.14",
-    "@storybook/manager-webpack5": "^6.5.13",
+    "@storybook/manager-webpack5": "^6.5.14",
     "@storybook/testing-library": "^0.0.13",
     "babel-loader": "^9.1.0",
     "chromatic": "^6.11.4",
