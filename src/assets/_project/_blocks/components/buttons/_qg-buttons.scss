@@ -4,7 +4,7 @@
 
 .btn-global-primary{
   color: #fff;
-  background-color: $qg-global-primary-dark-grey;
+  background-color: $qg-global-primary-dark;
   font-weight: bold;
   border-radius: 4px;
   padding: 9px 24px;
@@ -16,7 +16,7 @@
   &:hover, &:focus, &.hover, &.focus {
     text-decoration-line: underline;
     color: #fff;
-    background-color: $qg-global-primary-dark-grey;
+    background-color: $qg-global-primary-dark;
   }
 
   &:focus, &.focus {
