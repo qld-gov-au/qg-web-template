@@ -65,6 +65,17 @@
     h2 {
       color: #fff;
     }
+    .content {
+      .details {
+        a:not(.btn):not(.qg-btn) {
+          @include qg-link-styles__theme-white;
+
+          &.stretched-link {
+            @include qg-link-styles__theme-white;
+          }
+        }
+      }
+    }
   }
 
   .content {
@@ -104,14 +115,6 @@
       }
       > :nth-child(2) {
         margin-top: 0.75rem;
-      }
-
-      a:not(.btn):not(.qg-btn) {
-        @include qg-link-styles__theme-white;
-
-        &.stretched-link {
-          @include qg-link-styles__theme-white;
-        }
       }
 
       a.btn {

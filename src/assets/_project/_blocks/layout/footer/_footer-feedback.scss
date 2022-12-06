@@ -180,8 +180,10 @@
     position: relative;
     transition: all .3s ease;
     z-index: 1;
+    @include qg-link-hover-decoration;
 
     &__text {
+      @include qg-link-hover-decoration;
       left: 50%;
       transform: translateX(-50%);
       position: absolute;
