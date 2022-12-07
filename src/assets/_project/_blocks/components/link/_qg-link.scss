@@ -40,10 +40,7 @@
     color: $qg-blue-dark;
     @include qg-link-decoration;
     text-decoration-color: #457aa3;
-    &:hover,
-    &.hover {
-      @include qg-link-hover-decoration;
-    }
+    @include qg-link-hover-decoration;
   }
 }
 
@@ -54,10 +51,7 @@
     &:link {
       @include qg-link-none-decoration;
     }
-    &:hover,
-    &.hover {
-      @include qg-link-hover-decoration;
-    }
+    @include qg-link-hover-decoration;
   }
 }
 
@@ -73,10 +67,7 @@
     &:link {
       @include qg-link-none-decoration;
     }
-    &:hover,
-    &.hover {
-      @include qg-link-hover-decoration;
-    }
+    @include qg-link-hover-decoration;
   }
 }
 
@@ -86,10 +77,7 @@
     color: $qg-global-primary-darker-grey;
     @include qg-link-decoration;
     text-decoration-color: #737678;
-    &:hover,
-    &.hover {
-      @include qg-link-hover-decoration;
-    }
+    @include qg-link-hover-decoration;
   }
 }
 
@@ -104,9 +92,7 @@
     color: #fff;
     @include qg-link-decoration;
     text-decoration-color: rgba(255, 255, 255, 0.73);
-    &:hover,
-    &.hover {
-      @include qg-link-hover-decoration;
+    @include qg-link-hover-decoration {
       text-decoration-color: #fff;
     }
   }
@@ -119,9 +105,7 @@
     &:link {
       @include qg-link-none-decoration;
     }
-    &:hover,
-    &.hover {
-      @include qg-link-hover-decoration;
+    @include qg-link-hover-decoration {
       text-decoration-color: #fff;
     }
   }
@@ -135,12 +119,10 @@
 .qg-link-styles__visited-change {
   &:visited {
     color: #80b;
-  }
-
-  &:visited:hover {
-    color: #80b;
-    @include qg-link-hover-decoration;
-    text-decoration-color: #80b;
+    @include qg-link-hover-decoration {
+      color: #80b;
+      text-decoration-color: #80b;
+    }
   }
 }
 
