@@ -100,7 +100,7 @@
     "jest-puppeteer": "^6.1.1",
     "node-ssi": "^0.3.2",
     "np": "^7.6.2",
-    "puppeteer": "^19.3.0",
+    "puppeteer": "^19.4.0",
     "sass": "^1.56.1",
     "storybook-addon-pseudo-states": "^1.15.1",
     "string-replace-loader": "^3.1.0",
