@@ -3,6 +3,10 @@
   padding-top: 20px;
   z-index: 2;
 
+  #qg-search-query {
+    color: $qg-global-primary-darker;
+  }
+
   .qg-search-concierge {
     border-top: solid 1px $qg-pagination-border;
     position: absolute;
