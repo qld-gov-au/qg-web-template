@@ -134,3 +134,8 @@
     @include qg-link-styles__default
   }
 }
+
+// Don't apply a text-decoration if underline is hardcoded
+u a {
+  text-decoration-line: none !important;
+}
