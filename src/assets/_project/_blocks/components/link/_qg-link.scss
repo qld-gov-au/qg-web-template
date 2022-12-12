@@ -17,14 +17,8 @@
     //   background: none;
     // }
     &:not(.btn-link) {
-      &:active,
-      &:focus,
-      &:focus-visible,
-      &.active,
-      &.focus {
+      @include qg-button-outline-decoration {
         background-color: transparent;
-        outline: 3px solid #0096d6;
-        outline-offset: 2px;
       }
     }
     @content;
