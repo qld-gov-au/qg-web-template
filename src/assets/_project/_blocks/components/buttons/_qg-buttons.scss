@@ -133,7 +133,7 @@
   }
 }
 
-#body .qg-btn, #body .btn, {
+#body .qg-btn, #body .btn, body .qg-btn, body .btn, {
   // override default .btn styling
   @include qg-link-hover-decoration;
 }
