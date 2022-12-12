@@ -70,7 +70,7 @@
     }
   }
   button:focus, button.focus {
-    outline: 2px solid #0096d6 !important;
+    outline: 2px solid $qg-active-outline !important;
     outline-offset: 2px;
     z-index: 100;
   }

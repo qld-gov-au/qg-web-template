@@ -14,6 +14,7 @@
             transition: all .3s ease;
             white-space: nowrap;
             top: 9px;
+            @include qg-link-hover-decoration;
         }
 
         &[aria-expanded=true] {
@@ -26,12 +27,6 @@
 
             + .qg-location-setter-wrap .qg-location-setter {
                 border-radius: 0 0 4px 4px;
-            }
-        }
-
-        &:hover,&:focus {
-            .qg-service-centre-set-location__text {
-                text-decoration-line: underline;
             }
         }
     }

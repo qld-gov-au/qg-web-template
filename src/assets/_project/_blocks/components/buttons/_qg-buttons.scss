@@ -79,7 +79,6 @@
   @include button-variant($qg-light-green, $qg-light-green, lighten($qg-light-green, 7.5%), $hover-border: $qg-light-green, $active-background:$qg-light-green, $active-border: $qg-light-green);
   color: #000;
   a, &:focus:not(:disabled), &:hover:not(:disabled), &:link:not(:disabled), &:visited:not(:disabled), &:active:not(:disabled), &.focus:not(:disabled), &.hover:not(:disabled), &.link:not(:disabled), &.visited:not(:disabled), &.active:not(:disabled) {
-    text-decoration-line: none !important;
     color: #000 !important;
   }
 }
@@ -89,7 +88,6 @@
   color: #fff;
   a, &:focus, &:hover, &:link, &:visited, &:active, &.focus, &.hover, &.link, &.visited, &.active {
     color: #fff !important;
-    text-decoration-line: none !important;
   }
 }
 
@@ -98,7 +96,6 @@
   color: #fff;
   a, &:focus, &:hover, &:link, &:visited, &:active, &.focus, &.hover, &.link, &.visited, &.active {
     color: #fff !important;
-    text-decoration-line: none !important;
   }
 }
 
@@ -110,6 +107,8 @@
 
 .qg-btn {
   @extend .btn;
+  @include qg-button-outline-decoration;
+
   &.btn-outline-dark{
     color: $qg-outline-dark;
     background-color: transparent !important;
@@ -133,7 +132,7 @@
   }
 }
 
-#body .qg-btn, #body .btn, {
+#body .qg-btn, #body .btn, body .qg-btn, body .btn, {
   // override default .btn styling
   @include qg-link-hover-decoration;
 }

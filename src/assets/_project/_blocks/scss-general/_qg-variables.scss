@@ -15,6 +15,9 @@ $qg-green: #78ba00;
 $qg-outline-dark: #00698f;
 $qg-outline-dark-hover: #313131;
 
+// ## Active outlines (transient) ##
+$qg-active-outline: #0096d6;
+
 // ## Dark grey ##
 $qg-dark-grey-lightest: #949494;
 $qg-dark-gray-lighter: #8a8f91; // Lightest for large text on white
@@ -286,3 +289,15 @@ $qg-linkedin: #0077b5;
   @content;
 }
 $text-underline-offset: 5px;
+
+@mixin qg-button-outline-decoration {
+  // Surround buttons and links with a blue outline when active/focused
+  &:active, &.active,
+  &:focus, &.focus, &:focus-visible {
+    outline-width: 3px;
+    outline-style: solid;
+    outline-color: $qg-active-outline;
+    outline-offset: 2px;
+    @content;
+  }
+}
