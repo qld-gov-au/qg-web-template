@@ -107,6 +107,8 @@
 
 .qg-btn {
   @extend .btn;
+  @include qg-button-outline-decoration;
+
   &.btn-outline-dark{
     color: $qg-outline-dark;
     background-color: transparent !important;
