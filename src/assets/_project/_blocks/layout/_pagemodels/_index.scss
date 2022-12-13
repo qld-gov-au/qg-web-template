@@ -18,7 +18,7 @@
       float: left;
     }
     a {
-      &:not(:hover){
+      &:not(:hover):not(:active):not(:focus){
         text-decoration-line: none !important;
       }
       &:hover {

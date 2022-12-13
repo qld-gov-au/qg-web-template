@@ -180,10 +180,10 @@
     position: relative;
     transition: all .3s ease;
     z-index: 1;
-    @include qg-link-hover-decoration;
+    @include qg-underline-on-highlight-decoration;
 
     &__text {
-      @include qg-link-hover-decoration;
+      @include qg-underline-on-highlight-decoration;
       left: 50%;
       transform: translateX(-50%);
       position: absolute;
@@ -192,10 +192,8 @@
       top: 7px;
     }
 
-    &:hover,&:focus{
-      .qg-feedback-toggle__text {
-        text-decoration-line: underline;
-      }
+    .qg-feedback-toggle__text {
+      @include qg-underline-on-highlight-decoration;
     }
 
     &[aria-expanded=true] {

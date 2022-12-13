@@ -1,4 +1,4 @@
-#qg-banner-blurb{
+#qg-content #qg-banner-blurb{
   @include make-col-ready();
   @include make-col(12);
   background: #f5f5f5;
@@ -40,14 +40,7 @@
     bottom: 0;
   }
   a {
-    color: #fff;
-    text-underline-offset: $text-underline-offset;
-    text-decoration-line: underline;
-    &:hover, &:active, &:focus, &:visited{
-      color: #000;
-      text-decoration-thickness: 2px;
-      text-decoration-style: solid;
-    }
+    @include qg-link-styles__theme-white;
   }
   img {
     max-width: 1312px;
