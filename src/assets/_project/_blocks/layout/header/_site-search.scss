@@ -3,6 +3,10 @@
   padding-top: 20px;
   z-index: 2;
 
+  #qg-search-query {
+    color: $qg-global-primary-darker;
+  }
+
   .qg-search-concierge {
     border-top: solid 1px $qg-pagination-border;
     position: absolute;
@@ -56,7 +60,7 @@
       }
 
       &.highlight {
-        background-color: $qg-global-primary-dark-grey;
+        background-color: $qg-global-primary-dark;
         color: #fff;
 
         .qg-search-concierge-content {

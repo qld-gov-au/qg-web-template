@@ -4,19 +4,21 @@
 
 .btn-global-primary{
   color: #fff;
-  background-color: $qg-global-primary-dark-grey;
+  background-color: $qg-global-primary-dark;
   font-weight: bold;
   border-radius: 4px;
   padding: 9px 24px;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
 
   @include media-breakpoint-down(sm) {
     padding: 9px 11px;
   }
 
-  &:hover, &:focus, &.hover, &.focus {
+  &:hover, &:focus, &.hover, &.focus, &:active {
     text-decoration-line: underline;
     color: #fff;
-    background-color: $qg-global-primary-dark-grey;
+    background-color: $qg-global-primary-dark;
   }
 
   &:focus, &.focus {
@@ -33,6 +35,8 @@
   overflow: hidden;
   padding: 9px 24px;
   display: table;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
 
   @include media-breakpoint-down(sm) {
     padding: 9px 11px;
@@ -58,8 +62,9 @@
   border-radius: 4px;
   padding: 7px 24px;
   text-decoration-line: none;
+  text-decoration-thickness: 2px;
 
-  &:hover, &:focus, &.hover, &.focus {
+  &:hover, &:focus, &.hover, &.focus, &:active {
     color: #fff;
     text-decoration-line: underline;
   }
@@ -126,4 +131,9 @@
   &.btn-link.light{
     color:#ffffff;
   }
+}
+
+#body .qg-btn, #body .btn, {
+  // override default .btn styling
+  @include qg-link-hover-decoration;
 }

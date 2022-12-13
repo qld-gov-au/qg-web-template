@@ -25,6 +25,9 @@
         background-color: transparent;
         outline: 3px solid #0096d6;
         outline-offset: 2px;
+        // workaround for Firefox border issue on multiline links,
+        // https://www.drupal.org/project/drupal/issues/3016658
+        display: inline-block;
       }
     }
     @content;
@@ -40,10 +43,7 @@
     color: $qg-blue-dark;
     @include qg-link-decoration;
     text-decoration-color: #457aa3;
-    &:hover,
-    &.hover {
-      @include qg-link-hover-decoration;
-    }
+    @include qg-link-hover-decoration;
   }
 }
 
@@ -54,10 +54,7 @@
     &:link {
       @include qg-link-none-decoration;
     }
-    &:hover,
-    &.hover {
-      @include qg-link-hover-decoration;
-    }
+    @include qg-link-hover-decoration;
   }
 }
 
@@ -73,10 +70,7 @@
     &:link {
       @include qg-link-none-decoration;
     }
-    &:hover,
-    &.hover {
-      @include qg-link-hover-decoration;
-    }
+    @include qg-link-hover-decoration;
   }
 }
 
@@ -86,10 +80,7 @@
     color: $qg-global-primary-darker-grey;
     @include qg-link-decoration;
     text-decoration-color: #737678;
-    &:hover,
-    &.hover {
-      @include qg-link-hover-decoration;
-    }
+    @include qg-link-hover-decoration;
   }
 }
 
@@ -104,9 +95,7 @@
     color: #fff;
     @include qg-link-decoration;
     text-decoration-color: rgba(255, 255, 255, 0.73);
-    &:hover,
-    &.hover {
-      @include qg-link-hover-decoration;
+    @include qg-link-hover-decoration {
       text-decoration-color: #fff;
     }
   }
@@ -119,9 +108,7 @@
     &:link {
       @include qg-link-none-decoration;
     }
-    &:hover,
-    &.hover {
-      @include qg-link-hover-decoration;
+    @include qg-link-hover-decoration {
       text-decoration-color: #fff;
     }
   }
@@ -135,12 +122,10 @@
 .qg-link-styles__visited-change {
   &:visited {
     color: #80b;
-  }
-
-  &:visited:hover {
-    color: #80b;
-    @include qg-link-hover-decoration;
-    text-decoration-color: #80b;
+    @include qg-link-hover-decoration {
+      color: #80b;
+      text-decoration-color: #80b;
+    }
   }
 }
 
@@ -151,4 +136,9 @@
   a:not(.qg-btn):not(.btn):not(.button){
     @include qg-link-styles__default
   }
+}
+
+// Don't apply a text-decoration if underline is hardcoded
+u a {
+  text-decoration-line: none !important;
 }
