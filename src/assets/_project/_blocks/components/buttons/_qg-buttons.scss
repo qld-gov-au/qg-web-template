@@ -1,29 +1,13 @@
-@mixin hover() {
-  &:hover:not(:disabled, .disabled), &.hover:not(:disabled, .disabled) { @content; }
-}
-
 .btn-global-primary{
   color: #fff;
   background-color: $qg-global-primary-dark;
   font-weight: bold;
   padding: 9px 24px;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 5px;
 
   @include media-breakpoint-down(sm) {
     padding: 9px 11px;
   }
-
-  &:hover, &:focus, &.hover, &.focus, &:active {
-    text-decoration-line: underline;
-    color: #fff;
-    background-color: $qg-global-primary-dark;
-  }
-
-  &:focus, &.focus {
-    outline: 1px dotted #000;
-    outline: 5px auto -webkit-focus-ring-color;
-  }
+  @include qg-underline-on-highlight-decoration;
 }
 
 .btn-global-primary-white{
@@ -33,22 +17,12 @@
   overflow: hidden;
   padding: 9px 24px;
   display: table;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 5px;
 
   @include media-breakpoint-down(sm) {
     padding: 9px 11px;
   }
 
-  &:hover, &:focus, &.hover, &.focus {
-    color: $qg-global-primary-dark-grey;
-    text-decoration-line: underline;
-  }
-
-  &:focus, &.focus {
-    outline: 1px dotted #000;
-    outline: 5px auto -webkit-focus-ring-color;
-  }
+  @include qg-underline-on-highlight-decoration;
 }
 
 .btn-global-secondary{
@@ -58,18 +32,8 @@
   display: table;
   font-weight: bold;
   padding: 7px 24px;
-  text-decoration-line: none;
-  text-decoration-thickness: 2px;
 
-  &:hover, &:focus, &.hover, &.focus, &:active {
-    color: #fff;
-    text-decoration-line: underline;
-  }
-
-  &:focus, &.focus {
-    outline: 1px dotted #000;
-    outline: 5px auto -webkit-focus-ring-color;
-  }
+  @include qg-underline-on-highlight-decoration;
 }
 
 .btn-primary{
@@ -97,7 +61,7 @@
 }
 
 .btn-link {
-  @include hover() {
+  @include on-hover() {
     @include link-hover;
   }
 }
@@ -132,5 +96,5 @@
 
 #body .qg-btn, #body .btn, body .qg-btn, body .btn, {
   // override default .btn styling
-  @include qg-link-hover-decoration;
+  @include qg-underline-on-highlight-decoration;
 }

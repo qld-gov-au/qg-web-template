@@ -25,6 +25,28 @@
   }
 }
 
+@mixin qg-link-white {
+  // style rules for links with white text (intended for dark backgrounds)
+  color: #fff;
+  text-decoration-color: rgba(255, 255, 255, 0.73);
+}
+
+@mixin _qg-link-visited-decoration {
+  &:visited {
+    text-decoration-color: currentColor;
+  }
+}
+@mixin qg-link-decoration {
+  @include qg-link-underline;
+  text-decoration-thickness: 0.5px;
+  @include _qg-link-visited-decoration;
+  @include qg-underline-on-highlight-decoration;
+}
+@mixin _qg-link-none-decoration {
+  text-decoration-line: none;
+  @include _qg-link-visited-decoration;
+}
+
 //-------------------------------------------------
 
 //START theme BLUE
@@ -34,7 +56,6 @@
     color: $qg-blue-dark;
     @include qg-link-decoration;
     text-decoration-color: #457aa3;
-    @include qg-link-hover-decoration;
   }
 }
 
@@ -43,9 +64,9 @@
   @include qg-global-link-styles {
     color: $qg-blue-dark;
     &:link {
-      @include qg-link-none-decoration;
+      @include _qg-link-none-decoration;
     }
-    @include qg-link-hover-decoration;
+    @include qg-underline-on-highlight-decoration;
   }
 }
 
@@ -59,9 +80,9 @@
   @include qg-global-link-styles {
     color: $qg-global-primary-darker-grey;
     &:link {
-      @include qg-link-none-decoration;
+      @include _qg-link-none-decoration;
     }
-    @include qg-link-hover-decoration;
+    @include qg-underline-on-highlight-decoration;
   }
 }
 
@@ -71,7 +92,6 @@
     color: $qg-global-primary-darker-grey;
     @include qg-link-decoration;
     text-decoration-color: #737678;
-    @include qg-link-hover-decoration;
   }
 }
 
@@ -83,25 +103,19 @@
 // 2. With underline
 @mixin qg-link-styles__theme-white {
   @include qg-global-link-styles {
-    color: #fff;
+    @include qg-link-white;
     @include qg-link-decoration;
-    text-decoration-color: rgba(255, 255, 255, 0.73);
-    @include qg-link-hover-decoration {
-      text-decoration-color: #fff;
-    }
   }
 }
 
 // 2. without underline
 @mixin qg-link-styles__no-underline-white {
   @include qg-global-link-styles {
-    color: #fff;
+    @include qg-link-white;
     &:link {
-      @include qg-link-none-decoration;
+      @include _qg-link-none-decoration;
     }
-    @include qg-link-hover-decoration {
-      text-decoration-color: #fff;
-    }
+    @include qg-underline-on-highlight-decoration;
   }
 }
 
@@ -113,10 +127,7 @@
 .qg-link-styles__visited-change {
   &:visited {
     color: #80b;
-    @include qg-link-hover-decoration {
-      color: #80b;
-      text-decoration-color: #80b;
-    }
+    text-decoration-color: currentColor;
   }
 }
 
