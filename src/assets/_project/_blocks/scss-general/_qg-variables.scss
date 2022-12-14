@@ -298,6 +298,9 @@ $text-underline-offset: 5px;
     outline-style: solid;
     outline-color: $qg-active-outline;
     outline-offset: 2px;
+    // workaround for Firefox border issue on multiline links,
+    // https://www.drupal.org/project/drupal/issues/3016658
+    display: inline-block;
     @content;
   }
 }
