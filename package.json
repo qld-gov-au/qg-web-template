@@ -51,7 +51,7 @@
     "@storybook/manager-webpack5": "^6.5.14",
     "@storybook/testing-library": "^0.0.13",
     "babel-loader": "^9.1.0",
-    "chromatic": "^6.12.0",
+    "chromatic": "^6.13.1",
     "concurrently": "^7.6.0",
     "copy-webpack-plugin": "^11.0.0",
     "cssnano": "^4.1.11",
@@ -113,7 +113,7 @@
     "@babel/runtime": "^7.20.6",
     "bootstrap": "^4.6.2",
     "chromium": "^3.0.3",
-    "jquery": "^3.6.0",
+    "jquery": "^3.6.2",
     "jquery-ui-bundle": "^1.12.1",
     "nodep-date-input-polyfill": "^5.2.0",
     "stickyfill": "^1.1.1"
