@@ -82,7 +82,7 @@
   }
   &.btn-outline-light{
     color: #ffffff !important;
-    background-color: transparent;
+    background-color: transparent !important;
     border:3px solid #ffffff;
     @include qg-underline-on-highlight-decoration;
   }
