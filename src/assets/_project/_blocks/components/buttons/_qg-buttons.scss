@@ -75,19 +75,16 @@
     color: $qg-outline-dark;
     background-color: transparent !important;
     border:3px solid $qg-outline-dark;
-    &:hover:not(:disabled), &:active:not(:disabled), &:focus:not(:disabled), &.hover:not(:disabled), &.active:not(:disabled), &.focus:not(:disabled) {
+    @include qg-underline-on-highlight-decoration {
       border:3px solid $qg-outline-dark-hover;
       color: $qg-outline-dark-hover;
-      text-decoration-line: underline;
     }
   }
   &.btn-outline-light{
     color: #ffffff !important;
     background-color: transparent;
     border:3px solid #ffffff;
-    &:hover, &:active, &:focus, &.hover, &.active, &.focus {
-      text-decoration-line: underline;
-    }
+    @include qg-underline-on-highlight-decoration;
   }
   &.btn-link.light{
     color:#ffffff;
