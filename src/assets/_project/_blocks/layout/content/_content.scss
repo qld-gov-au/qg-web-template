@@ -25,8 +25,11 @@
     margin-left: 1em;
     font-size: 1rem;
   }
-  ul li {
-    margin-bottom: 0.5em;
+  ul {
+    margin-bottom: 0.75rem;
+    li {
+      margin-bottom: 0.5em;
+    }
   }
 }
 
