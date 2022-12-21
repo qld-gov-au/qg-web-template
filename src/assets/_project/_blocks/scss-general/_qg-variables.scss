@@ -303,6 +303,20 @@ $qg-linkedin: #0077b5;
     @content;
   }
 }
+@mixin all-states {
+  // Apply styling to all element states, without using !important.
+  // This is primarily to help override Bootstrap defaults,
+  // since specific states take priority over rules without states.
+  &:hover, &.hover, &:not(:hover), &:not(.hover) {
+    &:focus, &.focus, &:not(:focus), &:not(.focus) {
+      &:active, &.active, &:not(:active), &:not(.active) {
+        &:disabled, &.disabled, &:not(:disabled), &:not(.disabled) {
+          @content;
+        }
+      }
+    }
+  }
+}
 
 $text-underline-offset: 5px;
 

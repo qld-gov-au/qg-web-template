@@ -1,5 +1,7 @@
 .btn-global-primary{
-  color: #fff;
+  @include all-states {
+    color: white;
+  }
   background-color: $qg-global-primary-dark;
   font-weight: bold;
   padding: 9px 24px;
@@ -26,7 +28,9 @@
 }
 
 .btn-global-secondary{
-  color: #fff;
+  @include all-states {
+    color: white;
+  }
   background-color: transparent;
   border: solid 3px #fff;
   display: table;
@@ -45,10 +49,11 @@
 }
 
 .btn-secondary {
-  @include button-variant($qg-blue, $qg-blue);
-  color: #fff;
-  a, &:focus, &:hover, &:link, &:visited, &:active, &.focus, &.hover, &.link, &.visited, &.active {
-    color: #fff !important;
+  @include all-states {
+    color: $qg-blue-dark;
+    border-color: $qg-blue-dark;
+    background-color: $buttonSecondaryBackground;
+    border: $buttonSecondaryBorder;
   }
 }
 
