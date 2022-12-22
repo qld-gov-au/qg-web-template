@@ -41,7 +41,7 @@
 }
 
 .btn-primary{
-  @include button-variant($qg-light-green, $qg-light-green, lighten($qg-light-green, 7.5%), $hover-border: $qg-light-green, $active-background:$qg-light-green, $active-border: $qg-light-green);
+  @include button-variant($qg-light-green, transparent, lighten($qg-light-green, 7.5%), $hover-border: transparent, $active-background:$qg-light-green, $active-border: transparent);
   color: #000;
   a, &:focus:not(:disabled), &:hover:not(:disabled), &:link:not(:disabled), &:visited:not(:disabled), &:active:not(:disabled), &.focus:not(:disabled), &.hover:not(:disabled), &.link:not(:disabled), &.visited:not(:disabled), &.active:not(:disabled) {
     color: #000 !important;
