@@ -30,7 +30,7 @@
     @include qg-link-styles__no-underline-white;
     background-color: $qg-dark-grey-dark;
     border: none;
-    color: #fff;
+    color: white;
     padding: 10px 20px 10px 15px;
     &:active, &:focus{
       position: relative;
@@ -66,10 +66,10 @@
   }
 
   .dropdown-item {
-    color: #fff;
+    color: white;
     padding: 13px 0;
     white-space: normal;
-    @include css-chevron-inline-right(6px, #fff, 21px, before, 26px);
+    @include css-chevron-inline-right(6px, white, 21px, before, 26px);
     @include qg-link-styles__no-underline-white;
 
     &.qg-dropdown-all {
@@ -79,7 +79,7 @@
 
       &:hover {
         text-decoration-thickness: 2px;
-        text-decoration-color: #fff;
+        text-decoration-color: white;
       }
 
       padding-left: 0;
@@ -154,7 +154,7 @@
       &:after {
         border: none;
       }
-      @include css-chevron-inline-down(6px, #fff, 20px);
+      @include css-chevron-inline-down(6px, white, 20px);
       &:hover, &:focus,
       &[aria-expanded="true"] {
         text-decoration-line: underline;

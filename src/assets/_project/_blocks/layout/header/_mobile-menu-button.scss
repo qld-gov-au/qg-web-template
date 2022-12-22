@@ -4,12 +4,12 @@
 
     span {
         display: table;
-        color: #fff;
+        color: white;
         margin: auto;
     }
 
     .qg-global-icons {
-        border: 2px solid #fff;
+        border: 2px solid white;
         border-radius: 4px;
         margin: 0 auto 1px;
         padding: 8px 10px;
@@ -28,7 +28,7 @@
 
     &[aria-expanded="true"] {
         .qg-global-icons {
-            background-color: #fff;
+            background-color: white;
 
             .qg-icon--menu-close {
                 display: block;
@@ -42,7 +42,7 @@
 
     .qg-global-icons {
         svg rect {
-            fill: #fff;
+            fill: white;
         }
     }
 
@@ -62,7 +62,7 @@
 
     .qg-global-icons {
         svg g g, svg g rect {
-            fill: #fff;
+            fill: white;
         }
     }
 

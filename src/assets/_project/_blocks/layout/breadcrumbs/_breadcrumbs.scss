@@ -1,54 +1,54 @@
 .qg-breadcrumb {
-	background-color: #fff;
+    background-color: white;
 
-	&-list {
-		list-style: none;
-		margin: 0 15px;
-		padding: 10px 0;
+    &-list {
+        list-style: none;
+        margin: 0 15px;
+        padding: 10px 0;
 
-		&.expanded {
-			.shorten {
-				display: none;
-			}
-		}
+        &.expanded {
+            .shorten {
+                display: none;
+            }
+        }
 
-		&-item {
-			display: block;
-      		float: left;
+        &-item {
+            display: block;
+            float: left;
 
-			&:first-child:before {
-				display: none;
-			}
+            &:first-child:before {
+                display: none;
+            }
 
-			&:before {
-				color: $qg-pagination-border;
-				font-family: 'FontAwesome';
-				font-size: 9px;
-				text-rendering: auto;
-				-webkit-font-smoothing: antialiased;
-				content: "\f054";
-				margin: 0 7px;
-			}
+            &:before {
+                color: $qg-pagination-border;
+                font-family: 'FontAwesome';
+                font-size: 9px;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+                content: "\f054";
+                margin: 0 7px;
+            }
 
-			&.shortened {
+            &.shortened {
         height: 0;
-				overflow: hidden;
-				max-width: 0;
-				transition: max-width 0s;
-			}
+                overflow: hidden;
+                max-width: 0;
+                transition: max-width 0s;
+            }
 
-			.qg-breadcrumb-list-item__link {
+            .qg-breadcrumb-list-item__link {
         color: #292929;
         @include qg-link-styles__theme-black;
-			}
+            }
 
-			&:last-child {
-				&:after {
-					display: none;
-				}
-			}
-		}
-	}
+            &:last-child {
+                &:after {
+                    display: none;
+                }
+            }
+        }
+    }
 
   .qg-breadcrumb-toggle {
     border: 0;
@@ -59,15 +59,15 @@
 }
 
 @include media-breakpoint-down(sm) {
-	.qg-breadcrumb-list-item {
-		display: none;
+    .qg-breadcrumb-list-item {
+        display: none;
 
-		&:nth-last-child(2) {
-			display: block;
+        &:nth-last-child(2) {
+            display: block;
 
-			&:before {
-				content: "\f053";
-			}
-		}
-	}
+            &:before {
+                content: "\f053";
+            }
+        }
+    }
 }

@@ -14,7 +14,7 @@
 
 .btn-global-primary-white{
   color: $qg-global-primary-dark-grey;
-  background-color: #fff;
+  background-color: white;
   font-weight: bold;
   overflow: hidden;
   padding: 9px 24px;
@@ -32,7 +32,7 @@
     color: white;
   }
   background-color: transparent;
-  border: solid 3px #fff;
+  border: solid 3px white;
   display: table;
   font-weight: bold;
   padding: 7px 24px;
@@ -50,18 +50,15 @@
 
 .btn-secondary {
   @include all-states {
-    color: $qg-blue-dark;
-    border-color: $qg-blue-dark;
-    background-color: $buttonSecondaryBackground;
-    border: $buttonSecondaryBorder;
+    @include button-variant($qg-blue, transparent);
   }
 }
 
 .btn-default {
   @include button-variant($qg-dark-grey, $qg-dark-grey);
-  color: #fff;
+  color: white;
   a, &:focus, &:hover, &:link, &:visited, &:active, &.focus, &.hover, &.link, &.visited, &.active {
-    color: #fff !important;
+    color: white !important;
   }
 }
 
@@ -86,13 +83,13 @@
     }
   }
   &.btn-outline-light{
-    color: #ffffff !important;
+    color: white !important;
     background-color: transparent !important;
-    border:3px solid #ffffff;
+    border:3px solid white;
     @include qg-underline-on-highlight-decoration;
   }
   &.btn-link.light{
-    color:#ffffff;
+    color: white;
   }
 }
 

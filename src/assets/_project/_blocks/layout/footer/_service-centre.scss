@@ -34,13 +34,13 @@
     &__link{
         @include rem(font-size, 18px);
         display: block;
-        color: #fff;
+        color: white;
         margin: 20px 0;
         text-decoration-line: underline;
         transition: opacity .1s linear;
 
         @include on-hover-or-active {
-            color: #fff;
+            color: white;
             opacity: 0.7;
         }
     }
