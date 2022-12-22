@@ -76,9 +76,10 @@
   &.btn-outline-dark{
     color: $qg-outline-dark;
     background-color: transparent !important;
-    border:3px solid $qg-outline-dark;
+    @include all-states {
+      border: 3px solid $qg-outline-dark;
+    }
     @include qg-underline-on-highlight-decoration {
-      border:3px solid $qg-outline-dark-hover;
       color: $qg-outline-dark-hover;
     }
   }
