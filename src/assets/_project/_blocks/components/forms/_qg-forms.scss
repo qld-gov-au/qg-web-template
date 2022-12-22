@@ -341,17 +341,6 @@
     cursor: pointer;
   }
 
-  //Action buttons ------------------------------------------------------
-  button.btn-secondary {
-    color: $SecondaryColor;
-    background-color: white;
-    border: $buttonSecondaryBorder;
-  }
-
-  button.btn-secondary:hover {
-    color: $SecondaryColor;
-  }
-
   //Errors  -------------------------------------------------------------
 
   //error alert
