@@ -22,11 +22,13 @@
 
     .nav-link {
       padding: 10px 20px 10px 15px;
+      margin: 5px;
       @include qg-link-styles__no-underline-white;
     }
   }
 
   .qg-portal-links__btn {
+    margin: 5px;
     @include qg-link-styles__no-underline-white;
     background-color: $qg-dark-grey-dark;
     border: none;
