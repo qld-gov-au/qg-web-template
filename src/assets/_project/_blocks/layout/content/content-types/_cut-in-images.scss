@@ -90,7 +90,7 @@
 #qg-primary-content {
   .cut-in, .qg-cut-in, .qg-cut-in-alt {
     a:not(.print-content-link):active, a:not(.print-content-link):focus, a:not(.print-content-link):visited{
-      color: #13578b;
+      @include qg-link-unvisited-color;
     }
     a:not(.print-content-link):link {
       text-decoration-line: none;

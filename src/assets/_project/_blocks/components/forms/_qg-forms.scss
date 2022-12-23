@@ -544,7 +544,7 @@
     &>ul.pagination {
       .page-item .page-link {
           background: none !important;
-          color: #13578b !important;
+          @include qg-link-unvisited-color($qg-blue-dark !important);
           font-weight: 700;
           display: inline-block;
           padding: 16px;
