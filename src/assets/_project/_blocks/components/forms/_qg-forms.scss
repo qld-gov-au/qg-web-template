@@ -503,11 +503,11 @@
       background-color: transparent !important;
       padding: 16px;
       margin-top: -1px;
-      color: #13578b;
+      color: $qg-blue-dark;
       font-weight: 700;
       text-decoration-line: underline;
       .card-title {
-        color: #13578b !important;
+        color: $qg-blue-dark !important;
         padding-right: 28px;
       }
       &:hover {
