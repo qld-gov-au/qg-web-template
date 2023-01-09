@@ -37,7 +37,10 @@
   font-weight: bold;
   padding: 7px 24px;
 
-  @include qg-underline-on-highlight-decoration;
+  @include qg-underline-on-highlight-decoration {
+    // repeat colour rule with greater priority
+    color: #fff;
+  }
 }
 
 .btn-primary{
