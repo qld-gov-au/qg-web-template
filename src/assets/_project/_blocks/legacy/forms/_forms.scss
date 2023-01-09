@@ -629,9 +629,8 @@ form li.footer {
 }
 
 /* link actions */
-.actions :link,
-.actions :visited {
-  color: $qg-blue-dark;
+.actions :link {
+  @include qg-link-unvisited-color;
 }
 
 /* question states */

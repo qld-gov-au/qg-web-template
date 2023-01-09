@@ -89,7 +89,7 @@
     a{
       text-decoration-line: none !important;
       padding: 0.4rem 0.7rem;
-      color: $qg-blue-dark !important;
+      @include qg-link-unvisited-color($qg-blue-dark !important);
       font-weight: bold;
       display: inline-block;
     }

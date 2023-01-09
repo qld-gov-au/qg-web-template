@@ -121,7 +121,7 @@
       display: block;
       margin: 0;
       padding: .7em 0 0.9em 10 + 15px;
-      color: $qg-blue-darker;
+      @include qg-link-unvisited-color($qg-blue-darker);
       text-decoration-line: none;
     }
 

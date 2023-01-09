@@ -32,7 +32,7 @@
       .page-number {
         speak: none;
         float: left;
-        color: $qg-blue-dark;
+        @include qg-link-unvisited-color;
         @include rem(min-width, 20px);
         text-align: center;
         @include rem(margin-left, -30px);

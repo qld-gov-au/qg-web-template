@@ -187,6 +187,11 @@
     color: $hintColour;
     font-weight: $hintWeight;
   }
+  legend {
+    font-size: $labelHeadingSize;
+    color: $labelHeadingColour;
+    font-weight: $labelHeadingWeight;
+  }
 
   // choices list styles (forms.io styles overrides)
   .is-flipped .choices__list--dropdown {
@@ -545,7 +550,7 @@
     &>ul.pagination {
       .page-item .page-link {
           background: none !important;
-          color: $qg-blue-dark !important;
+          @include qg-link-unvisited-color($qg-blue-dark !important);
           font-weight: 700;
           display: inline-block;
           padding: 16px;

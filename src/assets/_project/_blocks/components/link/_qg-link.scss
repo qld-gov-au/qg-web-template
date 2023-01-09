@@ -25,6 +25,12 @@
   }
 }
 
+@mixin qg-link-unvisited-color($color: $link-color) {
+  &:not(:visited) {
+    color: $color;
+  }
+}
+
 @mixin qg-link-white {
   // style rules for links with white text (intended for dark backgrounds)
   color: #fff;
@@ -53,7 +59,7 @@
 // 1. color theme blue with underline
 @mixin qg-link-styles__default {
   @include qg-global-link-styles {
-    color: $qg-blue-dark;
+    @include qg-link-unvisited-color;
     @include qg-link-decoration;
     text-decoration-color: #457aa3;
   }
@@ -62,7 +68,7 @@
 // 2. color theme blue no underline
 @mixin qg-link-styles__no-underline-default {
   @include qg-global-link-styles {
-    color: $qg-blue-dark;
+    @include qg-link-unvisited-color;
     &:link {
       @include _qg-link-none-decoration;
     }
@@ -78,7 +84,7 @@
 // 1. color theme black no underline
 @mixin qg-link-styles__no-underline-black {
   @include qg-global-link-styles {
-    color: $qg-global-primary-darker-grey;
+    @include qg-link-unvisited-color($qg-global-primary-darker-grey);
     &:link {
       @include _qg-link-none-decoration;
     }
@@ -89,7 +95,7 @@
 // 2. color theme black with underline
 @mixin qg-link-styles__theme-black {
   @include qg-global-link-styles {
-    color: $qg-global-primary-darker-grey;
+    @include qg-link-unvisited-color($qg-global-primary-darker-grey);
     @include qg-link-decoration;
     text-decoration-color: #737678;
   }
