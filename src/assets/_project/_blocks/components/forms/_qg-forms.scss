@@ -290,6 +290,7 @@
       margin-right: 0;
     }
     input[type=radio], input[type=checkbox] {
+      accent-color: $qg-global-primary-darker-grey;
       width: 25px;
       height: 25px;
       padding-right: 16px;
