@@ -1,5 +1,5 @@
 @mixin qg-card {
-  color: #ffffff;
+  color: white;
   display: flex;
 
   &.qg-card__clickable {
@@ -63,7 +63,7 @@
 
   &:not(.qg-card__light-theme) {
     h2 {
-      color: #fff;
+      color: white;
     }
     .content {
       .details {

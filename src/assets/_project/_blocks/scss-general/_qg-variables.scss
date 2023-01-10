@@ -215,7 +215,7 @@ $inputWidth: 100%;
 $inputBackground: #fff;
 
 $SecondaryColor: #005e85 !important;
-$buttonSecondaryBackground: transparent !important;
+$buttonSecondaryBackground: transparent;
 $buttonSecondaryBorder: 3px solid $SecondaryColor;
 
 $defaultBorder: #ebebeb;
@@ -301,6 +301,20 @@ $qg-linkedin: #0077b5;
   @include on-hover-or-active {
     @include _qg-link-underline-thicker;
     @content;
+  }
+}
+@mixin all-states {
+  // Apply styling to all element states, without using !important.
+  // This is primarily to help override Bootstrap defaults,
+  // since specific states take priority over rules without states.
+  &:hover, &.hover, &:not(:hover), &:not(.hover) {
+    &:focus, &.focus, &:not(:focus), &:not(.focus) {
+      &:active, &.active, &:not(:active), &:not(.active) {
+        &:disabled, &.disabled, &:not(:disabled), &:not(.disabled) {
+          @content;
+        }
+      }
+    }
   }
 }
 
