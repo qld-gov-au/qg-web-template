@@ -1,4 +1,4 @@
-#qg-primary-content .qg-index-links {
+#qg-content #qg-primary-content .qg-index-links {
   @extend .d-flex;
   @extend .flex-wrap;
   .qg-index-item.content-only{
@@ -86,6 +86,7 @@
       padding: 0 !important;
       margin-bottom: 0;
       a {
+        @include qg-link-styles__theme-white;
         padding: 1em 1.5em 1em 1.5em !important;
         display: block;
         color: white !important;
