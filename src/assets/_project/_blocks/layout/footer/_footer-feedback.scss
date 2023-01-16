@@ -17,7 +17,7 @@
     }
   }
   &-content {
-    background-color: #fff;
+    background-color: white;
     border-radius: 4px;
     color: $qg-global-primary-darker-grey;
     padding: 0 15px 0 15px;
@@ -89,7 +89,7 @@
 
       a {
         text-decoration-line: underline;
-        color: #13578b;
+        @include qg-link-unvisited-color;
         &:hover, &:focus {
           opacity: 0.7;
         }
@@ -158,7 +158,7 @@
   }
 
   .qg-feedback-toggle {
-    background-color: #fff;
+    background-color: white;
     border-radius: 4px 4px 0 0;
     padding: 8px 12px 0 12px;
 
@@ -197,7 +197,7 @@
     }
 
     &[aria-expanded=true] {
-      background-color: #fff;
+      background-color: white;
       border-radius: 4px 4px 0 0;
       padding: 8px 12px 0 12px;
 
@@ -221,7 +221,7 @@
 
   .qg-footer-feedback__v2 {
     transform: translateY(-6px);
-    background: #fff;
+    background: white;
     border-radius: 4px;
     .qg-footer-feedback__close{
       padding: 0 0 15px 0;
@@ -237,7 +237,7 @@
 
 .qg-footer-feedback {
   &-content {
-    background-color: #fff;
+    background-color: white;
     border-radius: 4px;
     color: $qg-global-primary-darker-grey;
     padding: 0 15px 25px 15px;

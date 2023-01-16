@@ -19,10 +19,10 @@
   .rc-theme__active{
     background-color: $qg-blue !important;
     [type="checkbox"]:checked + label .rc-theme__icon, [type="radio"]:checked + label .rc-theme__icon {
-      fill: #fff;
+      fill: white;
     }
     .rc-theme__label-desc{
-      color: #fff;
+      color: white;
     }
   }
   .rc-theme__label{
@@ -49,7 +49,7 @@
       margin-bottom: 16px;
       margin-right: 32px !important;
       color: #000;
-      background-color: #fff;
+      background-color: white;
       border-radius: 3px;
       border: 1px solid $qg-pagination-border !important;
     }
@@ -82,7 +82,7 @@
     height: 22px;
     border: 1px solid #000;
     border-radius: 100%;
-    background: #fff;
+    background: white;
   }
 
   [type="checkbox"]:checked + label:before,
@@ -94,7 +94,7 @@
     width: 22px;
     height: 22px;
     border: 1px solid #000;
-    background: #fff;
+    background: white;
   }
   [type="radio"]:checked + label:after,
   [type="radio"]:not(:checked) + label:after {
@@ -168,7 +168,7 @@
     border-radius: $borderRadius;
     &:focus-within {
       color: #495057;
-      background-color: #fff;
+      background-color: white;
       border-color: $focusBorderColor;
       outline: 0;
       box-shadow: 0 0 0 $borderWidth $focusBoxShadow;
@@ -290,6 +290,7 @@
       margin-right: 0;
     }
     input[type=radio], input[type=checkbox] {
+      accent-color: $qg-global-primary-darker-grey;
       width: 25px;
       height: 25px;
       padding-right: 16px;
@@ -344,17 +345,6 @@
   }
   .qg-link {
     cursor: pointer;
-  }
-
-  //Action buttons ------------------------------------------------------
-  button.btn-secondary {
-    color: $SecondaryColor;
-    background-color: white;
-    border: $buttonSecondaryBorder;
-  }
-
-  button.btn-secondary:hover {
-    color: $SecondaryColor;
   }
 
   //Errors  -------------------------------------------------------------
@@ -508,11 +498,11 @@
       background-color: transparent !important;
       padding: 16px;
       margin-top: -1px;
-      color: #13578b;
+      color: $qg-blue-dark;
       font-weight: 700;
       text-decoration-line: underline;
       .card-title {
-        color: #13578b !important;
+        color: $qg-blue-dark !important;
         padding-right: 28px;
       }
       &:hover {
@@ -549,7 +539,7 @@
     &>ul.pagination {
       .page-item .page-link {
           background: none !important;
-          color: #13578b !important;
+          @include qg-link-unvisited-color($qg-blue-dark !important);
           font-weight: 700;
           display: inline-block;
           padding: 16px;

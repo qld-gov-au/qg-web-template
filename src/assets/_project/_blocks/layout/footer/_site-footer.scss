@@ -1,6 +1,6 @@
 .qg-site-footer {
     background-color: $qg-global-primary;
-    color: #fff;
+    color: white;
     padding-top: 8px;
 
     .container-fluid {
@@ -29,7 +29,7 @@
         margin-bottom: 30px;
 
         a {
-            color: #fff;
+            color: white;
             text-decoration-line: none;
             transition: opacity .1s linear;
 
@@ -67,7 +67,7 @@
           }
           &:before{
             @include rem(font-size, 20px);
-            color: #FFF;
+            color: white;
             font-family: FontAwesome;
             margin-right: 10px;
           }

@@ -6,7 +6,7 @@
   background: -webkit-gradient(left top, right top, color-stop(0, #7954a3), color-stop(100%, #0b2e4c));
   background: linear-gradient(90deg, #7954a3 0, #0b2e4c);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="$qg-purple", endColorstr="$qg-dark-blue", GradientType=1);
-  color: #fff;
+  color: white;
   height: 72px;
   left: 0;
   bottom: 0;
@@ -29,7 +29,7 @@
       display: block
     }
     .qg-quick-exit__input:checked + .qg-quick-exit__label {
-      color: #fff;
+      color: white;
       font-weight: 500
     }
     .qg-tooltip__parent {
@@ -113,11 +113,11 @@
           .qg-quick-exit__tip-link {
             -ms-flex-align: center;
             align-items: center;
-            color: #fff;
+            color: white;
             display: -ms-flexbox;
             display: flex;
             &:active, &:focus, &:hover {
-              color: #fff;
+              color: white;
               text-decoration-line: none
             }
             .fa {
