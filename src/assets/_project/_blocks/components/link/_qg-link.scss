@@ -93,7 +93,8 @@
 @mixin qg-link-styles__theme-white {
   @include qg-global-link-styles {
     color: #fff;
-    @include qg-link-decoration;
+    @include qg-link-underline;
+    text-decoration-thickness: 0.5px;
     text-decoration-color: rgba(255, 255, 255, 0.73);
     @include qg-link-hover-decoration {
       text-decoration-color: #fff;
