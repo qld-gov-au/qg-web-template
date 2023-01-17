@@ -18,9 +18,7 @@
       float: left;
     }
     a {
-      &:not(:hover):not(:active):not(:focus) {
-        text-decoration-line: none !important;
-      }
+      text-decoration-line: none !important;
       &:hover {
         img {
           border: 1px solid #06c;
@@ -104,16 +102,6 @@
     }
     p,ul{
       display: none;
-    }
-  }
-}
-
-// Override default link styling, but don't increase priority
-// of other index-links rules
-#qg-content #qg-primary-content .qg-index-links {
-  @include breakpoint(xs) {
-    h2 a {
-      @include qg-link-styles__theme-white;
     }
   }
 }
