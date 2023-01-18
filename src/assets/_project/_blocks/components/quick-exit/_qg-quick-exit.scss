@@ -58,7 +58,7 @@
         }
         .qg-quick-exit__label {
           font-weight: 500;
-          text-decoration: underline
+          text-decoration-line: underline
         }
         .qg-quick-exit__list {
           margin: 0;
@@ -79,7 +79,7 @@
         .qg-quick-exit__button {
           border-radius: 4px;
           display: inline-block;
-          text-decoration: none;
+          text-decoration-line: none;
           border-color: #ffd200;
           background-color: #ffd200;
           color: #0c2e4c;
@@ -118,14 +118,14 @@
             display: flex;
             &:active, &:focus, &:hover {
               color: #fff;
-              text-decoration: none
+              text-decoration-line: none
             }
             .fa {
               font-size: 22px;
               margin-right: 8px
             }
             .qg-quick-exit__tip-title {
-              text-decoration: underline
+              text-decoration-line: underline
             }
           }
           .qg-quick-exit__actions {

@@ -85,7 +85,7 @@ thead > tr > td > a:link,
 thead > tr > th > a:visited,
 thead > tr > td > a:visited {
   color: #FFFFFF;
-  text-decoration: none;
+  text-decoration-line: none;
 }
 
 
@@ -252,13 +252,13 @@ table.dataTable {
   cursor: pointer;
   *cursor: hand;
   color: $tables-paginate-enabled-previous-next-color !important;
-  text-decoration: none;
+  text-decoration-line: none;
 }
 .paginate_disabled_previous:hover,
 .paginate_enabled_previous:hover,
 .paginate_disabled_next:hover,
 .paginate_enabled_next:hover {
-  text-decoration: underline;
+  text-decoration-line: underline;
 }
 .paginate_disabled_previous:active,
 .paginate_enabled_previous:active,
@@ -310,7 +310,7 @@ table.dataTable {
   outline: none
 }
 .paging_full_numbers a:hover {
-  text-decoration: none;
+  text-decoration-line: none;
 }
 
 .paging_full_numbers a.paginate_button,
@@ -332,7 +332,7 @@ table.dataTable {
 
 .paging_full_numbers a.paginate_button:hover {
   background-color: $tables-paging-full-numbers-link-paginate-button-hover-background-color;
-  text-decoration: none !important;
+  text-decoration-line: none !important;
 }
 
 .paging_full_numbers a.paginate_active {
@@ -369,7 +369,7 @@ table.dataTable {
   float: left;
   padding: 0.3em 0.6em;
   line-height: 1.5;
-  text-decoration: none;
+  text-decoration-line: none;
   color: #13578b;
   background-color: #fff;
   border: 1px solid $qg-pagination-border !important;
@@ -402,7 +402,7 @@ table.dataTable {
   color: #0a2d48 !important;
   background-color: #eee;
   border-color: #ddd;
-  text-decoration: none !important;
+  text-decoration-line: none !important;
   cursor: pointer;
 }
 

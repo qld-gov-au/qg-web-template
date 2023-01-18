@@ -41,7 +41,7 @@
       @include rem(font-size, 14px);
       margin-bottom: 0;
       a {
-        text-decoration: underline;
+        text-decoration-line: underline;
         &:hover, &:focus {
           opacity: 0.7;
         }
@@ -88,7 +88,7 @@
       margin-bottom: 0;
 
       a {
-        text-decoration: underline;
+        text-decoration-line: underline;
         color: #13578b;
         &:hover, &:focus {
           opacity: 0.7;
@@ -123,7 +123,7 @@
       margin: 15px 0;
 
       a {
-        text-decoration: underline;
+        text-decoration-line: underline;
 
         &:hover, &:focus {
           opacity: 0.7;
@@ -136,11 +136,11 @@
     @include rem(font-size, 14px);
     background-color: transparent;
     border: 0;
-    color: $qg-global-primary-accesible-grey;
+    color: $qg-global-primary-accessible-grey;
     font-weight: normal;
     padding: 0;
     margin-top: 10px;
-    text-decoration: underline;
+    text-decoration-line: underline;
   }
 }
 
@@ -180,8 +180,10 @@
     position: relative;
     transition: all .3s ease;
     z-index: 1;
+    @include qg-link-hover-decoration;
 
     &__text {
+      @include qg-link-hover-decoration;
       left: 50%;
       transform: translateX(-50%);
       position: absolute;
@@ -192,7 +194,7 @@
 
     &:hover,&:focus{
       .qg-feedback-toggle__text {
-        text-decoration: underline;
+        text-decoration-line: underline;
       }
     }
 
@@ -265,7 +267,7 @@
       margin-bottom: 0;
 
       a {
-        text-decoration: underline;
+        text-decoration-line: underline;
 
         &:hover, &:focus {
           opacity: 0.7;
@@ -323,7 +325,7 @@
       margin-bottom: 0;
 
       a {
-        text-decoration: underline;
+        text-decoration-line: underline;
 
         &:hover, &:focus {
           opacity: 0.7;
@@ -411,7 +413,7 @@
       margin: 15px 0;
 
       a {
-        text-decoration: underline;
+        text-decoration-line: underline;
 
         &:hover, &:focus {
           opacity: 0.7;
@@ -424,10 +426,10 @@
     @include rem(font-size, 14px);
     background-color: transparent;
     border: 0;
-    color: $qg-global-primary-accesible-grey;
+    color: $qg-global-primary-accessible-grey;
     font-weight: normal;
     padding: 0;
     margin-top: 10px;
-    text-decoration: underline;
+    text-decoration-line: underline;
   }
 }

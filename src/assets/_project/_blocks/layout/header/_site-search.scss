@@ -3,6 +3,10 @@
   padding-top: 20px;
   z-index: 2;
 
+  #qg-search-query {
+    color: $qg-global-primary-darker;
+  }
+
   .qg-search-concierge {
     border-top: solid 1px $qg-pagination-border;
     position: absolute;
@@ -56,7 +60,7 @@
       }
 
       &.highlight {
-        background-color: $qg-global-primary-dark-grey;
+        background-color: $qg-global-primary-dark;
         color: #fff;
 
         .qg-search-concierge-content {
@@ -64,9 +68,9 @@
           padding-bottom: 20px;
           a:not(.btn) {
             color: #fff;
-            text-decoration:underline;
+            text-decoration-line:underline;
             &:hover {
-              text-decoration:none;
+              text-decoration-line:none;
             }
           }
         }
@@ -94,7 +98,7 @@
           display: block;
           margin-top: 20px;
           transition: opacity .1s linear;
-          text-decoration: underline;
+          text-decoration-line: underline;
 
           &:hover, &:focus {
             opacity: 0.7;
@@ -155,7 +159,7 @@
             width: 100%;
 
             &:hover,&:focus {
-              text-decoration: underline;
+              text-decoration-line: underline;
             }
           }
         }

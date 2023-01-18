@@ -1,0 +1,25 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+
+import { QgPrimaryContent, QgContent } from "../../decorators";
+import { getDecoratedParameters } from "../../helpers";
+
+import Basic from "./templates/Basic.html";
+
+<Meta title="Components/Search Categories" decorators={[QgPrimaryContent, QgContent]} />
+
+# Index
+Requires `#QgPrimaryContent` ancestor.
+
+This story mimic card usage on https://www.qld.gov.au/recreation/arts/heritage/archives/search-the-records homepage
+
+Some style is sitting in Squiz Matrix https://www.qld.gov.au/recreation/arts/heritage/archives/search-the-records/QSAR_search.min.css which is franchise customized
+
+Not included in Forgov SWE documentation.
+
+## Basic
+
+<Canvas withSource="open">
+  <Story name="Basic" parameters={getDecoratedParameters(Basic)}>
+    {() => Basic}
+  </Story>
+</Canvas>
