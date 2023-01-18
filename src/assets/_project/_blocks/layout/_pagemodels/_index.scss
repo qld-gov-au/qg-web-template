@@ -18,9 +18,7 @@
       float: left;
     }
     a {
-      &:not(:hover){
-        text-decoration-line: none !important;
-      }
+      text-decoration-line: none !important;
       &:hover {
         img {
           border: 1px solid #06c;
