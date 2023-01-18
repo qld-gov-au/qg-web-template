@@ -267,11 +267,10 @@ $qg-linkedin: #0077b5;
 @mixin qg-link-decoration {
   @include qg-link-underline;
   text-decoration-thickness: 0.5px;
-  @include qg-link-visited-decoration;
 }
-@mixin qg-link-visited-decoration {
+@mixin qg-link-visited-decoration ($visitedColor: #80b) {
   &:visited {
-    color: #80b;
+    color: $visitedColor;
     text-decoration-color: currentColor;
   }
 }
