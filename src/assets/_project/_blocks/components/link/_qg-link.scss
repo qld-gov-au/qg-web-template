@@ -86,6 +86,17 @@
   }
 }
 
+// Black theme that doesn't change when visited
+@mixin qg-link-styles__theme-black-always {
+  @include qg-global-link-styles {
+    color: $qg-global-primary-darker-grey;
+    @include qg-link-decoration;
+    @include qg-link-visited-decoration($qg-global-primary-darker-grey);
+    text-decoration-color: #737678;
+    @include qg-link-hover-decoration;
+  }
+}
+
 // END theme BLACK
 
 //-------------------------------------------------
