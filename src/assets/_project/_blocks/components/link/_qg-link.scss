@@ -42,6 +42,7 @@
   @include qg-global-link-styles {
     color: $qg-blue-dark;
     @include qg-link-decoration;
+    @include qg-link-visited-decoration;
     text-decoration-color: #457aa3;
     @include qg-link-hover-decoration;
   }
@@ -79,6 +80,18 @@
   @include qg-global-link-styles {
     color: $qg-global-primary-darker-grey;
     @include qg-link-decoration;
+    @include qg-link-visited-decoration;
+    text-decoration-color: #737678;
+    @include qg-link-hover-decoration;
+  }
+}
+
+// Black theme that doesn't change when visited
+@mixin qg-link-styles__theme-black-always {
+  @include qg-global-link-styles {
+    color: $qg-global-primary-darker-grey;
+    @include qg-link-decoration;
+    @include qg-link-visited-decoration($qg-global-primary-darker-grey);
     text-decoration-color: #737678;
     @include qg-link-hover-decoration;
   }
@@ -94,6 +107,7 @@
   @include qg-global-link-styles {
     color: #fff;
     @include qg-link-decoration;
+    @include qg-link-visited-decoration(#fff);
     text-decoration-color: rgba(255, 255, 255, 0.73);
     @include qg-link-hover-decoration {
       text-decoration-color: #fff;
