@@ -274,6 +274,20 @@ $qg-linkedin: #0077b5;
     text-decoration-color: currentColor;
   }
 }
+@mixin all-states {
+  // Apply styling to all element states, without using !important.
+  // This is primarily to help override Bootstrap defaults,
+  // since specific states take priority over rules without states.
+  &:hover, &.hover, &:not(:hover), &:not(.hover) {
+    &:focus, &.focus, &:not(:focus), &:not(.focus) {
+      &:active, &.active, &:not(:active), &:not(.active) {
+        &:disabled, &.disabled, &:not(:disabled), &:not(.disabled) {
+          @content;
+        }
+      }
+    }
+  }
+}
 @mixin qg-link-none-decoration {
   text-decoration-line: none;
   @include qg-link-visited-decoration;
