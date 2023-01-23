@@ -35,6 +35,9 @@
   // style rules for links with white text (intended for dark backgrounds)
   color: white;
   text-decoration-color: rgba(255, 255, 255, 0.73);
+  @include qg-link-hover-decoration {
+    text-decoration-color: #fff;
+  }
 }
 
 @mixin _qg-link-visited-decoration {
@@ -61,6 +64,7 @@
   @include qg-global-link-styles {
     @include qg-link-unvisited-color;
     @include qg-link-decoration;
+    @include qg-link-visited-decoration;
     text-decoration-color: #457aa3;
   }
 }
@@ -97,6 +101,18 @@
   @include qg-global-link-styles {
     @include qg-link-unvisited-color($qg-global-primary-darker-grey);
     @include qg-link-decoration;
+    @include qg-link-visited-decoration;
+    text-decoration-color: #737678;
+    @include qg-link-hover-decoration;
+  }
+}
+
+// Black theme that doesn't change when visited
+@mixin qg-link-styles__theme-black-always {
+  @include qg-global-link-styles {
+    color: $qg-global-primary-darker-grey;
+    @include qg-link-decoration;
+    @include qg-link-visited-decoration($qg-global-primary-darker-grey);
     text-decoration-color: #737678;
   }
 }
@@ -134,6 +150,10 @@
   &:visited {
     color: #80b;
     text-decoration-color: currentColor;
+    @include qg-link-hover-decoration {
+      color: #80b;
+      text-decoration-color: currentColor;
+    }
   }
 }
 

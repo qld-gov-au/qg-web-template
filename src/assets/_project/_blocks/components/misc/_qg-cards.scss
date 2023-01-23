@@ -31,7 +31,9 @@
     .btn-link {
       padding-left: 0;
       text-align: left;
-      @include qg-link-styles__theme-white;
+      &:not(.qg-card__light-theme .btn-link) {
+        @include qg-link-styles__theme-white;
+      }
     }
   }
 
@@ -68,7 +70,9 @@
     .content {
       .details {
         a:not(.btn):not(.qg-btn) {
-          @include qg-link-styles__theme-white;
+          @include all-states {
+            @include qg-link-styles__theme-white;
+          }
 
           &.stretched-link {
             @include qg-link-styles__theme-white;
