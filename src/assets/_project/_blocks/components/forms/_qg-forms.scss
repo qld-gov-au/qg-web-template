@@ -269,21 +269,13 @@
       display:flex;
     }
     input[type=radio], input[type=checkbox] {
-      top:0;
-    }
-    input[type=checkbox] {
+      top: 0;
       appearance: none;
-      &:checked::before {
-        clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
-      }
-
       @include qg-button-outline-decoration(grid);
       border: solid currentColor 0.5px;
       display: grid;
       place-content: center;
-      &:checked::before {
-        transform: scale(1);
-      }
+
       &::before {
         content: "";
         width: 1.2em;
@@ -291,6 +283,19 @@
         transform: scale(0);
         box-shadow: inset 1.2em 1.2em black;
       }
+      &:checked::before {
+        transform: scale(1);
+      }
+    }
+
+    input[type=radio] {
+      border-radius: 50%;
+      &::before {
+        border-radius: 50%;
+      }
+    }
+    input[type=checkbox]:checked::before {
+      clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
     }
   }
   .checkbox, .qg-forms-v2__checkbox,
