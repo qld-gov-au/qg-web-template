@@ -337,7 +337,7 @@ $qg-linkedin: #0077b5;
 }
 $text-underline-offset: 5px;
 
-@mixin qg-button-outline-decoration {
+@mixin qg-button-outline-decoration ($display: inline-block) {
   // Surround buttons and links with a blue outline when active/focused
   @include on-active {
     outline-width: 3px;
@@ -346,7 +346,7 @@ $text-underline-offset: 5px;
     outline-offset: 2px;
     // workaround for Firefox border issue on multiline links,
     // https://www.drupal.org/project/drupal/issues/3016658
-    display: inline-block;
+    display: $display;
     @content;
   }
 }
