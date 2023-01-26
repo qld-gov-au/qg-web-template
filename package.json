@@ -44,7 +44,7 @@
     "@babel/preset-env": "^7.20.2",
     "@storybook/addon-actions": "^6.5.12",
     "@storybook/addon-essentials": "^6.5.15",
-    "@storybook/addon-interactions": "^6.5.15",
+    "@storybook/addon-interactions": "^6.5.16",
     "@storybook/addon-links": "^6.5.15",
     "@storybook/builder-webpack5": "^6.5.15",
     "@storybook/html": "^6.5.15",
