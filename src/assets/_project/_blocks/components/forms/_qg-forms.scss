@@ -290,6 +290,8 @@
 
     input[type=radio] {
       border-radius: 50%;
+      // compatibility with Firefox pre-88
+      -moz-outline-radius: 50%;
       &::before {
         border-radius: 50%;
       }
