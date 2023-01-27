@@ -24,11 +24,11 @@
       &.focus {
         outline: 3px solid #0096d6;
         outline-offset: 2px;
-        // workaround for Firefox border issue on multiline links,
-        // https://www.drupal.org/project/drupal/issues/3016658
-        &:not(.pagination a) {
-          display: inline-block;
-        }
+      }
+      // workaround for Firefox border issue on multiline links,
+      // https://www.drupal.org/project/drupal/issues/3016658
+      &:not(.pagination a) {
+        display: inline-block;
       }
     }
     @content;
