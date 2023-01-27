@@ -26,7 +26,9 @@
         outline-offset: 2px;
         // workaround for Firefox border issue on multiline links,
         // https://www.drupal.org/project/drupal/issues/3016658
-        display: inline-block;
+        &:not(.pagination a) {
+          display: inline-block;
+        }
       }
     }
     @content;
