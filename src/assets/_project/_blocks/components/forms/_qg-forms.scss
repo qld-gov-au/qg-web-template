@@ -134,17 +134,17 @@
   [type="radio"]:disabled,
   [type="checkbox"]:disabled {
     background: transparent;
-    color: $qg-dark-gray-light;
+    color: $qg-dark-grey-lightest;
     cursor: not-allowed;
     +label, +label:before {
       cursor: not-allowed;
       color: $qg-dark-gray-light !important;
     }
     +label:before {
-      border-color: $qg-dark-gray-light;
+      border-color: $qg-dark-grey-lightest;
     }
     +label svg path.rc-theme__icon {
-      fill: $qg-dark-gray-light;
+      fill: $qg-dark-grey-lightest;
     }
   }
 
@@ -273,6 +273,12 @@
       appearance: none;
       @include qg-button-outline-decoration(grid);
       border: solid $qg-dark-grey 2px;
+      &:disabled {
+        border-color: $qg-dark-grey-lightest;
+        &::before {
+          box-shadow: inset 1.2em 1.2em $qg-dark-grey-lightest;
+        }
+      }
       display: grid;
       place-content: center;
 
