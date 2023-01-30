@@ -16,7 +16,7 @@
     // &.hover {
     //   background: none;
     // }
-    &:not(.btn-link) {
+    &:not(.btn-link, button a) {
       &:active,
       &:focus,
       &:focus-visible,
