@@ -27,7 +27,7 @@
       }
       // workaround for Firefox border issue on multiline links,
       // https://www.drupal.org/project/drupal/issues/3016658
-      &:not(.pagination a) {
+      &:not(.pagination a, .graph a) {
         display: inline-block;
       }
     }
