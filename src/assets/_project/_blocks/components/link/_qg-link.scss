@@ -36,10 +36,12 @@
 // 1. color theme blue with underline
 @mixin qg-link-styles__default {
   @include qg-global-link-styles {
-    color: $qg-blue-dark;
     @include qg-link-decoration;
     @include qg-link-visited-decoration;
-    text-decoration-color: #457aa3;
+    &:not(.qg-private-content-link) {
+      color: $qg-blue-dark;
+      text-decoration-color: #457aa3;
+    }
     @include qg-link-hover-decoration;
   }
 }
