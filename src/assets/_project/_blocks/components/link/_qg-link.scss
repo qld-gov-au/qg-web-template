@@ -16,7 +16,8 @@
     // &.hover {
     //   background: none;
     // }
-    &:not(.btn-link, button a) {
+    // Don't apply outlines to button links or the Digital Dashboard
+    &:not(.btn-link, button a, #ia-format a) {
       &:active,
       &:focus,
       &:focus-visible,
