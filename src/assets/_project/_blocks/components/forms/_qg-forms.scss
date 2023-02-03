@@ -175,7 +175,7 @@
     }
   }
   .form-control, .form-control.dropdown, .form-check-input{
-    border: $borderWidth solid #818181;
+    border: $borderWidth solid $qg-pagination-border;
   }
   label, .label {
     font-size: $labelSize;
@@ -272,7 +272,7 @@
       top: 0;
       appearance: none;
       @include qg-button-outline-decoration(grid);
-      border: solid #818181 2px;
+      border: solid $qg-pagination-border 2px;
       &:disabled {
         border-color: $qg-dark-grey-lightest;
         &::before {
