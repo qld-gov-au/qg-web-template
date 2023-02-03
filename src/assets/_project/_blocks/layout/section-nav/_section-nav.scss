@@ -23,6 +23,9 @@
       &:link, &:hover {
         text-decoration-line: none;
       }
+      @include on-hover-or-active {
+        background-color: $qg-section-nav-bg-color;
+      }
     }
   }
   > ul {
@@ -56,6 +59,9 @@
         &:link, &:hover {
           text-decoration-line: none;
         }
+      }
+      @include on-hover-or-active {
+        background-color: $qg-section-nav-bg-color;
       }
     }
     ul {
