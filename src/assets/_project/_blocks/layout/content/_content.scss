@@ -29,7 +29,8 @@
     margin-bottom: 0.75rem;
   }
   ul, ol {
-    li {
+    // don't add margins to elements styled by JavaScript
+    li:not(.select2 li) {
       margin-bottom: 0.5em;
     }
   }

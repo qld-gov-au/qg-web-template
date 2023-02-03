@@ -876,12 +876,12 @@ form button,
   max-width: none;
   font-weight: bold;
   font-style: normal;
-  color: white;
   background: #585E62;
   border: none;
   border-radius: 0;
   -moz-border-radius: 0;
-  -webkit-border-radius: 0; }
+  -webkit-border-radius: 0;
+}
 
 /* slimmer buttons in asides */
 .aside button,
@@ -904,7 +904,6 @@ form button:focus,
 .poll .button:focus,
 .actions input:hover,
 .actions input:focus {
-  color: #000000;
   background-color: #7d858a;
   outline: 1px solid #585E62;
   outline-offset: -1px; }
