@@ -292,6 +292,10 @@
       &:checked::before {
         transform: scale(1);
       }
+
+      @include on-hover {
+        box-shadow: $qg-light-blue-gray3 0 0 0px 5px, inset $qg-light-blue-gray3 0 0 0px 100px;
+      }
     }
 
     input[type=radio] {
