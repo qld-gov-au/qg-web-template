@@ -272,7 +272,7 @@
       top: 0;
       appearance: none;
       @include qg-button-outline-decoration(grid);
-      border: solid $qg-dark-grey 2px;
+      border: solid #818181 2px;
       &:disabled {
         border-color: $qg-dark-grey-lightest;
         &::before {
