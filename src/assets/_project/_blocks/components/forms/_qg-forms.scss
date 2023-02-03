@@ -273,6 +273,7 @@
       appearance: none;
       @include qg-button-outline-decoration(grid);
       border: solid $qg-pagination-border 2px;
+      position: static;
       &:disabled {
         border-color: $qg-dark-grey-lightest;
         &::before {
