@@ -175,7 +175,7 @@
     }
   }
   .form-control, .form-control.dropdown, .form-check-input{
-    border: $borderWidth solid #818181;
+    border: $borderWidth solid $qg-pagination-border;
   }
   label, .label {
     font-size: $labelSize;
@@ -272,7 +272,8 @@
       top: 0;
       appearance: none;
       @include qg-button-outline-decoration(grid);
-      border: solid $qg-dark-grey 2px;
+      border: solid $qg-pagination-border 2px;
+      position: static;
       &:disabled {
         border-color: $qg-dark-grey-lightest;
         &::before {
@@ -291,6 +292,10 @@
       }
       &:checked::before {
         transform: scale(1);
+      }
+
+      @include on-hover {
+        box-shadow: $qg-light-blue-gray3 0 0 0px 5px, inset $qg-light-blue-gray3 0 0 0px 100px;
       }
     }
 
