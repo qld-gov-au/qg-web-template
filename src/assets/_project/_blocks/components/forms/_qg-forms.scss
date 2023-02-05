@@ -276,6 +276,7 @@
       position: static;
       &:disabled {
         border-color: $qg-dark-grey-lightest;
+        background-color: $qg-global-primary-light-grey;
         &::before {
           box-shadow: inset 1.2em 1.2em $qg-dark-grey-lightest;
         }
