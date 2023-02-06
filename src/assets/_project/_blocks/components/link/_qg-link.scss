@@ -60,6 +60,7 @@
   @include qg-global-link-styles {
     @include qg-link-decoration;
     @include qg-link-visited-decoration;
+    @include qg-underline-on-highlight-decoration;
     &:not(.qg-private-content-link) {
       @include qg-link-unvisited-color;
       text-decoration-color: #457aa3;
@@ -160,7 +161,7 @@
 // Apply default styling to all links that don't have a button class
 @mixin qg-non-button-link-styles__default {
   a:not(.qg-btn):not(.btn):not(.button){
-    @include qg-link-styles__default
+    @include qg-link-styles__default;
   }
 }
 
