@@ -19,14 +19,7 @@
     // }
     // Don't apply outlines to button links or the Digital Dashboard
     &:not(.btn-link, button a, #ia-format a) {
-      &:active,
-      &:focus,
-      &:focus-visible,
-      &.active,
-      &.focus {
-        outline: 3px solid #0096d6;
-        outline-offset: 2px;
-      }
+      @include qg-button-outline-decoration;
     }
     @content;
   }

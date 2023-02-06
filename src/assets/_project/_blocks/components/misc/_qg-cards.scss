@@ -4,16 +4,15 @@
 
   &.qg-card__clickable {
     .content {
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      @include qg-button-outline-decoration;
 
-      &:hover {
-        box-shadow: none;
+      h2 a {
+        @include all-states {
+          outline-style: none !important;
+        }
       }
     }
 
-    .content:focus-within {
-      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-    }
   }
 
   .btn-primary {
