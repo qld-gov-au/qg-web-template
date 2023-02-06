@@ -7,6 +7,7 @@ $black: #000000;
 $qg-blue: #007EB1; // Primary blue
 $qg-blue-dark: #13578b; // Primary link colour (see bootstrap-variables.scss), accordion expan/collapse
 $qg-blue-darker: #005375;
+$qg-blue-hover: darken($qg-blue, 7.5%);
 
 $qg-light-green: #9AC02C;
 $qg-green: #78ba00;
@@ -317,10 +318,10 @@ $qg-linkedin: #0077b5;
   // Apply styling to all element states, without using !important.
   // This is primarily to help override Bootstrap defaults,
   // since specific states take priority over rules without states.
-  &:hover, &.hover, &:not(:hover), &:not(.hover) {
-    &:focus, &.focus, &:not(:focus), &:not(.focus) {
-      &:active, &.active, &:not(:active), &:not(.active) {
-        &:disabled, &.disabled, &:not(:disabled), &:not(.disabled) {
+  &:hover, &:not(:hover) {
+    &:focus, &:not(:focus) {
+      &:active, &:not(:active) {
+        &:disabled, &:not(:disabled) {
           @content;
         }
       }
