@@ -35,6 +35,7 @@
 @mixin qg-link-unvisited-color($color: $link-color) {
   &:not(:visited):not(.btn):not(.qg-btn):not(.button) {
     color: $color;
+    @content;
   }
 }
 
@@ -61,8 +62,9 @@
     @include qg-link-decoration;
     @include qg-link-visited-decoration;
     &:not(.qg-private-content-link) {
-      @include qg-link-unvisited-color;
-      text-decoration-color: #457aa3;
+      @include qg-link-unvisited-color {
+        text-decoration-color: #457aa3;
+      }
     }
   }
 }
