@@ -490,7 +490,8 @@ $(function () {
     if (jsonResponse.hasOwnProperty('features')) {
       // Add each suburb to the location list
       jsonResponse['features'].forEach(function (object) {
-        var sourceName = object['attributes']['ADMINAREANAME'].toLowerCase();
+        var sourceName = object['attributes']['ADMINAREANAME'] || object['attributes']['adminareaname'];
+        sourceName = sourceName.toLowerCase();
         var suburbLGA = titleCase(sourceName);
         var suburbObject = {
           'name': sourceName,
