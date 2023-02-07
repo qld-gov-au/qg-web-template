@@ -530,7 +530,7 @@ $(function () {
       // Maps not loaded
       // Create script tag
       var apiKey = 'AIzaSyDvR5MCDqi0HtcjkehKqbKhyoCxt4Khqac';
-      var scriptURL = 'https://maps.googleapis.com/maps/api/js?key=' + apiKey;
+      var scriptURL = 'https://maps.googleapis.com/maps/api/js?callback=qg_location_init&key=' + apiKey;
       var scriptElement = document.createElement('script');
 
       // Populate tag
@@ -540,6 +540,8 @@ $(function () {
 
       // Insert into the DOM
       document.querySelector('body').appendChild(scriptElement);
+
+      window.qg_location_init = function() {};
       scriptElement.onload = function () {
         qgLocation.fn.init();
       };
