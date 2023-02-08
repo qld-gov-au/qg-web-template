@@ -1,0 +1,25 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+
+import Tenders from "./templates/Tenders.html";
+
+import { QgPrimaryContent, QgContent } from "../../decorators";
+
+import { getDecoratedParameters } from "../../helpers";
+
+<Meta title="Franchises/DigitalDashboard" decorators={[QgPrimaryContent, QgContent]} />
+
+# Digital Dashboard
+
+This story mimics component usages on https://www.qld.gov.au/digitalprojectsdashboard
+
+Some style is sitting in Squiz Matrix https://www.qld.gov.au/__data/assets/css_file/0015/102129/ictdashboard.css
+
+Not included in Forgov SWE documentation.
+
+## Tenders
+
+<Canvas withSource="open">
+  <Story name="Tenders" parameters={getDecoratedParameters(Tenders)}>
+    {() => Tenders}
+  </Story>
+</Canvas>
