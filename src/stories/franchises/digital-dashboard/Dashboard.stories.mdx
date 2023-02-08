@@ -1,5 +1,6 @@
 import { Canvas, Meta, Story } from "@storybook/addon-docs";
 
+import Dashboard from "./templates/Dashboard.html";
 import Tenders from "./templates/Tenders.html";
 
 import { QgPrimaryContent, QgContent } from "../../decorators";
@@ -15,6 +16,14 @@ This story mimics component usages on https://www.qld.gov.au/digitalprojectsdash
 Some style is sitting in Squiz Matrix https://www.qld.gov.au/__data/assets/css_file/0015/102129/ictdashboard.css
 
 Not included in Forgov SWE documentation.
+
+## Dashboard
+
+<Canvas withSource="open">
+  <Story name="Dashboard" parameters={getDecoratedParameters(Dashboard)}>
+    {() => Dashboard}
+  </Story>
+</Canvas>
 
 ## Tenders
 
