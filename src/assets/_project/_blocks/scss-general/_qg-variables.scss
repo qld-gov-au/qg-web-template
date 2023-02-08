@@ -339,5 +339,9 @@ $text-underline-offset: 5px;
     outline-color: $qg-active-outline;
     outline-offset: 2px;
     @content;
+    * {
+      // don't apply an extra outline to any children
+      outline-style: none !important;
+    }
   }
 }

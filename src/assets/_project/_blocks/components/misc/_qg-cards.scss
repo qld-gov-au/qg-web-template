@@ -5,14 +5,7 @@
   &.qg-card__clickable {
     .content {
       @include qg-button-outline-decoration;
-
-      h2 a {
-        @include all-states {
-          outline-style: none !important;
-        }
-      }
     }
-
   }
 
   .btn-primary {
