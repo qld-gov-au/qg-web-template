@@ -160,7 +160,22 @@
   }
 }
 
-// Don't apply a text-decoration if underline is hardcoded
-u a {
-  text-decoration-line: none !important;
+@supports selector(:has(a)) {
+  // Move underline decorations from 'u' tags to their enclosed anchors.
+  // This allows us to apply customisations directly to the anchor,
+  // without the 'u' tag getting in the way.
+  u:has(a) {
+    text-decoration-line: none;
+  }
+  u a {
+    text-decoration-line: underline;
+  }
+}
+@supports not selector(:has(a)) {
+  // On browsers that cannot use the :has pseudo-selector (Firefox),
+  // just exclude our standard underline styling inside a 'u' tag,
+  // so we don't get a double underline.
+  u a {
+    text-decoration-line: none !important;
+  }
 }
