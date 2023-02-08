@@ -968,6 +968,7 @@ form button,
 .poll .button,
 .actions input,
 #page-feedback form .actions input[type=submit] {
+  margin: 0;
   line-height: 1.2;
   padding: 1em 2em;
   max-width: none;
