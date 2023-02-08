@@ -72,7 +72,7 @@
   }
 }
 
-.qg-btn, .button {
+.qg-btn {
   @extend .btn;
   @include qg-button-outline-decoration;
   border-radius: $btn-border-radius-base;
