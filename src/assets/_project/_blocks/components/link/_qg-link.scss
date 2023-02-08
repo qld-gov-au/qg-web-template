@@ -17,10 +17,7 @@
     // &.hover {
     //   background: none;
     // }
-    // Don't apply outlines to button links or the Digital Dashboard
-    &:not(.btn-link, button a, #ia-format a) {
-      @include qg-button-outline-decoration;
-    }
+    @include qg-button-outline-decoration;
     @content;
   }
 }
