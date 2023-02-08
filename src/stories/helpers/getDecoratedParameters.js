@@ -1,7 +1,7 @@
-export const getDecoratedParameters = (tempalte) => ({
+export const getDecoratedParameters = (template) => ({
   docs: {
     source: {
-      code: tempalte,
+      code: template,
     },
   },
 });

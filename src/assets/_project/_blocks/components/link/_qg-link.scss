@@ -37,7 +37,7 @@
   color: white;
   text-decoration-color: rgba(255, 255, 255, 0.73);
   @include qg-underline-on-highlight-decoration {
-    text-decoration-color: #fff;
+    text-decoration-color: white;
   }
 }
 
