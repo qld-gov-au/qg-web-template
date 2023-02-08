@@ -60,10 +60,10 @@
       }
     }
   }
-  button:focus, button.focus {
-    outline: 2px solid $qg-active-outline !important;
-    outline-offset: 2px;
-    z-index: 100;
+  button {
+    @include qg-button-outline-decoration {
+      z-index: 100;
+    }
   }
   &.qg-dark-accordion article {
     background-color: #f5f5f5;
