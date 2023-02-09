@@ -24,12 +24,12 @@
     margin-left: 1em;
     font-size: 1rem;
   }
-  ul {
+  ul:not(#tabbed-nav ul) {
     margin-bottom: 0.75rem;
   }
   ul, ol {
-    // don't add margins to elements styled by JavaScript
-    li:not(.select2 li) {
+    // don't add margins to contexts that manage their own spacing
+    li:not(.select2 li, .graph li, #tabbed-nav li) {
       margin-bottom: 0.5em;
     }
   }

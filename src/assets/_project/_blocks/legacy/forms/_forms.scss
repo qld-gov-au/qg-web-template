@@ -331,8 +331,6 @@ textarea {
   background: white;
   border: 1px solid #cccccc;
   padding: .5em .7em;
-  // apply margin to accommodate border on active/focus
-  margin: 2px;
   max-width: 100%;
   font-family: "Lato", Helvetica, Arial, sans-serif;
 }
@@ -970,6 +968,7 @@ form button,
 .poll .button,
 .actions input,
 #page-feedback form .actions input[type=submit] {
+  margin: 0;
   line-height: 1.2;
   padding: 1em 2em;
   max-width: none;
