@@ -478,6 +478,6 @@ label {
 }
 
 // preserve visited link colour
-a:visited:not(.btn):not(.qg-btn) {
+a:visited:not(.btn, .button, .qg-btn) {
   color: #80b;
 }
