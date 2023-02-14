@@ -11,7 +11,9 @@
       .page-link):not(.dfv-cards--type-top-prompt
       a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.print-content-link):not(.qg-aside-button):not(.dfv-back
       a):not(.QSAR-records-search a) {
-    text-underline-offset: $text-underline-offset;
+    &:not(span[role=link] *) {
+      text-underline-offset: $text-underline-offset;
+    }
     // not sure why Asif need to add this, which will have side-effect on customised style added by franchise.
     // &:hover,
     // &.hover {
