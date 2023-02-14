@@ -382,14 +382,12 @@
 
     </div>
   </div>
-</div>
-
 <aside id="qg-secondary-content">
 
   <div class="qg-aside" role="complementary">
     <h2><span class="fa fa-search" aria-hidden="true"></span>Refine Search</h2>
     <div class="qg-projects-search">
-      <form novalidate="true">
+      <form class="qg-forms-v2" novalidate="true">
         <input type="text" name="AdvancedSearch" id="AdvancedSearch" value="" hidden="">
         <div class="exlayouttable">
           <ol class="questions form-section">
@@ -402,7 +400,7 @@
                     <legend>
                         <span class="label">Project status</span>
                     </legend>
-                    <ul class="choices" id="status-list">
+                    <ul class="choices qg-forms-v2__checkbox" id="status-list">
                         <li>
                             <input id="status-green" name="ProjectStatusG" value="G" type="checkbox">
                             <label for="status-green"><img src="https://www.qld.gov.au/digitalprojectsdashboard/assets/images/flag-G.png" alt="">On track</label>
@@ -423,7 +421,7 @@
                     <legend>
                         <span class="label">Digital priorities</span>
                     </legend>
-                    <ul class="choices" id="priorities-list">
+                    <ul class="choices qg-forms-v2__checkbox" id="priorities-list">
                         <li>
                             <input id="priorities-people" name="ProjectPriorityP" value="P" type="checkbox">
                             <label for="priorities-people"><img src="https://www.qld.gov.au/digitalprojectsdashboard/assets/images/people.png" alt="">People</label>
@@ -529,10 +527,10 @@
           <li class="footer">
             <ul class="actions">
               <li>
-                <strong><input type="submit" value="Search"></strong>
+                <button type="submit" class="btn btn-primary" value="Search">Search</button>
               </li>
               <li id="reset">
-                <input type="reset" value="Reset" onclick="window.location=window.location.pathname">
+                <button type="reset" class="btn btn-default" value="Reset" onclick="window.location=window.location.pathname">Reset</button>
               </li>
               <li><a class="advancedsearch">Show advanced search</a></li>
             </ul>
@@ -556,3 +554,4 @@
   </div>
 
 </aside>
+</div>
