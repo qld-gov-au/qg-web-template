@@ -8201,7 +8201,7 @@ var Channel = /*#__PURE__*/function () {
     this.sender = generateRandomId();
     this.events = {};
     this.data = {};
-    this.transport = void 0;
+    this.transport = undefined;
     this.addPeerListener = util_deprecate__WEBPACK_IMPORTED_MODULE_8___default()(function (eventName, listener) {
       _this.addListener(eventName, listener);
     }, (0,ts_dedent__WEBPACK_IMPORTED_MODULE_9__["default"])(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n      channel.addPeerListener is deprecated\n    "]))));
@@ -11976,6 +11976,815 @@ function start(renderToDOM) {
 
 /***/ }),
 
+/***/ "./node_modules/jest-mock/build/index.js":
+/*!***********************************************!*\
+  !*** ./node_modules/jest-mock/build/index.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+var __webpack_unused_export__;
+
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+__webpack_require__(/*! ./node_modules/core-js/modules/es.object.define-property.js */ "./node_modules/core-js/modules/es.object.define-property.js");
+__webpack_require__(/*! ./node_modules/core-js/modules/es.regexp.constructor.js */ "./node_modules/core-js/modules/es.regexp.constructor.js");
+__webpack_require__(/*! ./node_modules/core-js/modules/es.regexp.exec.js */ "./node_modules/core-js/modules/es.regexp.exec.js");
+__webpack_require__(/*! ./node_modules/core-js/modules/es.regexp.to-string.js */ "./node_modules/core-js/modules/es.regexp.to-string.js");
+__webpack_require__(/*! ./node_modules/core-js/modules/es.set.js */ "./node_modules/core-js/modules/es.set.js");
+__webpack_require__(/*! ./node_modules/core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
+__webpack_require__(/*! ./node_modules/core-js/modules/es.string.iterator.js */ "./node_modules/core-js/modules/es.string.iterator.js");
+__webpack_require__(/*! ./node_modules/core-js/modules/es.array.iterator.js */ "./node_modules/core-js/modules/es.array.iterator.js");
+__webpack_require__(/*! ./node_modules/core-js/modules/web.dom-collections.iterator.js */ "./node_modules/core-js/modules/web.dom-collections.iterator.js");
+__webpack_require__(/*! ./node_modules/core-js/modules/es.array.slice.js */ "./node_modules/core-js/modules/es.array.slice.js");
+__webpack_require__(/*! ./node_modules/core-js/modules/es.array.is-array.js */ "./node_modules/core-js/modules/es.array.is-array.js");
+__webpack_require__(/*! ./node_modules/core-js/modules/es.weak-map.js */ "./node_modules/core-js/modules/es.weak-map.js");
+__webpack_require__(/*! ./node_modules/core-js/modules/es.object.get-own-property-names.js */ "./node_modules/core-js/modules/es.object.get-own-property-names.js");
+__webpack_require__(/*! ./node_modules/core-js/modules/es.object.get-own-property-descriptor.js */ "./node_modules/core-js/modules/es.object.get-own-property-descriptor.js");
+__webpack_require__(/*! ./node_modules/core-js/modules/es.object.get-prototype-of.js */ "./node_modules/core-js/modules/es.object.get-prototype-of.js");
+__webpack_require__(/*! ./node_modules/core-js/modules/es.array.from.js */ "./node_modules/core-js/modules/es.array.from.js");
+__webpack_require__(/*! ./node_modules/core-js/modules/es.array.for-each.js */ "./node_modules/core-js/modules/es.array.for-each.js");
+__webpack_require__(/*! ./node_modules/core-js/modules/web.dom-collections.for-each.js */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
+__webpack_require__(/*! ./node_modules/core-js/modules/es.promise.js */ "./node_modules/core-js/modules/es.promise.js");
+__webpack_require__(/*! ./node_modules/core-js/modules/es.function.name.js */ "./node_modules/core-js/modules/es.function.name.js");
+__webpack_require__(/*! ./node_modules/core-js/modules/es.string.starts-with.js */ "./node_modules/core-js/modules/es.string.starts-with.js");
+__webpack_require__(/*! ./node_modules/core-js/modules/es.string.replace.js */ "./node_modules/core-js/modules/es.string.replace.js");
+__webpack_require__(/*! ./node_modules/core-js/modules/es.map.js */ "./node_modules/core-js/modules/es.map.js");
+__webpack_require__(/*! ./node_modules/core-js/modules/es.string.match.js */ "./node_modules/core-js/modules/es.string.match.js");
+__webpack_require__(/*! ./node_modules/core-js/modules/es.function.bind.js */ "./node_modules/core-js/modules/es.function.bind.js");
+__webpack_require__(/*! ./node_modules/core-js/modules/es.symbol.to-primitive.js */ "./node_modules/core-js/modules/es.symbol.to-primitive.js");
+__webpack_require__(/*! ./node_modules/core-js/modules/es.date.to-primitive.js */ "./node_modules/core-js/modules/es.date.to-primitive.js");
+__webpack_require__(/*! ./node_modules/core-js/modules/es.symbol.js */ "./node_modules/core-js/modules/es.symbol.js");
+__webpack_require__(/*! ./node_modules/core-js/modules/es.symbol.description.js */ "./node_modules/core-js/modules/es.symbol.description.js");
+__webpack_require__(/*! ./node_modules/core-js/modules/es.number.constructor.js */ "./node_modules/core-js/modules/es.number.constructor.js");
+__webpack_unused_export__ = ({
+  value: true
+});
+__webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = exports.ModuleMocker = void 0;
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+  return obj;
+}
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/* eslint-disable local/ban-types-eventually, local/prefer-rest-params-eventually */
+
+/**
+ * Possible types of a MockFunctionResult.
+ * 'return': The call completed by returning normally.
+ * 'throw': The call completed by throwing a value.
+ * 'incomplete': The call has not completed yet. This is possible if you read
+ *               the  mock function result from within the mock function itself
+ *               (or a function called by the mock function).
+ */
+
+/**
+ * Represents the result of a single call to a mock function.
+ */
+// see https://github.com/Microsoft/TypeScript/issues/25215
+var MOCK_CONSTRUCTOR_NAME = 'mockConstructor';
+var FUNCTION_NAME_RESERVED_PATTERN = /[\s!-\/:-@\[-`{-~]/;
+var FUNCTION_NAME_RESERVED_REPLACE = new RegExp(FUNCTION_NAME_RESERVED_PATTERN.source, 'g');
+var RESERVED_KEYWORDS = new Set(['arguments', 'await', 'break', 'case', 'catch', 'class', 'const', 'continue', 'debugger', 'default', 'delete', 'do', 'else', 'enum', 'eval', 'export', 'extends', 'false', 'finally', 'for', 'function', 'if', 'implements', 'import', 'in', 'instanceof', 'interface', 'let', 'new', 'null', 'package', 'private', 'protected', 'public', 'return', 'static', 'super', 'switch', 'this', 'throw', 'true', 'try', 'typeof', 'var', 'void', 'while', 'with', 'yield']);
+function matchArity(fn, length) {
+  var mockConstructor;
+  switch (length) {
+    case 1:
+      mockConstructor = function (_a) {
+        return fn.apply(this, arguments);
+      };
+      break;
+    case 2:
+      mockConstructor = function (_a, _b) {
+        return fn.apply(this, arguments);
+      };
+      break;
+    case 3:
+      mockConstructor = function (_a, _b, _c) {
+        return fn.apply(this, arguments);
+      };
+      break;
+    case 4:
+      mockConstructor = function (_a, _b, _c, _d) {
+        return fn.apply(this, arguments);
+      };
+      break;
+    case 5:
+      mockConstructor = function (_a, _b, _c, _d, _e) {
+        return fn.apply(this, arguments);
+      };
+      break;
+    case 6:
+      mockConstructor = function (_a, _b, _c, _d, _e, _f) {
+        return fn.apply(this, arguments);
+      };
+      break;
+    case 7:
+      mockConstructor = function (_a, _b, _c, _d, _e, _f, _g) {
+        return fn.apply(this, arguments);
+      };
+      break;
+    case 8:
+      mockConstructor = function (_a, _b, _c, _d, _e, _f, _g, _h) {
+        return fn.apply(this, arguments);
+      };
+      break;
+    case 9:
+      mockConstructor = function (_a, _b, _c, _d, _e, _f, _g, _h, _i) {
+        return fn.apply(this, arguments);
+      };
+      break;
+    default:
+      mockConstructor = function () {
+        return fn.apply(this, arguments);
+      };
+      break;
+  }
+  return mockConstructor;
+}
+function getObjectType(value) {
+  return Object.prototype.toString.apply(value).slice(8, -1);
+}
+function getType(ref) {
+  var typeName = getObjectType(ref);
+  if (typeName === 'Function' || typeName === 'AsyncFunction' || typeName === 'GeneratorFunction') {
+    return 'function';
+  } else if (Array.isArray(ref)) {
+    return 'array';
+  } else if (typeName === 'Object') {
+    return 'object';
+  } else if (typeName === 'Number' || typeName === 'String' || typeName === 'Boolean' || typeName === 'Symbol') {
+    return 'constant';
+  } else if (typeName === 'Map' || typeName === 'WeakMap' || typeName === 'Set') {
+    return 'collection';
+  } else if (typeName === 'RegExp') {
+    return 'regexp';
+  } else if (ref === undefined) {
+    return 'undefined';
+  } else if (ref === null) {
+    return 'null';
+  } else {
+    return null;
+  }
+}
+function isReadonlyProp(object, prop) {
+  if (prop === 'arguments' || prop === 'caller' || prop === 'callee' || prop === 'name' || prop === 'length') {
+    var typeName = getObjectType(object);
+    return typeName === 'Function' || typeName === 'AsyncFunction' || typeName === 'GeneratorFunction';
+  }
+  if (prop === 'source' || prop === 'global' || prop === 'ignoreCase' || prop === 'multiline') {
+    return getObjectType(object) === 'RegExp';
+  }
+  return false;
+}
+var ModuleMocker = /*#__PURE__*/function () {
+  /**
+   * @see README.md
+   * @param global Global object of the test environment, used to create
+   * mocks
+   */
+  function ModuleMocker(global) {
+    _classCallCheck(this, ModuleMocker);
+    _defineProperty(this, '_environmentGlobal', void 0);
+    _defineProperty(this, '_mockState', void 0);
+    _defineProperty(this, '_mockConfigRegistry', void 0);
+    _defineProperty(this, '_spyState', void 0);
+    _defineProperty(this, '_invocationCallCounter', void 0);
+    this._environmentGlobal = global;
+    this._mockState = new WeakMap();
+    this._mockConfigRegistry = new WeakMap();
+    this._spyState = new Set();
+    this._invocationCallCounter = 1;
+  }
+  _createClass(ModuleMocker, [{
+    key: "_getSlots",
+    value: function _getSlots(object) {
+      if (!object) {
+        return [];
+      }
+      var slots = new Set();
+      var EnvObjectProto = this._environmentGlobal.Object.prototype;
+      var EnvFunctionProto = this._environmentGlobal.Function.prototype;
+      var EnvRegExpProto = this._environmentGlobal.RegExp.prototype; // Also check the builtins in the current context as they leak through
+      // core node modules.
+
+      var ObjectProto = Object.prototype;
+      var FunctionProto = Function.prototype;
+      var RegExpProto = RegExp.prototype; // Properties of Object.prototype, Function.prototype and RegExp.prototype
+      // are never reported as slots
+
+      while (object != null && object !== EnvObjectProto && object !== EnvFunctionProto && object !== EnvRegExpProto && object !== ObjectProto && object !== FunctionProto && object !== RegExpProto) {
+        var ownNames = Object.getOwnPropertyNames(object);
+        for (var i = 0; i < ownNames.length; i++) {
+          var prop = ownNames[i];
+          if (!isReadonlyProp(object, prop)) {
+            var propDesc = Object.getOwnPropertyDescriptor(object, prop);
+            if (propDesc !== undefined && !propDesc.get || object.__esModule) {
+              slots.add(prop);
+            }
+          }
+        }
+        object = Object.getPrototypeOf(object);
+      }
+      return Array.from(slots);
+    }
+  }, {
+    key: "_ensureMockConfig",
+    value: function _ensureMockConfig(f) {
+      var config = this._mockConfigRegistry.get(f);
+      if (!config) {
+        config = this._defaultMockConfig();
+        this._mockConfigRegistry.set(f, config);
+      }
+      return config;
+    }
+  }, {
+    key: "_ensureMockState",
+    value: function _ensureMockState(f) {
+      var state = this._mockState.get(f);
+      if (!state) {
+        state = this._defaultMockState();
+        this._mockState.set(f, state);
+      }
+      if (state.calls.length > 0) {
+        state.lastCall = state.calls[state.calls.length - 1];
+      }
+      return state;
+    }
+  }, {
+    key: "_defaultMockConfig",
+    value: function _defaultMockConfig() {
+      return {
+        mockImpl: undefined,
+        mockName: 'jest.fn()',
+        specificMockImpls: [],
+        specificReturnValues: []
+      };
+    }
+  }, {
+    key: "_defaultMockState",
+    value: function _defaultMockState() {
+      return {
+        calls: [],
+        instances: [],
+        invocationCallOrder: [],
+        results: []
+      };
+    }
+  }, {
+    key: "_makeComponent",
+    value: function _makeComponent(metadata, restore) {
+      var _this2 = this;
+      if (metadata.type === 'object') {
+        return new this._environmentGlobal.Object();
+      } else if (metadata.type === 'array') {
+        return new this._environmentGlobal.Array();
+      } else if (metadata.type === 'regexp') {
+        return new this._environmentGlobal.RegExp('');
+      } else if (metadata.type === 'constant' || metadata.type === 'collection' || metadata.type === 'null' || metadata.type === 'undefined') {
+        return metadata.value;
+      } else if (metadata.type === 'function') {
+        var prototype = metadata.members && metadata.members.prototype && metadata.members.prototype.members || {};
+        var prototypeSlots = this._getSlots(prototype);
+        var mocker = this;
+        var mockConstructor = matchArity(function () {
+          var _arguments = arguments,
+            _this = this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          var mockState = mocker._ensureMockState(f);
+          var mockConfig = mocker._ensureMockConfig(f);
+          mockState.instances.push(this);
+          mockState.calls.push(args); // Create and record an "incomplete" mock result immediately upon
+          // calling rather than waiting for the mock to return. This avoids
+          // issues caused by recursion where results can be recorded in the
+          // wrong order.
+
+          var mockResult = {
+            type: 'incomplete',
+            value: undefined
+          };
+          mockState.results.push(mockResult);
+          mockState.invocationCallOrder.push(mocker._invocationCallCounter++); // Will be set to the return value of the mock if an error is not thrown
+
+          var finalReturnValue; // Will be set to the error that is thrown by the mock (if it throws)
+
+          var thrownError; // Will be set to true if the mock throws an error. The presence of a
+          // value in `thrownError` is not a 100% reliable indicator because a
+          // function could throw a value of undefined.
+
+          var callDidThrowError = false;
+          try {
+            // The bulk of the implementation is wrapped in an immediately
+            // executed arrow function so the return value of the mock function
+            // can be easily captured and recorded, despite the many separate
+            // return points within the logic.
+            finalReturnValue = function () {
+              if (_this instanceof f) {
+                // This is probably being called as a constructor
+                prototypeSlots.forEach(function (slot) {
+                  // Copy prototype methods to the instance to make
+                  // it easier to interact with mock instance call and
+                  // return values
+                  if (prototype[slot].type === 'function') {
+                    // @ts-expect-error no index signature
+                    var protoImpl = _this[slot]; // @ts-expect-error no index signature
+
+                    _this[slot] = mocker.generateFromMetadata(prototype[slot]); // @ts-expect-error no index signature
+
+                    _this[slot]._protoImpl = protoImpl;
+                  }
+                }); // Run the mock constructor implementation
+
+                var mockImpl = mockConfig.specificMockImpls.length ? mockConfig.specificMockImpls.shift() : mockConfig.mockImpl;
+                return mockImpl && mockImpl.apply(_this, _arguments);
+              } // If mockImplementationOnce()/mockImplementation() is last set,
+              // implementation use the mock
+
+              var specificMockImpl = mockConfig.specificMockImpls.shift();
+              if (specificMockImpl === undefined) {
+                specificMockImpl = mockConfig.mockImpl;
+              }
+              if (specificMockImpl) {
+                return specificMockImpl.apply(_this, _arguments);
+              } // Otherwise use prototype implementation
+
+              if (f._protoImpl) {
+                return f._protoImpl.apply(_this, _arguments);
+              }
+              return undefined;
+            }();
+          } catch (error) {
+            // Store the thrown error so we can record it, then re-throw it.
+            thrownError = error;
+            callDidThrowError = true;
+            throw error;
+          } finally {
+            // Record the result of the function.
+            // NOTE: Intentionally NOT pushing/indexing into the array of mock
+            //       results here to avoid corrupting results data if mockClear()
+            //       is called during the execution of the mock.
+            mockResult.type = callDidThrowError ? 'throw' : 'return';
+            mockResult.value = callDidThrowError ? thrownError : finalReturnValue;
+          }
+          return finalReturnValue;
+        }, metadata.length || 0);
+        var f = this._createMockFunction(metadata, mockConstructor);
+        f._isMockFunction = true;
+        f.getMockImplementation = function () {
+          return _this2._ensureMockConfig(f).mockImpl;
+        };
+        if (typeof restore === 'function') {
+          this._spyState.add(restore);
+        }
+        this._mockState.set(f, this._defaultMockState());
+        this._mockConfigRegistry.set(f, this._defaultMockConfig());
+        Object.defineProperty(f, 'mock', {
+          configurable: false,
+          enumerable: true,
+          get: function () {
+            return _this2._ensureMockState(f);
+          },
+          set: function (val) {
+            return _this2._mockState.set(f, val);
+          }
+        });
+        f.mockClear = function () {
+          _this2._mockState.delete(f);
+          return f;
+        };
+        f.mockReset = function () {
+          f.mockClear();
+          _this2._mockConfigRegistry.delete(f);
+          return f;
+        };
+        f.mockRestore = function () {
+          f.mockReset();
+          return restore ? restore() : undefined;
+        };
+        f.mockReturnValueOnce = function (value // next function call will return this value or default return value
+        ) {
+          return f.mockImplementationOnce(function () {
+            return value;
+          });
+        };
+        f.mockResolvedValueOnce = function (value) {
+          return f.mockImplementationOnce(function () {
+            return Promise.resolve(value);
+          });
+        };
+        f.mockRejectedValueOnce = function (value) {
+          return f.mockImplementationOnce(function () {
+            return Promise.reject(value);
+          });
+        };
+        f.mockReturnValue = function (value // next function call will return specified return value or this one
+        ) {
+          return f.mockImplementation(function () {
+            return value;
+          });
+        };
+        f.mockResolvedValue = function (value) {
+          return f.mockImplementation(function () {
+            return Promise.resolve(value);
+          });
+        };
+        f.mockRejectedValue = function (value) {
+          return f.mockImplementation(function () {
+            return Promise.reject(value);
+          });
+        };
+        f.mockImplementationOnce = function (fn) {
+          // next function call will use this mock implementation return value
+          // or default mock implementation return value
+          var mockConfig = _this2._ensureMockConfig(f);
+          mockConfig.specificMockImpls.push(fn);
+          return f;
+        };
+        f.mockImplementation = function (fn) {
+          // next function call will use mock implementation return value
+          var mockConfig = _this2._ensureMockConfig(f);
+          mockConfig.mockImpl = fn;
+          return f;
+        };
+        f.mockReturnThis = function () {
+          return f.mockImplementation(function () {
+            return this;
+          });
+        };
+        f.mockName = function (name) {
+          if (name) {
+            var mockConfig = _this2._ensureMockConfig(f);
+            mockConfig.mockName = name;
+          }
+          return f;
+        };
+        f.getMockName = function () {
+          var mockConfig = _this2._ensureMockConfig(f);
+          return mockConfig.mockName || 'jest.fn()';
+        };
+        if (metadata.mockImpl) {
+          f.mockImplementation(metadata.mockImpl);
+        }
+        return f;
+      } else {
+        var unknownType = metadata.type || 'undefined type';
+        throw new Error('Unrecognized type ' + unknownType);
+      }
+    }
+  }, {
+    key: "_createMockFunction",
+    value: function _createMockFunction(metadata, mockConstructor) {
+      var name = metadata.name;
+      if (!name) {
+        return mockConstructor;
+      } // Preserve `name` property of mocked function.
+
+      var boundFunctionPrefix = 'bound ';
+      var bindCall = ''; // if-do-while for perf reasons. The common case is for the if to fail.
+
+      if (name && name.startsWith(boundFunctionPrefix)) {
+        do {
+          name = name.substring(boundFunctionPrefix.length); // Call bind() just to alter the function name.
+
+          bindCall = '.bind(null)';
+        } while (name && name.startsWith(boundFunctionPrefix));
+      } // Special case functions named `mockConstructor` to guard for infinite
+      // loops.
+
+      if (name === MOCK_CONSTRUCTOR_NAME) {
+        return mockConstructor;
+      }
+      if (
+      // It's a syntax error to define functions with a reserved keyword
+      // as name.
+      RESERVED_KEYWORDS.has(name) ||
+      // It's also a syntax error to define functions with a name that starts with a number
+      /^\d/.test(name)) {
+        name = '$' + name;
+      } // It's also a syntax error to define a function with a reserved character
+      // as part of it's name.
+
+      if (FUNCTION_NAME_RESERVED_PATTERN.test(name)) {
+        name = name.replace(FUNCTION_NAME_RESERVED_REPLACE, '$');
+      }
+      var body = 'return function ' + name + '() {' + 'return ' + MOCK_CONSTRUCTOR_NAME + '.apply(this,arguments);' + '}' + bindCall;
+      var createConstructor = new this._environmentGlobal.Function(MOCK_CONSTRUCTOR_NAME, body);
+      return createConstructor(mockConstructor);
+    }
+  }, {
+    key: "_generateMock",
+    value: function _generateMock(metadata, callbacks, refs) {
+      var _this3 = this;
+      // metadata not compatible but it's the same type, maybe problem with
+      // overloading of _makeComponent and not _generateMock?
+      // @ts-expect-error
+      var mock = this._makeComponent(metadata);
+      if (metadata.refID != null) {
+        refs[metadata.refID] = mock;
+      }
+      this._getSlots(metadata.members).forEach(function (slot) {
+        var slotMetadata = metadata.members && metadata.members[slot] || {};
+        if (slotMetadata.ref != null) {
+          callbacks.push(function (ref) {
+            return function () {
+              return mock[slot] = refs[ref];
+            };
+          }(slotMetadata.ref));
+        } else {
+          mock[slot] = _this3._generateMock(slotMetadata, callbacks, refs);
+        }
+      });
+      if (metadata.type !== 'undefined' && metadata.type !== 'null' && mock.prototype && typeof mock.prototype === 'object') {
+        mock.prototype.constructor = mock;
+      }
+      return mock;
+    }
+    /**
+     * @see README.md
+     * @param _metadata Metadata for the mock in the schema returned by the
+     * getMetadata method of this module.
+     */
+  }, {
+    key: "generateFromMetadata",
+    value: function generateFromMetadata(_metadata) {
+      var callbacks = [];
+      var refs = {};
+      var mock = this._generateMock(_metadata, callbacks, refs);
+      callbacks.forEach(function (setter) {
+        return setter();
+      });
+      return mock;
+    }
+    /**
+     * @see README.md
+     * @param component The component for which to retrieve metadata.
+     */
+  }, {
+    key: "getMetadata",
+    value: function getMetadata(component, _refs) {
+      var _this4 = this;
+      var refs = _refs || new Map();
+      var ref = refs.get(component);
+      if (ref != null) {
+        return {
+          ref: ref
+        };
+      }
+      var type = getType(component);
+      if (!type) {
+        return null;
+      }
+      var metadata = {
+        type: type
+      };
+      if (type === 'constant' || type === 'collection' || type === 'undefined' || type === 'null') {
+        metadata.value = component;
+        return metadata;
+      } else if (type === 'function') {
+        // @ts-expect-error this is a function so it has a name
+        metadata.name = component.name; // @ts-expect-error may be a mock
+
+        if (component._isMockFunction === true) {
+          // @ts-expect-error may be a mock
+          metadata.mockImpl = component.getMockImplementation();
+        }
+      }
+      metadata.refID = refs.size;
+      refs.set(component, metadata.refID);
+      var members = null; // Leave arrays alone
+
+      if (type !== 'array') {
+        this._getSlots(component).forEach(function (slot) {
+          if (type === 'function' &&
+          // @ts-expect-error may be a mock
+          component._isMockFunction === true && slot.match(/^mock/)) {
+            return;
+          } // @ts-expect-error no index signature
+
+          var slotMetadata = _this4.getMetadata(component[slot], refs);
+          if (slotMetadata) {
+            if (!members) {
+              members = {};
+            }
+            members[slot] = slotMetadata;
+          }
+        });
+      }
+      if (members) {
+        metadata.members = members;
+      }
+      return metadata;
+    }
+  }, {
+    key: "isMockFunction",
+    value: function isMockFunction(fn) {
+      return !!fn && fn._isMockFunction === true;
+    }
+  }, {
+    key: "fn",
+    value: function fn(implementation) {
+      var length = implementation ? implementation.length : 0;
+      var fn = this._makeComponent({
+        length: length,
+        type: 'function'
+      });
+      if (implementation) {
+        fn.mockImplementation(implementation);
+      }
+      return fn;
+    }
+
+    // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+  }, {
+    key: "spyOn",
+    value: function spyOn(object, methodName, accessType) {
+      if (accessType) {
+        return this._spyOnProperty(object, methodName, accessType);
+      }
+      if (typeof object !== 'object' && typeof object !== 'function') {
+        throw new Error('Cannot spyOn on a primitive value; ' + this._typeOf(object) + ' given');
+      }
+      var original = object[methodName];
+      if (!this.isMockFunction(original)) {
+        if (typeof original !== 'function') {
+          throw new Error('Cannot spy the ' + methodName + ' property because it is not a function; ' + this._typeOf(original) + ' given instead');
+        }
+        var isMethodOwner = Object.prototype.hasOwnProperty.call(object, methodName);
+        var descriptor = Object.getOwnPropertyDescriptor(object, methodName);
+        var proto = Object.getPrototypeOf(object);
+        while (!descriptor && proto !== null) {
+          descriptor = Object.getOwnPropertyDescriptor(proto, methodName);
+          proto = Object.getPrototypeOf(proto);
+        }
+        var mock;
+        if (descriptor && descriptor.get) {
+          var originalGet = descriptor.get;
+          mock = this._makeComponent({
+            type: 'function'
+          }, function () {
+            descriptor.get = originalGet;
+            Object.defineProperty(object, methodName, descriptor);
+          });
+          descriptor.get = function () {
+            return mock;
+          };
+          Object.defineProperty(object, methodName, descriptor);
+        } else {
+          mock = this._makeComponent({
+            type: 'function'
+          }, function () {
+            if (isMethodOwner) {
+              object[methodName] = original;
+            } else {
+              delete object[methodName];
+            }
+          }); // @ts-expect-error overriding original method with a Mock
+
+          object[methodName] = mock;
+        }
+        mock.mockImplementation(function () {
+          return original.apply(this, arguments);
+        });
+      }
+      return object[methodName];
+    }
+  }, {
+    key: "_spyOnProperty",
+    value: function _spyOnProperty(obj, propertyName) {
+      var accessType = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'get';
+      if (typeof obj !== 'object' && typeof obj !== 'function') {
+        throw new Error('Cannot spyOn on a primitive value; ' + this._typeOf(obj) + ' given');
+      }
+      if (!obj) {
+        throw new Error('spyOn could not find an object to spy upon for ' + propertyName + '');
+      }
+      if (!propertyName) {
+        throw new Error('No property name supplied');
+      }
+      var descriptor = Object.getOwnPropertyDescriptor(obj, propertyName);
+      var proto = Object.getPrototypeOf(obj);
+      while (!descriptor && proto !== null) {
+        descriptor = Object.getOwnPropertyDescriptor(proto, propertyName);
+        proto = Object.getPrototypeOf(proto);
+      }
+      if (!descriptor) {
+        throw new Error(propertyName + ' property does not exist');
+      }
+      if (!descriptor.configurable) {
+        throw new Error(propertyName + ' is not declared configurable');
+      }
+      if (!descriptor[accessType]) {
+        throw new Error('Property ' + propertyName + ' does not have access type ' + accessType);
+      }
+      var original = descriptor[accessType];
+      if (!this.isMockFunction(original)) {
+        if (typeof original !== 'function') {
+          throw new Error('Cannot spy the ' + propertyName + ' property because it is not a function; ' + this._typeOf(original) + ' given instead');
+        } // @ts-expect-error: mock is assignable
+
+        descriptor[accessType] = this._makeComponent({
+          type: 'function'
+        }, function () {
+          // @ts-expect-error: mock is assignable
+          descriptor[accessType] = original;
+          Object.defineProperty(obj, propertyName, descriptor);
+        });
+        descriptor[accessType].mockImplementation(function () {
+          // @ts-expect-error
+          return original.apply(this, arguments);
+        });
+      }
+      Object.defineProperty(obj, propertyName, descriptor);
+      return descriptor[accessType];
+    }
+  }, {
+    key: "clearAllMocks",
+    value: function clearAllMocks() {
+      this._mockState = new WeakMap();
+    }
+  }, {
+    key: "resetAllMocks",
+    value: function resetAllMocks() {
+      this._mockConfigRegistry = new WeakMap();
+      this._mockState = new WeakMap();
+    }
+  }, {
+    key: "restoreAllMocks",
+    value: function restoreAllMocks() {
+      this._spyState.forEach(function (restore) {
+        return restore();
+      });
+      this._spyState = new Set();
+    }
+  }, {
+    key: "_typeOf",
+    value: function _typeOf(value) {
+      return value == null ? '' + value : typeof value;
+    } // the typings test helper
+  }, {
+    key: "mocked",
+    value: function mocked(item) {
+      var _deep = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+      return item;
+    }
+  }]);
+  return ModuleMocker;
+}();
+exports.ModuleMocker = ModuleMocker;
+var JestMock = new ModuleMocker(__webpack_require__.g);
+var fn = JestMock.fn.bind(JestMock);
+__webpack_unused_export__ = fn;
+var spyOn = JestMock.spyOn.bind(JestMock);
+__webpack_unused_export__ = spyOn;
+var mocked = JestMock.mocked.bind(JestMock);
+__webpack_unused_export__ = mocked;
+
+/***/ }),
+
+/***/ "./node_modules/slash/index.js":
+/*!*************************************!*\
+  !*** ./node_modules/slash/index.js ***!
+  \*************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+
+__webpack_require__(/*! ./node_modules/core-js/modules/es.string.replace.js */ "./node_modules/core-js/modules/es.string.replace.js");
+__webpack_require__(/*! ./node_modules/core-js/modules/es.regexp.exec.js */ "./node_modules/core-js/modules/es.regexp.exec.js");
+module.exports = function (path) {
+  var isExtendedLengthPath = /^\\\\\?\\/.test(path);
+  var hasNonAscii = /[^\u0000-\u0080]+/.test(path); // eslint-disable-line no-control-regex
+
+  if (isExtendedLengthPath || hasNonAscii) {
+    return path;
+  }
+  return path.replace(/\\/g, '/');
+};
+
+/***/ }),
+
 /***/ "./node_modules/@storybook/core-events/dist/esm/index.js":
 /*!***************************************************************!*\
   !*** ./node_modules/@storybook/core-events/dist/esm/index.js ***!
@@ -15077,8 +15886,8 @@ var Preview = /*#__PURE__*/function () {
 /* harmony import */ var _storybook_core_events__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @storybook/core-events */ "./node_modules/@storybook/core-events/dist/esm/index.js");
 /* harmony import */ var _storybook_client_logger__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @storybook/client-logger */ "./node_modules/@storybook/client-logger/dist/esm/index.js");
 /* harmony import */ var _Preview__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./Preview */ "./node_modules/@storybook/preview-web/dist/esm/Preview.js");
-/* harmony import */ var _UrlStore__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./UrlStore */ "./node_modules/@storybook/preview-web/dist/esm/UrlStore.js");
-/* harmony import */ var _WebView__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./WebView */ "./node_modules/@storybook/preview-web/dist/esm/WebView.js");
+/* harmony import */ var _UrlStore__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./UrlStore */ "./node_modules/@storybook/preview-web/dist/esm/UrlStore.js");
+/* harmony import */ var _WebView__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./WebView */ "./node_modules/@storybook/preview-web/dist/esm/WebView.js");
 /* harmony import */ var _StoryRender__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./StoryRender */ "./node_modules/@storybook/preview-web/dist/esm/StoryRender.js");
 /* harmony import */ var _DocsRender__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./DocsRender */ "./node_modules/@storybook/preview-web/dist/esm/DocsRender.js");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
@@ -15162,6 +15971,9 @@ var PreviewWeb = /*#__PURE__*/function (_Preview) {
   function PreviewWeb() {
     var _this;
 
+    var urlStore = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : new _UrlStore__WEBPACK_IMPORTED_MODULE_22__.UrlStore();
+    var webview = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : new _WebView__WEBPACK_IMPORTED_MODULE_23__.WebView();
+
     _classCallCheck(this, PreviewWeb);
 
     _this = _super.call(this);
@@ -15170,8 +15982,8 @@ var PreviewWeb = /*#__PURE__*/function (_Preview) {
     _this.previewEntryError = void 0;
     _this.currentSelection = void 0;
     _this.currentRender = void 0;
-    _this.view = new _WebView__WEBPACK_IMPORTED_MODULE_22__.WebView();
-    _this.urlStore = new _UrlStore__WEBPACK_IMPORTED_MODULE_23__.UrlStore(); // Add deprecated APIs for back-compat
+    _this.view = webview;
+    _this.urlStore = urlStore; // Add deprecated APIs for back-compat
     // @ts-ignore
 
     _this.storyStore.getSelection = util_deprecate__WEBPACK_IMPORTED_MODULE_20___default()(function () {
@@ -27184,991 +27996,6 @@ module.exports = function shimArrayPrototypeReduce() {
 	return polyfill;
 };
 
-
-/***/ }),
-
-/***/ "./node_modules/jest-mock/build/index.js":
-/*!***********************************************!*\
-  !*** ./node_modules/jest-mock/build/index.js ***!
-  \***********************************************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-"use strict";
-var __webpack_unused_export__;
-
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
-
-__webpack_require__(/*! ./node_modules/core-js/modules/es.object.define-property.js */ "./node_modules/core-js/modules/es.object.define-property.js");
-
-__webpack_require__(/*! ./node_modules/core-js/modules/es.regexp.constructor.js */ "./node_modules/core-js/modules/es.regexp.constructor.js");
-
-__webpack_require__(/*! ./node_modules/core-js/modules/es.regexp.exec.js */ "./node_modules/core-js/modules/es.regexp.exec.js");
-
-__webpack_require__(/*! ./node_modules/core-js/modules/es.regexp.to-string.js */ "./node_modules/core-js/modules/es.regexp.to-string.js");
-
-__webpack_require__(/*! ./node_modules/core-js/modules/es.set.js */ "./node_modules/core-js/modules/es.set.js");
-
-__webpack_require__(/*! ./node_modules/core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
-
-__webpack_require__(/*! ./node_modules/core-js/modules/es.string.iterator.js */ "./node_modules/core-js/modules/es.string.iterator.js");
-
-__webpack_require__(/*! ./node_modules/core-js/modules/es.array.iterator.js */ "./node_modules/core-js/modules/es.array.iterator.js");
-
-__webpack_require__(/*! ./node_modules/core-js/modules/web.dom-collections.iterator.js */ "./node_modules/core-js/modules/web.dom-collections.iterator.js");
-
-__webpack_require__(/*! ./node_modules/core-js/modules/es.array.slice.js */ "./node_modules/core-js/modules/es.array.slice.js");
-
-__webpack_require__(/*! ./node_modules/core-js/modules/es.array.is-array.js */ "./node_modules/core-js/modules/es.array.is-array.js");
-
-__webpack_require__(/*! ./node_modules/core-js/modules/es.weak-map.js */ "./node_modules/core-js/modules/es.weak-map.js");
-
-__webpack_require__(/*! ./node_modules/core-js/modules/es.object.get-own-property-names.js */ "./node_modules/core-js/modules/es.object.get-own-property-names.js");
-
-__webpack_require__(/*! ./node_modules/core-js/modules/es.object.get-own-property-descriptor.js */ "./node_modules/core-js/modules/es.object.get-own-property-descriptor.js");
-
-__webpack_require__(/*! ./node_modules/core-js/modules/es.object.get-prototype-of.js */ "./node_modules/core-js/modules/es.object.get-prototype-of.js");
-
-__webpack_require__(/*! ./node_modules/core-js/modules/es.array.from.js */ "./node_modules/core-js/modules/es.array.from.js");
-
-__webpack_require__(/*! ./node_modules/core-js/modules/es.array.for-each.js */ "./node_modules/core-js/modules/es.array.for-each.js");
-
-__webpack_require__(/*! ./node_modules/core-js/modules/web.dom-collections.for-each.js */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
-
-__webpack_require__(/*! ./node_modules/core-js/modules/es.promise.js */ "./node_modules/core-js/modules/es.promise.js");
-
-__webpack_require__(/*! ./node_modules/core-js/modules/es.function.name.js */ "./node_modules/core-js/modules/es.function.name.js");
-
-__webpack_require__(/*! ./node_modules/core-js/modules/es.string.starts-with.js */ "./node_modules/core-js/modules/es.string.starts-with.js");
-
-__webpack_require__(/*! ./node_modules/core-js/modules/es.string.replace.js */ "./node_modules/core-js/modules/es.string.replace.js");
-
-__webpack_require__(/*! ./node_modules/core-js/modules/es.map.js */ "./node_modules/core-js/modules/es.map.js");
-
-__webpack_require__(/*! ./node_modules/core-js/modules/es.string.match.js */ "./node_modules/core-js/modules/es.string.match.js");
-
-__webpack_require__(/*! ./node_modules/core-js/modules/es.function.bind.js */ "./node_modules/core-js/modules/es.function.bind.js");
-
-__webpack_unused_export__ = ({
-  value: true
-});
-__webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = exports.ModuleMocker = void 0;
-
-function _defineProperty(obj, key, value) {
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
-
-  return obj;
-}
-/**
- * Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-/* eslint-disable local/ban-types-eventually, local/prefer-rest-params-eventually */
-
-/**
- * Possible types of a MockFunctionResult.
- * 'return': The call completed by returning normally.
- * 'throw': The call completed by throwing a value.
- * 'incomplete': The call has not completed yet. This is possible if you read
- *               the  mock function result from within the mock function itself
- *               (or a function called by the mock function).
- */
-
-/**
- * Represents the result of a single call to a mock function.
- */
-// see https://github.com/Microsoft/TypeScript/issues/25215
-
-
-var MOCK_CONSTRUCTOR_NAME = 'mockConstructor';
-var FUNCTION_NAME_RESERVED_PATTERN = /[\s!-\/:-@\[-`{-~]/;
-var FUNCTION_NAME_RESERVED_REPLACE = new RegExp(FUNCTION_NAME_RESERVED_PATTERN.source, 'g');
-var RESERVED_KEYWORDS = new Set(['arguments', 'await', 'break', 'case', 'catch', 'class', 'const', 'continue', 'debugger', 'default', 'delete', 'do', 'else', 'enum', 'eval', 'export', 'extends', 'false', 'finally', 'for', 'function', 'if', 'implements', 'import', 'in', 'instanceof', 'interface', 'let', 'new', 'null', 'package', 'private', 'protected', 'public', 'return', 'static', 'super', 'switch', 'this', 'throw', 'true', 'try', 'typeof', 'var', 'void', 'while', 'with', 'yield']);
-
-function matchArity(fn, length) {
-  var mockConstructor;
-
-  switch (length) {
-    case 1:
-      mockConstructor = function (_a) {
-        return fn.apply(this, arguments);
-      };
-
-      break;
-
-    case 2:
-      mockConstructor = function (_a, _b) {
-        return fn.apply(this, arguments);
-      };
-
-      break;
-
-    case 3:
-      mockConstructor = function (_a, _b, _c) {
-        return fn.apply(this, arguments);
-      };
-
-      break;
-
-    case 4:
-      mockConstructor = function (_a, _b, _c, _d) {
-        return fn.apply(this, arguments);
-      };
-
-      break;
-
-    case 5:
-      mockConstructor = function (_a, _b, _c, _d, _e) {
-        return fn.apply(this, arguments);
-      };
-
-      break;
-
-    case 6:
-      mockConstructor = function (_a, _b, _c, _d, _e, _f) {
-        return fn.apply(this, arguments);
-      };
-
-      break;
-
-    case 7:
-      mockConstructor = function (_a, _b, _c, _d, _e, _f, _g) {
-        return fn.apply(this, arguments);
-      };
-
-      break;
-
-    case 8:
-      mockConstructor = function (_a, _b, _c, _d, _e, _f, _g, _h) {
-        return fn.apply(this, arguments);
-      };
-
-      break;
-
-    case 9:
-      mockConstructor = function (_a, _b, _c, _d, _e, _f, _g, _h, _i) {
-        return fn.apply(this, arguments);
-      };
-
-      break;
-
-    default:
-      mockConstructor = function () {
-        return fn.apply(this, arguments);
-      };
-
-      break;
-  }
-
-  return mockConstructor;
-}
-
-function getObjectType(value) {
-  return Object.prototype.toString.apply(value).slice(8, -1);
-}
-
-function getType(ref) {
-  var typeName = getObjectType(ref);
-
-  if (typeName === 'Function' || typeName === 'AsyncFunction' || typeName === 'GeneratorFunction') {
-    return 'function';
-  } else if (Array.isArray(ref)) {
-    return 'array';
-  } else if (typeName === 'Object') {
-    return 'object';
-  } else if (typeName === 'Number' || typeName === 'String' || typeName === 'Boolean' || typeName === 'Symbol') {
-    return 'constant';
-  } else if (typeName === 'Map' || typeName === 'WeakMap' || typeName === 'Set') {
-    return 'collection';
-  } else if (typeName === 'RegExp') {
-    return 'regexp';
-  } else if (ref === undefined) {
-    return 'undefined';
-  } else if (ref === null) {
-    return 'null';
-  } else {
-    return null;
-  }
-}
-
-function isReadonlyProp(object, prop) {
-  if (prop === 'arguments' || prop === 'caller' || prop === 'callee' || prop === 'name' || prop === 'length') {
-    var typeName = getObjectType(object);
-    return typeName === 'Function' || typeName === 'AsyncFunction' || typeName === 'GeneratorFunction';
-  }
-
-  if (prop === 'source' || prop === 'global' || prop === 'ignoreCase' || prop === 'multiline') {
-    return getObjectType(object) === 'RegExp';
-  }
-
-  return false;
-}
-
-var ModuleMocker = /*#__PURE__*/function () {
-  /**
-   * @see README.md
-   * @param global Global object of the test environment, used to create
-   * mocks
-   */
-  function ModuleMocker(global) {
-    _classCallCheck(this, ModuleMocker);
-
-    _defineProperty(this, '_environmentGlobal', void 0);
-
-    _defineProperty(this, '_mockState', void 0);
-
-    _defineProperty(this, '_mockConfigRegistry', void 0);
-
-    _defineProperty(this, '_spyState', void 0);
-
-    _defineProperty(this, '_invocationCallCounter', void 0);
-
-    this._environmentGlobal = global;
-    this._mockState = new WeakMap();
-    this._mockConfigRegistry = new WeakMap();
-    this._spyState = new Set();
-    this._invocationCallCounter = 1;
-  }
-
-  _createClass(ModuleMocker, [{
-    key: "_getSlots",
-    value: function _getSlots(object) {
-      if (!object) {
-        return [];
-      }
-
-      var slots = new Set();
-      var EnvObjectProto = this._environmentGlobal.Object.prototype;
-      var EnvFunctionProto = this._environmentGlobal.Function.prototype;
-      var EnvRegExpProto = this._environmentGlobal.RegExp.prototype; // Also check the builtins in the current context as they leak through
-      // core node modules.
-
-      var ObjectProto = Object.prototype;
-      var FunctionProto = Function.prototype;
-      var RegExpProto = RegExp.prototype; // Properties of Object.prototype, Function.prototype and RegExp.prototype
-      // are never reported as slots
-
-      while (object != null && object !== EnvObjectProto && object !== EnvFunctionProto && object !== EnvRegExpProto && object !== ObjectProto && object !== FunctionProto && object !== RegExpProto) {
-        var ownNames = Object.getOwnPropertyNames(object);
-
-        for (var i = 0; i < ownNames.length; i++) {
-          var prop = ownNames[i];
-
-          if (!isReadonlyProp(object, prop)) {
-            var propDesc = Object.getOwnPropertyDescriptor(object, prop);
-
-            if (propDesc !== undefined && !propDesc.get || object.__esModule) {
-              slots.add(prop);
-            }
-          }
-        }
-
-        object = Object.getPrototypeOf(object);
-      }
-
-      return Array.from(slots);
-    }
-  }, {
-    key: "_ensureMockConfig",
-    value: function _ensureMockConfig(f) {
-      var config = this._mockConfigRegistry.get(f);
-
-      if (!config) {
-        config = this._defaultMockConfig();
-
-        this._mockConfigRegistry.set(f, config);
-      }
-
-      return config;
-    }
-  }, {
-    key: "_ensureMockState",
-    value: function _ensureMockState(f) {
-      var state = this._mockState.get(f);
-
-      if (!state) {
-        state = this._defaultMockState();
-
-        this._mockState.set(f, state);
-      }
-
-      if (state.calls.length > 0) {
-        state.lastCall = state.calls[state.calls.length - 1];
-      }
-
-      return state;
-    }
-  }, {
-    key: "_defaultMockConfig",
-    value: function _defaultMockConfig() {
-      return {
-        mockImpl: undefined,
-        mockName: 'jest.fn()',
-        specificMockImpls: [],
-        specificReturnValues: []
-      };
-    }
-  }, {
-    key: "_defaultMockState",
-    value: function _defaultMockState() {
-      return {
-        calls: [],
-        instances: [],
-        invocationCallOrder: [],
-        results: []
-      };
-    }
-  }, {
-    key: "_makeComponent",
-    value: function _makeComponent(metadata, restore) {
-      var _this2 = this;
-
-      if (metadata.type === 'object') {
-        return new this._environmentGlobal.Object();
-      } else if (metadata.type === 'array') {
-        return new this._environmentGlobal.Array();
-      } else if (metadata.type === 'regexp') {
-        return new this._environmentGlobal.RegExp('');
-      } else if (metadata.type === 'constant' || metadata.type === 'collection' || metadata.type === 'null' || metadata.type === 'undefined') {
-        return metadata.value;
-      } else if (metadata.type === 'function') {
-        var prototype = metadata.members && metadata.members.prototype && metadata.members.prototype.members || {};
-
-        var prototypeSlots = this._getSlots(prototype);
-
-        var mocker = this;
-        var mockConstructor = matchArity(function () {
-          var _arguments = arguments,
-              _this = this;
-
-          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-            args[_key] = arguments[_key];
-          }
-
-          var mockState = mocker._ensureMockState(f);
-
-          var mockConfig = mocker._ensureMockConfig(f);
-
-          mockState.instances.push(this);
-          mockState.calls.push(args); // Create and record an "incomplete" mock result immediately upon
-          // calling rather than waiting for the mock to return. This avoids
-          // issues caused by recursion where results can be recorded in the
-          // wrong order.
-
-          var mockResult = {
-            type: 'incomplete',
-            value: undefined
-          };
-          mockState.results.push(mockResult);
-          mockState.invocationCallOrder.push(mocker._invocationCallCounter++); // Will be set to the return value of the mock if an error is not thrown
-
-          var finalReturnValue; // Will be set to the error that is thrown by the mock (if it throws)
-
-          var thrownError; // Will be set to true if the mock throws an error. The presence of a
-          // value in `thrownError` is not a 100% reliable indicator because a
-          // function could throw a value of undefined.
-
-          var callDidThrowError = false;
-
-          try {
-            // The bulk of the implementation is wrapped in an immediately
-            // executed arrow function so the return value of the mock function
-            // can be easily captured and recorded, despite the many separate
-            // return points within the logic.
-            finalReturnValue = function () {
-              if (_this instanceof f) {
-                // This is probably being called as a constructor
-                prototypeSlots.forEach(function (slot) {
-                  // Copy prototype methods to the instance to make
-                  // it easier to interact with mock instance call and
-                  // return values
-                  if (prototype[slot].type === 'function') {
-                    // @ts-expect-error no index signature
-                    var protoImpl = _this[slot]; // @ts-expect-error no index signature
-
-                    _this[slot] = mocker.generateFromMetadata(prototype[slot]); // @ts-expect-error no index signature
-
-                    _this[slot]._protoImpl = protoImpl;
-                  }
-                }); // Run the mock constructor implementation
-
-                var mockImpl = mockConfig.specificMockImpls.length ? mockConfig.specificMockImpls.shift() : mockConfig.mockImpl;
-                return mockImpl && mockImpl.apply(_this, _arguments);
-              } // If mockImplementationOnce()/mockImplementation() is last set,
-              // implementation use the mock
-
-
-              var specificMockImpl = mockConfig.specificMockImpls.shift();
-
-              if (specificMockImpl === undefined) {
-                specificMockImpl = mockConfig.mockImpl;
-              }
-
-              if (specificMockImpl) {
-                return specificMockImpl.apply(_this, _arguments);
-              } // Otherwise use prototype implementation
-
-
-              if (f._protoImpl) {
-                return f._protoImpl.apply(_this, _arguments);
-              }
-
-              return undefined;
-            }();
-          } catch (error) {
-            // Store the thrown error so we can record it, then re-throw it.
-            thrownError = error;
-            callDidThrowError = true;
-            throw error;
-          } finally {
-            // Record the result of the function.
-            // NOTE: Intentionally NOT pushing/indexing into the array of mock
-            //       results here to avoid corrupting results data if mockClear()
-            //       is called during the execution of the mock.
-            mockResult.type = callDidThrowError ? 'throw' : 'return';
-            mockResult.value = callDidThrowError ? thrownError : finalReturnValue;
-          }
-
-          return finalReturnValue;
-        }, metadata.length || 0);
-
-        var f = this._createMockFunction(metadata, mockConstructor);
-
-        f._isMockFunction = true;
-
-        f.getMockImplementation = function () {
-          return _this2._ensureMockConfig(f).mockImpl;
-        };
-
-        if (typeof restore === 'function') {
-          this._spyState.add(restore);
-        }
-
-        this._mockState.set(f, this._defaultMockState());
-
-        this._mockConfigRegistry.set(f, this._defaultMockConfig());
-
-        Object.defineProperty(f, 'mock', {
-          configurable: false,
-          enumerable: true,
-          get: function () {
-            return _this2._ensureMockState(f);
-          },
-          set: function (val) {
-            return _this2._mockState.set(f, val);
-          }
-        });
-
-        f.mockClear = function () {
-          _this2._mockState.delete(f);
-
-          return f;
-        };
-
-        f.mockReset = function () {
-          f.mockClear();
-
-          _this2._mockConfigRegistry.delete(f);
-
-          return f;
-        };
-
-        f.mockRestore = function () {
-          f.mockReset();
-          return restore ? restore() : undefined;
-        };
-
-        f.mockReturnValueOnce = function (value // next function call will return this value or default return value
-        ) {
-          return f.mockImplementationOnce(function () {
-            return value;
-          });
-        };
-
-        f.mockResolvedValueOnce = function (value) {
-          return f.mockImplementationOnce(function () {
-            return Promise.resolve(value);
-          });
-        };
-
-        f.mockRejectedValueOnce = function (value) {
-          return f.mockImplementationOnce(function () {
-            return Promise.reject(value);
-          });
-        };
-
-        f.mockReturnValue = function (value // next function call will return specified return value or this one
-        ) {
-          return f.mockImplementation(function () {
-            return value;
-          });
-        };
-
-        f.mockResolvedValue = function (value) {
-          return f.mockImplementation(function () {
-            return Promise.resolve(value);
-          });
-        };
-
-        f.mockRejectedValue = function (value) {
-          return f.mockImplementation(function () {
-            return Promise.reject(value);
-          });
-        };
-
-        f.mockImplementationOnce = function (fn) {
-          // next function call will use this mock implementation return value
-          // or default mock implementation return value
-          var mockConfig = _this2._ensureMockConfig(f);
-
-          mockConfig.specificMockImpls.push(fn);
-          return f;
-        };
-
-        f.mockImplementation = function (fn) {
-          // next function call will use mock implementation return value
-          var mockConfig = _this2._ensureMockConfig(f);
-
-          mockConfig.mockImpl = fn;
-          return f;
-        };
-
-        f.mockReturnThis = function () {
-          return f.mockImplementation(function () {
-            return this;
-          });
-        };
-
-        f.mockName = function (name) {
-          if (name) {
-            var mockConfig = _this2._ensureMockConfig(f);
-
-            mockConfig.mockName = name;
-          }
-
-          return f;
-        };
-
-        f.getMockName = function () {
-          var mockConfig = _this2._ensureMockConfig(f);
-
-          return mockConfig.mockName || 'jest.fn()';
-        };
-
-        if (metadata.mockImpl) {
-          f.mockImplementation(metadata.mockImpl);
-        }
-
-        return f;
-      } else {
-        var unknownType = metadata.type || 'undefined type';
-        throw new Error('Unrecognized type ' + unknownType);
-      }
-    }
-  }, {
-    key: "_createMockFunction",
-    value: function _createMockFunction(metadata, mockConstructor) {
-      var name = metadata.name;
-
-      if (!name) {
-        return mockConstructor;
-      } // Preserve `name` property of mocked function.
-
-
-      var boundFunctionPrefix = 'bound ';
-      var bindCall = ''; // if-do-while for perf reasons. The common case is for the if to fail.
-
-      if (name && name.startsWith(boundFunctionPrefix)) {
-        do {
-          name = name.substring(boundFunctionPrefix.length); // Call bind() just to alter the function name.
-
-          bindCall = '.bind(null)';
-        } while (name && name.startsWith(boundFunctionPrefix));
-      } // Special case functions named `mockConstructor` to guard for infinite
-      // loops.
-
-
-      if (name === MOCK_CONSTRUCTOR_NAME) {
-        return mockConstructor;
-      }
-
-      if ( // It's a syntax error to define functions with a reserved keyword
-      // as name.
-      RESERVED_KEYWORDS.has(name) || // It's also a syntax error to define functions with a name that starts with a number
-      /^\d/.test(name)) {
-        name = '$' + name;
-      } // It's also a syntax error to define a function with a reserved character
-      // as part of it's name.
-
-
-      if (FUNCTION_NAME_RESERVED_PATTERN.test(name)) {
-        name = name.replace(FUNCTION_NAME_RESERVED_REPLACE, '$');
-      }
-
-      var body = 'return function ' + name + '() {' + 'return ' + MOCK_CONSTRUCTOR_NAME + '.apply(this,arguments);' + '}' + bindCall;
-      var createConstructor = new this._environmentGlobal.Function(MOCK_CONSTRUCTOR_NAME, body);
-      return createConstructor(mockConstructor);
-    }
-  }, {
-    key: "_generateMock",
-    value: function _generateMock(metadata, callbacks, refs) {
-      var _this3 = this;
-
-      // metadata not compatible but it's the same type, maybe problem with
-      // overloading of _makeComponent and not _generateMock?
-      // @ts-expect-error
-      var mock = this._makeComponent(metadata);
-
-      if (metadata.refID != null) {
-        refs[metadata.refID] = mock;
-      }
-
-      this._getSlots(metadata.members).forEach(function (slot) {
-        var slotMetadata = metadata.members && metadata.members[slot] || {};
-
-        if (slotMetadata.ref != null) {
-          callbacks.push(function (ref) {
-            return function () {
-              return mock[slot] = refs[ref];
-            };
-          }(slotMetadata.ref));
-        } else {
-          mock[slot] = _this3._generateMock(slotMetadata, callbacks, refs);
-        }
-      });
-
-      if (metadata.type !== 'undefined' && metadata.type !== 'null' && mock.prototype && typeof mock.prototype === 'object') {
-        mock.prototype.constructor = mock;
-      }
-
-      return mock;
-    }
-    /**
-     * @see README.md
-     * @param _metadata Metadata for the mock in the schema returned by the
-     * getMetadata method of this module.
-     */
-
-  }, {
-    key: "generateFromMetadata",
-    value: function generateFromMetadata(_metadata) {
-      var callbacks = [];
-      var refs = {};
-
-      var mock = this._generateMock(_metadata, callbacks, refs);
-
-      callbacks.forEach(function (setter) {
-        return setter();
-      });
-      return mock;
-    }
-    /**
-     * @see README.md
-     * @param component The component for which to retrieve metadata.
-     */
-
-  }, {
-    key: "getMetadata",
-    value: function getMetadata(component, _refs) {
-      var _this4 = this;
-
-      var refs = _refs || new Map();
-      var ref = refs.get(component);
-
-      if (ref != null) {
-        return {
-          ref: ref
-        };
-      }
-
-      var type = getType(component);
-
-      if (!type) {
-        return null;
-      }
-
-      var metadata = {
-        type: type
-      };
-
-      if (type === 'constant' || type === 'collection' || type === 'undefined' || type === 'null') {
-        metadata.value = component;
-        return metadata;
-      } else if (type === 'function') {
-        // @ts-expect-error this is a function so it has a name
-        metadata.name = component.name; // @ts-expect-error may be a mock
-
-        if (component._isMockFunction === true) {
-          // @ts-expect-error may be a mock
-          metadata.mockImpl = component.getMockImplementation();
-        }
-      }
-
-      metadata.refID = refs.size;
-      refs.set(component, metadata.refID);
-      var members = null; // Leave arrays alone
-
-      if (type !== 'array') {
-        this._getSlots(component).forEach(function (slot) {
-          if (type === 'function' && // @ts-expect-error may be a mock
-          component._isMockFunction === true && slot.match(/^mock/)) {
-            return;
-          } // @ts-expect-error no index signature
-
-
-          var slotMetadata = _this4.getMetadata(component[slot], refs);
-
-          if (slotMetadata) {
-            if (!members) {
-              members = {};
-            }
-
-            members[slot] = slotMetadata;
-          }
-        });
-      }
-
-      if (members) {
-        metadata.members = members;
-      }
-
-      return metadata;
-    }
-  }, {
-    key: "isMockFunction",
-    value: function isMockFunction(fn) {
-      return !!fn && fn._isMockFunction === true;
-    }
-  }, {
-    key: "fn",
-    value: function fn(implementation) {
-      var length = implementation ? implementation.length : 0;
-
-      var fn = this._makeComponent({
-        length: length,
-        type: 'function'
-      });
-
-      if (implementation) {
-        fn.mockImplementation(implementation);
-      }
-
-      return fn;
-    } // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-
-  }, {
-    key: "spyOn",
-    value: function spyOn(object, methodName, accessType) {
-      if (accessType) {
-        return this._spyOnProperty(object, methodName, accessType);
-      }
-
-      if (typeof object !== 'object' && typeof object !== 'function') {
-        throw new Error('Cannot spyOn on a primitive value; ' + this._typeOf(object) + ' given');
-      }
-
-      var original = object[methodName];
-
-      if (!this.isMockFunction(original)) {
-        if (typeof original !== 'function') {
-          throw new Error('Cannot spy the ' + methodName + ' property because it is not a function; ' + this._typeOf(original) + ' given instead');
-        }
-
-        var isMethodOwner = Object.prototype.hasOwnProperty.call(object, methodName);
-        var descriptor = Object.getOwnPropertyDescriptor(object, methodName);
-        var proto = Object.getPrototypeOf(object);
-
-        while (!descriptor && proto !== null) {
-          descriptor = Object.getOwnPropertyDescriptor(proto, methodName);
-          proto = Object.getPrototypeOf(proto);
-        }
-
-        var mock;
-
-        if (descriptor && descriptor.get) {
-          var originalGet = descriptor.get;
-          mock = this._makeComponent({
-            type: 'function'
-          }, function () {
-            descriptor.get = originalGet;
-            Object.defineProperty(object, methodName, descriptor);
-          });
-
-          descriptor.get = function () {
-            return mock;
-          };
-
-          Object.defineProperty(object, methodName, descriptor);
-        } else {
-          mock = this._makeComponent({
-            type: 'function'
-          }, function () {
-            if (isMethodOwner) {
-              object[methodName] = original;
-            } else {
-              delete object[methodName];
-            }
-          }); // @ts-expect-error overriding original method with a Mock
-
-          object[methodName] = mock;
-        }
-
-        mock.mockImplementation(function () {
-          return original.apply(this, arguments);
-        });
-      }
-
-      return object[methodName];
-    }
-  }, {
-    key: "_spyOnProperty",
-    value: function _spyOnProperty(obj, propertyName) {
-      var accessType = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'get';
-
-      if (typeof obj !== 'object' && typeof obj !== 'function') {
-        throw new Error('Cannot spyOn on a primitive value; ' + this._typeOf(obj) + ' given');
-      }
-
-      if (!obj) {
-        throw new Error('spyOn could not find an object to spy upon for ' + propertyName + '');
-      }
-
-      if (!propertyName) {
-        throw new Error('No property name supplied');
-      }
-
-      var descriptor = Object.getOwnPropertyDescriptor(obj, propertyName);
-      var proto = Object.getPrototypeOf(obj);
-
-      while (!descriptor && proto !== null) {
-        descriptor = Object.getOwnPropertyDescriptor(proto, propertyName);
-        proto = Object.getPrototypeOf(proto);
-      }
-
-      if (!descriptor) {
-        throw new Error(propertyName + ' property does not exist');
-      }
-
-      if (!descriptor.configurable) {
-        throw new Error(propertyName + ' is not declared configurable');
-      }
-
-      if (!descriptor[accessType]) {
-        throw new Error('Property ' + propertyName + ' does not have access type ' + accessType);
-      }
-
-      var original = descriptor[accessType];
-
-      if (!this.isMockFunction(original)) {
-        if (typeof original !== 'function') {
-          throw new Error('Cannot spy the ' + propertyName + ' property because it is not a function; ' + this._typeOf(original) + ' given instead');
-        } // @ts-expect-error: mock is assignable
-
-
-        descriptor[accessType] = this._makeComponent({
-          type: 'function'
-        }, function () {
-          // @ts-expect-error: mock is assignable
-          descriptor[accessType] = original;
-          Object.defineProperty(obj, propertyName, descriptor);
-        });
-        descriptor[accessType].mockImplementation(function () {
-          // @ts-expect-error
-          return original.apply(this, arguments);
-        });
-      }
-
-      Object.defineProperty(obj, propertyName, descriptor);
-      return descriptor[accessType];
-    }
-  }, {
-    key: "clearAllMocks",
-    value: function clearAllMocks() {
-      this._mockState = new WeakMap();
-    }
-  }, {
-    key: "resetAllMocks",
-    value: function resetAllMocks() {
-      this._mockConfigRegistry = new WeakMap();
-      this._mockState = new WeakMap();
-    }
-  }, {
-    key: "restoreAllMocks",
-    value: function restoreAllMocks() {
-      this._spyState.forEach(function (restore) {
-        return restore();
-      });
-
-      this._spyState = new Set();
-    }
-  }, {
-    key: "_typeOf",
-    value: function _typeOf(value) {
-      return value == null ? '' + value : typeof value;
-    } // the typings test helper
-
-  }, {
-    key: "mocked",
-    value: function mocked(item) {
-      var _deep = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
-
-      return item;
-    }
-  }]);
-
-  return ModuleMocker;
-}();
-
-exports.ModuleMocker = ModuleMocker;
-var JestMock = new ModuleMocker(__webpack_require__.g);
-var fn = JestMock.fn.bind(JestMock);
-__webpack_unused_export__ = fn;
-var spyOn = JestMock.spyOn.bind(JestMock);
-__webpack_unused_export__ = spyOn;
-var mocked = JestMock.mocked.bind(JestMock);
-__webpack_unused_export__ = mocked;
-
-/***/ }),
-
-/***/ "./node_modules/slash/index.js":
-/*!*************************************!*\
-  !*** ./node_modules/slash/index.js ***!
-  \*************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-
-
-__webpack_require__(/*! ./node_modules/core-js/modules/es.string.replace.js */ "./node_modules/core-js/modules/es.string.replace.js");
-
-__webpack_require__(/*! ./node_modules/core-js/modules/es.regexp.exec.js */ "./node_modules/core-js/modules/es.regexp.exec.js");
-
-module.exports = function (path) {
-  var isExtendedLengthPath = /^\\\\\?\\/.test(path);
-  var hasNonAscii = /[^\u0000-\u0080]+/.test(path); // eslint-disable-line no-control-regex
-
-  if (isExtendedLengthPath || hasNonAscii) {
-    return path;
-  }
-
-  return path.replace(/\\/g, '/');
-};
 
 /***/ }),
 
@@ -58121,6 +57948,7 @@ var runtime = (function (exports) {
 
   var Op = Object.prototype;
   var hasOwn = Op.hasOwnProperty;
+  var defineProperty = Object.defineProperty || function (obj, key, desc) { obj[key] = desc.value; };
   var undefined; // More compressible than void 0.
   var $Symbol = typeof Symbol === "function" ? Symbol : {};
   var iteratorSymbol = $Symbol.iterator || "@@iterator";
@@ -58153,7 +57981,7 @@ var runtime = (function (exports) {
 
     // The ._invoke method unifies the implementations of the .next,
     // .throw, and .return methods.
-    generator._invoke = makeInvokeMethod(innerFn, self, context);
+    defineProperty(generator, "_invoke", { value: makeInvokeMethod(innerFn, self, context) });
 
     return generator;
   }
@@ -58214,8 +58042,12 @@ var runtime = (function (exports) {
   var Gp = GeneratorFunctionPrototype.prototype =
     Generator.prototype = Object.create(IteratorPrototype);
   GeneratorFunction.prototype = GeneratorFunctionPrototype;
-  define(Gp, "constructor", GeneratorFunctionPrototype);
-  define(GeneratorFunctionPrototype, "constructor", GeneratorFunction);
+  defineProperty(Gp, "constructor", { value: GeneratorFunctionPrototype, configurable: true });
+  defineProperty(
+    GeneratorFunctionPrototype,
+    "constructor",
+    { value: GeneratorFunction, configurable: true }
+  );
   GeneratorFunction.displayName = define(
     GeneratorFunctionPrototype,
     toStringTagSymbol,
@@ -58325,7 +58157,7 @@ var runtime = (function (exports) {
 
     // Define the unified helper method that is used to implement .next,
     // .throw, and .return (see defineIteratorMethods).
-    this._invoke = enqueue;
+    defineProperty(this, "_invoke", { value: enqueue });
   }
 
   defineIteratorMethods(AsyncIterator.prototype);
@@ -58435,31 +58267,32 @@ var runtime = (function (exports) {
   // delegate iterator, or by modifying context.method and context.arg,
   // setting context.delegate to null, and returning the ContinueSentinel.
   function maybeInvokeDelegate(delegate, context) {
-    var method = delegate.iterator[context.method];
+    var methodName = context.method;
+    var method = delegate.iterator[methodName];
     if (method === undefined) {
       // A .throw or .return when the delegate iterator has no .throw
-      // method always terminates the yield* loop.
+      // method, or a missing .next mehtod, always terminate the
+      // yield* loop.
       context.delegate = null;
 
-      if (context.method === "throw") {
-        // Note: ["return"] must be used for ES3 parsing compatibility.
-        if (delegate.iterator["return"]) {
-          // If the delegate iterator has a return method, give it a
-          // chance to clean up.
-          context.method = "return";
-          context.arg = undefined;
-          maybeInvokeDelegate(delegate, context);
+      // Note: ["return"] must be used for ES3 parsing compatibility.
+      if (methodName === "throw" && delegate.iterator["return"]) {
+        // If the delegate iterator has a return method, give it a
+        // chance to clean up.
+        context.method = "return";
+        context.arg = undefined;
+        maybeInvokeDelegate(delegate, context);
 
-          if (context.method === "throw") {
-            // If maybeInvokeDelegate(context) changed context.method from
-            // "return" to "throw", let that override the TypeError below.
-            return ContinueSentinel;
-          }
+        if (context.method === "throw") {
+          // If maybeInvokeDelegate(context) changed context.method from
+          // "return" to "throw", let that override the TypeError below.
+          return ContinueSentinel;
         }
-
+      }
+      if (methodName !== "return") {
         context.method = "throw";
         context.arg = new TypeError(
-          "The iterator does not provide a 'throw' method");
+          "The iterator does not provide a '" + methodName + "' method");
       }
 
       return ContinueSentinel;
@@ -58563,7 +58396,8 @@ var runtime = (function (exports) {
     this.reset(true);
   }
 
-  exports.keys = function(object) {
+  exports.keys = function(val) {
+    var object = Object(val);
     var keys = [];
     for (var key in object) {
       keys.push(key);
@@ -64732,4 +64566,4 @@ module.exports = JSON.parse('{"amp":"&","apos":"\'","gt":">","lt":"<","quot":"\\
 /***/ })
 
 }]);
-//# sourceMappingURL=463.cc71f70a.iframe.bundle.js.map
+//# sourceMappingURL=463.a3a9a709.iframe.bundle.js.map
