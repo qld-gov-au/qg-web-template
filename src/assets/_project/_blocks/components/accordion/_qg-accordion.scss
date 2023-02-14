@@ -40,6 +40,9 @@
           z-index: 101;
           transition: transform 0.25s ease-in;
         }
+        .accordion-label {
+          display: inline-block;
+        }
         img + .accordion-label{
           display: block;
           margin-left: 2.5rem;
