@@ -1,4 +1,4 @@
-#qg-primary-content {
+#qg-primary-content, #qg-content .container-fluid.qg-site-width {
   h1:first-child {
     margin-top: 0;
     margin-bottom: 1em;
@@ -6,6 +6,10 @@
     small {
       display: block;
     }
+  }
+  @include qg-non-button-link-styles__default;
+  .print-content-link{
+    @include qg-link-styles__no-underline-default
   }
   caption{
     caption-side: inherit;
@@ -20,6 +24,12 @@
     border: 1px solid #dcdcdc;
     margin-left: 1em;
     font-size: 1rem;
+  }
+  ul, ol {
+    // don't add margins to contexts that manage their own spacing
+    li:not(.select2 li, .graph li, #tabbed-nav li) {
+      margin-bottom: 0.5em;
+    }
   }
 }
 
@@ -62,41 +72,5 @@
     content: " ";
     display: block;
     clear: both;
-  }
-}
-
-//links styles
-a {
-  color: $qg-blue-dark;
-  &:active, &:hover, &:focus {
-    color: $qg-blue-dark;
-  }
-}
-#qg-primary-content, #qg-secondary-content {
-  a:not(.print-content-link) {
-    &:focus, &:hover, &:link, &:visited {
-      text-decoration: underline;
-    }
-    &:active, &:focus {
-      color: #c00;
-    }
-    &:visited {
-      color: #80b;
-    }
-    &:hover {
-      color: #06c;
-    }
-    //&.qg-btn, &.button, &.btn {
-    //  text-decoration: none;
-    //  &:focus, &:hover, &:link, &:visited {
-    //    text-decoration: none;
-    //    color: #FFF;
-    //  }
-    //}
-    //&.btn-primary {
-    //  &:focus, &:hover, &:link, &:visited {
-    //    color: #000;
-    //  }
-    //}
   }
 }

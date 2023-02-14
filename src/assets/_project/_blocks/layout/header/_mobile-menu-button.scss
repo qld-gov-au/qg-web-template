@@ -2,7 +2,7 @@
     background-color: transparent;
     border: 0;
 
-	span {
+    span {
         display: table;
         color: #fff;
         margin: auto;
@@ -61,7 +61,7 @@
     right: 24px;
 
     .qg-global-icons {
-        svg g g {
+        svg g g, svg g rect {
             fill: #fff;
         }
     }
@@ -71,7 +71,7 @@
             display: none;
         }
 
-        svg g g {
+        svg g g, svg g rect {
             fill: $qg-global-primary-grey;
         }
     }
@@ -81,7 +81,7 @@
     .qg-show-menu {
         left: 10px;
     }
-    
+
     .qg-show-search {
         right: 10px;
     }
@@ -92,7 +92,7 @@
 }
 
 @include media-breakpoint-up(md) {
-	.qg-show-menu, .qg-show-search {
-		display: none;
-	}
+    .qg-show-menu, .qg-show-search {
+        display: none;
+    }
 }

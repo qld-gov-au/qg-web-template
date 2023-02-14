@@ -490,7 +490,8 @@ $(function () {
     if (jsonResponse.hasOwnProperty('features')) {
       // Add each suburb to the location list
       jsonResponse['features'].forEach(function (object) {
-        var sourceName = object['attributes']['ADMINAREANAME'].toLowerCase();
+        var sourceName = object['attributes']['ADMINAREANAME'] || object['attributes']['adminareaname'];
+        sourceName = sourceName.toLowerCase();
         var suburbLGA = titleCase(sourceName);
         var suburbObject = {
           'name': sourceName,
@@ -529,7 +530,7 @@ $(function () {
       // Maps not loaded
       // Create script tag
       var apiKey = 'AIzaSyDvR5MCDqi0HtcjkehKqbKhyoCxt4Khqac';
-      var scriptURL = 'https://maps.googleapis.com/maps/api/js?key=' + apiKey;
+      var scriptURL = 'https://maps.googleapis.com/maps/api/js?callback=qg_location_init&key=' + apiKey;
       var scriptElement = document.createElement('script');
 
       // Populate tag
@@ -539,6 +540,8 @@ $(function () {
 
       // Insert into the DOM
       document.querySelector('body').appendChild(scriptElement);
+
+      window.qg_location_init = function() {};
       scriptElement.onload = function () {
         qgLocation.fn.init();
       };

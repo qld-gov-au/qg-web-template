@@ -13,7 +13,7 @@
         -moz-osx-font-smoothing: grayscale;
         font-style: normal;
         font-weight: normal;
-        text-decoration: none;
+        text-decoration-line: none;
     }
 }
 
@@ -40,7 +40,7 @@
 .btn-group {
     .dropdown-toggle.qg-icon:after {
         width: 1.4em;
-        
+
         padding-left: 0.1em;
         padding-right: 0.1em;
     }
@@ -48,7 +48,7 @@
 
 .qg-toggle-icon:after {
     content: "\f077";
-    
+
     font-family: FontAwesome;
     color: #fff;
 

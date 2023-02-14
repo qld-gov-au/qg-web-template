@@ -61,7 +61,7 @@
   padding-right: 16px;
   padding-right: 1rem;
   content: "";
-  text-decoration: none;
+  text-decoration-line: none;
   background: inherit;
   color: #000; }
 .info:before, .info:hover:before, .status:before, .status:hover:before {
@@ -100,7 +100,7 @@
   padding-right: 16px;
   padding-right: 1rem;
   content: "";
-  text-decoration: none;
+  text-decoration-line: none;
   background: inherit;
   color: #000; }
 .success-step:before, .success-step:hover:before {
@@ -139,7 +139,7 @@
   padding-right: 16px;
   padding-right: 1rem;
   content: "";
-  text-decoration: none;
+  text-decoration-line: none;
   background: inherit;
   color: #000; }
 .success:before, .success:hover:before {
@@ -178,7 +178,7 @@
   padding-right: 16px;
   padding-right: 1rem;
   content: "";
-  text-decoration: none;
+  text-decoration-line: none;
   background: inherit;
   color: #000; }
 .warn:before, .warn:hover:before {
@@ -217,7 +217,7 @@
   padding-right: 16px;
   padding-right: 1rem;
   content: "";
-  text-decoration: none;
+  text-decoration-line: none;
   background: inherit;
   color: #000; }
 .fail:before, .fail:hover:before {
@@ -256,7 +256,7 @@ div.download:hover:before {
   padding-right: 16px;
   padding-right: 1rem;
   content: "";
-  text-decoration: none;
+  text-decoration-line: none;
   background: inherit;
   color: #000; }
 div.download:before, div.download:hover:before {
@@ -705,7 +705,7 @@ legend .hint .help {
 //abbr.required, abbr[title*="required"] {
   //color: #F85C50;
   //border-bottom: none;
-  //text-decoration: none; }
+  //text-decoration-line: none; }
 
 //.questions abbr.required, .questions abbr[title*="required"] {
 //  position: absolute;
@@ -782,12 +782,12 @@ input:checked + label {
 
 .data dd a {
   color: #444444;
-  text-decoration: none; }
+  text-decoration-line: none; }
 
 .data dd a:active,
 .data dd a:hover {
   color: inherit;
-  text-decoration: underline; }
+  text-decoration-line: underline; }
 
 /* data to copy and paste */
 .copypaste {
@@ -852,7 +852,7 @@ input[type=reset] {
 #asides .button:visited {
   display: inline-block;
   color: #ffffff;
-  text-decoration: none;
+  text-decoration-line: none;
   white-space: nowrap; }
 
 /* leave image buttons alone */
@@ -876,12 +876,12 @@ form button,
   max-width: none;
   font-weight: bold;
   font-style: normal;
-  color: #ffffff;
   background: #585E62;
   border: none;
   border-radius: 0;
   -moz-border-radius: 0;
-  -webkit-border-radius: 0; }
+  -webkit-border-radius: 0;
+}
 
 /* slimmer buttons in asides */
 .aside button,
@@ -904,7 +904,6 @@ form button:focus,
 .poll .button:focus,
 .actions input:hover,
 .actions input:focus {
-  color: #000000;
   background-color: #7d858a;
   outline: 1px solid #585E62;
   outline-offset: -1px; }

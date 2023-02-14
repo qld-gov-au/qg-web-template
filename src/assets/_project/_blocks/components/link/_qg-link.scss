@@ -1,0 +1,158 @@
+// This file contains all possible SWE link styling themes. Components extends these theme classes. As an example,
+//a {
+//  @include .qg-link-styles__no-underline-default
+//}
+//-------------------------------------------------
+
+// global link styles
+@mixin qg-global-link-styles {
+  // make exception for certain classes, which need to re-visit for better optimization
+  &:not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item
+      .page-link):not(.dfv-cards--type-top-prompt
+      a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.print-content-link):not(.qg-aside-button):not(.dfv-back
+      a):not(.QSAR-records-search a) {
+    text-underline-offset: $text-underline-offset;
+    // not sure why Asif need to add this, which will have side-effect on customised style added by franchise.
+    // &:hover,
+    // &.hover {
+    //   background: none;
+    // }
+    // Don't apply outlines to button links or the Digital Dashboard
+    &:not(.btn-link, button a, #ia-format a) {
+      &:active,
+      &:focus,
+      &:focus-visible,
+      &.active,
+      &.focus {
+        outline: 3px solid #0096d6;
+        outline-offset: 2px;
+      }
+    }
+    @content;
+  }
+}
+
+//-------------------------------------------------
+
+//START theme BLUE
+// 1. color theme blue with underline
+@mixin qg-link-styles__default {
+  @include qg-global-link-styles {
+    @include qg-link-decoration;
+    @include qg-link-visited-decoration;
+    &:not(.qg-private-content-link) {
+      color: $qg-blue-dark;
+      text-decoration-color: #457aa3;
+    }
+    @include qg-link-hover-decoration;
+  }
+}
+
+// 2. color theme blue no underline
+@mixin qg-link-styles__no-underline-default {
+  @include qg-global-link-styles {
+    color: $qg-blue-dark;
+    &:link {
+      @include qg-link-none-decoration;
+    }
+    @include qg-link-hover-decoration;
+  }
+}
+
+//END theme BLUE
+
+//-------------------------------------------------
+
+// START theme BLACK
+// 1. color theme black no underline
+@mixin qg-link-styles__no-underline-black {
+  @include qg-global-link-styles {
+    color: $qg-global-primary-darker-grey;
+    &:link {
+      @include qg-link-none-decoration;
+    }
+    @include qg-link-hover-decoration;
+  }
+}
+
+// 2. color theme black with underline
+@mixin qg-link-styles__theme-black {
+  @include qg-global-link-styles {
+    color: $qg-global-primary-darker-grey;
+    @include qg-link-decoration;
+    @include qg-link-visited-decoration;
+    text-decoration-color: #737678;
+    @include qg-link-hover-decoration;
+  }
+}
+
+// Black theme that doesn't change when visited
+@mixin qg-link-styles__theme-black-always {
+  @include qg-global-link-styles {
+    color: $qg-global-primary-darker-grey;
+    @include qg-link-decoration;
+    @include qg-link-visited-decoration($qg-global-primary-darker-grey);
+    text-decoration-color: #737678;
+    @include qg-link-hover-decoration;
+  }
+}
+
+// END theme BLACK
+
+//-------------------------------------------------
+
+// START theme WHITE
+// 2. With underline
+@mixin qg-link-styles__theme-white {
+  @include qg-global-link-styles {
+    color: #fff;
+    @include qg-link-decoration;
+    @include qg-link-visited-decoration(#fff);
+    text-decoration-color: rgba(255, 255, 255, 0.73);
+    @include qg-link-hover-decoration {
+      text-decoration-color: #fff;
+    }
+  }
+}
+
+// 2. without underline
+@mixin qg-link-styles__no-underline-white {
+  @include qg-global-link-styles {
+    color: #fff;
+    &:link {
+      @include qg-link-none-decoration;
+    }
+    @include qg-link-hover-decoration {
+      text-decoration-color: #fff;
+    }
+  }
+}
+
+// END theme WHITE
+
+//-------------------------------------------------
+
+//visited theme
+.qg-link-styles__visited-change {
+  &:visited {
+    color: #80b;
+    @include qg-link-hover-decoration {
+      color: #80b;
+      text-decoration-color: #80b;
+    }
+  }
+}
+
+//-------------------------------------------------
+
+// Apply default styling to all links that don't have a button class
+@mixin qg-non-button-link-styles__default {
+  a:not(.qg-btn):not(.btn):not(.button){
+    @include qg-link-styles__default
+  }
+}
+
+// Don't apply a text-decoration if underline is hardcoded
+u a {
+  text-decoration-line: none !important;
+}
