@@ -1,4 +1,4 @@
-/*! ICT-Dashboard => Version-2.0.0, Date-9/2/2023, Time-13:30:12 */
+/*! ICT-Dashboard => Version-2.0.0, Date-13/2/2023, Time-9:23:57 */
 /* dev/uat env */
 body.env-dev {
   background: url("https://www.qld.gov.au/?a=5491") repeat-x;
@@ -97,23 +97,9 @@ div.ict-tabnav ul.tenders li.tenders a {
   margin-left: 1em !important;
   margin-right: 1em !important; }
 
-#ictdb .actions {
-  margin: 1em 0;
-  clear: left;
-  float: left;
-  width: 100%; }
-
-#ictdb .actions ul {
-  margin: 1em 0;
-  padding: 0; }
-
-#ictdb h2 {
-  margin: 0.2em 0 0 0; }
-
 #overview-status {
   width: 48%;
-  float: left;
-  padding-right: 2%; }
+  float: left; }
 
 #overview-expenditure {
   width: 48%;
@@ -135,10 +121,6 @@ div.ict-tabnav ul.tenders li.tenders a {
 #overview-status,
 #overview-expenditure {
   text-align: center; }
-
-#overview-status {
-  margin: 0;
-  padding: 0; }
 
 #overview-status .graph li, #overview-expenditure .graph li {
   float: left;
@@ -249,7 +231,7 @@ div.ict-tabnav ul.tenders li.tenders a {
   max-width: 100%;
   margin: 0;
   padding: 0;
-  outline: rgba(0, 0, 0, 0.5) solid 1px; }
+  outline: rgba(0, 0, 0, 0.5) solid 1px !important; }
   #overview-expenditure .graph li span {
     position: absolute;
     top: .25em;
@@ -273,10 +255,11 @@ div.ict-tabnav ul.tenders li.tenders a {
     height: 1.2em;
     outline: rgba(0, 0, 0, 0.2) solid 1px; }
 
-#overview-expenditure a:hover, #overview-expenditure a:focus {
-  outline: #00b6ff solid 3px;
+#overview-expenditure a {
   display: block;
   height: 2.6em; }
+  #overview-expenditure a:hover {
+    outline: #0096d6 solid 3px; }
 
 #overview-expenditure .gkey .g1 span {
   background: #007EB1;
@@ -296,27 +279,32 @@ div.ict-tabnav ul.tenders li.tenders a {
 
 #projects {
   width: 100%;
-  float: left; }
+  float: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
 
 #projects h2 {
-  float: left;
-  top: 0.35em;
   position: relative;
-  margin-bottom: 0; }
-
-#projects .view-all {
-  padding: 0 .5em;
-  margin-left: .5em;
-  border-left: 1px solid #000;
-  font-size: 0.8em;
-  font-weight: normal; }
+  margin-bottom: 0;
+  margin-top: 0;
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1; }
 
 #projects p {
-  float: left;
   padding: 0 .5em;
-  margin-left: .5em;
   border-left: 1px solid #000;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1; }
 
 #project-status {
   width: 50%;
@@ -382,25 +370,15 @@ div.ict-tabnav ul.tenders li.tenders a {
   min-width: 400px;
   float: right;
   margin-top: 0.5em;
-  text-align: right;
   margin-bottom: .5em; }
 
 #ictdb .search-wrapper {
   width: 100% !important;
-  min-width: 200px !important;
-  text-align: right; }
+  min-width: 200px !important; }
 
 #ictdb .search-wrapper input {
-  border: none;
   float: left;
-  width: 60%;
-  padding: .4em .7em; }
-
-#ictdb .search-wrapper .button {
-  background: #585e62;
-  width: 30%;
-  padding: 0.52em;
-  float: left; }
+  width: 60%; }
 
 #ictdb ul.graph {
   padding: 0; }
@@ -693,24 +671,31 @@ table#example tr.even.shown td {
   display: none; }
 
 .qg-projects-search form .choices label {
-  position: relative;
-  top: -4px; }
+  margin-bottom: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
 
-#status-list label {
-  display: inline-block; }
-  #status-list label img {
-    pointer-events: none; }
+#status-list label img {
+  pointer-events: none; }
 
-.qg-projects-search form .choices img {
+.qg-aside .qg-projects-search form .choices img {
   position: relative;
   padding-right: 0.5em;
   width: 2em; }
 
+.qg-projects-search form .choices li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
 .choices li input {
   position: absolute;
   margin-left: -20px;
-  padding: 0;
-  top: 0.1em; }
+  padding: 0; }
 
 #aside-more-information-dashboard {
   margin-bottom: 80px; }
