@@ -44,7 +44,6 @@
           display: inline-block;
         }
         img + .accordion-label{
-          display: block;
           margin-left: 2.5rem;
           margin-bottom: 0;
         }
@@ -64,7 +63,7 @@
     }
   }
   button {
-    @include qg-button-outline-decoration {
+    @include qg-button-outline-decoration (0px) {
       z-index: 100;
     }
   }
