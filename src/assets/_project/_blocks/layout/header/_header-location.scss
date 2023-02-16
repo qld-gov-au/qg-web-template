@@ -14,13 +14,11 @@
     .dropdown-toggle {
         background-color: transparent;
         border: 0;
-        color: white;
         padding: 0 0 0 5px;
         transition: opacity .3s ease;
         &:after {
             display: none;
         }
-        @include qg-link-styles__theme-white
     }
     &__title {
         display: flex;
@@ -69,6 +67,9 @@
         .dropdown-menu {
             left: -35px;
             top: calc(100% + 10px);
+        }
+        .dropdown-toggle {
+            @include qg-link-styles__theme-white;
         }
     }
     @include media-breakpoint-down(sm) {
