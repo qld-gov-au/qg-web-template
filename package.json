@@ -54,7 +54,7 @@
     "chromatic": "^6.17.0",
     "concurrently": "^7.6.0",
     "copy-webpack-plugin": "^11.0.0",
-    "cssnano": "^4.1.11",
+    "cssnano": "^5.1.15",
     "del": "^2.2.2",
     "eslint": "^8.34.0",
     "eslint-config-semistandard": "^7.0.0",
