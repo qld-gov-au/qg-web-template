@@ -5,7 +5,7 @@
 //-------------------------------------------------
 
 // global link styles
-@mixin qg-global-link-styles {
+@mixin qg-global-link-styles($margin: 2px) {
   // make exception for certain classes, which need to re-visit for better optimization
   &:not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item
       .page-link):not(.dfv-cards--type-top-prompt
@@ -19,7 +19,7 @@
     // &.hover {
     //   background: none;
     // }
-    @include qg-button-outline-decoration;
+    @include qg-button-outline-decoration($margin);
     @content;
   }
 }
@@ -116,8 +116,8 @@
 
 // START theme WHITE
 // 2. With underline
-@mixin qg-link-styles__theme-white {
-  @include qg-global-link-styles {
+@mixin qg-link-styles__theme-white($margin: 2px) {
+  @include qg-global-link-styles($margin) {
     @include qg-link-white;
     @include qg-link-decoration;
   }
