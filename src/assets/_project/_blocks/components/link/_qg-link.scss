@@ -81,6 +81,8 @@
 // 1. color theme black no underline
 @mixin qg-link-styles__no-underline-black {
   @include qg-global-link-styles {
+    // in case underline is restored by eg hover
+    text-decoration-color: currentColor;
     @include qg-link-unvisited-color($qg-global-primary-darker-grey);
     &:link {
       @include _qg-link-none-decoration;

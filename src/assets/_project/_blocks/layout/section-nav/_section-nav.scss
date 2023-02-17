@@ -11,18 +11,13 @@
     margin-bottom: 0;
     @include rem(font-size, 19px);
     a {
-      &:not(.active) {
-        @include qg-link-styles__no-underline-black;
-      }
+      @include qg-link-styles__no-underline-black;
       margin: -0.7rem 0 -0.7rem -1rem;
       padding: 0.7rem 0 0.7rem 1rem;
       width: calc(100% + 1rem);
       display: inline-block;
       color: $qg-dark-grey-darker !important;
       font-size: 1rem;
-      &:link, &:hover {
-        text-decoration-line: none;
-      }
       @include on-hover-or-active {
         background-color: $qg-section-nav-bg-color;
       }
@@ -45,9 +40,7 @@
     @include rem(font-size, 14px);
 
     a {
-      &:not(.active) {
-        @include qg-link-styles__no-underline-black;
-      }
+      @include qg-link-styles__no-underline-black;
       display: block;
       width: 100%;
       margin: 0;
@@ -56,9 +49,6 @@
       &.active{
         color: #212529;
         font-weight: 700;
-        &:link, &:hover {
-          text-decoration-line: none;
-        }
       }
       @include on-hover-or-active {
         background-color: $qg-section-nav-bg-color;
