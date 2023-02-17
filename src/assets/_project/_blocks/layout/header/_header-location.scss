@@ -14,13 +14,11 @@
     .dropdown-toggle {
         background-color: transparent;
         border: 0;
-        color: white;
         padding: 0 0 0 5px;
         transition: opacity .3s ease;
         &:after {
             display: none;
         }
-        @include qg-link-styles__theme-white
     }
     &__title {
         display: flex;
@@ -65,10 +63,13 @@
             left: 220px;
         }
     }
-    @include media-breakpoint-up(sm) {
+    @include media-breakpoint-up(md) {
         .dropdown-menu {
             left: -35px;
             top: calc(100% + 10px);
+        }
+        .dropdown-toggle {
+            @include qg-link-styles__theme-white(0px);
         }
     }
     @include media-breakpoint-down(sm) {
@@ -79,7 +80,7 @@
             justify-content: center;
         }
         .dropdown-toggle {
-            @include qg-link-styles__theme-black;
+            @include qg-link-styles__theme-black(0px);
             order: 3;
             margin-left: 3px;
         }
