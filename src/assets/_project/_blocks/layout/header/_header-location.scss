@@ -79,7 +79,7 @@
             justify-content: center;
         }
         .dropdown-toggle {
-            @include qg-link-styles__theme-black;
+            @include qg-link-styles__theme-black(0px);
             order: 3;
             margin-left: 3px;
         }
