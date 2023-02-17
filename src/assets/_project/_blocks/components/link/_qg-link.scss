@@ -90,8 +90,8 @@
 }
 
 // 2. color theme black with underline
-@mixin qg-link-styles__theme-black {
-  @include qg-global-link-styles {
+@mixin qg-link-styles__theme-black($margin: 2px) {
+  @include qg-global-link-styles($margin) {
     @include qg-link-unvisited-color($qg-global-primary-darker-grey);
     @include qg-link-decoration;
     @include qg-link-visited-decoration;
