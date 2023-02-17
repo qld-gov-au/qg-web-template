@@ -23,11 +23,11 @@
     color: $qg-pagination-disabled-color !important;
     pointer-events: none;
     cursor: auto;
-    background-color: #fff;
+    background-color: white;
   }
   .page-item.active .page-link{
     background-color: $qg-pagination-link-color;
     border-color: $qg-pagination-link-color;
-    color: #fff !important;
+    color: white !important;
   }
 }

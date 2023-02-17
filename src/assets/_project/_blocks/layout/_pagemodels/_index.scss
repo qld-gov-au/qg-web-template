@@ -21,7 +21,7 @@
       // workaround for Firefox border issue on multiline links,
       // https://www.drupal.org/project/drupal/issues/3016658
       display: inline-block;
-      &:not(:hover){
+      &:not(:hover):not(:active):not(:focus){
         text-decoration-line: none !important;
       }
       &:hover {
@@ -91,15 +91,14 @@
       a {
         padding: 1em 1.5em 1em 1.5em !important;
         display: block;
-        color: #ffffff !important;
+        color: white !important;
       }
       a:visited, a:active{
-        color: #ffffff !important;
+        color: white !important;
       }
       a:hover {
         background: #007eb1;
-        color: #ffffff !important;
-        text-decoration-line: none !important;
+        color: white !important;
       }
       img {
         display: none;
@@ -107,6 +106,16 @@
     }
     p,ul{
       display: none;
+    }
+  }
+}
+
+// Override default link styling, but don't increase priority
+// of other index-links rules
+#qg-content #qg-primary-content .qg-index-links {
+  @include breakpoint(xs) {
+    h2 a {
+      @include qg-link-styles__theme-white;
     }
   }
 }

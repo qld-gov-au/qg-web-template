@@ -1,13 +1,16 @@
 import { Canvas, Meta, Story } from "@storybook/addon-docs";
 
-import { QgPrimaryContent, QgTwoColNav } from "../../decorators";
+import { QgPrimaryContent, QgTwoColNav, Grid } from "../../decorators";
+import { getDecoratedParameters } from "../../helpers";
 
 import TextInput from "./templates/TextInput.html";
 import Textarea from "./templates/Textarea.html";
 import Checkbox from "./templates/Checkbox.html";
 import CheckboxCustom from "./templates/CheckboxCustom.html";
+import CheckboxStates from "./templates/CheckboxStates.html";
 import Radio from "./templates/Radio.html";
 import RadioCustom from "./templates/RadioCustom.html";
+import RadioStates from "./templates/RadioStates.html";
 import Select from "./templates/Select.html";
 import DatePicker from "./templates/DatePicker.html";
 import Validation from "./templates/Validation.html";
@@ -87,6 +90,14 @@ Requires `#QgPrimaryContent` ancestor.
   </Story>
 </Canvas>
 
+## CheckboxStates
+
+<Canvas withSource="close">
+  <Story name="CheckboxStates" decorators={[Grid(5)]} parameters={getDecoratedParameters(CheckboxStates)}>
+    {() => CheckboxStates}
+  </Story>
+</Canvas>
+
 ## Radio
 
 <Canvas withSource="open">
@@ -118,6 +129,14 @@ Requires `#QgPrimaryContent` ancestor.
     }}
   >
     {() => RadioCustom}
+  </Story>
+</Canvas>
+
+## RadioStates
+
+<Canvas withSource="close">
+  <Story name="RadioStates" decorators={[Grid(5)]} parameters={getDecoratedParameters(RadioStates)}>
+    {() => RadioStates}
   </Story>
 </Canvas>
 

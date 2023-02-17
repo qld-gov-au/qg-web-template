@@ -302,7 +302,7 @@ ol.xor > li:first-child::before {
 
 .listbox a:hover, #tools .listbox a:hover, .listbox a:focus, #tools .listbox a:focus, .listbox a.focus, #tools .listbox a.focus {
   /* override #tools a */
-  background: #fff;
+  background: white;
   color: #939393;
   border: none;
 }
@@ -328,7 +328,7 @@ input[type=datetime],
 input[type=number],
 select,
 textarea {
-  background: #ffffff;
+  background: white;
   border: 1px solid #cccccc;
   padding: .5em .7em;
   max-width: 100%;
@@ -340,7 +340,7 @@ input:not([type]) {
   font: inherit;
   padding: .3em;
   max-width: 90%;
-  background: #ffffff;
+  background: white;
   border: 1px solid #cccccc;
 }
 
@@ -379,7 +379,7 @@ table input:not([type]) {
 .aside input[type=number],
 .aside select,
 .aside textarea {
-  background: #ffffff;
+  background: white;
   border: 1px solid #cccccc;
   padding: .5em .7em;
   max-width: 90%;
@@ -402,7 +402,7 @@ table input:not([type]) {
 .search .lookup {
   background: #666666;
   border: 0 none;
-  color: #ffffff;
+  color: white;
   display: inline-block;
   padding: 0.2em 0.4em;
   position: absolute;
@@ -629,9 +629,8 @@ form li.footer {
 }
 
 /* link actions */
-.actions :link,
-.actions :visited {
-  color: #13578b;
+.actions :link {
+  @include qg-link-unvisited-color;
 }
 
 /* question states */
@@ -649,7 +648,6 @@ form li.footer {
 }
 
 /* focus */
-button.focus,
 input.focus,
 select.focus,
 textarea.focus {
@@ -950,7 +948,7 @@ input[type=reset] {
 .button:hover,
 #asides .button:visited {
   display: inline-block;
-  color: #ffffff;
+  color: white;
   text-decoration-line: none;
   white-space: nowrap;
 }
@@ -1071,7 +1069,7 @@ em .ui-button,
 .actions em .button,
 .actions em input {
   background-color: #007EB1;
-  color: #ffffff;
+  color: white;
 }
 
 form em button:hover,
@@ -1106,7 +1104,7 @@ form input[type="submit"][disabled] {
   opacity: .35;
   /* based on jquery UI .ui-state-disabled */
   background: #585E62;
-  color: #ffffff;
+  color: white;
   cursor: default;
 }
 
@@ -1123,7 +1121,7 @@ em .ui-button[disabled],
 form em button[disabled],
 form em input[type="submit"][disabled] {
   background: #007EB1;
-  color: #ffffff;
+  color: white;
 }
 
 #search-button,

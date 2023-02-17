@@ -7,7 +7,6 @@
       display: block;
     }
   }
-  @include qg-non-button-link-styles__default;
   .print-content-link{
     @include qg-link-styles__no-underline-default
   }
@@ -24,6 +23,9 @@
     border: 1px solid #dcdcdc;
     margin-left: 1em;
     font-size: 1rem;
+  }
+  ul:not(#tabbed-nav ul) {
+    margin-bottom: 0.75rem;
   }
   ul, ol {
     // don't add margins to contexts that manage their own spacing
@@ -74,3 +76,5 @@
     clear: both;
   }
 }
+
+@include qg-non-button-link-styles__default;

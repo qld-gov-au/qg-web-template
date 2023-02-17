@@ -15,6 +15,11 @@
     margin-top: 5px;
     font-size: 1.2em;
   }
+  a {
+    @include qg-global-link-styles {
+      @include qg-link-decoration;
+    }
+  }
   & + p{
     margin-top: 1em;
   }

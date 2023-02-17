@@ -5,31 +5,44 @@
 //-------------------------------------------------
 
 // global link styles
-@mixin qg-global-link-styles {
+@mixin qg-global-link-styles($margin: 2px) {
   // make exception for certain classes, which need to re-visit for better optimization
   &:not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item
       .page-link):not(.dfv-cards--type-top-prompt
       a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.print-content-link):not(.qg-aside-button):not(.dfv-back
       a):not(.QSAR-records-search a) {
-    text-underline-offset: $text-underline-offset;
+    &:not(span[role=link] *) {
+      text-underline-offset: $text-underline-offset;
+    }
     // not sure why Asif need to add this, which will have side-effect on customised style added by franchise.
     // &:hover,
     // &.hover {
     //   background: none;
     // }
-    // Don't apply outlines to button links or the Digital Dashboard
-    &:not(.btn-link, button a, #ia-format a) {
-      &:active,
-      &:focus,
-      &:focus-visible,
-      &.active,
-      &.focus {
-        outline: 3px solid #0096d6;
-        outline-offset: 2px;
-      }
-    }
+    @include qg-button-outline-decoration($margin);
     @content;
   }
+}
+
+@mixin qg-link-unvisited-color($color: $link-color) {
+  &:not(:visited):not(.btn):not(.qg-btn):not(.button) {
+    color: $color;
+    @content;
+  }
+}
+
+@mixin qg-link-white {
+  // style rules for links with white text (intended for dark backgrounds)
+  color: white;
+  text-decoration-color: rgba(255, 255, 255, 0.73);
+  @include qg-underline-on-highlight-decoration {
+    text-decoration-color: white;
+  }
+}
+
+@mixin _qg-link-none-decoration {
+  text-decoration-line: none;
+  @include qg-link-visited-decoration;
 }
 
 //-------------------------------------------------
@@ -40,22 +53,23 @@
   @include qg-global-link-styles {
     @include qg-link-decoration;
     @include qg-link-visited-decoration;
+    @include qg-underline-on-highlight-decoration;
     &:not(.qg-private-content-link) {
-      color: $qg-blue-dark;
-      text-decoration-color: #457aa3;
+      @include qg-link-unvisited-color {
+        text-decoration-color: #457aa3;
+      }
     }
-    @include qg-link-hover-decoration;
   }
 }
 
 // 2. color theme blue no underline
 @mixin qg-link-styles__no-underline-default {
   @include qg-global-link-styles {
-    color: $qg-blue-dark;
+    @include qg-link-unvisited-color;
     &:link {
-      @include qg-link-none-decoration;
+      @include _qg-link-none-decoration;
     }
-    @include qg-link-hover-decoration;
+    @include qg-underline-on-highlight-decoration;
   }
 }
 
@@ -67,22 +81,22 @@
 // 1. color theme black no underline
 @mixin qg-link-styles__no-underline-black {
   @include qg-global-link-styles {
-    color: $qg-global-primary-darker-grey;
+    @include qg-link-unvisited-color($qg-global-primary-darker-grey);
     &:link {
-      @include qg-link-none-decoration;
+      @include _qg-link-none-decoration;
     }
-    @include qg-link-hover-decoration;
+    @include qg-underline-on-highlight-decoration;
   }
 }
 
 // 2. color theme black with underline
-@mixin qg-link-styles__theme-black {
-  @include qg-global-link-styles {
-    color: $qg-global-primary-darker-grey;
+@mixin qg-link-styles__theme-black($margin: 2px) {
+  @include qg-global-link-styles($margin) {
+    @include qg-link-unvisited-color($qg-global-primary-darker-grey);
     @include qg-link-decoration;
     @include qg-link-visited-decoration;
     text-decoration-color: #737678;
-    @include qg-link-hover-decoration;
+    @include qg-underline-on-highlight-decoration;
   }
 }
 
@@ -93,7 +107,6 @@
     @include qg-link-decoration;
     @include qg-link-visited-decoration($qg-global-primary-darker-grey);
     text-decoration-color: #737678;
-    @include qg-link-hover-decoration;
   }
 }
 
@@ -103,28 +116,21 @@
 
 // START theme WHITE
 // 2. With underline
-@mixin qg-link-styles__theme-white {
-  @include qg-global-link-styles {
-    color: #fff;
+@mixin qg-link-styles__theme-white($margin: 2px) {
+  @include qg-global-link-styles($margin) {
+    @include qg-link-white;
     @include qg-link-decoration;
-    @include qg-link-visited-decoration(#fff);
-    text-decoration-color: rgba(255, 255, 255, 0.73);
-    @include qg-link-hover-decoration {
-      text-decoration-color: #fff;
-    }
   }
 }
 
 // 2. without underline
 @mixin qg-link-styles__no-underline-white {
   @include qg-global-link-styles {
-    color: #fff;
+    @include qg-link-white;
     &:link {
-      @include qg-link-none-decoration;
+      @include _qg-link-none-decoration;
     }
-    @include qg-link-hover-decoration {
-      text-decoration-color: #fff;
-    }
+    @include qg-underline-on-highlight-decoration;
   }
 }
 
@@ -136,9 +142,10 @@
 .qg-link-styles__visited-change {
   &:visited {
     color: #80b;
-    @include qg-link-hover-decoration {
+    text-decoration-color: currentColor;
+    @include qg-underline-on-highlight-decoration {
       color: #80b;
-      text-decoration-color: #80b;
+      text-decoration-color: currentColor;
     }
   }
 }
@@ -148,11 +155,26 @@
 // Apply default styling to all links that don't have a button class
 @mixin qg-non-button-link-styles__default {
   a:not(.qg-btn):not(.btn):not(.button){
-    @include qg-link-styles__default
+    @include qg-link-styles__default;
   }
 }
 
-// Don't apply a text-decoration if underline is hardcoded
-u a {
-  text-decoration-line: none !important;
+@supports selector(:has(a)) {
+  // Move underline decorations from 'u' tags to their enclosed anchors.
+  // This allows us to apply customisations directly to the anchor,
+  // without the 'u' tag getting in the way.
+  u:has(a) {
+    text-decoration-line: none;
+  }
+  u a {
+    text-decoration-line: underline;
+  }
+}
+@supports not selector(:has(a)) {
+  // On browsers that cannot use the :has pseudo-selector (Firefox),
+  // just exclude our standard underline styling inside a 'u' tag,
+  // so we don't get a double underline.
+  u a {
+    text-decoration-line: none !important;
+  }
 }

@@ -27,7 +27,7 @@
 
     &:after {
       content: "";
-      background-color: #fff;
+      background-color: white;
       height: 3px;
       position: absolute;
       top: -4px;
@@ -45,7 +45,7 @@
       }
 
       &.suggestions {
-        background-color: #fff;
+        background-color: white;
 
         .qg-search-concierge-content {
           padding-top: 33px;
@@ -61,13 +61,13 @@
 
       &.highlight {
         background-color: $qg-global-primary-dark;
-        color: #fff;
+        color: white;
 
         .qg-search-concierge-content {
           padding-top: 18px;
           padding-bottom: 20px;
           a:not(.btn) {
-            color: #fff;
+            color: white;
             text-decoration-line:underline;
             &:hover {
               text-decoration-line:none;
@@ -77,7 +77,7 @@
 
         .list-group {
           button, a {
-            color: #fff;
+            color: white;
           }
         }
       }
@@ -175,7 +175,7 @@
     input[type=text] {
       // use of !important to overwrite Boostrap input style
       border-radius: 4px !important;
-      border: 3px solid #fff;
+      border: 3px solid white;
       padding: 10px 140px 10px 38px;
       -webkit-appearance: none;
       z-index: 0;

@@ -27,13 +27,13 @@
     thead {
       tr {
         background-color: #005375;
-        color: #ffffff;
+        color: white;
       }
     }
     tr {
       background: #f6f6f6;
       &:nth-child(even) {
-        background: #ffffff;
+        background: white;
       }
       td {
         padding: 1em;
@@ -78,13 +78,13 @@ tfoot {
 thead > tr > th,
 thead > tr > td {
   background: $tables-thead-background-color;
-  color: #FFFFFF;
+  color: white;
 }
 thead > tr > th > a:link,
 thead > tr > td > a:link,
 thead > tr > th > a:visited,
 thead > tr > td > a:visited {
-  color: #FFFFFF;
+  color: white;
   text-decoration-line: none;
 }
 
@@ -105,12 +105,12 @@ table .number {
 /* offset */
 .even > td,
 .even > th {
-  background-color: #FFFFFF;
+  background-color: white;
 }
 
 .current > td,
 .current > th {
-  background: #FFFFFF;
+  background: white;
 }
 
 /*
@@ -370,8 +370,8 @@ table.dataTable {
   padding: 0.3em 0.6em;
   line-height: 1.5;
   text-decoration-line: none;
-  color: #13578b;
-  background-color: #fff;
+  color: $qg-blue-dark;
+  background-color: white;
   border: 1px solid $qg-pagination-border !important;
   &:focus, &:visited, &:link, &:active {
     color: $qg-pagination-link-color !important;
@@ -389,11 +389,11 @@ table.dataTable {
 
 .dataTables_paginate .paginate_button.current {
   &:focus, &:visited, &:link, &:active {
-    background-color: #13578B !important;
-    color: #fff !important;
+    background-color: $qg-blue-dark !important;
+    color: white !important;
   }
-  background-color: #13578B;
-  color: #fff !important;
+  background-color: $qg-blue-dark;
+  color: white !important;
 }
 
 .dataTables_paginate a:focus,
@@ -410,7 +410,7 @@ table.dataTable {
 .dataTables_paginate a.disabled:focus,
 .dataTables_paginate a.disabled:hover {
   color: #777 !important;
-  background-color: #fff;
+  background-color: white;
   border-color: #ddd;
   cursor: not-allowed;
 }
