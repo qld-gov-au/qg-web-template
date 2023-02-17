@@ -63,7 +63,7 @@
             left: 220px;
         }
     }
-    @include media-breakpoint-up(sm) {
+    @include media-breakpoint-up(md) {
         .dropdown-menu {
             left: -35px;
             top: calc(100% + 10px);
