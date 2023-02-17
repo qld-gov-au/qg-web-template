@@ -20,18 +20,15 @@
     padding: 0;
     display: flex;
 
-    .nav-link {
+    .nav-link, .qg-portal-links__btn {
+      background-color: $qg-dark-grey-dark;
       padding: 10px 20px 10px 15px;
       @include qg-link-styles__no-underline-white;
     }
   }
 
   .qg-portal-links__btn {
-    @include qg-link-styles__no-underline-white;
-    background-color: $qg-dark-grey-dark;
     border: none;
-    color: white;
-    padding: 10px 20px 10px 15px;
     &:active, &:focus{
       position: relative;
       z-index: 1;
