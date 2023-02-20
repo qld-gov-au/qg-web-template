@@ -1,4 +1,5 @@
-.qg-breadcrumb {
+#qg-breadcrumb {
+  .qg-breadcrumb {
     background-color: white;
 
     &-list {
@@ -40,7 +41,7 @@
             .qg-breadcrumb-list-item__link {
         color: #292929;
         @include qg-link-styles__theme-black-always;
-			}
+      }
 
             &:last-child {
                 &:after {
@@ -50,11 +51,12 @@
         }
     }
 
-  .qg-breadcrumb-toggle {
-    border: 0;
-    background-color: transparent;
-    padding: 0;
-    @include qg-global-link-styles;
+    .qg-breadcrumb-toggle {
+      border: 0;
+      background-color: transparent;
+      padding: 0;
+      @include qg-global-link-styles;
+    }
   }
 }
 
