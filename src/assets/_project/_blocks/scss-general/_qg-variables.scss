@@ -305,7 +305,7 @@ $qg-linkedin: #0077b5;
     @include _qg-link-underline-thicker;
     @content;
     // ensure spans within links follow their parent
-    span {
+    span.title {
       @include _qg-link-underline-thicker;
       @content;
     }
