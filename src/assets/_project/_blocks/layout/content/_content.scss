@@ -33,6 +33,7 @@
       margin-bottom: 0.5em;
     }
   }
+  @include qg-non-button-link-styles__default;
 }
 
 .qg-visuallyhidden, .visuallyhidden {
@@ -77,4 +78,3 @@
   }
 }
 
-@include qg-non-button-link-styles__default;
