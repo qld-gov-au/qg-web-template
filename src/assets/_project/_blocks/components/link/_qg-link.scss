@@ -40,7 +40,7 @@
   @include qg-global-link-styles {
     @include qg-link-decoration;
     @include qg-link-visited-decoration;
-    &:not(.qg-private-content-link) {
+    &:not(.qg-private-content-link):not(:visited) {
       color: $qg-blue-dark;
       text-decoration-color: #457aa3;
     }
