@@ -2479,7 +2479,7 @@ $(function () {
   });
 
   // Binds
-  $('body').on('focusin', '.qg-navigation .nav-link, .qg-service-finder__popular-apps a, .qg-coat-of-arms a, .qg-site-header button', qgSiteSearch.fn.handleFocus);
+  $('body').on('focusin', '.qg-navigation .nav-link, .qg-service-finder__popular-apps a, .qg-coat-of-arms a', qgSiteSearch.fn.handleFocus);
   $('body').on('click', qgSiteSearch.fn.handleBodyClick);
   $('body').on('click', '.qg-search-close-concierge', qgSiteSearch.fn.clearInputField);
   $('body').on('click', '.qg-search-concierge-group.suggestions button', qgSiteSearch.fn.searchSuggestionClick);
