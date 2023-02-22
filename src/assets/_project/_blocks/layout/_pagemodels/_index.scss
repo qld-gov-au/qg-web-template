@@ -90,15 +90,12 @@
       margin-bottom: 0;
       a {
         padding: 1em 1.5em 1em 1.5em !important;
+        width: 100%;
         display: block;
-        color: white !important;
-      }
-      a:visited, a:active{
-        color: white !important;
-      }
-      a:hover {
-        background: #007eb1;
-        color: white !important;
+        @include qg-link-styles__theme-white(0);
+        &:hover {
+          background: #007eb1;
+        }
       }
       img {
         display: none;
@@ -115,7 +112,7 @@
 #qg-content #qg-primary-content .qg-index-links {
   @include breakpoint(xs) {
     h2 a {
-      @include qg-link-styles__theme-white;
+      @include qg-link-styles__theme-white(0);
     }
   }
 }
