@@ -21,20 +21,15 @@
       // workaround for Firefox border issue on multiline links,
       // https://www.drupal.org/project/drupal/issues/3016658
       display: inline-block;
-      &:not(:hover):not(:active):not(:focus){
-        text-decoration-line: none !important;
-      }
-      &:hover {
-        img {
-          border: 1px solid #06c;
-        }
-      }
       img {
         position: absolute;
         left: 25px;
         background: #f9f9f9;
         border: 1px solid #fffefc;
         box-shadow: 0 0 2px 1px rgba(0,0,0,.1);
+        &:hover {
+          border: 1px solid #06c;
+        }
       }
 
     }
@@ -45,7 +40,7 @@
         padding-bottom: 5px;
         list-style: none;
         @include rem(line-height, 24px);
-        a{
+        a {
           font-size: 1rem;
           &:before {
             position: absolute;

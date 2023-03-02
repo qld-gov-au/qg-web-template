@@ -94,10 +94,11 @@
 // 2. color theme black with underline
 @mixin qg-link-styles__theme-black($margin: 2px) {
   @include qg-global-link-styles($margin) {
-    @include qg-link-unvisited-color($qg-global-primary-darker-grey);
+    @include qg-link-unvisited-color($qg-global-primary-darker-grey) {
+      text-decoration-color: #737678;
+    }
     @include qg-link-decoration;
     @include qg-link-visited-decoration;
-    text-decoration-color: #737678;
     @include qg-underline-on-highlight-decoration;
   }
 }
@@ -109,6 +110,7 @@
     @include qg-link-decoration;
     @include qg-link-visited-decoration($qg-global-primary-darker-grey);
     text-decoration-color: #737678;
+    @include qg-underline-on-highlight-decoration;
   }
 }
 
