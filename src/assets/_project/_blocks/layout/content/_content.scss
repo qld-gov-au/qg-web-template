@@ -7,6 +7,7 @@
       display: block;
     }
   }
+  @include qg-non-button-link-styles__default;
   .print-content-link{
     @include qg-link-styles__no-underline-default
   }
@@ -76,5 +77,3 @@
     clear: both;
   }
 }
-
-@include qg-non-button-link-styles__default;

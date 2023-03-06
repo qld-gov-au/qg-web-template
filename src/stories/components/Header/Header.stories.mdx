@@ -4,6 +4,7 @@ import { getCanvasMobileProps, getStoryMobileParameters, getStoryMobileHeight } 
 
 import Default from "./templates/Header.html";
 import Mobile from "./templates/Header.html";
+import Search from "./templates/Search.html";
 
 <Meta title="Components/Header" />
 
@@ -19,4 +20,10 @@ import Mobile from "./templates/Header.html";
 
 <Canvas withSource="none" {...getCanvasMobileProps()}>
   <Story name="Mobile" parameters={getStoryMobileParameters()} height={getStoryMobileHeight()}>{() => Mobile}</Story>
+</Canvas>
+
+## Search
+
+<Canvas withSource="close">
+  <Story name="Search">{() => Search}</Story>
 </Canvas>
