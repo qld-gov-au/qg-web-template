@@ -1,5 +1,4 @@
-#qg-breadcrumb {
-  .qg-breadcrumb {
+#qg-breadcrumb .qg-breadcrumb, .qg-breadcrumb {
     background-color: white;
 
     &-list {
@@ -57,7 +56,6 @@
       padding: 0;
       @include qg-global-link-styles;
     }
-  }
 }
 
 @include media-breakpoint-down(sm) {
