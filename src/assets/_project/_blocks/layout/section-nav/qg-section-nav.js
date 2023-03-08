@@ -42,6 +42,7 @@ var activeSideNav = (function () {
       });
     } else {
       $('.qg-section-nav ul>li, #qg-section-nav ul>li').each(function () {
+        console.log('test log');
         if ($.trim(refineText($(this).text())) === $.trim(currentPageTitle)) {
           $(this).find('a').addClass('active active-nav').removeAttr('href');
         }
