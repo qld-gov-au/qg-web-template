@@ -37,13 +37,13 @@ var activeSideNav = (function () {
       $('.guide-sub-nav >li').each(function () {
         let guideNavHeading = $(this).clone().find('.page-number').remove().end().text().trim();
         if (refineText(guideNavHeading) === refineText(contentHeading)) {
-          $(this).find('a').addClass('active').removeAttr('href');
+          $(this).find('a').addClass('active active-nav').removeAttr('href');
         }
       });
     } else {
       $('.qg-section-nav ul>li, #qg-section-nav ul>li').each(function () {
         if ($.trim(refineText($(this).text())) === $.trim(currentPageTitle)) {
-          $(this).find('a').addClass('active').removeAttr('href');
+          $(this).find('a').addClass('active active-nav').removeAttr('href');
         }
       });
     }
