@@ -50,10 +50,6 @@
         color: #212529;
         font-weight: 700;
       }
-      // If a link gets active, focus, or focus-within event apply the blue outline
-      &:active, &:focus, &:focus-visible {
-        @include qg-button-outline-decoration;
-      }
       @include on-hover-or-active {
         background-color: $qg-section-nav-bg-color;
       }
