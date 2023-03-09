@@ -5,7 +5,7 @@
 //-------------------------------------------------
 
 // global link styles
-@mixin qg-global-link-styles($margin: 2px) {
+@mixin qg-global-link-styles($margin: 2px 2px 2px 0) {
   // make exception for certain classes, which need to re-visit for better optimization
   &:not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item
       .page-link):not(.dfv-cards--type-top-prompt

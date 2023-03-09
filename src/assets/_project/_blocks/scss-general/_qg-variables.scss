@@ -281,7 +281,7 @@ $qg-linkedin: #0077b5;
 }
 
 @mixin on-hover-or-active() {
-  &:hover, &.hover, &:active, &.active, &:focus, &.focus, &:focus-visible {
+  &:hover, &.hover, &:active, &:focus, &.focus, &:focus-visible {
     &:not(:disabled, .disabled) {
       @content;
     }
