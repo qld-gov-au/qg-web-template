@@ -84,13 +84,13 @@
     }
     .controls-grp {
       position: relative;
-      display: inline-block;
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: baseline;
+      justify-content: center;
       margin-bottom: 0;
       padding-left: 0 !important;
-      // float: right;
-      // width: 30%;
       top: -7px;
-      // text-align: right;
       
       li {
         display: inline-block;
