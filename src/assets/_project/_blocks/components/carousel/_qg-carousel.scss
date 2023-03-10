@@ -4,7 +4,7 @@
       margin-bottom: 0;
     }
   }
-  .carousel{
+  .carousel {
     @include rem(margin-top, 16px);
     position: relative;
     .carousel-inner{
@@ -63,12 +63,12 @@
     .carousel-indicators{
       position: inherit;
       margin-left: 0;
-      float: left;
+      // float: left;
       justify-content: flex-start;
       text-align: left;
       margin-bottom: 0;
       margin-right: 0;
-      width: 70%;
+      // width: 70%;
       flex-wrap: wrap;
       height: 38px;
       li {
@@ -84,12 +84,14 @@
     }
     .controls-grp {
       position: relative;
+      display: inline-block;
       margin-bottom: 0;
       padding-left: 0 !important;
-      float: right;
-      width: 30%;
+      // float: right;
+      // width: 30%;
       top: -7px;
-      text-align: right;
+      // text-align: right;
+      
       li {
         display: inline-block;
         margin-right: 18px;
@@ -157,6 +159,19 @@
         visibility: hidden;
       }
     }
+
+    .carousel-nav {
+      
+      display: flex;
+      justify-content: space-between;
+      margin-top: 0.5rem;
+
+      &:after {
+        content: none;
+      }
+
+    }
+
   }
 }
 
