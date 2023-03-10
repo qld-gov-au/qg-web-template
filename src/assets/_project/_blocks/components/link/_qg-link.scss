@@ -129,7 +129,7 @@
 
 // 2. without underline
 @mixin qg-link-styles__no-underline-white {
-  @include qg-global-link-styles(0) {
+  @include qg-global-link-styles {
     @include qg-link-white;
     &:link {
       @include _qg-link-none-decoration;
