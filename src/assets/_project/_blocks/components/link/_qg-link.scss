@@ -10,7 +10,7 @@
   &:not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item
       .page-link):not(.dfv-cards--type-top-prompt
       a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.print-content-link):not(.qg-aside-button):not(.dfv-back
-      a):not(.QSAR-records-search a):not(.dfv-content a.qg-links-list__link) {
+      a):not(.QSAR-records-search a):not(.dfv-content a.qg-links-list__link):not(.qg-portal-links__list.navbar-nav .nav-link) {
     &:not(span[role=link] *) {
       text-underline-offset: $text-underline-offset;
     }
