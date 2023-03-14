@@ -118,3 +118,4 @@ const gitFunctions = {
   },
 };
 module.exports = gitFunctions;
+
