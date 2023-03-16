@@ -130,10 +130,6 @@ gulp.task('cdn-commit', require('./gulp/publish-tasks/git').commit(config.static
 gulp.task('cdn-branch', require('./gulp/publish-tasks/git').branch(config.staticCdnRepo.folder));
 gulp.task('cdn-push', require('./gulp/publish-tasks/git').push(config.staticCdnRepo.folder));
 
-//TESTING
-//gulp.task('cdn-clone-steve', require('./gulp/publish-tasks/git').clone('https://github.com/qld-gov-au/qg-web-template.git', "cdn-clone-test-test"));
-
-
 // SWE release
 gulp.task('swe-add', require('./gulp/publish-tasks/git').add());
 gulp.task('swe-commit', require('./gulp/publish-tasks/git').commit('./', pjson['version']));
