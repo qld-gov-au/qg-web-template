@@ -34,12 +34,21 @@
     let carousel = $(e).attr('id');
     carousels.push(carousel);
     $(this).attr('data-state', 'cycle');
-    $('#' + carousel + '').find('.toggleCarousel').click(function (e) {
+    
+    $('#' + carousel).carousel({
+      pause: false
+    });
+
+    $('#' + carousel + '').find('.toggleCarousel').on("click", function (e) {
       e.preventDefault();
       var $parentCarousel = $(this).parents('div.carousel.slide');
-      $parentCarousel.attr('data-state') === 'cycle' ? $parentCarousel.attr('data-state', 'pause') : $parentCarousel.attr('data-state', 'cycle');
-      $parentCarousel.carousel($parentCarousel.attr('data-state'));
-      $(this).find('i').toggleClass('fa-sync fa-pause');
+      let state = $parentCarousel.attr('data-state');
+      if(state === 'cycle') {
+        $parentCarousel.carousel('pause').attr('data-state', 'pause');
+      } else if( state === 'pause' ) {
+        $parentCarousel.carousel('cycle').carousel('next').attr('data-state', 'cycle');
+      }
+      $(this).find('span.fa, i.fa').toggleClass('fa-sync fa-pause');
     });
   });
   window.onload = function () {
