@@ -39,10 +39,13 @@
       pause: false
     });
 
-    $('#' + carousel + '').find('.toggleCarousel').on("click", function (e) {
+    $('#' + carousel + '').find('.toggleCarousel').on('click', function (e) {
+      
       e.preventDefault();
+      
       var $parentCarousel = $(this).parents('div.carousel.slide');
       let state = $parentCarousel.attr('data-state');
+      
       if(state === 'cycle') {
         $parentCarousel.carousel('pause').attr('data-state', 'pause');
       } else if( state === 'pause' ) {
