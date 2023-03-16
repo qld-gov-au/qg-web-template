@@ -34,21 +34,16 @@
     let carousel = $(e).attr('id');
     carousels.push(carousel);
     $(this).attr('data-state', 'cycle');
-    
     $('#' + carousel).carousel({
-      pause: false
+      pause: false,
     });
-
     $('#' + carousel + '').find('.toggleCarousel').on('click', function (e) {
-      
       e.preventDefault();
-      
       var $parentCarousel = $(this).parents('div.carousel.slide');
       let state = $parentCarousel.attr('data-state');
-      
-      if(state === 'cycle') {
+      if (state === 'cycle') {
         $parentCarousel.carousel('pause').attr('data-state', 'pause');
-      } else if( state === 'pause' ) {
+      } else if (state === 'pause') {
         $parentCarousel.carousel('cycle').carousel('next').attr('data-state', 'cycle');
       }
       $(this).find('span.fa, i.fa').toggleClass('fa-sync fa-pause');
