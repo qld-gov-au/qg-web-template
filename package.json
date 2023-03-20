@@ -99,7 +99,7 @@
     "jest": "^29.5.0",
     "jest-puppeteer": "^8.0.4",
     "node-ssi": "^0.3.2",
-    "np": "^7.6.3",
+    "np": "^7.6.4",
     "puppeteer": "^19.7.3",
     "sass": "^1.58.3",
     "storybook-addon-pseudo-states": "^1.15.2",
