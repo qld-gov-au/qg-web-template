@@ -41,7 +41,7 @@
 }
 
 @mixin _qg-link-none-decoration {
-  text-decoration-line: none;
+  text-decoration-line: none !important;
   @include qg-link-visited-decoration;
 }
 
