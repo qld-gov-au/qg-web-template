@@ -50,7 +50,7 @@
         color: #212529;
         font-weight: 700;
       }
-      @include on-hover-or-active {
+      @include on-hover {
         background-color: $qg-section-nav-bg-color;
       }
     }
