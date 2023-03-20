@@ -271,8 +271,9 @@ $qg-linkedin: #0077b5;
 }
 
 @mixin on-active() {
-  &:active, &.active,
-  &:focus, &.focus, &:focus-visible, &:focus-within {
+  &:active,
+  &:focus, &.focus,
+  &:focus-visible, &:focus-within {
     &:not(:disabled, .disabled) {
       @content;
     }
@@ -280,7 +281,8 @@ $qg-linkedin: #0077b5;
 }
 
 @mixin on-hover-or-active() {
-  &:hover, &.hover, &:active, &.active, &:focus, &.focus, &:focus-visible {
+  &:hover, &.hover, &:active, &:focus, &.focus, &:focus-visible,
+  &.active:active, &.active:hover, &.active:focus, &.active:focus-visible {
     &:not(:disabled, .disabled) {
       @content;
     }
@@ -355,5 +357,6 @@ $text-underline-offset: 5px;
   // unless we're inside a context where exact positioning matters
   &:not(#ict-tabcontainer *, #tabbed-nav *) {
     margin: $margin;
+    margin-left: 0
   }
 }
