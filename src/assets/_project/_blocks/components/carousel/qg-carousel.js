@@ -32,28 +32,10 @@
   };
   $('.qg-featured .carousel.slide').each(function (i, e) {
     let carousel = $(e).attr('id');
-<<<<<<< HEAD
-    carousels.push(carousel);
-    $(this).attr('data-state', 'cycle');
-    $('#' + carousel).carousel({
-      pause: false,
-    });
-    $('#' + carousel + '').find('.toggleCarousel').on('click', function (e) {
-      e.preventDefault();
-      var $parentCarousel = $(this).parents('div.carousel.slide');
-      let state = $parentCarousel.attr('data-state');
-      if (state === 'cycle') {
-        $parentCarousel.carousel('pause').attr('data-state', 'pause');
-      } else if (state === 'pause') {
-        $parentCarousel.carousel('cycle').carousel('next').attr('data-state', 'cycle');
-      }
-      $(this).find('span.fa, i.fa').toggleClass('fa-sync fa-pause');
-=======
 
     //Disable hover behaviour #QOLDEV-67
     $('#' + carousel).carousel({
       pause: false,
->>>>>>> 0e299731 (QOLSVC-1058 disbale pause on hover)
     });
 
     carousels.push(carousel);
