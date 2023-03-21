@@ -17,7 +17,7 @@ $qg-outline-dark: #00698f;
 $qg-outline-dark-hover: #313131;
 
 // ## Active outlines (transient) ##
-$qg-active-outline: #0096d6;
+$qg-active-outline: #00b4ff;
 
 // ## Dark grey ##
 $qg-dark-grey-lightest: #949494;
@@ -347,6 +347,7 @@ $text-underline-offset: 5px;
     outline-style: solid;
     outline-color: $qg-active-outline;
     outline-offset: 2px;
+    border-radius: 0;
     @content;
     * {
       // don't apply an extra outline to any children
