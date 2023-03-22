@@ -303,7 +303,7 @@ $qg-linkedin: #0077b5;
 }
 @mixin qg-underline-on-highlight-decoration {
   // apply a 2px underline on hover/focus/active
-  @include on-hover-or-active {
+  @include on-hover {
     @include _qg-link-underline-thicker;
     @content;
     // ensure spans within links follow their parent
