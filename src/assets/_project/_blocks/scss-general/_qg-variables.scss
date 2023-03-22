@@ -348,7 +348,7 @@ $text-underline-offset: 5px;
   @include on-active {
     outline-width: 3px;
     outline-style: solid;
-    @if $light-background {
+    @if $light-background == true {
       outline-color: $qg-active-outline;
     } @else {
       outline-color: $qg-active-outline-lighter;
