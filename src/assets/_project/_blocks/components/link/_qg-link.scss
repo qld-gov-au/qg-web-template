@@ -129,6 +129,7 @@
   @include qg-global-link-styles($margin) {
     @include qg-link-white;
     @include qg-link-decoration;
+    @include qg-button-outline-decoration($light-background: false);
   }
 }
 
@@ -140,6 +141,7 @@
       @include _qg-link-none-decoration;
     }
     @include qg-underline-on-highlight-decoration;
+    @include qg-button-outline-decoration($light-background: false);
   }
 }
 
