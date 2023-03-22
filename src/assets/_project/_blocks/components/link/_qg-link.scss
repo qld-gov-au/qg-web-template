@@ -54,7 +54,6 @@
     @include qg-link-decoration;
     @include qg-link-visited-decoration;
     @include qg-underline-on-highlight-decoration;
-    //@include qg-button-outline-decoration($light-background: true);
     &:not(.qg-private-content-link) {
       @include qg-link-unvisited-color {
         text-decoration-color: #457aa3;
@@ -71,7 +70,6 @@
       @include _qg-link-none-decoration;
     }
     @include qg-underline-on-highlight-decoration;
-    //@include qg-button-outline-decoration($light-background: true);
   }
 }
 
