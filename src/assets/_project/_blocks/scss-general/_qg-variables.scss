@@ -20,7 +20,7 @@ $qg-outline-dark-hover: #313131;
 $qg-active-outline: #0096d6;
 
 // ## Active outlines on dark background ##
-$qg-active-outline-lighter: #00b4ff;
+$qg-active-outline-brighter: #00b4ff;
 
 // ## Dark grey ##
 $qg-dark-grey-lightest: #949494;
@@ -351,7 +351,7 @@ $text-underline-offset: 5px;
     @if $light-background == true {
       outline-color: $qg-active-outline;
     } @else {
-      outline-color: $qg-active-outline-lighter;
+      outline-color: $qg-active-outline-brighter;
     }
     outline-offset: 2px;
     border-radius: 0;
