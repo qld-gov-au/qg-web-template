@@ -88,6 +88,7 @@
       @include _qg-link-none-decoration;
     }
     @include qg-underline-on-highlight-decoration;
+    @include qg-button-outline-decoration;
   }
 }
 
@@ -100,6 +101,7 @@
     @include qg-link-decoration;
     @include qg-link-visited-decoration;
     @include qg-underline-on-highlight-decoration;
+    @include qg-button-outline-decoration;
   }
 }
 
@@ -111,6 +113,7 @@
     @include qg-link-visited-decoration($qg-global-primary-darker-grey);
     text-decoration-color: #737678;
     @include qg-underline-on-highlight-decoration;
+    @include qg-button-outline-decoration;
   }
 }
 
@@ -124,6 +127,7 @@
   @include qg-global-link-styles($margin) {
     @include qg-link-white;
     @include qg-link-decoration;
+    @include qg-button-outline-decoration($outline-color: $qg-active-outline-brighter);
   }
 }
 
@@ -135,6 +139,7 @@
       @include _qg-link-none-decoration;
     }
     @include qg-underline-on-highlight-decoration;
+    @include qg-button-outline-decoration($outline-color: $qg-active-outline-brighter);
   }
 }
 

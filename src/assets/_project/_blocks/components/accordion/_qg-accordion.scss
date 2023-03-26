@@ -63,7 +63,7 @@
     }
   }
   button {
-    @include qg-button-outline-decoration (0px) {
+    @include qg-button-outline-decoration ($margin: 0px) {
       z-index: 100;
     }
   }

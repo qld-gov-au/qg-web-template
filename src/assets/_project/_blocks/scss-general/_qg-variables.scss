@@ -16,8 +16,11 @@ $qg-green: #78ba00;
 $qg-outline-dark: #00698f;
 $qg-outline-dark-hover: #313131;
 
-// ## Active outlines (transient) ##
+// ## Active outlines on white background (transient) ##
 $qg-active-outline: #0096d6;
+
+// ## Active outlines on dark background ##
+$qg-active-outline-brighter: #00b4ff;
 
 // ## Dark grey ##
 $qg-dark-grey-lightest: #949494;
@@ -340,13 +343,14 @@ $qg-linkedin: #0077b5;
 
 $text-underline-offset: 5px;
 
-@mixin qg-button-outline-decoration ($margin: 2px) {
+@mixin qg-button-outline-decoration($margin: 2px, $outline-color: $qg-active-outline) {
   // Surround buttons and links with a blue outline when active/focused
   @include on-active {
     outline-width: 3px;
     outline-style: solid;
-    outline-color: $qg-active-outline;
+    outline-color: $outline-color;
     outline-offset: 2px;
+    border-radius: 0;
     @content;
     * {
       // don't apply an extra outline to any children
