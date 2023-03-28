@@ -19,7 +19,7 @@
     // &.hover {
     //   background: none;
     // }
-    @include qg-button-outline-decoration($margin, $qg-active-outline);
+    @include qg-button-outline-decoration($margin, $outline-color);
     @content;
   }
 }
