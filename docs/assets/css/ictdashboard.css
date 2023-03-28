@@ -1,0 +1,1347 @@
+/*! ICT-Dashboard => Version-2.0.0, Date-13/2/2023, Time-9:23:57 */
+/* dev/uat env */
+body.env-dev {
+  background: url("https://www.qld.gov.au/?a=5491") repeat-x;
+  background-attachment: fixed; }
+
+body.env-uat {
+  background: url("https://www.qld.gov.au/?a=13515") repeat-x;
+  background-attachment: fixed; }
+
+#header-wrapper .box-sizing,
+#qg-coa {
+  background: none; }
+
+#header-wrapper .box-sizing .max-width {
+  background: rgba(0, 0, 0, 0.04); }
+
+/* tabbed navigation */
+.highcharts-stack-labels span {
+  visibility: inherit !important;
+  opacity: inherit !important; }
+
+div.ict-tabnav {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-bottom: 2px solid #EEE; }
+
+div.ict-tabnav ul {
+  position: relative;
+  overflow: visible;
+  width: 100%;
+  margin: 0;
+  padding: 0; }
+
+div.ict-tabnav ul li {
+  position: relative;
+  top: 2px;
+  display: inline-block;
+  border: 2px solid #EEE;
+  padding: 0;
+  margin-top: .3em; }
+
+div.ict-tabnav ul li a,
+div.ict-tabnav ul li span {
+  display: inline-block;
+  margin: 0;
+  padding: .5em 1em;
+  font-weight: bold;
+  letter-spacing: .03em; }
+
+div.ict-tabnav ul li span {
+  background-color: #FFF; }
+
+div.ict-tabnav ul li a {
+  color: #FFF !important;
+  font-weight: normal;
+  background-color: #293942;
+  text-decoration: none !important; }
+
+div.ict-tabnav ul li a:visited {
+  color: #FFF;
+  background-color: #293942; }
+
+div.ict-tabnav ul li a:hover {
+  background-color: #006584; }
+
+#ict-tabcontainer, #ict-tendercontainer {
+  position: relative;
+  border: 1px solid #eee;
+  padding: 10px;
+  background-color: #eee;
+  overflow: hidden; }
+
+div.ict-tabnav ul.projects li.projects a {
+  color: #293942 !important;
+  background-color: #EEE; }
+
+div.ict-tabnav ul.tenders li.tenders a {
+  color: #293942 !important;
+  background-color: #EEE; }
+
+.spinner {
+  width: 73px;
+  min-height: 600px;
+  height: auto;
+  margin: 0 auto;
+  display: block; }
+
+#ictdb table.striped {
+  width: 100%; }
+
+/* ------------------ */
+/*  ICTDB front page  */
+/* ------------------ */
+#content-container .article .box-sizing .border {
+  margin-left: 1em !important;
+  margin-right: 1em !important; }
+
+#overview-status {
+  width: 48%;
+  float: left; }
+
+#overview-expenditure {
+  width: 48%;
+  float: left;
+  padding-left: 2%; }
+
+#ictdb.mobile #overview-status,
+#ictdb.mobile #overview-expenditure {
+  padding: 0; }
+
+#overview-status h3,
+#overview-expenditure h3 {
+  margin: 0 0 0.9em 0; }
+
+#overview-expenditure .graph li span,
+#overview-status .graph li span {
+  text-shadow: 1px 1px 3px #46465a; }
+
+#overview-status,
+#overview-expenditure {
+  text-align: center; }
+
+#overview-status .graph li, #overview-expenditure .graph li {
+  float: left;
+  list-style-type: none;
+  display: block;
+  text-align: center;
+  margin: 0;
+  height: 2em;
+  font-weight: 900;
+  font-size: 1.3em; }
+
+#overview-status .gkey, #overview-expenditure .gkey {
+  float: left;
+  margin: 0;
+  padding: 0; }
+  #overview-status .gkey li, #overview-expenditure .gkey li {
+    float: left;
+    margin-top: 0.5em;
+    list-style-type: none;
+    padding: 0;
+    margin-right: 1em; }
+    #overview-status .gkey li span, #overview-expenditure .gkey li span {
+      float: left;
+      padding: 0;
+      margin: 0.25em 0.4em 0 0;
+      width: 1em;
+      height: 1em;
+      outline: rgba(0, 0, 0, 0.5) solid 1px; }
+
+#overview-status .graph span {
+  outline: rgba(0, 0, 0, 0.5) solid 1px; }
+
+#overview-status .graph li span {
+  padding: .25em 0;
+  display: block;
+  color: #fff !important; }
+
+#overview-status .graph .g1, #overview-status .graph .g2, #overview-status .graph .g3, #overview-status .graph .g4 {
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease; }
+
+#overview-status .graph a {
+  text-decoration: none !important; }
+
+#overview-status img {
+  position: absolute;
+  left: 0;
+  width: 20px; }
+
+#overview-status .gkey {
+  width: 100%; }
+  #overview-status .gkey .gtotal {
+    font-weight: 900;
+    float: right; }
+    #overview-status .gkey .gtotal a {
+      font-weight: normal; }
+  #overview-status .gkey .g1, #overview-status .gkey .g2, #overview-status .gkey .g3, #overview-status .gkey .g4 {
+    position: relative;
+    padding-left: 30px; }
+
+#overview-status .graph .g3 {
+  width: 0%;
+  background: #f00;
+  -webkit-box-shadow: inset 0 0 0 1000px #f00 !important;
+          box-shadow: inset 0 0 0 1000px #f00 !important; }
+  #overview-status .graph .g3 span:hover, #overview-status .graph .g3 span:focus {
+    outline: #ff8181 solid 3px; }
+
+#overview-status .graph .g2 {
+  width: 0%;
+  background: #FFA500;
+  -webkit-box-shadow: inset 0 0 0 1000px #FFA500 !important;
+          box-shadow: inset 0 0 0 1000px #FFA500 !important; }
+  #overview-status .graph .g2 span:hover, #overview-status .graph .g2 span:focus {
+    outline: #ffd249 solid 3px; }
+
+#overview-status .graph .g1 {
+  width: 100%;
+  background: #78BA00;
+  -webkit-box-shadow: inset 0 0 0 1000px #78BA00 !important;
+          box-shadow: inset 0 0 0 1000px #78BA00 !important; }
+  #overview-status .graph .g1 span:hover, #overview-status .graph .g1 span:focus {
+    outline: #9be90e solid 3px; }
+
+#overview-status .gkey .g3 span {
+  background: #f00;
+  -webkit-box-shadow: inset 0 0 0 1000px #f00 !important;
+          box-shadow: inset 0 0 0 1000px #f00 !important; }
+
+#overview-status .gkey .g2 span {
+  background: #FFA500;
+  -webkit-box-shadow: inset 0 0 0 1000px #FFA500 !important;
+          box-shadow: inset 0 0 0 1000px #FFA500 !important; }
+
+#overview-status .gkey .g1 span {
+  background: #78BA00;
+  -webkit-box-shadow: inset 0 0 0 1000px #78BA00 !important;
+          box-shadow: inset 0 0 0 1000px #78BA00 !important; }
+
+#overview-expenditure .graph {
+  position: relative;
+  float: left;
+  background: #959595;
+  -webkit-box-shadow: inset 0 0 0 1000px #959595 !important;
+          box-shadow: inset 0 0 0 1000px #959595 !important;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  outline: rgba(0, 0, 0, 0.5) solid 1px !important; }
+  #overview-expenditure .graph li span {
+    position: absolute;
+    top: .25em;
+    margin: 0 .5em;
+    color: #fff; }
+  #overview-expenditure .graph .g1 span {
+    left: 0; }
+  #overview-expenditure .graph .g2 span {
+    right: 0;
+    color: #fff; }
+  #overview-expenditure .graph .g1 {
+    -webkit-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+    float: left;
+    width: 0%;
+    background: #007EB1;
+    -webkit-box-shadow: inset 0 0 0 1000px #007EB1 !important;
+            box-shadow: inset 0 0 0 1000px #007EB1 !important;
+    margin: .4em 0;
+    height: 1.2em;
+    outline: rgba(0, 0, 0, 0.2) solid 1px; }
+
+#overview-expenditure a {
+  display: block;
+  height: 2.6em; }
+  #overview-expenditure a:hover {
+    outline: #0096d6 solid 3px; }
+
+#overview-expenditure .gkey .g1 span {
+  background: #007EB1;
+  -webkit-box-shadow: inset 0 0 0 1000px #007EB1 !important;
+          box-shadow: inset 0 0 0 1000px #007EB1 !important; }
+
+#overview-expenditure .gkey .g2 span {
+  background: #959595;
+  -webkit-box-shadow: inset 0 0 0 1000px #959595 !important;
+          box-shadow: inset 0 0 0 1000px #959595 !important; }
+
+.col-chart-label {
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 0;
+  z-index: 0; }
+
+#projects {
+  width: 100%;
+  float: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+#projects h2 {
+  position: relative;
+  margin-bottom: 0;
+  margin-top: 0;
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1; }
+
+#projects p {
+  padding: 0 .5em;
+  border-left: 1px solid #000;
+  margin-bottom: 0;
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1; }
+
+#project-status {
+  width: 50%;
+  float: left;
+  padding-right: 0%;
+  clear: left; }
+
+#containerProjectStatus, #containerProjectExpenditure {
+  width: 100%;
+  min-width: 310px;
+  height: 550px;
+  float: left; }
+
+#containerProjectStatus abbr {
+  cursor: pointer; }
+
+#project-expenditure {
+  width: 50%;
+  float: left; }
+
+/* graph tooltip */
+.highcharts-tooltip span {
+  margin-top: 50px; }
+
+.highcharts-container a {
+  /*fix for Cross Gov */
+  white-space: nowrap; }
+
+.ictdbTooltip {
+  z-index: 50;
+  padding: 0;
+  margin: 0;
+  height: auto !important;
+  min-width: 200px; }
+
+.ictdbTooltip .group,
+.ictdbTooltip .grouptitle {
+  clear: right;
+  display: block;
+  margin: 0;
+  padding: 0;
+  float: left;
+  width: 100%; }
+
+.ictdbTooltip .grouptitle {
+  font-weight: 800; }
+
+.ictdbTooltip .group {
+  color: #000; }
+
+.ictdbTooltip .group.g0 strong {
+  color: #78BA00; }
+
+.ictdbTooltip .group.g1 strong {
+  color: #FFA500; }
+
+.ictdbTooltip .group.g2 strong {
+  color: #f00; }
+
+/* search */
+#feature-search-db {
+  width: 48%;
+  min-width: 400px;
+  float: right;
+  margin-top: 0.5em;
+  margin-bottom: .5em; }
+
+#ictdb .search-wrapper {
+  width: 100% !important;
+  min-width: 200px !important; }
+
+#ictdb .search-wrapper input {
+  float: left;
+  width: 60%; }
+
+#ictdb ul.graph {
+  padding: 0; }
+
+#content-container #more-information {
+  clear: both; }
+  #content-container #more-information a, #content-container #more-information a:hover {
+    color: #FFF; }
+
+#content-container #more-information ul li a:hover {
+  color: #FFF; }
+
+@media (max-width: 992px) {
+  #qg-primary-content {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2; }
+  #qg-secondary-content .qg-aside {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1; } }
+
+@media all and (max-width: 768px) {
+  .qg-projects-search {
+    font-size: 0.9em; }
+  #ictdb {
+    font-size: 0.9em; }
+    #ictdb #feature-search-db {
+      width: 100%;
+      min-width: 200px; }
+    #ictdb .graph {
+      margin: 0;
+      padding: 0; }
+    #ictdb #overview-status, #ictdb #overview-expenditure {
+      width: 100%;
+      padding: 0; }
+    #ictdb #project-status, #ictdb #containerProjectStatus, #ictdb #project-expenditure, #ictdb #containerProjectExpenditure {
+      width: 100%; }
+    #ictdb #containerProjectStatus, #ictdb #containerProjectExpenditure {
+      height: 800px;
+      overflow: hidden; }
+  #content-container #more-information h2 {
+    display: none; }
+  #content-container #more-information ul li a {
+    color: #0B2E4C;
+    display: inline-block;
+    margin-bottom: 7px;
+    margin-bottom: 0.5em; }
+    #content-container #more-information ul li a:hover {
+      color: #0B2E4C; } }
+
+#ictdb .desktop-view,
+#ictdb .mobile-view {
+  display: none; }
+
+#ictdb .mobile-view {
+  display: list-item; }
+
+#ictdb ul {
+  margin-left: inherit; }
+
+#ictdb-search {
+  clear: both;
+  width: 60%;
+  margin: auto;
+  min-width: 500px;
+  text-align: center; }
+
+/* ----------------- */
+/*  ICTDB data page  */
+/* ----------------- */
+div.highcharts-axis-labels.highcharts-xaxis-labels span span {
+  text-decoration: underline;
+  color: #007EB1; }
+
+div.highcharts-axis-labels.highcharts-xaxis-labels span span:hover,
+div.highcharts-axis-labels.highcharts-xaxis-labels span span.active {
+  text-decoration: underline;
+  color: #007EB1;
+  cursor: pointer;
+  font-weight: 900; }
+
+div.highcharts-axis-labels.highcharts-xaxis-labels span span:focus {
+  text-decoration: underline;
+  color: #00f;
+  cursor: pointer;
+  font-weight: 900; }
+
+.highcharts-axis-labels.highcharts-xaxis-labels span {
+  z-index: 1 !important; }
+
+.highcharts-tooltip span {
+  z-index: 9999 !important;
+  background: #ffffff;
+  background: white;
+  padding: 10px !important;
+  -webkit-box-shadow: inset 0px 0px 4px 2px #8e969e;
+  box-shadow: inset 0px 0px 4px 2px #8e969e !important; }
+
+abbr[data-original-title], abbr[title] {
+  cursor: pointer !important; }
+
+/* -- table -- */
+table#example tr th a {
+  display: inline-block;
+  width: 96%;
+  padding-right: 2em; }
+
+thead > tr > td > a:link, thead > tr > td > a:visited, thead > tr > th > a:link, thead > tr > th > a:visited {
+  color: #fff !important;
+  text-decoration: none !important; }
+
+.thminwid {
+  width: 6em; }
+
+table#example td.details-control {
+  background: url("https://www.qld.gov.au/__data/assets/image/0025/5488/details_open.png") no-repeat left 21px;
+  padding-left: 35px; }
+
+#ictdb table#example td.details-control {
+  padding-left: 25px;
+  background-position: left 50%; }
+
+table#example tr.shown td.details-control {
+  background: url("https://www.qld.gov.au/__data/assets/image/0024/5487/details_close.png") no-repeat left 21px; }
+
+table#example tr.shown td.details-title {
+  font-weight: 900; }
+
+table#example tr.shown {
+  border-top: 1px solid; }
+
+table#example tr.detailedInfoRow.open {
+  border-bottom: 1px solid; }
+
+table#example .even td.details-control,
+tr.shown.even td.details-control {
+  background-color: white; }
+
+table#example tr.summary {
+  cursor: pointer;
+  cursor: hand; }
+
+table#example .detailedInfoRow td {
+  padding: 0 1em 0 1em; }
+
+table#example .detailedInfoRow td p {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important; }
+
+table#example p .button {
+  padding-bottom: 0.5em !important;
+  padding-top: 0.5em !important; }
+
+table#example p.actions {
+  text-align: right !important; }
+
+table#example tr.even td.sorting_1 {
+  background-color: #cfdde7; }
+
+table#example tr.odd td.sorting_1 {
+  background-color: #c6d3de; }
+
+table#example tr.odd.shown td {
+  background-color: #F3F3F3; }
+
+table#example tr.even.shown td {
+  background-color: #fff; }
+
+.toggle-sort {
+  position: relative;
+  width: 100%; }
+
+#toggleInformation {
+  position: absolute;
+  right: 0;
+  top: .5em; }
+
+#example th {
+  background: url("//static.qgov.net.au/assets/v2/images/datatable/sort_both.png") no-repeat center right #13578b !important;
+  padding-right: 0 !important;
+  vertical-align: middle !important; }
+
+#example th.asc {
+  background: url("//static.qgov.net.au/assets/v2/images/datatable/sort_asc.png") no-repeat center right #13578b !important; }
+
+#example th.desc {
+  background: url("//static.qgov.net.au/assets/v2/images/datatable/sort_desc.png") no-repeat center right #13578b !important; }
+
+#example ul {
+  margin-left: 0; }
+
+#example ul ul,
+#ictdb #example .detailedInfoRow td ul ul {
+  padding-left: 1.7em; }
+
+#ictdb #example .detailedInfoRow td ul {
+  padding-left: 1em; }
+
+#ictdb .desktop-view,
+#ictdb .small-view {
+  display: none; }
+
+#ictdb .small-view {
+  display: list-item; }
+
+#ictdb td,
+#ictdb th {
+  padding: 0.5em; }
+
+#example td {
+  white-space: nowrap; }
+
+#example td.details-title,
+#example .detailedInfoRow td {
+  white-space: normal; }
+  #example td.details-title img,
+  #example .detailedInfoRow td img {
+    width: 1.5em;
+    margin: auto 1em -0.4em; }
+  #example td.details-title .learn-more,
+  #example .detailedInfoRow td .learn-more {
+    margin: auto 2rem;
+    border: 1px solid;
+    padding: 0.5rem;
+    text-decoration: none; }
+    #example td.details-title .learn-more i,
+    #example .detailedInfoRow td .learn-more i {
+      margin-left: 0.5rem;
+      font-weight: bold; }
+  #example td.details-title .project-journey-events input[type='checkbox'],
+  #example .detailedInfoRow td .project-journey-events input[type='checkbox'] {
+    margin: auto 1.5rem auto 0.5rem; }
+
+.actions li {
+  margin: 0 0.5em 0.5em 0 !important; }
+
+/* -- aside overides -- */
+.qg-projects-search li.hide {
+  display: none !important; }
+
+.qg-projects-search .advancedsearch {
+  text-decoration: underline;
+  color: #13578b;
+  cursor: pointer; }
+
+#content-container .aside {
+  padding: 1px;
+  margin: 0; }
+
+#content-container .actions {
+  padding: 0;
+  margin: 0; }
+
+#content-container.small .aside h2 {
+  position: absolute;
+  left: -9999em; }
+
+#content-container .aside h2 {
+  position: relative;
+  left: 0; }
+
+#content-container .aside .actions a {
+  color: #000; }
+
+#content-container .aside .actions a:hover {
+  color: #000; }
+
+.qg-projects-search .status.warn h2 {
+  position: absolute;
+  left: -9999em; }
+
+.qg-projects-search .status.warn ol {
+  margin: 0;
+  padding: 0; }
+
+.qg-projects-search .status.warn li {
+  margin: 0;
+  display: block;
+  min-height: 3em; }
+
+.qg-projects-search form fieldset {
+  border: none;
+  padding: .35em 0; }
+
+.aside.search {
+  background: #f2f7f9; }
+
+.qg-projects-search form.hide {
+  display: none; }
+
+.qg-projects-search form .choices label {
+  margin-bottom: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+#status-list label img {
+  pointer-events: none; }
+
+.qg-aside .qg-projects-search form .choices img {
+  position: relative;
+  padding-right: 0.5em;
+  width: 2em; }
+
+.qg-projects-search form .choices li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.choices li input {
+  position: absolute;
+  margin-left: -20px;
+  padding: 0; }
+
+#aside-more-information-dashboard {
+  margin-bottom: 80px; }
+
+/* -- sliders -- */
+.extra-controls.unminimised {
+  position: relative;
+  border-top: 1px solid #eee;
+  border-bottom: 3px solid #ccc;
+  padding: 1em 0 0;
+  height: 4em;
+  margin: 1em 0 2.5em 0; }
+
+.extra-controls {
+  position: relative;
+  border-top: 1px solid #eee;
+  border-bottom: 3px solid #eee;
+  padding: 0;
+  height: 0px;
+  overflow: hidden;
+  margin: 1em 0 0 0;
+  clear: both; }
+
+body .qg-projects-search form .questions input.inp {
+  width: 45%;
+  text-align: center;
+  padding: 5px; }
+
+.lbls {
+  width: 100%; }
+
+.lbl {
+  float: left; }
+
+.inp + .inp,
+.lbl + .lbl {
+  float: right; }
+
+.lbl {
+  font-size: 80%;
+  padding: .5em 5px; }
+
+.irs-slider.to:before {
+  position: absolute;
+  display: block;
+  content: "";
+  top: -120%;
+  left: -20%;
+  width: 150%;
+  height: 256%;
+  background: rgba(0, 0, 0, 0); }
+
+.range-slider {
+  margin: 0 2em 0 1em !important; }
+  .range-slider .irs-bar {
+    background: url("/digitalprojectsdashboard-uat/assets/images/sprite-skin-flat.png") repeat-x 0 -60px; }
+
+.lbl.js-from,
+.lbl.js-to {
+  text-decoration: underline;
+  color: #13578B; }
+
+#qg-primary-content table tr:nth-child(even) {
+  background: initial !important; }
+
+.qg-projects-search select {
+  overflow: auto; }
+  .qg-projects-search select option {
+    width: 200%; }
+
+#results-table a {
+  font-size: 0.9em; }
+
+#ictdb.dataTable.small,
+#ictdb.dataTable.medium {
+  width: 100%; }
+
+.qg-projects-search.medium {
+  width: 100%; }
+
+#content-container .article .box-sizing .qg-projects-search.small div.border,
+#content-container .article .box-sizing .qg-projects-search.medium div.border {
+  margin: 0; }
+
+.search-widget .widget-header .action a.up:before,
+.search-widget .widget-header .action a:before {
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+.search-widget .widget-header .action a:hover:before,
+.search-widget .widget-header .action a.up:hover:before {
+  color: #0066cc; }
+
+#content-container .article .box-sizing .border {
+  margin-left: 2.9em; }
+
+#ictdb.dataTable.small .desktop-view,
+#ictdb.dataTable .mobile-view {
+  display: none; }
+
+#ictdb.dataTable.small .mobile-view {
+  display: list-item; }
+
+#ictdb.dataTable .projectStatusCol img {
+  width: 20px;
+  margin: auto 0.5em -0.4em 0; }
+
+#ictdb.dataTable .projectStatusCol span {
+  position: absolute;
+  left: -9999em; }
+
+/* temp pagination */
+#pagination ul {
+  padding: 0;
+  text-align: left; }
+
+#pagination li {
+  display: inline-block;
+  list-style: none;
+  margin: 1em; }
+
+/* Print overrides -webkit-print-color-adjust: exact; */
+#ia-format {
+  float: left;
+  width: 100%;
+  margin: 0 0 2em 0;
+  background: #fff;
+  padding-bottom: 1em; }
+
+#ia-format .d1 {
+  clear: none;
+  float: left;
+  padding: 0;
+  margin: 1em 0;
+  position: relative;
+  width: 50%;
+  *width: 49.95% !important; }
+
+#ia-format ul.medium .d1 {
+  margin: 0;
+  min-height: 165px; }
+
+@media screen and (max-width: 640px) {
+  #ia-format .d1 {
+    width: 100%;
+    *width: 99% !important; } }
+
+#ia-format .d1 .inner {
+  height: 90%;
+  margin-left: 58px;
+  margin-right: .5em;
+  padding: 1em 1em 1em 46px; }
+
+#ia-format ul a {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  text-decoration: none;
+  text-transform: none;
+  background: transparent;
+  color: #13578b; }
+
+#ia-format ul a:hover {
+  background: transparent;
+  color: #13578b;
+  text-decoration: underline; }
+
+#ia-format ul a:active {
+  background: transparent;
+  color: #13578b;
+  text-decoration: underline; }
+
+#ia-format h2 a {
+  color: #13578b; }
+
+#ia-format h2 a:hover {
+  color: #0066CC; }
+
+#ia-format h2 a:active {
+  color: #cc0000; }
+
+#ia-format a:focus .link-text {
+  outline: 2px solid #eab754; }
+
+#ia-format.no-img .d1 .inner {
+  margin-left: .5em;
+  padding-left: 1em; }
+
+#ia-format .d1 h2 {
+  font-size: 19px;
+  font-size: 1.2rem;
+  font-weight: 900;
+  margin: 0 1em 0 0; }
+
+#ia-format .d1 h2 a .link-text {
+  display: block; }
+
+#ia-format .d1 img {
+  background: #F9F9F9;
+  border: 1px solid #FFFEFC;
+  -webkit-box-shadow: 0 0 2px 1px black;
+          box-shadow: 0 0 2px 1px black;
+  -webkit-box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1) !important;
+          box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1) !important;
+  display: block;
+  height: 75px;
+  left: 13px;
+  top: 1em;
+  width: 75px; }
+
+#ia-format .d1 .inner img {
+  position: absolute; }
+
+#ia-format .d1 a:hover img {
+  -webkit-transform: rotate(-5deg);
+  -ms-transform: rotate(-5deg);
+  transform: rotate(-5deg);
+  border-color: #0066CC; }
+
+#ia-format .d1 a:visited:hover img {
+  border-color: #576978; }
+
+.residents-index #ia-format .d1 img {
+  width: 50px;
+  height: 50px;
+  top: .7em; }
+
+.residents-index #ia-format .d1 .inner {
+  margin-left: 48px;
+  padding: 1em 1em .5em 30px;
+  min-height: 45px; }
+
+.residents-index #ia-format li.flex-grid-new-row .inner {
+  margin-left: 40px; }
+
+.audience-index #ia {
+  margin-top: 0; }
+
+.audience-index #ia-format h2,
+.audience-index #ia-format h3,
+.audience-index #ia-format ul {
+  margin-top: 0;
+  margin-bottom: 0; }
+
+.audience-index #ia-format h2 {
+  padding-left: .5em; }
+
+.audience-index #ia-format h3 {
+  font-size: 19px;
+  font-size: 1.2rem;
+  font-weight: 900;
+  padding-bottom: .5em; }
+
+.audience-index #ia-format .section {
+  margin-top: .5em; }
+
+#ia-format li {
+  list-style: none !important;
+  margin: .5em 0 .5em 0; }
+
+#ia-format li.no-thumb p {
+  margin-left: 0;
+  margin-top: 0; }
+
+#ia-format .d1 p {
+  padding: .5em 1em .5em 0;
+  margin: 0; }
+
+div.actions ul {
+  padding: 0; }
+
+#ia-format ul.small {
+  padding: 0; }
+
+#ia-format ul.small img {
+  width: 30px;
+  height: 30px;
+  top: 0; }
+
+#ia-format ul.small .inner {
+  padding: 0; }
+
+#content-container.small .st_view_inner {
+  padding: 3px; }
+
+@media all and (min-width: 700px) and (max-width: 1024px) {
+  .st_views {
+    height: 950px !important; } }
+
+@media only screen and (device-width: 768px) {
+  #ia-format ul .d1 {
+    margin: 0;
+    min-height: 165px; } }
+
+@media print {
+  #ict-tabcontainer a:after {
+    display: none !important; }
+  #ia-format a:after {
+    display: inherit !important; }
+  #ia-format .demo-layout li {
+    width: 100% !important; }
+  #overview-status .print-link-url,
+  #overview-expenditure .print-link-url,
+  #ui-controls,
+  #nav-site,
+  #tools,
+  #feature-search-db,
+  .aside.search,
+  .toggle-sort {
+    display: none !important; }
+  .franchise-index-with-asides h1,
+  #results-table th,
+  #results-table td,
+  #content-container .article .box-sizing .box-sizing,
+  #content-container .article .box-sizing .border {
+    left-padding: 0 !important;
+    margin-left: 0 !important; }
+  #ictdb.dataTable {
+    width: 100%; }
+  #overview-expenditure .graph li span,
+  #overview-status .graph li span {
+    color: #000 !important; }
+  #overview-expenditure .graph li span,
+  #overview-status .graph li span {
+    text-shadow: 1px 1px 3px white; }
+  body #example thead tr th a {
+    color: #000000 !important; }
+  table#example td.details-control {
+    padding-left: 0; }
+  #ictdb.dataTable .projectStatusCol span {
+    position: relative;
+    left: 0;
+    top: -0.2em;
+    margin: 0 0 0 .6em; }
+  .qg-projects-search {
+    clear: left; }
+  abbr[title]:after {
+    content: "" !important; }
+  #qg-primary-content a[href]:after, #qg-secondary-content a[href]:after {
+    content: " (" attr(href) ")";
+    color: #06c !important;
+    font-size: 11px !important; } }
+
+#ui-datepicker-div {
+  background: #13578b;
+  color: #fff;
+  font-size: 75%; }
+
+.ui-datepicker-header {
+  text-align: center;
+  position: relative;
+  padding: 5px; }
+
+.ui-datepicker-next, .ui-datepicker-prev {
+  cursor: pointer; }
+
+.ui-datepicker-next {
+  margin-left: 20px;
+  position: absolute;
+  bottom: 0;
+  right: 10px; }
+  .ui-datepicker-next::after {
+    content: ">>"; }
+
+.ui-datepicker-prev {
+  position: absolute;
+  bottom: 0;
+  left: 10px; }
+  .ui-datepicker-prev::before {
+    content: "<<"; }
+
+.page-error {
+  text-align: center;
+  color: #666;
+  font-size: 20px;
+  padding: 100px 0; }
+
+.page-error img {
+  max-width: 100%;
+  max-height: 160px; }
+
+.highcharts-label {
+  visibility: inherit !important;
+  opacity: 1 !important; }
+@charset "UTF-8";
+/* Ion.RangeSlider
+// css version 2.0.1
+// © 2013-2014 Denis Ineshin | IonDen.com
+// ===================================================================================================================*/
+/* =====================================================================================================================
+// RangeSlider */
+.irs {
+  position: relative;
+  display: block;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.irs-line {
+  position: relative;
+  display: block;
+  overflow: hidden; }
+
+.irs-line-left, .irs-line-mid, .irs-line-right {
+  position: absolute;
+  display: block;
+  top: 0; }
+
+.irs-line-left {
+  left: 0;
+  width: 11%; }
+
+.irs-line-mid {
+  left: 9%;
+  width: 82%; }
+
+.irs-line-right {
+  right: 0;
+  width: 11%; }
+
+.irs-bar {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 0; }
+
+.irs-bar-edge {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0; }
+
+.irs-shadow {
+  position: absolute;
+  display: none;
+  left: 0;
+  width: 0; }
+
+.irs-slider {
+  position: absolute;
+  display: block;
+  cursor: default;
+  z-index: 1; }
+
+.irs-slider.single {
+  left: 10px; }
+
+.irs-slider.from {
+  left: 100px; }
+
+.irs-slider.to {
+  left: 300px; }
+
+.irs-slider.type_last {
+  z-index: 2; }
+
+.irs-min {
+  position: absolute;
+  display: block;
+  left: 0;
+  cursor: default; }
+
+.irs-max {
+  position: absolute;
+  display: block;
+  right: 0;
+  cursor: default; }
+
+.irs-from, .irs-to, .irs-single {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  cursor: default;
+  white-space: nowrap; }
+
+.irs-grid {
+  position: absolute;
+  display: none;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20px; }
+
+.irs-with-grid .irs-grid {
+  display: block; }
+
+.irs-grid-pol {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 8px;
+  background: #000; }
+
+.irs-grid-pol.small {
+  height: 4px; }
+
+.irs-grid-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  white-space: nowrap;
+  text-align: center;
+  font-size: 9px;
+  line-height: 9px;
+  padding: 0 3px;
+  color: #000; }
+
+.irs-disable-mask {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: -1%;
+  width: 102%;
+  height: 100%;
+  cursor: default;
+  background: rgba(0, 0, 0, 0);
+  z-index: 2; }
+
+.irs-disabled {
+  opacity: 0.4; }
+
+.lt-ie9 .irs-disabled {
+  filter: alpha(opacity=40); }
+
+.irs-hidden-input {
+  position: absolute !important;
+  display: block !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  outline: none !important;
+  z-index: -9999 !important;
+  background: none !important;
+  border-style: solid !important;
+  border-color: transparent !important; }
+@charset "UTF-8";
+/* Ion.RangeSlider, Flat UI Skin
+// css version 2.0.0
+// © Denis Ineshin, 2014    https://github.com/IonDen
+// ===================================================================================================================*/
+/* =====================================================================================================================
+// Skin details */
+.irs-line-mid,
+.irs-line-left,
+.irs-line-right,
+.irs-bar,
+.irs-bar-edge,
+.irs-slider {
+  background: url(../../images/sprite-skin-flat.png) repeat-x; }
+
+.irs {
+  height: 40px; }
+
+.irs-with-grid {
+  height: 60px; }
+
+.irs-line {
+  height: 12px;
+  top: 25px; }
+
+.irs-line-left {
+  height: 12px;
+  background-position: 0 -30px; }
+
+.irs-line-mid {
+  height: 12px;
+  background-position: 0 0; }
+
+.irs-line-right {
+  height: 12px;
+  background-position: 100% -30px; }
+
+.irs-bar {
+  height: 12px;
+  top: 25px;
+  background-position: 0 -60px; }
+
+.irs-bar-edge {
+  top: 25px;
+  height: 12px;
+  width: 9px;
+  background-position: 0 -90px; }
+
+.irs-shadow {
+  height: 3px;
+  top: 34px;
+  background: #000;
+  opacity: 0.25; }
+
+.lt-ie9 .irs-shadow {
+  filter: alpha(opacity=25); }
+
+.irs-slider {
+  width: 16px;
+  height: 18px;
+  top: 22px;
+  background-position: 0 -120px; }
+
+#irs-active-slider, .irs-slider:hover {
+  background-position: 0 -150px; }
+
+.irs-min, .irs-max {
+  color: #999;
+  font-size: 10px;
+  line-height: 1.333;
+  text-shadow: none;
+  top: 0;
+  padding: 1px 3px;
+  background: #e1e4e9;
+  border-radius: 4px; }
+
+.irs-from, .irs-to, .irs-single {
+  color: #fff;
+  font-size: 10px;
+  line-height: 1.333;
+  text-shadow: none;
+  padding: 1px 5px;
+  background: #13578b;
+  border-radius: 4px; }
+
+.irs-from:after, .irs-to:after, .irs-single:after {
+  position: absolute;
+  display: block;
+  content: "";
+  bottom: -6px;
+  left: 50%;
+  width: 0;
+  height: 0;
+  margin-left: -3px;
+  overflow: hidden;
+  border: 3px solid transparent;
+  border-top-color: #13578b; }
+
+.irs-grid-pol {
+  background: #e1e4e9; }
+
+.irs-grid-text {
+  color: #999; }
