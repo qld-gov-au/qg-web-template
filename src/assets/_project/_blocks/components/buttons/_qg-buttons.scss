@@ -81,11 +81,12 @@
     color: $qg-outline-dark;
     background-color: transparent !important;
     @include all-states {
-      border: 3px solid $qg-outline-dark;
+      border: 3px solid $qg-outline-dark !important;
+      color: $qg-global-primary-dark-grey !important;
     }
-    @include on-hover {
-      border-color: $qg-outline-dark-hover;
-    }
+    /*@include on-hover {
+      border-color: $qg-outline-dark-hover !important;
+    }*/
     @include qg-underline-on-highlight-decoration {
       color: $qg-outline-dark-hover;
     }
