@@ -83,6 +83,9 @@
     @include all-states {
       border: 3px solid $qg-outline-dark;
     }
+    @include on-hover {
+      border-color: $qg-outline-dark-hover;
+    }
     @include qg-underline-on-highlight-decoration {
       color: $qg-outline-dark-hover;
     }
