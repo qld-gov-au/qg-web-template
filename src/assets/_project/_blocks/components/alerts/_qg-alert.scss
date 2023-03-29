@@ -1,5 +1,5 @@
 // content alert and global alert styles
-.alert {
+.alert, .qg-site-wide-alert {
   position: relative;
   color: #000;
   & > :first-child{
