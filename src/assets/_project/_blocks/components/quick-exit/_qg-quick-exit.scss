@@ -58,10 +58,6 @@
       transform: rotate(-45deg)
     }
     .qg-quick-exit__label {
-      @include on-active {
-        @include qg-button-outline-decoration;
-        border-radius: $btn-border-radius-base;
-      }
       font-weight: 500;
       @include qg-link-decoration;
       @include qg-underline-on-highlight-decoration;
@@ -83,13 +79,6 @@
       flex-grow: 1
     }
     .qg-quick-exit__button {
-      @include on-active {
-        @include qg-button-outline-decoration;
-        border-radius: $btn-border-radius-base;
-      }
-      @include on-hover-or-active {
-        @include _qg-link-underline-thicker;
-      }
       border-radius: 4px;
       display: inline-block;
       text-decoration-line: none;
@@ -149,7 +138,10 @@
             flex-grow: 0
           }
           .qg-quick-exit__item {
-            margin-left: 25px
+            margin-left: 25px;
+            @include on-active {
+              @include qg-button-outline-decoration;
+            }
           }
           .qg-tooltip__wrapper {
             bottom: auto;
