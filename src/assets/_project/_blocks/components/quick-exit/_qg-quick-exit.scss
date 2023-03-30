@@ -58,8 +58,13 @@
       transform: rotate(-45deg)
     }
     .qg-quick-exit__label {
+      @include on-active {
+        @include qg-button-outline-decoration;
+        border-radius: $btn-border-radius-base;
+      }
       font-weight: 500;
       @include qg-link-decoration;
+      @include qg-underline-on-highlight-decoration;
     }
     .qg-quick-exit__list {
       margin: 0;
@@ -78,6 +83,13 @@
       flex-grow: 1
     }
     .qg-quick-exit__button {
+      @include on-active {
+        @include qg-button-outline-decoration;
+        border-radius: $btn-border-radius-base;
+      }
+      @include on-hover-or-active {
+        @include _qg-link-underline-thicker;
+      }
       border-radius: 4px;
       display: inline-block;
       text-decoration-line: none;
@@ -112,6 +124,7 @@
             padding-left: 16px
           }
           .qg-quick-exit__tip-link {
+            @include qg-underline-on-highlight-decoration;
             -ms-flex-align: center;
             align-items: center;
             color: white;
@@ -127,6 +140,7 @@
             }
             .qg-quick-exit__tip-title {
               @include qg-link-decoration;
+              @include qg-underline-on-highlight-decoration;
             }
           }
           .qg-quick-exit__actions {
