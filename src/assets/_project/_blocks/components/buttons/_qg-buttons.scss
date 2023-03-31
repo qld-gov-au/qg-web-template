@@ -67,8 +67,9 @@
 }
 
 .btn-link {
-  @include on-hover() {
-    @include link-hover;
+  @include qg-link-styles__default;
+  @include all-states {
+    color: $qg-blue-dark;
   }
 }
 
