@@ -139,8 +139,10 @@
           }
           .qg-quick-exit__item {
             margin-left: 25px;
-            @include on-active {
-              @include qg-button-outline-decoration;
+            &.qg-tooltip-container {
+              @include on-active {
+                @include qg-button-outline-decoration($margin: 0);
+              }
             }
           }
           .qg-tooltip__wrapper {
