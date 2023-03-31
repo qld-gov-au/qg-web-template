@@ -343,14 +343,14 @@ $qg-linkedin: #0077b5;
 
 $text-underline-offset: 5px;
 
-@mixin qg-button-outline-decoration($margin: 2px, $outline-color: $qg-active-outline) {
+@mixin qg-button-outline-decoration($margin: 2px, $outline-color: $qg-active-outline, $border-radius: 0) {
   // Surround buttons and links with a blue outline when active/focused
   @include on-active {
     outline-width: 3px;
     outline-style: solid;
     outline-color: $outline-color;
     outline-offset: 2px;
-    border-radius: 0;
+    border-radius: $border-radius;
     @content;
     * {
       // don't apply an extra outline to any children
