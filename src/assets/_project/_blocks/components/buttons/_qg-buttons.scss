@@ -81,9 +81,7 @@
   &.btn-outline-dark{
     color: $qg-outline-dark;
     background-color: transparent !important;
-    @include all-states {
-      border: 3px solid $qg-outline-dark;
-    }
+    border: 3px solid $qg-outline-dark;
     @include on-hover-or-active {
       border-color: $qg-outline-dark-hover;
       color: $qg-global-primary-dark-grey;
