@@ -85,7 +85,7 @@
       border: 3px solid $qg-outline-dark;
     }
     @include on-hover-or-active {
-      border-color: $qg-outline-dark-hover !important;
+      border-color: $qg-outline-dark-hover;
       color: $qg-global-primary-dark-grey;
     }
     @include qg-underline-on-highlight-decoration;
