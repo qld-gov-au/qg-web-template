@@ -75,7 +75,7 @@
 
 .qg-btn {
   @extend .btn;
-  @include qg-button-outline-decoration;
+  @include qg-button-outline-decoration($border-radius: $btn-border-radius-base);
   border-radius: $btn-border-radius-base;
 
   &.btn-outline-dark{
