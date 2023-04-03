@@ -4,7 +4,7 @@
 
   &.qg-card__clickable {
     .content {
-      @include qg-button-outline-decoration;
+      @include qg-button-outline-decoration($border-radius: $btn-border-radius-base);
     }
   }
 
