@@ -127,6 +127,7 @@
   @include qg-global-link-styles($margin: $margin) {
     @include qg-link-white;
     @include qg-link-decoration;
+    @include qg-link-visited-decoration(white);
     @include qg-button-outline-decoration($outline-color: $qg-active-outline-brighter);
   }
 }
