@@ -1,42 +1,55 @@
 // if the font size is less than 16px on mobile then the IOS will zoom the page and this makes the page unstable
- @include media-breakpoint-down(md) {
-    input, select, textarea {
-      font-size: 1rem !important;
-    }
+@include media-breakpoint-down(md) {
+
+  input,
+  select,
+  textarea {
+    font-size: 1rem !important;
   }
+}
 
 //custom theme for radio buttons and checkbox
 .rc-theme {
-  .rc-theme__focus{
+  .rc-theme__focus {
     outline: 2px solid $qg-blue;
     outline-offset: 1px;
   }
+
   &.choices {
     display: flex;
     flex-wrap: wrap;
-    margin-top:1em;
+    margin-top: 1em;
   }
-  .rc-theme__active{
+
+  .rc-theme__active {
     background-color: $qg-blue !important;
-    [type="checkbox"]:checked + label .rc-theme__icon, [type="radio"]:checked + label .rc-theme__icon {
+
+    [type='checkbox']:checked+label .rc-theme__icon,
+    [type='radio']:checked+label .rc-theme__icon {
       fill: white;
     }
-    .rc-theme__label-desc{
+
+    .rc-theme__label-desc {
       color: white;
     }
   }
-  .rc-theme__label{
+
+  .rc-theme__label {
     padding-left: 35px;
   }
-  .rc-theme__with-image{
+
+  .rc-theme__with-image {
     text-align: center;
-    svg{
+
+    svg {
       margin-top: 15px;
     }
+
     .rc-theme__icon {
       fill: $black;
     }
-    .rc-theme__label-desc{
+
+    .rc-theme__label-desc {
       display: inline-block;
       margin-top: 19px;
     }
@@ -53,27 +66,29 @@
       border-radius: 3px;
       border: 1px solid $qg-pagination-border !important;
     }
+
     label {
       color: #000 !important;
       font-weight: normal;
     }
   }
 
-  [type="radio"],
-  [type="checkbox"] {
+  [type='radio'],
+  [type='checkbox'] {
     position: absolute;
     left: -9999px;
-   &+label {
-     position: relative;
-     cursor: pointer;
-     line-height: 20px;
-     display: inline-block;
-     color: #666;
-   }
+
+    &+label {
+      position: relative;
+      cursor: pointer;
+      line-height: 20px;
+      display: inline-block;
+      color: #666;
+    }
   }
 
-  [type="radio"]:checked + label:before,
-  [type="radio"]:not(:checked) + label:before{
+  [type='radio']:checked+label:before,
+  [type='radio']:not(:checked)+label:before {
     content: '';
     position: absolute;
     left: 0;
@@ -85,8 +100,8 @@
     background: white;
   }
 
-  [type="checkbox"]:checked + label:before,
-  [type="checkbox"]:not(:checked) + label:before{
+  [type='checkbox']:checked+label:before,
+  [type='checkbox']:not(:checked)+label:before {
     content: '';
     position: absolute;
     left: 0;
@@ -96,8 +111,9 @@
     border: 1px solid #000;
     background: white;
   }
-  [type="radio"]:checked + label:after,
-  [type="radio"]:not(:checked) + label:after {
+
+  [type='radio']:checked+label:after,
+  [type='radio']:not(:checked)+label:after {
     content: '';
     width: 14px;
     height: 14px;
@@ -109,8 +125,8 @@
     transition: all 0.2s ease;
   }
 
-  [type="checkbox"]:checked + label:after,
-  [type="checkbox"]:not(:checked) + label:after{
+  [type='checkbox']:checked+label:after,
+  [type='checkbox']:not(:checked)+label:after {
     content: '\2714';
     font-size: 22px;
     position: absolute;
@@ -119,53 +135,75 @@
     color: #000;
     transition: all 0.2s ease;
   }
-  [type="radio"]:not(:checked) + label:after,
-  [type="checkbox"]:not(:checked) + label:after{
+
+  [type='radio']:not(:checked)+label:after,
+  [type='checkbox']:not(:checked)+label:after {
     opacity: 0;
     -webkit-transform: scale(0);
     transform: scale(0);
   }
-  [type="radio"]:checked + label:after,
-  [type="checkbox"]:checked + label:after{
+
+  [type='radio']:checked+label:after,
+  [type='checkbox']:checked+label:after {
     opacity: 1;
     -webkit-transform: scale(1);
     transform: scale(1);
   }
-  [type="radio"]:disabled,
-  [type="checkbox"]:disabled {
+
+  [type='radio']:disabled,
+  [type='checkbox']:disabled {
     background: transparent;
     color: $qg-dark-grey-lightest;
     cursor: not-allowed;
-    +label, +label:before {
+
+    +label,
+    +label:before {
       cursor: not-allowed;
       color: $qg-dark-gray-light !important;
     }
+
     +label:before {
       border-color: $qg-dark-grey-lightest;
     }
+
     +label svg path.rc-theme__icon {
       fill: $qg-dark-grey-lightest;
     }
   }
-
 }
+
 // hint text
-.hint{
+.hint {
   color: $qg-dark-gray-light;
   @include rem(font-size, 14px);
 }
+
 //------------------------------------------------------------------------------------
 // Updated form styles (migrated from forms.io repository to make all forms look the same)
 //------------------------------------------------------------------------------------
 
-.qg-forms-v2{
-  input:not([type=button]):not([type=reset]):not([type=submit]):not([type=image]):not([type]),
-  input[type=text], input[type=password], input[type=search], input[type=email], input[type=tel], input[type=url], input[type=date], input[type=time], input[type=datetime], input[type=number], select, textarea,
+.qg-forms-v2 {
+
+  input:not([type='button']):not([type='reset']):not([type='submit']):not([type='image']):not([type]),
+  input[type='text'],
+  input[type='password'],
+  input[type='search'],
+  input[type='email'],
+  input[type='tel'],
+  input[type='url'],
+  input[type='date'],
+  input[type='time'],
+  input[type='datetime'],
+  input[type='number'],
   select,
   textarea,
-  .formio-choices .selection, .form-control.dropdown {
+  select,
+  textarea,
+  .formio-choices .selection,
+  .form-control.dropdown {
     padding: 8px;
     border-radius: $borderRadius;
+
     &:focus-within {
       color: #495057;
       background-color: white;
@@ -174,19 +212,26 @@
       box-shadow: 0 0 0 $borderWidth $focusBoxShadow;
     }
   }
-  .form-control, .form-control.dropdown, .form-check-input{
+
+  .form-control,
+  .form-control.dropdown,
+  .form-check-input {
     border: $borderWidth solid $qg-pagination-border;
   }
-  label, .label {
+
+  label,
+  .label {
     font-size: $labelSize;
     color: $labelColour;
     font-weight: $labelWeight;
   }
+
   .hint {
     font-size: $hintSize;
     color: $hintColour;
     font-weight: $hintWeight;
   }
+
   legend {
     font-size: $labelHeadingSize;
     color: $labelHeadingColour;
@@ -197,40 +242,49 @@
   .is-flipped .choices__list--dropdown {
     margin-bottom: 8px;
   }
-  .choices__list--dropdown{
+
+  .choices__list--dropdown {
     box-shadow: 0 0 0 $borderWidth $focusBoxShadow;
     margin-top: 8px;
     border: $borderWidth solid $focusBorderColor !important;
     border-radius: 4px;
+
     .choices__item--selectable {
       padding: 8px 14px;
     }
   }
-  .choices[data-type*=select-multiple] .choices__button, .choices[data-type*=text] .choices__button {
+
+  .choices[data-type*='select-multiple'] .choices__button,
+  .choices[data-type*='text'] .choices__button {
     background-image: url(../images/x-icon.svg);
     background-size: 11px;
     vertical-align: middle;
     border-left: none;
   }
-  .formio-choices{
+
+  .formio-choices {
     .choices__item.choices__item--selectable {
       white-space: pre-wrap;
       word-break: break-word;
     }
+
     .choices__list--multiple .choices__item[data-deletable] {
       padding-right: 10px;
       margin: 4px 8px 4px 0;
     }
-    input.choices__input:not(.choices__input--cloned){
-      border:none;
+
+    input.choices__input:not(.choices__input--cloned) {
+      border: none;
       font-size: 1rem;
       padding: 0 10px 0 0;
       margin: 4px 8px 4px 0;
-      &:focus{
+
+      &:focus {
         box-shadow: none !important;
       }
     }
-    .choices__input--cloned{
+
+    .choices__input--cloned {
       font-size: 1rem;
       border: 0;
       padding: 0 0 0 8px;
@@ -238,112 +292,148 @@
       background: initial;
       box-shadow: none !important;
     }
+
     .choices__item {
       padding: 4px 10px;
       line-height: inherit;
       font-size: 1rem;
     }
-    .choices__item.choices__item--selectable:not(.choices__item--choice){
+
+    .choices__item.choices__item--selectable:not(.choices__item--choice) {
       background: $qg-global-primary-light-grey;
       border-radius: 6px;
       border: none;
       color: $qg-global-primary-darker;
     }
-    .choices__button{
+
+    .choices__button {
       background-color: initial;
     }
   }
-  // end of choices list styles (forms.io styles overrides)
 
+  // end of choices list styles (forms.io styles overrides)
 
   // forms.io radio button and checkbox specific styles overrides
   // ------------------------------------------------------------
-  .qg-forms-v2__checkbox, .qg-forms-v2__radio {
+  .qg-forms-v2__checkbox,
+  .qg-forms-v2__radio {
     display: flex;
     flex-direction: column;
+
     label {
-      width:100%;
-      margin-bottom: 14px;
+      width: 100%;
+      margin-bottom: 0;
     }
-    li{
-      display:flex;
+
+    li {
+      display: flex;
+      align-items: center;
     }
-    input[type=radio], input[type=checkbox] {
+
+    input[type='radio'],
+    input[type='checkbox'] {
       top: 0;
       appearance: none;
       @include qg-button-outline-decoration;
       border: solid $qg-pagination-border 2px;
       position: static;
+
       &:disabled {
         border-color: $qg-dark-grey-lightest;
         background-color: $qg-global-primary-light-grey;
+
         &::before {
           box-shadow: inset 1.2em 1.2em $qg-dark-grey-lightest;
         }
       }
+
       display: grid;
       place-content: center;
 
       &::before {
-        content: "";
+        content: '';
         width: 1.2em;
         height: 1.2em;
         transform: scale(0);
         box-shadow: inset 1.2em 1.2em black;
       }
+
       &:checked::before {
         transform: scale(1);
       }
 
       @include on-hover {
-        box-shadow: $qg-light-blue-gray3 0 0 0px 5px, inset $qg-light-blue-gray3 0 0 0px 100px;
+        box-shadow: $qg-light-blue-gray3 0 0 0px 5px,
+          inset $qg-light-blue-gray3 0 0 0px 100px;
       }
     }
 
-    input[type=radio] {
+    input[type='radio'] {
       border-radius: 50%;
       // compatibility with Firefox pre-88
       -moz-outline-radius: 50%;
+
       &::before {
         border-radius: 50%;
       }
+
+      //
+      @include on-active {
+        border-radius: 50%;
+        -moz-outline-radius: 50%;
+      }
     }
-    input[type=checkbox]:checked::before {
+
+    input[type='checkbox']:checked::before {
       clip-path: polygon(18% 40%, 2% 56%, 37% 91%, 97% 31%, 81% 15%, 37% 59%);
     }
   }
-  .checkbox, .qg-forms-v2__checkbox,
-  .form-radio, .qg-forms-v2__radio {
+
+  .checkbox,
+  .qg-forms-v2__checkbox,
+  .form-radio,
+  .qg-forms-v2__radio {
     padding: 12px 0 12px 0;
     margin: 0;
+
     .radio {
       margin: 0;
     }
-    .form-check, .form-check-inline {
+
+    .form-check,
+    .form-check-inline {
       padding-bottom: $defaultRem;
       padding-left: 0;
-      .form-check-input{
+
+      .form-check-input {
         margin-left: -16px;
       }
     }
+
     .form-check-inline .form-check-input {
       margin-right: 0;
     }
-    input[type=radio], input[type=checkbox] {
+
+    input[type='radio'],
+    input[type='checkbox'] {
       accent-color: $qg-global-primary-darker-grey;
       width: 1.5em;
       height: 1.5em;
       padding: 0.9em;
       margin-top: 0;
-      &:checked + label {
+
+      &:checked+label {
         color: inherit;
       }
     }
+
     label {
-      display:flex;
+      display: flex;
       font-weight: normal;
-      margin-left: 16px;
-      > span {
+      margin-left: 0;
+      padding-left: 14px;
+
+      >span {
         flex: 1;
         font-weight: $checkboxWeight;
         margin-left: $defaultRem;
@@ -357,32 +447,39 @@
       &:after {
         display: none;
       }
-      input + span:after {
-        content: " *";
+
+      input+span:after {
+        content: ' *';
         color: #eb0000;
       }
     }
   }
+
   // ------------------------------------------------------------------
   // end of forms.io radio button and checkbox specific styles overrides
 
   .formio-hidden {
     margin-bottom: 0 !important;
   }
-  .invalid .alert{
+
+  .invalid .alert {
     font-weight: normal;
   }
+
   .alert {
     margin-bottom: 16px;
     font-size: 1rem;
+
     &.alert-danger {
       background-color: #ffedde;
       border-color: #f9af71;
     }
   }
+
   .text-muted {
     color: $hintColour;
   }
+
   .qg-link {
     cursor: pointer;
   }
@@ -393,10 +490,12 @@
   .alert-danger {
     li {
       text-decoration-line: underline;
+
       span {
         color: $SecondaryColor;
       }
     }
+
     background-color: $alertWarningBackground;
     border-color: $alertWarningBorder;
   }
@@ -449,18 +548,22 @@
     display: inline-grid;
     //Fallback
     display: grid;
+
     div.col-form-label {
       order: 0;
     }
+
     div.text-muted {
       order: 1;
       margin-bottom: 4px;
     }
+
     div.formio-errors {
       order: 2;
       margin-bottom: 8px;
     }
-    div[ref="element"],
+
+    div[ref='element'],
     div.row,
     div.form-radio,
     div.checkbox,
@@ -492,6 +595,7 @@
   .border {
     border: 0;
   }
+
   .card {
     position: relative;
     display: inherit !important;
@@ -503,6 +607,7 @@
     border: none !important;
     border-radius: 0 !important;
   }
+
   .card-body {
     display: inherit !important;
     min-height: inherit !important;
@@ -525,11 +630,13 @@
       margin-bottom: 0 !important;
       border: none !important;
     }
+
     .card-body {
       border: 1px solid gray;
       padding: 16px;
       margin-top: -1px;
     }
+
     .card-header {
       position: relative;
       display: block;
@@ -541,21 +648,27 @@
       color: $qg-blue-dark;
       font-weight: 700;
       text-decoration-line: underline;
+
       .card-title {
         color: $qg-blue-dark !important;
         padding-right: 28px;
       }
+
       &:hover {
         text-decoration-line: none;
-        .text-light, .text-muted {
+
+        .text-light,
+        .text-muted {
           color: #212529 !important;
         }
       }
+
       .formio-collapse-icon {
         display: none;
       }
+
       &:after {
-        content: " ";
+        content: ' ';
         position: absolute;
         top: 50%;
         margin-top: -9px;
@@ -566,9 +679,10 @@
         background-repeat: no-repeat;
         background-position: 50%;
         z-index: 101;
-        transition: transform .25s ease-in;
+        transition: transform 0.25s ease-in;
       }
-      &[aria-expanded="false"]:after {
+
+      &[aria-expanded='false']:after {
         transform: rotate(-180deg);
       }
     }
@@ -576,26 +690,29 @@
 
   &>div>nav {
     display: block;
+
     &>ul.pagination {
       .page-item .page-link {
-          background: none !important;
-          @include qg-link-unvisited-color($qg-blue-dark !important);
-          font-weight: 700;
-          display: inline-block;
-          padding: 16px;
-          border-radius: 0 !important;
-          margin: 0;
-          margin-right: -1px;
-          text-decoration-line: underline !important;
+        background: none !important;
+        @include qg-link-unvisited-color($qg-blue-dark !important);
+        font-weight: 700;
+        display: inline-block;
+        padding: 16px;
+        border-radius: 0 !important;
+        margin: 0;
+        margin-right: -1px;
+        text-decoration-line: underline !important;
       }
+
       .page-item:not(.active):hover .page-link {
-          text-decoration-line: none !important;
-          background-color: #f5f5f5 !important;
+        text-decoration-line: none !important;
+        background-color: #f5f5f5 !important;
       }
+
       .page-item.active .page-link {
-          color: #212529 !important;
-          text-decoration-line: none !important;
-          background-color: #f5f5f5 !important;
+        color: #212529 !important;
+        text-decoration-line: none !important;
+        background-color: #f5f5f5 !important;
       }
     }
   }
@@ -603,11 +720,13 @@
 
 #qg-primary-content {
   .qg-forms-v2 .formio-component-panel .card-header {
-      display: block;
+    display: block;
   }
-  .qg-forms-v2 .formio-component-panel .card-body{
-      padding: 16px;
+
+  .qg-forms-v2 .formio-component-panel .card-body {
+    padding: 16px;
   }
+
   .qg-forms-v2 .formio-form nav {
     display: block;
   }
