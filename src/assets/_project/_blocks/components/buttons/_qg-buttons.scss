@@ -81,12 +81,12 @@
   &.btn-outline-dark{
     color: $qg-outline-dark;
     background-color: transparent !important;
-    @include all-states {
-      border: 3px solid $qg-outline-dark;
+    border: 3px solid $qg-outline-dark;
+    @include on-hover-or-active {
+      border-color: $qg-outline-dark-hover;
+      color: $qg-global-primary-dark-grey;
     }
-    @include qg-underline-on-highlight-decoration {
-      color: $qg-outline-dark-hover;
-    }
+    @include qg-underline-on-highlight-decoration;
   }
   &.btn-outline-light{
     color: white !important;
@@ -99,7 +99,7 @@
   }
 }
 
-#body .qg-btn, #body .btn, body .qg-btn, body .btn, {
+#body .qg-btn, #body .btn, body .qg-btn, body .btn {
   // override default .btn styling
   @include qg-underline-on-highlight-decoration;
 }
