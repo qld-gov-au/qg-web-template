@@ -326,8 +326,8 @@
     }
 
     li {
-      display: flex;
-      align-items: center;
+      // display: flex;
+      // align-items: center;
     }
 
     input[type='radio'],
@@ -347,8 +347,8 @@
         }
       }
 
-      display: grid;
-      place-content: center;
+      // display: grid;
+      // place-content: center;
 
       &::before {
         content: '';
