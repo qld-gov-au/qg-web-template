@@ -1,21 +1,28 @@
 .qg-footer-feedback__v2 {
-  .alert.alert-warning{
+
+  .alert.alert-warning {
     @extend .pt-4;
     @extend .mb-3;
     @extend .mt-0;
   }
+
   .questions .qg-forms-v2__radio {
     padding-bottom: 0;
+
     li {
       margin: 0;
-      &:last-child{
-        margin-bottom:0;
+      padding: 0;
+
+      &:last-child {
+        margin-bottom: 0;
       }
     }
+
     label {
       display: initial;
     }
   }
+
   &-content {
     background-color: white;
     border-radius: 4px;
@@ -30,19 +37,25 @@
   .status {
     margin: 0 0 24px !important;
     padding: 15px 13px;
+
     .fa {
       @include rem(font-size, 18px);
       margin-right: 10px;
     }
+
     h4 {
-      font-size:initial;
+      font-size: initial;
     }
+
     p {
       @include rem(font-size, 14px);
       margin-bottom: 0;
+
       a {
         text-decoration-line: underline;
-        &:hover, &:focus {
+
+        &:hover,
+        &:focus {
           opacity: 0.7;
         }
       }
@@ -50,17 +63,21 @@
   }
 
   .questions {
+    
     li {
       padding: 0;
     }
+
     legend {
       @include rem(line-height, 20px);
     }
+
     .label {
       display: inline;
     }
 
-    abbr.required,abbr[title*='required'] {
+    abbr.required,
+    abbr[title*='required'] {
       @include rem(font-size, 16px);
       color: $qg-global-error;
       display: inline;
@@ -90,7 +107,9 @@
       a {
         text-decoration-line: underline;
         @include qg-link-unvisited-color;
-        &:hover, &:focus {
+
+        &:hover,
+        &:focus {
           opacity: 0.7;
         }
       }
@@ -107,7 +126,12 @@
     color: initial;
     padding: 15px 0 0;
 
-    h1,h2,h3,h4,h5,h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       @include rem(font-size, 16px);
       color: $qg-global-primary-dark-grey;
       font-weight: 600;
@@ -125,7 +149,8 @@
       a {
         text-decoration-line: underline;
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
           opacity: 0.7;
         }
       }
@@ -207,13 +232,13 @@
         transform: none;
       }
 
-      + .qg-footer-feedback .qg-footer-feedback-content{
+      +.qg-footer-feedback .qg-footer-feedback-content {
         border-radius: 0 0 4px 4px;
       }
     }
 
     &.d-none {
-      + .qg-footer-feedback .qg-footer-feedback-content{
+      +.qg-footer-feedback .qg-footer-feedback-content {
         border-radius: 4px;
       }
     }
@@ -223,7 +248,8 @@
     transform: translateY(-6px);
     background: white;
     border-radius: 4px;
-    .qg-footer-feedback__close{
+
+    .qg-footer-feedback__close {
       padding: 0 0 15px 0;
       display: inline-block;
       margin: 0;
@@ -267,7 +293,8 @@
       a {
         text-decoration-line: underline;
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
           opacity: 0.7;
         }
       }
@@ -288,7 +315,8 @@
       display: inline;
     }
 
-    abbr.required,abbr[title*='required'] {
+    abbr.required,
+    abbr[title*='required'] {
       @include rem(font-size, 16px);
       color: $qg-global-error;
       display: inline;
@@ -325,7 +353,8 @@
       a {
         text-decoration-line: underline;
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
           opacity: 0.7;
         }
       }
@@ -349,7 +378,8 @@
         padding-left: 29px;
         position: relative;
 
-        &:after,&:before {
+        &:after,
+        &:before {
           border-radius: 50%;
           content: '';
           position: absolute;
@@ -365,6 +395,7 @@
           transition: all .3s ease;
           width: 12px;
         }
+
         &:before {
           border: 1px solid $qg-global-primary-darker-grey;
           height: 18px;
@@ -374,7 +405,7 @@
         }
       }
 
-      input[type=radio]:checked + label {
+      input[type=radio]:checked+label {
         font-weight: bold;
         color: $qg-global-primary-darker-grey;
 
@@ -395,7 +426,12 @@
   .thankyou {
     padding-top: 15px;
 
-    h1,h2,h3,h4,h5,h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       @include rem(font-size, 16px);
       color: $qg-global-primary-dark-grey;
       font-weight: 600;
@@ -413,7 +449,8 @@
       a {
         text-decoration-line: underline;
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
           opacity: 0.7;
         }
       }

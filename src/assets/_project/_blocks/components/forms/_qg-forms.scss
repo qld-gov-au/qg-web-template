@@ -321,17 +321,18 @@
     
     display: flex;
     flex-direction: column;
-
+  
     li {
       display: grid;
       align-items: center;
-      grid-template-columns: 2rem 1fr;
+      grid-template-columns: 2rem 1rem;
       grid-column-gap: 1rem;
-      margin: 0 0 1.5rem 0;
-      padding: 0 0 0 0;
-    }
 
-    
+      //Important tags added due to V2 classes competing with legacy _forms.css
+      margin: 0 0 1.5rem 0 !important;
+      padding: 0 0 0 0 !important;      
+
+    }
 
     input[type='radio'],
     input[type='checkbox'] {
@@ -349,6 +350,7 @@
         &::before {
           box-shadow: inset 1.2em 1.2em $qg-dark-grey-lightest;
         }
+        
       }
 
       &::before {
@@ -371,7 +373,7 @@
       + label {
         width: 100%;
         margin: 0;
-        padding: 0;
+        padding-left: 0;
       }
     }
 
