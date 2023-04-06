@@ -19,7 +19,11 @@
     // &.hover {
     //   background: none;
     // }
-    display: inline-block;
+
+    &:not(#overview-expenditure a) {
+      display: inline-block;
+    }
+
     @include qg-button-outline-decoration($margin, $outline-color);
     @content;
   }
