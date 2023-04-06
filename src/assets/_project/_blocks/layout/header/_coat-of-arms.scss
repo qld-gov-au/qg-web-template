@@ -5,6 +5,7 @@
 
   a {
     @include qg-global-link-styles($outline-color: $qg-active-outline-brighter);
+    display: inline-block;
   }
 
   img {
