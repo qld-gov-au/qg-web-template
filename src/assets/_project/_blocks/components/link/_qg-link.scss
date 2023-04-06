@@ -19,7 +19,9 @@
     // &.hover {
     //   background: none;
     // }
-    display: inline-block;
+    &:not(#ict-tabcontainer a) {
+      display: inline-block;
+    }
     @include qg-button-outline-decoration($margin, $outline-color);
     @content;
   }
