@@ -67,9 +67,11 @@
 }
 
 .btn-link {
-  @include qg-link-styles__default;
+  @include qg-button-outline-decoration($border-radius: $btn-border-radius-base);
   @include all-states {
-    color: $qg-blue-dark;
+    &:not(.light) {
+      color: $qg-blue-dark;
+    }
   }
 }
 
