@@ -74,10 +74,16 @@
 }
 
 .qg-btn {
+  &.btn-primary, &.btn-outline-dark, &.btn-outline-light, &.btn-default {
+    @include on-active {
+      box-shadow: none;
+    }
+  }
+}
+
+.qg-btn {
   @extend .btn;
   @include qg-button-outline-decoration($border-radius: $btn-border-radius-base);
-  border-radius: $btn-border-radius-base;
-
   &.btn-outline-dark{
     color: $qg-outline-dark;
     background-color: transparent !important;
@@ -91,7 +97,7 @@
   &.btn-outline-light{
     color: white !important;
     background-color: transparent !important;
-    border:3px solid white;
+    border: 3px solid white;
     @include qg-underline-on-highlight-decoration;
   }
   &.btn-link.light{
