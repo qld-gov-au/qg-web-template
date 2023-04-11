@@ -276,6 +276,7 @@ $qg-linkedin: #0077b5;
 @mixin on-active() {
   &:active,
   &:focus, &.focus,
+  &:active:focus,
   &:focus-visible, &:focus-within {
     &:not(:disabled, .disabled) {
       @content;
@@ -352,6 +353,7 @@ $text-underline-offset: 5px;
     outline-offset: 2px;
     border-radius: $border-radius;
     box-shadow: none;
+
     @content;
     * {
       // don't apply an extra outline to any children
