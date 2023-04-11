@@ -351,7 +351,7 @@ $text-underline-offset: 5px;
     outline-color: $outline-color;
     outline-offset: 2px;
     border-radius: $border-radius;
-    box-shadow: none;
+    box-shadow: none !important;
     @content;
     * {
       // don't apply an extra outline to any children
