@@ -93,6 +93,8 @@ $(function () {
     } else {
       qgSiteSearch.fn.checkForSuggestions(inputValue, targetInput);
     }
+    // Toggle aria-expanded for the search input
+    targetInput.attr('aria-expanded', 'true');
   };
 
   // Handle clicking out of the input field
@@ -224,10 +226,14 @@ $(function () {
   qgSiteSearch.fn.closeConciergePanels = function () {
     var initialConcierge = $('.qg-search-concierge-initial');
     var helpfulConcierge = $('.qg-search-concierge-help');
+    var targetInput = $('.qg-search-site__input');
 
     // Immediately close both concierge panels
     initialConcierge.addClass('hide').removeClass('show');
     helpfulConcierge.addClass('hide').removeClass('show');
+
+    // Toggle aria-expanded for the search input
+    targetInput.attr('aria-expanded', 'false');
 
     setTimeout(function () {
       initialConcierge.removeClass('hide');
@@ -243,6 +249,7 @@ $(function () {
 
     // Remove initial state
     initialConcierge.removeClass('show');
+    targetInput.attr('aria-expanded', 'false');
 
     // Query Funnelback when three characters are entered
     if (numChars >= 3) {
@@ -254,6 +261,7 @@ $(function () {
 
       // Transition reveal suggestions
       helpfulConcierge.addClass('show');
+      targetInput.attr('aria-expanded', 'true');
     }
   };
 
