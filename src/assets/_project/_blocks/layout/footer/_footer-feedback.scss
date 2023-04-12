@@ -6,7 +6,6 @@
     @extend .mt-0;
   }
 
-<<<<<<< HEAD
   .questions .qg-forms-v2__radio {
     padding-bottom: 0;
 
@@ -23,20 +22,6 @@
       display: initial;
     }
   }
-=======
-  // .questions .qg-forms-v2__radio {
-  //   padding-bottom: 0;
-  //   li {
-  //     margin: 0;
-  //     &:last-child{
-  //       margin-bottom:0;
-  //     }
-  //   }
-  //   label {
-  //     display: initial;
-  //   }
-  // }
->>>>>>> 45ef5e27 (QOLDEV-62 Added seoperate radio-checks css)
 
   &-content {
     background-color: white;
