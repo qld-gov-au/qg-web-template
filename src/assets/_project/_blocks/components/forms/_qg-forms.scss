@@ -198,8 +198,6 @@
   input[type='number'],
   select,
   textarea,
-  select,
-  textarea,
   .formio-choices .selection,
   .form-control.dropdown {
     padding: 8px;
@@ -316,6 +314,7 @@
 
   // forms.io radio button and checkbox specific styles overrides
   // ------------------------------------------------------------
+<<<<<<< HEAD
   .qg-forms-v2__checkbox,
   .qg-forms-v2__radio {
     
@@ -403,6 +402,13 @@
   .form-radio,
   .qg-forms-v2__radio {
     
+=======
+  
+  // Moved to refer qc-forms-radio-check.scss 
+
+  .checkbox,
+  .form-radio {
+>>>>>>> 45ef5e27 (QOLDEV-62 Added seoperate radio-checks css)
     padding: 12px 0 12px 0;
     margin: 0;
 
