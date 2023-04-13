@@ -87,14 +87,15 @@ $(function () {
   // Handle clicking into the input field
   qgSiteSearch.fn.onFocus = function (inputValue, targetInput) {
     var initialConcierge = targetInput.parent().find($('.qg-search-concierge-initial'));
+    // Toggle aria-expanded for the search input
+    targetInput.attr('aria-expanded', 'true');
+
     if (inputValue === '') {
       // Transition reveal initial state
       initialConcierge.addClass('show');
     } else {
       qgSiteSearch.fn.checkForSuggestions(inputValue, targetInput);
     }
-    // Toggle aria-expanded for the search input
-    targetInput.attr('aria-expanded', 'true');
   };
 
   // Handle clicking out of the input field
@@ -112,13 +113,13 @@ $(function () {
     var initialConcierge = targetInput.parent().find($('.qg-search-concierge-initial'));
     var helpfulConcierge = targetInput.parent().find($('.qg-search-concierge-help'));
     var clearButton = targetInput.parent().find($('.qg-search-close-concierge'));
+
     if (keyCode === 40) {
       targetInput.parents($('.qg-site-search__form')).attr('data-navindex', '0');
       setTimeout($('.qg-search-concierge.show').find('a, button')[0].focus(), 300);
     } else if (inputValue !== '') {
       // Reveal the clear button
       clearButton.removeClass('hide');
-
       // Look for suggested results
       qgSiteSearch.fn.checkForSuggestions(inputValue, targetInput);
     } else {
@@ -128,6 +129,11 @@ $(function () {
       // Remove suggestions and transition reveal initial state
       initialConcierge.addClass('show');
       helpfulConcierge.removeClass('show');
+    }
+    if (initialConcierge.hasClass('show') || helpfulConcierge.hasClass('show')) {
+      targetInput.attr('aria-expanded', 'true');
+    } else {
+      targetInput.attr('aria-expanded', 'false');
     }
   };
 
@@ -249,7 +255,6 @@ $(function () {
 
     // Remove initial state
     initialConcierge.removeClass('show');
-    targetInput.attr('aria-expanded', 'false');
 
     // Query Funnelback when three characters are entered
     if (numChars >= 3) {
@@ -261,7 +266,6 @@ $(function () {
 
       // Transition reveal suggestions
       helpfulConcierge.addClass('show');
-      targetInput.attr('aria-expanded', 'true');
     }
   };
 
@@ -320,6 +324,7 @@ $(function () {
       suggestionsHTML += '</div>';
     } else {
       targetInput.parent().find($('.qg-search-concierge-help')).hide();
+      targetInput.attr('aria-expanded', 'false');
     }
     // Update the concierge container
     suggestionsContainer.html(suggestionsHTML);
