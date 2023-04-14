@@ -63,8 +63,8 @@
 }
 
 // 2. color theme blue no underline
-@mixin qg-link-styles__no-underline-default {
-  @include qg-global-link-styles {
+@mixin qg-link-styles__no-underline-default($margin: 2px) {
+  @include qg-global-link-styles($margin: $margin) {
     @include qg-link-unvisited-color;
     &:link {
       @include _qg-link-none-decoration;
