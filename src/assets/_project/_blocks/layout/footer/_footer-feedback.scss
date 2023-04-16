@@ -1,5 +1,10 @@
+
 .qg-footer-feedback__v2 {
 
+  form#qg-page-feedback-form a {
+    color: $qg-blue-dark !important;
+  }
+  
   .alert.alert-warning {
     @extend .pt-4;
     @extend .mb-3;
@@ -200,6 +205,7 @@
 }
 
 .qg-site-footer {
+  
   .qg-feedback-toggle {
     height: 44px;
     position: relative;
@@ -467,4 +473,5 @@
     margin-top: 10px;
     text-decoration-line: underline;
   }
+
 }
