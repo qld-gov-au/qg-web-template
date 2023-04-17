@@ -5,6 +5,7 @@
     h2, p, ul, &> div &> span {
       padding-left: 10px;
     }
+  }
 
   &> .qg-index-item {
     @include make-col-ready();
