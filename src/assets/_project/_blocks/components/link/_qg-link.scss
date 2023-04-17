@@ -63,8 +63,8 @@
 }
 
 // 2. color theme blue no underline
-@mixin qg-link-styles__no-underline-default {
-  @include qg-global-link-styles {
+@mixin qg-link-styles__no-underline-default($margin: 2px) {
+  @include qg-global-link-styles($margin: $margin) {
     @include qg-link-unvisited-color;
     &:link {
       @include _qg-link-none-decoration;
@@ -127,7 +127,7 @@
   @include qg-global-link-styles($margin: $margin) {
     @include qg-link-white;
     @include qg-link-decoration;
-    @include qg-button-outline-decoration($outline-color: $qg-active-outline-brighter);
+    @include qg-button-outline-decoration($margin: $margin, $outline-color: $qg-active-outline-brighter);
   }
 }
 

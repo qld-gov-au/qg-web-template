@@ -62,8 +62,8 @@
     h2 {
       margin-top: 0;
       @include rem(font-size, 19px);
-      a{
-        @include qg-link-styles__no-underline-default;
+      a {
+        @include qg-link-styles__no-underline-default(0);
       }
     }
     & > ul:not(.qg-unstyled) {
@@ -105,9 +105,12 @@
 // Override default link styling, but don't increase priority
 // of other index-links rules
 #qg-content #qg-primary-content .qg-index-links {
-  @include breakpoint(xs) {
-    h2 a {
+  h2 a, ul li a {
+    @include breakpoint(xs) {
       @include qg-link-styles__theme-white(0);
+    }
+    @include media-breakpoint-up(sm) {
+      @include qg-link-styles__no-underline-default;
     }
   }
 }
