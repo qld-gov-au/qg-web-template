@@ -80,6 +80,9 @@
     @include on-active {
       box-shadow: none;
     }
+    @include all-states {
+      @include qg-button-outline-decoration($border-radius: $btn-border-radius-base);
+    }
   }
 }
 
@@ -112,7 +115,7 @@ a, input, button {
   body &.qg-btn, body &.btn, body &.button {
     // override default .btn styling
     @include all-states {
-      @include qg-button-outline-decoration($border-radius: $btn-border-radius-base);
+      //@include qg-button-outline-decoration($border-radius: $btn-border-radius-base);
     }
   }
 }
