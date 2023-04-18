@@ -2,21 +2,32 @@
 //We create a pseudo radio/checkbox using a HTML label with a :before and :after tags.
 //The input:checked and accessibility still works correctly due to semantic markup and label "for" attributes.
 
+//V2 forms - radios and checkboxes wrapper
 .qg-forms-v2 {
 
     .qg-forms-v2__radio,
-    .qg-forms-v2__checkbox {
+    .qg-forms-v2__checkbox,
+    .form-check {
 
-        &.choices li, //.choices needed to support legacy forms
-        li {
-            margin: 0.5rem 0 !important;
+        &:has(label.form-check-label) {
+            padding: 0;
+            margin: 0;
+        }
+
+        //.choices needed to support legacy forms
+        &.choices li,
+        li,
+        .form-check-label {
+            margin: 0.75rem 0 !important;
             padding: 0 !important;
             position: relative;
             min-height: calc(2rem + 2px);
             overflow: visible;
         }
 
-        li {
+        li,
+        .form-check-label {
+
             input[type="radio"],
             input[type="checkbox"],
             input[type="radio"]:before,
@@ -32,34 +43,40 @@
             input[type="radio"],
             input[type="checkbox"] {
 
-                +label {
-
-                    //The label            
+                //Radios and checkbox labels   
+                +label,
+                +span {
                     margin: 0;
                     font-weight: 400;
-                    max-width: 26rem;
-                    position: relative;
+                    max-width: 33rem;
                     line-height: 1.5rem;
-                    display: flex;
-                    align-items: flex-start;
+                    position: relative;
+                    cursor: default;
                     padding-left: 3rem;
                     padding-top: 3px;
-                    cursor: default;
+                }
 
-                    // :before handles radio or checkbox border and outline
+                //Radios
+                // labels :before handles radio or checkbox border and outline
+                +label:before,
+                +span:before {
+                    content: "";
+                    width: 2rem;
+                    height: 2rem;
+                    top: 0;
+                    left: 0;
+                    position: absolute;
+                    border: 2px solid #808080;
+                    transition: all 200ms;
+                }
+
+                //The hover state
+                +label:hover,
+                +span:hover {
+
+                    cursor: pointer;
+
                     &:before {
-                        content: "";
-                        width: 2rem;
-                        height: 2rem;
-                        top: 0;
-                        left: 0;
-                        position: absolute;
-                        border: 2px solid #808080;
-                        transition: all 200ms;
-                    }
-
-                    //The hover state
-                    &:hover:before {
                         box-shadow:
                             inset 0 0 0 1px #808080, //add a 1px inset shadow to make border grow "inwards"
                             inset 0 0 0 2rem #EEF4F6, //grey background fade in
@@ -67,10 +84,10 @@
                     }
                 }
 
-
-
-                // checked:after handles checked state. Radio and checkbox have defined clip-path shapes below for checked state
-                &:checked+label:after {
+                // checked:after handles checked state. 
+                //Radio and checkbox have defined clip-path shapes below for checked state
+                &:checked+label:after,
+                &:checked+span:after {
                     content: "";
                     position: absolute;
                     background: #212529;
@@ -88,7 +105,9 @@
                 &:checked:focus,
                 &:checked:focus-within {
                     &:not(:disabled) {
-                        +label:before {
+
+                        +label:before,
+                        +span:before {
                             box-shadow:
                                 0 0 0 2px #FFF,
                                 0 0 0 5px #0096D6;
@@ -98,11 +117,14 @@
 
                 //Handle disabled radios and checks                
                 &:disabled {
-                    +label {
+
+                    +label,
+                    +span {
                         cursor: not-allowed;
                     }
 
-                    +label:hover:before {
+                    +label:hover:before,
+                    +span:hover:before {
                         box-shadow: none;
                     }
                 }
@@ -112,11 +134,13 @@
             //RADIOS specific
             input[type="radio"] {
 
-                +label:before {
+                +label:before,
+                +span:before {
                     border-radius: 100% !important;
                 }
 
-                &:checked+label:after {
+                &:checked+label:after,
+                &:checked+span:after {
                     clip-path: circle(35% at center center);
                     -webkit-clip-path: circle(35% at center center);
                 }
@@ -125,66 +149,14 @@
 
             //CHECKBOXES specific
             input[type="checkbox"] {
-                &:checked+label:after {
+
+                &:checked+label:after,
+                &:checked+span:after {
                     transform: scale(0.7);
                     clip-path: polygon(18% 40%, 2% 56%, 37% 91%, 97% 31%, 81% 15%, 37% 59%);
                 }
             }
 
         }
-
     }
-
-
-    .checkbox,
-    .form-radio {
-        padding: 12px 0 12px 0;
-        margin: 0;
-
-    .radio {
-        margin: 0;
-    }
-
-    .form-check,
-    .form-check-inline {
-      padding-bottom: $defaultRem;
-      padding-left: 0;
-
-      .form-check-input {
-        margin-left: -16px;
-      }
-    }
-
-    .form-check-inline .form-check-input {
-      margin-right: 0;
-    }
-
-    input[type='radio'],
-    input[type='checkbox'] {
-      accent-color: $qg-global-primary-darker-grey;
-      width: 1.5em;
-      height: 1.5em;
-      padding: 0.9em;
-      margin-top: 0;
-
-      &:checked+label {
-        color: inherit;
-      }
-    }
-
-    label {
-      display: flex;
-      font-weight: normal;
-      margin-left: 0;
-      padding-left: 14px;
-
-      > span {
-        flex: 1;
-        font-weight: $checkboxWeight;
-        margin-left: $defaultRem;
-      }
-    }
-  }
-
-
 }
