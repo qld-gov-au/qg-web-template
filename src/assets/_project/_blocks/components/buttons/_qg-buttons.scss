@@ -75,13 +75,15 @@
   }
 }
 
-.qg-btn {
-  &.btn-primary, &.btn-outline-dark, &.btn-outline-light, &.btn-default {
-    @include on-active {
-      box-shadow: none;
-    }
-    @include all-states {
-      @include qg-button-outline-decoration($border-radius: $btn-border-radius-base);
+body, #body {
+  .qg-btn, .btn {
+    &.btn-primary, &.btn-outline-dark, &.btn-outline-light, &.btn-default {
+      @include on-active {
+        box-shadow: none;
+      }
+      @include all-states {
+        @include qg-button-outline-decoration($border-radius: $btn-border-radius-base);
+      }
     }
   }
 }
