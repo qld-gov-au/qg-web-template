@@ -109,5 +109,7 @@
 
 #body .qg-btn, #body .btn, body .qg-btn, body .btn {
   // override default .btn styling
-  @include qg-underline-on-highlight-decoration;
+  @include all-states {
+    @include qg-button-outline-decoration($border-radius: $btn-border-radius-base);
+  }
 }
