@@ -59,7 +59,7 @@
     }
     .qg-quick-exit__item.qg-tooltip-container {
       @include on-active {
-        //@include qg-button-outline-decoration($margin: 0);
+        @include qg-button-outline-decoration($margin: 0);
       }
     }
     .qg-quick-exit__label {
