@@ -39,12 +39,6 @@
     right: 0;
     bottom: 0;
   }
-  a {
-    @include qg-link-styles__theme-white;
-    &.qg-btn {
-      border-radius: $btn-border-radius-base;
-    }
-  }
   img {
     max-width: 1312px;
     max-height: 361px;
@@ -59,6 +53,12 @@
     margin: 0 15px;
     padding: 1em;
     width: 27.5em;
+    a {
+      @include qg-link-styles__theme-white;
+      &.qg-btn {
+        border-radius: $btn-border-radius-base;
+      }
+    }
     &.light{
       background: none !important;
       * {
