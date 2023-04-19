@@ -26,6 +26,7 @@
       padding: 10px 20px 10px 15px;
       @include qg-link-styles__no-underline-white;
     }
+
   }
 
   .qg-portal-links__btn {
@@ -37,6 +38,7 @@
     &:after {
       margin-left: 8px;
     }
+
   }
 
   .dropdown-menu {
@@ -85,12 +87,20 @@
       &:after {
         border: none;
       }
+      
     }
 
     &:hover {
       background-color: transparent;
     }
+
+    &:focus {
+      background-color: $qg-global-dark-grey-active;
+    }
+
+
   }
+
 
   @include media-breakpoint-up(md) {
     .nav-item {
@@ -177,12 +187,24 @@
     }
     .qg-dropdown-wrapper {
       padding: 0;
-      margin: 5px;
+      // margin: 5px;
     }
-    .dropdown-item {
+
+    .qg-dropdown-wrapper .dropdown-item {
+      
       border-bottom: 1px solid #000;
-      padding: 10px 23px;
-      line-height: 22px;
+      
+      // padding: 10px 23px;
+      // line-height: 22px;
+      margin: 0 !important;
+      padding: 0.75rem 3rem 0.75rem 1.5rem;
+      line-height: 1.5rem;
+
+      // On mobile interfaces (ie when hamburger menu is in use)
+      // Ensure the focus/active outline is contained with the elements borders. We do this with a negative margin that matches the width of the outline (3px) 
+      @include on-active {
+        outline-offset: -3px !important;
+      }
 
       &:after {
         border: none;
@@ -190,8 +212,9 @@
 
       &:last-child {
         border-bottom: none;
-        padding-left: 23px;
+        padding-left: 1.5rem;
       }
+
     }
   }
 
