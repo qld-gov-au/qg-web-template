@@ -54,9 +54,11 @@
     padding: 1em;
     width: 27.5em;
     a {
-      @include qg-link-styles__theme-white;
+      &:not(.qg-btn) {
+        @include qg-link-styles__theme-white;
+      }
       &.qg-btn {
-        border-radius: $btn-border-radius-base;
+        @include qg-link-styles__theme-white($border-radius: $btn-border-radius-base);
       }
     }
     &.light{

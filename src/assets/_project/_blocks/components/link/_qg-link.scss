@@ -122,11 +122,11 @@
 
 // START theme WHITE
 // 2. With underline
-@mixin qg-link-styles__theme-white($margin: 2px) {
+@mixin qg-link-styles__theme-white($margin: 2px, $border-radius: 0) {
   @include qg-global-link-styles($margin: $margin) {
     @include qg-link-white;
     @include qg-link-decoration;
-    @include qg-button-outline-decoration($margin: $margin, $outline-color: $qg-active-outline-brighter);
+    @include qg-button-outline-decoration($margin: $margin, $outline-color: $qg-active-outline-brighter, $border-radius: $border-radius);
   }
 }
 
