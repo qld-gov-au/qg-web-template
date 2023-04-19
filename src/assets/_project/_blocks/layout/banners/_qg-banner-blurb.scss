@@ -41,6 +41,9 @@
   }
   a {
     @include qg-link-styles__theme-white;
+    &.qg-btn {
+      @include qg-button-outline-decoration($border-radius: $btn-border-radius-base);
+    }
   }
   img {
     max-width: 1312px;
