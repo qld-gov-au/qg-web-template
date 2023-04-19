@@ -34,9 +34,9 @@
 @mixin qg-link-white {
   // style rules for links with white text (intended for dark backgrounds)
   color: white;
-  text-decoration-color: rgba(255, 255, 255, 0.73) !important;
+  text-decoration-color: rgba(255, 255, 255, 0.73);
   @include qg-underline-on-highlight-decoration {
-    text-decoration-color: white !important;
+    text-decoration-color: white;
   }
 }
 
