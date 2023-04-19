@@ -53,11 +53,8 @@
     margin: 0 15px;
     padding: 1em;
     width: 27.5em;
-    a {
-      &:not(.qg-btn) {
-        @include qg-link-styles__theme-white;
-      }
-      &.qg-btn {
+    .qg-btn {
+      @include media-breakpoint-up(sm) {
         @include qg-link-styles__theme-white($border-radius: $btn-border-radius-base);
       }
     }
