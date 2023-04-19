@@ -57,6 +57,11 @@
       left: 25px;
       transform: rotate(-45deg)
     }
+    .qg-quick-exit__item.qg-tooltip-container {
+      @include on-active {
+        @include qg-button-outline-decoration($margin: 0);
+      }
+    }
     .qg-quick-exit__label {
       font-weight: 500;
       @include qg-link-decoration;
@@ -139,11 +144,6 @@
           }
           .qg-quick-exit__item {
             margin-left: 25px;
-            &.qg-tooltip-container {
-              @include on-active {
-                @include qg-button-outline-decoration($margin: 0);
-              }
-            }
           }
           .qg-tooltip__wrapper {
             bottom: auto;
