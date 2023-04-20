@@ -10,6 +10,7 @@
     padding: 9px 11px;
   }
   @include qg-underline-on-highlight-decoration;
+  @include qg-button-outline-decoration($margin: 0, $border-radius: $btn-border-radius-base);
 }
 
 .btn-global-primary-white{
