@@ -125,17 +125,13 @@
             color: white;
             display: -ms-flexbox;
             display: flex;
-            &:active, &:focus, &:hover {
-              color: white;
-              //text-decoration-line: none
-            }
+
             .fa {
               font-size: 22px;
               margin-right: 8px;
-              &:active, &:focus, &:hover {
-                color: white;
-                text-decoration-line: none
-              }
+              position: absolute; // This is to prevent fa-question-circle to have underline when hovered
+              margin-left: -27px;
+              margin-bottom: -5px;
             }
             .qg-quick-exit__tip-title {
               @include qg-link-decoration;
