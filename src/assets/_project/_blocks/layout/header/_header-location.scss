@@ -11,7 +11,7 @@
         font-size: 20px;
         margin-left: 10px;
     }
-    .dropdown-toggle {
+    button.dropdown-toggle {
         background-color: transparent;
         border: 0;
         padding: 0 0 0 5px;
@@ -19,6 +19,7 @@
         &:after {
             display: none;
         }
+        @include qg-global-link-styles($margin: 0);
     }
     &__title {
         display: flex;
