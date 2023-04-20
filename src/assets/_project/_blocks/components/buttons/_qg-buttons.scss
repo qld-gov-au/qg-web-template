@@ -112,5 +112,6 @@
   // override default .btn styling
   @include all-states {
     @include qg-button-outline-decoration($border-radius: $btn-border-radius-base);
+    @include qg-underline-on-highlight-decoration;
   }
 }
