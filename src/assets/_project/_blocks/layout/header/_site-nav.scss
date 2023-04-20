@@ -75,9 +75,9 @@
                 display: inline-block;
                 position: relative;
                 width: 100%;
-        a {
-          @include qg-link-styles__no-underline-default
-        }
+                a {
+                    @include qg-link-styles__no-underline-default
+                }
                 &:before {
                     @include rem(font-size, 12px);
                     content: "\f054";
@@ -192,9 +192,9 @@
         .dropdown-toggle {
             text-align: left;
             &:after {
-       border: none;
-      }
-      @include css-chevron-inline-down(6px, $qg-global-primary-darker-grey, 20px);
+                border: none;
+            }
+            @include css-chevron-inline-down(6px, $qg-global-primary-darker-grey, 20px);
         }
 
         .dropdown-menu.mega-menu {
@@ -214,7 +214,7 @@
                 }
             }
             ul {
-        margin: 8px;
+                margin: 8px;
                 background-color: white;
                 column-count: initial;
                 li {
