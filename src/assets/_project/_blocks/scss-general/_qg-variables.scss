@@ -276,6 +276,7 @@ $qg-linkedin: #0077b5;
 @mixin on-active() {
   &:active,
   &:focus, &.focus,
+  &:active:focus,
   &:focus-visible, &:focus-within {
     &:not(:disabled, .disabled) {
       @content;
@@ -296,9 +297,7 @@ $qg-linkedin: #0077b5;
 @mixin qg-link-underline {
   text-decoration-line: underline;
   text-decoration-style: solid;
-  &:not(span[role=link] *) {
-    text-underline-offset: $text-underline-offset;
-  }
+  text-underline-offset: $text-underline-offset;
 }
 @mixin _qg-link-underline-thicker {
   @include qg-link-underline;
@@ -343,14 +342,16 @@ $qg-linkedin: #0077b5;
 
 $text-underline-offset: 5px;
 
-@mixin qg-button-outline-decoration($margin: 2px, $outline-color: $qg-active-outline) {
+@mixin qg-button-outline-decoration($margin: 2px, $outline-color: $qg-active-outline, $border-radius: 0) {
   // Surround buttons and links with a blue outline when active/focused
   @include on-active {
     outline-width: 3px;
     outline-style: solid;
     outline-color: $outline-color;
     outline-offset: 2px;
-    border-radius: 0;
+    border-radius: $border-radius;
+    box-shadow: none;
+
     @content;
     * {
       // don't apply an extra outline to any children

@@ -11,9 +11,8 @@
       .page-link):not(.dfv-cards--type-top-prompt
       a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.qg-aside-button):not(.dfv-back
       a):not(.QSAR-records-search a):not(.dfv-content a.qg-links-list__link) {
-    &:not(span[role=link] *) {
-      text-underline-offset: $text-underline-offset;
-    }
+
+    text-underline-offset: $text-underline-offset;
     // not sure why Asif need to add this, which will have side-effect on customised style added by franchise.
     // &:hover,
     // &.hover {
@@ -63,8 +62,8 @@
 }
 
 // 2. color theme blue no underline
-@mixin qg-link-styles__no-underline-default {
-  @include qg-global-link-styles {
+@mixin qg-link-styles__no-underline-default($margin: 2px) {
+  @include qg-global-link-styles($margin: $margin) {
     @include qg-link-unvisited-color;
     &:link {
       @include _qg-link-none-decoration;
@@ -123,11 +122,11 @@
 
 // START theme WHITE
 // 2. With underline
-@mixin qg-link-styles__theme-white($margin: 2px) {
+@mixin qg-link-styles__theme-white($margin: 2px, $border-radius: 0) {
   @include qg-global-link-styles($margin: $margin) {
     @include qg-link-white;
     @include qg-link-decoration;
-    @include qg-button-outline-decoration($outline-color: $qg-active-outline-brighter);
+    @include qg-button-outline-decoration($margin: $margin, $outline-color: $qg-active-outline-brighter, $border-radius: $border-radius);
   }
 }
 
