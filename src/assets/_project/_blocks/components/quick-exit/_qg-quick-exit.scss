@@ -119,6 +119,7 @@
           }
           .qg-quick-exit__tip-link {
             @include qg-underline-on-highlight-decoration;
+            @include qg-button-outline-decoration;
             -ms-flex-align: center;
             align-items: center;
             color: white;
@@ -126,11 +127,15 @@
             display: flex;
             &:active, &:focus, &:hover {
               color: white;
-              text-decoration-line: none
+              //text-decoration-line: none
             }
             .fa {
               font-size: 22px;
-              margin-right: 8px
+              margin-right: 8px;
+              &:active, &:focus, &:hover {
+                color: white;
+                text-decoration-line: none
+              }
             }
             .qg-quick-exit__tip-title {
               @include qg-link-decoration;
