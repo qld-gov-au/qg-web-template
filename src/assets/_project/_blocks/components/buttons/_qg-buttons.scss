@@ -9,7 +9,6 @@
   @include media-breakpoint-down(sm) {
     padding: 9px 11px;
   }
-  @include qg-underline-on-highlight-decoration;
 }
 
 .btn-global-primary-white{
@@ -110,6 +109,7 @@
 #body .qg-btn, #body .btn, body .qg-btn, body .btn {
   // override default .btn styling
   @include all-states {
-    @include qg-button-outline-decoration($border-radius: $btn-border-radius-base);
+    @include qg-button-outline-decoration($margin: 0, $border-radius: $btn-border-radius-base);
+    @include qg-underline-on-highlight-decoration;
   }
 }

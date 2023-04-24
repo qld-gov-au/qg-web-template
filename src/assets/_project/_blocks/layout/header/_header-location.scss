@@ -19,6 +19,9 @@
         &:after {
             display: none;
         }
+        @include all-states {
+            @include qg-global-link-styles($margin: 0);
+        }
     }
     &__title {
         display: flex;
