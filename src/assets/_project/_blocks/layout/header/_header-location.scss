@@ -72,7 +72,7 @@
             top: calc(100% + 10px);
         }
         .dropdown-toggle {
-            @include qg-link-styles__theme-white(0px);
+            @include qg-link-styles__theme-white(0 0 0 5px);
         }
     }
     @include media-breakpoint-down(sm) {
@@ -83,9 +83,8 @@
             justify-content: center;
         }
         .dropdown-toggle {
-            @include qg-link-styles__theme-black(0px);
+            @include qg-link-styles__theme-black(0 0 0 5px);
             order: 3;
-            margin-left: 3px;
         }
         .header-location__icon {
             order: 1;
