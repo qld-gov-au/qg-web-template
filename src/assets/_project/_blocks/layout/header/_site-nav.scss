@@ -165,7 +165,7 @@
             }
         }
         .nav-link{
-      //@include qg-link-styles__no-underline-black;
+        //@include qg-link-styles__no-underline-black;
             color: $qg-global-primary-darker-grey;
             padding: 12px 13px 11px;
             margin: 5px;
@@ -185,10 +185,6 @@
 @include media-breakpoint-down(sm) {
    
     #qg-site-nav {
-        
-        .nav {
-            display: flex;
-        }
         
         .dropdown.mega-dropdown {
             position: relative;
@@ -281,6 +277,16 @@
             }
         }
     }
+}
+
+@include media-breakpoint-down(lg) {
+
+    #qg-site-nav {
+        .nav {
+            display: flex;
+        }
+    }
+
 }
 
 
