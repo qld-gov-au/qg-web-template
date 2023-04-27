@@ -415,7 +415,7 @@
   .alert-danger {
     li {
       text-decoration-line: underline;
-
+      text-underline-offset: $text-underline-offset;
       span {
         color: $SecondaryColor;
       }
