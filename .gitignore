@@ -54,3 +54,4 @@ release
 web-template-release/
 template-pages/sample/*
 storybook-static/
+.vscode/settings.json
