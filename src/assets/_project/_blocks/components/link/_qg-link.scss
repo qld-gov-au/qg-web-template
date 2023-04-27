@@ -5,7 +5,7 @@
 //-------------------------------------------------
 
 // global link styles
-@mixin qg-global-link-styles($margin: 2px, $outline-color: $qg-active-outline) {
+@mixin qg-global-link-styles($margin: 2px 2px 2px 0, $outline-color: $qg-active-outline) {
   // make exception for certain classes, which need to re-visit for better optimization
   &:not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item
       .page-link):not(.dfv-cards--type-top-prompt
@@ -62,7 +62,7 @@
 }
 
 // 2. color theme blue no underline
-@mixin qg-link-styles__no-underline-default($margin: 2px) {
+@mixin qg-link-styles__no-underline-default($margin: 2px 2px 2px 0) {
   @include qg-global-link-styles($margin: $margin) {
     @include qg-link-unvisited-color;
     &:link {
@@ -92,7 +92,7 @@
 }
 
 // 2. color theme black with underline
-@mixin qg-link-styles__theme-black($margin: 2px) {
+@mixin qg-link-styles__theme-black($margin: 2px 2px 2px 0) {
   @include qg-global-link-styles($margin: $margin) {
     @include qg-link-unvisited-color($qg-global-primary-darker-grey) {
       text-decoration-color: #737678;
@@ -122,7 +122,7 @@
 
 // START theme WHITE
 // 2. With underline
-@mixin qg-link-styles__theme-white($margin: 2px, $border-radius: 0) {
+@mixin qg-link-styles__theme-white($margin: 2px 2px 2px 0, $border-radius: 0) {
   @include qg-global-link-styles($margin: $margin) {
     @include qg-link-white;
     @include qg-link-decoration;
