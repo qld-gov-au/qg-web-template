@@ -142,6 +142,7 @@
 
                 &:checked+label:after,
                 &:checked+span:after {
+                    border-radius: 100% !important;
                     transform: scale(0.7);
                 }
             }
