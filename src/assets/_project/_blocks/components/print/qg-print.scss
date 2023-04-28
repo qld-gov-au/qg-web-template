@@ -1,7 +1,10 @@
 // print button styles
-.print-content-link{
-  position: absolute;
-  right: 35px;
-  z-index:1;
-  top: -28px;
+#qg-page-options {
+  padding-bottom: 10px;
+  .print-content-link{
+    position: absolute;
+    right: 35px;
+    z-index:1;
+    top: -28px;
+  }
 }

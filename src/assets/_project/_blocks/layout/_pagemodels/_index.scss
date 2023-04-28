@@ -106,11 +106,9 @@
 // of other index-links rules
 #qg-content #qg-primary-content .qg-index-links {
   h2 a, ul li a {
+    @include qg-link-styles__no-underline-default;
     @include breakpoint(xs) {
       @include qg-link-styles__theme-white(0);
-    }
-    @include media-breakpoint-up(sm) {
-      @include qg-link-styles__no-underline-default;
     }
   }
 }

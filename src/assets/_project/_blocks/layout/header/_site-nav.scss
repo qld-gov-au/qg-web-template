@@ -75,9 +75,9 @@
                 display: inline-block;
                 position: relative;
                 width: 100%;
-        a {
-          @include qg-link-styles__no-underline-default
-        }
+                a {
+                    @include qg-link-styles__no-underline-default
+                }
                 &:before {
                     @include rem(font-size, 12px);
                     content: "\f054";
@@ -250,6 +250,7 @@
         
 
             ul {
+
                 background-color: white;
                 column-count: initial;
         
