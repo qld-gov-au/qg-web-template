@@ -142,8 +142,7 @@
 
                 &:checked+label:after,
                 &:checked+span:after {
-                    clip-path: circle(35% at center center);
-                    -webkit-clip-path: circle(35% at center center);
+                    transform: scale(0.7);
                 }
             }
 
