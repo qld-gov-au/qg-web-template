@@ -7,6 +7,13 @@
       @include all-states {
         @include qg-button-outline-decoration($border-radius: $btn-border-radius-base);
       }
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      &:hover {
+        box-shadow: none;
+      }
+      &:focus-within {
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+      }
     }
   }
 
