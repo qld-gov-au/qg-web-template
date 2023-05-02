@@ -39,7 +39,7 @@
         box-shadow: 0 2px 3px 0 #000;
       }
       #qg-site-search__submit{
-        @include media-breakpoint-down(xs) {
+        @include media-breakpoint-down(sm) {
           padding: 9px 16px;
         }
       }
