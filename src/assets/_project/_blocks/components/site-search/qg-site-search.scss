@@ -33,18 +33,19 @@
       }
       .qg-search-site__input{
         color: $qg-global-primary-darker;
-        border: 3px solid #808080;
+        border: 1px solid #808080;
         border-radius: 7px;
-        padding: 1rem;
+        padding: 13px 50px 13px 20px;
+        box-shadow: 0 2px 3px 0 #000;
       }
       #qg-site-search__submit{
         padding: 9px 16px;
       }
       .qg-search-concierge{
-        top: 92%;
+        top: 97%;
         &.show {
           z-index: 9999999;
-          border: 3px solid #808080;
+          border: 1px solid #808080;
           border-radius: 0 0 7px 7px;
         }
         &:after{
