@@ -84,6 +84,10 @@
                             0 0 0 4px #EEF4F6; //background lightgrey hover effect
                     }
                 }
+                
+                &:checked+label {
+                    color: inherit;
+                }
 
                 // checked:after handles checked state. 
                 //Radio and checkbox have defined clip-path shapes below for checked state
