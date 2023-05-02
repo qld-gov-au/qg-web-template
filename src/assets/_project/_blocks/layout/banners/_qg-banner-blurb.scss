@@ -54,6 +54,9 @@
     padding: 1em;
     width: 27.5em;
     .qg-btn, a {
+      .qg-service-finder__container .qg-search-concierge-content li.list-group-item & {
+        color: $qg-global-primary-darker-grey;
+      }
       @include media-breakpoint-up(sm) {
         @include qg-link-styles__theme-white($border-radius: $btn-border-radius-base);
       }
