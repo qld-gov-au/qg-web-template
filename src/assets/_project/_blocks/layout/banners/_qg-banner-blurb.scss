@@ -62,7 +62,7 @@
       @include media-breakpoint-up(sm) {
         @include qg-link-styles__theme-white;
       }
-      .qg-service-finder__container .qg-search-concierge-content li.list-group-item & {
+      .qg-service-finder__container .qg-search-concierge & {
         @include qg-link-styles__theme-black-always;
       }
     }

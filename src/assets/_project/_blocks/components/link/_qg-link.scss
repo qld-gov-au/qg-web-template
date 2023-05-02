@@ -10,7 +10,7 @@
   &:not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item
       .page-link):not(.dfv-cards--type-top-prompt
       a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.qg-aside-button):not(.dfv-back
-      a):not(.QSAR-records-search a):not(.dfv-content a.qg-links-list__link):not(.qg-service-finder__container li.list-group-item a) {
+      a):not(.QSAR-records-search a):not(.dfv-content a.qg-links-list__link):not(.qg-service-finder__container .qg-search-concierge a) {
 
     text-underline-offset: $text-underline-offset;
     // not sure why Asif need to add this, which will have side-effect on customised style added by franchise.
