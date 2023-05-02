@@ -63,8 +63,12 @@
         @include qg-link-styles__theme-white;
       }
     }
-    .qg-service-finder__container .qg-search-concierge a {
-      @include qg-link-styles__theme-black-always;
+    .qg-service-finder__container .qg-search-concierge-group {
+      ul li a {
+        @include qg-link-styles__theme-black-always {
+          text-decoration-color: $qg-global-primary-darker-grey;
+        }
+      }
     }
     &.light{
       background: none !important;
