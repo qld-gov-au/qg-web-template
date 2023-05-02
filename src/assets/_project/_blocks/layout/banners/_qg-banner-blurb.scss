@@ -53,12 +53,17 @@
     margin: 0 15px;
     padding: 1em;
     width: 27.5em;
-    .qg-btn, a {
-      .qg-service-finder__container .qg-search-concierge-content li.list-group-item & {
-        color: $qg-global-primary-darker-grey;
-      }
+    .qg-btn {
       @include media-breakpoint-up(sm) {
         @include qg-link-styles__theme-white($border-radius: $btn-border-radius-base);
+      }
+    }
+    a {
+      @include media-breakpoint-up(sm) {
+        @include qg-link-styles__theme-white;
+      }
+      .qg-service-finder__container .qg-search-concierge-content li.list-group-item & {
+        @include qg-link-styles__theme-black-always;
       }
     }
     &.light{
