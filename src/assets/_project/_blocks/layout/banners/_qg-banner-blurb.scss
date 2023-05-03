@@ -67,9 +67,6 @@
       a {
         @include qg-link-styles__theme-black-always(black, $qg-global-primary-darker-grey);
       }
-      > a {
-        padding: 20px 35px 0 35px;
-      }
     }
     &.light{
       background: none !important;

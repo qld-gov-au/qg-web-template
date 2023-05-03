@@ -38,7 +38,9 @@
         padding: 1rem;
       }
       #qg-site-search__submit{
-        padding: 9px 16px;
+        @include media-breakpoint-down(sm) {
+          padding: 9px 16px;
+        }
       }
       .qg-search-concierge{
         top: 92%;
@@ -50,6 +52,9 @@
         &:after{
           background: none !important;
         }
+        .qg-search-concierge > a {
+          padding: 20px 35px 0 35px;
+        }
       }
     }
   }
@@ -57,7 +62,7 @@
     color: #000;
     background-color: #9ac02c;
     border-color: #9ac02c;
-    margin-right: 0.4rem;
+    margin-right: 0.4rem !important;
   }
 }
 // related search tags styles
