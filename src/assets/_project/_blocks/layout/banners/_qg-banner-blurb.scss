@@ -65,11 +65,10 @@
     }
     .qg-service-finder__container .qg-search-concierge-content {
       a {
-        @include qg-link-styles__theme-black-always;
-        text-decoration-color: $qg-global-primary-darker-grey !important;
+        @include qg-link-styles__theme-black-always(black, $qg-global-primary-darker-grey);
       }
       > a {
-        padding: 20px, 35px, 0, 35px;
+        padding: 20px 35px 0 35px;
       }
     }
     &.light{
