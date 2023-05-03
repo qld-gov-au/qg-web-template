@@ -95,7 +95,7 @@
 @mixin qg-link-styles__theme-black($margin: 2px 2px 2px 0) {
   @include qg-global-link-styles($margin: $margin) {
     @include qg-link-unvisited-color($qg-global-primary-darker-grey) {
-      text-decoration-color: #737678;
+      text-decoration-color: $qg-global-primary-text-decoration-grey;
     }
     @include qg-link-decoration;
     @include qg-link-visited-decoration;
@@ -105,12 +105,12 @@
 }
 
 // Black theme that doesn't change when visited
-@mixin qg-link-styles__theme-black-always {
+@mixin qg-link-styles__theme-black-always($text-color: $qg-global-primary-darker-grey, $text-decoration-color: $qg-global-primary-text-decoration-grey) {
   @include qg-global-link-styles {
-    color: $qg-global-primary-darker-grey;
+    color: $text-color;
     @include qg-link-decoration;
-    @include qg-link-visited-decoration($qg-global-primary-darker-grey);
-    text-decoration-color: #737678;
+    @include qg-link-visited-decoration($text-color);
+    text-decoration-color: $text-decoration-color;
     @include qg-underline-on-highlight-decoration;
     @include qg-button-outline-decoration;
   }
