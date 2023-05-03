@@ -64,7 +64,7 @@
       }
     }
     .qg-service-finder__container .qg-search-concierge-content {
-      ul li a {
+      a {
         @include qg-link-styles__theme-black-always;
         text-decoration-color: $qg-global-primary-darker-grey !important;
       }
