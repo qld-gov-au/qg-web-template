@@ -31,9 +31,12 @@ const gitFunctions = {
   },
   branch: (folder, argv) => {
     return (cb) => {
+      let branchname = `v${pjson.version}-test`;
       if (folder) process.chdir(path.resolve(folder));
-      let ext = argv.branch ? `--${argv.branch}` : ``;
-      let branchname = `v${pjson.version}-test${ext}`;
+      if (argv.branch) {
+        let ext = argv.branch ? `--${argv.branch}` : ``;
+        branchname += `${ext}`;
+      }
       return git.checkout(branchname, { args: '-B' }, function (err) {
         if (err) throw err;
         cb();
