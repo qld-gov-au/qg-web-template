@@ -126,7 +126,7 @@ gulp.task('cdn-clean', require('./gulp/publish-tasks/git').clean(config.staticCd
 gulp.task('cdn-clone', require('./gulp/publish-tasks/git').clone(config.staticCdnRepo.url, config.staticCdnRepo.folder));
 gulp.task('cdn-transfer', require('./gulp/publish-tasks/git').transfer());
 gulp.task('cdn-add', require('./gulp/publish-tasks/git').add(config.staticCdnRepo.folder));
-gulp.task('cdn-branch', require('./gulp/publish-tasks/git').branch(config.staticCdnRepo.folder));
+gulp.task('cdn-branch', require('./gulp/publish-tasks/git').branch(config.staticCdnRepo.folder, argv));
 gulp.task('cdn-commit', require('./gulp/publish-tasks/git').commit(config.staticCdnRepo.folder, pjson.version));
 gulp.task('cdn-branch', require('./gulp/publish-tasks/git').branch(config.staticCdnRepo.folder));
 gulp.task('cdn-push', require('./gulp/publish-tasks/git').push(config.staticCdnRepo.folder));
