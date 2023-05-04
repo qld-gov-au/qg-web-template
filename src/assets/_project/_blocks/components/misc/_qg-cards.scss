@@ -2,6 +2,10 @@
   color: white;
   display: flex;
 
+  > a {
+    margin: 0;
+  }
+
   &.qg-card__clickable {
     .content {
       @include all-states {
