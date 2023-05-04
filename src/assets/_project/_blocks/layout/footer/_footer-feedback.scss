@@ -3,6 +3,7 @@
 
   form#qg-page-feedback-form a {
     color: $qg-blue-dark !important;
+    text-decoration-color: #457aa3 !important; 
   }
   
   .alert.alert-warning {
@@ -273,6 +274,11 @@
     border-radius: 4px;
     color: $qg-global-primary-darker-grey;
     padding: 0 15px 25px 15px;
+  }
+
+  form#qg-page-feedback-form a {
+    color: $qg-blue-dark !important;
+    text-decoration-color: #457aa3 !important; 
   }
 
   &-wrap {
