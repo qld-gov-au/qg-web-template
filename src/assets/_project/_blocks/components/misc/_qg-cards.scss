@@ -1,9 +1,9 @@
-@mixin qg-card {
+@mixin qg-card($margin: 0) {
   color: white;
   display: flex;
 
   > a {
-    margin: 0;
+    margin: $margin;
   }
 
   &.qg-card__clickable {
