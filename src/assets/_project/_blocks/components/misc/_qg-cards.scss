@@ -3,7 +3,7 @@
   display: flex;
 
   > a {
-    margin: $margin;
+    margin: $margin !important;
   }
 
   &.qg-card__clickable {
