@@ -1,10 +1,9 @@
-@mixin qg-card($margin: 0) {
+#qg-content ul.featured-section .qg-card > a {
+  margin: 0;
+}
+@mixin qg-card {
   color: white;
   display: flex;
-
-  > a {
-    margin: $margin !important;
-  }
 
   &.qg-card__clickable {
     .content {
