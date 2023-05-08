@@ -159,7 +159,7 @@
 
                 &:checked+label:after,
                 &:checked+span:after {
-                    transform: scale(0.625);
+                    transform: scale(0.7);
                     clip-path: polygon(18% 40%, 2% 56%, 37% 91%, 97% 31%, 81% 15%, 37% 59%);
                 }
             }
