@@ -1,3 +1,6 @@
+#qg-content ul.featured-section .qg-card > a {
+  margin: 0 !important;
+}
 @mixin qg-card {
   color: white;
   display: flex;
