@@ -14,10 +14,13 @@ const gitFunctions = {
       return del([folder], cb);
     };
   },
-  clone: (url, folder) => {
+  clone: (url, folder, usessh) => {
     return (cb) => {
-      // try to use an SSH URL instead of HTTP(S), so we can push to it gracefully
-      return git.clone(url.replace(/^https?:/, 'ssh:'), { args: folder }, function (err) {
+      // If reqeusted, publish to SSH URL instead of HTTP(S), so we can push to it gracefully
+      if (usessh) {
+        url = url.replace(/^https?:/, 'ssh:');
+      }
+      return git.clone(url, { args: folder }, function (err) {
         if (err) {
           return git.clone(url, { args: folder }, function (err2) {
             if (err2) {
@@ -32,11 +35,8 @@ const gitFunctions = {
   branch: (folder, argv) => {
     return (cb) => {
       let branchname = `v${pjson.version}-test`;
+      branchname += argv.hasOwnProperty('branch') ? `--${argv.branch}` : '';
       if (folder) process.chdir(path.resolve(folder));
-      if (argv.branch) {
-        let ext = argv.branch ? `--${argv.branch}` : ``;
-        branchname += `${ext}`;
-      }
       return git.checkout(branchname, { args: '-B' }, function (err) {
         if (err) throw err;
         cb();
@@ -114,8 +114,8 @@ const gitFunctions = {
           cb();
         });
       } else {
-        let ext = argv.branch ? `--${argv.branch}` : ``;
-        let branchname = `v${pjson.version}-test${ext}`;
+        let branchname = `v${pjson.version}-test`;
+        branchname += argv.hasOwnProperty('branch') ? `--${argv.branch}` : '';
         return git.push('origin', [branchname], { args: ' -f' }, function (err) {
           if (err) throw err;
           cb();
