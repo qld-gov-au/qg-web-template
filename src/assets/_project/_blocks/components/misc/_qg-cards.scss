@@ -1,10 +1,19 @@
+#qg-content ul.featured-section .qg-card > a {
+  margin: 0 !important;
+}
 @mixin qg-card {
   color: white;
   display: flex;
 
   &.qg-card__clickable {
     .content {
-      @include qg-button-outline-decoration;
+      @include all-states {
+        @include qg-button-outline-decoration($border-radius: $btn-border-radius-base);
+      }
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      &:hover {
+        box-shadow: none;
+      }
     }
   }
 

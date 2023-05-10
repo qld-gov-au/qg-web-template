@@ -32,7 +32,8 @@ Recommend using VSCode as the IDE for development.
 | npm run **publish-npm** | Publish the release folder on NPM package manager. (npm repo link https://github.com/qld-gov-au/web-template-release) |
 | npm run **publish-cdn** | Publish the release folder on Static CDN      |
 | npm run **create-swe-release**  | Create a Github release on this (qg-web-template) repository      |
-| npm run **publish-test-npm** | Creates a branch release-vX.Y.Z-test on web-template-release repo (https://github.com/qld-gov-au/web-template-release) which can be deployed on Matrix for testing    |
+| npm run **publish-test-npm** | Creates a branch vX.Y.Z-test on web-template-release repo (https://github.com/qld-gov-au/web-template-release) which can be deployed on Matrix for testing    |
+| npm run **publish-uat-branch** | Creates a branch vX.Y.Z-test--branchname on web-template-release repo (https://github.com/qld-gov-au/web-template-release) which can be deployed on Matrix for testing. <br><br>This script accepts a custom "--brachname" argument, for example *npm run publish-uat-branch --branchname="uidev01"* to create branch vX.Y.Z-test--uidev01 |
 | npm run **publish-test-cdn** | Creates a branch release-vX.Y.Z-test on static CDN repository which can be deployed on TEST environment of applications using Bamboo for testing
 | npm **test** | Run E2E tests (using Jest and Puppeteer)
 

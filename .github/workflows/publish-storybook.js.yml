@@ -28,9 +28,27 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
           cache: 'npm'
+          always-auth: 'true'
+          registry-url: 'https://nexus.tools.services.qld.gov.au/nexus/repository/npm_all/'
+      - name: npmrc #run on lint step (Which is cached)
+        run: |
+          npm -v
+          node -v
+          cat /home/runner/work/_temp/.npmrc
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NEXUSREADONLY2NPMTOKEN }}
+
       - name: Install #run on lint step (Which is cached)
         run: | # Install packages
-          npm install --prefer-offline --no-audit
+          npm install --prefer-offline --no-audit --ignore-scripts
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NEXUSREADONLY2NPMTOKEN }}
+
+      # `npm rebuild` will run all those post-install scripts for us.
+      - name: rebuild and prepare
+        run: npm rebuild && npm run prepare --if-present
+
+
       - name: Build 🔧
         run: |
           npm run build

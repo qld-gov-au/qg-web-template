@@ -1,0 +1,167 @@
+//We hide the browser default rendering of radios and checkboxes - they are difficult to style consistently cross-browser.  
+//We create a pseudo radio/checkbox using a HTML label with a :before and :after tags.
+//The input:checked and accessibility still works correctly due to semantic markup and label "for" attributes.
+
+//V2 forms - radios and checkboxes wrapper
+.qg-forms-v2 {
+
+    .qg-forms-v2__radio,
+    .qg-forms-v2__checkbox,
+    .form-check {
+
+        &:has(label.form-check-label) {
+            padding: 0;
+            margin: 0;
+        }
+
+        //.choices needed to support legacy forms
+        &.choices li,
+        li,
+        .form-check-label {
+            margin: 0.75rem 0 !important;
+            padding: 0 !important;
+            position: relative;
+            min-height: calc(2rem + 2px);
+            overflow: visible;
+        }
+
+        li,
+        .form-check-label {
+
+            input[type="radio"],
+            input[type="checkbox"],
+            input[type="radio"]:before,
+            input[type="checkbox"]:before,
+            input[type="radio"]:after,
+            input[type="checkbox"]:after {
+                position: absolute;
+                opacity: 0;
+                left: -9999px;
+                top: 0;
+            }
+
+            input[type="radio"],
+            input[type="checkbox"] {
+
+                //Radios and checkbox labels   
+                +label,
+                +span {
+                    margin: 0;
+                    font-weight: 400;
+                    max-width: 33rem;
+                    line-height: 1.5rem;
+                    position: relative;
+                    cursor: default;
+                    padding-left: 3rem;
+                    padding-top: 3px;
+                    display: inline-block;
+                }
+
+                //Radios
+                // labels :before handles radio or checkbox border and outline
+                +label:before,
+                +span:before {
+                    content: "";
+                    width: 2rem;
+                    height: 2rem;
+                    top: 0;
+                    left: 0;
+                    position: absolute;
+                    border: 2px solid #808080;
+                    transition: all 200ms;
+                }
+
+                //The hover state
+                +label:hover,
+                +span:hover {
+
+                    cursor: pointer;
+
+                    &:before {
+                        box-shadow:
+                            inset 0 0 0 1px #808080, //add a 1px inset shadow to make border grow "inwards"
+                            inset 0 0 0 2rem #EEF4F6, //grey background fade in
+                            0 0 0 4px #EEF4F6; //background lightgrey hover effect
+                    }
+                }
+                
+                &:checked+label {
+                    color: inherit;
+                }
+
+                // checked:after handles checked state. 
+                //Radio and checkbox have defined clip-path shapes below for checked state
+                &:checked+label:after,
+                &:checked+span:after {
+                    content: "";
+                    position: absolute;
+                    background: #212529;
+                    width: 2rem;
+                    height: 2rem;
+                    top: 0;
+                    left: 0;
+                }
+
+                //Interaction states, add blue outline. Do not apply to disabled checks and radios. 
+                &:active,
+                &:focus,
+                &:focus-within,
+                &:checked:active,
+                &:checked:focus,
+                &:checked:focus-within {
+                    &:not(:disabled) {
+
+                        +label:before,
+                        +span:before {
+                            box-shadow:
+                                0 0 0 2px #FFF,
+                                0 0 0 5px #0096D6;
+                        }
+                    }
+                }
+
+                //Handle disabled radios and checks                
+                &:disabled {
+
+                    +label,
+                    +span {
+                        cursor: not-allowed;
+                    }
+
+                    +label:hover:before,
+                    +span:hover:before {
+                        box-shadow: none;
+                    }
+                }
+
+            }
+
+            //RADIOS specific
+            input[type="radio"] {
+
+                +label:before,
+                +span:before {
+                    border-radius: 100% !important;
+                }
+
+                &:checked+label:after,
+                &:checked+span:after {
+                    border-radius: 100% !important;
+                    transform: scale(0.7);
+                }
+            }
+
+
+            //CHECKBOXES specific
+            input[type="checkbox"] {
+
+                &:checked+label:after,
+                &:checked+span:after {
+                    transform: scale(0.7);
+                    clip-path: polygon(18% 40%, 2% 56%, 37% 91%, 97% 31%, 81% 15%, 37% 59%);
+                }
+            }
+
+        }
+    }
+}
