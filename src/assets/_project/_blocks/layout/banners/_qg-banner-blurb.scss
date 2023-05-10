@@ -58,7 +58,7 @@
         @include qg-link-styles__theme-white($border-radius: $btn-border-radius-base);
       }
     }
-    & > a {
+    & > a:not(.qg-btn) {
       @include media-breakpoint-up(sm) {
         @include qg-link-styles__theme-white;
       }
