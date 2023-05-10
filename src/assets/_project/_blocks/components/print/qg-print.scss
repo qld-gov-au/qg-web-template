@@ -2,8 +2,9 @@
 #qg-page-options {
   margin-bottom: 20px;
   height: 30px;
+  display: flex;
+  justify-content: end;
   a {
-    float: right;
     margin-left: 1rem !important;
   }
 }
