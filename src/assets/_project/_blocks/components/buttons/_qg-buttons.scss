@@ -52,7 +52,9 @@
 
 .btn-secondary {
   @include button-variant($qg-blue, transparent);
-  color: white !important;
+  @include all-states {
+    color: white;
+  }
   @include on-hover {
     background-color: $qg-blue-hover;
   }
