@@ -1,10 +1,8 @@
-// print button styles
+// page options including print and subscribe buttons
 #qg-page-options {
-  padding-bottom: 10px;
-  .print-content-link{
-    position: absolute;
-    right: 35px;
-    z-index:1;
-    top: -28px;
-  }
+  margin-bottom: 20px;
+  height: 30px;
+  display: flex;
+  justify-content: end;
+  column-gap: 1rem;
 }
