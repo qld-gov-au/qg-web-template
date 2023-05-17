@@ -1,20 +1,15 @@
 .dfv-content a.qg-links-list__link, .dfv-back a {
     @include qg-link-styles__theme-white;
 }
-.dfv-content a:visited, a.dfv-resource-nav__link {
+.dfv-content a:visited:not(.btn, .button, .qg-btn), a.dfv-resource-nav__link {
     color: currentColor;
 }
 .dfv-back a {
     margin: 0 !important;
     &:active {
-        border-radius: $btn-border-radius-base;
+        border-radius: $btn-border-radius-base !important;
     }
 }
-#qg-primary-content .dfv-page-introduction a, #qg-primary-content .dfv-content a {
+#qg-primary-content .dfv-page-introduction a, #qg-primary-content .dfv-content a:not(.qg-links-list__link) {
     color: $qg-blue-dark !important;
-}
-.dfv-content {
-    a:visited:not(.btn, .button, .qg-btn) {
-        color: currentColor;
-    }
 }
