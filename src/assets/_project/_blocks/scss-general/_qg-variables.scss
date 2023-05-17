@@ -326,12 +326,6 @@ $qg-linkedin: #0077b5;
     text-decoration-color: currentColor;
   }
 }
-.dfv-content a.qg-links-list__link, .dfv-back a {
-  @include qg-link-styles__theme-white;
-}
-.dfv-content a:visited, a.dfv-resource-nav__link {
-  color: currentColor !important;
-}
 @mixin all-states {
   // Apply styling to all element states, without using !important.
   // This is primarily to help override Bootstrap defaults,

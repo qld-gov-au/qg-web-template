@@ -1,0 +1,6 @@
+.dfv-content a.qg-links-list__link, .dfv-back a {
+    @include qg-link-styles__theme-white;
+}
+.dfv-content a:visited, a.dfv-resource-nav__link {
+    color: currentColor !important;
+}
