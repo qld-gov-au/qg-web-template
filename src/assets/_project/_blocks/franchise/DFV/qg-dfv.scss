@@ -5,9 +5,11 @@
     color: currentColor;
 }
 .dfv-back a {
-    @include qg-button-outline-decoration;
-    /*margin: 0 !important;
-    border-radius: $btn-border-radius-base !important;
+    @include all-states {
+        @include qg-button-outline-decoration;
+    }
+    margin: 0 !important;
+    /*border-radius: $btn-border-radius-base !important;
     &:active {
         border-radius: $btn-border-radius-base !important;
     }*/
