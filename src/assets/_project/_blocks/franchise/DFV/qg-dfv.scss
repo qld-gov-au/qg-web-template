@@ -6,7 +6,7 @@
 }
 .dfv-back a {
     @include all-states {
-        @include qg-button-outline-decoration;
+        @include qg-button-outline-decoration($btn-border-radius-base);
     }
     margin: 0 !important;
     /*border-radius: $btn-border-radius-base !important;
