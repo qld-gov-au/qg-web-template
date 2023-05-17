@@ -5,11 +5,12 @@
     color: currentColor;
 }
 .dfv-back a {
-    margin: 0 !important;
+    /*margin: 0 !important;
     border-radius: $btn-border-radius-base !important;
     &:active {
         border-radius: $btn-border-radius-base !important;
-    }
+    }*/
+    text-decoration: none;
 }
 #qg-primary-content .dfv-page-introduction a, #qg-primary-content .dfv-content a:not(.qg-links-list__link) {
     color: $qg-blue-dark !important;
