@@ -321,7 +321,7 @@ $qg-linkedin: #0077b5;
   text-decoration-thickness: 0.5px;
 }
 @mixin qg-link-visited-decoration ($visitedColor: #80b) {
-  &:visited:not([class^="dfv"]):not([class*=' dfv']) {
+  &:visited:not([class^="dfv"]):not([class*=' dfv']):not([class^="dfv"] + span):not([class*=' dfv'] + span) {
     color: $visitedColor;
     text-decoration-color: currentColor;
   }
