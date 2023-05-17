@@ -326,10 +326,10 @@ $qg-linkedin: #0077b5;
     text-decoration-color: currentColor;
   }
 }
-.dfv-content a.qg-links-list__link, .dfv-back a, a.dfv-resource-nav__link {
+.dfv-content a.qg-links-list__link, .dfv-back a {
   @include qg-link-styles__theme-white;
 }
-.dfv-content a:visited {
+.dfv-content a:visited, a.dfv-resource-nav__link {
   color: currentColor !important;
 }
 @mixin all-states {
