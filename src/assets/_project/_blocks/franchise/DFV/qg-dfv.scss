@@ -5,6 +5,16 @@
     color: currentColor;
 }
 .dfv-back a {
-    margin: 0;
-    border-radius: $btn-border-radius-base;
+    margin: 0 !important;
+    &:active {
+        border-radius: $btn-border-radius-base;
+    }
+}
+#qg-primary-content .dfv-page-introduction a, #qg-primary-content .dfv-content a {
+    color: $qg-blue-dark !important;
+}
+.dfv-content {
+    a:visited:not(.btn, .button, .qg-btn) {
+        color: currentColor;
+    }
 }
