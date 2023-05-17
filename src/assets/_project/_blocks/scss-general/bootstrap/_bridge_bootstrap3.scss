@@ -478,6 +478,6 @@ label {
 }
 
 // preserve visited link colour
-a:visited:not(.btn, .button, .qg-btn) {
+a:visited:not(.btn, .button, .qg-btn):not([class^="dfv"]):not([class*=' dfv']) {
   color: #80b;
 }

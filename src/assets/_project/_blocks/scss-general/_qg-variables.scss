@@ -321,10 +321,16 @@ $qg-linkedin: #0077b5;
   text-decoration-thickness: 0.5px;
 }
 @mixin qg-link-visited-decoration ($visitedColor: #80b) {
-  &:visited:not([class^="dfv"]):not([class*=' dfv']):not([class^="dfv"] + span):not([class*=' dfv'] + span) {
+  &:visited:not([class^="dfv"]):not([class*=' dfv']) {
     color: $visitedColor;
     text-decoration-color: currentColor;
   }
+}
+.dfv-content a.qg-links-list__link, .dfv-back a, a.dfv-resource-nav__link {
+  @include qg-link-styles__theme-white;
+}
+.dfv-content a:visited {
+  color: currentColor !important;
 }
 @mixin all-states {
   // Apply styling to all element states, without using !important.
