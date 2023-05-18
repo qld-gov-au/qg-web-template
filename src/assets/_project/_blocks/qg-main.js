@@ -28,5 +28,5 @@ import feedbackForm from './layout/footer/feedback-form';
 })();
 
 if ($("#qg-quick-exit__input").length > 0) {
-  $("body").addClass('private-content');
+  $("body").addClass("private-content");
 }
