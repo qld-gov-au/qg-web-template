@@ -27,6 +27,8 @@ import feedbackForm from './layout/footer/feedback-form';
   feedbackForm.init(franchiseTitle);
 })();
 
-if ($("#qg-quick-exit__input").length > 0) {
-  $("body").addClass("private-content");
-}
+$(function () {
+  if ($("#qg-quick-exit__input").length > 0) {
+    $("body").addClass("private-content");
+  }
+});
