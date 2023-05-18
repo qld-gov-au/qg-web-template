@@ -26,3 +26,7 @@ import feedbackForm from './layout/footer/feedback-form';
   stepNav.init();
   feedbackForm.init(franchiseTitle);
 })();
+
+if ($("#qg-quick-exit__input").length > 0) {
+  $("body").addClass('private-content');
+}
