@@ -1,12 +1,6 @@
 .dfv-content a.qg-links-list__link, .dfv-back a {
     @include qg-link-styles__theme-white;
 }
-.dfv-content a:visited:not(.btn, .button, .qg-btn), a.dfv-resource-nav__link {
-    color: currentColor;
-}
 .dfv-back a {
-    text-decoration: none;
-}
-#qg-primary-content .dfv-page-introduction a, #qg-primary-content .dfv-content a:not(.qg-links-list__link) {
-    color: $qg-blue-dark !important;
+    text-decoration: none !important;
 }
