@@ -5,7 +5,7 @@
     color: currentColor;
 }
 .dfv-back a {
-    text-decoration: none;
+    text-decoration: none !important;
 }
 #qg-primary-content .dfv-page-introduction a, #qg-primary-content .dfv-content a:not(.qg-links-list__link) {
     color: $qg-blue-dark !important;
