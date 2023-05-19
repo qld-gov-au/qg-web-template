@@ -7,7 +7,7 @@
         padding: 0;
     }
 
-    a:not(.btn) {
+    a:not(.btn):not(.qg-footer-feedback__close) {
       @include qg-link-styles__theme-white;
     }
     #qg-footer-feedback a:not(.btn) {

@@ -28,6 +28,6 @@ import feedbackForm from './layout/footer/feedback-form';
 })();
 $(function () {
   if ($('#qg-quick-exit__input').length > 0) {
-    $('body').addClass('private-content');
+    $('body').addClass('qg-private-content');
   }
 });
