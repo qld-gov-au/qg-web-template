@@ -1,7 +1,9 @@
 // page options including print and subscribe buttons
 #qg-page-options {
-  margin-bottom: 15px;
   display: flex;
   justify-content: end;
   column-gap: 1rem;
+  a {
+    padding-bottom: 20px;
+  }
 }
