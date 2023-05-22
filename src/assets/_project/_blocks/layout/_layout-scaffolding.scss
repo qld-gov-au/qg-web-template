@@ -10,6 +10,7 @@
 }
 #qg-primary-content {
   //@include qg-responsive-spacing(margin-top, full);
+  margin-top: 20px;
   .dropup {
     & > ul {
       margin: 0;

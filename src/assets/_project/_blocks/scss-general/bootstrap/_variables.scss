@@ -33,9 +33,8 @@ $text-color:            #000;
 
 //** Global textual link color.
 $link-color:            $qg-blue-dark;
-$qg-grid-gutter-width:  50px;
 
-$grid-gutter-width:          $qg-grid-gutter-width; // 30px !default;, SWE = 50px;
+$grid-gutter-width:          $qg-spacing; // 30px !default;, SWE = 50px;
 $qg-grid-gutter-width-small: $qg-spacing-xs; // Custom for responsive gutter widths
 
 
