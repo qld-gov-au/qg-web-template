@@ -9,7 +9,7 @@
   margin: 0 auto;
 }
 #qg-primary-content {
-  @include qg-responsive-spacing(margin-top, full);
+  //@include qg-responsive-spacing(margin-top, full);
   .dropup {
     & > ul {
       margin: 0;
