@@ -1,4 +1,4 @@
-// print button styles
+// page options including print and subscribe buttons
 #qg-page-options {
   position: absolute;
   top: -40px;
@@ -8,6 +8,6 @@
     position: relative;
     top: initial;
     right: initial;
-    margin-left: 1rem;
+    margin-left: 1rem !important;
   }
 }
