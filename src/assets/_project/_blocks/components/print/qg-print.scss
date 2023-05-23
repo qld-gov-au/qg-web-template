@@ -1,7 +1,14 @@
 // print button styles
-.print-content-link{
-  position: absolute;
-  right: 35px;
-  z-index:1;
-  top: -28px;
+#qg-page-options {
+  a {
+    position: absolute;
+    z-index: 1;
+    top: -40px;
+  }
+  .fg-subscribe__link {
+    right: -110px;
+  }
+  .print-content-link {
+    right: 35px;
+  }
 }
