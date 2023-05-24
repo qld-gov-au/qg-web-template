@@ -1,4 +1,9 @@
 // content alert and global alert styles
+.qg-site-wide-alert.qg-site-wide-alert__grey {
+  a {
+    @include qg-link-styles__theme-white;
+  }
+}
 .alert {
   position: relative;
   color: #000;

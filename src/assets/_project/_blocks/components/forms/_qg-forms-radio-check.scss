@@ -5,6 +5,13 @@
 //V2 forms - radios and checkboxes wrapper
 .qg-forms-v2 {
 
+    .form-radio {
+        .form-check {
+            padding-bottom: 0;
+            padding-top: 0
+        }
+    }
+
     .qg-forms-v2__radio,
     .qg-forms-v2__checkbox,
     .form-check {
@@ -147,7 +154,9 @@
                 &:checked+label:after,
                 &:checked+span:after {
                     border-radius: 100% !important;
-                    transform: scale(0.7);
+                    transform: scale(0.625); 
+                    //Checked circle 
+                    // (input) 2rem * (scale) 0.625 = 20px circle radius
                 }
             }
 

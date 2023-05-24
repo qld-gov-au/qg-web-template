@@ -26,7 +26,7 @@
     margin-left: 1em;
     font-size: 1rem;
   }
-  ul:not(#tabbed-nav ul):not(.qg-quick-exit__list) {
+  ul:not(#tabbed-nav ul):not(.qg-quick-exit__list):not(.select2-selection__rendered) {
     margin-bottom: 0.75rem;
   }
   ul, ol {
