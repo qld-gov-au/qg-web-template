@@ -51,7 +51,7 @@
     "@storybook/manager-webpack5": "^6.5.16",
     "@storybook/testing-library": "^0.0.13",
     "babel-loader": "^9.1.2",
-    "chromatic": "^6.17.0",
+    "chromatic": "^6.18.0",
     "concurrently": "^7.6.0",
     "copy-webpack-plugin": "^11.0.0",
     "cssnano": "^4.1.11",
