@@ -1,13 +1,13 @@
 .qg-site-footer {
     background-color: $qg-global-primary;
-    color: #fff;
+    color: white;
     padding-top: 8px;
 
     .container-fluid {
         padding: 0;
     }
 
-    a:not(.btn) {
+    a:not(.btn):not(#qg-footer-feedback a) {
       @include qg-link-styles__theme-white;
     }
     #qg-footer-feedback a:not(.btn) {
@@ -29,7 +29,7 @@
         margin-bottom: 30px;
 
         a {
-            color: #fff;
+            color: white;
             text-decoration-line: none;
             transition: opacity .1s linear;
 
@@ -41,7 +41,7 @@
     }
 
     p {
-        line-height: 20px;
+        line-height: 1.5;
     }
 
     .col {
@@ -67,7 +67,7 @@
           }
           &:before{
             @include rem(font-size, 20px);
-            color: #FFF;
+            color: white;
             font-family: FontAwesome;
             margin-right: 10px;
           }

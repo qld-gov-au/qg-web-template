@@ -39,7 +39,7 @@
   <meta name="DCTERMS.license" scheme="DCTERMS.URI" content="https://creativecommons.org/licenses/by/4.0/">
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="shortcut icon" href="/assets/v4/latest/images/favicon.ico">
 
@@ -67,7 +67,7 @@
   '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-PMDS7K');</script>
 <!-- End Google Tag Manager -->
-<section id="qg-access" role="navigation" aria-labelledby="landmark-label">
+<section id="qg-access" aria-labelledby="landmark-label">
   <h2 id="landmark-label" tabindex="1">Skip links and keyboard navigation</h2>
   <ul>
     <li><a id="skip-to-content" href="#qg-primary-content" tabindex="1">Skip to content</a></li>
@@ -76,7 +76,7 @@
 </section>
 
 
-<header id="qg-site-header" class="qg-site-header sticky">
+<header id="qg-site-header" class="qg-site-header sticky" role="banner">
   <div class="container-fluid qg-site-width qg-site-header-top">
     <div class="row align-items-center justify-content-between">
       <button id="qg-show-menu" class="qg-show-menu" aria-label="Search" data-toggle="collapse" data-target=".qg-navigation" aria-expanded="false" aria-controls="qg-site-nav qg-portal-links">
@@ -138,7 +138,7 @@
       <form action="https://www.qld.gov.au/search" id="qg-global-search-form" role="search" class="qg-site-search__form qg-search-form collapse qg-global-web-autocomplete" data-suggestions="https://find.search.qld.gov.au/s/suggest.json?collection=qld-gov&fmt=json%2B%2B&alpha=0.5&profile=qld" data-results-url="https://find.search.qld.gov.au/s/search.json?collection=qld-gov&profile=qld&meta_sfinder_sand=yes">
         <div class="input-group">
           <label for="qg-search-query" class="qg-visually-hidden">Search Queensland Government</label>
-          <input type="text" name="query" id="qg-search-query" class="form-control qg-search-site__input" autocomplete="off" placeholder="Search website" tabindex="0" aria-required="true" aria-expanded="false"/>
+          <input type="text" name="query" id="qg-search-query" class="form-control qg-search-site__input" autocomplete="off" placeholder="Search website" tabindex="0" aria-expanded="false" role="combobox"/>
           <svg class="qg-search__icon" width="512px" height="512px" viewBox="0 0 512 512">
             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
               <g transform="translate(67.298684, 71.201316)">
@@ -228,7 +228,7 @@
 
     </div>
   </div>
-  <div id="qg-portal-links" class="qg-portal-links qg-navigation collapse">
+  <div id="qg-portal-links" class="qg-portal-links qg-navigation collapse" aria-label="top">
     <div class="container-fluid qg-site-width">
       <nav class="navbar navbar-expand">
         <div class="collapse navbar-collapse" id="qgPortalLinksDropdown">
@@ -273,7 +273,7 @@
   <div class="container-fluid qg-site-width qg-site-header-bottom">
     <div class="row align-items-center justify-content-between">
 
-      <nav id="qg-site-nav" class="qg-navigation collapse" role="navigation" aria-label="Main navigation">
+      <nav id="qg-site-nav" class="qg-navigation collapse" role="navigation" aria-label="main">
         <ul class="nav">
           <li class="nav-item hidden-lg hidden-md">
             <a class="nav-link" href="/" data-analytics-link-group="qg-primary-nav-link">Home</a>
@@ -372,16 +372,17 @@
 </div>
 
 <footer class="qg-site-footer">
+  <h2 class="collapse">Support links</h2>
   <div class="container-fluid qg-site-width">
     <div class="d-flex flex-wrap">
       <div class="col col-md-4">
         <div class="qg-footer-col-content qg-contact-us">
           <h3>Contact us</h3>
           <ul>
-            <li>Get in touch for enquiries, feedback, complaints and compliments.<p class="phone"><span>13 QGOV (<a href="tel:137468" class="d-inline d-sm-none" data-analytics-link-group="qg-contact-phone">13 74 68</a><span class="d-none d-sm-inline">13 74 68</span>)</span></p></li>
-            <li>For COVID-19 related enquiries: <p class="phone"><span>134 COVID (<a href="tel:134268" class="d-inline d-sm-none" data-analytics-link-group="qg-contact-phone">13 42 68</a><span class="d-none d-sm-inline">13 42 68</span>)</span></p></li>
-            <li class="facebook"><a href="https://www.facebook.com/QueenslandGovernment/" aria-label="Facebook /QueenslandGovernment">/QueenslandGovernment</a></li>
-            <li class="twitter"><a href="https://twitter.com/qldgov" aria-label="Twitter @QldGov">@QldGov</a></li>
+            <li>For general enquiries, feedback, complaints and compliments: <p class="phone"><span>13 QGOV (<a href="tel:137468" class="d-inline" data-analytics-link-group="qg-contact-phone">13 74 68</a>)</span></p></li>
+            <li>For COVID-19 related enquiries: <p class="phone"><span>134 COVID (<a href="tel:134268" class="d-inline" data-analytics-link-group="qg-contact-phone">13 42 68</a>)</span></p></li>
+            <li class="facebook"><a href="https://www.facebook.com/QueenslandGovernment/" aria-label="Facebook /QueenslandGovernment" data-analytics-link-group="qg-contact-facebook">/QueenslandGovernment</a></li>
+            <li class="twitter"><a href="https://twitter.com/qldgov" aria-label="Twitter @QldGov" data-analytics-link-group="qg-contact-twitter">@QldGov</a></li>
           </ul>
           <a class="btn btn-global-secondary" href="https://www.qld.gov.au/contact-us">Other contact options</a>
           <hr class="hidden-lg hidden-md">
@@ -395,7 +396,7 @@
           <div class="qg-service-centre__wrapper" data-types="QGAP; HSC" data-centres="https://find.search.qld.gov.au/s/search.json?collection=services-web&sort=prox&num_ranks=2">
             <div class="qg-location-default">
               <p>Help us provide you with the most useful information by setting your location.</p>
-              <button class="btn btn-global-primary-white qg-service-centre-set-location collapsed" data-analytics-link-group="qg-nearest-service-set-location" data-toggle="collapse" data-target="#qg-service-centre-location-setter" role="button" aria-expanded="false" aria-controls="qg-service-centre-location-setter">
+              <button class="btn btn-global-primary-white qg-service-centre-set-location collapsed" data-analytics-link-group="qg-nearest-service-set-location" data-toggle="collapse" data-target="#qg-service-centre-location-setter" role="button" aria-expanded="false" aria-controls="qg-service-centre-location-setter">
                 <span class="qg-service-centre-set-location__text">Set your location</span>
               </button>
               <div id="qg-service-centre-location-setter" class="qg-location-setter-wrap collapse" style="">

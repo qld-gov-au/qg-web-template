@@ -21,20 +21,15 @@
       // workaround for Firefox border issue on multiline links,
       // https://www.drupal.org/project/drupal/issues/3016658
       display: inline-block;
-      &:not(:hover){
-        text-decoration-line: none !important;
-      }
-      &:hover {
-        img {
-          border: 1px solid #06c;
-        }
-      }
       img {
         position: absolute;
         left: 25px;
         background: #f9f9f9;
         border: 1px solid #fffefc;
         box-shadow: 0 0 2px 1px rgba(0,0,0,.1);
+        &:hover {
+          border: 1px solid #06c;
+        }
       }
 
     }
@@ -45,7 +40,7 @@
         padding-bottom: 5px;
         list-style: none;
         @include rem(line-height, 24px);
-        a{
+        a {
           font-size: 1rem;
           &:before {
             position: absolute;
@@ -67,8 +62,8 @@
     h2 {
       margin-top: 0;
       @include rem(font-size, 19px);
-      a{
-        @include qg-link-styles__no-underline-default;
+      a {
+        @include qg-link-styles__no-underline-default(0);
       }
     }
     & > ul:not(.qg-unstyled) {
@@ -90,16 +85,12 @@
       margin-bottom: 0;
       a {
         padding: 1em 1.5em 1em 1.5em !important;
+        width: 100%;
         display: block;
-        color: #ffffff !important;
-      }
-      a:visited, a:active{
-        color: #ffffff !important;
-      }
-      a:hover {
-        background: #007eb1;
-        color: #ffffff !important;
-        text-decoration-line: none !important;
+        @include qg-link-styles__theme-white(0);
+        &:hover {
+          background: #007eb1;
+        }
       }
       img {
         display: none;
@@ -107,6 +98,17 @@
     }
     p,ul{
       display: none;
+    }
+  }
+}
+
+// Override default link styling, but don't increase priority
+// of other index-links rules
+#qg-content #qg-primary-content .qg-index-links {
+  h2 a, ul li a {
+    @include qg-link-styles__no-underline-default;
+    @include breakpoint(xs) {
+      @include qg-link-styles__theme-white(0);
     }
   }
 }

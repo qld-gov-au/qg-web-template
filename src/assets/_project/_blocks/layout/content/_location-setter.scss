@@ -1,5 +1,5 @@
 .qg-location-setter {
-    background-color: #fff;
+    background-color: white;
     border: 0;
     border-radius: 4px;
     box-shadow: 0 4px 6px 0 rgba(32, 33, 36, 0.47);
@@ -123,7 +123,7 @@
                     @include rem(font-size, 14px);
                     border: 0;
                     color:$qg-global-primary-darker-grey;
-                    background-color: #fff;
+                    background-color: white;
                     padding: 9px 12px;
                     text-align: left;
                     font-weight: 500;

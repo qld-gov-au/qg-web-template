@@ -17,7 +17,7 @@
 
   <!-- Misc Metadata test-->
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0">
   <!--[if (lt IE 9)|(gt IE 10) ]><link href="//fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css" /><![endif]-->
   <!--[if !IE]><!--><link href="//fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css" /><!--<![endif]-->
 
@@ -112,7 +112,7 @@
 
 
 
-<section id="qg-access" role="navigation" aria-labelledby="landmark-label">
+<section id="qg-access" aria-labelledby="landmark-label">
   <h2 id="landmark-label" tabindex="1">Skip links and keyboard navigation</h2>
   <ul>
     <li><a id="skip-to-content" href="#qg-primary-content" tabindex="1">Skip to content</a></li>
@@ -172,7 +172,7 @@
 
 
 
-<header id="qg-site-header" class="qg-site-header sticky">
+<header id="qg-site-header" class="qg-site-header sticky" role="banner">
   <div class="container-fluid qg-site-width qg-site-header-top">
     <div class="row align-items-center justify-content-between">
 
@@ -237,7 +237,7 @@
       </button><form action="https://www.qld.gov.au/search" id="qg-global-search-form" role="search" class="qg-search-form collapse qg-global-web-autocomplete" data-suggestions="https://find.search.qld.gov.au/s/suggest.json?collection=qld-gov&fmt=json%2B%2B&alpha=0.5&profile=qld" data-results-url="https://find.search.qld.gov.au/s/search.json?collection=qld-gov&profile=qld&meta_sfinder_sand=yes">
       <div class="input-group">
         <label for="qg-search-query" class="qg-visually-hidden">Search Queensland Government</label>
-        <input type="text" name="query" id="qg-search-query" accesskey="5" class="form-control" autocomplete="off" placeholder="Search website" tabindex="0" aria-required="true" aria-expanded="false"/>
+        <input type="text" name="query" id="qg-search-query" accesskey="5" class="form-control" autocomplete="off" placeholder="Search website" tabindex="0" aria-expanded="false" role="combobox"/>
         <svg class="qg-search__icon" width="512px" height="512px" viewBox="0 0 512 512">
           <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
             <g transform="translate(67.298684, 71.201316)">
@@ -307,7 +307,7 @@
   </div>
 
 
-  <div id="qg-portal-links" class="qg-portal-links qg-navigation collapse">
+  <div id="qg-portal-links" class="qg-portal-links qg-navigation collapse" aria-label="top">
     <div class="container-fluid qg-site-width">
       <nav class="navbar navbar-expand">
         <div class="collapse navbar-collapse" id="qgPortalLinksDropdown">
@@ -352,7 +352,7 @@
   <div class="container-fluid qg-site-width qg-site-header-bottom">
     <div class="row align-items-center justify-content-between">
 
-      <nav id="qg-site-nav" class="qg-navigation collapse" role="navigation" aria-label="Main navigation">
+      <nav id="qg-site-nav" class="qg-navigation collapse" role="navigation" aria-label="main">
         <ul class="nav">
           <li class="nav-item hidden-lg hidden-md">
             <a class="nav-link" href="/" data-analytics-link-group="qg-primary-nav-link">Home</a>
@@ -710,6 +710,7 @@
 <!-- noindex -->
 
 <footer class="qg-site-footer">
+  <h2 class="collapse">Support links</h2>
   <div class="container-fluid qg-site-width">
     <div class="d-flex flex-wrap">
       <div class="col col-md-4">

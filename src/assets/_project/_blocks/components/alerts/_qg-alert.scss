@@ -1,4 +1,9 @@
 // content alert and global alert styles
+.qg-site-wide-alert.qg-site-wide-alert__grey {
+  a {
+    @include qg-link-styles__theme-white;
+  }
+}
 .alert {
   position: relative;
   color: #000;
@@ -14,6 +19,11 @@
   h2 {
     margin-top: 5px;
     font-size: 1.2em;
+  }
+  a {
+    @include qg-global-link-styles {
+      @include qg-link-decoration;
+    }
   }
   & + p{
     margin-top: 1em;

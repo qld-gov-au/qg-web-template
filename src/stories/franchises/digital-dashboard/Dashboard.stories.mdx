@@ -1,6 +1,7 @@
 import { Canvas, Meta, Story } from "@storybook/addon-docs";
 
 import Dashboard from "./templates/Dashboard.html";
+import Projects from "./templates/Projects.html";
 import Tenders from "./templates/Tenders.html";
 
 import { QgPrimaryContent, QgContent } from "../../decorators";
@@ -22,6 +23,14 @@ Not included in Forgov SWE documentation.
 <Canvas withSource="open">
   <Story name="Dashboard" parameters={getDecoratedParameters(Dashboard)}>
     {() => Dashboard}
+  </Story>
+</Canvas>
+
+## Projects
+
+<Canvas withSource="open">
+  <Story name="Projects">
+    {() => Projects}
   </Story>
 </Canvas>
 

@@ -7,26 +7,27 @@
         text-decoration-line: underline;
     }
     .fa-map-marker {
-        color: #fff;
+        color: white;
         font-size: 20px;
         margin-left: 10px;
     }
     .dropdown-toggle {
         background-color: transparent;
         border: 0;
-        color: #fff;
-        padding: 0 0 0 5px;
+        padding: 0;
         transition: opacity .3s ease;
         &:after {
             display: none;
         }
-        @include qg-link-styles__theme-white
+        @include all-states {
+            @include qg-global-link-styles($margin: 0 0 0 5px);
+        }
     }
     &__title {
         display: flex;
     }
     &__label {
-        color: #fff;
+        color: white;
     }
     .qg-location-setter {
         display: block;
@@ -55,7 +56,7 @@
             height: 0;
             border-style: solid;
             border-width: 0 4.5px 9px 4.5px;
-            border-color: transparent transparent #fff transparent;
+            border-color: transparent transparent white transparent;
             top: -9px;
             left: 173px;
         }
@@ -65,10 +66,13 @@
             left: 220px;
         }
     }
-    @include media-breakpoint-up(sm) {
+    @include media-breakpoint-up(md) {
         .dropdown-menu {
             left: -35px;
             top: calc(100% + 10px);
+        }
+        .dropdown-toggle {
+            @include qg-link-styles__theme-white;
         }
     }
     @include media-breakpoint-down(sm) {

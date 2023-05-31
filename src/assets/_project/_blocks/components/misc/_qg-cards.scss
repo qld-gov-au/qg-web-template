@@ -1,18 +1,20 @@
-@mixin qg-card {
-  color: #ffffff;
+@mixin qg-card($margin: 0) {
+  color: white;
   display: flex;
+
+  > a {
+    margin: $margin !important;
+  }
 
   &.qg-card__clickable {
     .content {
+      @include all-states {
+        @include qg-button-outline-decoration($border-radius: $btn-border-radius-base);
+      }
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-
       &:hover {
         box-shadow: none;
       }
-    }
-
-    .content:focus-within {
-      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
     }
   }
 
@@ -65,7 +67,7 @@
 
   &:not(.qg-card__light-theme) {
     h2 {
-      color: #fff;
+      color: white;
     }
     .content {
       .details {

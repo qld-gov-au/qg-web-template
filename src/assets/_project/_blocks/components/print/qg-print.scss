@@ -1,7 +1,13 @@
-// print button styles
-.print-content-link{
+// page options including print and subscribe buttons
+#qg-page-options {
   position: absolute;
+  top: -40px;
   right: 35px;
-  z-index:1;
-  top: -28px;
+  z-index: 1;
+  a {
+    position: relative;
+    top: initial;
+    right: initial;
+    margin-left: 1rem !important;
+  }
 }
