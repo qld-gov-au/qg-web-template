@@ -123,11 +123,14 @@
           position: initial;
           left: inherit;
           top: 0;
-          width: inherit;
           right: 0;
+          width: inherit;
+          
           background-image: none;
           color: #000;
           text-shadow: none;
+          margin : 0 !important;
+
           .icon-prev,.icon-next{
             position: inherit;
           }
