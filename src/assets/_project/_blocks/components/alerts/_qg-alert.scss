@@ -24,6 +24,10 @@
     @include qg-global-link-styles {
       @include qg-link-decoration;
     }
+    &:hover {
+      text-decoration-thickness: 2px !important;
+      color: $qg-blue-dark;
+    }
   }
   & + p{
     margin-top: 1em;
