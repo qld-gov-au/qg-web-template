@@ -26,12 +26,12 @@
     margin-left: 1em;
     font-size: 1rem;
   }
-  ul:not(#tabbed-nav ul):not(.qg-quick-exit__list):not(.select2-selection__rendered) {
+  ul:not(#tabbed-nav ul):not(.qg-quick-exit__list):not(.select2-selection__rendered):not(.qg-share-list) {
     margin-bottom: 0.75rem;
   }
   ul, ol {
     // don't add margins to contexts that manage their own spacing
-    li:not(.select2 li, .graph li, #tabbed-nav li):not(.qg-quick-exit__item) {
+    li:not(.select2 li, .graph li, #tabbed-nav li):not(.qg-quick-exit__item):not(.qg-share-list-item) {
       margin-bottom: 0.5em;
     }
   }
