@@ -23,7 +23,7 @@
     contentDefaultHeight: '90%',
     reuseFragment: true,
   });
-  // this function equals the height of the cards in a group, if it finds a class '.cards__equal-height'.
+  // this function equals the height of the cards in a group, if it finds a class '.qg-cards__equal-height'.
   function setHeight() {
     const equalHeightCards = document.querySelectorAll('.qg-cards__equal-height');
 
