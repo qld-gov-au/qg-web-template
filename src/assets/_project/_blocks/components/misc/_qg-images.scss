@@ -35,10 +35,6 @@
     }
   }
 
-  &.max-width-none {
-    max-width: none;
-  }
-
   img {
     width: 100%;
     height: auto;
@@ -88,6 +84,14 @@
     }
     @media print {
       word-break: break-all;
+    }
+  }
+}
+
+#qg-primary-content {
+  figure, img {
+    &.max-width-none {
+      max-width: none;
     }
   }
 }
