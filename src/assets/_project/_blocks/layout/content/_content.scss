@@ -31,7 +31,7 @@
   }
   ul, ol {
     // don't add margins to contexts that manage their own spacing
-    li:not(.select2 li, .graph li, #tabbed-nav li):not(.qg-quick-exit__item):not(.qg-share-list-item) {
+    li:not(.select2 li, .graph li, #tabbed-nav li):not(.qg-quick-exit__item):not(.qg-share-list-item):not(.dfv-topics__item) {
       margin-bottom: 0.5em;
     }
   }
