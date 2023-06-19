@@ -240,6 +240,9 @@ table.dataTable {
   float: right;
   text-align: right;
   padding: 0.5em 0;
+  .previous, .next {
+    display: inline-block;
+  }
 }
 
 /* Two button pagination - previous / next */
