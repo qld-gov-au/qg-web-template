@@ -20,5 +20,5 @@
 }
 
 #qg-content #qg-primary-content .dfv-topics__link {
-    margin: 0 !important;
+   @include qg-global-link-styles($margin: 0);
 }
