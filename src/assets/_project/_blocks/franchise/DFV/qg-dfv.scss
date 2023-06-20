@@ -10,10 +10,11 @@
     font-weight: 700 !important;
 }
 .dfv-back span, .dfv-back a, a.qg-aside-button {
-    &:hover {
+    @include qg-underline-on-highlight-decoration;
+    /*&:hover {
         text-decoration: underline !important;
         text-decoration-thickness: 2px !important;
-    }
+    }*/
 }
 #qg-primary-content .dfv-page-introduction a, #qg-primary-content .dfv-content a:not(.qg-links-list__link) {
     color: $qg-blue-dark !important;
