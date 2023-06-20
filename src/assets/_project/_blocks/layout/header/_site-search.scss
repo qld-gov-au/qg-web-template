@@ -68,13 +68,13 @@
           padding-bottom: 20px;
           a:not(.btn) {
             color: white;
-            text-decoration-line:underline;
+            text-decoration-line: underline;
             &:hover {
-              text-decoration-line:none;
+              text-decoration-line: none;
             }
           }
           a.btn {
-            margin-left: 35px;
+            margin-left: 35px !important;
           }
         }
 
