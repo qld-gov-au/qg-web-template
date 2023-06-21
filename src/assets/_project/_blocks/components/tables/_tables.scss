@@ -31,11 +31,17 @@
       }
     }
     tr {
+      background: #f6f6f6;
+      &:nth-child(even) {
+        background: white;
+      }
       td {
         padding: 1em;
       }
     }
-
+  }
+  &.qg-table-no-striped tr {
+    background: white;
   }
 }
 
