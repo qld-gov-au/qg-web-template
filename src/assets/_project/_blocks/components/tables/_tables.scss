@@ -39,8 +39,11 @@
         padding: 1em;
       }
     }
-    &.qg-table-no-striped tr {
-      background: white;
+    &.qg-table-no-striped {
+      @extend .table-bordered;
+      tr {
+        background: white;
+      }
     }
   }
 }
