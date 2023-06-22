@@ -246,7 +246,7 @@ table.dataTable {
   float: right;
   text-align: right;
   padding: 0.5em 0;
-  .previous, .next {
+  .previous:before, .next:after {
     display: inline-block;
   }
 }
