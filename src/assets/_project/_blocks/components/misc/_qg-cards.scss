@@ -24,8 +24,7 @@
   }
 
   .qg-card__footer {
-    padding: 1em;
-    border-top: 1px solid hsla(0, 0%, 50%, 0.7);
+    padding: 0 1em 1em;
     //this condition is to support legacy Aggregation page HTML
     .btn {
       width: 100%;
@@ -57,7 +56,6 @@
       }
 
       .qg-card__footer {
-        border-top: 1px solid rgba(211, 211, 211, 1);
         .btn-link {
           @include qg-link-styles__default;
         }
