@@ -5,9 +5,8 @@
       width: 100% !important;
       .qg-search-close-concierge {
         top: 6px;
-        right: 93px;
         @media (max-width: $screen-xs-max) {
-          right: 60px;
+          right: 50px;
         }
       }
       .list-group-item a {
@@ -35,7 +34,10 @@
         color: $qg-global-primary-darker;
         border: 3px solid #808080;
         border-radius: 7px;
-        padding: 1rem;
+        padding: 1rem 9rem 1rem 1rem;
+        @media (max-width: $screen-xs-max) {
+          padding-right: 6.5rem
+        }
       }
       #qg-site-search__submit{
         @include media-breakpoint-down(sm) {
