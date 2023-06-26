@@ -5,7 +5,7 @@
       width: 100% !important;
       .qg-search-close-concierge {
         top: 6px;
-        @media (max-width: $screen-xs-max) {
+        @media (max-width: $screen-sm-max) {
           right: 50px;
         }
       }
@@ -35,7 +35,7 @@
         border: 3px solid #808080;
         border-radius: 7px;
         padding: 1rem 9rem 1rem 1rem;
-        @media (max-width: $screen-xs-max) {
+        @media (max-width: $screen-sm-max) {
           padding-right: 6.5rem
         }
       }
