@@ -24,6 +24,7 @@
     font-weight: bold;
   }
   table {
+    @extend .table; // inheriting bootstrap table styles
     thead {
       tr {
         background-color: #005375;
@@ -39,7 +40,12 @@
         padding: 1em;
       }
     }
-
+    &.qg-table-no-striped {
+      @extend .table-bordered;
+      tr {
+        background: white;
+      }
+    }
   }
 }
 
@@ -240,6 +246,9 @@ table.dataTable {
   float: right;
   text-align: right;
   padding: 0.5em 0;
+  .previous:before, .next:after {
+    display: inline-block;
+  }
 }
 
 /* Two button pagination - previous / next */
