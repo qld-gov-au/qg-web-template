@@ -1,5 +1,6 @@
 const path = require("path");
 const CopyPlugin = require("copy-webpack-plugin");
+const replaceAll = require('string.prototype.replaceall');
 
 module.exports = {
   core: {
@@ -38,6 +39,13 @@ module.exports = {
               localPath: "/",
               location: process.env.PUBLIC_PATH?.replace(/\/+$/, "") || "http://localhost:6006", // http url where the file can be dl
               onFileMatch: (filePath, fileContent, isLocal) => {
+                
+                //Apply a shim if replaceAll function is not available (usually below node 14.x )
+                //https://github.com/es-shims/String.prototype.replaceAll
+                if(typeof(fileContent.replaceAll) === 'undefined') {
+                  replaceAll.shim();
+                }
+
                 return fileContent
                   .replaceAll(
                     'virtual=".',
