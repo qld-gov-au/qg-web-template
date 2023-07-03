@@ -53,16 +53,16 @@
     margin: 0 15px;
     padding: 1em;
     width: 27.5em;
-    a:not(.qg-btn):not(.btn) {
-      @include media-breakpoint-up(sm) {
-        @include qg-link-styles__theme-white;
+    & > a, p a {
+      &:not(.qg-btn):not(.btn) {
+        @include media-breakpoint-up(sm) {
+          @include qg-link-styles__theme-white;
+        }
       }
     }
     .qg-service-finder__container .qg-search-concierge-content {
       a {
-        @include all-states {
-          @include qg-link-styles__theme-black-always(black, $qg-global-primary-darker-grey);
-        }
+        @include qg-link-styles__theme-black-always(black, $qg-global-primary-darker-grey);
       }
       > a {
         padding: 20px 35px 0 35px;
