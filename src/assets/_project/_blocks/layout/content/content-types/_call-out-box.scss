@@ -76,7 +76,6 @@
     span {
       vertical-align: top;
     }
-    // we'll remove this block of css that support the i element before 22nd June
     i {
       vertical-align: top;
     }
@@ -84,7 +83,7 @@
   .qg-callout__content{
     align-self: center;
     *{
-      margin-bottom: 0; //this effectively resets any chance of multiple P's, LI's. P + buttons etc.
+      margin-bottom: 0;
     }
     margin-bottom: 25px;
     margin-top: 25px;
