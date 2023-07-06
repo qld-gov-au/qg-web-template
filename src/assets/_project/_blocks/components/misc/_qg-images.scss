@@ -61,6 +61,7 @@
     display: block;
     text-align: right;
     position: relative;
+    margin: 0 !important;
     &:hover {
       >span, >img:not(.figure__expand-icon) {
         outline: 1px solid #0066CC;
