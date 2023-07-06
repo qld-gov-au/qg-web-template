@@ -8,13 +8,14 @@
   margin: 25px auto;
   padding: 0;
   overflow: hidden;
+
   &.qg-callout__grey-theme{
     background-color: #f5f5f5;
     border-left: 4px solid #808080;;
   }
-  .qg-callout__bottom-alignment{
-    .qg-callout__cta{
-      margin-top: 25px;
+  .qg-callout__bottom-alignment {
+    .qg-callout__cta {
+      margin-top: 25px !important;
     }
   }
   .qg-callout__left-alignment, .qg-callout__right-alignment{
@@ -83,7 +84,7 @@
   .qg-callout__content{
     align-self: center;
     *{
-      margin-bottom: 0;
+      margin-bottom: 0; //this effectively resets any chance of multiple P's, LI's. P + buttons etc.
     }
     margin-bottom: 25px;
     margin-top: 25px;
@@ -125,7 +126,7 @@
       margin-right: 2em;
     }
   }
-  p {
+  p:last-child {
     margin: 0;
   }
 }
