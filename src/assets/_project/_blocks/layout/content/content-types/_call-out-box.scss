@@ -9,69 +9,80 @@
   padding: 0;
   overflow: hidden;
 
-  &.qg-callout__grey-theme{
+  &.qg-callout__grey-theme {
     background-color: #f5f5f5;
-    border-left: 4px solid #808080;;
+    border-left: 4px solid #808080;
   }
   .qg-callout__bottom-alignment {
     .qg-callout__cta {
       margin-top: 25px !important;
     }
   }
-  .qg-callout__left-alignment, .qg-callout__right-alignment{
+  .qg-callout__left-alignment,
+  .qg-callout__right-alignment {
     @extend .d-flex;
     @extend .align-content-center;
     @extend .align-items-center;
     @include media-breakpoint-down(xs) {
-      flex-wrap:wrap;
+      flex-wrap: wrap;
     }
-    .qg-callout__description{
+    .qg-callout__description {
       @include media-breakpoint-up(sm) {
         width: 90%;
       }
     }
-    .qg-callout__cta{
+    .qg-callout__cta {
       @include media-breakpoint-down(xs) {
         margin-top: 25px;
       }
     }
   }
-  .qg-callout__left-alignment{
+  .qg-callout__left-alignment {
     @include media-breakpoint-up(sm) {
-      flex-direction: row-reverse
+      flex-direction: row-reverse;
     }
-    .qg-callout__description{
+    .qg-callout__description {
       margin-left: 25px;
       @include media-breakpoint-down(xs) {
         margin-left: 0;
       }
     }
-    .qg-callout__cta{
+    .qg-callout__cta {
       margin-right: 0;
       @extend .align-items-start;
     }
   }
-  .qg-callout__right-alignment{
-    .qg-callout__description{
+  .qg-callout__right-alignment {
+    .qg-callout__description {
       margin-right: 25px;
       @include media-breakpoint-down(xs) {
         margin-right: 0;
       }
     }
-    .qg-callout__cta{
+    .qg-callout__cta {
       margin-right: 0;
       @extend .align-items-end;
     }
   }
-  .qg-callout__header{
+
+  @include media-breakpoint-down(xs) {
+    .qg-callout__left-alignment,
+    .qg-callout__right-alignment {
+      .qg-callout__cta {
+        margin-top: 25px !important;
+      }
+    }
+  }
+
+  .qg-callout__header {
     margin-top: 25px;
     margin-bottom: 0;
-    .qg-callout__title{
+    .qg-callout__title {
       margin-bottom: -10px;
     }
   }
-  .qg-callout__icon{
-    float:left;
+  .qg-callout__icon {
+    float: left;
     height: 20px;
     span {
       vertical-align: top;
@@ -80,14 +91,14 @@
       vertical-align: top;
     }
   }
-  .qg-callout__content{
+  .qg-callout__content {
     align-self: center;
-    *{
+    * {
       margin-bottom: 0;
     }
     margin-bottom: 25px;
     margin-top: 25px;
-    & + .qg-callout__image{
+    & + .qg-callout__image {
       @include media-breakpoint-down(sm) {
         margin-bottom: 0;
       }
@@ -96,7 +107,7 @@
       order: 2;
     }
   }
-  .qg-callout__image{
+  .qg-callout__image {
     align-self: center;
     @include media-breakpoint-down(xs) {
       margin-top: 25px;
@@ -105,20 +116,20 @@
       order: 1;
     }
   }
-  .qg-callout__description{
-    ol, ul {
+  .qg-callout__description {
+    ol,
+    ul {
       padding-left: 38px;
     }
   }
-  .qg-callout__icon{
+  .qg-callout__icon {
     font-size: 1.5rem;
     margin-right: 10px;
   }
-  .qg-callout__title{
+  .qg-callout__title {
     margin-top: 0;
   }
   a.qg-btn {
-    float: left;
     margin-right: 1em;
     @include breakpoint($screen-sm-min) {
       min-width: 8em;
