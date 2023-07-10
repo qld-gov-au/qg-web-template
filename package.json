@@ -54,6 +54,7 @@
     "@storybook/html": "^7.0.26",
     "@storybook/html-webpack5": "^7.0.26",
     "@storybook/testing-library": "^0.2.0",
+    "ajv": "^7.2.4",
     "babel-loader": "^9.1.2",
     "chromatic": "^6.15.0",
     "concurrently": "^7.6.0",
@@ -118,8 +119,10 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.20.13",
+    "@storybook/preview-api": "^7.0.26",
     "bootstrap": "^4.6.2",
     "chromium": "^3.0.3",
+    "html-loader": "^4.2.0",
     "jquery": "^3.6.3",
     "jquery-ui-bundle": "^1.12.1",
     "nodep-date-input-polyfill": "^5.2.0",
