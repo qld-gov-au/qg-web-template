@@ -5,7 +5,9 @@ import { getDecoratedParameters } from "../../helpers";
 
 import Default from "./templates/Default.html";
 import Blue from "./templates/Blue.html";
-import WithButton from "./templates/WithButton.html";
+import WithButtonBottom from "./templates/WithButtonBottom.html";
+import WithButtonRight from "./templates/WithButtonRight.html";
+import WithButtonLeft from "./templates/WithButtonLeft.html";
 import WithImage from "./templates/WithImage.html";
 
 <Meta title="Components/Callout" decorators={[QgPrimaryContent, QgContent]} />
@@ -24,11 +26,24 @@ import WithImage from "./templates/WithImage.html";
   <Story name="Blue" parameters={getDecoratedParameters(Blue)}>{() => Blue}</Story>
 </Canvas>
 
-## WithButton
+## WithButtonBottom
 
 <Canvas withSource="open">
-  <Story name="WithButton" parameters={getDecoratedParameters(WithButton)}>{() => WithButton}</Story>
+  <Story name="WithButtonBottom" parameters={getDecoratedParameters(WithButtonBottom)}>{() => WithButtonBottom}</Story>
 </Canvas>
+
+## WithButtonRight
+
+<Canvas withSource="open">
+  <Story name="WithButtonRight" parameters={getDecoratedParameters(WithButtonRight)}>{() => WithButtonRight}</Story>
+</Canvas>
+
+## WithButtonLeft
+
+<Canvas withSource="open">
+  <Story name="WithButtonLeft" parameters={getDecoratedParameters(WithButtonLeft)}>{() => WithButtonLeft}</Story>
+</Canvas>
+
 
 ## WithImage
 
