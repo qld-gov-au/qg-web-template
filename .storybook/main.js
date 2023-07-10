@@ -24,7 +24,7 @@ module.exports = {
         rule.use = [{
           loader: "html-loader",
           options: {
-            attributes: false
+            sources: false
           }
         }, {
           loader: "webpack-ssi-include-loader",
