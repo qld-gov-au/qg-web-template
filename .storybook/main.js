@@ -1,8 +1,11 @@
 const path = require("path");
 const CopyPlugin = require("copy-webpack-plugin");
 module.exports = {
-  stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
-  addons: ["@storybook/addon-links", "@storybook/addon-essentials", "@storybook/addon-interactions", "storybook-addon-pseudo-states", "@storybook/addon-mdx-gfm"],
+  core: {
+    builder: "webpack5",
+  },
+  stories: ["../src/**/*.stories.*"],
+  addons: ["@storybook/addon-links", "@storybook/addon-essentials", "@storybook/addon-interactions", "storybook-addon-pseudo-states"],
   staticDirs: ["../build"],
   previewMainTemplate: "./.storybook/previewMainTemplate.ejs",
   framework: {
