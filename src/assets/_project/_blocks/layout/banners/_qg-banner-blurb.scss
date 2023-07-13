@@ -59,7 +59,7 @@
           @include qg-link-styles__theme-white;
         }
         @include media-breakpoint-down(xs) {
-          @include qg-link-styles__theme-black;
+          @include qg-link-styles__default;
         }
       }
     }
