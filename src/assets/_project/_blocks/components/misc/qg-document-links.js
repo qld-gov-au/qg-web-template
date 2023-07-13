@@ -7,7 +7,6 @@
 // 3. reformats the file summary for consistency (PDF 517 KB)
 // 4. Rounds UP the file size value to the nearest whole integer
 // 5. Assumes a bias for over inflated sizes. e.g. 1.3 MB will round up to 2 MB
-// SP
 
 document.addEventListener('DOMContentLoaded', () => {
   const filePattern = /\.(?:PDF|DOC|DOCX|XLS|XLSX|RTF)$/i;
