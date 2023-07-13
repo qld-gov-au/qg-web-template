@@ -58,6 +58,9 @@
         @include media-breakpoint-up(sm) {
           @include qg-link-styles__theme-white;
         }
+        @include media-breakpoint-down(xs) {
+          @include qg-link-styles__default;
+        }
       }
     }
     .qg-service-finder__container .qg-search-concierge-content {
