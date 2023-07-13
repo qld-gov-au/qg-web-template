@@ -27,3 +27,13 @@ a{
 .ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-prev-hover, .ui-datepicker .ui-datepicker-next, .ui-datepicker .ui-datepicker-next-hover {
   top: 8px !important;
 }
+
+#qg-search-results-map-container {
+  .map-popup {
+    padding-left: 20px;
+    a {
+      display: block;
+      margin: 5px !important;
+    }
+  }
+}
