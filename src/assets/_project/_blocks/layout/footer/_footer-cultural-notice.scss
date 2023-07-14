@@ -1,0 +1,126 @@
+/* FOOTER WITH CULTURAL NOTICE and PRE 4.3 CLEANUP */
+
+/* 
+Classes for cultural acknowledgement notice and SWE footer updates. 
+To merge into SWE 4.3.0 release. SP 30/6/23 
+*/
+
+.qg-cultural-notice {
+    
+    margin-top: 1rem;
+    margin-bottom: 0;
+    
+    h3 {
+        margin: 0 0 30px 0;
+    }
+    
+    p {
+        margin: 0.75rem 0 0 0;
+        
+        &:nth-of-type(1) {
+            margin-top: 0
+        }
+    }
+}
+
+footer.qg-site-footer {
+    
+    padding-top: 2.25rem;
+    
+    .qg-footer-col-content {
+        
+        max-width: 270px;
+        margin-bottom: 2.75rem;
+        
+        &.qg-cultural-notice {
+            max-width: unset;  
+        }
+        
+        h3 {
+            margin-top: 0 !important;
+        }
+        
+        a.btn,
+        button.btn {
+            max-width: 420px;
+        }
+
+        /* Disable SWE legacy footer lines */
+        &:not(.qg-service-centre) hr {
+            display: none !important;
+        }
+        
+    }
+
+    .qg-legal {
+        padding-top: 0;
+        
+        ul {
+            padding-top: 0;
+            margin-left: 0;
+            border-top: none;
+            
+            li {
+                padding: 0 0.75rem 0 0;
+            }
+        }
+        
+    }
+
+}
+
+@media (max-width: 767.98px) { 
+    
+    footer.qg-site-footer {
+
+        .qg-cultural-notice  {
+            margin-top: 0;
+        }
+        
+        .qg-footer-col-content {
+            max-width: 100%;
+            padding-bottom: 1.785rem;
+            margin-bottom: 1.785rem;
+        }
+        
+        .sm-border-bottom {
+            border-bottom: 1px solid hsla(0, 0%, 100%, .25);
+        }
+        
+       
+        h3 {
+            margin-top: 0;
+        }
+    
+        .qg-legal .list-inline {
+            margin: 0;
+            padding-top: 0;
+        }
+        
+        .qg-service-centre__wrapper {
+            margin-bottom: 1rem;
+            
+            hr {
+                display: none;
+            }
+
+        }
+        
+    }
+    
+}
+
+// Between medium and large devices (between 768px and 992px)
+@media (min-width: 768px) and (max-width: 991.98px) { 
+    footer.qg-site-footer {
+        .qg-footer-col-content {
+            max-width: 420px;
+            
+            a.btn,
+            button.btn {
+                max-width: 420px;
+            }
+
+        }
+    }
+}
