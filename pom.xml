@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+
+    <groupId>au.gov.qld.oss</groupId>
+    <version>1.0.0-SNAPSHOT</version>
+    <artifactId>qg-web-temptlate</artifactId>
+    <packaging>pom</packaging>
+
+    <properties>
+        <frontend-maven-plugin.version>1.13.4</frontend-maven-plugin.version>
+        <node.version>v18.16.1</node.version> 
+        <npm.version>9.5.1</npm.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.github.eirslett</groupId>
+                <artifactId>frontend-maven-plugin</artifactId>
+                <version>${frontend-maven-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>install node and npm</id>
+                        <goals>
+                            <goal>install-node-and-npm</goal>
+                        </goals>
+                        <configuration>
+                            <nodeVersion>${node.version}</nodeVersion>
+                            <npmVersion>${npm.version}</npmVersion>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>npm install (no audit)</id>
+                        <goals>
+                            <goal>npm</goal>
+                        </goals>
+                        <phase>generate-resources</phase>
+                        <configuration>
+                            <arguments>install --no-audit</arguments>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>npm test</id>
+                        <goals>
+                            <goal>npm</goal>
+                        </goals>
+                        <phase>test</phase>
+                        <configuration>
+                            <arguments>run test-ci</arguments>
+                        </configuration>
+                    </execution>
+
+                    <!--<execution>
+                        <id>npm integration</id>
+                        <goals>
+                            <goal>npm</goal>
+                        </goals>
+                        <phase>integration-test</phase>
+                        <configuration>
+                            <arguments>run </arguments>
+                        </configuration>
+                    </execution>-->
+                    <execution>
+                        <id>npm package test-release</id>
+                        <goals>
+                            <goal>npm</goal>
+                        </goals>
+                        <phase>package</phase>
+                        <configuration>
+                            <arguments>run test-release</arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
