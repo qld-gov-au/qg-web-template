@@ -5,7 +5,10 @@ import CopyPlugin from 'copy-webpack-plugin'
 
 /** @type { import('@storybook/react-vite').StorybookConfig } */
 const config = {
-  stories: ["../src/**/*.mdx", "../src/**/*.stories.@(mdx|js|jsx|ts|tsx)"], // *.mdx is default, *.stories.(mdx|js|jsx|ts|ts) is V6 way)
+  stories: [
+    "../src/stories/Introduction.mdx", //First page to load
+    "../src/**/*.mdx",
+    "../src/**/*.stories.@(mdx|js|jsx|ts|tsx)"], // *.mdx is default, *.stories.(mdx|js|jsx|ts|ts) is V6 way)
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
