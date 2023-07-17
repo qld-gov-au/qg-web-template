@@ -8,14 +8,13 @@
 - Should not have any side effects on production code/bundle.
 
 ## Commands
-### Start the Storybook locally
-```
-npm run start
-```
 ### Build and serve the Storybook locally
 ```
+npm run storybook
+```
+### Build standalone Storybook
+```
 npm run build-storybook
-npx http-server storybook-static
 ```
 ### Release the Storybook to Github Page
 

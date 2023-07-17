@@ -1,24 +1,20 @@
-const path = require("path");
-const CopyPlugin = require("copy-webpack-plugin");
-module.exports = {
-  stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
-  addons: ["@storybook/addon-links",
+// .storybook/main.js
+
+import path from 'path'
+import CopyPlugin from 'copy-webpack-plugin'
+
+/** @type { import('@storybook/react-vite').StorybookConfig } */
+const config = {
+  stories: ["../src/**/*.mdx", "../src/**/*.stories.@(mdx|js|jsx|ts|tsx)"], // *.mdx is default, *.stories.(mdx|js|jsx|ts|ts) is V6 way)
+  addons: [
+    "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
     "storybook-addon-pseudo-states",
     "@storybook/addon-mdx-gfm",
-    {
-      name: '@storybook/addon-docs',
-      options: {
-        mdxPluginOptions: {
-          mdxCompileOptions: {
-            remarkPlugins: [remarkGfm],
-          },
-        },
-      },
-    },],
-  staticDirs: ["../build"],
-  previewMainTemplate: "./.storybook/previewMainTemplate.ejs",
+  ],
+  staticDirs: ['../build', 'storybook-static'],
+  previewMainTemplate: "./.storybook/previewMainTemplate.ejs", //see https://storybook.js.org/docs/react/addons/writing-presets for example link
   framework: {
     name: "@storybook/html-webpack5",
     options: {}
@@ -38,7 +34,7 @@ module.exports = {
         rule.use = [{
           loader: "html-loader",
           options: {
-            attributes: false
+            minimize: false
           }
         }, {
           loader: "webpack-ssi-include-loader",
@@ -47,7 +43,9 @@ module.exports = {
             location: process.env.PUBLIC_PATH?.replace(/\/+$/, "") || "http://localhost:6006",
             // http url where the file can be dl
             onFileMatch: (filePath, fileContent, isLocal) => {
-              return fileContent.replaceAll('virtual=".', `virtual="${filePath.slice(0, filePath.lastIndexOf("/"))}/.`).replaceAll('src="/assets', `src="${process.env.PUBLIC_PATH?.replace(/\/+$/, "") || ""}${process.env.ASSETS_PATH?.replace(/\/+$/, "") || ""}/assets`);
+              return fileContent
+                .replaceAll('virtual=".', `virtual="${filePath.slice(0, filePath.lastIndexOf("/"))}/.`)
+                .replaceAll('src="/assets', `src="${process.env.PUBLIC_PATH?.replace(/\/+$/, "") || ""}${process.env.ASSETS_PATH?.replace(/\/+$/, "") || ""}/assets`);
             }
           }
         }];
@@ -67,6 +65,8 @@ module.exports = {
     return config;
   },
   docs: {
-    autodocs: true
+    autodocs: true,
+    defaultName: 'Docs', // set to change the name of generated docs entries
   }
 };
+export default config;
