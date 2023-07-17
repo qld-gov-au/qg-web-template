@@ -1,13 +1,15 @@
 {
   "name": "Queensland-Government-Web-Template",
-  "version": "4.2.2",
+  "version": "4.3.0",
   "description": "This template is designed to provide a template for all Franchise websites, and the underpinning technology for new Agency websites.",
   "main": "gulpfile.babel.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/qld-gov-au/qg-web-template.git"
   },
-  "publishConfig":{"registry":"https://registry.npmjs.org"},
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
   "scripts": {
     "clean": "gulp clean-build && gulp clean-release",
     "prebuild": "gulp clean-build",
