@@ -21,36 +21,59 @@ const config = {
     name: "@storybook/html-webpack5",
     options: {}
   },
-  webpackFinal: async (config, {
-    configType
-  }) => {
-    // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'
-    // You can change the configuration based on that.
-    // 'PRODUCTION' is used when building the static version of storybook.
+  webpackFinal: async (config) => {
 
     // Make whatever fine-grained changes you need
 
+    //Don't use static cdn on storybook, use internal
+    //Handle templates by referencing built assets where required so webpack can compact them and
+    //not throw errors
+    config.module.rules.unshift(
+      {
+        test: /\.html$/,
+        loader: 'string-replace-loader',
+        options: {
+          search: 'https://static.qgov.net.au',
+          replace: './',
+          flags: 'g'
+        }
+      },
+      {
+        test: /\.html$/,
+        loader: 'string-replace-loader',
+        options: {
+          search: '"/assets/',
+          replace: '"./../../build/assets/',
+          flags: 'g'
+        }
+      },
+    )
+
     config.module.rules.forEach(rule => {
       const pattern = /html-loader/;
-      if (rule.use && pattern.test(rule.use)) {
-        rule.use = [{
-          loader: "html-loader",
-          options: {
-            minimize: false
-          }
-        }, {
-          loader: "webpack-ssi-include-loader",
-          options: {
-            localPath: "/",
-            location: process.env.PUBLIC_PATH?.replace(/\/+$/, "") || "http://localhost:6006",
-            // http url where the file can be dl
-            onFileMatch: (filePath, fileContent, isLocal) => {
-              return fileContent
-                .replaceAll('virtual=".', `virtual="${filePath.slice(0, filePath.lastIndexOf("/"))}/.`)
-                .replaceAll('src="/assets', `src="${process.env.PUBLIC_PATH?.replace(/\/+$/, "") || ""}${process.env.ASSETS_PATH?.replace(/\/+$/, "") || ""}/assets`);
+      if (rule.use && pattern.test(rule.use)) { //if html-loader plugin.
+        rule.use = [
+          {
+            loader: "html-loader",
+            options: {
+              minimize: false,
+              esModule: false,
+            },
+          },
+          {
+            loader: "webpack-ssi-include-loader",
+            options: {
+              localPath: "/",
+              location: process.env.PUBLIC_PATH?.replace(/\/+$/, "") || "http://localhost:6006",
+              // http url where the file can be dl
+              onFileMatch: (filePath, fileContent, isLocal) => {
+                return fileContent
+                  .replaceAll('virtual=".', `virtual="${filePath.slice(0, filePath.lastIndexOf("/"))}/.`)
+                  .replaceAll('src="/assets', `src="${process.env.PUBLIC_PATH?.replace(/\/+$/, "") || ""}${process.env.ASSETS_PATH?.replace(/\/+$/, "") || ""}/assets`);
+              }
             }
           }
-        }];
+          ];
       }
     });
     config.plugins.push(new CopyPlugin({
