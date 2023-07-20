@@ -57,7 +57,7 @@ module.exports = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "QgAccordion": () => (/* binding */ QgAccordion)
+/* harmony export */   QgAccordion: () => (/* binding */ QgAccordion)
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
 /* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
@@ -347,7 +347,7 @@ var QgAccordion = /*#__PURE__*/function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "QgAddressAutocomplete": () => (/* binding */ QgAddressAutocomplete)
+/* harmony export */   QgAddressAutocomplete: () => (/* binding */ QgAddressAutocomplete)
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
 /* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
@@ -970,35 +970,34 @@ if ($("script[src*='jquery.fancybox']").length === 0) {
   \**************************************************************************/
 /***/ (() => {
 
-(function ($) {
-  'use strict';
+// This function looks for file summary strings on a page and reformats values for consistency and readability.
+// It is an update a previous SWE function with the same behaviour.
+// It has been converted from jQuery to vanilla JS and it now rounds up filesize values. The previous function stripped all values after the decimal point.
 
-  var linkType = '.PDF$|.DOC$|.DOCX$|.XLS$|.XLSX$|.RTF$';
-  var contentType = 'PDF|DOC|DOCX|XLS|XLSX|RTF';
-  $(document).ready(function () {
-    $('a', '#qg-primary-content, #qg-secondary-content').each(function () {
-      var $this = $(this);
-      var linkRegex = new RegExp(linkType, 'i');
-      // check to see if a link with a selected linkType exist
-      // Example - cue-template-change-log.pdf|rtf...
-      if (linkRegex.test($this.attr('href'))) {
-        var contentRegex = new RegExp(contentType);
-        var currContent = $this.text();
-        if (/\.\d*?/.test(currContent)) {
-          // check to see if decimals exist, if yes then round then off
-          // Example (PDF 106.66) -> (PDF 106)
-          var extractSize = new RegExp('\\((?:' + contentType.toUpperCase() + '),?\\s+[0-9\\.]+\\s*[KM]B\\)', 'i');
-          currContent.match(extractSize) ? $(this).find('.meta').empty().append(currContent.match(extractSize)[0].toUpperCase().replace(/(\.\d*)/gi, '')) : '';
-        } else if (!contentRegex.test(currContent)) {
-          // check to see there is no doc type present in the content section
-          // If yes then insert <span class="meta">PDF</span>
-          var linkText = $this.attr('href').replace(/^.*\.(.+)$/, '$1').toUpperCase();
-          $this.append(' <span class="meta">(' + linkText + ')</span>');
-        }
-      }
-    });
+// 1. looks for this file summary pattern: for example "(PDF, 1.3 MB) or (DOCX 23.5KB)" on all links (A tags) in the DOM
+// 2. checks the HREF of the link ends in .PDF, .RTF etc
+// 3. reformats the file summary for consistency (PDF 517 KB)
+// 4. Rounds UP the file size value to the nearest whole integer
+// 5. Assumes a bias for over inflated sizes. e.g. 1.3 MB will round up to 2 MB
+
+document.addEventListener('DOMContentLoaded', function () {
+  var filePattern = /\.(?:PDF|DOC|DOCX|XLS|XLSX|RTF)$/i;
+  var summaryPattern = /\((PDF|DOC|DOCX|XLS|XLSX|RTF)\s*,?\s*([\d.]+)\s*(KB|MB|GB)\)/i;
+  var elements = document.querySelectorAll('#qg-primary-content a, #qg-secondary-content a');
+  elements.forEach(function (element) {
+    var fileMatch = element.href.match(filePattern);
+    var summaryMatch = element.text.match(summaryPattern);
+    if (fileMatch && summaryMatch) {
+      var originalSummary = summaryMatch[0]; // "(PDF 1.56MB)"
+      var contentType = summaryMatch[1].toUpperCase(); // "PDF"
+      var fileSize = Math.ceil(parseFloat(summaryMatch[2])); // 1.56
+      var fileSizeUnit = summaryMatch[3].toUpperCase(); // "MB"
+
+      var newSummary = "<span class=\"meta\">(".concat(contentType, ", ").concat(fileSize, " ").concat(fileSizeUnit, ")</span>");
+      element.innerHTML = element.textContent.replace(originalSummary, newSummary); //(PDF 1.6 MB)
+    }
   });
-})(jQuery);
+});
 
 /***/ }),
 
@@ -1396,7 +1395,7 @@ A1 This function checks meta tag [name="DCTERMS.license] and then insert markup 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "QgPrint": () => (/* binding */ QgPrint)
+/* harmony export */   QgPrint: () => (/* binding */ QgPrint)
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
 /* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
@@ -1617,7 +1616,7 @@ if (document.querySelector('.qg-site-search__multiple-forms')) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "QgQuickExit": () => (/* binding */ QgQuickExit)
+/* harmony export */   QgQuickExit: () => (/* binding */ QgQuickExit)
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
 /* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
@@ -1739,7 +1738,7 @@ var QgQuickExit = /*#__PURE__*/function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "QgSearchMinimize": () => (/* binding */ QgSearchMinimize)
+/* harmony export */   QgSearchMinimize: () => (/* binding */ QgSearchMinimize)
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
 /* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
@@ -1918,6 +1917,8 @@ $(function () {
   // Handle clicking into the input field
   qgSiteSearch.fn.onFocus = function (inputValue, targetInput) {
     var initialConcierge = targetInput.parent().find($('.qg-search-concierge-initial'));
+    // Toggle aria-expanded for the search input
+    targetInput.attr('aria-expanded', 'true');
     if (inputValue === '') {
       // Transition reveal initial state
       initialConcierge.addClass('show');
@@ -1947,7 +1948,6 @@ $(function () {
     } else if (inputValue !== '') {
       // Reveal the clear button
       clearButton.removeClass('hide');
-
       // Look for suggested results
       qgSiteSearch.fn.checkForSuggestions(inputValue, targetInput);
     } else {
@@ -1957,6 +1957,11 @@ $(function () {
       // Remove suggestions and transition reveal initial state
       initialConcierge.addClass('show');
       helpfulConcierge.removeClass('show');
+    }
+    if (initialConcierge.hasClass('show') || helpfulConcierge.hasClass('show')) {
+      targetInput.attr('aria-expanded', 'true');
+    } else {
+      targetInput.attr('aria-expanded', 'false');
     }
   };
   qgSiteSearch.fn.keyboardNavigation = function (event) {
@@ -2250,10 +2255,14 @@ $(function () {
   qgSiteSearch.fn.closeConciergePanels = function () {
     var initialConcierge = $('.qg-search-concierge-initial');
     var helpfulConcierge = $('.qg-search-concierge-help');
+    var targetInput = $('.qg-search-site__input');
 
     // Immediately close both concierge panels
     initialConcierge.addClass('hide').removeClass('show');
     helpfulConcierge.addClass('hide').removeClass('show');
+
+    // Toggle aria-expanded for the search input
+    targetInput.attr('aria-expanded', 'false');
     setTimeout(function () {
       initialConcierge.removeClass('hide');
       helpfulConcierge.removeClass('hide');
@@ -2334,6 +2343,7 @@ $(function () {
       suggestionsHTML += '</div>';
     } else {
       targetInput.parent().find($('.qg-search-concierge-help')).hide();
+      targetInput.attr('aria-expanded', 'false');
     }
     // Update the concierge container
     suggestionsContainer.html(suggestionsHTML);
@@ -3908,12 +3918,9 @@ var stepNav = {
 /*!***********************************************************!*\
   !*** ./src/assets/_project/_blocks/legacy/forms/forms.js ***!
   \***********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/typeof */ "./node_modules/@babel/runtime/helpers/esm/typeof.js");
-
+var _typeof = __webpack_require__(/*! @babel/runtime/helpers/typeof */ "./node_modules/@babel/runtime/helpers/typeof.js");
 /*! Form validation - v1.1.1 - 2014-04-09
  * https://github.com/bboyle/form-validation
  * Copyright (c) 2014 Ben Boyle; Licensed MIT */
@@ -3951,7 +3958,7 @@ __webpack_require__.r(__webpack_exports__);
         var $element = $(domElement),
           labelElement = null,
           foundElement = null;
-        if ((0,_babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_0__["default"])(options) === 'object' && options.level === 'group') {
+        if (_typeof(options) === 'object' && options.level === 'group') {
           foundElement = $element.formValidation('group').find(component)[0];
         } else if ($element.is(':radio, :checkbox')) {
           foundElement = $element.closest('fieldset').find(component)[0];
@@ -4202,7 +4209,7 @@ __webpack_require__.r(__webpack_exports__);
       // return question element for item
       question: function question(options) {
         // looking for group?
-        if ((0,_babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_0__["default"])(options) === 'object' && options.level === 'group') {
+        if (_typeof(options) === 'object' && options.level === 'group') {
           // return the group
           return this.formValidation('group');
         }
@@ -4277,7 +4284,7 @@ __webpack_require__.r(__webpack_exports__);
     // http://docs.jquery.com/Plugins/Authoring#Plugin_Methods
     if (methods[method]) {
       return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
-    } else if ((0,_babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_0__["default"])(method) === 'object' || !method) {
+    } else if (_typeof(method) === 'object' || !method) {
       return methods.init.apply(this, arguments);
     } else {
       $.error('Method ' + method + ' does not exist on jQuery.formValidation');
@@ -4336,7 +4343,7 @@ if (jQuery !== 'undefined') {
       // for feature detection
       input = $('<input>').get(0),
       // polyfill test
-      polyfill = (0,_babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_0__["default"])(input.validity) !== 'object',
+      polyfill = _typeof(input.validity) !== 'object',
       // radio button bug (google earth internal browser)
       radioButtonBug = !polyfill && $('<input type="radio" required checked>').get(0).validity.valueMissing === true,
       validateBuggyRadioButtons,
@@ -4483,7 +4490,7 @@ if (jQuery !== 'undefined') {
         if (polyfill) {
           // set us up the API
           candidates.filter(function () {
-            return (0,_babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_0__["default"])(this.validity) !== 'object';
+            return _typeof(this.validity) !== 'object';
           }).each(function () {
             this.validity = validityState(false, false, false, '', false);
             this.validationMessage = '';
@@ -4743,7 +4750,7 @@ if (jQuery !== 'undefined') {
       },
       valueInArray = function valueInArray(possibleValues, actualValues) {
         var i;
-        if ((0,_babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_0__["default"])(possibleValues) !== 'object') {
+        if (_typeof(possibleValues) !== 'object') {
           possibleValues = [possibleValues];
         }
         for (i = 0; i < actualValues.length; i++) {
@@ -4770,9 +4777,9 @@ if (jQuery !== 'undefined') {
         form = this.closest('form');
         if (form.length) {
           dependencyMap = form.data('relevance');
-          if ((0,_babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_0__["default"])(dependencyMap) === 'object') {
+          if (_typeof(dependencyMap) === 'object') {
             dependencyMap = dependencyMap.dependencyMap;
-            if ((0,_babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_0__["default"])(dependencyMap) === 'object') {
+            if (_typeof(dependencyMap) === 'object') {
               // get descendent-or-self select, radio and checkbox
               targets = this.add(this.find('select,input')).filter('select,:radio,:checkbox');
               // get unique @name for select, radio and checkbox
@@ -4782,7 +4789,7 @@ if (jQuery !== 'undefined') {
               $.each(targets, function (index, name) {
                 var map = dependencyMap[name],
                   values;
-                if ((0,_babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_0__["default"])(map) === 'object') {
+                if (_typeof(map) === 'object') {
                   $.each(map, function (index, config) {
                     if (isRelevant === false) {
                       config.items.relevance('relevant', false);
@@ -4874,14 +4881,14 @@ if (jQuery !== 'undefined') {
           form = this.closest('form');
           // get dependency map (create it if needed)
           data = form.data('relevance');
-          if ((0,_babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_0__["default"])(data) !== 'object') {
+          if (_typeof(data) !== 'object') {
             data = {};
             form.data('relevance', data);
           }
-          if ((0,_babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_0__["default"])(data.dependencyMap) !== 'object') {
+          if (_typeof(data.dependencyMap) !== 'object') {
             data.dependencyMap = {};
           }
-          if ((0,_babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_0__["default"])(data.dependencyMap[name]) !== 'object') {
+          if (_typeof(data.dependencyMap[name]) !== 'object') {
             data.dependencyMap[name] = [];
             // setup event handlers for name
             formElementsByName(form[0], name).filter(':radio,:checkbox').on('click', recalculateRelevance).end().filter('select').on('change', recalculateRelevance);
@@ -4971,7 +4978,7 @@ if (jQuery !== 'undefined') {
       // http://docs.jquery.com/Plugins/Authoring#Plugin_Methods
       if (methods[method]) {
         return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
-      } else if ((0,_babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_0__["default"])(method) === 'object' || !method) {
+      } else if (_typeof(method) === 'object' || !method) {
         // return methods.init.apply( this, arguments );
         return this;
       } else {
@@ -4987,7 +4994,7 @@ if (jQuery !== 'undefined') {
   var displayFileSize;
 
   // bail out if no file API support
-  if ((0,_babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_0__["default"])($('<input type="file">')[0].files) !== 'object') {
+  if (_typeof($('<input type="file">')[0].files) !== 'object') {
     // duplicate fsize instruction before submit button
     $('.max-fsize').each(function () {
       var fsize = $(this),
@@ -5422,7 +5429,7 @@ if (!browserSupportsDateInput() && $('input[type=\'date\']').length > 0) {
   });
 }
 // 'qg-date-input' adds a jquery ui datepicker
-if ($('input[class=\'qg-date-input\']').length > 0) {
+if ($('input[class*=\'qg-date-input\']').length > 0) {
   $.getScript('/assets/v4/latest/lib/ext/jquery-ui-bundle/jquery-ui.min.js', function () {
     $('head').append($("<link rel='stylesheet' href='/assets/v4/latest/lib/ext/jquery-ui-bundle/jquery-ui.min.css' type='text/css' media='screen' />"));
     $('.qg-date-input').datepicker({
@@ -5430,6 +5437,7 @@ if ($('input[class=\'qg-date-input\']').length > 0) {
       changeYear: true,
       changeMonth: true
     });
+    $('.qg-date-input').attr('type', 'date');
   });
 }
 
@@ -5459,7 +5467,7 @@ module.exports = env;
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "QgLoadGoogleApi": () => (/* binding */ QgLoadGoogleApi)
+/* harmony export */   QgLoadGoogleApi: () => (/* binding */ QgLoadGoogleApi)
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
 /* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
@@ -5634,21 +5642,19 @@ var QgLoadGoogleApi = /*#__PURE__*/function () {
     contentDefaultHeight: '90%',
     reuseFragment: true
   });
-  // this function equals the height of the cards in a group, if it finds a class '.cards__equal-height'.
+  // this function equals the height of the cards in a group, if it finds a class '.qg-cards__equal-height'.
   function setHeight() {
-    if ($('.cards__equal-height').length > 0) {
-      $('.qg-cards.cards__equal-height').each(function () {
-        // Cache the highest
-        var highestBox = 0;
-        // Select and loop the elements you want to equalise
-        $(this).find('.details').each(function () {
-          // If this box is higher than the cached highest then store it
-          if ($(this).height() > highestBox) {
-            highestBox = $(this).height();
-          }
+    var equalHeightCards = document.querySelectorAll('.qg-cards__equal-height');
+    if (equalHeightCards.length > 0) {
+      equalHeightCards.forEach(function (cardBlock) {
+        var maxHeight = 0;
+        var cards = cardBlock.querySelectorAll('.qg-card .details');
+        cards.forEach(function (card) {
+          maxHeight = Math.max(maxHeight, card.offsetHeight);
         });
-        // Set the height of all those children to whichever was highest
-        $(this).find('.details').height(highestBox);
+        cards.forEach(function (card) {
+          card.style.height = "".concat(maxHeight, "px");
+        });
       });
     }
   }
@@ -6198,6 +6204,25 @@ module.exports = (function(doc, win) {
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime/helpers/typeof.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/typeof.js ***!
+  \*******************************************************/
+/***/ ((module) => {
+
+function _typeof(obj) {
+  "@babel/helpers - typeof";
+
+  return (module.exports = _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) {
+    return typeof obj;
+  } : function (obj) {
+    return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+  }, module.exports.__esModule = true, module.exports["default"] = module.exports), _typeof(obj);
+}
+module.exports = _typeof, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js":
 /*!*******************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/esm/classCallCheck.js ***!
@@ -6412,6 +6437,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils_qg_env__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_utils_qg_env__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _utils_qg_util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/qg-util */ "./src/assets/_project/_blocks/utils/qg-util.js");
 /* harmony import */ var _legacy_forms_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./legacy/forms/forms */ "./src/assets/_project/_blocks/legacy/forms/forms.js");
+/* harmony import */ var _legacy_forms_forms__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_legacy_forms_forms__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _components_qg_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/qg-components */ "./src/assets/_project/_blocks/components/qg-components.js");
 /* harmony import */ var _layout_footer_footer_legals__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./layout/footer/footer-legals */ "./src/assets/_project/_blocks/layout/footer/footer-legals.js");
 /* harmony import */ var _layout_footer_footer_legals__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_layout_footer_footer_legals__WEBPACK_IMPORTED_MODULE_4__);
@@ -6456,6 +6482,11 @@ __webpack_require__.r(__webpack_exports__);
   _layout_section_nav_qg_step_nav__WEBPACK_IMPORTED_MODULE_6__["default"].init();
   _layout_footer_feedback_form__WEBPACK_IMPORTED_MODULE_11___default().init(franchiseTitle);
 })();
+$(function () {
+  if ($('#qg-quick-exit__input').length > 0) {
+    $('body').addClass('qg-private-content');
+  }
+});
 })();
 
 /******/ })()
