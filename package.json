@@ -121,7 +121,7 @@
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
-    "@babel/runtime": "^7.20.13",
+    "@babel/runtime": "^7.22.6",
     "bootstrap": "^4.6.2",
     "jquery": "^3.6.3",
     "jquery-ui-bundle": "^1.12.1",
