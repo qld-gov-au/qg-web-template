@@ -28,26 +28,34 @@ const config = {
     //Don't use static cdn on storybook, use internal
     //Handle templates by referencing built assets where required so webpack can compact them and
     //not throw errors
-    config.module.rules.unshift(
-      {
+    config.module.rules.unshift({
         test: /\.html$/,
         loader: 'string-replace-loader',
         options: {
-          search: 'https://static.qgov.net.au',
-          replace: './',
-          flags: 'g'
+          multiple: [
+            {
+              search: /https:\/\/www.qld.gov.au\/__data\/assets\/image\/\d+\/\d+\//,
+              replace: './assets/images/placeholders/',
+              flags: 'g'
+            },
+            {
+              search: 'https://www.smartservice.qld.gov.au/payment/minicart/',
+              replace: './assets/images/placeholders/',
+              flags: 'g'
+            },
+            {
+              search: 'https://static.qgov.net.au/',
+              replace: './',
+              flags: 'g'
+            },
+            {
+              search: '"/assets/',
+              replace: '"./../../build/assets/',
+              flags: 'g'
+            }
+          ]
         }
-      },
-      {
-        test: /\.html$/,
-        loader: 'string-replace-loader',
-        options: {
-          search: '"/assets/',
-          replace: '"./../../build/assets/',
-          flags: 'g'
-        }
-      },
-    )
+      })
 
     config.module.rules.forEach(rule => {
       const pattern = /html-loader/;
@@ -63,8 +71,8 @@ const config = {
           {
             loader: "webpack-ssi-include-loader",
             options: {
-              localPath: "/",
-              location: process.env.PUBLIC_PATH?.replace(/\/+$/, "") || "http://localhost:6006",
+              localPath: path.join(__dirname, '/build'),
+              location: "http://localhost:6006",
               // http url where the file can be dl
               onFileMatch: (filePath, fileContent, isLocal) => {
                 return fileContent

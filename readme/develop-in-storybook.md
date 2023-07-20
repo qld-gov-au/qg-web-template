@@ -16,6 +16,9 @@ npm run storybook
 ```
 npm run build-storybook
 ```
+
+Note: We require storybook running on localhost:6006 to copy the SSI templates into the static build
+
 ### Release the Storybook to Github Page
 
 The Storybook will publish to GH pages on every `push` in `master` branch with Github Actions workflow.
