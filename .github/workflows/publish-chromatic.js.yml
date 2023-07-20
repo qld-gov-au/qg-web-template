@@ -36,7 +36,7 @@ jobs:
           registry-url: 'https://nexus.tools.services.qld.gov.au/nexus/repository/npm_all/'
 
 
-      - name: npmrc 
+      - name: npmrc
         run: |
           npm -v
           node -v
@@ -55,12 +55,17 @@ jobs:
       - name: rebuild and prepare
         run: npm rebuild && npm run prepare --if-present
 
-      - name: Test release 🔧
+      - name: Build
         run: |
-          npm run test-release
+          npm run build
+
       - name: Test 🔧
         run: |
           npm run test-ci
+
+      - name: Test release 🔧
+        run: |
+          npm run test-release
       - name: Publish to Chromatic
         if: ${{ github.actor != 'dependabot[bot]' }}
         uses: chromaui/action@v1
