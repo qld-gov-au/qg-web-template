@@ -55,6 +55,10 @@ jobs:
       - name: rebuild and prepare
         run: npm rebuild && npm run prepare --if-present
 
+      - name: Build
+        run: |
+          npm run build
+
       - name: Test 🔧
         run: |
           npm run test-ci

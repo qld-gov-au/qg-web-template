@@ -11,7 +11,7 @@
     "registry": "https://registry.npmjs.org"
   },
   "scripts": {
-    "all": "npm run clean && npm run test-release && npm run test-ci && npm run build-storybook-gh",
+    "all": "npm run clean && npm run build && npm run test-ci && npm run test-release  && npm run build-storybook-gh",
     "clean": "gulp clean-build && gulp clean-release",
     "prebuild": "gulp clean-build",
     "build": "gulp build",

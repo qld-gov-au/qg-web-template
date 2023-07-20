@@ -53,12 +53,15 @@ jobs:
       - name: Build 🔧
         run: |
           npm run build
+
       - name: Test 🔧
         run: |
           npm run test-ci
+
       - name: Build Storybook 🔧
         run: |
           npm run build-storybook-gh
+
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
