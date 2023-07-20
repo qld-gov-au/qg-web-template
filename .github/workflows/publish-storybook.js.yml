@@ -8,6 +8,7 @@ on:
   push:
     branches:
       - master
+      - develop
 
 concurrency:
   group: compile-${{ github.workflow }}-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
