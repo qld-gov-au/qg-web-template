@@ -19,6 +19,5 @@ if ($('input[class*=\'qg-date-input\']').length > 0) {
       changeYear: true,
       changeMonth: true,
     });
-    $('.qg-date-input').attr('type', 'date');
   });
 }
