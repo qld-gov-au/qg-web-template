@@ -64,12 +64,12 @@
                 position: absolute;
             }
 
-            &:nth-child(1):before {
-                content: "\f05a";
+            &.centre-distance:before {
+                content: "\f05a"; // inforamation icon
             }
 
-            &:nth-child(2):before {
-                content: "\f14e";
+            &.centre-address:before {
+                content: "\f14e"; // compass icon
             }
         }
     }
