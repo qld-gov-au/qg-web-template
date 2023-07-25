@@ -775,8 +775,11 @@ $(function () {
       var centreAddress2 = centreData['listMetadata']['address2'];
 
       // Build URL
-      var centreType = centreData['listMetadata']['datasource'][0];
-      var centreURL = centreContainer.attr('data-' + centreType.toLowerCase());
+      var centreType = centreData['listMetadata']['datasource'];
+      if (centreType !== undefined) {
+        centreType = centreType[0].toLowerCase();
+      }
+      var centreURL = centreContainer.attr('data-' + centreType);
 
       // Handle special cases
       switch (centreType) {
@@ -793,7 +796,9 @@ $(function () {
       centreHTML += '<li class="qg-service-centre-list-item">';
       centreHTML += '<a href="' + centreURL + '" data-analytics-link-group="qg-nearest-service-centre-services">Services available</a>';
       centreHTML += '</li>';
-      centreHTML += '<li class="qg-service-centre-list-item">' + centreDistance + ' km away</li>';
+      if (centreDistance !== undefined) {
+        centreHTML += '<li class="qg-service-centre-list-item">' + centreDistance + ' km away</li>';
+      }
       centreHTML += '<li class="qg-service-centre-list-item">';
       if (centreAddress1 !== undefined) {
         centreHTML += '<span class="qg-service-centre__address">' + centreAddress1 + '</span>';
