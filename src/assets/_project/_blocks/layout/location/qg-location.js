@@ -796,7 +796,7 @@ $(function () {
       centreHTML += '<li class="qg-service-centre-list-item">';
       centreHTML += '<a href="' + centreURL + '" data-analytics-link-group="qg-nearest-service-centre-services">Services available</a>';
       centreHTML += '</li>';
-      if (centreDistance !== undefined) {
+      if (centreDistance !== null) {
         centreHTML += '<li class="qg-service-centre-list-item">' + centreDistance + ' km away</li>';
       }
       centreHTML += '<li class="qg-service-centre-list-item">';
