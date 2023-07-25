@@ -793,13 +793,13 @@ $(function () {
       // Build HTML
       centreHTML += '<a href="' + centreURL + '" class="qg-service-centre__link" data-analytics-link-group="qg-nearest-service-centre-details">' + centreName + '</a>';
       centreHTML += '<ul class="qg-service-centre-list">';
-      centreHTML += '<li class="qg-service-centre-list-item">';
+      centreHTML += '<li class="qg-service-centre-list-item service-info">';
       centreHTML += '<a href="' + centreURL + '" data-analytics-link-group="qg-nearest-service-centre-services">Services available</a>';
       centreHTML += '</li>';
       if (centreDistance !== null) {
         centreHTML += '<li class="qg-service-centre-list-item centre-distance">' + centreDistance + ' km away</li>';
       }
-      centreHTML += '<li class="qg-service-centre-list-item centre-address">';
+      centreHTML += '<li class="qg-service-centre-list-item">';
       if (centreAddress1 !== undefined) {
         centreHTML += '<span class="qg-service-centre__address">' + centreAddress1 + '</span>';
       }

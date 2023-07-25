@@ -64,11 +64,11 @@
                 position: absolute;
             }
 
-            &.centre-distance:before {
+            &.service-info:before {
                 content: "\f05a"; // inforamation icon
             }
 
-            &.centre-address:before {
+            &.centre-distance:before {
                 content: "\f14e"; // compass icon
             }
         }
