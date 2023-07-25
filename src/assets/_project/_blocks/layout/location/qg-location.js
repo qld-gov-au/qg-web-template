@@ -768,14 +768,14 @@ $(function () {
     }
 
     if (centreData) {
-      var centreName = Array.isArray(centreData['listMetadata']) ? centreData['listMetadata']['t'] : '';
-      var centreID = Array.isArray(centreData['listMetadata']) ? centreData['listMetadata']['id'] : '';
+      var centreName = (centreData['listMetadata'] != null) ? centreData['listMetadata']['t'] : '';
+      var centreID = (centreData['listMetadata'] != null) ? centreData['listMetadata']['id'] : '';
       var centreDistance = centreData['kmFromOrigin'];
-      var centreAddress1 = Array.isArray(centreData['listMetadata']) ? centreData['listMetadata']['address1'] : '';
-      var centreAddress2 = Array.isArray(centreData['listMetadata']) ? centreData['listMetadata']['address2'] : '';
+      var centreAddress1 = (centreData['listMetadata'] != null) ? centreData['listMetadata']['address1'] : '';
+      var centreAddress2 = (centreData['listMetadata'] != null) ? centreData['listMetadata']['address2'] : '';
 
       // Build URL
-      var centreType = Array.isArray(centreData['listMetadata']) ? centreData['listMetadata']['datasource'].toLowerCase() : '';
+      var centreType = (centreData['listMetadata'] != null) ? centreData['listMetadata']['datasource'].toLowerCase() : '';
       var centreURL = centreContainer.attr('data-' + centreType);
 
       // Handle special cases
