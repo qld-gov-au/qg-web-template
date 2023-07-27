@@ -12,7 +12,13 @@ if (!browserSupportsDateInput() && $('input[type=\'date\']').length > 0) {
 }
 // 'qg-date-input' adds a jquery ui datepicker
 if ($('input[class*=\'qg-date-input\']').length > 0) {
-  $.getScript('{{CDN}}/latest/lib/ext/jquery-ui-bundle/jquery-ui.min.js', function () {
+  $('head').append($("<link rel='stylesheet' href='{{CDN}}/latest/lib/ext/jquery-ui-bundle/jquery-ui.min.css' type='text/css' media='screen' />"));
+    $('.qg-date-input').datepicker({
+      dateFormat: 'dd/mm/yy',
+      changeYear: true,
+      changeMonth: true,
+    });
+  /*$.getScript('{{CDN}}/latest/lib/ext/jquery-ui-bundle/jquery-ui.min.js', function () {
     $('head').append($("<link rel='stylesheet' href='{{CDN}}/latest/lib/ext/jquery-ui-bundle/jquery-ui.min.css' type='text/css' media='screen' />"));
     $('head').append($("<script src='{{CDN}}/latest/lib/ext/jquery-ui-bundle/jquery-ui.min.js'></script>"));
     $('input[class~=\'qg-date-input\']').datepicker({
@@ -20,5 +26,5 @@ if ($('input[class*=\'qg-date-input\']').length > 0) {
       changeYear: true,
       changeMonth: true,
     });
-  });
+  });*/
 }
