@@ -1,6 +1,6 @@
 {
   "name": "Queensland-Government-Web-Template",
-  "version": "4.2.2",
+  "version": "4.2.3",
   "description": "This template is designed to provide a template for all Franchise websites, and the underpinning technology for new Agency websites.",
   "main": "gulpfile.babel.js",
   "repository": {
@@ -102,7 +102,7 @@
     "jest-puppeteer": "^7.0.0",
     "node-ssi": "^0.3.2",
     "np": "^7.6.3",
-    "puppeteer": "^19.6.3",
+    "puppeteer": "^20.9.0",
     "sass": "^1.61.0",
     "storybook-addon-pseudo-states": "^1.15.2",
     "string-replace-loader": "^3.1.0",
