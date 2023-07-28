@@ -18,9 +18,9 @@ if ($('input[class*=\'qg-date-input\']').length > 0) {
 }
 
 $(window).on('load', function() {
-  // hasDatepicker class has to be removed from the input when the document is ready. jquery-ui.min.js will add the
+  // hasDatepicker class has to be removed from the input when the page is loaded. jquery-ui.min.js will add the
   // calendar widget when the class does not exist on the input. Then hasDatepicker will be dynamically added to the input.
-  // This needs to be done when the document is ready
+  // This needs to be done when the page is loaded
   $('.qg-date-input').removeClass('hasDatepicker');
   $('.qg-date-input').datepicker({
     changeYear: true,
