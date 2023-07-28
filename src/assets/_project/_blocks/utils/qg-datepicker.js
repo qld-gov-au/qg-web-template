@@ -17,7 +17,8 @@ if ($('input[class*=\'qg-date-input\']').length > 0) {
   });
 }
 jQuery(document).ready(function() {
-  // hasDatepicker is added by the jquery-ui.min.js and prevents the calendar widget to be added
+  // hasDatepicker class has to be removed from the input when the document is ready. jquery-ui.min.js will add the
+  // calendar widget when the class does not exist on the input. Then hasDatepicker will be dynamically added to the input.
   // This needs to be done when the document is ready
   $('.qg-date-input').removeClass('hasDatepicker');
   $('.qg-date-input').datepicker({
