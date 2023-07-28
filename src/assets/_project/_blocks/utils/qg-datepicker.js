@@ -10,7 +10,6 @@ if (!browserSupportsDateInput() && $('input[type=\'date\']').length > 0) {
     console.log('date polyfill loaded');
   });
 }
-
 // 'qg-date-input' adds a jquery ui datepicker
 if ($('input[class*=\'qg-date-input\']').length > 0) {
   $.getScript('{{CDN}}/latest/lib/ext/jquery-ui-bundle/jquery-ui.min.js', function () {
@@ -18,6 +17,8 @@ if ($('input[class*=\'qg-date-input\']').length > 0) {
   });
 }
 jQuery(document).ready(function() {
+  // hasDatepicker is added by the jquery-ui.min.js and prevents the calendar widget to be added
+  // This needs to be done when the document is ready
   $('.qg-date-input').removeClass('hasDatepicker');
   $('.qg-date-input').datepicker({
     dateFormat: 'dd/mm/yy',
