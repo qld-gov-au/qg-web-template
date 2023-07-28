@@ -10,6 +10,7 @@ if (!browserSupportsDateInput() && $('input[type=\'date\']').length > 0) {
     console.log('date polyfill loaded');
   });
 }
+jQuery(document).ready(function() {
 // 'qg-date-input' adds a jquery ui datepicker
 if ($('input[class*=\'qg-date-input\']').length > 0) {
   /*var $j = jQuery.noConflict();
@@ -27,3 +28,4 @@ if ($('input[class*=\'qg-date-input\']').length > 0) {
     });
   });
 }
+});
