@@ -22,6 +22,9 @@ $(window).on('load', function() {
   // calendar widget when the class does not exist on the input. Then hasDatepicker will be dynamically added to the input.
   // This needs to be done when the document is ready
   $('.qg-date-input').removeClass('hasDatepicker');
-  $('.qg-date-input').datepicker();
+  $('.qg-date-input').datepicker({
+    changeYear: true,
+    changeMonth: true,
+  });
 });
 
