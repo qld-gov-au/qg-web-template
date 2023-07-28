@@ -10,7 +10,7 @@ if (!browserSupportsDateInput() && $('input[type=\'date\']').length > 0) {
     console.log('date polyfill loaded');
   });
 }
-jQuery(document).ready(function() {
+
 // 'qg-date-input' adds a jquery ui datepicker
 if ($('input[class*=\'qg-date-input\']').length > 0) {
   /*var $j = jQuery.noConflict();
@@ -21,11 +21,11 @@ if ($('input[class*=\'qg-date-input\']').length > 0) {
   });*/
   $.getScript('{{CDN}}/latest/lib/ext/jquery-ui-bundle/jquery-ui.min.js', function () {
     $('head').append($("<link rel='stylesheet' href='{{CDN}}/latest/lib/ext/jquery-ui-bundle/jquery-ui.min.css' type='text/css' media='screen' />"));
-    /*$('input[class~=\'qg-date-input\']').datepicker({
+    $('input[class~=\'qg-date-input\']').datepicker({
       dateFormat: 'dd/mm/yy',
       changeYear: true,
       changeMonth: true,
-    });*/
+    });
   });
 }
-});
+
