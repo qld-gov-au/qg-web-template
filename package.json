@@ -124,7 +124,7 @@
     "@babel/runtime": "^7.20.13",
     "bootstrap": "^4.6.2",
     "jquery": "^3.6.3",
-    "jquery-ui-bundle": "^1.13.2",
+    "jquery-ui-bundle": "^1.12.1",
     "nodep-date-input-polyfill": "^5.2.0",
     "stickyfill": "^1.1.1"
   }
