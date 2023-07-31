@@ -1,9 +1,9 @@
 (function () {
   const replacements = [
-    ["find.search.qld.gov.au", "discover.search.qld.gov.au"],
-    ["qld-gov", "qgov~sp-search"],
-    ["qgov-content", "qgov~sp-content"],
-    ["services-web", "qgov~sp-services"],
+    ['find.search.qld.gov.au', 'discover.search.qld.gov.au'],
+    ['qld-gov', 'qgov~sp-search'],
+    ['qgov-content', 'qgov~sp-content'],
+    ['services-web', 'qgov~sp-services'],
   ];
 
   function updateRefs(originalValue) {
