@@ -4,7 +4,6 @@
     ["qld-gov", "qgov~sp-search"],
     ["qgov-content", "qgov~sp-content"],
     ["services-web", "qgov~sp-services"],
-    ["imold", "imnew"],
   ];
 
   function updateRefs(originalValue) {
