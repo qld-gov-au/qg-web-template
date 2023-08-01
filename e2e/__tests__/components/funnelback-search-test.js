@@ -21,7 +21,7 @@ describe('SWE Header testing', () => {
     await page.waitForTimeout(ct.WT);
     expect(
       await page.$$eval('.qg-search-concierge-content li button', nodes => nodes.map(n => n.textContent)),
-    ).toEqual(['jobs in queensland government', 'jobs', 'government jobs']);
+    ).toEqual(['jobs in queensland government', 'government jobs', 'jobs volunteers']);
   });
 
   afterAll(async () => {
