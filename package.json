@@ -108,7 +108,7 @@
     "jest-puppeteer": "^7.0.0",
     "node-ssi": "^0.3.2",
     "np": "^7.6.3",
-    "puppeteer": "^19.6.3",
+    "puppeteer": "^21.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.64.0",
