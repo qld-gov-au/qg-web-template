@@ -24,9 +24,11 @@ $(window).on('load', function() {
     // This needs to be done when the page is loaded
     $('.qg-date-input').removeClass('hasDatepicker');
     $('.qg-date-input').datepicker({
+      dateFormat: 'dd/mm/yy',
       changeYear: true,
       changeMonth: true,
     });
+    $('.qg-date-input').attr('placeholder', 'dd/mm/yyyy');
   }
 });
 
