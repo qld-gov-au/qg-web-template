@@ -382,7 +382,11 @@ $(function () {
     // Look for services in standard results
     if (allResults.length > 0) {
       var filteredResults = allResults.filter(function (result) {
-          return result['listMetadata']['sfinder'] === 'yes';
+        if (result['listMetadata'] != null && result['listMetadata']['sfinder'] != null) {
+          return result['listMetadata']['sfinder'][0] === 'yes';
+        } else {
+          return false;
+        }
       });
 
       serviceResults = serviceResults.concat(filteredResults);
