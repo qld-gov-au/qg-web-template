@@ -19,6 +19,9 @@ import './layout/content/content';
 import './layout/content/content-types/figure-credits-toggle';
 import feedbackForm from './layout/footer/feedback-form';
 
+//Funnelback refs
+import './components/site-search/qg-funnelback-v16-refs';
+
 (function () {
   'use strict';
   let franchiseTitle = window.qg.swe.franchiseTitle;
