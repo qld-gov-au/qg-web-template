@@ -8,15 +8,17 @@
 - Should not have any side effects on production code/bundle.
 
 ## Commands
-### Start the Storybook locally
-```
-npm run start
-```
 ### Build and serve the Storybook locally
 ```
-npm run build-storybook
-npx http-server storybook-static
+npm run storybook
 ```
+### Build standalone Storybook
+```
+npm run build-storybook
+```
+
+Note: We require storybook running on localhost:6006 to copy the SSI templates into the static build
+
 ### Release the Storybook to Github Page
 
 The Storybook will publish to GH pages on every `push` in `master` branch with Github Actions workflow.
