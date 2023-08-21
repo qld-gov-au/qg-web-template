@@ -4,7 +4,7 @@ const ct = require('../../config/constants');
 let browser;
 let page;
 beforeAll(async () => {
-  browser = await puppeteer.launch({headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox']});
+  browser = await puppeteer.launch({headless: "new", args: ['--no-sandbox', '--disable-setuid-sandbox']});
   page = await browser.newPage();
   await page.setViewport({ width: ct.BT_XL, height: ct.WH });
   await page.goto(`${ct.APP_URL}/docs/components.html`, { waitUntil: 'networkidle0' });
