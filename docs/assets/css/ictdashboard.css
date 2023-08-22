@@ -751,8 +751,8 @@ body .qg-projects-search form .questions input.inp {
 .range-slider {
   margin: 0 2em 0 1em !important; }
   .range-slider .irs-bar {
-    background: url("/digitalprojectsdashboard-uat/assets/images/sprite-skin-flat.png") repeat-x 0 -60px; }
-
+    /*background: url("/digitalprojectsdashboard-uat/assets/images/sprite-skin-flat.png") repeat-x 0 -60px; }*/
+  }
 .lbl.js-from,
 .lbl.js-to {
   text-decoration: underline;
@@ -1255,8 +1255,8 @@ div.actions ul {
 .irs-bar,
 .irs-bar-edge,
 .irs-slider {
-  background: url(../../images/sprite-skin-flat.png) repeat-x; }
-
+  /*background: url(../../images/sprite-skin-flat.png) repeat-x; }*/
+}
 .irs {
   height: 40px; }
 
