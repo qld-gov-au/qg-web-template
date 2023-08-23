@@ -27,9 +27,9 @@ describe('SWE Components testing', () => {
     await page.click('.qg-quick-exit__button');
     await page.waitForTimeout(ct.WT);
     expect(await page.evaluate(() => location.href)).toBe('https://www.google.com.au/');
-    //await page.goBack();
-    //await page.waitForTimeout(ct.WT);
-    //expect(await page.evaluate(() => location.href)).not.toBe(`${ct.APP_URL}/docs/quick-exit.html`);
+    await page.goBack();
+    await page.waitForTimeout(ct.WT);
+    expect(await page.evaluate(() => location.href)).not.toBe(`${ct.APP_URL}/docs/quick-exit.html`);
   }, ct.TO);
 
   afterAll(async () => {
