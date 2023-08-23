@@ -21,7 +21,7 @@ describe('SWE Components testing', () => {
     // 3. -> 'tips to browse safely' navigating to the correct link
     await page.click('.qg-quick-exit__tip-link');
     await page.waitForTimeout(ct.WT);
-    expect(await page.evaluate(() => location.href)).toBe('https://www.qld.gov.au/help/tips-to-browse-safely-online');
+    expect(await page.evaluate(() => location.href)).toBe(`${ct.APP_URL}/help/tips-to-browse-safely-online`);
     await page.goBack();
     // 4. -> 'close this site' is working as expected and browser back is not taking to the same page
     await page.click('.qg-quick-exit__button');
