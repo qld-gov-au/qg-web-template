@@ -490,7 +490,8 @@ $(function () {
     if (jsonResponse.hasOwnProperty('features')) {
       // Add each suburb to the location list
       jsonResponse['features'].forEach(function (object) {
-        var sourceName = object['attributes']['ADMINAREANAME'].toLowerCase();
+        var sourceName = object['attributes']['ADMINAREANAME'] || object['attributes']['adminareaname'];
+        sourceName = sourceName.toLowerCase();
         var suburbLGA = titleCase(sourceName);
         var suburbObject = {
           'name': sourceName,
@@ -529,7 +530,7 @@ $(function () {
       // Maps not loaded
       // Create script tag
       var apiKey = 'AIzaSyDvR5MCDqi0HtcjkehKqbKhyoCxt4Khqac';
-      var scriptURL = 'https://maps.googleapis.com/maps/api/js?key=' + apiKey;
+      var scriptURL = 'https://maps.googleapis.com/maps/api/js?callback=qg_location_init&key=' + apiKey;
       var scriptElement = document.createElement('script');
 
       // Populate tag
@@ -539,6 +540,8 @@ $(function () {
 
       // Insert into the DOM
       document.querySelector('body').appendChild(scriptElement);
+
+      window.qg_location_init = function() {};
       scriptElement.onload = function () {
         qgLocation.fn.init();
       };
@@ -764,15 +767,18 @@ $(function () {
       centreData = results[0];
     }
 
-    if (centreData) {
-      var centreName = centreData['metaData']['t'];
-      var centreID = centreData['metaData']['id'];
+    if (centreData && centreData['listMetadata']) {
+      var centreName = centreData['listMetadata']['t'];
+      var centreID = centreData['listMetadata']['id'];
       var centreDistance = centreData['kmFromOrigin'];
-      var centreAddress1 = centreData['metaData']['address1'];
-      var centreAddress2 = centreData['metaData']['address2'];
+      var centreAddress1 = centreData['listMetadata']['address1'];
+      var centreAddress2 = centreData['listMetadata']['address2'];
 
       // Build URL
-      var centreType = centreData['metaData']['datasource'].toLowerCase();
+      var centreType = centreData['listMetadata']['datasource'];
+      if (centreType !== undefined) {
+        centreType = centreType[0].toLowerCase();
+      }
       var centreURL = centreContainer.attr('data-' + centreType);
 
       // Handle special cases
@@ -787,10 +793,12 @@ $(function () {
       // Build HTML
       centreHTML += '<a href="' + centreURL + '" class="qg-service-centre__link" data-analytics-link-group="qg-nearest-service-centre-details">' + centreName + '</a>';
       centreHTML += '<ul class="qg-service-centre-list">';
-      centreHTML += '<li class="qg-service-centre-list-item">';
+      centreHTML += '<li class="qg-service-centre-list-item service-info">';
       centreHTML += '<a href="' + centreURL + '" data-analytics-link-group="qg-nearest-service-centre-services">Services available</a>';
       centreHTML += '</li>';
-      centreHTML += '<li class="qg-service-centre-list-item">' + centreDistance + ' km away</li>';
+      if (centreDistance !== null) {
+        centreHTML += '<li class="qg-service-centre-list-item centre-distance">' + centreDistance + ' km away</li>';
+      }
       centreHTML += '<li class="qg-service-centre-list-item">';
       if (centreAddress1 !== undefined) {
         centreHTML += '<span class="qg-service-centre__address">' + centreAddress1 + '</span>';
@@ -865,3 +873,4 @@ $(function () {
   $('body').on('click', '.qg-location-setter-close', qgLocation.fn.closeServiceCentre);
   $('body').on('keydown', '.qg-location-setter-autocomplete button', qgLocation.fn.keyboardNavigation);
 });
+

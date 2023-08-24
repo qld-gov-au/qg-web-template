@@ -1,10 +1,10 @@
 #step-nav {
   background: #013652;
-  color: #fff;
+  color: white;
   .dropdown {
     padding: 0.7em 1em;
     display: block;
-    color: #fff;
+    color: white;
     cursor: pointer;
     transition: all 0.7s ease;
     &:after {
@@ -12,7 +12,7 @@
     }
     &:hover{
       text-decoration-line: none !important;
-      color: #fff !important;
+      color: white !important;
       background: #53b2d2;
     }
   }
@@ -24,7 +24,7 @@
       margin: 0;
       padding: 0;
       a {
-        color: #fff;
+        color: white !important;
       }
       ol.guide-sub-nav {
         list-style: none;
@@ -50,13 +50,13 @@
             &:hover, &.active{
               background: #53b2d2;
               text-decoration-line: none;
-              color: #fff;
+              color: white;
               .page-number {
-                background: #fff;
+                background: white;
               }
             }
             &:visited{
-              color: #fff;
+              color: white;
             }
           }
         }

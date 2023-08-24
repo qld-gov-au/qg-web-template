@@ -1,15 +1,17 @@
 .qg-site-footer {
+
     background-color: $qg-global-primary;
-    color: #fff;
-    padding-top: 8px;
+    color: white;
+    padding-top: 2.25rem;
 
     .container-fluid {
         padding: 0;
     }
 
-    a:not(.btn) {
+    a:not(.btn):not(#qg-footer-feedback a) {
       @include qg-link-styles__theme-white;
     }
+    
     #qg-footer-feedback a:not(.btn) {
       @include qg-link-styles__default;
     }
@@ -26,10 +28,10 @@
     h3 {
         @include rem(font-size, 20px);
         font-weight: bold;
-        margin-bottom: 30px;
+        margin: 0 0 30px 0;
 
         a {
-            color: #fff;
+            color: white;
             text-decoration-line: none;
             transition: opacity .1s linear;
 
@@ -41,7 +43,7 @@
     }
 
     p {
-        line-height: 20px;
+        line-height: 1.5;
     }
 
     .col {
@@ -49,10 +51,50 @@
         padding: 0 0 0 15px;
     }
 
+
     .qg-footer-col-content {
-        max-width: 270px
+        
+        max-width: 270px;
+        margin-bottom: 2.75rem;
+        
+        h3 {
+            margin-top: 0 !important;
+        }
+        
+        a.btn,
+        button.btn {
+            max-width: 420px;
+        }
+        
+        &.qg-cultural-notice {
+            max-width: unset;  
+        }
+
+        /* Disable SWE legacy footer horizontal rule (HR) - these are replaced with CSS borders */
+        &:not(.qg-service-centre) hr {
+            display: none !important;
+        }
     }
 
+    .qg-cultural-notice {
+    
+        margin-top: 1rem;
+        margin-bottom: 0;
+        
+        h3 {
+            margin: 0 0 30px 0;
+        }
+        
+        p {
+            margin: 0.75rem 0 0 0;
+            
+            &:nth-of-type(1) {
+                margin-top: 0
+            }
+        }
+
+    }
+    
     hr {
         margin: 30px 0;
         border-color: rgba(255,255,255,0.25);
@@ -67,7 +109,7 @@
           }
           &:before{
             @include rem(font-size, 20px);
-            color: #FFF;
+            color: white;
             font-family: FontAwesome;
             margin-right: 10px;
           }
@@ -110,7 +152,58 @@
         }
     }
 
+    @include media-breakpoint-down(xs) {
+        
+        .qg-cultural-notice  {
+            margin-top: 0;
+        }
+            
+        .qg-footer-col-content {
+            max-width: 100%;
+            padding-bottom: 1.785rem;
+            margin-bottom: 1.785rem;
+        }
+            
+        .sm-border-bottom {
+            border-bottom: 1px solid hsla(0, 0%, 100%, .25);
+        }
+            
+           
+        h3 {
+            margin-top: 0;
+        }
+        
+        .qg-legal .list-inline {
+            margin: 0;
+            padding-top: 0;
+        }
+            
+        .qg-service-centre__wrapper {
+            margin-bottom: 1rem;
+            
+            hr {
+                display: none;
+            }
+
+        }
+    }
+
+    // Between medium and large devices (ONLY between 768px and 992px)
+    @include media-breakpoint-only(sm) {
+        .qg-footer-col-content {
+            max-width: 420px;
+            
+            a.btn,
+            button.btn {
+                max-width: 420px;
+            }
+
+        }
+    }
+
+    
     @media (max-width: 600px) {
+        
         .col {
             flex-basis: 100%;
             max-width: none;

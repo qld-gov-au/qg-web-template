@@ -1,0 +1,6 @@
+#!/bin/sh
+export PATH="$PWD/node/":$PATH
+node -v
+npm -v
+$PWD/node/npm "$@"
+##node "node/node_modules/npm/bin/npm-cli.js" "$@"

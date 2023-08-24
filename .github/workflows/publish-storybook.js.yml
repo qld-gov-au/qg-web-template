@@ -8,6 +8,7 @@ on:
   push:
     branches:
       - master
+      - develop
 
 concurrency:
   group: compile-${{ github.workflow }}-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
@@ -18,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: [ '16' ]
+        node: [ '18' ]
     name: Build and Deploy on Node ${{ matrix.node }}
     steps:
       - uses: actions/checkout@v3
@@ -28,18 +29,39 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
           cache: 'npm'
+          always-auth: 'true'
+          registry-url: 'https://nexus.tools.services.qld.gov.au/nexus/repository/npm_all/'
+      - name: npmrc #run on lint step (Which is cached)
+        run: |
+          npm -v
+          node -v
+          cat /home/runner/work/_temp/.npmrc
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NEXUSREADONLY2NPMTOKEN }}
+
       - name: Install #run on lint step (Which is cached)
         run: | # Install packages
-          npm install --prefer-offline --no-audit
+          npm install --prefer-offline --no-audit --ignore-scripts
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NEXUSREADONLY2NPMTOKEN }}
+
+      # `npm rebuild` will run all those post-install scripts for us.
+      - name: rebuild and prepare
+        run: npm rebuild && npm run prepare --if-present
+
+
       - name: Build 🔧
         run: |
           npm run build
+
       - name: Test 🔧
         run: |
           npm run test-ci
+
       - name: Build Storybook 🔧
         run: |
           npm run build-storybook-gh
+
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:

@@ -5,9 +5,8 @@
       width: 100% !important;
       .qg-search-close-concierge {
         top: 6px;
-        right: 93px;
-        @media (max-width: $screen-xs-max) {
-          right: 60px;
+        @media (max-width: $screen-sm-max) {
+          right: 50px;
         }
       }
       .list-group-item a {
@@ -35,10 +34,15 @@
         color: $qg-global-primary-darker;
         border: 3px solid #808080;
         border-radius: 7px;
-        padding: 1rem;
+        padding: 1rem 9rem 1rem 1rem;
+        @media (max-width: $screen-sm-max) {
+          padding-right: 6rem
+        }
       }
       #qg-site-search__submit{
-        padding: 9px 16px;
+        @include media-breakpoint-down(sm) {
+          padding: 9px 16px;
+        }
       }
       .qg-search-concierge{
         top: 92%;
@@ -50,6 +54,9 @@
         &:after{
           background: none !important;
         }
+        .qg-search-concierge-content > a {
+          padding: 0 35px 0 35px;
+        }
       }
     }
   }
@@ -57,7 +64,7 @@
     color: #000;
     background-color: #9ac02c;
     border-color: #9ac02c;
-    margin-right: 0.4rem;
+    margin-right: 0.4rem !important;
   }
 }
 // related search tags styles
@@ -111,7 +118,7 @@
 
 // multiple search styling for global search
 .qg-search-state__container {
-  color: #fff;
+  color: white;
   margin-top: 0.8em;
   margin-right: 1em;
   cursor: pointer;

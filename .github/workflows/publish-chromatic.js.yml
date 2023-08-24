@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: [ '16' ]
+        node: [ '18' ]
     name: Build and test on Node ${{ matrix.node }}
     steps:
       - name: Checkout repository
@@ -32,15 +32,40 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
           cache: 'npm'
+          always-auth: 'true'
+          registry-url: 'https://nexus.tools.services.qld.gov.au/nexus/repository/npm_all/'
+
+
+      - name: npmrc
+        run: |
+          npm -v
+          node -v
+          cat /home/runner/work/_temp/.npmrc
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NEXUSREADONLY2NPMTOKEN }}
+
+
       - name: Install #run on lint step (Which is cached)
         run: | # Install packages
-          npm install --prefer-offline --no-audit
-      - name: Test release 🔧
+          npm install --prefer-offline --no-audit --ignore-scripts
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NEXUSREADONLY2NPMTOKEN }}
+
+      # `npm rebuild` will run all those post-install scripts for us.
+      - name: rebuild and prepare
+        run: npm rebuild && npm run prepare --if-present
+
+      - name: Build
         run: |
-          npm run test-release
+          npm run build
+
       - name: Test 🔧
         run: |
           npm run test-ci
+
+      - name: Test release 🔧
+        run: |
+          npm run test-release
       - name: Publish to Chromatic
         if: ${{ github.actor != 'dependabot[bot]' }}
         uses: chromaui/action@v1

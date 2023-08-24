@@ -1,139 +1,116 @@
-@mixin hover() {
-  &:hover:not(:disabled, .disabled), &.hover:not(:disabled, .disabled) { @content; }
-}
-
 .btn-global-primary{
-  color: #fff;
+  @include all-states {
+    color: white;
+  }
   background-color: $qg-global-primary-dark;
   font-weight: bold;
-  border-radius: 4px;
   padding: 9px 24px;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 5px;
 
   @include media-breakpoint-down(sm) {
     padding: 9px 11px;
-  }
-
-  &:hover, &:focus, &.hover, &.focus, &:active {
-    text-decoration-line: underline;
-    color: #fff;
-    background-color: $qg-global-primary-dark;
-  }
-
-  &:focus, &.focus {
-    outline: 1px dotted #000;
-    outline: 5px auto -webkit-focus-ring-color;
   }
 }
 
 .btn-global-primary-white{
   color: $qg-global-primary-dark-grey;
-  background-color: #fff;
+  background-color: white;
   font-weight: bold;
-  border-radius: 4px;
   overflow: hidden;
   padding: 9px 24px;
   display: table;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 5px;
 
   @include media-breakpoint-down(sm) {
     padding: 9px 11px;
   }
 
-  &:hover, &:focus, &.hover, &.focus {
-    color: $qg-global-primary-dark-grey;
-    text-decoration-line: underline;
-  }
-
-  &:focus, &.focus {
-    outline: 1px dotted #000;
-    outline: 5px auto -webkit-focus-ring-color;
-  }
+  @include qg-underline-on-highlight-decoration;
 }
 
 .btn-global-secondary{
-  color: #fff;
+  @include all-states {
+    color: white;
+  }
   background-color: transparent;
-  border: solid 3px #fff;
+  border: solid 3px white;
   display: table;
   font-weight: bold;
-  border-radius: 4px;
   padding: 7px 24px;
-  text-decoration-line: none;
-  text-decoration-thickness: 2px;
 
-  &:hover, &:focus, &.hover, &.focus, &:active {
-    color: #fff;
-    text-decoration-line: underline;
-  }
-
-  &:focus, &.focus {
-    outline: 1px dotted #000;
-    outline: 5px auto -webkit-focus-ring-color;
+  @include qg-underline-on-highlight-decoration {
+    // repeat colour rule with greater priority
+    color: white;
   }
 }
 
 .btn-primary{
-  @include button-variant($qg-light-green, $qg-light-green, lighten($qg-light-green, 7.5%), $hover-border: $qg-light-green, $active-background:$qg-light-green, $active-border: $qg-light-green);
+  @include button-variant($qg-light-green, transparent, lighten($qg-light-green, 7.5%), $hover-border: transparent, $active-background:$qg-light-green, $active-border: transparent);
   color: #000;
   a, &:focus:not(:disabled), &:hover:not(:disabled), &:link:not(:disabled), &:visited:not(:disabled), &:active:not(:disabled), &.focus:not(:disabled), &.hover:not(:disabled), &.link:not(:disabled), &.visited:not(:disabled), &.active:not(:disabled) {
-    text-decoration-line: none !important;
     color: #000 !important;
   }
 }
 
 .btn-secondary {
-  @include button-variant($qg-blue, $qg-blue);
-  color: #fff;
-  a, &:focus, &:hover, &:link, &:visited, &:active, &.focus, &.hover, &.link, &.visited, &.active {
-    color: #fff !important;
-    text-decoration-line: none !important;
+  @include button-variant($qg-blue, transparent);
+  color: white !important;
+  @include on-hover {
+    background-color: $qg-blue-hover;
   }
 }
 
 .btn-default {
   @include button-variant($qg-dark-grey, $qg-dark-grey);
-  color: #fff;
+  color: white;
   a, &:focus, &:hover, &:link, &:visited, &:active, &.focus, &.hover, &.link, &.visited, &.active {
-    color: #fff !important;
-    text-decoration-line: none !important;
+    color: white !important;
   }
 }
 
 .btn-link {
-  @include hover() {
-    @include link-hover;
+  @include qg-button-outline-decoration($border-radius: $btn-border-radius-base);
+  @include all-states {
+    &:not(.light) {
+      color: $qg-blue-dark;
+    }
+  }
+}
+
+.qg-btn {
+  &.btn-primary, &.btn-outline-dark, &.btn-outline-light, &.btn-default {
+    @include on-active {
+      box-shadow: none;
+    }
   }
 }
 
 .qg-btn {
   @extend .btn;
+  @include qg-button-outline-decoration($border-radius: $btn-border-radius-base);
   &.btn-outline-dark{
     color: $qg-outline-dark;
     background-color: transparent !important;
-    border:3px solid $qg-outline-dark;
-    &:hover:not(:disabled), &:active:not(:disabled), &:focus:not(:disabled), &.hover:not(:disabled), &.active:not(:disabled), &.focus:not(:disabled) {
-      border:3px solid $qg-outline-dark-hover;
-      color: $qg-outline-dark-hover;
-      text-decoration-line: underline;
+    border: 3px solid $qg-outline-dark;
+    @include on-hover-or-active {
+      border-color: $qg-outline-dark-hover;
+      color: $qg-global-primary-dark-grey;
     }
+    @include qg-underline-on-highlight-decoration;
   }
   &.btn-outline-light{
-    color: #ffffff !important;
-    background-color: transparent;
-    border:3px solid #ffffff;
-    &:hover, &:active, &:focus, &.hover, &.active, &.focus {
-      text-decoration-line: underline;
-    }
+    color: white !important;
+    background-color: transparent !important;
+    border: 3px solid white;
+    @include qg-underline-on-highlight-decoration;
   }
   &.btn-link.light{
-    color:#ffffff;
+    color: white;
   }
 }
 
-#body .qg-btn, #body .btn, {
+#body .qg-btn, #body .btn, body .qg-btn, body .btn {
   // override default .btn styling
-  @include qg-link-hover-decoration;
+  @include all-states {
+    @include qg-button-outline-decoration($margin: 0, $border-radius: $btn-border-radius-base);
+    @include qg-underline-on-highlight-decoration;
+  }
 }

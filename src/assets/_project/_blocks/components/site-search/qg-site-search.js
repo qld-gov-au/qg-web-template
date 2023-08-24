@@ -87,6 +87,9 @@ $(function () {
   // Handle clicking into the input field
   qgSiteSearch.fn.onFocus = function (inputValue, targetInput) {
     var initialConcierge = targetInput.parent().find($('.qg-search-concierge-initial'));
+    // Toggle aria-expanded for the search input
+    targetInput.attr('aria-expanded', 'true');
+
     if (inputValue === '') {
       // Transition reveal initial state
       initialConcierge.addClass('show');
@@ -110,13 +113,13 @@ $(function () {
     var initialConcierge = targetInput.parent().find($('.qg-search-concierge-initial'));
     var helpfulConcierge = targetInput.parent().find($('.qg-search-concierge-help'));
     var clearButton = targetInput.parent().find($('.qg-search-close-concierge'));
+
     if (keyCode === 40) {
       targetInput.parents($('.qg-site-search__form')).attr('data-navindex', '0');
       setTimeout($('.qg-search-concierge.show').find('a, button')[0].focus(), 300);
     } else if (inputValue !== '') {
       // Reveal the clear button
       clearButton.removeClass('hide');
-
       // Look for suggested results
       qgSiteSearch.fn.checkForSuggestions(inputValue, targetInput);
     } else {
@@ -126,6 +129,11 @@ $(function () {
       // Remove suggestions and transition reveal initial state
       initialConcierge.addClass('show');
       helpfulConcierge.removeClass('show');
+    }
+    if (initialConcierge.hasClass('show') || helpfulConcierge.hasClass('show')) {
+      targetInput.attr('aria-expanded', 'true');
+    } else {
+      targetInput.attr('aria-expanded', 'false');
     }
   };
 
@@ -224,10 +232,14 @@ $(function () {
   qgSiteSearch.fn.closeConciergePanels = function () {
     var initialConcierge = $('.qg-search-concierge-initial');
     var helpfulConcierge = $('.qg-search-concierge-help');
+    var targetInput = $('.qg-search-site__input');
 
     // Immediately close both concierge panels
     initialConcierge.addClass('hide').removeClass('show');
     helpfulConcierge.addClass('hide').removeClass('show');
+
+    // Toggle aria-expanded for the search input
+    targetInput.attr('aria-expanded', 'false');
 
     setTimeout(function () {
       initialConcierge.removeClass('hide');
@@ -312,6 +324,7 @@ $(function () {
       suggestionsHTML += '</div>';
     } else {
       targetInput.parent().find($('.qg-search-concierge-help')).hide();
+      targetInput.attr('aria-expanded', 'false');
     }
     // Update the concierge container
     suggestionsContainer.html(suggestionsHTML);
@@ -369,7 +382,11 @@ $(function () {
     // Look for services in standard results
     if (allResults.length > 0) {
       var filteredResults = allResults.filter(function (result) {
-        return result['metaData']['sfinder'] === 'yes';
+        if (result['listMetadata'] != null && result['listMetadata']['sfinder'] != null) {
+          return result['listMetadata']['sfinder'][0] === 'yes';
+        } else {
+          return false;
+        }
       });
 
       serviceResults = serviceResults.concat(filteredResults);
@@ -475,7 +492,7 @@ $(function () {
   });
 
   // Binds
-  $('body').on('focusin', '.qg-navigation .nav-link, .qg-service-finder__popular-apps a, .qg-coat-of-arms a, .qg-site-header button', qgSiteSearch.fn.handleFocus);
+  $('body').on('focusin', '.qg-navigation .nav-link, .qg-service-finder__popular-apps a, .qg-coat-of-arms a', qgSiteSearch.fn.handleFocus);
   $('body').on('click', qgSiteSearch.fn.handleBodyClick);
   $('body').on('click', '.qg-search-close-concierge', qgSiteSearch.fn.clearInputField);
   $('body').on('click', '.qg-search-concierge-group.suggestions button', qgSiteSearch.fn.searchSuggestionClick);

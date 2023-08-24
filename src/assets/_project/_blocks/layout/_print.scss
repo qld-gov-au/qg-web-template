@@ -88,7 +88,7 @@
 
     td,
     th {
-      background-color: #fff !important;
+      background-color: white !important;
     }
   }
   .table-bordered {
@@ -98,7 +98,7 @@
     }
   }
   body {
-    background: #ffffff;
+    background: white;
     color: #000000;
   }
   .row {
@@ -308,4 +308,8 @@
   form .label {
       border: none;
   }
+}
+
+.no-print {
+  @extend .d-print-none;
 }

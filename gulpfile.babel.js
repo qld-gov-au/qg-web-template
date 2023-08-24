@@ -110,30 +110,30 @@ gulp.task('serve', require('./gulp/build-tasks/serve')(gulp, plugins, connect, c
 /* PUBLISH TASKS */
 // web template release
 gulp.task('wt-clean', require('./gulp/publish-tasks/git').clean(config.webTemplateRepo.folder));
-gulp.task('wt-clone', require('./gulp/publish-tasks/git').clone(config.webTemplateRepo.url, config.webTemplateRepo.folder));
+gulp.task('wt-clone', require('./gulp/publish-tasks/git').clone(config.webTemplateRepo.url, config.webTemplateRepo.folder, false));
+
 // wt-branch task creates a test branch on 'web-template-release'.
-gulp.task('wt-branch', require('./gulp/publish-tasks/git').branch(config.webTemplateRepo.folder));
+gulp.task('wt-branch', require('./gulp/publish-tasks/git').branch(config.webTemplateRepo.folder, argv));
 gulp.task('wt-sync', require('./gulp/publish-tasks/git').sync(config.basepath.release, config.webTemplateRepo.folder, ['package.json']));
 gulp.task('wt-updateVersion', require('./gulp/publish-tasks/git').updateVersion(config.webTemplateRepo.folder, pjson['version']));
 gulp.task('wt-add', require('./gulp/publish-tasks/git').add(config.webTemplateRepo.folder));
 gulp.task('wt-commit', require('./gulp/publish-tasks/git').commit(config.webTemplateRepo.folder, pjson['version']));
 gulp.task('wt-tag', require('./gulp/publish-tasks/git').tag(config.webTemplateRepo.folder, pjson['version']));
-gulp.task('wt-push', require('./gulp/publish-tasks/git').push(config.webTemplateRepo.folder));
+gulp.task('wt-push', require('./gulp/publish-tasks/git').push(config.webTemplateRepo.folder, argv));
 
 // CDN release
 gulp.task('cdn-clean', require('./gulp/publish-tasks/git').clean(config.staticCdnRepo.folder));
-gulp.task('cdn-clone', require('./gulp/publish-tasks/git').clone(config.staticCdnRepo.url, config.staticCdnRepo.folder));
+gulp.task('cdn-clone', require('./gulp/publish-tasks/git').clone(config.staticCdnRepo.url, config.staticCdnRepo.folder, true));
 gulp.task('cdn-transfer', require('./gulp/publish-tasks/git').transfer());
 gulp.task('cdn-add', require('./gulp/publish-tasks/git').add(config.staticCdnRepo.folder));
-gulp.task('cdn-branch', require('./gulp/publish-tasks/git').branch(config.staticCdnRepo.folder));
+gulp.task('cdn-branch', require('./gulp/publish-tasks/git').branch(config.staticCdnRepo.folder, argv));
 gulp.task('cdn-commit', require('./gulp/publish-tasks/git').commit(config.staticCdnRepo.folder, pjson.version));
-gulp.task('cdn-branch', require('./gulp/publish-tasks/git').branch(config.staticCdnRepo.folder));
-gulp.task('cdn-push', require('./gulp/publish-tasks/git').push(config.staticCdnRepo.folder));
+gulp.task('cdn-push', require('./gulp/publish-tasks/git').push(config.staticCdnRepo.folder, argv));
 
 // SWE release
 gulp.task('swe-add', require('./gulp/publish-tasks/git').add());
 gulp.task('swe-commit', require('./gulp/publish-tasks/git').commit('./', pjson['version']));
-gulp.task('swe-push', require('./gulp/publish-tasks/git').push('./'));
+gulp.task('swe-push', require('./gulp/publish-tasks/git').push('./', argv));
 gulp.task('swe-tag', require('./gulp/publish-tasks/git').tag('./', pjson['version']));
 
 /* WATCH TASKS */
