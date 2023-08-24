@@ -53,7 +53,7 @@
     "@storybook/addon-essentials": "v7.0.27",
     "@storybook/addon-interactions": "v7.0.27",
     "@storybook/addon-links": "v7.0.27",
-    "@storybook/addon-mdx-gfm": "^7.0.27",
+    "@storybook/addon-mdx-gfm": "^7.3.2",
     "@storybook/html": "v7.0.27",
     "@storybook/html-webpack5": "^7.0.27",
     "@storybook/testing-library": "^0.2.0",
