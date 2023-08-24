@@ -13,7 +13,8 @@ const config = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
-    "storybook-addon-pseudo-states"
+    "storybook-addon-pseudo-states",
+    "@storybook/addon-mdx-gfm"
   ],
   staticDirs: ['../build', 'storybook-static'],
   previewMainTemplate: "./.storybook/previewMainTemplate.ejs", //see https://storybook.js.org/docs/react/addons/writing-presets for example link
