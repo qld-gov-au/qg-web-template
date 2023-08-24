@@ -48,6 +48,7 @@
 @import "components/site-search/qg-site-search";
 @import "components/accordion/qg-accordion";
 @import "components/forms/qg-forms";
+@import "components/forms/qg-forms-radio-check";
 @import "components/misc/qg-pagination";
 @import "components/tables/tables";
 @import "components/video/video";
@@ -68,6 +69,8 @@
 @import "components/misc/qg-fancybox";
 @import "components/spinners/qg-spinners";
 
+@import "franchise/DFV/qg-dfv";
+
 // QG layout components
 @import "layout/layout-scaffolding"; // Primary layout structure
 
@@ -77,6 +80,7 @@
 @import "layout/print";
 @import "layout/footer/site-footer";
 @import "layout/footer/legals";
+@import "layout/footer/footer-cultural-notice";
 @import "layout/footer/service-centre";
 @import "layout/footer/footer-feedback";
 @import "layout/header/header-location";

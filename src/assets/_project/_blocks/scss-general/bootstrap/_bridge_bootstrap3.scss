@@ -432,17 +432,6 @@ pre {
 }
 
 //buttons
-.btn-secondary {
-  color: #fff;
-  background-color: #007EB1;
-  border-color: #007EB1;
-  &:link, &:hover, &:active {
-    color: #fff;
-    background-color: #0090cb;
-    border-color: #0090cb;
-  }
-}
-
 .btn-default:active:hover, .btn-default:active:focus, .btn-default:active.focus, .btn-default.active:hover, .btn-default.active:focus, .btn-default.active.focus, .open > .btn-default.dropdown-toggle:hover, .open > .btn-default.dropdown-toggle:focus, .open > .btn-default.dropdown-toggle.focus {
   color: #fff;
   background-color: #828a8f;
@@ -487,3 +476,4 @@ label {
   margin-bottom: 5px;
   font-weight: 700;
 }
+

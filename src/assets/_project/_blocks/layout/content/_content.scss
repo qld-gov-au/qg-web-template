@@ -1,4 +1,5 @@
-#qg-primary-content, #qg-content .container-fluid.qg-site-width {
+#qg-primary-content, 
+#qg-content .container-fluid.qg-site-width {
   h1:first-child {
     margin-top: 0;
     margin-bottom: 1em;
@@ -25,9 +26,22 @@
     margin-left: 1em;
     font-size: 1rem;
   }
-  ul li {
-    margin-bottom: 0.5em;
+  ul:not(#tabbed-nav ul):not(.qg-quick-exit__list):not(.select2-selection__rendered):not(.qg-share-list) {
+    margin-bottom: 0.75rem;
   }
+  ul, ol {
+    // don't add margins to contexts that manage their own spacing
+    li:not(.select2 li, .graph li, #tabbed-nav li):not(.qg-quick-exit__item):not(.qg-share-list-item):not(.dfv-topics__item) {
+      margin-bottom: 0.5em;
+    }
+  }
+  
+  //Reduce the bottom margin of paragraphs if is adjacent (followed direclty by) an UL or OL
+  p:has( + ul),
+  p:has( + ol) {
+    margin-bottom: 0.5rem;
+  }
+
 }
 
 .qg-visuallyhidden, .visuallyhidden {

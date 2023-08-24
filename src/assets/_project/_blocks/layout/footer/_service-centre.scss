@@ -14,6 +14,7 @@
             transition: all .3s ease;
             white-space: nowrap;
             top: 9px;
+            @include qg-underline-on-highlight-decoration;
         }
 
         &[aria-expanded=true] {
@@ -28,24 +29,18 @@
                 border-radius: 0 0 4px 4px;
             }
         }
-
-        &:hover,&:focus {
-            .qg-service-centre-set-location__text {
-                text-decoration-line: underline;
-            }
-        }
     }
 
     &__link{
         @include rem(font-size, 18px);
         display: block;
-        color: #fff;
+        color: white;
         margin: 20px 0;
         text-decoration-line: underline;
         transition: opacity .1s linear;
 
-        &:hover, &:focus {
-            color: #fff;
+        @include on-hover-or-active {
+            color: white;
             opacity: 0.7;
         }
     }
@@ -69,12 +64,12 @@
                 position: absolute;
             }
 
-            &:nth-child(1):before {
-                content: "\f05a";
+            &.service-info:before {
+                content: "\f05a"; // inforamation icon
             }
 
-            &:nth-child(2):before {
-                content: "\f14e";
+            &.centre-distance:before {
+                content: "\f14e"; // compass icon
             }
         }
     }

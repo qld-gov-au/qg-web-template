@@ -23,23 +23,22 @@
     contentDefaultHeight: '90%',
     reuseFragment: true,
   });
-  // this function equals the height of the cards in a group, if it finds a class '.cards__equal-height'.
+  // this function equals the height of the cards in a group, if it finds a class '.qg-cards__equal-height'.
   function setHeight() {
-    if ($('.cards__equal-height').length > 0) {
-      $('.qg-cards.cards__equal-height').each(function () {
-        // Cache the highest
-        var highestBox = 0;
-        // Select and loop the elements you want to equalise
-        $(this)
-          .find('.details')
-          .each(function () {
-            // If this box is higher than the cached highest then store it
-            if ($(this).height() > highestBox) {
-              highestBox = $(this).height();
-            }
-          });
-        // Set the height of all those children to whichever was highest
-        $(this).find('.details').height(highestBox);
+    const equalHeightCards = document.querySelectorAll('.qg-cards__equal-height');
+
+    if (equalHeightCards.length > 0) {
+      equalHeightCards.forEach((cardBlock) => {
+        let maxHeight = 0;
+        const cards = cardBlock.querySelectorAll('.qg-card .details');
+
+        cards.forEach((card) => {
+          maxHeight = Math.max(maxHeight, card.offsetHeight);
+        });
+
+        cards.forEach((card) => {
+          card.style.height = `${maxHeight}px`;
+        });
       });
     }
   }
@@ -55,7 +54,7 @@
   // check if a view is loaded in an iframe , this is to detect Squiz Matrix preview mode
   // and insert a class so that additional styles can be applied
   let frameAttr = window.frameElement && window.frameElement.getAttribute('Name');
-  if (frameAttr && frameAttr === 'ees_modePreviewFrame'){
+  if (frameAttr && frameAttr === 'ees_modePreviewFrame') {
     $('.container-fluid').addClass('qg-edit-plus-styles');
   }
 
@@ -71,14 +70,13 @@
     },
   ];
   // setTimeout is just a temporary solution for display the warning message in SPA as elements are created on the fly
-  setTimeout(
-    () => {
-      deprecationWarnings.forEach(({selector, label}) => {
-        if ($(selector).length) {
-          console.warn(`Please change the font awesome element in ${label} from i to span, we'll be removing the css in this element before 22nd june 2022. Please refer to the https://github.com/qld-gov-au/qg-web-template/pull/391 for more details.`);
-        }
-      });
-    },
-    5000,
-  );
+  setTimeout(() => {
+    deprecationWarnings.forEach(({ selector, label }) => {
+      if ($(selector).length) {
+        console.warn(
+          `Please change the font awesome element in ${label} from i to span, we'll be removing the css in this element before 22nd june 2022. Please refer to the https://github.com/qld-gov-au/qg-web-template/pull/391 for more details.`,
+        );
+      }
+    });
+  }, 5000);
 })(jQuery, qg.swe);

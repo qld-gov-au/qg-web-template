@@ -1,23 +1,36 @@
+
 .qg-footer-feedback__v2 {
-  .alert.alert-warning{
+
+  form#qg-page-feedback-form a {
+    color: $qg-blue-dark !important;
+    text-decoration-color: #457aa3 !important; 
+  }
+  
+  .alert.alert-warning {
     @extend .pt-4;
     @extend .mb-3;
     @extend .mt-0;
   }
+
   .questions .qg-forms-v2__radio {
     padding-bottom: 0;
+
     li {
       margin: 0;
-      &:last-child{
-        margin-bottom:0;
+      padding: 0;
+
+      &:last-child {
+        margin-bottom: 0;
       }
     }
+
     label {
       display: initial;
     }
   }
+
   &-content {
-    background-color: #fff;
+    background-color: white;
     border-radius: 4px;
     color: $qg-global-primary-darker-grey;
     padding: 0 15px 0 15px;
@@ -30,19 +43,25 @@
   .status {
     margin: 0 0 24px !important;
     padding: 15px 13px;
+
     .fa {
       @include rem(font-size, 18px);
       margin-right: 10px;
     }
+
     h4 {
-      font-size:initial;
+      font-size: initial;
     }
+
     p {
       @include rem(font-size, 14px);
       margin-bottom: 0;
+
       a {
         text-decoration-line: underline;
-        &:hover, &:focus {
+
+        &:hover,
+        &:focus {
           opacity: 0.7;
         }
       }
@@ -50,17 +69,21 @@
   }
 
   .questions {
+    
     li {
       padding: 0;
     }
+
     legend {
       @include rem(line-height, 20px);
     }
+
     .label {
       display: inline;
     }
 
-    abbr.required,abbr[title*='required'] {
+    abbr.required,
+    abbr[title*='required'] {
       @include rem(font-size, 16px);
       color: $qg-global-error;
       display: inline;
@@ -69,8 +92,8 @@
     }
 
     .actions li {
-      margin-right: 0;
-      margin-bottom: 20px;
+      margin: 0 0 20px 0;
+      padding: 5px;
       width: 100%;
 
       .btn {
@@ -89,8 +112,10 @@
 
       a {
         text-decoration-line: underline;
-        color: #13578b;
-        &:hover, &:focus {
+        @include qg-link-unvisited-color;
+
+        &:hover,
+        &:focus {
           opacity: 0.7;
         }
       }
@@ -107,7 +132,12 @@
     color: initial;
     padding: 15px 0 0;
 
-    h1,h2,h3,h4,h5,h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       @include rem(font-size, 16px);
       color: $qg-global-primary-dark-grey;
       font-weight: 600;
@@ -125,7 +155,8 @@
       a {
         text-decoration-line: underline;
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
           opacity: 0.7;
         }
       }
@@ -158,7 +189,7 @@
   }
 
   .qg-feedback-toggle {
-    background-color: #fff;
+    background-color: white;
     border-radius: 4px 4px 0 0;
     padding: 8px 12px 0 12px;
 
@@ -175,15 +206,16 @@
 }
 
 .qg-site-footer {
+  
   .qg-feedback-toggle {
     height: 44px;
     position: relative;
     transition: all .3s ease;
     z-index: 1;
-    @include qg-link-hover-decoration;
+    @include qg-underline-on-highlight-decoration;
 
     &__text {
-      @include qg-link-hover-decoration;
+      @include qg-underline-on-highlight-decoration;
       left: 50%;
       transform: translateX(-50%);
       position: absolute;
@@ -192,14 +224,12 @@
       top: 7px;
     }
 
-    &:hover,&:focus{
-      .qg-feedback-toggle__text {
-        text-decoration-line: underline;
-      }
+    .qg-feedback-toggle__text {
+      @include qg-underline-on-highlight-decoration;
     }
 
     &[aria-expanded=true] {
-      background-color: #fff;
+      background-color: white;
       border-radius: 4px 4px 0 0;
       padding: 8px 12px 0 12px;
 
@@ -209,13 +239,13 @@
         transform: none;
       }
 
-      + .qg-footer-feedback .qg-footer-feedback-content{
+      +.qg-footer-feedback .qg-footer-feedback-content {
         border-radius: 0 0 4px 4px;
       }
     }
 
     &.d-none {
-      + .qg-footer-feedback .qg-footer-feedback-content{
+      +.qg-footer-feedback .qg-footer-feedback-content {
         border-radius: 4px;
       }
     }
@@ -223,9 +253,10 @@
 
   .qg-footer-feedback__v2 {
     transform: translateY(-6px);
-    background: #fff;
+    background: white;
     border-radius: 4px;
-    .qg-footer-feedback__close{
+
+    .qg-footer-feedback__close {
       padding: 0 0 15px 0;
       display: inline-block;
       margin: 0;
@@ -239,10 +270,15 @@
 
 .qg-footer-feedback {
   &-content {
-    background-color: #fff;
+    background-color: white;
     border-radius: 4px;
     color: $qg-global-primary-darker-grey;
     padding: 0 15px 25px 15px;
+  }
+
+  form#qg-page-feedback-form a {
+    color: $qg-blue-dark !important;
+    text-decoration-color: #457aa3 !important; 
   }
 
   &-wrap {
@@ -269,7 +305,8 @@
       a {
         text-decoration-line: underline;
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
           opacity: 0.7;
         }
       }
@@ -290,7 +327,8 @@
       display: inline;
     }
 
-    abbr.required,abbr[title*='required'] {
+    abbr.required,
+    abbr[title*='required'] {
       @include rem(font-size, 16px);
       color: $qg-global-error;
       display: inline;
@@ -327,7 +365,8 @@
       a {
         text-decoration-line: underline;
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
           opacity: 0.7;
         }
       }
@@ -351,7 +390,8 @@
         padding-left: 29px;
         position: relative;
 
-        &:after,&:before {
+        &:after,
+        &:before {
           border-radius: 50%;
           content: '';
           position: absolute;
@@ -367,6 +407,7 @@
           transition: all .3s ease;
           width: 12px;
         }
+
         &:before {
           border: 1px solid $qg-global-primary-darker-grey;
           height: 18px;
@@ -376,7 +417,7 @@
         }
       }
 
-      input[type=radio]:checked + label {
+      input[type=radio]:checked+label {
         font-weight: bold;
         color: $qg-global-primary-darker-grey;
 
@@ -397,7 +438,12 @@
   .thankyou {
     padding-top: 15px;
 
-    h1,h2,h3,h4,h5,h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       @include rem(font-size, 16px);
       color: $qg-global-primary-dark-grey;
       font-weight: 600;
@@ -415,7 +461,8 @@
       a {
         text-decoration-line: underline;
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
           opacity: 0.7;
         }
       }
@@ -432,4 +479,5 @@
     margin-top: 10px;
     text-decoration-line: underline;
   }
+
 }

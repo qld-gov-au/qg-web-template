@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- based on https://github.com/storybookjs/storybook/blob/next/code/builders/builder-webpack5/templates/preview.ejs -->
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -9,6 +10,7 @@
     <% } %>
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- custom qld online code start -->
     <link href="//fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css" />
     <link href="./assets/v4/latest/css/qg-main.css" rel="stylesheet" type="text/css" media="all">
     <noscript>
@@ -16,15 +18,15 @@
     </noscript>
         <link href="./assets/v4/latest/css/qg-main.css" rel="stylesheet" type="text/css" media="all">
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-
+<!-- custom qld online code end -->
     <% if (typeof headHtmlSnippet !== 'undefined') { %> <%= headHtmlSnippet %> <% } %> <%
     htmlWebpackPlugin.files.css.forEach(file => { %>
     <link href="<%= file %>" rel="stylesheet" />
     <% }); %>
 
     <style>
-      #root[hidden],
-      #docs-root[hidden] {
+      #storybook-root[hidden],
+      #storybook-docs[hidden] {
         display: none !important;
       }
       pre {
@@ -41,8 +43,9 @@
   <body>
     <% if (typeof bodyHtmlSnippet !== 'undefined') { %> <%= bodyHtmlSnippet %> <% } %>
 
-    <div id="root"></div>
-    <div id="docs-root"></div>
+<div id="storybook-root"></div>
+<div id="storybook-docs"></div>
+
     <% if (typeof globals !== 'undefined' && Object.keys(globals).length) { %>
     <script>
       <% for (var varName in globals) { %>
@@ -51,11 +54,15 @@
           <% } %>
       <% } %>
     </script>
-    <% } %> <% htmlWebpackPlugin.files.js.forEach(file => { %>
-    <script src="<%= file %>"></script>
-    <% }); %>
-    <script src="./assets/v4/latest/lib/all-ext-min.js"></script>
-    <script>
+    <% } %>
+    <script type="module">
+      import './sb-preview/runtime.js';
+
+      <% htmlWebpackPlugin.files.js.forEach(file => { %>
+        import './<%= file %>';
+      <% }); %>
+      //### custom qld online code start -->
+      import './assets/v4/latest/lib/all-ext-min.js';
       function addScript(src) {
         if (document.querySelectorAll(`script[src$="${src.substring(src.lastIndexOf('/') + 1)}"]`).length === 0) {
           const script = document.createElement('script');
@@ -84,6 +91,7 @@
         childList: true,
         subtree: true
       });
+      //### custom qld online code end
     </script>
   </body>
 </html>

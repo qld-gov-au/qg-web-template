@@ -1,166 +1,191 @@
-.qg-featured{
-  &.qg-aside{
+.qg-featured {
+  &.qg-aside {
     .carousel {
       margin-bottom: 0;
     }
   }
-  .carousel{
+  .carousel {
     @include rem(margin-top, 16px);
     position: relative;
-    .carousel-inner{
+
+    .carousel-inner {
+      
       .carousel-item {
-        a {
-          text-decoration-line: none !important;
-          display: block;
-        }
+
+        position: relative;
         opacity: 0;
         transition: opacity 0.2s ease-in-out;
+
+        a {
+          display: block;
+        }
+
         img {
           width: 100%;
           height: auto;
           margin-bottom: 1.6rem;
         }
         h3 {
-          margin-top: 0;
+          margin: 0 0 0.5rem 0!important;
+          text-align: left;
+          font-size: 1.125rem;
+          @include qg-link-styles__default;
         }
       }
+
       .active {
         opacity: 1;
       }
+
       .active.left,
       .active.right {
         left: 0;
         opacity: 0;
         z-index: 1;
       }
+
       .next.left,
       .prev.right {
         opacity: 1;
       }
+
       .carousel-control {
         z-index: 2;
       }
     }
-    .carousel-caption{
+    .carousel-caption {
+      
       position: static;
       padding: 0;
-      margin-bottom:0;
+      margin-bottom: 0;
       background: none;
-      h3 {
-        text-align: left;
-        @include rem(font-size, 15px);
-        font-weight: 700;
-        color: #000 !important;
-      }
+      
       p {
         text-align: left;
         color: #000;
-        &.more{
+        &.more {
           text-align: right;
         }
       }
     }
-    .carousel-indicators{
-      position: inherit;
-      margin-left: 0;
-      float: left;
-      justify-content: flex-start;
-      text-align: left;
-      margin-bottom: 0;
-      margin-right: 0;
-      width: 70%;
+
+    .carousel-nav {
+      display: flex;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .carousel-indicators {
+      flex-basis: calc(100% - 10rem);
+
+      display: flex;
       flex-wrap: wrap;
-      height: 38px;
+      align-items: center;
+      justify-content: flex-start;
+
+      position: relative;
+      margin: 0;
+      padding: 0;
+
       li {
         border: 1px solid #000;
         border-radius: 50%;
-        margin-right: 10px;
-        width: 10px;
-        height: 10px;
-        &.active{
-          background-color: #000;
+        margin: 0.5rem;
+        width: 0.75rem;
+        height: 0.75rem;
+
+        &.active {
+          background-color: $black;
         }
       }
     }
+
     .controls-grp {
-      position: relative;
-      margin-bottom: 0;
-      padding-left: 0 !important;
-      float: right;
-      width: 30%;
-      top: -7px;
-      text-align: right;
+      flex-basis: 10rem;
+
+      margin: 0;
+      margin-bottom: 0 !important;
+      padding: 0;
+
+      display: flex;
+      justify-content: flex-end;
+      flex-wrap: nowrap;
+      list-style: none;
+
       li {
+        margin-bottom: 0 !important;
+        width: 2.5rem;
+        height: 2rem;
         display: inline-block;
-        margin-right: 18px;
-        line-height: 1;
-        &:last-child{
-          margin-right: 0;
-        }
-        a {
+
+        & > a {
           text-decoration-line: none !important;
-        }
-        a:active, a:focus {
-          color: #c00;
-          i {
-            color: #c00;
-          }
-        }
-        .fa {
-          color: #000;
-          &.fa-sync {
-            &:before{
-              content: "\f021";
+          display: block;
+
+          //All nav icons
+          .fa-sync,
+          .icon-prev,
+          .icon-next,
+          .fa-pause {
+            color: $black;
+            width: 2.5rem;
+            height: 2rem;
+            display: block;
+            position: relative;
+
+            &:before {
               font-family: FontAwesome;
+              font-size: 1.75rem;
+              line-height: 1.75rem;
+              width: 2.5rem;
+              position: absolute;
+              top: 0;
+              left: 0.75rem;
             }
           }
-        }
-        .toggleCarousel{
-          position: relative;
-          top: -4px;
-        }
-        .carousel-control{
-          position: initial;
-          left: inherit;
-          top: 0;
-          width: inherit;
-          right: 0;
-          background-image: none;
-          color: #000;
-          text-shadow: none;
-          .icon-prev,.icon-next{
-            position: inherit;
-          }
-          &.right{
-            top: -8px;
-            .icon-next:before{
-              content: "\f0da";
-              position: inherit;
-              font-family: FontAwesome;
-              font-size: 27px;
+
+          &:hover,
+          &:active,
+          &:focus {
+            span {
+              color: $qg-blue-hover;
             }
           }
-          &.left{
-            top: -8px;
-            right: 74px;
-            .icon-prev:before{
-              content: "\f0d9";
-              font-family: FontAwesome;
-              position: inherit;
-              font-size: 27px;
-            }
+
+          //Pause/sync icon only
+          .fa-pause:before,
+          .fa-sync:before {
+            font-size: 1.25rem;
+            left: 0.65rem;
+          }
+
+          // Individual icons
+          .fa-sync:before {
+            content: "\f021";
+          }
+          .icon-prev:before {
+            content: "\f0d9";
+          }
+          .icon-next:before {
+            content: "\f0da";
           }
         }
       }
+
       .button-title {
         display: none;
         visibility: hidden;
       }
     }
   }
+
+  .carousel[data-count="0"] .carousel-nav,
+  .carousel[data-count="1"] .carousel-nav,
+  .carousel.hide-navigation .carousel-nav {
+    display: none;
+  }
 }
 
-
-#qg-content  #qg-primary-content .carousel-cell .carousel-cell__header a {
-  text-decoration-color:currentColor;
+#qg-content #qg-primary-content .carousel-cell .carousel-cell__header a {
+  text-decoration-color: currentColor;
 }

@@ -19,6 +19,9 @@ import './layout/content/content';
 import './layout/content/content-types/figure-credits-toggle';
 import feedbackForm from './layout/footer/feedback-form';
 
+//Funnelback refs
+import './components/site-search/qg-funnelback-v16-refs';
+
 (function () {
   'use strict';
   let franchiseTitle = window.qg.swe.franchiseTitle;
@@ -26,3 +29,8 @@ import feedbackForm from './layout/footer/feedback-form';
   stepNav.init();
   feedbackForm.init(franchiseTitle);
 })();
+$(function () {
+  if ($('#qg-quick-exit__input').length > 0) {
+    $('body').addClass('qg-private-content');
+  }
+});

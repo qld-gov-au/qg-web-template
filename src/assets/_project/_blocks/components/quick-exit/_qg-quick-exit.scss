@@ -6,7 +6,7 @@
   background: -webkit-gradient(left top, right top, color-stop(0, #7954a3), color-stop(100%, #0b2e4c));
   background: linear-gradient(90deg, #7954a3 0, #0b2e4c);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="$qg-purple", endColorstr="$qg-dark-blue", GradientType=1);
-  color: #fff;
+  color: white;
   height: 72px;
   left: 0;
   bottom: 0;
@@ -14,79 +14,86 @@
   position: fixed;
   width: 100%;
   z-index: 100;
-    .qg-quick-exit__inner {
-        display: -ms-flexbox;
-        display: flex;
-        align-items: center;
-        .qg-quick-exit__tips {
-          display: none
-        }
-        .qg-quick-exit__input:focus + .qg-quick-exit__label {
-          outline: thin dotted;
-          outline: 5px auto -webkit-focus-ring-color
-        }
-        .qg-quick-exit__input:checked + .qg-tooltip__parent .qg-tooltip__wrapper {
-          display: block
-        }
-        .qg-quick-exit__input:checked + .qg-quick-exit__label {
-          color: #fff;
-          font-weight: 500
-        }
-        .qg-tooltip__parent {
-          position: relative
-        }
-        .qg-tooltip__wrapper {
-          background-color: #ffd200;
-          bottom: 50px;
-          box-shadow: 0 0 8px 0 #8a8f91;
-          color: #000;
-          display: none;
-          font-weight: 500;
-          padding: 25px;
-          position: absolute
-        }
-        .qg-tooltip__wrapper:after {
-          border-bottom: 14px solid #ffd200;
-          border-left: 14px solid #ffd200;
-          border-right: 14px solid transparent;
-          border-top: 14px solid transparent;
-          bottom: -14px;
-          content: " ";
-          position: absolute;
-          left: 25px;
-          transform: rotate(-45deg)
-        }
-        .qg-quick-exit__label {
-          font-weight: 500;
-          text-decoration-line: underline
-        }
-        .qg-quick-exit__list {
-          margin: 0;
-          padding: 0;
-          list-style: none;
-          -ms-flex-align: center;
-          align-items: center;
-          display: -ms-flexbox;
-          display: flex;
-          height: 100%;
-          -ms-flex-pack: distribute;
-          justify-content: space-around
-        }
-        .qg-quick-exit__actions {
-          -ms-flex-positive: 1;
-          flex-grow: 1
-        }
-        .qg-quick-exit__button {
-          border-radius: 4px;
-          display: inline-block;
-          text-decoration-line: none;
-          border-color: #ffd200;
-          background-color: #ffd200;
-          color: #0c2e4c;
-          font-weight: 700;
-          padding: 8px 34px
-        }
+  .qg-quick-exit__inner {
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    .qg-quick-exit__tips {
+      display: none;
     }
+    .qg-quick-exit__input:focus + .qg-quick-exit__label {
+      outline: thin dotted;
+      outline: 5px auto -webkit-focus-ring-color
+    }
+    .qg-quick-exit__input:checked + .qg-tooltip__parent .qg-tooltip__wrapper {
+      display: block
+    }
+    .qg-quick-exit__input:checked + .qg-quick-exit__label {
+      color: white;
+      font-weight: 500
+    }
+    .qg-tooltip__parent {
+      position: relative
+    }
+    .qg-tooltip__wrapper {
+      background-color: #ffd200;
+      bottom: 50px;
+      box-shadow: 0 0 8px 0 #8a8f91;
+      color: #000;
+      display: none;
+      font-weight: 500;
+      padding: 25px;
+      position: absolute
+    }
+    .qg-tooltip__wrapper:after {
+      border-bottom: 14px solid #ffd200;
+      border-left: 14px solid #ffd200;
+      border-right: 14px solid transparent;
+      border-top: 14px solid transparent;
+      bottom: -14px;
+      content: " ";
+      position: absolute;
+      left: 25px;
+      transform: rotate(-45deg)
+    }
+    .qg-quick-exit__item.qg-tooltip-container {
+      @include on-active {
+        @include qg-button-outline-decoration($margin: 0);
+      }
+    }
+    .qg-quick-exit__label {
+      font-weight: 500;
+      @include qg-link-decoration;
+      @include qg-underline-on-highlight-decoration;
+    }
+    .qg-quick-exit__list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      -ms-flex-align: center;
+      align-items: center;
+      display: -ms-flexbox;
+      display: flex;
+      height: 100%;
+      -ms-flex-pack: distribute;
+      justify-content: space-around
+    }
+    .qg-quick-exit__actions {
+      -ms-flex-positive: 1;
+      flex-grow: 1
+    }
+    .qg-quick-exit__button {
+      border-radius: 4px;
+      display: inline-block;
+      text-decoration-line: none;
+      border-color: #ffd200;
+      background-color: #ffd200;
+      color: #0c2e4c;
+      font-weight: 700;
+      padding: 8px 34px
+    }
+  }
 }
 
 
@@ -108,24 +115,28 @@
         justify-content: space-between;
           .qg-quick-exit__tips {
             display: block;
-            padding-left: 16px
+            padding-left: 40px
           }
           .qg-quick-exit__tip-link {
+            @include qg-underline-on-highlight-decoration;
+            @include qg-button-outline-decoration;
+            @include qg-link-styles__theme-white;
             -ms-flex-align: center;
             align-items: center;
-            color: #fff;
+            color: white;
             display: -ms-flexbox;
             display: flex;
-            &:active, &:focus, &:hover {
-              color: #fff;
-              text-decoration-line: none
-            }
+
             .fa {
               font-size: 22px;
-              margin-right: 8px
+              margin-right: 8px;
+              position: absolute; // This is to prevent fa-question-circle to have underline when hovered
+              margin-left: -27px;
+              margin-bottom: -5px;
             }
             .qg-quick-exit__tip-title {
-              text-decoration-line: underline
+              @include qg-link-decoration;
+              @include qg-underline-on-highlight-decoration;
             }
           }
           .qg-quick-exit__actions {
@@ -134,7 +145,7 @@
             flex-grow: 0
           }
           .qg-quick-exit__item {
-            margin-left: 25px
+            margin-left: 25px;
           }
           .qg-tooltip__wrapper {
             bottom: auto;

@@ -3,6 +3,11 @@
   padding-top: 20px;
   overflow: hidden;
 
+  a {
+    @include qg-global-link-styles($outline-color: $qg-active-outline-brighter);
+    display: inline-block;
+  }
+
   img {
     height: 50px;
     width: 289px;

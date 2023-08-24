@@ -1,18 +1,20 @@
-@mixin qg-card {
-  color: #ffffff;
+@mixin qg-card($margin: 0) {
+  color: white;
   display: flex;
+
+  > a {
+    margin: $margin !important;
+  }
 
   &.qg-card__clickable {
     .content {
+      @include all-states {
+        @include qg-button-outline-decoration($border-radius: $btn-border-radius-base);
+      }
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-
       &:hover {
         box-shadow: none;
       }
-    }
-
-    .content:focus-within {
-      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
     }
   }
 
@@ -22,8 +24,7 @@
   }
 
   .qg-card__footer {
-    padding: 1em;
-    border-top: 1px solid hsla(0, 0%, 50%, 0.7);
+    padding: 0 1em 1em;
     //this condition is to support legacy Aggregation page HTML
     .btn {
       width: 100%;
@@ -31,14 +32,16 @@
     .btn-link {
       padding-left: 0;
       text-align: left;
-      @include qg-link-styles__theme-white;
+      &:not(.qg-card__light-theme .btn-link) {
+        @include qg-link-styles__theme-white;
+      }
     }
   }
 
   // card with light theme styles
   &.qg-card__light-theme {
     .content {
-      background: none;
+      background: white;
 
       .details {
         color: #000;
@@ -53,7 +56,6 @@
       }
 
       .qg-card__footer {
-        border-top: 1px solid rgba(211, 211, 211, 1);
         .btn-link {
           @include qg-link-styles__default;
         }
@@ -63,12 +65,14 @@
 
   &:not(.qg-card__light-theme) {
     h2 {
-      color: #fff;
+      color: white;
     }
     .content {
       .details {
         a:not(.btn):not(.qg-btn) {
-          @include qg-link-styles__theme-white;
+          @include all-states {
+            @include qg-link-styles__theme-white;
+          }
 
           &.stretched-link {
             @include qg-link-styles__theme-white;
@@ -130,7 +134,6 @@
           position: relative;
           padding-left: 1.6rem;
           list-style: none;
-          margin-bottom: 0.5em;
 
           &:before {
             font-family: FontAwesome;

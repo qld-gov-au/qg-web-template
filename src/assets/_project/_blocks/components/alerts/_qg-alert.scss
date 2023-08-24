@@ -1,4 +1,9 @@
 // content alert and global alert styles
+.qg-site-wide-alert.qg-site-wide-alert__grey {
+  a {
+    @include qg-link-styles__theme-white;
+  }
+}
 .alert {
   position: relative;
   color: #000;
@@ -15,7 +20,16 @@
     margin-top: 5px;
     font-size: 1.2em;
   }
-  & + p{
+  a:not(.btn, .qg-btn) {
+    @include qg-global-link-styles {
+      @include qg-link-decoration;
+    }
+    &:hover {
+      text-decoration-thickness: 2px !important;
+      color: $qg-blue-dark;
+    }
+  }
+  & + p {
     margin-top: 1em;
   }
   &.alert-danger {
