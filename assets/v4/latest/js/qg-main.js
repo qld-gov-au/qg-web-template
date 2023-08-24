@@ -284,53 +284,60 @@ var QgAccordion = /*#__PURE__*/function () {
 /*!************************************************************************!*\
   !*** ./src/assets/_project/_blocks/components/carousel/qg-carousel.js ***!
   \************************************************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 /*aside carousel play and pause feature*/
 
 
+var _toConsumableArray = __webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ "./node_modules/@babel/runtime/helpers/toConsumableArray.js");
 (function ($) {
   var carousels = [];
   var eqHeight = function eqHeight(carousels) {
-    carousels.forEach(function (e) {
-      var items = $('#' + e + '').find('.carousel-item');
-      var heights = [];
-      var tallest;
-      if (items.length) {
-        var normalizeHeights = function normalizeHeights() {
-          items.each(function () {
-            heights.push($(this).height());
-          });
-          tallest = Math.max.apply(null, heights);
-          items.each(function () {
-            $(this).css('min-height', tallest + 'px');
-          });
-        };
-        normalizeHeights();
-        $(window).on('resize orientationchange', function () {
-          tallest = 0;
-          heights.length = 0;
-          items.each(function () {
-            $(this).css('min-height', '0');
-          });
-          normalizeHeights();
-        });
-      }
+    //For each carousel on the page...
+    carousels.forEach(function (carousel) {
+      //Get the height of each carousel slide in the carousel...
+      var slides = $('#' + carousel).find('.carousel-item');
+
+      //Each slides height into an array...
+      var slideHeights = slides.map(function (e, slide) {
+        return $(slide).height();
+      });
+
+      //Assign the tallest value to every slide
+      slideHeights.map(function (e, slide) {
+        $(slide).css('min-height', Math.max.apply(Math, _toConsumableArray(slideHeights)) + 'px');
+      });
     });
   };
-  $('.qg-featured .carousel.slide').each(function (i, e) {
-    var carousel = $(e).attr('id');
-    carousels.push(carousel);
+  $('.qg-featured .carousel.slide').each(function (int, element) {
+    var carouselID = $(element).attr('id');
+    carousels.push(carouselID);
+
+    //Start all slides to cycle by default
     $(this).attr('data-state', 'cycle');
-    $('#' + carousel + '').find('.toggleCarousel').click(function (e) {
+
+    //Bind click/tap event
+    $('#' + carouselID).find('.toggleCarousel').on('click', function (e) {
       e.preventDefault();
-      var $parentCarousel = $(this).parents('div.carousel.slide');
-      $parentCarousel.attr('data-state') === 'cycle' ? $parentCarousel.attr('data-state', 'pause') : $parentCarousel.attr('data-state', 'cycle');
-      $parentCarousel.carousel($parentCarousel.attr('data-state'));
-      $(this).find('i').toggleClass('fa-sync fa-pause');
+      var parentCarousel = $(this).parents('div.carousel.slide');
+      var currentState = parentCarousel.attr('data-state');
+      switch (currentState) {
+        //If paused, switch to cycling state
+        case 'pause':
+          parentCarousel.attr('data-state', 'cycle').carousel('cycle');
+          $(this).find('i, span').not('.button-title').removeClass('fa-sync fa-pause').addClass('fa-pause');
+          break;
+        case 'cycle':
+          //If cycling, switch to a paused state
+          parentCarousel.attr('data-state', 'pause').carousel('pause');
+          $(this).find('i, span').not('.button-title').removeClass('fa-sync fa-pause').addClass('fa-sync');
+          break;
+      }
     });
   });
+
+  //Equal height each carousel slide
   window.onload = function () {
     eqHeight(carousels);
   };
@@ -6262,6 +6269,78 @@ module.exports = (function(doc, win) {
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime/helpers/arrayLikeToArray.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/arrayLikeToArray.js ***!
+  \*****************************************************************/
+/***/ ((module) => {
+
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+  for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
+  return arr2;
+}
+module.exports = _arrayLikeToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js ***!
+  \******************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var arrayLikeToArray = __webpack_require__(/*! ./arrayLikeToArray.js */ "./node_modules/@babel/runtime/helpers/arrayLikeToArray.js");
+function _arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) return arrayLikeToArray(arr);
+}
+module.exports = _arrayWithoutHoles, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/iterableToArray.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/iterableToArray.js ***!
+  \****************************************************************/
+/***/ ((module) => {
+
+function _iterableToArray(iter) {
+  if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
+}
+module.exports = _iterableToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/nonIterableSpread.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/nonIterableSpread.js ***!
+  \******************************************************************/
+/***/ ((module) => {
+
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+module.exports = _nonIterableSpread, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/toConsumableArray.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/toConsumableArray.js ***!
+  \******************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var arrayWithoutHoles = __webpack_require__(/*! ./arrayWithoutHoles.js */ "./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js");
+var iterableToArray = __webpack_require__(/*! ./iterableToArray.js */ "./node_modules/@babel/runtime/helpers/iterableToArray.js");
+var unsupportedIterableToArray = __webpack_require__(/*! ./unsupportedIterableToArray.js */ "./node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js");
+var nonIterableSpread = __webpack_require__(/*! ./nonIterableSpread.js */ "./node_modules/@babel/runtime/helpers/nonIterableSpread.js");
+function _toConsumableArray(arr) {
+  return arrayWithoutHoles(arr) || iterableToArray(arr) || unsupportedIterableToArray(arr) || nonIterableSpread();
+}
+module.exports = _toConsumableArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/typeof.js":
 /*!*******************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/typeof.js ***!
@@ -6278,6 +6357,25 @@ function _typeof(obj) {
   }, module.exports.__esModule = true, module.exports["default"] = module.exports), _typeof(obj);
 }
 module.exports = _typeof, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js ***!
+  \***************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var arrayLikeToArray = __webpack_require__(/*! ./arrayLikeToArray.js */ "./node_modules/@babel/runtime/helpers/arrayLikeToArray.js");
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return arrayLikeToArray(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return arrayLikeToArray(o, minLen);
+}
+module.exports = _unsupportedIterableToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
 
