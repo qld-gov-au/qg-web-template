@@ -74,7 +74,7 @@
     "eslint-plugin-standard": "^5.0.0",
     "event-stream": "^4.0.1",
     "font-awesome": "^4.7.0",
-    "gh-pages": "^5.0.0",
+    "gh-pages": "^6.0.0",
     "git-hooks": "^1.1.10",
     "gulp": "^4.0.2",
     "gulp-add-src": "^1.0.0",
