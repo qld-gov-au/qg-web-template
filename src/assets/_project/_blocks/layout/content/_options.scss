@@ -7,6 +7,10 @@
 .qg-share {
   margin: 10px 0 30px;
 
+  .qg-share-link {
+    padding-top: 3px;
+  }
+
   &__title {
     @include rem(font-size, 14px);
     color: $qg-global-primary-darker-grey;
