@@ -1,0 +1,36 @@
+{
+  "sourceType": "unambiguous",
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "chrome": 102,
+          "safari" : "16.1",
+          "edge" : 102,
+          "firefox" : 91,
+          "samsung" : 16,
+          "ios" : "15.6",
+          "android" : "4.4.3-4.4.4",
+          "opera" : 99
+        }
+      }
+    ]
+  ],
+  "plugins": [
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "absoluteRuntime": false,
+        "corejs": false,
+        "helpers": true,
+        "regenerator": true,
+        "useESModules": false,
+        "version": "7.0.0-beta.0"
+      }
+    ]
+  ],
+  "ignore": [
+    "src/template-pages"
+  ]
+}
