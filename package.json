@@ -62,7 +62,7 @@
     "chromium": "^3.0.3",
     "concurrently": "^7.6.0",
     "copy-webpack-plugin": "^11.0.0",
-    "cssnano": "^4.1.11",
+    "cssnano": "^6.0.1",
     "del": "^2.2.2",
     "eslint": "^8.47.0",
     "eslint-config-semistandard": "^7.0.0",
