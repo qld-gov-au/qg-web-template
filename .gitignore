@@ -49,8 +49,8 @@ etc/
 
 ### Build & Release ###
 /build/**
-/release/**
-release
-web-template-release/
-template-pages/sample/*
-storybook-static/
+/release/
+/web-template-release/
+/template-pages/sample/*
+/storybook-static/
+/node/

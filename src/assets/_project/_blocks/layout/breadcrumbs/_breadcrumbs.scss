@@ -31,16 +31,16 @@
             }
 
             &.shortened {
-        height: 0;
+                height: 0;
                 overflow: hidden;
                 max-width: 0;
                 transition: max-width 0s;
             }
 
             .qg-breadcrumb-list-item__link {
-        color: #292929;
-        @include qg-link-styles__theme-black-always;
-      }
+                color: #292929;
+                @include qg-link-styles__theme-black-always;
+            }
 
             &:last-child {
                 &:after {
@@ -59,7 +59,7 @@
 }
 
 @include media-breakpoint-down(sm) {
-    .qg-breadcrumb-list-item {
+    #qg-breadcrumb .qg-breadcrumb-list-item {
         display: none;
 
         &:nth-last-child(2) {

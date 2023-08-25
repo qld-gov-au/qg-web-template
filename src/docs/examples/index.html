@@ -135,7 +135,7 @@
         <span>Search</span>
       </button>
 
-      <form action="https://www.qld.gov.au/search" id="qg-global-search-form" role="search" class="qg-site-search__form qg-search-form collapse qg-global-web-autocomplete" data-suggestions="https://find.search.qld.gov.au/s/suggest.json?collection=qld-gov&fmt=json%2B%2B&alpha=0.5&profile=qld" data-results-url="https://find.search.qld.gov.au/s/search.json?collection=qld-gov&profile=qld&meta_sfinder_sand=yes">
+      <form action="https://www.qld.gov.au/search" id="qg-global-search-form" role="search" class="qg-site-search__form qg-search-form collapse qg-global-web-autocomplete" data-suggestions="https://discover.search.qld.gov.au/s/suggest.json?collection=qgov~sp-search&fmt=json%2B%2B&alpha=0.5&profile=qld" data-results-url="https://discover.search.qld.gov.au/s/search.json?collection=qgov~sp-search&profile=qld&meta_sfinder_sand=yes">
         <div class="input-group">
           <label for="qg-search-query" class="qg-visually-hidden">Search Queensland Government</label>
           <input type="text" name="query" id="qg-search-query" class="form-control qg-search-site__input" autocomplete="off" placeholder="Search website" tabindex="0" aria-expanded="false" role="combobox"/>
@@ -219,9 +219,7 @@
           </div>
         </div>
         <!--parameters to display results on search page-->
-        <input type="hidden" name="num_ranks" value="10">
-        <input type="hidden" name="tiers" value="off">
-        <input type="hidden" name="collection" value="qld-gov">
+        <input type="hidden" name="collection" value="qgov~sp-search">
         <input type="hidden" name="profile" value="qld">
       </form>
 
@@ -380,7 +378,6 @@
           <h3>Contact us</h3>
           <ul>
             <li>For general enquiries, feedback, complaints and compliments: <p class="phone"><span>13 QGOV (<a href="tel:137468" class="d-inline" data-analytics-link-group="qg-contact-phone">13 74 68</a>)</span></p></li>
-            <li>For COVID-19 related enquiries: <p class="phone"><span>134 COVID (<a href="tel:134268" class="d-inline" data-analytics-link-group="qg-contact-phone">13 42 68</a>)</span></p></li>
             <li class="facebook"><a href="https://www.facebook.com/QueenslandGovernment/" aria-label="Facebook /QueenslandGovernment" data-analytics-link-group="qg-contact-facebook">/QueenslandGovernment</a></li>
             <li class="twitter"><a href="https://twitter.com/qldgov" aria-label="Twitter @QldGov" data-analytics-link-group="qg-contact-twitter">@QldGov</a></li>
           </ul>
@@ -393,7 +390,7 @@
         <div class="qg-footer-col-content qg-service-centre">
           <h3>Your nearest service centre</h3>
 
-          <div class="qg-service-centre__wrapper" data-types="QGAP; HSC" data-centres="https://find.search.qld.gov.au/s/search.json?collection=services-web&sort=prox&num_ranks=2">
+          <div class="qg-service-centre__wrapper" data-types="QGAP; HSC" data-centres="https://discover.search.qld.gov.au/s/search.json?collection=qgov~sp-services&sort=prox">
             <div class="qg-location-default">
               <p>Help us provide you with the most useful information by setting your location.</p>
               <button class="btn btn-global-primary-white qg-service-centre-set-location collapsed" data-analytics-link-group="qg-nearest-service-set-location" data-toggle="collapse" data-target="#qg-service-centre-location-setter" role="button" aria-expanded="false" aria-controls="qg-service-centre-location-setter">
@@ -562,14 +559,14 @@
 
     <div class="qg-legal d-flex flex-wrap align-items-end justify-content-between">
       <ul class="list-inline col-lg-6 col-md-6">
-        <li><a href="https://www.qld.gov.au/help/" class="no-print">Help</a></li>
+        <li><a href="https://www.qld.gov.au/help/" class="d-print-none">Help</a></li>
         <li><a href="https://www.qld.gov.au/legal/copyright/">Copyright</a></li>
         <li><a href="https://www.qld.gov.au/legal/disclaimer/">Disclaimer</a></li>
         <li><a href="https://www.qld.gov.au/legal/privacy/">Privacy</a></li>
         <li><a href="https://www.qld.gov.au/right-to-information/">Right to information</a></li>
-        <li><a href="https://www.qld.gov.au/help/accessibility/" class="no-print">Accessibility</a></li>
-        <li><a href="http://www.smartjobs.qld.gov.au/" class="no-print">Jobs in Queensland Government</a></li>
-        <li id="link-languages"><a href="https://www.qld.gov.au/languages/" class="no-print">Other languages</a></li>
+        <li><a href="https://www.qld.gov.au/help/accessibility/" class="d-print-none">Accessibility</a></li>
+        <li><a href="http://www.smartjobs.qld.gov.au/" class="d-print-none">Jobs in Queensland Government</a></li>
+        <li id="link-languages"><a href="https://www.qld.gov.au/languages/" class="d-print-none">Other languages</a></li>
       </ul>
       <p class="qg-copyright col-lg-4 col-md-4">&copy; The State of Queensland <span id="qg-copyright-daterange"></span></p>
     </div>

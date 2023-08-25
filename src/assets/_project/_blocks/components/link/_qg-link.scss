@@ -9,7 +9,7 @@
   // make exception for certain classes, which need to re-visit for better optimization
   &:not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item
       .page-link):not(.dfv-cards--type-top-prompt
-      a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.qg-aside-button):not(.QSAR-records-search a) {
+      a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a) {
 
     text-underline-offset: $text-underline-offset;
     // not sure why Asif need to add this, which will have side-effect on customised style added by franchise.

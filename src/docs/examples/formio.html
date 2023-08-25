@@ -194,7 +194,7 @@
           </div>
         </div>
         <span>Search</span>
-      </button><form action="https://oss-uat.clients.squiz.net/search" id="qg-global-search-form" role="search" class="qg-search-form collapse qg-global-web-autocomplete" data-suggestions="https://find.search.qld.gov.au/s/suggest.json?collection=qld-gov&fmt=json%2B%2B&alpha=0.5&profile=qld" data-results-url="https://find.search.qld.gov.au/s/search.json?collection=qld-gov&profile=qld&meta_sfinder_sand=yes">
+      </button><form action="https://oss-uat.clients.squiz.net/search" id="qg-global-search-form" role="search" class="qg-search-form collapse qg-global-web-autocomplete" data-suggestions="https://discover.search.qld.gov.au/s/suggest.json?collection=qgov~sp-search&fmt=json%2B%2B&alpha=0.5&profile=qld" data-results-url="https://discover.search.qld.gov.au/s/search.json?collection=qgov~sp-search&profile=qld&meta_sfinder_sand=yes">
       <div class="input-group">
         <label for="qg-search-query" class="qg-visually-hidden">Search Queensland Government</label>
         <input type="text" name="query" id="qg-search-query" accesskey="5" class="form-control" autocomplete="off" placeholder="Search website" tabindex="0" aria-expanded="false" role="combobox"/>
@@ -257,9 +257,7 @@
       </div>
 
       <!--parameters to display results on search page-->
-      <input type="hidden" name="num_ranks" value="10">
-      <input type="hidden" name="tiers" value="off">
-      <input type="hidden" name="collection" value="qld-gov">
+      <input type="hidden" name="collection" value="qgov~sp-search">
       <input type="hidden" name="profile" value="qld">
     </form>
 
@@ -386,7 +384,7 @@
       <div id="qg-primary-content" role="main">
 
 
-        <a class="print-content-link" href='#'><span class="fa fa-print"></span> Print</a>
+        <a class="print-content-link" href='#'><span class="fa fa-print"></span>Print</a>
 
 
 
@@ -528,7 +526,7 @@
 
       <aside id="qg-secondary-content">
 
-        <!--https://find.search.qld.gov.au/s/search.json?collection=qgov-content&query=!null&meta_ContentType=aside&meta_Tags_or=&fmo=true&profile=_default-->
+        <!--https://discover.search.qld.gov.au/s/search.json?collection=qgov~sp-content&query=!null&meta_ContentType=aside&meta_Tags_or=&fmo=true&profile=_default-->
       </aside>
 
 
@@ -877,7 +875,6 @@
           <!--<p>For general enquiries, feedback, complaints and compliments: test</p>-->
           <ul>
             <li>For general enquiries, feedback, complaints and compliments: <p class="phone"><span>13 QGOV (<a href="tel:137468" class="d-inline d-sm-none" data-analytics-link-group="qg-contact-phone">13 74 68</a><span class="d-none d-sm-inline">13 74 68</span>)</span></p></li>
-            <li>For COVID-19 related enquiries: <p class="phone"><span>134 COVID (<a href="tel:134268" class="d-inline d-sm-none" data-analytics-link-group="qg-contact-phone">13 42 68</a><span class="d-none d-sm-inline">13 42 68</span>)</span></p></li>
             <li class="facebook"><a href="https://www.facebook.com/QueenslandGovernment/" aria-label="Facebook /QueenslandGovernment" data-analytics-link-group="qg-contact-facebook">/QueenslandGovernment</a></li>
             <li class="twitter"><a href="https://twitter.com/qldgov" aria-label="Twitter @QldGov" data-analytics-link-group="qg-contact-twitter">@QldGov</a></li>
           </ul>
@@ -1012,15 +1009,15 @@
     </div>
     <div class="qg-legal d-flex flex-wrap align-items-end justify-content-between">
       <ul class="list-inline col-lg-6 col-md-6">
-        <li><a href="https://oss-uat.clients.squiz.net/help" class="no-print">Help</a></li>
+        <li><a href="https://oss-uat.clients.squiz.net/help" class="d-print-none">Help</a></li>
         <li><a href="https://oss-uat.clients.squiz.net/legal/copyright">Copyright</a></li>
         <li><a href="https://oss-uat.clients.squiz.net/legal/disclaimer">Disclaimer</a></li>
         <li><a href="https://oss-uat.clients.squiz.net/legal/privacy">Privacy</a></li>
         <li><a href="https://oss-uat.clients.squiz.net/about/rights-accountability/right-to-information">Right to information</a></li>
-        <li><a href="https://oss-uat.clients.squiz.net/help/accessibility" class="no-print">Accessibility</a></li>
+        <li><a href="https://oss-uat.clients.squiz.net/help/accessibility" class="d-print-none">Accessibility</a></li>
         <li class="d-none"><a href="https://oss-uat.clients.squiz.net/help/keyboard" accesskey="0">Keyboard Accessibility</a>
-        <li><a href="http://www.smartjobs.qld.gov.au/" class="no-print">Jobs in Queensland Government</a></li>
-        <li id="link-languages"><a href="https://oss-uat.clients.squiz.net/help/languages" class="no-print">Other languages</a></li>
+        <li><a href="http://www.smartjobs.qld.gov.au/" class="d-print-none">Jobs in Queensland Government</a></li>
+        <li id="link-languages"><a href="https://oss-uat.clients.squiz.net/help/languages" class="d-print-none">Other languages</a></li>
       </ul>
       <p class="qg-copyright col-lg-4 col-md-4">&copy; The State of Queensland <span id="qg-copyright-yearrange">1995&ndash;2022</span></p>
     </div>

@@ -9,5 +9,13 @@
     top: initial;
     right: initial;
     margin-left: 1rem !important;
+    .fa {
+      margin-right: 5px;
+    }
+  }
+}
+.print-content-link, #printguide {
+  .fa {
+    margin-right: 5px;
   }
 }
