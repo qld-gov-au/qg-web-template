@@ -4,7 +4,7 @@ const ct = require('../../config/constants');
 let browser;
 let page;
 beforeAll(async () => {
-  browser = await puppeteer.launch({headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox']});
+  browser = await puppeteer.launch({headless: "new", args: ['--no-sandbox', '--disable-setuid-sandbox']});
   page = await browser.newPage();
   await page.setViewport({ width: ct.BT_XL, height: ct.WH });
   await page.goto(`${ct.APP_URL}/docs/components.html`, { waitUntil: 'networkidle0' });
@@ -12,18 +12,18 @@ beforeAll(async () => {
 
 describe('SWE Footer testing', () => {
   test('Footer feedback', async () => {
-
+    
     await page.click('.qg-feedback-toggle');
-
+    
     // check getRecaptcha input value is populated as expected and is false by default
     await page.waitForTimeout(ct.WT);
     const getRecaptcha =  await page.$eval('input[name=g-recaptcha-response]', el => $(el).val());
     expect(getRecaptcha).toMatch(/false/);
-
+    
     await page.click('label[for="page-feedback-about-this-website"]');
     await page.click('label[for="fs-very-satisfied"]');
     await page.type('#comments', 'Useful website', { delay: 20 });
-
+    
     // this test case causing massive fail in circleci, which have issue when submitting a real form with remote api, disabled this test for now.
     // as we are moving out from circleci, Github Actions pipeline doesn't has this issues
     /*

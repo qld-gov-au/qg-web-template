@@ -383,7 +383,7 @@ $(function () {
     if (allResults.length > 0) {
       var filteredResults = allResults.filter(function (result) {
         if (result['listMetadata'] != null && result['listMetadata']['sfinder'] != null) {
-          return result['listMetadata']['sfinder'] === 'yes';
+          return result['listMetadata']['sfinder'][0] === 'yes';
         } else {
           return false;
         }
