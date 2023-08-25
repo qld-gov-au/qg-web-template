@@ -124,7 +124,6 @@
     "@babel/runtime": "^7.22.10",
     "ajv": "^8.12.0",
     "bootstrap": "^4.6.2",
-    "chromium": "^3.0.3",
     "jquery": "^3.7.0",
     "jquery-ui-bundle": "^1.12.1",
     "nodep-date-input-polyfill": "^5.2.0",
