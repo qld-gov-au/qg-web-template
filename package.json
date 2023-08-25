@@ -60,7 +60,7 @@
     "babel-loader": "^9.1.3",
     "chromatic": "^6.19.9",
     "chromium": "^3.0.3",
-    "concurrently": "^7.6.0",
+    "concurrently": "^8.2.1",
     "copy-webpack-plugin": "^11.0.0",
     "cssnano": "^6.0.1",
     "del": "^2.2.2",
