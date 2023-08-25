@@ -2,21 +2,21 @@ import { Canvas, Meta, Story } from "@storybook/addon-docs";
 
 import { getCanvasMobileProps, getStoryMobileParameters, getStoryMobileHeight } from "../../helpers";
 
-import Default from "../../../template-pages/aggregation-page.html";
-import Mobile from "../../../template-pages/aggregation-page.html";
+import Default from "../../../template-pages/application-page.html";
+import Mobile from "../../../template-pages/application-page.html";
 
-<Meta title="Templates/AggregationPage" />
+<Meta title="Templates/ApplicationPage" />
 
-# Aggregation Page
+# Application Page
 
 ## Default
 
-<Canvas withSource="close">
+<Canvas sourceState="close">
   <Story name="Default">{() => Default}</Story>
 </Canvas>
 
 ## Mobile
 
-<Canvas withSource="none" {...getCanvasMobileProps()}>
+<Canvas sourceState="none" {...getCanvasMobileProps()}>
   <Story name="Mobile" parameters={getStoryMobileParameters()} height={getStoryMobileHeight()}>{() => Mobile}</Story>
 </Canvas>

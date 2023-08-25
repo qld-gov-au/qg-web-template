@@ -1,7 +1,7 @@
 import { Meta } from '@storybook/addon-docs';
-import { Description } from '@storybook/addon-docs/blocks';
+import { Markdown } from '@storybook/addon-docs/blocks';
 
-import Readme from "../../readme/develop-in-storybook.md"
+import Readme from "../../readme/develop-in-storybook.md?raw"
 
 <Meta title="Welcome" />
 
@@ -10,4 +10,4 @@ import Readme from "../../readme/develop-in-storybook.md"
 Welcome to SWE Storybook, this documentation is mainly for development and testing purpose.
 For user orientated documentation, please refer to https://www.forgov.qld.gov.au/information-and-communication-technology/communication-and-publishing/website-and-digital-publishing/website-standards-guidelines-and-templates/swe.
 
-<Description>{Readme}</Description>
+<Markdown>{Readme}</Markdown>

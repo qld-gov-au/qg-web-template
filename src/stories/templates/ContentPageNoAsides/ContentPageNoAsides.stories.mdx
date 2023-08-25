@@ -11,12 +11,12 @@ import Mobile from "../../../template-pages/content-page-no-asides.html";
 
 ## Default
 
-<Canvas withSource="close">
+<Canvas sourceState="close">
   <Story name="Default">{() => Default}</Story>
 </Canvas>
 
 ## Mobile
 
-<Canvas withSource="none" {...getCanvasMobileProps()}>
+<Canvas sourceState="none" {...getCanvasMobileProps()}>
   <Story name="Mobile" parameters={getStoryMobileParameters()} height={getStoryMobileHeight()}>{() => Mobile}</Story>
 </Canvas>

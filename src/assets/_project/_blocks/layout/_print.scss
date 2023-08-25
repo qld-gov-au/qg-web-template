@@ -309,3 +309,7 @@
       border: none;
   }
 }
+
+.no-print {
+  @extend .d-print-none;
+}
