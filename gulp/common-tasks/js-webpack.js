@@ -58,9 +58,7 @@ module.exports = function (gulp, plugins, config, destFolder, banner) {
       optimization: {
         minimize: true,
         minimizer: [
-          new TerserPlugin({
-            sourceMap: true,
-          }),
+          new TerserPlugin({}),
         ],
       },
       module: {
