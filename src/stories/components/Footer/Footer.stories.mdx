@@ -17,7 +17,7 @@ import Mobile from "./templates/Footer.html";
 
 {/* Footer always contributed difference in Chromatic snapshot, hence disabled snapshot temporary, need further investigation (caused by the feedback button) */}
 
-<Canvas withSource="close">
+<Canvas sourceState="hidden">
   <Story name="Default" parameters={{ chromatic: { delay: 3000, disableSnapshot: true } }}>
     {() => Default}
   </Story>
@@ -27,7 +27,7 @@ import Mobile from "./templates/Footer.html";
 
 {/* Footer always contributed difference in Chromatic snapshot, hence disabled snapshot temporary, need further investigation (caused by the feedback button) */}
 
-<Canvas withSource="none" {...getCanvasMobileProps()}>
+<Canvas sourceState="none" {...getCanvasMobileProps()}>
   <Story
     name="Mobile"
     parameters={{ ...getStoryMobileParameters(), chromatic: { disableSnapshot: true } }}
