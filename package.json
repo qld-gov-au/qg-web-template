@@ -50,7 +50,7 @@
     "@babel/plugin-transform-runtime": "^7.22.10",
     "@babel/preset-env": "^7.22.10",
     "@storybook/addon-actions": "v7.3.2",
-    "@storybook/addon-essentials": "v7.3.2",
+    "@storybook/addon-essentials": "v7.4.0",
     "@storybook/addon-interactions": "v7.3.2",
     "@storybook/addon-links": "v7.3.2",
     "@storybook/addon-mdx-gfm": "^7.3.2",
@@ -115,7 +115,7 @@
     "storybook": "^7.3.2",
     "storybook-addon-pseudo-states": "^2.1.1",
     "string-replace-loader": "^3.1.0",
-    "terser-webpack-plugin": "^3.1.0",
+    "terser-webpack-plugin": "^5.3.9",
     "webpack": "^5.88.2",
     "webpack-ssi-include-loader": "^1.6.1",
     "webpack-stream": "^7.0.0"
