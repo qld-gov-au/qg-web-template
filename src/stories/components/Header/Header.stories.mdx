@@ -12,18 +12,18 @@ import Search from "./templates/Search.html";
 
 ## Default
 
-<Canvas withSource="close">
+<Canvas sourceState="hidden">
   <Story name="Default">{() => Default}</Story>
 </Canvas>
 
 ## Mobile
 
-<Canvas withSource="none" {...getCanvasMobileProps()}>
+<Canvas sourceState="none" {...getCanvasMobileProps()}>
   <Story name="Mobile" parameters={getStoryMobileParameters()} height={getStoryMobileHeight()}>{() => Mobile}</Story>
 </Canvas>
 
 ## Search
 
-<Canvas withSource="close">
+<Canvas sourceState="hidden">
   <Story name="Search">{() => Search}</Story>
 </Canvas>

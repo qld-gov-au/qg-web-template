@@ -21,31 +21,31 @@ import States from "./templates/States.html";
 
 ## Default
 
-<Canvas withSource="open">
+<Canvas sourceState="shown">
   <Story name="Default" parameters={getDecoratedParameters(Default)}>{() => Default}</Story>
 </Canvas>
 
 ## Subtitle
 
-<Canvas withSource="open">
+<Canvas sourceState="shown">
   <Story name="Subtitle" parameters={getDecoratedParameters(Subtitle)}>{() => Subtitle}</Story>
 </Canvas>
 
 ## Icon
 
-<Canvas withSource="open">
+<Canvas sourceState="shown">
   <Story name="Icon" parameters={getDecoratedParameters(Icon)}>{() => Icon}</Story>
 </Canvas>
 
 ## Expandable
 
-<Canvas withSource="open">
+<Canvas sourceState="shown">
   <Story name="Expandable" parameters={getDecoratedParameters(Expandable)}>{() => Expandable}</Story>
 </Canvas>
 
 ## States
 
-<Canvas withSource="close">
+<Canvas sourceState="hidden">
   <Story
     name="States"
     decorators={[Grid(2)]} parameters={getDecoratedParameters(States)}
@@ -56,7 +56,7 @@ import States from "./templates/States.html";
 
 ## Mobile
 
-<Canvas withSource="none" {...getCanvasMobileProps()}>
+<Canvas sourceState="none" {...getCanvasMobileProps()}>
   <Story name="Mobile" parameters={getStoryMobileParameters()} height={getStoryMobileHeight()}>
     {() => Mobile}
   </Story>

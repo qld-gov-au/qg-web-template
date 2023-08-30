@@ -14,7 +14,7 @@ import Vimeo from "./templates/Vimeo.html";
 
 {/* disabled snapshot for this story as youtube player animation cause story renewal in every generation. */}
 
-<Canvas withSource="open">
+<Canvas sourceState="shown">
   <Story
     name="Youtube"
     parameters={{
@@ -28,7 +28,7 @@ import Vimeo from "./templates/Vimeo.html";
 
 ## Vimeo
 
-<Canvas withSource="open">
+<Canvas sourceState="shown">
   <Story name="Vimeo" parameters={getDecoratedParameters(Vimeo)}>
     {() => Vimeo}
   </Story>

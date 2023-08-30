@@ -9,7 +9,9 @@ export const getStoryMobileParameters = () => ({
   },
   docs: {
     // Opt-out of inline rendering
-    inlineStories: false,
+    story: {
+      inline: false,
+    },
   },
   chromatic: {
     viewports: [
