@@ -129,5 +129,8 @@
     "nodep-date-input-polyfill": "^5.2.0",
     "postcss": "^8.4.28",
     "stickyfill": "^1.1.1"
+  },
+  "engines" : {
+    "node" : ">=18"
   }
 }
