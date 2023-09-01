@@ -22907,7 +22907,7 @@ footer.qg-site-footer .qg-legal ul li {
   margin: 2px 2px 2px 0;
 }
 
-#qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content > a {
+#qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content > a:not(.btn):not(.qg-btn):not(.qg-btn) {
   padding: 20px 35px 0 35px;
 }
 
