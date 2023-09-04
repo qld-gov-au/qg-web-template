@@ -38,6 +38,7 @@
       }
       td {
         padding: 1em;
+        border: 0; // defaulting to borderless
       }
     }
     &.qg-table-no-stripes {
