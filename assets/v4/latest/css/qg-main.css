@@ -13566,6 +13566,10 @@ body:not([data-accessibility=false]):not([data-access-new-window=false]) #qg-con
   padding: 1rem;
 }
 
+.qg-accordion.qg-accordion-v2 article .acc-heading a.qg-accordion--ga {
+  margin: 0 !important;
+}
+
 .qg-accordion.qg-accordion-v2 article .acc-heading:hover > a, .qg-accordion.qg-accordion-v2 article .acc-heading:focus > a, .qg-accordion.qg-accordion-v2 article .acc-heading:focus-visible > a {
   text-decoration-thickness: 2px !important;
 }
@@ -15142,6 +15146,10 @@ body:not([data-accessibility=false]):not([data-access-new-window=false]) #qg-con
 #qg-primary-content caption {
   color: #000;
   font-weight: bold;
+}
+
+#qg-primary-content table:not(.table-bordered) td {
+  border: 0;
 }
 
 #qg-primary-content table thead tr {
