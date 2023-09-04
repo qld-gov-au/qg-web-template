@@ -24,6 +24,11 @@
     font-weight: bold;
   }
   table {
+    &:not(.table-bordered) {
+      td {
+        border: 0; // defaulting to borderless
+      }
+    }
     @extend .table; // inheriting bootstrap table styles
     thead {
       tr {
