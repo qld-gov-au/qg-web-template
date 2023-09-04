@@ -25,7 +25,9 @@
   }
   table {
     &:not(.table-bordered) {
-      border: 0; // defaulting to borderless
+      td {
+        border: 0; // defaulting to borderless
+      }
     }
     @extend .table; // inheriting bootstrap table styles
     thead {
