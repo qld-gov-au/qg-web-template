@@ -24,6 +24,9 @@
     font-weight: bold;
   }
   table {
+    &:not(.table-bordered) {
+      border: 0; // defaulting to borderless
+    }
     @extend .table; // inheriting bootstrap table styles
     thead {
       tr {
@@ -38,7 +41,6 @@
       }
       td {
         padding: 1em;
-        border: 0; // defaulting to borderless
       }
     }
     &.qg-table-no-stripes {
