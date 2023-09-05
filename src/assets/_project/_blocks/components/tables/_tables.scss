@@ -24,7 +24,7 @@
     font-weight: bold;
   }
   table {
-    &:not(.table-bordered) {
+    &:not(.table-bordered):not(.qg-table-no-stripes) {
       td {
         border: 0; // defaulting to borderless
       }
