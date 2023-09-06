@@ -15148,7 +15148,7 @@ body:not([data-accessibility=false]):not([data-access-new-window=false]) #qg-con
   font-weight: bold;
 }
 
-#qg-primary-content table:not(.table-bordered) td {
+#qg-primary-content table:not(.table-bordered):not(.qg-table-no-stripes) td {
   border: 0;
 }
 
