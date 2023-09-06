@@ -266,8 +266,8 @@ table.dataTable {
   *cursor: hand;
   color: $tables-paginate-enabled-previous-next-color !important;
 }
-.paginate_disabled_previous:hover,
-.paginate_enabled_previous:hover,
+//.paginate_disabled_previous:hover,
+//.paginate_enabled_previous:hover,
 .paginate_disabled_next:hover,
 .paginate_enabled_next:hover {
   text-decoration-line: underline;
@@ -374,7 +374,7 @@ table.dataTable {
 .dataTables_paginate {
   margin: 24px 0;
   .paginate_button {
-    @include qg-button-outline-decoration;
+    //@include qg-button-outline-decoration;
   }
 }
 
