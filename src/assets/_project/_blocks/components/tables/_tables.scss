@@ -131,7 +131,6 @@ table.dataTable {
   margin: 0 auto;
   clear: both;
   width: 100%;
-  display: block;
   overflow: auto;
 
   thead th {
@@ -266,7 +265,6 @@ table.dataTable {
   cursor: pointer;
   *cursor: hand;
   color: $tables-paginate-enabled-previous-next-color !important;
-  text-decoration-line: none;
 }
 .paginate_disabled_previous:hover,
 .paginate_enabled_previous:hover,
@@ -375,6 +373,9 @@ table.dataTable {
 /* Styling for Sortable Tables - OFAP-202 */
 .dataTables_paginate {
   margin: 24px 0;
+  .paginate_button {
+    @include qg-button-outline-decoration;
+  }
 }
 
 .dataTables_paginate .paginate_button, .dataTables_paginate .ellipsis {
