@@ -374,7 +374,7 @@ table.dataTable {
 .dataTables_paginate {
   margin: 24px 0;
   .paginate_button {
-    //@include qg-button-outline-decoration;
+    @extend .qg-btn
   }
 }
 
