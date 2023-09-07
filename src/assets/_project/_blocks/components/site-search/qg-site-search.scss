@@ -4,9 +4,9 @@
       float: inherit !important;
       width: 100% !important;
       .qg-search-close-concierge {
-        top: 8px;
+        top: 4px;
         @media (max-width: $screen-sm-max) {
-          right: 50px;
+          right: 55px;
         }
       }
       .list-group-item a {
@@ -34,7 +34,7 @@
         color: $qg-global-primary-darker;
         border: 3px solid #808080;
         border-radius: 7px;
-        padding: 1rem 9rem 1rem 1rem;
+        padding: 12px 9rem 12px 14px;
         @media (max-width: $screen-sm-max) {
           padding-right: 6rem
         }
@@ -64,7 +64,7 @@
     color: #000;
     background-color: #9ac02c;
     border-color: #9ac02c;
-    margin-right: 5px !important;
+    margin-right: 2px !important;
   }
 }
 // related search tags styles
