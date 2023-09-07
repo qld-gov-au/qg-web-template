@@ -7,6 +7,7 @@ import Default from "./templates/Default.html";
 import Figure from "./templates/Figure.html";
 import WithCaptionCredits from "./templates/WithCaptionCredits.html";
 import PullLeftRight from "./templates/PullLeftRight.html";
+import FullWidth from "./templates/FullWidth.html";
 import WithLargerImage from "./templates/WithLargerImage.html";
 import WithoutBorder from "./templates/WithoutBorder.html";
 
@@ -18,7 +19,7 @@ Requires `#QgPrimaryContent` ancestor.
 
 ## Default
 
-<Canvas withSource="open">
+<Canvas sourceState="shown">
   <Story name="Default" parameters={getDecoratedParameters(Default)}>
     {() => Default}
   </Story>
@@ -26,7 +27,7 @@ Requires `#QgPrimaryContent` ancestor.
 
 ## Figure
 
-<Canvas withSource="open">
+<Canvas sourceState="shown">
   <Story name="Figure" parameters={getDecoratedParameters(Figure)}>
     {() => Figure}
   </Story>
@@ -34,7 +35,7 @@ Requires `#QgPrimaryContent` ancestor.
 
 ## WithCaptionCredits
 
-<Canvas withSource="open">
+<Canvas sourceState="shown">
   <Story name="WithCaptionCredits" parameters={getDecoratedParameters(WithCaptionCredits)}>
     {() => WithCaptionCredits}
   </Story>
@@ -42,15 +43,23 @@ Requires `#QgPrimaryContent` ancestor.
 
 ## PullLeftRight
 
-<Canvas withSource="open">
+<Canvas sourceState="shown">
   <Story name="PullLeftRight" parameters={getDecoratedParameters(PullLeftRight)}>
     {() => PullLeftRight}
   </Story>
 </Canvas>
 
+## FullWidth
+
+<Canvas sourceState="shown">
+  <Story name="FullWidth" parameters={getDecoratedParameters(FullWidth)}>
+    {() => FullWidth}
+  </Story>
+</Canvas>
+
 ## WithLargerImage
 
-<Canvas withSource="open">
+<Canvas sourceState="shown">
   <Story name="WithLargerImage" parameters={getDecoratedParameters(WithLargerImage)}>
     {() => WithLargerImage}
   </Story>
@@ -58,7 +67,7 @@ Requires `#QgPrimaryContent` ancestor.
 
 ## WithoutBorder
 
-<Canvas withSource="open">
+<Canvas sourceState="shown">
   <Story name="WithoutBorder" parameters={getDecoratedParameters(WithoutBorder)}>
     {() => WithoutBorder}
   </Story>

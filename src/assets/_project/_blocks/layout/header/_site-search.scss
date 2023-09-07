@@ -3,6 +3,10 @@
   padding-top: 20px;
   z-index: 2;
 
+  #feature-search-submit {
+    z-index: 1;
+  }
+
   #qg-search-query {
     color: $qg-global-primary-darker;
   }
@@ -204,9 +208,11 @@
     .qg-search-close-concierge {
       border: 0;
       background-color: transparent;
-      padding: 14px;
+      padding: 11px 8px;
       position: absolute;
-      right: 100px;
+      right: 106px;
+      top: 3px;
+      z-index: 1;
 
       svg {
         height: 22px;

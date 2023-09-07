@@ -4,6 +4,7 @@ import { QgPrimaryContent, QgContent } from "../../decorators";
 import { getDecoratedParameters } from "../../helpers";
 
 import Default from "./templates/Default.html";
+import Bordered from "./templates/Bordered.html";
 import NoStripe from "./templates/NoStripe.html";
 
 <Meta title="Components/Table" decorators={[QgPrimaryContent, QgContent]} />
@@ -14,15 +15,23 @@ Requires `#QgPrimaryContent` ancestor.
 
 ## Default
 
-<Canvas withSource="open">
+<Canvas sourceState="shown">
   <Story name="Default" parameters={getDecoratedParameters(Default)}>
     {() => Default}
   </Story>
 </Canvas>
 
+## Bordered
+
+<Canvas sourceState="shown">
+  <Story name="Bordered" parameters={getDecoratedParameters(Bordered)}>
+    {() => Bordered}
+  </Story>
+</Canvas>
+
 ## NoStripe
 
-<Canvas withSource="open">
+<Canvas sourceState="shown">
   <Story name="NoStripe" parameters={getDecoratedParameters(NoStripe)}>
     {() => NoStripe}
   </Story>

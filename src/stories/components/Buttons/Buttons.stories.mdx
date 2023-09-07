@@ -17,7 +17,7 @@ import Links from "./templates/Links.html";
 
 ## Primary
 
-<Canvas withSource="open">
+<Canvas sourceState="shown">
   <Story name="Primary" parameters={getDecoratedParameters(Primary)}>
     {() => Primary}
   </Story>
@@ -25,7 +25,7 @@ import Links from "./templates/Links.html";
 
 ## Secondary
 
-<Canvas withSource="open">
+<Canvas sourceState="shown">
   <Story name="Secondary" parameters={getDecoratedParameters(Secondary)}>
     {() => Secondary}
   </Story>
@@ -33,7 +33,7 @@ import Links from "./templates/Links.html";
 
 ## Tertiary
 
-<Canvas withSource="open">
+<Canvas sourceState="shown">
   <Story name="Tertiary" parameters={getDecoratedParameters(Tertiary)}>
     {() => Tertiary}
   </Story>
@@ -41,7 +41,7 @@ import Links from "./templates/Links.html";
 
 ## Outline
 
-<Canvas withSource="open">
+<Canvas sourceState="shown">
   <Story name="Outline" parameters={getDecoratedParameters(Outline)}>
     {() => Outline}
   </Story>
@@ -49,7 +49,7 @@ import Links from "./templates/Links.html";
 
 ## Loading
 
-<Canvas withSource="open">
+<Canvas sourceState="shown">
   <Story name="Loading" parameters={getDecoratedParameters(Loading)}>
     {() => Loading}
   </Story>
@@ -57,7 +57,7 @@ import Links from "./templates/Links.html";
 
 ## States
 
-<Canvas withSource="close">
+<Canvas sourceState="hidden">
   <Story name="States" decorators={[Grid(5)]} parameters={getDecoratedParameters(States)}>
     {() => States}
   </Story>
@@ -65,7 +65,7 @@ import Links from "./templates/Links.html";
 
 ## Links
 
-<Canvas withSource="close">
+<Canvas sourceState="hidden">
   <Story name="Links" decorators={[Grid(5)]} parameters={getDecoratedParameters(Links)}>
     {() => Links}
   </Story>
