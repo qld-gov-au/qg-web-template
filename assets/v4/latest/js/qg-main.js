@@ -5467,6 +5467,18 @@ module.exports = parentWidth;
 
 /***/ }),
 
+/***/ "./src/assets/_project/_blocks/utils/qg-datatables.js":
+/*!************************************************************!*\
+  !*** ./src/assets/_project/_blocks/utils/qg-datatables.js ***!
+  \************************************************************/
+/***/ (() => {
+
+$(window).on('load', function () {
+  $('.sortable-table .dataTables_wrapper a.paginate_button').addClass('qg-btn');
+});
+
+/***/ }),
+
 /***/ "./src/assets/_project/_blocks/utils/qg-datepicker.js":
 /*!************************************************************!*\
   !*** ./src/assets/_project/_blocks/utils/qg-datepicker.js ***!
@@ -5778,6 +5790,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _parent_width__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_parent_width__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _qg_datepicker__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./qg-datepicker */ "./src/assets/_project/_blocks/utils/qg-datepicker.js");
 /* harmony import */ var _qg_datepicker__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_qg_datepicker__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _qg_datatables__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./qg-datatables */ "./src/assets/_project/_blocks/utils/qg-datatables.js");
+/* harmony import */ var _qg_datatables__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_qg_datatables__WEBPACK_IMPORTED_MODULE_5__);
+
 
 
 
