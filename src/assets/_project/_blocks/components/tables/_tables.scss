@@ -131,7 +131,6 @@ table.dataTable {
   margin: 0 auto;
   clear: both;
   width: 100%;
-  display: block;
   overflow: auto;
 
   thead th {
@@ -266,14 +265,8 @@ table.dataTable {
   cursor: pointer;
   *cursor: hand;
   color: $tables-paginate-enabled-previous-next-color !important;
-  text-decoration-line: none;
 }
-.paginate_disabled_previous:hover,
-.paginate_enabled_previous:hover,
-.paginate_disabled_next:hover,
-.paginate_enabled_next:hover {
-  text-decoration-line: underline;
-}
+
 .paginate_disabled_previous:active,
 .paginate_enabled_previous:active,
 .paginate_disabled_next:active,
@@ -323,9 +316,6 @@ table.dataTable {
 .paging_full_numbers a:active {
   outline: none
 }
-.paging_full_numbers a:hover {
-  text-decoration-line: none;
-}
 
 .paging_full_numbers a.paginate_button,
 .paging_full_numbers a.paginate_active {
@@ -346,7 +336,6 @@ table.dataTable {
 
 .paging_full_numbers a.paginate_button:hover {
   background-color: $tables-paging-full-numbers-link-paginate-button-hover-background-color;
-  text-decoration-line: none !important;
 }
 
 .paging_full_numbers a.paginate_active {
@@ -375,73 +364,62 @@ table.dataTable {
 /* Styling for Sortable Tables - OFAP-202 */
 .dataTables_paginate {
   margin: 24px 0;
-}
-
-.dataTables_paginate .paginate_button, .dataTables_paginate .ellipsis {
-  display: inline;
-  position: relative;
-  float: left;
-  padding: 0.3em 0.6em;
-  line-height: 1.5;
-  text-decoration-line: none;
-  color: $qg-blue-dark;
-  background-color: white;
-  border: 1px solid $qg-pagination-border !important;
-  &:focus, &:visited, &:link, &:active {
-    color: $qg-pagination-link-color !important;
+  .paginate_button, .ellipsis {
+    display: inline;
+    position: relative;
+    float: left;
+    padding: 0.3em 0.6em;
+    line-height: 1.5;
+    color: $qg-blue-dark;
+    background-color: white;
+    border: 1px solid $qg-pagination-border !important;
+    &:focus, &:visited, &:link, &:active {
+      color: $qg-pagination-link-color !important;
+    }
+    &.previous{
+      margin-left: 0;
+      border-top-left-radius: 0.25rem;
+      border-bottom-left-radius: 0.25rem;
+    }
+    &.next{
+      border-top-right-radius: 0.25rem;
+      border-bottom-right-radius: 0.25rem;
+    }
   }
-  &.previous{
-    margin-left: 0;
-    border-top-left-radius: 0.25rem;
-    border-bottom-left-radius: 0.25rem;
+  a.paginate_button {
+    margin: 2px 2px 2px 0 !important;
+    &.current {
+      &:focus, &:visited, &:link, &:active {
+        background-color: $qg-blue-dark !important;
+        color: white !important;
+      }
+      background-color: $qg-blue-dark;
+      color: white !important;
+    }
+    &:focus, &:hover {
+      z-index: 2;
+      color: #0a2d48 !important;
+      background-color: #eee;
+      border-color: #ddd;
+      cursor: pointer;
+    }
+    &.disabled, &.disabled:focus, &.disabled:hover {
+      color: #777 !important;
+      background-color: white;
+      border-color: #ddd;
+      cursor: not-allowed;
+    }
   }
-  &.next{
-    border-top-right-radius: 0.25rem;
-    border-bottom-right-radius: 0.25rem;
+  .next:after, .previous:before {
+    font-family: FontAwesome;
   }
-}
-
-.dataTables_paginate .paginate_button.current {
-  &:focus, &:visited, &:link, &:active {
-    background-color: $qg-blue-dark !important;
-    color: white !important;
+  .previous:before {
+    content: "\f137";
+    padding-right: .3em;
   }
-  background-color: $qg-blue-dark;
-  color: white !important;
-}
-
-.dataTables_paginate a:focus,
-.dataTables_paginate a:hover {
-  z-index: 2;
-  color: #0a2d48 !important;
-  background-color: #eee;
-  border-color: #ddd;
-  text-decoration-line: none !important;
-  cursor: pointer;
-}
-
-.dataTables_paginate a.disabled,
-.dataTables_paginate a.disabled:focus,
-.dataTables_paginate a.disabled:hover {
-  color: #777 !important;
-  background-color: white;
-  border-color: #ddd;
-  cursor: not-allowed;
-}
-
-
-.dataTables_paginate .next:after,
-.dataTables_paginate .previous:before {
-  font-family: FontAwesome;
-}
-
-.dataTables_paginate .previous:before {
-  content: "\f137";
-  padding-right: .3em;
-}
-
-.dataTables_paginate .next:after {
-  content:"\f138";
-  padding-left: .3em;
+  .next:after {
+    content:"\f138";
+    padding-left: .3em;
+  }
 }
 
