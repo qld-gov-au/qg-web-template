@@ -266,12 +266,7 @@ table.dataTable {
   *cursor: hand;
   color: $tables-paginate-enabled-previous-next-color !important;
 }
-//.paginate_disabled_previous:hover,
-//.paginate_enabled_previous:hover,
-.paginate_disabled_next:hover,
-.paginate_enabled_next:hover {
-  text-decoration-line: underline;
-}
+
 .paginate_disabled_previous:active,
 .paginate_enabled_previous:active,
 .paginate_disabled_next:active,
@@ -379,7 +374,6 @@ table.dataTable {
     float: left;
     padding: 0.3em 0.6em;
     line-height: 1.5;
-    text-decoration-line: none;
     color: $qg-blue-dark;
     background-color: white;
     border: 1px solid $qg-pagination-border !important;
@@ -397,6 +391,7 @@ table.dataTable {
     }
   }
   a.paginate_button {
+    @include qg-button-outline-decoration;
     &.current {
       &:focus, &:visited, &:link, &:active {
         background-color: $qg-blue-dark !important;
