@@ -4,7 +4,7 @@
       float: inherit !important;
       width: 100% !important;
       .qg-search-close-concierge {
-        top: 6px;
+        top: 8px;
         @media (max-width: $screen-sm-max) {
           right: 50px;
         }
@@ -64,7 +64,7 @@
     color: #000;
     background-color: #9ac02c;
     border-color: #9ac02c;
-    margin-right: 0.4rem !important;
+    margin-right: 5px !important;
   }
 }
 // related search tags styles

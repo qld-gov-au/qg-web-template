@@ -3,6 +3,10 @@
   padding-top: 20px;
   z-index: 2;
 
+  #feature-search-submit {
+    z-index: 1;
+  }
+
   #qg-search-query {
     color: $qg-global-primary-darker;
   }
@@ -208,6 +212,7 @@
       position: absolute;
       right: 104px;
       top: 3px;
+      z-index: 1;
 
       svg {
         height: 22px;
