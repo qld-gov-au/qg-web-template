@@ -391,7 +391,7 @@ table.dataTable {
     }
   }
   a.paginate_button {
-    @include qg-button-outline-decoration;
+    margin: 2px 2px 2px 0 !important;
     &.current {
       &:focus, &:visited, &:link, &:active {
         background-color: $qg-blue-dark !important;
