@@ -316,9 +316,6 @@ table.dataTable {
 .paging_full_numbers a:active {
   outline: none
 }
-.paging_full_numbers a:hover {
-  text-decoration-line: none;
-}
 
 .paging_full_numbers a.paginate_button,
 .paging_full_numbers a.paginate_active {
@@ -339,7 +336,6 @@ table.dataTable {
 
 .paging_full_numbers a.paginate_button:hover {
   background-color: $tables-paging-full-numbers-link-paginate-button-hover-background-color;
-  text-decoration-line: none !important;
 }
 
 .paging_full_numbers a.paginate_active {
