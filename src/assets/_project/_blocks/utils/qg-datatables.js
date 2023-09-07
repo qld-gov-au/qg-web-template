@@ -1,3 +1,3 @@
-$(document).on('ready', function() {
+$(document).on('load', function() {
     $('.sortable-table .dataTables_wrapper a.paginate_button').addClass('qg-btn');
 });
