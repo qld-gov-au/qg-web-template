@@ -64,16 +64,6 @@
       <% }); %>
       //### custom qld online code start -->
       import './assets/v4/latest/lib/all-ext-min.js';
-      function addScript(src) {
-        if (document.querySelectorAll(`script[src$="${src.substring(src.lastIndexOf('/') + 1)}"]`).length === 0) {
-          const script = document.createElement('script');
-          script.src = src;
-          document.getElementsByTagName('head')[0].appendChild(script);
-        };
-      }
-      function handleStoryInit(canvas) {
-        addScript("./assets/v4/latest/js/qg-main.js");
-      }
 
       // set up the mutation observer
       var observer = new MutationObserver(function (mutations, me) {
@@ -81,7 +71,6 @@
         // `me` is the MutationObserver instance
         var canvas = document.getElementById('my-canvas');
         if ($("#root").children.length > 0 || $("#docs-root").children.length > 0) {
-          handleStoryInit(canvas);
           me.disconnect(); // stop observing
           return;
         }
