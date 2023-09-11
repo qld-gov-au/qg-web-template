@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Webpack App</title><meta name="viewport" content="width=device-width,initial-scale=1"><link href="//fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic" rel="stylesheet"><link href="./assets/v4/latest/css/qg-main.css" rel="stylesheet" media="all"><noscript><link href="./assets/v4/latest/css/qg-noscript.css" rel="stylesheet" media="all"></noscript><link href="./assets/v4/latest/css/qg-main.css" rel="stylesheet" media="all"><script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script><base target="_parent"><style>/* While we aren't showing the main block yet, but still preparing, we want everything the user
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Webpack App</title><meta name="viewport" content="width=device-width,initial-scale=1"><link href="//fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic" rel="stylesheet"><link href="./assets/v4/latest/css/qg-main.css" rel="stylesheet" media="all"><noscript><link href="./assets/v4/latest/css/qg-noscript.css" rel="stylesheet" media="all"></noscript><link href="./assets/v4/latest/css/qg-main.css" rel="stylesheet" media="all"><script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous" type="text/javascript"></script><base target="_parent"><style>/* While we aren't showing the main block yet, but still preparing, we want everything the user
      has rendered, which may or may not be in #storybook-root, to be display none */
   .sb-show-preparing-story:not(.sb-show-main) > :not(.sb-preparing-story) {
     display: none;
@@ -318,7 +318,12 @@
   } catch (e) {
     // eslint-disable-next-line no-console
     console.warn('unable to connect to top frame for connecting dev tools');
-  }</script><style>#storybook-root[hidden],
+  }</script><script type="text/javascript">document.addEventListener("DOMContentLoaded", function(event) {
+    const script = document.createElement('script');
+    script.src = "./assets/v4/latest/js/qg-main.js"; 
+    script.crossOrigin = "anonymous";
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }, false);</script><style>#storybook-root[hidden],
       #storybook-docs[hidden] {
         display: none !important;
       }
@@ -357,7 +362,7 @@
             window['DOCS_OPTIONS'] = {"defaultName":"Docs","autodocs":true};</script><script type="module">import './sb-preview/runtime.js';
 
       
-        import './runtime~main.2c140669.iframe.bundle.js';
+        import './runtime~main.ebc6b2df.iframe.bundle.js';
       
         import './3361.0b599d39.iframe.bundle.js';
       
@@ -365,16 +370,6 @@
       
       //### custom qld online code start -->
       import './assets/v4/latest/lib/all-ext-min.js';
-      function addScript(src) {
-        if (document.querySelectorAll(`script[src$="${src.substring(src.lastIndexOf('/') + 1)}"]`).length === 0) {
-          const script = document.createElement('script');
-          script.src = src;
-          document.getElementsByTagName('head')[0].appendChild(script);
-        };
-      }
-      function handleStoryInit(canvas) {
-        addScript("./assets/v4/latest/js/qg-main.js");
-      }
 
       // set up the mutation observer
       var observer = new MutationObserver(function (mutations, me) {
@@ -382,7 +377,6 @@
         // `me` is the MutationObserver instance
         var canvas = document.getElementById('my-canvas');
         if ($("#root").children.length > 0 || $("#docs-root").children.length > 0) {
-          handleStoryInit(canvas);
           me.disconnect(); // stop observing
           return;
         }
