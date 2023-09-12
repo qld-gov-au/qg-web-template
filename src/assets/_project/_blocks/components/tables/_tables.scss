@@ -402,7 +402,7 @@ table.dataTable {
       background-color: #eee;
       border-color: #ddd;
       &:not(.disabled) {
-        text-decoration-line: underline;
+        text-decoration-line: underline !important;
       }
       cursor: pointer;
     }
