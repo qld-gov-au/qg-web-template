@@ -105,10 +105,6 @@
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    position: relative;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
     z-index: 999;
       .qg-quick-exit__inner {
         //background: none;
@@ -148,19 +144,7 @@
             margin-left: 25px;
           }
           .qg-tooltip__wrapper {
-            bottom: auto;
-            top: 40px;
             padding: 16px
-          }
-          .qg-tooltip__wrapper:after {
-            border-bottom: 8px solid #ffd200;
-            border-left: 8px solid #ffd200;
-            border-right: 8px solid transparent;
-            border-top: 8px solid transparent;
-            bottom: auto;
-            left: 25px;
-            top: -8px;
-            transform: rotate(135deg)
           }
           .qg-quick-exit__button {
             padding-left: 48px;
