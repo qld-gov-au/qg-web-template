@@ -17,7 +17,7 @@ if (!browserSupportsDateInput() && $('input[type=\'date\']').length > 0) {
   });
 //}
 
-document.addEventListener("DOMContentLoaded", function(event){
+document.addEventListener('DOMContentLoaded', function(event){
 //$(window).on('load', function() {
   if ($('input[class*=\'qg-date-input\']').length > 0) {
     // hasDatepicker class has to be removed from the input when the page is loaded. jquery-ui.min.js will add the
