@@ -31,6 +31,6 @@ if ($("input[class*='qg-date-input']").length > 0) {
     $('head').append($("<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css' type='text/css' media='screen' />"));
   });
 }
-
+handleDatePicker();
 $(window).on('load', handleDatePicker);
 
