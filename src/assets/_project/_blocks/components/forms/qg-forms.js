@@ -15,7 +15,7 @@
     var $fr = $('input[type="radio"]');
     var $fc = $('input[type="checkbox"]');
 
-    $rcTheme.find($fr).change(function () {
+    $rcTheme.find($fr).on('change', function() {
       if ($(this).is(':checked')) {
         $(this).parents('.rc-theme').find('li').removeClass('rc-theme__active');
         $(this).parents('li').addClass('rc-theme__active');
@@ -23,7 +23,7 @@
         $(this).parents('li').removeClass('rc-theme__active');
       }
     });
-    $rcTheme.find($fc).change(function () {
+    $rcTheme.find($fc).on('change', function () {
       if ($(this).is(':checked')) {
         $(this).parents('li').addClass('rc-theme__active');
       } else {

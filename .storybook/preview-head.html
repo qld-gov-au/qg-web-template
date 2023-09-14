@@ -1,0 +1,11 @@
+<script type="text/javascript">
+  $.getScript('https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js', function () {
+    $('head').append($("<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css' type='text/css' media='screen' />"));
+  });
+  document.addEventListener("DOMContentLoaded", function(event) {
+    const script = document.createElement('script');
+    script.src = "./assets/v4/latest/js/qg-main.js";
+    script.crossOrigin = "anonymous";
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }, false);
+</script>
