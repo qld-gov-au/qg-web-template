@@ -10,15 +10,9 @@ if (!browserSupportsDateInput() && $('input[type=\'date\']').length > 0) {
     console.log('date polyfill loaded');
   });
 }
-// 'qg-date-input' adds a jquery ui datepicker
-if ($('input[class*=\'qg-date-input\']').length > 0) {
-  $.getScript('{{CDN}}/latest/lib/ext/jquery-ui-bundle/jquery-ui.min.js', function () {
-    $('head').append($("<link rel='stylesheet' href='{{CDN}}/latest/lib/ext/jquery-ui-bundle/jquery-ui.min.css' type='text/css' media='screen' />"));
-  });
-}
 
-$(window).on('load', function() {
-  if ($('input[class*=\'qg-date-input\']').length > 0) {
+var handleDatePicker = function() {
+  if ($("input[class*='qg-date-input']").length > 0) {
     // hasDatepicker class has to be removed from the input when the page is loaded. jquery-ui.min.js will add the
     // calendar widget when the class does not exist on the input. Then hasDatepicker will be dynamically added to the input.
     // This needs to be done when the page is loaded
@@ -30,5 +24,13 @@ $(window).on('load', function() {
     });
     $('.qg-date-input').attr('placeholder', 'dd/mm/yyyy');
   }
-});
+};
+// 'qg-date-input' adds a jquery ui datepicker
+if ($("input[class*='qg-date-input']").length > 0) {
+  $.getScript('https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js', function () {
+    $('head').append($("<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css' type='text/css' media='screen' />"));
+  });
+}
+handleDatePicker();
+$(window).on('load', handleDatePicker);
 
