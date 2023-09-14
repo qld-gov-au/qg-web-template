@@ -318,9 +318,12 @@
   } catch (e) {
     // eslint-disable-next-line no-console
     console.warn('unable to connect to top frame for connecting dev tools');
-  }</script><script type="text/javascript">document.addEventListener("DOMContentLoaded", function(event) {
+  }</script><script type="text/javascript">$.getScript('https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js', function () {
+    $('head').append($("<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css' type='text/css' media='screen' />"));
+  });
+  document.addEventListener("DOMContentLoaded", function(event) {
     const script = document.createElement('script');
-    script.src = "./assets/v4/latest/js/qg-main.js"; 
+    script.src = "./assets/v4/latest/js/qg-main.js";
     script.crossOrigin = "anonymous";
     document.getElementsByTagName('head')[0].appendChild(script);
   }, false);</script><style>#storybook-root[hidden],
@@ -362,7 +365,7 @@
             window['DOCS_OPTIONS'] = {"defaultName":"Docs","autodocs":true};</script><script type="module">import './sb-preview/runtime.js';
 
       
-        import './runtime~main.0f6c39dd.iframe.bundle.js';
+        import './runtime~main.b0a34540.iframe.bundle.js';
       
         import './3361.0b599d39.iframe.bundle.js';
       

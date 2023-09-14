@@ -620,7 +620,7 @@ var QgAddressAutocomplete = /*#__PURE__*/function () {
   if ($rcTheme.length > 0) {
     var $fr = $('input[type="radio"]');
     var $fc = $('input[type="checkbox"]');
-    $rcTheme.find($fr).change(function () {
+    $rcTheme.find($fr).on('change', function () {
       if ($(this).is(':checked')) {
         $(this).parents('.rc-theme').find('li').removeClass('rc-theme__active');
         $(this).parents('li').addClass('rc-theme__active');
@@ -628,7 +628,7 @@ var QgAddressAutocomplete = /*#__PURE__*/function () {
         $(this).parents('li').removeClass('rc-theme__active');
       }
     });
-    $rcTheme.find($fc).change(function () {
+    $rcTheme.find($fc).on('change', function () {
       if ($(this).is(':checked')) {
         $(this).parents('li').addClass('rc-theme__active');
       } else {
@@ -5497,14 +5497,8 @@ if (!browserSupportsDateInput() && $('input[type=\'date\']').length > 0) {
     console.log('date polyfill loaded');
   });
 }
-// 'qg-date-input' adds a jquery ui datepicker
-if ($('input[class*=\'qg-date-input\']').length > 0) {
-  $.getScript('/assets/v4/latest/lib/ext/jquery-ui-bundle/jquery-ui.min.js', function () {
-    $('head').append($("<link rel='stylesheet' href='/assets/v4/latest/lib/ext/jquery-ui-bundle/jquery-ui.min.css' type='text/css' media='screen' />"));
-  });
-}
-$(window).on('load', function () {
-  if ($('input[class*=\'qg-date-input\']').length > 0) {
+var handleDatePicker = function handleDatePicker() {
+  if ($("input[class*='qg-date-input']").length > 0) {
     // hasDatepicker class has to be removed from the input when the page is loaded. jquery-ui.min.js will add the
     // calendar widget when the class does not exist on the input. Then hasDatepicker will be dynamically added to the input.
     // This needs to be done when the page is loaded
@@ -5516,7 +5510,15 @@ $(window).on('load', function () {
     });
     $('.qg-date-input').attr('placeholder', 'dd/mm/yyyy');
   }
-});
+};
+// 'qg-date-input' adds a jquery ui datepicker
+if ($("input[class*='qg-date-input']").length > 0) {
+  $.getScript('https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js', function () {
+    $('head').append($("<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css' type='text/css' media='screen' />"));
+  });
+}
+handleDatePicker();
+$(window).on('load', handleDatePicker);
 
 /***/ }),
 
