@@ -5473,9 +5473,11 @@ module.exports = parentWidth;
   \************************************************************/
 /***/ (() => {
 
-$(window).on('load', function () {
+var addQGButtonClass = function addQGButtonClass() {
   $('.sortable-table .dataTables_wrapper a.paginate_button').addClass('qg-btn');
-});
+};
+$(window).on('load', addQGButtonClass);
+$(document).on('change', '.sortable-table select', addQGButtonClass);
 
 /***/ }),
 

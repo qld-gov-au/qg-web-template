@@ -13867,6 +13867,10 @@ body:not([data-accessibility=false]):not([data-access-new-window=false]) #qg-con
   margin-top: 1em;
 }
 
+.rc-theme.choices.qg-radio-tabs {
+  padding: 3px 0 0 3px;
+}
+
 .rc-theme .rc-theme__active {
   background-color: #007EB1 !important;
 }
@@ -14037,7 +14041,21 @@ body:not([data-accessibility=false]):not([data-access-new-window=false]) #qg-con
 .qg-forms-v2 select,
 .qg-forms-v2 textarea,
 .qg-forms-v2 .formio-choices .selection,
-.qg-forms-v2 .form-control.dropdown {
+.qg-forms-v2 .form-control.dropdown, .sortable-table input:not([type=button]):not([type=reset]):not([type=submit]):not([type=image]):not([type]),
+.sortable-table input[type=text],
+.sortable-table input[type=password],
+.sortable-table input[type=search],
+.sortable-table input[type=email],
+.sortable-table input[type=tel],
+.sortable-table input[type=url],
+.sortable-table input[type=date],
+.sortable-table input[type=time],
+.sortable-table input[type=datetime],
+.sortable-table input[type=number],
+.sortable-table select,
+.sortable-table textarea,
+.sortable-table .formio-choices .selection,
+.sortable-table .form-control.dropdown {
   padding: 8px;
   border-radius: 4px;
 }
@@ -14056,7 +14074,21 @@ body:not([data-accessibility=false]):not([data-access-new-window=false]) #qg-con
 .qg-forms-v2 select:focus-within,
 .qg-forms-v2 textarea:focus-within,
 .qg-forms-v2 .formio-choices .selection:focus-within,
-.qg-forms-v2 .form-control.dropdown:focus-within {
+.qg-forms-v2 .form-control.dropdown:focus-within, .sortable-table input:not([type=button]):not([type=reset]):not([type=submit]):not([type=image]):not([type]):focus-within,
+.sortable-table input[type=text]:focus-within,
+.sortable-table input[type=password]:focus-within,
+.sortable-table input[type=search]:focus-within,
+.sortable-table input[type=email]:focus-within,
+.sortable-table input[type=tel]:focus-within,
+.sortable-table input[type=url]:focus-within,
+.sortable-table input[type=date]:focus-within,
+.sortable-table input[type=time]:focus-within,
+.sortable-table input[type=datetime]:focus-within,
+.sortable-table input[type=number]:focus-within,
+.sortable-table select:focus-within,
+.sortable-table textarea:focus-within,
+.sortable-table .formio-choices .selection:focus-within,
+.sortable-table .form-control.dropdown:focus-within {
   color: #495057;
   background-color: white;
   border-color: #80bdff;
@@ -14066,74 +14098,78 @@ body:not([data-accessibility=false]):not([data-access-new-window=false]) #qg-con
 
 .qg-forms-v2 .form-control,
 .qg-forms-v2 .form-control.dropdown,
-.qg-forms-v2 .form-check-input {
+.qg-forms-v2 .form-check-input, .sortable-table .form-control,
+.sortable-table .form-control.dropdown,
+.sortable-table .form-check-input {
   border: 2px solid #808080;
 }
 
 .qg-forms-v2 label,
-.qg-forms-v2 .label {
+.qg-forms-v2 .label, .sortable-table label,
+.sortable-table .label {
   font-size: 16px;
   color: #000;
   font-weight: 600;
 }
 
-.qg-forms-v2 .hint {
+.qg-forms-v2 .hint, .sortable-table .hint {
   font-size: 16px;
   color: #767676 !important;
   font-weight: 400;
 }
 
-.qg-forms-v2 legend {
+.qg-forms-v2 legend, .sortable-table legend {
   font-size: 20px;
   color: #000;
   font-weight: 900;
 }
 
-.qg-forms-v2 .is-flipped .choices__list--dropdown {
+.qg-forms-v2 .is-flipped .choices__list--dropdown, .sortable-table .is-flipped .choices__list--dropdown {
   margin-bottom: 8px;
 }
 
-.qg-forms-v2 .choices__list--dropdown {
+.qg-forms-v2 .choices__list--dropdown, .sortable-table .choices__list--dropdown {
   box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2470588235);
   margin-top: 8px;
   border: 2px solid #80bdff !important;
   border-radius: 4px;
 }
 
-.qg-forms-v2 .choices__list--dropdown .choices__item--selectable {
+.qg-forms-v2 .choices__list--dropdown .choices__item--selectable, .sortable-table .choices__list--dropdown .choices__item--selectable {
   padding: 8px 14px;
 }
 
 .qg-forms-v2 .choices[data-type*=select-multiple] .choices__button,
-.qg-forms-v2 .choices[data-type*=text] .choices__button {
+.qg-forms-v2 .choices[data-type*=text] .choices__button, .sortable-table .choices[data-type*=select-multiple] .choices__button,
+.sortable-table .choices[data-type*=text] .choices__button {
   background-image: url(../images/x-icon.svg);
   background-size: 11px;
   vertical-align: middle;
   border-left: none;
 }
 
-.qg-forms-v2 .formio-choices .choices__item.choices__item--selectable {
+.qg-forms-v2 .formio-choices .choices__item.choices__item--selectable, .sortable-table .formio-choices .choices__item.choices__item--selectable {
   white-space: pre-wrap;
   word-break: break-word;
 }
 
-.qg-forms-v2 .formio-choices .choices__list--multiple .choices__item[data-deletable] {
+.qg-forms-v2 .formio-choices .choices__list--multiple .choices__item[data-deletable], .sortable-table .formio-choices .choices__list--multiple .choices__item[data-deletable] {
   padding-right: 10px;
   margin: 4px 8px 4px 0;
 }
 
-.qg-forms-v2 .formio-choices input.choices__input:not(.choices__input--cloned) {
+.qg-forms-v2 .formio-choices input.choices__input:not(.choices__input--cloned), .sortable-table .formio-choices input.choices__input:not(.choices__input--cloned) {
   border: none;
   font-size: 1rem;
   padding: 0 10px 0 0;
   margin: 4px 8px 4px 0;
 }
 
-.qg-forms-v2 .formio-choices input.choices__input:not(.choices__input--cloned):focus {
+.qg-forms-v2 .formio-choices input.choices__input:not(.choices__input--cloned):focus, .sortable-table .formio-choices input.choices__input:not(.choices__input--cloned):focus {
   box-shadow: none !important;
 }
 
-.qg-forms-v2 .formio-choices .choices__input--cloned {
+.qg-forms-v2 .formio-choices .choices__input--cloned, .sortable-table .formio-choices .choices__input--cloned {
   font-size: 1rem;
   border: 0;
   padding: 0 0 0 8px;
@@ -14142,38 +14178,43 @@ body:not([data-accessibility=false]):not([data-access-new-window=false]) #qg-con
   box-shadow: none !important;
 }
 
-.qg-forms-v2 .formio-choices .choices__item {
+.qg-forms-v2 .formio-choices .choices__item, .sortable-table .formio-choices .choices__item {
   padding: 4px 10px;
   line-height: inherit;
   font-size: 1rem;
 }
 
-.qg-forms-v2 .formio-choices .choices__item.choices__item--selectable:not(.choices__item--choice) {
+.qg-forms-v2 .formio-choices .choices__item.choices__item--selectable:not(.choices__item--choice), .sortable-table .formio-choices .choices__item.choices__item--selectable:not(.choices__item--choice) {
   background: #f3f3f3;
   border-radius: 6px;
   border: none;
   color: #212529;
 }
 
-.qg-forms-v2 .formio-choices .choices__button {
+.qg-forms-v2 .formio-choices .choices__button, .sortable-table .formio-choices .choices__button {
   background-color: initial;
 }
 
 .qg-forms-v2 .checkbox,
-.qg-forms-v2 .form-radio {
+.qg-forms-v2 .form-radio, .sortable-table .checkbox,
+.sortable-table .form-radio {
   padding: 12px 0 12px 0;
   margin: 0;
 }
 
 .qg-forms-v2 .checkbox .radio,
-.qg-forms-v2 .form-radio .radio {
+.qg-forms-v2 .form-radio .radio, .sortable-table .checkbox .radio,
+.sortable-table .form-radio .radio {
   margin: 0;
 }
 
 .qg-forms-v2 .checkbox .form-check,
 .qg-forms-v2 .checkbox .form-check-inline,
 .qg-forms-v2 .form-radio .form-check,
-.qg-forms-v2 .form-radio .form-check-inline {
+.qg-forms-v2 .form-radio .form-check-inline, .sortable-table .checkbox .form-check,
+.sortable-table .checkbox .form-check-inline,
+.sortable-table .form-radio .form-check,
+.sortable-table .form-radio .form-check-inline {
   padding-bottom: 1.3rem;
   padding-left: 0;
 }
@@ -14181,19 +14222,26 @@ body:not([data-accessibility=false]):not([data-access-new-window=false]) #qg-con
 .qg-forms-v2 .checkbox .form-check .form-check-input,
 .qg-forms-v2 .checkbox .form-check-inline .form-check-input,
 .qg-forms-v2 .form-radio .form-check .form-check-input,
-.qg-forms-v2 .form-radio .form-check-inline .form-check-input {
+.qg-forms-v2 .form-radio .form-check-inline .form-check-input, .sortable-table .checkbox .form-check .form-check-input,
+.sortable-table .checkbox .form-check-inline .form-check-input,
+.sortable-table .form-radio .form-check .form-check-input,
+.sortable-table .form-radio .form-check-inline .form-check-input {
   margin-left: -16px;
 }
 
 .qg-forms-v2 .checkbox .form-check-inline .form-check-input,
-.qg-forms-v2 .form-radio .form-check-inline .form-check-input {
+.qg-forms-v2 .form-radio .form-check-inline .form-check-input, .sortable-table .checkbox .form-check-inline .form-check-input,
+.sortable-table .form-radio .form-check-inline .form-check-input {
   margin-right: 0;
 }
 
 .qg-forms-v2 .checkbox input[type=radio],
 .qg-forms-v2 .checkbox input[type=checkbox],
 .qg-forms-v2 .form-radio input[type=radio],
-.qg-forms-v2 .form-radio input[type=checkbox] {
+.qg-forms-v2 .form-radio input[type=checkbox], .sortable-table .checkbox input[type=radio],
+.sortable-table .checkbox input[type=checkbox],
+.sortable-table .form-radio input[type=radio],
+.sortable-table .form-radio input[type=checkbox] {
   accent-color: #292929;
   width: 1.5em;
   height: 1.5em;
@@ -14204,12 +14252,16 @@ body:not([data-accessibility=false]):not([data-access-new-window=false]) #qg-con
 .qg-forms-v2 .checkbox input[type=radio]:checked + label,
 .qg-forms-v2 .checkbox input[type=checkbox]:checked + label,
 .qg-forms-v2 .form-radio input[type=radio]:checked + label,
-.qg-forms-v2 .form-radio input[type=checkbox]:checked + label {
+.qg-forms-v2 .form-radio input[type=checkbox]:checked + label, .sortable-table .checkbox input[type=radio]:checked + label,
+.sortable-table .checkbox input[type=checkbox]:checked + label,
+.sortable-table .form-radio input[type=radio]:checked + label,
+.sortable-table .form-radio input[type=checkbox]:checked + label {
   color: inherit;
 }
 
 .qg-forms-v2 .checkbox label,
-.qg-forms-v2 .form-radio label {
+.qg-forms-v2 .form-radio label, .sortable-table .checkbox label,
+.sortable-table .form-radio label {
   display: flex;
   font-weight: normal;
   margin-left: 0;
@@ -14217,78 +14269,79 @@ body:not([data-accessibility=false]):not([data-access-new-window=false]) #qg-con
 }
 
 .qg-forms-v2 .checkbox label > span,
-.qg-forms-v2 .form-radio label > span {
+.qg-forms-v2 .form-radio label > span, .sortable-table .checkbox label > span,
+.sortable-table .form-radio label > span {
   flex: 1;
   font-weight: 400;
   margin-left: 1.3rem;
 }
 
-.qg-forms-v2 .formio-component-checkbox .field-required:after {
+.qg-forms-v2 .formio-component-checkbox .field-required:after, .sortable-table .formio-component-checkbox .field-required:after {
   display: none;
 }
 
-.qg-forms-v2 .formio-component-checkbox .field-required input + span:after {
+.qg-forms-v2 .formio-component-checkbox .field-required input + span:after, .sortable-table .formio-component-checkbox .field-required input + span:after {
   content: " *";
   color: #eb0000;
 }
 
-.qg-forms-v2 .formio-hidden {
+.qg-forms-v2 .formio-hidden, .sortable-table .formio-hidden {
   margin-bottom: 0 !important;
 }
 
-.qg-forms-v2 .invalid .alert {
+.qg-forms-v2 .invalid .alert, .sortable-table .invalid .alert {
   font-weight: normal;
 }
 
-.qg-forms-v2 .alert {
+.qg-forms-v2 .alert, .sortable-table .alert {
   margin-bottom: 16px;
   font-size: 1rem;
 }
 
-.qg-forms-v2 .alert.alert-danger {
+.qg-forms-v2 .alert.alert-danger, .sortable-table .alert.alert-danger {
   background-color: #ffedde;
   border-color: #f9af71;
 }
 
-.qg-forms-v2 .text-muted {
+.qg-forms-v2 .text-muted, .sortable-table .text-muted {
   color: #767676 !important;
 }
 
-.qg-forms-v2 .qg-link {
+.qg-forms-v2 .qg-link, .sortable-table .qg-link {
   cursor: pointer;
 }
 
-.qg-forms-v2 .alert-danger {
+.qg-forms-v2 .alert-danger, .sortable-table .alert-danger {
   background-color: #ffedde;
   border-color: #f9af71;
 }
 
-.qg-forms-v2 .alert-danger li {
+.qg-forms-v2 .alert-danger li, .sortable-table .alert-danger li {
   text-decoration-line: underline;
   text-underline-offset: 5px;
 }
 
-.qg-forms-v2 .alert-danger li span {
+.qg-forms-v2 .alert-danger li span, .sortable-table .alert-danger li span {
   color: #005e85 !important;
 }
 
-.qg-forms-v2 .is-invalid {
+.qg-forms-v2 .is-invalid, .sortable-table .is-invalid {
   background-color: white;
   background-image: none !important;
 }
 
-.qg-forms-v2 .formio-error-wrapper {
+.qg-forms-v2 .formio-error-wrapper, .sortable-table .formio-error-wrapper {
   color: white !important;
   background-color: white !important;
   border-color: white !important;
   padding: 0;
 }
 
-.qg-forms-v2 .formio-errors div.error {
+.qg-forms-v2 .formio-errors div.error, .sortable-table .formio-errors div.error {
   font-size: 16px;
 }
 
-.qg-forms-v2 div.has_error {
+.qg-forms-v2 div.has_error, .sortable-table div.has_error {
   margin-top: 1.3rem;
 }
 
@@ -14307,7 +14360,22 @@ body:not([data-accessibility=false]):not([data-access-new-window=false]) #qg-con
 .qg-forms-v2 .formio-component-datetime,
 .qg-forms-v2 .formio-component-day,
 .qg-forms-v2 .formio-component-datetime,
-.qg-forms-v2 .formio-component-currency {
+.qg-forms-v2 .formio-component-currency, .sortable-table .formio-component-textfield,
+.sortable-table .formio-component-textarea,
+.sortable-table .formio-component-hidden,
+.sortable-table .formio-component-checkbox,
+.sortable-table .formio-component-email,
+.sortable-table .formio-component-password,
+.sortable-table .formio-component-radio,
+.sortable-table .formio-component-currency,
+.sortable-table .formio-component-number,
+.sortable-table .formio-component-selectboxes,
+.sortable-table .formio-component-url,
+.sortable-table .formio-component-phoneNumber,
+.sortable-table .formio-component-datetime,
+.sortable-table .formio-component-day,
+.sortable-table .formio-component-datetime,
+.sortable-table .formio-component-currency {
   display: inline-grid;
   display: grid;
 }
@@ -14327,7 +14395,22 @@ body:not([data-accessibility=false]):not([data-access-new-window=false]) #qg-con
 .qg-forms-v2 .formio-component-datetime div.col-form-label,
 .qg-forms-v2 .formio-component-day div.col-form-label,
 .qg-forms-v2 .formio-component-datetime div.col-form-label,
-.qg-forms-v2 .formio-component-currency div.col-form-label {
+.qg-forms-v2 .formio-component-currency div.col-form-label, .sortable-table .formio-component-textfield div.col-form-label,
+.sortable-table .formio-component-textarea div.col-form-label,
+.sortable-table .formio-component-hidden div.col-form-label,
+.sortable-table .formio-component-checkbox div.col-form-label,
+.sortable-table .formio-component-email div.col-form-label,
+.sortable-table .formio-component-password div.col-form-label,
+.sortable-table .formio-component-radio div.col-form-label,
+.sortable-table .formio-component-currency div.col-form-label,
+.sortable-table .formio-component-number div.col-form-label,
+.sortable-table .formio-component-selectboxes div.col-form-label,
+.sortable-table .formio-component-url div.col-form-label,
+.sortable-table .formio-component-phoneNumber div.col-form-label,
+.sortable-table .formio-component-datetime div.col-form-label,
+.sortable-table .formio-component-day div.col-form-label,
+.sortable-table .formio-component-datetime div.col-form-label,
+.sortable-table .formio-component-currency div.col-form-label {
   order: 0;
 }
 
@@ -14346,7 +14429,22 @@ body:not([data-accessibility=false]):not([data-access-new-window=false]) #qg-con
 .qg-forms-v2 .formio-component-datetime div.text-muted,
 .qg-forms-v2 .formio-component-day div.text-muted,
 .qg-forms-v2 .formio-component-datetime div.text-muted,
-.qg-forms-v2 .formio-component-currency div.text-muted {
+.qg-forms-v2 .formio-component-currency div.text-muted, .sortable-table .formio-component-textfield div.text-muted,
+.sortable-table .formio-component-textarea div.text-muted,
+.sortable-table .formio-component-hidden div.text-muted,
+.sortable-table .formio-component-checkbox div.text-muted,
+.sortable-table .formio-component-email div.text-muted,
+.sortable-table .formio-component-password div.text-muted,
+.sortable-table .formio-component-radio div.text-muted,
+.sortable-table .formio-component-currency div.text-muted,
+.sortable-table .formio-component-number div.text-muted,
+.sortable-table .formio-component-selectboxes div.text-muted,
+.sortable-table .formio-component-url div.text-muted,
+.sortable-table .formio-component-phoneNumber div.text-muted,
+.sortable-table .formio-component-datetime div.text-muted,
+.sortable-table .formio-component-day div.text-muted,
+.sortable-table .formio-component-datetime div.text-muted,
+.sortable-table .formio-component-currency div.text-muted {
   order: 1;
   margin-bottom: 4px;
 }
@@ -14366,7 +14464,22 @@ body:not([data-accessibility=false]):not([data-access-new-window=false]) #qg-con
 .qg-forms-v2 .formio-component-datetime div.formio-errors,
 .qg-forms-v2 .formio-component-day div.formio-errors,
 .qg-forms-v2 .formio-component-datetime div.formio-errors,
-.qg-forms-v2 .formio-component-currency div.formio-errors {
+.qg-forms-v2 .formio-component-currency div.formio-errors, .sortable-table .formio-component-textfield div.formio-errors,
+.sortable-table .formio-component-textarea div.formio-errors,
+.sortable-table .formio-component-hidden div.formio-errors,
+.sortable-table .formio-component-checkbox div.formio-errors,
+.sortable-table .formio-component-email div.formio-errors,
+.sortable-table .formio-component-password div.formio-errors,
+.sortable-table .formio-component-radio div.formio-errors,
+.sortable-table .formio-component-currency div.formio-errors,
+.sortable-table .formio-component-number div.formio-errors,
+.sortable-table .formio-component-selectboxes div.formio-errors,
+.sortable-table .formio-component-url div.formio-errors,
+.sortable-table .formio-component-phoneNumber div.formio-errors,
+.sortable-table .formio-component-datetime div.formio-errors,
+.sortable-table .formio-component-day div.formio-errors,
+.sortable-table .formio-component-datetime div.formio-errors,
+.sortable-table .formio-component-currency div.formio-errors {
   order: 2;
   margin-bottom: 8px;
 }
@@ -14450,26 +14563,108 @@ body:not([data-accessibility=false]):not([data-access-new-window=false]) #qg-con
 .qg-forms-v2 .formio-component-currency div.row,
 .qg-forms-v2 .formio-component-currency div.form-radio,
 .qg-forms-v2 .formio-component-currency div.checkbox,
-.qg-forms-v2 .formio-component-currency div.address-autocomplete-container {
+.qg-forms-v2 .formio-component-currency div.address-autocomplete-container, .sortable-table .formio-component-textfield div[ref=element],
+.sortable-table .formio-component-textfield div.row,
+.sortable-table .formio-component-textfield div.form-radio,
+.sortable-table .formio-component-textfield div.checkbox,
+.sortable-table .formio-component-textfield div.address-autocomplete-container,
+.sortable-table .formio-component-textarea div[ref=element],
+.sortable-table .formio-component-textarea div.row,
+.sortable-table .formio-component-textarea div.form-radio,
+.sortable-table .formio-component-textarea div.checkbox,
+.sortable-table .formio-component-textarea div.address-autocomplete-container,
+.sortable-table .formio-component-hidden div[ref=element],
+.sortable-table .formio-component-hidden div.row,
+.sortable-table .formio-component-hidden div.form-radio,
+.sortable-table .formio-component-hidden div.checkbox,
+.sortable-table .formio-component-hidden div.address-autocomplete-container,
+.sortable-table .formio-component-checkbox div[ref=element],
+.sortable-table .formio-component-checkbox div.row,
+.sortable-table .formio-component-checkbox div.form-radio,
+.sortable-table .formio-component-checkbox div.checkbox,
+.sortable-table .formio-component-checkbox div.address-autocomplete-container,
+.sortable-table .formio-component-email div[ref=element],
+.sortable-table .formio-component-email div.row,
+.sortable-table .formio-component-email div.form-radio,
+.sortable-table .formio-component-email div.checkbox,
+.sortable-table .formio-component-email div.address-autocomplete-container,
+.sortable-table .formio-component-password div[ref=element],
+.sortable-table .formio-component-password div.row,
+.sortable-table .formio-component-password div.form-radio,
+.sortable-table .formio-component-password div.checkbox,
+.sortable-table .formio-component-password div.address-autocomplete-container,
+.sortable-table .formio-component-radio div[ref=element],
+.sortable-table .formio-component-radio div.row,
+.sortable-table .formio-component-radio div.form-radio,
+.sortable-table .formio-component-radio div.checkbox,
+.sortable-table .formio-component-radio div.address-autocomplete-container,
+.sortable-table .formio-component-currency div[ref=element],
+.sortable-table .formio-component-currency div.row,
+.sortable-table .formio-component-currency div.form-radio,
+.sortable-table .formio-component-currency div.checkbox,
+.sortable-table .formio-component-currency div.address-autocomplete-container,
+.sortable-table .formio-component-number div[ref=element],
+.sortable-table .formio-component-number div.row,
+.sortable-table .formio-component-number div.form-radio,
+.sortable-table .formio-component-number div.checkbox,
+.sortable-table .formio-component-number div.address-autocomplete-container,
+.sortable-table .formio-component-selectboxes div[ref=element],
+.sortable-table .formio-component-selectboxes div.row,
+.sortable-table .formio-component-selectboxes div.form-radio,
+.sortable-table .formio-component-selectboxes div.checkbox,
+.sortable-table .formio-component-selectboxes div.address-autocomplete-container,
+.sortable-table .formio-component-url div[ref=element],
+.sortable-table .formio-component-url div.row,
+.sortable-table .formio-component-url div.form-radio,
+.sortable-table .formio-component-url div.checkbox,
+.sortable-table .formio-component-url div.address-autocomplete-container,
+.sortable-table .formio-component-phoneNumber div[ref=element],
+.sortable-table .formio-component-phoneNumber div.row,
+.sortable-table .formio-component-phoneNumber div.form-radio,
+.sortable-table .formio-component-phoneNumber div.checkbox,
+.sortable-table .formio-component-phoneNumber div.address-autocomplete-container,
+.sortable-table .formio-component-datetime div[ref=element],
+.sortable-table .formio-component-datetime div.row,
+.sortable-table .formio-component-datetime div.form-radio,
+.sortable-table .formio-component-datetime div.checkbox,
+.sortable-table .formio-component-datetime div.address-autocomplete-container,
+.sortable-table .formio-component-day div[ref=element],
+.sortable-table .formio-component-day div.row,
+.sortable-table .formio-component-day div.form-radio,
+.sortable-table .formio-component-day div.checkbox,
+.sortable-table .formio-component-day div.address-autocomplete-container,
+.sortable-table .formio-component-datetime div[ref=element],
+.sortable-table .formio-component-datetime div.row,
+.sortable-table .formio-component-datetime div.form-radio,
+.sortable-table .formio-component-datetime div.checkbox,
+.sortable-table .formio-component-datetime div.address-autocomplete-container,
+.sortable-table .formio-component-currency div[ref=element],
+.sortable-table .formio-component-currency div.row,
+.sortable-table .formio-component-currency div.form-radio,
+.sortable-table .formio-component-currency div.checkbox,
+.sortable-table .formio-component-currency div.address-autocomplete-container {
   order: 3;
 }
 
 .qg-forms-v2 .formio-component-submitButton,
 .qg-forms-v2 .formio-component-submit,
 .qg-forms-v2 .formio-component-form,
-.qg-forms-v2 .fieldset-body {
+.qg-forms-v2 .fieldset-body, .sortable-table .formio-component-submitButton,
+.sortable-table .formio-component-submit,
+.sortable-table .formio-component-form,
+.sortable-table .fieldset-body {
   display: block !important;
 }
 
-.qg-forms-v2 fieldset .fieldset-body label {
+.qg-forms-v2 fieldset .fieldset-body label, .sortable-table fieldset .fieldset-body label {
   font-weight: 600;
 }
 
-.qg-forms-v2 .border {
+.qg-forms-v2 .border, .sortable-table .border {
   border: 0;
 }
 
-.qg-forms-v2 .card {
+.qg-forms-v2 .card, .sortable-table .card {
   position: relative;
   display: inherit !important;
   flex-direction: inherit !important;
@@ -14481,7 +14676,7 @@ body:not([data-accessibility=false]):not([data-access-new-window=false]) #qg-con
   border-radius: 0 !important;
 }
 
-.qg-forms-v2 .card-body {
+.qg-forms-v2 .card-body, .sortable-table .card-body {
   display: inherit !important;
   min-height: inherit !important;
   padding: inherit !important;
@@ -15556,6 +15751,10 @@ table.dataTable thead td:active {
   background-color: #eee;
   border-color: #ddd;
   cursor: pointer;
+}
+
+.dataTables_paginate a.paginate_button:focus:not(.disabled), .dataTables_paginate a.paginate_button:hover:not(.disabled) {
+  text-decoration-line: underline !important;
 }
 
 .dataTables_paginate a.paginate_button.disabled, .dataTables_paginate a.paginate_button.disabled:focus, .dataTables_paginate a.paginate_button.disabled:hover {
