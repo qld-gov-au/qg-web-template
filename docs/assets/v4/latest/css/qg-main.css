@@ -21168,7 +21168,9 @@ footer.qg-site-footer .qg-legal ul li {
 
 .qg-portal-links .qg-portal-links__list .nav-link, .qg-portal-links .qg-portal-links__list .qg-portal-links__btn {
   background-color: #4a4a4a;
-  padding: 10px 20px 10px 15px;
+  padding: 7px 20px 9px 15px;
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
 }
 
 .qg-portal-links .qg-portal-links__list .nav-link:not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a), .qg-portal-links .qg-portal-links__list .qg-portal-links__btn:not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a) {
@@ -21477,7 +21479,7 @@ footer.qg-site-footer .qg-legal ul li {
 @media (min-width: 992px) {
   .qg-portal-links .nav-item {
     margin-top: 2px;
-    max-height: 44px;
+    max-height: 46px;
     padding-left: 5px;
   }
   .qg-portal-links .dropdown-menu {
