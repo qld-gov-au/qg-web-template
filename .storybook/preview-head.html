@@ -1,7 +1,10 @@
 <script type="text/javascript">
-  $.getScript('https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js', function () {
-    $('head').append($("<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css' type='text/css' media='screen' />"));
-  });
+  const jqueryuiscript = document.createElement('script');
+  jqueryuiscript.src = "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js";
+  jqueryuiscript.crossOrigin = "anonymous";
+  document.getElementsByTagName('head')[0].appendChild(jqueryuiscript);
+  $('head').append($("<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css' type='text/css' crossOrigin = 'anonymous' media='screen' />"));
+
   document.addEventListener("DOMContentLoaded", function(event) {
     const script = document.createElement('script');
     script.src = "./assets/v4/latest/js/qg-main.js";
