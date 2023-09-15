@@ -20,7 +20,7 @@ describe('SWE Header testing', () => {
     await page.type('input#qg-search-query', 'jobs', { delay: 40 });
     await page.waitForTimeout(ct.WT);
     expect(
-      await page.$$eval('.qg-search-concierge-content li button', nodes => nodes.map(n => n.textContent)),
+      await page.evaluate('.qg-search-concierge-content li button', nodes => nodes.map(n => n.textContent)),
     ).toHaveLength(3);
   });
 
