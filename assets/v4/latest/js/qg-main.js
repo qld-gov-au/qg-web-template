@@ -5775,6 +5775,39 @@ var QgLoadGoogleApi = /*#__PURE__*/function () {
 
 /***/ }),
 
+/***/ "./src/assets/_project/_blocks/utils/qg-quickexit.js":
+/*!***********************************************************!*\
+  !*** ./src/assets/_project/_blocks/utils/qg-quickexit.js ***!
+  \***********************************************************/
+/***/ (() => {
+
+var handleQuickExit = function handleQuickExit(e) {
+  var $el = $('.qg-quick-exit');
+  if (document.documentElement.clientWidth > 992) {
+    if ($(this).scrollTop() > 200) {
+      $el.css({
+        'position': 'fixed',
+        'top': '0px'
+      });
+    }
+    if ($(this).scrollTop() < 200) {
+      $el.css({
+        'position': 'sticky',
+        'top': '0px'
+      });
+    }
+  } else {
+    $el.css({
+      'position': 'fixed',
+      'top': 'auto'
+    });
+  }
+};
+$(window).on('scroll', handleQuickExit);
+window.addEventListener('resize', handleQuickExit, true);
+
+/***/ }),
+
 /***/ "./src/assets/_project/_blocks/utils/qg-util.js":
 /*!******************************************************!*\
   !*** ./src/assets/_project/_blocks/utils/qg-util.js ***!
@@ -5792,8 +5825,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _parent_width__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_parent_width__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _qg_datepicker__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./qg-datepicker */ "./src/assets/_project/_blocks/utils/qg-datepicker.js");
 /* harmony import */ var _qg_datepicker__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_qg_datepicker__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _qg_datatables__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./qg-datatables */ "./src/assets/_project/_blocks/utils/qg-datatables.js");
-/* harmony import */ var _qg_datatables__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_qg_datatables__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _qg_quickexit__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./qg-quickexit */ "./src/assets/_project/_blocks/utils/qg-quickexit.js");
+/* harmony import */ var _qg_quickexit__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_qg_quickexit__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _qg_datatables__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./qg-datatables */ "./src/assets/_project/_blocks/utils/qg-datatables.js");
+/* harmony import */ var _qg_datatables__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_qg_datatables__WEBPACK_IMPORTED_MODULE_6__);
+
 
 
 
