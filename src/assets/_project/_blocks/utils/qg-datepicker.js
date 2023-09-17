@@ -33,4 +33,3 @@ if ($("input[class*='qg-date-input']").length > 0) {
 }
 handleDatePicker();
 $(window).on('load', handleDatePicker);
-
