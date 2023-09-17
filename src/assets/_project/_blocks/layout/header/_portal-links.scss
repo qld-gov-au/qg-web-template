@@ -23,7 +23,9 @@
 
     .nav-link, .qg-portal-links__btn {
       background-color: $qg-dark-grey-dark;
-      padding: 10px 20px 10px 15px;
+      padding: 7px 20px 9px 15px;
+      margin-top: 5px !important;
+      margin-bottom: 5px !important;
       @include qg-link-styles__no-underline-white;
     }
 
@@ -105,7 +107,7 @@
   @include media-breakpoint-up(md) {
     .nav-item {
       margin-top: 2px;
-      max-height: 44px;
+      max-height: 46px;
       padding-left: 5px;
     }
     .dropdown-menu {

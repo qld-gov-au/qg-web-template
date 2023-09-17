@@ -401,6 +401,9 @@ table.dataTable {
       color: #0a2d48 !important;
       background-color: #eee;
       border-color: #ddd;
+      &:not(.disabled) {
+        text-decoration-line: underline !important;
+      }
       cursor: pointer;
     }
     &.disabled, &.disabled:focus, &.disabled:hover {
