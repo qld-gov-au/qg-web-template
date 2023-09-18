@@ -28,9 +28,8 @@ var handleDatePicker = function() {
 // 'qg-date-input' adds a jquery ui datepicker
 if ($("input[class*='qg-date-input']").length > 0) {
   $.getScript('https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js', function () {
-    $('head').append($("<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css' type='text/css' media='screen' />"));
+    $('head').append($("<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css' type='text/css' crossorigin='anonymous' media='screen' />"));
   });
 }
 handleDatePicker();
 $(window).on('load', handleDatePicker);
-
