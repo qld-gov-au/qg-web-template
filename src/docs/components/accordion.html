@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <title>Accordion</title>
+
+  <meta name="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur cupiditate eius facere hic molestiae quasi sapiente. Accusantium beatae consectetur cumque, eaque fugit labore officia quisquam quod reprehenderit suscipit! Consectetur, magni!" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur cupiditate eius facere hic molestiae quasi sapiente. Accusantium beatae consectetur cumque, eaque fugit labore officia quisquam quod reprehenderit suscipit! Consectetur, magni!">
+  <meta name="keywords" content="KEYWORDS">
+  <meta name="DCTERMS.creator" scheme="AGLSTERMS.GOLD" content="c=AU; o=The State of Queensland; ou=DEPARTMENT NAME; ou=UNIT NAME">
+  <meta name="DCTERMS.publisher" scheme="AGLSTERMS.AglsAgent" content="corporateName=The State of Queensland; jurisdiction=Queensland">
+  <meta name="DCTERMS.created" content="2010-11-04">
+  <meta name="DCTERMS.modified" content="2011-03-05">
+  <meta name="DCTERMS.title" content="Add your heading">
+  <meta name="DCTERMS.alternative" content="Add your heading">
+  <meta name="DCTERMS.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur cupiditate eius facere hic molestiae quasi sapiente. Accusantium beatae consectetur cumque, eaque fugit labore officia quisquam quod reprehenderit suscipit! Consectetur, magni!" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur cupiditate eius facere hic molestiae quasi sapiente. Accusantium beatae consectetur cumque, eaque fugit labore officia quisquam quod reprehenderit suscipit! Consectetur, magni!">
+  <meta name="DCTERMS.subject" scheme="AGLSTERMS.APAIS" content="SUBJECT">
+  <meta name="AGLSTERMS.function" scheme="AGLSTERMS.AGIFT" content="FUNCTION">
+  <meta name="DCTERMS.type" scheme="DCTERMS.DCMIType" content="Text">
+  <meta name="AGLSTERMS.documentType" scheme="AGLSTERMS.agls-document" content="guidelines">
+  <meta name="DCTERMS.audience" scheme="AGLSTERMS.agls-audience" content="">
+  <meta name="DCTERMS.jurisdiction" scheme="AGLSTERMS.AglsJuri" content="Queensland">
+
+  <!-- Open graph -->
+  <meta property="og:title" content="Queensland Government">
+  <meta property="og:Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur cupiditate eius facere hic molestiae quasi sapiente. Accusantium beatae consectetur cumque, eaque fugit labore officia quisquam quod reprehenderit suscipit! Consectetur, magni!" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur cupiditate eius facere hic molestiae quasi sapiente. Accusantium beatae consectetur cumque, eaque fugit labore officia quisquam quod reprehenderit suscipit! Consectetur, magni!">
+  <meta property="og:image" content="/assets/v4/latest/images/coat-of-arms/coa-thumbnail.png">
+  <meta property="og:url" content="">
+  <meta property="og:type" content="article" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Queensland Government" />
+  <meta name="twitter:Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur cupiditate eius facere hic molestiae quasi sapiente. Accusantium beatae consectetur cumque, eaque fugit labore officia quisquam quod reprehenderit suscipit! Consectetur, magni!" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur cupiditate eius facere hic molestiae quasi sapiente. Accusantium beatae consectetur cumque, eaque fugit labore officia quisquam quod reprehenderit suscipit! Consectetur, magni!" />
+  <meta name="twitter:image" content="/assets/v4/latest/images/coat-of-arms/coa-thumbnail.png" />
+
+  <!--#include virtual="/assets/includes-local/head-assets.html"-->
+
+</head>
+
+<body data-qg-accessibility="true">
+<!--#include virtual="/assets/includes-local/analytics.html"-->
+<!--#include virtual="/assets/includes-local/header/access.html"-->
+
+
+
+<!--#include virtual="/assets/includes-local/header/header.html"-->
+<div class="qg-global-breadcrumb qg-breadcrumb">
+  <div class="container-fluid qg-site-width">
+    <nav id="qg-breadcrumb" aria-label="breadcrumb" class="qg-breadcrumb-nav row">
+      <ol class="qg-breadcrumb-list">
+        <li class="qg-breadcrumb-list-item">
+          <a href="/" class="qg-breadcrumb-list-item__link">
+            Home
+          </a>
+        </li>
+        <li class="qg-breadcrumb-list-item">
+          <a href="../" class="qg-breadcrumb-list-item__link">
+            Web Template Documentation
+          </a>
+        </li>
+        <li class="qg-breadcrumb-list-item">
+          <a href="../components.html" class="qg-breadcrumb-list-item__link">
+            Components
+          </a>
+        </li>
+        <li class="qg-breadcrumb-list-item">
+          <a href="#" class="qg-breadcrumb-list-item__link">
+            Accordion
+          </a>
+        </li>
+      </ol>
+    </nav>
+  </div>
+</div>
+<div class="container-fluid qg-site-width">
+  <div id="qg-content">
+    <div id="qg-one-col" class="row wide">
+
+      <div id="qg-primary-content" role="main">
+        <h1 id="accordion" class="category">Accordion</h1>
+        <section>
+          <p>Accordions display collapsible content panels for presenting information in a limited amount of space. Accordions help users see only the content they need, while everything else is easily accessible.</p>
+          <p> Usage considerations</p>
+          <ul>
+            <li>Try to limit the number of panels in an accordion by categorising information into smaller, digestible chucks. This will assist your users in scanning and comprehending the content.</li>
+            <li>Remember to structure textual content correctly in accordions, for example use heading tags where appropriate.</li>
+          </ul>
+
+          <section class="qg-accordion qg-accordion-v2 qg-dark-accordion mb-4" aria-label="Accordion Label">
+            <div class="qg-acc-controls">
+              <button class="controls expand">Expand all</button>
+              <span class="controls">&#124;</span>
+              <button class="controls collapse">Collapse all</button>
+            </div>
+            <article>
+              <button class="acc-heading qg-accordion--closed" aria-controls="accordion-default" aria-expanded="true" >
+                <a class="qg-accordion--ga">
+                   <span class="accordion-label">
+                       <span class="title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur culpa est magnam odit quidem!</span>
+                   </span>
+                </a>
+              </button>
+              <div class="collapsing-section" id="id-panel-3">
+                <p> Content related to header. </p>
+                <ul>
+                  <li>If dot points are available</li>
+                  <li>Can go here</li>
+                </ul>
+                <p>Form example inside accordion</p>
+                <form name="feedback" action="" method="post">
+                  <ol class="sections">
+                    <li class="section"><fieldset><legend><span class="h3">Contact details</span></legend>
+                      <ol class="questions">
+                        <li>
+                          <label for="name">
+                            <span class="label">Name</span>
+                          </label>
+                          <input id="name"  name="name" size="20" type="text" />
+                        </li>
+                        <li>
+                          <label for="email">
+                            <span class="label">Email</span>
+                          </label>
+                          <input id="email" name="email" size="40" type="email" />
+                        </li>
+                        <li>
+                          <label for="phone">
+                            <span class="label">Phone</span>
+
+
+                          </label>
+                          <input id="phone" name="phone" size="40" type="text" />
+                        </li>
+                        <li>
+                          <label for="organisation">
+                            <span class="label">Organisation</span>
+                          </label>
+                          <input id="organisation" name="organisation" size="40" type="text" />
+                        </li>
+
+                        <li>
+                          <label for="additional-comments">
+                            <span class="label">Comments</span>
+                            <abbr class="required" title="(required)">*</abbr>
+                            <small class="hint">Please do not include private or sensitive information such as credit card numbers, bank account numbers, usernames and passwords.</small>
+                          </label>
+                          <textarea id="additional-comments" name="additional-comments" required="required" rows="10" cols="40"></textarea>
+                        </li>
+                      </ol>
+                    </fieldset>
+                    </li>
+
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                      <label class="form-check-label" for="exampleRadios1">
+                        Default radio
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                      <label class="form-check-label" for="exampleRadios2">
+                        Second default radio
+                      </label>
+                    </div>
+                    <div class="form-check disabled">
+                      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" disabled>
+                      <label class="form-check-label" for="exampleRadios3">
+                        Disabled radio
+                      </label>
+                    </div>
+
+                    <li class="footer">
+
+                      <input type="hidden" name="Last page visited" value="" />
+                      <ol class="actions">
+                        <li><strong><input value="Send message" type="submit" /></strong></li>
+                      </ol>
+                    </li>
+                  </ol>
+                </form>
+              </div>
+            </article>
+            <article>
+              <button class="acc-heading qg-accordion--closed" aria-controls="accordion-default" aria-expanded="true">
+                <a class="qg-accordion--ga">
+                  <img src="https://placeimg.com/20/20/nature" alt="">
+                  <span class="accordion-label"><span class="title">With icon</span> <span class="subtitle">Subtitle can go here (optional)</span></span>
+                </a>
+              </button>
+              <div class="collapsing-section " id="id-panel-4">
+                <h4>Heading</h4>
+                <p> Content related to header. </p>
+                <ul>
+                  <li>If dot points are available</li>
+                  <li>Can go here</li>
+                </ul>
+                <p>Or provide any semantic html structure</p>
+                <button type="button" class="qg-btn btn-default">Default</button>
+                <button type="button" class="qg-btn btn-primary">Primary</button>
+                <button type="button" class="qg-btn btn-secondary">Primary Alt</button>
+                <button type="button" class="qg-btn btn-link">Link</button>
+              </div>
+            </article>
+          </section>
+          <section class="qg-accordion qg-accordion-v2 mt-4" aria-label="Accordion Label">
+            <div class="qg-acc-controls">
+              <button class="controls expand">Expand all</button>
+              <span class="controls">&#124;</span>
+              <button class="controls collapse">Collapse all</button>
+            </div>
+            <article>
+              <button class="acc-heading qg-accordion--closed" aria-controls="accordion-default" aria-expanded="true" >
+                <a class="qg-accordion--ga">
+                  <span class="accordion-label">
+                    <span class="title">Without icon</span>
+                  </span>
+                </a>
+              </button>
+              <div class="collapsing-section" id="id-panel-1">
+                <p> Content related to header. </p>
+                <ul>
+                  <li>If dot points are available</li>
+                  <li>Can go here</li>
+                </ul>
+                <p>Form example inside accordion</p>
+              </div>
+            </article>
+            <article>
+              <button class="acc-heading qg-accordion--closed" aria-controls="accordion-default" aria-expanded="true">
+                <a class="qg-accordion--ga">
+                  <img src="https://placeimg.com/20/20/nature" alt="">
+                  <span class="accordion-label">
+                    <span class="title">With icon</span>
+                    <span class="subtitle">Subtitle can go here (optional)</span>
+                  </span>
+                </a>
+              </button>
+              <div class="collapsing-section " id="id-panel-2">
+                <h4>Heading</h4>
+                <p> Content related to header. </p>
+                <ul>
+                  <li>If dot points are available</li>
+                  <li>Can go here</li>
+                </ul>
+                <p>Or provide any semantic html structure</p>
+                <button type="button" class="qg-btn btn-default">Default</button>
+                <button type="button" class="qg-btn btn-primary">Primary</button>
+                <button type="button" class="qg-btn btn-secondary">Primary Alt</button>
+                <button type="button" class="qg-btn btn-link">Link</button>
+              </div>
+            </article>
+          </section>
+
+
+
+
+          </br><p> HTML </p>
+
+          <pre><code class="language-markup">
+          &lt;section class=&quot;qg-accordion qg-accordion-v2&quot; aria-label=&quot;Accordion Label&quot;&gt;
+            &lt;div class=&quot;qg-acc-controls&quot;&gt;
+              &lt;button class=&quot;controls expand&quot;&gt;Expand all&lt;/button&gt;
+              &lt;span class=&quot;controls&quot;&gt;&amp;#124;&lt;/span&gt;
+              &lt;button class=&quot;controls collapse&quot;&gt;Collapse all&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;article&gt;
+              &lt;button class=&quot;acc-heading qg-accordion--closed&quot; aria-controls=&quot;accordion-default&quot; aria-expanded=&quot;true&quot; &gt;&lt;span class=&quot;accordion-label&quot;&gt;&lt;span class=&quot;title&quot;&gt;Without icon&lt;/span&gt;&lt;/span&gt;&lt;/button&gt;
+              &lt;div class=&quot;collapsing-section&quot;&gt;
+                &lt;p&gt; Content related to header. &lt;/p&gt;
+                &lt;ul&gt;
+                  &lt;li&gt;If dot points are available&lt;/li&gt;
+                  &lt;li&gt;Can go here&lt;/li&gt;
+                &lt;/ul&gt;
+                &lt;p&gt;Form example inside accordion&lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/article&gt;
+            &lt;article&gt;
+              &lt;button class=&quot;acc-heading qg-accordion--closed&quot; aria-controls=&quot;accordion-default&quot; aria-expanded=&quot;true&quot; &gt;&lt;img src=&quot;https://placeimg.com/20/20/nature&quot; alt=&quot;&quot;&gt;&lt;span class=&quot;accordion-label&quot;&gt;&lt;span class=&quot;title&quot;&gt;With icon&lt;/span&gt; &lt;span class=&quot;subtitle&quot;&gt;Subtitle can go here (optional)&lt;/span&gt;&lt;/span&gt;&lt;/button&gt;
+              &lt;div class=&quot;collapsing-section &quot;&gt;
+                &lt;h4&gt;Heading&lt;/h4&gt;
+                &lt;p&gt; Content related to header. &lt;/p&gt;
+                &lt;ul&gt;
+                  &lt;li&gt;If dot points are available&lt;/li&gt;
+                  &lt;li&gt;Can go here&lt;/li&gt;
+                &lt;/ul&gt;
+                &lt;p&gt;Or provide any semantic html structure&lt;/p&gt;
+                &lt;button type=&quot;button&quot; class=&quot;qg-btn btn-default&quot;&gt;Default&lt;/button&gt;
+                &lt;button type=&quot;button&quot; class=&quot;qg-btn btn-primary&quot;&gt;Primary&lt;/button&gt;
+                &lt;button type=&quot;button&quot; class=&quot;qg-btn btn-secondary&quot;&gt;Primary Alt&lt;/button&gt;
+                &lt;button type=&quot;button&quot; class=&quot;qg-btn btn-link&quot;&gt;Link&lt;/button&gt;
+              &lt;/div&gt;
+            &lt;/article&gt;
+          &lt;/section&gt;
+          </code></pre>
+          <table class="mb-4 mt-4">
+            <tr>
+              <th>Class</th>
+              <th>Usage</th>
+            </tr>
+            <tr>
+              <td><span class="text-nowrap"><strong>qg-dark-accordion</strong></span></td>
+              <td>Dark theme</td>
+            </tr>
+            <tr>
+              <td><span class="text-nowrap"><strong>qg-accordion-v2</strong></span></td>
+              <td>Accordion enhancements (accessibility and design). For backward compatibility accordions already in use without this new class will work as expected</td>
+            </tr>
+          </table>
+          <p>Use 'title of an accordion' or an 'ID of an accordion' to open a panel</p>
+          <div>
+              <ul>
+                 <li>We can use a 'title of an accordion'. For example , https://qld-gov-au.github.io/web-template-release/components/accordion.html#With-icon</li>
+                <li>Similarly we can use an ID to open a panel For example , https://qld-gov-au.github.io/web-template-release/components/accordion.html##id-panel-3</li>
+             </ul>
+          </div>
+          <p class="mt-4">Fontawesome icon can also be used instead of image.</p>
+          <p class="alert alert-info mb-2">Accordion without icons or images is advised best practice. </p>
+          <pre><code class="language-markdown">
+                &lt;i class="fa fa-car" aria-hidden="true">&lt;/i>
+                or
+                &lt;img src="{{path of the image}}" alt="">
+          </code></pre>
+        </section>
+
+      </div>
+    </div>
+  </div>
+</div>
+<br />
+<br />
+<br />
+<!--#include virtual="/assets/includes-local/footer/footer.html"-->
+
+<script>
+  var qg = qg || {};
+  qg.swe = qg.swe || {};
+  // Used by the feedback form.
+  qg.swe.franchiseTitle = 'Franchise Title';
+</script>
+
+<!--#include virtual="/assets/includes-local/footer/footer-scripts.html"-->
+
+</body>
+
+</html>
