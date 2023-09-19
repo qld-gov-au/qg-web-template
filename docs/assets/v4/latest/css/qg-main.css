@@ -18819,6 +18819,10 @@ a .meta {
   margin: 5px !important;
 }
 
+body.qg-private-content {
+  margin-top: 0;
+}
+
 .fancybox-active .fancybox-container {
   z-index: 1001;
 }
@@ -21144,7 +21148,6 @@ footer.qg-site-footer .qg-legal ul li {
 }
 .qg-portal-links {
   background-color: #4a4a4a;
-  padding-top: 3px;
   padding-bottom: 2px;
   order: 1;
 }
