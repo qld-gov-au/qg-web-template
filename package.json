@@ -127,7 +127,7 @@
     "jquery": "^3.7.1",
     "jquery-ui-bundle": "^1.12.1",
     "nodep-date-input-polyfill": "^5.2.0",
-    "postcss": "^8.4.29",
+    "postcss": "^8.4.30",
     "stickyfill": "^1.1.1"
   }
 }
