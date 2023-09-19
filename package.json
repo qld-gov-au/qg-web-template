@@ -46,9 +46,9 @@
   "licence": "all rights reserved",
   "homepage": "http://www.qld.gov.au/",
   "devDependencies": {
-    "@babel/core": "^7.22.19",
+    "@babel/core": "^7.22.20",
     "@babel/plugin-transform-runtime": "^7.22.15",
-    "@babel/preset-env": "^7.22.15",
+    "@babel/preset-env": "^7.22.20",
     "@storybook/addon-actions": "v7.4.2",
     "@storybook/addon-essentials": "v7.4.2",
     "@storybook/addon-interactions": "v7.4.2",
@@ -127,7 +127,7 @@
     "jquery": "^3.7.1",
     "jquery-ui-bundle": "^1.12.1",
     "nodep-date-input-polyfill": "^5.2.0",
-    "postcss": "^8.4.29",
+    "postcss": "^8.4.30",
     "stickyfill": "^1.1.1"
   }
 }
