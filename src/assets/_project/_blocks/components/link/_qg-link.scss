@@ -29,6 +29,10 @@
   }
 }
 
+.rsDefault .rsTmb.rsNavSelected .text-right a {
+  @include qg-link-unvisited-color(#333);
+}
+
 @mixin qg-link-white {
   // style rules for links with white text (intended for dark backgrounds)
   color: white !important;
