@@ -79,6 +79,9 @@
           }
           a.btn {
             margin-left: 35px !important;
+            @include media-breakpoint-down(sm) {
+              margin-left: 25px !important;
+            }
           }
         }
 
@@ -342,5 +345,10 @@
 }
 
 .highlight .qg-search-concierge-content .justify-content-between *:not(h4) {
-  margin-left: 35px;
+  @include media-breakpoint-up(lg) {
+    margin-left: 35px;
+  }
+  @include media-breakpoint-down(sm) {
+    margin-right: 35px;
+  }
 }
