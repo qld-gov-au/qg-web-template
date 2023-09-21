@@ -13467,7 +13467,7 @@ body:not([data-accessibility=false]):not([data-access-new-window=false]) #qg-con
   background: none !important;
 }
 
-.qg-site-search__component.qg-site-search__form .input-group .qg-search-concierge .qg-search-concierge-content > a {
+.qg-site-search__component.qg-site-search__form .input-group .qg-search-concierge .qg-search-concierge-content > a:not(.btn):not(.qg-btn) {
   padding: 0 35px 0 35px;
 }
 
@@ -22066,6 +22066,11 @@ footer.qg-site-footer .qg-legal ul li {
   margin-left: 35px !important;
 }
 
+@media (max-width: 991.98px) {
+  .qg-search-form .qg-search-concierge-group.highlight .qg-search-concierge-content a.btn, .qg-search-form .qg-search-concierge-group.highlight .qg-search-concierge-content a.qg-btn, .qg-search-form .qg-search-concierge-group.highlight .qg-search-concierge-content .qg-promotional-banner__container .qg-promotional-banner__popular-apps ul li a, .qg-promotional-banner__container .qg-promotional-banner__popular-apps ul li .qg-search-form .qg-search-concierge-group.highlight .qg-search-concierge-content a {
+    margin-left: 25px !important;
+  }
+}
 .qg-search-form .qg-search-concierge-group.highlight .list-group button, .qg-search-form .qg-search-concierge-group.highlight .list-group a {
   color: white;
 }
@@ -22274,10 +22279,16 @@ footer.qg-site-footer .qg-legal ul li {
     display: none;
   }
 }
-.highlight .qg-search-concierge-content .justify-content-between *:not(h4) {
-  margin-left: 35px;
+@media (min-width: 1200px) {
+  .highlight .qg-search-concierge-content .justify-content-between *:not(h4) {
+    margin-left: 35px;
+  }
 }
-
+@media (max-width: 991.98px) {
+  .highlight .qg-search-concierge-content .justify-content-between *:not(h4) {
+    margin-right: 35px;
+  }
+}
 #qg-site-nav {
   padding-top: 27px;
   padding-bottom: 10px;
