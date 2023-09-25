@@ -30,7 +30,8 @@
 }
 
 .rsDefault .rsTmb.rsNavSelected .text-right a {
-  @include qg-link-unvisited-color(#333);
+  color: #333;
+  text-decoration-color: $qg-global-primary-darker-grey;
 }
 
 @mixin qg-link-white {
