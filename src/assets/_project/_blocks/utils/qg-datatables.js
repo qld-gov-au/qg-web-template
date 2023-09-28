@@ -5,3 +5,4 @@ window.onpageshow = function () {
   addQGButtonClass();
 };
 $(document).on('change', '.sortable-table select', addQGButtonClass);
+$(document).on('change', '.sortable-table input', addQGButtonClass);
