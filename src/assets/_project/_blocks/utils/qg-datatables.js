@@ -3,10 +3,11 @@ if ($("table[class*='dataTable']").length > 0) {
 }
 
 var addQGButtonClass = function () {
-  $('.sortable-table .dataTables_wrapper a.paginate_button').addClass('qg-btn');
+  $('.dataTables_wrapper a.paginate_button').addClass('qg-btn');
 };
 window.onpageshow = function () {
   addQGButtonClass();
 };
-$(document).on('change', '.sortable-table select', addQGButtonClass);
-$(document).on('change', '.sortable-table input', addQGButtonClass);
+$(document).on('change', '.dataTables_wrapper select', addQGButtonClass);
+$(document).on('change', '.dataTables_wrapper input', addQGButtonClass);
+$('.dataTable').on( 'order.dt',  addQGButtonClass);
