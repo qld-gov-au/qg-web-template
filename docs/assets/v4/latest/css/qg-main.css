@@ -1303,27 +1303,27 @@ pre code {
     margin-left: 91.66666667%;
   }
 }
-.table, .qg-table, #qg-primary-content table {
+.table, .qg-table, table {
   width: 100%;
   margin-bottom: 1rem;
   color: #212529;
 }
 
-.table th, .qg-table th, #qg-primary-content table th,
+.table th, .qg-table th, table th,
 .table td,
 .qg-table td,
-#qg-primary-content table td {
+table td {
   padding: 0.75rem;
   vertical-align: top;
   border-top: 1px solid #dee2e6;
 }
 
-.table thead th, .qg-table thead th, #qg-primary-content table thead th {
+.table thead th, .qg-table thead th, table thead th {
   vertical-align: bottom;
   border-bottom: 2px solid #dee2e6;
 }
 
-.table tbody + tbody, .qg-table tbody + tbody, #qg-primary-content table tbody + tbody {
+.table tbody + tbody, .qg-table tbody + tbody, table tbody + tbody {
   border-top: 2px solid #dee2e6;
 }
 
@@ -1332,19 +1332,19 @@ pre code {
   padding: 0.3rem;
 }
 
-.table-bordered, #qg-primary-content table.qg-table-no-stripes {
+.table-bordered, table.qg-table-no-stripes {
   border: 1px solid #dee2e6;
 }
 
-.table-bordered th, #qg-primary-content table.qg-table-no-stripes th,
+.table-bordered th, table.qg-table-no-stripes th,
 .table-bordered td,
-#qg-primary-content table.qg-table-no-stripes td {
+table.qg-table-no-stripes td {
   border: 1px solid #dee2e6;
 }
 
-.table-bordered thead th, #qg-primary-content table.qg-table-no-stripes thead th,
+.table-bordered thead th, table.qg-table-no-stripes thead th,
 .table-bordered thead td,
-#qg-primary-content table.qg-table-no-stripes thead td {
+table.qg-table-no-stripes thead td {
   border-bottom-width: 2px;
 }
 
@@ -1555,13 +1555,13 @@ pre code {
   background-color: rgba(0, 0, 0, 0.075);
 }
 
-.table .thead-dark th, .qg-table .thead-dark th, #qg-primary-content table .thead-dark th {
+.table .thead-dark th, .qg-table .thead-dark th, table .thead-dark th {
   color: #fff;
   background-color: #343a40;
   border-color: #454d55;
 }
 
-.table .thead-light th, .qg-table .thead-light th, #qg-primary-content table .thead-light th {
+.table .thead-light th, .qg-table .thead-light th, table .thead-light th {
   color: #495057;
   background-color: #e9ecef;
   border-color: #dee2e6;
@@ -1578,7 +1578,7 @@ pre code {
   border-color: #454d55;
 }
 
-.table-dark.table-bordered, #qg-primary-content table.table-dark.qg-table-no-stripes {
+.table-dark.table-bordered, table.table-dark.qg-table-no-stripes {
   border: 0;
 }
 
@@ -1598,7 +1598,7 @@ pre code {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
-  .table-responsive-sm > .table-bordered, #qg-primary-content .table-responsive-sm > table.qg-table-no-stripes {
+  .table-responsive-sm > .table-bordered, .table-responsive-sm > table.qg-table-no-stripes {
     border: 0;
   }
 }
@@ -1609,7 +1609,7 @@ pre code {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
-  .table-responsive-md > .table-bordered, #qg-primary-content .table-responsive-md > table.qg-table-no-stripes {
+  .table-responsive-md > .table-bordered, .table-responsive-md > table.qg-table-no-stripes {
     border: 0;
   }
 }
@@ -1620,7 +1620,7 @@ pre code {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
-  .table-responsive-lg > .table-bordered, #qg-primary-content .table-responsive-lg > table.qg-table-no-stripes {
+  .table-responsive-lg > .table-bordered, .table-responsive-lg > table.qg-table-no-stripes {
     border: 0;
   }
 }
@@ -1631,7 +1631,7 @@ pre code {
   -webkit-overflow-scrolling: touch;
 }
 
-.table-responsive > .table-bordered, #qg-primary-content .table-responsive > table.qg-table-no-stripes {
+.table-responsive > .table-bordered, .table-responsive > table.qg-table-no-stripes {
   border: 0;
 }
 
@@ -8964,18 +8964,18 @@ a.text-dark:hover, a.text-dark:focus {
   .label {
     border: 1px solid #000;
   }
-  .table, .qg-table, #qg-primary-content table {
+  .table, .qg-table, table {
     border-collapse: collapse !important;
   }
-  .table td, .qg-table td, #qg-primary-content table td,
+  .table td, .qg-table td, table td,
   .table th,
   .qg-table th,
-  #qg-primary-content table th {
+  table th {
     background-color: white !important;
   }
-  .table-bordered th, #qg-primary-content table.qg-table-no-stripes th,
+  .table-bordered th, table.qg-table-no-stripes th,
   .table-bordered td,
-  #qg-primary-content table.qg-table-no-stripes td {
+  table.qg-table-no-stripes td {
     border: 1px solid #ddd !important;
   }
   body {
@@ -15343,28 +15343,28 @@ body:not([data-accessibility=false]):not([data-access-new-window=false]) #qg-con
   font-weight: bold;
 }
 
-#qg-primary-content table:not(.table-bordered):not(.qg-table-no-stripes) td {
+table:not(.table-bordered):not(table.qg-table-no-stripes):not(.qg-table-no-stripes) td {
   border: 0;
 }
 
-#qg-primary-content table thead tr {
+table thead tr {
   background-color: #005375;
   color: white;
 }
 
-#qg-primary-content table tr {
+table tr {
   background: #f6f6f6;
 }
 
-#qg-primary-content table tr:nth-child(even) {
+table tr:nth-child(even) {
   background: white;
 }
 
-#qg-primary-content table tr td {
+table tr td {
   padding: 1em;
 }
 
-#qg-primary-content table.qg-table-no-stripes tr {
+table.qg-table-no-stripes tr {
   background: white;
 }
 
@@ -18729,7 +18729,7 @@ a[data-toggle=collapse].qg-icon:after {
     margin-left: -25px;
   }
 }
-.qg-correct, .table.qg-correct-incorrect > tbody > tr td:nth-child(even), .qg-correct-incorrect.qg-table > tbody > tr td:nth-child(even), #qg-primary-content table.qg-correct-incorrect > tbody > tr td:nth-child(even), table.qg-correct-incorrect td:nth-child(even), .table > tbody > tr table.qg-correct-incorrect td:nth-child(even), .qg-table > tbody > tr table.qg-correct-incorrect td:nth-child(even), table.qg-correct-incorrect .table > tbody > tr td:nth-child(even), table.qg-correct-incorrect .qg-table > tbody > tr td:nth-child(even), #qg-primary-content table > tbody > tr .table.qg-correct-incorrect > tbody > tr td:nth-child(even), #qg-primary-content table > tbody > tr .qg-correct-incorrect.qg-table > tbody > tr td:nth-child(even), .table.qg-correct-incorrect > tbody > tr #qg-primary-content table > tbody > tr td:nth-child(even), .qg-correct-incorrect.qg-table > tbody > tr #qg-primary-content table > tbody > tr td:nth-child(even), #qg-primary-content table > tbody > tr table.qg-correct-incorrect td:nth-child(even), table.qg-correct-incorrect #qg-primary-content table > tbody > tr td:nth-child(even), .table > tbody > tr td.qg-correct, .qg-table > tbody > tr td.qg-correct, #qg-primary-content table > tbody > tr td.qg-correct, table td.qg-correct, table.qg-correct-incorrect td:nth-child(even), .qg-incorrect, .table.qg-correct-incorrect > tbody > tr td:nth-child(odd), .qg-correct-incorrect.qg-table > tbody > tr td:nth-child(odd), #qg-primary-content table.qg-correct-incorrect > tbody > tr td:nth-child(odd), table.qg-correct-incorrect td:nth-child(odd), .table > tbody > tr table.qg-correct-incorrect td:nth-child(odd), .qg-table > tbody > tr table.qg-correct-incorrect td:nth-child(odd), table.qg-correct-incorrect .table > tbody > tr td:nth-child(odd), table.qg-correct-incorrect .qg-table > tbody > tr td:nth-child(odd), #qg-primary-content table > tbody > tr .table.qg-correct-incorrect > tbody > tr td:nth-child(odd), #qg-primary-content table > tbody > tr .qg-correct-incorrect.qg-table > tbody > tr td:nth-child(odd), .table.qg-correct-incorrect > tbody > tr #qg-primary-content table > tbody > tr td:nth-child(odd), .qg-correct-incorrect.qg-table > tbody > tr #qg-primary-content table > tbody > tr td:nth-child(odd), #qg-primary-content table > tbody > tr table.qg-correct-incorrect td:nth-child(odd), table.qg-correct-incorrect #qg-primary-content table > tbody > tr td:nth-child(odd), .table > tbody > tr td.qg-incorrect, .qg-table > tbody > tr td.qg-incorrect, #qg-primary-content table > tbody > tr td.qg-incorrect, table td.qg-incorrect, table.qg-correct-incorrect td:nth-child(odd) {
+.qg-correct, .table.qg-correct-incorrect > tbody > tr td:nth-child(even), .qg-correct-incorrect.qg-table > tbody > tr td:nth-child(even), table.qg-correct-incorrect td:nth-child(even), .table > tbody > tr table.qg-correct-incorrect td:nth-child(even), .qg-table > tbody > tr table.qg-correct-incorrect td:nth-child(even), table.qg-correct-incorrect .table > tbody > tr td:nth-child(even), table.qg-correct-incorrect .qg-table > tbody > tr td:nth-child(even), .table > tbody > tr td.qg-correct, .qg-table > tbody > tr td.qg-correct, table td.qg-correct, .qg-incorrect, .table.qg-correct-incorrect > tbody > tr td:nth-child(odd), .qg-correct-incorrect.qg-table > tbody > tr td:nth-child(odd), table.qg-correct-incorrect > tbody > tr td:nth-child(odd), table.qg-correct-incorrect td:nth-child(odd), .table > tbody > tr table.qg-correct-incorrect td:nth-child(odd), .qg-table > tbody > tr table.qg-correct-incorrect td:nth-child(odd), table.qg-correct-incorrect .table > tbody > tr td:nth-child(odd), table.qg-correct-incorrect .qg-table > tbody > tr td:nth-child(odd), table > tbody > tr table.qg-correct-incorrect td:nth-child(odd), table.qg-correct-incorrect table > tbody > tr td:nth-child(odd), .table > tbody > tr td.qg-incorrect, .qg-table > tbody > tr td.qg-incorrect, table > tbody > tr td.qg-incorrect, table.qg-correct-incorrect > tbody > tr td:nth-child(odd), table > tbody > tr table.qg-correct-incorrect td:nth-child(odd), table.qg-correct-incorrect table > tbody > tr td:nth-child(odd), table > tbody > tr table.qg-correct-incorrect td:nth-child(odd), table.qg-correct-incorrect table > tbody > tr td:nth-child(odd), table td.qg-incorrect, table.qg-correct-incorrect > tbody > tr td:nth-child(odd), table.qg-correct-incorrect td:nth-child(odd), table > tbody > tr table.qg-correct-incorrect td:nth-child(odd), table.qg-correct-incorrect table > tbody > tr td:nth-child(odd) {
   position: relative;
   margin: 0.4em 0;
   padding: 15px 15px 15px 40px !important;
@@ -18738,7 +18738,7 @@ a[data-toggle=collapse].qg-icon:after {
   vertical-align: top;
 }
 
-.qg-correct:before, .table.qg-correct-incorrect > tbody > tr td:nth-child(even):before, .qg-correct-incorrect.qg-table > tbody > tr td:nth-child(even):before, #qg-primary-content table.qg-correct-incorrect > tbody > tr td:nth-child(even):before, table.qg-correct-incorrect td:nth-child(even):before, .table > tbody > tr table.qg-correct-incorrect td:nth-child(even):before, .qg-table > tbody > tr table.qg-correct-incorrect td:nth-child(even):before, table.qg-correct-incorrect .table > tbody > tr td:nth-child(even):before, table.qg-correct-incorrect .qg-table > tbody > tr td:nth-child(even):before, #qg-primary-content table > tbody > tr .table.qg-correct-incorrect > tbody > tr td:nth-child(even):before, #qg-primary-content table > tbody > tr .qg-correct-incorrect.qg-table > tbody > tr td:nth-child(even):before, .table.qg-correct-incorrect > tbody > tr #qg-primary-content table > tbody > tr td:nth-child(even):before, .qg-correct-incorrect.qg-table > tbody > tr #qg-primary-content table > tbody > tr td:nth-child(even):before, #qg-primary-content table > tbody > tr table.qg-correct-incorrect td:nth-child(even):before, table.qg-correct-incorrect #qg-primary-content table > tbody > tr td:nth-child(even):before, .table > tbody > tr td.qg-correct:before, .qg-table > tbody > tr td.qg-correct:before, #qg-primary-content table > tbody > tr td.qg-correct:before, table td.qg-correct:before, table.qg-correct-incorrect td:nth-child(even):before, .qg-incorrect:before, .table.qg-correct-incorrect > tbody > tr td:nth-child(odd):before, .qg-correct-incorrect.qg-table > tbody > tr td:nth-child(odd):before, #qg-primary-content table.qg-correct-incorrect > tbody > tr td:nth-child(odd):before, table.qg-correct-incorrect td:nth-child(odd):before, .table > tbody > tr table.qg-correct-incorrect td:nth-child(odd):before, .qg-table > tbody > tr table.qg-correct-incorrect td:nth-child(odd):before, table.qg-correct-incorrect .table > tbody > tr td:nth-child(odd):before, table.qg-correct-incorrect .qg-table > tbody > tr td:nth-child(odd):before, #qg-primary-content table > tbody > tr .table.qg-correct-incorrect > tbody > tr td:nth-child(odd):before, #qg-primary-content table > tbody > tr .qg-correct-incorrect.qg-table > tbody > tr td:nth-child(odd):before, .table.qg-correct-incorrect > tbody > tr #qg-primary-content table > tbody > tr td:nth-child(odd):before, .qg-correct-incorrect.qg-table > tbody > tr #qg-primary-content table > tbody > tr td:nth-child(odd):before, #qg-primary-content table > tbody > tr table.qg-correct-incorrect td:nth-child(odd):before, table.qg-correct-incorrect #qg-primary-content table > tbody > tr td:nth-child(odd):before, .table > tbody > tr td.qg-incorrect:before, .qg-table > tbody > tr td.qg-incorrect:before, #qg-primary-content table > tbody > tr td.qg-incorrect:before, table td.qg-incorrect:before, table.qg-correct-incorrect td:nth-child(odd):before {
+.qg-correct:before, .table.qg-correct-incorrect > tbody > tr td:nth-child(even):before, .qg-correct-incorrect.qg-table > tbody > tr td:nth-child(even):before, table.qg-correct-incorrect td:nth-child(even):before, .table > tbody > tr table.qg-correct-incorrect td:nth-child(even):before, .qg-table > tbody > tr table.qg-correct-incorrect td:nth-child(even):before, table.qg-correct-incorrect .table > tbody > tr td:nth-child(even):before, table.qg-correct-incorrect .qg-table > tbody > tr td:nth-child(even):before, .table > tbody > tr td.qg-correct:before, .qg-table > tbody > tr td.qg-correct:before, table td.qg-correct:before, table.qg-correct-incorrect td:nth-child(even):before, .qg-incorrect:before, .table.qg-correct-incorrect > tbody > tr td:nth-child(odd):before, .qg-correct-incorrect.qg-table > tbody > tr td:nth-child(odd):before, table.qg-correct-incorrect > tbody > tr td:nth-child(odd):before, table.qg-correct-incorrect td:nth-child(odd):before, .table > tbody > tr table.qg-correct-incorrect td:nth-child(odd):before, .qg-table > tbody > tr table.qg-correct-incorrect td:nth-child(odd):before, table.qg-correct-incorrect .table > tbody > tr td:nth-child(odd):before, table.qg-correct-incorrect .qg-table > tbody > tr td:nth-child(odd):before, table > tbody > tr table.qg-correct-incorrect td:nth-child(odd):before, table.qg-correct-incorrect table > tbody > tr td:nth-child(odd):before, .table > tbody > tr td.qg-incorrect:before, .qg-table > tbody > tr td.qg-incorrect:before, table > tbody > tr td.qg-incorrect:before, table.qg-correct-incorrect > tbody > tr td:nth-child(odd):before, table > tbody > tr table.qg-correct-incorrect td:nth-child(odd):before, table.qg-correct-incorrect table > tbody > tr td:nth-child(odd):before, table > tbody > tr table.qg-correct-incorrect td:nth-child(odd):before, table.qg-correct-incorrect table > tbody > tr td:nth-child(odd):before, table td.qg-incorrect:before, table.qg-correct-incorrect > tbody > tr td:nth-child(odd):before, table.qg-correct-incorrect td:nth-child(odd):before, table > tbody > tr table.qg-correct-incorrect td:nth-child(odd):before, table.qg-correct-incorrect table > tbody > tr td:nth-child(odd):before {
   aria-hidden: true;
   position: absolute;
   top: 8px;
@@ -18749,22 +18749,22 @@ a[data-toggle=collapse].qg-icon:after {
   text-align: center;
 }
 
-.qg-correct, .table.qg-correct-incorrect > tbody > tr td:nth-child(even), .qg-correct-incorrect.qg-table > tbody > tr td:nth-child(even), #qg-primary-content table.qg-correct-incorrect > tbody > tr td:nth-child(even), table.qg-correct-incorrect td:nth-child(even), .table > tbody > tr table.qg-correct-incorrect td:nth-child(even), .qg-table > tbody > tr table.qg-correct-incorrect td:nth-child(even), table.qg-correct-incorrect .table > tbody > tr td:nth-child(even), table.qg-correct-incorrect .qg-table > tbody > tr td:nth-child(even), #qg-primary-content table > tbody > tr .table.qg-correct-incorrect > tbody > tr td:nth-child(even), #qg-primary-content table > tbody > tr .qg-correct-incorrect.qg-table > tbody > tr td:nth-child(even), .table.qg-correct-incorrect > tbody > tr #qg-primary-content table > tbody > tr td:nth-child(even), .qg-correct-incorrect.qg-table > tbody > tr #qg-primary-content table > tbody > tr td:nth-child(even), #qg-primary-content table > tbody > tr table.qg-correct-incorrect td:nth-child(even), table.qg-correct-incorrect #qg-primary-content table > tbody > tr td:nth-child(even), .table > tbody > tr td.qg-correct, .qg-table > tbody > tr td.qg-correct, #qg-primary-content table > tbody > tr td.qg-correct, table td.qg-correct, table.qg-correct-incorrect td:nth-child(even) {
+.qg-correct, .table.qg-correct-incorrect > tbody > tr td:nth-child(even), .qg-correct-incorrect.qg-table > tbody > tr td:nth-child(even), table.qg-correct-incorrect td:nth-child(even), .table > tbody > tr table.qg-correct-incorrect td:nth-child(even), .qg-table > tbody > tr table.qg-correct-incorrect td:nth-child(even), table.qg-correct-incorrect .table > tbody > tr td:nth-child(even), table.qg-correct-incorrect .qg-table > tbody > tr td:nth-child(even), .table > tbody > tr td.qg-correct, .qg-table > tbody > tr td.qg-correct, table td.qg-correct, table.qg-correct-incorrect td:nth-child(even) {
   border-color: #92c23a;
   background-color: #fafff2;
 }
 
-.qg-correct:before, .table.qg-correct-incorrect > tbody > tr td:nth-child(even):before, .qg-correct-incorrect.qg-table > tbody > tr td:nth-child(even):before, #qg-primary-content table.qg-correct-incorrect > tbody > tr td:nth-child(even):before, table.qg-correct-incorrect td:nth-child(even):before, .table > tbody > tr table.qg-correct-incorrect td:nth-child(even):before, .qg-table > tbody > tr table.qg-correct-incorrect td:nth-child(even):before, table.qg-correct-incorrect .table > tbody > tr td:nth-child(even):before, table.qg-correct-incorrect .qg-table > tbody > tr td:nth-child(even):before, #qg-primary-content table > tbody > tr .table.qg-correct-incorrect > tbody > tr td:nth-child(even):before, #qg-primary-content table > tbody > tr .qg-correct-incorrect.qg-table > tbody > tr td:nth-child(even):before, .table.qg-correct-incorrect > tbody > tr #qg-primary-content table > tbody > tr td:nth-child(even):before, .qg-correct-incorrect.qg-table > tbody > tr #qg-primary-content table > tbody > tr td:nth-child(even):before, #qg-primary-content table > tbody > tr table.qg-correct-incorrect td:nth-child(even):before, table.qg-correct-incorrect #qg-primary-content table > tbody > tr td:nth-child(even):before, .table > tbody > tr td.qg-correct:before, .qg-table > tbody > tr td.qg-correct:before, #qg-primary-content table > tbody > tr td.qg-correct:before, table td.qg-correct:before, table.qg-correct-incorrect td:nth-child(even):before {
+.qg-correct:before, .table.qg-correct-incorrect > tbody > tr td:nth-child(even):before, .qg-correct-incorrect.qg-table > tbody > tr td:nth-child(even):before, table.qg-correct-incorrect td:nth-child(even):before, .table > tbody > tr table.qg-correct-incorrect td:nth-child(even):before, .qg-table > tbody > tr table.qg-correct-incorrect td:nth-child(even):before, table.qg-correct-incorrect .table > tbody > tr td:nth-child(even):before, table.qg-correct-incorrect .qg-table > tbody > tr td:nth-child(even):before, .table > tbody > tr td.qg-correct:before, .qg-table > tbody > tr td.qg-correct:before, table td.qg-correct:before, table.qg-correct-incorrect td:nth-child(even):before {
   content: "\f00c";
   color: #78ba00;
 }
 
-.qg-incorrect, .table.qg-correct-incorrect > tbody > tr td:nth-child(odd), .qg-correct-incorrect.qg-table > tbody > tr td:nth-child(odd), #qg-primary-content table.qg-correct-incorrect > tbody > tr td:nth-child(odd), table.qg-correct-incorrect td:nth-child(odd), .table > tbody > tr table.qg-correct-incorrect td:nth-child(odd), .qg-table > tbody > tr table.qg-correct-incorrect td:nth-child(odd), table.qg-correct-incorrect .table > tbody > tr td:nth-child(odd), table.qg-correct-incorrect .qg-table > tbody > tr td:nth-child(odd), #qg-primary-content table > tbody > tr .table.qg-correct-incorrect > tbody > tr td:nth-child(odd), #qg-primary-content table > tbody > tr .qg-correct-incorrect.qg-table > tbody > tr td:nth-child(odd), .table.qg-correct-incorrect > tbody > tr #qg-primary-content table > tbody > tr td:nth-child(odd), .qg-correct-incorrect.qg-table > tbody > tr #qg-primary-content table > tbody > tr td:nth-child(odd), #qg-primary-content table > tbody > tr table.qg-correct-incorrect td:nth-child(odd), table.qg-correct-incorrect #qg-primary-content table > tbody > tr td:nth-child(odd), .table > tbody > tr td.qg-incorrect, .qg-table > tbody > tr td.qg-incorrect, #qg-primary-content table > tbody > tr td.qg-incorrect, table td.qg-incorrect, table.qg-correct-incorrect td:nth-child(odd) {
+.qg-incorrect, .table.qg-correct-incorrect > tbody > tr td:nth-child(odd), .qg-correct-incorrect.qg-table > tbody > tr td:nth-child(odd), table.qg-correct-incorrect > tbody > tr td:nth-child(odd), table.qg-correct-incorrect td:nth-child(odd), .table > tbody > tr table.qg-correct-incorrect td:nth-child(odd), .qg-table > tbody > tr table.qg-correct-incorrect td:nth-child(odd), table.qg-correct-incorrect .table > tbody > tr td:nth-child(odd), table.qg-correct-incorrect .qg-table > tbody > tr td:nth-child(odd), table > tbody > tr table.qg-correct-incorrect td:nth-child(odd), table.qg-correct-incorrect table > tbody > tr td:nth-child(odd), .table > tbody > tr td.qg-incorrect, .qg-table > tbody > tr td.qg-incorrect, table > tbody > tr td.qg-incorrect, table.qg-correct-incorrect > tbody > tr td:nth-child(odd), table > tbody > tr table.qg-correct-incorrect td:nth-child(odd), table.qg-correct-incorrect table > tbody > tr td:nth-child(odd), table > tbody > tr table.qg-correct-incorrect td:nth-child(odd), table.qg-correct-incorrect table > tbody > tr td:nth-child(odd), table td.qg-incorrect, table.qg-correct-incorrect > tbody > tr td:nth-child(odd), table.qg-correct-incorrect td:nth-child(odd), table > tbody > tr table.qg-correct-incorrect td:nth-child(odd), table.qg-correct-incorrect table > tbody > tr td:nth-child(odd) {
   border-color: #d4534c;
   background-color: #fffafa;
 }
 
-.qg-incorrect:before, .table.qg-correct-incorrect > tbody > tr td:nth-child(odd):before, .qg-correct-incorrect.qg-table > tbody > tr td:nth-child(odd):before, #qg-primary-content table.qg-correct-incorrect > tbody > tr td:nth-child(odd):before, table.qg-correct-incorrect td:nth-child(odd):before, .table > tbody > tr table.qg-correct-incorrect td:nth-child(odd):before, .qg-table > tbody > tr table.qg-correct-incorrect td:nth-child(odd):before, table.qg-correct-incorrect .table > tbody > tr td:nth-child(odd):before, table.qg-correct-incorrect .qg-table > tbody > tr td:nth-child(odd):before, #qg-primary-content table > tbody > tr .table.qg-correct-incorrect > tbody > tr td:nth-child(odd):before, #qg-primary-content table > tbody > tr .qg-correct-incorrect.qg-table > tbody > tr td:nth-child(odd):before, .table.qg-correct-incorrect > tbody > tr #qg-primary-content table > tbody > tr td:nth-child(odd):before, .qg-correct-incorrect.qg-table > tbody > tr #qg-primary-content table > tbody > tr td:nth-child(odd):before, #qg-primary-content table > tbody > tr table.qg-correct-incorrect td:nth-child(odd):before, table.qg-correct-incorrect #qg-primary-content table > tbody > tr td:nth-child(odd):before, .table > tbody > tr td.qg-incorrect:before, .qg-table > tbody > tr td.qg-incorrect:before, #qg-primary-content table > tbody > tr td.qg-incorrect:before, table td.qg-incorrect:before, table.qg-correct-incorrect td:nth-child(odd):before {
+.qg-incorrect:before, .table.qg-correct-incorrect > tbody > tr td:nth-child(odd):before, .qg-correct-incorrect.qg-table > tbody > tr td:nth-child(odd):before, table.qg-correct-incorrect > tbody > tr td:nth-child(odd):before, table.qg-correct-incorrect td:nth-child(odd):before, .table > tbody > tr table.qg-correct-incorrect td:nth-child(odd):before, .qg-table > tbody > tr table.qg-correct-incorrect td:nth-child(odd):before, table.qg-correct-incorrect .table > tbody > tr td:nth-child(odd):before, table.qg-correct-incorrect .qg-table > tbody > tr td:nth-child(odd):before, table > tbody > tr table.qg-correct-incorrect td:nth-child(odd):before, table.qg-correct-incorrect table > tbody > tr td:nth-child(odd):before, .table > tbody > tr td.qg-incorrect:before, .qg-table > tbody > tr td.qg-incorrect:before, table > tbody > tr td.qg-incorrect:before, table.qg-correct-incorrect > tbody > tr td:nth-child(odd):before, table > tbody > tr table.qg-correct-incorrect td:nth-child(odd):before, table.qg-correct-incorrect table > tbody > tr td:nth-child(odd):before, table > tbody > tr table.qg-correct-incorrect td:nth-child(odd):before, table.qg-correct-incorrect table > tbody > tr td:nth-child(odd):before, table td.qg-incorrect:before, table.qg-correct-incorrect > tbody > tr td:nth-child(odd):before, table.qg-correct-incorrect td:nth-child(odd):before, table > tbody > tr table.qg-correct-incorrect td:nth-child(odd):before, table.qg-correct-incorrect table > tbody > tr td:nth-child(odd):before {
   content: "\f00d";
   color: #d22d24;
 }
@@ -18774,15 +18774,15 @@ span.qg-correct, span.qg-incorrect {
   max-width: 48%;
 }
 
-.table > tbody > tr td.qg-correct, .qg-table > tbody > tr td.qg-correct, .table.qg-correct-incorrect > tbody > tr td:nth-child(even), .qg-correct-incorrect.qg-table > tbody > tr td:nth-child(even), .table > tbody > tr table.qg-correct-incorrect td:nth-child(even), .qg-table > tbody > tr table.qg-correct-incorrect td:nth-child(even), table.qg-correct-incorrect .table > tbody > tr td:nth-child(even), table.qg-correct-incorrect .qg-table > tbody > tr td:nth-child(even), #qg-primary-content table > tbody > tr .table.qg-correct-incorrect > tbody > tr td:nth-child(even), #qg-primary-content table > tbody > tr .qg-correct-incorrect.qg-table > tbody > tr td:nth-child(even), .table.qg-correct-incorrect > tbody > tr #qg-primary-content table > tbody > tr td:nth-child(even), .qg-correct-incorrect.qg-table > tbody > tr #qg-primary-content table > tbody > tr td:nth-child(even), #qg-primary-content table > tbody > tr td.qg-correct, #qg-primary-content table.qg-correct-incorrect > tbody > tr td:nth-child(even), #qg-primary-content table > tbody > tr table.qg-correct-incorrect td:nth-child(even), table.qg-correct-incorrect #qg-primary-content table > tbody > tr td:nth-child(even), .table > tbody > tr td.qg-incorrect, .qg-table > tbody > tr td.qg-incorrect, .table.qg-correct-incorrect > tbody > tr td:nth-child(odd), .qg-correct-incorrect.qg-table > tbody > tr td:nth-child(odd), .table > tbody > tr table.qg-correct-incorrect td:nth-child(odd), .qg-table > tbody > tr table.qg-correct-incorrect td:nth-child(odd), table.qg-correct-incorrect .table > tbody > tr td:nth-child(odd), table.qg-correct-incorrect .qg-table > tbody > tr td:nth-child(odd), #qg-primary-content table > tbody > tr .table.qg-correct-incorrect > tbody > tr td:nth-child(odd), #qg-primary-content table > tbody > tr .qg-correct-incorrect.qg-table > tbody > tr td:nth-child(odd), .table.qg-correct-incorrect > tbody > tr #qg-primary-content table > tbody > tr td:nth-child(odd), .qg-correct-incorrect.qg-table > tbody > tr #qg-primary-content table > tbody > tr td:nth-child(odd), #qg-primary-content table > tbody > tr td.qg-incorrect, #qg-primary-content table.qg-correct-incorrect > tbody > tr td:nth-child(odd), #qg-primary-content table > tbody > tr table.qg-correct-incorrect td:nth-child(odd), table.qg-correct-incorrect #qg-primary-content table > tbody > tr td:nth-child(odd), table td.qg-correct, table.qg-correct-incorrect td:nth-child(even), table td.qg-incorrect, table.qg-correct-incorrect td:nth-child(odd), table td.qg-incorrect, table.qg-correct-incorrect td:nth-child(odd) {
+.table > tbody > tr td.qg-correct, .qg-table > tbody > tr td.qg-correct, .table.qg-correct-incorrect > tbody > tr td:nth-child(even), .qg-correct-incorrect.qg-table > tbody > tr td:nth-child(even), .table > tbody > tr table.qg-correct-incorrect td:nth-child(even), .qg-table > tbody > tr table.qg-correct-incorrect td:nth-child(even), table.qg-correct-incorrect .table > tbody > tr td:nth-child(even), table.qg-correct-incorrect .qg-table > tbody > tr td:nth-child(even), table > tbody > tr td.qg-correct, table > tbody > tr table.qg-correct-incorrect td:nth-child(even), table.qg-correct-incorrect table > tbody > tr td:nth-child(even), table > tbody > tr td.qg-correct, table > tbody > tr table.qg-correct-incorrect td:nth-child(even), table.qg-correct-incorrect table > tbody > tr td:nth-child(even), .table > tbody > tr td.qg-incorrect, .qg-table > tbody > tr td.qg-incorrect, .table.qg-correct-incorrect > tbody > tr td:nth-child(odd), .qg-correct-incorrect.qg-table > tbody > tr td:nth-child(odd), .table > tbody > tr table.qg-correct-incorrect td:nth-child(odd), .qg-table > tbody > tr table.qg-correct-incorrect td:nth-child(odd), table.qg-correct-incorrect .table > tbody > tr td:nth-child(odd), table.qg-correct-incorrect .qg-table > tbody > tr td:nth-child(odd), table > tbody > tr td.qg-incorrect, table.qg-correct-incorrect > tbody > tr td:nth-child(odd), table > tbody > tr table.qg-correct-incorrect td:nth-child(odd), table.qg-correct-incorrect table > tbody > tr td:nth-child(odd), table > tbody > tr table.qg-correct-incorrect td:nth-child(odd), table.qg-correct-incorrect table > tbody > tr td:nth-child(odd), table > tbody > tr td.qg-incorrect, table.qg-correct-incorrect > tbody > tr td:nth-child(odd), table > tbody > tr table.qg-correct-incorrect td:nth-child(odd), table.qg-correct-incorrect table > tbody > tr td:nth-child(odd), table > tbody > tr table.qg-correct-incorrect td:nth-child(odd), table.qg-correct-incorrect table > tbody > tr td:nth-child(odd), table > tbody > tr td.qg-incorrect, table.qg-correct-incorrect > tbody > tr td:nth-child(odd), table > tbody > tr table.qg-correct-incorrect td:nth-child(odd), table.qg-correct-incorrect table > tbody > tr td:nth-child(odd), table > tbody > tr table.qg-correct-incorrect td:nth-child(odd), table.qg-correct-incorrect table > tbody > tr td:nth-child(odd), table td.qg-correct, table.qg-correct-incorrect td:nth-child(even), table td.qg-incorrect, table.qg-correct-incorrect > tbody > tr td:nth-child(odd), table.qg-correct-incorrect td:nth-child(odd), table > tbody > tr table.qg-correct-incorrect td:nth-child(odd), table.qg-correct-incorrect table > tbody > tr td:nth-child(odd), table > tbody > tr td.qg-incorrect, table.qg-correct-incorrect > tbody > tr td:nth-child(odd), table > tbody > tr table.qg-correct-incorrect td:nth-child(odd), table.qg-correct-incorrect table > tbody > tr td:nth-child(odd), table > tbody > tr table.qg-correct-incorrect td:nth-child(odd), table.qg-correct-incorrect table > tbody > tr td:nth-child(odd), table td.qg-incorrect, table.qg-correct-incorrect > tbody > tr td:nth-child(odd), table.qg-correct-incorrect td:nth-child(odd), table > tbody > tr table.qg-correct-incorrect td:nth-child(odd), table.qg-correct-incorrect table > tbody > tr td:nth-child(odd) {
   border-left-width: 3px;
 }
 
-.table.qg-correct-incorrect > tbody > tr td:nth-child(even), .qg-correct-incorrect.qg-table > tbody > tr td:nth-child(even), #qg-primary-content table.qg-correct-incorrect > tbody > tr td:nth-child(even), table.qg-correct-incorrect td:nth-child(even) {
+.table.qg-correct-incorrect > tbody > tr td:nth-child(even), .qg-correct-incorrect.qg-table > tbody > tr td:nth-child(even), table.qg-correct-incorrect td:nth-child(even) {
   border-left-width: 3px;
 }
 
-.table.qg-correct-incorrect > tbody > tr td:nth-child(odd), .qg-correct-incorrect.qg-table > tbody > tr td:nth-child(odd), #qg-primary-content table.qg-correct-incorrect > tbody > tr td:nth-child(odd), table.qg-correct-incorrect td:nth-child(odd) {
+.table.qg-correct-incorrect > tbody > tr td:nth-child(odd), .qg-correct-incorrect.qg-table > tbody > tr td:nth-child(odd), table.qg-correct-incorrect > tbody > tr td:nth-child(odd), table.qg-correct-incorrect td:nth-child(odd) {
   border-left-width: 3px;
 }
 
@@ -19644,18 +19644,18 @@ body.qg-private-content {
   .label {
     border: 1px solid #000;
   }
-  .table, #qg-primary-content table, .qg-table {
+  .table, table, .qg-table {
     border-collapse: collapse !important;
   }
-  .table td, #qg-primary-content table td, .qg-table td,
+  .table td, table td, .qg-table td,
   .table th,
-  #qg-primary-content table th,
+  table th,
   .qg-table th {
     background-color: white !important;
   }
-  .table-bordered th, #qg-primary-content table.qg-table-no-stripes th,
+  .table-bordered th, table.qg-table-no-stripes th,
   .table-bordered td,
-  #qg-primary-content table.qg-table-no-stripes td {
+  table.qg-table-no-stripes td {
     border: 1px solid #ddd !important;
   }
   body {
@@ -23057,7 +23057,7 @@ footer.qg-site-footer .qg-legal ul li {
     text-decoration-color: #457aa3;
   }
 }
-#qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a) {
+#qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.btn):not(.qg-btn):not(.qg-btn):not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a) {
   text-underline-offset: 5px;
   color: black;
   text-decoration-line: underline;
@@ -23067,7 +23067,7 @@ footer.qg-site-footer .qg-legal ul li {
   text-decoration-color: #292929;
 }
 
-#qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):active:not(:disabled, .disabled), #qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):focus:not(:disabled, .disabled), #qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a).focus:not(:disabled, .disabled), #qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):active:focus:not(:disabled, .disabled), #qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):focus-visible:not(:disabled, .disabled), #qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):focus-within:not(:disabled, .disabled) {
+#qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.btn):not(.qg-btn):not(.qg-btn):not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):active:not(:disabled, .disabled), #qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.btn):not(.qg-btn):not(.qg-btn):not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):focus:not(:disabled, .disabled), #qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.btn):not(.qg-btn):not(.qg-btn):not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a).focus:not(:disabled, .disabled), #qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.btn):not(.qg-btn):not(.qg-btn):not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):active:focus:not(:disabled, .disabled), #qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.btn):not(.qg-btn):not(.qg-btn):not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):focus-visible:not(:disabled, .disabled), #qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.btn):not(.qg-btn):not(.qg-btn):not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):focus-within:not(:disabled, .disabled) {
   outline-width: 3px;
   outline-style: solid;
   outline-color: #0096d6;
@@ -23076,34 +23076,34 @@ footer.qg-site-footer .qg-legal ul li {
   box-shadow: none;
 }
 
-#qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):active:not(:disabled, .disabled) *, #qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):focus:not(:disabled, .disabled) *, #qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a).focus:not(:disabled, .disabled) *, #qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):active:focus:not(:disabled, .disabled) *, #qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):focus-visible:not(:disabled, .disabled) *, #qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):focus-within:not(:disabled, .disabled) * {
+#qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.btn):not(.qg-btn):not(.qg-btn):not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):active:not(:disabled, .disabled) *, #qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.btn):not(.qg-btn):not(.qg-btn):not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):focus:not(:disabled, .disabled) *, #qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.btn):not(.qg-btn):not(.qg-btn):not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a).focus:not(:disabled, .disabled) *, #qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.btn):not(.qg-btn):not(.qg-btn):not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):active:focus:not(:disabled, .disabled) *, #qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.btn):not(.qg-btn):not(.qg-btn):not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):focus-visible:not(:disabled, .disabled) *, #qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.btn):not(.qg-btn):not(.qg-btn):not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):focus-within:not(:disabled, .disabled) * {
   outline-style: none !important;
 }
 
-#qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):not(#ict-tabcontainer *, #tabbed-nav *) {
+#qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.btn):not(.qg-btn):not(.qg-btn):not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):not(#ict-tabcontainer *, #tabbed-nav *) {
   margin: 2px 2px 2px 0;
 }
 
-#qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):visited:not(.qg-private-content a):not([class^=dfv]):not([class*=" dfv"]) {
+#qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.btn):not(.qg-btn):not(.qg-btn):not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):visited:not(.qg-private-content a):not([class^=dfv]):not([class*=" dfv"]) {
   color: black;
   text-decoration-color: currentColor;
 }
 
-#qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):hover:not(:disabled, .disabled), #qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a).hover:not(:disabled, .disabled) {
+#qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.btn):not(.qg-btn):not(.qg-btn):not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):hover:not(:disabled, .disabled), #qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.btn):not(.qg-btn):not(.qg-btn):not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a).hover:not(:disabled, .disabled) {
   text-decoration-line: underline;
   text-decoration-style: solid;
   text-underline-offset: 5px;
   text-decoration-thickness: 2px;
 }
 
-#qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):hover:not(:disabled, .disabled) span.title, #qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a).hover:not(:disabled, .disabled) span.title {
+#qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.btn):not(.qg-btn):not(.qg-btn):not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):hover:not(:disabled, .disabled) span.title, #qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.btn):not(.qg-btn):not(.qg-btn):not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a).hover:not(:disabled, .disabled) span.title {
   text-decoration-line: underline;
   text-decoration-style: solid;
   text-underline-offset: 5px;
   text-decoration-thickness: 2px;
 }
 
-#qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):active:not(:disabled, .disabled), #qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):focus:not(:disabled, .disabled), #qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a).focus:not(:disabled, .disabled), #qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):active:focus:not(:disabled, .disabled), #qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):focus-visible:not(:disabled, .disabled), #qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):focus-within:not(:disabled, .disabled) {
+#qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.btn):not(.qg-btn):not(.qg-btn):not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):active:not(:disabled, .disabled), #qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.btn):not(.qg-btn):not(.qg-btn):not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):focus:not(:disabled, .disabled), #qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.btn):not(.qg-btn):not(.qg-btn):not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a).focus:not(:disabled, .disabled), #qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.btn):not(.qg-btn):not(.qg-btn):not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):active:focus:not(:disabled, .disabled), #qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.btn):not(.qg-btn):not(.qg-btn):not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):focus-visible:not(:disabled, .disabled), #qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.btn):not(.qg-btn):not(.qg-btn):not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):focus-within:not(:disabled, .disabled) {
   outline-width: 3px;
   outline-style: solid;
   outline-color: #0096d6;
@@ -23112,11 +23112,11 @@ footer.qg-site-footer .qg-legal ul li {
   box-shadow: none;
 }
 
-#qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):active:not(:disabled, .disabled) *, #qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):focus:not(:disabled, .disabled) *, #qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a).focus:not(:disabled, .disabled) *, #qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):active:focus:not(:disabled, .disabled) *, #qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):focus-visible:not(:disabled, .disabled) *, #qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):focus-within:not(:disabled, .disabled) * {
+#qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.btn):not(.qg-btn):not(.qg-btn):not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):active:not(:disabled, .disabled) *, #qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.btn):not(.qg-btn):not(.qg-btn):not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):focus:not(:disabled, .disabled) *, #qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.btn):not(.qg-btn):not(.qg-btn):not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a).focus:not(:disabled, .disabled) *, #qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.btn):not(.qg-btn):not(.qg-btn):not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):active:focus:not(:disabled, .disabled) *, #qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.btn):not(.qg-btn):not(.qg-btn):not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):focus-visible:not(:disabled, .disabled) *, #qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.btn):not(.qg-btn):not(.qg-btn):not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):focus-within:not(:disabled, .disabled) * {
   outline-style: none !important;
 }
 
-#qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):not(#ict-tabcontainer *, #tabbed-nav *) {
+#qg-banner-blurb .blurb .qg-service-finder__container .qg-search-concierge-content a:not(.btn):not(.qg-btn):not(.qg-btn):not(.qg-feature-box .qg-link):not(.qg-index a.qg-index-item):not(.page-item .page-link):not(.dfv-cards--type-top-prompt a.card):not(.search-categories__index-toggle):not(.search-categories__index):not(.QSAR-records-search a):not(#ict-tabcontainer *, #tabbed-nav *) {
   margin: 2px 2px 2px 0;
 }
 
