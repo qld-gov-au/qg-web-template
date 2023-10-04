@@ -8,3 +8,4 @@ if ($("table[class*='dataTable']").length > 0) {
   });
 }
 
+window.onpageshow = addQGButtonClass;
