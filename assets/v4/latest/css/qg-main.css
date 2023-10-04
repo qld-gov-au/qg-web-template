@@ -15201,6 +15201,62 @@ body:not([data-accessibility=false]):not([data-access-new-window=false]) #qg-con
 .qg-forms-v2 .form-check .form-check-label input[type=checkbox]:disabled + label,
 .qg-forms-v2 .form-check .form-check-label input[type=checkbox]:disabled + span {
   cursor: not-allowed;
+  color: #585E62;
+}
+
+.qg-forms-v2 .qg-forms-v2__radio li input[type=radio]:disabled + label:before,
+.qg-forms-v2 .qg-forms-v2__radio li input[type=radio]:disabled + span:before,
+.qg-forms-v2 .qg-forms-v2__radio li input[type=checkbox]:disabled + label:before,
+.qg-forms-v2 .qg-forms-v2__radio li input[type=checkbox]:disabled + span:before,
+.qg-forms-v2 .qg-forms-v2__radio .form-check-label input[type=radio]:disabled + label:before,
+.qg-forms-v2 .qg-forms-v2__radio .form-check-label input[type=radio]:disabled + span:before,
+.qg-forms-v2 .qg-forms-v2__radio .form-check-label input[type=checkbox]:disabled + label:before,
+.qg-forms-v2 .qg-forms-v2__radio .form-check-label input[type=checkbox]:disabled + span:before,
+.qg-forms-v2 .qg-forms-v2__checkbox li input[type=radio]:disabled + label:before,
+.qg-forms-v2 .qg-forms-v2__checkbox li input[type=radio]:disabled + span:before,
+.qg-forms-v2 .qg-forms-v2__checkbox li input[type=checkbox]:disabled + label:before,
+.qg-forms-v2 .qg-forms-v2__checkbox li input[type=checkbox]:disabled + span:before,
+.qg-forms-v2 .qg-forms-v2__checkbox .form-check-label input[type=radio]:disabled + label:before,
+.qg-forms-v2 .qg-forms-v2__checkbox .form-check-label input[type=radio]:disabled + span:before,
+.qg-forms-v2 .qg-forms-v2__checkbox .form-check-label input[type=checkbox]:disabled + label:before,
+.qg-forms-v2 .qg-forms-v2__checkbox .form-check-label input[type=checkbox]:disabled + span:before,
+.qg-forms-v2 .form-check li input[type=radio]:disabled + label:before,
+.qg-forms-v2 .form-check li input[type=radio]:disabled + span:before,
+.qg-forms-v2 .form-check li input[type=checkbox]:disabled + label:before,
+.qg-forms-v2 .form-check li input[type=checkbox]:disabled + span:before,
+.qg-forms-v2 .form-check .form-check-label input[type=radio]:disabled + label:before,
+.qg-forms-v2 .form-check .form-check-label input[type=radio]:disabled + span:before,
+.qg-forms-v2 .form-check .form-check-label input[type=checkbox]:disabled + label:before,
+.qg-forms-v2 .form-check .form-check-label input[type=checkbox]:disabled + span:before {
+  background: #F3F3F3;
+  border-color: #979797;
+}
+
+.qg-forms-v2 .qg-forms-v2__radio li input[type=radio]:disabled + label:after,
+.qg-forms-v2 .qg-forms-v2__radio li input[type=radio]:disabled + span:after,
+.qg-forms-v2 .qg-forms-v2__radio li input[type=checkbox]:disabled + label:after,
+.qg-forms-v2 .qg-forms-v2__radio li input[type=checkbox]:disabled + span:after,
+.qg-forms-v2 .qg-forms-v2__radio .form-check-label input[type=radio]:disabled + label:after,
+.qg-forms-v2 .qg-forms-v2__radio .form-check-label input[type=radio]:disabled + span:after,
+.qg-forms-v2 .qg-forms-v2__radio .form-check-label input[type=checkbox]:disabled + label:after,
+.qg-forms-v2 .qg-forms-v2__radio .form-check-label input[type=checkbox]:disabled + span:after,
+.qg-forms-v2 .qg-forms-v2__checkbox li input[type=radio]:disabled + label:after,
+.qg-forms-v2 .qg-forms-v2__checkbox li input[type=radio]:disabled + span:after,
+.qg-forms-v2 .qg-forms-v2__checkbox li input[type=checkbox]:disabled + label:after,
+.qg-forms-v2 .qg-forms-v2__checkbox li input[type=checkbox]:disabled + span:after,
+.qg-forms-v2 .qg-forms-v2__checkbox .form-check-label input[type=radio]:disabled + label:after,
+.qg-forms-v2 .qg-forms-v2__checkbox .form-check-label input[type=radio]:disabled + span:after,
+.qg-forms-v2 .qg-forms-v2__checkbox .form-check-label input[type=checkbox]:disabled + label:after,
+.qg-forms-v2 .qg-forms-v2__checkbox .form-check-label input[type=checkbox]:disabled + span:after,
+.qg-forms-v2 .form-check li input[type=radio]:disabled + label:after,
+.qg-forms-v2 .form-check li input[type=radio]:disabled + span:after,
+.qg-forms-v2 .form-check li input[type=checkbox]:disabled + label:after,
+.qg-forms-v2 .form-check li input[type=checkbox]:disabled + span:after,
+.qg-forms-v2 .form-check .form-check-label input[type=radio]:disabled + label:after,
+.qg-forms-v2 .form-check .form-check-label input[type=radio]:disabled + span:after,
+.qg-forms-v2 .form-check .form-check-label input[type=checkbox]:disabled + label:after,
+.qg-forms-v2 .form-check .form-check-label input[type=checkbox]:disabled + span:after {
+  background: #979797;
 }
 
 .qg-forms-v2 .qg-forms-v2__radio li input[type=radio]:disabled + label:hover:before,
@@ -15228,6 +15284,22 @@ body:not([data-accessibility=false]):not([data-access-new-window=false]) #qg-con
 .qg-forms-v2 .form-check .form-check-label input[type=checkbox]:disabled + label:hover:before,
 .qg-forms-v2 .form-check .form-check-label input[type=checkbox]:disabled + span:hover:before {
   box-shadow: none;
+}
+
+.qg-forms-v2 .qg-forms-v2__radio li input[type=radio]:checked:disabled,
+.qg-forms-v2 .qg-forms-v2__radio li input[type=checkbox]:checked:disabled,
+.qg-forms-v2 .qg-forms-v2__radio .form-check-label input[type=radio]:checked:disabled,
+.qg-forms-v2 .qg-forms-v2__radio .form-check-label input[type=checkbox]:checked:disabled,
+.qg-forms-v2 .qg-forms-v2__checkbox li input[type=radio]:checked:disabled,
+.qg-forms-v2 .qg-forms-v2__checkbox li input[type=checkbox]:checked:disabled,
+.qg-forms-v2 .qg-forms-v2__checkbox .form-check-label input[type=radio]:checked:disabled,
+.qg-forms-v2 .qg-forms-v2__checkbox .form-check-label input[type=checkbox]:checked:disabled,
+.qg-forms-v2 .form-check li input[type=radio]:checked:disabled,
+.qg-forms-v2 .form-check li input[type=checkbox]:checked:disabled,
+.qg-forms-v2 .form-check .form-check-label input[type=radio]:checked:disabled,
+.qg-forms-v2 .form-check .form-check-label input[type=checkbox]:checked:disabled {
+  cursor: not-allowed;
+  color: #585E62;
 }
 
 .qg-forms-v2 .qg-forms-v2__radio li input[type=radio] + label:before,
