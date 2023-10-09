@@ -7,6 +7,7 @@ import Default from "./templates/Default.html";
 import Figure from "./templates/Figure.html";
 import WithCaptionCredits from "./templates/WithCaptionCredits.html";
 import PullLeftRight from "./templates/PullLeftRight.html";
+import FullWidth from "./templates/FullWidth.html";
 import WithLargerImage from "./templates/WithLargerImage.html";
 import WithoutBorder from "./templates/WithoutBorder.html";
 
@@ -45,6 +46,14 @@ Requires `#QgPrimaryContent` ancestor.
 <Canvas sourceState="shown">
   <Story name="PullLeftRight" parameters={getDecoratedParameters(PullLeftRight)}>
     {() => PullLeftRight}
+  </Story>
+</Canvas>
+
+## FullWidth
+
+<Canvas sourceState="shown">
+  <Story name="FullWidth" parameters={getDecoratedParameters(FullWidth)}>
+    {() => FullWidth}
   </Story>
 </Canvas>
 

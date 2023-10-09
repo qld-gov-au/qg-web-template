@@ -64,10 +64,10 @@
       }
     }
     .qg-service-finder__container .qg-search-concierge-content {
-      a {
+      a:not(.btn):not(.qg-btn) {
         @include qg-link-styles__theme-black-always(black, $qg-global-primary-darker-grey);
       }
-      > a {
+      & > a:not(.btn):not(.qg-btn) {
         padding: 20px 35px 0 35px;
       }
     }
