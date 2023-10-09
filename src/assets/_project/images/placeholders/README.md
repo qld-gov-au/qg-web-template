@@ -8,8 +8,8 @@ placehold.co:
 * https://placehold.co/75 --> 75.png
 * https://placehold.co/150 --> 150.png
 * https://placehold.co/450 --> 450.png
-* https://placehold.co/702x395/ccc/ccc --> 702x395.png
-* https://placehold.co/750x422/ccc/ccc --> 750x422.png
+* https://placehold.co/702x395/ccc/ccc/png --> 702x395.png
+* https://placehold.co/750x422/ccc/ccc/png --> 750x422.png
 * https://placehold.co/920x572/808080/808080 --> 920x572.png
 
 picsum.photos:
