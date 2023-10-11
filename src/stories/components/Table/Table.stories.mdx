@@ -6,6 +6,7 @@ import { getDecoratedParameters } from "../../helpers";
 import Default from "./templates/Default.html";
 import Bordered from "./templates/Bordered.html";
 import NoStripe from "./templates/NoStripe.html";
+import Searchable from "./templates/Searchable.html";
 
 <Meta title="Components/Table" decorators={[QgPrimaryContent, QgContent]} />
 
@@ -34,5 +35,13 @@ Requires `#QgPrimaryContent` ancestor.
 <Canvas sourceState="shown">
   <Story name="NoStripe" parameters={getDecoratedParameters(NoStripe)}>
     {() => NoStripe}
+  </Story>
+</Canvas>
+
+## Searchable table
+
+<Canvas sourceState="shown">
+  <Story name="Searchable" parameters={getDecoratedParameters(Searchable)}>
+    {() => Searchable}
   </Story>
 </Canvas>

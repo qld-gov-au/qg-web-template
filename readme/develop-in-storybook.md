@@ -4,7 +4,7 @@
 ## Goals of using Storybook
 - Make visual testing possible, integrate with visual testing service like [Chromatic](https://www.chromatic.com/).
 - Provide a clean and isolated UI component develop environment.
-- Replace the legacy Github page documentation, as it has been migrated to [Forgov](https://www.forgov.qld.gov.au/information-and-communication-technology/communication-and-publishing/website-and-digital-publishing/website-standards-guidelines-and-templates/swe) and target audiences will be the end-users.
+- Replace the legacy Github page documentation, as it has been migrated to [Forgov](https://www.forgov.qld.gov.au/information-and-communication-technology/communication-and-publishing/website-and-digital-publishing/website-standards-guidelines-and-templates/swe).
 - Should not have any side effects on production code/bundle.
 
 ## Commands
