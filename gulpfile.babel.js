@@ -1,9 +1,9 @@
 'use strict';
+import del from 'del';
 // Core
 const gulp = require('gulp');
 const path = require('path');
 const config  = require('./gulp/gulp-config.js');
-const del  = require('del');
 const argv = require('yargs').argv;
 const plugins = require('gulp-load-plugins')();
 const es  = require('event-stream');
