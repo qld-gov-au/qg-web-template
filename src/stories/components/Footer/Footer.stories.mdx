@@ -27,7 +27,7 @@ import Mobile from "./templates/Footer.html";
 
 {/* Footer always contributed difference in Chromatic snapshot, hence disabled snapshot temporary, need further investigation (caused by the feedback button) */}
 
-<Canvas sourceState="none" {...getCanvasMobileProps()}>
+<Canvas withSource="none" {...getCanvasMobileProps()}>
   <Story
     name="Mobile"
     parameters={{ ...getStoryMobileParameters(), chromatic: { disableSnapshot: true } }}

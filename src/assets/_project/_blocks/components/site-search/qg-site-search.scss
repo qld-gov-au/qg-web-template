@@ -54,7 +54,7 @@
         &:after{
           background: none !important;
         }
-        .qg-search-concierge-content > a {
+        .qg-search-concierge-content > a:not(.btn) {
           padding: 0 35px 0 35px;
         }
       }

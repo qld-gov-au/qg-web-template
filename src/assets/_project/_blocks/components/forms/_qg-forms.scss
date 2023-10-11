@@ -19,6 +19,9 @@
     display: flex;
     flex-wrap: wrap;
     margin-top: 1em;
+    &.qg-radio-tabs {
+      padding: 3px 0 0 3px;
+    }
   }
 
   .rc-theme__active {
@@ -182,7 +185,7 @@
 // Updated form styles (migrated from forms.io repository to make all forms look the same)
 //------------------------------------------------------------------------------------
 
-.qg-forms-v2 {
+.qg-forms-v2, .sortable-table {
 
   input:not([type='button']):not([type='reset']):not([type='submit']):not([type='image']):not([type]),
   input[type='text'],

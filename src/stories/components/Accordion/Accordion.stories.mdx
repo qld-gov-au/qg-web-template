@@ -56,7 +56,7 @@ import States from "./templates/States.html";
 
 ## Mobile
 
-<Canvas sourceState="none" {...getCanvasMobileProps()}>
+<Canvas withSource="none" {...getCanvasMobileProps()}>
   <Story name="Mobile" parameters={getStoryMobileParameters()} height={getStoryMobileHeight()}>
     {() => Mobile}
   </Story>
