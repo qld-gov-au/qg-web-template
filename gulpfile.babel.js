@@ -1,20 +1,22 @@
-import { deleteAsync } from './node_modules/del/index.js'
-
 'use strict';
 // Core
-const gulp = require('gulp');
-const path = require('path');
-const config  = require('./gulp/gulp-config.js');
-const argv = require('yargs').argv;
-const plugins = require('gulp-load-plugins')();
-const es  = require('event-stream');
-const addSrc  = require('gulp-add-src');
+import gulp from 'gulp';
+import path from 'path';
+import * as config from './gulp/gulp-config.js';
+import del from 'del';
+import yargs from 'yargs';
+import loadPlugins from 'gulp-load-plugins';
+import { eventStream } from 'event-stream';
+
+const argv = yargs.argv;
+const plugins = loadPlugins();
+const es = eventStream;
 
 // For testing
-const connectssi = require('gulp-connect-ssi');
-const connect = require('gulp-connect');
-// const wait              = require('gulp-wait');
-const pjson = require('./package.json');
+import connectssi from 'gulp-connect-ssi';
+import connect from 'gulp-connect';
+// import wait from 'gulp-wait';
+import pjson from './package.json';
 
 //constructs build banner for assets
 const buildDate = new Date();
