@@ -31,19 +31,19 @@ const banner = '/*! SWE' +
 
 /* CLEAN TASKS */
 gulp.task('clean-build', (cb) => {
-  return deleteAsync([config.basepath.build], cb);
+  return del([config.basepath.build], cb);
 });
 gulp.task('clean-release', (cb) => {
-  return deleteAsync([config.basepath.release], cb);
+  return del([config.basepath.release], cb);
 });
 gulp.task('clean-redundant-build', (cb) => {
-  return deleteAsync([`${config.basepath.build}/docs/assets/includes-local`], cb);
+  return del([`${config.basepath.build}/docs/assets/includes-local`], cb);
 });
 gulp.task('clean-redundant-release', (cb) => {
-  return deleteAsync([`${config.basepath.release}/template-cdn/assets`, `${config.basepath.release}/template-local/assets/includes-local`], cb);
+  return del([`${config.basepath.release}/template-cdn/assets`, `${config.basepath.release}/template-local/assets/includes-local`], cb);
 });
 gulp.task('clean-publish', (cb) => {
-  return deleteAsync([`${config.webTemplateRepo.folder}`, `${config.staticCdnRepo.folder}`], cb);
+  return del([`${config.webTemplateRepo.folder}`, `${config.staticCdnRepo.folder}`], cb);
 });
 
 /* BUILD */
