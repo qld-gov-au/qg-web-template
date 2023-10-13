@@ -620,7 +620,7 @@ var QgAddressAutocomplete = /*#__PURE__*/function () {
   if ($rcTheme.length > 0) {
     var $fr = $('input[type="radio"]');
     var $fc = $('input[type="checkbox"]');
-    $rcTheme.find($fr).on('change', function () {
+    $rcTheme.find($fr).change(function () {
       if ($(this).is(':checked')) {
         $(this).parents('.rc-theme').find('li').removeClass('rc-theme__active');
         $(this).parents('li').addClass('rc-theme__active');
@@ -628,7 +628,7 @@ var QgAddressAutocomplete = /*#__PURE__*/function () {
         $(this).parents('li').removeClass('rc-theme__active');
       }
     });
-    $rcTheme.find($fc).on('change', function () {
+    $rcTheme.find($fc).change(function () {
       if ($(this).is(':checked')) {
         $(this).parents('li').addClass('rc-theme__active');
       } else {
@@ -5467,24 +5467,6 @@ module.exports = parentWidth;
 
 /***/ }),
 
-/***/ "./src/assets/_project/_blocks/utils/qg-datatables.js":
-/*!************************************************************!*\
-  !*** ./src/assets/_project/_blocks/utils/qg-datatables.js ***!
-  \************************************************************/
-/***/ (() => {
-
-var addQGButtonClass = function addQGButtonClass() {
-  $('.dataTables_wrapper a.paginate_button').addClass('qg-btn');
-};
-if ($("table[class*='dataTable']").length > 0) {
-  $('.dataTable').DataTable({
-    'drawCallback': addQGButtonClass
-  });
-}
-window.onpageshow = addQGButtonClass;
-
-/***/ }),
-
 /***/ "./src/assets/_project/_blocks/utils/qg-datepicker.js":
 /*!************************************************************!*\
   !*** ./src/assets/_project/_blocks/utils/qg-datepicker.js ***!
@@ -5503,8 +5485,14 @@ if (!browserSupportsDateInput() && $('input[type=\'date\']').length > 0) {
     console.log('date polyfill loaded');
   });
 }
-var handleDatePicker = function handleDatePicker() {
-  if ($("input[class*='qg-date-input']").length > 0) {
+// 'qg-date-input' adds a jquery ui datepicker
+if ($('input[class*=\'qg-date-input\']').length > 0) {
+  $.getScript('/assets/v4/latest/lib/ext/jquery-ui-bundle/jquery-ui.min.js', function () {
+    $('head').append($("<link rel='stylesheet' href='/assets/v4/latest/lib/ext/jquery-ui-bundle/jquery-ui.min.css' type='text/css' media='screen' />"));
+  });
+}
+$(window).on('load', function () {
+  if ($('input[class*=\'qg-date-input\']').length > 0) {
     // hasDatepicker class has to be removed from the input when the page is loaded. jquery-ui.min.js will add the
     // calendar widget when the class does not exist on the input. Then hasDatepicker will be dynamically added to the input.
     // This needs to be done when the page is loaded
@@ -5516,15 +5504,7 @@ var handleDatePicker = function handleDatePicker() {
     });
     $('.qg-date-input').attr('placeholder', 'dd/mm/yyyy');
   }
-};
-// 'qg-date-input' adds a jquery ui datepicker
-if ($("input[class*='qg-date-input']").length > 0) {
-  $.getScript('https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js', function () {
-    $('head').append($("<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css' type='text/css' crossorigin='anonymous' media='screen' />"));
-  });
-}
-handleDatePicker();
-$(window).on('load', handleDatePicker);
+});
 
 /***/ }),
 
@@ -5781,39 +5761,6 @@ var QgLoadGoogleApi = /*#__PURE__*/function () {
 
 /***/ }),
 
-/***/ "./src/assets/_project/_blocks/utils/qg-quickexit.js":
-/*!***********************************************************!*\
-  !*** ./src/assets/_project/_blocks/utils/qg-quickexit.js ***!
-  \***********************************************************/
-/***/ (() => {
-
-var handleQuickExit = function handleQuickExit(e) {
-  var $el = $('.qg-quick-exit');
-  if (document.documentElement.clientWidth > 992) {
-    if ($(this).scrollTop() > 200) {
-      $el.css({
-        'position': 'fixed',
-        'top': '0px'
-      });
-    }
-    if ($(this).scrollTop() < 200) {
-      $el.css({
-        'position': 'sticky',
-        'top': '0px'
-      });
-    }
-  } else {
-    $el.css({
-      'position': 'fixed',
-      'top': 'auto'
-    });
-  }
-};
-$(window).on('scroll', handleQuickExit);
-window.addEventListener('resize', handleQuickExit, true);
-
-/***/ }),
-
 /***/ "./src/assets/_project/_blocks/utils/qg-util.js":
 /*!******************************************************!*\
   !*** ./src/assets/_project/_blocks/utils/qg-util.js ***!
@@ -5831,12 +5778,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _parent_width__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_parent_width__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _qg_datepicker__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./qg-datepicker */ "./src/assets/_project/_blocks/utils/qg-datepicker.js");
 /* harmony import */ var _qg_datepicker__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_qg_datepicker__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _qg_quickexit__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./qg-quickexit */ "./src/assets/_project/_blocks/utils/qg-quickexit.js");
-/* harmony import */ var _qg_quickexit__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_qg_quickexit__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _qg_datatables__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./qg-datatables */ "./src/assets/_project/_blocks/utils/qg-datatables.js");
-/* harmony import */ var _qg_datatables__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_qg_datatables__WEBPACK_IMPORTED_MODULE_6__);
-
-
 
 
 
@@ -6406,14 +6347,14 @@ module.exports = _toConsumableArray, module.exports.__esModule = true, module.ex
   \*******************************************************/
 /***/ ((module) => {
 
-function _typeof(o) {
+function _typeof(obj) {
   "@babel/helpers - typeof";
 
-  return (module.exports = _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) {
-    return typeof o;
-  } : function (o) {
-    return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
-  }, module.exports.__esModule = true, module.exports["default"] = module.exports), _typeof(o);
+  return (module.exports = _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) {
+    return typeof obj;
+  } : function (obj) {
+    return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+  }, module.exports.__esModule = true, module.exports["default"] = module.exports), _typeof(obj);
 }
 module.exports = _typeof, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
@@ -6549,14 +6490,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ _typeof)
 /* harmony export */ });
-function _typeof(o) {
+function _typeof(obj) {
   "@babel/helpers - typeof";
 
-  return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) {
-    return typeof o;
-  } : function (o) {
-    return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
-  }, _typeof(o);
+  return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) {
+    return typeof obj;
+  } : function (obj) {
+    return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+  }, _typeof(obj);
 }
 
 /***/ }),
