@@ -266,6 +266,31 @@ $qg-facebook: #3b5998;
 $qg-twitter: #1da1f2;
 $qg-linkedin: #0077b5;
 
+// ## Tag
+$qg-tag-bg-grey: #dedede;
+$qg-tag-color-grey: #444444;
+
+$qg-tag-bg-green: #cce5d8;
+$qg-tag-color-green: #004C23;
+
+$qg-tag-bg-blue: #ccdff1;
+$qg-tag-color-blue: #004281;
+
+$qg-tag-bg-purple: #d6cce3;
+$qg-tag-color-purple: #240050;
+
+$qg-tag-bg-pink: #f7d7e6;
+$qg-tag-color-pink: #800d42;
+
+$qg-tag-bg-red: #f7d1d1;
+$qg-tag-color-red: #8a0a0a;
+
+$qg-tag-bg-orange: #fcd6c3;
+$qg-tag-color-orange: #792d06;
+
+$qg-tag-bg-yellow: #fbf0C5;
+$qg-tag-color-yellow: #4d4712;
+
 @mixin on-hover() {
   &:hover, &.hover {
     &:not(:disabled, .disabled) {
