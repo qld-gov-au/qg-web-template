@@ -15866,6 +15866,53 @@ table.dataTable thead td:active {
   padding: 3px;
 }
 
+.badge.qg-tag {
+  font-weight: normal;
+  margin-right: 0.5rem;
+}
+
+.badge.qg-tag-grey {
+  background-color: #dedede;
+  color: #444444;
+}
+
+.badge.qg-tag-green {
+  background-color: #cce5d8;
+  color: #004C23;
+}
+
+.badge.qg-tag-blue {
+  background-color: #ccdff1;
+  color: #004281;
+}
+
+.badge.qg-tag-purple {
+  background-color: #d6cce3;
+  color: #240050;
+}
+
+.badge.qg-tag-pink {
+  background-color: #f7d7e6;
+  color: #800d42;
+  font-weight: normal;
+}
+
+.badge.qg-tag-red {
+  background-color: #f7d1d1;
+  color: #8a0a0a;
+  font-weight: normal;
+}
+
+.badge.qg-tag-orange {
+  background-color: #fcd6c3;
+  color: #792d06;
+}
+
+.badge.qg-tag-yellow {
+  background-color: #fbf0C5;
+  color: #4d4712;
+}
+
 .qg-visually-hidden {
   border: 0;
   clip: rect(1px 1px 1px 1px);
