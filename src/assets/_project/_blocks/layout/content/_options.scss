@@ -52,7 +52,8 @@
       }
 
       .x-twitter-square {
-        fill: red;
+        // CSS filter generator: https://codepen.io/sosuke/pen/Pjoqqp
+        filter: invert(49%) sepia(99%) saturate(2307%) hue-rotate(161deg) brightness(94%) contrast(101%);
       }
 
       .fa-linkedin-square {
