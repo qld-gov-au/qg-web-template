@@ -39,7 +39,8 @@
     }
 
     .x-twitter-square {
-      content: url("data:image/svg+xml,%3Csvg width='20.58' height='23' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3C!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --%3E%3Cpath d='M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm297.1 84L257.3 234.6 379.4 396H283.8L209 298.1 123.3 396H75.8l111-126.9L69.7 116h98l67.7 89.5L313.6 116h47.5zM323.3 367.6L153.4 142.9H125.1L296.9 367.6h26.3z'/%3E%3C/svg%3E");
+      //content: url("data:image/svg+xml,%3Csvg width='20.58' height='23' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3C!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --%3E%3Cpath d='M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm297.1 84L257.3 234.6 379.4 396H283.8L209 298.1 123.3 396H75.8l111-126.9L69.7 116h98l67.7 89.5L313.6 116h47.5zM323.3 367.6L153.4 142.9H125.1L296.9 367.6h26.3z'/%3E%3C/svg%3E");
+      content: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="20" rx="4"/><path d="M14.0404 4H15.9964L11.7243 8.88168L16.75 15.5254H12.8158L9.73224 11.4971L6.20812 15.5254H4.24935L8.81796 10.303L4 4H8.0339L10.8183 7.68204L14.0404 4ZM13.3533 14.3563H14.4366L7.44377 5.10821H6.28015L13.3533 14.3563Z" fill="white"/></svg>');
     }
 
     &:hover, &:focus {
