@@ -9,20 +9,31 @@
     init: function () {
       // twitter and facebook SDK scripts
       let twitterSdkScript = 'platform.twitter.com/widgets.js';
-      let facebookSdkScript = 'connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v12.0';
+      let facebookSdkScript = 'connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v18.0';
+
       // check if twitter SDK script is not already on the page then load
-      if (this.config.$twitterEl.length > 0 && $('script[src*="' + twitterSdkScript + '"]').length <= 0) {
-        this.loadScript('script', 'twitter-wjs', twitterSdkScript);
+      if (this.config.$twitterEl.length > 0) {
+        if ($('script[src*="' + twitterSdkScript + '"]').length <= 0) {
+          this.loadScript('script', 'twitter-wjs', twitterSdkScript);
+        }
       }
-      // check if facebook SDK script is not already on the page then load
-      if (this.config.$facebookEl.length > 0 && $('script[src*="' + facebookSdkScript + '"]').length <= 0) {
+
+      //Iterate over each facebook element and add the fb embed code
+      if (this.config.$facebookEl.length > 0) {
         this.config.$facebookEl.each(function () {
           var curr = $(this);
           var fbUrl = curr.attr('data-href');
-          var fbhtml = '<div class="fb-page" data-href="' + fbUrl + '" data-tabs="timeline" data-small-header="true" data-width="10000"  data-adapt-container-width="true" data-show-facepile="false"></div>';
+          var fbhtml =
+            '<div class="fb-page" data-href="' +
+            fbUrl +
+            '" data-tabs="timeline" data-small-header="true" data-width="10000"  data-adapt-container-width="true" data-show-facepile="false"></div>';
           curr.append(fbhtml);
         });
-        this.loadScript('script', 'facebook-wjs', facebookSdkScript);
+
+        // check if facebook SDK script is not already on the page then load
+        if ($('script[src*="' + facebookSdkScript + '"]').length <= 0) {
+          this.loadScript('script', 'facebook-wjs', facebookSdkScript);
+        }
       }
     },
     // load script function creates a tag and append on the page
@@ -42,5 +53,4 @@
   };
   // initialize the social media
   qgSocialMedia.init();
-}(jQuery));
-
+})(jQuery);
