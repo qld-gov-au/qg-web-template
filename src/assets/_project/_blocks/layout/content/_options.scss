@@ -24,8 +24,10 @@
 
     &-item {
       margin-right: 22px;
-      &.qg-twitter-list-item {
-        margin-top: 3px;
+      .qg-share-twitter {
+        svg {
+          margin-top: -6px;
+        }
       }
 
       &:last-child {
@@ -41,11 +43,6 @@
       transition: color .25s ease;
     }
 
-    .x-twitter-square {
-      // SVG with dark grey color #4a4a4a
-      content: url('data:image/svg+xml,<svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="0.600098" width="20.8" height="20.8" rx="4" fill="%234a4a4a"/><path d="M14.0404 5H15.9964L11.7243 9.88168L16.75 16.5254H12.8158L9.73224 12.4971L6.20812 16.5254H4.24935L8.81796 11.303L4 5H8.0339L10.8183 8.68204L14.0404 5ZM13.3533 15.3563H14.4366L7.44377 6.10821H6.28015L13.3533 15.3563Z" fill="white"/></svg>');
-    }
-
     &:hover, &:focus {
       .fa-facebook-square {
         color: $qg-facebook;
@@ -56,8 +53,11 @@
       }
 
       .x-twitter-square {
-        // SVG to CSS converter: https://www.svgbackgrounds.com/tools/svg-to-css/
-        content: url('data:image/svg+xml,<svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="0.600098" width="20.8" height="20.8" rx="4" fill="black"/><path d="M14.0404 5H15.9964L11.7243 9.88168L16.75 16.5254H12.8158L9.73224 12.4971L6.20812 16.5254H4.24935L8.81796 11.303L4 5H8.0339L10.8183 8.68204L14.0404 5ZM13.3533 15.3563H14.4366L7.44377 6.10821H6.28015L13.3533 15.3563Z" fill="white"/></svg>');
+        svg {
+          rect {
+            fill: black;
+          }
+        }
       }
 
       .fa-linkedin-square {
