@@ -5,6 +5,7 @@ import { getDecoratedParameters } from "../../helpers";
 
 import Primary from "./templates/Primary.html";
 import Secondary from "./templates/Secondary.html";
+import Default from "./templates/Default.html";
 import Tertiary from "./templates/Tertiary.html";
 import Outline from "./templates/Outline.html";
 import Loading from "./templates/Loading.html";
@@ -28,6 +29,14 @@ import Links from "./templates/Links.html";
 <Canvas sourceState="shown">
   <Story name="Secondary" parameters={getDecoratedParameters(Secondary)}>
     {() => Secondary}
+  </Story>
+</Canvas>
+
+## Default
+
+<Canvas sourceState="shown">
+  <Story name="Default" parameters={getDecoratedParameters(Default)}>
+    {() => Default}
   </Story>
 </Canvas>
 
