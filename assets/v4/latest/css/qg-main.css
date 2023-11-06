@@ -13072,6 +13072,17 @@ body:not([data-accessibility=false]):not([data-access-new-window=false]) #qg-con
   box-shadow: none;
 }
 
+.qg-btn, .qg-promotional-banner__container .qg-promotional-banner__popular-apps ul li a {
+  --border-width: 3px;
+}
+
+.qg-btn.btn-global-primary, .qg-promotional-banner__container .qg-promotional-banner__popular-apps ul li a.btn-global-primary, .qg-btn.btn-global-primary-white, .qg-promotional-banner__container .qg-promotional-banner__popular-apps ul li a.btn-global-primary-white, .qg-btn.btn-primary, .qg-promotional-banner__container .qg-promotional-banner__popular-apps ul li a.btn-primary, .qg-btn.btn-secondary, .qg-promotional-banner__container .qg-promotional-banner__popular-apps ul li a.btn-secondary, #qg-primary-content .qg-card .qg-btn.btn-primary, #qg-primary-content .qg-card .qg-promotional-banner__container .qg-promotional-banner__popular-apps ul li a.btn-primary, .qg-promotional-banner__container .qg-promotional-banner__popular-apps ul li #qg-primary-content .qg-card a.btn-primary,
+#qg-content .qg-card .qg-btn.btn-primary,
+#qg-content .qg-card .qg-promotional-banner__container .qg-promotional-banner__popular-apps ul li a.btn-primary,
+.qg-promotional-banner__container .qg-promotional-banner__popular-apps ul li #qg-content .qg-card a.btn-primary, .qg-btn.btn-default, .qg-promotional-banner__container .qg-promotional-banner__popular-apps ul li a.btn-default {
+  border-width: var(--border-width);
+}
+
 .qg-btn:active:not(:disabled, .disabled), .qg-promotional-banner__container .qg-promotional-banner__popular-apps ul li a:active:not(:disabled, .disabled), .qg-btn:focus:not(:disabled, .disabled), .qg-promotional-banner__container .qg-promotional-banner__popular-apps ul li a:focus:not(:disabled, .disabled), .qg-btn.focus:not(:disabled, .disabled), .qg-promotional-banner__container .qg-promotional-banner__popular-apps ul li a.focus:not(:disabled, .disabled), .qg-btn:active:focus:not(:disabled, .disabled), .qg-btn:focus-visible:not(:disabled, .disabled), .qg-promotional-banner__container .qg-promotional-banner__popular-apps ul li a:focus-visible:not(:disabled, .disabled), .qg-btn:focus-within:not(:disabled, .disabled), .qg-promotional-banner__container .qg-promotional-banner__popular-apps ul li a:focus-within:not(:disabled, .disabled) {
   outline-width: 3px;
   outline-style: solid;
@@ -13092,7 +13103,7 @@ body:not([data-accessibility=false]):not([data-access-new-window=false]) #qg-con
 .qg-btn.btn-outline-dark, .qg-promotional-banner__container .qg-promotional-banner__popular-apps ul li a {
   color: #00698f;
   background-color: transparent !important;
-  border: 3px solid #00698f;
+  border: var(--border-width) solid #00698f;
 }
 
 .qg-btn.btn-outline-dark:hover:not(:disabled, .disabled), .qg-promotional-banner__container .qg-promotional-banner__popular-apps ul li a:hover:not(:disabled, .disabled), .qg-btn.btn-outline-dark.hover:not(:disabled, .disabled), .qg-promotional-banner__container .qg-promotional-banner__popular-apps ul li a.hover:not(:disabled, .disabled), .qg-btn.btn-outline-dark:active:not(:disabled, .disabled), .qg-promotional-banner__container .qg-promotional-banner__popular-apps ul li a:active:not(:disabled, .disabled), .qg-btn.btn-outline-dark:focus:not(:disabled, .disabled), .qg-promotional-banner__container .qg-promotional-banner__popular-apps ul li a:focus:not(:disabled, .disabled), .qg-btn.btn-outline-dark.focus:not(:disabled, .disabled), .qg-promotional-banner__container .qg-promotional-banner__popular-apps ul li a.focus:not(:disabled, .disabled), .qg-btn.btn-outline-dark:focus-visible:not(:disabled, .disabled), .qg-promotional-banner__container .qg-promotional-banner__popular-apps ul li a:focus-visible:not(:disabled, .disabled), .qg-btn.btn-outline-dark.active:active:not(:disabled, .disabled), .qg-btn.btn-outline-dark.active:hover:not(:disabled, .disabled), .qg-btn.btn-outline-dark.active:focus:not(:disabled, .disabled), .qg-btn.btn-outline-dark.active:focus-visible:not(:disabled, .disabled) {
@@ -13117,7 +13128,7 @@ body:not([data-accessibility=false]):not([data-access-new-window=false]) #qg-con
 .qg-btn.btn-outline-light, .qg-promotional-banner__container .qg-promotional-banner__popular-apps ul li a.btn-outline-light {
   color: white !important;
   background-color: transparent !important;
-  border: 3px solid white;
+  border: var(--border-width) solid white;
 }
 
 .qg-btn.btn-outline-light:hover:not(:disabled, .disabled), .qg-promotional-banner__container .qg-promotional-banner__popular-apps ul li a.btn-outline-light:hover:not(:disabled, .disabled), .qg-btn.btn-outline-light.hover:not(:disabled, .disabled), .qg-promotional-banner__container .qg-promotional-banner__popular-apps ul li a.btn-outline-light.hover:not(:disabled, .disabled) {
