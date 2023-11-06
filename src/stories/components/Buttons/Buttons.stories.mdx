@@ -3,11 +3,12 @@ import { Canvas, Meta, Story } from "@storybook/addon-docs";
 import { QgPrimaryContent, QgContent, Grid } from "../../decorators";
 import { getDecoratedParameters } from "../../helpers";
 
+import Default from "./templates/Default.html";
 import Primary from "./templates/Primary.html";
 import Secondary from "./templates/Secondary.html";
-import Default from "./templates/Default.html";
 import Tertiary from "./templates/Tertiary.html";
 import Outline from "./templates/Outline.html";
+import Global from "./templates/Global.html";
 import Loading from "./templates/Loading.html";
 import States from "./templates/States.html";
 import Links from "./templates/Links.html";
@@ -15,6 +16,14 @@ import Links from "./templates/Links.html";
 <Meta title="Components/Buttons" decorators={[QgPrimaryContent, QgContent]} />
 
 # Buttons
+
+## Default
+
+<Canvas sourceState="shown">
+  <Story name="Default" parameters={getDecoratedParameters(Default)}>
+    {() => Default}
+  </Story>
+</Canvas>
 
 ## Primary
 
@@ -29,14 +38,6 @@ import Links from "./templates/Links.html";
 <Canvas sourceState="shown">
   <Story name="Secondary" parameters={getDecoratedParameters(Secondary)}>
     {() => Secondary}
-  </Story>
-</Canvas>
-
-## Default
-
-<Canvas sourceState="shown">
-  <Story name="Default" parameters={getDecoratedParameters(Default)}>
-    {() => Default}
   </Story>
 </Canvas>
 
@@ -55,6 +56,15 @@ import Links from "./templates/Links.html";
     {() => Outline}
   </Story>
 </Canvas>
+
+## Global search
+
+<Canvas sourceState="shown">
+  <Story name="Global" parameters={getDecoratedParameters(Global)}>
+    {() => Global}
+  </Story>
+</Canvas>
+
 
 ## Loading
 
