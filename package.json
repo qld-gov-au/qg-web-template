@@ -47,7 +47,7 @@
   "homepage": "http://www.qld.gov.au/",
   "devDependencies": {
     "@babel/core": "^7.23.2",
-    "@babel/plugin-transform-runtime": "^7.23.2",
+    "@babel/plugin-transform-runtime": "^7.23.3",
     "@babel/preset-env": "^7.23.2",
     "@storybook/addon-actions": "v7.5.3",
     "@storybook/addon-essentials": "v7.5.3",
