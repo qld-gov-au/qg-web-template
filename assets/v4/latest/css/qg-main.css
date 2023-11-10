@@ -14190,9 +14190,16 @@ body:not([data-accessibility=false]):not([data-access-new-window=false]) #qg-con
 }
 
 .qg-forms-v2 .formio-choices .choices__item, .sortable-table .formio-choices .choices__item {
-  padding: 4px 10px;
   line-height: inherit;
   font-size: 1rem;
+}
+
+.qg-forms-v2 .formio-choices .choices__list--dropdown .choices__item, .sortable-table .formio-choices .choices__list--dropdown .choices__item {
+  padding: 10px;
+}
+
+.qg-forms-v2 .formio-choices .choices__input, .sortable-table .formio-choices .choices__input {
+  padding: 10px !important;
 }
 
 .qg-forms-v2 .formio-choices .choices__item.choices__item--selectable:not(.choices__item--choice), .sortable-table .formio-choices .choices__item.choices__item--selectable:not(.choices__item--choice) {
