@@ -295,9 +295,16 @@
     }
 
     .choices__item {
-      padding: 4px 10px;
       line-height: inherit;
       font-size: 1rem;
+    }
+
+    .choices__list--dropdown .choices__item {
+      padding: 4px 10px;
+    }
+
+    &[data-type*=select-one] .choices__input {
+        padding: 4px 10px !important;
     }
 
     .choices__item.choices__item--selectable:not(.choices__item--choice) {
