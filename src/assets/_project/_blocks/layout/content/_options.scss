@@ -24,9 +24,12 @@
 
     &-item {
       margin-right: 22px;
+      &.twitter-list-item {
+        transform: scale(1.015);
+      }
       .qg-share-twitter {
         svg {
-          margin-top: -6px;
+          margin-top: -5px;
         }
       }
 
