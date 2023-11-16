@@ -50,7 +50,7 @@
         color: #212529;
         font-weight: 700;
         background-color: $qg-section-nav-bg-color;
-        &:not(:hover) {
+        &:hover {
           text-decoration-line: none !important;
         }
       }
