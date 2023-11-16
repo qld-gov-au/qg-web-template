@@ -28,10 +28,9 @@
       }
     }
 
-    h2 {
+    h3 {
       margin-top: 0;
       overflow: hidden;
-      color: $qg-aside-h2-color;
       @include rem(font-size, 22px);
       font-weight: bold;
 
@@ -41,9 +40,6 @@
         font-size: 1.3em;
       }
 
-    }
-    h3 {
-      color: $qg-dark-blue2;
     }
     p:last-child {
       margin-bottom: 0;
@@ -103,7 +99,7 @@
       }
     }
     &.login {
-      h2:before {
+      h3:before {
         content: $fa-var-sign-in;
         font-family: FontAwesome;
         color: $qg-green;
