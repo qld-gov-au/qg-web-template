@@ -124,10 +124,7 @@
 #qg-one-col, #qg-three-col, #qg-two-col-aside:not(.wide), #qg-two-col-nav:not(.wide) {
   .qg-index-links > .qg-index-item {
     @include media-breakpoint-up(sm) {
-      @include make-col(6);
-    }
-    &:nth-child(3) {
-      @include qg-index-item;
+      @include make-col(12); // Make the page one-col. Example: Topic Index page with an aside
     }
   }
 }
@@ -146,9 +143,9 @@
 #qg-two-col-aside.wide, #qg-two-col-nav.wide {
   .qg-index-links > .qg-index-item {
     @include media-breakpoint-up(sm) {
-      @include make-col(4);
+      @include make-col(6); // Make the page two-col. Example: Topic index page with no aside
     }
-    &:nth-child(4) {
+    &:nth-child(3) {
       @include qg-index-item;
     }
   }
