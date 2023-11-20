@@ -3,7 +3,7 @@
   @extend .flex-wrap;
   .qg-index-item.content-only{
     h2, p, ul, &> div &> span {
-      padding-left: 10px;
+      padding-left: 0;
     }
   }
 
