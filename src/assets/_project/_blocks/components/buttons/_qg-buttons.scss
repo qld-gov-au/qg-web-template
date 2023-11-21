@@ -84,27 +84,47 @@
 }
 
 .qg-btn {
+  
+  --border-width: 3px; //Default buttons border width
+
   @extend .btn;
+
+  &.btn-global-primary,
+  &.btn-global-primary-white,
+  &.btn-primary,
+  &.btn-secondary,
+  &.btn-default {
+    border-width: var(--border-width);
+  }
+  
   @include qg-button-outline-decoration($border-radius: $btn-border-radius-base);
   &.btn-outline-dark{
     color: $qg-outline-dark;
     background-color: transparent !important;
-    border: 3px solid $qg-outline-dark;
+    border: var(--border-width) solid $qg-outline-dark;
+    
     @include on-hover-or-active {
       border-color: $qg-outline-dark-hover;
       color: $qg-global-primary-dark-grey;
     }
+    
     @include qg-underline-on-highlight-decoration;
+  
   }
+  
   &.btn-outline-light{
     color: white !important;
     background-color: transparent !important;
-    border: 3px solid white;
+    border: var(--border-width) solid white;
+  
     @include qg-underline-on-highlight-decoration;
+  
   }
+  
   &.btn-link.light{
     color: white;
   }
+
 }
 
 #body .qg-btn, #body .btn, body .qg-btn, body .btn {
