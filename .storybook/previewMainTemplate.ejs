@@ -11,13 +11,17 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 <!-- custom qld online code start -->
-    <link href="//fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css" />
-    <link href="./assets/v4/latest/css/qg-main.css" rel="stylesheet" type="text/css" media="all">
+    <link href="//fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic" rel="stylesheet" crossorigin="anonymous" type="text/css" />
     <noscript>
       <link href="./assets/v4/latest/css/qg-noscript.css" rel="stylesheet" type="text/css" media="all">
     </noscript>
-        <link href="./assets/v4/latest/css/qg-main.css" rel="stylesheet" type="text/css" media="all">
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <link href="./assets/v4/latest/css/qg-main.css" rel="stylesheet" type="text/css" crossorigin="anonymous" media="all">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css' crossorigin='anonymous' type='text/css' media='screen' />
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous" type="text/javascript"></script>
+    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
 <!-- custom qld online code end -->
     <% if (typeof headHtmlSnippet !== 'undefined') { %> <%= headHtmlSnippet %> <% } %> <%
     htmlWebpackPlugin.files.css.forEach(file => { %>
@@ -63,16 +67,6 @@
       <% }); %>
       //### custom qld online code start -->
       import './assets/v4/latest/lib/all-ext-min.js';
-      function addScript(src) {
-        if (document.querySelectorAll(`script[src$="${src.substring(src.lastIndexOf('/') + 1)}"]`).length === 0) {
-          const script = document.createElement('script');
-          script.src = src;
-          document.getElementsByTagName('head')[0].appendChild(script);
-        };
-      }
-      function handleStoryInit(canvas) {
-        addScript("./assets/v4/latest/js/qg-main.js");
-      }
 
       // set up the mutation observer
       var observer = new MutationObserver(function (mutations, me) {
@@ -80,7 +74,6 @@
         // `me` is the MutationObserver instance
         var canvas = document.getElementById('my-canvas');
         if ($("#root").children.length > 0 || $("#docs-root").children.length > 0) {
-          handleStoryInit(canvas);
           me.disconnect(); // stop observing
           return;
         }
