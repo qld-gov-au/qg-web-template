@@ -120,12 +120,10 @@
                 content: "\f082";
             }
             &.twitter {
-                a {
-                    padding-left: 7px;
-                }
                 svg {
                     transform: scale(1.1);
                     margin-top: -6px;
+                    margin-right: 7px;
                 }
             }
         }
