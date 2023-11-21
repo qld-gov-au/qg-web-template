@@ -20117,13 +20117,10 @@ body.qg-private-content {
   content: "\f082";
 }
 
-.qg-site-footer ul li.twitter a {
-  padding-left: 7px;
-}
-
 .qg-site-footer ul li.twitter svg {
   transform: scale(1.1);
   margin-top: -6px;
+  margin-right: 7px;
 }
 
 @media (max-width: 1199.98px) {
