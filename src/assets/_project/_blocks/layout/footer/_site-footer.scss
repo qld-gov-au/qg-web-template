@@ -119,8 +119,12 @@
             &.facebook:before {
                 content: "\f082";
             }
-            &.twitter:before {
-                content: "\f081";
+            &.twitter {
+                svg {
+                    transform: scale(1.1);
+                    margin-top: -6px;
+                    margin-right: 7px;
+                }
             }
         }
     }

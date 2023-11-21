@@ -27,6 +27,9 @@
       .acc-heading {
 
         padding: 1rem;
+        a.qg-accordion--ga {
+          margin: 0 !important;
+        }
 
         &:hover > a, 
         &:focus > a,
