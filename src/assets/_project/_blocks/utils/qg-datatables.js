@@ -3,8 +3,8 @@ var addQGButtonClass = function () {
 };
 
 $('.dataTable').each(function () {
-  if (!$.fn.DataTable.isDataTable('.dataTable')) {
-    $('.dataTable').DataTable({
+  if (!$.fn.DataTable.isDataTable(this)) {
+    $(this).DataTable({
       'drawCallback': addQGButtonClass,
     });
   }
