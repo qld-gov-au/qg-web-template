@@ -7,5 +7,3 @@ if ($("table[class*='dataTable']").length > 0) {
     'drawCallback': addQGButtonClass,
   });
 }
-
-window.onpageshow = addQGButtonClass;
