@@ -9,3 +9,4 @@ $('.dataTable').each(function () {
     });
   }
 });
+window.onpageshow = addQGButtonClass;
