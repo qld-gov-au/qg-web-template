@@ -14349,10 +14349,14 @@ body:not([data-accessibility=false]):not([data-access-new-window=false]) #qg-con
 }
 
 .qg-forms-v2 .formio-error-wrapper, .sortable-table .formio-error-wrapper {
-  color: white !important;
+  color: #FFF !important;
   background-color: white !important;
   border-color: white !important;
   padding: 0;
+}
+
+.qg-forms-v2 .formio-error-wrapper.formio-component-file, .sortable-table .formio-error-wrapper.formio-component-file {
+  color: #721C24 !important;
 }
 
 .qg-forms-v2 .formio-errors div.error, .sortable-table .formio-errors div.error {
@@ -15796,6 +15800,10 @@ table.dataTable thead td:active {
 }
 
 .dataTables_paginate .paginate_button, .dataTables_paginate .ellipsis {
+  padding: 8.4px 21 0.6px;
+  border-radius: 4px;
+  margin-top: 2px;
+  margin-right: 2px;
   display: inline;
   position: relative;
   float: left;
