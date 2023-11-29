@@ -1,7 +1,7 @@
 #qg-primary-content .qg-index-links {
   @extend .d-flex;
   @extend .flex-wrap;
-  padding-top: 1.5em;
+  padding-top: 1em;
   .qg-index-item.content-only{
     h2, p, ul, &> div &> span {
       padding-left: 0;
