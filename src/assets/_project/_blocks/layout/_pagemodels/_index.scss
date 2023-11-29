@@ -1,6 +1,7 @@
 #qg-primary-content .qg-index-links {
   @extend .d-flex;
   @extend .flex-wrap;
+  padding-top: 1.5em;
   .qg-index-item.content-only{
     h2, p, ul, &> div &> span {
       padding-left: 0;
@@ -75,7 +76,7 @@
     margin-left: 0;
     &> .qg-index-item{
       //width: 100%;
-      margin-bottom: 2rem !important;
+      margin-bottom: 1.5rem !important;
       padding-left: 0 !important;
       padding-right: 0 !important;
       border: solid 1px #d3d3d3;
