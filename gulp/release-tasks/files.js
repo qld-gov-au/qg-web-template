@@ -60,7 +60,7 @@ module.exports = function (gulp, plugins, config, es, path, banner) {
     //CSS task
     gulp.src(`${config.basepath.build}/assets/${config.versionName}/**/*.css`, { dot: true })
       .pipe(plugins.postcss([cssnano({
-        discardComments: {removeAll: true},
+        discardComments: { removeAll: true },
       })]))
       .on('error', console.log)
       .pipe(plugins.insert.prepend(banner))

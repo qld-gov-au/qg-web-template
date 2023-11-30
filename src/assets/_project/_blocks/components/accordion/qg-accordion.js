@@ -42,9 +42,9 @@ export class QgAccordion {
    * @return {undefined}
    **/
   hashTrigger(){
-    let self = this;
-    let hashValTrimmed = this.filterSpecialChar(self.urlHashVal);
-    let hashValueIdMatch = self.urlHashVal.replace('#', '');
+    const self = this;
+    const hashValTrimmed = this.filterSpecialChar(self.urlHashVal);
+    const hashValueIdMatch = self.urlHashVal.replace('#', '');
     if (hashValTrimmed.length > 0) {
       // supports ID match
       self.$accordion.find('.collapsing-section').each(function (index, titleEl){
@@ -85,8 +85,8 @@ export class QgAccordion {
    * @return {undefined}
    **/
   accordionPanelClick(){
-    let self = this;
-    let accHeading = self.$accordion_v2.find(self.$accHeading);
+    const self = this;
+    const accHeading = self.$accordion_v2.find(self.$accHeading);
     accHeading.on('click', function (event) {
       self.toggleOpenCloseClass($(this));
     });
@@ -115,7 +115,7 @@ export class QgAccordion {
    * @return {undefined}
    **/
   collapseAll(){
-    let self = this;
+    const self = this;
     // collapse all click
     // label selector is to provide backward compatibility in case projects are using old markup
     $('.qg-acc-controls .collapse, label[for=\'collapse\']').on('click keypress', function (event) {
@@ -133,7 +133,7 @@ export class QgAccordion {
    * @return {undefined}
    **/
   expandAll(){
-    let self = this;
+    const self = this;
     //expand all click
     // label selector is to provide backward compatibility in case projects are using old markup
     $('.qg-acc-controls .expand, label[for=\'expand\']').on('click keypress', function (event) {
@@ -152,7 +152,7 @@ export class QgAccordion {
    **/
   gaTracking(){
     this.$accordion.find('.qg-accordion--ga').each(function(){
-      let title = 'accordion title - ' + $(this).find($('.title')).text();
+      const title = 'accordion title - ' + $(this).find($('.title')).text();
       $(this).attr('data-analytics-link-group', title);
     });
   }
@@ -162,13 +162,13 @@ export class QgAccordion {
    * @return {undefined}
    **/
   legacyAccordion(){
-    let self = this;
-    let accItem = $('.qg-accordion:not(.qg-accordion-v2)').find('article');
+    const self = this;
+    const accItem = $('.qg-accordion:not(.qg-accordion-v2)').find('article');
     accItem.find('.acc-heading').on('keypress', function (event) {
       if (event.target === event.currentTarget) {
         event.preventDefault();
         if (self.keyboardAccessibility(event) === true) {
-          let parent = $(this).parent();
+          const parent = $(this).parent();
           if (parent.find('input[name="tabs"]:checked').length > 0) {
             parent.find('input[name="tabs"]').prop('checked', false);
           } else {

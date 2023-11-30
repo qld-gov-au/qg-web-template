@@ -6,8 +6,8 @@ $(function () {
   //
 
   var qgSiteSearch = {
-    'fn': {},
-    'vars': {},
+    fn: {},
+    vars: {},
   };
 
   //
@@ -66,9 +66,9 @@ $(function () {
 
   // Handle multiple events
   qgSiteSearch.fn.inputEventHandler = function (event) {
-    var eventType = event['type'];
-    var targetInput = $(event['target']);
-    var keyCode = event['keyCode'];
+    var eventType = event.type;
+    var targetInput = $(event.target);
+    var keyCode = event.keyCode;
     var inputValue = targetInput.val();
 
     switch (eventType) {
@@ -139,7 +139,7 @@ $(function () {
 
   qgSiteSearch.fn.keyboardNavigation = function (event) {
     var self = $(this);
-    var keyCode = event['keyCode'];
+    var keyCode = event.keyCode;
     var focusableList = self.parents('.qg-site-search__form').find($('.qg-search-concierge.show')).find('a, button');
     var currentIndex = self.parents('.qg-site-search__form').attr('data-navindex');
 
@@ -160,7 +160,7 @@ $(function () {
 
   // Handle clearing the input field via button
   qgSiteSearch.fn.clearInputField = function (event) {
-    let inputTarget = event.target;
+    const inputTarget = event.target;
     var clearButton = $(this).parent().find($('.qg-search-close-concierge'));
     var searchInput = $(this).parent().find($('.qg-search-site__input'));
     searchInput.val('');
@@ -174,7 +174,7 @@ $(function () {
 
   // Handle selecting a suggestion
   qgSiteSearch.fn.searchSuggestionClick = function (event) {
-    var targetElement = $(event['currentTarget']);
+    var targetElement = $(event.currentTarget);
     var suggestionValue = targetElement.text();
     var searchInput = $('.qg-search-site__input');
 
@@ -184,10 +184,10 @@ $(function () {
 
   // Handle background click to close concierge
   qgSiteSearch.fn.handleBodyClick = function (event, targetInput) {
-    let self = event.target;
+    const self = event.target;
     var targetSelector = '#qg-global-search-form';
 
-    if ($(event['target']).closest(targetSelector).length === 0) {
+    if ($(event.target).closest(targetSelector).length === 0) {
       // Close the concierge panels
       qgSiteSearch.fn.closeConciergePanels(self);
     }
@@ -209,10 +209,10 @@ $(function () {
 
   // Get example suggestions from Funnelback
   qgSiteSearch.fn.getExampleSuggestions = function (inputValue) {
-    var exampleResponse = [{'key': 'cancelled', 'disp': 'cancelled', 'disp_t': 'T', 'wt': '77.44', 'cat': '', 'cat_t': '', 'action': '', 'action_t': 'S'}, {'key': 'cancellation', 'disp': 'cancellation', 'disp_t': 'T', 'wt': '72.139', 'cat': '', 'cat_t': '', 'action': '', 'action_t': 'S'}, {'key': 'cancel', 'disp': 'cancel', 'disp_t': 'T', 'wt': '69.493', 'cat': '', 'cat_t': '', 'action': '', 'action_t': 'S'}, {'key': 'cancelling', 'disp': 'cancelling', 'disp_t': 'T', 'wt': '43.151', 'cat': '', 'cat_t': '', 'action': '', 'action_t': 'S'}, {'key': 'cancellations', 'disp': 'cancellations', 'disp_t': 'T', 'wt': '32.28', 'cat': '', 'cat_t': '', 'action': '', 'action_t': 'S'}, {'key': 'cancellation of membership', 'disp': 'cancellation of membership', 'disp_t': 'T', 'wt': '2.2', 'cat': '', 'cat_t': '', 'action': '', 'action_t': 'S'}, {'key': 'cancellation form', 'disp': 'fill out this cancellation form', 'disp_t': 'T', 'wt': '2', 'cat': '', 'cat_t': '', 'action': '', 'action_t': 'S'}, {'key': 'cancel a booking', 'disp': 'cancel a booking', 'disp_t': 'T', 'wt': '1.1', 'cat': '', 'cat_t': '', 'action': '', 'action_t': 'S'}, {'key': 'cancel a disability parking permit', 'disp': 'cancel a disability parking permit', 'disp_t': 'T', 'wt': '1', 'cat': '', 'cat_t': '', 'action': '', 'action_t': 'S'}, {'key': 'cancelling your registration', 'disp': 'cancelling your registration', 'disp_t': 'T', 'wt': '1', 'cat': '', 'cat_t': '', 'action': '', 'action_t': 'S'}];
+    var exampleResponse = [{ key: 'cancelled', disp: 'cancelled', disp_t: 'T', wt: '77.44', cat: '', cat_t: '', action: '', action_t: 'S' }, { key: 'cancellation', disp: 'cancellation', disp_t: 'T', wt: '72.139', cat: '', cat_t: '', action: '', action_t: 'S' }, { key: 'cancel', disp: 'cancel', disp_t: 'T', wt: '69.493', cat: '', cat_t: '', action: '', action_t: 'S' }, { key: 'cancelling', disp: 'cancelling', disp_t: 'T', wt: '43.151', cat: '', cat_t: '', action: '', action_t: 'S' }, { key: 'cancellations', disp: 'cancellations', disp_t: 'T', wt: '32.28', cat: '', cat_t: '', action: '', action_t: 'S' }, { key: 'cancellation of membership', disp: 'cancellation of membership', disp_t: 'T', wt: '2.2', cat: '', cat_t: '', action: '', action_t: 'S' }, { key: 'cancellation form', disp: 'fill out this cancellation form', disp_t: 'T', wt: '2', cat: '', cat_t: '', action: '', action_t: 'S' }, { key: 'cancel a booking', disp: 'cancel a booking', disp_t: 'T', wt: '1.1', cat: '', cat_t: '', action: '', action_t: 'S' }, { key: 'cancel a disability parking permit', disp: 'cancel a disability parking permit', disp_t: 'T', wt: '1', cat: '', cat_t: '', action: '', action_t: 'S' }, { key: 'cancelling your registration', disp: 'cancelling your registration', disp_t: 'T', wt: '1', cat: '', cat_t: '', action: '', action_t: 'S' }];
 
     var filteredResponse = exampleResponse.filter(function (suggestion) {
-      return suggestion['disp'].indexOf(inputValue.toLowerCase()) !== -1;
+      return suggestion.disp.indexOf(inputValue.toLowerCase()) !== -1;
     });
 
     return filteredResponse;
@@ -220,7 +220,7 @@ $(function () {
 
   // Get example service results from Funnelback
   qgSiteSearch.fn.getExampleServices = function () {
-    var exampleResponse = {'response': {'resultPacket': {'query': 'grants', 'results': [{'rank': 1, 'title': 'Grants and funding | Environment, land and water | Queensland Government', 'collection': 'qgov-web', 'metaData': {'license': 'https://creativecommons.org/licenses/by/4.0/', 'r': 'all', 'c': 'Grants and funding are available to support environmental programs in Queensland. This includes koala and marine life conservation, and nature refuges.', 'C': 'Grants and funding are available to support environmental programs in Queensland. This includes koala and marine life conservation, and nature refuges.', 's': 'Grant; funding; nature assist; koala; Everyones environment; Indigenous sea rangers; research; NatureAssist; Indigenous Sea Country Management Grants Program; Koala Rescue and Rehabilitation Grants Program; Koala Research Grant Program; koala', 'd': '2019-07-31', 't': 'Grants and funding | Environment, land and water | Queensland Government;Grants and funding | Environment and pollution management', 'e': 'Text', 'f': 'guidelines', 'j': 'https://www.qld.gov.au/environment/pollution/funding'}, 'liveUrl': 'https://www.qld.gov.au/environment/pollution/funding', 'clickTrackingUrl': '/s/redirect?collection=qld-gov&url=https%3A%2F%2Fwww.qld.gov.au%2Fenvironment%2Fpollution%2Ffunding&index_url=https%3A%2F%2Fwww.qld.gov.au%2Fenvironment%2Fpollution%2Ffunding&auth=qzUXw9sTwPwOdKvslCPbog&profile=qld_preview&rank=1&query=grants', 'explain': null, 'indexUrl': 'https://www.qld.gov.au/environment/pollution/funding'}, {'rank': 2, 'title': 'Funding and grants | Recreation, sport and arts | Queensland Government', 'collection': 'qgov-web', 'metaData': {'c': 'Find what funding and grants are available for young athletes and for clubs to upgrade sport and recreation facilities or equipment.', 'C': 'Find what funding and grants are available for young athletes and for clubs to upgrade sport and recreation facilities or equipment.', 'sprequired': 'yes', 'd': '2019-07-19', 'e': 'Collection', 'f': 'index', 'stype': 'apply-for-it', 'j': 'https://www.qld.gov.au/recreation/sports/funding', 'sid': 'P001085', 'sfinder': 'yes', 'license': 'https://creativecommons.org/licenses/by/4.0/', 'scategory': 'recreation-sports-and-arts', 'r': 'all', 's': 'Funding and grants; funding for young athletes; grants for young athletes; athlete scholarships; funding for kids and young people; funding for clubs and organisations; grants for clubs and organisations; funding to upgrade sport and recreation', 't': 'Funding and grants | Recreation, sport and arts | Queensland Government;Funding and grants | Sport', 'skioskonly': 'no'}, 'liveUrl': 'https://www.qld.gov.au/recreation/sports/funding', 'clickTrackingUrl': '/s/redirect?collection=qld-gov&url=https%3A%2F%2Fwww.qld.gov.au%2Frecreation%2Fsports%2Ffunding&index_url=https%3A%2F%2Fwww.qld.gov.au%2Frecreation%2Fsports%2Ffunding&auth=cM3gwHE6wlGI5UzFw2iszA&profile=qld_preview&rank=2&query=grants', 'explain': null, 'indexUrl': 'https://www.qld.gov.au/recreation/sports/funding'}, {'rank': 3, 'title': 'Everyones Environment grants program | Environment, land and water | Queensland Government', 'collection': 'qgov-web', 'metaData': {'c': 'This program provides funding for Queensland community groups with projects aimed at delivering practical actions for local environmental improvements.', 'C': 'This program provides funding for Queensland community groups with projects aimed at delivering practical actions for local environmental improvements.', 'sprequired': 'no', 'd': '2015-03-23', 'e': 'Text', 'f': 'guidelines', 'stype': 'find-it', 'j': 'https://www.qld.gov.au/environment/pollution/funding/everyones', 'sid': 'P000369', 'sfinder': 'yes', 'license': 'https://creativecommons.org/licenses/by/4.0/', 'scategory': 'environment-land-and-water', 'r': 'all', 's': 'Grants; everyone; environment; heritage; Queensland; funding', 't': 'Everyones Environment grants program | Environment, land and water | Queensland Government;Everyones Environment grants program | Grants and funding', 'skioskonly': 'no'}, 'liveUrl': 'https://www.qld.gov.au/environment/pollution/funding/everyones', 'clickTrackingUrl': '/s/redirect?collection=qld-gov&url=https%3A%2F%2Fwww.qld.gov.au%2Fenvironment%2Fpollution%2Ffunding%2Feveryones&index_url=https%3A%2F%2Fwww.qld.gov.au%2Fenvironment%2Fpollution%2Ffunding%2Feveryones&auth=QaZNQYwacyhU7xtVcs%2FPbg&profile=qld_preview&rank=3&query=grants', 'explain': null, 'indexUrl': 'https://www.qld.gov.au/environment/pollution/funding/everyones'}], 'error': null}, 'curator': {'exhibits': [{'titleHtml': 'Queensland Government Grants Finder', 'displayUrl': 'https://www.grants.services.qld.gov.au/#/', 'linkUrl': '/s/redirect?collection=qld-gov&url=https%3A%2F%2Fwww.grants.services.qld.gov.au%2F%23%2F&index_url=https%3A%2F%2Fwww.grants.services.qld.gov.au%2F%23%2F&auth=wEzza0HDD%2BGN4WIzBUq0%2Fg&profile=qld_preview&type=FP', 'descriptionHtml': 'The Queensland Government Grants Finder is a comprehensive list of our grants and funding programs.', 'additionalProperties': {'icon': 'fa-car fa-motorcycle fa-address-card', 'buttonText': 'Find out more', 'service': 'yes'}, 'category': ''}, {'titleHtml': 'North Queensland flood assistance', 'displayUrl': 'https://www.qld.gov.au/community/disasters-emergencies/queensland-disasters/fnq-monsoonal-trough', 'linkUrl': '/s/redirect?collection=qld-gov&url=https%3A%2F%2Fwww.qld.gov.au%2Fcommunity%2Fdisasters-emergencies%2Fqueensland-disasters%2Ffnq-monsoonal-trough&index_url=https%3A%2F%2Fwww.qld.gov.au%2Fcommunity%2Fdisasters-emergencies%2Fqueensland-disasters%2Ffnq-monsoonal-trough&auth=qbavFamsPcqvWK5M3INRmA&profile=qld_preview&type=FP', 'descriptionHtml': 'Personal hardship financial assistance has been activated for some communities at this time.', 'additionalProperties': {}, 'category': ''}, {'titleHtml': 'Change of address', 'displayUrl': 'https://www.change-of-address.services.qld.gov.au/', 'linkUrl': '/s/redirect?collection=qld-gov&url=https%3A%2F%2Fwww.change-of-address.services.qld.gov.au%2F&index_url=https%3A%2F%2Fwww.change-of-address.services.qld.gov.au%2F&auth=RrjhEMq01%2B%2BZwQhpwXAjPg&profile=qld_preview&type=FP', 'descriptionHtml': 'Use this online form to change your home and/or postal address online, rather than contacting multiple Queensland Government departments/services.', 'additionalProperties': {'icon': 'fa-car fa-motorcycle fa-address-card', 'service': 'yes'}, 'category': ''}]}}};
+    var exampleResponse = { response: { resultPacket: { query: 'grants', results: [{ rank: 1, title: 'Grants and funding | Environment, land and water | Queensland Government', collection: 'qgov-web', metaData: { license: 'https://creativecommons.org/licenses/by/4.0/', r: 'all', c: 'Grants and funding are available to support environmental programs in Queensland. This includes koala and marine life conservation, and nature refuges.', C: 'Grants and funding are available to support environmental programs in Queensland. This includes koala and marine life conservation, and nature refuges.', s: 'Grant; funding; nature assist; koala; Everyones environment; Indigenous sea rangers; research; NatureAssist; Indigenous Sea Country Management Grants Program; Koala Rescue and Rehabilitation Grants Program; Koala Research Grant Program; koala', d: '2019-07-31', t: 'Grants and funding | Environment, land and water | Queensland Government;Grants and funding | Environment and pollution management', e: 'Text', f: 'guidelines', j: 'https://www.qld.gov.au/environment/pollution/funding' }, liveUrl: 'https://www.qld.gov.au/environment/pollution/funding', clickTrackingUrl: '/s/redirect?collection=qld-gov&url=https%3A%2F%2Fwww.qld.gov.au%2Fenvironment%2Fpollution%2Ffunding&index_url=https%3A%2F%2Fwww.qld.gov.au%2Fenvironment%2Fpollution%2Ffunding&auth=qzUXw9sTwPwOdKvslCPbog&profile=qld_preview&rank=1&query=grants', explain: null, indexUrl: 'https://www.qld.gov.au/environment/pollution/funding' }, { rank: 2, title: 'Funding and grants | Recreation, sport and arts | Queensland Government', collection: 'qgov-web', metaData: { c: 'Find what funding and grants are available for young athletes and for clubs to upgrade sport and recreation facilities or equipment.', C: 'Find what funding and grants are available for young athletes and for clubs to upgrade sport and recreation facilities or equipment.', sprequired: 'yes', d: '2019-07-19', e: 'Collection', f: 'index', stype: 'apply-for-it', j: 'https://www.qld.gov.au/recreation/sports/funding', sid: 'P001085', sfinder: 'yes', license: 'https://creativecommons.org/licenses/by/4.0/', scategory: 'recreation-sports-and-arts', r: 'all', s: 'Funding and grants; funding for young athletes; grants for young athletes; athlete scholarships; funding for kids and young people; funding for clubs and organisations; grants for clubs and organisations; funding to upgrade sport and recreation', t: 'Funding and grants | Recreation, sport and arts | Queensland Government;Funding and grants | Sport', skioskonly: 'no' }, liveUrl: 'https://www.qld.gov.au/recreation/sports/funding', clickTrackingUrl: '/s/redirect?collection=qld-gov&url=https%3A%2F%2Fwww.qld.gov.au%2Frecreation%2Fsports%2Ffunding&index_url=https%3A%2F%2Fwww.qld.gov.au%2Frecreation%2Fsports%2Ffunding&auth=cM3gwHE6wlGI5UzFw2iszA&profile=qld_preview&rank=2&query=grants', explain: null, indexUrl: 'https://www.qld.gov.au/recreation/sports/funding' }, { rank: 3, title: 'Everyones Environment grants program | Environment, land and water | Queensland Government', collection: 'qgov-web', metaData: { c: 'This program provides funding for Queensland community groups with projects aimed at delivering practical actions for local environmental improvements.', C: 'This program provides funding for Queensland community groups with projects aimed at delivering practical actions for local environmental improvements.', sprequired: 'no', d: '2015-03-23', e: 'Text', f: 'guidelines', stype: 'find-it', j: 'https://www.qld.gov.au/environment/pollution/funding/everyones', sid: 'P000369', sfinder: 'yes', license: 'https://creativecommons.org/licenses/by/4.0/', scategory: 'environment-land-and-water', r: 'all', s: 'Grants; everyone; environment; heritage; Queensland; funding', t: 'Everyones Environment grants program | Environment, land and water | Queensland Government;Everyones Environment grants program | Grants and funding', skioskonly: 'no' }, liveUrl: 'https://www.qld.gov.au/environment/pollution/funding/everyones', clickTrackingUrl: '/s/redirect?collection=qld-gov&url=https%3A%2F%2Fwww.qld.gov.au%2Fenvironment%2Fpollution%2Ffunding%2Feveryones&index_url=https%3A%2F%2Fwww.qld.gov.au%2Fenvironment%2Fpollution%2Ffunding%2Feveryones&auth=QaZNQYwacyhU7xtVcs%2FPbg&profile=qld_preview&rank=3&query=grants', explain: null, indexUrl: 'https://www.qld.gov.au/environment/pollution/funding/everyones' }], error: null }, curator: { exhibits: [{ titleHtml: 'Queensland Government Grants Finder', displayUrl: 'https://www.grants.services.qld.gov.au/#/', linkUrl: '/s/redirect?collection=qld-gov&url=https%3A%2F%2Fwww.grants.services.qld.gov.au%2F%23%2F&index_url=https%3A%2F%2Fwww.grants.services.qld.gov.au%2F%23%2F&auth=wEzza0HDD%2BGN4WIzBUq0%2Fg&profile=qld_preview&type=FP', descriptionHtml: 'The Queensland Government Grants Finder is a comprehensive list of our grants and funding programs.', additionalProperties: { icon: 'fa-car fa-motorcycle fa-address-card', buttonText: 'Find out more', service: 'yes' }, category: '' }, { titleHtml: 'North Queensland flood assistance', displayUrl: 'https://www.qld.gov.au/community/disasters-emergencies/queensland-disasters/fnq-monsoonal-trough', linkUrl: '/s/redirect?collection=qld-gov&url=https%3A%2F%2Fwww.qld.gov.au%2Fcommunity%2Fdisasters-emergencies%2Fqueensland-disasters%2Ffnq-monsoonal-trough&index_url=https%3A%2F%2Fwww.qld.gov.au%2Fcommunity%2Fdisasters-emergencies%2Fqueensland-disasters%2Ffnq-monsoonal-trough&auth=qbavFamsPcqvWK5M3INRmA&profile=qld_preview&type=FP', descriptionHtml: 'Personal hardship financial assistance has been activated for some communities at this time.', additionalProperties: {}, category: '' }, { titleHtml: 'Change of address', displayUrl: 'https://www.change-of-address.services.qld.gov.au/', linkUrl: '/s/redirect?collection=qld-gov&url=https%3A%2F%2Fwww.change-of-address.services.qld.gov.au%2F&index_url=https%3A%2F%2Fwww.change-of-address.services.qld.gov.au%2F&auth=RrjhEMq01%2B%2BZwQhpwXAjPg&profile=qld_preview&type=FP', descriptionHtml: 'Use this online form to change your home and/or postal address online, rather than contacting multiple Queensland Government departments/services.', additionalProperties: { icon: 'fa-car fa-motorcycle fa-address-card', service: 'yes' }, category: '' }] } } };
     return exampleResponse;
   };
 
@@ -315,7 +315,7 @@ $(function () {
       suggestions.forEach(function (item) {
         suggestionsHTML += '<li class="list-group-item">';
         suggestionsHTML += '<button tabindex="-1" data-analytics-link-group="qg-global-search-suggestion">';
-        suggestionsHTML += getBoldText(inputValue, item['disp']);
+        suggestionsHTML += getBoldText(inputValue, item.disp);
         suggestionsHTML += '</button>';
         suggestionsHTML += '</li>';
       });
@@ -352,14 +352,14 @@ $(function () {
 
   // Process suggested services and filter out bad results
   qgSiteSearch.fn.processServices = function (services) {
-    var allResults = services['response']['resultPacket']['results'];
+    var allResults = services.response.resultPacket.results;
     var serviceResults = [];
     var featuredService = null;
-    var curatorIndex = services['response']['curator'];
+    var curatorIndex = services.response.curator;
 
     // Look for curated results
     if (typeof (curatorIndex) !== 'undefined') {
-      var allCuratedResults = curatorIndex['exhibits'];
+      var allCuratedResults = curatorIndex.exhibits;
 
       if (typeof (allCuratedResults) !== 'undefined') {
         if (allCuratedResults.length > 0) {
@@ -369,9 +369,9 @@ $(function () {
           // Process any additional exhibits
           for (var index = 1; index < allCuratedResults.length; index++) {
             var result = allCuratedResults[index];
-            var additionalProperties = result['additionalProperties'];
+            var additionalProperties = result.additionalProperties;
 
-            if (additionalProperties['service'] === 'yes') {
+            if (additionalProperties.service === 'yes') {
               serviceResults.push(result);
             }
           }
@@ -382,8 +382,8 @@ $(function () {
     // Look for services in standard results
     if (allResults.length > 0) {
       var filteredResults = allResults.filter(function (result) {
-        if (result['listMetadata'] != null && result['listMetadata']['sfinder'] != null) {
-          return result['listMetadata']['sfinder'][0] === 'yes';
+        if (result.listMetadata != null && result.listMetadata.sfinder != null) {
+          return result.listMetadata.sfinder[0] === 'yes';
         } else {
           return false;
         }
@@ -409,18 +409,18 @@ $(function () {
     var serviceHTML = '';
 
     if (featuredService) {
-      var title = featuredService['titleHtml'];
-      var linkURL = featuredService['displayUrl'];
-      var description = featuredService['descriptionHtml'];
-      var additionalProperties = featuredService['additionalProperties'];
+      var title = featuredService.titleHtml;
+      var linkURL = featuredService.displayUrl;
+      var description = featuredService.descriptionHtml;
+      var additionalProperties = featuredService.additionalProperties;
 
       serviceHTML = '<div class="qg-search-concierge-content">';
       serviceHTML += '<div class="d-flex justify-content-between align-content-center flex-wrap">';
       serviceHTML += '<h4>' + title + '</h4>';
 
       // Check for icons
-      if (typeof (additionalProperties['icon']) !== 'undefined') {
-        var allIcons = additionalProperties['icon'].split(' ');
+      if (typeof (additionalProperties.icon) !== 'undefined') {
+        var allIcons = additionalProperties.icon.split(' ');
 
         var iconHTML = allIcons.map(function (icon) {
           return '<span class="fa ' + icon + '"></span>';
@@ -432,8 +432,8 @@ $(function () {
       serviceHTML += '</div>';
       serviceHTML += '<p>' + description + '</p>';
       if (linkURL) {
-        if (additionalProperties['buttonText']) {
-          serviceHTML += '<a href="' + linkURL + '"  tabindex="-1" data-analytics-link-group="qg-global-search-feature" class="btn btn-global-primary-white">' + additionalProperties['buttonText'] + '</a>';
+        if (additionalProperties.buttonText) {
+          serviceHTML += '<a href="' + linkURL + '"  tabindex="-1" data-analytics-link-group="qg-global-search-feature" class="btn btn-global-primary-white">' + additionalProperties.buttonText + '</a>';
         } else {
           serviceHTML += '<a href="' + linkURL + '"  tabindex="-1" data-analytics-link-group="qg-global-search-feature" class="btn btn-global-primary-white">Continue</a>';
         }
@@ -456,17 +456,17 @@ $(function () {
       serviceHTML += '<ul class="list-group">';
 
       serviceResults.forEach(function (service) {
-        var serviceName = service['title'];
-        var serviceLink = service['liveUrl'];
+        var serviceName = service.title;
+        var serviceLink = service.liveUrl;
 
         if (typeof (serviceName) !== 'undefined') {
           serviceName = serviceName.split('|')[0].trim();
         } else {
-          serviceName = service['titleHtml'];
+          serviceName = service.titleHtml;
         }
 
         if (typeof (serviceLink) === 'undefined') {
-          serviceLink = service['displayUrl'];
+          serviceLink = service.displayUrl;
         }
 
         serviceHTML += '<li class="list-group-item">';
