@@ -50,7 +50,7 @@
     "@babel/plugin-transform-runtime": "^7.23.4",
     "@babel/preset-env": "^7.23.3",
     "@storybook/addon-actions": "v7.6.1",
-    "@storybook/addon-essentials": "v7.6.1",
+    "@storybook/addon-essentials": "v7.6.2",
     "@storybook/addon-interactions": "v7.6.1",
     "@storybook/addon-links": "v7.6.1",
     "@storybook/addon-mdx-gfm": "^7.6.1",
