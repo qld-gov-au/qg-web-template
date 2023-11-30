@@ -6,8 +6,9 @@
  * Licensed under the MIT license.
  */
 
-(function($) {
+(function( $ ) {
   'use strict';
+
 
   /**
    * Assigns a unique value to `@id` unless hasAttribute( 'id' ) is true
@@ -16,26 +17,32 @@
    *
    * @return jquery object (chaining supported)
    */
-  $.fn.generateId = function(preferredId) {
+  $.fn.generateId = function( preferredId ) {
+
     var i = 1;
 
-    if (!preferredId) {
+    if ( ! preferredId ) {
       preferredId = 'id';
     } else {
-      preferredId = $.trim(preferredId.toLowerCase().replace(/[^a-z0-9_]+/g, ' ')).replace(/\s+/g, '-');
+      preferredId = $.trim( preferredId.toLowerCase().replace( /[^a-z0-9_]+/g, ' ' )).replace( /\s+/g, '-' );
     }
 
     return this.each(function() {
+
       var id;
 
-      if (!this.getAttribute('id')) {
+      if ( ! this.getAttribute( 'id' )) {
+
         id = preferredId;
-        while (document.getElementById(id)) {
-          id = preferredId + String(i);
+        while ( document.getElementById( id )) {
+          id = preferredId + String( i );
           i++;
         }
-        this.setAttribute('id', id);
+        this.setAttribute( 'id', id );
       }
     });
+
   };
-}(jQuery));
+
+
+}( jQuery ));
