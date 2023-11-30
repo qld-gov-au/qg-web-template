@@ -2818,7 +2818,6 @@ var feedbackForm = {
     .replace(/{/g, '&#123;') // strip (
     .replace(/}/g, '&#124;'); // strip )
   },
-
   /**
    * Predict user browser (this function only predicts based on certain browser values and may not work with all the browsers)
    * @return {Object}
