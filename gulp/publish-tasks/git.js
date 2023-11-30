@@ -45,7 +45,7 @@ const gitFunctions = {
   },
   sync: (from, to, ignore) => {
     return (cb) => {
-      let ignoreFiles = ['.git', '.gitignore'].concat(ignore);
+      const ignoreFiles = ['.git', '.gitignore'].concat(ignore);
       return gulp
         .src(`${from}/**/*`)
         .pipe(

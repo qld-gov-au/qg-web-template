@@ -14,7 +14,7 @@ module.exports = function (gulp, plugins, config, es, path, banner) {
       `!**/${config.versionName}/**/*.js`, // handled by JS task that minifies
       `!**/${config.versionName}/**/*.css`, // handled by SCSS -> CSS task that minifies
     ].concat(config.release.excludes);
-    let includesLink = {
+    const includesLink = {
       cdnRegex: new RegExp('="(/)?assets/includes-cdn/', 'g'),
       localRegex: new RegExp('="(/)?assets/includes-local/', 'g'),
       cdnReplacement: '="$1assets/includes-cdn/',
