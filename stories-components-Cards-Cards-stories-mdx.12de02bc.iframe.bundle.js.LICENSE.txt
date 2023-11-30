@@ -18,6 +18,8 @@
 
 /*! ./templates/CardColumns.html */
 
+/*! ./templates/CardsWithTags.html */
+
 /*! ./templates/Clickable.html */
 
 /*! ./templates/WithActionButton.html */
@@ -105,6 +107,10 @@
 /*!*****************************************************************!*\
   !*** ./src/stories/components/Cards/templates/CardColumns.html ***!
   \*****************************************************************/
+
+/*!*******************************************************************!*\
+  !*** ./src/stories/components/Cards/templates/CardsWithTags.html ***!
+  \*******************************************************************/
 
 /*!*******************************************************************!*\
   !*** ./src/stories/components/Cards/templates/WithThumbnail.html ***!
