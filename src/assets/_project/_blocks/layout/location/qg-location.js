@@ -487,7 +487,7 @@ $(function () {
     var locationList = [];
     var userSuburb = qgLocation.vars.suburb_input;
 
-    if (jsonResponse.hasOwnProperty('features')) {
+    if (Object.prototype.hasOwnProperty.call(jsonResponse, 'features')) {
       // Add each suburb to the location list
       jsonResponse.features.forEach(function (object) {
         var sourceName = object.attributes.ADMINAREANAME || object.attributes.adminareaname;

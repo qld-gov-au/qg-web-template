@@ -35,7 +35,7 @@ const gitFunctions = {
   branch: (folder, argv) => {
     return (cb) => {
       let branchname = `v${pjson.version}-test`;
-      branchname += argv.hasOwnProperty('branch') ? `--${argv.branch}` : '';
+      branchname += Object.prototype.hasOwnProperty.call(argv, 'branch') ? `--${argv.branch}` : '';
       if (folder) process.chdir(path.resolve(folder));
       return git.checkout(branchname, { args: '-B' }, function (err) {
         if (err) throw err;
@@ -115,7 +115,7 @@ const gitFunctions = {
         });
       } else {
         let branchname = `v${pjson.version}-test`;
-        branchname += argv.hasOwnProperty('branch') ? `--${argv.branch}` : '';
+        branchname += Object.prototype.hasOwnProperty.call(argv, 'branch') ? `--${argv.branch}` : '';
         return git.push('origin', [branchname], { args: ' -f' }, function (err) {
           if (err) throw err;
           cb();
