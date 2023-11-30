@@ -38,18 +38,18 @@ export class QgAddressAutocomplete {
     this.$form.find(':input:not(:checkbox):not(:radio), select, textarea').each(function () {
       const name = $(this).attr('name');
       let getParameterVal = qg.swe.getParameterByName($(this).attr('name'));
-      if (getParameterVal !== false) {
-        getParameterVal = $('[name="' + name + '"]').val(getParameterVal);
-      } else {
+      if (getParameterVal === false) {
         getParameterVal = '';
+      } else {
+        getParameterVal = $('[name="' + name + '"]').val(getParameterVal);
       }
     }).end().find('input[type=checkbox], input[type=radio]').each(function () {
       const name = $(this).attr('name');
       let getParameterVal = qg.swe.getParameterByName(name);
-      if (getParameterVal !== false) {
-        getParameterVal = $('[value="' + getParameterVal + '"]').prop('checked', true);
-      } else {
+      if (getParameterVal === false) {
         getParameterVal = '';
+      } else {
+        getParameterVal = $('[value="' + getParameterVal + '"]').prop('checked', true);
       }
     });
   }
