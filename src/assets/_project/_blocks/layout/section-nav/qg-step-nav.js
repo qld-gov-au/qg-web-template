@@ -1,5 +1,5 @@
 import breakpoints from '../../utils/breakpoints.js';
-let stepNav = {
+const stepNav = {
   config: {
     $guideSubNav: $('.qg-section-nav .guide-sub-nav'),
     $qgSectionNav: $('.qg-section-nav', '.qg-section-nav'),
@@ -39,7 +39,7 @@ let stepNav = {
     if (($(window).width() < breakpoints.bsMd)) {
       if ($('#step-nav .guide-sub-nav').length === 0) {
         this.config.$heading.after(this.view(this.getActiveNav(), this.countListItems()));
-        let $getSubNav = this.config.$guideSubNav.clone();
+        const $getSubNav = this.config.$guideSubNav.clone();
         $('#step-nav li').append($getSubNav);
       }
       $('#step-nav').hover(() => {

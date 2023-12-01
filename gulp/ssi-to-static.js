@@ -32,7 +32,7 @@ module.exports = function (includeSrc, src, dest, exclude) {
     baseDir: includeSrc, // Source of includes
   });
 
-  let filesList = getFiles(src);
+  const filesList = getFiles(src);
   filesList.forEach(function (file) {
     ssi.compileFile(file, function (err, content) {
       if (err) {

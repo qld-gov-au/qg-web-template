@@ -2,6 +2,11 @@
   &.qg-aside {
     .carousel {
       margin-bottom: 0;
+      .carousel-caption {
+        p {
+          color: #4d4d4d;
+        }
+      }
     }
   }
   .carousel {

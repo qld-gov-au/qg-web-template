@@ -444,10 +444,14 @@
 
   //error container
   .formio-error-wrapper {
-    color: white !important;
+    color: #FFF !important;
     background-color: white !important;
     border-color: white !important;
     padding: 0;
+
+    &.formio-component-file {
+      color: #721C24 !important;
+    }
   }
 
   //error labels

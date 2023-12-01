@@ -26,7 +26,7 @@ export class QgLoadGoogleApi {
    **/
   _checkEnvAndSetKey () {
     let googleApiKey;
-    let self = this;
+    const self = this;
     // if no franchise name identified then use the default key according to the environment
     if (window.location.hostname.search(/\bgithub\b/) !== -1) {
       googleApiKey = keys.defGoogle.docs;
@@ -52,20 +52,20 @@ export class QgLoadGoogleApi {
    * @return {undefined}
    **/
   _staticMaps () {
-    let googleApiKey = this._checkEnvAndSetKey();
+    const googleApiKey = this._checkEnvAndSetKey();
     var $mapImg = $('.qg-static-map');
     function generateStaticMapImg (ele) {
-      let lat = ele.attr('data-lat') || -27.4673;
-      let lon = ele.attr('data-long') || 153.0233;
-      let zoom = ele.attr('data-zoom') || 17;
-      let height = ele.attr('data-height') || 189;
+      const lat = ele.attr('data-lat') || -27.4673;
+      const lon = ele.attr('data-long') || 153.0233;
+      const zoom = ele.attr('data-zoom') || 17;
+      const height = ele.attr('data-height') || 189;
       return 'https://maps.googleapis.com/maps/api/staticmap?size=373x' + height + '&maptype=roadmap&markers=' + lat + '%2C' + lon + '&key=' + googleApiKey + '&sensor=false&zoom=' + zoom;
     }
     // append static image on the maps description page
     if ($mapImg.length > 0) {
       var htmlInsert = $('<div>');
       $mapImg.each(function () {
-        let $this = $(this);
+        const $this = $(this);
         $this.find('img').attr('src', generateStaticMapImg($this.find('img')));
         htmlInsert.append($this);
       });
@@ -81,11 +81,11 @@ export class QgLoadGoogleApi {
    * @return {undefined}
    **/
   _loadGoogleApi (callback) {
-    let googleApiKey = this._checkEnvAndSetKey();
-    let appendScript = url => {
+    const googleApiKey = this._checkEnvAndSetKey();
+    const appendScript = url => {
       $('head').append('<script type="text/javascript" src="' + url + '"></script>');
     };
-    let next = () => {
+    const next = () => {
       if (typeof callback === 'function') {
         callback();
       } else {
@@ -93,8 +93,8 @@ export class QgLoadGoogleApi {
       }
     };
     if ($('#googleapi').length <= 0) {
-      let s = document.createElement('script');
-      let u = `https://maps.googleapis.com/maps/api/js?key=${googleApiKey}&region=AU&libraries=places`;
+      const s = document.createElement('script');
+      const u = `https://maps.googleapis.com/maps/api/js?key=${googleApiKey}&region=AU&libraries=places`;
       s.type = 'text/javascript';
       s.id = 'googleapi';
       s.src = u;

@@ -33,9 +33,9 @@ var activeSideNav = (function () {
     var currentPageTitle = getCurrentTitle();
     if ($('.guide-sub-nav').length > 0){
       // In case of Guide Navigation, sub heading are in H2 tags.
-      let contentHeading = $.trim($('h2', '#qg-primary-content').eq(0).text());
+      const contentHeading = $.trim($('h2', '#qg-primary-content').eq(0).text());
       $('.guide-sub-nav >li').each(function () {
-        let guideNavHeading = $(this).clone().find('.page-number').remove().end().text().trim();
+        const guideNavHeading = $(this).clone().find('.page-number').remove().end().text().trim();
         if (refineText(guideNavHeading) === refineText(contentHeading)) {
           $(this).find('a').addClass('active').removeAttr('href');
         }

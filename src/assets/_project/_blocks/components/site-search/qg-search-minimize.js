@@ -22,7 +22,7 @@ export class QgSearchMinimize {
   }
 
   addSearchToggleMarkup() {
-    let self = this;
+    const self = this;
     if ($('.' + self.searchStateContainer).length <= 0){
       // 'Search all information & services' markup which on click show the global search form
       var searchStateContainerMarkup = `<div class="qg-search-state__container  align-self-center row"> <i class="fa fa-search" aria-hidden="true"></i>
@@ -35,7 +35,7 @@ export class QgSearchMinimize {
   }
 
   onServiceFinderSearchClick () {
-    let self = this;
+    const self = this;
     // toggle global search on interacting with the service finder search
     self.$multipleForms.find(self.$siteSearchInput).click(function() {
       if ($(window).width() >= self.smBreakPoint) {
@@ -46,7 +46,7 @@ export class QgSearchMinimize {
   }
 
   onSearchStateContainerClick (){
-    let self = this;
+    const self = this;
     // toggle global search form on click
     $('.' + self.searchStateContainer).on('click', function (){
       $(this).hide();
@@ -55,7 +55,7 @@ export class QgSearchMinimize {
   }
 
   onResize() {
-    let self = this;
+    const self = this;
     let resizeTimer;
     $(window).resize(function(e) {
       clearTimeout(resizeTimer);
@@ -76,4 +76,3 @@ export class QgSearchMinimize {
     });
   }
 }
-

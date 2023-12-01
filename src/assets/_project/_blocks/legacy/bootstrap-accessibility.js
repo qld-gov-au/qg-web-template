@@ -25,197 +25,194 @@
  * ======================================================================== */
 
 (function($) {
-    "use strict";
+  'use strict';
 
-    var uniqueId = function(prefix) {
-        return (prefix || 'ui-id') + '-' + Math.floor((Math.random()*1000)+1)
-    }
+  var uniqueId = function(prefix) {
+    return (prefix || 'ui-id') + '-' + Math.floor((Math.random() * 1000) + 1);
+  };
 
-    // Alert Extension
-    // ===============================
+  // Alert Extension
+  // ===============================
 
-    $('.alert').attr('role', 'alert')
-    $('.close').removeAttr('aria-hidden').wrapInner('<span aria-hidden="true"></span>').append('<span class="sr-only">Close</span>')
+  $('.alert').attr('role', 'alert');
+  $('.close').removeAttr('aria-hidden').wrapInner('<span aria-hidden="true"></span>').append('<span class="sr-only">Close</span>');
 
-    // TOOLTIP Extension
-    // ===============================
+  // TOOLTIP Extension
+  // ===============================
 
-    var showTooltip =    $.fn.tooltip.Constructor.prototype.show
-        , hideTooltip =    $.fn.tooltip.Constructor.prototype.hide
+  var showTooltip =    $.fn.tooltip.Constructor.prototype.show;
+  var hideTooltip =    $.fn.tooltip.Constructor.prototype.hide;
 
-    $.fn.tooltip.Constructor.prototype.show = function () {
-        showTooltip.apply(this, arguments)
-        var $tip = this.tip()
-            , tooltipID = $tip.attr('id') || uniqueId('ui-tooltip')
-        $tip.attr({'role':'tooltip','id' : tooltipID})
-        this.$element.attr('aria-describedby', tooltipID)
-    }
+  $.fn.tooltip.Constructor.prototype.show = function () {
+    showTooltip.apply(this, arguments);
+    var $tip = this.tip();
+    var tooltipID = $tip.attr('id') || uniqueId('ui-tooltip');
+    $tip.attr({ role: 'tooltip', id: tooltipID });
+    this.$element.attr('aria-describedby', tooltipID);
+  };
 
-    $.fn.tooltip.Constructor.prototype.hide = function () {
-        hideTooltip.apply(this, arguments)
-        removeMultiValAttributes(this.$element, 'aria-describedby', this.tip().attr('id'))
-        return this
-    }
+  $.fn.tooltip.Constructor.prototype.hide = function () {
+    hideTooltip.apply(this, arguments);
+    removeMultiValAttributes(this.$element, 'aria-describedby', this.tip().attr('id'));
+    return this;
+  };
 
-    // Popover Extension
-    // ===============================
-    var showPopover =   $.fn.popover.Constructor.prototype.setContent
-        , hideTPopover =   $.fn.popover.Constructor.prototype.hide
+  // Popover Extension
+  // ===============================
+  var showPopover =   $.fn.popover.Constructor.prototype.setContent;
+  var hideTPopover =   $.fn.popover.Constructor.prototype.hide;
 
-    $.fn.popover.Constructor.prototype.setContent = function(){
-        showPopover.apply(this, arguments)
-        var $tip = this.tip()
-            , tooltipID = $tip.attr('id') || uniqueId('ui-tooltip')
-        $tip.attr({'role':'alert','id' : tooltipID})
-        this.$element.attr('aria-describedby', tooltipID)
-        this.$element.focus()
-    }
-    $.fn.popover.Constructor.prototype.hide =  function(){
-        hideTooltip.apply(this, arguments)
-        removeMultiValAttributes(this.$element, 'aria-describedby', this.tip().attr('id'))
-    }
+  $.fn.popover.Constructor.prototype.setContent = function(){
+    showPopover.apply(this, arguments);
+    var $tip = this.tip();
+    var tooltipID = $tip.attr('id') || uniqueId('ui-tooltip');
+    $tip.attr({ role: 'alert', id: tooltipID });
+    this.$element.attr('aria-describedby', tooltipID);
+    this.$element.focus();
+  };
+  $.fn.popover.Constructor.prototype.hide = function(){
+    hideTooltip.apply(this, arguments);
+    removeMultiValAttributes(this.$element, 'aria-describedby', this.tip().attr('id'));
+  };
 
-    //Modal Extension
-    $('.modal-dialog').attr( {'role' : 'document'})
-    var modalhide =   $.fn.modal.Constructor.prototype.hide
-    $.fn.modal.Constructor.prototype.hide = function(){
-        var modalOpener = this.$element.parent().find('[data-target="#' + this.$element.attr('id') + '"]')
-        modalhide.apply(this, arguments)
-        modalOpener.focus()
-    }
+  //Modal Extension
+  $('.modal-dialog').attr({ role: 'document' });
+  var modalhide =   $.fn.modal.Constructor.prototype.hide;
+  $.fn.modal.Constructor.prototype.hide = function(){
+    var modalOpener = this.$element.parent().find('[data-target="#' + this.$element.attr('id') + '"]');
+    modalhide.apply(this, arguments);
+    modalOpener.focus();
+  };
 
-    // DROPDOWN Extension
-    // ===============================
+  // DROPDOWN Extension
+  // ===============================
 
-    var toggle   = '[data-toggle=dropdown]'
-        , $par
-        , firstItem
-        , focusDelay = 200
-        , menus = $(toggle).parent().find('ul').attr('role','menu')
-        , lis = menus.find('li').attr('role','presentation')
+  var toggle   = '[data-toggle=dropdown]';
+  var $par;
+  var firstItem;
+  var focusDelay = 200;
+  var menus = $(toggle).parent().find('ul').attr('role', 'menu');
+  var lis = menus.find('li').attr('role', 'presentation');
 
-    lis.find('a').attr({'role':'menuitem', 'tabIndex':'-1'})
-    $(toggle).attr({ 'aria-haspopup':'true', 'aria-expanded': 'false'})
+  lis.find('a').attr({ role: 'menuitem', tabIndex: '-1' });
+  $(toggle).attr({ 'aria-haspopup': 'true', 'aria-expanded': 'false' });
 
-    $(toggle).parent().on('shown.bs.dropdown',function(e){
-        $par = $(this)
-        var $toggle = $par.find(toggle)
-        $toggle.attr('aria-expanded','true')
+  $(toggle).parent().on('shown.bs.dropdown', function(e){
+    $par = $(this);
+    var $toggle = $par.find(toggle);
+    $toggle.attr('aria-expanded', 'true');
 
-        setTimeout(function(){
-            firstItem = $('.dropdown-menu [role=menuitem]:visible', $par)[0]
-            try{ firstItem.focus()} catch(ex) {}
-        }, focusDelay)
-    })
+    setTimeout(function(){
+      firstItem = $('.dropdown-menu [role=menuitem]:visible', $par)[0];
+      try { firstItem.focus(); } catch (ex) {}
+    }, focusDelay);
+  });
 
-    $(toggle).parent().on('hidden.bs.dropdown',function(e){
-        $par = $(this)
-        var $toggle = $par.find(toggle)
-        $toggle.attr('aria-expanded','false')
-    })
+  $(toggle).parent().on('hidden.bs.dropdown', function(e){
+    $par = $(this);
+    var $toggle = $par.find(toggle);
+    $toggle.attr('aria-expanded', 'false');
+  });
 
-    //Adding Space Key Behaviour, opens on spacebar
-    $.fn.dropdown.Constructor.prototype.keydown = function (e) {
-        var  $par
-            , firstItem
-        if (!/(32)/.test(e.keyCode)) return
-        $par = $(this).parent()
-        $(this).trigger ("click")
-        e.preventDefault() && e.stopPropagation()
-    }
+  //Adding Space Key Behaviour, opens on spacebar
+  $.fn.dropdown.Constructor.prototype.keydown = function (e) {
+    var $par,
+      firstItem;
+    if (!/(32)/.test(e.keyCode)) return;
+    $par = $(this).parent();
+    $(this).trigger('click');
+    e.preventDefault() && e.stopPropagation();
+  };
 
-    $(document)
-        .on('focusout.dropdown.data-api', '.dropdown-menu', function(e){
-            var $this = $(this)
-                , that = this
-            setTimeout(function() {
-                if(!$.contains(that, document.activeElement)){
-                    $this.parent().removeClass('open')
-                    $this.parent().find('[data-toggle=dropdown]').attr('aria-expanded','false')
-                }
-            }, 150)
-        })
-        .on('keydown.bs.dropdown.data-api', toggle + ', [role=menu]' , $.fn.dropdown.Constructor.prototype.keydown)
-
-
-    // Tab Extension
-    // ===============================
-
-    var $tablist = $('.nav-tabs')
-        , $lis = $tablist.children('li')
-        , $tabs = $tablist.find('[data-toggle="tab"], [data-toggle="pill"]')
-
-    $tablist.attr('role', 'tablist')
-    $lis.attr('role', 'presentation')
-    $tabs.attr('role', 'tab')
-
-    $tabs.each(function( index ) {
-        var tabpanel = $($(this).attr('href'))
-            , tab = $(this)
-            , tabid = tab.attr('id') || uniqueId('ui-tab')
-
-        tab.attr('id', tabid)
-
-        if(tab.parent().hasClass('active')){
-            tab.attr( { 'tabIndex' : '0', 'aria-expanded' : 'true', 'aria-selected' : 'true', 'aria-controls': tab.attr('href').substr(1) } )
-            tabpanel.attr({ 'role' : 'tabpanel', 'tabIndex' : '0', 'aria-hidden' : 'false', 'aria-labelledby':tabid })
-        }else{
-            tab.attr( { 'tabIndex' : '-1', 'aria-expanded' : 'false', 'aria-selected' : 'false', 'aria-controls': tab.attr('href').substr(1) } )
-            tabpanel.attr( { 'role' : 'tabpanel', 'tabIndex' : '-1', 'aria-hidden' : 'true', 'aria-labelledby':tabid } )
+  $(document)
+    .on('focusout.dropdown.data-api', '.dropdown-menu', function(e){
+      var $this = $(this);
+      var that = this;
+      setTimeout(function() {
+        if (!$.contains(that, document.activeElement)){
+          $this.parent().removeClass('open');
+          $this.parent().find('[data-toggle=dropdown]').attr('aria-expanded', 'false');
         }
+      }, 150);
     })
+    .on('keydown.bs.dropdown.data-api', toggle + ', [role=menu]', $.fn.dropdown.Constructor.prototype.keydown);
 
-    $.fn.tab.Constructor.prototype.keydown = function (e) {
-        var $this = $(this)
-            , $items
-            , $ul = $this.closest('ul[role=tablist] ')
-            , index
-            , k = e.which || e.keyCode
+  // Tab Extension
+  // ===============================
 
-        $this = $(this)
-        if (!/(37|38|39|40)/.test(k)) return
+  var $tablist = $('.nav-tabs');
+  var $lis = $tablist.children('li');
+  var $tabs = $tablist.find('[data-toggle="tab"], [data-toggle="pill"]');
 
-        $items = $ul.find('[role=tab]:visible')
-        index = $items.index($items.filter(':focus'))
+  $tablist.attr('role', 'tablist');
+  $lis.attr('role', 'presentation');
+  $tabs.attr('role', 'tab');
 
-        if (k == 38 || k == 37) index--                         // up & left
-        if (k == 39 || k == 40) index++                        // down & right
+  $tabs.each(function(index) {
+    var tabpanel = $($(this).attr('href'));
+    var tab = $(this);
+    var tabid = tab.attr('id') || uniqueId('ui-tab');
 
+    tab.attr('id', tabid);
 
-        if(index < 0) index = $items.length -1
-        if(index == $items.length) index = 0
-
-        var nextTab = $items.eq(index)
-        if(nextTab.attr('role') ==='tab'){
-
-            nextTab.tab('show')      //Comment this line for dynamically loaded tabPabels, to save Ajax requests on arrow key navigation
-                .focus()
-        }
-        // nextTab.focus()
-
-        e.preventDefault()
-        e.stopPropagation()
+    if (tab.parent().hasClass('active')){
+      tab.attr({ tabIndex: '0', 'aria-expanded': 'true', 'aria-selected': 'true', 'aria-controls': tab.attr('href').substr(1) });
+      tabpanel.attr({ role: 'tabpanel', tabIndex: '0', 'aria-hidden': 'false', 'aria-labelledby': tabid });
+    } else {
+      tab.attr({ tabIndex: '-1', 'aria-expanded': 'false', 'aria-selected': 'false', 'aria-controls': tab.attr('href').substr(1) });
+      tabpanel.attr({ role: 'tabpanel', tabIndex: '-1', 'aria-hidden': 'true', 'aria-labelledby': tabid });
     }
+  });
 
-    $(document).on('keydown.tab.data-api','[data-toggle="tab"], [data-toggle="pill"]' , $.fn.tab.Constructor.prototype.keydown)
+  $.fn.tab.Constructor.prototype.keydown = function (e) {
+    var $this = $(this);
+    var $items;
+    var $ul = $this.closest('ul[role=tablist] ');
+    var index;
+    var k = e.which || e.keyCode;
 
-    var tabactivate =    $.fn.tab.Constructor.prototype.activate;
-    $.fn.tab.Constructor.prototype.activate = function (element, container, callback) {
-        var $active = container.find('> .active')
-        $active.find('[data-toggle=tab]').attr({ 'tabIndex' : '-1','aria-selected' : false,'aria-expanded' : false })
-        $active.filter('.tab-pane').attr({ 'aria-hidden' : true,'tabIndex' : '-1' })
+    $this = $(this);
+    if (!/(37|38|39|40)/.test(k)) return;
 
-        tabactivate.apply(this, arguments)
+    $items = $ul.find('[role=tab]:visible');
+    index = $items.index($items.filter(':focus'));
 
-        element.addClass('active')
-        element.find('[data-toggle=tab]').attr({ 'tabIndex' : '0','aria-selected' : true,'aria-expanded' : true })
-        element.filter('.tab-pane').attr({ 'aria-hidden' : false,'tabIndex' : '0' })
+    if (k == 38 || k == 37) index--; // up & left
+    if (k == 39 || k == 40) index++; // down & right
+
+    if (index < 0) index = $items.length - 1;
+    if (index == $items.length) index = 0;
+
+    var nextTab = $items.eq(index);
+    if (nextTab.attr('role') === 'tab'){
+      nextTab.tab('show') //Comment this line for dynamically loaded tabPabels, to save Ajax requests on arrow key navigation
+        .focus();
     }
+    // nextTab.focus()
 
-    // Collapse Extension
-    // ===============================
+    e.preventDefault();
+    e.stopPropagation();
+  };
 
-    /*
+  $(document).on('keydown.tab.data-api', '[data-toggle="tab"], [data-toggle="pill"]', $.fn.tab.Constructor.prototype.keydown);
+
+  var tabactivate =    $.fn.tab.Constructor.prototype.activate;
+  $.fn.tab.Constructor.prototype.activate = function (element, container, callback) {
+    var $active = container.find('> .active');
+    $active.find('[data-toggle=tab]').attr({ tabIndex: '-1', 'aria-selected': false, 'aria-expanded': false });
+    $active.filter('.tab-pane').attr({ 'aria-hidden': true, tabIndex: '-1' });
+
+    tabactivate.apply(this, arguments);
+
+    element.addClass('active');
+    element.find('[data-toggle=tab]').attr({ tabIndex: '0', 'aria-selected': true, 'aria-expanded': true });
+    element.filter('.tab-pane').attr({ 'aria-hidden': false, tabIndex: '0' });
+  };
+
+  // Collapse Extension
+  // ===============================
+
+  /*
     // Disabled because it was creating accessibility issues
 
     var $colltabs =  $('[data-toggle="collapse"]')
@@ -312,111 +309,107 @@
 
     */
 
-    // Carousel Extension
-    // ===============================
+  // Carousel Extension
+  // ===============================
 
-    $('.carousel').each(function (index) {
-        var $this = $(this)
-            , prev = $this.find('[data-slide="prev"]')
-            , next = $this.find('[data-slide="next"]')
-            , $options = $this.find('.item')
-            , $listbox = $options.parent()
+  $('.carousel').each(function (index) {
+    var $this = $(this);
+    var prev = $this.find('[data-slide="prev"]');
+    var next = $this.find('[data-slide="next"]');
+    var $options = $this.find('.item');
+    var $listbox = $options.parent();
 
-        $this.attr( { 'data-interval' : 'false', 'data-wrap' : 'false' } )
-        $listbox.attr('role', 'listbox')
-        $options.attr('role', 'option')
+    $this.attr({ 'data-interval': 'false', 'data-wrap': 'false' });
+    $listbox.attr('role', 'listbox');
+    $options.attr('role', 'option');
 
-        var spanPrev = document.createElement('span')
-        spanPrev.setAttribute('class', 'sr-only')
-        spanPrev.innerHTML='Previous'
+    var spanPrev = document.createElement('span');
+    spanPrev.setAttribute('class', 'sr-only');
+    spanPrev.innerHTML = 'Previous';
 
-        var spanNext = document.createElement('span')
-        spanNext.setAttribute('class', 'sr-only')
-        spanNext.innerHTML='Next'
+    var spanNext = document.createElement('span');
+    spanNext.setAttribute('class', 'sr-only');
+    spanNext.innerHTML = 'Next';
 
-        prev.attr('role', 'button')
-        next.attr('role', 'button')
+    prev.attr('role', 'button');
+    next.attr('role', 'button');
 
-        prev.append(spanPrev)
-        next.append(spanNext)
+    prev.append(spanPrev);
+    next.append(spanNext);
 
-        $options.each(function () {
-            var item = $(this)
-            if(item.hasClass('active')){
-                item.attr({ 'aria-selected': 'true', 'tabindex' : '0' })
-            }else{
-                item.attr({ 'aria-selected': 'false', 'tabindex' : '-1' })
-            }
-        })
-    })
+    $options.each(function () {
+      var item = $(this);
+      if (item.hasClass('active')){
+        item.attr({ 'aria-selected': 'true', tabindex: '0' });
+      } else {
+        item.attr({ 'aria-selected': 'false', tabindex: '-1' });
+      }
+    });
+  });
 
-    var slideCarousel = $.fn.carousel.Constructor.prototype.slide
-    $.fn.carousel.Constructor.prototype.slide = function (type, next) {
-        var $active = this.$element.find('.item.active')
-            , $next = next || $active[type]()
+  var slideCarousel = $.fn.carousel.Constructor.prototype.slide;
+  $.fn.carousel.Constructor.prototype.slide = function (type, next) {
+    var $active = this.$element.find('.item.active');
+    var $next = next || $active[type]();
 
-        slideCarousel.apply(this, arguments)
+    slideCarousel.apply(this, arguments);
 
-        $active
-            .one($.support.transition.end, function () {
-                $active.attr({'aria-selected':false, 'tabIndex': '-1'})
-                $next.attr({'aria-selected':true, 'tabIndex': '0'})
-                //.focus()
-            })
+    $active
+      .one($.support.transition.end, function () {
+        $active.attr({ 'aria-selected': false, tabIndex: '-1' });
+        $next.attr({ 'aria-selected': true, tabIndex: '0' });
+        //.focus()
+      });
+  };
+
+  $.fn.carousel.Constructor.prototype.keydown = function (e) {
+    var $this = $(this);
+    var $ul = $this.closest('div[role=listbox]');
+    var $items = $ul.find('[role=option]');
+    var $parent = $ul.parent();
+    var k = e.which || e.keyCode;
+    var index;
+    var i;
+
+    if (!/(37|38|39|40)/.test(k)) return;
+
+    index = $items.index($items.filter('.active'));
+    if (k == 37 || k == 38) { //  Up
+      $parent.carousel('prev');
+      index--;
+      if (index < 0) index = $items.length - 1;
+      else $this.prev().focus();
+    }
+    if (k == 39 || k == 40) { // Down
+      $parent.carousel('next');
+      index++;
+      if (index == $items.length) index = 0;
+      else {
+        $this.one($.support.transition.end, function () {
+          $this.next().focus();
+        });
+      }
     }
 
-    $.fn.carousel.Constructor.prototype.keydown = function (e) {
-        var $this = $(this)
-            , $ul = $this.closest('div[role=listbox]')
-            , $items = $ul.find('[role=option]')
-            , $parent = $ul.parent()
-            , k = e.which || e.keyCode
-            , index
-            , i
+    e.preventDefault();
+    e.stopPropagation();
+  };
+  $(document).on('keydown.carousel.data-api', 'div[role=option]', $.fn.carousel.Constructor.prototype.keydown);
 
-        if (!/(37|38|39|40)/.test(k)) return
+  // GENERAL UTILITY FUNCTIONS
+  // ===============================
 
-        index = $items.index($items.filter('.active'))
-        if (k == 37 || k == 38) {                           //  Up
-            $parent.carousel('prev')
-            index--
-            if(index < 0) index = $items.length -1
-            else  $this.prev().focus()
-
-        }
-        if (k == 39 || k == 40) {                          // Down
-            $parent.carousel('next')
-            index++
-            if(index == $items.length) index = 0
-            else  {
-                $this.one($.support.transition.end, function () {
-                    $this.next().focus()
-                })
-            }
-
-        }
-
-        e.preventDefault()
-        e.stopPropagation()
+  var removeMultiValAttributes = function (el, attr, val) {
+    var describedby = (el.attr(attr) || '').split(/\s+/);
+    var index = $.inArray(val, describedby);
+    if (index !== -1) {
+      describedby.splice(index, 1);
     }
-    $(document).on('keydown.carousel.data-api', 'div[role=option]', $.fn.carousel.Constructor.prototype.keydown)
-
-    // GENERAL UTILITY FUNCTIONS
-    // ===============================
-
-    var removeMultiValAttributes = function (el, attr, val) {
-        var describedby = (el.attr( attr ) || "").split( /\s+/ )
-            , index = $.inArray(val, describedby)
-        if ( index !== -1 ) {
-            describedby.splice( index, 1 )
-        }
-        describedby = $.trim( describedby.join( " " ) )
-        if (describedby ) {
-            el.attr( attr, describedby )
-        } else {
-            el.removeAttr( attr )
-        }
+    describedby = $.trim(describedby.join(' '));
+    if (describedby) {
+      el.attr(attr, describedby);
+    } else {
+      el.removeAttr(attr);
     }
-
-
+  };
 })(jQuery);

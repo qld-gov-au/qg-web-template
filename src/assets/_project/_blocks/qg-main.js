@@ -24,7 +24,7 @@ import './components/site-search/qg-funnelback-v16-refs';
 
 (function () {
   'use strict';
-  let franchiseTitle = window.qg.swe.franchiseTitle;
+  const franchiseTitle = window.qg.swe.franchiseTitle;
   activeSideNav.highlightNavItem();
   stepNav.init();
   feedbackForm.init(franchiseTitle);
