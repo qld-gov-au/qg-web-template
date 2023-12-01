@@ -48,7 +48,7 @@ gulp.task('template-pages', require('./gulp/build-tasks/template-pages')(gulp, p
 gulp.task('template-pages-docs', require('./gulp/build-tasks/template-pages')(gulp, plugins, config, 'docs', 'docs'));
 gulp.task('template-pages-to-docs', require('./gulp/build-tasks/template-pages')(gulp, plugins, config, 'template-pages', 'docs/pagemodels'));
 
-let assetDests = ['assets', 'docs/assets'];
+const assetDests = ['assets', 'docs/assets'];
 gulp.task('scss', require('./gulp/common-tasks/scss')(gulp, plugins, config, assetDests, addSrc));
 gulp.task('js', require('./gulp/common-tasks/js-webpack.js')(gulp, plugins, config, assetDests, banner));
 gulp.task('other-assets-root', require('./gulp/build-tasks/other-assets')(gulp, plugins, config, es, assetDests[0]));
@@ -104,7 +104,7 @@ gulp.task('release', gulp.series(
 });
 
 /* LOCAL SERVER */
-let randomPort = Math.floor(1000 + Math.random() * 9000);
+const randomPort = Math.floor(1000 + Math.random() * 9000);
 gulp.task('serve', require('./gulp/build-tasks/serve')(gulp, plugins, connect, connectssi, argv, path, randomPort));
 
 /* PUBLISH TASKS */
@@ -115,10 +115,10 @@ gulp.task('wt-clone', require('./gulp/publish-tasks/git').clone(config.webTempla
 // wt-branch task creates a test branch on 'web-template-release'.
 gulp.task('wt-branch', require('./gulp/publish-tasks/git').branch(config.webTemplateRepo.folder, argv));
 gulp.task('wt-sync', require('./gulp/publish-tasks/git').sync(config.basepath.release, config.webTemplateRepo.folder, ['package.json']));
-gulp.task('wt-updateVersion', require('./gulp/publish-tasks/git').updateVersion(config.webTemplateRepo.folder, pjson['version']));
+gulp.task('wt-updateVersion', require('./gulp/publish-tasks/git').updateVersion(config.webTemplateRepo.folder, pjson.version));
 gulp.task('wt-add', require('./gulp/publish-tasks/git').add(config.webTemplateRepo.folder));
-gulp.task('wt-commit', require('./gulp/publish-tasks/git').commit(config.webTemplateRepo.folder, pjson['version']));
-gulp.task('wt-tag', require('./gulp/publish-tasks/git').tag(config.webTemplateRepo.folder, pjson['version']));
+gulp.task('wt-commit', require('./gulp/publish-tasks/git').commit(config.webTemplateRepo.folder, pjson.version));
+gulp.task('wt-tag', require('./gulp/publish-tasks/git').tag(config.webTemplateRepo.folder, pjson.version));
 gulp.task('wt-push', require('./gulp/publish-tasks/git').push(config.webTemplateRepo.folder, argv));
 
 // CDN release
@@ -132,9 +132,9 @@ gulp.task('cdn-push', require('./gulp/publish-tasks/git').push(config.staticCdnR
 
 // SWE release
 gulp.task('swe-add', require('./gulp/publish-tasks/git').add());
-gulp.task('swe-commit', require('./gulp/publish-tasks/git').commit('./', pjson['version']));
+gulp.task('swe-commit', require('./gulp/publish-tasks/git').commit('./', pjson.version));
 gulp.task('swe-push', require('./gulp/publish-tasks/git').push('./', argv));
-gulp.task('swe-tag', require('./gulp/publish-tasks/git').tag('./', pjson['version']));
+gulp.task('swe-tag', require('./gulp/publish-tasks/git').tag('./', pjson.version));
 
 /* WATCH TASKS */
 // Note: External libraries and external modules are not watched

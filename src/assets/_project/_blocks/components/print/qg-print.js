@@ -26,7 +26,7 @@ export class QgPrint {
   * @return {undefined}
   **/
   onClickContentBtn() {
-    let self = this;
+    const self = this;
     if (self.$printContentLink.length > 0) {
       $(document).on('click', '.print-content-link', function(event) {
         event.preventDefault();
@@ -40,7 +40,7 @@ export class QgPrint {
   * @return {undefined}
   **/
   onClickGuidePageBtn () {
-    let self = this;
+    const self = this;
     let numImagesLoaded = 0;
 
     // store content present inside the 'qg-primary-content' container
@@ -62,7 +62,7 @@ export class QgPrint {
       self.$content.append(self.new_content);
       // check all images are there on the page or not (large images takes more time to load also depends on the network connection speed)
       const imageList = self.$content.find('img');
-      let totalImages = imageList.length;
+      const totalImages = imageList.length;
       // filter out the content and make it ready for print
       self.$content.find('h1').not(':first').remove();
       self.$content.find('.qg-print-guide p:contains("In this guide")').parent().remove();
@@ -73,7 +73,7 @@ export class QgPrint {
         self.$content.empty().append(self.current_content);
       } else {
         imageList.map(function() {
-          let tempSrc =  this.src;
+          const tempSrc =  this.src;
           this.onload = function () {
             numImagesLoaded++;
             if (numImagesLoaded >= totalImages) {
@@ -93,7 +93,7 @@ export class QgPrint {
    * @return {undefined}
    **/
   getRemotePages (pageContent) {
-    let self = this;
+    const self = this;
     $.ajax({
       url: pageContent,
       data: {},
