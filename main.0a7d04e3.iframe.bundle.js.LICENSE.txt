@@ -16,9 +16,9 @@
 
 /*! ./node_modules/@storybook/addon-links/dist/preview.js */
 
-/*! ./node_modules/@storybook/html/dist/entry-preview-docs.mjs */
+/*! ./node_modules/@storybook/html-webpack5/node_modules/@storybook/html/dist/entry-preview-docs.mjs */
 
-/*! ./node_modules/@storybook/html/dist/entry-preview.mjs */
+/*! ./node_modules/@storybook/html-webpack5/node_modules/@storybook/html/dist/entry-preview.mjs */
 
 /*! ./node_modules/storybook-addon-pseudo-states/dist/preview.mjs */
 
