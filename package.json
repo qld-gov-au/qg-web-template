@@ -64,7 +64,7 @@
     "copy-webpack-plugin": "^11.0.0",
     "cssnano": "^6.0.1",
     "del": "^2.2.2",
-    "eslint": "^8.54.0",
+    "eslint": "^8.55.0",
     "eslint-config-semistandard": "^7.0.0",
     "eslint-config-standard": "^14.1.1",
     "eslint-html-reporter": "^0.7.4",
@@ -108,7 +108,7 @@
     "jest": "^29.7.0",
     "jest-puppeteer": "^9.0.1",
     "node-ssi": "^0.3.2",
-    "np": "^9.0.0",
+    "np": "^9.1.0",
     "puppeteer": "^21.5.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -122,13 +122,13 @@
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
-    "@babel/runtime": "^7.23.4",
+    "@babel/runtime": "^7.23.5",
     "ajv": "^8.12.0",
     "bootstrap": "^4.6.2",
     "jquery": "^3.7.1",
     "jquery-ui-bundle": "^1.12.1",
     "nodep-date-input-polyfill": "^5.2.0",
-    "postcss": "^8.4.31",
+    "postcss": "^8.4.32",
     "stickyfill": "^1.1.1"
   }
 }
