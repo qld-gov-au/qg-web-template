@@ -1,3 +1,7 @@
+/*! ../../../template-pages/topic-index-page-with-aside.html */
+
+/*! ../../../template-pages/topic-index-page-with-thumbnails.html */
+
 /*! ../../../template-pages/topic-index-page.html */
 
 /*! ../../helpers */
@@ -31,6 +35,14 @@
 /*!**************************************************!*\
   !*** ./src/template-pages/topic-index-page.html ***!
   \**************************************************/
+
+/*!*************************************************************!*\
+  !*** ./src/template-pages/topic-index-page-with-aside.html ***!
+  \*************************************************************/
+
+/*!******************************************************************!*\
+  !*** ./src/template-pages/topic-index-page-with-thumbnails.html ***!
+  \******************************************************************/
 
 /*!*************************************************************************!*\
   !*** ./src/stories/templates/TopicIndexPage/TopicIndexPage.stories.mdx ***!

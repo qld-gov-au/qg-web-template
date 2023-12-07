@@ -1,5 +1,9 @@
 /*! ../../../template-pages/content-page-no-asides.html */
 
+/*! ../../../template-pages/content-page-without-location.html */
+
+/*! ../../../template-pages/content-page.html */
+
 /*! ../../helpers */
 
 /*! ../../node_modules/html-loader/dist/runtime/getUrl.js */
@@ -28,10 +32,18 @@
 
 /*! react/jsx-runtime */
 
+/*!**********************************************!*\
+  !*** ./src/template-pages/content-page.html ***!
+  \**********************************************/
+
 /*!********************************************************!*\
   !*** ./src/template-pages/content-page-no-asides.html ***!
   \********************************************************/
 
-/*!***********************************************************************************!*\
-  !*** ./src/stories/templates/ContentPageNoAsides/ContentPageNoAsides.stories.mdx ***!
-  \***********************************************************************************/
+/*!***************************************************************!*\
+  !*** ./src/template-pages/content-page-without-location.html ***!
+  \***************************************************************/
+
+/*!*******************************************************************!*\
+  !*** ./src/stories/templates/ContentPage/ContentPage.stories.mdx ***!
+  \*******************************************************************/
