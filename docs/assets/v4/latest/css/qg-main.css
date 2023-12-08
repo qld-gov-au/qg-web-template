@@ -18260,8 +18260,8 @@ a[data-toggle=collapse].qg-icon:after {
   font-weight: 500;
 }
 
-.qg-quick-exit .qg-quick-exit__inner .qg-tooltip__content p {
-  width: 150px;
+.qg-quick-exit .qg-quick-exit__inner .qg-tooltip {
+  width: 190px;
 }
 
 .qg-quick-exit .qg-quick-exit__inner .qg-tooltip__parent {
