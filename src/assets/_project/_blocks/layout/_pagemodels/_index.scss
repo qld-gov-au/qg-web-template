@@ -71,7 +71,7 @@
       list-style: none;
     }
   }
-  @include breakpoint(sm) {
+  @include media-breakpoint-down(sm) {
     margin-right: 0;
     margin-left: 0;
     & > .qg-index-item {
