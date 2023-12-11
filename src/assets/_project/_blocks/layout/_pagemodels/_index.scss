@@ -1,6 +1,7 @@
 #qg-primary-content .qg-index-links {
   @extend .d-flex;
   @extend .flex-wrap;
+  justify-content: space-between;
   padding-top: 1em;
   .qg-index-item.content-only{
     h2, p, ul, &> div &> span {
@@ -145,6 +146,7 @@
   .qg-index-links > .qg-index-item {
     @include media-breakpoint-up(sm) {
       @include make-col(6); // Make the page two-col. Example: Topic index page with no aside
+      max-width: 49%;
     }
     &:nth-child(3) {
       @include qg-index-item;
