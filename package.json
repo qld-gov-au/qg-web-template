@@ -48,7 +48,7 @@
   "devDependencies": {
     "@babel/core": "^7.23.5",
     "@babel/plugin-transform-runtime": "^7.23.4",
-    "@babel/preset-env": "^7.23.5",
+    "@babel/preset-env": "^7.23.6",
     "@storybook/addon-actions": "v7.6.4",
     "@storybook/addon-essentials": "v7.6.4",
     "@storybook/addon-interactions": "v7.6.4",
