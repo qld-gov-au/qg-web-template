@@ -71,11 +71,10 @@
       list-style: none;
     }
   }
-  @include breakpoint(xs) {
+  @include breakpoint(sm) {
     margin-right: 0;
     margin-left: 0;
-    &> .qg-index-item{
-      //width: 100%;
+    & > .qg-index-item {
       margin-bottom: 1.5rem !important;
       padding-left: 0 !important;
       padding-right: 0 !important;
