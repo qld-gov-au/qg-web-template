@@ -128,11 +128,11 @@
     @include media-breakpoint-up(md) {
       @include make-col(12);
     }
-    @include breakpoint(sm) {
+    @include media-breakpoint-only(sm) {
       @include make-col(6);
       max-width: 49%;
     }
-    @include breakpoint(xs) {
+    @include media-breakpoint-only(xs) {
       @include make-col(12); // Make the page one-col. Example: Topic Index page with an aside
     }
   }
