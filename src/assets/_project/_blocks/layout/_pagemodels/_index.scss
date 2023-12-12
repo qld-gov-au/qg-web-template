@@ -128,7 +128,7 @@
     @include media-breakpoint-up(sm) {
       @include make-col(6);
     }
-    @include media-breakpoint(xs) {
+    @include breakpoint(xs) {
       @include make-col(12); // Make the page one-col. Example: Topic Index page with an aside
     }
   }
