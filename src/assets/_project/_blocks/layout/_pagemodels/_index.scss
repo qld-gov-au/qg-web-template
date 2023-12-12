@@ -125,6 +125,10 @@
 // Legacy stuff
 #qg-one-col, #qg-three-col, #qg-two-col-aside:not(.wide), #qg-two-col-nav:not(.wide) {
   .qg-index-links > .qg-index-item {
+    @include media-breakpoint-up(xs) {
+      @include make-col(6);
+      max-width: 49%;
+    }
     @include media-breakpoint-up(sm) {
       @include make-col(12); // Make the page one-col. Example: Topic Index page with an aside
     }
