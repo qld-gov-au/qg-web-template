@@ -3,6 +3,8 @@ import { Canvas, Meta, Story } from "@storybook/addon-docs";
 import { getCanvasMobileProps, getStoryMobileParameters, getStoryMobileHeight } from "../../helpers";
 
 import Default from "../../../template-pages/content-page.html";
+import NoAside from "../../../template-pages/content-page-no-asides.html";
+import WithoutLocation from "../../../template-pages/content-page-without-location.html";
 import Mobile from "../../../template-pages/content-page.html";
 
 <Meta title="Templates/ContentPage" />
@@ -13,6 +15,18 @@ import Mobile from "../../../template-pages/content-page.html";
 
 <Canvas sourceState="close">
   <Story name="Default">{() => Default}</Story>
+</Canvas>
+
+## No aside
+
+<Canvas sourceState="close">
+  <Story name="NoAside">{() => NoAside}</Story>
+</Canvas>
+
+## Without location
+
+<Canvas sourceState="close">
+  <Story name="WithoutLocation">{() => WithoutLocation}</Story>
 </Canvas>
 
 ## Mobile

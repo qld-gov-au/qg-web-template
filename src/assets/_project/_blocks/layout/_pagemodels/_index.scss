@@ -1,6 +1,7 @@
 #qg-primary-content .qg-index-links {
   @extend .d-flex;
   @extend .flex-wrap;
+  justify-content: space-between;
   padding-top: 1em;
   .qg-index-item.content-only{
     h2, p, ul, &> div &> span {
@@ -71,11 +72,10 @@
       list-style: none;
     }
   }
-  @include breakpoint(xs) {
+  @include media-breakpoint-down(sm) {
     margin-right: 0;
     margin-left: 0;
-    &> .qg-index-item{
-      //width: 100%;
+    & > .qg-index-item {
       margin-bottom: 1.5rem !important;
       padding-left: 0 !important;
       padding-right: 0 !important;
@@ -125,7 +125,14 @@
 // Legacy stuff
 #qg-one-col, #qg-three-col, #qg-two-col-aside:not(.wide), #qg-two-col-nav:not(.wide) {
   .qg-index-links > .qg-index-item {
-    @include media-breakpoint-up(sm) {
+    @include media-breakpoint-up(md) {
+      @include make-col(12);
+    }
+    @include media-breakpoint-only(sm) {
+      @include make-col(6);
+      max-width: 49%;
+    }
+    @include media-breakpoint-only(xs) {
       @include make-col(12); // Make the page one-col. Example: Topic Index page with an aside
     }
   }
@@ -146,6 +153,7 @@
   .qg-index-links > .qg-index-item {
     @include media-breakpoint-up(sm) {
       @include make-col(6); // Make the page two-col. Example: Topic index page with no aside
+      max-width: 49%;
     }
     &:nth-child(3) {
       @include qg-index-item;
