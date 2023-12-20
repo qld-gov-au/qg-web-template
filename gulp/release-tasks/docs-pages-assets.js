@@ -2,11 +2,11 @@
 
 module.exports = function (gulp, plugins, config, local = false, relpath = false) {
   return function (cb) {
-    let src = [
+    const src = [
       `${config.basepath.release}/docs/**/*.html`,
     ];
 
-    let relLink = {
+    const relLink = {
       regex: new RegExp('="/assets/', 'g'),
       replacement: '="assets/',
     };

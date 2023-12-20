@@ -5,10 +5,9 @@
 const path = require('path');
 const ssiToStatic = require('../ssi-to-static.js');
 
-let includeSrc = path.join('build');
-let src = path.join('build', 'docs');
-let dest = path.join('build', 'docs');
-let exclude = [];
+const includeSrc = path.join('build');
+const src = path.join('build', 'docs');
+const dest = path.join('build', 'docs');
+const exclude = [];
 
 ssiToStatic(includeSrc, src, dest, exclude);
-

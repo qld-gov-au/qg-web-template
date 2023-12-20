@@ -18,7 +18,7 @@ import keys from '../../data/qg-google-keys';
      * @return {undefined}
      **/
     init: function() {
-      let $feedbackForm = this.config.$feedbackForm;
+      const $feedbackForm = this.config.$feedbackForm;
       // let loadedRecaptcha = false;
       if ($feedbackForm.length > 0) {
         /**
@@ -77,14 +77,14 @@ import keys from '../../data/qg-google-keys';
       var self = this;
       grecaptcha.ready(() => {
         $('#qg-page-feedback-form').submit(function (event) {
-          let targetFormSubmit = $(this);
+          const targetFormSubmit = $(this);
           event.preventDefault();
           if ($('#qg-page-feedback-form li.invalid').length <= 0) {
-            let $inputRecaptchaResponseElem = self.config.$feedbackForm.find('input[name="g-recaptcha-response"]');
-            let postUrl = targetFormSubmit.attr('action');
-            let requestMethod = targetFormSubmit.attr('method');
-            let $successMsgContainer = $('.thankyou');
-            grecaptcha.execute(self.feedbackGoogleRecaptchaApiKey(), {action: 'feedback'})
+            const $inputRecaptchaResponseElem = self.config.$feedbackForm.find('input[name="g-recaptcha-response"]');
+            const postUrl = targetFormSubmit.attr('action');
+            const requestMethod = targetFormSubmit.attr('method');
+            const $successMsgContainer = $('.thankyou');
+            grecaptcha.execute(self.feedbackGoogleRecaptchaApiKey(), { action: 'feedback' })
               .then(function (token) {
                 if ($inputRecaptchaResponseElem.length > 0) {
                   $inputRecaptchaResponseElem.val(token);
@@ -169,7 +169,7 @@ import keys from '../../data/qg-google-keys';
     v3Captcha: function (form, greptcha, key, action){
       // console.log('v3 key: ' + key);
       try {
-        grecaptcha.execute(key, {action: action})
+        grecaptcha.execute(key, { action: action })
           .then(function (token) {
             if (greptcha.length > 0) {
               if (
@@ -193,7 +193,7 @@ import keys from '../../data/qg-google-keys';
      *  @return {undefined}
      **/
     loadRecaptchaLib: function (){
-      let self = this;
+      const self = this;
       /**
        * handles footer feedback recaptcha load
        **/
@@ -210,8 +210,8 @@ import keys from '../../data/qg-google-keys';
           //enable recaptcha on form submits, load latest v3 version of recaptcha
           let v2Loaded = false;
           $('form[data-recaptcha="true"]').each(function () {
-            let manualSitekey = $(this).attr('data-sitekey');
-            let manualAction = $(this).attr('data-action');
+            const manualSitekey = $(this).attr('data-sitekey');
+            const manualAction = $(this).attr('data-action');
             if (manualSitekey !== undefined && manualAction !== undefined) { //v3 manual form
               $.getScript('https://www.google.com/recaptcha/api.js?render=' + manualSitekey, function (){
                 self.onloadRecaptcha();
@@ -237,7 +237,7 @@ import keys from '../../data/qg-google-keys';
      * @return {undefined}
      **/
     onloadRecaptcha: function(){
-      let self = this;
+      const self = this;
       grecaptcha.ready(function () {
         //v2 Forms
         if (!self.config.loadedRecaptcha) {
@@ -245,11 +245,11 @@ import keys from '../../data/qg-google-keys';
             .find('input[type="submit"], button[type="submit"]')
             .on('click', e => {
               e.preventDefault();
-              let subBtn = e.target;
-              let form = $(subBtn).parents('form');
-              let $inputRecaptchaResponseElem = form.find('input[name="g-recaptcha-response"]');
-              let manualSitekey = form.attr('data-sitekey');
-              let manualAction = form.attr('data-action');
+              const subBtn = e.target;
+              const form = $(subBtn).parents('form');
+              const $inputRecaptchaResponseElem = form.find('input[name="g-recaptcha-response"]');
+              const manualSitekey = form.attr('data-sitekey');
+              const manualAction = form.attr('data-action');
               if (manualSitekey !== undefined && manualAction !== undefined) { //v3 manual form
                 self.v3Captcha(form, $inputRecaptchaResponseElem, manualSitekey, manualAction);
               } else if (manualAction !== undefined) { //v3 manual with feedback key but differnt action

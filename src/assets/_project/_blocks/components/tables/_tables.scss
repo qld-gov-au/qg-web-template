@@ -366,6 +366,10 @@ table.dataTable {
 .dataTables_paginate {
   margin: 24px 0;
   .paginate_button, .ellipsis {
+    padding: 8.4px 21.6px;
+    border-radius: 4px;
+    margin-top: 2px;
+    margin-right: 2px;
     display: inline;
     position: relative;
     float: left;

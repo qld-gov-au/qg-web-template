@@ -21,9 +21,9 @@ function opensInNewWindow () {
 }
 
 function addCorrectIncorrect () {
-  let ext = ':not(:has(.qg-blank-notice))';
-  let $correct = $(`.qg-correct${ext}, table.qg-correct-incorrect td:nth-child(odd)${ext}`);
-  let $incorrect = $(`.qg-incorrect${ext}, table.qg-correct-incorrect td:nth-child(even)${ext}`);
+  const ext = ':not(:has(.qg-blank-notice))';
+  const $correct = $(`.qg-correct${ext}, table.qg-correct-incorrect td:nth-child(odd)${ext}`);
+  const $incorrect = $(`.qg-incorrect${ext}, table.qg-correct-incorrect td:nth-child(even)${ext}`);
 
   $correct.prepend('<span class="qg-blank-notice sr-only">Correct.</span> ');
   $incorrect.prepend('<span class="qg-blank-notice sr-only">Incorrect.</span> ');
@@ -37,4 +37,3 @@ function init () {
 }
 
 module.exports = { init: init };
-

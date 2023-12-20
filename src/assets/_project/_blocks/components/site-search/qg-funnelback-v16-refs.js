@@ -13,7 +13,7 @@
       newValue = newValue.replace(new RegExp(pair[0], 'g'), pair[1]);
 
       if (originalValue.includes(pair[0])) {
-        let depReference = pair[1].includes('qgov~') ? `"${pair[0]}" collection,` : `"${pair[0]}"`;
+        const depReference = pair[1].includes('qgov~') ? `"${pair[0]}" collection,` : `"${pair[0]}"`;
         console.log(
           `SWE/Funnelback notice:\nThis application contains a reference to ${depReference} which is deprecated. It must be replaced with "${pair[1]}".\n`,
         );

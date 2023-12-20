@@ -9,6 +9,7 @@ import WithImage from "./templates/WithImage.html";
 import WithThumbnail from "./templates/WithThumbnail.html";
 import Clickable from "./templates/Clickable.html";
 import CardColumns from "./templates/CardColumns.html";
+import CardsWithTags from "./templates/CardsWithTags.html";
 
 <Meta title="Components/Cards" decorators={[QgPrimaryContent, QgContent]} />
 
@@ -67,5 +68,13 @@ Not included in Forgov SWE documentation.
 <Canvas sourceState="shown">
   <Story name="CardColumns" parameters={getDecoratedParameters(CardColumns)}>
     {() => CardColumns}
+  </Story>
+</Canvas>
+
+## CardsWithTags
+
+<Canvas sourceState="shown">
+  <Story name="CardsWithTags" parameters={getDecoratedParameters(CardsWithTags)}>
+    {() => CardsWithTags}
   </Story>
 </Canvas>

@@ -36,13 +36,21 @@ export class QgAddressAutocomplete {
    **/
   _setValFromUrlParameters () {
     this.$form.find(':input:not(:checkbox):not(:radio), select, textarea').each(function () {
-      let name = $(this).attr('name');
+      const name = $(this).attr('name');
       let getParameterVal = qg.swe.getParameterByName($(this).attr('name'));
-      getParameterVal !== false ? $('[name="' + name + '"]').val(getParameterVal) : '';
+      if (getParameterVal === false) {
+        getParameterVal = '';
+      } else {
+        getParameterVal = $('[name="' + name + '"]').val(getParameterVal);
+      }
     }).end().find('input[type=checkbox], input[type=radio]').each(function () {
-      let name = $(this).attr('name');
+      const name = $(this).attr('name');
       let getParameterVal = qg.swe.getParameterByName(name);
-      getParameterVal !== false ? $('[value="' + getParameterVal + '"]').prop('checked', true) : '';
+      if (getParameterVal === false) {
+        getParameterVal = '';
+      } else {
+        getParameterVal = $('[value="' + getParameterVal + '"]').prop('checked', true);
+      }
     });
   }
 
@@ -66,7 +74,7 @@ export class QgAddressAutocomplete {
    * @return {undefined}
    **/
   _onBlue () {
-    let self = this;
+    const self = this;
     this.$inpuField.blur(function () {
       console.log('blur');
       if ($(this).val().length === 0) {
@@ -82,25 +90,25 @@ export class QgAddressAutocomplete {
    * @return {undefined}
    **/
   _getCurrentLocation (){
-    let self = this;
+    const self = this;
     if (this.$getCurrentLocIcon.length > 0) {
       $.each(this.$getCurrentLocIcon, (i, ele) => {
         $(ele).on('click', function (event) {
           event.preventDefault();
           if (navigator.geolocation) {
-            let showLocation = (position) => {
+            const showLocation = (position) => {
               // get latitude and longitude
-              let latitude = position.coords.latitude;
-              let longitude = position.coords.longitude;
-              let latlng = {lat: parseFloat(latitude), lng: parseFloat(longitude)};
-              let geocoder = new google.maps.Geocoder();
-              let locationInput = $(this).parent().find(self.$inpuField);
+              const latitude = position.coords.latitude;
+              const longitude = position.coords.longitude;
+              const latlng = { lat: parseFloat(latitude), lng: parseFloat(longitude) };
+              const geocoder = new google.maps.Geocoder();
+              const locationInput = $(this).parent().find(self.$inpuField);
               // Insert latitude and longitude value to the hidden input fields
               self.$searchWidget.find(self.$latitude).val(latitude)
                 .end()
                 .find(self.$longitude).val(longitude);
               // get address using latitude and longitude from Google maps api
-              geocoder.geocode({'location': latlng}, (results, status) => {
+              geocoder.geocode({ location: latlng }, (results, status) => {
                 if (status === 'OK') {
                   if (results[1]) {
                     locationInput.val(results[1].formatted_address);
@@ -113,14 +121,14 @@ export class QgAddressAutocomplete {
                 }
               });
             };
-            let errorHandler = (err) => {
+            const errorHandler = (err) => {
               if (err.code === 1) {
                 alert('Error: Access is denied!');
               } else if (err.code === 2) {
                 alert('Error: Position is unavailable!');
               }
             };
-            let options = {timeout: 60000};
+            const options = { timeout: 60000 };
             navigator.geolocation.getCurrentPosition(showLocation, errorHandler, options);
           } else {
             // Browser doesn't support Geolocation
@@ -136,25 +144,25 @@ export class QgAddressAutocomplete {
    * @return {undefined}
    **/
   _addressAutocomplete () {
-    let self = this;
-    let googleAddressAutocomplete = function (){
-      let qldBounds = new google.maps.LatLngBounds(
+    const self = this;
+    const googleAddressAutocomplete = function (){
+      const qldBounds = new google.maps.LatLngBounds(
         new google.maps.LatLng(-29, 138.0578426),
         new google.maps.LatLng(-9.9339, 153.63831),
       );
       // set events on all autocomplete fields (there can be more than one autocomplete on a same page)
       $.each(self.$inpuField, function () {
-        let dataStrictBounds = $(this).data('strictbounds') || true;
-        let options = {
+        const dataStrictBounds = $(this).data('strictbounds') || true;
+        const options = {
           bounds: qldBounds,
           strictBounds: dataStrictBounds,
           types: ['geocode'],
         };
-        let autocomplete = new google.maps.places.Autocomplete(this, options);
+        const autocomplete = new google.maps.places.Autocomplete(this, options);
 
         // add lat and lng values after a option is selection from the autocomplete options
         autocomplete.addListener('place_changed', function(){
-          let place = autocomplete.getPlace();
+          const place = autocomplete.getPlace();
           if (place.geometry) {
             self.$searchWidget.find(self.$latitude).val(place.geometry.location.lat())
               .end()
@@ -173,7 +181,7 @@ export class QgAddressAutocomplete {
    * @return {undefined}
    **/
   _keypress () {
-    let self = this;
+    const self = this;
     // eslint-disable-next-line no-unused-vars
     let addressSelection = false;
     let reqReady = true;
@@ -183,20 +191,20 @@ export class QgAddressAutocomplete {
         if (event.keyCode === 13 || event.keyCode === 9) {
           event.preventDefault();
           // get the value from the autocomplete options
-          let itemFull = $('.pac-container .pac-item:first').text();
-          let itemQuery = $('.pac-container .pac-item:first .pac-item-query').text();
-          let firstResult = itemQuery + ' ' + itemFull.substring(itemQuery.length);
+          const itemFull = $('.pac-container .pac-item:first').text();
+          const itemQuery = $('.pac-container .pac-item:first .pac-item-query').text();
+          const firstResult = itemQuery + ' ' + itemFull.substring(itemQuery.length);
           // check if results are there
           if (firstResult.length > 1 && reqReady === true) {
             self.$inpuField.val(firstResult);
-            let geocoder = new google.maps.Geocoder();
-            geocoder.geocode({ 'address': firstResult }, function (results, status) {
+            const geocoder = new google.maps.Geocoder();
+            geocoder.geocode({ address: firstResult }, function (results, status) {
               if (status === 'OK') {
                 reqReady = false;
                 if (results) {
                   $('.qg-location-autocomplete').val(results[0].formatted_address);
-                  let latitude = results[0].geometry.location.lat();
-                  let longitude = results[0].geometry.location.lng();
+                  const latitude = results[0].geometry.location.lat();
+                  const longitude = results[0].geometry.location.lng();
                   addressSelection = true;
                   self.$searchWidget.find(self.$latitude).val(latitude)
                     .end()

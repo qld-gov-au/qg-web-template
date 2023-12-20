@@ -14,7 +14,7 @@ module.exports = function (gulp, plugins, config, es, path, banner) {
       `!**/${config.versionName}/**/*.js`, // handled by JS task that minifies
       `!**/${config.versionName}/**/*.css`, // handled by SCSS -> CSS task that minifies
     ].concat(config.release.excludes);
-    let includesLink = {
+    const includesLink = {
       cdnRegex: new RegExp('="(/)?assets/includes-cdn/', 'g'),
       localRegex: new RegExp('="(/)?assets/includes-local/', 'g'),
       cdnReplacement: '="$1assets/includes-cdn/',
@@ -60,7 +60,7 @@ module.exports = function (gulp, plugins, config, es, path, banner) {
     //CSS task
     gulp.src(`${config.basepath.build}/assets/${config.versionName}/**/*.css`, { dot: true })
       .pipe(plugins.postcss([cssnano({
-        discardComments: {removeAll: true},
+        discardComments: { removeAll: true },
       })]))
       .on('error', console.log)
       .pipe(plugins.insert.prepend(banner))
