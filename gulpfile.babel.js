@@ -1,7 +1,7 @@
 'use strict';
 import deleteSync from 'del';
 // Core
-import * as gulp from 'gulp';
+import gulp from 'gulp';
 import * as path from 'path';
 import * as config from './gulp/gulp-config.js';
 import * as argv from 'yargs';
