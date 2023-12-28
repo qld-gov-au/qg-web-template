@@ -1,5 +1,5 @@
 'use strict';
-import deleteSync from 'del';
+import {rimrafSync} from 'rimraf';
 // Core
 import gulp from 'gulp';
 import * as path from 'path';
@@ -29,19 +29,24 @@ const banner = '/*! SWE' +
 
 /* CLEAN TASKS */
 gulp.task('clean-build', (cb) => {
-  return deleteSync([config.basepath.build], cb);
+  rimrafSync([config.basepath.build]);
+  cb();
 });
 gulp.task('clean-release', (cb) => {
-  return deleteSync([config.basepath.release], cb);
+  rimrafSync([config.basepath.release]);
+  cb();
 });
 gulp.task('clean-redundant-build', (cb) => {
-  return deleteSync([`${config.basepath.build}/docs/assets/includes-local`], cb);
+  rimrafSync([`${config.basepath.build}/docs/assets/includes-local`]);
+  cb();
 });
 gulp.task('clean-redundant-release', (cb) => {
-  return deleteSync([`${config.basepath.release}/template-cdn/assets`, `${config.basepath.release}/template-local/assets/includes-local`], cb);
+  rimrafSync([`${config.basepath.release}/template-cdn/assets`, `${config.basepath.release}/template-local/assets/includes-local`]);
+  cb();
 });
 gulp.task('clean-publish', (cb) => {
-  return deleteSync([`${config.webTemplateRepo.folder}`, `${config.staticCdnRepo.folder}`], cb);
+  rimrafSync([`${config.webTemplateRepo.folder}`, `${config.staticCdnRepo.folder}`]);
+  cb();
 });
 
 /* BUILD */
