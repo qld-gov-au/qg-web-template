@@ -1,7 +1,7 @@
 'use strict';
 // config specific imports
-import * as path from 'path';
-import pjson from '../package.json';
+const path        = require('path');
+const pjson       = require('../package.json');
 
 module.exports = {
   versionName: 'v4',

@@ -1,5 +1,5 @@
 'use strict';
-import {rimrafSync} from 'rimraf';
+const {rimrafSync} = require('rimraf');
 // Core
 import gulp from 'gulp';
 import * as path from 'path';
