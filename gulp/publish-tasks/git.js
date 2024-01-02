@@ -3,7 +3,7 @@
 const config = require('../gulp-config.js');
 const gulp = require('gulp');
 const git = require('gulp-git');
-const del = require('del');
+const {rimrafSync} = require('rimraf');
 const path = require('path');
 const dirSync = require('gulp-directory-sync');
 const replace = require('gulp-replace');
@@ -11,7 +11,8 @@ const pjson = require('../../package.json');
 const gitFunctions = {
   clean: (folder) => {
     return (cb) => {
-      return del([folder], cb);
+      rimrafSync([folder]);
+      cb();
     };
   },
   clone: (url, folder, usessh) => {
