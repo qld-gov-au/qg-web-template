@@ -1,12 +1,11 @@
 'use strict';
-const { rimrafSync } = require('rimraf');
+
 // Core
 import gulp from 'gulp';
 import * as path from 'path';
 import * as config from './gulp/gulp-config.js';
 import * as argv from 'yargs';
 import pluginsLoader from 'gulp-load-plugins';
-const plugins = pluginsLoader();
 import * as es from 'event-stream';
 import * as addSrc from 'gulp-add-src';
 
@@ -15,6 +14,9 @@ import connectssi from 'gulp-connect-ssi';
 import connect from 'gulp-connect';
 // import wait from 'gulp-wait';
 import pjson from './package.json';
+
+const plugins = pluginsLoader();
+const { rimrafSync } = require('rimraf');
 
 //constructs build banner for assets
 const buildDate = new Date();
