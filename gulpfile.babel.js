@@ -1,12 +1,12 @@
 'use strict';
-const {rimrafSync} = require('rimraf');
+const { rimrafSync } = require('rimraf');
 // Core
 import gulp from 'gulp';
 import * as path from 'path';
 import * as config from './gulp/gulp-config.js';
 import * as argv from 'yargs';
-import plugins_loader from 'gulp-load-plugins';
-const plugins = plugins_loader();
+import pluginsLoader from 'gulp-load-plugins';
+const plugins = pluginsLoader();
 import * as es from 'event-stream';
 import * as addSrc from 'gulp-add-src';
 
