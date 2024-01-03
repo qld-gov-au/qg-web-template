@@ -28,6 +28,8 @@ import release_files_task from './gulp/release-tasks/files';
 import release_other_files_task from './gulp/release-tasks/other-files';
 import replace_links_task from './gulp/release-tasks/replace-links';
 import release_storybook_assets_task from './gulp/release-tasks/storybook-assets';
+import build_tasks from './gulp/build-tasks/serve';
+import * as git_tasks from './gulp/publish-tasks/git';
 
 const plugins = pluginsLoader();
 const { rimrafSync } = require('rimraf');
@@ -129,12 +131,10 @@ gulp.task('release', gulp.series(
 
 /* LOCAL SERVER */
 const randomPort = Math.floor(1000 + Math.random() * 9000);
-import build_tasks from './gulp/build-tasks/serve';
 gulp.task('serve', build_tasks(gulp, plugins, connect, connectssi, argv, path, randomPort));
 
 /* PUBLISH TASKS */
 // web template release
-import * as git_tasks from './gulp/publish-tasks/git';
 gulp.task('wt-clean', git_tasks.clean(config.webTemplateRepo.folder));
 gulp.task('wt-clone', git_tasks.clone(config.webTemplateRepo.url, config.webTemplateRepo.folder, false));
 
