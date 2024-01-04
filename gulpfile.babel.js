@@ -1,12 +1,11 @@
 'use strict';
-import deleteSync from 'del';
+
 // Core
 import gulp from 'gulp';
 import * as path from 'path';
 import * as config from './gulp/gulp-config.js';
 import * as argv from 'yargs';
-import plugins_loader from 'gulp-load-plugins';
-const plugins = plugins_loader();
+import pluginsLoader from 'gulp-load-plugins';
 import * as es from 'event-stream';
 import * as addSrc from 'gulp-add-src';
 
@@ -15,6 +14,25 @@ import connectssi from 'gulp-connect-ssi';
 import connect from 'gulp-connect';
 // import wait from 'gulp-wait';
 import pjson from './package.json';
+
+import template_tasks from './gulp/build-tasks/template-pages';
+import scss_task from './gulp/common-tasks/scss';
+import webpack_task from './gulp/common-tasks/js-webpack.js';
+import other_asset_task from './gulp/build-tasks/other-assets';
+import other_files_task from './gulp/build-tasks/other-files';
+import external_lib_task from './gulp/build-tasks/externalLib';
+import asset_include_task from './gulp/build-tasks/assets-includes';
+import lint_task from './gulp/test-tasks/lint';
+import scss_src_task from './gulp/release-tasks/scss-src';
+import release_files_task from './gulp/release-tasks/files';
+import release_other_files_task from './gulp/release-tasks/other-files';
+import replace_links_task from './gulp/release-tasks/replace-links';
+import release_storybook_assets_task from './gulp/release-tasks/storybook-assets';
+import build_tasks from './gulp/build-tasks/serve';
+import * as git_tasks from './gulp/publish-tasks/git';
+
+const plugins = pluginsLoader();
+const { rimrafSync } = require('rimraf');
 
 //constructs build banner for assets
 const buildDate = new Date();
@@ -29,35 +47,32 @@ const banner = '/*! SWE' +
 
 /* CLEAN TASKS */
 gulp.task('clean-build', (cb) => {
-  return deleteSync([config.basepath.build], cb);
+  rimrafSync([config.basepath.build]);
+  cb();
 });
 gulp.task('clean-release', (cb) => {
-  return deleteSync([config.basepath.release], cb);
+  rimrafSync([config.basepath.release]);
+  cb();
 });
 gulp.task('clean-redundant-build', (cb) => {
-  return deleteSync([`${config.basepath.build}/docs/assets/includes-local`], cb);
+  rimrafSync([`${config.basepath.build}/docs/assets/includes-local`]);
+  cb();
 });
 gulp.task('clean-redundant-release', (cb) => {
-  return deleteSync([`${config.basepath.release}/template-cdn/assets`, `${config.basepath.release}/template-local/assets/includes-local`], cb);
+  rimrafSync([`${config.basepath.release}/template-cdn/assets`, `${config.basepath.release}/template-local/assets/includes-local`]);
+  cb();
 });
 gulp.task('clean-publish', (cb) => {
-  return deleteSync([`${config.webTemplateRepo.folder}`, `${config.staticCdnRepo.folder}`], cb);
+  rimrafSync([`${config.webTemplateRepo.folder}`, `${config.staticCdnRepo.folder}`]);
+  cb();
 });
 
 /* BUILD */
-import template_tasks from './gulp/build-tasks/template-pages'
 gulp.task('template-pages', template_tasks(gulp, plugins, config, 'template-pages', 'template-pages', 'local'));
 gulp.task('template-pages-docs', template_tasks(gulp, plugins, config, 'docs', 'docs'));
 gulp.task('template-pages-to-docs', template_tasks(gulp, plugins, config, 'template-pages', 'docs/pagemodels'));
 
 const assetDests = ['assets', 'docs/assets'];
-import scss_task from './gulp/common-tasks/scss';
-import webpack_task from './gulp/common-tasks/js-webpack.js';
-import other_asset_task from './gulp/build-tasks/other-assets';
-import other_files_task from './gulp/build-tasks/other-files';
-import external_lib_task from './gulp/build-tasks/externalLib';
-import asset_include_task from './gulp/build-tasks/assets-includes';
-import lint_task from './gulp/test-tasks/lint';
 
 gulp.task('scss', scss_task(gulp, plugins, config, assetDests, addSrc));
 gulp.task('js', webpack_task(gulp, plugins, config, assetDests, banner));
@@ -98,12 +113,6 @@ gulp.task('build', gulp.series(
 /* RELEASE TASKS */
 // Grabs SCSS from SRC and moves to release, does not process
 
-import scss_src_task from './gulp/release-tasks/scss-src';
-import release_files_task from './gulp/release-tasks/files';
-import release_other_files_task from './gulp/release-tasks/other-files';
-import replace_links_task from './gulp/release-tasks/replace-links';
-import release_storybook_assets_task from './gulp/release-tasks/storybook-assets';
-
 gulp.task('scss-src', scss_src_task(gulp, plugins, config));
 gulp.task('release-other-files', release_other_files_task(gulp, plugins, config));
 gulp.task('replace-links', replace_links_task(gulp, plugins, es, config));
@@ -122,12 +131,10 @@ gulp.task('release', gulp.series(
 
 /* LOCAL SERVER */
 const randomPort = Math.floor(1000 + Math.random() * 9000);
-import build_tasks from './gulp/build-tasks/serve';
 gulp.task('serve', build_tasks(gulp, plugins, connect, connectssi, argv, path, randomPort));
 
 /* PUBLISH TASKS */
 // web template release
-import * as git_tasks from './gulp/publish-tasks/git';
 gulp.task('wt-clean', git_tasks.clean(config.webTemplateRepo.folder));
 gulp.task('wt-clone', git_tasks.clone(config.webTemplateRepo.url, config.webTemplateRepo.folder, false));
 

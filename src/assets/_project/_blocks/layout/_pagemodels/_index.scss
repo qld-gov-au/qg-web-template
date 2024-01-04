@@ -4,15 +4,15 @@
   justify-content: space-between;
   padding-top: 1em;
   .qg-index-item.content-only{
-    h2, p, ul, &> div &> span {
+    h2, p, ul, & > div & > span {
       padding-left: 0;
     }
   }
 
-  &> .qg-index-item {
+  & > .qg-index-item {
     @include make-col-ready();
     @include make-col(12);
-    margin-bottom: $qg-spacing;
+    margin-bottom: 35px;
     word-wrap: break-word;
     img {
       width: 75px;
@@ -58,7 +58,7 @@
         }
       }
     }
-    h2, p, ul, &> div &> span {
+    h2, p, ul, & > div & > span {
       padding-left: ($qg-spacing * 0.5) + 75px;
     }
     h2 {

@@ -85,17 +85,17 @@ $(function () {
   // Handle custom events
   function customEventHandler (event, eventName) {
     switch (eventName) {
-    case qgLocation.vars.event_coordinates_set:
+    case qgLocation['vars']['event_coordinates_set']:
       qgLocation.fn.getLocality();
       break;
-    case qgLocation.vars.event_locality_set:
+      case qgLocation['vars']['event_locality_set']:
       qgLocation.fn.getCoordinates();
       break;
-    case qgLocation.vars.event_location_found:
+      case qgLocation['vars']['event_location_found']:
       qgLocation.fn.setLocationName();
       qgLocation.fn.initServiceCentre();
       break;
-    case qgLocation.vars.event_location_cleared:
+      case qgLocation['vars']['event_location_cleared']:
       qgLocation.fn.resetLocationContainers();
       break;
     }
@@ -156,11 +156,11 @@ $(function () {
 
   // Keep location dropdown open the elements inside of the dropdown are clicked
   $('.header-location .dropdown-menu').click(function (e) {
-    var eventTarget = event.target;
-    var targetElement = eventTarget.tagName.toLowerCase();
+    var eventTarget = event['target'];
+    var targetElement = eventTarget['tagName'].toLowerCase();
 
     // Close suburb list if clicking outside
-    if (event.keyCode !== 40 && event.keyCode !== 38) {
+    if (event['keyCode'] !== 40 && event['keyCode'] !== 38) {
       qgLocation.fn.closeSuburbsIfOutside(e);
     }
 
@@ -182,11 +182,11 @@ $(function () {
   qgLocation.fn.deletePositionData = function (event) {
     event.stopPropagation();
 
-    var cookieName = qgLocation.vars.cookie_name;
+    var cookieName = qgLocation['vars']['cookie_name'];
     deleteCookie(cookieName);
 
     // Notify the rest of the page
-    $('body').trigger('custom', qgLocation.vars.event_location_cleared);
+    $('body').trigger('custom', qgLocation['vars']['event_location_cleared']);
   };
 
   // Close the popup
@@ -207,9 +207,9 @@ $(function () {
 
   // Manually search for location
   qgLocation.fn.initManualSearch = function (event) {
-    var inputField = event.target;
-    var keyCode = event.keyCode;
-    var inputValue = inputField.value.toLowerCase();
+    var inputField = event['target'];
+    var keyCode = event['keyCode'];
+    var inputValue = inputField['value'].toLowerCase();
     var numChars = inputValue.length;
 
     $('.qg-location-setter-form input[type=text]').removeClass('error');
@@ -221,7 +221,7 @@ $(function () {
       }
     } else if (numChars >= 3) {
       // Save the manual suburb input value
-      qgLocation.vars.suburb_input = inputValue;
+      qgLocation['vars']['suburb_input'] = inputValue;
 
       // Query the suburbs API
       qgLocation.fn.querySuburbsAPI();
@@ -232,10 +232,10 @@ $(function () {
 
   qgLocation.fn.keyboardNavigation = function (event) {
     var navIndex = parseInt($('.qg-location-setter-form input[type=text]').attr('data-navindex'));
-    if (event.keyCode === 40) {
+    if (event['keyCode'] === 40) {
       navIndex++;
       $('.qg-location-setter-autocomplete button')[navIndex].focus();
-    } else if (event.keyCode === 38) {
+    } else if (event['keyCode'] === 38) {
       if (navIndex > 0) {
         navIndex--;
         $('.qg-location-setter-autocomplete button')[navIndex].focus();
@@ -250,7 +250,7 @@ $(function () {
   qgLocation.fn.getManualSuburbName = function (event) {
     event.stopPropagation();
 
-    var suburbButton = event.target;
+    var suburbButton = event['target'];
     var suburbName = suburbButton.getAttribute('data-location');
     var suburbFullArea = $(suburbButton).text();
 
@@ -315,7 +315,7 @@ $(function () {
 
   // Close suburb list if clicking outside
   qgLocation.fn.closeSuburbsIfOutside = function (event) {
-    if (!$(event.target).closest('.qg-location-setter-form').length && event.view !== undefined) {
+    if (!$(event['target']).closest('.qg-location-setter-form').length && event['view'] !== undefined) {
       $('.qg-location-setter-autocomplete').addClass('hide');
     }
   };
@@ -362,8 +362,8 @@ $(function () {
     // Get location coordinates from storage
     var geocoderQuery = {
       location: {
-        lat: parseFloat(storedData.latitude),
-        lng: parseFloat(storedData.longitude),
+        lat: parseFloat(storedData['latitude']),
+        lng: parseFloat(storedData['longitude']),
       },
     };
 
@@ -379,7 +379,7 @@ $(function () {
     // Check over all address matches
     for (var index = 0; index < jsonResponse.length; index++) {
       var address = jsonResponse[index];
-      var addressComponents = address.address_components;
+      var addressComponents = address['address_components'];
 
       // Break out of the loop if a locality is found
       if (locality !== 'unknown') {
@@ -389,11 +389,11 @@ $(function () {
       // Check over all address components
       for (var componentIndex = 0; componentIndex < addressComponents.length; componentIndex++) {
         var component = addressComponents[componentIndex];
-        var componentTypes = component.types;
+        var componentTypes = component['types'];
 
         // Find the locality component
         if (componentTypes.indexOf(targetType) !== -1) {
-          locality = component.short_name;
+          locality = component['short_name'];
           break;
         }
       }
@@ -409,13 +409,13 @@ $(function () {
   qgLocation.fn.getCoordinates = function () {
     var storedData = qgLocation.fn.getStoredLocation();
 
-    if (typeof (storedData.latitude) === 'undefined') {
-      var address = storedData.address;
+    if (typeof (storedData['latitude']) === 'undefined') {
+      var address = storedData['address'];
 
       if (address) {
         // Get location coordinates from storage
         var geocoderQuery = {
-          address: storedData.address,
+          address: storedData['address'],
         };
 
         // Query the Google Maps API with location coordinates
@@ -423,7 +423,7 @@ $(function () {
       }
     } else {
       // Notify the rest of the page
-      $('body').trigger('custom', qgLocation.vars.event_location_found);
+      $('body').trigger('custom', qgLocation['vars']['event_location_found']);
     }
   };
 
@@ -434,10 +434,10 @@ $(function () {
     // Check over all address matches
     for (var index = 0; index < jsonResponse.length; index++) {
       var address = jsonResponse[index];
-      var geometry = address.geometry;
+      var geometry = address['geometry'];
 
       if (typeof (geometry) !== 'undefined') {
-        coordinates = geometry.location;
+        coordinates = geometry['location'];
 
         if (typeof (coordinates) !== 'undefined') {
           break;
@@ -485,12 +485,12 @@ $(function () {
   // Check the ArcGIS API
   qgLocation.fn.processSuburbsData = function (jsonResponse) {
     var locationList = [];
-    var userSuburb = qgLocation.vars.suburb_input;
+    var userSuburb = qgLocation['vars']['suburb_input'];
 
     if (Object.prototype.hasOwnProperty.call(jsonResponse, 'features')) {
       // Add each suburb to the location list
-      jsonResponse.features.forEach(function (object) {
-        var sourceName = object.attributes.ADMINAREANAME || object.attributes.adminareaname;
+      jsonResponse['features'].forEach(function (object) {
+        var sourceName = object['attributes']['ADMINAREANAME'] || object['attributes']['adminareaname'];
         sourceName = sourceName.toLowerCase();
         var suburbLGA = titleCase(sourceName);
         var suburbObject = {
@@ -504,7 +504,7 @@ $(function () {
         if (userSuburb !== '') {
           // Compare values
           if (sourceName.indexOf(userSuburb) === 0) {
-            suburbObject.name_formatted = getBoldText(userSuburb, suburbLGA);
+            suburbObject['name_formatted'] = getBoldText(userSuburb, suburbLGA);
 
             locationList.push(suburbObject);
           }
@@ -534,9 +534,9 @@ $(function () {
       var scriptElement = document.createElement('script');
 
       // Populate tag
-      scriptElement.type = 'text/javascript';
-      scriptElement.src = scriptURL;
-      scriptElement.id = scriptID;
+      scriptElement['type'] = 'text/javascript';
+      scriptElement['src'] = scriptURL;
+      scriptElement['id'] = scriptID;
 
       // Insert into the DOM
       document.querySelector('body').appendChild(scriptElement);
@@ -565,13 +565,13 @@ $(function () {
       var dataEvent = '';
 
       // Check for coordinates
-      if (typeof (storedData.latitude) !== 'undefined') {
-        if (storedData.locality !== 'unknown') {
+      if (typeof (storedData['latitude']) !== 'undefined') {
+        if (storedData['locality'] !== 'unknown') {
           // All location data found, update the page
-          dataEvent = qgLocation.vars.event_locality_set;
+          dataEvent = qgLocation['vars']['event_locality_set'];
         } else {
           // Coordinates exist, find locality
-          dataEvent = qgLocation.vars.event_coordinates_set;
+          dataEvent = qgLocation['vars']['event_coordinates_set'];
         }
       }
 
@@ -588,7 +588,7 @@ $(function () {
 
   // Check for saved location
   qgLocation.fn.getStoredLocation = function () {
-    var cookieName = qgLocation.vars.cookie_name;
+    var cookieName = qgLocation['vars']['cookie_name'];
     var storedData = getCookie(cookieName);
 
     if (storedData !== '') {
@@ -609,9 +609,9 @@ $(function () {
 
   // The user has blocked geolocation
   qgLocation.fn.failure = function (response) {
-    var responseMessage = response.message;
+    var responseMessage = response['message'];
 
-    qgLocation.vars.error_message = responseMessage;
+    qgLocation['vars']['error_message'] = responseMessage;
   };
 
   // Save the position data to the browser
@@ -626,12 +626,12 @@ $(function () {
     qgLocation.fn.saveLocationCookie(location);
 
     // Notify the rest of the page
-    $('body').trigger('custom', qgLocation.vars.event_coordinates_set);
+    $('body').trigger('custom', qgLocation['vars']['event_coordinates_set']);
   };
 
   // Save data to the location cookie
   qgLocation.fn.saveLocationCookie = function (cookieData) {
-    var cookieName = qgLocation.vars.cookie_name;
+    var cookieName = qgLocation['vars']['cookie_name'];
     var cookieValue = JSON.stringify(cookieData);
     var daysActive = 7;
 
@@ -651,16 +651,16 @@ $(function () {
 
     // Handle optional address value
     if (address) {
-      storedData.address = address;
+      storedData['address'] = address;
     }
 
-    storedData.locality = locality;
+    storedData['locality'] = locality;
 
     // Save to cookie
     qgLocation.fn.saveLocationCookie(storedData);
 
     // Notify the rest of the page
-    $('body').trigger('custom', qgLocation.vars.event_locality_set);
+    $('body').trigger('custom', qgLocation['vars']['event_locality_set']);
   };
 
   // Save the suburb coordinates
@@ -673,8 +673,8 @@ $(function () {
     }
 
     // Data is processed differently depending on environment
-    storedData.latitude = coordinates.lat();
-    storedData.longitude = coordinates.lng();
+    storedData['latitude'] = coordinates.lat();
+    storedData['longitude'] = coordinates.lng();
 
     // Save to cookie
     qgLocation.fn.saveLocationCookie(storedData);
@@ -696,8 +696,8 @@ $(function () {
         suggestionHTML = '<ul>';
 
         allSuburbs.forEach(function (suburbData) {
-          var suburbName = suburbData.suburb;
-          var suburbHTML = suburbData.name_formatted;
+          var suburbName = suburbData['suburb'];
+          var suburbHTML = suburbData['name_formatted'];
 
           suggestionHTML += '<li><button class="qg-location-manual" tabindex="-1" data-location="' + suburbName + '">' + suburbHTML + '</button></li>';
         });
@@ -714,7 +714,7 @@ $(function () {
   // Visually set the location data
   qgLocation.fn.setLocationName = function () {
     var storedData = qgLocation.fn.getStoredLocation();
-    var locality = storedData.locality;
+    var locality = storedData['locality'];
 
     // Update header
     $('.header-location .dropdown-toggle').attr('aria-label', 'Your location is ' + locality);
@@ -742,7 +742,7 @@ $(function () {
       }
 
       // Query Funnelback with location and service centre types
-      var locationOrigin = storedData.latitude + ',' + storedData.longitude;
+      var locationOrigin = storedData['latitude'] + ',' + storedData['longitude'];
       var targetURL = serviceCentreModule.attr('data-centres');
       var queryMetadata = centreTypes.join('+');
 
@@ -758,7 +758,7 @@ $(function () {
 
   // Process the service centre response
   qgLocation.fn.findServiceCentre = function (jsonResponse) {
-    var results = jsonResponse.response.resultPacket.results;
+    var results = jsonResponse['response']['resultPacket']['results'];
     var centreData = null;
     var centreContainer = $('.qg-service-centre__results');
     var centreHTML = '';
@@ -767,15 +767,15 @@ $(function () {
       centreData = results[0];
     }
 
-    if (centreData && centreData.listMetadata) {
-      var centreName = centreData.listMetadata.t;
-      var centreID = centreData.listMetadata.id;
-      var centreDistance = centreData.kmFromOrigin;
-      var centreAddress1 = centreData.listMetadata.address1;
-      var centreAddress2 = centreData.listMetadata.address2;
+    if (centreData && centreData['listMetadata']) {
+      var centreName = centreData['listMetadata']['t'];
+      var centreID = centreData['listMetadata']['id'];
+      var centreDistance = centreData['kmFromOrigin'];
+      var centreAddress1 = centreData['listMetadata']['address1'];
+      var centreAddress2 = centreData['listMetadata']['address2'];
 
       // Build URL
-      var centreType = centreData.listMetadata.datasource;
+      var centreType = centreData['listMetadata']['datasource'];
       if (centreType !== undefined) {
         centreType = centreType[0].toLowerCase();
       }

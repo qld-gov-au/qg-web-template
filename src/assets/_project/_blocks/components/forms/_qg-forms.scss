@@ -627,10 +627,10 @@
     }
   }
 
-  &>div>nav {
+  & > div > nav {
     display: block;
 
-    &>ul.pagination {
+    & > ul.pagination {
       .page-item .page-link {
         background: none !important;
         @include qg-link-unvisited-color($qg-blue-dark !important);
