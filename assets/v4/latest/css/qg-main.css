@@ -14073,6 +14073,7 @@ body:not([data-accessibility=false]):not([data-access-new-window=false]) #qg-con
 .sortable-table .form-control.dropdown {
   padding: 8px;
   border-radius: 4px;
+  height: 44px;
 }
 
 .qg-forms-v2 input:not([type=button]):not([type=reset]):not([type=submit]):not([type=image]):not([type]):focus-within,
