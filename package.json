@@ -55,7 +55,7 @@
     "@storybook/addon-links": "v7.6.8",
     "@storybook/addon-mdx-gfm": "^7.6.8",
     "@storybook/html": "v7.6.7",
-    "@storybook/html-webpack5": "^7.6.7",
+    "@storybook/html-webpack5": "^7.6.8",
     "@storybook/testing-library": "^0.2.2",
     "babel-loader": "^9.1.3",
     "chromatic": "^10.2.1",
