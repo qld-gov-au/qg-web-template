@@ -1,16 +1,18 @@
 #qg-primary-content .qg-index-links {
   @extend .d-flex;
   @extend .flex-wrap;
+  justify-content: space-between;
+  padding-top: 1em;
   .qg-index-item.content-only{
-    h2, p, ul, &> div &> span {
-      padding-left: 10px;
+    h2, p, ul, & > div & > span {
+      padding-left: 0;
     }
   }
 
-  &> .qg-index-item {
+  & > .qg-index-item {
     @include make-col-ready();
     @include make-col(12);
-    margin-bottom: $qg-spacing;
+    margin-bottom: 35px;
     word-wrap: break-word;
     img {
       width: 75px;
@@ -56,7 +58,7 @@
         }
       }
     }
-    h2, p, ul, &> div &> span {
+    h2, p, ul, & > div & > span {
       padding-left: ($qg-spacing * 0.5) + 75px;
     }
     h2 {
@@ -70,15 +72,20 @@
       list-style: none;
     }
   }
-  @include breakpoint(xs) {
+  @include media-breakpoint-down(sm) {
     margin-right: 0;
     margin-left: 0;
-    &> .qg-index-item{
-      //width: 100%;
-      margin-bottom: 10px;
-      background: $qg-blue-green;
+    & > .qg-index-item {
+      margin-bottom: 1.5rem !important;
       padding-left: 0 !important;
       padding-right: 0 !important;
+      border: solid 1px #d3d3d3;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      @include qg-button-outline-decoration($border-radius: $btn-border-radius-base);
+      &:hover {
+        box-shadow: none;
+      }
     }
     h2 {
       padding: 0 !important;
@@ -87,16 +94,12 @@
         padding: 1em 1.5em 1em 1.5em !important;
         width: 100%;
         display: block;
-        @include qg-link-styles__theme-white(0);
-        &:hover {
-          background: #007eb1;
-        }
       }
       img {
         display: none;
       }
     }
-    p,ul{
+    p,ul {
       display: none;
     }
   }
@@ -106,9 +109,8 @@
 // of other index-links rules
 #qg-content #qg-primary-content .qg-index-links {
   h2 a, ul li a {
-    @include qg-link-styles__no-underline-default;
-    @include breakpoint(xs) {
-      @include qg-link-styles__theme-white(0);
+    @include media-breakpoint-up(sm) {
+      @include qg-link-styles__no-underline-default;
     }
   }
 }
@@ -123,11 +125,15 @@
 // Legacy stuff
 #qg-one-col, #qg-three-col, #qg-two-col-aside:not(.wide), #qg-two-col-nav:not(.wide) {
   .qg-index-links > .qg-index-item {
-    @include media-breakpoint-up(sm) {
-      @include make-col(6);
+    @include media-breakpoint-up(md) {
+      @include make-col(12);
     }
-    &:nth-child(3) {
-      @include qg-index-item;
+    @include media-breakpoint-only(sm) {
+      @include make-col(6);
+      max-width: 49%;
+    }
+    @include media-breakpoint-only(xs) {
+      @include make-col(12); // Make the page one-col. Example: Topic Index page with an aside
     }
   }
 }
@@ -146,9 +152,10 @@
 #qg-two-col-aside.wide, #qg-two-col-nav.wide {
   .qg-index-links > .qg-index-item {
     @include media-breakpoint-up(sm) {
-      @include make-col(4);
+      @include make-col(6); // Make the page two-col. Example: Topic index page with no aside
+      max-width: 49%;
     }
-    &:nth-child(4) {
+    &:nth-child(3) {
       @include qg-index-item;
     }
   }

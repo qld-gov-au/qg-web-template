@@ -53,7 +53,7 @@ export class QgQuickExit {
   * @return {undefined}
   **/
   onbtnClick () {
-    let self = this;
+    const self = this;
     this.quickExitButton.onclick = function (e) {
       return self.quickExit(self.escapeSite);
     };
@@ -64,7 +64,7 @@ export class QgQuickExit {
   * @return {undefined}
   **/
   onKeyDown (){
-    let self = this;
+    const self = this;
     // add hotkey trigger
     document.addEventListener('keydown', function (e) {
       if (e.keyCode === self.hotkey) {

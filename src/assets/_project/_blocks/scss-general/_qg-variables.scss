@@ -127,7 +127,6 @@ $qg-section-nav-link-hover-bg-color: $qg-light-gray-darker;
 $qg-aside-bg-color: $qg-pale-blue;
 $qg-aside-bg-color2: $qg-pale-blue-light;
 $qg-aside-bg-color3: $qg-pale-blue-dark;
-$qg-aside-h2-color: $qg-dark-blue2;
 
 // Content options
 $qg-content-options-bg-color: $qg-blue;
@@ -265,6 +264,31 @@ $qg-global-error: #d60000;
 $qg-facebook: #3b5998;
 $qg-twitter: #1da1f2;
 $qg-linkedin: #0077b5;
+
+// ## Tag
+$qg-tag-bg-grey: #dedede;
+$qg-tag-color-grey: #444444;
+
+$qg-tag-bg-green: #cce5d8;
+$qg-tag-color-green: #004C23;
+
+$qg-tag-bg-blue: #ccdff1;
+$qg-tag-color-blue: #004281;
+
+$qg-tag-bg-purple: #d6cce3;
+$qg-tag-color-purple: #240050;
+
+$qg-tag-bg-pink: #f7d7e6;
+$qg-tag-color-pink: #800d42;
+
+$qg-tag-bg-red: #f7d1d1;
+$qg-tag-color-red: #8a0a0a;
+
+$qg-tag-bg-orange: #fcd6c3;
+$qg-tag-color-orange: #792d06;
+
+$qg-tag-bg-yellow: #fbf0C5;
+$qg-tag-color-yellow: #4d4712;
 
 @mixin on-hover() {
   &:hover, &.hover {

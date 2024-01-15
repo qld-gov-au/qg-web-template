@@ -24,6 +24,14 @@
 
     &-item {
       margin-right: 22px;
+      &.twitter-list-item {
+        transform: scale(1.02);
+      }
+      .qg-share-twitter {
+        svg {
+          margin-top: -6px;
+        }
+      }
 
       &:last-child {
         margin-right: 0;
@@ -34,7 +42,7 @@
   &-link {
     .fa {
       @include rem(font-size, 24px);
-      color: #000;
+      color: $qg-dark-grey-dark;
       transition: color .25s ease;
     }
 
@@ -45,6 +53,14 @@
 
       .fa-twitter-square {
         color: $qg-twitter;
+      }
+
+      .x-twitter-square {
+        svg {
+          rect {
+            fill: black;
+          }
+        }
       }
 
       .fa-linkedin-square {

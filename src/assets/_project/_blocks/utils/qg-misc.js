@@ -12,8 +12,8 @@
     if (name == null) return false;
     if (!url) url = window.location.href;
     name = name.replace(/[\\[\]]/g, '\\$&');
-    let regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
-    let results = regex.exec(url);
+    const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
+    const results = regex.exec(url);
     if (!results || !results[2]) return false;
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
   };
@@ -53,7 +53,7 @@
   });
   // check if a view is loaded in an iframe , this is to detect Squiz Matrix preview mode
   // and insert a class so that additional styles can be applied
-  let frameAttr = window.frameElement && window.frameElement.getAttribute('Name');
+  const frameAttr = window.frameElement && window.frameElement.getAttribute('Name');
   if (frameAttr && frameAttr === 'ees_modePreviewFrame') {
     $('.container-fluid').addClass('qg-edit-plus-styles');
   }

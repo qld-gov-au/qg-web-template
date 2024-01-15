@@ -19,6 +19,9 @@
     display: flex;
     flex-wrap: wrap;
     margin-top: 1em;
+    &.qg-radio-tabs {
+      padding: 3px 0 0 3px;
+    }
   }
 
   .rc-theme__active {
@@ -182,7 +185,7 @@
 // Updated form styles (migrated from forms.io repository to make all forms look the same)
 //------------------------------------------------------------------------------------
 
-.qg-forms-v2 {
+.qg-forms-v2, .sortable-table {
 
   input:not([type='button']):not([type='reset']):not([type='submit']):not([type='image']):not([type]),
   input[type='text'],
@@ -201,6 +204,7 @@
   .form-control.dropdown {
     padding: 8px;
     border-radius: $borderRadius;
+    height: 44px;
 
     &:focus-within {
       color: #495057;
@@ -292,9 +296,16 @@
     }
 
     .choices__item {
-      padding: 4px 10px;
       line-height: inherit;
       font-size: 1rem;
+    }
+
+    .choices__list--dropdown .choices__item {
+      padding: 10px;
+    }
+
+    .choices__input {
+        padding: 10px !important;
     }
 
     .choices__item.choices__item--selectable:not(.choices__item--choice) {
@@ -434,10 +445,14 @@
 
   //error container
   .formio-error-wrapper {
-    color: white !important;
+    color: #FFF !important;
     background-color: white !important;
     border-color: white !important;
     padding: 0;
+
+    &.formio-component-file {
+      color: #721C24 !important;
+    }
   }
 
   //error labels
@@ -613,10 +628,10 @@
     }
   }
 
-  &>div>nav {
+  & > div > nav {
     display: block;
 
-    &>ul.pagination {
+    & > ul.pagination {
       .page-item .page-link {
         background: none !important;
         @include qg-link-unvisited-color($qg-blue-dark !important);

@@ -9,6 +9,7 @@ import WithImage from "./templates/WithImage.html";
 import WithThumbnail from "./templates/WithThumbnail.html";
 import Clickable from "./templates/Clickable.html";
 import CardColumns from "./templates/CardColumns.html";
+import CardsWithTags from "./templates/CardsWithTags.html";
 
 <Meta title="Components/Cards" decorators={[QgPrimaryContent, QgContent]} />
 
@@ -18,7 +19,7 @@ Requires `#QgContent` ancestor.
 
 ## Basic
 
-<Canvas withSource="open">
+<Canvas sourceState="shown">
   <Story name="Basic" parameters={getDecoratedParameters(Basic)}>
     {() => Basic}
   </Story>
@@ -26,7 +27,7 @@ Requires `#QgContent` ancestor.
 
 ## WithActionButton
 
-<Canvas withSource="open">
+<Canvas sourceState="shown">
   <Story name="WithActionButton" parameters={getDecoratedParameters(WithActionButton)}>
     {() => WithActionButton}
   </Story>
@@ -34,7 +35,7 @@ Requires `#QgContent` ancestor.
 
 ## WithImage
 
-<Canvas withSource="open">
+<Canvas sourceState="shown">
   <Story name="WithImage" parameters={getDecoratedParameters(WithImage)}>
     {() => WithImage}
   </Story>
@@ -42,7 +43,7 @@ Requires `#QgContent` ancestor.
 
 ## WithThumbnail
 
-<Canvas withSource="open">
+<Canvas sourceState="shown">
   <Story name="WithThumbnail" parameters={getDecoratedParameters(WithThumbnail)}>
     {() => WithThumbnail}
   </Story>
@@ -50,7 +51,7 @@ Requires `#QgContent` ancestor.
 
 ## Clickable
 
-<Canvas withSource="open">
+<Canvas sourceState="shown">
   <Story name="Clickable" parameters={getDecoratedParameters(Clickable)}>
     {() => Clickable}
   </Story>
@@ -64,8 +65,16 @@ Some style is sitting in Squiz Matrix https://www.qld.gov.au/__data/assets/css_f
 
 Not included in Forgov SWE documentation.
 
-<Canvas withSource="open">
+<Canvas sourceState="shown">
   <Story name="CardColumns" parameters={getDecoratedParameters(CardColumns)}>
     {() => CardColumns}
+  </Story>
+</Canvas>
+
+## CardsWithTags
+
+<Canvas sourceState="shown">
+  <Story name="CardsWithTags" parameters={getDecoratedParameters(CardsWithTags)}>
+    {() => CardsWithTags}
   </Story>
 </Canvas>

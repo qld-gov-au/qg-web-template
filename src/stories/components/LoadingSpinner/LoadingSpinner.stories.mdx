@@ -13,7 +13,7 @@ import AbsoluteCenter from "./templates/AbsoluteCenter.html";
 
 ## Default
 
-<Canvas withSource="open">
+<Canvas sourceState="shown">
   <Story name="Default" decorators={[Grid(2)]} parameters={getDecoratedParameters(Default)}>
     {() => Default}
   </Story>
@@ -21,7 +21,7 @@ import AbsoluteCenter from "./templates/AbsoluteCenter.html";
 
 ## CenterAligned
 
-<Canvas withSource="open">
+<Canvas sourceState="shown">
   <Story
     name="CenterAligned"
     decorators={[Grid(2)]}
@@ -33,7 +33,7 @@ import AbsoluteCenter from "./templates/AbsoluteCenter.html";
 
 ## AbsoluteCenter
 
-<Canvas withSource="open">
+<Canvas sourceState="shown">
   <Story name="AbsoluteCenter" parameters={getDecoratedParameters(AbsoluteCenter)}>
     {() => AbsoluteCenter}
   </Story>

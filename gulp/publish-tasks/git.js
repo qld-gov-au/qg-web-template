@@ -3,7 +3,7 @@
 const config = require('../gulp-config.js');
 const gulp = require('gulp');
 const git = require('gulp-git');
-const del = require('del');
+const { rimrafSync } = require('rimraf');
 const path = require('path');
 const dirSync = require('gulp-directory-sync');
 const replace = require('gulp-replace');
@@ -11,7 +11,8 @@ const pjson = require('../../package.json');
 const gitFunctions = {
   clean: (folder) => {
     return (cb) => {
-      return del([folder], cb);
+      rimrafSync([folder]);
+      cb();
     };
   },
   clone: (url, folder, usessh) => {
@@ -35,7 +36,7 @@ const gitFunctions = {
   branch: (folder, argv) => {
     return (cb) => {
       let branchname = `v${pjson.version}-test`;
-      branchname += argv.hasOwnProperty('branch') ? `--${argv.branch}` : '';
+      branchname += Object.prototype.hasOwnProperty.call(argv, 'branch') ? `--${argv.branch}` : '';
       if (folder) process.chdir(path.resolve(folder));
       return git.checkout(branchname, { args: '-B' }, function (err) {
         if (err) throw err;
@@ -45,7 +46,7 @@ const gitFunctions = {
   },
   sync: (from, to, ignore) => {
     return (cb) => {
-      let ignoreFiles = ['.git', '.gitignore'].concat(ignore);
+      const ignoreFiles = ['.git', '.gitignore'].concat(ignore);
       return gulp
         .src(`${from}/**/*`)
         .pipe(
@@ -115,7 +116,7 @@ const gitFunctions = {
         });
       } else {
         let branchname = `v${pjson.version}-test`;
-        branchname += argv.hasOwnProperty('branch') ? `--${argv.branch}` : '';
+        branchname += Object.prototype.hasOwnProperty.call(argv, 'branch') ? `--${argv.branch}` : '';
         return git.push('origin', [branchname], { args: ' -f' }, function (err) {
           if (err) throw err;
           cb();

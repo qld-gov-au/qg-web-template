@@ -2,16 +2,16 @@
 'use strict';
 
 (function ($) {
-  let carousels = [];
+  var carousels = [];
 
-  let eqHeight = (carousels) => {
+  const eqHeight = (carousels) => {
     //For each carousel on the page...
     carousels.forEach(function (carousel) {
       //Get the height of each carousel slide in the carousel...
-      let slides = $('#' + carousel).find('.carousel-item');
+      const slides = $('#' + carousel).find('.carousel-item');
 
       //Each slides height into an array...
-      let slideHeights = slides.map(function(e, slide) {
+      const slideHeights = slides.map(function(e, slide) {
         return $(slide).height();
       });
 
@@ -23,7 +23,7 @@
   };
 
   $('.qg-featured .carousel.slide').each(function (int, element) {
-    let carouselID = $(element).attr('id');
+    const carouselID = $(element).attr('id');
     carousels.push(carouselID);
 
     //Start all slides to cycle by default
@@ -32,8 +32,8 @@
     //Bind click/tap event
     $('#' + carouselID).find('.toggleCarousel').on('click', function (e) {
       e.preventDefault();
-      let parentCarousel = $(this).parents('div.carousel.slide');
-      let currentState = parentCarousel.attr('data-state');
+      const parentCarousel = $(this).parents('div.carousel.slide');
+      const currentState = parentCarousel.attr('data-state');
       switch (currentState) {
       //If paused, switch to cycling state
       case 'pause':

@@ -30,20 +30,17 @@
 
     h2 {
       margin-top: 0;
+    }
+
+    h3 {
+      margin-top: 0;
       overflow: hidden;
-      color: $qg-aside-h2-color;
-      @include rem(font-size, 22px);
-      font-weight: bold;
 
       .fa {
         padding-right: .3em;
         color: $qg-icon-color;
         font-size: 1.3em;
       }
-
-    }
-    h3 {
-      color: $qg-dark-blue2;
     }
     p:last-child {
       margin-bottom: 0;

@@ -19,13 +19,13 @@ var feedbackForm = {
      * Add hidden inputs on a page
      **/
     const hiddenInputs = {
-      'franchise': franchise,
+      franchise: franchise,
       'page-title': $(document).find('title').text(),
       'page-url': window.location.href,
       'page-referer': document.referrer,
-      'rspUsrAgent': navigator.userAgent,
-      'browserName': this.predictBrowserName().name + ' ' + this.predictBrowserName().version,
-      'OS': navigator.platform,
+      rspUsrAgent: navigator.userAgent,
+      browserName: this.predictBrowserName().name + ' ' + this.predictBrowserName().version,
+      OS: navigator.platform,
       'g-recaptcha-response': '',
     };
     for (const prop in hiddenInputs) {
@@ -76,11 +76,11 @@ var feedbackForm = {
     var matchBrowser = navigatorUserAgent.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
     if (/trident/i.test(matchBrowser[1])){
       predictVersion = /\brv[ :]+(\d+)/g.exec(navigatorUserAgent) || [];
-      return {name: 'IE', version: (predictVersion[1] || '')};
+      return { name: 'IE', version: (predictVersion[1] || '') };
     }
     if (matchBrowser[1] === 'Chrome'){
       predictVersion = navigatorUserAgent.match(/\bOPR|Edge\/(\d+)/);
-      if (predictVersion != null) { return {name: 'Edge', version: predictVersion[1]}; }
+      if (predictVersion != null) { return { name: 'Edge', version: predictVersion[1] }; }
     }
     matchBrowser = matchBrowser[2] ? [matchBrowser[1], matchBrowser[2]] : [navigator.appName, navigator.appVersion, '-?'];
     predictVersion = navigatorUserAgent.match(/version\/(\d+)/i);

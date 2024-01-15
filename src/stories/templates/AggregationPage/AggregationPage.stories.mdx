@@ -2,12 +2,12 @@ import { Canvas, Meta, Story } from "@storybook/addon-docs";
 
 import { getCanvasMobileProps, getStoryMobileParameters, getStoryMobileHeight } from "../../helpers";
 
-import Default from "../../../template-pages/content-page-no-asides.html";
-import Mobile from "../../../template-pages/content-page-no-asides.html";
+import Default from "../../../template-pages/aggregation-page.html";
+import Mobile from "../../../template-pages/aggregation-page.html";
 
-<Meta title="Templates/ContentPageNoAsides" />
+<Meta title="Templates/AggregationPage" />
 
-# Content Page No Asides
+# Aggregation Page
 
 ## Default
 
@@ -17,6 +17,6 @@ import Mobile from "../../../template-pages/content-page-no-asides.html";
 
 ## Mobile
 
-<Canvas sourceState="none" {...getCanvasMobileProps()}>
+<Canvas withSource="none" {...getCanvasMobileProps()}>
   <Story name="Mobile" parameters={getStoryMobileParameters()} height={getStoryMobileHeight()}>{() => Mobile}</Story>
 </Canvas>

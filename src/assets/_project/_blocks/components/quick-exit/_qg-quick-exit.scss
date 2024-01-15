@@ -13,7 +13,7 @@
   padding: 16px;
   position: fixed;
   width: 100%;
-  z-index: 100;
+  z-index: 200;
   .qg-quick-exit__inner {
     display: -ms-flexbox;
     display: flex;
@@ -32,6 +32,10 @@
     .qg-quick-exit__input:checked + .qg-quick-exit__label {
       color: white;
       font-weight: 500
+    }
+
+    .qg-tooltip {
+      width: 190px;
     }
     .qg-tooltip__parent {
       position: relative

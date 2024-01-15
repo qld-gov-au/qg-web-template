@@ -9,15 +9,15 @@ $(function () {
   //
 
   var qgLocation = {
-    'fn': {},
-    'vars': {
-      'cookie_name': 'qg-location',
-      'event_coordinates_set': 'qgLocationCoordsSet',
-      'event_locality_set': 'qgLocationLocalitySet',
-      'event_location_found': 'qgLocationFound',
-      'event_location_cleared': 'qgLocationCleared',
-      'error_message': '',
-      'suburb_input': '',
+    fn: {},
+    vars: {
+      cookie_name: 'qg-location',
+      event_coordinates_set: 'qgLocationCoordsSet',
+      event_locality_set: 'qgLocationLocalitySet',
+      event_location_found: 'qgLocationFound',
+      event_location_cleared: 'qgLocationCleared',
+      error_message: '',
+      suburb_input: '',
     },
   };
 
@@ -88,14 +88,14 @@ $(function () {
     case qgLocation['vars']['event_coordinates_set']:
       qgLocation.fn.getLocality();
       break;
-    case qgLocation['vars']['event_locality_set']:
+      case qgLocation['vars']['event_locality_set']:
       qgLocation.fn.getCoordinates();
       break;
-    case qgLocation['vars']['event_location_found']:
+      case qgLocation['vars']['event_location_found']:
       qgLocation.fn.setLocationName();
       qgLocation.fn.initServiceCentre();
       break;
-    case qgLocation['vars']['event_location_cleared']:
+      case qgLocation['vars']['event_location_cleared']:
       qgLocation.fn.resetLocationContainers();
       break;
     }
@@ -326,14 +326,14 @@ $(function () {
 
   // Get local example of Google Maps API
   qgLocation.fn.getExampleLocation = function () {
-    var exampleResponse = [ { 'address_components': [ { 'long_name': 'Browning St near Boundary Rd, stop 5', 'short_name': 'Browning St near Boundary Rd, stop 5', 'types': [ 'establishment', 'point_of_interest', 'transit_station' ] }, { 'long_name': 'South Brisbane', 'short_name': 'South Brisbane', 'types': [ 'locality', 'political' ] }, { 'long_name': 'Brisbane City', 'short_name': 'Brisbane', 'types': [ 'administrative_area_level_2', 'political' ] }, { 'long_name': 'Queensland', 'short_name': 'QLD', 'types': [ 'administrative_area_level_1', 'political' ] }, { 'long_name': 'Australia', 'short_name': 'AU', 'types': [ 'country', 'political' ] }, { 'long_name': '4101', 'short_name': '4101', 'types': [ 'postal_code' ] } ], 'formatted_address': 'Browning St near Boundary Rd, stop 5, South Brisbane QLD 4101, Australia', 'geometry': { 'location': { 'lat': -27.477727, 'lng': 153.01314 }, 'location_type': 'GEOMETRIC_CENTER', 'viewport': { 'northeast': { 'lat': -27.4763780197085, 'lng': 153.0144889802915 }, 'southwest': { 'lat': -27.4790759802915, 'lng': 153.0117910197085 } } }, 'place_id': 'ChIJufdIyqBQkWsRlnW4qQxzN94', 'types': [ 'establishment', 'point_of_interest', 'transit_station' ] } ];
+    var exampleResponse = [{ address_components: [{ long_name: 'Browning St near Boundary Rd, stop 5', short_name: 'Browning St near Boundary Rd, stop 5', types: ['establishment', 'point_of_interest', 'transit_station'] }, { long_name: 'South Brisbane', short_name: 'South Brisbane', types: ['locality', 'political'] }, { long_name: 'Brisbane City', short_name: 'Brisbane', types: ['administrative_area_level_2', 'political'] }, { long_name: 'Queensland', short_name: 'QLD', types: ['administrative_area_level_1', 'political'] }, { long_name: 'Australia', short_name: 'AU', types: ['country', 'political'] }, { long_name: '4101', short_name: '4101', types: ['postal_code'] }], formatted_address: 'Browning St near Boundary Rd, stop 5, South Brisbane QLD 4101, Australia', geometry: { location: { lat: -27.477727, lng: 153.01314 }, location_type: 'GEOMETRIC_CENTER', viewport: { northeast: { lat: -27.4763780197085, lng: 153.0144889802915 }, southwest: { lat: -27.4790759802915, lng: 153.0117910197085 } } }, place_id: 'ChIJufdIyqBQkWsRlnW4qQxzN94', types: ['establishment', 'point_of_interest', 'transit_station'] }];
 
     return exampleResponse;
   };
 
   // Get local example of service centres
   qgLocation.fn.getExampleServiceCentres = function () {
-    var exampleCentres = {'question': {'rawInputParameters': {'origin': ['-27.477413799999997;153.01329099999998']}}, 'response': {'resultPacket': {'results': [{'rank': 1, 'title': 'Asif AMin Justices of the Peace Branch', 'kmFromOrigin': 0.2, 'metaData': {'area': 'Brisbane City', 'hours': 'Monday to Friday, 10am-2pm|Mon,Mon,Tues,Tues,Wednes,Wednes,Thurs,Thurs,Fri,Fri,', 'agency': 'DJAG', 'address2': 'Level 6, 154 Melbourne Street', 'address1': 'See reception', 'viewpageassetid': '21806', 'postcode': '4101', 'type': 'Service', 's': 'Volunteer Justice of the Peace or Commissioner for Declarations', 't': 'Justices of the Peace Branch', 'phone': '1300 301 147', 'datasource': 'JP', 'suburb': 'SOUTH BRISBANE', 'location': '-27.4761712;153.0149019', 'id': '92'}}, {'rank': 2, 'title': 'Family Court Brisbane', 'kmFromOrigin': 1.2, 'metaData': {'area': 'Brisbane City', 'hours': 'Monday, Thursday and Friday 9am-2pm Note this service is for Family Court matters only. Hours of service may vary daily.|Mon,Mon,Thurs,Thurs,Fri,Fri,', 'agency': 'DJAG', 'address2': '(Entrance via Tank Street)', 'address1': 'Corner North Quay and Tank Streets', 'viewpageassetid': '21806', 'postcode': '4000', 'type': 'Service', 's': 'Hours of service vary daily, please phone before attending. Volunteer Justice of the Peace or Commissioner for Declarations', 't': 'Family Court Brisbane', 'datasource': 'JP', 'suburb': 'BRISBANE', 'location': '-27.468426;153.019921', 'id': '62'}}]}}};
+    var exampleCentres = { question: { rawInputParameters: { origin: ['-27.477413799999997;153.01329099999998'] } }, response: { resultPacket: { results: [{ rank: 1, title: 'Asif AMin Justices of the Peace Branch', kmFromOrigin: 0.2, metaData: { area: 'Brisbane City', hours: 'Monday to Friday, 10am-2pm|Mon,Mon,Tues,Tues,Wednes,Wednes,Thurs,Thurs,Fri,Fri,', agency: 'DJAG', address2: 'Level 6, 154 Melbourne Street', address1: 'See reception', viewpageassetid: '21806', postcode: '4101', type: 'Service', s: 'Volunteer Justice of the Peace or Commissioner for Declarations', t: 'Justices of the Peace Branch', phone: '1300 301 147', datasource: 'JP', suburb: 'SOUTH BRISBANE', location: '-27.4761712;153.0149019', id: '92' } }, { rank: 2, title: 'Family Court Brisbane', kmFromOrigin: 1.2, metaData: { area: 'Brisbane City', hours: 'Monday, Thursday and Friday 9am-2pm Note this service is for Family Court matters only. Hours of service may vary daily.|Mon,Mon,Thurs,Thurs,Fri,Fri,', agency: 'DJAG', address2: '(Entrance via Tank Street)', address1: 'Corner North Quay and Tank Streets', viewpageassetid: '21806', postcode: '4000', type: 'Service', s: 'Hours of service vary daily, please phone before attending. Volunteer Justice of the Peace or Commissioner for Declarations', t: 'Family Court Brisbane', datasource: 'JP', suburb: 'BRISBANE', location: '-27.468426;153.019921', id: '62' } }] } } };
 
     return exampleCentres;
   };
@@ -361,9 +361,9 @@ $(function () {
 
     // Get location coordinates from storage
     var geocoderQuery = {
-      'location': {
-        'lat': parseFloat(storedData['latitude']),
-        'lng': parseFloat(storedData['longitude']),
+      location: {
+        lat: parseFloat(storedData['latitude']),
+        lng: parseFloat(storedData['longitude']),
       },
     };
 
@@ -415,7 +415,7 @@ $(function () {
       if (address) {
         // Get location coordinates from storage
         var geocoderQuery = {
-          'address': storedData['address'],
+          address: storedData['address'],
         };
 
         // Query the Google Maps API with location coordinates
@@ -459,12 +459,12 @@ $(function () {
   qgLocation.fn.querySuburbsAPI = function () {
     var suburbsURL = 'https://gisservices.information.qld.gov.au/arcgis/rest/services/PlanningCadastre/LandParcelPropertyFramework/MapServer/19/query';
     var suburbsParams = {
-      'f': 'json',
-      'where': 'ADMINAREANAME+%3C%3E+%27Null%27',
-      'returnGeometry': 'false',
-      'spatialRel': 'esriSpatialRelIntersects',
-      'outFields': 'ADMINAREANAME',
-      'orderByFields': 'ADMINAREANAME%20ASC',
+      f: 'json',
+      where: 'ADMINAREANAME+%3C%3E+%27Null%27',
+      returnGeometry: 'false',
+      spatialRel: 'esriSpatialRelIntersects',
+      outFields: 'ADMINAREANAME',
+      orderByFields: 'ADMINAREANAME%20ASC',
     };
 
     // Construct query params from data
@@ -487,17 +487,17 @@ $(function () {
     var locationList = [];
     var userSuburb = qgLocation['vars']['suburb_input'];
 
-    if (jsonResponse.hasOwnProperty('features')) {
+    if (Object.prototype.hasOwnProperty.call(jsonResponse, 'features')) {
       // Add each suburb to the location list
       jsonResponse['features'].forEach(function (object) {
         var sourceName = object['attributes']['ADMINAREANAME'] || object['attributes']['adminareaname'];
         sourceName = sourceName.toLowerCase();
         var suburbLGA = titleCase(sourceName);
         var suburbObject = {
-          'name': sourceName,
-          'name_friendly': suburbLGA,
-          'name_formatted': suburbLGA,
-          'suburb': suburbLGA.split(',')[0],
+          name: sourceName,
+          name_friendly: suburbLGA,
+          name_formatted: suburbLGA,
+          suburb: suburbLGA.split(',')[0],
         };
 
         // Filter out the suburb if user input exists
@@ -601,7 +601,7 @@ $(function () {
 
   // The user has allowed geolocation
   qgLocation.fn.processPositionData = function (response) {
-    var positionData = response['coords'];
+    var positionData = response.coords;
 
     qgLocation.fn.setPositionData(positionData);
     closeDropdown();
@@ -617,9 +617,9 @@ $(function () {
   // Save the position data to the browser
   qgLocation.fn.setPositionData = function (positionData) {
     var location = {
-      'latitude': positionData['latitude'],
-      'longitude': positionData['longitude'],
-      'locality': 'unknown',
+      latitude: positionData.latitude,
+      longitude: positionData.longitude,
+      locality: 'unknown',
     };
 
     // Save to cookie
@@ -645,7 +645,7 @@ $(function () {
     // Handle no cookie present
     if (storedData === null) {
       storedData = {
-        'locality': 'unknown',
+        locality: 'unknown',
       };
     }
 
@@ -680,7 +680,7 @@ $(function () {
     qgLocation.fn.saveLocationCookie(storedData);
 
     // Notify the rest of the page
-    $('body').trigger('custom', qgLocation['vars']['event_location_found']);
+    $('body').trigger('custom', qgLocation.vars.event_location_found);
   };
 
   // Populate the suburb suggestion list
@@ -873,4 +873,3 @@ $(function () {
   $('body').on('click', '.qg-location-setter-close', qgLocation.fn.closeServiceCentre);
   $('body').on('keydown', '.qg-location-setter-autocomplete button', qgLocation.fn.keyboardNavigation);
 });
-

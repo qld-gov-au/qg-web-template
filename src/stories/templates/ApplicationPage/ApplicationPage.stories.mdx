@@ -2,12 +2,12 @@ import { Canvas, Meta, Story } from "@storybook/addon-docs";
 
 import { getCanvasMobileProps, getStoryMobileParameters, getStoryMobileHeight } from "../../helpers";
 
-import Default from "../../../template-pages/content-page-without-location.html";
-import Mobile from "../../../template-pages/content-page-without-location.html";
+import Default from "../../../template-pages/application-page.html";
+import Mobile from "../../../template-pages/application-page.html";
 
-<Meta title="Templates/ContentPageWithoutLocation" />
+<Meta title="Templates/ApplicationPage" />
 
-# Content Page Without Location
+# Application Page
 
 ## Default
 
@@ -17,6 +17,6 @@ import Mobile from "../../../template-pages/content-page-without-location.html";
 
 ## Mobile
 
-<Canvas sourceState="none" {...getCanvasMobileProps()}>
+<Canvas withSource="none" {...getCanvasMobileProps()}>
   <Story name="Mobile" parameters={getStoryMobileParameters()} height={getStoryMobileHeight()}>{() => Mobile}</Story>
 </Canvas>

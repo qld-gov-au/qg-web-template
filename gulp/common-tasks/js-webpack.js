@@ -15,7 +15,7 @@ module.exports = function (gulp, plugins, config, destFolder, banner) {
         return `/assets/${config.versionName}`;
       }
     };
-    let dest = {
+    const dest = {
       base: `${config.basepath.build}`,
       release: `${config.basepath.build}`,
       ext: `${config.versionName}/latest/js`,
@@ -58,9 +58,7 @@ module.exports = function (gulp, plugins, config, destFolder, banner) {
       optimization: {
         minimize: true,
         minimizer: [
-          new TerserPlugin({
-            sourceMap: true,
-          }),
+          new TerserPlugin({}),
         ],
       },
       module: {

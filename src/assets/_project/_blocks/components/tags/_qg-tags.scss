@@ -1,0 +1,47 @@
+.badge {
+    &.qg-tag {
+        font-weight: normal;
+        margin-right: 0.5rem;
+    }
+    &.qg-tag-grey {
+        background-color: $qg-tag-bg-grey;
+        color: $qg-tag-color-grey;
+    }
+
+    &.qg-tag-green {
+        background-color: $qg-tag-bg-green;
+        color: $qg-tag-color-green;
+    }
+
+    &.qg-tag-blue {
+        background-color: $qg-tag-bg-blue;
+        color: $qg-tag-color-blue;
+    }
+
+    &.qg-tag-purple {
+        background-color: $qg-tag-bg-purple;
+        color: $qg-tag-color-purple;
+    }
+
+    &.qg-tag-pink {
+        background-color: $qg-tag-bg-pink;
+        color: $qg-tag-color-pink;
+        font-weight: normal;
+    }
+
+    &.qg-tag-red {
+        background-color: $qg-tag-bg-red;
+        color: $qg-tag-color-red;
+        font-weight: normal;
+    }
+
+    &.qg-tag-orange {
+        background-color: $qg-tag-bg-orange;
+        color: $qg-tag-color-orange;
+    }
+
+    &.qg-tag-yellow {
+        background-color: $qg-tag-bg-yellow;
+        color: $qg-tag-color-yellow;
+    }
+}

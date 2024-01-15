@@ -12,7 +12,7 @@ import Search from "./templates/Search.html";
 
 ## Default
 
-<Canvas withSource="close">
+<Canvas sourceState="hidden">
   <Story name="Default">{() => Default}</Story>
 </Canvas>
 
@@ -24,6 +24,6 @@ import Search from "./templates/Search.html";
 
 ## Search
 
-<Canvas withSource="close">
-  <Story name="Search">{() => Search}</Story>
+<Canvas sourceState="hidden">
+  <Story name="Search" height="350px">{() => Search}</Story>
 </Canvas>
