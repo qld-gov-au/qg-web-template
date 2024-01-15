@@ -1,19 +1,38 @@
 'use strict';
+
 // Core
-const gulp = require('gulp');
-const path = require('path');
-const config  = require('./gulp/gulp-config.js');
-const del  = require('del');
-const argv = require('yargs').argv;
-const plugins = require('gulp-load-plugins')();
-const es  = require('event-stream');
-const addSrc  = require('gulp-add-src');
+import gulp from 'gulp';
+import * as path from 'path';
+import * as config from './gulp/gulp-config.js';
+import * as argv from 'yargs';
+import pluginsLoader from 'gulp-load-plugins';
+import * as es from 'event-stream';
+import * as addSrc from 'gulp-add-src';
 
 // For testing
-const connectssi = require('gulp-connect-ssi');
-const connect = require('gulp-connect');
-// const wait              = require('gulp-wait');
-const pjson = require('./package.json');
+import connectssi from 'gulp-connect-ssi';
+import connect from 'gulp-connect';
+// import wait from 'gulp-wait';
+import pjson from './package.json';
+
+import template_tasks from './gulp/build-tasks/template-pages';
+import scss_task from './gulp/common-tasks/scss';
+import webpack_task from './gulp/common-tasks/js-webpack.js';
+import other_asset_task from './gulp/build-tasks/other-assets';
+import other_files_task from './gulp/build-tasks/other-files';
+import external_lib_task from './gulp/build-tasks/externalLib';
+import asset_include_task from './gulp/build-tasks/assets-includes';
+import lint_task from './gulp/test-tasks/lint';
+import scss_src_task from './gulp/release-tasks/scss-src';
+import release_files_task from './gulp/release-tasks/files';
+import release_other_files_task from './gulp/release-tasks/other-files';
+import replace_links_task from './gulp/release-tasks/replace-links';
+import release_storybook_assets_task from './gulp/release-tasks/storybook-assets';
+import build_tasks from './gulp/build-tasks/serve';
+import * as git_tasks from './gulp/publish-tasks/git';
+
+const plugins = pluginsLoader();
+const { rimrafSync } = require('rimraf');
 
 //constructs build banner for assets
 const buildDate = new Date();
@@ -28,42 +47,48 @@ const banner = '/*! SWE' +
 
 /* CLEAN TASKS */
 gulp.task('clean-build', (cb) => {
-  return del([config.basepath.build], cb);
+  rimrafSync([config.basepath.build]);
+  cb();
 });
 gulp.task('clean-release', (cb) => {
-  return del([config.basepath.release], cb);
+  rimrafSync([config.basepath.release]);
+  cb();
 });
 gulp.task('clean-redundant-build', (cb) => {
-  return del([`${config.basepath.build}/docs/assets/includes-local`], cb);
+  rimrafSync([`${config.basepath.build}/docs/assets/includes-local`]);
+  cb();
 });
 gulp.task('clean-redundant-release', (cb) => {
-  return del([`${config.basepath.release}/template-cdn/assets`, `${config.basepath.release}/template-local/assets/includes-local`], cb);
+  rimrafSync([`${config.basepath.release}/template-cdn/assets`, `${config.basepath.release}/template-local/assets/includes-local`]);
+  cb();
 });
 gulp.task('clean-publish', (cb) => {
-  return del([`${config.webTemplateRepo.folder}`, `${config.staticCdnRepo.folder}`], cb);
+  rimrafSync([`${config.webTemplateRepo.folder}`, `${config.staticCdnRepo.folder}`]);
+  cb();
 });
 
 /* BUILD */
-gulp.task('template-pages', require('./gulp/build-tasks/template-pages')(gulp, plugins, config, 'template-pages', 'template-pages', 'local'));
-gulp.task('template-pages-docs', require('./gulp/build-tasks/template-pages')(gulp, plugins, config, 'docs', 'docs'));
-gulp.task('template-pages-to-docs', require('./gulp/build-tasks/template-pages')(gulp, plugins, config, 'template-pages', 'docs/pagemodels'));
+gulp.task('template-pages', template_tasks(gulp, plugins, config, 'template-pages', 'template-pages', 'local'));
+gulp.task('template-pages-docs', template_tasks(gulp, plugins, config, 'docs', 'docs'));
+gulp.task('template-pages-to-docs', template_tasks(gulp, plugins, config, 'template-pages', 'docs/pagemodels'));
 
 const assetDests = ['assets', 'docs/assets'];
-gulp.task('scss', require('./gulp/common-tasks/scss')(gulp, plugins, config, assetDests, addSrc));
-gulp.task('js', require('./gulp/common-tasks/js-webpack.js')(gulp, plugins, config, assetDests, banner));
-gulp.task('other-assets-root', require('./gulp/build-tasks/other-assets')(gulp, plugins, config, es, assetDests[0]));
-gulp.task('other-assets-docs', require('./gulp/build-tasks/other-assets')(gulp, plugins, config, es, assetDests[1]));
+
+gulp.task('scss', scss_task(gulp, plugins, config, assetDests, addSrc));
+gulp.task('js', webpack_task(gulp, plugins, config, assetDests, banner));
+gulp.task('other-assets-root', other_asset_task(gulp, plugins, config, es, assetDests[0]));
+gulp.task('other-assets-docs', other_asset_task(gulp, plugins, config, es, assetDests[1]));
 gulp.task('other-assets', gulp.series('other-assets-root', 'other-assets-docs'));
 
-gulp.task('build-other-files', require('./gulp/build-tasks/other-files')(gulp, plugins, config));
-gulp.task('external-plugins-bundle', require('./gulp/build-tasks/externalLib')(gulp, plugins, config));
+gulp.task('build-other-files', other_files_task(gulp, plugins, config));
+gulp.task('external-plugins-bundle', external_lib_task(gulp, plugins, config));
 
-gulp.task('assets-includes-local', require('./gulp/build-tasks/assets-includes')(gulp, plugins, config, 'assets/includes-local', true));
-gulp.task('assets-includes-docs', require('./gulp/build-tasks/assets-includes')(gulp, plugins, config, 'docs/assets/includes-local', true, true));
-gulp.task('assets-includes-cdn', require('./gulp/build-tasks/assets-includes')(gulp, plugins, config, 'assets/includes-cdn'));
+gulp.task('assets-includes-local', asset_include_task(gulp, plugins, config, 'assets/includes-local', true));
+gulp.task('assets-includes-docs', asset_include_task(gulp, plugins, config, 'docs/assets/includes-local', true, true));
+gulp.task('assets-includes-cdn', asset_include_task(gulp, plugins, config, 'assets/includes-cdn'));
 
 /* TEST TASKS */
-gulp.task('test:eslint', require('./gulp/test-tasks/lint')(gulp, plugins, config));
+gulp.task('test:eslint', lint_task(gulp, plugins, config));
 
 /* Build task  */
 gulp.task('build', gulp.series(
@@ -87,11 +112,12 @@ gulp.task('build', gulp.series(
 
 /* RELEASE TASKS */
 // Grabs SCSS from SRC and moves to release, does not process
-gulp.task('scss-src', require('./gulp/release-tasks/scss-src')(gulp, plugins, config));
-gulp.task('release-other-files', require('./gulp/release-tasks/other-files')(gulp, plugins, config));
-gulp.task('replace-links', require('./gulp/release-tasks/replace-links')(gulp, plugins, es, config));
-gulp.task('release-files', require('./gulp/release-tasks/files')(gulp, plugins, config, es, path, banner));
-gulp.task('release-storybook-assets', require('./gulp/release-tasks/storybook-assets')(gulp, plugins, config, 'stories/components', 'stories/components'));
+
+gulp.task('scss-src', scss_src_task(gulp, plugins, config));
+gulp.task('release-other-files', release_other_files_task(gulp, plugins, config));
+gulp.task('replace-links', replace_links_task(gulp, plugins, es, config));
+gulp.task('release-files', release_files_task(gulp, plugins, config, es, path, banner));
+gulp.task('release-storybook-assets', release_storybook_assets_task(gulp, plugins, config, 'stories/components', 'stories/components'));
 
 gulp.task('release', gulp.series(
   'js',
@@ -105,36 +131,36 @@ gulp.task('release', gulp.series(
 
 /* LOCAL SERVER */
 const randomPort = Math.floor(1000 + Math.random() * 9000);
-gulp.task('serve', require('./gulp/build-tasks/serve')(gulp, plugins, connect, connectssi, argv, path, randomPort));
+gulp.task('serve', build_tasks(gulp, plugins, connect, connectssi, argv, path, randomPort));
 
 /* PUBLISH TASKS */
 // web template release
-gulp.task('wt-clean', require('./gulp/publish-tasks/git').clean(config.webTemplateRepo.folder));
-gulp.task('wt-clone', require('./gulp/publish-tasks/git').clone(config.webTemplateRepo.url, config.webTemplateRepo.folder, false));
+gulp.task('wt-clean', git_tasks.clean(config.webTemplateRepo.folder));
+gulp.task('wt-clone', git_tasks.clone(config.webTemplateRepo.url, config.webTemplateRepo.folder, false));
 
 // wt-branch task creates a test branch on 'web-template-release'.
-gulp.task('wt-branch', require('./gulp/publish-tasks/git').branch(config.webTemplateRepo.folder, argv));
-gulp.task('wt-sync', require('./gulp/publish-tasks/git').sync(config.basepath.release, config.webTemplateRepo.folder, ['package.json']));
-gulp.task('wt-updateVersion', require('./gulp/publish-tasks/git').updateVersion(config.webTemplateRepo.folder, pjson.version));
-gulp.task('wt-add', require('./gulp/publish-tasks/git').add(config.webTemplateRepo.folder));
-gulp.task('wt-commit', require('./gulp/publish-tasks/git').commit(config.webTemplateRepo.folder, pjson.version));
-gulp.task('wt-tag', require('./gulp/publish-tasks/git').tag(config.webTemplateRepo.folder, pjson.version));
-gulp.task('wt-push', require('./gulp/publish-tasks/git').push(config.webTemplateRepo.folder, argv));
+gulp.task('wt-branch', git_tasks.branch(config.webTemplateRepo.folder, argv));
+gulp.task('wt-sync', git_tasks.sync(config.basepath.release, config.webTemplateRepo.folder, ['package.json']));
+gulp.task('wt-updateVersion', git_tasks.updateVersion(config.webTemplateRepo.folder, pjson.version));
+gulp.task('wt-add', git_tasks.add(config.webTemplateRepo.folder));
+gulp.task('wt-commit', git_tasks.commit(config.webTemplateRepo.folder, pjson.version));
+gulp.task('wt-tag', git_tasks.tag(config.webTemplateRepo.folder, pjson.version));
+gulp.task('wt-push', git_tasks.push(config.webTemplateRepo.folder, argv));
 
 // CDN release
-gulp.task('cdn-clean', require('./gulp/publish-tasks/git').clean(config.staticCdnRepo.folder));
-gulp.task('cdn-clone', require('./gulp/publish-tasks/git').clone(config.staticCdnRepo.url, config.staticCdnRepo.folder, true));
-gulp.task('cdn-transfer', require('./gulp/publish-tasks/git').transfer());
-gulp.task('cdn-add', require('./gulp/publish-tasks/git').add(config.staticCdnRepo.folder));
-gulp.task('cdn-branch', require('./gulp/publish-tasks/git').branch(config.staticCdnRepo.folder, argv));
-gulp.task('cdn-commit', require('./gulp/publish-tasks/git').commit(config.staticCdnRepo.folder, pjson.version));
-gulp.task('cdn-push', require('./gulp/publish-tasks/git').push(config.staticCdnRepo.folder, argv));
+gulp.task('cdn-clean', git_tasks.clean(config.staticCdnRepo.folder));
+gulp.task('cdn-clone', git_tasks.clone(config.staticCdnRepo.url, config.staticCdnRepo.folder, true));
+gulp.task('cdn-transfer', git_tasks.transfer());
+gulp.task('cdn-add', git_tasks.add(config.staticCdnRepo.folder));
+gulp.task('cdn-branch', git_tasks.branch(config.staticCdnRepo.folder, argv));
+gulp.task('cdn-commit', git_tasks.commit(config.staticCdnRepo.folder, pjson.version));
+gulp.task('cdn-push', git_tasks.push(config.staticCdnRepo.folder, argv));
 
 // SWE release
-gulp.task('swe-add', require('./gulp/publish-tasks/git').add());
-gulp.task('swe-commit', require('./gulp/publish-tasks/git').commit('./', pjson.version));
-gulp.task('swe-push', require('./gulp/publish-tasks/git').push('./', argv));
-gulp.task('swe-tag', require('./gulp/publish-tasks/git').tag('./', pjson.version));
+gulp.task('swe-add', git_tasks.add());
+gulp.task('swe-commit', git_tasks.commit('./', pjson.version));
+gulp.task('swe-push', git_tasks.push('./', argv));
+gulp.task('swe-tag', git_tasks.tag('./', pjson.version));
 
 /* WATCH TASKS */
 // Note: External libraries and external modules are not watched
