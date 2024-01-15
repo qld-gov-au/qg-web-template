@@ -94,7 +94,7 @@
     "gulp-load-plugins": "^2.0.8",
     "gulp-open": "^3.0.1",
     "gulp-plumber": "^1.2.1",
-    "gulp-postcss": "^9.0.1",
+    "gulp-postcss": "^9.1.0",
     "gulp-prompt": "^1.2.0",
     "gulp-replace": "^1.1.4",
     "gulp-sass": "^5.1.0",
