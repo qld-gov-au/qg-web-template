@@ -450,7 +450,8 @@
     border-color: white !important;
     padding: 0;
 
-    &.formio-component-file {
+    &.formio-component-file,
+    &.formio-component-select {
       color: #721C24 !important;
     }
   }
