@@ -14360,7 +14360,7 @@ body:not([data-accessibility=false]):not([data-access-new-window=false]) #qg-con
   padding: 0;
 }
 
-.qg-forms-v2 .formio-error-wrapper.formio-component-file, .sortable-table .formio-error-wrapper.formio-component-file {
+.qg-forms-v2 .formio-error-wrapper.formio-component-file, .qg-forms-v2 .formio-error-wrapper.formio-component-select, .sortable-table .formio-error-wrapper.formio-component-file, .sortable-table .formio-error-wrapper.formio-component-select {
   color: #721C24 !important;
 }
 
