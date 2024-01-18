@@ -51,7 +51,7 @@
     "@babel/preset-env": "^7.23.8",
     "@storybook/addon-actions": "v7.6.9",
     "@storybook/addon-essentials": "v7.6.9",
-    "@storybook/addon-interactions": "v7.6.9",
+    "@storybook/addon-interactions": "v7.6.10",
     "@storybook/addon-links": "v7.6.9",
     "@storybook/addon-mdx-gfm": "^7.6.9",
     "@storybook/html": "v7.6.9",
