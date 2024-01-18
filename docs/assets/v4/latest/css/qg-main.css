@@ -14073,7 +14073,6 @@ body:not([data-accessibility=false]):not([data-access-new-window=false]) #qg-con
 .sortable-table .form-control.dropdown {
   padding: 8px;
   border-radius: 4px;
-  height: 44px;
 }
 
 .qg-forms-v2 input:not([type=button]):not([type=reset]):not([type=submit]):not([type=image]):not([type]):focus-within,
@@ -14110,6 +14109,10 @@ body:not([data-accessibility=false]):not([data-access-new-window=false]) #qg-con
   border-color: #80bdff;
   outline: 0;
   box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2470588235);
+}
+
+.qg-forms-v2 .form-control.dropdown, .sortable-table .form-control.dropdown {
+  height: 44px;
 }
 
 .qg-forms-v2 .form-control,
