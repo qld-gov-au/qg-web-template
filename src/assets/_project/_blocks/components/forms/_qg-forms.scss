@@ -204,6 +204,7 @@
   .form-control.dropdown {
     padding: 8px;
     border-radius: $borderRadius;
+    height: 44px;
 
     &:focus-within {
       color: #495057;
