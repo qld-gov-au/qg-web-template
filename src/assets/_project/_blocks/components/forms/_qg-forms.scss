@@ -204,7 +204,6 @@
   .form-control.dropdown {
     padding: 8px;
     border-radius: $borderRadius;
-    height: 44px;
 
     &:focus-within {
       color: #495057;
@@ -213,6 +212,10 @@
       outline: 0;
       box-shadow: 0 0 0 $borderWidth $focusBoxShadow;
     }
+  }
+
+  .form-control.dropdown {
+    height: 44px;
   }
 
   .form-control,
@@ -450,7 +453,8 @@
     border-color: white !important;
     padding: 0;
 
-    &.formio-component-file {
+    &.formio-component-file,
+    &.formio-component-select {
       color: #721C24 !important;
     }
   }
