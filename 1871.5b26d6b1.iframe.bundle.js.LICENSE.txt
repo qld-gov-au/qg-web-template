@@ -261,8 +261,6 @@
 
 /*! @storybook/theming */
 
-/*! doctrine */
-
 /*! import() */
 
 /*! lodash/cloneDeep.js */
@@ -678,10 +676,6 @@
 /*!*******************************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteralLoose.js ***!
   \*******************************************************************************/
-
-/*!******************************************************************************************!*\
-  !*** ./node_modules/@storybook/blocks/node_modules/@storybook/docs-tools/dist/index.mjs ***!
-  \******************************************************************************************/
 
 /*!***********************************************************************************************************************************!*\
   !*** ./node_modules/@emotion/use-insertion-effect-with-fallbacks/dist/emotion-use-insertion-effect-with-fallbacks.browser.esm.js ***!
