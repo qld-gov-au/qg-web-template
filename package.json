@@ -52,7 +52,7 @@
     "@storybook/addon-actions": "v7.6.17",
     "@storybook/addon-essentials": "v7.6.17",
     "@storybook/addon-interactions": "v7.6.17",
-    "@storybook/addon-links": "v7.6.17",
+    "@storybook/addon-links": "v8.0.0",
     "@storybook/addon-mdx-gfm": "^7.6.17",
     "@storybook/html": "v7.6.17",
     "@storybook/html-webpack5": "^7.6.17",
