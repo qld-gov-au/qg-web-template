@@ -117,7 +117,7 @@
     "storybook-addon-pseudo-states": "^2.2.1",
     "string-replace-loader": "^3.1.0",
     "terser-webpack-plugin": "^5.3.10",
-    "webpack": "^5.90.3",
+    "webpack": "^5.91.0",
     "webpack-ssi-include-loader": "^1.6.1",
     "webpack-stream": "^7.0.0"
   },
