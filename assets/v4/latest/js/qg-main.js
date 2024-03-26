@@ -97,7 +97,7 @@ var QgAccordion = /*#__PURE__*/function () {
    * @param {string} value - value to filter
    * @return {undefined}
    **/
-  (0,_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(QgAccordion, [{
+  return (0,_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(QgAccordion, [{
     key: "filterSpecialChar",
     value: function filterSpecialChar(value) {
       return decodeURI(value.toLowerCase().replace(/[^a-zA-Z0-9/]/g, ''));
@@ -275,7 +275,6 @@ var QgAccordion = /*#__PURE__*/function () {
       });
     }
   }]);
-  return QgAccordion;
 }();
 
 /***/ }),
@@ -396,7 +395,7 @@ var QgAddressAutocomplete = /*#__PURE__*/function () {
    * _setValFromUrlParameters -> set value of the input fields from the URL
    * @return {undefined}
    **/
-  (0,_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(QgAddressAutocomplete, [{
+  return (0,_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(QgAddressAutocomplete, [{
     key: "_setValFromUrlParameters",
     value: function _setValFromUrlParameters() {
       this.$form.find(':input:not(:checkbox):not(:radio), select, textarea').each(function () {
@@ -600,7 +599,6 @@ var QgAddressAutocomplete = /*#__PURE__*/function () {
       });
     }
   }]);
-  return QgAddressAutocomplete;
 }();
 
 /***/ }),
@@ -1443,7 +1441,7 @@ var QgPrint = /*#__PURE__*/function () {
   * onClickContent function register a event to print content using a button with the 'print-content-link' class
   * @return {undefined}
   **/
-  (0,_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(QgPrint, [{
+  return (0,_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(QgPrint, [{
     key: "onClickContentBtn",
     value: function onClickContentBtn() {
       var self = this;
@@ -1531,7 +1529,6 @@ var QgPrint = /*#__PURE__*/function () {
       });
     }
   }]);
-  return QgPrint;
 }();
 
 /***/ }),
@@ -1659,7 +1656,7 @@ var QgQuickExit = /*#__PURE__*/function () {
   * Initialise QgQuickExit
   * @return {undefined}
   **/
-  (0,_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(QgQuickExit, [{
+  return (0,_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(QgQuickExit, [{
     key: "init",
     value: function init() {
       if (this.$quickExit.length > 0 && typeof this.quickExitButton !== 'undefined' && this.quickExitButton != null) {
@@ -1739,7 +1736,6 @@ var QgQuickExit = /*#__PURE__*/function () {
       }
     }
   }]);
-  return QgQuickExit;
 }();
 
 /***/ }),
@@ -1817,7 +1813,7 @@ var QgSearchMinimize = /*#__PURE__*/function () {
     this.$siteSearchInput = $('.qg-search-site__input');
     this.$multipleForms = $('.qg-site-search__multiple-forms');
   }
-  (0,_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(QgSearchMinimize, [{
+  return (0,_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(QgSearchMinimize, [{
     key: "init",
     value: function init() {
       this.onResize();
@@ -1882,7 +1878,6 @@ var QgSearchMinimize = /*#__PURE__*/function () {
       });
     }
   }]);
-  return QgSearchMinimize;
 }();
 
 /***/ }),
@@ -5605,7 +5600,7 @@ var QgLoadGoogleApi = /*#__PURE__*/function () {
    * onbtnClick -> clicking quick exit button a page
    * @return {undefined}
    **/
-  (0,_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(QgLoadGoogleApi, [{
+  return (0,_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(QgLoadGoogleApi, [{
     key: "_isProd",
     value: function _isProd() {
       return window.location.hostname.search(/dev|test|localhost|github|\buat\b/) === -1;
@@ -5719,7 +5714,6 @@ var QgLoadGoogleApi = /*#__PURE__*/function () {
       }
     }
   }]);
-  return QgLoadGoogleApi;
 }();
 
 /***/ }),
