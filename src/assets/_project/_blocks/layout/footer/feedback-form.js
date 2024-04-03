@@ -1,4 +1,4 @@
-var feedbackForm = {
+const feedbackForm = {
   /**
    * Initialise feedbackForm
    * @param {string} franchiseTitle - Franchise title if any present on a page
@@ -19,7 +19,7 @@ var feedbackForm = {
      * Add hidden inputs on a page
      **/
     const hiddenInputs = {
-      franchise: franchise,
+      franchise,
       'page-title': $(document).find('title').text(),
       'page-url': window.location.href,
       'page-referer': document.referrer,
@@ -71,9 +71,9 @@ var feedbackForm = {
    * @return {Object}
    **/
   predictBrowserName: function () {
-    var navigatorUserAgent = navigator.userAgent;
-    var predictVersion;
-    var matchBrowser = navigatorUserAgent.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+    const navigatorUserAgent = navigator.userAgent;
+    let predictVersion;
+    let matchBrowser = navigatorUserAgent.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
     if (/trident/i.test(matchBrowser[1])){
       predictVersion = /\brv[ :]+(\d+)/g.exec(navigatorUserAgent) || [];
       return { name: 'IE', version: (predictVersion[1] || '') };
@@ -98,7 +98,7 @@ var feedbackForm = {
    * @param {string} val - value of the hidden input
    **/
   addHiddenInput: function (key, val) {
-    var newHiddenInput = $('<input type="hidden"/>');
+    const newHiddenInput = $('<input type="hidden"/>');
     newHiddenInput.attr('name', key);
     newHiddenInput.attr('value', this.sanitize(val));
     $('#feedback-hidden-inputs').append(newHiddenInput);

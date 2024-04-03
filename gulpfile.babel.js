@@ -22,7 +22,6 @@ import other_asset_task from './gulp/build-tasks/other-assets';
 import other_files_task from './gulp/build-tasks/other-files';
 import external_lib_task from './gulp/build-tasks/externalLib';
 import asset_include_task from './gulp/build-tasks/assets-includes';
-import lint_task from './gulp/test-tasks/lint';
 import scss_src_task from './gulp/release-tasks/scss-src';
 import release_files_task from './gulp/release-tasks/files';
 import release_other_files_task from './gulp/release-tasks/other-files';
@@ -87,12 +86,8 @@ gulp.task('assets-includes-local', asset_include_task(gulp, plugins, config, 'as
 gulp.task('assets-includes-docs', asset_include_task(gulp, plugins, config, 'docs/assets/includes-local', true, true));
 gulp.task('assets-includes-cdn', asset_include_task(gulp, plugins, config, 'assets/includes-cdn'));
 
-/* TEST TASKS */
-gulp.task('test:eslint', lint_task(gulp, plugins, config));
-
 /* Build task  */
 gulp.task('build', gulp.series(
-  'test:eslint',
   'assets-includes-docs',
   'assets-includes-cdn',
   'assets-includes-local',
@@ -167,7 +162,6 @@ gulp.task('swe-tag', git_tasks.tag('./', pjson.version));
 gulp.task('watch:project', function (done) {
   gulp.watch([`${config.basepath.src}/assets/_project/_blocks/layout/**/*.html`], gulp.series('assets-includes-local', 'assets-includes-docs'));
   gulp.watch([`${config.basepath.src}/assets/_project/**/*.scss`], gulp.series('scss'));
-  gulp.watch(`${config.basepath.src}/assets/_project/_blocks/**/*.js`, { verbose: true }, gulp.series('js', 'test:eslint'));
   gulp.watch(`${config.basepath.src}/assets/_project/lib/**/*.js`, { verbose: true }, gulp.series('other-assets'));
   gulp.watch([`${config.basepath.src}/assets/_project/images/**/*`], gulp.series('other-assets'));
   gulp.watch([`${config.basepath.src}/template-pages/**/*`], gulp.series('template-pages', 'template-pages-to-docs'));

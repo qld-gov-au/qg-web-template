@@ -49,7 +49,7 @@ export class QgPrint {
     // attach a event on the print guide link/button
     $('body').on('click', '#printguide', function(event) {
       event.preventDefault();
-      var pageList = [];
+      let pageList = [];
       // grab all the links in the guide page list
       pageList = self.$pageLinks.map(function() {
         return this.href;

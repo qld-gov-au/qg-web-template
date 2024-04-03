@@ -44,7 +44,7 @@
   }
   setHeight();
   $(window).on('resize', function () {
-    var $windowSize = $(window).width();
+    const $windowSize = $(window).width();
     if ($windowSize < 767) {
       $('.cards__equal-height').find('.details').removeAttr('style');
     } else {

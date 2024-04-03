@@ -2,15 +2,15 @@ $(function () {
   'use strict';
 
   // Polyfill for position: sticky;
-  var Stickyfill = require('stickyfill');
-  var stickyfill = Stickyfill();
+  const Stickyfill = require('stickyfill');
+  const stickyfill = Stickyfill();
   stickyfill.add($('.sticky')[0]);
 
   // Mobile menu & Search events to prevent both of them opening at the same time
-  var $qgContent = $('#qg-content');
-  var $qgNav = $('.qg-navigation');
+  const $qgContent = $('#qg-content');
+  const $qgNav = $('.qg-navigation');
   $('.qg-show-menu, .qg-show-search').on('click', function () {
-    var otherMenu = $(this).hasClass('qg-show-menu') ? $('#qg-global-search-form') : $qgNav;
+    const otherMenu = $(this).hasClass('qg-show-menu') ? $('#qg-global-search-form') : $qgNav;
     if (!$qgContent.is(':hidden') || !otherMenu.is(':hidden')) {
       $qgContent.hide();
     } else {

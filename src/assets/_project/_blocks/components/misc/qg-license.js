@@ -99,13 +99,13 @@ A1 This function checks meta tag [name="DCTERMS.license] and then insert markup 
     },
   };
 
-  var getLicenseVal = function (url) {
-    var urlArr = /\/licenses\/([a-zA-Z0-9-/.]+)/g.exec(url)[1].split('/').filter(function (e) {
+  const getLicenseVal = function (url) {
+    const urlArr = /\/licenses\/([a-zA-Z0-9-/.]+)/g.exec(url)[1].split('/').filter(function (e) {
       return e;
     });
 
-    var abbreviation = urlArr[0];
-    var version = urlArr[1];
+    const abbreviation = urlArr[0];
+    const version = urlArr[1];
 
     return {
       name: licenceOptions.types[abbreviation].name,
@@ -121,8 +121,8 @@ A1 This function checks meta tag [name="DCTERMS.license] and then insert markup 
     $('meta').filter('[name="DCTERMS.license"]').filter(function () {
       return new RegExp('https?://creativecommons.org/licenses/[a-zA-Z0-9\\-\\/\\.]+').test(this.content);
     }).eq(0).each(function () {
-      var url = this.content;
-      var licence = getLicenseVal(url);
+      const url = this.content;
+      const licence = getLicenseVal(url);
       // if we have licence details…
       if (licence) {
         $('.qg-content-footer').append(
