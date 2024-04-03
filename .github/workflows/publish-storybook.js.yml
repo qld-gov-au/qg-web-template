@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: [ '18' ]
+        node: [ '20' ]
     name: Build and Deploy on Node ${{ matrix.node }}
     steps:
       - uses: actions/checkout@v3
