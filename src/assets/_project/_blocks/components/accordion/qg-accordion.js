@@ -101,7 +101,7 @@ export class QgAccordion {
     if (event.type === 'click') {
       return true;
     } else if (event.type === 'keypress') {
-      var code = event.charCode || event.keyCode;
+      const code = event.charCode || event.keyCode;
       if ((code === 32) || (code === 13)) {
         return true;
       }
@@ -162,8 +162,8 @@ export class QgAccordion {
    * @return {undefined}
    **/
   legacyAccordion(){
-    var self = this;
-    var accItem = $('.qg-accordion:not(.qg-accordion-v2)').find('article');
+    const self = this;
+    const accItem = $('.qg-accordion:not(.qg-accordion-v2)').find('article');
     accItem.find('.acc-heading').on('keypress', function (event) {
       if (event.target === event.currentTarget) {
         event.preventDefault();

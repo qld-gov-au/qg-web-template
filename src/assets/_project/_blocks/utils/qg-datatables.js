@@ -1,4 +1,4 @@
-var addQGButtonClass = function () {
+const addQGButtonClass = function () {
   $('.dataTables_wrapper a.paginate_button').addClass('qg-btn');
 };
 

@@ -1,6 +1,6 @@
 // this function checks date input field is supported in a browser or not
 function browserSupportsDateInput () {
-  var i = document.createElement('input');
+  const i = document.createElement('input');
   i.setAttribute('type', 'date');
   return i.type !== 'text';
 }
@@ -11,7 +11,7 @@ if (!browserSupportsDateInput() && $('input[type=\'date\']').length > 0) {
   });
 }
 
-var handleDatePicker = function() {
+const handleDatePicker = function() {
   if ($("input[class*='qg-date-input']").length > 0) {
     // hasDatepicker class has to be removed from the input when the page is loaded. jquery-ui.min.js will add the
     // calendar widget when the class does not exist on the input. Then hasDatepicker will be dynamically added to the input.

@@ -76,22 +76,5 @@ module.exports = {
     karmaConfig () {
       return process.cwd() + '/karma.config.js';
     },
-    // Linting source and exclusions
-    lint: [
-      'gulpfile.babel.js',
-      'src/**/*.js',
-      'gulp/**/*.js',
-      'tests/**/*.js',
-      '!tests/reports/**/*.js',
-      '!src/assets/modules/**/*.js',
-      '!src/docs/assets/js/prism.js',
-      '!build/**/*',
-      '!release/**/*',
-      '!**/_old/**/*',
-      '!**/_local*/**/*',
-      '!**/_local.*',
-      '!**/legacy/**/*',
-      '!**/lib/ext/**/*',
-    ],
   },
 };

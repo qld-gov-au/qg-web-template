@@ -1,5 +1,5 @@
-var handleQuickExit = function (e) {
-  var $el = $('.qg-quick-exit');
+const handleQuickExit = function (e) {
+  const $el = $('.qg-quick-exit');
   if (document.documentElement.clientWidth > 992) {
     if ($(this).scrollTop() > 200) {
       $el.css({ position: 'fixed', top: '0px' });
