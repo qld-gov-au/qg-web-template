@@ -4,12 +4,9 @@
   background-color: white;
 }
 
+/* Div wrapper for Social Media Share buttons. */
 .qg-share {
   margin: 10px 0 30px;
-
-  .qg-share-link {
-    padding-top: 3px;
-  }
 
   &__title {
     @include rem(font-size, 14px);
@@ -17,16 +14,23 @@
     margin: 0 20px 0 0;
   }
 
+  /* UL element */
   &-list {
     list-style: none;
     margin: 0;
     padding: 0;
 
+    /* List item element */
     &-item {
-      margin-right: 22px;
+      margin: 0 22px 0 0;
+      padding: 0px;
+
       .qg-share-twitter {
         svg {
-          margin-top: -6px;
+          width: 20.5px;
+          height: 20.5px;
+          vertical-align: top;
+          margin-top: 0.5px;
         }
       }
 
@@ -36,7 +40,16 @@
     }
   }
 
+  /* Anchor element for social links - placed inside LI element */
   &-link {
+    display: block;
+    padding-top: 3px;
+    margin: 0px;
+
+    span {
+      display: inline-block;
+    }
+
     .fa {
       @include rem(font-size, 24px);
       color: $qg-dark-grey-dark;
