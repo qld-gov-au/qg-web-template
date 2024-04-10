@@ -1,0 +1,17 @@
+import { Canvas, Meta, Story } from "@storybook/blocks";
+import * as TagStories from './Tag.stories';
+
+import { QgPrimaryContent, QgContent } from "../../decorators";
+import { getDecoratedParameters } from "../../helpers";
+
+import Default from "./templates/Default.html";
+
+<Meta of={TagStories} />
+
+# Tag
+
+## Default
+
+<Canvas sourceState="shown">
+  <Story of={TagStories.Default} />
+</Canvas>

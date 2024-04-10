@@ -1,0 +1,38 @@
+import { Canvas, Meta, Story } from "@storybook/blocks";
+import * as DashboardStories from './Dashboard.stories';
+
+import Dashboard from "./templates/Dashboard.html";
+import Projects from "./templates/Projects.html";
+import Tenders from "./templates/Tenders.html";
+
+import { QgPrimaryContent, QgContent } from "../../decorators";
+
+import { getDecoratedParameters } from "../../helpers";
+
+<Meta of={DashboardStories} />
+
+# Digital Dashboard
+
+This story mimics component usages on https://www.qld.gov.au/digitalprojectsdashboard
+
+Some style is sitting in Squiz Matrix https://www.qld.gov.au/\_\_data/assets/css\_file/0015/102129/ictdashboard.css
+
+Not included in Forgov SWE documentation.
+
+## Dashboard
+
+<Canvas sourceState="open">
+  <Story of={DashboardStories.Dashboard} />
+</Canvas>
+
+## Projects
+
+<Canvas sourceState="open">
+  <Story of={DashboardStories.Projects} />
+</Canvas>
+
+## Tenders
+
+<Canvas sourceState="shown">
+  <Story of={DashboardStories.Tenders} />
+</Canvas>

@@ -1,0 +1,24 @@
+import { Canvas, Meta, Story } from "@storybook/blocks";
+import * as PromotionalBannerStories from './PromotionalBanner.stories';
+
+import { QgPrimaryContent, QgContent } from "../../decorators";
+import { getDecoratedParameters } from "../../helpers";
+
+import Default from "./templates/Default.html";
+import WithImage from "./templates/WithImage.html";
+
+<Meta of={PromotionalBannerStories} />
+
+# Promotional Banner
+
+## Default
+
+<Canvas sourceState="shown">
+  <Story of={PromotionalBannerStories.Default} />
+</Canvas>
+
+## WithImage
+
+<Canvas sourceState="shown">
+  <Story of={PromotionalBannerStories.WithImage} />
+</Canvas>

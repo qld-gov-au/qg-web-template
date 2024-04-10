@@ -1,0 +1,26 @@
+import { Canvas, Meta, Story } from "@storybook/blocks";
+import * as PrintStories from './Print.stories';
+
+import { QgPrimaryContent, QgContent } from "../../decorators";
+import { getDecoratedParameters } from "../../helpers";
+
+import Default from "./templates/Default.html";
+import PrintGuide from "./templates/PrintGuide.html";
+
+<Meta of={PrintStories} />
+
+# Print
+
+Requires `#QgPrimaryContent` ancestor.
+
+## Default
+
+<Canvas sourceState="shown">
+  <Story of={PrintStories.Default} />
+</Canvas>
+
+## PrintGuide
+
+<Canvas sourceState="shown">
+  <Story of={PrintStories.PrintGuide} />
+</Canvas>

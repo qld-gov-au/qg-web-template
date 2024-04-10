@@ -1,0 +1,16 @@
+import { Canvas, Meta, Story } from "@storybook/blocks";
+import * as BreadcrumbsStories from './Breadcrumbs.stories';
+
+import { QgPrimaryContent, QgContent } from "../../decorators";
+
+import Default from "./templates/Default.html";
+
+<Meta of={BreadcrumbsStories} />
+
+# Breadcrumbs
+
+## Default
+
+<Canvas sourceState="shown">
+  <Story of={BreadcrumbsStories.Default} />
+</Canvas>

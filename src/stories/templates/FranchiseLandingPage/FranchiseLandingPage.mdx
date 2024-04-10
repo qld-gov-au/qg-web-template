@@ -1,0 +1,23 @@
+import { Canvas, Meta, Story } from "@storybook/blocks";
+import * as FranchiseLandingPageStories from './FranchiseLandingPage.stories';
+
+import { getCanvasMobileProps, getStoryMobileParameters, getStoryMobileHeight } from "../../helpers";
+
+import Default from "../../../template-pages/franchise-landing-page.html";
+import Mobile from "../../../template-pages/franchise-landing-page.html";
+
+<Meta of={FranchiseLandingPageStories} />
+
+# Franchise Landing Page
+
+## Default
+
+<Canvas sourceState="close">
+  <Story of={FranchiseLandingPageStories.Default} />
+</Canvas>
+
+## Mobile
+
+<Canvas withSource="none" {...getCanvasMobileProps()}>
+  <Story of={FranchiseLandingPageStories.Mobile} />
+</Canvas>

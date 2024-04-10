@@ -1,0 +1,17 @@
+import { Canvas, Meta, Story } from "@storybook/blocks";
+import * as PaginationStories from './Pagination.stories';
+
+import { QgPrimaryContent, QgContent } from "../../decorators";
+import { getDecoratedParameters } from "../../helpers";
+
+import Default from "./templates/Default.html";
+
+<Meta of={PaginationStories} />
+
+# Pagination
+
+## Default
+
+<Canvas sourceState="shown">
+  <Story of={PaginationStories.Default} />
+</Canvas>

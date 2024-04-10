@@ -1,0 +1,16 @@
+import { Canvas, Meta, Story } from "@storybook/blocks";
+import * as IconographyStories from './Iconography.stories';
+
+import Default from "./templates/Default.html";
+
+import { QgContent } from "../../decorators";
+
+<Meta of={IconographyStories} />
+
+# Iconography
+
+## Default
+
+<Canvas sourceState="shown">
+  <Story of={IconographyStories.Default} />
+</Canvas>

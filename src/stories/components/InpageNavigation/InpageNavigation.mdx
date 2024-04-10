@@ -1,0 +1,19 @@
+import { Canvas, Meta, Story } from "@storybook/blocks";
+import * as InpageNavigationStories from './InpageNavigation.stories';
+
+import { QgPrimaryContent, QgContent } from "../../decorators";
+import { getDecoratedParameters } from "../../helpers";
+
+import Default from "./templates/Default.html";
+
+<Meta of={InpageNavigationStories} />
+
+# Inpage Navigation
+
+Requires `#QgPrimaryContent` ancestor.
+
+## Default
+
+<Canvas sourceState="shown">
+  <Story of={InpageNavigationStories.Default} />
+</Canvas>

@@ -1,0 +1,19 @@
+import { Canvas, Meta, Story } from "@storybook/blocks";
+import * as BlockquoteStories from './Blockquote.stories';
+
+import Default from "./templates/Default.html";
+
+import { QgPrimaryContent, QgContent } from "../../decorators";
+import { getDecoratedParameters } from "../../helpers";
+
+<Meta of={BlockquoteStories} />
+
+# Blockquote
+
+Requires `#QgPrimaryContent` ancestor.
+
+## Default
+
+<Canvas sourceState="shown">
+  <Story of={BlockquoteStories.Default} />
+</Canvas>

@@ -1,0 +1,17 @@
+import { Canvas, Meta, Story } from "@storybook/blocks";
+import * as QuickExitStories from './QuickExit.stories';
+
+import { QgPrimaryContent, QgContent } from "../../decorators";
+import { getDecoratedParameters } from "../../helpers";
+
+import Default from "./templates/Default.html";
+
+<Meta of={QuickExitStories} />
+
+# Quick Exit
+
+## Default
+
+<Canvas sourceState="shown">
+  <Story of={QuickExitStories.Default} />
+</Canvas>

@@ -1,0 +1,31 @@
+import { Canvas, Meta, Story } from "@storybook/blocks";
+import * as SocialMediaStories from './SocialMedia.stories';
+
+import { QgPrimaryContent, QgContent } from "../../decorators";
+import { getDecoratedParameters } from "../../helpers";
+
+import Default from "./templates/Default.html";
+import FacebookFeed from "./templates/FacebookFeed.html";
+import TwitterFeed from "./templates/TwitterFeed.html";
+
+<Meta of={SocialMediaStories} />
+
+# Social Media
+
+## Default
+
+<Canvas sourceState="shown">
+  <Story of={SocialMediaStories.Default} />
+</Canvas>
+
+## FacebookFeed
+
+<Canvas sourceState="shown">
+  <Story of={SocialMediaStories.FacebookFeed} />
+</Canvas>
+
+## TwitterFeed
+
+<Canvas sourceState="shown">
+  <Story of={SocialMediaStories.TwitterFeed} />
+</Canvas>

@@ -1,0 +1,17 @@
+import { Canvas, Meta, Story } from "@storybook/blocks";
+import * as LastUpdateStories from './LastUpdate.stories';
+
+import { QgPrimaryContent, QgContent } from "../../decorators";
+import { getDecoratedParameters } from "../../helpers";
+
+import Default from "./templates/Default.html";
+
+<Meta of={LastUpdateStories} />
+
+# Last Update
+
+## Default
+
+<Canvas sourceState="shown">
+  <Story of={LastUpdateStories.Default} />
+</Canvas>

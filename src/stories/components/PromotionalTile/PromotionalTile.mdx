@@ -1,0 +1,19 @@
+import { Canvas, Meta, Story } from "@storybook/blocks";
+import * as PromotionalTileStories from './PromotionalTile.stories';
+
+import { QgPrimaryContent, QgContent } from "../../decorators";
+import { getDecoratedParameters } from "../../helpers";
+
+import Default from "./templates/Default.html";
+
+<Meta of={PromotionalTileStories} />
+
+# Promotional Tile
+
+Requires `#QgPrimaryContent` ancestor.
+
+## Default
+
+<Canvas sourceState="open">
+  <Story of={PromotionalTileStories.Default} />
+</Canvas>

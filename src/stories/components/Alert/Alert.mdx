@@ -1,0 +1,38 @@
+import { Canvas, Meta, Story } from "@storybook/blocks";
+import * as AlertStories from './Alert.stories';
+
+import { QgPrimaryContent, QgContent } from "../../decorators";
+import { getDecoratedParameters } from "../../helpers";
+
+import Information from "./templates/Information.html";
+import Success from "./templates/Success.html";
+import Warning from "./templates/Warning.html";
+import Critical from "./templates/Critical.html";
+
+<Meta of={AlertStories} />
+
+# Alert
+
+## Information
+
+<Canvas sourceState="shown">
+  <Story of={AlertStories.Information} />
+</Canvas>
+
+## Success
+
+<Canvas sourceState="shown">
+  <Story of={AlertStories.Success} />
+</Canvas>
+
+## Warning
+
+<Canvas sourceState="shown">
+  <Story of={AlertStories.Warning} />
+</Canvas>
+
+## Critical
+
+<Canvas sourceState="shown">
+  <Story of={AlertStories.Critical} />
+</Canvas>

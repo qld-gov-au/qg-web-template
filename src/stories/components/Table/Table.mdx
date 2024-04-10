@@ -1,0 +1,40 @@
+import { Canvas, Meta, Story } from "@storybook/blocks";
+import * as TableStories from './Table.stories';
+
+import { QgPrimaryContent, QgContent } from "../../decorators";
+import { getDecoratedParameters } from "../../helpers";
+
+import Default from "./templates/Default.html";
+import Bordered from "./templates/Bordered.html";
+import NoStripe from "./templates/NoStripe.html";
+import Searchable from "./templates/Searchable.html";
+
+<Meta of={TableStories} />
+
+# Table
+
+Requires `#QgPrimaryContent` ancestor.
+
+## Default
+
+<Canvas sourceState="shown">
+  <Story of={TableStories.Default} />
+</Canvas>
+
+## Bordered
+
+<Canvas sourceState="shown">
+  <Story of={TableStories.Bordered} />
+</Canvas>
+
+## NoStripe
+
+<Canvas sourceState="shown">
+  <Story of={TableStories.NoStripe} />
+</Canvas>
+
+## Searchable table
+
+<Canvas sourceState="shown">
+  <Story of={TableStories.Searchable} />
+</Canvas>
