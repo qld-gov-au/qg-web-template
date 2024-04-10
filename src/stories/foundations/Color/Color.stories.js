@@ -1,24 +1,22 @@
-import Alert from "./templates/Alert.html";
-import Brand from "./templates/Brand.html";
-import Text from "./templates/Text.html";
-
-import { QgContent } from "../../decorators";
+import AlertTemplate from './templates/Alert.html';
+import BrandTemplate from './templates/Brand.html';
+import TextTemplate from './templates/Text.html';
 
 export default {
-  title: "Foundations/Color",
+  title: 'Foundations/Color',
 };
 
 export const Text = {
-  render: () => Text,
-  name: "Text",
+  render: () => TextTemplate,
+  name: 'Text',
 };
 
 export const Brand = {
-  render: () => Brand,
-  name: "Brand",
+  render: () => BrandTemplate,
+  name: 'Brand',
 };
 
 export const Alert = {
-  render: () => Alert,
-  name: "Alert",
+  render: () => AlertTemplate,
+  name: 'Alert',
 };

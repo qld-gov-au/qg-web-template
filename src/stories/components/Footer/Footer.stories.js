@@ -1,19 +1,17 @@
 import {
-  getCanvasMobileProps,
   getStoryMobileParameters,
   getStoryMobileHeight,
-} from "../../helpers";
+} from '../../helpers';
 
-import Default from "./templates/Footer.html";
-import Mobile from "./templates/Footer.html";
+import DefaultTemplate from './templates/Footer.html';
 
 export default {
-  title: "Components/Footer",
+  title: 'Components/Footer',
 };
 
 export const Default = {
-  render: () => Default,
-  name: "Default",
+  render: () => DefaultTemplate,
+  name: 'Default',
 
   parameters: {
     chromatic: {
@@ -24,8 +22,8 @@ export const Default = {
 };
 
 export const Mobile = {
-  render: () => Mobile,
-  name: "Mobile",
+  render: () => DefaultTemplate,
+  name: 'Mobile',
 
   parameters: {
     ...getStoryMobileParameters(),

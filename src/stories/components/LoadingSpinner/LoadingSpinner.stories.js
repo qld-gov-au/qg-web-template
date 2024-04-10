@@ -1,31 +1,31 @@
-import { QgPrimaryContent, QgContent, Grid } from "../../decorators";
-import { getDecoratedParameters } from "../../helpers";
+import { QgPrimaryContent, QgContent, Grid } from '../../decorators';
+import { getDecoratedParameters } from '../../helpers';
 
-import Default from "./templates/Default.html";
-import CenterAligned from "./templates/CenterAligned.html";
-import AbsoluteCenter from "./templates/AbsoluteCenter.html";
+import DefaultTemplate from './templates/Default.html';
+import CenterAlignedTemplate from './templates/CenterAligned.html';
+import AbsoluteCenterTemplate from './templates/AbsoluteCenter.html';
 
 export default {
-  title: "Components/Loading Spinner",
+  title: 'Components/Loading Spinner',
   decorators: [QgPrimaryContent, QgContent],
 };
 
 export const Default = {
-  render: () => Default,
-  name: "Default",
+  render: () => DefaultTemplate,
+  name: 'Default',
   decorators: [Grid(2)],
-  parameters: getDecoratedParameters(Default),
+  parameters: getDecoratedParameters(DefaultTemplate),
 };
 
 export const CenterAligned = {
-  render: () => CenterAligned,
-  name: "CenterAligned",
+  render: () => CenterAlignedTemplate,
+  name: 'CenterAligned',
   decorators: [Grid(2)],
-  parameters: getDecoratedParameters(CenterAligned),
+  parameters: getDecoratedParameters(CenterAlignedTemplate),
 };
 
 export const AbsoluteCenter = {
-  render: () => AbsoluteCenter,
-  name: "AbsoluteCenter",
-  parameters: getDecoratedParameters(AbsoluteCenter),
+  render: () => AbsoluteCenterTemplate,
+  name: 'AbsoluteCenter',
+  parameters: getDecoratedParameters(AbsoluteCenterTemplate),
 };

@@ -1,27 +1,27 @@
-import { QgPrimaryContent, QgContent } from "../../decorators";
-import { getDecoratedParameters } from "../../helpers";
+import { QgPrimaryContent, QgContent } from '../../decorators';
+import { getDecoratedParameters } from '../../helpers';
 
-import Default from "./templates/Default.html";
-import FacebookFeed from "./templates/FacebookFeed.html";
-import TwitterFeed from "./templates/TwitterFeed.html";
+import DefaultTemplate from './templates/Default.html';
+import FacebookFeedTemplate from './templates/FacebookFeed.html';
+import TwitterFeedTemplate from './templates/TwitterFeed.html';
 
 export default {
-  title: "Components/Social Media",
+  title: 'Components/Social Media',
   decorators: [QgPrimaryContent, QgContent],
 };
 
 export const Default = {
   render: () => Default,
-  name: "Default",
-  parameters: getDecoratedParameters(Default),
+  name: 'Default',
+  parameters: getDecoratedParameters(DefaultTemplate),
 };
 
 export const FacebookFeed = {
-  render: () => FacebookFeed,
-  name: "FacebookFeed",
+  render: () => FacebookFeedTemplate,
+  name: 'FacebookFeed',
 
   parameters: {
-    ...getDecoratedParameters(Default),
+    ...getDecoratedParameters(DefaultTemplate),
 
     chromatic: {
       disableSnapshot: true,
@@ -30,11 +30,11 @@ export const FacebookFeed = {
 };
 
 export const TwitterFeed = {
-  render: () => TwitterFeed,
-  name: "TwitterFeed",
+  render: () => TwitterFeedTemplate,
+  name: 'TwitterFeed',
 
   parameters: {
-    ...getDecoratedParameters(Default),
+    ...getDecoratedParameters(DefaultTemplate),
 
     chromatic: {
       disableSnapshot: true,

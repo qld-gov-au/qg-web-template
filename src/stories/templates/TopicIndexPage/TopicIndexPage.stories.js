@@ -1,36 +1,34 @@
 import {
-  getCanvasMobileProps,
   getStoryMobileParameters,
   getStoryMobileHeight,
-} from "../../helpers";
+} from '../../helpers';
 
-import Default from "../../../template-pages/topic-index-page.html";
-import WithAside from "../../../template-pages/topic-index-page-with-aside.html";
-import WithThumbnails from "../../../template-pages/topic-index-page-with-thumbnails.html";
-import Mobile from "../../../template-pages/topic-index-page.html";
+import DefaultTemplate from '../../../template-pages/topic-index-page.html';
+import WithAsideTemplate from '../../../template-pages/topic-index-page-with-aside.html';
+import WithThumbnailsTemplate from '../../../template-pages/topic-index-page-with-thumbnails.html';
 
 export default {
-  title: "Templates/TopicIndexPage",
+  title: 'Templates/TopicIndexPage',
 };
 
 export const Default = {
-  render: () => Default,
-  name: "Default",
+  render: () => DefaultTemplate,
+  name: 'Default',
 };
 
 export const WithAside = {
-  render: () => WithAside,
-  name: "WithAside",
+  render: () => WithAsideTemplate,
+  name: 'WithAside',
 };
 
 export const WithThumbnails = {
-  render: () => WithThumbnails,
-  name: "WithThumbnails",
+  render: () => WithThumbnailsTemplate,
+  name: 'WithThumbnails',
 };
 
 export const Mobile = {
-  render: () => Mobile,
-  name: "Mobile",
+  render: () => DefaultTemplate,
+  name: 'Mobile',
   parameters: getStoryMobileParameters(),
   height: getStoryMobileHeight(),
 };

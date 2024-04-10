@@ -1,20 +1,20 @@
-import { QgPrimaryContent, QgContent } from "../../decorators";
-import { getDecoratedParameters } from "../../helpers";
+import { QgPrimaryContent, QgContent } from '../../decorators';
+import { getDecoratedParameters } from '../../helpers';
 
-import Youtube from "./templates/Youtube.html";
-import Vimeo from "./templates/Vimeo.html";
+import YoutubeTemplate from './templates/Youtube.html';
+import VimeoTemplate from './templates/Vimeo.html';
 
 export default {
-  title: "Components/Video",
+  title: 'Components/Video',
   decorators: [QgPrimaryContent, QgContent],
 };
 
 export const Youtube = {
   render: () => Youtube,
-  name: "Youtube",
+  name: 'Youtube',
 
   parameters: {
-    ...getDecoratedParameters(Youtube),
+    ...getDecoratedParameters(YoutubeTemplate),
 
     chromatic: {
       pauseAnimationAtEnd: true,
@@ -25,6 +25,6 @@ export const Youtube = {
 
 export const Vimeo = {
   render: () => Vimeo,
-  name: "Vimeo",
-  parameters: getDecoratedParameters(Vimeo),
+  name: 'Vimeo',
+  parameters: getDecoratedParameters(VimeoTemplate),
 };

@@ -1,34 +1,34 @@
-import Default from "./templates/Default.html";
-import Icon from "./templates/Icon.html";
+import DefaultTemplate from './templates/Default.html';
+import IconTemplate from './templates/Icon.html';
 
-import { QgContent } from "../../decorators";
+import { QgContent } from '../../decorators';
 
 export default {
-  title: "Components/Aside",
+  title: 'Components/Aside',
   decorators: [QgContent],
 };
 
 export const Default = {
-  render: () => Default,
-  name: "Default",
+  render: () => DefaultTemplate,
+  name: 'Default',
 
   parameters: {
     docs: {
       source: {
-        code: Default,
+        code: DefaultTemplate,
       },
     },
   },
 };
 
 export const Icon = {
-  render: () => Icon,
-  name: "Icon",
+  render: () => IconTemplate,
+  name: 'Icon',
 
   parameters: {
     docs: {
       source: {
-        code: Icon,
+        code: IconTemplate,
       },
     },
   },

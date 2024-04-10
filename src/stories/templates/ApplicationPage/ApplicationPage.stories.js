@@ -1,24 +1,22 @@
 import {
-  getCanvasMobileProps,
   getStoryMobileParameters,
   getStoryMobileHeight,
-} from "../../helpers";
+} from '../../helpers';
 
-import Default from "../../../template-pages/application-page.html";
-import Mobile from "../../../template-pages/application-page.html";
+import DefaultTemplate from '../../../template-pages/application-page.html';
 
 export default {
-  title: "Templates/ApplicationPage",
+  title: 'Templates/ApplicationPage',
 };
 
 export const Default = {
-  render: () => Default,
-  name: "Default",
+  render: () => DefaultTemplate,
+  name: 'Default',
 };
 
 export const Mobile = {
-  render: () => Mobile,
-  name: "Mobile",
+  render: () => DefaultTemplate,
+  name: 'Mobile',
   parameters: getStoryMobileParameters(),
   height: getStoryMobileHeight(),
 };

@@ -1,29 +1,29 @@
-import Dashboard from "./templates/Dashboard.html";
-import Projects from "./templates/Projects.html";
-import Tenders from "./templates/Tenders.html";
+import DashboardTemplate from './templates/Dashboard.html';
+import ProjectsTemplate from './templates/Projects.html';
+import TendersTemplate from './templates/Tenders.html';
 
-import { QgPrimaryContent, QgContent } from "../../decorators";
+import { QgPrimaryContent, QgContent } from '../../decorators';
 
-import { getDecoratedParameters } from "../../helpers";
+import { getDecoratedParameters } from '../../helpers';
 
 export default {
-  title: "Franchises/DigitalDashboard",
+  title: 'Franchises/DigitalDashboard',
   decorators: [QgPrimaryContent, QgContent],
 };
 
 export const Dashboard = {
-  render: () => Dashboard,
-  name: "Dashboard",
-  parameters: getDecoratedParameters(Dashboard),
+  render: () => DashboardTemplate,
+  name: 'Dashboard',
+  parameters: getDecoratedParameters(DashboardTemplate),
 };
 
 export const Projects = {
-  render: () => Projects,
-  name: "Projects",
+  render: () => ProjectsTemplate,
+  name: 'Projects',
 };
 
 export const Tenders = {
-  render: () => Tenders,
-  name: "Tenders",
-  parameters: getDecoratedParameters(Tenders),
+  render: () => TendersTemplate,
+  name: 'Tenders',
+  parameters: getDecoratedParameters(TendersTemplate),
 };

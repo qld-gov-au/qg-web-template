@@ -1,9 +1,7 @@
-import { QgPrimaryContent, QgContent } from "../../decorators";
-
-import Default from "./templates/Default.html";
+import DefaultTemplate from './templates/Default.html';
 
 export default {
-  title: "Components/Breadcrumbs",
+  title: 'Components/Breadcrumbs',
 
   parameters: {
     chromatic: {
@@ -13,6 +11,6 @@ export default {
 };
 
 export const Default = {
-  render: () => Default,
-  name: "Default",
+  render: () => DefaultTemplate,
+  name: 'Default',
 };

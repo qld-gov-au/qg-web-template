@@ -1,31 +1,29 @@
 import {
-  getCanvasMobileProps,
   getStoryMobileParameters,
   getStoryMobileHeight,
-} from "../../helpers";
+} from '../../helpers';
 
-import Default from "./templates/Header.html";
-import Mobile from "./templates/Header.html";
-import Search from "./templates/Search.html";
+import DefaultTemplate from './templates/Header.html';
+import SearchTemplate from './templates/Search.html';
 
 export default {
-  title: "Components/Header",
+  title: 'Components/Header',
 };
 
 export const Default = {
-  render: () => Default,
-  name: "Default",
+  render: () => DefaultTemplate,
+  name: 'Default',
 };
 
 export const Mobile = {
-  render: () => Mobile,
-  name: "Mobile",
+  render: () => DefaultTemplate,
+  name: 'Mobile',
   parameters: getStoryMobileParameters(),
   height: getStoryMobileHeight(),
 };
 
 export const Search = {
-  render: () => Search,
-  name: "Search",
-  height: "350px",
+  render: () => SearchTemplate,
+  name: 'Search',
+  height: '350px',
 };

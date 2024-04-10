@@ -1,15 +1,15 @@
-import { QgPrimaryContent, QgContent } from "../../decorators";
-import { getDecoratedParameters } from "../../helpers";
+import { QgPrimaryContent, QgContent } from '../../decorators';
+import { getDecoratedParameters } from '../../helpers';
 
-import Default from "./templates/Default.html";
+import DefaultTemplate from './templates/Default.html';
 
 export default {
-  title: "Components/Page Alert",
+  title: 'Components/Page Alert',
   decorators: [QgPrimaryContent, QgContent],
 };
 
 export const Default = {
-  render: () => Default,
-  name: "Default",
-  parameters: getDecoratedParameters(Default),
+  render: () => DefaultTemplate,
+  name: 'Default',
+  parameters: getDecoratedParameters(DefaultTemplate),
 };

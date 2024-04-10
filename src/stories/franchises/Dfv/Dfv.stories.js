@@ -1,37 +1,37 @@
-import AsideButton from "./templates/AsideButton.html";
-import DfvCards from "./templates/DfvCards.html";
-import DfvBack from "./templates/DfvBack.html";
-import LinksList from "./templates/LinksList.html";
+import AsideButtonTemplate from './templates/AsideButton.html';
+import DfvCardsTemplate from './templates/DfvCards.html';
+import DfvBackTemplate from './templates/DfvBack.html';
+import LinksListTemplate from './templates/LinksList.html';
 
-import { QgPrimaryContent, QgContent } from "../../decorators";
+import { QgPrimaryContent, QgContent } from '../../decorators';
 
-import { getDecoratedParameters } from "../../helpers";
+import { getDecoratedParameters } from '../../helpers';
 
 export default {
-  title: "Franchises/DFV",
+  title: 'Franchises/DFV',
   decorators: [QgPrimaryContent, QgContent],
 };
 
 export const DfvCards = {
-  render: () => DfvCards,
-  name: "DfvCards",
-  parameters: getDecoratedParameters(DfvCards),
+  render: () => DfvCardsTemplate,
+  name: 'DfvCards',
+  parameters: getDecoratedParameters(DfvCardsTemplate),
 };
 
 export const AsideButton = {
-  render: () => AsideButton,
-  name: "AsideButton",
-  parameters: getDecoratedParameters(AsideButton),
+  render: () => AsideButtonTemplate,
+  name: 'AsideButton',
+  parameters: getDecoratedParameters(AsideButtonTemplate),
 };
 
 export const DfvBack = {
-  render: () => DfvBack,
-  name: "DfvBack",
-  parameters: getDecoratedParameters(DfvBack),
+  render: () => DfvBackTemplate,
+  name: 'DfvBack',
+  parameters: getDecoratedParameters(DfvBackTemplate),
 };
 
 export const LinksList = {
-  render: () => LinksList,
-  name: "LinksList",
-  parameters: getDecoratedParameters(LinksList),
+  render: () => LinksListTemplate,
+  name: 'LinksList',
+  parameters: getDecoratedParameters(LinksListTemplate),
 };

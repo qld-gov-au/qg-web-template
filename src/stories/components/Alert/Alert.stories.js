@@ -1,36 +1,36 @@
-import { QgPrimaryContent, QgContent } from "../../decorators";
-import { getDecoratedParameters } from "../../helpers";
+import { QgPrimaryContent, QgContent } from '../../decorators';
+import { getDecoratedParameters } from '../../helpers';
 
-import Information from "./templates/Information.html";
-import Success from "./templates/Success.html";
-import Warning from "./templates/Warning.html";
-import Critical from "./templates/Critical.html";
+import InformationTemplate from './templates/Information.html';
+import SuccessTemplate from './templates/Success.html';
+import WarningTemplate from './templates/Warning.html';
+import CriticalTemplate from './templates/Critical.html';
 
 export default {
-  title: "Components/Alert",
+  title: 'Components/Alert',
   decorators: [QgPrimaryContent, QgContent],
 };
 
 export const Information = {
-  render: () => Information,
-  name: "Information",
-  parameters: getDecoratedParameters(Information),
+  render: () => InformationTemplate,
+  name: 'Information',
+  parameters: getDecoratedParameters(InformationTemplate),
 };
 
 export const Success = {
-  render: () => Success,
-  name: "Success",
-  parameters: getDecoratedParameters(Success),
+  render: () => SuccessTemplate,
+  name: 'Success',
+  parameters: getDecoratedParameters(SuccessTemplate),
 };
 
 export const Warning = {
-  render: () => Warning,
-  name: "Warning",
-  parameters: getDecoratedParameters(Warning),
+  render: () => WarningTemplate,
+  name: 'Warning',
+  parameters: getDecoratedParameters(WarningTemplate),
 };
 
 export const Critical = {
-  render: () => Critical,
-  name: "Critical",
-  parameters: getDecoratedParameters(Critical),
+  render: () => CriticalTemplate,
+  name: 'Critical',
+  parameters: getDecoratedParameters(CriticalTemplate),
 };

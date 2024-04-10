@@ -1,15 +1,15 @@
-import Default from "./templates/Default.html";
+import DefaultTemplate from './templates/Default.html';
 
-import { QgPrimaryContent, QgContent } from "../../decorators";
-import { getDecoratedParameters } from "../../helpers";
+import { QgPrimaryContent, QgContent } from '../../decorators';
+import { getDecoratedParameters } from '../../helpers';
 
 export default {
-  title: "Components/Blockquote",
+  title: 'Components/Blockquote',
   decorators: [QgPrimaryContent, QgContent],
 };
 
 export const Default = {
-  render: () => Default,
-  name: "Default",
-  parameters: getDecoratedParameters(Default),
+  render: () => DefaultTemplate,
+  name: 'Default',
+  parameters: getDecoratedParameters(DefaultTemplate),
 };

@@ -1,22 +1,22 @@
-import { QgPrimaryContent, QgContent } from "../../decorators";
-import { getDecoratedParameters } from "../../helpers";
+import { QgPrimaryContent, QgContent } from '../../decorators';
+import { getDecoratedParameters } from '../../helpers';
 
-import Default from "./templates/Default.html";
-import PrintGuide from "./templates/PrintGuide.html";
+import DefaultTemplate from './templates/Default.html';
+import PrintGuideTemplate from './templates/PrintGuide.html';
 
 export default {
-  title: "Components/Print",
+  title: 'Components/Print',
   decorators: [QgPrimaryContent, QgContent],
 };
 
 export const Default = {
-  render: () => Default,
-  name: "Default",
-  parameters: getDecoratedParameters(Default),
+  render: () => DefaultTemplate,
+  name: 'Default',
+  parameters: getDecoratedParameters(DefaultTemplate),
 };
 
 export const PrintGuide = {
-  render: () => PrintGuide,
-  name: "PrintGuide",
-  parameters: getDecoratedParameters(PrintGuide),
+  render: () => PrintGuideTemplate,
+  name: 'PrintGuide',
+  parameters: getDecoratedParameters(PrintGuideTemplate),
 };

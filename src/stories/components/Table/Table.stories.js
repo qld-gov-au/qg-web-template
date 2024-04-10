@@ -1,36 +1,36 @@
-import { QgPrimaryContent, QgContent } from "../../decorators";
-import { getDecoratedParameters } from "../../helpers";
+import { QgPrimaryContent, QgContent } from '../../decorators';
+import { getDecoratedParameters } from '../../helpers';
 
-import Default from "./templates/Default.html";
-import Bordered from "./templates/Bordered.html";
-import NoStripe from "./templates/NoStripe.html";
-import Searchable from "./templates/Searchable.html";
+import DefaultTemplate from './templates/Default.html';
+import BorderedTemplate from './templates/Bordered.html';
+import NoStripeTemplate from './templates/NoStripe.html';
+import SearchableTemplate from './templates/Searchable.html';
 
 export default {
-  title: "Components/Table",
+  title: 'Components/Table',
   decorators: [QgPrimaryContent, QgContent],
 };
 
 export const Default = {
-  render: () => Default,
-  name: "Default",
-  parameters: getDecoratedParameters(Default),
+  render: () => DefaultTemplate,
+  name: 'Default',
+  parameters: getDecoratedParameters(DefaultTemplate),
 };
 
 export const Bordered = {
-  render: () => Bordered,
-  name: "Bordered",
-  parameters: getDecoratedParameters(Bordered),
+  render: () => BorderedTemplate,
+  name: 'Bordered',
+  parameters: getDecoratedParameters(BorderedTemplate),
 };
 
 export const NoStripe = {
-  render: () => NoStripe,
-  name: "NoStripe",
-  parameters: getDecoratedParameters(NoStripe),
+  render: () => NoStripeTemplate,
+  name: 'NoStripe',
+  parameters: getDecoratedParameters(NoStripeTemplate),
 };
 
 export const Searchable = {
-  render: () => Searchable,
-  name: "Searchable",
-  parameters: getDecoratedParameters(Searchable),
+  render: () => SearchableTemplate,
+  name: 'Searchable',
+  parameters: getDecoratedParameters(SearchableTemplate),
 };

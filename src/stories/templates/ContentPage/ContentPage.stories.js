@@ -1,36 +1,34 @@
 import {
-  getCanvasMobileProps,
   getStoryMobileParameters,
   getStoryMobileHeight,
-} from "../../helpers";
+} from '../../helpers';
 
-import Default from "../../../template-pages/content-page.html";
-import NoAside from "../../../template-pages/content-page-no-asides.html";
-import WithoutLocation from "../../../template-pages/content-page-without-location.html";
-import Mobile from "../../../template-pages/content-page.html";
+import DefaultTemplate from '../../../template-pages/content-page.html';
+import NoAsideTemplate from '../../../template-pages/content-page-no-asides.html';
+import WithoutLocationTemplate from '../../../template-pages/content-page-without-location.html';
 
 export default {
-  title: "Templates/ContentPage",
+  title: 'Templates/ContentPage',
 };
 
 export const Default = {
-  render: () => Default,
-  name: "Default",
+  render: () => DefaultTemplate,
+  name: 'Default',
 };
 
 export const NoAside = {
-  render: () => NoAside,
-  name: "NoAside",
+  render: () => NoAsideTemplate,
+  name: 'NoAside',
 };
 
 export const WithoutLocation = {
-  render: () => WithoutLocation,
-  name: "WithoutLocation",
+  render: () => WithoutLocationTemplate,
+  name: 'WithoutLocation',
 };
 
 export const Mobile = {
-  render: () => Mobile,
-  name: "Mobile",
+  render: () => DefaultTemplate,
+  name: 'Mobile',
   parameters: getStoryMobileParameters(),
   height: getStoryMobileHeight(),
 };

@@ -1,22 +1,22 @@
-import { QgPrimaryContent, QgContent } from "../../decorators";
-import { getDecoratedParameters } from "../../helpers";
+import { QgPrimaryContent, QgContent } from '../../decorators';
+import { getDecoratedParameters } from '../../helpers';
 
-import Default from "./templates/Default.html";
-import WithImage from "./templates/WithImage.html";
+import DefaultTemplate from './templates/Default.html';
+import WithImageTemplate from './templates/WithImage.html';
 
 export default {
-  title: "Components/Promotional Banner",
+  title: 'Components/Promotional Banner',
   decorators: [QgPrimaryContent, QgContent],
 };
 
 export const Default = {
-  render: () => Default,
-  name: "Default",
-  parameters: getDecoratedParameters(Default),
+  render: () => DefaultTemplate,
+  name: 'Default',
+  parameters: getDecoratedParameters(DefaultTemplate),
 };
 
 export const WithImage = {
-  render: () => WithImage,
-  name: "WithImage",
-  parameters: getDecoratedParameters(WithImage),
+  render: () => WithImageTemplate,
+  name: 'WithImage',
+  parameters: getDecoratedParameters(WithImageTemplate),
 };

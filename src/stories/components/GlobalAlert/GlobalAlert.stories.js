@@ -1,10 +1,10 @@
-import Default from "./templates/Default.html";
+import DefaultTemplate from './templates/Default.html';
 
 export default {
-  title: "Components/GlobalAlert ",
+  title: 'Components/GlobalAlert ',
 };
 
 export const Default = {
-  render: () => Default,
-  name: "Default",
+  render: () => DefaultTemplate,
+  name: 'Default',
 };

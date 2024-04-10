@@ -1,29 +1,29 @@
-import { QgPrimaryContent, QgContent } from "../../decorators";
-import { getDecoratedParameters } from "../../helpers";
+import { QgPrimaryContent, QgContent } from '../../decorators';
+import { getDecoratedParameters } from '../../helpers';
 
-import Short from "./templates/Short.html";
-import Long from "./templates/Long.html";
-import InTable from "./templates/InTable.html";
+import ShortTemplate from './templates/Short.html';
+import LongTemplate from './templates/Long.html';
+import InTableTemplate from './templates/InTable.html';
 
 export default {
-  title: "Components/Correct Incorrect",
+  title: 'Components/Correct Incorrect',
   decorators: [QgPrimaryContent, QgContent],
 };
 
 export const Short = {
-  render: () => Short,
-  name: "Short",
-  parameters: getDecoratedParameters(Short),
+  render: () => ShortTemplate,
+  name: 'Short',
+  parameters: getDecoratedParameters(ShortTemplate),
 };
 
 export const Long = {
-  render: () => Long,
-  name: "Long",
-  parameters: getDecoratedParameters(Long),
+  render: () => LongTemplate,
+  name: 'Long',
+  parameters: getDecoratedParameters(LongTemplate),
 };
 
 export const InTable = {
-  render: () => InTable,
-  name: "InTable",
-  parameters: getDecoratedParameters(InTable),
+  render: () => InTableTemplate,
+  name: 'InTable',
+  parameters: getDecoratedParameters(InTableTemplate),
 };

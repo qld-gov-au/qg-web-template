@@ -1,63 +1,55 @@
-import { Canvas, Meta, Story } from "@storybook/addon-docs";
-
-import { QgPrimaryContent, QgContent, Grid } from "../../decorators";
+import { Grid, QgContent, QgPrimaryContent } from '../../decorators';
 import {
-  getCanvasMobileProps,
-  getStoryMobileParameters,
-  getStoryMobileHeight,
   getDecoratedParameters,
-} from "../../helpers";
+  getStoryMobileHeight,
+  getStoryMobileParameters,
+} from '../../helpers';
 
-import Default from "./templates/Default.html";
-import Subtitle from "./templates/Subtitle.html";
-import Icon from "./templates/Icon.html";
-import Expandable from "./templates/Expandable.html";
-import Mobile from "./templates/Default.html";
-import States from "./templates/States.html";
+import DefaultTemplate from './templates/Default.html';
+import SubtitleTemplate from './templates/Subtitle.html';
+import IconTemplate from './templates/Icon.html';
+import ExpandableTemplate from './templates/Expandable.html';
+import StatesTemplate from './templates/States.html';
 
-<Meta title="Components/Accordion" decorators={[QgPrimaryContent, QgContent]} />
+export default {
+  title: 'Components/Accordion',
+  decorators: [QgPrimaryContent, QgContent],
+};
 
-# Accordion
+export const Default = {
+  render: () => DefaultTemplate,
+  name: 'Default',
+  parameters: getDecoratedParameters(DefaultTemplate),
+};
 
-## Default
+export const Subtitle = {
+  render: () => SubtitleTemplate,
+  name: 'Subtitle',
+  parameters: getDecoratedParameters(SubtitleTemplate),
+};
 
-<Canvas sourceState="shown">
-  <Story name="Default" parameters={getDecoratedParameters(Default)}>{() => Default}</Story>
-</Canvas>
+export const Icon = {
+  render: () => IconTemplate,
+  name: 'Icon',
+  parameters: getDecoratedParameters(IconTemplate),
+};
 
-## Subtitle
+export const Expandable = {
+  render: () => ExpandableTemplate,
+  name: 'Expandable',
+  parameters: getDecoratedParameters(ExpandableTemplate),
+};
 
-<Canvas sourceState="shown">
-  <Story name="Subtitle" parameters={getDecoratedParameters(Subtitle)}>{() => Subtitle}</Story>
-</Canvas>
+export const States = {
+  render: () => StatesTemplate,
+  name: 'States',
+  decorators: [Grid(2)],
+  parameters: getDecoratedParameters(StatesTemplate),
+};
 
-## Icon
-
-<Canvas sourceState="shown">
-  <Story name="Icon" parameters={getDecoratedParameters(Icon)}>{() => Icon}</Story>
-</Canvas>
-
-## Expandable
-
-<Canvas sourceState="shown">
-  <Story name="Expandable" parameters={getDecoratedParameters(Expandable)}>{() => Expandable}</Story>
-</Canvas>
-
-## States
-
-<Canvas sourceState="hidden">
-  <Story
-    name="States"
-    decorators={[Grid(2)]} parameters={getDecoratedParameters(States)}
-  >
-    {() => States}
-  </Story>
-</Canvas>
-
-## Mobile
-
-<Canvas withSource="none" {...getCanvasMobileProps()}>
-  <Story name="Mobile" parameters={getStoryMobileParameters()} height={getStoryMobileHeight()}>
-    {() => Mobile}
-  </Story>
-</Canvas>
+export const Mobile = {
+  render: () => DefaultTemplate,
+  name: 'Mobile',
+  parameters: getStoryMobileParameters(),
+  height: getStoryMobileHeight(),
+};

@@ -1,12 +1,10 @@
-import Default from "./templates/Default.html";
-
-import { QgContent } from "../../decorators";
+import DefaultTemplate from './templates/Default.html';
 
 export default {
-  title: "Foundations/Iconography",
+  title: 'Foundations/Iconography',
 };
 
 export const Default = {
-  render: () => Default,
-  name: "Default",
+  render: () => DefaultTemplate,
+  name: 'Default',
 };

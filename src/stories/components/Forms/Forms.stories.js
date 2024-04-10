@@ -1,177 +1,177 @@
-import { QgPrimaryContent, QgTwoColNav, Grid } from "../../decorators";
-import { getDecoratedParameters } from "../../helpers";
+import { QgPrimaryContent, QgTwoColNav, Grid } from '../../decorators';
+import { getDecoratedParameters } from '../../helpers';
 
-import TextInput from "./templates/TextInput.html";
-import Textarea from "./templates/Textarea.html";
-import Checkbox from "./templates/Checkbox.html";
-import CheckboxCustom from "./templates/CheckboxCustom.html";
-import CheckboxStates from "./templates/CheckboxStates.html";
-import Radio from "./templates/Radio.html";
-import RadioCustom from "./templates/RadioCustom.html";
-import RadioStates from "./templates/RadioStates.html";
-import Select from "./templates/Select.html";
-import DatePicker from "./templates/DatePicker.html";
-import Validation from "./templates/Validation.html";
-import Hint from "./templates/Hint.html";
-import HintInfo from "./templates/HintInfo.html";
+import TextInputTemplate from './templates/TextInput.html';
+import TextareaTemplate from './templates/Textarea.html';
+import CheckboxTemplate from './templates/Checkbox.html';
+import CheckboxCustomTemplate from './templates/CheckboxCustom.html';
+import CheckboxStatesTemplate from './templates/CheckboxStates.html';
+import RadioTemplate from './templates/Radio.html';
+import RadioCustomTemplate from './templates/RadioCustom.html';
+import RadioStatesTemplate from './templates/RadioStates.html';
+import SelectTemplate from './templates/Select.html';
+import DatePickerTemplate from './templates/DatePicker.html';
+import ValidationTemplate from './templates/Validation.html';
+import HintTemplate from './templates/Hint.html';
+import HintInfoTemplate from './templates/HintInfo.html';
 
 export default {
-  title: "Components/Forms",
+  title: 'Components/Forms',
   decorators: [QgTwoColNav, QgPrimaryContent],
 };
 
 export const TextInput = {
-  render: () => TextInput,
-  name: "TextInput",
+  render: () => TextInputTemplate,
+  name: 'TextInput',
 
   parameters: {
     docs: {
       source: {
-        code: TextInput,
+        code: TextInputTemplate,
       },
     },
   },
 };
 
 export const Textarea = {
-  render: () => Textarea,
-  name: "Textarea",
+  render: () => TextareaTemplate,
+  name: 'Textarea',
 
   parameters: {
     docs: {
       source: {
-        code: Textarea,
+        code: TextareaTemplate,
       },
     },
   },
 };
 
 export const Checkbox = {
-  render: () => Checkbox,
-  name: "Checkbox",
+  render: () => CheckboxTemplate,
+  name: 'Checkbox',
 
   parameters: {
     docs: {
       source: {
-        code: Checkbox,
+        code: CheckboxTemplate,
       },
     },
   },
 };
 
 export const CheckboxCustom = {
-  render: () => CheckboxCustom,
-  name: "CheckboxCustom",
+  render: () => CheckboxCustomTemplate,
+  name: 'CheckboxCustom',
 
   parameters: {
     docs: {
       source: {
-        code: CheckboxCustom,
+        code: CheckboxCustomTemplate,
       },
     },
   },
 };
 
 export const CheckboxStates = {
-  render: () => CheckboxStates,
-  name: "CheckboxStates",
+  render: () => CheckboxStatesTemplate,
+  name: 'CheckboxStates',
   decorators: [Grid(5)],
-  parameters: getDecoratedParameters(CheckboxStates),
+  parameters: getDecoratedParameters(CheckboxStatesTemplate),
 };
 
 export const Radio = {
-  render: () => Radio,
-  name: "Radio",
+  render: () => RadioTemplate,
+  name: 'Radio',
 
   parameters: {
     docs: {
       source: {
-        code: Radio,
+        code: RadioTemplate,
       },
     },
   },
 };
 
 export const RadioCustom = {
-  render: () => RadioCustom,
-  name: "RadioCustom",
+  render: () => RadioCustomTemplate,
+  name: 'RadioCustom',
 
   parameters: {
     docs: {
       source: {
-        code: RadioCustom,
+        code: RadioCustomTemplate,
       },
     },
   },
 };
 
 export const RadioStates = {
-  render: () => RadioStates,
-  name: "RadioStates",
+  render: () => RadioStatesTemplate,
+  name: 'RadioStates',
   decorators: [Grid(5)],
-  parameters: getDecoratedParameters(RadioStates),
+  parameters: getDecoratedParameters(RadioStatesTemplate),
 };
 
 export const Select = {
-  render: () => Select,
-  name: "Select",
+  render: () => SelectTemplate,
+  name: 'Select',
 
   parameters: {
     docs: {
       source: {
-        code: Select,
+        code: SelectTemplate,
       },
     },
   },
 };
 
 export const DatePicker = {
-  render: () => DatePicker,
-  name: "DatePicker",
+  render: () => DatePickerTemplate,
+  name: 'DatePicker',
 
   parameters: {
     docs: {
       source: {
-        code: DatePicker,
+        code: DatePickerTemplate,
       },
     },
   },
 };
 
 export const Validation = {
-  render: () => Validation,
-  name: "Validation",
+  render: () => ValidationTemplate,
+  name: 'Validation',
 
   parameters: {
     docs: {
       source: {
-        code: Validation,
+        code: ValidationTemplate,
       },
     },
   },
 };
 
 export const Hint = {
-  render: () => Hint,
-  name: "Hint",
+  render: () => HintTemplate,
+  name: 'Hint',
 
   parameters: {
     docs: {
       source: {
-        code: Hint,
+        code: HintTemplate,
       },
     },
   },
 };
 
 export const HintInfo = {
-  render: () => HintInfo,
-  name: "HintInfo",
+  render: () => HintInfoTemplate,
+  name: 'HintInfo',
 
   parameters: {
     docs: {
       source: {
-        code: HintInfo,
+        code: HintInfoTemplate,
       },
     },
   },
