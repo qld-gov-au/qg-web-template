@@ -55,7 +55,7 @@
     "@storybook/addon-interactions": "7.6.10",
     "@storybook/addon-links": "7.6.10",
     "@storybook/addon-mdx-gfm": "7.6.10",
-    "@storybook/html": "7.6.10",
+    "@storybook/html": "8.0.8",
     "@storybook/html-webpack5": "^7.6.10",
     "@storybook/testing-library": "^0.2.2",
     "babel-loader": "^9.1.3",
