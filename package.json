@@ -38,7 +38,7 @@
     "storybook-ci": "storybook dev -p 6006 --ci --disable-telemetry",
     "storybook-ci-smoketest": "storybook dev -p 6006 --ci --smoke-test --disable-telemetry",
     "storybook-docs": "storybook dev -p 6006 --docs --disable-telemetry",
-    "build-storybook": "npm run storybook-ci & (echo \"starting localhost:6006 for SSI includes to be bundled \r\n sleeping 25\"; sleep 25;) && storybook build --disable-telemetry && jobs -p && echo 'please kill prcess' && jobs -l",
+    "build-storybook": "npm run storybook-ci & (echo \"starting localhost:6006 for SSI includes to be bundled \r\n sleeping 25\"; sleep 25;) && storybook build --disable-telemetry --webpack-stats-json && jobs -p && echo 'please kill prcess' && jobs -l",
     "build-storybook-docs": "storybook build --docs --disable-telemetry",
     "build-storybook-gh": "npm run build-storybook",
     "chromatic": "echo \"This is for manual deployment, define your own CHROMATIC_PROJECT_TOKEN in your ~/.npmrc. eg. export CHROMATIC_PROJECT_TOKEN=xxxxxx\" && npm run build && npx chromatic --project-token=${CHROMATIC_PROJECT_TOKEN} -b build-storybook"
