@@ -93,4 +93,5 @@ jobs:
           # 👇 Chromatic projectToken, refer to the manage page to obtain it.
           token: ${{ secrets.GH_TOKEN }}
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          onlyChanged: true # 👈 Required option to enable TurboSnap
           storybookBuildDir: "storybook-static"
