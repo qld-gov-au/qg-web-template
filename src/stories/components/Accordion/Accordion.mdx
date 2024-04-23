@@ -1,0 +1,44 @@
+import { Canvas, Meta, Story } from "@storybook/blocks";
+import * as AccordionStories from './Accordion.stories';
+
+import { getCanvasMobileProps } from "../../helpers";
+
+<Meta of={AccordionStories} />
+
+# Accordion
+
+## Default
+
+<Canvas sourceState="shown">
+  <Story of={AccordionStories.Default} />
+</Canvas>
+
+## Subtitle
+
+<Canvas sourceState="shown">
+  <Story of={AccordionStories.Subtitle} />
+</Canvas>
+
+## Icon
+
+<Canvas sourceState="shown">
+  <Story of={AccordionStories.Icon} />
+</Canvas>
+
+## Expandable
+
+<Canvas sourceState="shown">
+  <Story of={AccordionStories.Expandable} />
+</Canvas>
+
+## States
+
+<Canvas sourceState="hidden">
+  <Story of={AccordionStories.States} />
+</Canvas>
+
+## Mobile
+
+<Canvas withSource="none" {...getCanvasMobileProps()}>
+  <Story of={AccordionStories.Mobile} />
+</Canvas>

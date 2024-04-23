@@ -1,0 +1,20 @@
+import { Canvas, Meta, Story } from "@storybook/blocks";
+import * as PrintStories from './Print.stories';
+
+<Meta of={PrintStories} />
+
+# Print
+
+Requires `#QgPrimaryContent` ancestor.
+
+## Default
+
+<Canvas sourceState="shown">
+  <Story of={PrintStories.Default} />
+</Canvas>
+
+## PrintGuide
+
+<Canvas sourceState="shown">
+  <Story of={PrintStories.PrintGuide} />
+</Canvas>

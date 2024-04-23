@@ -1,0 +1,24 @@
+import { Canvas, Meta, Story } from "@storybook/blocks";
+import * as CorrectIncorrectStories from './CorrectIncorrect.stories';
+
+<Meta of={CorrectIncorrectStories} />
+
+# Correct Incorrect
+
+## Short
+
+<Canvas sourceState="shown">
+  <Story of={CorrectIncorrectStories.Short} />
+</Canvas>
+
+## Long
+
+<Canvas sourceState="shown">
+  <Story of={CorrectIncorrectStories.Long} />
+</Canvas>
+
+## InTable
+
+<Canvas sourceState="shown">
+  <Story of={CorrectIncorrectStories.InTable} />
+</Canvas>

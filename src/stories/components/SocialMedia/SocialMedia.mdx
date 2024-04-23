@@ -1,0 +1,24 @@
+import { Canvas, Meta, Story } from "@storybook/blocks";
+import * as SocialMediaStories from './SocialMedia.stories';
+
+<Meta of={SocialMediaStories} />
+
+# Social Media
+
+## Default
+
+<Canvas sourceState="shown">
+  <Story of={SocialMediaStories.Default} />
+</Canvas>
+
+## FacebookFeed
+
+<Canvas sourceState="shown">
+  <Story of={SocialMediaStories.FacebookFeed} />
+</Canvas>
+
+## TwitterFeed
+
+<Canvas sourceState="shown">
+  <Story of={SocialMediaStories.TwitterFeed} />
+</Canvas>
