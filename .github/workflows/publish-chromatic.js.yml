@@ -17,24 +17,45 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      HAVE_CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN != '' }}
     strategy:
       matrix:
         node: [ '18' ]
     name: Build and test on Node ${{ matrix.node }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0 # 👈 Required to retrieve git history
 
       - name: Use Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
           cache: 'npm'
           always-auth: 'true'
           registry-url: 'https://nexus.tools.services.qld.gov.au/nexus/repository/npm_all/'
 
+
+      - name: Cache node modules
+        id: cache-npm
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-node-modules
+        with:
+          # npm cache files are stored in `~/.npm` on Linux/macOS
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
+        name: List the state of node modules
+        continue-on-error: true
+        run: npm list
 
       - name: npmrc
         run: |
@@ -67,11 +88,24 @@ jobs:
         run: |
           npm run test-release
       - name: Publish to Chromatic
-        if: ${{ github.actor != 'dependabot[bot]' }}
-        uses: chromaui/action@v1
+        if: ${{ github.actor != 'dependabot[bot]' && env.HAVE_CHROMATIC_PROJECT_TOKEN == 'true' }}
+        uses: chromaui/action@latest
         # Options required to the GitHub Chromatic Action
         with:
           # 👇 Chromatic projectToken, refer to the manage page to obtain it.
           token: ${{ secrets.GH_TOKEN }}
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          # 👇 tell Chromatic to rebuild the entire project when a file matching the pattern is changed https://www.chromatic.com/docs/github-actions/#enable-turbosnap
+          #externals: |
+          #  *.sass
+          #  public/**
+          onlyChanged: true # 👈 Required option to enable TurboSnap
           storybookBuildDir: "storybook-static"
+
+      - name: Publish to Chromatic - Is Skipped
+        if: ${{ env.HAVE_CHROMATIC_PROJECT_TOKEN != 'true' }}
+        run: |
+          echo "### Chromatic not configured" >> $GITHUB_STEP_SUMMARY
+          echo "secrets.CHROMATIC_PROJECT_TOKEN not existing, chromatic did not publish" >> $GITHUB_STEP_SUMMARY
+          echo "If this is a fork, please setup your own personal chromatic at" >> $GITHUB_STEP_SUMMARY
+          echo "[chromatic setup](https://www.chromatic.com/setup)" >> $GITHUB_STEP_SUMMARY

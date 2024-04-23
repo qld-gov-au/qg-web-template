@@ -53,7 +53,7 @@ export class QgLoadGoogleApi {
    **/
   _staticMaps () {
     const googleApiKey = this._checkEnvAndSetKey();
-    var $mapImg = $('.qg-static-map');
+    const $mapImg = $('.qg-static-map');
     function generateStaticMapImg (ele) {
       const lat = ele.attr('data-lat') || -27.4673;
       const lon = ele.attr('data-long') || 153.0233;
@@ -63,7 +63,7 @@ export class QgLoadGoogleApi {
     }
     // append static image on the maps description page
     if ($mapImg.length > 0) {
-      var htmlInsert = $('<div>');
+      const htmlInsert = $('<div>');
       $mapImg.each(function () {
         const $this = $(this);
         $this.find('img').attr('src', generateStaticMapImg($this.find('img')));
@@ -71,7 +71,7 @@ export class QgLoadGoogleApi {
       });
       $('aside').prepend(htmlInsert);
       $('a.qg-static-map').wrap("<div class='qg-aside st-map-static'>");
-      $('.st-map-static').eq(0).prepend("<h2><span class='fa fa-compass' aria-hidden='true'></span>Maps</h2>");
+      $('.st-map-static').eq(0).prepend("<h3><span class='fa fa-compass' aria-hidden='true'></span>Maps</h3>");
     }
   }
 

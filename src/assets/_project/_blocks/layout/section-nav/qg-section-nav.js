@@ -4,7 +4,7 @@
      * activeSideNav function if text of a page heading match with a side nav text then adds a 'active' class.
      * @return {undefined}
  **/
-var activeSideNav = (function () {
+const activeSideNav = (function () {
   function refineText (text) {
     return text.toLowerCase().replace(/ /g, '');
   }
@@ -13,7 +13,7 @@ var activeSideNav = (function () {
      * @return {undefined}
   **/
   function getCurrentTitle () {
-    var currentPageTitle = '';
+    let currentPageTitle = '';
     if ($('#guide-title').length > 0) {
       currentPageTitle = $('#guide-title').text();
     } else if ($('meta[name="DCTERMS.alternative"]').length > 0 && refineText($('meta[name="DCTERMS.alternative"]').eq(0).attr('content')) !== '') {
@@ -30,7 +30,7 @@ var activeSideNav = (function () {
      * @return {undefined}
  **/
   function highlightNavItem () {
-    var currentPageTitle = getCurrentTitle();
+    const currentPageTitle = getCurrentTitle();
     if ($('.guide-sub-nav').length > 0){
       // In case of Guide Navigation, sub heading are in H2 tags.
       const contentHeading = $.trim($('h2', '#qg-primary-content').eq(0).text());
@@ -50,7 +50,7 @@ var activeSideNav = (function () {
   }
 
   return {
-    highlightNavItem: highlightNavItem,
+    highlightNavItem,
   };
 })();
 

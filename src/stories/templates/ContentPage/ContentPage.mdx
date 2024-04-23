@@ -1,0 +1,32 @@
+import { Canvas, Meta, Story } from "@storybook/blocks";
+import * as ContentPageStories from './ContentPage.stories';
+
+import { getCanvasMobileProps } from "../../helpers";
+
+<Meta of={ContentPageStories} />
+
+# Content Page
+
+## Default
+
+<Canvas sourceState="close">
+  <Story of={ContentPageStories.Default} />
+</Canvas>
+
+## No aside
+
+<Canvas sourceState="close">
+  <Story of={ContentPageStories.NoAside} />
+</Canvas>
+
+## Without location
+
+<Canvas sourceState="close">
+  <Story of={ContentPageStories.WithoutLocation} />
+</Canvas>
+
+## Mobile
+
+<Canvas withSource="none" {...getCanvasMobileProps()}>
+  <Story of={ContentPageStories.Mobile} />
+</Canvas>

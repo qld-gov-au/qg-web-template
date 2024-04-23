@@ -25,7 +25,7 @@ export class QgSearchMinimize {
     const self = this;
     if ($('.' + self.searchStateContainer).length <= 0){
       // 'Search all information & services' markup which on click show the global search form
-      var searchStateContainerMarkup = `<div class="qg-search-state__container  align-self-center row"> <i class="fa fa-search" aria-hidden="true"></i>
+      const searchStateContainerMarkup = `<div class="qg-search-state__container  align-self-center row"> <i class="fa fa-search" aria-hidden="true"></i>
 <p class="ml-2 mb-0">Search all information and services</p> </div>`;
 
       $(searchStateContainerMarkup).insertBefore(self.$globalSearchForm);

@@ -5,8 +5,8 @@ A1 Quick exit function to exit from a page on 'Esc' key or 'Close this site' but
 - https://www.qld.gov.au/law/crime-and-police/abuse-family-matters-and-protection-orders/apply-for-a-protection-order
  */
 
-var Stickyfill = require('stickyfill');
-var stickyfill = Stickyfill();
+const Stickyfill = require('stickyfill');
+const stickyfill = Stickyfill();
 
 export class QgQuickExit {
   constructor () {

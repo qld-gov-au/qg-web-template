@@ -5,7 +5,7 @@
 'use strict';
 
 function opensInNewWindow () {
-  var $target = $('a[target=_blank]');
+  const $target = $('a[target=_blank]');
 
   if (!$target.hasClass('qg-accessibility-off') && // Legacy
     $target.attr('data-access-extlink') !== false && // Legacy
@@ -36,4 +36,4 @@ function init () {
   }
 }
 
-module.exports = { init: init };
+module.exports = { init };

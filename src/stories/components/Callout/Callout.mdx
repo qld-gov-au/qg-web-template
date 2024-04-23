@@ -1,0 +1,42 @@
+import { Canvas, Meta, Story } from "@storybook/blocks";
+import * as CalloutStories from './Callout.stories';
+
+<Meta of={CalloutStories} />
+
+# Callout
+
+## Default
+
+<Canvas sourceState="shown">
+  <Story of={CalloutStories.Default} />
+</Canvas>
+
+## Blue
+
+<Canvas sourceState="shown">
+  <Story of={CalloutStories.Blue} />
+</Canvas>
+
+## WithButtonBottom
+
+<Canvas sourceState="shown">
+  <Story of={CalloutStories.WithButtonBottom} />
+</Canvas>
+
+## WithButtonRight
+
+<Canvas sourceState="shown">
+  <Story of={CalloutStories.WithButtonRight} />
+</Canvas>
+
+## WithButtonLeft
+
+<Canvas sourceState="shown">
+  <Story of={CalloutStories.WithButtonLeft} />
+</Canvas>
+
+## WithImage
+
+<Canvas sourceState="shown">
+  <Story of={CalloutStories.WithImage} />
+</Canvas>

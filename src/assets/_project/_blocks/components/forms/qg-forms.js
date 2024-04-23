@@ -3,7 +3,7 @@
   /**
    * This adds a pattern for radio button and checkbox , more info https://qld-gov-au.github.io/web-template-release/forms.html#radio-button-and-checkbox-pattern
    **/
-  var $rcTheme = $('.rc-theme');
+  const $rcTheme = $('.rc-theme');
   function toggleFocus (e) {
     if (e.type === 'focus') {
       $(this).parents('li').addClass('rc-theme__focus');
@@ -12,8 +12,8 @@
     }
   }
   if ($rcTheme.length > 0) {
-    var $fr = $('input[type="radio"]');
-    var $fc = $('input[type="checkbox"]');
+    const $fr = $('input[type="radio"]');
+    const $fc = $('input[type="checkbox"]');
 
     $rcTheme.find($fr).on('change', function() {
       if ($(this).is(':checked')) {
