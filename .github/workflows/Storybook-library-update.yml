@@ -1,0 +1,110 @@
+name: Update Storybook package.json items
+on:
+  schedule:
+    # * is a special character in YAMLso you have to quote this string
+    - cron:  '0 1 * * *'
+  workflow_dispatch:
+    inputs:
+      description:
+        description: 'Manual run of update Libs'  
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: write #Work with the contents of the repository. For example, contents: read permits an action to list the commits, and contents: write allows the action to create a release.
+  #pages: write #Work with GitHub Pages. For example, pages: write permits an action to request a GitHub Pages build.
+  actions: read #Work with GitHub Actions. For example, actions: write permits an action to cancel a workflow run.
+  id-token: write #Fetch an OpenID Connect (OIDC) token. This requires id-token: write.
+  pull-requests: write #Work with pull requests. For example, pull-requests: write permits an action to add a label to a pull request.
+
+jobs:
+  updateLibs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: "develop"
+
+      - name: Cache node modules
+        id: cache-npm
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-node-modules
+        with:
+          # npm cache files are stored in `~/.npm` on Linux/macOS
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
+        name: List the state of node modules
+        continue-on-error: true
+        run: npm list
+
+      # run script in prem, extract to lib, update versions.txt on each file
+      - name: list folder
+        run: |
+          pwd
+          ls -ltr
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install
+        run: | # Install packages
+          npm install --prefer-offline --no-audit --ignore-scripts
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NEXUSREADONLY2NPMTOKEN }}
+
+      # `npm rebuild` will run all those post-install scripts for us.
+      - name: rebuild and prepare
+        run: npm rebuild && npm run prepare --if-present
+
+      - name: List versions
+        run: | # List versions
+          npm view storybook versions
+
+      - name: What changed
+        run: |
+         export outdated="`npm outdated --parsable `"
+          
+         echo '### Outdated' >> $GITHUB_STEP_SUMMARY
+         echo "$outdated" >> $GITHUB_STEP_SUMMARY
+         echo '' >> $GITHUB_STEP_SUMMARY
+         
+        
+         echo 'OUTDATED_LIST<<EOF' >> $GITHUB_OUTPUT
+         echo "$outdated" >> $GITHUB_OUTPUT
+         echo 'EOF' >> $GITHUB_OUTPUT
+        
+         echo "OUTDATED_VERSION<<EOF" >> $GITHUB_OUTPUT
+         npm outdated --parsable|grep ^storybook|awk '{ print $4 }' >> $GITHUB_OUTPUT
+         echo 'EOF' >> $GITHUB_OUTPUT
+         echo $outdated|grep ^storybook|awk '{ print $4 }'
+        id: what-changed-data
+
+      - name: Update package.json ${{ steps.what-changed-data.outputs.OUTDATED_VERSION }}
+        run: | # Update storybook
+          npx storybook@latest upgrade  -y 
+      - name: Install latest
+        run: | # Install packages https://github.com/actions/setup-node/blob/main/docs/advanced-usage.md#use-private-packages
+          npm install --no-audit --ignore-scripts
+
+
+      # `npm rebuild` will run all those post-install scripts for us.
+      - name: rebuild and prepare
+        run: npm rebuild && npm run prepare --if-present
+
+        # todo work out how to extract 'outdated' to be commit message
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          commit-message: "update storybook js libraries \r\n ${{ steps.what-changed-data.outputs.OUTDATED_LIST }}"
+          title: "update storybook ${{ steps.what-changed-data.outputs.OUTDATED_VERSION }}"
+          body: "update storybook \r\n ### Please Manually close pull requests and immediately reopen them. This will enable on: pull_request workflows to run and be added as checks.  \r\n ${{ steps.what-changed-data.outputs.OUTDATED_LIST }}"
+          branch: "update-storybook-libraries-${{ steps.what-changed-data.outputs.OUTDATED_VERSION }}"
+          base: develop
