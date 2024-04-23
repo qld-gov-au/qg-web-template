@@ -1,0 +1,20 @@
+import { Canvas, Meta, Story } from "@storybook/blocks";
+import * as VideoStories from './Video.stories';
+
+<Meta of={VideoStories} />
+
+# Video
+
+## Youtube
+
+{/* disabled snapshot for this story as youtube player animation cause story renewal in every generation. */}
+
+<Canvas sourceState="shown">
+  <Story of={VideoStories.Youtube} />
+</Canvas>
+
+## Vimeo
+
+<Canvas sourceState="shown">
+  <Story of={VideoStories.Vimeo} />
+</Canvas>

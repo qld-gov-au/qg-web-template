@@ -1,0 +1,30 @@
+import { Canvas, Meta, Story } from "@storybook/blocks";
+import * as AlertStories from './Alert.stories';
+
+<Meta of={AlertStories} />
+
+# Alert
+
+## Information
+
+<Canvas sourceState="shown">
+  <Story of={AlertStories.Information} />
+</Canvas>
+
+## Success
+
+<Canvas sourceState="shown">
+  <Story of={AlertStories.Success} />
+</Canvas>
+
+## Warning
+
+<Canvas sourceState="shown">
+  <Story of={AlertStories.Warning} />
+</Canvas>
+
+## Critical
+
+<Canvas sourceState="shown">
+  <Story of={AlertStories.Critical} />
+</Canvas>

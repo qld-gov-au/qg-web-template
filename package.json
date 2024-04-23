@@ -42,7 +42,7 @@
     "build-storybook": "npm-run-all --parallel --race storybook-ci build-storybook-delayed",
     "build-storybook-docs": "storybook build --docs --disable-telemetry",
     "build-storybook-gh": "npm run build-storybook",
-    "chromatic": "echo \"This is for manual deployment, define your own CHROMATIC_PROJECT_TOKEN in your ~/.npmrc. eg. export CHROMATIC_PROJECT_TOKEN=xxxxxx\" && npm run build && npx chromatic --project-token=${CHROMATIC_PROJECT_TOKEN} -b build-storybook"
+    "chromatic": "echo \"This is for manual deployment, define your own CHROMATIC_PROJECT_TOKEN in your ~/.npmrc. eg. export CHROMATIC_PROJECT_TOKEN=xxxxxx\" && npm run build && npx chromatic --project-token=${CHROMATIC_PROJECT_TOKEN} -b storybook build"
   },
   "authors": "Queensland Government",
   "licence": "all rights reserved",
@@ -51,14 +51,14 @@
     "@babel/core": "^7.24.4",
     "@babel/plugin-transform-runtime": "^7.24.3",
     "@babel/preset-env": "^7.24.4",
-    "@storybook/addon-actions": "7.6.10",
-    "@storybook/addon-essentials": "7.6.10",
-    "@storybook/addon-interactions": "7.6.10",
-    "@storybook/addon-links": "7.6.10",
-    "@storybook/addon-mdx-gfm": "7.6.10",
-    "@storybook/html": "7.6.10",
-    "@storybook/html-webpack5": "^7.6.10",
-    "@storybook/testing-library": "^0.2.2",
+    "@storybook/addon-actions": "^8.0.6",
+    "@storybook/addon-essentials": "^8.0.6",
+    "@storybook/addon-interactions": "^8.0.6",
+    "@storybook/addon-links": "^8.0.6",
+    "@storybook/addon-webpack5-compiler-babel": "^3.0.3",
+    "@storybook/blocks": "^8.0.6",
+    "@storybook/html": "^8.0.6",
+    "@storybook/html-webpack5": "^8.0.6",
     "babel-loader": "^9.1.3",
     "chromatic": "^11.3.0",
     "chromium": "^3.0.3",
@@ -68,10 +68,10 @@
     "eslint": "^8.57.0",
     "eslint-config-standard": "17.1.0",
     "eslint-html-reporter": "^0.7.4",
-    "eslint-webpack-plugin": "4.1.0",
     "eslint-plugin-import": "2.29.1",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-promise": "6.1.1",
+    "eslint-webpack-plugin": "4.1.0",
     "event-stream": "^4.0.1",
     "font-awesome": "^4.7.0",
     "gh-pages": "^6.1.1",
@@ -108,11 +108,9 @@
     "np": "^10.0.3",
     "npm-run-all": "^4.1.5",
     "puppeteer": "^22.6.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "rimraf": "^5.0.5",
     "sass": "^1.74.1",
-    "storybook": "7.6.10",
+    "storybook": "^8.0.6",
     "storybook-addon-pseudo-states": "^3.0.1",
     "string-replace-loader": "^3.1.0",
     "terser-webpack-plugin": "^5.3.10",
@@ -122,6 +120,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.24.4",
+    "@storybook/test": "^8.0.6",
     "ajv": "^8.12.0",
     "bootstrap": "^4.6.2",
     "jquery": "^3.7.1",
@@ -130,7 +129,7 @@
     "postcss": "^8.4.38",
     "stickyfill": "^1.1.1"
   },
-  "engines" : {
-    "node" : ">=18"
+  "engines": {
+    "node": ">=18"
   }
 }
