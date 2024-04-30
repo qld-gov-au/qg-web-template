@@ -6,6 +6,9 @@ let page;
 beforeAll(async () => {
   browser = await puppeteer.launch({headless: "new", args: ['--no-sandbox', '--disable-setuid-sandbox']});
   page = await browser.newPage();
+  if (typeof page.waitForTimeout !== 'function') {
+    page.waitForTimeout = function(timeout) { return new Promise(r => setTimeout(r, timeout)) };
+  }
   await page.setViewport({ width: ct.BT_SM, height: ct.WH });
   await page.goto(`${ct.APP_URL}/docs/components.html`, { waitUntil: 'networkidle0' });
 });

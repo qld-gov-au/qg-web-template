@@ -1,4 +1,16 @@
 {
+  "ignorePatterns": [
+    // Linting source and exclusions
+    "src/assets/_project/lib/ext/", //Ignore external libraries
+    "src/assets/_project/_blocks/legacy/*", //Ignore legacy
+    "storybook-static/*", //Ignore Storybook
+    "node_modules/*",
+    "release/*",
+    "docs/*",
+    "build/*",
+    "e2e/**",
+    "dist/*"
+  ],
   "globals": {
     "jQuery": true,
     "$": true,
@@ -13,18 +25,18 @@
     "node": true,
     "es6": true
   },
-  "extends": ["semistandard"],
+  "extends": ["standard"],
   "rules": {
     "indent": [1, 2],
-    "one-var": 2,
-    "no-tabs": 1,
-    "no-path-concat": 0,
+    "one-var": "off",
+    "no-tabs": "off",
+    "no-path-concat": "off",
     "valid-jsdoc": "warn",
-    "spaced-comment": 0,
-    "space-before-blocks": 0,
-    "space-before-function-paren": 0,
+    "spaced-comment": "off",
+    "space-before-blocks": "off",
+    "space-before-function-paren": "off",
     "comma-dangle": [1, "always-multiline"],
-    "eol-last": 1,
+    "eol-last": "warn",
     "no-multi-spaces": [
       2,
       {
@@ -33,10 +45,31 @@
           "VariableDeclarator": true,
           "ImportDeclaration": true,
           "ObjectExpression": true
-        },
-      },
+        }
+      }
     ],
-    "no-warning-comments": 1,
+    "no-warning-comments": "warn",
+    "semi": ["error", "always"],
+    "no-extra-semi": "error",
+    "no-mixed-spaces-and-tabs": "warn",
+    "no-useless-escape": "off",
+    //This is to keep the peace till major standard alteratons occur
+    "array-callback-return": "warn",
+    "eqeqeq": "warn",
+    "new-cap": "warn",
+    "no-cond-assign": "warn",
+    "no-new-wrappers": "warn",
+    "no-mixed-operators": "warn",
+    "no-prototype-builtins": "warn",
+    "no-return-assign": "warn",
+    "no-redeclare": "warn",
+    "no-sequences": "warn",
+    "no-sparse-arrays": "warn",
+    "no-unused-expressions": "warn",
+    "no-undef": "warn",
+    "no-void": "warn",
+    "prefer-regex-literals": "warn",
+    //End keep the peace
     "camelcase": "off"
   },
   "overrides": [

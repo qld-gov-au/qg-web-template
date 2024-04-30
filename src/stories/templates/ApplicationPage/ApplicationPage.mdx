@@ -1,0 +1,21 @@
+import { Canvas, Meta, Story } from "@storybook/blocks";
+import * as ApplicationPageStories from './ApplicationPage.stories';
+
+import { getCanvasMobileProps } from "../../helpers";
+
+
+<Meta of={ApplicationPageStories} />
+
+# Application Page
+
+## Default
+
+<Canvas sourceState="close">
+  <Story of={ApplicationPageStories.Default} />
+</Canvas>
+
+## Mobile
+
+<Canvas withSource="none" {...getCanvasMobileProps()}>
+  <Story of={ApplicationPageStories.Mobile} />
+</Canvas>

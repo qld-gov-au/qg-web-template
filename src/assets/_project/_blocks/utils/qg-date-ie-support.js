@@ -1,5 +1,5 @@
 function browserSupportsDateInput () {
-  var i = document.createElement('input');
+  const i = document.createElement('input');
   i.setAttribute('type', 'date');
   return i.type !== 'text';
 }

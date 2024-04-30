@@ -4,22 +4,22 @@
 (function ($) {
   'use strict';
 
-  var validationErrorMessage = 'Please check your answers';
-  var SUBMIT_TOLERANCE = 10000;
-  var DEFAULT_STATUS_HTML = `<div class="alert alert-warning mt-4" id="qg-forms__validation-errors" role="alert"><div class="inner"><h2><span class="fa fa-exclamation-triangle"></span>${validationErrorMessage}</h2><ol></ol></div></div>`;
+  const validationErrorMessage = 'Please check your answers';
+  const SUBMIT_TOLERANCE = 10000;
+  const DEFAULT_STATUS_HTML = `<div class="alert alert-warning mt-4" id="qg-forms__validation-errors" role="alert"><div class="inner"><h2><span class="fa fa-exclamation-triangle"></span>${validationErrorMessage}</h2><ol></ol></div></div>`;
   // fields that validate
-  var candidateForValidation = 'input, select, textarea';
+  const candidateForValidation = 'input, select, textarea';
 
   // invalidFilter
-  var invalidFilter = function () {
+  const invalidFilter = function () {
     return !(this.disabled || this.validity.valid);
   };
 
   // follow plugin conventions for storing plugin data
   // http://docs.jquery.com/Plugins/Authoring#Data
-  var pluginDataKey = 'formValidation';
-  var pluginData = function (key, value) {
-    var dataHash = this.data(pluginDataKey) || this.data(pluginDataKey, {}).data(pluginDataKey);
+  const pluginDataKey = 'formValidation';
+  const pluginData = function (key, value) {
+    const dataHash = this.data(pluginDataKey) || this.data(pluginDataKey, {}).data(pluginDataKey);
 
     if (typeof key !== 'undefined') {
       if (typeof value !== 'undefined') {
@@ -35,11 +35,11 @@
   };
 
   // helper for .label, .hint and .alert
-  var getLabelComponent = function (component, options) {
+  const getLabelComponent = function (component, options) {
     return this.map(function (index, domElement) {
-      var $element = $(domElement);
-      var labelElement = null;
-      var foundElement = null;
+      const $element = $(domElement);
+      let labelElement = null;
+      let foundElement = null;
 
       if (typeof options === 'object' && options.level === 'group') {
         foundElement = $element.formValidation('group').find(component)[0];
@@ -59,11 +59,11 @@
     });
   };
 
-  var changeValidityCheck = function () {
-    var $this = $(this);
-    var alertElement = $this.formValidation('alert');
-    var alertLevel;
-    var invalidContainers;
+  const changeValidityCheck = function () {
+    const $this = $(this);
+    let alertElement = $this.formValidation('alert');
+    let alertLevel;
+    let invalidContainers;
 
     // is this control valid?
     if (this.validity.valid) {
@@ -112,12 +112,12 @@
 
   // checks for invalid elements
   // returns number of invalid elements
-  var submitValidityCheck = function () {
+  const submitValidityCheck = function () {
     // form object
-    var form = $(this).closest('form');
+    const form = $(this).closest('form');
 
     // invalid fields
-    var invalid = form.find(candidateForValidation).filter(function invalidFields() {
+    const invalid = form.find(candidateForValidation).filter(function invalidFields() {
       // skip disabled
       if (this.disabled) {
         return false;
@@ -137,13 +137,13 @@
     });
 
     // alert container
-    var alert = pluginData.call(form, 'summaryElement') || pluginData.call(form, 'summaryElement', $(DEFAULT_STATUS_HTML));
+    const alert = pluginData.call(form, 'summaryElement') || pluginData.call(form, 'summaryElement', $(DEFAULT_STATUS_HTML));
 
     // messages within alert
-    var messages = alert.find('ol');
+    const messages = alert.find('ol');
 
     // track groups
-    var lastGroupSeen = true;
+    let lastGroupSeen = true;
 
     if (invalid.length > 0) {
       // remove old messages
@@ -152,15 +152,15 @@
       // add new messages
       invalid.each(function () {
         // get field
-        var $this = $(this);
+        const $this = $(this);
         // get group (if exists)
-        var group = $this.formValidation('group');
+        const group = $this.formValidation('group');
         // get label or group label
-        var label = $this.formValidation('label', {
+        const label = $this.formValidation('label', {
           level: group.length > 0 ? 'group' : null,
         });
-        var labelId;
-        var item;
+        let labelId;
+        let item;
 
         // get the label id
         if (label.length > 0) {
@@ -192,10 +192,10 @@
     return invalid.length;
   };
 
-  var submitValidationHandler = function (event) {
+  const submitValidationHandler = function (event) {
     // validate form
-    var count = submitValidityCheck.call(this);
-    var form = $(this);
+    const count = submitValidityCheck.call(this);
+    const form = $(this);
 
     // remove invalid class from questions that do not contain invalid fields
     form.find('.invalid').filter(function() {
@@ -216,7 +216,7 @@
 
       // show the error summary
       (function(form) {
-        var summary = pluginData.call(form, 'summaryElement');
+        const summary = pluginData.call(form, 'summaryElement');
         // hide any previous status blocks
         form.prev(`.alert:contains(${validationErrorMessage})`).not(summary).remove();
         // show the new summary
@@ -252,12 +252,12 @@
   // bind this AFTER the validation handler
   // only invoked if validation did not prevent submit
   // This will softlock submit if form submit passes this function with in SUBMIT_TOLERANCE timerange
-  var submitDoneHandler = function(event) {
+  const submitDoneHandler = function(event) {
     // use event.timeStamp when available and $.now() otherwise
-    var timeStamp = event.timeStamp || $.now();
-    var form = $(this);
-    var summaryElement = pluginData.call(form, 'summaryElement');
-    var lastSubmitTimeStamp
+    const timeStamp = event.timeStamp || $.now();
+    const form = $(this);
+    const summaryElement = pluginData.call(form, 'summaryElement');
+    let lastSubmitTimeStamp
       ;
 
     // remove summary element from DOM on successful submit
@@ -279,13 +279,13 @@
   };
 
   // plugin methods
-  var methods = {
+  const methods = {
     // $( x ).formValidation( 'alert' ) -- get
     // get alert text
     alert: function() {
       return this.map(function(index, domElement) {
-        var $element = $(domElement);
-        var group;
+        const $element = $(domElement);
+        let group;
 
         if ($element.is(':radio, :checkbox') === true) {
           return $element.closest('fieldset').find('legend > .alert')[0];
@@ -381,7 +381,7 @@
     // $( x ).formValidation( 'getValidationMessage' )
     // return String validation message, e.g. "Must be completed"
     getValidationMessage: function() {
-      var validityState = this[0].validity;
+      const validityState = this[0].validity;
 
       if (typeof validityState === 'undefined' || validityState.valid === true) {
         return '';
@@ -429,7 +429,7 @@
    * @return jquery object (chaining supported)
    */
   $.fn.generateId = function(preferredId) {
-    var i = 1;
+    let i = 1;
 
     if (!preferredId) {
       preferredId = 'id';
@@ -438,7 +438,7 @@
     }
 
     return this.each(function() {
-      var id;
+      let id;
 
       if (!this.getAttribute('id')) {
         id = preferredId;
@@ -461,38 +461,38 @@ if (jQuery !== 'undefined') {
 
     // http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#valid-e-mail-address
     // 1*( atext / "." ) "@" ldh-str 1*( "." ldh-str )
-    var REXP_EMAIL = /^[A-Za-z0-9!#$%&'*+\-\/=\?\^_`\{\|\}~\.]+@[A-Za-z0-9\-]+(\.[A-Za-z0-9\-]+)*$/;
+    const REXP_EMAIL = /^[A-Za-z0-9!#$%&'*+\-\/=\?\^_`\{\|\}~\.]+@[A-Za-z0-9\-]+(\.[A-Za-z0-9\-]+)*$/;
 
     // fields that validate
-    var candidateForValidation = 'input, select, textarea';
+    const candidateForValidation = 'input, select, textarea';
 
     // for feature detection
-    var input = $('<input>').get(0);
+    const input = $('<input>').get(0);
 
     // polyfill test
-    var polyfill = typeof input.validity !== 'object';
+    const polyfill = typeof input.validity !== 'object';
 
     // radio button bug (google earth internal browser)
-    var radioButtonBug = !polyfill && $('<input type="radio" required checked>').get(0).validity.valueMissing === true;
-    var validateBuggyRadioButtons;
+    const radioButtonBug = !polyfill && $('<input type="radio" required checked>').get(0).validity.valueMissing === true;
+    let validateBuggyRadioButtons;
 
     // invalid fields filter
-    var isInvalid = function() {
+    const isInvalid = function() {
       return !(this.disabled || this.validity.valid);
     };
 
     // get all radio buttons
-    var getRadioButtonsInGroup = function(radio) {
+    const getRadioButtonsInGroup = function(radio) {
       return $(radio.form.elements[radio.name]).filter('[name="' + radio.name + '"]');
     };
 
     // manage validity state object
-    var validityState = function(typeMismatch, valueMissing, customError, message, patternMismatch) {
+    const validityState = function(typeMismatch, valueMissing, customError, message, patternMismatch) {
       if (typeof message === 'string') {
         customError = !!message;
       }
       return {
-        customError: customError,
+        customError,
         typeMismatch: !!typeMismatch,
         patternMismatch: !!patternMismatch,
         valueMissing: !!valueMissing,
@@ -500,15 +500,15 @@ if (jQuery !== 'undefined') {
       };
     };
 
-    var validateField = function(message) {
-      var $this = $(this);
-      var required = !!$this.attr('required');
-      var radio = this.type === 'radio' && getRadioButtonsInGroup(this);
-      var valueMissing;
-      var invalidEmail = this.getAttribute('type') === 'email' && !!this.value && !REXP_EMAIL.test(this.value);
-      var patternMismatch;
-      var pattern;
-      var newValidityState
+    const validateField = function(message) {
+      const $this = $(this);
+      let required = !!$this.attr('required');
+      const radio = this.type === 'radio' && getRadioButtonsInGroup(this);
+      let valueMissing;
+      const invalidEmail = this.getAttribute('type') === 'email' && !!this.value && !REXP_EMAIL.test(this.value);
+      let patternMismatch;
+      let pattern;
+      let newValidityState
         ;
 
       // radio buttons are required if any single radio button is flagged as required
@@ -567,8 +567,8 @@ if (jQuery !== 'undefined') {
       return this.disabled || this.validity.valid;
     };
 
-    var changeHandler = function(event) {
-      var target = event.target;
+    const changeHandler = function(event) {
+      const target = event.target;
 
       validateField.call(target);
 
@@ -580,10 +580,10 @@ if (jQuery !== 'undefined') {
       }
     };
 
-    var submitHandler = function(event){
-      var form = $(this);
-      var novalidate = !!form.attr('novalidate');
-      var invalid = false
+    const submitHandler = function(event){
+      const form = $(this);
+      const novalidate = !!form.attr('novalidate');
+      let invalid = false
         ;
 
       // polyfill validation?
@@ -623,8 +623,8 @@ if (jQuery !== 'undefined') {
       }
     };
 
-    var initConstraintValidationAPI = function() {
-      var candidates = $(candidateForValidation);
+    const initConstraintValidationAPI = function() {
+      const candidates = $(candidateForValidation);
 
       // INPUT validityState
       if (polyfill) {
@@ -659,10 +659,10 @@ if (jQuery !== 'undefined') {
         candidates.filter(function() {
           return typeof this.checkValidity !== 'function';
         }).each(function() {
-          var domElement = this;
+          const domElement = this;
 
           this.checkValidity = function() {
-            var valid = validateField.call(domElement);
+            const valid = validateField.call(domElement);
 
             // if invalid, and unless novalidate
             if (!valid && !this.form.getAttribute('novalidate')) {
@@ -681,7 +681,7 @@ if (jQuery !== 'undefined') {
         candidates.filter(function() {
           return typeof this.setCustomValidity !== 'function';
         }).each(function() {
-          var that = this;
+          const that = this;
 
           this.setCustomValidity = function(message) {
             validateField.call(that, message);
@@ -692,8 +692,8 @@ if (jQuery !== 'undefined') {
       // check for required radio button bug (google earth internal browser)
       if (radioButtonBug) {
         validateBuggyRadioButtons = function(form) {
-          var seen = {};
-          var radio,
+          const seen = {};
+          let radio,
             valueMissing;
 
           // check every required radio button
@@ -777,27 +777,27 @@ if (jQuery !== 'undefined') {
       onMaxCount: function(){},
     }, options);
 
-    var navKeys = [33, 34, 35, 36, 37, 38, 39, 40];
+    const navKeys = [33, 34, 35, 36, 37, 38, 39, 40];
 
     return $(this).each(function() {
-      var countable = $(this);
-      var counter = $(options.counter);
+      const countable = $(this);
+      const counter = $(options.counter);
       if (!counter.length) { return false; }
 
-      var countCheck = function() {
-        var count;
-        var revCount;
+      const countCheck = function() {
+        let count;
+        let revCount;
 
-        var reverseCount = function(ct) {
+        const reverseCount = function(ct) {
           return ct - (ct * 2) + options.maxCount;
         };
 
-        var countInt = function() {
+        const countInt = function() {
           return (options.countDirection === 'up') ? revCount : count;
         };
 
-        var numberFormat = function(ct) {
-          var prefix = '';
+        const numberFormat = function(ct) {
+          let prefix = '';
           if (options.thousandSeparator) {
             ct = ct.toString();
             // Handle large negative numbers
@@ -805,14 +805,14 @@ if (jQuery !== 'undefined') {
               ct = ct.substr(1);
               prefix = '-';
             }
-            for (var i = ct.length - 3; i > 0; i -= 3){
+            for (let i = ct.length - 3; i > 0; i -= 3){
               ct = ct.substr(0, i) + options.thousandSeparator + ct.substr(i);
             }
           }
           return prefix + ct;
         };
 
-        var changeCountableValue = function(val) {
+        const changeCountableValue = function(val) {
           countable.val(val).trigger('change');
         };
 
@@ -827,12 +827,12 @@ if (jQuery !== 'undefined') {
 
         /* If strictMax set restrict further characters */
         if (options.strictMax && count <= 0) {
-          var content = countable.val();
+          const content = countable.val();
           if (count < 0) {
             options.onMaxCount(countInt(), countable, counter);
           }
           if (options.countType === 'words') {
-            var allowedText = content.match(new RegExp('\\s?(\\S+\\s+){' + options.maxCount + '}'));
+            const allowedText = content.match(new RegExp('\\s?(\\S+\\s+){' + options.maxCount + '}'));
             if (allowedText) {
               changeCountableValue(allowedText[0]);
             }
@@ -884,35 +884,35 @@ if (jQuery !== 'undefined') {
   (function($) {
     'use strict';
 
-    var relevantEvent = 'relevant';
-    var irrelevantEvent = 'irrelevant';
-    var elementsToDisable = 'button, input, select, textarea';
-    var polyfillHidden = (function() {
-      var hidden = $('<div hidden></div>');
-      var hiddenSupported = hidden.appendTo('body').is(':hidden');
+    const relevantEvent = 'relevant';
+    const irrelevantEvent = 'irrelevant';
+    const elementsToDisable = 'button, input, select, textarea';
+    const polyfillHidden = (function() {
+      const hidden = $('<div hidden></div>');
+      const hiddenSupported = hidden.appendTo('body').is(':hidden');
       hidden.remove();
       return !hiddenSupported;
     }());
 
-    var formElementsByName = function(form, name) {
+    const formElementsByName = function(form, name) {
       // filter out the @id matching of HTMLFormElement.elements[]
       return $(form.elements[name]).filter('[name="' + name + '"]');
     };
 
-    var filterRelevant = function() {
+    const filterRelevant = function() {
       return $(this).closest('[hidden]').length === 0;
     };
 
-    var filterIrrelevant = function() {
+    const filterIrrelevant = function() {
       return $(this).closest('[hidden]').length > 0;
     };
 
-    var valueMap = function(element) {
+    const valueMap = function(element) {
       return element.value;
     };
 
-    var valueInArray = function(possibleValues, actualValues) {
-      var i;
+    const valueInArray = function(possibleValues, actualValues) {
+      let i;
       if (typeof possibleValues !== 'object') {
         possibleValues = [possibleValues];
       }
@@ -927,10 +927,10 @@ if (jQuery !== 'undefined') {
     };
 
     // when changing a control that alters relevance of other elements…
-    var recalculateRelevance = function() {
+    const recalculateRelevance = function() {
       // assume dependency map exists
-      var map = $(this.form).data('relevance').dependencyMap[this.name];
-      var values = $.map(formElementsByName(this.form, this.name).filter('select,:checked').filter(':visible'), valueMap)
+      const map = $(this.form).data('relevance').dependencyMap[this.name];
+      const values = $.map(formElementsByName(this.form, this.name).filter('select,:checked').filter(':visible'), valueMap)
         ;
 
       $.each(map, function(index, config) {
@@ -939,8 +939,8 @@ if (jQuery !== 'undefined') {
     };
 
     // when an element changes relevance, check descendent controls that alter relevance in turn…
-    var recalculateDependents = function(isRelevant) {
-      var form,
+    const recalculateDependents = function(isRelevant) {
+      let form,
         dependencyMap,
         targets;
 
@@ -958,8 +958,8 @@ if (jQuery !== 'undefined') {
               return elementOfArray.name;
             }));
             $.each(targets, function(index, name) {
-              var map = dependencyMap[name];
-              var values;
+              const map = dependencyMap[name];
+              let values;
 
               if (typeof map === 'object') {
                 $.each(map, function(index, config) {
@@ -977,14 +977,14 @@ if (jQuery !== 'undefined') {
       }
     };
 
-    var methods = {
+    const methods = {
 
       // $( x ).relevance( 'relevant', true )
       // if the element is hidden, fire a 'relevant' event
       // $( x ).relevance( 'relevant', false )
       // if the element is visible, fire an "irrelevant" event
       relevant: function(makeRelevant) {
-        var targets;
+        let targets;
         if (makeRelevant) {
           targets = this.filter(filterIrrelevant).trigger(relevantEvent);
         } else {
@@ -1025,7 +1025,7 @@ if (jQuery !== 'undefined') {
 
         if (polyfillHidden) {
           this.stop(true, true).hide(0, function() {
-            var $this = $(this);
+            const $this = $(this);
             // disable elements (including self if appropriate)
             $this.filter(elementsToDisable).add($this.find(elementsToDisable)).each(function() {
               this.setAttribute('disabled', 'disabled');
@@ -1046,7 +1046,7 @@ if (jQuery !== 'undefined') {
       // example: $( '#red' ).relevance( 'relevantWhen', { id: 'rgb-red', value: 'red' })
       // #red will be shown/hidden when '@name=rgb' value changes.
       relevantWhen: function(config) {
-        var form,
+        let form,
           data,
           name,
           values;
@@ -1087,7 +1087,7 @@ if (jQuery !== 'undefined') {
         // add or update relevance rule
         data.dependencyMap[name].push({
           items: this,
-          values: values,
+          values,
           negate: config.negate,
         });
 
@@ -1107,15 +1107,15 @@ if (jQuery !== 'undefined') {
         }, options);
 
         this.find(options.instructionSelector).each(function() {
-          var $this = $(this);
-          var value = $this.text();
-          var question = $this.closest(options.questionSelector);
-          var toggle = question.prevAll(options.questionSelector);
-          var i;
-          var answers;
-          var nestedToggles;
-          var match = false;
-          var negate = false;
+          const $this = $(this);
+          let value = $this.text();
+          const question = $this.closest(options.questionSelector);
+          let toggle = question.prevAll(options.questionSelector);
+          let i;
+          let answers;
+          let nestedToggles;
+          let match = false;
+          let negate = false;
 
           // pattern: (If different to <PREVIOUS QUESTION>)
           if (/If different to/.test(value)) {
@@ -1148,7 +1148,7 @@ if (jQuery !== 'undefined') {
           }
           if (match) {
             toggle = toggle.add(toggle.find('select,input')).filter('select,:radio,:checkbox');
-            question.relevance('relevantWhen', { name: toggle.attr('name'), value: value, negate: negate });
+            question.relevance('relevantWhen', { name: toggle.attr('name'), value, negate });
           }
         });
         return this;
@@ -1156,7 +1156,7 @@ if (jQuery !== 'undefined') {
     };
     // fallback (default) event handling
     $(document).on('relevant irrelevant', function(event) {
-      var target = $(event.target);
+      const target = $(event.target);
       if (event.type === 'relevant') {
         target.relevance('show');
       } else {
@@ -1183,14 +1183,14 @@ if (jQuery !== 'undefined') {
 
   // window.console.log( 'file-size-validation.js' );
 
-  var displayFileSize;
+  let displayFileSize;
 
   // bail out if no file API support
   if (typeof $('<input type="file">')[0].files !== 'object') {
     // duplicate fsize instruction before submit button
     $('.max-fsize').each(function() {
-      var fsize = $(this);
-      var form;
+      const fsize = $(this);
+      let form;
       form = fsize.closest('.preamble').nextAll('form').eq(0);
       form.find('.actions').before('<p>' + fsize.parent().html() + '</p>');
     });
@@ -1201,7 +1201,7 @@ if (jQuery !== 'undefined') {
   displayFileSize = function(input) {
     input.nextAll('.fsize').remove();
     if (input[0].files.length > 0) {
-      var filesize = input[0].files[0].size / 1024;
+      let filesize = input[0].files[0].size / 1024;
 
       if (filesize >= 1024) {
         filesize = filesize / 1024;
@@ -1214,9 +1214,9 @@ if (jQuery !== 'undefined') {
 
   // forms with max file size
   $('.max-fsize').each(function() {
-    var fsize = $(this);
-    var form;
-    var maxFileSize;
+    const fsize = $(this);
+    let form;
+    let maxFileSize;
 
     // read fsize, assume MB
     maxFileSize = parseInt(fsize.text().replace(/\D+/g, ''), 10) * 1024 * 1024;
@@ -1226,15 +1226,15 @@ if (jQuery !== 'undefined') {
     form = fsize.closest('.preamble').nextAll('form').eq(0);
 
     form.find(':file').on('change', function() {
-      var input = $(this);
+      const input = $(this);
 
       displayFileSize(input);
 
       // recalculate file sizes
-      var total = 0;
-      var valid;
+      let total = 0;
+      let valid;
       $(':file', this.form).each(function(index, element) {
-        var size = element.files.length ? element.files[0].size : 0;
+        const size = element.files.length ? element.files[0].size : 0;
         total += size; // total = total + size;
       });
 
@@ -1264,11 +1264,11 @@ if (jQuery !== 'undefined') {
 (function($) {
   'use strict';
 
-  var xorConstraintSubmitHandler = function(event) {
+  const xorConstraintSubmitHandler = function(event) {
     // has one of the required fields been answered?
-    var xorFields = event.data[0];
-    var validationMessage = event.data[1];
-    var xorConstraintMet = xorFields.filter(function() {
+    const xorFields = event.data[0];
+    const validationMessage = event.data[1];
+    const xorConstraintMet = xorFields.filter(function() {
       return this.value.length > 1;
     }).length > 0
       ;
@@ -1280,13 +1280,13 @@ if (jQuery !== 'undefined') {
     });
   };
 
-  var xorConstraintChangeHandler = function(event, validationUiRefreshOnly) {
+  const xorConstraintChangeHandler = function(event, validationUiRefreshOnly) {
     if (validationUiRefreshOnly === true) {
       // pass through to other change handlers
       return;
     }
 
-    var xorFields = event.data[0];
+    const xorFields = event.data[0];
 
     // constraint validity check
     xorConstraintSubmitHandler(event);
@@ -1339,7 +1339,7 @@ if (jQuery !== 'undefined') {
  */
 (function($) { /* start closure */
   'use strict';
-  var initValidation = function() {
+  const initValidation = function() {
     window.initConstraintValidationAPI();
     $('form').formValidation('validate');
   };
@@ -1358,8 +1358,8 @@ if (jQuery !== 'undefined') {
   // extend jquery to 'toggle required'
   $.fn.toggleRequired = function(required) {
     return this.each(function() {
-      var controls = $(this.form.elements[this.name]);
-      var question = $(this).closest('.questions > li');
+      const controls = $(this.form.elements[this.name]);
+      const question = $(this).closest('.questions > li');
 
       if (required) {
         if (question.find('abbr[title="(required)"]').length === 0) {
@@ -1381,15 +1381,15 @@ if (jQuery !== 'undefined') {
 }(jQuery));
 /*globals qg*/
 // globals
-var qg = { oldIE: false };
+const qg = { oldIE: false };
 qg.date = (function() {
   'use strict';
 
-  var datePackage = {};
+  const datePackage = {};
 
   // Public holiday dates for 2010-2014 (viewed 2012-09-28)
   // http://www.justice.qld.gov.au/fair-and-safe-work/industrial-relations/public-holidays/dates
-  var qldHolidays = {
+  const qldHolidays = {
     // 2010
     '2010-01-01': 'New Year’s Day',
     '2010-01-26': 'Australia Day',
@@ -1510,10 +1510,10 @@ qg.date = (function() {
 
   // is a public holiday
   datePackage.isPublicHoliday = function(date) {
-    var d = date.getDate();
-    var m = date.getMonth() + 1;
-    var y = String(date.getFullYear());
-    var dateString = y + (m < 10 ? '-0' : '-') + m + (d < 10 ? '-0' : '-') + d
+    const d = date.getDate();
+    const m = date.getMonth() + 1;
+    const y = String(date.getFullYear());
+    const dateString = y + (m < 10 ? '-0' : '-') + m + (d < 10 ? '-0' : '-') + d
     ;
 
     // return true, date is a public holiday
@@ -1533,10 +1533,10 @@ qg.date = (function() {
   $('.hint').filter(function() {
     return (/Maximum:\s+\d+\s+words/).test($(this).text());
   }).each(function() {
-    var hint = $(this);
-    var max = parseInt(hint.text().replace(/Maximum:\s+(\d+)\s+words/, '$1'), 10);
-    var textField = hint.closest('label').nextAll('textarea');
-    var counter;
+    const hint = $(this);
+    const max = parseInt(hint.text().replace(/Maximum:\s+(\d+)\s+words/, '$1'), 10);
+    const textField = hint.closest('label').nextAll('textarea');
+    let counter;
 
     // add counter
     counter = $('<span></span>').generateId('word-count');

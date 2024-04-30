@@ -298,6 +298,16 @@
     display: none;
   }
   //SSQGHF styles END
+
+  /* Expand all accordions */
+  .qg-accordion .collapsing-section {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    max-height: 100%;
+    overflow: auto;
+  }
+
 }
 
 /*print styles for forms*/

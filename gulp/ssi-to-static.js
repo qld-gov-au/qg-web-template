@@ -11,9 +11,9 @@ const fs = require('fs');
 */
 const getFiles = function (dir, files_) {
   files_ = files_ || [];
-  var files = fs.readdirSync(dir);
-  for (var i in files) {
-    var name = dir + '/' + files[i];
+  const files = fs.readdirSync(dir);
+  for (const i in files) {
+    const name = dir + '/' + files[i];
     if (fs.statSync(name).isDirectory()) {
       getFiles(name, files_);
     } else {

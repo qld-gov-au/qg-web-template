@@ -6,8 +6,8 @@
 (function ($, swe) {
   swe.ajaxCall = (url, dataType, callback, errorMsg) => {
     $.ajax({
-      url: url,
-      dataType: dataType,
+      url,
+      dataType,
       crossDomain: true,
       success: callback,
       error: () => {

@@ -2,7 +2,7 @@
 'use strict';
 
 (function ($) {
-  var carousels = [];
+  const carousels = [];
 
   const eqHeight = (carousels) => {
     //For each carousel on the page...

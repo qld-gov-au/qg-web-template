@@ -1,0 +1,20 @@
+import { Canvas, Meta, Story } from "@storybook/blocks";
+import * as AsideStories from './Aside.stories';
+
+<Meta of={AsideStories} />
+
+# Aside
+
+Requires `#QgContent` ancestor.
+
+## Default
+
+<Canvas sourceState="shown">
+  <Story of={AsideStories.Default} />
+</Canvas>
+
+## Icon
+
+<Canvas sourceState="shown">
+  <Story of={AsideStories.Icon} />
+</Canvas>
