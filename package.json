@@ -38,7 +38,7 @@
     "storybook-ci": "storybook dev -p 6006 --ci --disable-telemetry",
     "storybook-ci-smoketest": "storybook dev -p 6006 --ci --smoke-test --disable-telemetry",
     "storybook-docs": "storybook dev -p 6006 --docs --disable-telemetry",
-    "build-storybook-delayed": "(echo \"starting localhost:6006 for SSI includes to be bundled \n sleeping 25\"; sleep 25; echo \"!!!! storybook build starting now !!!!\"; storybook build --disable-telemetry --webpack-stats-json)",
+    "build-storybook-delayed": "(echo \"starting localhost:6006 for SSI includes to be bundled \n sleeping 45\"; sleep 45; echo \"!!!! storybook build starting now !!!!\"; storybook build --disable-telemetry --webpack-stats-json)",
     "build-storybook": "npm-run-all --parallel --race storybook-ci build-storybook-delayed",
     "build-storybook-docs": "storybook build --docs --disable-telemetry",
     "build-storybook-gh": "npm run build-storybook",
