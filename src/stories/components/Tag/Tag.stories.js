@@ -9,7 +9,7 @@ export default {
 };
 
 export const Default = {
-  render: () => Default,
+  render: () => DefaultTemplate,
   name: 'Default',
   height: '50px',
   parameters: getDecoratedParameters(DefaultTemplate),
