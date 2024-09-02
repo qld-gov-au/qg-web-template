@@ -103,7 +103,7 @@
     "gulp-wait": "0.0.2",
     "historyjs": "^1.8.0-b2",
     "jest": "^29.7.0",
-    "jest-puppeteer": "^10.0.1",
+    "jest-puppeteer": "^10.1.0",
     "node-ssi": "^0.3.2",
     "np": "^10.0.7",
     "npm-run-all": "^4.1.5",
