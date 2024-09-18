@@ -111,7 +111,7 @@
     "rimraf": "^6.0.1",
     "sass": "^1.78.0",
     "storybook": "^8.0.6",
-    "storybook-addon-pseudo-states": "^4.0.0",
+    "storybook-addon-pseudo-states": "^4.0.2",
     "string-replace-loader": "^3.1.0",
     "terser-webpack-plugin": "^5.3.10",
     "webpack": "^5.94.0",
