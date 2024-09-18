@@ -1,0 +1,12 @@
+import { Canvas, Meta, Story } from "@storybook/blocks";
+import * as BannerStories from './Banner.stories';
+
+<Meta of={BannerStories} />
+
+# Banner
+
+## Default
+
+<Canvas sourceState="shown">
+  <Story of={BannerStories.Default} />
+</Canvas>

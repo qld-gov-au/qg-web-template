@@ -1,0 +1,27 @@
+import { Canvas, Meta, Story } from "@storybook/blocks";
+import * as HeaderStories from './Header.stories';
+
+import { getCanvasMobileProps } from "../../helpers";
+
+
+<Meta of={HeaderStories} />
+
+# Header
+
+## Default
+
+<Canvas sourceState="hidden">
+  <Story of={HeaderStories.Default} />
+</Canvas>
+
+## Mobile
+
+<Canvas withSource="none" {...getCanvasMobileProps()}>
+  <Story of={HeaderStories.Mobile} />
+</Canvas>
+
+## Search
+
+<Canvas sourceState="hidden">
+  <Story of={HeaderStories.Search} />
+</Canvas>

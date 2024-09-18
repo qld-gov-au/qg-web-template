@@ -17,7 +17,7 @@ if ($("script[src*='jquery.fancybox']").length === 0) {
         });
       });
       // cut in images caption
-      var cutInLink = $('.cut-in .caption a');
+      const cutInLink = $('.cut-in .caption a');
       $(cutInLink).attr('data-fancybox', 'images');
 
       // initialize fancybox , please check fancybox plugin doc for more details regarding the config http://fancyapps.com/fancybox/
@@ -55,7 +55,7 @@ if ($("script[src*='jquery.fancybox']").length === 0) {
         `,
         },
         caption: function (instance, item) {
-          var caption = $(this).data('caption') || '';
+          let caption = $(this).data('caption') || '';
 
           if (item.type === 'image') {
             caption = '<div class="fancybox-border">' + (caption.length ? caption : '') + '</div>';

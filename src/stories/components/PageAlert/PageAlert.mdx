@@ -1,0 +1,14 @@
+import { Canvas, Meta, Story } from "@storybook/blocks";
+import * as PageAlertStories from './PageAlert.stories';
+
+<Meta of={PageAlertStories} />
+
+# Page Alert
+
+Requires `#QgPrimaryContent` ancestor.
+
+## Default
+
+<Canvas sourceState="shown">
+  <Story of={PageAlertStories.Default} />
+</Canvas>

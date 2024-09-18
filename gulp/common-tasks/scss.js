@@ -1,6 +1,6 @@
 'use-strict';
-var sass = require('gulp-sass')(require('sass'));
-var sourcemaps = require('gulp-sourcemaps');
+const sass = require('gulp-sass')(require('sass'));
+const sourcemaps = require('gulp-sourcemaps');
 
 module.exports = function (gulp, plugins, config, destFolder = 'assets', addSrc) {
   const extLibCssTarget = config.extLib.css.map(function (s) { return `${config.basepath.src}/assets/_project/lib/ext/` + s; });

@@ -105,13 +105,13 @@
   }
 }
 
-// Override default link styling, but don't increase priority
-// of other index-links rules
+// qg-global-link-styles mixin is overriding a tag style on line 68, hence below overriding was added:
+// Override default link styling, but don't increase priority of other index-links rules.
 #qg-content #qg-primary-content .qg-index-links {
   h2 a, ul li a {
-    @include media-breakpoint-up(sm) {
+    @include media-breakpoint-up(md) {
       @include qg-link-styles__no-underline-default;
-    }
+    }  
   }
 }
 

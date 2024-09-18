@@ -1,0 +1,23 @@
+import { Canvas, Meta, Story } from "@storybook/blocks";
+import * as FooterStories from './Footer.stories';
+import { getCanvasMobileProps } from "../../helpers";
+
+<Meta of={FooterStories} />
+
+# Footer
+
+## Default
+
+{/* Footer always contributed difference in Chromatic snapshot, hence disabled snapshot temporary, need further investigation (caused by the feedback button) */}
+
+<Canvas sourceState="hidden">
+  <Story of={FooterStories.Default} />
+</Canvas>
+
+## Mobile
+
+{/* Footer always contributed difference in Chromatic snapshot, hence disabled snapshot temporary, need further investigation (caused by the feedback button) */}
+
+<Canvas withSource="none" {...getCanvasMobileProps()}>
+  <Story of={FooterStories.Mobile} />
+</Canvas>

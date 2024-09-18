@@ -5,7 +5,7 @@
 import keys from '../../data/qg-google-keys';
 (function ($, swe) {
   'use strict';
-  var qgRecaptcha = {
+  const qgRecaptcha = {
     config: {
       $feedbackForm: $('#qg-page-feedback-form'),
       $recaptchaOnPage: $('form[data-recaptcha="true"]'),
@@ -25,7 +25,7 @@ import keys from '../../data/qg-google-keys';
          * check if env is not the prod env then change submission handler url to test.smartservice.qld.gov.au
          **/
         if (!this.isProd()) {
-          var testUrl = $feedbackForm.attr('action').replace('www.smartservice.qld.gov.au', 'test.smartservice.qld.gov.au');
+          const testUrl = $feedbackForm.attr('action').replace('www.smartservice.qld.gov.au', 'test.smartservice.qld.gov.au');
           $feedbackForm.attr('action', testUrl);
         }
         /**
@@ -74,7 +74,7 @@ import keys from '../../data/qg-google-keys';
      * @return {undefined}
      **/
     footerFeedbackSubmitWithRecaptchaCheck: function() {
-      var self = this;
+      const self = this;
       grecaptcha.ready(() => {
         $('#qg-page-feedback-form').submit(function (event) {
           const targetFormSubmit = $(this);
@@ -88,7 +88,7 @@ import keys from '../../data/qg-google-keys';
               .then(function (token) {
                 if ($inputRecaptchaResponseElem.length > 0) {
                   $inputRecaptchaResponseElem.val(token);
-                  var formData = targetFormSubmit.serialize();
+                  const formData = targetFormSubmit.serialize();
                   $.ajax({
                     url: postUrl,
                     type: requestMethod,
@@ -117,8 +117,8 @@ import keys from '../../data/qg-google-keys';
      **/
     hideCaptchaBanner: function (){
       if (($('p.captchaPrivacyTerms').length === $('form[data-recaptcha="true"]').length) && (this.config.$grecaptchaBadge.css('visibility') !== 'hidden')) {
-        var hidegrecaptchaBadge = '.grecaptcha-badge { visibility: hidden; }';
-        var styleSheet = document.createElement('style');
+        const hidegrecaptchaBadge = '.grecaptcha-badge { visibility: hidden; }';
+        const styleSheet = document.createElement('style');
         styleSheet.type = 'text/css';
         styleSheet.innerText = hidegrecaptchaBadge;
         document.head.appendChild(styleSheet);
@@ -137,7 +137,7 @@ import keys from '../../data/qg-google-keys';
         grecaptcha.render(subBtn, {
           sitekey: key,
           callback: () => {
-            var response = grecaptcha.getResponse();
+            const response = grecaptcha.getResponse();
             if (
               response === '' ||
               response === undefined ||
@@ -169,7 +169,7 @@ import keys from '../../data/qg-google-keys';
     v3Captcha: function (form, greptcha, key, action){
       // console.log('v3 key: ' + key);
       try {
-        grecaptcha.execute(key, { action: action })
+        grecaptcha.execute(key, { action })
           .then(function (token) {
             if (greptcha.length > 0) {
               if (

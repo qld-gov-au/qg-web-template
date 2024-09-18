@@ -3,18 +3,20 @@
 import path from 'path'
 import CopyPlugin from 'copy-webpack-plugin'
 
-/** @type { import('@storybook/react-vite').StorybookConfig } */
+/** @type { import('@storybook/html-webpack5').StorybookConfig } */
 const config = {
   stories: [
-    "../src/stories/Introduction.mdx", //First page to load
+    "../src/stories/Introduction.mdx",
     "../src/**/*.mdx",
-    "../src/**/*.stories.@(mdx|js|jsx|ts|tsx)"], // *.mdx is default, *.stories.(mdx|js|jsx|ts|ts) is V6 way)
+    "../src/**/*.@(mdx|stories.@(js|jsx|ts|tsx))"
+  ], // *.mdx is default, *.stories.(mdx|js|jsx|ts|ts) is V6 way)
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
     "storybook-addon-pseudo-states",
-    "@storybook/addon-mdx-gfm"
+    "@storybook/addon-mdx-gfm",
+    "@storybook/addon-webpack5-compiler-babel"
   ],
   staticDirs: ['../build', 'storybook-static'],
   previewMainTemplate: "./.storybook/previewMainTemplate.ejs", //see https://storybook.js.org/docs/react/addons/writing-presets for example link
@@ -22,14 +24,14 @@ const config = {
     name: "@storybook/html-webpack5",
     options: {}
   },
-  webpackFinal: async (config) => {
+  webpackFinal: async (configuration) => {
 
     // Make whatever fine-grained changes you need
 
     //Don't use static cdn on storybook, use internal
     //Handle templates by referencing built assets where required so webpack can compact them and
     //not throw errors
-    config.module.rules.unshift({
+    configuration.module.rules.unshift({
         test: /\.html$/,
         loader: 'string-replace-loader',
         options: {
@@ -58,7 +60,7 @@ const config = {
         }
       })
 
-    config.module.rules.forEach(rule => {
+    configuration.module.rules.forEach(rule => {
       const pattern = /html-loader/;
       if (rule.use && pattern.test(rule.use)) { //if html-loader plugin.
         rule.use = [
@@ -85,18 +87,18 @@ const config = {
           ];
       }
     });
-    config.plugins.push(new CopyPlugin({
+    configuration.plugins.push(new CopyPlugin({
       patterns: [{
         from: path.resolve(__dirname, "../src/stories/assets"),
         to: "assets"
       }]
     }));
-    if (process.env.PUBLIC_PATH) config.output.publicPath = process.env.PUBLIC_PATH;
+    if (process.env.PUBLIC_PATH) configuration.output.publicPath = process.env.PUBLIC_PATH;
     // force source snippet to be un-minified
-    config.mode = "development";
+    configuration.mode = "development";
     // instead of default config.optimization.chunkIds = "natural", because there is github pages deployment issue, filename begin with 'node_modules' will get excluded by Jekyll build
-    config.optimization.chunkIds = "deterministic";
-    return config;
+    configuration.optimization.chunkIds = "deterministic";
+    return configuration;
   },
   docs: {
     autodocs: true,

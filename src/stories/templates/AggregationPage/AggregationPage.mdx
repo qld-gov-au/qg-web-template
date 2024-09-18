@@ -1,0 +1,20 @@
+import { Canvas, Meta, Story } from "@storybook/blocks";
+import * as AggregationPageStories from './AggregationPage.stories';
+
+import { getCanvasMobileProps } from "../../helpers";
+
+<Meta of={AggregationPageStories} />
+
+# Aggregation Page
+
+## Default
+
+<Canvas sourceState="close">
+  <Story of={AggregationPageStories.Default} />
+</Canvas>
+
+## Mobile
+
+<Canvas withSource="none" {...getCanvasMobileProps()}>
+  <Story of={AggregationPageStories.Mobile} />
+</Canvas>
