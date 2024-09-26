@@ -15,7 +15,6 @@ const config = {
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
     "storybook-addon-pseudo-states",
-    "@storybook/addon-mdx-gfm",
     "@storybook/addon-webpack5-compiler-babel"
   ],
   staticDirs: ['../build', 'storybook-static'],
