@@ -120,7 +120,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.25.0",
-    "@storybook/test": "^8.0.6",
+    "@storybook/test": "^8.4.3",
     "ajv": "^8.17.1",
     "bootstrap": "^4.6.2",
     "jquery": "^3.7.1",
