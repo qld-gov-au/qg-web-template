@@ -74,49 +74,4 @@ export class QgLoadGoogleApi {
       $('.st-map-static').eq(0).prepend("<h3><span class='fa fa-compass' aria-hidden='true'></span>Maps</h3>");
     }
   }
-
-  /**
-   * onbtnClick -> clicking quick exit button a page
-   * @param {function} callback - execute after successful loading of a key
-   * @return {undefined}
-   **/
-  _loadGoogleApi (callback) {
-    const googleApiKey = this._checkEnvAndSetKey();
-    const appendScript = url => {
-      $('head').append('<script type="text/javascript" src="' + url + '"></script>');
-    };
-    const next = () => {
-      if (typeof callback === 'function') {
-        callback();
-      } else {
-        appendScript(callback);
-      }
-    };
-    if ($('#googleapi').length <= 0) {
-      const s = document.createElement('script');
-      const u = `https://maps.googleapis.com/maps/api/js?key=${googleApiKey}&region=AU&libraries=places`;
-      s.type = 'text/javascript';
-      s.id = 'googleapi';
-      s.src = u;
-      document.getElementsByTagName('head')[0].appendChild(s);
-      s.onreadystatechange = function () { //trigger for IE
-        if (this.readyState === 'complete') {
-          next();
-        }
-      };
-      s.onload = function () {
-        next();
-      };
-    } else { //if script is already created but either loading or loaded
-      if (document.readyState === 'loading') {
-        document.onreadystatechange = function () {
-          if (this.readyState === 'complete') {
-            next();
-          }
-        };
-      } else {
-        next();
-      }
-    }
-  }
 }
