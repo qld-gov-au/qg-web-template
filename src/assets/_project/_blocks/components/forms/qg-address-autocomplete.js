@@ -22,7 +22,6 @@ export class QgAddressAutocomplete {
     this.apiKey = 'qldonline'; // TODO: sort out PLSPlus API keys
 
     if (this.$searchWidget.length > 0 || this.$inputField.length > 0){
-      console.log('Hello, world!');
       this._setValFromUrlParameters();
       this._resetValue();
       this._keypress();
@@ -243,7 +242,7 @@ export class QgAddressAutocomplete {
   _addressAutocomplete () {
     const self = this;
     $.each(self.$inputField, () => {
-      const autocompleteBox = $('.qg-location-autocomplete-results');
+      const autocompleteBox = $('<div class="qg-location-autocomplete-results"></div>');
       autocompleteBox.insertAfter(this);
 
       $(this).on('keypress', async () => {
