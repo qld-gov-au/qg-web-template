@@ -7,13 +7,14 @@ A1 On Maps Autocomplete
  */
 
 import { QgLoadGoogleApi } from '../../utils/qg-load-google-api';
-const loadGoogleApi = new QgLoadGoogleApi();
+new QgLoadGoogleApi()._staticMaps();
 
 export class QgAddressAutocomplete {
   constructor () {
     this.$searchWidget = $('.qg-search-widget');
     this.$inputField = $('.qg-location-autocomplete');
     this.$inpuFieldContainer = $('.qg-fl');
+    this.$autocompleteContainer = $('.qg-location-autocomplete-results');
     this.$latitude = $('.qg-search-widget__latitude');
     this.$longitude = $('.qg-search-widget__longitude');
     this.$form = $('.qg-search-widget-form');
@@ -74,7 +75,7 @@ export class QgAddressAutocomplete {
     this.$inputField.blur(function () {
       console.log('blur');
       if ($(this).val().length === 0) {
-        this.$searchWidget.find(self.$latitude).val('')
+        $(this).closest(self.$searchWidget).find(self.$latitude).val('')
           .end()
           .find(self.$longitude).val('');
       }
@@ -101,8 +102,9 @@ export class QgAddressAutocomplete {
               self.$searchWidget.find(self.$latitude).val(latitude)
                 .end()
                 .find(self.$longitude).val(longitude);
-              const address = self._validateCoordinates(latitude, longitude);
-              locationInput.val(address);
+              self._validateCoordinates(latitude, longitude).then(address => {
+                locationInput.val(address);
+              });
             };
             const errorHandler = (err) => {
               if (err.code === 1) {
@@ -231,19 +233,20 @@ export class QgAddressAutocomplete {
   _autocompleteItemSelected(node) {
     const selectedAddress = $(node).text();
     const searchBox = $(node).closest(this.$searchWidget).find(this.$inputField);
-    const autocompleteBox = $(node).closest(this.$searchWidget).find('.qg-location-autocomplete-results');
+    const autocompleteBox = $(node).closest(this.$searchWidget).find(this.$autocompleteContainer);
     const longitude = $(node).closest(this.$searchWidget).find(this.$longitude);
     const latitude = $(node).closest(this.$searchWidget).find(this.$latitude);
     searchBox.val(selectedAddress);
     autocompleteBox.hide();
 
-    if ($(node).attr('longitude') && $(node).attr('latitude')) {
-      longitude.val($(node).attr('longitude'));
-      latitude.val($(node).attr('latitude'));
+    if (node.getAttribute('longitude') && node.getAttribute('latitude')) {
+      longitude.val(node.getAttribute('longitude'));
+      latitude.val(node.getAttribute('latitude'));
     } else {
-      const { lng, lat } = this._parseAddress(selectedAddress);
-      longitude.val(lng);
-      latitude.val(lat);
+      this._parseAddress(selectedAddress).then(({ lng, lat }) => {
+        longitude.val(lng);
+        latitude.val(lat);
+      });
     }
   }
 
@@ -253,12 +256,13 @@ export class QgAddressAutocomplete {
    **/
   _addressAutocomplete () {
     const self = this;
-    $.each(self.$inputField, () => {
+    $.each(self.$inputField, (i) => {
+      const input = self.$inputField[i];
       const autocompleteBox = $('<div class="qg-location-autocomplete-results"></div>');
-      autocompleteBox.insertAfter(this);
+      $(input).after(autocompleteBox);
 
-      $(this).on('keypress', async () => {
-        const query = $(this).val();
+      $(input).on('input', async () => {
+        const query = $(input).val();
         if (query.length < 3) {
           autocompleteBox.hide();
           return;
@@ -279,50 +283,19 @@ export class QgAddressAutocomplete {
       });
     });
 
-    $(document).on('click', '.qg-location-autocomplete-item', () => {
-      self._autocompleteItemSelected(this);
+    $(document).on('click', '.qg-location-autocomplete-item', (event) => {
+      self._autocompleteItemSelected(event.target);
     });
 
     // Close autocomplete when clicking outside
     $(document).on('click', function (e) {
-      if (!$(e.target).closest(self.$inputField).length && !$(e.target).closest('.qg-location-autocomplete-results').length) {
-        $('.qg-location-autocomplete-results').each(() => {
+      if (!$(e.target).closest(self.$inputField).length && !$(e.target).closest(self.$autocompleteContainer).length) {
+        // TODO: this isn't hiding the autocomplete results correctly
+        $(self.$autocompleteContainer).each(() => {
           $(this).hide();
         });
       }
     });
-
-    /*
-    const self = this;
-    const googleAddressAutocomplete = function (){
-      const qldBounds = new google.maps.LatLngBounds(
-        new google.maps.LatLng(-29, 138.0578426),
-        new google.maps.LatLng(-9.9339, 153.63831),
-      );
-      // set events on all autocomplete fields (there can be more than one autocomplete on a same page)
-      $.each(self.$inpuField, function () {
-        const dataStrictBounds = $(this).data('strictbounds') || true;
-        const options = {
-          bounds: qldBounds,
-          strictBounds: dataStrictBounds,
-          types: ['geocode'],
-        };
-        const autocomplete = new google.maps.places.Autocomplete(this, options);
-
-        // add lat and lng values after a option is selection from the autocomplete options
-        autocomplete.addListener('place_changed', function(){
-          const place = autocomplete.getPlace();
-          if (place.geometry) {
-            self.$searchWidget.find(self.$latitude).val(place.geometry.location.lat())
-              .end()
-              .find(self.$longitude).val(place.geometry.location.lng());
-          }
-        });
-      });
-    };
-     */
-    // load google api with a valid key
-    loadGoogleApi._loadGoogleApi(googleAddressAutocomplete);
   }
 
   /**
@@ -335,57 +308,11 @@ export class QgAddressAutocomplete {
 
     self.$inputField.on('keydown', async function(event) {
       if (event.key === 'Enter' || event.key === 'Tab') {
+        // TODO: this doesn't work properly
         event.preventDefault();
-        const autocompleteResults = $(this).closest(self.$searchWidget).find('.qg-location-autocomplete-results');
+        const autocompleteResults = $(this).closest(self.$searchWidget).find(self.$autocompleteContainer);
         self._autocompleteItemSelected(autocompleteResults.children()[0]);
       }
     });
-
-    /*
-    // eslint-disable-next-line no-unused-vars
-    let addressSelection = false;
-    let reqReady = true;
-
-    self.$inpuField.keypress(function (event) {
-      if ($(this).val().length >= 1) {
-        if (event.keyCode === 13 || event.keyCode === 9) {
-          event.preventDefault();
-          // get the value from the autocomplete options
-          const itemFull = $('.pac-container .pac-item:first').text();
-          const itemQuery = $('.pac-container .pac-item:first .pac-item-query').text();
-          const firstResult = itemQuery + ' ' + itemFull.substring(itemQuery.length);
-          // check if results are there
-          if (firstResult.length > 1 && reqReady === true) {
-            self.$inpuField.val(firstResult);
-            const geocoder = new google.maps.Geocoder();
-            geocoder.geocode({ address: firstResult }, function (results, status) {
-              if (status === 'OK') {
-                reqReady = false;
-                if (results) {
-                  $('.qg-location-autocomplete').val(results[0].formatted_address);
-                  const latitude = results[0].geometry.location.lat();
-                  const longitude = results[0].geometry.location.lng();
-                  addressSelection = true;
-                  self.$searchWidget.find(self.$latitude).val(latitude)
-                    .end()
-                    .find(self.$longitude).val(longitude);
-                  setTimeout(function () {
-                    reqReady = true;
-                  }, 1000);
-                } else {
-                  reqReady = true;
-                }
-              } else {
-                reqReady = true;
-                if (status === 'ZERO_RESULTS' || status === 'OVER_QUERY_LIMIT' || status === undefined) {
-                  console.error(status);
-                }
-              }
-            });
-          }
-        }
-      }
-    });
-     */
   }
 }

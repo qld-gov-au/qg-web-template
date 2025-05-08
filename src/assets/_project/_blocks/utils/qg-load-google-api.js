@@ -8,7 +8,6 @@ import keys from '../data/qg-google-keys';
 
 export class QgLoadGoogleApi {
   constructor() {
-    this.firstFolderPath = location.pathname.split('/')[1];
     this._staticMaps();
   }
 
@@ -26,7 +25,7 @@ export class QgLoadGoogleApi {
    **/
   _checkEnvAndSetKey () {
     let googleApiKey;
-    const self = this;
+    const firstFolderPath = location.pathname.split('/')[1];
     // if no franchise name identified then use the default key according to the environment
     if (window.location.hostname.search(/\bgithub\b/) !== -1) {
       googleApiKey = keys.defGoogle.docs;
@@ -36,9 +35,9 @@ export class QgLoadGoogleApi {
       googleApiKey = keys.defGoogle.prod;
     }
     // check if a particular franchise key is required by checking the folder path in the URL
-    if (self.firstFolderPath) {
+    if (firstFolderPath) {
       keys.franchises.forEach(function (e) {
-        if (self.firstFolderPath === e.name) {
+        if (firstFolderPath === e.name) {
           googleApiKey = e.apiKey;
         }
       });

@@ -55,17 +55,19 @@
       z-index: 1001;
       border: 1px solid #ccc;
       width: 90%;
-      margin-right: 11px;
-      max-height: 200px;
+      top: 150px;
+      max-height: 180px;
       overflow-y: auto;
       display: none;
+      position: absolute;
     }
-    .autocomplete-item {
+    .qg-location-autocomplete-item {
       padding: 5px 10px;
       cursor: pointer;
-    }
-    .autocomplete-item:hover {
-      background-color: #e9e9e9;
+      background-color: white;
+      :hover {
+        background-color: #e9e9e9;
+      }
     }
     .qg-app-geocoding{
       width: 47px;
