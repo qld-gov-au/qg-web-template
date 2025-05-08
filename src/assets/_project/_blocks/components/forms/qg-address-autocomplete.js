@@ -6,7 +6,6 @@ A1 On Maps Autocomplete
 - https://www.qld.gov.au/law/legal-mediation-and-justice-of-the-peace/about-justice-of-the-peace/search-for-your-nearest-jp-or-cdec
  */
 
-/*global qg, google*/
 import { QgLoadGoogleApi } from '../../utils/qg-load-google-api';
 const loadGoogleApi = new QgLoadGoogleApi();
 
@@ -97,26 +96,13 @@ export class QgAddressAutocomplete {
               // get latitude and longitude
               const latitude = position.coords.latitude;
               const longitude = position.coords.longitude;
-              const latlng = { lat: parseFloat(latitude), lng: parseFloat(longitude) };
-              const geocoder = new google.maps.Geocoder();
               const locationInput = $(this).parent().find(self.$inputField);
               // Insert latitude and longitude value to the hidden input fields
               self.$searchWidget.find(self.$latitude).val(latitude)
                 .end()
                 .find(self.$longitude).val(longitude);
-              // get address using latitude and longitude from Google maps api
-              geocoder.geocode({ location: latlng }, (results, status) => {
-                if (status === 'OK') {
-                  if (results[1]) {
-                    locationInput.val(results[1].formatted_address);
-                    locationInput.trigger('place_changed');
-                  } else {
-                    window.alert('No results found');
-                  }
-                } else {
-                  window.alert('Geocoder failed due to: ' + status);
-                }
-              });
+              const address = self._validateCoordinates(latitude, longitude);
+              locationInput.val(address);
             };
             const errorHandler = (err) => {
               if (err.code === 1) {
@@ -164,7 +150,7 @@ export class QgAddressAutocomplete {
         }
       });
 
-    if (!this.apiKey_) {
+    if (!this.apiKey) {
       return ckanResults;
     } else {
       url = `https://www.address.services.qld.gov.au/pls-plus-qg/AutoCompleteAddress?query=${encodeURIComponent(query)}&apiKey=${this.apiKey}`;
@@ -184,6 +170,32 @@ export class QgAddressAutocomplete {
 
       return ckanResults.concat(plsPlusResults);
     }
+  }
+
+  /**
+   *
+   * @param lat
+   * @param lng
+   * @return {Promise<string>}
+   */
+  async _validateCoordinates(lat, lng) {
+    const url = `https://www.address.services.qld.gov.au/pls-plus-qg/ValidateCoordinates?latitude=${lat}&longitude=${lng}&apiKey=${this.apiKey}`;
+    const response = await fetch(url);
+    const data = await response.json();
+
+    if (data && data.ValidateCoordinatesResponse.ValidateCoordinatesResult.ResultCount >= 1) {
+      const results = data.ValidateCoordinatesResponse.ValidateCoordinatesResult.Results.Result;
+
+      // Ensure results is treated as an array
+      const resultArray = Array.isArray(results) ? results : [results];
+      if (resultArray.length >= 1) {
+        const fullAddress = resultArray[0].MetaData.find(meta => meta.Name === 'FullAddressString');
+        if (fullAddress) {
+          return fullAddress.value;
+        }
+      }
+    }
+    return '';
   }
 
   /**
