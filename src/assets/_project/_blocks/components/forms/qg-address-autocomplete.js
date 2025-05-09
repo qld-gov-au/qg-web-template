@@ -132,7 +132,18 @@ export class QgAddressAutocomplete {
    *         with both the text address, and the longitude & latitude if they are known
    */
   async _queryAutocomplete(query) {
-    let url = `https://www.data.qld.gov.au/api/3/action/datastore_search_sql?sql=${encodeURIComponent(`SELECT * from \"53537486-245a-4e4a-b7cd-7b2bdacdd896\" where postcode='${query.toUpperCase()}' or locality='${query.toUpperCase()}'`)}&_=1737522535876`;
+    // For CKAN, extract only the suburb name from the query so the results in the text box are
+    // searchable. e.g. the query "SUBURB NAME QLD 4999" will be reduced to "SUBURB NAME" which can
+    // be matched exactly within CKAN
+    let ckanQuery = query.toLowerCase();
+    for (const state of ['qld', 'act', 'nsw', 'nt', 'vic', 'sa', 'tas', 'wa']) {
+      if (ckanQuery.includes(` ${state} `)) {
+        ckanQuery = ckanQuery.split(` ${state}`)[0];
+        break;
+      }
+    }
+
+    let url = `https://www.data.qld.gov.au/api/3/action/datastore_search_sql?sql=${encodeURIComponent(`SELECT * from \"53537486-245a-4e4a-b7cd-7b2bdacdd896\" where postcode='${ckanQuery.toUpperCase()}' or locality='${ckanQuery.toUpperCase()}'`)}&_=1737522535876`;
     let response = await fetch(url);
     let data = await response.json();
     const ckanResults = data.result?.records
@@ -265,14 +276,15 @@ export class QgAddressAutocomplete {
    **/
   _addressAutocomplete () {
     const self = this;
+
     $.each(self.$inputField, (i) => {
-      const input = self.$inputField[i];
+      const input = $(self.$inputField[i]);
       // Add a container element to hold the autocomplete results
       const autocompleteBox = $('<div class="qg-location-autocomplete-results"></div>');
-      $(input).after(autocompleteBox);
+      input.after(autocompleteBox);
 
-      $(input).on('input', async () => {
-        const query = $(input).val();
+      async function showAutocomplete() {
+        const query = input.val();
         if (query.length < 3) {
           autocompleteBox.hide();
           return;
@@ -292,8 +304,12 @@ export class QgAddressAutocomplete {
           // No results, hide the container
           autocompleteBox.hide();
         }
-      });
+      }
+
+      input.on('input', showAutocomplete);
+      input.on('click', showAutocomplete);
     });
+    self.$autocompleteContainer = $('.qg-location-autocomplete-results');
 
     $(document).on('click', '.qg-location-autocomplete-item', (event) => {
       self._autocompleteItemSelected(event.target);
@@ -302,9 +318,8 @@ export class QgAddressAutocomplete {
     // Close autocomplete when clicking outside
     $(document).on('click', function (e) {
       if (!$(e.target).closest(self.$inputField).length && !$(e.target).closest(self.$autocompleteContainer).length) {
-        // TODO: this isn't hiding the autocomplete results correctly
-        $(self.$autocompleteContainer).each(() => {
-          $(this).hide();
+        self.$autocompleteContainer.each((_, element) => {
+          $(element).hide();
         });
       }
     });
@@ -320,7 +335,6 @@ export class QgAddressAutocomplete {
 
     self.$inputField.on('keydown', async function(event) {
       if (event.key === 'Enter' || event.key === 'Tab') {
-        // TODO: this doesn't work properly
         event.preventDefault();
         const autocompleteResults = $(this).closest(self.$searchWidget).find(self.$autocompleteContainer);
         self._autocompleteItemSelected(autocompleteResults.children()[0]);
