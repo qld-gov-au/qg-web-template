@@ -125,15 +125,18 @@ export class QgAddressAutocomplete {
   }
 
   /**
-   *
-   * @param query
-   * @return {Promise<*>}
+   * Searches the given query in both the CKAN locality database and in PLSPlus, and returns an
+   * array of the concatenated results
+   * @param {String} query The search query
+   * @return {Promise<{ result: String, longitude: String, latitude: String }[]>} Array of results,
+   *         with both the text address, and the longitude & latitude if they are known
    */
   async _queryAutocomplete(query) {
     let url = `https://www.data.qld.gov.au/api/3/action/datastore_search_sql?sql=${encodeURIComponent(`SELECT * from \"53537486-245a-4e4a-b7cd-7b2bdacdd896\" where postcode='${query.toUpperCase()}' or locality='${query.toUpperCase()}'`)}&_=1737522535876`;
     let response = await fetch(url);
     let data = await response.json();
     const ckanResults = data.result?.records
+      // The dataset has several non-standard 9*** postcodes that come up for Brisbane searches
       .filter((result) => result?.postcode.toString()[0] !== '9')
       .map((result) => {
         return {
@@ -142,6 +145,7 @@ export class QgAddressAutocomplete {
           latitude: result.latitude,
         };
       })
+      // Put QLD results at the top
       .sort((a, b) => {
         if (a.result.includes('QLD') && !b.result.includes('QLD')) {
           return -1;
@@ -175,10 +179,11 @@ export class QgAddressAutocomplete {
   }
 
   /**
-   *
-   * @param lat
-   * @param lng
-   * @return {Promise<string>}
+   * Use PLSPlus to search the given coordinates for an address
+   * @param {string} lat Latitude for the search
+   * @param {string} lng Longitude for the search
+   * @return {Promise<string>} The text address that was found for the coordinates. Empty string if
+   *         none was found.
    */
   async _validateCoordinates(lat, lng) {
     const url = `https://www.address.services.qld.gov.au/pls-plus-qg/ValidateCoordinates?latitude=${lat}&longitude=${lng}&apiKey=${this.apiKey}`;
@@ -201,15 +206,13 @@ export class QgAddressAutocomplete {
   }
 
   /**
-   *
-   * @param query
-   * @return {Promise<{lng: string, lat: string}|{lng: *, lat: *}>}
+   * Use PLSPlus to find the latitude and longitude for the given address query. Should only be
+   * called with addresses that have already been received from PLSPlus.
+   * @param {string} query The addressed to be searched.
+   * @return {Promise<{lng: string, lat: string}>} The latitude and longitude found for the address.
+   *         Defaults to an empty string if the address can't be found.
    */
   async _parseAddress(query) {
-    if (!this.apiKey) {
-      return { lng: '153.0251227', lat: '-27.46977074' };
-    }
-
     const url = `https://www.address.services.qld.gov.au/pls-plus-qg/ParseAddress?query=${encodeURIComponent(query)}&apiKey=${this.apiKey}`;
     const response = await fetch(url);
     const data = await response.json();
@@ -222,13 +225,15 @@ export class QgAddressAutocomplete {
       return { lng: record.Geocode.Longitude, lat: record.Geocode.Latitude };
     } else {
       console.log('Address not found');
-      return { lng: '153.0251227', lat: '-27.46977074' };
+      return { lng: '', lat: '' };
     }
   }
 
   /**
-   *
-   * @param node
+   * Handler for an autocomplete result item being selected. Fills in data from the result into the
+   * search input and longitude & latitude hidden fields.
+   * @param {node} node The HTML node for the autocomplete item that was selected.
+   * @return {undefined}
    */
   _autocompleteItemSelected(node) {
     const selectedAddress = $(node).text();
@@ -236,13 +241,17 @@ export class QgAddressAutocomplete {
     const autocompleteBox = $(node).closest(this.$searchWidget).find(this.$autocompleteContainer);
     const longitude = $(node).closest(this.$searchWidget).find(this.$longitude);
     const latitude = $(node).closest(this.$searchWidget).find(this.$latitude);
+    // Fill address/locality result into the search bar and hide the autocomplete results
     searchBox.val(selectedAddress);
     autocompleteBox.hide();
 
     if (node.getAttribute('longitude') && node.getAttribute('latitude')) {
+      // Fill the longitude and latitude into the hidden fields if they are found
       longitude.val(node.getAttribute('longitude'));
       latitude.val(node.getAttribute('latitude'));
     } else {
+      // If the result doesn't already have the longitude and latitude (i.e. it is from PLSPlus),
+      // find the coordinates
       this._parseAddress(selectedAddress).then(({ lng, lat }) => {
         longitude.val(lng);
         latitude.val(lat);
@@ -258,6 +267,7 @@ export class QgAddressAutocomplete {
     const self = this;
     $.each(self.$inputField, (i) => {
       const input = self.$inputField[i];
+      // Add a container element to hold the autocomplete results
       const autocompleteBox = $('<div class="qg-location-autocomplete-results"></div>');
       $(input).after(autocompleteBox);
 
@@ -268,6 +278,7 @@ export class QgAddressAutocomplete {
           return;
         }
 
+        // Find results for the search query and add them to the container
         const suggestions = await self._queryAutocomplete(query);
         if (suggestions.length > 0) {
           autocompleteBox.empty();
@@ -278,6 +289,7 @@ export class QgAddressAutocomplete {
             }
           });
         } else {
+          // No results, hide the container
           autocompleteBox.hide();
         }
       });
